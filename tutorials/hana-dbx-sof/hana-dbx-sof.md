@@ -9,7 +9,7 @@ primary_tag: software-product>sap-hana-cloud
 # Explore SAP HANA Cloud, SAP HANA Database SQL on Files
 <!-- description --> Learn how files such as CSV or Parquet stored on data lake Files can be queried using SQL on Files.  
 
-## Prerequisites (provided)
+## Prerequisites 
 - An SAP HANA Cloud, SAP HANA database (2024 QRC3)
 - A data lake Files instance (unavailable in trial/free tier)
 
@@ -33,7 +33,7 @@ A [data lake Files](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-fo
 In this tutorial, we will be using the SAP HANA Database SQL on Files feature which was released in QRC 3 of 2024.  Virtual tables can be created in SAP HANA Cloud, SAP HANA database that retrieve their data from a CSV, Parquet, or Delta table stored on a data lake Files instance.  Details can be found in [SAP HANA Cloud, SAP HANA Database SQL on Files Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-native-sql-on-files-overview) and [Unlocking the True Potential of Data in Files with SAP HANA Database SQL on Files in SAP HANA Cloud](https://community.sap.com/t5/technology-blogs-by-sap/unlocking-the-true-potential-of-data-in-files-with-sap-hana-database-sql-on/ba-p/13861585).
 
 ### View and Create Instances in SAP HANA Cloud Central
-SAP HANA Cloud Central can be used to view and manage your SAP HANA Cloud instances running in a subaccount.  
+[SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/subscribing-to-sap-hana-cloud-administration-tools) can be used to view and manage your SAP HANA Cloud instances running in a subaccount.  
 
 A SAP HANA database and a Data lake Files instance are required to complete this tutorial.
 
@@ -53,16 +53,22 @@ If you have not already done so, use the **Create Instance** button to create th
 
     ![disable the data lake relational engine](disable-relational-engine.png)
 
+    Notice that the estimate is 0 CU or consumption units per month as initially the data lake Files instance will be empty.
+
 ### Configure a data lake Files instance
-The data lake Files instance uses X.509 certificates for authentication and authorization.  Details on how to create the certificates and configure the data lake Files instance can be found at steps 3 and 4 of [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli).
+The data lake Files instance uses X.509 certificates for authentication and authorization.
 
 ![manage configuration of a data lake](dlf-manage-config.png)
 
+Details on how to create the certificates and configure the data lake Files instance can be found at steps 3 and 4 of [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli).
+
 ![trust and authorization](trust-authorization-dlf.png)
+
+The authorization pattern indicates that client certificates that are trusted by the CA specified in the trusts section that match the provided pattern (SAP employees in Waterloo) will have the privileges assigned to the role user. 
 
 See also [Setting Up Initial Access to HANA Cloud data lake Files](https://community.sap.com/t5/technology-blogs-by-sap/setting-up-initial-access-to-hana-cloud-data-lake-files/ba-p/13519656) and [Configuring Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/configuring-data-lake-files).
 
-### Connect using the SAP HANA database explorer
+### Create a database user with the required privileges
 Follow the steps below to connect to the database using the SAP HANA database explorer.
 
 1. In the Instances app, from the action menu for HC_HDB, select Open in SAP HANA database explorer.
@@ -89,6 +95,10 @@ Follow the steps below to connect to the database using the SAP HANA database ex
     
     CONNECT USER3 PASSWORD Password3;
     ```
+
+    Then create a new connection using the specified user using the Add Database with Different User option.
+
+    ![Add a database with a different user](add-database-with-different-user.png)
 
 ### Connect from SAP HANA database explorer to data lake Files
 Once the data lake Files instance has been created and configured, it can be accessed using the [SAP HANA database explorer](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/getting-started-with-sap-hana-database-explorer), [REST API](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/2024_3_QRC/en-US/html/index.html), or [hdlfscli](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/hdlfscli-data-lake-files-utility).
@@ -118,7 +128,13 @@ Files can now be uploaded to the data lake Files instance.
     ![Titanic download](titanic-download-parquet.png)
 
 
-2. Open the previously downloaded CSV file in an editor such as Notepad.  Remove the header row or the first row which contains the names of the columns.  Save the file as titanic_nh.csv.  When using SQL on Files with a CSV file, the source file cannot have a header row.  CSV files with a header will likely be supported in an upcoming release.
+2. When using SQL on Files with a CSV file, the source file cannot have a header row.  CSV files with a header will likely be supported in an upcoming release.  
+
+    * Open the previously downloaded CSV file in an editor such as Notepad.  
+    
+    * Remove the header row or the first row which contains the names of the columns.  
+    
+    * Save the file as titanic_nh.csv.  
 
 3. Upload these files into a folder of your choosing such as your first name.  
 
@@ -130,7 +146,15 @@ Files can now be uploaded to the data lake Files instance.
 
     ![files uploaded](files-uploaded.png)
 
-    Different operations can be performed on a folder or individual files such as move, delete, restore and a more detailed view of the files can be seen as shown below enabling multiple files to be selected.
+    Different operations can be performed on a folder or individual files such as: 
+    
+    * move
+    * rename
+    * delete
+    * restore snapshot
+    * download
+    
+    A detailed view of the files can be seen as shown below enabling multiple files to be selected.
 
     ![file operations](file-operations.png)
 
@@ -139,21 +163,47 @@ Files can now be uploaded to the data lake Files instance.
 ### Create a remote source
 A remote source provides a connection from an SAP HANA database to the data lake Files instance.
 
-1. Execute the below SQL to view a list of existing remote sources.
+1. Execute the below SQL to view a list of existing remote sources, PSEs, and certificates.  In order for a remote source to be created, a personal security environment (PSE) store is required that contains the appropriate certificates to enable the connection from the database to the data lake Files instance.  
 
     ```SQL
     SELECT * FROM REMOTE_SOURCES;
-    --CALL CHECK_REMOTE_SOURCE('HC_DL_FILES_RS');
+    SELECT * FROM PSES;
+    SELECT * FROM CERTIFICATES;
+    SELECT * FROM PSE_CERTIFICATES;
+    ```
+
+2. Use the **Link** option in SAP HANA Cloud Central to create a remote source, PSE, and certificates.  It should be noted that the client certificate created does not have an option to export the client.key so it is not available to be used for connections other than those that originate from within the SAP HANA Cloud, SAP HANA database such as those from the SAP HANA database explorer or hdlfscli tool. 
+
+    ![Linked data lake Files](link.png)
+
+    ```SQL
+    SELECT * FROM REMOTE_SOURCES;
+    SELECT * FROM PSES;
+    SELECT * FROM CERTIFICATES;
+    SELECT * FROM PSE_CERTIFICATES;
     ```
 
     ![created remote source](remote-source.png)
 
-    The above remote source will be created in the next step.
+    Notice that there is now a remote source to the linked data lake Files instance.
 
-2. In order for a remote source to be created, a personal security environment (PSE) store is required that contains the appropriate certificates to enable the connection from the database to the data lake Files instance.  
+3.  Users can be granted privileges to access the PSE and remote source.  Further details can be found at [GRANT Statement (Access Control)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control).
 
-    The SQL below can be executed to create a PSE and a remote source.  
+    ```SQL
+    CONNECT DBADMIN PASSWORD YOUR_PASSWORD;
+    
+    GRANT REFERENCES ON PSE _SAP_DB_ACCESS_PSE_CLIENT_IDENTITY TO HC_DLFILES_ROLE;
 
+    GRANT CREATE VIRTUAL TABLE ON REMOTE SOURCE "HC_HDL_FILES_rs" TO HC_DLFILES_ROLE;
+
+    --Authorizes the creation of tables on a remote source object
+    GRANT REMOTE TABLE ADMIN ON REMOTE SOURCE "HC_HDL_FILES_rs" TO HC_DLFILES_ROLE;
+    
+    CONNECT USER3 PASSWORD Password3;
+    ```
+
+4. Should you wish to create the remote source, PSE, and certificates without using the UI, the following SQL can be used.
+    
     ```SQL
     SELECT * FROM PSES;
     CREATE PSE HC_DL_FILES_PSE;
@@ -190,7 +240,7 @@ A remote source provides a connection from an SAP HANA database to the data lake
     SELECT * FROM PSE_CERTIFICATES;
     ```
 
-    For further details see [Set Up an X.509 Mutual Authentication Environment](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-data-access-guide/set-up-x-509-mutual-authentication-environment)
+    For further details see [Set Up an X.509 Mutual Authentication Environment](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-data-access-guide/set-up-x-509-mutual-authentication-environment).
 
     ```SQL
     --Create a credential for export using the previously created PSE.
@@ -210,9 +260,6 @@ A remote source provides a connection from an SAP HANA database to the data lake
     Users can be granted privileges to access the PSE and remote source.  Further details can be found at [GRANT Statement (Access Control)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control).
 
     ```SQL
-    --For the PSE generated by link button (QRC 4)
-    --GRANT REFERENCES ON PSE _SAP_DB_ACCESS_PSE_CLIENT_IDENTITY TO USER4;
-
     GRANT REFERENCES ON PSE HC_DL_FILES_PSE TO HC_DLFILES_ROLE;
 
     GRANT CREATE VIRTUAL TABLE ON REMOTE SOURCE "HC_DL_FILES_RS" TO HC_DLFILES_ROLE;
@@ -220,13 +267,9 @@ A remote source provides a connection from an SAP HANA database to the data lake
     --Authorizes the creation of tables on a remote source object
     GRANT REMOTE TABLE ADMIN ON REMOTE SOURCE "HC_DL_FILES_RS" TO HC_DLFILES_ROLE;
     ```
-
-    It is also possible for SAP HANA Cloud Central to perform these operations in the UI as shown below.  It should be noted that the certificate created does not have an option to export the client.key so it is not available to be used for connections other than those that originate from within the SAP HANA Cloud, SAP HANA database such as those from the SAP HANA database explorer or hdlfscli tool. 
-
-    ![Linked data lake Files](link.png)
-
+   
 ### Create virtual tables
-Virtual tables can now be created using the remote source HC_DL_FILES_RS.  
+Virtual tables can now be created using the remote source HC_HDL_FILES_rs.  
 
 1. Create a virtual table that points to the CSV file.  
 
@@ -246,7 +289,7 @@ Virtual tables can now be created using the remote source HC_DL_FILES_RS.
         FARE DOUBLE,
         CABIN NVARCHAR(15),
         EMBARKED NVARCHAR (1)
-    ) AT "HC_DL_FILES_RS"."/YOUR_NAME/titanic_nh.csv"
+    ) AT "HC_HDL_FILES_rs"."/YOUR_NAME/titanic_nh.csv"
       AS CSV FIELD DELIMITED BY ',' ESCAPE '"';
 
     SELECT * FROM TITANIC_CSV;
@@ -274,7 +317,7 @@ Virtual tables can now be created using the remote source HC_DL_FILES_RS.
         FARE DOUBLE,
         CABIN NVARCHAR(15),
         EMBARKED NVARCHAR (1)
-    ) AT "HC_DL_FILES_RS"."/YOUR_NAME/titanic.parquet" AS PARQUET;
+    ) AT "HC_HDL_FILES_rs"."/YOUR_NAME/titanic.parquet" AS PARQUET;
 
     SELECT * FROM TITANIC_P;
     ```
@@ -284,7 +327,7 @@ Virtual tables can now be created using the remote source HC_DL_FILES_RS.
     ```SQL
     --Update YOUR_NAME before executing and ensure the case is correct
     CALL GET_REMOTE_SOURCE_FILE_COLUMNS(
-      REMOTE_SOURCE_NAME => 'HC_DL_FILES_RS',
+      REMOTE_SOURCE_NAME => 'HC_HDL_FILES_rs',
       REMOTE_FILE_PATH => '/YOUR_NAME/titanic.parquet',
       REMOTE_FILE_FORMAT => 'PARQUET',
       OPTIONS => ''
@@ -453,7 +496,15 @@ An alternative approach that enables you to only include a subset of the data or
 ### Export to data lake Files from an SAP HANA Cloud, SAP HANA database table
 Data from an SAP HANA Cloud, SAP HANA table or view can be exported to data lake Files as shown below.  
 
-1. Export using CSV.
+1. Create a credential for export.
+
+    ```SQL 
+    --Create a credential for export using the previously created PSE.
+    CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE _SAP_DB_ACCESS_PSE_CLIENT_IDENTITY;
+    SELECT * FROM CREDENTIALS;
+    ```
+
+2. Export using CSV.
 
     ```SQL
     --Update YOUR_NAME before executing and ensure the case is correct
@@ -466,7 +517,7 @@ Data from an SAP HANA Cloud, SAP HANA table or view can be exported to data lake
         COLUMN LIST IN FIRST ROW;
     ```
 
-2. Export using Parquet
+3. Export using Parquet
 
     ```SQL
     --Update YOUR_NAME before executing and ensure the case is correct
@@ -513,7 +564,7 @@ NYC_Taxi_Trip_Data
         BOROUGH NVARCHAR(5000),
         ZONE NVARCHAR(5000),
         SERVICE_ZONE NVARCHAR(5000)
-    ) AT "HC_DL_FILES_RS"."/NYC_Taxi_Trip_Data/taxi_zone_lookup.csv" AS CSV;
+    ) AT "HC_HDL_FILES_rs"."/NYC_Taxi_Trip_Data/taxi_zone_lookup.csv" AS CSV;
 
     SELECT * FROM TAXI_ZONE_LOOKUP ORDER BY SERVICE_ZONE, BOROUGH, ZONE;
     ```
@@ -522,7 +573,7 @@ NYC_Taxi_Trip_Data
 
     ```SQL
     CALL GET_REMOTE_SOURCE_FILE_COLUMNS(
-        REMOTE_SOURCE_NAME => 'HC_DL_FILES_RS',
+        REMOTE_SOURCE_NAME => 'HC_HDL_FILES_rs',
         REMOTE_FILE_PATH => '/NYC_Taxi_Trip_Data/YEAR=2023/MONTH=06/yellow_tripdata_2023-06.parquet',
         REMOTE_FILE_FORMAT => 'PARQUET',
         OPTIONS => ''
@@ -537,7 +588,7 @@ NYC_Taxi_Trip_Data
         TRIP_DISTANCE DOUBLE,
         PULOCATIONID INT,
         FARE_AMOUNT DOUBLE
-    ) AT "HC_DL_FILES_RS"."/NYC_Taxi_Trip_Data/YEAR=2023/MONTH=06/yellow_tripdata_2023-06.parquet" AS PARQUET FILE COLUMN LIST(1, 4, 5, 8, 11);
+    ) AT "HC_HDL_FILES_rs"."/NYC_Taxi_Trip_Data/YEAR=2023/MONTH=06/yellow_tripdata_2023-06.parquet" AS PARQUET FILE COLUMN LIST(1, 4, 5, 8, 11);
     ```
     
 5. Execute a few queries using the virtual tables.
@@ -567,7 +618,7 @@ NYC_Taxi_Trip_Data
         TRIP_DISTANCE DOUBLE,
         PULOCATIONID INT,
         FARE_AMOUNT DOUBLE
-    ) AT "HC_DL_FILES_RS"."/NYC_Taxi_Trip_Data" AS PARQUET 
+    ) AT "HC_HDL_FILES_rs"."/NYC_Taxi_Trip_Data" AS PARQUET 
     FILE COLUMN LIST(1, 2, 3, 6, 7, 10, 13)
     PARTITION BY (YEAR, MONTH);
     ```
