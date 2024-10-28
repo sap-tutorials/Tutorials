@@ -148,7 +148,6 @@ Let's create an application for a customer loyalty program. The customer can get
 4. Copy the prompt below:
 
     ```code
-    Enhance my sample data with meaningful data. Any phone numbers must be 10 digits long. 
     All customer numbers must be 7 digits long and one customer must use the customer number 1200547. 
     No fields may be empty. 
     Total purchase value must be smaller than 10000 not rounded. 
