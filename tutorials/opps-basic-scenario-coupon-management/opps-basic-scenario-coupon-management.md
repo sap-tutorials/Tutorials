@@ -122,8 +122,15 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 3. Open the **PATCH** request `/Coupon({ID})`.
 4. Choose **Parameters**.
 5. For ID, enter the **technical coupon ID** from the coupon object you just created.
-6. Choose **Run**. 
-7. Make sure you get the HTTP response **200**.
+6. For the **Request body**, choose `application/json`
+7. Copy the following raw data and paste it into the body.
+```json
+{ 
+  "status": "ACTIVE"
+}
+```
+8. Choose **Run**. 
+9. Make sure you get the HTTP response **200**.
 
 You have now successfully changed the status of the coupon code. 
 
