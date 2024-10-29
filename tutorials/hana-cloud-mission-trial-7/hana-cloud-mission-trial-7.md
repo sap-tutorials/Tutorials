@@ -40,7 +40,7 @@ primary_tag: software-product>sap-hana-cloud
 
 1.	Go to the Instances tab in SAP HANA Cloud Central and open SAP HANA database explorer. 
 
-    ![Open DBx from HANA Cloud Central](open-dbx-hcc.png)
+    ![Open DBx from HANA Cloud Central](open-dbx.png)
 
     Then open the SQL Console by clicking the icon in the left-hand top corner.
 

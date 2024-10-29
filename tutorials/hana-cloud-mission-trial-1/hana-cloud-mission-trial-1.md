@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Christopher Kollhed
-author_profile: https://github.com/chriskollhed
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, software-product>sap-hana-cloud]
@@ -12,7 +12,7 @@ primary_tag: software-product>sap-hana-cloud
 <!-- description --> Learn about the SAP HANA Cloud trial and the process to sign up for it.
 
 ## Intro
-This tutorial is part of a mission, in which you will learn in a hands-on, end-to-end setting how to use SAP HANA Cloud, SAP HANA database. SAP offers two free options to use SAP HANA Cloud. This tutorial covers the first option, which is signing up for the SAP HANA Cloud trial. The trial allows you to use SAP HANA Cloud in a test environment and does not require payment details to sign up, whereas the free tier option can be easily upgraded to a paid version but does require payment details. If you would like to learn more about the second option of using SAP HANA Cloud free tier, proceed to [this tutorial](hana-cloud-mission-trial-2-ft).
+This tutorial is part of a mission, in which you will learn in a hands-on, end-to-end setting how to use SAP HANA Cloud, SAP HANA database. SAP offers two free options to use SAP HANA Cloud. This tutorial covers the first option, which is signing up for the SAP HANA Cloud trial. The trial allows you to use SAP HANA Cloud in a test environment and does not require payment details to sign up, whereas the free tier option can be easily upgraded to a paid version but is only available in enterprise accounts.  If you would like to learn more about the second option of using SAP HANA Cloud free tier, proceed to [this tutorial](hana-cloud-mission-trial-2-ft).
 
 
 >![Alex Banner](banner-alex.png)
@@ -41,7 +41,7 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 -	The configuration of your trial instance of SAP HANA Cloud, SAP HANA database is **16 GB of memory, 1 vCPU, and 80 GB of storage**.
 
--   Features such as JSON document store, Script Server, PAL/APL etc. require larger HANA Cloud configurations (3 vCPUs, 45 GB of memory) and are therefore *not supported* in a trial account.
+- Features such as JSON document store and Script Server require larger HANA Cloud configurations (3 vCPUs, 45 GB of memory) and are therefore *not supported* in a trial account.
 
 
 ### Sign up for the SAP HANA Cloud trial
