@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Christopher Kollhed
-author_profile: https://github.com/chriskollhed
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-btp-cockpit]
@@ -40,19 +40,19 @@ In this tutorial, you will learn how to create an SAP Business Technology Platfo
 ---
 
 ### Get to know the SAP HANA Cloud free tier model
--	Customers and partners with an existing Cloud Platform Enterprise Agreement (CPEA) or Pay-As-You-Go contract can start using the free tier model for SAP BTP to explore, learn, and try SAP BTP services (such as SAP HANA Cloud) with a path to productive use.
+- Customers with an enterprise account can use the free service plans for SAP BTP to explore, learn, and try SAP BTP services (such as SAP HANA Cloud) with a path to productive use.
 
--	With the free tier model for SAP BTP you start with a productive account right away. The free tier means you can try out selected services up to a specified capacity limit and switch easily to the paid tier, without losing any work.  
+- The free tier means you can try out selected services up to a specified capacity limit and switch easily to the paid tier, without losing any work.  
 
--	The configuration of your free tier instance of SAP HANA Cloud, SAP HANA database is **30 GB of memory, 2 vCPUs, and 120 GB of storage**.
+- The configuration of your free tier instance of SAP HANA Cloud, SAP HANA database is **30 GB of memory, 2 vCPUs, and 120 GB of storage**.
 
--   If you do not restart your instance within **30 days**, it will be **deleted**. Additional details are available at [SAP HANA Database License](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-license).
+- If you do not restart your instance within **30 days**, it will be **deleted**. Additional details are available at [SAP HANA Database License](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-license).
 
--	In comparison, SAP BTP trial (introduced in the first tutorial) allows you to build full applications in a test environment to learn and explore the capabilities of SAP BTP. However, once customers and partners are ready to move to the next phase and deploy to production, they will need to get a new productive account and start over.
+- In comparison, SAP BTP trial (introduced in the first tutorial) allows you to build full applications in a test environment to learn and explore the capabilities of SAP BTP. However, once customers and partners are ready to move to the next phase and deploy to production, they will need to get a new productive account and start over.
 
--	SAP HANA Cloud services are available as both a trial or free tier model – customers and partners can choose the option based on their preferences.  Note that this tutorial contains details for the second option: SAP HANA Cloud free tier.   
+- SAP HANA Cloud services are available as both a trial or free tier model – customers and partners can choose the option based on their preferences.  Note that this tutorial contains details for the second option: SAP HANA Cloud free tier.   
 
--   Features such as JSON document store, Script Server, PAL/APL etc. require larger HANA Cloud configurations (3 `vCPUs`, 45G memory) and are therefore *not supported* when using free tier.
+- Features such as JSON document store and Script Server require larger HANA Cloud configurations (3 `vCPUs`, 45G memory) and are therefore *not supported* when using free tier.
 
 ### Create an SAP BTP account to use the free tier model
 If you would like to use the free tier model to get started with SAP HANA Cloud, [get an account on SAP BTP to try out free tier service plans](btp-free-tier-account) by following steps 1 to 8 of the linked tutorial.
