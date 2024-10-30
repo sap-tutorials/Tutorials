@@ -147,10 +147,6 @@ Now that you have created the multi-code coupon object and set it to active, you
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Generate coupon codes](generate_coupon_code.png)
-<!-- border -->![Coupon management 2](coupon_management_2.png)
-
-
 1. For **API Environment**, select the trial environment you have created for the Coupon Management service.
 2. On the left-hand side, choose **Coupon**.
 3. Open the **POST** request `/Coupon({ID})/CouponManagementService.generateCouponCodes`.
@@ -164,7 +160,12 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 }
 ```
 7. Choose **Run**.
+
+<!-- border -->![Generate coupon codes](generate_coupon_code.png)
+
 8. Make sure you get the HTTP response **200**.
+
+<!-- border -->![Generate coupon codes success](generate_coupon_code_success.png)
 
 With this, you have now created a batch of **100** unique codes for the coupon **COFFEELOVER**. You must note down the batch ID to read the coupon codes.
 
@@ -183,6 +184,8 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 5. Enter the **Batch ID** noted down at the time of generation of coupon codes. 
 6. Choose **Run**.
 7. Make sure you get the HTTP response **200**.
+
+<!-- border -->![Read coupon codes](read_coupon_code.png)
 
 With this, you can read the coupon codes generated for the multi-code coupon **COFFEELOVER**. This is the coupon code value to be communicated to the target group members as part of your promotional campaign. 
 
@@ -441,6 +444,8 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 7. Choose **Execute**.
 8. Make sure you get the HTTP response **200**.
 
+<!-- border -->![Upload a promotion](upload_promotion.png)
+
 With this, you uploaded the promotional rule "Buy a coffee machine and show coupon TIME FOR COFFEE to get 100 Euro off" (promotion ID: `771`) for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**. 
 
 
@@ -453,6 +458,7 @@ You can use the **Data Access** service for checking your uploaded data. If you 
 ### Additional Information
 
 * [Official Product Documentation](https://help.sap.com/docs/OPP)
+* [Coupon Management](https://help.sap.com/docs/omnichannel-promotion-pricing/service-guide/coupon-management)
 * [Trial Documentation](https://help.sap.com/docs/OPP/0c145d124b784b548b618cda8a5b2aba/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
 * [SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://help.sap.com/docs/OPP/7c87270e23c64c2aa922ce297a6df23d/67a9da084cf84e058cb3a3911971bdd0.html?version=Cloud)
 * [Video: SAP Omnichannel Promotion Pricing in a nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html)
