@@ -19,7 +19,7 @@ primary_tag: software-product>sap-hana-cloud
 
 
 ## You will learn
-- How to create an HDI container in a Cloud Foundry runtime that is mapped to a HANA Cloud instance
+- How to create an HDI container in a Cloud Foundry runtime that is mapped to a SAP HANA Cloud instance
 - How to create a development space and project in SAP Business Application Studio
 - How to establish a connection to your database
 - How to create a user-provided service
@@ -139,7 +139,7 @@ You are now ready to create your first development space.
 
 Now you can create a development project within your new space. Follow these steps:
 
-1.	On the **Get Started** page, click on **Start from template**.
+1.	On the **Get Started** page, click on **New Project from Template**.
 
     ![Start from Template](bas-welcome.png)
 
@@ -167,15 +167,21 @@ Now you can create a development project within your new space. Follow these ste
 
 7.	Once the login is complete, your organization and space are automatically selected. If you are part of multiple organizations or spaces, you can adjust the preselected options via the drop-down menus.
 
+    ![CF Org and Space selection](org-and-space.png)
+
 8. Under **Create a new HDI service instance**, select **No**. This will prompt you to choose a Cloud Foundry service. Select the HDI Container service you created earlier in this tutorial.
 
     ![Bind to HDI service](bind-to-hdi.png)
 
 9.	Click on **Finish** to create the project.
 
-    Your project will be generated, which takes a few minutes to complete. You can follow the status of your project creation on the bottom right corner of the screen.
+    Your project will be generated, which takes a few minutes to complete. 
 
-    Once the project is complete, the project will open in a new workspace, and the structure can be seen on the left-hand panel.
+    Once the project is complete, it can be opened if it isn't open already.
+
+    ![open project](open-project.png)  
+    
+    The structure can be seen on the left-hand panel.
 
     ![Open in New Workspace](left-panel.png)
 
@@ -224,7 +230,7 @@ Now that your project is created and you know the basics of how to navigate SAP 
 
 3.	In the field **Select connection type**, choose the option **Create user-provided service instance** from the drop-down menu.
 
-4.	Enter a name for your service and provide the user name and password for the `UPS_GRANTOR` user you previously created in step 2 of the [Create Users and Manage Roles and Privileges](hana-cloud-mission-trial-5) tutorial.
+4.	Enter a name for your service and provide the user name and password (Password1) for the `UPS_GRANTOR` user you previously created in step 2 of the [Create Users and Manage Roles and Privileges](hana-cloud-mission-trial-5) tutorial.
 
     ![USP UI1](ss-13-USP-UI1_.png)
 
@@ -240,7 +246,7 @@ Now that your project is created and you know the basics of how to navigate SAP 
 
 ### Modify the hdbgrants file
 
-1. In File explorer, open the `.hdbgrants` file. Here, you can see a template of all different types of privileges you could grant to different user groups. There is a dedicated section for object owner users and application users.
+1. In File explorer, open the `.hdbgrants` file with the option **Open With ... Text Editor**. Here, you can see a template of all different types of privileges you could grant to different user groups. There is a dedicated section for object owner users and application users.
 
     ![Open .hdbgrants file](open-hdbgrants.png)
 
@@ -268,6 +274,8 @@ Now that your project is created and you know the basics of how to navigate SAP 
         }
     }
     ```
+
+
 
 ### Deploy your project
 
