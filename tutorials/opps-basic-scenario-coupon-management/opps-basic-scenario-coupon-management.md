@@ -64,10 +64,6 @@ You can now create a multi-code coupon object with the Coupon Management service
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Coupon management 1](coupon_management_1.png)
-<!-- border -->![Coupon management 2](coupon_management_2.png)
-
-
 1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
 2. On the left-hand side, choose **Coupon**.
 3. Open the **POST** request `/Coupon`.
@@ -91,12 +87,16 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 7. Choose **Execute**.
 8. Make sure you get the HTTP response **201**.
 
-The response should look like the following sample:
+<!-- border -->![Create coupon(create_coupon.png)]
+
+The response should look like this:
+
+<!-- border -->![Coupon creation success](create_coupon_success.png)
 
 
 9. From the response, note down the technical coupon ID as you will use it later.
 
-With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1st, 2024 to December 31st, 2024**.
+With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 25th, 2024 to December 31st, 2024**.
 
 
 **Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEELOVER**, you can proceed with the following steps:
@@ -107,6 +107,8 @@ With this, you have created a multi-code coupon with the ID **COFFEELOVER** and 
 3. Choose **Run**.
 4. Make sure you get the HTTP response **200**. 
 5. In the response body, you should see the coupon that you have created.  
+
+<!-- border -->![Check created coupon](GET_coupon.png)
 
 
 ### Change status of coupon object
@@ -122,7 +124,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 3. Open the **PATCH** request `/Coupon({ID})`.
 4. Choose **Parameters**.
 5. For ID, enter the **technical coupon ID** from the coupon object you just created.
-6. For the **Request body**, choose `application/json`
+6. For the **Request body**, choose `application/json`.
 7. Copy the following raw data and paste it into the body.
 ```json
 { 
@@ -131,6 +133,9 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 ```
 8. Choose **Run**. 
 9. Make sure you get the HTTP response **200**.
+
+<!-- border -->![Change coupon status](change_coupon_status.png)
+<!-- border -->![Coupon status change success](change_coupon_status_success.png)
 
 You have now successfully changed the status of the coupon code. 
 
