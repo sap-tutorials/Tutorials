@@ -142,25 +142,22 @@ You have now successfully changed the status of the coupon code.
 
 Now that you have created the multi-code coupon object and set it to active, you can generate a batch of 100 coupon codes to be used in the promotional campaign.
 
-Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
-
-1. For **API Environment**, select the trial environment you have created for the Coupon Management service.
-2. On the left-hand side, choose **Coupon**.
-3. Open the **POST** request `/Coupon({ID})/CouponManagementService.generateCouponCodes`.
-4. Choose **Parameters**.
-5. For ID, enter the **technical coupon ID** from the coupon object you just created.
-6. Copy the following raw data and paste it into the body:
+1. On the left-hand side, choose **Coupon**.
+2. Open the **POST** request `/Coupon({ID})/CouponManagementService.generateCouponCodes`.
+3. Choose **Parameters**.
+4. For ID, enter the **technical coupon ID** from the coupon object you just created.
+5. Copy the following raw data and paste it into the body:
 ```json
 { 
 "generatedCodeCount": 100, 
 "validFrom": "2024-10-01" 
 }
 ```
-7. Choose **Run**.
+6. Choose **Run**.
 
 <!-- border -->![Generate coupon codes](generate_coupon_code.png)
 
-8. Make sure you get the HTTP response **200**.
+7. Make sure you get the HTTP response **200**.
 
 <!-- border -->![Generate coupon codes success](generate_coupon_code_success.png)
 
@@ -172,26 +169,23 @@ With this, you have now created a batch of **100** unique codes for the coupon *
 
 You can now read the coupon codes created using the Coupon Management service to circulate the coupon information to the target group as part of your promotional campaign. 
 
-Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
-
-1. For **API Environment**, select the trial environment you have created for the Coupon Management service.
-2. On the left-hand side, choose **Code Batch**.
-3. Open the **GET** request `/CodeBatch({ID})/codes`.
-4. Choose **Parameters**.
-5. Enter the **Batch ID** noted down at the time of generation of coupon codes. 
-6. Choose **Run**.
-7. Make sure you get the HTTP response **200**.
+1. On the left-hand side, choose **Code Batch**.
+2. Open the **GET** request `/CodeBatch({ID})/codes`.
+3. Choose **Parameters**.
+4. Enter the **Batch ID** noted down at the time of generation of coupon codes. 
+5. Choose **Run**.
+6. Make sure you get the HTTP response **200**.
 
 <!-- border -->![Read coupon codes](read_coupon_code.png)
 
 With this, you can read the coupon codes generated for the multi-code coupon **COFFEELOVER**. This is the coupon code value to be communicated to the target group members as part of your promotional campaign. 
 
-You must note down the coupon code value as it will be used for redeeming the coupon.
+You must note down a coupon code value as it will be used for redeeming the coupon.
 
 
 ### Create a promotion for multi-code coupon
 
-To finalize your promotional campaign, you must set up the following promotion for your **Heidelberg** store (business unit ID **FC01**):
+To finalize your promotional campaign, you want to set up the following promotion for your **Heidelberg** store (business unit ID **FC01**):
 * Buy a coffee machine and show the coupon **COFFEELOVER to get 50 Euro off**.  
 * The promotion is valid from October 1st, 2024 to December 31st, 2024.
 You can do so either using the **Maintain Promotions** app or the **Data Upload** service.
@@ -438,18 +432,20 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
   </IDOC>
 </_-ROP_-PROMOTION02>
 ```
-7. Choose **Execute**.
+7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
 <!-- border -->![Upload a promotion](upload_promotion.png)
 
-With this, you uploaded the promotional rule "Buy a coffee machine and show coupon TIME FOR COFFEE to get 100 Euro off" (promotion ID: `771`) for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 1st, 2024 to September 30th, 2024**. 
+With this, you uploaded the promotional rule "Buy a coffee machine and show coupon COFFEELOVER to get Euro 50 off" for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2024 to December 31st, 2024**. 
 
 
 ### Check uploaded master data
 
 
 You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 4 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
+
+With this, you are all set to launch your promotional campaign. 
 
 
 ### Additional Information
