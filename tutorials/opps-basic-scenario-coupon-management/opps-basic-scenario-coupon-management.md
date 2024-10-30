@@ -34,7 +34,7 @@ primary_tag: products>sap-business-technology-platform
 * In the **Coupon Management** service, you are planning to create a multi-code coupon with the ID **COFFEELOVER**.
 * As the target group **coffee lovers** in the **Heidelberg** region consists of **100** contacts, you want to create **100 unique coupon codes** for those customers, each of which can be **redeemed only once** by a customer. Once the unique coupon codes are created, your marketing system can read and distribute them to the customers that are part of the promotional campaign.
 * You want to create the following promotion for your **Heidelberg** store (business unit ID: `FC01`): **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. 
-* Your promotion is valid from **October 25, 2024 until December 31, 2024**.
+* Your promotion is valid from **October 1, 2024 until December 31, 2024**.
 * The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **500 Euro**.
 
 
@@ -97,7 +97,7 @@ The response should look like this:
 
 9. From the response, note down the technical coupon ID as you will use it later.
 
-With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 25th, 2024 to December 31st, 2024**.
+With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1, 2024 to December 31, 2024**.
 
 
 **Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEELOVER**, you can proceed with the following steps:
@@ -115,25 +115,21 @@ With this, you have created a multi-code coupon with the ID **COFFEELOVER** and 
 ### Change status of coupon object
 
 
-When creating the coupon, the **status** of the coupon was set as **inactive** because it cannot be created in the **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **inactive to active**.
+When creating the coupon, the **status** of the coupon was set as **inactive** because it cannot be created in the **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **INACTIVE** to **ACTIVE**.
 
-Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
-
-
-1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
-2. On the left-hand side, choose **Coupon**.
-3. Open the **PATCH** request `/Coupon({ID})`.
-4. Choose **Parameters**.
-5. For ID, enter the **technical coupon ID** from the coupon object you just created.
-6. For the **Request body**, choose `application/json`.
-7. Copy the following raw data and paste it into the body.
+1. On the left-hand side, choose **Coupon**.
+2. Open the **PATCH** request `/Coupon({ID})`.
+3. Choose **Parameters**.
+4. For ID, enter the **technical coupon ID** from the coupon object you just created.
+5. For the **Request body**, choose `application/json`.
+6. Copy the following raw data and paste it into the body.
 ```json
 { 
   "status": "ACTIVE"
 }
 ```
-8. Choose **Run**. 
-9. Make sure you get the HTTP response **200**.
+7. Choose **Run**. 
+8. Make sure you get the HTTP response **200**.
 
 <!-- border -->![Change coupon status](change_coupon_status.png)
 <!-- border -->![Coupon status change success](change_coupon_status_success.png)
