@@ -9,7 +9,7 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Create a Calculation View
-<!-- description --> Learn how to create your own calculation views in SAP HANA Cloud, SAP HANA database with SAP Business Application Studio using Join and Rank nodes. 
+<!-- description --> Learn how to create your own calculation views in SAP HANA Cloud, SAP HANA database with SAP Business Application Studio using Join and Rank nodes.
 
 ## Prerequisites
 - You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-2) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-2-ft), or a production environment of SAP HANA Cloud, SAP HANA database
@@ -34,7 +34,7 @@ primary_tag: software-product>sap-hana-cloud
 >
 > *Alex needs to know the top 5 partners of their agency and wants to find out the days with maximum booking of each partner.*
 
-In this tutorial, you will learn how to create a calculation in SAP Business Application Studio, in which you will join tables and rank results to get Alex the business insights they need. 
+In this tutorial, you will learn how to create a calculation in SAP Business Application Studio, in which you will join tables and rank results to get Alex the business insights they need.
 
 ---
 
@@ -45,7 +45,7 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 
 2.	Type **SAP HANA: Create HANA database artifact** and press `Enter` or click on the right option.
 
-3. Under **Path**, change the path so the calculation view is created in the `src` folder of your project.	
+3. Under **Path**, change the path so the calculation view is created inside the `src` folder of your project.	
 
 4. You will see a form appear on the right-side of the screen. Select **Calculation View** as your artifact type.
 
@@ -90,9 +90,6 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 9.	In your file explorer, a new file will appear ending with `.hdbsynonym`. In this file, your synonyms are defined and stored. Go back to the calculation view editor and you should see the two tables in the join node.
 
     ![Join Node tables added](ss-03-join-node-tables-added.png)
-
-
-
 
 
 ### Define the mapping of the join node

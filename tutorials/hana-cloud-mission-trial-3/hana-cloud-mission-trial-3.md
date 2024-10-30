@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Christopher Kollhed
-author_profile: https://github.com/chriskollhed
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
@@ -50,6 +50,8 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
     > If you would like to learn more about **SAP HANA Cloud, Data Lake**, and [Get Started with a Standalone SAP HANA Cloud, Data Lake](mission.hana-cloud-data-lake-get-started), navigate to the linked mission for the basics.
 
     ![Provisioning Wizard](wizard-type.png)
+
+    You may also choose the runtime environment.  Further details can be found at [What Runtime Environment is my SAP HANA Cloud Instance Using?](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/runtime-environments-for-sap-hana-cloud). 
 
 4.	Click on **Next Step** to continue.
 
@@ -121,7 +123,7 @@ Here, you can select in this step if you want to create **replicas** of your ins
 
     ![Availability Zone](avail-zone.png)
 
-    To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/increasing-system-availability?locale=en-US).
+    To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/increasing-system-availability).
 
 2.	Click on **Next Step** to continue.
 
@@ -134,7 +136,7 @@ In a free tier model or trial environment, availability zone and replicas are no
 
 ![HANA database replicas](hdb-replicas.png)
 
-To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/LATEST/en-US/2c325f7b30ba43ac93ca514eba505a33.html).
+To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/increasing-system-availability).
 
 Click on **Next Step** to continue.
 
@@ -171,19 +173,21 @@ Click on **Next Step** to continue.
 
 Now you can configure the **Advanced Settings**.
 
-1. The Data Provisioning Server is not required in this tutorial mission.
+1. The Predictive Analysis Library (PAL) is not required for this tutorial mission.  Further details can be found at [Hands-on Tutorial: Machine Learning with SAP HANA Cloud](https://community.sap.com/t5/artificial-intelligence-and-machine-learning-blogs/hands-on-tutorial-machine-learning-with-sap-hana-cloud/ba-p/13683430).
 
-2.	You may manage the allowed connections for your SAP HANA database instance, i.e. allowing access to your SAP HANA database instance from outside of the SAP Business Technology Platform (SAP BTP). Selecting Allow only BTP IP addresses denies all IP addresses outside SAP BTP. You may choose to allow access to specific applications by inserting one or more specific IP addresses or you can allow connections from all IP addresses.
+2. The Data Provisioning Server is not required in this tutorial mission.
 
-3.	Next, you can also choose to enable the SAP Cloud Connector, which makes it easier to connect this SAP HANA database instance to an SAP HANA on-premises database. You can also set the connection preferences for your cloud connector under **Allowed connections**.
+3.	You may manage the allowed connections for your SAP HANA database instance, i.e. allowing access to your SAP HANA database instance from outside of the SAP Business Technology Platform (SAP BTP). Selecting Allow only BTP IP addresses denies all IP addresses outside SAP BTP. You may choose to allow access to specific applications by inserting one or more specific IP addresses or you can allow connections from all IP addresses.
+
+4.	Next, you can also choose to enable the SAP Cloud Connector, which makes it easier to connect this SAP HANA database instance to an SAP HANA on-premises database. You can also set the connection preferences for your cloud connector under **Allowed connections**.
 
     > Keep in mind that you can still change your configurations here at a later point, if you decide to do so.  
 
     ![HDB advanced settings](hdb-advanced-settings.png)
 
-4. We will be using the instance mapping feature later in this tutorial mission.  Instance mapping enables an instance provisioned into the SAP BTP subaccount to be mapped into a runtime environment such as Cloud Foundry.
+5. We will be using the instance mapping feature later in this tutorial mission.  Instance mapping enables an instance provisioned into the SAP BTP subaccount to be mapped into a runtime environment such as Cloud Foundry.
 
-5.	Click on **Next Step** in the bottom left corner to continue.
+6.	Click on **Next Step** in the bottom left corner to continue.
 
 [OPTION END]
 
@@ -195,7 +199,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 > If you do not wish to enable a data lake, you can skip this step by clicking on **Review and Create** in the bottom-right corner.
 
 [OPTION BEGIN [Production]]
-1.	If you click on **Create data lake**, a managed SAP HANA Cloud, data lake will be provisioned alongside your SAP HANA database in SAP HANA Cloud.
+1.	If you click on **Create data lake**, a managed SAP HANA Cloud, data lake will be provisioned alongside your SAP HANA database in SAP HANA Cloud and will include a data lake Files instance.
 
     ![Data Lake Enabled](hdl-prod-create.png)
 
@@ -224,7 +228,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 [OPTION END]
 [OPTION BEGIN [Free Tier/Trial]]
 
-1.  Once you select **Create Data Lake** option, two more menu options will appear in the wizard with additional steps.
+1.  Once you select **Create Data Lake** option, two more menu options will appear in the wizard with additional steps.  Note that a data lake Files instance is not included in free tier or trial.
 
     ![Create Data Lake](hdl-create.png)
 
