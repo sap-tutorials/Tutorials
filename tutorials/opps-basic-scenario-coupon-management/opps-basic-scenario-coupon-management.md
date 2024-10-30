@@ -147,7 +147,7 @@ Now that you have created the multi-code coupon object and set it to active, you
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Coupon management 1](coupon_management_1.png)
+<!-- border -->![Generate coupon codes](generate_coupon_code.png)
 <!-- border -->![Coupon management 2](coupon_management_2.png)
 
 
