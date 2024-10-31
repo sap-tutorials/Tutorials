@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 60
-tags: [tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake]
+tags: [tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake, tutorial>license]
 primary_tag: software-product>sap-hana-cloud
 ---
 
