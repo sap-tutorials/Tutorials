@@ -28,7 +28,7 @@ parser: v2
 
 1. Navigate to the SAP Build lobby.
 
-2. Click **Create** to start the creation process.  
+2. Click **Create**, and from the dropdown list, select **Create**.  
 
     <!-- border -->![Create](1.2red.png)
 
