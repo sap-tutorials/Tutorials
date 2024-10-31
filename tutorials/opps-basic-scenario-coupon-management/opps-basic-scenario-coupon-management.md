@@ -34,7 +34,7 @@ primary_tag: products>sap-business-technology-platform
 * In the **Coupon Management** service, you create a multi-code coupon with the ID **COFFEELOVER**.
 * As the target group **coffee lovers** in the **Heidelberg** region consists of **100** contacts, you create **100 unique coupon codes** for those customers, each of which can be **redeemed only once** by a customer. Once the unique coupon codes are created, your marketing system can read and distribute them to the customers that are part of the promotional campaign.
 * You create the following promotion for your **Heidelberg** store (business unit ID: `FC01`): **Buy a coffee machine and show the coupon COFFEELOVER to get 50 Euro off**. 
-* Your promotion is valid from **October 1, 2024 until December 31, 2024**.
+* Your promotion is valid from **October 1, 2025 until December 31, 2025**.
 
 
 <!-- ### Set up SAP Omnichannel Promotion Pricing
@@ -77,8 +77,8 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
   "type": "MULTICODE",
   "name": "COFFEELOVER",
   "description": "Discount 50 Euro for coffee machine",
-  "validFrom": "2024-10-01",
-  "validTo": "2024-12-31",
+  "validFrom": "2025-10-01",
+  "validTo": "2025-12-31",
   "couponCodeValidityPeriodInDays": 90,
   "maxCodeGenerationCount": 100
 }
@@ -95,7 +95,7 @@ The response should look like this:
 
 9. From the response, note down the technical coupon ID as you will use it later.
 
-With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1, 2024 to December 31, 2024**.
+With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1, 2025 to December 31, 2025**.
 
 
 **Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEELOVER**, you can proceed with the following steps:
@@ -148,7 +148,7 @@ Now that you have created the multi-code coupon object and set it to active, you
 ```json
 { 
 "generatedCodeCount": 100, 
-"validFrom": "2024-10-01" 
+"validFrom": "2025-10-01" 
 }
 ```
 6. Choose **Run**.
@@ -185,7 +185,7 @@ You must note down a coupon code value as it will be used for redeeming the coup
 
 To finalize your promotional campaign, you want to set up the following promotion for your **Heidelberg** store (business unit ID **FC01**):
 * Buy a coffee machine and show the coupon **COFFEELOVER to get 50 Euro off**.  
-* The promotion is valid from October 1st, 2024 to December 31st, 2024.
+* The promotion is valid from October 1st, 2025 to December 31st, 2025.
 You can do so either using the **Maintain Promotions** app or the **Data Upload** service.
 In this tutorial, we will use the **Data Upload** service.
 
@@ -213,9 +213,9 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
       <PROMOTION_ID>2401</PROMOTION_ID> 
       <OFFER_ID>27DB2B4C00F61EEF9CB76E606FF07D88</OFFER_ID>
 <EXTERN_PROMO_ID>000000000000000000000000000000000821</EXTERN_PROMO_ID> 
-      <EFFECTIVE_DATE>20241001000000</EFFECTIVE_DATE> 
-      <EXPIRY_DATE>20241231235959</EXPIRY_DATE> 
-      <CHANGED_ON>20240913103445</CHANGED_ON> 
+      <EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE> 
+      <EXPIRY_DATE>20251231235959</EXPIRY_DATE> 
+      <CHANGED_ON>20250913103445</CHANGED_ON> 
       <STATUS_TCD>AC</STATUS_TCD>
       <CHANGE_INDICATOR>I</CHANGE_INDICATOR>
       <LOGSYS>RS9CLNT990</LOGSYS>
@@ -240,9 +240,9 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
         <SEQUENCE>772</SEQUENCE>
         <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
           <COMBINATION_CODE>&amp;&amp;</COMBINATION_CODE>
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
+          <EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE>
           <ELIGIBILITY_ID>772</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
+          <EXPIRY_DATE>20251231235959</EXPIRY_DATE>
           <INTERVAL_AMT>0.00000</INTERVAL_AMT>
           <INTERVAL_QTY>0.000</INTERVAL_QTY>
           <LIMIT_AMT>0.00000</LIMIT_AMT>
@@ -260,9 +260,9 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
         <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
           <CONSUMPTION_TCD>00</CONSUMPTION_TCD>
           <COUPON_NUMBER>TIME FOR COFFEE</COUPON_NUMBER>
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
+          <EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE>
           <ELIGIBILITY_ID>773</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
+          <EXPIRY_DATE>20251231235959</EXPIRY_DATE>
           <INTERVAL_AMT>0.00000</INTERVAL_AMT>
           <INTERVAL_QTY>0.000</INTERVAL_QTY>
           <LIMIT_AMT>0.00000</LIMIT_AMT>
@@ -278,9 +278,9 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
           <TYPE_CODE>COUP</TYPE_CODE>
         </_-ROP_-E1_ELIGIBILITY>
         <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
+          <EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE>
           <ELIGIBILITY_ID>774</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
+          <EXPIRY_DATE>20251231235959</EXPIRY_DATE>
           <INTERVAL_AMT>0.00000</INTERVAL_AMT>
           <INTERVAL_QTY>1.000</INTERVAL_QTY>
           <ITEM_ID>COFFEE_MACHINE</ITEM_ID>
@@ -335,9 +335,9 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
         <SEQUENCE>775</SEQUENCE>
         <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
           <COMBINATION_CODE>&amp;&amp;</COMBINATION_CODE>
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
+          <EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE>
           <ELIGIBILITY_ID>775</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
+          <EXPIRY_DATE>20251231235959</EXPIRY_DATE>
           <INTERVAL_AMT>0.00000</INTERVAL_AMT>
           <INTERVAL_QTY>0.000</INTERVAL_QTY>
           <LIMIT_AMT>0.00000</LIMIT_AMT>
@@ -355,9 +355,9 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
         <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
           <CONSUMPTION_TCD>00</CONSUMPTION_TCD>
           <COUPON_NUMBER>TIME FOR COFFEE</COUPON_NUMBER>
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
+          <EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE>
           <ELIGIBILITY_ID>776</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
+          <EXPIRY_DATE>20251231235959</EXPIRY_DATE>
           <INTERVAL_AMT>0.00000</INTERVAL_AMT>
           <INTERVAL_QTY>0.000</INTERVAL_QTY>
           <LIMIT_AMT>0.00000</LIMIT_AMT>
@@ -373,9 +373,9 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
           <TYPE_CODE>COUP</TYPE_CODE>
         </_-ROP_-E1_ELIGIBILITY>
         <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
+          <EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE>
           <ELIGIBILITY_ID>777</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
+          <EXPIRY_DATE>20251231235959</EXPIRY_DATE>
           <INTERVAL_AMT>0.00000</INTERVAL_AMT>
           <INTERVAL_QTY>1.000</INTERVAL_QTY>
           <ITEM_ID>COFFEE_MACHINE</ITEM_ID>
@@ -422,7 +422,7 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
         </_-ROP_-E1_PRICE_RULE>
       </_-ROP_-E1_PROMOTION_RULE>
       <_-ROP_-E1_PROMOTION_TEXT SEGMENT="1">
-        <DESCRIPTION>Buy a coffee machine and show coupon TIME FOR COFFEE to get 100 Euro off</DESCRIPTION>
+        <DESCRIPTION>Buy a coffee machine and show coupon TIME FOR COFFEE to get 50 Euro off</DESCRIPTION>
         <NAME>Coffee machine promotion</NAME>
         <SPRAS_ISO>EN</SPRAS_ISO>
       </_-ROP_-E1_PROMOTION_TEXT>
