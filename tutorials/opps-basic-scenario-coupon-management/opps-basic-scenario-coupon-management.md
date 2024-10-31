@@ -72,7 +72,6 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 6. Copy the following raw data and paste it into the body:
 ```json
 { 
-  "ID": "01234567-89ab-cdef-0123-456789abcdef",
   "status": "INACTIVE",
   "displayID": "COFFEELOVER",
   "type": "MULTICODE",
