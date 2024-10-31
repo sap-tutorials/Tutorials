@@ -448,6 +448,11 @@ You can use the **Data Access** service for checking your uploaded data. If you 
 With this, you are all set to launch your promotional campaign. 
 
 
+### What to Do Next
+
+ Navigate to the intermediate group [Set up Complex Promotions with SAP Omnichannel Promotion Pricing](group.opps-complex-promotion) and continue with the next tutorial [Reserve and Redeem a Multi-Code Coupon with SAP Omnichannel Promotion Pricing].
+
+
 ### Additional Information
 
 * [Official Product Documentation](https://help.sap.com/docs/OPP)
