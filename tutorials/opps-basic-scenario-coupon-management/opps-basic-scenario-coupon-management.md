@@ -79,7 +79,7 @@ The response should look like this:
 <!-- border -->![Coupon creation success](create_coupon_success.png)
 
 
-9. From the response, note down the technical coupon ID as you will use it later.
+8. From the response, note down the technical coupon ID as you will use it later.
 
 With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1, 2026 to December 31, 2026**.
 
