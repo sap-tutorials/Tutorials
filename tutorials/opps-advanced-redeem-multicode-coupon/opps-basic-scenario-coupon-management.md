@@ -35,7 +35,7 @@ primary_tag: products>sap-business-technology-platform
 * You have distributed the coupon **COFFEELOVER** with the unique coupon codes to your target customers. 
 * You have also created a promotion in the **Promotion Maintenance** app of **SAP Omnichannel Promotion Pricing**: **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. 
 * The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1st, 2025, to December 31st, 2025**.
-* The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **500 Euro**.
+* The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **Euro 1000**.
 
 
 ### Create environments in SAP Business Accelerator Hub
@@ -47,7 +47,11 @@ In order to continue with the next steps, you need to have already set up your t
 ### Reserve a Coupon Code
 
 
-You can now reserve the coupon code for the multi-code coupon **COFFEELOVER** the Coupon Management service. 
+You can now reserve a coupon code for the multi-code coupon **COFFEELOVER** using the Coupon Management service. 
+
+* Business scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of regular price EURO 1000. At the time of check-out, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. The client system calls the **Coupon Management** service to reserve the coupon code.
+
+* Desired result: The coupon code is reserved. 
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
