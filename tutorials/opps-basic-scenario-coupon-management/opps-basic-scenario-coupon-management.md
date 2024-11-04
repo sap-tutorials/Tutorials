@@ -71,7 +71,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
   "maxCodeGenerationCount": 100
 }
 ```
-6. Choose **Execute**.
+6. Choose **Run**.
 7. Make sure you get the HTTP response **201**.
 
 The response should look like this:
