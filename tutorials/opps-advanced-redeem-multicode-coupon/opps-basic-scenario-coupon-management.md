@@ -8,21 +8,21 @@ tags: [tutorial>advanced, topic>cloud, products>sap-business-technology-platform
 primary_tag: products>sap-business-technology-platform
 ---
 
-# Create Multi-Code Coupons with SAP Omnichannel Promotion Pricing
-<!-- description --> Learn how to use SAP Omnichannel Promotion Pricing for creating multi-code coupons in your promotions.
+# Reserve and Redeem a Multi-Code Coupons with SAP Omnichannel Promotion Pricing
+<!-- description --> Learn how to reserve and redeem a multi-code coupon in a sales transaction using the Coupon Management service of SAP Omnichannel Promotion Pricing. Also, calculate the effective sales price using the Calculation service for multi-code coupons in your promotions.
 
 ## Prerequisites
 - You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
 - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
 - You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
-
+- You have completed the tutorial <link to the first tutorial>. With this, you have generated a multi-code coupon and a batch of unique coupon codes for it. You should have noted down a code value from the codes thus generated.
 
 
 ## You will learn
-- How to use the **Coupon Management** service of SAP Omnichannel Promotion Pricing in your trial environment on SAP BTP. 
-- How to **create and read coupon codes** with the **Coupon Management** service that can be used by marketing channels to drive promotional campaigns. 
-- How to upload a promotional rule into **SAP Omnichannel Promotion Pricing** database with the help of the **Data Upload** service. 
+- How to use the **Coupon Management** service of **SAP Omnichannel Promotion Pricing** in your trial environment on SAP BTP. 
+- How to **reserve, extend reservation and redeem a coupon code** with the **Coupon Management** service. 
+- How to calculate the effective sales price in a sales transaction with the **Calculation** service of **SAP Omnichannel Promotion Pricing** by applying a coupon that triggers a discount on an item in the shopping cart. 
 
 
 ---
@@ -30,26 +30,12 @@ primary_tag: products>sap-business-technology-platform
 ### Get to know the business scenario
 
 
-* Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you are planning a promotional campaign to increase revenue and reduce stock. You want to create a promotional campaign for your target group **coffee lovers** in the **Heidelberg** store. For this, you plan to send **coffee lovers** a coupon that gives them **EURO 50** discount on purchase of coffee machines.
-* In the **Coupon Management** service, you are planning to create a multi-code coupon with the ID **COFFEELOVER**.
-* As the target group **coffee lovers** in the **Heidelberg** region consists of **100** contacts, you want to create **100 unique coupon codes** for those customers, each of which can be **redeemed only once** by a customer. Once the unique coupon codes are created, your marketing system can read and distribute them to the customers that are part of the promotional campaign.
-* You want to create the following promotion for your **Heidelberg** store (business unit ID: `FC01`): **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. 
-* Your promotion is valid from **October 1, 2024 until December 31, 2024**.
+* Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you are planning a promotional campaign to increase revenue and reduce stock. You want to create a promotional campaign for your target group **coffee lovers** in the **Heidelberg** store. 
+* As part of this promotional campaign, you have created a multi-code coupon with the coupon ID **COFFEELOVER**. The coupon is valid from **October 1st, 2025, to December 31st, 2025**. For this, you have also generated a batch of unique coupon codes which can be redeemed once by each customer. 
+* You have distributed the coupon **COFFEELOVER** with the unique coupon codes to your target customers. 
+* You have also created a promotion in the **Promotion Maintenance** app of **SAP Omnichannel Promotion Pricing**: **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. 
+* The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1st, 2025, to December 31st, 2025**.
 * The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **500 Euro**.
-
-
-<!-- ### Set up SAP Omnichannel Promotion Pricing
-
-
-To use the SAP Omnichannel Promotion Pricing trial, you need to:
-
-1. Subscribe to SAP Omnichannel Promotion Pricing
-2. Set Up Roles and Authorizations
-3. Create Service Instances
-4. Create Service Keys
-
-For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
- -->
 
 
 ### Create environments in SAP Business Accelerator Hub
