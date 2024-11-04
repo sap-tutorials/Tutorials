@@ -69,8 +69,8 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
   "maxCodeGenerationCount": 100
 }
 ```
-7. Choose **Execute**.
-8. Make sure you get the HTTP response **201**.
+6. Choose **Execute**.
+7. Make sure you get the HTTP response **201**.
 
 <!-- border -->![Create coupon(create_coupon.png)]
 
