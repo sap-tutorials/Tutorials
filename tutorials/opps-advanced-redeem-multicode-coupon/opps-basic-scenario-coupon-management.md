@@ -41,13 +41,13 @@ primary_tag: products>sap-business-technology-platform
 ### Create environments in SAP Business Accelerator Hub
 
 
-In order to continue with the next steps, you need to have already set up your trial environments for the **Coupon Management service, Data Upload service and Data Access service** in the **SAP Business Accelerator Hub**. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario). The same is applicable for **Coupon Management** service too. 
+In order to continue with the next steps, you need to have already set up your trial environments for the **Coupon Management service, Data Upload service, Data Access service, and Calculation service** in the **SAP Business Accelerator Hub**. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario). 
 
 
-### Create Multi-Code Coupon Object
+### Reserve a Coupon Code
 
 
-You can now create a multi-code coupon object with the Coupon Management service. 
+You can now reserve the coupon code for the multi-code coupon **COFFEELOVER** the Coupon Management service. 
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
