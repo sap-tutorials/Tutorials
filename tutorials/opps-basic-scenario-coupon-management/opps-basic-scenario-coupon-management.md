@@ -86,6 +86,7 @@ With this, you have created a multi-code coupon with the ID **COFFEELOVER** and 
 
 **Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEELOVER**, you can proceed with the following steps:
 
+<!-- border -->![Check created coupon](GET_coupon.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **GET** request `/Coupon`.
@@ -93,13 +94,13 @@ With this, you have created a multi-code coupon with the ID **COFFEELOVER** and 
 4. Make sure you get the HTTP response **200**. 
 5. In the response body, you should see the coupon that you have created.  
 
-<!-- border -->![Check created coupon](GET_coupon.png)
-
 
 ### Change status of coupon object
 
 
 When creating the coupon, the **status** of the coupon was set as **inactive** because it cannot be created in the **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **INACTIVE** to **ACTIVE**.
+
+<!-- border -->![Change coupon status](change_coupon_status.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **PATCH** request `/Coupon({ID})`.
@@ -115,7 +116,6 @@ When creating the coupon, the **status** of the coupon was set as **inactive** b
 7. Choose **Run**. 
 8. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Change coupon status](change_coupon_status.png)
 <!-- border -->![Coupon status change success](change_coupon_status_success.png)
 
 You have now successfully changed the status of the coupon code. 
@@ -125,6 +125,8 @@ You have now successfully changed the status of the coupon code.
 
 
 Now that you have created the multi-code coupon object and set it to active, you can generate a batch of 100 coupon codes to be used in the promotional campaign.
+
+<!-- border -->![Generate coupon codes](generate_coupon_code.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **POST** request `/Coupon({ID})/CouponManagementService.generateCouponCodes`.
@@ -138,9 +140,6 @@ Now that you have created the multi-code coupon object and set it to active, you
 }
 ```
 6. Choose **Run**.
-
-<!-- border -->![Generate coupon codes](generate_coupon_code.png)
-
 7. Make sure you get the HTTP response **200**.
 
 <!-- border -->![Generate coupon codes success](generate_coupon_code_success.png)
