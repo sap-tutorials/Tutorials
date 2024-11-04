@@ -49,6 +49,8 @@ In order to continue with the next steps, you need to have already set up your t
 
 You can now create a multi-code coupon object with the Coupon Management service. 
 
+<!-- border -->![Create coupon(create_coupon.png)]
+
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
 1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
@@ -71,8 +73,6 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 ```
 6. Choose **Execute**.
 7. Make sure you get the HTTP response **201**.
-
-<!-- border -->![Create coupon(create_coupon.png)]
 
 The response should look like this:
 
