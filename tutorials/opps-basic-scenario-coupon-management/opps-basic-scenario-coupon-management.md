@@ -152,14 +152,14 @@ With this, you have now created a batch of **100** unique codes for the coupon *
 
 You can now read the coupon codes created using the Coupon Management service to circulate the coupon information to the target group as part of your promotional campaign. 
 
+<!-- border -->![Read coupon codes](read_coupon_code.png)
+
 1. On the left-hand side, choose **Code Batch**.
 2. Open the **GET** request `/CodeBatch({ID})/codes`.
 3. Choose **Parameters**.
 4. Enter the **Batch ID** noted down at the time of generation of coupon codes. 
 5. Choose **Run**.
 6. Make sure you get the HTTP response **200**.
-
-<!-- border -->![Read coupon codes](read_coupon_code.png)
 
 With this, you can read the coupon codes generated for the multi-code coupon **COFFEELOVER**. This is the coupon code value to be communicated to the target group members as part of your promotional campaign. 
 
