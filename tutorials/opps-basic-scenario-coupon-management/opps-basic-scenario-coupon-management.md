@@ -35,7 +35,7 @@ primary_tag: products>sap-business-technology-platform
 * In the **Coupon Management** service, you create a multi-code coupon with the ID **COFFEELOVER**.
 * As the target group **coffee lovers** in the **Heidelberg** region consists of **100** contacts, you create **100 unique coupon codes** for those customers, each of which can be **redeemed only once** by a customer. Once the unique coupon codes are created, your marketing system can read and distribute them to the customers that are part of the promotional campaign.
 * You create the following promotion for your **Heidelberg** store (business unit ID: `FC01`): **Buy a coffee machine and show the coupon COFFEELOVER to get 50 Euro off**. 
-* Your promotion is valid from **October 1, 2025 until December 31, 2025**.
+* Your promotion is valid from **October 1, 2026 until December 31, 2026**.
 
 
 ### Create environments in SAP Business Accelerator Hub
