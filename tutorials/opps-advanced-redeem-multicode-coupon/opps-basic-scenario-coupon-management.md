@@ -49,34 +49,30 @@ In order to continue with the next steps, you need to have already set up your t
 
 You can now reserve a coupon code for the multi-code coupon **COFFEELOVER** using the Coupon Management service. 
 
-* Business scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of regular price EURO 1000. At the time of check-out, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. The client system calls the **Coupon Management** service to reserve the coupon code.
+* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of regular price EURO 1000. At the time of check-out, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. The client system calls the **Coupon Management** service to reserve the coupon code.
 
-* Desired result: The coupon code is reserved. 
+* Desired Result: The coupon code is reserved. 
+
+
+Let's see if this is the case:
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
 1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
-2. On the left-hand side, choose **Coupon**.
-3. Open the **POST** request `/Coupon`.
-4. Choose **Try Out**.
-5. For the **Request body**, choose `application/json`.
-6. Copy the following raw data and paste it into the body:
+2. Choose **Try Out**.
+3. On the left-hand side, choose **Service Operation**.
+4. Open the **POST** request **/reserveCouponCode**.
+5. For the request **body**, copy the following data and paste it into the body:
 ```json
 { 
-  "ID": "01234567-89ab-cdef-0123-456789abcdef",
-  "status": "INACTIVE",
-  "displayID": "COFFEELOVER",
-  "type": "MULTICODE",
-  "name": "COFFEELOVER",
-  "description": "Discount 50 Euro for coffee machine",
-  "validFrom": "2024-10-01",
-  "validTo": "2024-12-31",
-  "couponCodeValidityPeriodInDays": 90,
-  "maxCodeGenerationCount": 100
+  "couponCodeValue": "string",
+   "reservationDate": "2026-10-25",
+   "transactionID": "string"
+
 }
 ```
-7. Choose **Execute**.
-8. Make sure you get the HTTP response **201**.
+7. Choose **Run**.
+8. Make sure you get the HTTP response **200**.
 
 <!-- border -->![Create coupon(create_coupon.png)]
 
