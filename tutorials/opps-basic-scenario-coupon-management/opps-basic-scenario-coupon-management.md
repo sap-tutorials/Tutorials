@@ -176,7 +176,7 @@ You can do so either using the **Maintain Promotions** app or the **Data Upload*
 In this tutorial, we will use the **Data Upload** service.
 
 
-Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
+Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub]([h](https://api.sap.com/api/DataUpload/tryout). Log on with the same login information that you use for your SAP BTP account.
 
 <!-- border -->![Data upload 1](data_upload_1.png)
 <!-- border -->![Data upload 2](data_upload_2.png)
