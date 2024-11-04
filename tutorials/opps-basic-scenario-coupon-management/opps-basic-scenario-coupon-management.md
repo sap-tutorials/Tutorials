@@ -63,8 +63,8 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
   "type": "MULTICODE",
   "name": "COFFEELOVER",
   "description": "Discount 50 Euro for coffee machine",
-  "validFrom": "2025-10-01",
-  "validTo": "2025-12-31",
+  "validFrom": "2026-10-01",
+  "validTo": "2026-12-31",
   "couponCodeValidityPeriodInDays": 90,
   "maxCodeGenerationCount": 100
 }
@@ -81,7 +81,7 @@ The response should look like this:
 
 9. From the response, note down the technical coupon ID as you will use it later.
 
-With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1, 2025 to December 31, 2025**.
+With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1, 2026 to December 31, 2026**.
 
 
 **Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEELOVER**, you can proceed with the following steps:
@@ -134,7 +134,7 @@ Now that you have created the multi-code coupon object and set it to active, you
 ```json
 { 
 "generatedCodeCount": 100, 
-"validFrom": "2025-10-01" 
+"validFrom": "2026-10-01" 
 }
 ```
 6. Choose **Run**.
@@ -171,7 +171,7 @@ You must note down a coupon code value as it will be used for redeeming the coup
 
 To finalize your promotional campaign, you want to set up the following promotion for your **Heidelberg** store (business unit ID **FC01**):
 * Buy a coffee machine and show the coupon **COFFEELOVER to get 50 Euro off**.  
-* The promotion is valid from October 1st, 2025 to December 31st, 2025.
+* The promotion is valid from October 1st, 2026 to December 31st, 2026.
 You can do so either using the **Maintain Promotions** app or the **Data Upload** service.
 In this tutorial, we will use the **Data Upload** service.
 
@@ -200,8 +200,8 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 <PROMOTION_ID>2401</PROMOTION_ID> 
 <OFFER_ID>27DB2B4C00F61EEF9CB76E606FF07D88</OFFER_ID>	
 <EXTERN_PROMO_ID>000000000000000000000000000000000821</EXTERN_PROMO_ID> 
-<EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE> 
-<EXPIRY_DATE>20251231235959</EXPIRY_DATE> 
+<EFFECTIVE_DATE>20261001000000</EFFECTIVE_DATE> 
+<EXPIRY_DATE>20261231235959</EXPIRY_DATE> 
 <CHANGED_ON>20250913103445</CHANGED_ON> 
 <STATUS_TCD>AC</STATUS_TCD> 
 <CHANGE_INDICATOR>I</CHANGE_INDICATOR> 
@@ -265,8 +265,8 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 <COMBINATION_CODE>&amp;&amp;</COMBINATION_CODE> 
 <PROMO_RULE_ID>2402</PROMO_RULE_ID> 
 <TRANS_TOTAL_AMT>0.00000</TRANS_TOTAL_AMT> 
-<EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE> 
-<EXPIRY_DATE>20251231235959</EXPIRY_DATE> 
+<EFFECTIVE_DATE>20261001000000</EFFECTIVE_DATE> 
+<EXPIRY_DATE>20261231235959</EXPIRY_DATE> 
 <STATUS_TCD>AC</STATUS_TCD> 
 <LIMIT_QTY>0.000</LIMIT_QTY> 
 <LIMIT_AMT>0.00000</LIMIT_AMT> 
@@ -285,8 +285,8 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 <CONSUMPTION_TCD>00</CONSUMPTION_TCD> 
 <PROMO_RULE_ID>2402</PROMO_RULE_ID> 
 <TRANS_TOTAL_AMT>0.00000</TRANS_TOTAL_AMT> 
-<EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE> 
-<EXPIRY_DATE>20251231235959</EXPIRY_DATE> 
+<EFFECTIVE_DATE>20261001000000</EFFECTIVE_DATE> 
+<EXPIRY_DATE>20261231235959</EXPIRY_DATE> 
 <STATUS_TCD>AC</STATUS_TCD> 
 <LIMIT_QTY>0.000</LIMIT_QTY> 
 <LIMIT_AMT>0.00000</LIMIT_AMT> 
@@ -306,8 +306,8 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 <HIER_ID_QLF>R3</HIER_ID_QLF> 
 <PROMO_RULE_ID>2402</PROMO_RULE_ID> 
 <TRANS_TOTAL_AMT>0.00000</TRANS_TOTAL_AMT> 
-<EFFECTIVE_DATE>20251001000000</EFFECTIVE_DATE> 
-<EXPIRY_DATE>20251231235959</EXPIRY_DATE> 
+<EFFECTIVE_DATE>20261001000000</EFFECTIVE_DATE> 
+<EXPIRY_DATE>20261231235959</EXPIRY_DATE> 
 <STATUS_TCD>AC</STATUS_TCD> 
 <UOM_ISO_CODE>EA</UOM_ISO_CODE> 
 <LIMIT_QTY>9999999999.000</LIMIT_QTY> 
@@ -331,7 +331,7 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 
 <!-- border -->![Upload a promotion](upload_promotion.png)
 
-With this, you uploaded the promotional rule "Buy a coffee machine and show coupon COFFEELOVER to get Euro 50 off" for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2025 to December 31st, 2025**. 
+With this, you uploaded the promotional rule "Buy a coffee machine and show coupon COFFEELOVER to get Euro 50 off" for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2026 to December 31st, 2026**. 
 
 
 ### Check uploaded master data
