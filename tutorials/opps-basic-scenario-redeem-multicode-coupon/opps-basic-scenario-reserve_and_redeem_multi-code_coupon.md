@@ -35,7 +35,11 @@ primary_tag: products>sap-business-technology-platform
 * You have distributed the coupon **COFFEELOVER** with the unique coupon codes to your target customers. 
 * You have also created a promotion in the **Promotion Maintenance** app of **SAP Omnichannel Promotion Pricing**: **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. 
 * The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1, 2026, to December 31, 2026**.
-* The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **Euro 1000**.
+* On **October 25, 2026**, one of your customers that received the coupon **COFFEELOVER** comes to your **Heidelberg** store to purchase a coffee machine. Your customer selects a coffee machine (material number: `COFFEE_MACHINE`). The **regular sales price** for the **coffee machine** is **Euro 1000**.
+* The POS system calls the **Coupon Management** service to **reserve the coupon code**.
+* The cashier continues to complete the purchase. The POS system calls the **Calculation service** with the shopping cart information.
+* The Calculation services **calculates the effective sales price for the coffee machine** (regular price minus discount granted by the coupon) and returns it back to the POS system.
+•	Your customer completes the purchase. The POS system triggers a request to the Coupon Management service **to redeem the coupon code**. The redemption information is  returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with his new coffee machine.
 
 
 ### Create environments in SAP Business Accelerator Hub
