@@ -30,11 +30,11 @@ primary_tag: products>sap-business-technology-platform
 ### Get to know the business scenario
 
 
-* Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you are planning a promotional campaign to increase revenue and reduce stock. You want to create a promotional campaign for your target group **coffee lovers** in the **Heidelberg** store. 
-* As part of this promotional campaign, you have created a multi-code coupon with the coupon ID **COFFEELOVER**. The coupon is valid from **October 1st, 2025, to December 31st, 2025**. For this, you have also generated a batch of unique coupon codes which can be redeemed once by each customer. 
+* Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you launched a promotional campaign for your target group **coffee lovers** in the **Heidelberg** region. 
+* As part of this promotional campaign, you have created a multi-code coupon with the coupon ID **COFFEELOVER**. The coupon is valid from **October 1st, 2026, to December 31st, 2026**. For this, you have generated a batch of unique coupon codes that can be redeemed only once by each customer. 
 * You have distributed the coupon **COFFEELOVER** with the unique coupon codes to your target customers. 
 * You have also created a promotion in the **Promotion Maintenance** app of **SAP Omnichannel Promotion Pricing**: **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. 
-* The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1st, 2025, to December 31st, 2025**.
+* The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1, 2026, to December 31, 2026**.
 * The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **Euro 1000**.
 
 
