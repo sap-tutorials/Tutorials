@@ -84,7 +84,7 @@ The response should look like this:
 
 <!-- border -->![Coupon creation success](create_coupon_success.png)
 
-9. From the response, note down the **redemption information ID** and **reservation token**.
+9. From the response, note down the **redemption information ID** **`redemptionInfoID`** and **reservation token** **`reservationToken`**.
 
 With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
 
