@@ -66,7 +66,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 1. Navigate to the **Try Out** section.
 2. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
-3. On the left-hand side, choose **Service Operation**.
+3. On the left-hand side, choose **`Service Operation`**.
 4. Open the **POST** request **`/reserveCouponCode`**.
 5. For the request **body**, copy the following data and paste it into the body:
 ```json
