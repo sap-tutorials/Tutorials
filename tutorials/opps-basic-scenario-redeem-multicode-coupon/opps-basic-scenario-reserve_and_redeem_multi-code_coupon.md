@@ -37,7 +37,7 @@ primary_tag: products>sap-business-technology-platform
 * The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1, 2026, to December 31, 2026**.
 * On **October 25, 2026**, one of your customers that received the coupon **COFFEELOVER** comes to your **Heidelberg** store to purchase a coffee machine. Your customer selects a coffee machine (material number: `COFFEE_MACHINE`). The **regular sales price** for the **coffee machine** is **Euro 1000**.
 * The POS system calls the **Coupon Management** service to **reserve the coupon code**.
-* The cashier continues to complete the purchase. The POS system calls the **Calculation** service with the shopping cart information. The Calculation services **calculates the effective sales price for the coffee machine** (regular price minus discount granted by the coupon) and returns it to the POS.
+* The cashier continues to complete the purchase. The POS system calls the **Calculation** service with the shopping cart information. The Calculation service **calculates the effective sales price for the coffee machine** (regular price minus discount granted by the coupon) and returns it to the POS.
 * Your customer completes the purchase. The POS triggers a request to the **Coupon Management** service **to redeem the coupon code**. The redemption information is  returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with his new coffee machine.
 
 
