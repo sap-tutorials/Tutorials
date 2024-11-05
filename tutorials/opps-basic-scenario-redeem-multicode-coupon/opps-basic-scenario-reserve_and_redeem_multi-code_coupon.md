@@ -94,7 +94,7 @@ With this, you have reserved the coupon code for 30 minutes. It is also possible
 
 You can now calculate the effective sales price using the **Calculation** service. 
 
-* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of regular price EURO 1000. At the time of check-out on October 25, 2026, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. 
+* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of **regular price EURO 1000**. At the time of check-out on **October 25, 2026**, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. 
 
 
 * Desired Result: The effective sales price for the coffee machine should be EURO 950, as the customer is eligible for the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**.
@@ -104,11 +104,13 @@ Let's see if this is the case:
 
 Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/overview). Log on with the same login information that you use for your SAP BTP account.
 
+<!-- border -->![Create coupon(create_coupon.png)]
+
 1. For **API Environment**, select the trial environment you have created for the **Calculation** service.
 2. Choose **Try Out**.
-3. Open the **POST** request **/restapi/{tenantname}e**.
-4. Under **tenantName**, enter the **identityzone** from the service key you have created for the **Calculation** service in your SAP BTP account. If you need assistance, see step 4 of the tutorial [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html) .
-5. For the **Content Type**, choose **XML**.  
+3. Open the **POST** request **`/restapi/{tenantname}e`**.
+4. Under **tenantName**, enter the **`identityzone`** from the service key you have created for the **Calculation** service in your SAP BTP account. If you need assistance, see step 4 of the tutorial [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html) .
+5. For the **Content Type**, choose **`XML`**.  
 4. Copy the following data and paste it into the **body**:
 ```XML
 { 
@@ -152,21 +154,18 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
 7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Create coupon(create_coupon.png)]
-
 The response should look like this:
 
 <!-- border -->![Coupon creation success](create_coupon_success.png)
 
-
-With this, the **Calculation** service has calculated the effective sales price for the coffee machine as EURO 950 by applying the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. It then returns the effective sales price to the client system.
+With this, the **Calculation** service has calculated the effective sales price for the coffee machine as EURO 950 by applying the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. It then returns the effective sales price to the POS.
 
 ### Redeem the Coupon Code
 
 
 You can now redeem the coupon code for the multi-code coupon **COFFEELOVER** using the Coupon Management service. 
 
-* Scenario: The customer has completed the purchase of the coffee machine for which he used the coupon **COFFEELOVER** with the respective coupon code. The client system calls the **Coupon Management** service to redeem the coupon code. The redemption information is returned to the system which then confirms the completion of the purchase.
+* Scenario: The customer has completed the purchase of the coffee machine for which he used the coupon **COFFEELOVER** with the respective coupon code. The POS system calls the **Coupon Management** service to redeem the coupon code. The redemption information is returned to the system which then confirms the completion of the purchase.
 
 * Desired Result: The coupon code is redeemed. 
 
@@ -175,23 +174,22 @@ Let's see if this is the case:
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
+<!-- border -->![Create coupon(create_coupon.png)]
+
 1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
 2. Choose **Try Out**.
 3. On the left-hand side, choose **Redemption Information**.
-4. Open the **POST** request **/RedemptionInfo({ID})/CouponManagementService.redeemCouponCode**.
-5. Under **Parameters**, enter the **redemptionInfoID** which you noted down when you reserved the coupon code.
-5. For the **body**, enter the **reservation token** which you noted down at the time of reserving the coupon code.
+4. Open the **POST** request **`/RedemptionInfo({ID})/CouponManagementService.redeemCouponCode`**.
+5. Under **Parameters**, enter the **`redemptionInfoID`** which you noted down when you reserved the coupon code.
+5. For the **body**, enter the **`reservation token`** which you noted down at the time of reserving the coupon code.
 7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
-
-<!-- border -->![Create coupon(create_coupon.png)]
 
 The response should look like this:
 
 <!-- border -->![Coupon creation success](create_coupon_success.png)
 
-
-With this, you have successfully redeemed the coupon code. The redemption information is returned to the client system which then confirms the completion of payment. Your customer has now successfully purchased the coffee machine at a discount price.
+With this, you have successfully redeemed the coupon code. The redemption information is returned to the POS which then confirms the completion of payment. Your customer has now successfully purchased the coffee machine at a discounted price.
 
 ### Additional Information
 
