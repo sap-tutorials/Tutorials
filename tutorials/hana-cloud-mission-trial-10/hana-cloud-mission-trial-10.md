@@ -91,7 +91,7 @@ Great, now that you have the right schema name, next you will have to grant the 
 
 4.	Choose the database version **HANA Cloud**.
 
-5.	Select the artifact type as ``**Role (hdbrole)**``.
+5.	Select the artifact type as **Role (hdbrole)**.
 
 6.	Name your role `PublicAccessSchema`.
 

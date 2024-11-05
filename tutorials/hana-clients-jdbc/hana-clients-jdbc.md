@@ -64,34 +64,32 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
 
     >The JDBC driver has a different version number than the rest of the SAP HANA client interfaces.
 
-    The trace options are further described at [JDBC Tracing and Trace Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/4033f8e603504c0faf305ab77627af03.html).
+    The trace options are further described at [JDBC Tracing and Trace Options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4033f8e603504c0faf305ab77627af03.html).
 
 
 3. Run the following and use either connection details stored in the user store or specify the connection details.
 
     ```Shell (Windows)
-    java -jar C:\SAP\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
+    java -jar C:\SAP\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
     ```
     
     Alternatively, you may run
 
     ```Shell (Windows)
-    java -jar C:\SAP\hdbclient\ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
+    java -jar C:\SAP\hdbclient\ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
     ```  
 
 
     ```Shell (Linux or Mac)
-    java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
+    java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
     ```
 
     ![Link text e.g., Destination screen](java-driver-result.png)
 
-See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/9ac4e1eedbbc4961bce0db6ad64b3612.html) for additional details on parameters of `ngdbc.jar`.
+See [JDBC Command-Line Connection Options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/9ac4e1eedbbc4961bce0db6ad64b3612.html) for additional details on parameters of `ngdbc.jar`.
 
 
 ### Create a Java application that queries SAP HANA
-
-
 1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in the Notepad text editor.
 
     ```Shell (Microsoft Windows)
@@ -144,7 +142,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
                 try {
                     System.out.println("Connection to HANA successful!");
                     Statement stmt = connection.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;");
+                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;");
                     while (resultSet.next()) {
                         String title = resultSet.getString(1);
                         String firstName = resultSet.getString(2);
@@ -182,9 +180,9 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 
     ![Java Query](java-query.png)
 
-See [JDBC Connection Options in Java Code](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/1c86038c05464d31a7dcae14f2d8a7dd.html) for additional details on the `getConnection` method of the `DriverManager`.  
+See [JDBC Connection Options in Java Code](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/1c86038c05464d31a7dcae14f2d8a7dd.html) for additional details on the `getConnection` method of the `DriverManager`.  
 
-See [Connect to SAP HANA Cloud via JDBC](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/2020_04_QRC/en-US/030a162d380b4ec0bc6a284954c8256d.html) for additional details on the certificate used during the connection.
+See [Connect to SAP HANA Cloud via JDBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/ff15928cf5594d78b841fbbe649f04b4.html) for additional details on the certificate used during the connection.
 
 
 ### Debug the application
@@ -242,7 +240,6 @@ The following steps demonstrate how to configure `DBeaver` to connect to SAP HAN
     `DBeaver` can also be used to create an entity relationship (ER) diagram, perform a comparison of two selected objects, execute import and export operations, view spatial data on a map, and perform data analysis with its grouping and `calc` panels.
 
 ### Knowledge check
-
 Congratulations! You have now created and debugged a Java application that connects to and queries an SAP HANA database and used the JDBC driver in `DBeaver`.
 
 

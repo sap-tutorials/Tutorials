@@ -49,33 +49,43 @@ The SAP Cloud Application Programming model utilizes core data services to defin
     ```CAP CDS
     namespace app.interactions;
 
-    using { Country } from '@sap/cds/common';
+    using {
+        Country,
+        Currency,
+        cuid,
+        managed
+    } from '@sap/cds/common';
+
     type BusinessKey : String(10);
-    type SDate : DateTime;
-    type LText : String(1024);
+    type Price       : Decimal(10, 2);
+    type Text        : String(1024);
 
-
-    entity Interactions_Header {
-      key ID : Integer;
-      ITEMS  : Composition of many Interactions_Items on ITEMS.INTHeader = $self;
-      PARTNER  : BusinessKey;
-      LOG_DATE  : SDate;
-      BPCOUNTRY : Country;
-
-    };
-    entity Interactions_Items {
-
-        key INTHeader : association to Interactions_Header;
-        key TEXT_ID : BusinessKey;
-            LANGU   : String(2);
-            LOGTEXT : LText;
+    entity Headers : cuid, managed {
+        items   : Composition of many Items
+                      on items.interaction = $self;
+        partner : BusinessKey;
+        country : Country;
     };
 
+    entity Items : cuid {
+        interaction : Association to Headers;
+        text        : localized Text;
+        date        : DateTime;
+        @Semantics.amount.currencyCode: 'currency'
+        price       : Price;
+        currency    : Currency;
+    };
     ```
 
     > What is going on?
     >
     > You are declaring two entities with relationships between each other. The design-time artifacts declared in this file will be converted to run-time, physical artifacts in the database. In this example, the entities will become tables.
+
+1. We are using a reusable set of content (lists of countries, currencies, etc) provided by SAP in the above model. We also have to add this dependency to our project. From the command line issue the following command to do so:
+
+    ```shell
+    npm add @sap/cds-common-content --save
+    ```
 
 ### Create service interface
 
@@ -90,30 +100,31 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 1. Use the following content in this new file:
 
     ```CAP CDS
-
     using app.interactions from '../db/interactions';
+    using {sap} from '@sap/cds-common-content';
+
     service CatalogService {
 
-     entity Interactions_Header
-        as projection on interactions.Interactions_Header;
+        @odata.draft.enabled: true
+        entity Interactions_Header as projection on interactions.Headers;
 
-     entity Interactions_Items
-        as projection on  interactions.Interactions_Items;
+        entity Interactions_Items  as projection on interactions.Items;
 
+        @readonly
+        entity Languages           as projection on sap.common.Languages;
     }
-
     ```
 
 1. Save all.
 
-    >  What is going on?
+    > What is going on?
     >
     > You are declaring services to expose the database entities you declared in the previous step.
 
 1. From the terminal issue the command: `cds build`
 
     ```shell
-    cds build
+    cds build --production
     ```
 
     ![cds build](cds_build.png)
@@ -168,7 +179,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
     ![Bound Connection](bound_connection.png)
 
-1. We are now ready to deploy the development content into the database. Press the **Deploy** button (which looks like a rocket) at the **db** folder level in the SAP HANA Projects view.
+1. We are now ready to deploy the development content into the database. Before you go ahead, we recommend that you increase the default number of scrollback lines in the integrated terminal, if you're using a Dev Space in SAP Business Application Studio. This is because there are many lines of log output about to be generated and you will want to see them all. So use menu path **File -> Preferences -> Settings** and search for the "Terminal › Integrated: Scrollback" setting. Set the value to 10000. Now, once you've done that, you're ready to deploy. Press the **Deploy** button (which looks like a rocket) at the **db** folder level in the SAP HANA Projects view.
 
     ![Deploy](deploy.png)
 
@@ -219,7 +230,7 @@ You can now check the generated tables and views in the Database Explorer.
 
 ### Load data into your tables
 
-1. Download the [header file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/Header.csv) and the [items file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/Items.csv) into your local file system.
+1. Download the [header file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/app.interactions-Headers.csv) and the [items file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/app.interactions-Items.csv) and the [texts file](https://raw.githubusercontent.com/SAP-samples/hana-opensap-cloud-2020/main/tutorial/app.interactions-Items.texts.csv) into your local file system.
 
 1. Right-click again on the header table and choose **Import Data**.
 
@@ -253,7 +264,7 @@ You can now check the generated tables and views in the Database Explorer.
 
     ![Import data](16.png)
 
-1. Repeat the process with the `Items.csv` file into the `Items` table.
+1. Repeat the process with the `app.interactions-Items.csv` and `app.interactions-Items.texts.csv` files into the `ITEMS` and `ITEMS_TEXTS` tables.
 
     1![Import data](17.png)
 
@@ -266,5 +277,5 @@ You can now check the generated tables and views in the Database Explorer.
 1. Add the following WHERE clause to the SELECT statement and execute it to complete the validation below.
 
     ```SQL
-    where "LOGTEXT"  like '%happy%';
+    where "TEXT"  like '%happy%';
     ```

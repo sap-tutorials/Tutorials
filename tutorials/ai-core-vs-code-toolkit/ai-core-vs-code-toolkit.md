@@ -13,7 +13,7 @@ author_profile: https://github.com/dhrubpaul
 
 ## Prerequisites
 - Understanding Of SAP AI Core
-- Installing SAP AI Core toolkit VS Code extension
+- [Installing SAP AI Core toolkit VS Code extension](https://help.sap.com/docs/sap-ai-core/sap-ai-core-toolkit/sap-ai-core-toolkit)
 
 ## You will learn
 - Setup Vs code Toolkit
@@ -366,6 +366,10 @@ Step 4: A pop up appears at the bottom of VS code where you will be able to see 
 
 <!-- border -->![](img/Running_Training4.png)
 
+Step 5: Once the execution is complete and the status shows as 'Completed,' you can proceed with the deployment.
+
+![image](img/step15.png)
+
 
 ### Deployment
 
@@ -379,6 +383,8 @@ Choose the values in pop-up as shown below
 
 <!-- border -->![](img/Deployment3.png)
 
+<!-- border -->![](img/step16_1.png)
+
 Then we will choose the created configuration and right click on deployments and click on start deployment to deploy the model.
 
 <!-- border -->![](img/Deployment4.png)
@@ -389,7 +395,7 @@ Once the deployment starts, we would be able to see the Deployment deployment UR
 
 A Output will open at bottom of VS code showing Deployment details.
 
-<!-- border -->![](img/Deployment6.png)
+<!-- border -->![](img/step16_2.png)
 
 
 you can refer at : <https://developers.sap.com/tutorials/ai-core-setup.html#6ba18db2-51b7-4c79-baea-df58471b5c42> under Postman Section on how to Download and Setup postman with AI core.

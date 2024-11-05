@@ -13,7 +13,7 @@ author_profile: https://github.com/Lukas742
 <!-- description --> Start building a React web application leveraging UI5 Web Components for React.
 
 ## Prerequisites
-- [React](https://www.npmjs.com/package/react) and [React-DOM](https://www.npmjs.com/package/react-dom) ( **16.14.0 or higher** )
+- [React](https://www.npmjs.com/package/react) and [React-DOM](https://www.npmjs.com/package/react-dom) ( **18.0.0 or higher** )
 - [Node.js](https://nodejs.org/) - **[LTS](https://github.com/nodejs/release?tab=readme-ov-file#release-schedule) version** (check the version with `node -v`)
 
 
@@ -35,10 +35,14 @@ This first tutorial will start by creating a React application that is able to c
 
 UI5 Web Components for React provides various [templates](https://sap.github.io/ui5-webcomponents-react/?path=/docs/project-templates-examples--docs) for starting your project. In this tutorial, we'll use the Vite template.
 
+> #### Please note!
+>
+> This tutorial currently works only with Version 1 (1.x.x) of UI5 Web Components and UI5 Web Components for React. It will be updated shortly.
+
 Navigate to a folder where you want to create your Web App and open a terminal there. Then use the following command:
 
 ```Shell
-npx degit SAP/ui5-webcomponents-react/templates/vite-ts#main my-app
+npx degit SAP/ui5-webcomponents-react/templates/vite-ts#v1.29.x my-app
 cd my-app
 npm i
 ```

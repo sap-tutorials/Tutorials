@@ -1,12 +1,12 @@
 ---
-author_name: Christian Savchev
-author_profile: https://github.com/christiansavchev
-title: Getting Started with Alert Notification Service for SAP BTP
+author_name: Nikolay Penchev
+author_profile: https://github.com/NPenchev03
+title: Getting Started with SAP Alert Notification Service for SAP BTP
 description: Learn how to enable SAP Alert Notification service in your SAP BTP trial account, so that you can use its features to create subscriptions and receive notifications about SAP BTP events to your preferred communication channel or monitoring tool.
 keywords: tutorial
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit ]
+tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-alert-notification-service-for-sap-btp ]
 primary_tag: software-product>sap-btp--cloud-foundry-environment
 parser: v2
 ---
@@ -17,8 +17,8 @@ parser: v2
 
 ## You will learn
    - How to enable SAP Alert Notification service in your SAP BTP trial account, so that you can use its features.
-   - How to create an action of a type email, so that you can receive notifications to a given email.
-   - How to create a condition with an event property **Category**, predicate **Is** **Equal** **To** and value **NOTIFICATION**. SAP Alert Notification service for SAP BTP uses this condition to filter all relevant events regarding notifications.
+   - How to create an action of type email, so that you can receive notifications to a given email.
+   - How to create a condition with an event property **Category**, predicate **Is Equal To** and value **NOTIFICATION**. SAP Alert Notification service for SAP BTP uses this condition to filter all relevant events regarding notifications.
    - How to create a subscription using already created actions and conditions and receive notifications about SAP BTP events to your preferred communication channel or monitoring tool.
 
 ## Intro

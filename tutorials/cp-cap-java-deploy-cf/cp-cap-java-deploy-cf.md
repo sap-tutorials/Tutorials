@@ -27,7 +27,7 @@ In the previous tutorial you added authentication to your application. In this t
 
 You first need to provision your SAP HANA Cloud instance, which is a prerequisite to later on create a SAP HANA HDI Container to deploy your database artifacts to.
 
-1. Follow the tutorial [Provision an Instance of SAP HANA Cloud](hana-cloud-mission-trial-2). Use `bookstore-db` as the name of your database. Make sure to allow access to your SAP HANA Cloud from all IPs and that instance of the SAP HANA you have created is mapped to your subaccount and space where you working with this tutorial.
+1. Follow the tutorial [Provision an Instance of SAP HANA Cloud (Step 1+2)](hana-cloud-mission-trial-2). Make sure to allow access to your SAP HANA Cloud from all IPs and that the instance of the SAP HANA you have created is [mapped to your subaccount and space (Step 1)](hana-cloud-mission-trial-8) where you working with this tutorial.
 
 ### Enhance project configuration for production
 
@@ -190,10 +190,8 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
 
     This is the URL of the AppRouter, which enforces the authentication flow.
 
-4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+4. Open this URL in the browser and try out the provided links, for example, `odata/v4/BooksService/Books`. Application data is fetched from SAP HANA.
 
-5. Open the application in the browser. The according route can be found under `routes` of the previous step.
-
-6. Observe that your application is now secured by requiring authentication on service and entity endpoints. In the following tutorials you will learn how to configure authentication and authorization in the cloud.
+5. Observe that your application is now secured by requiring authentication on service and entity endpoints. In the following tutorials you will learn how to configure authentication and authorization in the cloud.
 
 ---

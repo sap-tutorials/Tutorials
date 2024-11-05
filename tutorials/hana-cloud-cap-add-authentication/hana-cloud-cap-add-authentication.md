@@ -2,8 +2,8 @@
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, software-product>sap-hana, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model]
-primary_tag: software-product>sap-hana-cloud
+tags: [ tutorial>intermediate, products>sap-hana, software-product-function>sap-cloud-application-programming-model, products>sap-business-application-studio]
+primary_tag: products>sap-hana-cloud
 parser: v2
 ---
 
@@ -38,20 +38,28 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![Basic xs-security.json](basic_xs_security.png)
 
-1. To really test the impact of roles in our application, lets add some security to our services. Open the `interaction_srv.cds` from the `srv` folder. Adjust the code as follows to make `Interactions_Header` service only available to authenticated users and `Interactions_Items` only available to users with the `Admin` role and restrict the results during read operations to only those records where the language column has the value of German (DE).
+1. To really test the impact of roles in our application, lets add some security to our services. Open the `interaction_srv.cds` from the `srv` folder. Adjust the code as follows to make `Interactions_Header` service only available to authenticated users and `Interactions_Items` only available to users with the `Admin` role and restrict the results during certain read operations to only those records where the Country column has the value of German (DE).
 
-    ```cap cds
+    ``` cds
     using app.interactions from '../db/interactions';
+    using {sap} from '@sap/cds-common-content';
+
     service CatalogService {
 
-    @requires: 'authenticated-user'
-    entity Interactions_Header
-        as projection on interactions.Interactions_Header;
+    @requires           : 'authenticated-user'
+    @cds.redirection.target
+    @odata.draft.enabled: true
+    entity Interactions_Header as projection on interactions.Headers;
 
     @requires: 'Admin'
-    @restrict: [{ grant: 'READ', where: 'LANGU = ''DE'''}]
-    entity Interactions_Items
-        as projection on  interactions.Interactions_Items;
+    entity Interactions_Items  as projection on interactions.Items;
+
+    @readonly
+    entity Languages           as projection on sap.common.Languages;
+
+    @readonly
+    @restrict: [{ grant: 'READ', where: 'country_code = ''DE'''}]
+    entity HeaderView as projection on interactions.Headers;
 
     }
     ```
@@ -151,7 +159,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
 1. The `approuter` component implements the necessary handshake with XSUAA to let the user log in interactively. The resulting JWT token is sent to the application where it's used to enforce authorization.
 
-1. Next open the xs-app.json file in the /app folder.  Here want to make several adjustments. Change the `authenicationMethod` to `route`. This will turn on authentication. You can deactivate it later by switching back to `none`.  Also add/update the routes.  We are adding authentication to CAP service route.  We are also adding the Application Router User API route (`sap-approuter-userapi`), which is nice for testing the UAA connection. We will also add the custom `logoutEndpoint` of `/app-logout`.  You can add this path to your URL if you want to force logout your user; which can be helpful to pickup any changes to your role configuration during development. Finally add the route to the local directory to serve the UI5/Fiori web content.
+1. Next open the xs-app.json file in the `/app/router` folder.  Here want to make several adjustments. Change the `authenicationMethod` to `route`. This will turn on authentication. You can deactivate it later by switching back to `none`.  Also add/update the routes.  We are adding authentication to CAP service route.  We are also adding the Application Router User API route (`sap-approuter-userapi`), which is nice for testing the UAA connection. We will also add the custom `logoutEndpoint` of `/app-logout`.  You can add this path to your URL if you want to force logout your user; which can be helpful to pickup any changes to your role configuration during development. Finally add the route to the local directory to serve the UI5/Fiori web content.
 
     ```json
    {
@@ -205,7 +213,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![CAP Service successful](cap_successful.png)
 
-1. Finally change to the `Interaction_Items` from the test page. You are now testing with data from the CAP service but all with authentication. You should also only be seeing a single record thanks to the data restriction we placed on the service as well.
+1. Finally change to the `HeaderView` from the test page. You are now testing with data from the CAP service but all with authentication. You should also only be seeing a single record thanks to the data restriction we placed on the service as well.
 
     ![Fiori with authentication](fiori_with_authentication.png)
 

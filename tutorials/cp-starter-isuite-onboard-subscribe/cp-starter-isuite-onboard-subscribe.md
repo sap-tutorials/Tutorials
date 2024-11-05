@@ -22,12 +22,14 @@ author_profile: https://github.com/Karunaharan
 ## SAP Integration Suite
 SAP Integration Suite combines the integration capabilities such as Cloud Integration (Process Integration), API Management, Integration Advisor, Trading Partner Management, Integration Assessment, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite.
 
-## Intro
 The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/integration-suite/?region=all&tab=service_plan) service catalog.
 
-This part of the series lets you experience few capabilities offered by SAP Integration Suite. For the complete mission, see [Request Product Details with an Integration Scenario](mission.cp-starter-integration-cpi).
+This part of the mission lets you experience few capabilities offered by SAP Integration Suite. For the complete mission, see [Request Product Details with an Integration Scenario](mission.cp-starter-integration-cpi).
 
-> **IMPORTANT**: Trial accounts are not intended for productive usage or team development. If you're using Integration Suite from a production account for your proof of concepts or real-time business cases, refer to the [product documentation](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/3dcf507f92f54597bc203600bf8f94c5.html) on SAP Help Portal for step-by-step explanation of the initial set up and further information.
+> **IMPORTANT**: Trial accounts are not intended for productive usage or team development. If you're using Integration Suite from a production account for your proof of concepts or real-time business cases, refer to the [product documentation](https://help.sap.com/docs/integration-suite) on SAP Help Portal for step-by-step explanation of the initial set up and further information.
+
+> **Remember**
+This tutorial is applicable only if you want to set up SAP Integration Suite for the use case covered in the mission [Request Product Details with an Integration Scenario](https://developers.sap.com/mission.cp-starter-integration-cpi.html). If you like to do a general set up of SAP Integration Suite or cover other use cases, then the steps mentioned here might not be exactly applicable. For general set up, refer to [Subscribing and Configuring Initial Access to SAP Integration Suite](https://help.sap.com/docs/integration-suite/sap-integration-suite/subscribing-to-integration-suite) and [Activating and Managing Capabilities](https://help.sap.com/docs/integration-suite/sap-integration-suite/activating-and-managing-capabilities).
 
 ## The Use Case
 Using this scenario, you design and execute an integration flow that reads product details from a public product catalog (`WebShop`) for a given product identifier. Product details include data such as the product name and price, for example. To accomplish the scenario, you use the SAP Integration Suite capabilities *Cloud Integration* and *API Management*.
@@ -183,7 +185,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
     <!-- border -->![Booster Success](5-7-Booster-Success.png)
 
-You can also manually do the role assignment and service instance creation without using the booster. For more information, see [Configure User Access](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/2c6214a3228e4b4cba207f49fda92ed4.html) and [Create Service Instances](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/883f025c30a64373b4e4102238a39fd4.html).
+You can also manually do the role assignment and service instance creation without using the booster. For more information, see [Configure User Access](https://help.sap.com/docs/cloud-integration/sap-cloud-integration/configuring-user-access-to-application) and [Create Service Instances](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/883f025c30a64373b4e4102238a39fd4.html).
 
 
 

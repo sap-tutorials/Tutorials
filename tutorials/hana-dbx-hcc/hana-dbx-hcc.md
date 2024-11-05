@@ -74,7 +74,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 5.  The current schema can be set and viewed for a SAP HANA database using the SQL statements below.
 
     ```SQL
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     SELECT CURRENT_SCHEMA, CURRENT_USER FROM DUMMY;
     ```
 
@@ -83,7 +83,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
     For data lake Relational Engine instances, the current schema can be set and viewed as shown below.
 
     ```SQL
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     SELECT CURRENT SCHEMA, CURRENT USER;
     ```
 
@@ -101,10 +101,10 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 1. Execute the following SQL statements.
 
     ```SQL
-    SELECT * FROM HOTEL.CUSTOMER;
+    SELECT * FROM HOTELS.CUSTOMER;
     SELECT * FROM NON_EXISTENT_TABLE;
     SELECT * FROM NON_EXISTENT_TABLE2;
-    SELECT * FROM HOTEL.HOTEL_ROOMS_VIEW;
+    SELECT * FROM HOTELS.HOTEL_ROOMS_VIEW;
     ```
 
     The following error dialog appears.  Select  **Skip All**.
@@ -129,7 +129,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     ![](copy-results.png)
 
-3. Place the cursor on line four and open the **Statement Help** panel.
+3. Place the cursor on line four and open the **Syntax Help** panel.
 
     ![statement help panel](statement-help.png)
 
@@ -273,7 +273,7 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
 * The SQL console in SAP HANA Cloud Central has the following additional features
 
     * Ability to format results
-    * Support SAP Morning and Evening Horizon themes
+    * Support for SAP Morning and Evening Horizon themes
 
 * The SAP HANA database explorer has some additional functionality
 

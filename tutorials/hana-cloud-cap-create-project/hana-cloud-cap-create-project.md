@@ -74,7 +74,7 @@ In this step we will create a new Dev Space configured for SAP Cloud Application
 
 Before we create our SAP HANA project, we want to do a few more one-time configuration steps to prepare the Dev Space
 
-1. In the left side of the Business Application Studio click on the Cloud Foundry targets icon
+1. In the left side of the Business Application Studio click on the Cloud Foundry targets icon. Depending upon your screensize this option might be behind the expansion three dots (...).
 
     ![CF Not Set](cf_not_set.png)
 
@@ -125,7 +125,7 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     ![New CAP Project Name](cap_project_name.png)
 
-    Choose `Node.js` as the runtime. Select `SAP HANA Cloud` and `SAP Application Router` from the productive runtime capabilities for your application section. Choose `Cloud Foundry:MTA Deployment` and `CI/CD Pipeline Integration` under which way to deploy your project.  Press **Finish**
+    Choose `Node.js` as the runtime. Select `SAP HANA Cloud` from the database for your application section. Choose `Cloud Foundry:MTA Deployment` and `CI/CD Pipeline Integration` under which way to deploy your project. Choose `SAP BTP Authorization and Trust Management Service (XSUAA)` and `SAP Application Router` from the productive runtime capabilities for your application section.   Press **Finish**
 
     ![New CAP Project Details](cap_project_details.png)
 
@@ -153,7 +153,7 @@ We are using several dependent Node.js modules in our project. They are referenc
 
     ![New Terminal](new_terminal.png)
 
-1. The terminal will open in the bottom right of the Business Application studio
+1. The terminal will open in the bottom right of the Business Application Studio
 
     ![Terminal in BAS](terminal_in_BAS.png)
 

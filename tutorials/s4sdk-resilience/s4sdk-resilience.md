@@ -163,7 +163,6 @@ myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
                         .timeoutDuration(Duration.ofSeconds(10)))
         .bulkheadConfiguration(
                 ResilienceConfiguration.BulkheadConfiguration.of()
-                ResilienceConfiguration.BulkheadConfiguration.of()
                         .maxConcurrentCalls(20));
 ```
 

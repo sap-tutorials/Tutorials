@@ -47,6 +47,8 @@ author_profile: https://github.com/mariajosesap
 
 1. Copy your Open Connectors credentials. You are going to use them to enable the credentials in Cloud Integration.
 
+    >Take note of the `Instance Token` as it will be used as the Element in the next step
+
 ![Stripe Open Connector Credentials](instance_credentials.png)
 
 ### Create an Open Connectors Credentials in SAP Cloud Integration

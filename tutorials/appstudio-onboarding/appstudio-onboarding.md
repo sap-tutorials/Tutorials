@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>mobile-development-kit-client]
 primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
@@ -18,7 +18,7 @@ author_profile: https://github.com/raz-korn
   - How to set up SAP Business Application Studio
 
 ## Intro
-The main focus of this tutorial is setting up SAP Business Application Studio in the trial environment. 
+The main focus of this tutorial is setting up SAP Business Application Studio in the trial environment.
 
 For setting up SAP Business Application Studio in an enterprise account, refer to the [Set Up SAP Business Application Studio](https://help.sap.com/docs/bas/sap-business-application-studio/getting-started) topic of the SAP Business Application Studio Administrator Guide.
 

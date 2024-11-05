@@ -47,7 +47,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![specify the data source name](data-source1.png)  
 
-    Connect using **USER1**. The **host** and **port** values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the **Copy SQL Endpoint** menu option.
+    Connect using **USER1**. The **host** and **port** values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the **Copy SQL Endpoint** menu option and then click on Login.
 
     ![specify the credentials, host and port](data-source2.png)  
 
@@ -99,23 +99,26 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
     log=/tmp/hdlclientlog.txt
     ```
 
+    Here the driver path is the path to your libdodbc17.so file.
+
 5. DBISQL or `isql`, which is a tool provided by unixODBC can be used to try out the data source. Ensure you are using the correct username and password.
 
     ```Shell (Linux)
     dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL" -nogui
     isql -v HC_DL USER1 Password1
     ```
+dsn is the name set in the odbc.ini file in the previous step.
 
     **DBISQL**
     
     Some example queries you can run are listed below.
 
     ```SQL
-    SELECT * FROM HOTEL.CUSTOMER;
+    SELECT * FROM HOTELS.CUSTOMER;
     ```
 
     ```SQL
-    SELECT * FROM HOTEL.ROOM;
+    SELECT * FROM HOTELS.ROOM;
     ```
 
     ![ODBC example with dbisql](ODBC-dbisql.png)
@@ -163,9 +166,9 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 
     > Note, if an error occurs that mentions, you do not have permission to select from SYSINDEX, a newer version of the driver may be needed.
 
-### Knowledge check
 For further information on programming an application to use the ODBC client driver, see [ODBC CLI](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/a3171c5084f210159caebadd9e149481.html).
 
+### Knowledge check
 Congratulations! You have configured an ODBC data source to contain connection information for a SAP HANA Cloud, data lake Relational Engine database and used that data source from unixODBC and Microsoft Excel.
 
 ---

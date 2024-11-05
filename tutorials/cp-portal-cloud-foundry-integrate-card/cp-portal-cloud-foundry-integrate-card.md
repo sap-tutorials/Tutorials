@@ -56,15 +56,75 @@ The **Site Directory** opens.
 
     <!-- border -->![Create report](7-create-report.png)
 
-### Assign yourself to the ContentPackageRole
+6. Ensure that the app is assigned to the `ContentPackageRole` by opening the Content Manager and searching for this role. In the role editor, under the **Apps** tab, you'll see the `Products by Category Card`.
 
-The `ContentPackageRole` is part of the content in the content package ZIP file.
+    <!-- border -->![View card in the role editor](14a-view-card-in-role.png)
+
+### Add a header to your page
+
+In this step, you'll add a header to your page for the card that you will add.
+
+1. Go back to the Content Manager by using the breadcrumbs above.
+
+    <!-- border -->![Back to Site Manager](21-go-back.png)
+
+
+2. Click the `Overview` page to open the page editor.
+
+    <!-- border -->![Open Overview page](23-open-overview-page.png)
+
+3. Click **Edit**.
+
+4. Click **+** to add a new secion.
+
+    <!-- border -->![Name section](25-add-section.png)
+
+5. In the **Section Title** field, type **My Cards**
+
+    <!-- border -->![Name section](24-name-section.png)
+
+6. Click **Add Widget**
+
+    <!-- border -->![Add widget](26-add-widget.png)
+
+7. Select **Cards**.
+
+    <!-- border -->![Select card](27-select-cards.png)
+
+8. Select the **Products by Category Card** to add it to your **Overview** page and then click **Save**. 
+
+    <!-- border -->![Select card](28-select-your-card.png)
+
+    Your screen will look like this. Don't worry the content will appear on the card once you do the necessary role assignments.
+
+    !-- border -->![Design time view](29-design-time-view.png)
+
+
+### Assign the ContentPackageRole to the site
+
+The `ContentPackageRole` is part of the content in the content package ZIP file. You now have to assign the `ContentPackageRole` to your site and you will also need to assign your user to this role in the next step. 
+
+1. Open the **Site Directory**.
+
+    <!-- border -->![Open Site Directory](15-open-site-directory.png)
+
+2. Open the **Site Settings** screen.
+
+    <!-- border -->![Open Site Settings](16-open-site-settings.png)
+
+3. Click **Edit**.
+
+4. In the **Assignments** panel, click inside the search box to open a list of available roles. You'll see the `ContentPackageRole`.  Assign it to the site by clicking the **+** next to the role name and then click **Save**.
+
+    <!-- border -->![Assign role to site](17-assign-role-to-site.png)    
+
+### Assign yourself to the ContentPackageRole
 
 1. Go back to the SAP BTP Cockpit using the **Instances and Subscriptions** tab in your browser.
 
     <!-- border -->![Go to BTP Cockpit](8-instances-and-subscriptions.png)
 
-2. From the side menu, go to **Security** --> **Role Collections** and search for the `ContentPackageRole`.
+2. From the side menu, go to **Security** --> **Role Collections** and search for the `ContentPackageRole` role.
 
     <!-- border -->![ContentPackage role](9-content-package-role.png)
 
@@ -76,78 +136,20 @@ The `ContentPackageRole` is part of the content in the content package ZIP file.
   
     <!-- border -->![Edit role collection](10-edit-role-collection.png)
 
-4. In the **Users** section of the screen, add your ID (your email), and then your email again and add it to the list of users by clicking the **+** button. Save your changes.
+5. In the **Users** section of the screen, add your ID (your email), and then your email again and add it to the list of users by clicking the **+** button. **Save** your changes.
 
     <!-- border -->![Add User](11-add-user.png)
 
-
-### Ensure that the app is assigned to the ContentPackageRole
-
-To do this, go to the Content Manager in SAP Build Work Zone, standard edition.
-
-1. Click  **Services** --> **Instances and Subscriptions** in the side panel of the SAP BTP cockpit, select the **SAP Build Work Zone, standard edition** service and then **Go to Application**..
-
-    <!-- border -->![Open work zone std](12-open-workzone-std.png)
-
-2. From the side panel, open the **Content Manager**.
-
-    <!-- border -->![Open Content Manager](13-open-content-manager.png) 
-
-3. Click the `ContentPackageRole` to open the role editor.
-
-    <!-- border -->![Select role](14-select-contentpackage-role.png)
-
-4. Under the **Apps** tab, you should see the `Products by Category Card`. This means that the card is assigned to this role. 
-
-    <!-- border -->![View card in the role editor](14a-view-card-in-role.png)
-
-
-### Assign the ContentPackageRole to the site
-
-1. Open the **Site Directory**.
-
-    <!-- border -->![Open Site Directory](15-open-site-directory.png)
-
-2. Open the **Site Settings** screen.
-
-    <!-- border -->![Open Site Settings](16-open-site-settings.png)
-
-3. In the **Assignments** panel, click inside the search box to open a list of available roles. You'll see the `ContentPackageRole`. Assign it to the site by clicking the **+** next to the role name and then click **Save**.
-
-    <!-- border -->![Assign role to site](17-assign-role-to-site.png)    
-
-
-### Add a header in your page
-
-1. Go back to the Site Manager by using the back arrow.
-
-    <!-- border -->![Back to Site Manager](21-go-back.png)
-
-2. Open the Content Manager.
-
-     <!-- border -->![Open Content Manager](22-open-content-manager.png)
-
-3. Click the `Overview` page to open the page editor.
-
-    <!-- border -->![Open Overview page](23-open-overview-page.png)
-
-4. Click **Edit**.
-
-5. In the section where you've added the card, enter `My Card` as the **Section Title** and click **Save**.
-
-    <!-- border -->![Name section](24-name-section.png)
-
+    >Note that assignment to the role can take time. If you don't want to wait, you can log out and log in again in order for the role assignment to take effect. 
 
 ### View the card in your runtime site
 
-1. Click the **Site Directory** icon.
+1. Still in the SAP BTP cockpit, click **Instances and Subscriptions** and go to SAP Build Work Zone, standard addition. The **Site Directory** is in focus.
 
-    <!-- border -->![Go back to Site Directory](18-open-site-directory.png)   
-
-2. Click on the **Go to site** icon.
+2. Click the **Go to site** icon.
 
      <!-- border -->![Go to site](19-go-to-site.png) 
 
-3. This is what you'll see:
+3. You'll see that your card has been added to the **Overview** page:
 
-    <!-- border -->![Final view](20-final-view.png) 
+    <!-- border -->![Final view](22-view-card.png) 

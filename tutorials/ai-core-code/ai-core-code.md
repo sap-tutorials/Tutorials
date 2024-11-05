@@ -12,6 +12,11 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> Build portable AI code with Docker and use it with SAP AI Core.
 
 ## Prerequisites
+- A BTP global account
+If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
+[How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
+[SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
+If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - You have created your first workflow with SAP AI Core, using [this tutorial](https://developers.sap.com/tutorials/ai-core-helloworld.html/#)
 
 ## You will learn
@@ -101,7 +106,7 @@ Create another file `requirements.txt` in the same directory. Here you will ment
 Paste the following snippet into `requirements.txt`.
 
 ```TEXT
-sklearn==0.0
+scikit-learn
 ```
 
 <!-- border -->![image](img/code-requirements.png)
@@ -145,7 +150,7 @@ Open your terminal and navigate to your `hello-aicore-code` directory.  You will
 Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGITRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
 ```BASH
-docker buildx build –load --platform=<YOUR_DOCKER_PLATFORM>  -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
+docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
 ```
 
 > **INFORMATION** In the command, `-t` indicates that there is a tag name, followed by a colon and version. The name is your descriptive string, and the version can be in any format, here `house-price` and `01`, respectively. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
@@ -631,7 +636,7 @@ docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:02 .
 Upload your code to your Docker registry.
 
 ```BASH
-docker upload docker.io/<YOUR_DOCKER_USERNAME>/house-price:02
+docker push docker.io/<YOUR_DOCKER_USERNAME>/house-price:02
 ```
 
 <!-- border -->![image](img/code-push-2.png)
