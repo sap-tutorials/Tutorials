@@ -177,15 +177,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 3. On the left-hand side, choose **Redemption Information**.
 4. Open the **POST** request **/RedemptionInfo({ID})/CouponManagementService.redeemCouponCode**.
 5. Under **Parameters**, enter the **redemptionInfoID** which you noted down when you reserved the coupon code.
-5. For the request **body**, copy the following data and paste it into the body:
-```json
-{ 
-  "couponCodeValue": "string",
-   "reservationDate": "2026-10-25",
-   "transactionID": "string"
-
-}
-```
+5. For the **body**, enter the **reservation token** which you noted down at the time of reserving the coupon code.
 7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
@@ -196,9 +188,7 @@ The response should look like this:
 <!-- border -->![Coupon creation success](create_coupon_success.png)
 
 
-9. From the response, note down the redemption information ID and reservation token.
-
-With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
+With this, you have successfully redeemed the coupon code. The redemption information is returned to the client system which then confirms the completion of payment. Your customer has now successfully purchased the coffee machine at a discount price.
 
 ### Additional Information
 
