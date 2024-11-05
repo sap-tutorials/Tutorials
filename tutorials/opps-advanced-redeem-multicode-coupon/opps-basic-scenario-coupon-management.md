@@ -86,340 +86,77 @@ The response should look like this:
 With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
 
 
-### Change status of coupon object
+### Calculate the effective sales price
 
 
-When creating the coupon, the **status** of the coupon was set as **inactive** because it cannot be created in the **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **INACTIVE** to **ACTIVE**.
+You can now calculate the effective sales price using the **Calculation** service. 
 
-1. On the left-hand side, choose **Coupon**.
-2. Open the **PATCH** request `/Coupon({ID})`.
-3. Choose **Parameters**.
-4. For ID, enter the **technical coupon ID** from the coupon object you just created.
-5. For the **Request body**, choose `application/json`.
-6. Copy the following raw data and paste it into the body.
-```json
-{ 
-  "status": "ACTIVE"
-}
-```
-7. Choose **Run**. 
-8. Make sure you get the HTTP response **200**.
-
-<!-- border -->![Change coupon status](change_coupon_status.png)
-<!-- border -->![Coupon status change success](change_coupon_status_success.png)
-
-You have now successfully changed the status of the coupon code. 
+* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of regular price EURO 1000. At the time of check-out on October 25, 2026, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. 
 
 
-### Generate coupon codes
+* Desired Result: The effective sales price for the coffee machine should be EURO 950. The customer is eligible for a discount under the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. As the regular price of the coffee machine is Euro 1000, a discount of EURO 50 would result in an effective sales price of EURO 950.
 
 
-Now that you have created the multi-code coupon object and set it to active, you can generate a batch of 100 coupon codes to be used in the promotional campaign.
+Let's see if this is the case:
 
-1. On the left-hand side, choose **Coupon**.
-2. Open the **POST** request `/Coupon({ID})/CouponManagementService.generateCouponCodes`.
-3. Choose **Parameters**.
-4. For ID, enter the **technical coupon ID** from the coupon object you just created.
-5. Copy the following raw data and paste it into the body:
-```json
-{ 
-"generatedCodeCount": 100, 
-"validFrom": "2024-10-01" 
-}
-```
-6. Choose **Run**.
+Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Generate coupon codes](generate_coupon_code.png)
-
-7. Make sure you get the HTTP response **200**.
-
-<!-- border -->![Generate coupon codes success](generate_coupon_code_success.png)
-
-With this, you have now created a batch of **100** unique codes for the coupon **COFFEELOVER**. You must note down the batch ID to read the coupon codes.
-
-
-### Read coupon codes
-
-
-You can now read the coupon codes created using the Coupon Management service to circulate the coupon information to the target group as part of your promotional campaign. 
-
-1. On the left-hand side, choose **Code Batch**.
-2. Open the **GET** request `/CodeBatch({ID})/codes`.
-3. Choose **Parameters**.
-4. Enter the **Batch ID** noted down at the time of generation of coupon codes. 
-5. Choose **Run**.
-6. Make sure you get the HTTP response **200**.
-
-<!-- border -->![Read coupon codes](read_coupon_code.png)
-
-With this, you can read the coupon codes generated for the multi-code coupon **COFFEELOVER**. This is the coupon code value to be communicated to the target group members as part of your promotional campaign. 
-
-You must note down a coupon code value as it will be used for redeeming the coupon.
-
-
-### Create a promotion for multi-code coupon
-
-To finalize your promotional campaign, you want to set up the following promotion for your **Heidelberg** store (business unit ID **FC01**):
-* Buy a coffee machine and show the coupon **COFFEELOVER to get 50 Euro off**.  
-* The promotion is valid from October 1st, 2024 to December 31st, 2024.
-You can do so either using the **Maintain Promotions** app or the **Data Upload** service.
-In this tutorial, we will use the **Data Upload** service.
-
-
-Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
-
-<!-- border -->![Data upload 1](data_upload_1.png)
-<!-- border -->![Data upload 2](data_upload_2.png)
-
-
-1. For **API Environment**, select the trial environment you have created for the Data Upload service.
-2. On the left-hand side, choose **Upload promotions using OAuth2**.
-3. Open the **POST** request `/idocinbound`.
-4. Choose **Try Out**.
-5. For the **Request body**, choose `application/xml`.
-6. Copy the following raw data and paste it into the body:
+1. For **API Environment**, select the trial environment you have created for the **Calculation** service.
+2. Choose **Try Out**.
+3. Open the **POST** request **/restapi/{tenantname}e**.
+4. Under **tenantName**, enter the **identityzone** from the service key you have created for the **Calculation** service in your SAP BTP account. If you need assistance, see step 4 of the tutorial [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html) .
+5. For the **Content Type**, choose **XML**.  
+4. Copy the following data and paste it into the **body**:
 ```XML
-<?xml version="1.0" encoding="utf-8"?>
-<_-ROP_-PROMOTION02>
-  <IDOC BEGIN="1">
-    <EDI_DC40 SEGMENT="1"> 
-      <IDOCTYP>/ROP/PROMOTION02</IDOCTYP> 
-    </EDI_DC40>
-    <_-ROP_-E1_PROMOTION> 
-      <PROMOTION_ID>2401</PROMOTION_ID> 
-      <OFFER_ID>27DB2B4C00F61EEF9CB76E606FF07D88</OFFER_ID>
-<EXTERN_PROMO_ID>000000000000000000000000000000000821</EXTERN_PROMO_ID> 
-      <EFFECTIVE_DATE>20241001000000</EFFECTIVE_DATE> 
-      <EXPIRY_DATE>20241231235959</EXPIRY_DATE> 
-      <CHANGED_ON>20240913103445</CHANGED_ON> 
-      <STATUS_TCD>AC</STATUS_TCD>
-      <CHANGE_INDICATOR>I</CHANGE_INDICATOR>
-      <LOGSYS>RS9CLNT990</LOGSYS>
-      <ORIGIN>01</ORIGIN> 
-      <MIN_PPS_RELEASE>0</MIN_PPS_RELEASE>
-      <OFFER_ID>42010AEF0FAA1EEBBABE7EEA0C2D0823</OFFER_ID>
-      <ORIGIN>01</ORIGIN>
-      <PROMOTION_ID>771</PROMOTION_ID>
-      <PROMOTION_TYPE>Z001</PROMOTION_TYPE>
-      <STATUS_TCD>AC</STATUS_TCD>
-      <_-ROP_-E1_PROMOTION_BU SEGMENT="1">
-        <BU_ID>FC01</BU_ID>
-        <BU_TYPE>1040</BU_TYPE>
-      </_-ROP_-E1_PROMOTION_BU>
-      <_-ROP_-E1_PROMOTION_RULE SEGMENT="1">
-        <ELIGIBILITY_ID>772</ELIGIBILITY_ID>
-        <ONLY_BASKET_MODE>X</ONLY_BASKET_MODE>
-        <PRICE_RULE_ID>772</PRICE_RULE_ID>
-        <PROMO_RULE_ID>772</PROMO_RULE_ID>
-        <RESOLUTION>1</RESOLUTION>
-        <SALE_RETURN_TCD>00</SALE_RETURN_TCD>
-        <SEQUENCE>772</SEQUENCE>
-        <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
-          <COMBINATION_CODE>&amp;&amp;</COMBINATION_CODE>
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
-          <ELIGIBILITY_ID>772</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
-          <INTERVAL_AMT>0.00000</INTERVAL_AMT>
-          <INTERVAL_QTY>0.000</INTERVAL_QTY>
-          <LIMIT_AMT>0.00000</LIMIT_AMT>
-          <LIMIT_QTY>0.000</LIMIT_QTY>
-          <MERCH_SET_ID>0</MERCH_SET_ID>
-          <PARENT_ELIGIB_ID>772</PARENT_ELIGIB_ID>
-          <PROMO_RULE_ID>772</PROMO_RULE_ID>
-          <ROOT_ELIGIB_ID>772</ROOT_ELIGIB_ID>
-          <STATUS_TCD>AC</STATUS_TCD>
-          <THRESHOLD_AMT>0.00000</THRESHOLD_AMT>
-          <THRESHOLD_QTY>0.000</THRESHOLD_QTY>
-          <TRANS_TOTAL_AMT>0.00000</TRANS_TOTAL_AMT>
-          <TYPE_CODE>COMB</TYPE_CODE>
-        </_-ROP_-E1_ELIGIBILITY>
-        <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
-          <CONSUMPTION_TCD>00</CONSUMPTION_TCD>
-          <COUPON_NUMBER>TIME FOR COFFEE</COUPON_NUMBER>
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
-          <ELIGIBILITY_ID>773</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
-          <INTERVAL_AMT>0.00000</INTERVAL_AMT>
-          <INTERVAL_QTY>0.000</INTERVAL_QTY>
-          <LIMIT_AMT>0.00000</LIMIT_AMT>
-          <LIMIT_QTY>0.000</LIMIT_QTY>
-          <MERCH_SET_ID>0</MERCH_SET_ID>
-          <PARENT_ELIGIB_ID>772</PARENT_ELIGIB_ID>
-          <PROMO_RULE_ID>772</PROMO_RULE_ID>
-          <ROOT_ELIGIB_ID>772</ROOT_ELIGIB_ID>
-          <STATUS_TCD>AC</STATUS_TCD>
-          <THRESHOLD_AMT>0.00000</THRESHOLD_AMT>
-          <THRESHOLD_QTY>0.000</THRESHOLD_QTY>
-          <TRANS_TOTAL_AMT>0.00000</TRANS_TOTAL_AMT>
-          <TYPE_CODE>COUP</TYPE_CODE>
-        </_-ROP_-E1_ELIGIBILITY>
-        <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
-          <ELIGIBILITY_ID>774</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
-          <INTERVAL_AMT>0.00000</INTERVAL_AMT>
-          <INTERVAL_QTY>1.000</INTERVAL_QTY>
-          <ITEM_ID>COFFEE_MACHINE</ITEM_ID>
-          <LIMIT_AMT>0.00000</LIMIT_AMT>
-          <LIMIT_QTY>9999999999.000</LIMIT_QTY>
-          <MERCH_SET_ID>0</MERCH_SET_ID>
-          <PARENT_ELIGIB_ID>772</PARENT_ELIGIB_ID>
-          <PROMO_RULE_ID>772</PROMO_RULE_ID>
-          <ROOT_ELIGIB_ID>772</ROOT_ELIGIB_ID>
-          <STATUS_TCD>AC</STATUS_TCD>
-          <THRESHOLD_AMT>0.00000</THRESHOLD_AMT>
-          <THRESHOLD_QTY>1.000</THRESHOLD_QTY>
-          <THRESHOLD_TCD>QUTI</THRESHOLD_TCD>
-          <TRANS_TOTAL_AMT>0.00000</TRANS_TOTAL_AMT>
-          <TYPE_CODE>ITEM</TYPE_CODE>
-          <UOM_ISO_CODE>PCE</UOM_ISO_CODE>
-        </_-ROP_-E1_ELIGIBILITY>
-        <_-ROP_-E1_PRICE_RULE SEGMENT="1">
-          <CALCULATION_BASE>00</CALCULATION_BASE>
-          <CALC_BASE_SEQUENCE>1-</CALC_BASE_SEQUENCE>
-          <CONSIDER_PREVIOUS_RULES>X</CONSIDER_PREVIOUS_RULES>
-          <COUPON_VALIDITY>0</COUPON_VALIDITY>
-          <CURRENCY_ISO_CODE>EUR</CURRENCY_ISO_CODE>
-          <DISC_METHOD_TCD>00</DISC_METHOD_TCD>
-          <EX_PRICE_RULE_ID>0000000000000000000</EX_PRICE_RULE_ID>
-          <ITEM_METHOD>00</ITEM_METHOD>
-          <MAM_LIMIT_CNT>0.000</MAM_LIMIT_CNT>
-          <NEW_PRICE_AMT>0.00000</NEW_PRICE_AMT>
-          <NEW_SET_PRCE_AMT>0.00000</NEW_SET_PRCE_AMT>
-          <PRICE_MODIF_AMT>5.00000</PRICE_MODIF_AMT>
-          <PRICE_MODIF_CODE>RT</PRICE_MODIF_CODE>
-          <PRICE_MODIF_PERC>0.000</PRICE_MODIF_PERC>
-          <PRICE_RULE_ID>772</PRICE_RULE_ID>
-          <ROUNDING_METHOD>00</ROUNDING_METHOD>
-          <ROUND_DECIMALS>2</ROUND_DECIMALS>
-          <ROUND_DESTINATION>1</ROUND_DESTINATION>
-          <RULE_CTRL_CODE>PO</RULE_CTRL_CODE>
-          <STATUS_TCD>AC</STATUS_TCD>
-          <SUBSEQ_NEW_PRICE_AMT>0.00000</SUBSEQ_NEW_PRICE_AMT>
-          <SUBSEQ_PRICE_MODIF_AMT>0.00000</SUBSEQ_PRICE_MODIF_AMT>
-          <SUBSEQ_PRICE_MODIF_PERC>0.000</SUBSEQ_PRICE_MODIF_PERC>
-          <TYPE_CODE>RB</TYPE_CODE>
-        </_-ROP_-E1_PRICE_RULE>
-      </_-ROP_-E1_PROMOTION_RULE>
-      <_-ROP_-E1_PROMOTION_RULE SEGMENT="1">
-        <ELIGIBILITY_ID>775</ELIGIBILITY_ID>
-        <ONLY_BASKET_MODE>X</ONLY_BASKET_MODE>
-        <PRICE_RULE_ID>775</PRICE_RULE_ID>
-        <PROMO_RULE_ID>775</PROMO_RULE_ID>
-        <RESOLUTION>0</RESOLUTION>
-        <SALE_RETURN_TCD>00</SALE_RETURN_TCD>
-        <SEQUENCE>775</SEQUENCE>
-        <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
-          <COMBINATION_CODE>&amp;&amp;</COMBINATION_CODE>
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
-          <ELIGIBILITY_ID>775</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
-          <INTERVAL_AMT>0.00000</INTERVAL_AMT>
-          <INTERVAL_QTY>0.000</INTERVAL_QTY>
-          <LIMIT_AMT>0.00000</LIMIT_AMT>
-          <LIMIT_QTY>0.000</LIMIT_QTY>
-          <MERCH_SET_ID>0</MERCH_SET_ID>
-          <PARENT_ELIGIB_ID>775</PARENT_ELIGIB_ID>
-          <PROMO_RULE_ID>775</PROMO_RULE_ID>
-          <ROOT_ELIGIB_ID>775</ROOT_ELIGIB_ID>
-          <STATUS_TCD>AC</STATUS_TCD>
-          <THRESHOLD_AMT>0.00000</THRESHOLD_AMT>
-          <THRESHOLD_QTY>0.000</THRESHOLD_QTY>
-          <TRANS_TOTAL_AMT>0.00000</TRANS_TOTAL_AMT>
-          <TYPE_CODE>COMB</TYPE_CODE>
-        </_-ROP_-E1_ELIGIBILITY>
-        <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
-          <CONSUMPTION_TCD>00</CONSUMPTION_TCD>
-          <COUPON_NUMBER>TIME FOR COFFEE</COUPON_NUMBER>
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
-          <ELIGIBILITY_ID>776</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
-          <INTERVAL_AMT>0.00000</INTERVAL_AMT>
-          <INTERVAL_QTY>0.000</INTERVAL_QTY>
-          <LIMIT_AMT>0.00000</LIMIT_AMT>
-          <LIMIT_QTY>0.000</LIMIT_QTY>
-          <MERCH_SET_ID>0</MERCH_SET_ID>
-          <PARENT_ELIGIB_ID>775</PARENT_ELIGIB_ID>
-          <PROMO_RULE_ID>775</PROMO_RULE_ID>
-          <ROOT_ELIGIB_ID>775</ROOT_ELIGIB_ID>
-          <STATUS_TCD>AC</STATUS_TCD>
-          <THRESHOLD_AMT>0.00000</THRESHOLD_AMT>
-          <THRESHOLD_QTY>0.000</THRESHOLD_QTY>
-          <TRANS_TOTAL_AMT>0.00000</TRANS_TOTAL_AMT>
-          <TYPE_CODE>COUP</TYPE_CODE>
-        </_-ROP_-E1_ELIGIBILITY>
-        <_-ROP_-E1_ELIGIBILITY SEGMENT="1">
-          <EFFECTIVE_DATE>20210501000000</EFFECTIVE_DATE>
-          <ELIGIBILITY_ID>777</ELIGIBILITY_ID>
-          <EXPIRY_DATE>20210507235959</EXPIRY_DATE>
-          <INTERVAL_AMT>0.00000</INTERVAL_AMT>
-          <INTERVAL_QTY>1.000</INTERVAL_QTY>
-          <ITEM_ID>COFFEE_MACHINE</ITEM_ID>
-          <LIMIT_AMT>0.00000</LIMIT_AMT>
-          <LIMIT_QTY>9999999999.000</LIMIT_QTY>
-          <MERCH_SET_ID>0</MERCH_SET_ID>
-          <PARENT_ELIGIB_ID>775</PARENT_ELIGIB_ID>
-          <PROMO_RULE_ID>775</PROMO_RULE_ID>
-          <ROOT_ELIGIB_ID>775</ROOT_ELIGIB_ID>
-          <STATUS_TCD>AC</STATUS_TCD>
-          <THRESHOLD_AMT>0.00000</THRESHOLD_AMT>
-          <THRESHOLD_QTY>1.000</THRESHOLD_QTY>
-          <THRESHOLD_TCD>QUTI</THRESHOLD_TCD>
-          <TRANS_TOTAL_AMT>0.00000</TRANS_TOTAL_AMT>
-          <TYPE_CODE>ITEM</TYPE_CODE>
-          <UOM_ISO_CODE>PCE</UOM_ISO_CODE>
-        </_-ROP_-E1_ELIGIBILITY>
-        <_-ROP_-E1_PRICE_RULE SEGMENT="1">
-          <CALCULATION_BASE>00</CALCULATION_BASE>
-          <CALC_BASE_SEQUENCE>1-</CALC_BASE_SEQUENCE>
-          <CONSIDER_PREVIOUS_RULES>X</CONSIDER_PREVIOUS_RULES>
-          <COUPON_VALIDITY>0</COUPON_VALIDITY>
-          <CURRENCY_ISO_CODE>EUR</CURRENCY_ISO_CODE>
-          <DISC_METHOD_TCD>00</DISC_METHOD_TCD>
-          <EX_PRICE_RULE_ID>0000000000000000000</EX_PRICE_RULE_ID>
-          <ITEM_METHOD>00</ITEM_METHOD>
-          <MAM_LIMIT_CNT>0.000</MAM_LIMIT_CNT>
-          <NEW_PRICE_AMT>0.00000</NEW_PRICE_AMT>
-          <NEW_SET_PRCE_AMT>0.00000</NEW_SET_PRCE_AMT>
-          <PRICE_MODIF_AMT>100.00000</PRICE_MODIF_AMT>
-          <PRICE_MODIF_CODE>RT</PRICE_MODIF_CODE>
-          <PRICE_MODIF_PERC>0.000</PRICE_MODIF_PERC>
-          <PRICE_RULE_ID>775</PRICE_RULE_ID>
-          <REWARD_AS_POINTS>X</REWARD_AS_POINTS>
-          <ROUNDING_METHOD>00</ROUNDING_METHOD>
-          <ROUND_DECIMALS>0</ROUND_DECIMALS>
-          <ROUND_DESTINATION>1</ROUND_DESTINATION>
-          <RULE_CTRL_CODE>PO</RULE_CTRL_CODE>
-          <STATUS_TCD>AC</STATUS_TCD>
-          <SUBSEQ_NEW_PRICE_AMT>0.00000</SUBSEQ_NEW_PRICE_AMT>
-          <SUBSEQ_PRICE_MODIF_AMT>0.00000</SUBSEQ_PRICE_MODIF_AMT>
-          <SUBSEQ_PRICE_MODIF_PERC>0.000</SUBSEQ_PRICE_MODIF_PERC>
-          <TYPE_CODE>RB</TYPE_CODE>
-        </_-ROP_-E1_PRICE_RULE>
-      </_-ROP_-E1_PROMOTION_RULE>
-      <_-ROP_-E1_PROMOTION_TEXT SEGMENT="1">
-        <DESCRIPTION>Buy a coffee machine and show coupon TIME FOR COFFEE to get 100 Euro off</DESCRIPTION>
-        <NAME>Coffee machine promotion</NAME>
-        <SPRAS_ISO>EN</SPRAS_ISO>
-      </_-ROP_-E1_PROMOTION_TEXT>
-    </_-ROP_-E1_PROMOTION>
-  </IDOC>
-</_-ROP_-PROMOTION02>
+{ 
+  <PriceCalculate
+            xmlns="http://www.sap.com/IXRetail/namespace/" InternalMajorVersion="15" InternalMinorVersion="0">
+            <ARTSHeader ActionCode="Calculate" MessageType="Request">
+                        <MessageID>9a89f2edfd1e413ea147e334b9c2ed4b</MessageID>
+                        <DateTime>2026-10-25T00:00:00.427-05:00</DateTime>
+                        <BusinessUnit TypeCode="RetailStore">FC01</BusinessUnit>
+                        <MasterDataSourceSystemID>RS9CLNT990</MasterDataSourceSystemID>
+            </ARTSHeader>
+            <PriceCalculateBody TransactionType="SaleTransaction" NetPriceFlag="true" RecommendationMode="CalcAndRec">
+                        <TransactionID>9a89f2edfd1e413ea147e334b9c2ed4b</TransactionID>
+                        <DateTime>2026-10-25T16:48:30.427-05:00</DateTime>
+                        <RegularSalesUnitPriceRoundingRule Multiple="0.01000" RoundingMethod="Commercial"/>
+                        <ShoppingBasket>
+                                    <LineItem>
+                                                <SequenceNumber>0</SequenceNumber>
+                                                <MerchandiseHierarchy ID="R3">COFFEEMACHINES</MerchandiseHierarchy>
+                                                <Sale ItemType="Stock" NonDiscountableFlag="false" FixedPriceFlag="true" FrequentShopperPointsEligibilityFlag="true">
+                                                            <TaxIncludedInPriceFlag>false</TaxIncludedInPriceFlag>
+                                                            <NonPieceGoodFlag>false</NonPieceGoodFlag>
+                                                            <NotConsideredByPriceEngineFlag>false</NotConsideredByPriceEngineFlag>
+                                                            <ItemID>COFFEEMACHINE</ItemID>
+                                                            <Quantity Units="1" UnitOfMeasureCode="EA">1</Quantity>
+                                                            <RegularSalesUnitPrice Currency="EUR">1000.0</RegularSalesUnitPrice>
+                                                </Sale>
+                                    </LineItem>
+                                     <LineItem>
+                        <SequenceNumber>1</SequenceNumber>
+                        <Coupon>
+                                    <PrimaryLabel>COFFEELOVER</PrimaryLabel>
+                                    <Quantity>1</Quantity>
+                        </Coupon>
+      </LineItem> 
+                        </ShoppingBasket>
+            </PriceCalculateBody>
+</PriceCalculate>
+}
 ```
 7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Upload a promotion](upload_promotion.png)
+<!-- border -->![Create coupon(create_coupon.png)]
 
-With this, you uploaded the promotional rule "Buy a coffee machine and show coupon COFFEELOVER to get Euro 50 off" for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2024 to December 31st, 2024**. 
+The response should look like this:
+
+<!-- border -->![Coupon creation success](create_coupon_success.png)
 
 
-### Check uploaded master data
-
-
-You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 4 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
-
-With this, you are all set to launch your promotional campaign. 
+With this, the **Calculation** service has calculated the effective sales price for the coffee machine as EURO 950 by applying the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. It then returns the effective sales price to the client system.
 
 
 ### What to Do Next
