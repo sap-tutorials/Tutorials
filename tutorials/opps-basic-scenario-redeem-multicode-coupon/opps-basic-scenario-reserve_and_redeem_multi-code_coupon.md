@@ -97,7 +97,7 @@ You can now calculate the effective sales price using the **Calculation** servic
 * Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of regular price EURO 1000. At the time of check-out on October 25, 2026, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. 
 
 
-* Desired Result: The effective sales price for the coffee machine should be EURO 950. The customer is eligible for a discount under the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. As the regular price of the coffee machine is Euro 1000, a discount of EURO 50 would result in an effective sales price of EURO 950.
+* Desired Result: The effective sales price for the coffee machine should be EURO 950, as the customer is eligible for the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**.
 
 
 Let's see if this is the case:
