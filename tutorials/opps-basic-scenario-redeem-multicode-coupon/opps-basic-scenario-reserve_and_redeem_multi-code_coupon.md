@@ -39,7 +39,7 @@ primary_tag: products>sap-business-technology-platform
 * The POS system calls the **Coupon Management** service to **reserve the coupon code**.
 * The cashier continues to complete the purchase. The POS system calls the **Calculation service** with the shopping cart information.
 * The Calculation services **calculates the effective sales price for the coffee machine** (regular price minus discount granted by the coupon) and returns it back to the POS system.
-•	Your customer completes the purchase. The POS system triggers a request to the Coupon Management service **to redeem the coupon code**. The redemption information is  returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with his new coffee machine.
+* Your customer completes the purchase. The POS system triggers a request to the Coupon Management service **to redeem the coupon code**. The redemption information is  returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with his new coffee machine.
 
 
 ### Create environments in SAP Business Accelerator Hub
