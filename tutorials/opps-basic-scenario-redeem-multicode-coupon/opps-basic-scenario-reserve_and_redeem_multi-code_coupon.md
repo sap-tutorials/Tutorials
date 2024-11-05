@@ -9,7 +9,7 @@ primary_tag: products>sap-business-technology-platform
 ---
 
 # Reserve and Redeem a Multi-Code Coupon with SAP Omnichannel Promotion Pricing
-<!-- description --> Learn how to reserve and redeem a multi-code coupon in a sales transaction using the Coupon Management service of SAP Omnichannel Promotion Pricing. Also, calculate the effective sales price using the Calculation service for multi-code coupons in your promotions.
+<!-- description --> Learn how to reserve and redeem a multi-code coupon in a sales transaction using the Coupon Management service of SAP Omnichannel Promotion Pricing and how to calculate the effective sales price using the Calculation service.
 
 ## Prerequisites
 - You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
