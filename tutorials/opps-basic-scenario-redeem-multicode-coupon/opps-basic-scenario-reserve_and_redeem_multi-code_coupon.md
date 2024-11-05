@@ -37,9 +37,9 @@ primary_tag: products>sap-business-technology-platform
 * The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1, 2026, to December 31, 2026**.
 * On **October 25, 2026**, one of your customers that received the coupon **COFFEELOVER** comes to your **Heidelberg** store to purchase a coffee machine. Your customer selects a coffee machine (material number: `COFFEE_MACHINE`). The **regular sales price** for the **coffee machine** is **Euro 1000**.
 * The POS system calls the **Coupon Management** service to **reserve the coupon code**.
-* The cashier continues to complete the purchase. The POS system calls the **Calculation service** with the shopping cart information.
-* The Calculation services **calculates the effective sales price for the coffee machine** (regular price minus discount granted by the coupon) and returns it back to the POS system.
-* Your customer completes the purchase. The POS system triggers a request to the Coupon Management service **to redeem the coupon code**. The redemption information is  returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with his new coffee machine.
+* The cashier continues to complete the purchase. The POS system calls the **Calculation** service with the shopping cart information.
+* The Calculation services **calculates the effective sales price for the coffee machine** (regular price minus discount granted by the coupon) and returns it to the POS.
+* Your customer completes the purchase. The POS triggers a request to the **Coupon Management** service **to redeem the coupon code**. The redemption information is  returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with his new coffee machine.
 
 
 ### Create environments in SAP Business Accelerator Hub
@@ -51,9 +51,9 @@ In order to continue with the next steps, you need to have already set up your t
 ### Reserve a Coupon Code
 
 
-You can now reserve a coupon code for the multi-code coupon **COFFEELOVER** using the Coupon Management service. 
+You can now reserve a coupon code for the multi-code coupon **COFFEELOVER** using the **Coupon Management** service. 
 
-* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of regular price EURO 1000. At the time of check-out, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. The client system calls the **Coupon Management** service to reserve the coupon code.
+* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine (material number: `COFFEE_MACHINE`, regular sales price: Euro 1000). At the time of check-out, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. The client system calls the **Coupon Management** service to reserve the coupon code.
 
 * Desired Result: The coupon code is reserved. 
 
@@ -62,8 +62,10 @@ Let's see if this is the case:
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
-2. Choose **Try Out**.
+<!-- border -->![Create coupon(create_coupon.png)]
+
+1. Navigate to the **Try Out** section.
+2. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
 3. On the left-hand side, choose **Service Operation**.
 4. Open the **POST** request **/reserveCouponCode**.
 5. For the request **body**, copy the following data and paste it into the body:
@@ -75,17 +77,14 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 }
 ```
-7. Choose **Run**.
+6. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
-
-<!-- border -->![Create coupon(create_coupon.png)]
 
 The response should look like this:
 
 <!-- border -->![Coupon creation success](create_coupon_success.png)
 
-
-9. From the response, note down the redemption information ID and reservation token.
+9. From the response, note down the **redemption information ID** and **reservation token**.
 
 With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
 
