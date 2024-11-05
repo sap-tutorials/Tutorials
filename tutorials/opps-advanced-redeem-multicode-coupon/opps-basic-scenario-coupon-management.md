@@ -81,21 +81,9 @@ The response should look like this:
 <!-- border -->![Coupon creation success](create_coupon_success.png)
 
 
-9. From the response, note down the technical coupon ID as you will use it later.
+9. From the response, note down the redemption information ID and reservation token.
 
-With this, you have created a multi-code coupon with the ID **COFFEELOVER** and validity period **October 1, 2024 to December 31, 2024**.
-
-
-**Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEELOVER**, you can proceed with the following steps:
-
-
-1. On the left-hand side, choose **Coupon**.
-2. Open the **GET** request `/Coupon`.
-3. Choose **Run**.
-4. Make sure you get the HTTP response **200**. 
-5. In the response body, you should see the coupon that you have created.  
-
-<!-- border -->![Check created coupon](GET_coupon.png)
+With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
 
 
 ### Change status of coupon object
