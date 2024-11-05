@@ -9,7 +9,7 @@ primary_tag: products>sap-business-technology-platform
 ---
 
 # Reserve and Redeem a Multi-Code Coupon with SAP Omnichannel Promotion Pricing
-<!-- description --> Learn how to reserve and redeem a multi-code coupon in a sales transaction using the Coupon Management service of SAP Omnichannel Promotion Pricing. Also, calculate the effective sales price using the Calculation service for multi-code coupons in your promotions.
+<!-- description --> Learn how to reserve and redeem a multi-code coupon in a sales transaction using the Coupon Management service of SAP Omnichannel Promotion Pricing and how to calculate the effective sales price using the Calculation service.
 
 ## Prerequisites
 - You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
@@ -21,7 +21,7 @@ primary_tag: products>sap-business-technology-platform
 
 ## You will learn
 - How to use the **Coupon Management** service of **SAP Omnichannel Promotion Pricing** in your trial environment on SAP BTP. 
-- How to **reserve, extend reservation and redeem a coupon code** with the **Coupon Management** service. 
+- How to **reserve and redeem a coupon code** with the **Coupon Management** service. 
 - How to calculate the effective sales price in a sales transaction with the **Calculation** service of **SAP Omnichannel Promotion Pricing** by applying a coupon that triggers a discount on an item in the shopping cart. 
 
 
@@ -30,12 +30,16 @@ primary_tag: products>sap-business-technology-platform
 ### Get to know the business scenario
 
 
-* Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you are planning a promotional campaign to increase revenue and reduce stock. You want to create a promotional campaign for your target group **coffee lovers** in the **Heidelberg** store. 
-* As part of this promotional campaign, you have created a multi-code coupon with the coupon ID **COFFEELOVER**. The coupon is valid from **October 1st, 2025, to December 31st, 2025**. For this, you have also generated a batch of unique coupon codes which can be redeemed once by each customer. 
+* Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you launched a promotional campaign for your target group **coffee lovers** in the **Heidelberg** region. 
+* As part of this promotional campaign, you have created a multi-code coupon with the coupon ID **COFFEELOVER**. The coupon is valid from **October 1st, 2026, to December 31st, 2026**. For this, you have generated a batch of unique coupon codes that can be redeemed only once by each customer. 
 * You have distributed the coupon **COFFEELOVER** with the unique coupon codes to your target customers. 
 * You have also created a promotion in the **Promotion Maintenance** app of **SAP Omnichannel Promotion Pricing**: **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. 
-* The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1st, 2025, to December 31st, 2025**.
-* The **regular sales price** for the **coffee machine** (material number: `COFFEE_MACHINE`) is **Euro 1000**.
+* The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1, 2026, to December 31, 2026**.
+* On **October 25, 2026**, one of your customers that received the coupon **COFFEELOVER** comes to your **Heidelberg** store to purchase a coffee machine. Your customer selects a coffee machine (material number: `COFFEE_MACHINE`). The **regular sales price** for the **coffee machine** is **Euro 1000**.
+* The POS system calls the **Coupon Management** service to **reserve the coupon code**.
+* The cashier continues to complete the purchase. The POS system calls the **Calculation service** with the shopping cart information.
+* The Calculation services **calculates the effective sales price for the coffee machine** (regular price minus discount granted by the coupon) and returns it back to the POS system.
+* Your customer completes the purchase. The POS system triggers a request to the Coupon Management service **to redeem the coupon code**. The redemption information is  returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with his new coffee machine.
 
 
 ### Create environments in SAP Business Accelerator Hub
