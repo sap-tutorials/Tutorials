@@ -86,7 +86,7 @@ The response should look like this:
 With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
 
 
-### Calculate the effective sales price
+### Calculate the Effective Sales Price
 
 
 You can now calculate the effective sales price using the **Calculation** service. 
@@ -158,11 +158,47 @@ The response should look like this:
 
 With this, the **Calculation** service has calculated the effective sales price for the coffee machine as EURO 950 by applying the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. It then returns the effective sales price to the client system.
 
+### Redeem the Coupon Code
 
-### What to Do Next
 
- Navigate to the intermediate group [Set up Complex Promotions with SAP Omnichannel Promotion Pricing](group.opps-complex-promotion) and continue with the next tutorial [Reserve and Redeem a Multi-Code Coupon with SAP Omnichannel Promotion Pricing].
+You can now redeem the coupon code for the multi-code coupon **COFFEELOVER** using the Coupon Management service. 
 
+* Scenario: The customer has completed the purchase of the coffee machine for which he used the coupon **COFFEELOVER** with the respective coupon code. The client system calls the **Coupon Management** service to redeem the coupon code. The redemption information is returned to the system which then confirms the completion of the purchase.
+
+* Desired Result: The coupon code is redeemed. 
+
+
+Let's see if this is the case:
+
+Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
+
+1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
+2. Choose **Try Out**.
+3. On the left-hand side, choose **Redemption Information**.
+4. Open the **POST** request **/RedemptionInfo({ID})/CouponManagementService.redeemCouponCode**.
+5. Under **Parameters**, enter the **redemptionInfoID** which you noted down when you reserved the coupon code.
+5. For the request **body**, copy the following data and paste it into the body:
+```json
+{ 
+  "couponCodeValue": "string",
+   "reservationDate": "2026-10-25",
+   "transactionID": "string"
+
+}
+```
+7. Choose **Run**.
+8. Make sure you get the HTTP response **200**.
+
+<!-- border -->![Create coupon(create_coupon.png)]
+
+The response should look like this:
+
+<!-- border -->![Coupon creation success](create_coupon_success.png)
+
+
+9. From the response, note down the redemption information ID and reservation token.
+
+With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
 
 ### Additional Information
 
