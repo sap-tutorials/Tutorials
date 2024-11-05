@@ -21,7 +21,7 @@ primary_tag: products>sap-business-technology-platform
 
 ## You will learn
 - How to use the **Coupon Management** service of **SAP Omnichannel Promotion Pricing** in your trial environment on SAP BTP. 
-- How to **reserve, extend reservation and redeem a coupon code** with the **Coupon Management** service. 
+- How to **reserve and redeem a coupon code** with the **Coupon Management** service. 
 - How to calculate the effective sales price in a sales transaction with the **Calculation** service of **SAP Omnichannel Promotion Pricing** by applying a coupon that triggers a discount on an item in the shopping cart. 
 
 
