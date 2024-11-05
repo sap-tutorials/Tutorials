@@ -23,7 +23,7 @@ To improve on this, you will configure a data source that has food information r
 ### Add data resources
 
 
-1. Open your app to the **Data** tab.
+1. Open your app to the **Integrations** tab.
    
     ![Add data source](add_data_source.png)
 
@@ -32,10 +32,6 @@ To improve on this, you will configure a data source that has food information r
     Select **Universal REST API integration**.
 
     ![Rest API direct integration](add_data_resource.png)
-
-    >If you are using SAP AppGyver Community Edition, click **Add Data Resource**, and then select **REST API direct integration**.
-
-    >![Rest API direct integration](add_data_resource-comm.png)
 
 3. Configure the resource with the following details:
 
@@ -57,6 +53,9 @@ To improve on this, you will configure a data source that has food information r
 
     ![Additional inputs](additional-inputs2.png)
 
+    If you scroll down you will see the additional input.
+
+    ![Additional inputs result](additional-inputs3.png)
 
 
 

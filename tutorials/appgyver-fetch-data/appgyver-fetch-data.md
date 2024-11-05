@@ -18,20 +18,20 @@ parser: v2
 ## Intro
 In the previous tutorial, you learned how to connect your application to a public API. From here, you now need to configure the application to read specific information from that API once a barcode has been scanned. 
 
-This again uses the **retrieve** request, as when you testing the data resource, but this time that request is triggered with a logic flow.
+This again uses the **Retrieve** request, as when you were testing the data resource, but this time the request is triggered with a logic flow.
 
 
 
 ### Remove alert component
-As you no longer need your application to send an alert, as this was just used as a test, you need to remove this flow funcion.
+As you no longer need your application to send an alert, as this was just used as a test, you need to remove this flow function.
 
 1. Open your app, and go to **UI Canvas** tab.
 
-2. Click the **Scan** button, then click **Show Logic for Button1**.
+2. Click the **Scan** button, then click **Add Logic for Button1**.
 
     ![Show logic for button 1](show_logic.png)
 
-    >If the logic canvas is already open, you can just click the buton.
+    >If the logic canvas is already open, you can just click the button.
 
 3. Select the **Alert** flow function, and click the **X**.
 

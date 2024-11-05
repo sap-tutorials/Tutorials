@@ -39,45 +39,33 @@ To start with, you'll add further visual information to your app in the form of 
 
 
 ### Display product name
-You will now bind the **Product Name** and **Energy-kcals_100g** fields to the title and text components.
+You will now bind the **Product Name** field to the text component.
 
 1. Select the **Text** component.
 
-    In the **Properties** tab, click the binding type square (shown as **ABC** or static text).
+2. In the **Properties** tab, click the binding type square (shown as **ABC** or static text) for the **Content** property.
 
     ![Click to bind](bind_paragraph.png)
 
-2. Now you will select what to bind.
+    Select **Data and Variables**.
 
-    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (probably only for a few seconds but you can always click to exit). So we have provided a second way to store the data using a formula.
+    ![Select data and variables](data_variables.png)
 
-    - Select **Data and Variables**.
+    Select **Data Variables**.
+    
+    ![Select data and variables](data_variables2.png)
 
-        ![Select data and variables](data_variables.png)
+    Click your **Open food facts** variable.
 
-        Select **Data Variables** and then click your **Open food facts** variable.
+    Scroll down to and select the `product_name` field. For this, we suggest using your browser's search.
 
-        Scroll down to and select the `product_name` field. For this, we suggest using your browser's search.
+    ![Product name variable](product_name.png)
 
-        ![Product name variable](product_name.png)
+    The browser may hang, but only for a few seconds.
 
-        The browser may hang, but only for a few seconds.
+    ![Product name result](product_name2.png)
 
-        ![Product name result](product_name2.png)
-
-        Click **Save**.
-
-    - Instead, you can do the same thing with a formula. Most, if not all, bindings can be done with the UI or manually with a formula.
-
-        Select **Formula** (instead of **Data and Variables**), and then enter for the formula the following:
-
-        ```JavaScript
-        data.OpenFoodFacts1.product.product_name
-        ```
-
-        ![Product name formula](calorie6.png)
-
-        Click **Save** twice.
+    Click **Save**.
 
 3. Click **Save** (upper right).
 
@@ -94,47 +82,27 @@ The paragraph will now display the product name of the scanned food item.
 ### Display calorific information
 We'll now add the calorific information to your app, using the same steps provided for the product name. 
 
-1. Add another **Text** component below the first one.
+1. Select the text component for the product, and duplicate it.
 
     ![Add text component](calorie1.png)
 
-2. With the new **Text** component selected, click the binding type square (shown as **ABC** or static text).
+2. Select the duplicated text component, and click the binding (NOT the binding type square) for the **Content** property.
 
     ![Click to bind](calorie2.png)
 
-2. Now you will select what to bind.
+3. Select the field under **Select data variable field** (currently assigned **product_name**). 
 
-    >**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the SAP Build Apps editor to hang (probably only for a few seconds but you can always click to exit). So we have provided a second way to store the data using a formula.
+    Scroll down to and select the `energy` field. For this, we suggest using your browser's search.
 
-    - Select **Data and Variables**.
+    ![Product name variable](calorie4.png)
 
-        ![Select data and variables](calorie3.png)
+    The browser may hang, but only for a few seconds.
 
-        Select **Data Variables** and then click your ***Open food facts*** variable.
+    ![Product name result](calorie5.png)
 
-        Scroll down to and select the `energy` field. For this, we suggest using your browser's search.
+    Click **Save**.
 
-        ![Product name variable](calorie4.png)
-
-        The browser may hang, but only for a few seconds.
-
-        ![Product name result](calorie5.png)
-
-        Click **Save**.
-
-    - Instead, you can do the same thing with a formula. 
-
-        Select **Formula** (instead of **Data and Variables**), and then enter for the formula the following:
-
-        ```JavaScript
-        data.OpenFoodFacts1.product.nutriments.energy
-        ```
-
-        ![Product name formula](calorie6.png)
-
-        Click **Save** twice.
-
-3. Click **Save** (upper right).
+4. Click **Save** (upper right).
 
 
 
@@ -165,7 +133,7 @@ We'll now display the image for the product (if there is one).
 
     Click **Save** twice.
 
-3. Click **Save** (upper right**).
+3. Click **Save** (upper right).
 
     ![Image added](addimage2.png)
 
@@ -174,10 +142,10 @@ We'll now display the image for the product (if there is one).
 
 
 
-### Test
+### Run the app
 Your app is now complete.
 
-It enables you to scan a barcode of a food item and retrieve the product name and calorific information per 100g.
+It enables you to scan a barcode of a food item and retrieve the product name and calorific information.
 
 1. Open the SAP Build Apps preview app, and select your app to preview.
    
@@ -191,7 +159,7 @@ It enables you to scan a barcode of a food item and retrieve the product name an
 
     ![Barcode](barcode.gif)
 
-    The app should displayed the following information and image.
+    The app should display the following information and image (it may take a few seconds to retrieve the information/image).
 
     ![Scan results](ScanDisplay.png)
 

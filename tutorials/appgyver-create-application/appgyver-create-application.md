@@ -14,9 +14,9 @@ parser: v2
 
 ## Prerequisites
 - Access to an SAP Build Apps system. Use one of the following:
-    - Free [community edition](https://www.appgyver.com/community) of SAP Build Apps / AppGyver.
+    - [SAP Build Apps, free edition](https://www.appgyver.com/community).
     - SAP Build Apps on an SAP BTP trial account <div>&nbsp;</div><iframe width="560" height="315" src="https://www.youtube.com/embed/ZpQM2B1v2GY" frameborder="0" allowfullscreen></iframe>
-- Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release).
+- Download the SAP Build Apps Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release).
 
 
 ## You will learn
@@ -24,15 +24,11 @@ parser: v2
   - How to add and edit visual elements in the SAP Build Apps Composer tool
 
 ## Intro
-In this mission you will learn how to create a no-code application using the SAP Build Apps Composer tool. The application you create will enable you to scan a barcode on a smartphone and retrieve information from a public API. To do this, you will need to download the Preview app (available through iTunes and Google Play store).
+In this mission you will learn how to create a no-code application using the SAP Build Apps Composer tool. The application you create will enable you to scan a barcode on a smartphone and retrieve information from a public API. To do this, you will need to download the Preview app (available through [iTunes](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) and [Google Play store](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)).
 
 The application you'll create across the tutorials will read barcodes from food packaging and display information about the product using the Open Food Facts API:
 
 ![Diagram of scanning a food item from a mobile app](OpenFoodFactsDiagram.png)
-
-The steps provided detail the process using an SAP BTP account within a desktop browser. It is also possible to replicate many of the steps using a free account from [AppGyver.com](https://AppGyver.com).
-
-All applications are created, edited, and managed within what we call a project, with one application created per project. Projects, and their related applications, are not automatically saved in this service, so care should be taken before closing a browser.
 
 >**IMPORTANT:** Though you can use any SAP Build Apps version, these tutorials are based on a SAP BTP trial account.
 
@@ -50,7 +46,7 @@ All applications are created, edited, and managed within what we call a project,
 
         ![Subaccount](start1.png)
 
-    - Under Instances and Subscriptions, click the button next to SAP Build Apps.
+    - **Under Instances and Subscriptions**, click the button next to SAP Build Apps.
     
         ![Instance](start2.png)
         
@@ -78,7 +74,15 @@ All applications are created, edited, and managed within what we call a project,
 
     ![Create](startnew4.png)
 
-Your SAP Build Apps project is created, and the default **Home page** is displayed. Once created, projects can be accessed again at any time from the SAP Build lobby.
+    Your SAP Build Apps project is created, and the default **Home page** is displayed. Once created, projects can be accessed again at any time from the SAP Build lobby.
+
+    ![New project](startnew5.png)
+
+4. Since we want to create a mobile app, open the device dropdown and select **Mobile**.
+
+    ![Mobile](startnew6.png)
+
+
 
 
 
@@ -116,7 +120,7 @@ You'll now start to create a basic layout for your application, starting with ed
     Copy-and-paste or type in the following:
 
     ```Text
-    Barcode Scanner.
+    Barcode Scanner
     ```
 
     ![Paste text](select3.png)

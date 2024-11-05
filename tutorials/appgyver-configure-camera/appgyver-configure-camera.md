@@ -23,10 +23,13 @@ To create a barcode scanning app, you need to configure a logic flow that tells 
 
 ### Add logic to button
 
-Open your app, and in the Composer, click the **Scan** button and then click **Add Logic to BUTTON 1** (bottom right).
+Open your app, and in the UI canvas, click the **Scan** button and then click **Add Logic to BUTTON 1** (bottom right).
 
-![Add logic to button](Add_logic.png)
+![Open logic canvas](Add_logic.png)
 
+You should now see the logic canvas.
+
+![Logic canvas](Add_logic.png)
 
 
 ### Add scan QR/barcode component
@@ -68,7 +71,7 @@ To test that the QR/barcode scanner is working, you'll add an **Alert** flow fun
     >
     >For each flow function with multiple outputs, the outputs may represent different flows. For the scan flow function, the outputs mean:
     >
-    >- Success scan of a QR/barcode
+    >- User successfully scans a QR/barcode
     >
     >- User cancels before scanning
     >
@@ -86,7 +89,7 @@ As the alert is currently set to display a static text response only, we want to
 
 1. Select the **Alert** flow function.
 
-2. In the Properties tab, find the **Dialog title** property, and click the binding type (currently **ABC** or static text).
+2. In the **Properties** tab, find the **Dialog title** property, and click the binding type (currently **ABC** or static text).
     
     ![Currently bound to element](Currently_bound.png)
 
@@ -96,13 +99,13 @@ As the alert is currently set to display a static text response only, we want to
 
     Select **Scan QR/Barcode**.
 
-    >This selects which flow function's output you want to take from.
+    >This selects which flow function's output you want to take from. Only flow functions on the path leading up to the current flow function are available.
 
     ![Output value of another node](Output_value2.png)
 
     Select **QR barcode content**.
 
-    >This selects which of this flow function's outputs you want to take from. In this case, the **Scn QR/Barcode** flow function only outputs a single text output, the QR or barcode.
+    >This selects which of this flow function's outputs you want to take from. In this case, the **Scan QR/Barcode** flow function only outputs a single text output, the QR or barcode.
 
     ![Output value of another node](Output_value3.png)
 
@@ -134,10 +137,14 @@ As the alert is currently set to display a static text response only, we want to
    
     ![Barcode example](barcode.gif)
    
-    As soon as the barcode comes within the camera's sights, the camera will close the barcode will be saved in the app.
+    As soon as the barcode comes within the camera's sights, the camera will close and the barcode will be saved in the app.
 
     ![Tap scan button](iphoneapp2a.png)
 
     The alert box that you configured to be shown after a successful scan is now displayed with the barcode number.
 
     ![View results](iphoneapp3.png)
+
+    ![Rule](rule.png)
+
+    Here is a QR code. Scan it and enter the text below.
