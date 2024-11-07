@@ -1,4 +1,4 @@
----
++---
 parser: v2
 auto_validation: true
 time: 25
@@ -8,17 +8,17 @@ author name: Boris Dafov
 ---
 
 # Create a UI5 Integration Card that Displays Data from the SAP Gateway Demo System
-<!-- description --> Create a UI5 integration card in SAP Build Work Zone to display data from the backend SAP Gateway Demo System.
+<!-- description --> Create a UI5 integration card in SAP Build Work Zone, advanced edition to display data from the backend SAP Gateway Demo System.
 
 ## Prerequisites
 - Please note that if you are following this tutorial as part of a workshop, you can skip these prerequisites.
 - You have an account on the SAP Gateway Demo System. See [Create an Account on the SAP Gateway Demo System](gateway-demo-signup).
 - You have connected the SAP BTP to your SAP Gateway Demo System Account. See [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection).
 - You have created a dev space. See [Create a Dev Space for SAP Fiori Apps](appstudio-devspace-fiori-create).
-- To deploy a UI5 Integration card in the SAP Build Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the SAP Build Work Zone service. Additionally, you have to configure a destination for SAP Build Work Zone instance. See [Development Tools for SAP Build Work Zone](https://help.sap.com/docs/build-work-zone-advanced-edition/sap-build-work-zone-advanced-edition/development-tools-for-sap-build-work-zone-advanced-edition).
+- To deploy a UI5 Integration card in the SAP Build Work Zone, you should have a subaccount in SAP BTP that includes a subscription to the "SAP Build Work Zone, advanced edition" service. Additionally, you have to configure a destination for the SAP Build Work Zone, advanced edition instance. See [Development Tools for SAP Build Work Zone, advanced edition](https://help.sap.com/docs/build-work-zone-advanced-edition/sap-build-work-zone-advanced-edition/development-tools-for-sap-build-work-zone-advanced-edition).
 
 
->**IMPORTANT:** SAP Build Work Zone is not available in a trial account. If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
+>**IMPORTANT:** SAP Build Work Zone, advanced edition is not available in a trial account (only Build Work Zone, standard edition). If you only have a trial account and you want to learn more about the Integration cards you can follow this tutorial from steps 1 to 5.
 
 
 ## You will learn
