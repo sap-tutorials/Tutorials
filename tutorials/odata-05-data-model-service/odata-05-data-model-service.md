@@ -4,12 +4,12 @@ author_name: DJ Adams
 author_profile: https://github.com/qmacro
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [products>sap-business-application-studio, topic>odata, tutorial>beginner ]
+tags: [products>sap-business-application-studio, programming-tool>odata, tutorial>beginner ]
 time: 20
 ---
 
 # Define a Simple Data Model and OData Service with CDS
-<!-- description --> Use core data services (CDS) in the context of the SAP Cloud Application Programming Model (CAP) to quickly set up your own simple OData service.
+<!-- description --> Use Core Data Services (CDS) in the context of the SAP Cloud Application Programming Model (CAP) to quickly set up your own simple OData service.
 
 ## Prerequisites
  - **Tutorials:** [Create a Dev Space for Business Applications](appstudio-devspace-create)
@@ -38,9 +38,9 @@ In the tutorial [Learn about OData Fundamentals](odata-01-intro-origins), you fa
 
 Jump to the Products entity set in the V4 version of the OData service, with this URL <https://services.odata.org/V4/Northwind/Northwind.svc/Products>.
 
-In the [earlier tutorial](odata-01-intro-origins), we used the V3 version at <https://services.odata.org/V3/Northwind/Northwind.svc/Products>. This resource has a default resource representation of XML; more specifically, the value of the `Content-Type` header returned with this resource is `application/atom+xml;type=feed;charset=utf-8` (you can check this by using your browser's developer tools to inspect the request's response headers).
+In a [previous tutorial](odata-01-intro-origins), we used the V3 version at <https://services.odata.org/V3/Northwind/Northwind.svc/Products>. This resource has a default resource representation of XML; more specifically, the value of the `Content-Type` header returned with this resource is `application/atom+xml;type=feed;charset=utf-8` (you can check this by using your browser's developer tools to inspect the HTTP response headers).
 
-In this tutorial, we're using the V4 version. After all, OData version 4 has been around as an OASIS standard [since 2014](https://raw.githubusercontent.com/qmacro/odata-specs/master/overview.md). Notice that the default representation of OData V4 resources here is JSON; more specifically, the value of the `Content-Type` header in the response is `application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8`. This JSON representation is also used for OData service document resources in V4 too, whereas in earlier versions it was XML.
+In this tutorial, we're using the V4 version. After all, OData version 4 has been around as an OASIS standard [since 2014](https://raw.githubusercontent.com/qmacro/odata-specs/master/overview.md). Notice that the default representation of most OData V4 resources here is JSON; more specifically, the value of the `Content-Type` header in the response is `application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8`. This JSON representation is also used for OData service document resources in V4 too, whereas in earlier versions it was XML.
 
 The representation of the `Products` entity set should look something like this:
 
@@ -49,24 +49,26 @@ The representation of the `Products` entity set should look something like this:
   "@odata.context": "https://services.odata.org/V4/Northwind/Northwind.svc/$metadata#Products",
   "value": [
     {
+      "@odata.etag": "W/\"1,1\"",
       "ProductID": 1,
       "ProductName": "Chai",
       "SupplierID": 1,
       "CategoryID": 1,
       "QuantityPerUnit": "10 boxes x 20 bags",
-      "UnitPrice": 18,
+      "UnitPrice": 18.0000,
       "UnitsInStock": 39,
       "UnitsOnOrder": 0,
       "ReorderLevel": 10,
       "Discontinued": false
     },
     {
+      "@odata.etag": "W/\"1,1\"",
       "ProductID": 2,
       "ProductName": "Chang",
       "SupplierID": 1,
       "CategoryID": 1,
       "QuantityPerUnit": "24 - 12 oz bottles",
-      "UnitPrice": 19,
+      "UnitPrice": 19.0000,
       "UnitsInStock": 17,
       "UnitsOnOrder": 40,
       "ReorderLevel": 25,
@@ -76,16 +78,16 @@ The representation of the `Products` entity set should look something like this:
 }
 ```
 
-This of course is just the data; to understand what you're looking at, look now at the definition of this entity set, in the OData service's metadata document at <https://services.odata.org/V4/Northwind/Northwind.svc/$metadata>.
+This of course is just the data; to understand what you're looking at, look now at the heart of the definition of this entity set, in the OData service's metadata document at <https://services.odata.org/V4/Northwind/Northwind.svc/$metadata>.
 
-Ignoring the navigation properties of the `Product` entity set for now, we see this set of property definitions:
+Ignoring the navigation properties of the `Product` entity type for now, we see this set of property definitions:
 
 ```XML
 <EntityType Name="Product">
   <Key>
     <PropertyRef Name="ProductID"/>
   </Key>
-  <Property xmlns:p5="http://schemas.microsoft.com/ado/2009/02/edm/annotation" Name="ProductID" Type="Edm.Int32" Nullable="false" p5:StoreGeneratedPattern="Identity"/>
+  <Property Name="ProductID" Type="Edm.Int32" Nullable="false"/>
   <Property Name="ProductName" Type="Edm.String" Nullable="false" MaxLength="40"/>
   <Property Name="SupplierID" Type="Edm.Int32"/>
   <Property Name="CategoryID" Type="Edm.Int32"/>
@@ -100,30 +102,30 @@ Ignoring the navigation properties of the `Product` entity set for now, we see t
 
 So, we know that the `ProductID` property is the only key field, and the types of other properties make sense to us too.
 
-To find the right balance between realism and efficiency (no-one wants to type in a large amount of definition or data), the first entity definition in the OData service you'll create will be a cut down version of this `Product` entity, encompassing the following properties:
+To find the right balance between realism and efficiency (no-one wants to type in a large amount of definition or data), the first entity definition in the OData service you'll create will be a cut down version of this `Product` entity type, encompassing the following properties:
 
 - `ProductID`
 - `ProductName`
 - `UnitsInStock`
 
-Further entities will be cut down versions of entities in the Northwind OData service too; this suggests that a cut down name for your OData service is appropriate too, so we'll go with `Northbreeze`.
+Further entities will be cut down versions of entities in the Northwind OData service too; this suggests that a cut down name for your OData service is appropriate too, so we'll go from `Northwind` to `Northbreeze` (see what we did there?).
 
 
 
 ### Start a new CAP project
 
 
-To start creating your `Northbreeze` OData service, start by creating a new CAP project in your App Studio dev space using the "Start from Template" wizard available on the Welcome page (if you don't have the Welcome page open, you can recall it with menu path **Help** **&rarr;** **Welcome**).
+To start creating your `Northbreeze` OData service, start by creating a new CAP project in your App Studio dev space using the "New project from Template" wizard available on the Get Started page (if you don't have the Get Started page open, you can recall it with menu path **Help** **&rarr;** **Get Started**).
 
 In the "Select Template and Target Location" step, select the **CAP Project** template and then use the **Start** button to continue.
 
 ![Select the CAP Project template](select-cap-project-template.png)
 
-In the "CAP Project Details" step, enter `northbreeze` for the project name, ensure that "Node.js" is selected for the runtime, and leave all the other options as they are. Then select the **Finish** button to complete, and open up the generated project in a new workspace, as directed by the popup that should appear.
+In the "CAP Project Details" step, enter `northbreeze` for the project name, ensure that "Node.js" is selected for the runtime, and leave all the other options as they are. Then select the **Finish** button to complete, and wait for the generated project to appear.
 
 > It's better if you use the all-lowercase version of the name (`northbreeze`) as the name is used as the name of the NPM package that you're (indirectly) creating, and convention there dictates lowercase only.
 
-Make yourself acquainted with the content of the generated project, by looking through the files and directories in the App Studio's Explorer. Among these, you should see three directories named `app/`, `db/`, and `srv/`. To understand what these are, and how they relate to what you're going to do in the rest of this tutorial, think of them in a vertical structure like this:
+Make yourself acquainted with the content of the generated project, by looking through some key files and directories in the App Studio's Explorer. Among these, you should see three directories named `app/`, `db/`, and `srv/`. To understand what these are, and how they relate to what you're going to do in the rest of this tutorial, think of them in a vertical structure like this:
 
 ```
 +------+
@@ -135,7 +137,7 @@ Make yourself acquainted with the content of the generated project, by looking t
 +------+
 ```
 
-At a high level this represents a typical full stack application, with the frontend represented by `app/`, the business logic represented by `srv/`, and the persistence layer represented by `db/`. CAP supports work in all of these layers.
+At a high level this represents a typical full stack application, with the frontend represented by `app/`, the business logic and services represented by `srv/`, and the persistence layer represented by `db/`. CAP supports work in all of these layers.
 
 In building your OData service, however, you won't need to make use of the `app/` layer. This is because an OData service is just that - a *service*. You'll be focusing your efforts at the persistence layer (in the `db/` directory) and the business logic layer (in the `srv/` directory).
 
@@ -151,7 +153,7 @@ While ultimately you'll have created an OData service, which is "flat", providin
 +------+
 ```
 
-The OData service you'll be creating is simple and has a one-to-one mapping between schema and service; however, CAP's focus on and strong support for [domain modeling](https://cap.cloud.sap/docs/about/#domain-modeling) allows for flexible relationships to be constructed between these two layers, to fit your service consumption needs precisely.
+The OData service you'll be creating is simple and has a one-to-one mapping between schema and service; however, note that CAP's focus on and strong support for [domain modeling](https://cap.cloud.sap/docs/about/#domain-modeling) allows for flexible relationships to be constructed between these two layers, to fit your service consumption needs precisely.
 
 
 
@@ -164,7 +166,7 @@ To keep things as simple as possible, you're going to define a single entity, wi
 
 Use the context menu on the `db/` node in the Explorer view to create a new file; give it the name `schema.cds`.
 
-It's time to define your entity, reflecting a simplified version of the `Products` entity in the Northwind service. Here's the entire content that should go into `schema.cds`.
+It's time to define your entity, reflecting a simplified version of the `Product` entity type in the Northwind service definition. Here's the entire content that should go into `schema.cds`.
 
 > Try to resist the temptation to copy/paste this content; instead, type it in and get to know the rich support for CAP that the App Studio sports, via the SAP CDS Language Support extension. When entering it, you don't have to worry about formatting either - the extension will do that for you too (just use the context menu or the Command Palette to invoke the "Format Document" facility).
 
@@ -178,6 +180,8 @@ entity Products {
 }
 ```
 
+> Note that while in the Northwind service definition the entity type followed the "singular" naming approach ("Product"), the convention in CAP is to use the "plural" naming approach for entity definitions (i.e. "Products").
+
 Is this all that's needed for an OData service? Let's find out.
 
 Open a terminal (menu path **Terminal** **&rarr;** **New Terminal**) and that should give you a Bash shell and put you automatically in the root directory of the project you have open in your workspace, that is, `northbreeze`. You'll see a prompt, which consists of your generic username in your App Studio's dev space, the most significant part of the name of the directory you're in (enter the command `pwd` to see the full name, if you're curious) and the traditional shell prompt character `$`.
@@ -186,37 +190,39 @@ Open a terminal (menu path **Terminal** **&rarr;** **New Terminal**) and that sh
 user: northbreeze $
 ```
 
-App Studio dev spaces that have been created using the "SAP Cloud Business Application" type (as you'll have done in the prerequisite tutorial) automatically have the CAP development kit installed, including the main command line tool `cds`. One of the features in `cds`'s arsenal is the `watch` command, which will start the runtime and restart it when changes are detected. It will also automatically use an in-memory persistence layer provided by SQLite, which is enough for what we need here in our explorations.
+App Studio dev spaces that have been created using the "SAP Cloud Business Application" type (as you'll have done in the prerequisite tutorial) automatically have the CAP development kit installed (also known as the CDS DK, or "Development Kit", from the name of the NPM package `@sap/cds-dki), including the main command line tool `cds`. One of the features in `cds`'s arsenal is the `watch` command, which will start the CAP server (the runtime) which will start serving services, and restart the CAP server when changes are detected. It will also automatically use an in-memory persistence layer provided by SQLite, which is enough for what we need here in our explorations.
 
 At the prompt, enter `cds watch`, and observe the output, which should look something like this:
 
 ```Shell/Bash
 user: northbreeze $ cds watch
+ 
+cds serve all --with-mocks --in-memory? 
+live reload enabled for browsers 
 
-cds serve all --with-mocks --in-memory?
-( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
+        ___________________________
+ 
+[cds] - loaded model from 1 file(s):
 
-[cds] - model loaded from 1 file(s):
+  db/schema.cds
 
-  ../db/schema.cds
-
-[cds] - using bindings from: { registry: '~/.cds-services.json' }
-[cds] - connect to db > sqlite { database: ':memory:' }
-/> successfully deployed to sqlite in-memory db
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: ':memory:' }
+/> successfully deployed to in-memory database. 
 
 
-[cds] - launched in: 1634.029ms
 [cds] - server listening on { url: 'http://localhost:4004' }
-[ terminate with ^C ]
+[cds] - launched at 10/23/2024, 3:31:06 PM, version: 8.3.1, in: 363.072ms
+[cds] - [ terminate with ^C ]
 
 
-    No service definitions found in loaded models
+    No service definitions found in loaded models.
     Waiting for some to arrive...
 ```
 
 This tells us an awful lot already; most importantly for our question, however, is the line "No service definitions found in loaded models - Waiting for some to arrive...".
 
-You have defined an entity, in a namespace, but not exposed it yet in a service definition. Moreover, if you navigate to the port 4004 that App Studio has prompted you to connect to, you'll see a welcome page describing what is being served, and the list of service endpoints is currently empty.
+You have defined an entity, in a namespace, but not exposed it yet in a service definition. Moreover, if you navigate to the port 4004 that App Studio will have prompted you to connect to, you'll see a welcome page describing what is being served, and the list of service endpoints is currently empty.
 
 So, creating a service definition is next. You can leave the `cds watch` process running, and it will notice and react to anything you subsequently add or change.
 
@@ -224,7 +230,7 @@ So, creating a service definition is next. You can leave the `cds watch` process
 ### Define the service layer
 
 
-In this step, you'll create the simplest service definition exposing the entire `Products` entity (all three properties) in a service called `Main`.
+In this step, you'll create the simplest service definition exposing the entire `Products` entity (all three elements) in a service called `Main`.
 
 Create a new file in the `srv/` directory, calling it `service.cds`. In the same fashion as in the previous step, type (rather than copy/paste) the following into it, exploring what features such as completion help are offered by the language support for CDS in the editor:
 
@@ -239,18 +245,23 @@ service Main {
 You should see some new output from the `cds watch` process in the terminal, that looks like this:
 
 ```
-[cds] - model loaded from 2 file(s):
+[cds] - loaded model from 2 file(s):
 
-  ../db/schema.cds
-  ../srv/service.cds
+  srv/service.cds
+  db/schema.cds
 
-[cds] - using bindings from: { registry: '~/.cds-services.json' }
-[cds] - connect to db > sqlite { database: ':memory:' }
-/> successfully deployed to sqlite in-memory db
+[cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+[cds] - connect to db > sqlite { url: ':memory:' }
+/> successfully deployed to in-memory database. 
 
-[cds] - serving Main { at: '/main' }
+[cds] - using auth strategy {
+  kind: 'mocked',
+  impl: '../../../../managed-content/globals/pnpm/5/.pnpm/@sap+cds@8.3.1_express@4.21.1/node_modules/@sap/cds/lib/auth/basic-auth'
+} 
 
-[cds] - launched in: 597.477ms
+[cds] - using new OData adapter
+[cds] - serving Main { path: '/odata/v4/main' }
+
 [cds] - server listening on { url: 'http://localhost:4004' }
 ```
 
@@ -266,18 +277,18 @@ Make the selection, and you should see a welcome page, this time listing a servi
 
 This tells us that you have your very own OData service, being served by the CAP runtime. Congratulations!
 
-Let's pause for a moment to understand what we're seeing here. First, there are the two well-known URLs that are standard for any OData service - the service document, represented by the `main` hyperlink, and the metadata document, represented by the `$metadata` hyperlink. Note also that these two words are joined with slashes like this:
+Let's pause for a moment to understand what we're seeing here. First, there are the two well-known URLs that are standard for any OData service - the service document, represented by the `/odata/v4/main` hyperlink, and the metadata document, represented by the `$metadata` hyperlink. Note also that these two components are joined with slashes like this:
 
 ```
-/main/$metadata
+/odata/v4/main/$metadata
 ```
 
-This denotes the relative path info for the URL of your OData service. In other words, independent of what host is to serve this service, `/main/` is the actual relative path for the service document.
+This denotes the relative path info for the URL of your OData service. In other words, independent of what host is to serve this service, `/odata/v4/main/` is the actual relative path for the service document.
 
 Explore the service document and the metadata document now, by following the hyperlinks. There are some high-level observations that are worth making here:
 
 - The service document faithfully reflects the fact that there is a single entity set `Products` available.
-- The metadata document reflects exactly the details that you defined for the entity at the schema layer; this is because the service exposure (in `srv/service.cds`) was the simplest thing that could possibly work, that is, a "pass through" where no properties were filtered out, or added from elsewhere.
+- The metadata document reflects exactly the details that you defined for the entity at the schema layer; this is because the service exposure (in `srv/service.cds`) was the simplest thing that could possibly work, that is, a "pass through" (aka "naked") service, where no properties were filtered out, or added from elsewhere.
 - The types in the entity definition (`Integer`, `String`) have been translated into OData types (`Edm.Int32`, `Edm.String`) in the `Property` elements within the `EntityType` element in the metadata document.
 - The `ProductID` property has been correctly marked as being a key property.
 - An entity set has been defined automatically for the `Products` entity definition, as can be seen within the `EntityContainer` element.
@@ -303,7 +314,7 @@ You have got a fully functioning OData service, but it's not as exciting as it c
 
 In this penultimate step, you're going to seed your fledgling OData service with data. This will allow you to better kick the tires and discover that yes, this really is a fully functional CRUD+Q OData service that you have created.
 
-Add a new directory below the `db/` directory, called `data/`, and in there, create a comma-separated value (CSV) file. Given the right names, CSV files in this directory are automatically read, and the data within imported, into corresponding entities, and that data can then be served by the OData service.
+Add a new directory below the `db/` directory, called `data/`, and in there, create a comma-separated value (CSV) file. Given the right names, CSV files in this directory are automatically read, and the data within imported, into the corresponding entities, and that data can then be served in the OData service.
 
 In order for this to work, the names of the CSV files are important, and are based on a combination of namespace and entity name, separated by a dash.
 
@@ -316,10 +327,10 @@ ProductID,ProductName,UnitsInStock
 3,Aniseed Syrup,13
 ```
 
-As soon as the contents of this file are saved, you should notice the `cds watch` restart things, but there's also a new line in the output, that should look something like this:
+As soon as the contents of this file are saved, you should notice the `cds watch` restart the CAP server, but there's also a new line in the output, that should look something like this:
 
 ```Shell/Bash
-> filling northbreeze.Products from ../db/data/northbreeze-Products.csv
+> init from db/data/northbreeze-Products.csv
 ```
 
 Great, your seed data is now part of your OData service.
@@ -358,26 +369,26 @@ It's now time to finish this tutorial with a few OData operations.
 There's plenty to explore now you have some data in your simple OData service. Try your own queries, or experiment with some of these. Each time, manipulate the path info and query string as appropriate, based on the URL in your browser. Remember that for the purposes of this tutorial, the URL can be thought of as being made up of three parts. If we take an example OData URL from App Studio, it might look something like this:
 
 ```
-https://4291e542-workspaces-ws-0cafe-app1.eu10.trial.applicationstudio.cloud.sap/main/Products?$top=11
+https://port4004-workspaces-ws-czcx7.us10.trial.applicationstudio.cloud.sap/odata/v4/main/Products?$top=11
 ```
 
-- The first part is the fully qualified host and domain name, all the way up to the first single slash.
+- The first part is the fully qualified hostname, all the way up to the first single slash.
 - The second part is the path info, all the way up to the question mark.
-- The third part is the query string, introduced by the question mark and made up of one or more `property=value` pairs, with URL encoded values where appropriate and joined together with & characters.
+- The third part is the query string, introduced by the question mark and made up of one or more `key=value` pairs, with URL-encoded values where appropriate, and joined together with & characters.
 
-(There is another common part that we see in some URLs, and that's the hash path, introduced with the # character, but this part is not relevant for OData URL construction).
+(There is another common part that we see in some URLs, and that's the document fragment identifier, also known as the hash path, introduced with the # character, but this part is not relevant for OData URL construction).
 
 **Return just the first product**
-`/main/Products?$top=1`
+`/odata/v4/main/Products?$top=1`
 
 **Return a count of how many products are available**
-`/main/Products/$count`
+`/odata/v4/main/Products/$count`
 
 **Return a single product**
-`/main/Products(2)`
+`/odata/v4/main/Products(2)`
 
 **Return only those "highly stocked" products**
-`/main/Products?$filter=UnitsInStock%20gt%2015`
+`/odata/v4/main/Products?$filter=UnitsInStock%20gt%2015`
 
 Your OData service isn't read-only either - it supports all operations (Create, Read, Update, Delete, and Query) out of the box, with no effort on your part at all.
 
@@ -386,25 +397,25 @@ Try out some write operations now, by opening up a second terminal and using the
 **Add a further product**
 
 ```Shell/Bash
-user: northbreeze $ curl -H "Content-Type: application/json" -d '{"ProductID":77,"ProductName":"Original Frankfurter grüne Soße","UnitsInStock":32}' http://localhost:4004/main/Products
+user: northbreeze $ curl -H "Content-Type: application/json" -d '{"ProductID":77,"ProductName":"Original Frankfurter grüne Soße","UnitsInStock":32}' http://localhost:4004/odata/v4/main/Products
 {"@odata.context":"$metadata#Products/$entity","ProductID":77,"ProductName":"Original Frankfurter grüne Soße","UnitsInStock":32}
 ```
 
 Once you have added this new product, you can check its existence by going back to the query of the entire entity set:
 
-`/main/Products`
+`/odata/v4/main/Products`
 
 **Reduce the number of units in stock for the Chang product**
 
 ```Shell/Bash
-user: northbreeze $ curl -H "Content-Type: application/json" -d '{"UnitsInStock":1}' -X PATCH "http://localhost:4004/main/Products(1)"
+user: northbreeze $ curl -H "Content-Type: application/json" -d '{"UnitsInStock":1}' -X PATCH "http://localhost:4004/odata/v4/main/Products(1)"
 {"@odata.context":"$metadata#Products/$entity","ProductID":1,"ProductName":"Chai","UnitsInStock":1}
 ```
 
 **Remove the recently added product**
 
 ```Shell/Bash
-user: northbreeze $ curl -X DELETE "http://localhost:4004/main/Products(77)"
+user: northbreeze $ curl -X DELETE "http://localhost:4004/odata/v4/main/Products(77)"
 ```
 
 At this point, you have exercised your OData service and tried out all five OData operation types.
