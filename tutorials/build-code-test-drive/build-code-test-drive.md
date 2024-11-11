@@ -44,7 +44,7 @@ parser: v2
    
     <!-- border -->![Select Full-Stack Application](tutorial2_1_5red.png)
 
-6. Enter a name for your project.
+6. Enter a name for your project using lowercase letters.
 
 7. Select the dev space where you want the project to reside.
     >SAP Build Code recommends the dev space it deems most suitable, and it will automatically create a new one for you if you don't already have one. If you have other dev spaces of the same type (for example, Full-Stack), you can select between them. If you want to create a different dev space, or a dev space or another type, go to the Dev Space Manager. See [Working in the Dev Space Manager](https://help.sap.com/docs/build_code/d0d8f5bfc3d640478854e6f4e7c7584a/ad40d52d0bea4d79baaf9626509caf33.html?locale=en-US).
@@ -90,16 +90,16 @@ Let's create an application for a customer loyalty program. The customer can get
 4.  Copy the prompt below.
 
     ```code
-    Design a customer loyalty program application. 
     Define 4 data entities: Customers, Products, Purchases and Redemptions. 
     Each customer must have the following fields: name, email, 7-digit customer number, total purchase value, total reward points, total redeemed reward points. 
-    All fields for each customer should be integer except name and email that will be stored as string. 
-    Each product should have a name, description and price. 
+    All fields for each customer should be `integer` except name and email that will be stored as `string`. 
+    Each product should have a name, description, and price. 
     Purchases should include the following fields: purchase value, reward points. 
-    All fields in Purchases must be integer. 
-    Redemptions must have 1 field in integer: redeemed amount. 
+    All fields in Purchases must be `integer`. 
+    Redemptions must have 1 field in `integer`: redeemed amount. 
     Each purchase and redemption will be associated to a customer. 
-    Each purchase will be associated to a product and is called selectedProduct.
+    Each purchase will be associated to a product and is called `selectedProduct`.
+    Use associations instead of compositions.
     ```
 
 5. At the bottom of the Joule view, select one of the slash commands suggested and then paste the code in the text field.
