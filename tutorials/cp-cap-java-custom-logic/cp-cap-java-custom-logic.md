@@ -307,50 +307,6 @@ Let's break it down again:
 
 - In the last line the net amount of the order item is calculated, based on the price of the book and the amount of books ordered.
 
-### Test handler
-
-1. In SAP Business Application Studio, stop your application if it's still running by clicking on the red stop icon in the **Debug** side panel.
-
-    <!-- border -->![stop debugging button](stop-debug.png)
-
-2. Choose the **Run Configuration** icon on the side panel of SAP Business Application Studio.
-
-    <!-- border -->![select the run configurations item](run-configurations.png)
-
-3. Click the green arrow to start the application.
-
-    <!-- border -->![start run configuration](start-runconfiguration.png)
-
-    You should see the application starting in the **Debug Console**.
-
-4. You will now test your application using some HTTP requests. Add a new request to the file `requests.http`:
-
-    ```HTTP
-    ### Create another Order
-
-    POST http://localhost:8080/odata/v4/OrdersService/Orders
-    Content-Type: application/json
-
-    {
-      "items": [
-        {
-          "book_ID": "fd0c5fda-8811-4e20-bcff-3a776abc290a",
-          "amount": 4
-        }
-      ]
-    }
-    ```
-
-6. Choose **Send Request** above the new request to execute the request.
-
-7. From the index page, choose **`OrderItems`** and you will see that the `netAmount` element is filled with the calculated value.
-
-    <!-- border -->![order items welcome page](order-item-welcome.png)
-
-    <!-- border -->![calculated net amount](calculated-net-amount.png)
-
-    >You can also add `/odata/v4/OrdersService/OrderItems` to the end of your app URL.
-
 ### Calculate total amount of order
 
 Finally, add a method to the `OrdersService` Java class to calculate the `total` element of the `Orders` entity.
@@ -409,9 +365,25 @@ Let's break down the code:
 
     You should see the application starting in the **Debug Console**.
 
-4. Update the `amount` to 10 in the third request in the `requests.http` file.
+4. You will now test your application using some HTTP requests. Add a new request to the file `requests.http`:
 
-5. Choose **Send Request** above the third request and execute the request.
+    ```HTTP
+    ### Create another Order
+
+    POST http://localhost:8080/odata/v4/OrdersService/Orders
+    Content-Type: application/json
+
+    {
+      "items": [
+        {
+          "book_ID": "fd0c5fda-8811-4e20-bcff-3a776abc290a",
+          "amount": 10
+        }
+      ]
+    }
+    ```
+
+5. Choose **Send Request** to execute the request.
 
 6. From the index page, choose **Orders**. You will see that the `total` element is filled with the calculated value.
 

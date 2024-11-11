@@ -39,15 +39,11 @@ author_profile: https://github.com/Karunaharan
 
       <!-- border -->![Add integration flow artifact](2-2-add-integration-flow-new.png)
 
-      Enter a **Name** for the integration flow and choose **OK**.
+      Enter a **Name** for the integration flow and choose **Add and Open in Editor**.
 
       <!-- border -->![Enter integration flow details and confirm](2-2-enter-iflow-details.png)
 
-3. Choose **Save** and open the integration flow by selecting it.
-
-      <!-- border -->![Save integration package and open integration flow](2-3-save-open-iflow.png)
-
-4. Choose **Edit** to start editing the integration flow.
+3. Choose **Edit** to start editing the integration flow.
 
     Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for every step in the integration flow.
 

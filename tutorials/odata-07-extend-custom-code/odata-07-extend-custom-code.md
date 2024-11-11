@@ -4,7 +4,7 @@ author_name: DJ Adams
 author_profile: https://github.com/qmacro
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [ software-product-function>sap-business-application-studio, topic>odata, tutorial>beginner ]
+tags: [ software-product-function>sap-business-application-studio, programming-tool>odata, tutorial>beginner ]
 time: 20
 ---
 
@@ -55,7 +55,7 @@ Remember that at this stage your fully functioning OData service is a result of 
 
 ### Create a service implementation
 
-Business logic in OData services belongs in a [service implementation](https://cap.cloud.sap/docs/node.js/services#srv-impls). The simplest way to do this is to create a `service.js` file in the same directory as your `service.cds` file, i.e. in the `srv/` directory. The framework will automatically recognize and use this "sibling" file.
+Business logic in OData services belongs in a [service implementation](https://cap.cloud.sap/docs/node.js/core-services#implementing-services). The simplest way to do this is to create a `service.js` file in the same directory as your `service.cds` file, i.e. in the `srv/` directory. The framework will automatically recognize and use this "sibling" file.
 
 In a new `srv/service.js` file, add the following JavaScript:
 
@@ -76,7 +76,7 @@ Let's stare at this for a few moments. You won't be far wrong if you guess that 
 
 First, in order to be used by CAP's runtime framework, a service implementation file such as this needs to offer a function definition for the framework to call on startup. This "offer" is via Node.js's module export mechanism, and what's exported here is the anonymous function which (apart from the `module.exports =` part itself) is the entire file contents.
 
-When the framework finds and invokes this anonymous function, it passes a server object, which we can use to define event handlers via the [Handler Registration API](https://cap.cloud.sap/docs/node.js/services#event-handlers). That's why we have a single `srv` parameter defined, and that's what we use to access the [srv.after](https://cap.cloud.sap/docs/node.js/services#srv-after) API to declare a function to be run under specific circumstances (more on that shortly).
+When the framework finds and invokes this anonymous function, it passes a server object, which we can use to define event handlers via the [Handler Registration API](https://cap.cloud.sap/docs/node.js/core-services#srv-on-before-after). That's why we have a single `srv` parameter defined, and that's what we use to access the `srv.after` API to declare a function to be run under specific circumstances (more on that shortly).
 
 Examining that API call, we see this pattern:
 
@@ -84,13 +84,13 @@ Examining that API call, we see this pattern:
 srv.after('READ', 'Products', items => { ... })
 ```
 
-This is how we can add custom business logic to extend the standard handling that is provided for us out of the box. Specifically, this call defines a function (`items => { ... }`) that should be executed whenever there's an OData READ (or query) operation on the `Products` entity data.
+This is how we can add custom business logic to extend the standard handling that is provided for us out of the box. Specifically, this call defines a function (`items => { ... }`) that should be executed whenever there's an OData READ (or QUERY) operation on the `Products` entity data.
 
 The use of the specific `after` API call is quite common, and allows us to jump onto the request processing flow towards the end, when the heavy lifting of data retrieval from the persistence layer has been done for us. As well as `after`, the Handler Registration API supports `before` and `on` events, but right now, `after` is what we want here.
 
 What does the function specified in this API call do? As you'd correctly guessed, it just adds a string on to the end of the value for each of the product names, specifically for the cases where the number of units in stock is high.
 
-In its simplest form, the function provided is given the data retrieved, and whatever the function returns is what ends up in the response to the original request. Note, however, that in the context of the `after` API call, the handler function cannot change the "shape" of the data, such as omit specific items. We'll look at how to do that later on in this tutorial.
+In its simplest form, the function provided is given the data retrieved, and whatever the function does ends up in the response to the original request. Note, however, that in the context of the `after` API call, the handler function cannot change the "shape" of the data, such as omit specific items. We'll look at how to do that later on in this tutorial.
 
 So with the simple `map` invocation, we are modifying the values for the `ProductName` properties of those items where the `UnitsInStock` value is more than 100.
 
@@ -155,7 +155,7 @@ That's great, but there's more that can be done in such a service implementation
 
 The two JavaScript functions you've provided so far have been to affect the processing of standard OData operations on the `Products` entity. But OData V4 defines [actions and functions](http://docs.oasis-open.org/odata/odata/v4.0/os/part1-protocol/odata-v4.0-os-part1-protocol.html#_Toc372793604), in addition to entities. Actions and functions can be bound, or unbound. Think of such things as the next generation of function imports that you might know from OData V2.
 
-So to round off this tutorial, let's define a simple unbound function on our OData service.
+So to round off this tutorial, let's define a simple [unbound function](https://cap.cloud.sap/docs/cds/cdl#actions) on our OData service.
 
 > Bear in mind the distinction between "function" in the JavaScript sense, and "function" in the OData sense.
 
@@ -173,31 +173,35 @@ service Main {
 }
 ```
 
-At this point, it's worth checking to see if this has any effect on your OData service. Once the CDS file is saved, and your service has restarted, navigate to the metadata document (that's the relative path `/main/$metadata`, but you knew that already, right?). It should look something like this:
+At this point, it's worth checking to see if this has any effect on your OData service. Once the CDS file is saved, and your service has restarted, navigate to the metadata document (that's the relative path `/odata/v4/main/$metadata`, but you knew that already, right?). It should look something like this:
 
 ```XML
-<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
   <edmx:DataServices>
-    <Schema Namespace="Main" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Main">
+      <Annotation Term="Core.Links">
+        <Collection>
+          <Record>
+            <PropertyValue Property="rel" String="author"/>
+            <PropertyValue Property="href" String="https://cap.cloud.sap"/>
+          </Record>
+        </Collection>
+      </Annotation>
       <EntityContainer Name="EntityContainer">
-        <EntitySet Name="Categories" EntityType="Main.Categories">
-          <NavigationPropertyBinding Path="Products" Target="Products"/>
-        </EntitySet>
         <EntitySet Name="Products" EntityType="Main.Products">
           <NavigationPropertyBinding Path="Category" Target="Categories"/>
         </EntitySet>
+        <EntitySet Name="Categories" EntityType="Main.Categories">
+          <NavigationPropertyBinding Path="Products" Target="Products"/>
+        </EntitySet>
         <FunctionImport Name="TotalStockCount" Function="Main.TotalStockCount"/>
       </EntityContainer>
-      <EntityType Name="Categories">
-        <Key>
-          <PropertyRef Name="CategoryID"/>
-        </Key>
-        <Property Name="CategoryID" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="CategoryName" Type="Edm.String"/>
-        <Property Name="Description" Type="Edm.String"/>
-        <NavigationProperty Name="Products" Type="Collection(Main.Products)" Partner="Category"/>
-      </EntityType>
       <EntityType Name="Products">
         <Key>
           <PropertyRef Name="ProductID"/>
@@ -210,6 +214,15 @@ At this point, it's worth checking to see if this has any effect on your OData s
         </NavigationProperty>
         <Property Name="Category_CategoryID" Type="Edm.Int32"/>
       </EntityType>
+      <EntityType Name="Categories">
+        <Key>
+          <PropertyRef Name="CategoryID"/>
+        </Key>
+        <Property Name="CategoryID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="CategoryName" Type="Edm.String"/>
+        <Property Name="Description" Type="Edm.String"/>
+        <NavigationProperty Name="Products" Type="Collection(Main.Products)" Partner="Category"/>
+      </EntityType>
       <Function Name="TotalStockCount" IsBound="false" IsComposable="false">
         <ReturnType Type="Edm.Int32"/>
       </Function>
@@ -218,12 +231,10 @@ At this point, it's worth checking to see if this has any effect on your OData s
 </edmx:Edmx>
 ```
 
-We can see that this simple declarative definition has already had an effect.
+We can see that this simple declarative definition has already had an effect - there is evidence of this new function import:
 
-There are two places where we see this new function import:
-
-* in the `EntityContainer` element we can see the function import listed alongside the two entity sets
-* near the bottom, after the definitions of the `Categories` and `Products` entity types, we see the definition for this function import
+* in the `EntityContainer` element where it's listed alongside the two entity sets
+* defined near the bottom, after the definitions of the `Categories` and `Products` entity types
 
 The function import definition here in the metadata document reflects what we intended; in particular, the function is called `TotalStockCount`, is unbound, and has an integer return type:
 
@@ -263,7 +274,7 @@ First, at the top of the file, there is this new line:
 const { Products } = cds.entities('northbreeze')
 ```
 
-Here, we're using introspection, made available to use by the `cds` module that we get access to automatically, to pull out the `Products` entity that we'll need shortly.
+Here, we're using destructuring to pull out the `Products` entity definition from the `northbreeze` service, via the `cds` module.
 
 Next, directly below the existing `srv.on('READ', 'Products', async (req, next) => { ... })` call that you already had, there is now a second call to the Handler Registration API to define a handler for the `TotalStockCount` function import.
 
@@ -286,7 +297,7 @@ The product data retrieved is stored in the `items` constant, and looks like thi
 ]
 ```
 
-It's then just a simple case of summing the values of the `UnitsInStock` property for each of the items, which we do cleanly with a simple `reduce` function, and return the result. Being a numeric value, the result type corresponds to what we defined as what the function import returns, back in the CDS file:
+It's then just a simple case of summing the values of the `UnitsInStock` property for each of the items, which we do cleanly with a simple [reduce](https://www.google.com/search?q=site%3Aqmacro.org+reduce) function, and return the result. Being a numeric value, the result type corresponds to what we defined as what the function import returns, back in the CDS file:
 
 ```CDS
 function TotalStockCount() returns Integer;
@@ -295,7 +306,7 @@ function TotalStockCount() returns Integer;
 Once you've saved the service implementation file and the `cds watch` process has restarted the service, you should try this function import out. Switch to the other tab and navigate to the relative path:
 
 ```
-/main/TotalStockCount()
+/odata/v4/main/TotalStockCount()
 ```
 
 The response should look something like this:
