@@ -92,23 +92,6 @@ cf app cf-nodejs
 
 <!-- border -->![Using the cf apps command](cf-app-cf-nodejs.png)
 
-To view the `cpu_entitlement` metric you need to install the CPU Entitlement plugin. To install it, run
-
-```
-cf install-plugin <download-URL>
-```
-> The `download-URL` above comes from the [plugin documentation](https://github.com/cloudfoundry/cpu-entitlement-plugin/blob/master/README.md). Make sure to pick the Download-URL that relates to the operating system you are using.
-
-Once you have installed the plugin you can then use it by running:
-
-```
-cf cpu-entitlement cf-nodejs
-```
-
-You should see similar output to the following:
-
-<!-- border -->![Viewing CPU Entitlement](cpu-entitlement.png)
-
 
 ### View metrics with the log cache plugin
 
