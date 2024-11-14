@@ -61,7 +61,6 @@ Let's see if this is the case:
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Create coupon(create_coupon.png)]
 
 1. Navigate to the **Try Out** section.
 2. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
@@ -81,7 +80,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Coupon creation success](create_coupon_success.png)
+<!-- border -->![Reserve coupon code success](reserve_coupon_code_success.png)
 
 9. From the response, note down the **redemption information ID** **`redemptionInfoID`** and **reservation token** **`reservationToken`**.
 
@@ -103,11 +102,10 @@ Let's see if this is the case:
 
 Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Create coupon(create_coupon.png)]
 
 1. For **API Environment**, select the trial environment you have created for the **Calculation** service.
 2. Choose **Try Out**.
-3. Open the **POST** request **`/restapi/{tenantname}e`**.
+3. Open the **POST** request **`/restapi/{tenantname}`**.
 4. Under **tenantName**, enter the **`identityzone`** from the service key you have created for the **Calculation** service in your SAP BTP account. If you need assistance, see step 4 of the tutorial [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html) .
 5. For the **Content Type**, choose **`XML`**.  
 4. Copy the following data and paste it into the **body**:
@@ -141,7 +139,7 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
                                      <LineItem>
                         <SequenceNumber>1</SequenceNumber>
                         <Coupon>
-                                    <PrimaryLabel>COFFEELOVER</PrimaryLabel>
+                                    <PrimaryLabel>COFFEE LOVER</PrimaryLabel>
                                     <Quantity>1</Quantity>
                         </Coupon>
       </LineItem> 
@@ -155,7 +153,7 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
 
 The response should look like this:
 
-<!-- border -->![Coupon creation success](create_coupon_success.png)
+<!-- border -->![Calculation success](calculation_request_success.png)
 
 With this, the **Calculation** service has calculated the effective sales price for the coffee machine as EURO 950 by applying the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. It then returns the effective sales price to the POS.
 
