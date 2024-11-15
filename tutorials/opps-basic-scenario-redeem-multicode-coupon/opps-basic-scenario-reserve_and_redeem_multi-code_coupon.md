@@ -50,9 +50,9 @@ In order to continue with the next steps, you need to have already set up your t
 ### Reserve a Coupon Code
 
 
-You can now reserve a coupon code for the multi-code coupon **COFFEELOVER** using the **Coupon Management** service. 
+You can now reserve a coupon code for the multi-code coupon **COFFEE LOVER** using the **Coupon Management** service. 
 
-* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine (material number: `COFFEE_MACHINE`, regular sales price: Euro 1000). At the time of check-out, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. The client system calls the **Coupon Management** service to reserve the coupon code.
+* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine (material number: `COFFEE_MACHINE`, regular sales price: Euro 1000). At the time of check-out, the customer presents the coupon code for the multi-code coupon **COFFEE LOVER** to the cashier. The client system calls the **Coupon Management** service to reserve the coupon code.
 
 * Desired Result: The coupon code is reserved. 
 
@@ -155,14 +155,14 @@ The response should look like this:
 
 <!-- border -->![Calculation success](calculation_request_success.png)
 
-With this, the **Calculation** service has calculated the effective sales price for the coffee machine as EURO 950 by applying the promotion **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. It then returns the effective sales price to the POS.
+With this, the **Calculation** service has calculated the effective sales price for the coffee machine as EURO 950 by applying the promotion **Buy a coffee machine and show the coupon COFFEE LOVER to get EURO 50 off**. It then returns the effective sales price to the POS.
 
 ### Redeem the Coupon Code
 
 
-You can now redeem the coupon code for the multi-code coupon **COFFEELOVER** using the Coupon Management service. 
+You can now redeem the coupon code for the multi-code coupon **COFFEE LOVER** using the Coupon Management service. 
 
-* Scenario: The customer has completed the purchase of the coffee machine for which he used the coupon **COFFEELOVER** with the respective coupon code. The POS system calls the **Coupon Management** service to redeem the coupon code. The redemption information is returned to the system which then confirms the completion of the purchase.
+* Scenario: The customer has completed the purchase of the coffee machine for which he used the coupon **COFFEE LOVER** with the respective coupon code. The POS system calls the **Coupon Management** service to redeem the coupon code. The redemption information is returned to the system which then confirms the completion of the purchase.
 
 * Desired Result: The coupon code is redeemed. 
 
@@ -171,7 +171,6 @@ Let's see if this is the case:
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Create coupon(create_coupon.png)]
 
 1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
 2. Choose **Try Out**.
