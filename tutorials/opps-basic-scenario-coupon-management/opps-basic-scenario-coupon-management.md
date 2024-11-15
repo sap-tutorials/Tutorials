@@ -81,10 +81,10 @@ The response should look like this:
 
 8. From the response, note down the technical coupon ID as you will use it later.
 
-With this, you have created a multi-code coupon with the ID **COFFEELOVER** and a validity period from **October 1, 2026 to December 31, 2026**.
+With this, you have created a multi-code coupon with the ID **COFFEE LOVER** and a validity period from **October 1, 2026 to December 31, 2026**.
 
 
-**Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEELOVER**, you can proceed with the following steps:
+**Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEE LOVER**, you can proceed with the following steps:
 
 <!-- border -->![Check created coupon](GET_coupon.png)
 
@@ -161,7 +161,7 @@ You can now read the coupon codes created using the **Coupon Management** servic
 5. Choose **Run**.
 6. Make sure you get the HTTP response **200**.
 
-With this, you can read the coupon codes generated for the multi-code coupon **COFFEELOVER**. This is the coupon code value to be communicated to the target group members as part of your promotional campaign. 
+With this, you can read the coupon codes generated for the multi-code coupon **COFFEE LOVER**. This is the coupon code value to be communicated to the target group members as part of your promotional campaign. 
 
 You must note down a coupon code value as it will be used for redeeming the coupon.
 
@@ -327,7 +327,7 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 
 <!-- border -->![Promotion data upload](promotion_data_upload.png)
 
-With this, you uploaded the promotional rule "Buy a coffee machine and show coupon COFFEELOVER to get Euro 50 off" for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2026 to December 31st, 2026**. 
+With this, you uploaded the promotional rule "Buy a coffee machine and show coupon COFFEE LOVER to get Euro 50 off" for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2026 to December 31st, 2026**. 
 
 
 ### Check uploaded master data
