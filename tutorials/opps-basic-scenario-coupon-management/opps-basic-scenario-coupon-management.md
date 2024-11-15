@@ -32,7 +32,7 @@ primary_tag: products>sap-business-technology-platform
 
 
 * Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you plan a promotional campaign to increase revenue and reduce stock. Therefore, you create a promotional campaign for your target group **coffee lovers** in the **Heidelberg** store. You plan to send a coupon to this target group that gives a **50 EUR** discount on the purchase of coffee machines.
-* In the **Coupon Management** service, you create a multi-code coupon with the ID **COFFEELOVER**. The coupon is valid from **October 1, 2026 until December 31, 2026**.
+* In the **Coupon Management** service, you create a multi-code coupon with the ID **COFFEE LOVER**. The coupon is valid from **October 1, 2026 until December 31, 2026**.
 * As the target group **coffee lovers** in the **Heidelberg** region consists of **100** contacts, you create **100 unique coupon codes** for those customers, each of which can be **redeemed only once** by a customer. Once the unique coupon codes are created, your marketing system can read and distribute them to the customers that are part of the promotional campaign.
 * You create the following promotion for your **Heidelberg** store (business unit ID: `FC01`): **Buy a coffee machine and show the coupon COFFEELOVER to get 50 Euro off**. 
 * Your promotion is valid from **October 1, 2026 until December 31, 2026**.
@@ -144,7 +144,7 @@ Now that you have created the multi-code coupon object and set it to active, you
 
 <!-- border -->![Generate coupon codes success](generate_coupon_codes.png)
 
-With this, you have now created a batch of **100** unique coupon codes for the coupon **COFFEELOVER**. You must note down the batch ID to read the coupon codes.
+With this, you have now created a batch of **100** unique coupon codes for the coupon **COFFEE LOVER**. You must note down the batch ID to read the coupon codes.
 
 
 ### Read coupon codes
@@ -169,7 +169,7 @@ You must note down a coupon code value as it will be used for redeeming the coup
 ### Create a promotion for multi-code coupon
 
 To finalize your promotional campaign, you want to set up the following promotion for your **Heidelberg** store (business unit ID **FC01**):
-* Buy a coffee machine and show the coupon **COFFEELOVER** to get 50 Euro off**.  
+* Buy a coffee machine and show the coupon **COFFEE LOVER** to get 50 Euro off**.  
 * The promotion is valid from October 1st, 2026 to December 31st, 2026.
 You can do so either by using the **Maintain Promotions** app or the **Data Upload** service.
 In this tutorial, we will use the **Data Upload** service.
