@@ -73,7 +73,7 @@ A workspace is created for your new project and the structure will look like thi
 
  The Common Data Model (CDM) includes business content from various SAP products all integrated in a unified manner in one site. It contains definitions of entities such as roles, spaces, apps, pages, groups, and catalogs and their relationships. For this tutorial we will be using the role and card entities. 
 
-1. Click on the `manifest.json` file. Everything needed to render the content package is described in this file. Copy and paste the following code snippet to replace the existing code:
+1. Click on the `manifest.json` file. Everything needed to render the content package is described in this file. Copy the following code snippet and add it to the manifest.json file:
 
     ```JSON
     
