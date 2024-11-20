@@ -28,7 +28,7 @@ primary_tag: products>sap-business-technology-platform
 
 ---
 
-### Get to know the business scenario
+## Get to know the business scenario
 
 
 * Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you plan a promotional campaign to increase revenue and reduce stock. Therefore, you create a promotional campaign for your target group **coffee lovers** in the **Heidelberg** store. You plan to send a coupon to this target group that gives a **50 EUR** discount on the purchase of coffee machines.
