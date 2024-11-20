@@ -153,7 +153,7 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
 
 The response should look like this:
 
-<!-- border -->![Calculation success](calculation_request_success.png)
+<!-- border -->![Calculation success](calculation_success.png)
 
 With this, the **Calculation** service has calculated the effective sales price for the coffee machine as EURO 950 by applying the promotion **Buy a coffee machine and show the coupon COFFEE LOVER to get EURO 50 off**. It then returns the effective sales price to the POS.
 
@@ -183,7 +183,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Redemption success](Redemption_success.png)
+<!-- border -->![Redemption success](redemption_success.png)
 
 With this, you have successfully redeemed the coupon code. The redemption information is returned to the POS which then confirms the completion of payment. Your customer has now successfully purchased the coffee machine at a discounted price.
 
