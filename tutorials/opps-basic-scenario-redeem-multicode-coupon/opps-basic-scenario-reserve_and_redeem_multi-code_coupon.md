@@ -27,7 +27,7 @@ primary_tag: products>sap-business-technology-platform
 
 ---
 
-### Get to know the business scenario
+## Get to know the business scenario
 
 
 * Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you launched a promotional campaign for your target group **coffee lovers** in the **Heidelberg** region. 
@@ -41,7 +41,7 @@ primary_tag: products>sap-business-technology-platform
 * Your customer completes the purchase. The POS triggers a request to the **Coupon Management** service **to redeem the coupon code**. The redemption information is  returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with his new coffee machine.
 
 
-### Create environments in SAP Business Accelerator Hub
+## Create environments in SAP Business Accelerator Hub
 
 
 In order to continue with the next steps, you need to have already set up your trial environments for the **Coupon Management service, Data Upload service, Data Access service, and Calculation service** in the **SAP Business Accelerator Hub**. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario). 
