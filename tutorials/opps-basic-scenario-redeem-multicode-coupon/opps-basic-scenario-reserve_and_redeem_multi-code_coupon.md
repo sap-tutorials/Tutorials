@@ -183,7 +183,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Coupon creation success](create_coupon_success.png)
+<!-- border -->![Redemption success](Redemption_success.png)
 
 With this, you have successfully redeemed the coupon code. The redemption information is returned to the POS which then confirms the completion of payment. Your customer has now successfully purchased the coffee machine at a discounted price.
 
