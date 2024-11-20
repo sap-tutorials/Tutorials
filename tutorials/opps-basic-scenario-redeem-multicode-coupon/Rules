@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+How long is the default reservation time for a coupon code?
+
+###Match
+[x] 10 minutes
+[x] One hour
+[x] Two days
+[ ] 30 minutes
+
+[VALIDATE_1]
