@@ -147,6 +147,7 @@ Now that you have created the multi-code coupon object and set it to active, you
 With this, you have now created a batch of **100** unique coupon codes for the coupon **COFFEE LOVER**. You must note down the batch ID to read the coupon codes.
 
 
+
 ### Read coupon codes
 
 
