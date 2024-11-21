@@ -10,8 +10,8 @@ parser: v2
 
 ## Prerequisites
 - [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
-- To integrate federated content into an SAP Build Work Zone site, you already need a site available in your SAP BTP trial account. Please follow at least the first two tutorials of the [Create your First Business Site with Apps](group.launchpad-cf-create-site) tutorial group or the full [Deliver your First Business Site Using SAP Build Work Zone, standard edition](mission.launchpad-cf) mission to set up SAP Build Work Zone, standard edition on your SAP BTP trial account.
-- To test content federation, you need an SAP S/4HANA system on release 2020 or newer and have administrator access to it. This tutorial describes the configuration of an SAP S/4HANA 2020 system which you can also get as [SAP S/4 HANA Fully Activated Appliance 30-day trial system](https://www.sap.com/products/s4hana-erp/trial.html). You can find more details about the process to start your SAP S/4HANA trial in this [Quick Start Document](https://www.sap.com/documents/2019/04/4276422b-487d-0010-87a3-c30de2ffd8ff.html#page=1).
+- To integrate federated content into an SAP Build Work Zone site, you already need a site available in your SAP BTP trial account. Please follow at least the first two tutorials of the [Create your First Business Site with Apps](group.launchpad-cf-create-site) tutorial group or the full [Create a Business Site Using SAP Build Work Zone, standard edition, and Add Applications and UI5 Cards to It](mission.launchpad-cf) mission to set up SAP Build Work Zone, standard edition on your SAP BTP trial account. 
+- To test content federation, you need an SAP S/4HANA system on release 2020 or newer and have administrator access to it. This tutorial describes the configuration of an SAP S/4HANA 2023 FPS01 system which you can also get as [SAP S/4 HANA Fully Activated Appliance 30-day trial system](https://www.sap.com/products/s4hana-erp/trial.html). You can find more details about the process to start your SAP S/4HANA trial in this [Quick Start Document](https://www.sap.com/documents/2019/04/4276422b-487d-0010-87a3-c30de2ffd8ff.html#page=1).
 &nbsp;
 To avoid reconfiguration of the SAP Cloud Connector after each restart, we recommend to use the system with a static public IP address.
 &nbsp;
@@ -34,19 +34,20 @@ You will learn how to combine federated content from SAP S/4HANA with apps from 
 ### Login to your SAP S/4HANA system
 
 
-1. If you are using your own instance of the SAP S/4HANA 2020 or 2021, Fully Activated Appliance solution in SAP Cloud Appliance Library, click **Connect**.
+1. If you are using your own instance of the SAP S/4HANA, Fully Activated Appliance solution in SAP Cloud Appliance Library, click **Connect**.
 
-    ![Connect instance](1-connect-to-cal.png)
+    ![Connect instance](1a-connect-to-cal.png)
 
-2.   You can either use the **Windows Remote Desktop** and login via SAP Logon there or login directly  via SAP GUI by clicking **Connect** in the SAP GUI row in the **Connect to the Instance** pop-up . Please check the [Getting Started with the SAP S/4HANA 2020 (SP00) Fully-Activated Appliance Guide](https://caldocs.hana.ondemand.com/caldocs/help/7a3ebd3e-d005-4c70-ae35-40a167aed981_Getting_Started_Guide_v1.pdf) for details.
+2.   You can either use the Windows Remote Desktop and login via SAP Logon there or login directly  via SAP GUI by clicking **Connect** in the SAP GUI row in the **Connect to the Instance** pop-up . Please check the [Getting Started with the SAP S/4HANA 2020 (SP00) Fully-Activated Appliance Guide](https://caldocs.hana.ondemand.com/caldocs/help/7a3ebd3e-d005-4c70-ae35-40a167aed981_Getting_Started_Guide_v1.pdf) for details.
 
-    An **.sap** file will be downloaded to your computer to connect to the SAP S/4HANA system.
 
-    ![Connect to S/4](1a-connect-to-s4.png)
+    ![Connect to S4](1a-connect-to-s4.png)
 
-3. Click the downloaded file. If required, click **Allow** in the pop-up window.
+3. An **.sap** file will be downloaded to your computer to connect to the SAP S/4HANA system.Click the downloaded file. If required, click **Allow** in the pop-up window.
+   
 
-    <!-- border --> ![Downloaded file](1b-downloaded-file.png)
+    ![Downloaded file](1b-downloaded-file.png)
+
 
 4. Login to client 100 of system S4H with default user ``BPINST`` and password ``Welcome1``.
 
@@ -65,32 +66,43 @@ To allow SAP Build Work Zone to consume data from your SAP S/4HANA system, you s
 
 Start the transaction ``uconcockpit``.
 
-![Launch uconcockpit](3-launch-uconcockpit.png)
+![Launch uconcockpit](3a-launch-uconcockpit.png)
 
 
 
 ### Activate clickjacking protection
 
-1. In the drop-down list, select **HTTP Whitelist Scenario**.
-
-    ![Open HTTP allowlist](4-open-http-whitelist.png)
-
-    >As of SAP S/4HANA 2021 this is called "HTTP Allowlist Scenario".
+1. In the drop-down list, select **HTTP Allowlist Scenario**.
 
 
-2. If the **Clickjacking Framing Protection** scenario is not available in the list, you need to activate it. To do so, select **HTTP Whitelist** > **Setup** in the menu bar.
+    ![Open HTTP allowlist](4a-open-http-whitelist.png)
 
-    ![Start HTTP Allowlist setup](5a-setup-http-whitelist.png)
 
-3. In the pop-up, check the entry **activate Clickjacking Protection (Context Type 02) for all clients (recommended)**. Then click the **Continue** icon.
+    > In releases before SAP S/4HANA 2021 this is called "HTTP Whitelist Scenario".
+    
 
-    ![Activate clickjacking protection](6a-activate-clickjacking-protection.png)
+2. If the **Clickjacking Framing Protection** scenario is already available in the list, you do not need to do anything here and can go directly to the next step **Open SAP Fiori launchpad client-specific settings**. This should be the case the SAP S/4HANA 2023 FPS01 Fully-Activated Appliance. 
 
-    >For more details, see [Using an Allowlist for Clickjacking Framing Protection](https://help.sap.com/viewer/864321b9b3dd487d94c70f6a007b0397/7.51.8/en-US/966b6233e5404ebe80513ae082131132.html)
+  ![Result clickjacking](7a-result-clickjacking.png)
 
-You now see the **Clickjacking Framing Protection** entry in the table. It is currently set to **Logging** mode. This means that connections are only logged, but not checked. With this setting, connectivity from your SAP BTP trial account will work. However, this is not a secure setting. In a productive environment, you would need to add the patterns for your SAP Build Work Zone to the whitelist and then set the scenario to **Active check** mode.
 
-![Result clickjacking](7-result-clickjacking.png)
+If not, you need to activate it. To do so, select **HTTP Allowlist** > **Setup** in the menu bar.
+
+
+  ![Start HTTP Allowlist setup](5a-setup-http-allowlist.png)
+
+
+In the pop-up, check the entry **activate Clickjacking Protection (Context Type 02) for all clients (recommended)**. Then click the **Continue** icon.
+
+
+  ![Activate clickjacking protection](6a-activate-clickjacking-protection.png)
+
+
+For more details, see [Using an Allowlist for Clickjacking Framing Protection](https://help.sap.com/viewer/864321b9b3dd487d94c70f6a007b0397/7.51.8/en-US/966b6233e5404ebe80513ae082131132.html)
+
+You now see the **Clickjacking Framing Protection** entry in the table. It is currently set to **Logging** mode. This means that connections are only logged, but not checked. With this setting, connectivity from your SAP BTP trial account will work. However, this is not a secure setting. In a productive environment, you would need to add the patterns for your SAP Build Work Zone to the allowlist and then set the scenario to **Active check** mode.
+
+  ![Result clickjacking](7a-result-clickjacking.png)
 
 
 
@@ -102,28 +114,32 @@ This parameter must only be set in an embedded scenario where the SAP Fiori fron
 
 1. Enter ``/nspro`` in the command field to access the customizing.
 
-    ![Launch SPRO](8-launch-spro.png)
+    ![Launch SPRO](8a-launch-spro.png)
 
 2. Click **SAP Reference IMG**.
 
-    ![Open SAP Reference IMG](9a-SAP-reference-IMG.png)
+    ![Open SAP Reference IMG](9b-SAP-reference-IMG.png)
 
-3. In the tree, open **SAP NetWeaver** > **UI Technologies** > **SAP Fiori** > **SAP Fiori Launchpad Settings**.
+3. In the tree, open **ABAP Platform** > **UI Technologies** > **SAP Fiori** > **SAP Fiori Launchpad Settings**.
 
-    >In an SAP S/4HANA 2020 system the path to choose would be ABAP Platform > UI Technologies > SAP Fiori > SAP Fiori Launchpad Settings.
+    >In an older system, e.g. SAP S/4HANA 2020, the path to choose would be SAP NetWeaver > UI Technologies > SAP Fiori > SAP Fiori Launchpad Settings.
 
 
 4. Then click the **IMG Activity** icon in front of **Change Client-Specific Settings**.
 
-    ![Change Settings](10-change-FLP-settings.png)
+    ![Change Settings](10a-change-FLP-settings.png)
 
+
+5. If you see a pop-up window informing you about a refresh of the text index, just confirm it.
+
+    ![Close pop-up](12b-confirm-popup.png)
 
 
 ### Set customizing parameter EXPOSURE_SYSTEM_ALIASES_MODE
 
 1. Click **New Entries** to create one new entry.
 
-    ![New Entries](11a-new-entries.png)
+    ![New Entries](11b-new-entries.png)
 
 2. For the new entry, make the following inputs in the first row of the table:
 
@@ -131,37 +147,34 @@ This parameter must only be set in an embedded scenario where the SAP Fiori fron
 
     Property Value:  `CLEAR`
 
-    > The values for Type and Category will be added automatically when you save the new entry.
+    > The values in other columns, e.g. for Type and Category, will be added automatically when you save the new entry.
 
 3. Click **Save**.
 
-    ![Exit](12-save-settings.png)
+    ![Exit](12a-save-settings.png)
 
-4. If you see a pop-up window informing you about a refresh of the text index, just confirm it.
-
-    ![Close pop-up](12b-confirm-popup.png)
 
     To save your settings, you need to assign a customizing request.
 
-5. Click the **Create** icon to create a new customizing request.
+4. Click the **Create** icon to create a new customizing request.
 
-    ![Create customizing request](13-create-customizing-request.png)
+    ![Create customizing request](13a-create-customizing-request.png)
 
-6. If you want, enter a description. Then click the **Save** icon.
+5. If you want, enter a description. Then click the **Save** icon.
 
-    ![Save request](14-save-request.png)
+    ![Save request](14a-save-request.png)
 
-7.  Click the **OK** icon to confirm the selected customizing request.
+6.  Click the **OK** icon to confirm using the newly created customizing request.
 
-    ![Confirm request](15-confirm-request.png)
+    ![Confirm request](15a-confirm-request.png)
 
-8.  Your entry was saved. Click the **Back** icon to go back to the main settings table.
+7.  Your entry was saved. Click the **Display** button to go back to the main settings table.
 
-    ![Back to FLP settings](16-back.png)
+    ![Back to FLP settings](16a-back.png)
 
 Now you made all settings required in the SAP S/4HANA trial system.
 
-![Customizing result](17-customizing-result.png)
+![Customizing result](17a-customizing-result.png)
 
 
 
@@ -174,11 +187,11 @@ If you work in your own SAP S/4HANA test system or just want to make sure all pr
 
 2. Enter ``cdm3`` in **Service Name** and click the **Execute** icon.
 
-    ![Enter service name](18a-open-cdm3-service.png)
+    ![Enter service name](18b-open-cdm3-service.png)
 
 3. Right-click the **cdm3** service. Check that the **Activate Service** entry is grey and inactive. This means that the service is already activated. Otherwise, you can activate it now by clicking Activate Service.
 
-    ![CDM3 service](18-cdm3-active.png)
+    ![CDM3 service](18a-cdm3-active.png)
 
 
 
@@ -191,13 +204,13 @@ You also need to make sure that the user which does the content exposure has the
 
 2. Enter the ``bpinst`` as **User** as this is the user that will do the content exposure. Then click the **Display** icon.
 
-    ![Enter user](19a-display-user.png)
+    ![Enter user](19b-display-user.png)
 
     > The permissions to run the content exposure are delivered with the role ``SAP_FLP_ADMIN``. The BPINST user has full administrator permissions and can be used for content exposure.
 
 3. Go to tab **Parameters** and make sure that the parameter  ``/UI2/PAGE_CACHE_OFF`` does **not** show up here. If it does, remove it.
 
-      <!-- border --> ![User parameters](19-su01.png)
+    ![User parameters](19a-su01.png)
 
 > This parameter is only used for test purposes to identify caching issues. It should not be available in productive systems anyhow, as it can slow down the loading process significantly.
 
