@@ -119,7 +119,7 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 
 3. Search for **`promotion`**. This will display all **Promotion Pricing** services. The following services are offered with SAP Omnichannel Promotion Pricing:
 
-    <!-- border -->![Promotion Pricing Services](Service_marketplace.png)
+    <!-- border -->![Promotion Pricing Services](v2_Service_marketplace.PNG)
 
 4. Choose the tile of the **Promotion Pricing, Calculation** service.
 

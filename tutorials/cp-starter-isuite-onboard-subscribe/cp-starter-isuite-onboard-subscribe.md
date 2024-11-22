@@ -127,7 +127,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
     <!-- border -->![Intermediate Step](4-1-CPI_step.png)
 
-    Select the **Enable API Business Hub Enterprise** checkbox. Choose **Next**.
+    Select the **Enable Developer Hub** checkbox. Choose **Next**.
 
     <!-- border -->![API management](4-1-API_step.png)
 

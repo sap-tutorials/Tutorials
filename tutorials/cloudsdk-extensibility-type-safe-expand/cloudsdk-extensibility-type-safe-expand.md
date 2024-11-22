@@ -1,10 +1,10 @@
 ---
 parser: v2
-author_name: Johannes Schneider
-author_profile: https://github.com/Johannes-Schneider
+author_name: Charles Dubois
+author_profile: https://github.com/CharlesDuboisSAP
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
 primary_tag: programming-tool>java
 ---
 
@@ -12,15 +12,15 @@ primary_tag: programming-tool>java
 <!-- description --> Use the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
 
 ## Prerequisites
-- [Introduce Resilience to Your Application](s4sdk-resilience)
-- [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
+ - [Introduce Resilience to Your Application](s4sdk-resilience)
+ - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
 
 > **Please note that the sandbox service does not support extending it by adding custom fields, you might have to use an actual S/4 system to try the tutorial out.**
 
 ## You will learn
-- How to use custom field extensions from S/4HANA in the virtual data model for OData
-- How to join connected entities from the virtual data model in eager fashion
-- How to leverage dependency injection to decouple your client code better from the SDK-provided classes
+  - How to use custom field extensions from S/4HANA in the virtual data model for OData
+  - How to join connected entities from the virtual data model in eager fashion
+  - How to leverage dependency injection to decouple your client code better from the SDK-provided classes
 
 ## Intro
 Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
