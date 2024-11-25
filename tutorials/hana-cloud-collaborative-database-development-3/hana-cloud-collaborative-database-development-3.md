@@ -29,7 +29,7 @@ primary_tag: products>sap-hana-cloud
 
 1.	Get started to collaborate in SAP Business Application Studio
 2.	Import data into a table in SAP HANA Database Project
-3.	You are here <sub-style="font-size:30px">&#9755;</sub> **Change data structures using HDBTABLE and HDBMIGRATIONTABLE objects**
+3.	You are here <sub style="font-size:30px">&#9755;</sub> **Change data structures using HDBTABLE and HDBMIGRATIONTABLE objects**
 
     >To answer the second question, create template projects that help you set up service connections, handle synonyms and prepare authorization management. You can create these templates once in the beginning and give your project team members a head-start. Using the template, they can build on your work and can quickly start working productively.
     >

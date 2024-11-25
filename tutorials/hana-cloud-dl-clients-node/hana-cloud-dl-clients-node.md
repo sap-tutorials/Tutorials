@@ -41,8 +41,6 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 >
 >![Chocolatey](Chocolatey.png)
 
----
-
 
 ### Install the data lake Relational Engine client for Node.js
 The Node.js driver covered in this tutorial is `@sap\iq-client` which supports the latest Node.js versions and includes a promise library.  An alternate driver is the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.
@@ -93,7 +91,7 @@ The Node.js driver covered in this tutorial is `@sap\iq-client` which supports t
 
 
 ### Create a synchronous Node.js application that queries SAP data lake Relational Engine
-1. Open a file named `nodeQuery.js` in an editor.
+1. Create a new file named `nodeQuery.js` in an editor.
 
     ```Shell (Microsoft Windows)
     notepad nodeQuery.js
@@ -125,7 +123,7 @@ The Node.js driver covered in this tutorial is `@sap\iq-client` which supports t
     var connection = datalakeIQ.createConnection();
     connection.connect(connOptions);
 
-    var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
+    var sql = 'select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;';
     t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
@@ -217,7 +215,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
             return console.error(err);
         }
         //Prepared statement example
-        const statement = connection.prepare('CALL HOTEL.SHOW_RESERVATIONS(?,?)');
+        const statement = connection.prepare('CALL HOTELS.SHOW_RESERVATIONS(?,?)');
         const parameters = [11, '2020-12-24'];
         var results = statement.execQuery(parameters, function(err, results) {
             if (err) {
@@ -314,7 +312,7 @@ The Node.js driver for the data lake Relational Engine client provides support f
     PromiseModule.connect(connection, connOptions)
         .then(() => {
              //Prepared statement example
-             return PromiseModule.prepare(connection, 'CALL HOTEL.SHOW_RESERVATIONS(?,?)');
+             return PromiseModule.prepare(connection, 'CALL HOTELS.SHOW_RESERVATIONS(?,?)');
         })
         .then((stmt) => {
             statement = stmt;
@@ -328,7 +326,7 @@ The Node.js driver for the data lake Relational Engine client provides support f
             return PromiseModule.close(results);
         })
         .then(() => {
-            PromiseModule.drop(statement);
+            return PromiseModule.drop(statement);
         })
         .then(() => {
             PromiseModule.disconnect(connection);
@@ -399,8 +397,5 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
 ### Knowledge check
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP data lake Relational Engine database.
-
-
-
 
 ---

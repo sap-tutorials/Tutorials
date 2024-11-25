@@ -26,8 +26,6 @@ Trace settings can also be configured using environment variables, or via connec
 ---
 
 ### Enable Tracing
-
-
 1. Enter the following command to see the current trace settings:  
 
     ```Shell
@@ -51,7 +49,7 @@ Trace settings can also be configured using environment variables, or via connec
     ```Shell (Linux or Mac)
     hdbsqldbc_cons TRACE SQL ON LEVEL INFO
     hdbsqldbc_cons TRACE TIMING ON
-    mkdir /tmp/traces
+    mkdir -p /tmp/traces
     hdbsqldbc_cons TRACE FILENAME /tmp/traces/SQLDBC-%p.txt
     ```
 
@@ -150,8 +148,6 @@ Trace settings can also be configured using environment variables, or via connec
 
 
 ### Additional Trace Settings
-
-
 The following are some additional options for tracing.
 
 1.  The FLUSH setting, when turned on, can reduce I/O activity.  If you are investigating a crash, it should be turned on to ensure that all the trace information is recorded.
@@ -205,21 +201,21 @@ The following are some additional options for tracing.
 4.  Trace information can be directed to `stdout` or `stderr`.  See below for a few examples.
 
     ```Shell
-    hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=sql=warning "SELECT * FROM HOTEL.CUSTOMER"
+    hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=sql=warning "SELECT * FROM HOTELS.CUSTOMER"
     ```
 
     ```Shell
     set HDB_SQLDBC_TRACEOPTS=SQL=WARN
     set HDB_SQLDBC_TRACEFILE=stdout
-    hdbsql -U User1UserKey "SELECT * FROM HOTEL.CUSTOMER"
+    hdbsql -U User1UserKey "SELECT * FROM HOTELS.CUSTOMER"
     set HDB_SQLDBC_TRACEOPTS=
     set HDB_SQLDBC_TRACEFILE=
     ```
 
 5.  Tracing can also be enabled in an application's connection properties.  For further details see `traceFile` and `traceOptions` in [SQLDBC Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/f6fb06ffe4484f6fa61f10082b11663d.html).
 
-### Tracing a JDBC Connection
 
+### Tracing a JDBC Connection
 Java must be installed in order to complete the following steps. To check if it is installed, run the following commands:
 ```Shell
 java -version
@@ -271,7 +267,7 @@ javac -version
 3.  Execute a query which will generate a trace file.
 
     ```Shell 
-    java -jar c:\sap\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT * FROM HOTEL.CUSTOMER"
+    java -jar c:\sap\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT * FROM HOTELS.CUSTOMER"
     ```
 
 4.  Examine the trace file by using the `cat` command (Linux or Mac) or the `type` command on Windows.
@@ -296,24 +292,23 @@ javac -version
 
     com.sap.db.jdbc.HanaConnectionClean@731f8236[ID:202968].createStatement()
     => com.sap.db.jdbc.HanaStatement@117159c0
-    com.sap.db.jdbc.HanaStatement@117159c0.execute("SELECT * FROM HOTEL.CUSTOMER")
+    com.sap.db.jdbc.HanaStatement@117159c0.execute("SELECT * FROM HOTELS.CUSTOMER")
     ```
 
 5.  Tracing information can be sent to `stdout` or `stderr` as shown below.
 
     ```Shell (Windows)
-    java -jar c:\sap\hdbclient\ngdbc.jar -k User1UserKey -o traceFile=stdout -o traceOptions=CONNECTIONS -c "SELECT * FROM HOTEL.CUSTOMER"
+    java -jar c:\sap\hdbclient\ngdbc.jar -k User1UserKey -o traceFile=stdout -o traceOptions=CONNECTIONS -c "SELECT * FROM HOTELS.CUSTOMER"
     ```
 
     ```Shell (Linux or Mac)
-    java -jar ~/sap/hdbclient/ngdbc.jar -k USER1UserKey -o traceFile=stdout -o traceOptions=CONNECTIONS -c "SELECT * FROM HOTEL.CUSTOMER"
+    java -jar ~/sap/hdbclient/ngdbc.jar -k USER1UserKey -o traceFile=stdout -o traceOptions=CONNECTIONS -c "SELECT * FROM HOTELS.CUSTOMER"
     ```
 
 
 6.  Tracing can also be enabled via the connection parameters.  For further details see [Trace a JDBC Connection Using a Connection String](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/250544c4c9f74855862a40a78d4ee3b5.html).
 
 ### Knowledge check
-
 Congratulations, you have now configured tracing with the SAP HANA client!
 
 

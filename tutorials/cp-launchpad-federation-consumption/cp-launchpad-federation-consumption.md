@@ -202,4 +202,5 @@ Now you are done in SAP BTP cockpit.
 
      > **Note:** If you select *Spaces and Pages - New Experience* as **View Mode** in the Site Settings, you can now also add the federated apps to pages you create on SAP Build Work Zone with the page editor.
 
+
 ---

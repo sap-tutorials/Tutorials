@@ -46,7 +46,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     > ---
 
-    > The SAP Automation Pilot subscription can be located in a different global account or sub account from the SAP Alert Notification service and the SAP HANA Cloud database.
+    > The SAP Automation Pilot subscription can be located in a different global account or subaccount from the SAP Alert Notification service and the SAP HANA Cloud database.
 
     ![create service](create-service.png)
 

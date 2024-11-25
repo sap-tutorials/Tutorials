@@ -39,7 +39,7 @@ terraform {
   required_providers {
     btp = {
       source  = "SAP/btp"
-      version = "~>1.0.0"
+      version = "~>1.3.0"
     }
   }
 }
@@ -59,12 +59,49 @@ terraform init
 
 ![terraform init](./terraform-init.png)
 
-Last but not least, you need to pass credentials to the provider to authenticate and interact with your BTP environments. Please set the environment variables `BTP_USERNAME` and `BTP_PASSWORD`:
+Last but not least, you need to pass credentials to the provider to authenticate and interact with your BTP environments. Please set the environment variables `BTP_USERNAME` and `BTP_PASSWORD`.
+
+[OPTION BEGIN [On Windows]]
+
+For Windows you have two options to export the environment variables:
+
+If you use Windows CMD, do the export via the following commands:
+
+```Shell
+set BTP_USERNAME=<your_username>
+set BTP_PASSWORD=<your_password>
+```
+
+If you use Powershell, do the export via the following commands:
+
+```Shell
+$Env:BTP_USERNAME = '<your_username>'
+$Env:BTP_PASSWORD = '<your_password>'
+```
+
+[OPTION END]
+
+[OPTION BEGIN [On Mac]]
+
+For Mac OS export the environment variables via:
 
 ```Shell
 export BTP_USERNAME=<your_username>
 export BTP_PASSWORD=<your_password>
 ```
+
+[OPTION END]
+
+[OPTION BEGIN [On Linux]]
+
+For Linux export the environment variables via:
+
+```Shell
+export BTP_USERNAME=<your_username>
+export BTP_PASSWORD=<your_password>
+```
+
+[OPTION END]
 
 Replace `<your_username>` and `<your_password>` with your actual BTP username and password.
 

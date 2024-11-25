@@ -29,16 +29,16 @@ primary_tag: software-product>sap-hana-cloud
     The schema can be changed by executing the SQL statement below:
 
     ```SQL
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     ```
 
     When performing a select against an object in the currently set schema, the schema name can be omitted.
 
     ```SQL
     SET SCHEMA USER1;
-    SELECT * FROM HOTEL.CUSTOMER; --succeeds
+    SELECT * FROM HOTELS.CUSTOMER; --succeeds
     SELECT * FROM CUSTOMER; --fails
-    SET SCHEMA HOTEL;
+    SET SCHEMA HOTELS;
     SELECT * FROM CUSTOMER; --succeeds
     ```
 

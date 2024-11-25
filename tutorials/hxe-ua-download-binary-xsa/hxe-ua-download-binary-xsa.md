@@ -73,7 +73,7 @@ Command arguments are:
 |Argument|Description|
 |--------|-----------|
 |`-h`|Print this help|
-|`-x`|Print extended help|
+|`-X`|Print extended help|
 |`-d <save_directory>`|Directory where to save the download file. Default is `%USERPROFILE%\Downloads` on Windows; and `~/Downloads` on Linux.|
 |`--ph <proxy_host>`|Proxy host name or IP address.|
 |`--pp <proxy_port>`|Proxy port.|

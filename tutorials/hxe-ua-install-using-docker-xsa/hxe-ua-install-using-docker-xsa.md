@@ -25,7 +25,7 @@ Before you begin, ensure your proxy settings have been properly set up. See [**H
 
 SAP HANA, express edition is a streamlined version of the SAP HANA platform which enables developers to jump-start application development in the cloud or personal computer to build and deploy modern applications that use up to 32GB memory. SAP HANA, express edition includes the in-memory data engine with advanced analytical data processing engines for business, text, spatial, and graph data - supporting multiple data models on a single copy of the data.
 
-The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the **SAP Store**.
+The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees.
 
 SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
 
@@ -175,27 +175,6 @@ sudo sh -c 'echo <hxehost_IP_address>    hxehost >> /etc/hosts'
 ```
 
 
-### (Optional) Create a Directory to Persist SAP HANA, express edition Data Outside of the Container
-
-
-Create a directory for the SAP HANA, express edition container and grant it the proper permissions.
-
-```bash
-mkdir -p /data/<directory_name>
-chown <hxeadm userID or name>:<sapsys groupID or name> /data/<directory_name>
-```
-
-For example:
-
-```bash
-mkdir -p /data/mydirectory
-chown 12000:79 /data/mydirectory
-```
-
-The name of this directory does not need to match the name you give to your SAP HANA, express edition container.
-
-
-
 ### Set Up Password for SAP HANA, express edition
 
 
@@ -247,7 +226,7 @@ This file serves as the master password for your SAP HANA, express edition users
 You must then add permissions for this file to be readable by the `hxeadm` user in the container. Change permissions with:
 
 ```bash
-sudo chmod 600 /data/<directory_name>/<file_name>.json
+sudo chmod 600 /data/<dir_for_password_file>/<file_name>.json
 sudo chown <hxeadm userID or name>:<sapsys groupID or name>/<file_name>.json
 ```
 
@@ -299,7 +278,7 @@ sudo docker run -p 49013:49013 -p 49015:49015 -p 49041-49045:49041-49045 -p 1138
 This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.
 
 > **Note:**
-> If you placed the password file in `/data/<directory_name>/<file_name>.json`, substitute  `file://<path_to_json_file>` with `file:///hana/mounts/<file_name>.json`.
+> If you placed the password file in `/data/<dir_for_password_file>/<file_name>.json`, substitute  `file://<path_to_json_file>` with `file:///hana/mounts/<file_name>.json`.
 >
 > Check if the password file `/hana/mounts/<file_name>.json` was deleted after the SAP HANA, express edition container starts.  If not, you can manually delete it. If the `JSON` file you are using is an *http* or *https* URL, you can leave out the `-v` option.
 >

@@ -62,7 +62,7 @@ As you can only create one private repository in a free Docker hub account, Dock
 **2.** In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 
 ```Shell / Bash
-pack build <docker-hub-account>/multitenant-kyma-backend:v1 --builder paketobuildpacks/builder-jammy-base
+pack build <docker-hub-account>/multitenant-kyma-backend:v1 --builder paketobuildpacks/builder-jammy-full
 ```
 
 
@@ -262,7 +262,7 @@ spec:
   - from:
     - namespaceSelector:
         matchLabels:
-          name: istio-system
+          kubernetes.io/metadata.name: istio-system
       podSelector:
         matchLabels:
           app: istio-ingressgateway

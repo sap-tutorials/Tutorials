@@ -1446,7 +1446,7 @@ The examples shown include commands to start, stop, update, and upgrade an SAP H
 
         ![Update the input instance details](cf-inputs.png)
 
-        The values can be found on the Overview page of the subaccount page.
+        The values can be found on the Overview page of the subaccount page.  Note that guid values can also be used for the Cloud Foundry Org name and space name.  Ensure that there is not a new line character following the values to ensure that an error message about the URL being malformed does not occur.
 
         ![subaccount overview page](overview.png)
 

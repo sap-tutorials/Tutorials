@@ -109,7 +109,7 @@ The `font-family` of the content now corresponds to the `font-family` of the hea
 
 ### Style your component
 
-In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style). You can also style your component using normal CSS or even authoring tools like [JSS](https://cssinjs.org), but this will be covered in [Tutorial 6](ui5-webcomponents-react-styling) of the tutorial series.
+In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style). You can also style your component using CSS ([modules](https://github.com/css-modules/css-modules)) or even authoring tools like [JSS](https://cssinjs.org), but this will be covered in [Tutorial 6](ui5-webcomponents-react-styling) of the tutorial series.
 
 The Card now spreads across the whole screen, this behavior is intended so it takes up the whole space of its container.
 

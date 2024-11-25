@@ -20,9 +20,9 @@ single-choice
 How many service instances do you have to at least create for your trial scenario?
 
 ###Match
-[ ] 1
 [ ] 2
-[x] 3
-[ ] 4
+[ ] 3
+[x] 4
+[ ] 5
 
 [VALIDATE_3]

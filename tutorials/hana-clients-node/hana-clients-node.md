@@ -79,7 +79,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 
     ```Shell (Linux or Mac)
-    mkdir $HOME/HANAClientsTutorial/node
+    mkdir -p $HOME/HANAClientsTutorial/node
     cd $HOME/HANAClientsTutorial/node
     ```
 
@@ -237,7 +237,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     //connection.onTrace("", null);  //disables callback tracing for the rest of the program
 
-    var sql = 'SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER;';
+    var sql = 'SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;';
     var t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
@@ -442,7 +442,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
             return console.error(err);
         }
         //Prepared statement example
-        const statement = connection.prepare('CALL HOTEL.SHOW_RESERVATIONS(?,?)');
+        const statement = connection.prepare('CALL HOTELS.SHOW_RESERVATIONS(?,?)');
         const parameters = [11, '2020-12-24'];
         var results = statement.execQuery(parameters, function(err, results) {
             if (err) {
@@ -544,7 +544,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
     PromiseModule.connect(connection, connOptions)
         .then(() => {
              //Prepared statement example
-             return PromiseModule.prepare(connection, 'CALL HOTEL.SHOW_RESERVATIONS(?,?)');
+             return PromiseModule.prepare(connection, 'CALL HOTELS.SHOW_RESERVATIONS(?,?)');
         })
         .then((stmt) => {
             statement = stmt;
@@ -558,7 +558,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
             return PromiseModule.close(results);
         })
         .then(() => {
-            PromiseModule.drop(statement);
+            return PromiseModule.drop(statement);
         })
         .then(() => {
             PromiseModule.disconnect(connection);
@@ -671,7 +671,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     console.log("Year session value is " + connection.getClientInfo("CURRENT_YEAR"));
 
-    var sql1: string = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER WHERE FIRSTNAME LIKE ?";
+    var sql1: string = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER WHERE FIRSTNAME LIKE ?";
 
     var statement: hana.Statement = connection.prepare(sql1);
     var result1: hana.ResultSet = statement.executeQuery(['M%']);

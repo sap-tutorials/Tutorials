@@ -13,6 +13,7 @@ author_profile: https://github.com/dhrubpaul
 
 ## Prerequisites
 - Understanding Of SAP AI Core
+- [Installing SAP AI Core toolkit VS Code extension](https://help.sap.com/docs/sap-ai-core/sap-ai-core-toolkit/sap-ai-core-toolkit)
 
 ## You will learn
 - Setup Vs code Toolkit
@@ -115,7 +116,7 @@ In the same directory, create a file named `Dockerfile` with **no extension**. T
 ```TEXT
 # Specify which base layers (default dependencies) to use
 # You may find more base layers at https://hub.docker.com/
-FROM python:3.7
+FROM python:3.11
 #
 # Creates directory within your Docker image
 RUN mkdir -p /app/src/
@@ -143,7 +144,7 @@ Open your terminal and navigate to your `hello-aicore-code` directory.  You will
 Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGITRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
 ```BASH
-docker buildx build –load --platform=<YOUR_DOCKER_PLATFORM>  -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
+docker buildx build --load --platform=<YOUR_DOCKER_PLATFORM>  -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
 ```
 
 > **INFORMATION** In the command, `-t` indicates that there is a tag name, followed by a colon and version. The name is your descriptive string, and the version can be in any format, here `house-price` and `01`, respectively. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
@@ -186,7 +187,7 @@ docker push docker.io/<YOUR_USERNAME>/house-price:01
 
 Here we will be adding our GitHub repository to AI core.
 
-**Step 1:** Select Ai core connection > Go inside admin operations > right click on GitHub repository and click on create git repository.
+**Step 1:** Select Ai core connection > Go inside admin operations > right click on GitHub repository and click on "Register git repository".
 
 <!-- border -->![](img/Adding_GitHub1.png)
 
@@ -207,18 +208,17 @@ Step 3: Fill the details GitHub URL, Name for GitHub, Username, password/token a
 
 <!-- border -->![](img/Adding_GitHub6.png)
 
-
-
 ### Creating an application
 
-Here we are adding an application from the GitHub repository we added to AI core.
+Here we add an application from the GitHub repository we just added to AI core.
 
 **Step 1:** Select Ai core connection > Go inside admin operations > right click on Applications and click on Register Application. A Pop up will open
 
 <!-- border -->![](img/Creating_application1.png)
 
 
-Step 2: Fill the details like application Name, GitHub URL, For following this tutorial enter Git version as HEAD (you can choose any specific commit too for the same repository If you are using Head make sure its in CAPS) also enter the path to Argo templates and press enter. This would mark as Completion of registering an application.
+Step 2: Fill the details like application Name, GitHub URL, For following this tutorial enter Git version as HEAD (you can choose any specific commit for the same repository, but if you are using HEAD make sure it's in uppercase), also enter the path to Argo templates and press enter. 
+This would mark as Completion of registering an application.
 
 **Please follow screenshots below**
 
@@ -312,15 +312,17 @@ Step 1: Select Ai core connection > Go inside ML operations > > Go inside ML Sce
 
 <!-- border -->![](img/Artifact1.png)
 
-Step 2: Enter the artifact name for reference, choose type as dataset and enter the artifact URL as : AI://<object\_credStore\_name>/Path\_to\_dataset, and the description for your reference. **In our case it would be ai://default/data**
+Step 2: Enter the artifact name for reference, choose type as dataset and enter the artifact URL as _AI://<object\_credStore\_name>/Path\_to\_dataset_, and the description for your reference.
 
 A pop-up will appear on the screen enter the values as per the screenshots below.
 
 <!-- border -->![](img/Artifact2.png)
 
-**Choose dataset.**
+**Choose dataset as an artifact type.**
 
 <!-- border -->![](img/Artifact3.png)
+
+**Choose ai://default/data as an artifact URL**
 
 <!-- border -->![](img/Artifact4.png)
 
@@ -364,6 +366,10 @@ Step 4: A pop up appears at the bottom of VS code where you will be able to see 
 
 <!-- border -->![](img/Running_Training4.png)
 
+Step 5: Once the execution is complete and the status shows as 'Completed,' you can proceed with the deployment.
+
+![image](img/step15.png)
+
 
 ### Deployment
 
@@ -377,6 +383,8 @@ Choose the values in pop-up as shown below
 
 <!-- border -->![](img/Deployment3.png)
 
+<!-- border -->![](img/step16_1.png)
+
 Then we will choose the created configuration and right click on deployments and click on start deployment to deploy the model.
 
 <!-- border -->![](img/Deployment4.png)
@@ -387,7 +395,7 @@ Once the deployment starts, we would be able to see the Deployment deployment UR
 
 A Output will open at bottom of VS code showing Deployment details.
 
-<!-- border -->![](img/Deployment6.png)
+<!-- border -->![](img/step16_2.png)
 
 
 you can refer at : <https://developers.sap.com/tutorials/ai-core-setup.html#6ba18db2-51b7-4c79-baea-df58471b5c42> under Postman Section on how to Download and Setup postman with AI core.

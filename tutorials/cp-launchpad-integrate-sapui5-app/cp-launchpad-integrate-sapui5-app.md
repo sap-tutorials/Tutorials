@@ -11,9 +11,11 @@ author_profile: https://github.com/LindsayBert
 # Integrate Your SAPUI5 App into Your Site
 <!-- description --> Add an SAPUI5 app to a site in SAP Build Work Zone, standard edition.
 
+
 ## Prerequisites
  - You've already created the `JobCore` site
- - You've deployed your SAPUI5 app (including the navigation properties), to SAP BTP, Cloud Foundry environment
+ - You've created a custom SAPUI5 application and deployed it to SAP BTP, Cloud Foundry environment
+ - You've created a space and a page and assigned the space to a role, as described in this tutorial: [Create a Space and a Page and Add Apps](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-spaces-pages.html)
 
 
 ## You will learn
@@ -24,6 +26,8 @@ Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to 
 
 
 ### Fetch updated content using the Channel Manager
+
+In this step, you will find your custom developed app that you deployed to your subaccount in SAP BTP.
 
 
 1. In the side navigation panel of your subaccount, click **Instances and Subscriptions** and then next to **SAP Build Work Zone, standard edition**, click the **Go to Application** icon.
@@ -54,56 +58,29 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 
     <!-- border -->![Open Content Editor](1-open-content-editor.png)
 
-    >The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available content providers, select the content, and add it to your own content.
-
-2. Click the **Content Explorer** tab to explore content from the available content providers.
+2. Click the **Content Explorer** button to explore content from the available content providers.
 
     ![Open Content Explorer](2-content-explorer.png)
 
 3. Select the **HTML5 Apps** provider.
 
-    ![Select the HTML5 tile](3a-select-HTML5-tile.png)
+    ![Select the HTML5 tile](3a-select-HTML-tile.png)
 
 4. You'll see that your `Suppliers` app that you've just created in SAP Business Application Studio, already exists in this provider. Select it and click **+ Add to My Content**.
 
     <!-- border -->![Add app to My Content](4-add-app-my-content.png)
 
-5. Click the **My Content** tab.
+5. Select the `Suppliers` app and click **Add**.
 
-    ![Click My Content](5-click-my-content.png)
+    ![Select app](5-select-app.png)
+
+6. Using the breadcrumbs, go back to the Content Manager.
+
+    ![Select app](6-go-to-content-manager.png)
 
     Note that your `Suppliers` app is in the list of content items.
 
-
-
-### Create group and assign app to it
-
-
-In this step, you'll create a new group and assign the `Suppliers` app to it.
-
-> A group is a set of one or more apps displayed together in a site. Assigning apps to groups, makes them visible to the user.
-
-1. Click **+ New** in the **Content Manager** and select **Group** to create a new group.
-
-    ![Add new group](6-add-group.png)
-
-2. Enter `Our Suppliers` as the **Title**.
-
-3. In the **Assignments** panel on the right, click in the search box to see a list of apps.
-
-    >If you have many apps, you can type some letters of your app name in the search bar, (for example, `su`) to search for the app.
-
-4. Next to the `Suppliers` app, click the **+** icon to assign your app to this group.
-
-    ![Assign app to group](7-assign-app-to-group.png)
-
-    You'll see that the icon changes.
-
-4. Click **Save**.
-
-    ![Save](8-save.png)
-
-
+    ![View app](7-view-app.png)
 
 
 ### Assign app to Everyone role
@@ -111,41 +88,58 @@ In this step, you'll create a new group and assign the `Suppliers` app to it.
 
 In this step, you'll assign the `Suppliers` app to the `Everyone` role. This is a default role - content assigned to the `Everyone` role is visible to all users.
 
-1. Open the **Content Manager** from the side panel.
-
-    ![Open Content Manager](9-open-content-manager.png)
-
-2. Click the `Everyone` role to open the role editor.
+1. In the **Content Manager**, click the `Everyone` role.
 
     ![Everyone role](9a-everyone-role.png)
 
-3. Click **Edit**.
+2. Click **Edit**.
 
     ![Edit role](10-edit-role.png)
 
-4. Click the search box in the **Assignments** panel on the right. Any available apps are shown in the list below.
+3. In the **Assignment Status** column, toggle the switch to assign the app to the `Everyone` role. 
 
-5. Next to the `Suppliers` app, click the **+** icon. You'll see that the icon changes.
+    ![Assign role](11-assign-everyone-role.png)
+
+4. Click **Save**.
+
+### Add the app to your page
+
+1. Using the breadcrumbs, go back to the Content Manager.
+
+2. Select the `Overview` page. 
+
+    ![Select page](12-select-page.png)
+
+3. When the page opens you'll see other apps and a card that you added in the previous tutorials. Click **Edit**.
+
+    ![Edit page](13-edit-page.png)
+
+4. Hover in the section where your other apps are displayed, click the **+** icon.
+
+    ![Add app](14-add-app.png)
+
+5. Select the `Suppliers` app and click **Add**.
+
+    ![Add Suppliers app](15-add-suppliers-app.png)
 
 6. Click **Save**.
-
 
 ### Review your site
 
 
 1. Click the **Site Directory** icon to open the Site Directory.
 
-    ![Open site directory](11-open-site-directory.png)
+    ![Open site directory](16-open-site-directory.png)
 
 2. Click **Go to site** on the site tile.
 
-    ![Open site](12-go-to-site.png)
+    ![Open site](17-go-to-site.png)
 
-    You'll see all the apps that you have created in your site. In the `Our Suppliers` group, you'll see the `Suppliers` app that we've just created.
+    You'll see all the apps that you have added to your site as well as the UI integration card.
 
-    ![See all apps](12a-view-launchpad.png)
+    ![See all apps](18-final-view.png)
 
 
-3. Click the app to launch it.
+3. Go ahead and click the apps to launch them.
 
-    ![View app](13-suppliers-app.png)
+   

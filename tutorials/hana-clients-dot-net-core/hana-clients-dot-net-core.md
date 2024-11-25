@@ -94,21 +94,26 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     pico dotNET.csproj
     ```
 
-    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the SAP HANA Client .NET driver from.  Modify the `HintPath` section with the information about where the dll is located on your machine.
+    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the SAP HANA Client .NET driver from.  Modify the `HintPath` section with the information about where the dll is located on your machine.  
+    
+    >The SAP HANA driver can be downloaded from [SAP Development Tools](https://tools.eu1.hana.ondemand.com/#hanatools) for either Linux, Windows or macOS if required.
+
+    >![HANAClientDriverDownload](HANAClientDriver.png)
 
     ```Shell (Microsoft Windows)
     <ItemGroup>
-      <Reference Include="Sap.Data.Hana.Core.v2.1">
-        <HintPath>C:\SAP\hdbclient\dotnetcore\v2.1\Sap.Data.Hana.Core.v2.1.dll</HintPath>
-      </Reference>
+      <Reference Include="Sap.Data.Hana.Core.v6.0">
+          <HintPath>C:\SAP\hdbclient\dotnetcore\v6.0\Sap.Data.Hana.Net.v6.0.dll</HintPath>
+        </Reference>
     </ItemGroup>
     ```
 
     ```Shell (Linux or Mac)
     <ItemGroup>
-      <Reference Include="Sap.Data.Hana.Core.v2.1">
-        <HintPath>/home/dan/sap/hdbclient/dotnetcore/v2.1/Sap.Data.Hana.Core.v2.1.dll</HintPath>
+      <Reference Include="Sap.Data.Hana.Core.v6.0">
+        <HintPath>/home/dan/sap/hdbclient/dotnetcore/v6.0/Sap.Data.Hana.Net.v6.0.dll</HintPath>
       </Reference>
+      
     </ItemGroup>
     ```
     ![dotNET.csproj code](dotNET-csproj-code.png)
@@ -154,7 +159,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
                     {
                         conn.Open();
                         Console.WriteLine("Connected");
-                        var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTEL.CUSTOMER";
+                        var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER";
                         using (var cmd = new HanaCommand(query, conn))
                         using (var reader = cmd.ExecuteReader())
                         {
@@ -207,10 +212,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     ![Result of running the app](result.png)
 
 
-
 ### Debug the application
-
-
 1. Open Visual Studio Code. If needed, download Visual Studio Code [here](https://code.visualstudio.com/Download).
 
 2. If you have not already done so, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
@@ -236,7 +238,6 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     For further information on debugging .NET apps consult [Tutorial: Debug a .NET Core console application using Visual Studio Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code) and [Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
 ### Knowledge check
-
 Congratulations! You have now created and debugged a .NET application that connects to and queries an SAP HANA database.  
 
 

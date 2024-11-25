@@ -39,15 +39,11 @@ author_profile: https://github.com/Karunaharan
 
       <!-- border -->![Add integration flow artifact](2-2-add-integration-flow-new.png)
 
-      Enter a **Name** for the integration flow and choose **OK**.
+      Enter a **Name** for the integration flow and choose **Add and Open in Editor**.
 
       <!-- border -->![Enter integration flow details and confirm](2-2-enter-iflow-details.png)
 
-3. Choose **Save** and open the integration flow by selecting it.
-
-      <!-- border -->![Save integration package and open integration flow](2-3-save-open-iflow.png)
-
-4. Choose **Edit** to start editing the integration flow.
+3. Choose **Edit** to start editing the integration flow.
 
     Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for every step in the integration flow.
 
@@ -141,15 +137,11 @@ You have now created a step that will (in the further step) connect and communic
 
 4. Select the **Connection** tab. In the **Address** field, enter **`https://refapp-espm-ui-cf.cfapps.eu10.hana.ondemand.com/espm-cloud-web/espm.svc`**. This is the URL of the online web shop from which you will fetch the product details.
 
-    <!-- border -->![Enter connection details for OData adapter](8-4-odata-connection-details.png)
-
 5. Select the **Processing** tab and choose **Select** in the **Resource Path** field.
 
     <!-- border -->![OData processing resource path selection - 1](8-5-odata-processing-1.png)
 
 6. Ensure the connection details are the same and choose **Step 2**.
-
-    <!-- border -->![OData processing resource path selection - 2](8-6-odata-processing-2.png)
 
 7. Choose the **Select Entity** field and choose **Products** from the dropdown list.
 

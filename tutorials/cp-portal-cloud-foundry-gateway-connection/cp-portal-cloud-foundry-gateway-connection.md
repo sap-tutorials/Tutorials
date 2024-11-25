@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 <!-- description --> Create a connection between SAP BTP, Cloud Foundry environment and the SAP Gateway Demo System (ES5).
 
 ## Prerequisites
-- You've created an account in SAP BTP 
+- You've created an account in SAP BTP  
 - You've created a user account on the SAP Gateway Demo System (ES5)
 
 

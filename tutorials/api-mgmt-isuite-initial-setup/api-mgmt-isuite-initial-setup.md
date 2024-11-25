@@ -18,7 +18,7 @@ primary_tag: software-product>sap-api-management
   - Access API Management features and resources available on Integration Suite.
 
 ## Intro
-To set up the API Management capability from Integration Suite, you should first have an Integration Suite subscription.
+To set up the API Management capability from Integration Suite, you should first have an Integration Suite subscription. 
 
 >**IMPORTANT** Ensure that you don't have an instance of starter plan created in the same subaccount, where you plan to create an Integration Suite subscription. Also, note that API Management capabilities from Integration Suite and API Management subscriptions using the standalone tile cannot coexist in the same subaccount.
 
@@ -42,7 +42,7 @@ To set up the API Management capability from Integration Suite, you should first
 
    To access Integration Suite, you must first assign the "Integration Provisioner" role to yourself.
 
->**IMPORTANT** If you choose **Go to Application** without assigning the **Integration Provisioner** role, an application authentication error appears. If the error persists after assigning the role, clear your web browser cache, and log out of the application and log in again.
+>**IMPORTANT** If you choose **Go to Application** without assigning the **Integration Provisioner** role, an application authentication error appears. If the error persists after assigning the role, clear your web browser cache and log out of the application and log in again.
 
 
 
@@ -56,7 +56,7 @@ To set up the API Management capability from Integration Suite, you should first
 2. Select the user to whom you want to assign the role, and under **Role Collections** section, choose **Assign Role Collection**.
    <!-- border -->![Assign Role Collection](Assign-Role-Collection.png)
 
-3. In the resulting dialog box, select the **Integration Provisioner** role and choose **Assign Role Collection**.
+3. In the resulting dialog box, select the **Integration_Provisioner** role and choose **Assign Role Collection**.
    <!-- border -->![Assign Integration Provisioner Role](integration-provisioner-role.png)
 
 
@@ -93,21 +93,18 @@ To set up the API Management capability from Integration Suite, you should first
 
 7. Go to the **SAP BTP Cockpit**, choose **Security** > **Users** and select the user to whom you want to assign the role. Under **Role Collections** section, choose **Assign Role Collection**. In the resulting dialog box, choose the following roles and choose **Assign Role Collection**:
 
- - **APIManagement.Selfservice.Administrator** - This role is required to configure API Management service in Integration Suite. 
- - **AuthGroup.SelfService.Admin** - This role is required during the onboarding of API business hub enterprise and to get access to it.
- - **Graph.KeyUser** - This role is required to create and activate business data graphs for a landscape.
- - **GraphNavigator.Viewer** - This role is required to explore business data graphs in **Graph Navigator**.
+   - **APIManagement.Selfservice.Administrator** - This role is required to configure API Management service in Integration Suite. 
+   - **AuthGroup.SelfService.Admin** - This role is required during the onboarding of API business hub enterprise and to get access to it.
+   - **Graph.KeyUser** - This role is required to create and activate business data graphs for a landscape.
+   - **GraphNavigator.Viewer** - This role is required to explore business data graphs in **Graph Navigator**.
+   
+8. Refresh the Integration Suite page. If you don't see the **APIs** option under the **Settings** tab, log out of the Integration Suite page and log in again.
 
-8. Refresh the **Integration Suite** page or logout and log back in. 
- 
-                                                                                     
-       
- 
- 
-                                                                                       
+
+
 ### Configure the API Management Service
 
-
+   
 
 1. On the **Integration Suite** home page, choose **Settings** > **APIs** from the left navigation pane.
    <!-- border -->![Setting Up API Management Service](settings-api.png)
