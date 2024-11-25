@@ -75,10 +75,10 @@ Start the transaction ``uconcockpit``.
 1. In the drop-down list, select **HTTP Allowlist Scenario**.
 
 
-    ![Open HTTP allowlist](4a-open-http-whitelist.png)
+    ![Open HTTP allowlist](4a-open-allowlist.png)
 
 
-    > In releases before SAP S/4HANA 2021 this is called "HTTP Whitelist Scenario".
+    > In older SAP S/4HANA releases, scenario names might differ.
     
 
 2. If the **Clickjacking Framing Protection** scenario is already available in the list, you do not need to do anything here and can go directly to the next step **Open SAP Fiori launchpad client-specific settings**. This should be the case the SAP S/4HANA 2023 FPS01 Fully-Activated Appliance. 
