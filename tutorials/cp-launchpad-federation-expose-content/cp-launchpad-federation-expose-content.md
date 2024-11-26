@@ -9,7 +9,7 @@ parser: v2
 ---
 
 ## Prerequisites
- - You have access to an SAP S/4HANA system with SAP Fiori Front-end Server 2020 or higher that was configured for connectivity with your SAP BTP trial account. 
+ - You have access to an SAP S/4HANA system with SAP Fiori Front-end Server 2020 or higher that was configured for connectivity with your SAP BTP trial account. The screenshots in this tutorial were taken from an SAP S/4HANA 2023 FPS01 system, but differences in older systems are also explained. 
 
 
 ## You will learn
@@ -30,44 +30,37 @@ Login to your SAP S/4HANA system with SAP Logon.
 
 1. Enter transaction code ``/n/ui2/cdm3_exp_scope``.
 
-    ![Enter transaction](2-s4-enter-transaction.png)
+    ![Enter transaction](2a-s4-enter-transaction.png)
 
-2. In the **Select and expose your SAP Fiori content** screen, click the **Select Roles** radio button to select only some roles for content exposure.
-
-    ![Select roles](3a-s4-select-roles.png)
-
+2. In the **Launchpad Content Exposure** screen, click the  **Multiple Selection** icon to open role selection.
+    ![Select roles](3c-s42023fps01.png)
 
 
-> **Note**: When using an SAP S/4HANA 2023 FPS01 system, the screen will look a bit different and give you the option to select between exposure version 1 and version 2. In this tutorial, simply keep version 1. To learn more about the exposure versions, please check the [documentation](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/federation-of-remote-content-providers).
->  ![Exposure Screen 2023 FPS01](3b-s42023fps01.png)
-> 
+
+    > **Note**: When using an older SAP S/4HANA system, the screen will look a bit different, as the option to select between exposure version 1 and version 2 only became available with SAP S/4HANA 2023 FPS01. In this tutorial, simply keep version 1. To learn more about the exposure versions, please check the [documentation](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/federation-of-remote-content-providers).
 
 
-3. Then click the **Multiple Selection** icon to open role selection.
+3. Enter the two roles ``SAP_BR_AP_ACCOUNTANT`` and ``SAP_BR_MASTER_SPECIALIST_FIN`` either by typing them in or using the value help.
 
-    ![Multiple Selection Icon](3c-s4-multiselect.png)
+2. Then click the **Copy** icon.
 
-4. Enter the two roles ``SAP_BR_AP_ACCOUNTANT`` and ``SAP_BR_MASTER_SPECIALIST_FIN`` either by typing them in or using the value help.
+    ![Multi select screen](4b-s4-select-roles.png)
 
-5. Then click the **Copy** icon.
+3. Click  **Save Configuration** to keep the roles for future exposure.
 
-    ![Multi select screen](4a-s4-select-roles.png)
-
-6. Click  **Save Selected Roles** to keep the roles for future exposure.
-
-    ![Save selected roles](5-s4-save-roles.png)
+    ![Save selected roles](5a-s4-save-roles.png)
 
 
 
 ### Expose Selected Roles
 
-Click **Expose** to start exposing the selected roles and their assigned content like apps, catalogs, and spaces.
+Click **Expose Content** to start exposing the selected roles and their assigned content like apps, catalogs, spaces and pages.
 
-![Expose](6-s4-expose.png)
+![Expose](6a-s4-expose.png)
 
-The exposure process starts. In the status bar you can check the progress. Preparation of the content usually takes 1 to 2 minutes.
+The exposure process starts. In the status message you can see the progress. Preparation of the content usually takes 1 to 2 minutes.
 
-![Status Reading catalogs](7a-s4-status.png)
+![Status Reading catalogs](7b-s4-status.png)
 
 
 
@@ -76,15 +69,9 @@ The exposure process starts. In the status bar you can check the progress. Prepa
 
 Once the exposure process is finished, the exposure log is displayed. In the status bar, you also see a success message.
 
-![Exposure log](8a-s4-success.png)
+![Exposure log](8b-s4-success.png)
 
-1. Scroll down to the bottom of the log.
-
-2. Expand the entry ``role entity SAP_BR_AP_ACCOUNTANT exposed with warnings`` to check the warnings.
-
-> You see which of the groups, catalogs, and apps were exposed with (tolerable) issues.
-
-![Check warnings](9a-s4-role-details.png)
+   Scroll down to the bottom of the log.
 
 Now you are done with exposing the content and can go to SAP Build Work Zone to consume the exposed content.
 
