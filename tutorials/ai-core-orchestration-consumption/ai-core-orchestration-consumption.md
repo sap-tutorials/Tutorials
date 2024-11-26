@@ -629,6 +629,7 @@ print(cv_content)
 The next step involves creating a template that specifies how the AI should handle the resume content. The template will include both SystemMessage and UserMessage components. 
 
 • SystemMessage: Defines the AI assistant's role and instructions. 
+
 • UserMessage: Represents the user's input (i.e., the CV content) to be processed by the AI. 
 
 ```CODE
@@ -765,6 +766,7 @@ console.log(txtContent);
 The next step involves creating a template that specifies how the AI should handle the resume content. The template will include both SystemMessage and UserMessage components. 
 
 • SystemMessage: Defines the AI assistant's role and instructions. 
+
 • UserMessage: Represents the user's input (i.e., the CV content) to be processed by the AI. 
 
 ```CODE
@@ -901,6 +903,7 @@ Data masking and content filtering are available to enhance data privacy and saf
 **Request Setup:**
 
 • Request Type: POST 
+
 • URL: https://$ORCH_DEPLOYMENT_URL/completion 
                 
 (Replace $ORCH_DEPLOYMENT_URL with the actual deployment URL) 
@@ -910,6 +913,7 @@ Data masking and content filtering are available to enhance data privacy and saf
 Add the following headers in Postman: 
 
 • content-type: application/json 
+
 • ai-resource-group: <RESOURCE_GROUP> 
 
 (Replace <RESOURCE_GROUP> with the actual resource group value) 
@@ -917,6 +921,7 @@ Add the following headers in Postman:
 **Body:**
 
 • Select raw as the input type. 
+
 • Set the format to JSON. 
 
 Copy and paste the following JSON configuration: 
