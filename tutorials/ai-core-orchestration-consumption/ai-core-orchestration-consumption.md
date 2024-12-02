@@ -8,8 +8,8 @@ author_name: Smita Naik
 author_profile: https://github.com/I321506
 ---
 
-# Basic Consumption of GenAI models Using Orchestration 
-<!-- description --> In this tutorial, we are going to learn the basic consumption of Gen AI models using the Orchestration.
+# Consumption of GenAI models Using Orchestration - A Beginner's Guide
+<!-- description --> In this tutorial, we are going to learn the simple consumption of Gen AI models using the Orchestration.
 
 ## You will learn
 - How to inference GenAI models Using Orchestration
