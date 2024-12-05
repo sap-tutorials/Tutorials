@@ -34,7 +34,7 @@ In this step, you copy the endpoint address of the integration flow.
 
 1. Open your integration flow.
 
-2. In the **Deployment Status** tab of the property sheet, choose the URL.
+2. In the **Deployment Status** tab of the property sheet, choose the navigation link.
 
     <!-- border -->![Access Deployed Artifact](1-2-access-deployed-artifacts.png)
 
@@ -47,19 +47,19 @@ In this step, you copy the endpoint address of the integration flow.
 
 ### Define the API
 
-In this step, you define and expose an integration flow endpoint as an application programming interface
+In this step, you define and expose an integration flow endpoint as an application programming interface (API).
 
 1. Choose **Settings** > **APIs** to provision the API Management capability. This provisioning might take a few seconds to complete. After the provisioning is complete, refresh your webpage.
 > The page is available only if you're provisioning the capability as a first-time user.
 
-2. Choose **Configure** > **APIs** > **Create** to create an API.
+2. Choose **Configure** > **APIs** > **Create** to create an API proxy.
 
 3. On the **Create API** dialog, next to **Select**: choose **URL** and specify the following parameters:
 >**IMPORTANT** : Paste only the endpoint URL till **`/http/products`** Otherwise, the scenario will not run appropriately.
 
     |  Parameter    | Settings
     |  :------------- | :-------------
-    |  URL           | Paste the integration flow endpoint address you have copied in **step 1**. It ends with **`/http/products/details`**. **Note:** paste only the endpoint URL till **`/http/products`** instead of **`/http/products/details`**.
+    |  URL           | Paste the integration flow endpoint address you have copied in **step 1**. It ends with **`/http/products/details`**. Paste the endpoint URL only till **`/http/products`** instead of **`/http/products/details`**.
     |  Name           | **`RequestProductDetails`**
     |  Title    | **`Product Details API`**
     |  API Base Path          | **`/products`**
@@ -226,10 +226,10 @@ This grant type works in the following way: In a first call, the API client prov
 
 
 
-### Execute API
+### Execute the API
 
 
-In this step you try out the API to get product details as a response from the remote component.
+In this step you try out the API to get product details as a response from the web shop.
 
 1. Go to the **Resources tab**.
 

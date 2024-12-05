@@ -31,7 +31,7 @@ author_profile: https://github.com/Karunaharan
 
     >The **Technical Name** gets populated automatically based on the name that you provide.
 
-      Choose **Save** and then choose **Artifacts** to navigate to the artifacts tab. In this tab, you will create your first integration flow.
+      Choose **Save** and then choose **Artifacts**. In this tab, you will create your first integration flow.
 
       <!-- border -->![Provide package details and navigate to artifacts](2-1-enter-integration-package-details.png)
 
@@ -151,7 +151,7 @@ You have now created a step that will (in the further step) connect and communic
 
     <!-- border -->![OData processing resource path selection - 4](8-8-odata-processing-4.png)
 
-9. Choose the **Select Field** icon.
+9. In the **Filter By** section, choose the **Select Field** icon.
 
     <!-- border -->![OData processing resource path selection - 5](8-9-odata-processing-5.png)
 
