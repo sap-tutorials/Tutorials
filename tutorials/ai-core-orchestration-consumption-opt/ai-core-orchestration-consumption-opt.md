@@ -9,7 +9,7 @@ author_profile: https://github.com/I321506
 ---
 
 # Leveraging Orchestration Capabilities to Enhance Responses
-<!-- description -->  In this tutorial, we will explore few orchestration capabilities available in the Gen AI Hub, including features such as Data Masking and Content Filtering.
+<!-- description -->  In this tutorial, we will explore advanced orchestration capabilities available in the Gen AI Hub, including features such as Data Masking and Content Filtering.
 
 ## You will learn
 - Inference of GenAI models using orchestration along with Data Masking and Content Filtering features
@@ -27,7 +27,7 @@ Familiarity with the orchestration workflow is recommended
 
 [OPTION BEGIN [AI Launchpad]]
 
-**In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from simple orchestration to leveraging optional modules to enhance data privacy and refine response quality. These enhancements include: 
+**In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
 
   -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
   -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses. 
@@ -51,7 +51,7 @@ Familiarity with the orchestration workflow is recommended
 
     -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses.
 
-- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these modules to improve data privacy, security, and response quality. 
+- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
 
 **NOTE** : If you are continuing with the same notebook from the previous tutorial, skip steps 1 and 2. Otherwise, create a new notebook using the already deployed orchestration URL to access the Harmonized API. 
 
@@ -75,13 +75,13 @@ print(cv_content)
 
 [OPTION BEGIN [SAP Cloud SDK]]
 
-- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional modules to enhance data privacy and refine response quality. These enhancements include: 
+- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
 
     -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
 
     -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses.
 
-- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these modules to improve data privacy, security, and response quality. 
+- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
 
 **NOTE** : If you are continuing with the same notebook from the previous tutorial, skip steps 1 and 2. Otherwise, create a new notebook using the already deployed orchestration URL to access the Harmonized API.  
 
@@ -111,6 +111,20 @@ console.log(txtContent);
 
 
 ```
+
+[OPTION END]
+
+[OPTION BEGIN [Bruno]]
+
+- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
+
+    -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
+
+    -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses.
+
+- Here, we extend the use case introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html), where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
+
+**Bruno Setup** : If you have already completed the environment setup, configuration, and deployment as described in the [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html), you can directly proceed to the Data Masking Configuration. If you're new to this, please follow the steps in the [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to set up your environment, configure, and deploy the orchestration before proceeding with the advanced modules.  
 
 [OPTION END]
 
@@ -403,82 +417,86 @@ console.log('Data Masking configuration defined successfully.');
 
 [OPTION END]
 
-[OPTION BEGIN [Postman]]
+[OPTION BEGIN [Bruno]]
+- Before proceeding with the data masking configuration, ensure the following:
+    - You have completed the Bruno collection and setup as per the [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html).
+    - The deployment for the orchestration is already done and configured correctly.
 
-- **Request Type**: **POST** 
-- **URL**: https://$ORCH_DEPLOYMENT_URL/completion (Replace $ORCH_DEPLOYMENT_URL with the actual URL) 
+**Note**: If you have already completed these setup steps, you can proceed directly to the data masking configuration. If not, please follow the steps in the [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to complete the environment setup and deployment.
 
-**Headers** 
+- The Data Masking Module ensures data privacy by anonymizing or pseudonymizing sensitive information before it is processed.
+    - Anonymization: Irreversibly replaces personal identifiers with placeholders (e.g., MASKED_ENTITY).
+    - Pseudonymization: Substitutes identifiers with reversible tokens (e.g., MASKED_ENTITY_ID).
 
-- **content-type**: application/json 
-- **Authorization**: Bearer <YOUR_TOKEN> (Replace <YOUR_TOKEN> with the generated token) 
-- **ai-resource-group**: <RESOURCE_GROUP> (Replace <RESOURCE_GROUP> with the actual resource group value) 
+For this tutorial, we use anonymization:
 
-**Body** 
+- Navigate to the **'04_consume_model'** section.
 
-- Go to the **Body** tab in Postman. 
-- Select **raw** as the input type. 
-- Set the format to **JSON**. 
-- Copy and paste the following **JSON** in the Body section: 
+- In the list of requests, select the **direct_model_usage** option to open the request designed for consuming the deployed model.
 
-```CODE
+- Expand the Body section of the request. Replace the current JSON in the Body with the following updated JSON, which includes the data masking configuration
 
-{   
-  "orchestration_config": {   
-    "module_configurations": {   
-      "templating_module_config": {   
-        "template": [   
-          {   
-            "role": "system",   
-            "content": "You are a helpful AI assistant for HR. Summarize the following CV in 10 sentences, focusing on key qualifications, work experience, and achievements. Include personal contact information, organizational history, and personal interests."   
-          },   
-          {   
-            "role": "user",   
-            "content": "Here is the candidate's resume: {{?candidate_resume}}"   
-          }   
-        ],   
-        "parameter_schema": {   
-          "candidate-resume": {   
-            "is_required": true   
-          }   
-        }   
-      },   
-      "llm_module_config": {   
-        "model_name": "gpt-4",   
-        "model_params": {   
-          "max_tokens": 300,   
-          "temperature": 0.1,   
-          "frequency_penalty": 0,   
-          "presence_penalty": 0   
-        }   
-      },   
-      "masking_module_config": {  
-        "masking_providers": [   
-          {   
-            "type": "sap_data_privacy_integration",   
-            "method": "anonymization",   
-            "entities": [   
-              {"type": "profile-email"},   
-              {"type": "profile-person"},   
-              {"type": "profile-phone"},   
-              {"type": "profile-org"},   
-              {"type": "profile-location"}   
-            ]   
-          }   
-        ]   
-      }   
-    }   
-  },   
-  "input_params": {   
-    "candidate_resume": "John Doe\n1234 Data St, San Francisco, CA 94101\n(123) 456-7890\njohndoe@email.com\nLinkedIn Profile\nGitHub Profile\n\nObjective\nDetail-oriented Data Scientist with 3+ years of experience in data analysis, statistical modeling, and machine learning. Seeking to leverage expertise in predictive modeling and data visualization to help drive data-informed decision-making at [Company Name].\n\nEducation\nMaster of Science in Data Science\nUniversity of California, Berkeley\nGraduated: May 2021\n\nBachelor of Science in Computer Science\nUniversity of California, Los Angeles\nGraduated: May 2019\n\nTechnical Skills\nProgramming Languages: Python, R, SQL, Java\nData Analysis & Visualization: Pandas, NumPy, Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn, TensorFlow, Keras, XGBoost\nBig Data Technologies: Hadoop, Spark\nDatabases: MySQL, PostgreSQL\nVersion Control: Git\n\nProfessional Experience\nData Scientist\nDataCorp Inc., San Francisco, CA\nJune 2021 – Present\n\nDeveloped predictive models to optimize marketing campaigns, which increased ROI by 20%.\nConducted in-depth data analysis using Python and SQL to identify trends and patterns in large datasets.\nCollaborated with cross-functional teams to implement data-driven strategies that improved customer satisfaction scores by 15%.\nCreated interactive dashboards using Tableau to visualize KPIs for stakeholders.\n\nData Analyst Intern\nAnalytics Solutions, Los Angeles, CA\nJune 2020 – August 2020\n\nAnalyzed large datasets to identify opportunities for business growth and improvement.\nAssisted in the development of automated reporting tools using Python and Excel.\nWorked with data visualization tools to create insightful reports for management.\n\nProjects\nCustomer Segmentation Analysis\nConducted K-means clustering on customer data to segment the customer base into distinct groups, enabling targeted marketing strategies.\n\nPredictive Stock Price Modeling\nBuilt a predictive model using time series analysis to forecast stock prices, achieving an accuracy rate of 85%.\n\nSentiment Analysis on Social Media\nImplemented natural language processing techniques to analyze sentiment from tweets, providing insights into public opinion on various topics.\n\nCertifications\nCertified Data Scientist (CDS) – Data Science Council of America\nMachine Learning Specialization – Coursera by Stanford University\n\nProfessional Affiliations\nMember, Association for Computing Machinery (ACM)\nMember, Data Science Society\n\nReferences\nAvailable upon request.\n\nPersonal Interests\n- I absolutely love exploring new technologies and working on innovative projects.\n- I enjoy reading books, especially on artificial intelligence and machine learning.\n- I hate people who are dishonest and unreliable.\n- I love traveling and experiencing new cultures.\n- I enjoy playing video games, especially competitive ones.\n- I hate being stuck in a routine; I always seek new challenges and growth opportunities.\n- I hate working in Azure cloud - \"Azure cloud is the most irritating platform I have ever used.\""   
-  }   
-} 
+```JSON
+{
+  "orchestration_config": {
+    "module_configurations": {
+      "templating_module_config": {
+        "template": [
+          {
+            "role": "system",
+            "content": "You are an AI assistant designed to screen resumes for HR purposes. Please assess the candidate qualifications based on the provided resume."
+          },
+          {
+            "role": "user",
+            "content": "Candidate Resume:\nJohn Doe\n1234 Data St, San Francisco, CA 94101\n(123) 456-7890\njohndoe@email.com\nLinkedIn Profile\nGitHub Profile\n\nObjective\nDetail-oriented Data Scientist with 3+ years of experience in data analysis, statistical modeling, and machine learning. Seeking to leverage expertise in predictive modeling and data visualization to help drive data-informed decision-making at [Company Name].\n\nEducation\nMaster of Science in Data Science\nUniversity of California, Berkeley\nGraduated: May 2021\n\nBachelor of Science in Computer Science\nUniversity of California, Los Angeles\nGraduated: May 2019\n\nTechnical Skills\n\nProgramming Languages: Python, R, SQL, Java\nData Analysis & Visualization: Pandas, NumPy, Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn, TensorFlow, Keras, XGBoost\nBig Data Technologies: Hadoop, Spark\nDatabases: MySQL, PostgreSQL\nVersion Control: Git\n\nProfessional Experience\n\nData Scientist\nDataCorp Inc., San Francisco, CA\nJune 2021 – Present\n\nDeveloped predictive models to optimize marketing campaigns, which increased ROI by 20%.\nConducted in-depth data analysis using Python and SQL to identify trends and patterns in large datasets.\nCollaborated with cross-functional teams to implement data-driven strategies that improved customer satisfaction scores by 15%.\n Created interactive dashboards using Tableau to visualize KPIs for stakeholders.\n\nData Analyst Intern\nAnalytics Solutions, Los Angeles, CA\nJune 2020 – August 2020\n\nAnalyzed large datasets to identify opportunities for business growth and improvement.\nAssisted in the development of automated reporting tools using Python and Excel.\nWorked with data visualization tools to create insightful reports for management.\n\nProjects\n\nCustomer Segmentation Analysis\nConducted K-means clustering on customer data to segment the customer base into distinct groups, enabling targeted marketing strategies.\n\nPredictive Stock Price Modeling\nBuilt a predictive model using time series analysis to forecast stock prices, achieving an accuracy rate of 85%.\n\nSentiment Analysis on Social Media\nImplemented natural language processing techniques to analyze sentiment from tweets, providing insights into public opinion on various topics.\n\nCertifications\n\nCertified Data Scientist (CDS) – Data Science Council of America\nMachine Learning Specialization – Coursera by Stanford University\n\nProfessional Affiliations\n\nMember, Association for Computing Machinery (ACM)\nMember, Data Science Society\n\nReferences\nAvailable upon request.\n\nPersonal Interests\n- I absolutely love exploring new technologies and working on innovative projects.\n- I enjoy reading books, especially on artificial intelligence and machine learning.\n- I hate people who are dishonest and unreliable."
+          }
+        ]
+      },
+      "llm_module_config": {
+        "model_name": "gpt-4o",
+        "model_params": {
+          "max_tokens": 300,
+          "temperature": 0.1,
+          "frequency_penalty": 0,
+          "presence_penalty": 0
+        }
+      },
+      "masking_module_config": {
+        "masking_providers": [
+          {
+            "type": "sap_data_privacy_integration",
+            "method": "anonymization",
+            "entities": [
+              {
+                "type": "profile-email"
+              },
+              {
+                "type": "profile-person"
+              },
+              {
+                "type": "profile-phone"
+              },
+              {
+                "type": "profile-org"
+              },
+              {
+                "type": "profile-location"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
 
 ```
-Refer to the screenshot for reference 
 
-![img](img/image007.png)
+- After replacing the JSON, click Send to execute the request.
 
+- Upon sending the request, the response will return the masked result, where sensitive information like email, phone numbers, and other personal identifiers are anonymized. For reference, you can check the screenshot provided showing how the masked result will appear.
+
+![img](img/image.png)
 [OPTION END]
 
 
@@ -653,123 +671,106 @@ const deploymentConfig = {
 }; 
 
 ```
- 
-
-
 
 **NOTE** : Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process.**  
 
-
-
 [OPTION END]
 
-[OPTION BEGIN [Postman]]
+[OPTION BEGIN [Bruno]]
 
-- Request Type: POST 
-- URL: https://$ORCH_DEPLOYMENT_URL/completion (Replace $ORCH_DEPLOYMENT_URL with the actual deployment URL) 
+The **Content Filtering** Module allows screening of both input and output content to remove inappropriate or unwanted elements. This is achieved through configurable thresholds: 
 
-**Headers:**
+- Navigate to the **'04_consume_model'** section.
+- Select **'direct_model_usage'**, Expand the Body tab to view the current JSON configuration.
+- Paste the following updated JSON configuration that includes data masking, input filtering and output filtering modules:
 
-- Add the following headers in Postman: 
-    - content-type: application/json 
-    - ai-resource-group: <RESOURCE_GROUP> (Replace <RESOURCE_GROUP> with the actual resource group value) 
+```JSON
 
-**Body:**
-
-  - Go to the Body tab in Postman.
-  - Select raw as the input type.
-  - Set the format to JSON.   
-  - Copy and paste the following JSON in the Body section: 
-
-```CODE
-
-{ 
-  "orchestration_config": { 
-    "module_configurations": { 
-      "templating_module_config": { 
-        "template": [ 
-          { 
-            "role": "system", 
-            "content": "You are an AI assistant designed to screen resumes for HR purposes. Please assess the candidate qualifications based on the provided resume." 
-          }, 
-          { 
-            "role": "user", 
-            "content": "Candidate Resume:\n{{?candidate_resume}}" 
-          } 
-        ] 
-      }, 
-      "llm_module_config": { 
-        "model_name": "gpt-35-turbo-16k", 
-        "model_params": { 
-          "max_tokens": 300, 
-          "temperature": 0.1, 
-          "frequency_penalty": 0, 
-          "presence_penalty": 0 
-        } 
-      }, 
-      "masking_module_config": { 
-        "masking_providers": [ 
-          { 
-            "type": "sap_data_privacy_integration", 
-            "method": "anonymization", 
-            "entities": [ 
-              {"type": "profile-email"}, 
-              {"type": "profile-person"}, 
-              {"type": "profile-phone"}, 
-              {"type": "profile-org"}, 
-              {"type": "profile-location"} 
-            ] 
-          } 
-        ] 
-      }, 
-      "filtering_module_config": { 
-        "input": { 
-          "filters": [ 
-            { 
-              "type": "azure_content_safety", 
-              "config": { 
-                "Hate": 2, 
-                "SelfHarm": 2, 
-                "Sexual": 2, 
-                "Violence": 2 
-              } 
-            } 
-          ] 
-        }, 
-        "output": { 
-          "filters": [ 
-            { 
-              "type": "azure_content_safety", 
-              "config": { 
-                "Hate": 2, 
-                "SelfHarm": 2, 
-                "Sexual": 2, 
-                "Violence": 2 
-              } 
-            } 
-          ] 
-        } 
-      } 
-    } 
-  }, 
-  "input_params": { 
-    "candidate_resume": "John Doe\n1234 Data St, San Francisco, CA 94101\n(123) 456-7890\njohndoe@email.com\nLinkedIn Profile\nGitHub Profile\n\nObjective\nDetail-oriented Data Scientist with 3+ years of experience in data analysis, statistical modeling, and machine learning. Seeking to leverage expertise in predictive modeling and data visualization to help drive data-informed decision-making at [Company Name].\n\nEducation\nMaster of Science in Data Science\nUniversity of California, Berkeley\nGraduated: May 2021\n\nBachelor of Science in Computer Science\nUniversity of California, Los Angeles\nGraduated: May 2019\n\nTechnical Skills\nProgramming Languages: Python, R, SQL, Java\nData Analysis & Visualization: Pandas, NumPy, Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn, TensorFlow, Keras, XGBoost\nBig Data Technologies: Hadoop, Spark\nDatabases: MySQL, PostgreSQL\nVersion Control: Git\n\nProfessional Experience\nData Scientist\nDataCorp Inc., San Francisco, CA\nJune 2021 – Present\n\nDeveloped predictive models to optimize marketing campaigns, which increased ROI by 20%.\nConducted in-depth data analysis using Python and SQL to identify trends and patterns in large datasets.\nCollaborated with cross-functional teams to implement data-driven strategies that improved customer satisfaction scores by 15%.\nCreated interactive dashboards using Tableau to visualize KPIs for stakeholders.\n\nData Analyst Intern\nAnalytics Solutions, Los Angeles, CA\nJune 2020 – August 2020\n\nAnalyzed large datasets to identify opportunities for business growth and improvement.\nAssisted in the development of automated reporting tools using Python and Excel.\nWorked with data visualization tools to create insightful reports for management.\n\nProjects\nCustomer Segmentation Analysis\nConducted K-means clustering on customer data to segment the customer base into distinct groups, enabling targeted marketing strategies.\n\nPredictive Stock Price Modeling\nBuilt a predictive model using time series analysis to forecast stock prices, achieving an accuracy rate of 85%.\n\nSentiment Analysis on Social Media\nImplemented natural language processing techniques to analyze sentiment from tweets, providing insights into public opinion on various topics.\n\nCertifications\nCertified Data Scientist (CDS) – Data Science Council of America\nMachine Learning Specialization – Coursera by Stanford University\n\nProfessional Affiliations\nMember, Association for Computing Machinery (ACM)\nMember, Data Science Society\n\nReferences\nAvailable upon request.\n\nPersonal Interests\n- I absolutely love exploring new technologies and working on innovative projects.\n- I enjoy reading books, especially on artificial intelligence and machine learning.\n- I hate people who are dishonest and unreliable.\n- I love traveling and experiencing new cultures.\n- I enjoy playing video games, especially competitive ones.\n- I hate being stuck in a routine; I always seek new challenges and growth opportunities.\n- I hate working in Azure cloud - \"Azure cloud is the most irritating platform I have ever used.\"" 
-  } 
-}  
+{
+  "orchestration_config": {
+    "module_configurations": {
+      "templating_module_config": {
+        "template": [
+          {
+            "role": "system",
+            "content": "You are an AI assistant designed to screen resumes for HR purposes. Please assess the candidate qualifications based on the provided resume."
+          },
+          {
+            "role": "user",
+            "content": "Candidate Resume:\nJohn Doe\n1234 Data St, San Francisco, CA 94101\n(123) 456-7890\njohndoe@email.com\nLinkedIn Profile\nGitHub Profile\n\nObjective\nDetail-oriented Data Scientist with 3+ years of experience in data analysis, statistical modeling, and machine learning. Seeking to leverage expertise in predictive modeling and data visualization to help drive data-informed decision-making at [Company Name].\n\nEducation\nMaster of Science in Data Science\nUniversity of California, Berkeley\nGraduated: May 2021\n\nBachelor of Science in Computer Science\nUniversity of California, Los Angeles\nGraduated: May 2019\n\nTechnical Skills\n\nProgramming Languages: Python, R, SQL, Java\nData Analysis & Visualization: Pandas, NumPy, Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn, TensorFlow, Keras, XGBoost\nBig Data Technologies: Hadoop, Spark\nDatabases: MySQL, PostgreSQL\nVersion Control: Git\n\nProfessional Experience\n\nData Scientist\nDataCorp Inc., San Francisco, CA\nJune 2021 – Present\n\nDeveloped predictive models to optimize marketing campaigns, which increased ROI by 20%.\nConducted in-depth data analysis using Python and SQL to identify trends and patterns in large datasets.\nCollaborated with cross-functional teams to implement data-driven strategies that improved customer satisfaction scores by 15%.\n Created interactive dashboards using Tableau to visualize KPIs for stakeholders.\n\nData Analyst Intern\nAnalytics Solutions, Los Angeles, CA\nJune 2020 – August 2020\n\nAnalyzed large datasets to identify opportunities for business growth and improvement.\nAssisted in the development of automated reporting tools using Python and Excel.\nWorked with data visualization tools to create insightful reports for management.\n\nProjects\n\nCustomer Segmentation Analysis\nConducted K-means clustering on customer data to segment the customer base into distinct groups, enabling targeted marketing strategies.\n\nPredictive Stock Price Modeling\nBuilt a predictive model using time series analysis to forecast stock prices, achieving an accuracy rate of 85%.\n\nSentiment Analysis on Social Media\nImplemented natural language processing techniques to analyze sentiment from tweets, providing insights into public opinion on various topics.\n\nCertifications\n\nCertified Data Scientist (CDS) – Data Science Council of America\nMachine Learning Specialization – Coursera by Stanford University\n\nProfessional Affiliations\n\nMember, Association for Computing Machinery (ACM)\nMember, Data Science Society\n\nReferences\nAvailable upon request.\n\nPersonal Interests\n- I absolutely love exploring new technologies and working on innovative projects.\n- I enjoy reading books, especially on artificial intelligence and machine learning.\n- I hate people who are dishonest and unreliable."
+          }
+        ]
+      },
+      "llm_module_config": {
+        "model_name": "gpt-4o",
+        "model_params": {
+          "max_tokens": 300,
+          "temperature": 0.1,
+          "frequency_penalty": 0,
+          "presence_penalty": 0
+        }
+      },
+      "masking_module_config": {
+        "masking_providers": [
+          {
+            "type": "sap_data_privacy_integration",
+            "method": "anonymization",
+            "entities": [
+              {
+                "type": "profile-email"
+              },
+              {
+                "type": "profile-person"
+              },
+              {
+                "type": "profile-phone"
+              },
+              {
+                "type": "profile-org"
+              },
+              {
+                "type": "profile-location"
+              }
+            ]
+          }
+        ]
+      },
+      "filtering_module_config": {
+        "input": {
+          "filters": [
+            {
+              "type": "azure_content_safety",
+              "config": {
+                "Hate": 2,
+                "SelfHarm": 2,
+                "Sexual": 2,
+                "Violence": 2
+              }
+            }
+          ]
+        },
+        "output": {
+          "filters": [
+            {
+              "type": "azure_content_safety",
+              "config": {
+                "Hate": 2,
+                "SelfHarm": 2,
+                "Sexual": 2,
+                "Violence": 2
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
 
 ```
 
-Refer to the screenshot for reference 
-
-![img](img/image011.png)
-
-
-
-
-**NOTE** : Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process.  
-
- 
-
+**NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case.
+![img](img/image.png)
 [OPTION END]
 
 ### Executing the Orchestration Workflow
@@ -899,32 +900,20 @@ async function generateResponsesForModels(txtContent) {
 
 [OPTION END]
 
-[OPTION BEGIN [Postman]]
+[OPTION BEGIN [Bruno]]
 
-- Finally, execute the orchestration and collect the results 
+- Click Send to execute the request with the updated configuration. Validate the returned response. It should contain:
+    - Masked Results: Sensitive information like email, phone numbers, and names will be anonymized.
+    - Filtered Content: Content deemed unsafe based on the configured thresholds will be flagged or filtered out.
 
-- To confirm the results of data masking and content filtering applied via the orchestration service, refer to the screenshots below. 
-
-![img](img/image021.png)
-
-- These screenshots display the Postman output, showcasing the masked and filtered data. Observe how sensitive information is appropriately masked, and the content adheres to the filtering criteria defined in the orchestration process. 
-
-
-
-
-**NOTE** : The response data in Postman reflects the successful execution of the pipeline, ensuring compliance with masking and filtering requirements.  
-
-
-
-
-
+By following these steps, you can successfully mask sensitive data and apply content filtering while consuming the deployed model.
+![img](img/image.png)
   **Conclusion** :  
-  Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of modules like data masking and content filtering to enhance privacy and ensure response quality.  
+  Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
-  While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
+  While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filterin settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
   By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
  
-
 [OPTION END]
 
