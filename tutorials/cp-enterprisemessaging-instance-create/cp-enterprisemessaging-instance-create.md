@@ -10,7 +10,7 @@ primary_tag: software-product>sap-event-mesh
 <!-- description -->  Create an instance of SAP Event Mesh service from SAP Business Technology Platform Cockpit and understand in detail about it's each property.  
 
 ## Prerequisites
-- SAP Business Technology Platform environment with SAP Event Mesh entitlement  
+- SAP Business Technology Platform environment with SAP Event Mesh entitlement. Note: SAP Event Mesh is currently only available in [Commercial accounts](https://help.sap.com/docs/btp/sap-business-technology-platform/commercial-models).  It is unavailable in SAP Business Technology Platform Trial.
 
 ## You will learn
   - How to create an SAP Event Mesh service instance

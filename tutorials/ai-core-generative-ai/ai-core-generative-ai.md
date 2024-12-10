@@ -1321,3 +1321,220 @@ Include the following in the body of the request.
 ![image](images/pm15.png)
 
 [OPTION END]
+
+### Visual Prompting
+
+The next example allows us to evaluate visual prompting capabilities in AI Launchpad.
+
+To begin, navigate to AI Launchpad > Generative AI Hub > Chat. CLick on `Configure`, and in model selection, select the `Image` option to enable image input.
+
+![img](images/vp0.png)
+
+In this example, we'll be demonstrating the following image recognition capabilities:
+
+- Identifying Products 
+
+- Categorizing by Characteristics
+
+- Analyzing Product Placement
+
+- Identifying Visual and Design Elements
+
+
+#### Identifying Products
+
+Use the upload button to upload relevant [image](images/scene%20detection.png) for context. Add a corresponding query, then hit send.
+
+![img](images/vp1.png)
+
+```Response
+The image features several different cereal brands with various packaging colors. Here is a list of the brands and their corresponding packaging colors:
+
+1. Post Great Grains
+- Packaging Colours: Brown and beige with images of grains and nuts.
+
+2. Post Grape-Nuts
+- Packaging Colours: White and purple.
+
+3. Quaker Granola
+- Packaging Colours: Beige and brown with images of granola.
+
+4. Kashi Organic Promise
+- Packaging Colours: Light green and beige.
+
+5. Kashi Cinnamon Harvest
+- Packaging Colours: Light green and beige.
+
+6. Carnation Breakfast Essentials
+- Packaging Colours: Yellow and blue.
+
+7. Quaker Life
+- Packaging Colours: White with blue and green accents.
+
+8. Quaker Oatmeal Squares
+- Packaging Colours: Light blue and beige.
+
+9. Kashi GOLEAN Crunch!
+- Packaging Colours: White with red and green text.
+
+10. Kashi GOLEAN Crisp!
+- Packaging Colours: White with green and red text.
+
+11. Post Honey Bunches of Oats
+- Packaging Colours: Yellow and orange with images of oats and almonds.
+
+12. Post Shredded Wheat
+- Packaging Colours: Yellow and red, as well as green and red.
+
+13. Post Honeycomb
+- Packaging Colours: Yellow and blue.
+
+14. Quaker Crunchy Corn Bran
+- Packaging Colours: Blue with yellow text and images of corn.
+
+15. Nature's Path Crunchy Vanilla Sunrise
+- Packaging Colours: Orange with images of cereal and vanilla.
+
+16. Crunch Berries (Cap’n Crunch)
+- Packaging Colours: Yellow with blue and red accents and cartoon characters.
+
+17. Cap’n Crunch
+- Packaging Colours: Yellow with cartoon characters.
+
+18. Oops! All Berries (Cap’n Crunch)
+- Packaging Colours: Blue with cartoon characters.
+
+19. Golden Crisp
+- Packaging Colours: Yellow with blue and cartoon characters.
+
+20. Frosted Flakes
+- Packaging Colours: Blue with orange and white accents, featuring cartoon characters.
+
+21. Cocoa Pebbles
+- Packaging Colours: Brown with cartoon characters.
+
+22. Fruity Pebbles
+- Packaging Colours: Red with cartoon characters.
+
+23. Post Raisin Bran
+- Packaging
+```
+
+Questions can further be added, without having to reupload the image in same AI Launchpad Chat instance.
+
+![img](images/vp2.png)
+
+
+#### Categorizing by Characteristics
+
+```Prompt
+Group the cereals by their primary ingredients, such as oats, wheat, or corn.
+```
+
+```Response
+
+Certainly! Here is a grouping of the cereals by their primary ingredients as inferred from the image:
+
+- Oats:
+1. Post Great Grains
+2. Quaker Oatmeal Squares
+3. Post Honey Bunches of Oats
+4. Quaker Granola
+5. Nature’s Path Cinnamon Harvest
+
+- Wheat:
+1. Post Shredded Wheat
+2. Kashi GOLEAN Crunch!
+3. Kashi GOLEAN Crisp!
+
+- Corn:
+1. Post Honeycomb
+2. Cap’n Crunch
+3. Cap’n Crunch Crunch Berries
+4. Cap’n Crunch Oops! All Berries
+5. Golden Crisp
+6. Kellogg’s Frosted Flakes
+7. Quaker Life
+8. Quaker Crunchy Corn Bran
+
+- Rice:
+1. Post Cocoa Pebbles
+2. Post Fruity Pebbles
+
+- Grape Nuts (Mixed Ingredients including Barley):
+1. Post Grape-Nuts
+
+These groupings are based on the typical primary ingredient associated with each cereal type.
+```
+
+#### Analyzing Product Placement
+
+```Prompt
+Describe the placement strategy for the cereals on the shelves. Are there any patterns in how products are organized?
+```
+
+```Response
+Based on the visible organization of cereals on the shelves in the image, the placement strategy seems to follow certain patterns and organizational principles:
+
+1. Brand Clustering:
+   - Cereals from the same brand are typically placed together in clusters. For instance, Post cereals like Great Grains, Grape-Nuts, and Honey Bunches of Oats are located near each other on the shelves.
+   - Similarly, Quaker cereals such as Oatmeal Squares, Life, and Granola are placed in proximity to each other. 
+
+2. Product Lines and Variants:
+   - Different variants of the same product line are placed next to each other. As seen with Quaker Life cereals, multiple flavors are grouped together.
+   - For the Cap’n Crunch series, different versions (Crunch Berries, Oops! All Berries, and the original) are placed side by side.
+
+3. Shelf Level and Product Type:
+   - Healthier or whole grain options like Kashi Organic Promise and Grape-Nuts are placed at eye level on the top shelves, which may be aimed at health-conscious shoppers.
+   - Popular, colorful, and marketed-to-children cereals such as Cap’n Crunch, Fruity Pebbles, and Cocoa Pebbles are placed on the middle to lower shelves where they are easily accessible and visible to children.
+
+4. Breakfast Essentials and Granola Bars:
+   - Non-cereal breakfast options like granola bars are placed towards the top, likely to encourage shoppers to consider these alternatives alongside their cereal choices.
+   - Breakfast Essentials, aimed at providing quick meal options, are placed on the top shelf, potentially targeting adult shoppers looking for convenient breakfast solutions.
+
+5. Vertical Space Utilization:
+   - Vertical space is used to provide a variety of choices within the same category of cereals, allowing easy comparison. This is seen with multiple rows of products like Shredded Wheat and Honey Bunches of Oats.
+
+6. Promotional Items:
+   - Non-cereal items designed to attract attention, such as the hanging Fruit Loops Candy Rolls, are placed at eye-catching positions to entice impulse purchases.
+
+Overall, the placement strategy appears to be well-thought-out, aiming to make it easy for customers to find specific brands, compare similar products, and attract attention to special items or promotions.
+```
+
+#### Identifying Visual and Design Elements
+
+```Prompt
+Analyze the design elements used on the cereal boxes, such as mascots, colors, and typography.
+```
+
+```Response
+The design elements on cereal boxes play a crucial role in attracting shoppers. Here's a detailed analysis of the primary design elements used:
+
+- Mascots:
+- Cartoon Characters: Many cereal brands, especially those marketed towards children, use mascots or cartoon characters to create a friendly and engaging look. For example:
+  - Cap’n Crunch features the iconic Cap’n Crunch character, which is instantly recognizable and appeals to kids.
+  - Frosted Flakes showcases Tony the Tiger, a friendly and energetic character that makes the cereal memorable.
+  - Cocoa Pebbles and Fruity Pebbles use characters from "The Flintstones," which adds a nostalgic and fun element.
+
+- Colors:
+- Bright and Vibrant Colors: These are used to grab attention and make products stand out on the shelves. 
+  - Cap’n Crunch and Crunch Berries use bold yellows and vibrant reds and blues to be eye-catching.
+  - Fruity Pebbles and Cocoa Pebbles use bold reds and browns respectively, which stand out on the shelves. 
+- Natural and Earth Tones: Used for more health-conscious products to suggest wholesomeness and natural ingredients.
+  - Kashi cereals use greens and beiges to indicate health and organic qualities.
+  - Post Great Grains and Quaker Granola use browns and beiges to suggest natural ingredients and healthiness.
+
+- Typography:
+- Bold and Large Fonts: The main product names are often in large, bold fonts to ensure high readability and easy recognition. 
+  - Life cereal has its name in large, bold letters.
+  - Honeycomb uses large blocky letters to make the product name noticeable.
+- Playful Fonts: For child-friendly cereals, playful or whimsical fonts are used.
+  - Oops! All Berries uses a fun and dynamic font to appeal to children.
+- Emphasis on Benefits: Key nutritional benefits or unique features are highlighted in contrasting colors or boxed texts.
+  - Honey Bunches of Oats often directly states health benefits like "whole grain" on the box.
+
+- Imagery:
+- Images of Cereal and Ingredients: High-quality images of the product in a bowl, often with milk, are used to evoke taste and texture, making the cereal look appetizing.
+```
+
+**NOTE**: The image recognition capabilities are not limited to the above demonstrated characteristics, and can be extended and modified based on individual use-case and scenarios. 
