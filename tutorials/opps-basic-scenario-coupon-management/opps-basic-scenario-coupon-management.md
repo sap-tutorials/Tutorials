@@ -126,7 +126,7 @@ You have now successfully changed the status of the coupon code.
 
 Now that you have created the multi-code coupon object and set it to active, you can generate a batch of 100 coupon codes to be used in the promotional campaign.
 
-<!-- border -->![Generate coupon codes](generate_coupon_codes_request.PNG)
+<!-- border -->![Generate coupon codes](generate_coupon_codes_request.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **POST** request `/Coupon({ID})/CouponManagementService.generateCouponCodes`.
@@ -154,7 +154,7 @@ With this, you have now created a batch of **100** unique coupon codes for the c
 
 You can now read the coupon codes created using the **Coupon Management** service to circulate the coupon information to the target group as part of your promotional campaign. 
 
-<!-- border -->![Read coupon codes](read_coupon_codes_request.PNG)
+<!-- border -->![Read coupon codes](read_coupon_codes_request.png)
 
 1. On the left-hand side, choose **Code Batch**.
 2. Open the **GET** request `/CodeBatch({ID})/codes`.
@@ -176,7 +176,7 @@ To finalize your promotional campaign, you want to set up the following promotio
 
 Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/tryout). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Promotion data upload](promotion_data_upload_request.PNG)
+<!-- border -->![Promotion data upload](promotion_data_upload_request.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the Data Upload service.

@@ -170,7 +170,7 @@ Let's see if this is the case:
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Redemption request](redemption_request.PNG)
+<!-- border -->![Redemption request](redemption_request.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the **Coupon Management** service.
