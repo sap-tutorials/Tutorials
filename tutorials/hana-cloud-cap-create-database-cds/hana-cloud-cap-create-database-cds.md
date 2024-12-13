@@ -124,7 +124,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 1. From the terminal issue the command: `cds build`
 
     ```shell
-    cds build --production
+    cds build
     ```
 
     ![cds build](cds_build.png)
@@ -165,7 +165,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
     ![Create a new service instance](create_Service_instance.png)
 
-1. To make subsequent steps easier, shorten the generated name to `MyHANAApp-dev`
+1. To make subsequent steps easier, shorten the generated name to `MyHANAApp-dev` + a group number or your initials if you are doing this tutorial as part of a group workshop/shared environment. This makes sure that everything remains unique per participant. Remember the value you used here and adjust the name in the subsequent steps. The remaining screenshots will always just show the base name.
 
     ![Generated Service Name](generated_service_name.png)
 
