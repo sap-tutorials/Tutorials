@@ -11,6 +11,10 @@ primary_tag: software-product>sap-hana-cloud
 # Sign up for an SAP HANA Cloud Trial account 
 <!-- description --> Learn about the SAP HANA Cloud trial and the process to sign up for it.
 
+## You will learn
+- Differences between a trial SAP HANA Cloud instance and a non trial instance
+- The process to sign up for a trial SAP BTP account
+
 ## Intro
 This tutorial is part of a mission, in which you will learn in a hands-on, end-to-end setting how to use SAP HANA Cloud, SAP HANA database. SAP offers two free options to use SAP HANA Cloud. This tutorial covers the first option, which is signing up for the SAP HANA Cloud trial. The trial allows you to use SAP HANA Cloud in a test environment and does not require payment details to sign up, whereas the free tier option can be easily upgraded to a paid version but is only available in enterprise accounts.  If you would like to learn more about the second option of using SAP HANA Cloud free tier, proceed to [this tutorial](hana-cloud-mission-trial-2-ft).
 

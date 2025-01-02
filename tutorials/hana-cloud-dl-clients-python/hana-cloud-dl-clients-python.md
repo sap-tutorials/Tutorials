@@ -105,7 +105,7 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     source pyvenv/python-virtualenv/bin/activate
     ```
 
-    A succesfull activation looks like this:-
+    A successful activation looks like this:-
 
     ![python-install](virtualenv.png)
 
