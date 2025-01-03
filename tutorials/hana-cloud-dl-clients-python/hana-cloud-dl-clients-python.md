@@ -1,4 +1,4 @@
----
+            ---
 parser: v2
 auto_validation: true
 time: 15
@@ -37,12 +37,17 @@ The first step is to check if Python and pip are installed.
 
     >In some Linux distributions, 'python' refers to Python 2, while 'python3' refers to Python 3. However, as Python 2 is now obsolete, 'python' may refer to Python 3 instead.
 
-
     If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
     On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.  The Microsoft Windows command prompt or shell will need to be reopened after Python is installed to pick up the path to python.   
 
     ![python-install](python-install.png)
+
+    On OpenSUSE Tumbleweed, yast can be used to install python313.  Once it has been installed its version can be seen with the below command.
+
+    ```Shell (Linux)
+    python3.13 --version
+    ```
 
 
 2. Enter the commands below.
@@ -86,9 +91,9 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     ```
 
 
-    On Linux the rest of the steps will be executed in a virtual enviroment.
+    On Linux the rest of the steps will be executed in a virtual environment.
 
-    First make a project folder, and create a virtual environment inside it. To do so, open the terminal app, write the following command, and hit return, here pyvenv is the name of the folder that you wish to create the virtual enviroment in.
+    First make a project folder, and create a virtual environment inside it. To do so, open the terminal app, write the following command, and hit return, here pyvenv is the name of the folder that you wish to create the virtual environment in.
 
     ```Shell(Linux)
     mkdir $HOME/pyvenv
@@ -109,9 +114,7 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
     ![python-install](virtualenv.png)
 
-
-
-    Now execute :-
+    Depending on which install of the data lake client was used, execute
 
     
     ```Shell (Linux)
@@ -119,11 +122,12 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     python3 setup.py install
     ```
 
+    or 
 
-
-
-
-
+    ```Shell (Linux)
+    cd $IQDIR17/sdk/python
+    pip install sqlanydb-1.0.14.tar.gz
+    ```
 
 2. On Microsoft Windows, create a user environment variable named `SQLANY_API_DLL` and set it to `%IQDIR17%\Bin64\dbcapi.dll`.
 
