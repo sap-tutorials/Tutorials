@@ -30,7 +30,7 @@ go version
 
 ![go version linux](version2.png)
 
-If Go is installed, then it will return the currently installed version, such as 1.21.5
+If Go is installed, then it will return the currently installed version, such as 1.23.4
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
 
@@ -86,20 +86,23 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     >It is also possible on Microsoft Windows to set this using the SETX command from a shell.
 
 
-    On Linux, open the '.bash_profile' and add the following lines.
-
+    On Linux, open the '.bashrc' or '.bash_profile' and first check and if needed the following lines.  Note that the path may be different depending on the data lake client install used.
     
     ```Shell (Linux)
+    echo $LD_LIBRARY_PATH
+    echo $CGO_LDFLAGS
     pico .bash_profile 
     ```
 
     ```Shell (Linux)
+    export LD_LIBRARY_PATH=$HOME/sap/dlclient/IQ-17_1/lib64
+    export LD_LIBRARY_PATH=$HOME/sap/hdlclient/lib64
     export CGO_LDFLAGS=$HOME/sap/dlclient/IQ-17_1/lib64/libdbcapi_r.so
-    export LD_LIBRARY_PATH=$HOME/sap/dlclient/IQ-17_1/lib64 
+    export CGO_LDFLAGS=$HOME/sap/hdlclient/lib64/libdbcapi_r.so
     ```
     ![.bash_profile contents](bashProfileAfterCGO.png)
 
-4. Navigate to the driver folder and create a Go module.
+4. Navigate to the driver folder and create a Go module.  Note that the path may be different depending on the data lake client install used.
 
     ```Shell (Windows)
     cd %IQDIR17%\sdk\golang\SAP\go-hdlre\driver
@@ -109,6 +112,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     
     ```Shell (Linux)
     cd $IQDIR17/sdk/golang-hdlre/src/SAP/go-hdlre/driver
+    cd $IQDIR17/sdk/golang/SAP/go-hdlre/driver/
     go mod init "SAP/go-hdlre/driver"
     go mod tidy
     ```
@@ -195,7 +199,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     pico go.mod
     ```
 
-4. Add the code below to `go.mod` under the go 1.19 (version) line:
+4. Add the code below to `go.mod` under the go 1.23.4 (version) line:
     
     >Make any necessary changes to ensure the path to the driver folder is correct.
 
@@ -206,6 +210,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     
     ```Code (Linux)
     replace SAP/go-hdlre/driver v0.1.0 => /home/name/sap/dlclient/IQ-17_1/sdk/golang-hdlre/src/SAP/go-hdlre/driver 
+    replace SAP/go-hdlre/driver v0.1.0 => /home/name/sap/hdlclient/sdk/golang/SAP/go-hdlre/driver
     require SAP/go-hdlre/driver v0.1.0 
     ```
 

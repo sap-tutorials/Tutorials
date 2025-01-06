@@ -88,11 +88,12 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
     pico .odbc.ini
     ```
 
-4. Configure the values of `driver` and `host` so that they conform with your setup.
+4. Configure the values of `driver` and `host` so that they conform with your setup.  Note that with the developer licensed version of the data lake client, the driver path below is slightly different.
 
     ```.odbc.ini
     [HC_DL]
     driver=/home/XXXXX/sap/dlclient/IQ-17_1/lib64/libdbodbc17.so
+    driver=/home/dan/sap/hdlclient/lib64/libdbodbc17.so
     encryption=TLS(trusted_certificates=*;direct=yes)
     host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.XXXX-XXXX.hanacloud.ondemand.com:443
     integrated=NO

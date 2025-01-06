@@ -32,16 +32,16 @@ SAP HANA Cloud is composed of multiple components.
 
   * SAP HANA is an in-memory, multi-model, column-based, relational database. For further details see [Introduction to SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-getting-started-guide/introduction-to-sap-hana-cloud) and the tutorial mission [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
-  * SAP HANA Cloud, data lake is composed of two components:  data lake Relational Engine and data lake Files.    
+  * SAP HANA Cloud, data lake is composed of two components; a data lake Relational Engine and data lake Files.    
 
-    [Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-relational-engine) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/docs/SAP_IQ), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Some of the client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/docs/SAP_SQL_Anywhere) and SAP Adaptive Server Enterprise.
+    [Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-relational-engine) is a disk-based, column-oriented relational database for storing and analyzing large amounts of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/docs/SAP_IQ), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Some of the client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/docs/SAP_SQL_Anywhere) and SAP Adaptive Server Enterprise.
 
-    [Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-files) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or ORC. Structured files can use [SQL on Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/sql-on-files), which enables SQL queries to be performed on them.  
+    [Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-files) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or delta tables.  Structured files can use [SQL on Files](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-cloud-sap-hana-database-sql-on-files-guide), which enables SQL queries to be performed on them.  
 
     >Note, that the data lake Files component, is currently not available in free tier or trial accounts.
 
 ### Choose where to deploy the database instances
-The SAP BTP platform provides multiple runtime environments such as Cloud Foundry and Kyma.  When a HANA Cloud or data lake instance is created, it can be created in a BTP subaccount or in a Cloud Foundry space.  SAP HANA Cloud Central can be used to provision and manage instances in the BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the BTP subaccount (Other Environments) and one that was provisioned into Cloud Foundry.
+The SAP BTP platform provides multiple runtime environments such as Cloud Foundry and Kyma.  When a SAP HANA Cloud or data lake instance is created, it can be created in a BTP subaccount or in a Cloud Foundry space.  SAP HANA Cloud Central can be used to provision and manage instances in the BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the BTP subaccount (Other Environments) and one that was provisioned into Cloud Foundry.
 
 ![Runtime Environments](runtime.png)
 
@@ -286,7 +286,70 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 For additional details on the SAP HANA database explorer, see the tutorial [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started), which showcases many of its features.
 
 
+### Install the developer licensed version of the data lake client
+This version of the data lake client does not include cryptographic libraries as it makes use of the libraries that are available on the operating systems such as OpenSSL.  It is available for download after accepting SAP Developer License agreement.  Currently, this version is only available for Linux.  Either client can be used to complete the steps shown in this tutorial group.
+
+1.  Open the HANA tab of [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools).
+
+2.  Download the SAP HANA Data Lake Client 1.0.
+
+    ![download](developmenttools.png)
+
+3.  Extract the archive.
+
+    ```Shell (Linux)
+    tar -zxvf hdlclient-latest-linux-x64.tar.gz
+    ```
+
+4.  Start the installer.
+
+    ```Shell (Linux)
+    cd ebf*
+    ./hdbinst
+    ```  
+
+    [run the installer](hdbinst.png)  
+
+5.  Configure the environment variables.  This can be done by calling hdlclienv.sh manually or it can be added to the Bash shell by referencing it in `.bashrc`.
+
+    Open the `.bashrc`.
+
+    ```Shell (Linux)
+    pico ~/.bashrc
+    ```
+
+    >This tutorial uses notepad and `pico` as default text editors, but any text editor will do.
+    >`Pico` can be installed on SUSE Linux with
+
+    >```Shell (Linux SUSE)
+    sudo zypper install pico
+    >```
+
+    Add the following line to point to the location where the SAP data lake client is installed.
+
+    ```Shell (Linux) .bash_profile
+    source ~/sap/hdlclient/bin64/hdlclienv.sh
+    ```
+
+    Test the change by running:
+
+    ```Shell (Linux)
+    source ~/.bashrc
+    ```
+
+    The following command should display the install location of the data lake client.
+
+    ```Shell (Linux)
+    echo $IQDIR17
+    ```
+
+    >In the case that the Data Lake Client needs to be uninstalled, run the `hdbuninst` file located in the directory `~/sap/hdlclient/install`.  
+
+    ---
+
+
 ### Install the data lake client
+This version of the data lake client is available from the SAP Software Download Center and requires an S-user ID and only shows software that you have purchased.  Additional details can be found at [Software Downloads FAQ](https://support.sap.com/content/dam/support/en_us/library/ssp/my-support/help-for-sap-support-applications/online_help-software_downloads.html#faq).  Either client can be used to complete the steps shown in this tutorial group.
 
 1.  Open [SAP for me](https://me.sap.com/softwarecenter) and navigate to **Support Packages & Patches** | **By Alphabetical Index (A-Z)**.
 
@@ -390,6 +453,38 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 The data lake client install includes [dbisql Interactive SQL Utility](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/dbisql-interactive-sql-utility), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
 
 1. Start the GUI version of DBISQL by searching from the Microsoft Windows Start menu. It can also be accessed by entering `dbisql` in the command prompt.
+
+    If the error "This file could not be found: java" occurs, follow the instructions below.
+
+    * Download and install [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud)
+
+        ```Shell (Linux)
+        unzip sapjvm-8.1.102-linux-x64.zip
+        mv ./sapjvm_8 ~/
+        ```
+
+    * Add the following to your bashrc. 
+
+        ```Shell (Linux)
+        export JAVA_HOME=~/sapjvm_8
+        export PATH=$PATH:$JAVA_HOME/bin
+        ```
+
+    * Apply and test the changes.
+        ```Shell (Linux)
+        source ~/.bashrc
+        java -version
+        dbisql
+        ```
+
+    If a further error occurs such as libXext.so.6: cannot open shared object file, install the missing components.
+
+        ```Shell (Linux)
+        sudo zypper install libXext6
+        sudo zypper install libXrender1
+        sudo zypper install libXtst6
+        sudo zypper install libXi6
+        ```
 
 2. Specify the connection type.
 
