@@ -2,11 +2,14 @@
 parser: v2
 auto_validation: true
 time: 10
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 # Create a Kyma service account
+
 <!-- description --> Learn how to create a Kubernetes service account that you can leverage to interact with your Kyma cluster.
 
 ## Prerequisites
