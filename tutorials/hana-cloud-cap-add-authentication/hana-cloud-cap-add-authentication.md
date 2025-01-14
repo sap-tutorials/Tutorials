@@ -72,7 +72,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![Updated xs-security.json](updated_xs_security.png)
 
-1. Since we want to test the security setup from the Business Application Studio, we are going to have add some additional configuration to the `xs-security.json`. You need to add another property to the `xs-security.json` to configure which redirect URIs are allowed by the `OAuth` configuration. Also while editing, add an `xsappname` with the value `myhanaapp` and a `tenant-mode` of `dedicated` as well. We can also add `credential-types` as a security best practice. You can read more about the [Credential Types in this blog post](https://blogs.sap.com/2022/07/05/why-developers-should-care-about-credential-types-for-xsuaa/) by [`Dinu PAVITHRAN`](https://people.sap.com/dinu.pavithran)
+1. Since we want to test the security setup from the Business Application Studio, we are going to have add some additional configuration to the `xs-security.json`. You need to add another property to the `xs-security.json` to configure which redirect URIs are allowed by the `OAuth` configuration. Also while editing, add an `xsappname` with the value `myhanaapp` (plus your group number or intials if you in a group workshop) and a `tenant-mode` of `dedicated` as well. We can also add `credential-types` as a security best practice. You can read more about the [Credential Types in this blog post](https://blogs.sap.com/2022/07/05/why-developers-should-care-about-credential-types-for-xsuaa/) by [`Dinu PAVITHRAN`](https://people.sap.com/dinu.pavithran)
 
     ```json
     {
@@ -111,7 +111,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     This wild card will allow testing from the Application Studio by telling the XSUAA it should allow authentication requests from this URL. See section [Application Security Descriptor Configuration Syntax](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html) for more details on configuration options.
 
-1. Open a terminal and create the XSUAA services instance with the `xs-security.json` configuration using the following command:
+1. Open a terminal and create the XSUAA services instance with the `xs-security.json` configuration using the following command (adjusting `MyHANAApp-auth` to include your group number or intitials if you are in a group workshop like we did earlier):
 
     ```shell
     cf create-service xsuaa application MyHANAApp-auth -c xs-security.json
@@ -125,7 +125,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
 ### Configure the application
 
-1. From the terminal, we need to create a service key. This will give us access to the credentials for your XSUAA instance.
+1. From the terminal, we need to create a service key (adjusting names to include your group number or initials if you are in a group workshop). This will give us access to the credentials for your XSUAA instance.
 
     ```shell
     cf create-service-key MyHANAApp-auth default  
@@ -145,7 +145,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![New Role Collection](new_role_collection.png)
 
-1. Name your role collection `MyHANAApp`. Then go into edit mode on the role collection. Use the value help for the Role. Use the Application Identifier to find your service instance (`myhanaapp!XXXXX`). Select the role and press **Add**
+1. Name your role collection `MyHANAApp` (plus your group number or intials if you in a group workshop). Then go into edit mode on the role collection. Use the value help for the Role. Use the Application Identifier to find your service instance (`myhanaapp!XXXXX`). Select the role and press **Add**
 
     ![Select Role](select_role.png)
 
