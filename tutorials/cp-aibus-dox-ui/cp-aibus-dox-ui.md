@@ -30,7 +30,7 @@ The core functionality of Document Information Extraction is to automatically ex
 >- [Use Generative AI to Process Business Documents] (https://developers.sap.com/mission.gen-ai-process-business-documents.html)
 >- [Shape Machine Learning to Process Custom Business Documents] (https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html)
 
->See also [Supported Document Types] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-document-types) and [Supported File Types] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-file-types-05b68ab7a2ab41a8b5a3902d47b15b07).
+>See also [Supported Document Types] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-document-types) and [Supported File Types] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-file-types-all).
 
 Upload to the service any standard document type file (in PDF format or single-page JPEG, PNG, and TIFF format) that has content in headers and tables, such as an invoice.
 
