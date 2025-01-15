@@ -1,8 +1,10 @@
 ---
 parser: v2
 auto_validation: true
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner, topic>node-js ]
+tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner, programming-tool>node-js ]
 time: 20
 ---
 
@@ -18,7 +20,6 @@ time: 20
 ---
 
 ### Install the Node.js runtime
-
 
 >Node.js is a server-side runtime environment built on Chrome's V8 JavaScript engine. It provides an event-driven, non-blocking (asynchronous) I/O and cross-platform runtime environment. It enables you to build scalable server-side applications using JavaScript and is open-source.
 >&nbsp;

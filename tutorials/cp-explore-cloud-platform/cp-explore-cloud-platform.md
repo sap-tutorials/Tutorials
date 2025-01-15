@@ -1,8 +1,8 @@
 ---
 parser: v2
 auto_validation: true
-author_name: Marius Obert
-author_profile: https://github.com/iobert
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-business-technology-platform
 tags: [ tutorial>beginner, topic>cloud ]
 time: 10
@@ -10,10 +10,12 @@ time: 10
 
 
 # View the SAP BTP from 10,000 Meters
+
 <!-- description --> Explore SAP BTP from a developer's perspective, and understand the concepts of accounts, environments and more.
 
 ## Prerequisites
- - There are none. If you want to start learning about SAP BTP, this is the very beginning.
+
+- There are none. If you want to start learning about SAP BTP, this is the very beginning.
 
 ## You will learn
   - What SAP BTP is
@@ -103,8 +105,5 @@ SAP offers [trial accounts for SAP BTP](hcp-create-trial-account), which are fre
 
 
 That's it!  That is the 10,000 meter overview of SAP BTP.  Please follow the later tutorials to get a trial account, get the account configured, and get started with services and writing new code for the cloud.  Have fun!
-
-
-
 
 ---
