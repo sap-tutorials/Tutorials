@@ -1,6 +1,8 @@
 ---
 parser: v2
 auto_validation: true
+author_name: Robert Waywell
+author_profile: https://github.com/RobWaywellSAP
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
 time: 30
