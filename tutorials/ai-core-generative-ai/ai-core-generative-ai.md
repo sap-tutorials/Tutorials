@@ -590,7 +590,7 @@ Include the following in the body of the request.
 
 [OPTION BEGIN [GENERATIVE AI HUB SDK]]
 
-open Jupter notebook or python IDE and run the following code to infrence the model using GPT-3.5-turbo .
+open Jupyter notebook or python IDE and run the following code to inference the model using GPT-3.5-turbo .
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
@@ -754,7 +754,7 @@ Include the following in the body of the request.
 
 [OPTION BEGIN [GENERATIVE AI HUB SDK]]
 
-Similarly change the value for prompt and re-run the cell in jupter notebook.
+Similarly change the value for prompt and re-run the cell in Jupyter notebook.
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
@@ -873,7 +873,7 @@ Include the following in the body of the request.
 
 [OPTION BEGIN [GENERATIVE AI HUB SDK]]
 
-Similarly change the value for prompt and re-run the cell in jupter notebook.
+Similarly change the value for prompt and re-run the cell in Jupyter notebook.
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
@@ -943,7 +943,7 @@ Include the following in the body of the request.
 
 [OPTION BEGIN [GENERATIVE AI HUB SDK]]
 
-Similarly change the value for prompt and re-run the cell in jupter notebook.
+Similarly change the value for prompt and re-run the cell in Jupyter notebook.
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
@@ -1012,7 +1012,7 @@ Include the following in the body of the request.
 
 [OPTION BEGIN [GENERATIVE AI HUB SDK]]
 
-Similarly change the value for prompt and re-run the cell in jupter notebook.
+Similarly change the value for prompt and re-run the cell in Jupyter notebook.
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
@@ -1079,7 +1079,7 @@ Include the following in the body of the request.
 
 [OPTION BEGIN [GENERATIVE AI HUB SDK]]
 
-Similarly change the value for prompt and re-run the cell in jupter notebook.
+Similarly change the value for prompt and re-run the cell in Jupyter notebook.
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm
@@ -1155,7 +1155,7 @@ Include the following in the body of the request.
 
 [OPTION BEGIN [GENERATIVE AI HUB SDK]]
 
-Similarly change the value for prompt and re-run the cell in jupter notebook.
+Similarly change the value for prompt and re-run the cell in Jupyter notebook.
 
 ```PYTHON
 from gen_ai_hub.proxy.langchain.init_models import init_llm

@@ -12,7 +12,7 @@ author_profile: https://github.com/dhrubpaul
 <!-- description --> In this tutorial we are going to learn on how to consume LLM on AI core deployed on SAP AI core.
 
 ## You will learn
-- How to infrence foundational models on AI core
+- How to inference foundational models on AI core
 
 ## Prerequisites
 - A BTP global account
