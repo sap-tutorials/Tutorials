@@ -175,7 +175,7 @@ The last step that remains is to activate the template.
 
     <!-- border -->![Template](ready2.png)
 
-6. Click the document row and **Extraction Results** to see the information extracted from the document using the schema and template you created.
+6. Access the document by clicking on it. You now see the page preview of the document file you uploaded, and the information extracted from the purchase order header fields and line items using the schema and template you created.
 
     <!-- border -->![Template](results2.png)
 
