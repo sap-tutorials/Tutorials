@@ -154,7 +154,7 @@ We now want to expose our Calculation View to the Cloud Application Programming 
 
     ![Add Entity to Service](entity_to_service.png)
 
-1. From the terminal return to the root of the project and issue the command: `cds build`
+1. From the terminal return to the root of the project and issue the command: `cds build --production`
 
     ```shell
     cds build --production

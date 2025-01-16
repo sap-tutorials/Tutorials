@@ -121,10 +121,10 @@ The SAP Cloud Application Programming model utilizes core data services to defin
     >
     > You are declaring services to expose the database entities you declared in the previous step.
 
-1. From the terminal issue the command: `cds build`
+1. From the terminal issue the command: `cds build --production`
 
     ```shell
-    cds build
+    cds build --production
     ```
 
     ![cds build](cds_build.png)
