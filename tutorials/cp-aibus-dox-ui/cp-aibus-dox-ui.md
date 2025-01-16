@@ -25,7 +25,7 @@ The core functionality of Document Information Extraction is to automatically ex
 ### Upload documents
 
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with business cards, invoices, payment advices, and purchase orders in the languages and for the countries and regions listed in [Supported Languages and Countries/Regions](https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-languages-and-countries-regions). If you're interested in processing other document types, try out the following tutorial missions:
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices, payment advices, and purchase orders in the languages and for the countries and regions listed in [Supported Languages and Countries/Regions](https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-languages-and-countries-regions). If you're interested in processing other document types, try out the following tutorial missions:
 
 >- [Use Generative AI to Process Business Documents] (https://developers.sap.com/mission.gen-ai-process-business-documents.html)
 >- [Shape Machine Learning to Process Custom Business Documents] (https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html)

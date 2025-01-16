@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 ### Create template
 
 
-In [Create Schema for Purchase Order Documents](cp-aibus-dox-ui-schema), you defined a schema that includes a list of header and line item fields you want to extract from purchase order documents. In this tutorial, you'll create a template that uses your schema and associate documents with your template. You'll **Edit** the **Extraction Results** of the associated documents to teach the Document Information Extraction service where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
+In [Create Schema for Purchase Order Documents](cp-aibus-dox-ui-schema), you defined a schema that includes a list of header and line item fields you want to extract from purchase order documents. In this tutorial, you'll create a template that uses your schema and associate documents with your template. You'll **Edit** the extraction results of the associated documents to teach the Document Information Extraction service where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
 
 In the Document Information Extraction UI, access **Template** on the left navigation pane and click **+** to create a new template.
 
@@ -85,7 +85,7 @@ In the dialog, proceed as follows:
 
     <!-- border -->![Template](ready.png)
 
-6. Click the document row and **Extraction Results** to see the information extracted from the document using the schema you created.
+6. Click the document row to see the information extracted from the document using the schema you created.
 
     <!-- border -->![Template](results.png)
 
@@ -175,7 +175,7 @@ The last step that remains is to activate the template.
 
     <!-- border -->![Template](ready2.png)
 
-6. Click the document row and **Extraction Results** to see the information extracted from the document using the schema and template you created.
+6. Access the document by clicking on it. You now see the page preview of the document file you uploaded, and the information extracted from the purchase order header fields and line items using the schema and template you created.
 
     <!-- border -->![Template](results2.png)
 
