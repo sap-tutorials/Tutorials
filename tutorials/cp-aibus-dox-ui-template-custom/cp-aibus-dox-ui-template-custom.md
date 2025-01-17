@@ -82,7 +82,7 @@ In the dialog, proceed as follows:
 
     <!-- border -->![Template](upload.png)
 
-    The document status changes from `PENDING` to `READY`.
+    The document status changes from `PENDING` to `DONE`.
 
     <!-- border -->![Template](ready.png)
 
@@ -170,7 +170,7 @@ The last step that remains is to activate the template.
 
 5. Click **Confirm**.
 
-    The document status changes from `PENDING` to `READY`.
+    The document status changes from `PENDING` to `DONE`.
 
     <!-- border -->![Template](ready2.png)
 

@@ -158,7 +158,7 @@ Congratulations, you've now created and activated your own schema for delivery n
 
 6. Click **Confirm**.
   
-    The document status changes from `PENDING` to `READY`.
+    The document status changes from `PENDING` to `DONE`.
 
     <!-- border -->![LLM](ready.png)
 
