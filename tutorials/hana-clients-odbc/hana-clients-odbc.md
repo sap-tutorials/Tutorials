@@ -48,6 +48,7 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
     ![New data source](Create-new-data-source.png)
 
 6. Example data source configuration for SAP HANA Cloud.   
+    >For the host, paste the SQL Endpoint from your instance. For more details, review [Choose an SAP HANA Database](https://developers.sap.com/tutorials/hana-clients-choose-hana-instance.html).
 
     ![ODBC HANA Cloud](ODBC-HC.png)  
 
@@ -63,7 +64,7 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 
     The user name `USER1` and password `Password1` can be entered when prompted for credentials.
 
-9. Press OK to save the data source.  
+9.  Press OK to save the data source.  
 
     >Saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
 
@@ -139,7 +140,7 @@ An application that supports ODBC can now make use of the created data source.  
 >
 > ![Excel 64 bit](excel-64-bit.png)  
 >
-> The SAP HANA client install can also be 32 or 64 bit.  To connect, the versions of SAP HANA client and Microsoft Excel must match.  If needed, the 32-bit installer for SAP HANA client is available from the SAP Software downloads site and can be installed into a separate directory such as `C:\SAP\hdbclient32`.  
+> The SAP HANA client install can also be 32 or 64 bit.  To connect, the versions of SAP HANA client and Microsoft Excel must match.  If needed, the 32-bit installer for SAP HANA client is available from the [SAP Software Centre](https://me.sap.com/softwarecenter) site and can be installed into a separate directory such as `C:\SAP\hdbclient32`.  
 
 The following steps demonstrate how to use Microsoft Excel to query data in SAP HANA using the ODBC connector.  
 

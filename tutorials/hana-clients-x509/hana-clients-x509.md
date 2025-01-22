@@ -177,8 +177,11 @@ The details of the client certificate needed for authentication will be stored i
 
 1. Create a PEM file for use with OpenSSL.
 
-    ```Shell
+    ```Command Prompt
     cat test_x509_user.key test_x509_user.crt demorootca.crt > test_x509_user.pem
+    ```
+    ```Powershell
+    Get-Content test_x509_user.key, test_x509_user.crt, demorootca.crt | Set-Content test_x509_user.pem
     ```
 
 2. Optionally create a PSE for use with SAP CommonCryptoLib.  sapgenpse is included in an install of the SAP HANA Client that is downloaded from the SAP Software Center.  
