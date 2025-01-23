@@ -472,7 +472,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     hdbsql -U USER1UserKey -I hotel.sql -- batch file
     ```
 
-2. [Substitution variables](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  
+2. [Substitution variables](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/18ce51f468bc4cfe9112e6be79953e93.html) can be used to pass parameters.  
 
     Create a file named `findCustomers.sql`.
 
@@ -495,12 +495,14 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     ```Shell
     hdbsql -A -U USER1UserKey -V nameParam=J% -I findCustomers.sql
     ```
+    The -V option specifies a named variable that can be used within the SQL specified after the -I option. 
 
     ![example of substitution parameters](subst.png)
 
     It is also possible to define new variables and list the defined variables as shown below.
 
     ```SQL
+    hdbsql -A -U USER1UserKey -V nameParam=J% 
     \vd titleParam Mr
     \vl
     SELECT * FROM HOTELS.CUSTOMER WHERE TITLE = '&titleParam' AND FIRSTNAME LIKE '&nameParam'
