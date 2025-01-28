@@ -47,7 +47,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 ### Create the Mobile Services App via the MS App Create Transaction
 
-1. Execute the transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI, then select your desired variant.
+1. Execute the transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI, then select your required variant (i.e., `SAP&SAM_2410`).
 
 2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please review the **Background Job User** parameter (additional info below). To add the `sap-client` header to the Mobile Destinations please see Step 5 (optional). To use an RFC Destination instead of the **Admin API** please see Step 4 (optional). Then execute the transaction.
 
@@ -64,7 +64,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | **MS Application Description**     | The application description given to the SAP Mobile Services app.                                                                                                                                                                                    |
     | **MS Vendor Name**                 | The vendor name given to the SAP Mobile Services app.                                                                                                                                                                                                |
     | **MS Application Timeout**         | The maximum time in milliseconds before a client connection times out in your environment. After that timeout period, the connection is closed.                                                                                                      |
-    | **MS App License Type**            | The Service Plan used by Mobile Services                                                                                                                                                                                                             |
+    | **MS App License Type**            | The Service Plan used by Mobile Services. The plan `basic-plus-app` is recommended for SAP mobile applications.                                                                                                                                      |
     | **SCC X.509 Virtual Host**         | Used to generate the URL for the Mobile Services Mobile Destinations                                                                                                                                                                                 |
     | **Cloud Connector Location ID**    | Used to set **Cloud Connector Location Id** for the Mobile Services Mobile Destinations                                                                                                                                                              |
     | **Background Job User**            | Used to schedule the Usage Metering background job with a daily frequency. If no user is provided, then the user executing the transaction is used. Please ensure the **Background Job User** will maintain authorization to run the background job. |
