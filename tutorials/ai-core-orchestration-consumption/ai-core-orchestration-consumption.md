@@ -8,7 +8,7 @@ author_name: Smita Naik
 author_profile: https://github.com/I321506
 ---
 
-# Consumption of GenAI models Using Orchestration - A Beginner's Guide
+# Consumption of GenAI models Using Orchestration - A Beginner's Guide 
 <!-- description --> In this tutorial, we are going to learn the simple consumption of Gen AI models using the Orchestration.
 
 ## You will learn
@@ -83,46 +83,41 @@ console.log(process.env.AICORE_SERVICE_KEY);
 
 [OPTION END]
 
-[OPTION BEGIN [Postman]]
+[OPTION BEGIN [Bruno]]
+#### Download and Import the Bruno Collection
+-	Download the [bruno_collections](img/Bruno_Collection.json) file
 
-1.	Download the service key for the AI Core service instance:
+-	Navigate to the Bruno Collections section
 
-    •	Once your account is ready, go to your AI Core service in BTP and download the service keys. These keys will be used in the OAuth 2.0 authorization setup.
+-	Upload the .json file to import the collection. Follow the screenshot attached for reference
+![img](img/img001.png)
+![img](img/img003.png)
+![img](img/img005.png)
+#### Set Environment Variables
+- From the imported collection, select the get_token query.
 
-2.	Configure OAuth 2.0 Authorization in Postman:
+- Click on "No Environment" and then select "Configure".
 
-    •	Open Postman and create a new tab.
+![img](img/no_env.png)
+- Populate the following environment variables with values from the service key:
+    -	ai_auth_url → url from the service key.
+    -	ai_api_url → serviceurls.AI_API_URL from the service key.
+    -	client_id → clientid from the service key.
+    -	client_secret → clientsecret from the service key.
+    -	resource_group → Specify a resource group name.
 
-    •	Go to the Authorization section.
+![img](img/img009.png)
+- Save the environment configuration.
 
-    •	Set the Type to OAuth 2.0.
+- Click on "No Environment" in the top-right corner and select "Grounding-test".
+![img](img/env_set.png)
+#### Generate the Token
+- Select the get_token request from the root folder of the imported collection.
 
-3.	Scroll down to Configure New Token and input the following details:
+- Execute the request to generate the token.
+![img](img/get_token.png)
 
-    •	Access Token URL: [Your Access Token URL]
-
-    •	Client ID: [Your Client ID from the service keys]
-
-    •	Client Secret: [Your Client Secret from the service keys]
-    
-    •	Scroll down and click on Generate Token.
-
-**Note:** Follow the screenshots provided for step-by-step guidance
-
-![img](img/image001.png)
-
-![img](img/image002.png)
-
-![img](img/image003.png)
-
-
-In the Headers tab, add the following headers:
-
-    •	Resource Group: [Your Resource Group Name]
-
-    •	Content-Type: application/json`
-
-![img](img/image004.png)
+**NOTE**: If the token expires at any point during execution, repeat this step to regenerate it.
 
 [OPTION END]
 
@@ -243,43 +238,25 @@ orchestrationConfig;
 
 [OPTION END]
 
-[OPTION BEGIN [Postman]]
+[OPTION BEGIN [Bruno]]
+#### Create Resource Group
 
-In Postman, send a POST request to the endpoint: {{apiurl}}/v2/lm/configurations. 
+- Expand the 01_resource_group section in the collection.
 
-Include the following parameters in the request body: 
+- Click on the create request and execute it to create a resource group.
+![img](img/resource_group.png)
+-	Next, execute the get_by_id request to verify the resource group status.
+    -	Ensure the status is PROVISIONED.
 
-```CODE
-{ 
+-	Follow the screenshot attached for reference.
+![img](img/get_resource_group.png)
+#### Create Configuration
+- Navigate to the configuration request and execute it to create a configuration.
 
-    "name": "orchestration", 
-    "executableId": "orchestration", 
-    "scenarioId": "orchestration", 
-    "versionId": "0.0.1", 
-    "parameterBindings": [ 
-        { 
-            "key": "modelFilterList", 
-            "value": "null" 
-        }, 
+- Copy the ID from the response for use in subsequent steps.
 
-        { 
-            "key": "modelFilterListType", 
-            "value": "allow" 
-        } 
-    ] 
-} 
-```
-
-**Parameter Details:** 
-
-        name: Identifier of your choice for this configuration. 
-        executableId: "orchestration" 
-        scenarioId: "orchestration" 
-        versionId: "0.0.1" 
-
-![img](img/image007.png)
-
-Response: You’ll receive a unique configurationId in the response. Refer to the screenshot for an example response. 
+- Follow the screenshot attached for reference.
+![img](img/deployment_create_config.png)
 
 [OPTION END]
 
@@ -420,31 +397,28 @@ export async function deployOrchestration(
 
 [OPTION END]
 
-[OPTION BEGIN [Postman]]
+[OPTION BEGIN [Bruno]]
+#### Update Configuration ID and Create Deployment
+- Navigate to the create_deployment request.
 
-• Send a POST request to the endpoint: {{apiurl}}/v2/lm/deployments. 
+- Update the Configuration ID in the request body with the ID obtained in the previous step.
 
-• Include the configurationId obtained from the previous step in the request body: 
+- Execute the request to create a deployment. Follow the screenshot attached for reference.
+![img](img/img021.png)
+#### Verify Deployment Status
+- Execute the get_deployment request repeatedly until:
+    - The status is RUNNING.
+    - The deploymentUrl appears in the response.
 
-```CODE
+Follow the screenshot attached for reference.
+![img](img/deployement_running.png)
+#### Update Environment Variable
+- Copy the deploymentUrl from the response.
 
-{ 
-    "configurationId": "yourConfigurationId" // Replace with the actual configuration ID 
-} 
+- Paste it into the orchestration_service_url field of the Grounding-test environment.
 
-```
-![img](img/image012.png)
-
-• Retrieve the details of your deployment to monitor its status. 
-
-• Send a GET request to the endpoint: {{apiurl}}/v2/lm/deployments. 
-
-**Deployment Status:** 
-
-The status should display as Running once the deployment is complete (see the provided screenshot for reference). 
-
-![img](img/image013.png)
-
+- Save the updated environment. Follow the screenshot attached for reference.
+![img](img/service_update_creds.png)
 [OPTION END]
 
 ### Consume Deployed Orchestration
@@ -898,79 +872,52 @@ Data masking and content filtering are available to enhance data privacy and saf
 
 [OPTION END]
 
-[OPTION BEGIN [Postman]]
+[OPTION BEGIN [Bruno]]
+- Go to the 08_consume_model section in the collection.
 
-**Request Setup:**
+- Select the direct_model_usage request for consuming the deployed model.
 
-• Request Type: POST 
+- Expand the Body section of the request. Replace the current JSON in the Body with the following updated JSON
 
-• URL: https://$ORCH_DEPLOYMENT_URL/completion 
-                
-(Replace $ORCH_DEPLOYMENT_URL with the actual deployment URL) 
-
-**Headers:**
-
-Add the following headers in Postman: 
-
-• content-type: application/json 
-
-• ai-resource-group: <RESOURCE_GROUP> 
-
-(Replace <RESOURCE_GROUP> with the actual resource group value) 
-
-**Body:**
-
-• Select raw as the input type. 
-
-• Set the format to JSON. 
-
-Copy and paste the following JSON configuration: 
-
-```CODE
-{ 
-    "orchestration_config": { 
-        "module_configurations": { 
-            "llm_module_config": { 
-                "model_name": "gpt-4o", 
-                "model_params": {}, 
-                "model_version": "2024-05-13" 
-            }, 
-
-            "templating_module_config": { 
-                "template": [ 
-                    { 
-                        "role": "system", 
-                        "content": "You are an AI assistant designed to screen resumes for HR purposes. Please assess the candidate qualifications based on the provided resume." 
-                    }, 
-                    { 
-                        "role": "user", 
-                        "content": "Candidate Resume:\n{{?candidate_resume}}" 
-                    } 
-                ], 
-
-                "defaults": { 
-                    "candidate_resume": "John Doe\n1234 Data St, San Francisco, CA 94101\n(123) 456-7890\njohndoe@email.com\nLinkedIn Profile\nGitHub Profile\n\nObjective\nDetail-oriented Data Scientist with 3+ years of experience in data analysis, statistical modeling, and machine learning. Seeking to leverage expertise in predictive modeling and data visualization to help drive data-informed decision-making at [Company Name].\n\nEducation\nMaster of Science in Data Science\nUniversity of California, Berkeley\nGraduated: May 2021\n\nBachelor of Science in Computer Science\nUniversity of California, Los Angeles\nGraduated: May 2019\n\nTechnical Skills\n\nProgramming Languages: Python, R, SQL, Java\nData Analysis & Visualization: Pandas, NumPy, Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn, TensorFlow, Keras, XGBoost\nBig Data Technologies: Hadoop, Spark\nDatabases: MySQL, PostgreSQL\nVersion Control: Git\n\nProfessional Experience\n\nData Scientist\nDataCorp Inc., San Francisco, CA\nJune 2021 – Present\n\nDeveloped predictive models to optimize marketing campaigns, which increased ROI by 20%.\nConducted in-depth data analysis using Python and SQL to identify trends and patterns in large datasets.\nCollaborated with cross-functional teams to implement data-driven strategies that improved customer satisfaction scores by 15%.\nCreated interactive dashboards using Tableau to visualize KPIs for stakeholders.\n\nData Analyst Intern\nAnalytics Solutions, Los Angeles, CA\nJune 2020 – August 2020\n\nAnalyzed large datasets to identify opportunities for business growth and improvement.\nAssisted in the development of automated reporting tools using Python and Excel.\nWorked with data visualization tools to create insightful reports for management.\n\nProjects\n\nCustomer Segmentation Analysis\nConducted K-means clustering on customer data to segment the customer base into distinct groups, enabling targeted marketing strategies.\n\nPredictive Stock Price Modeling\nBuilt a predictive model using time series analysis to forecast stock prices, achieving an accuracy rate of 85%.\n\nSentiment Analysis on Social Media\nImplemented natural language processing techniques to analyze sentiment from tweets, providing insights into public opinion on various topics.\n\nCertifications\n\nCertified Data Scientist (CDS) – Data Science Council of America\nMachine Learning Specialization – Coursera by Stanford University\n\nProfessional Affiliations\n\nMember, Association for Computing Machinery (ACM)\nMember, Data Science Society\n\nReferences\nAvailable upon request.\n\nPersonal Interests\n- I absolutely love exploring new technologies and working on innovative projects.\n- I enjoy reading books, especially on artificial intelligence and machine learning.\n- I hate people who are dishonest and unreliable.\n- I love traveling and experiencing new cultures.\n- I enjoy playing video games, especially competitive ones.\n- I hate being stuck in a routine; I always seek new challenges and growth opportunities.\n-I hate working in Azure cloud -\"Azure cloud is the most irritating platform I have ever used\"\n" 
-                } 
-            } 
-        } 
-    } 
-} 
+```JSON
+{  
+  "orchestration_config": {  
+    "module_configurations": {  
+      "llm_module_config": {  
+        "model_name": "gpt-4o",  
+        "model_params": {},  
+        "model_version": "2024-05-13"  
+      },  
+      "templating_module_config": {  
+        "template": [  
+          {  
+            "role": "system",  
+            "content": "You are an AI assistant designed to screen resumes for HR purposes. Please assess the candidate qualifications based on the provided resume."  
+          },  
+          {  
+            "role": "user",  
+            "content": "Candidate Resume:\n{{?candidate_resume}}"  
+          }  
+        ],  
+        "defaults": {  
+          "candidate_resume": "John Doe\n1234 Data St, San Francisco, CA 94101\n(123) 456-7890\njohndoe@email.com\nLinkedIn Profile\nGitHub Profile\n\nObjective\nDetail-oriented Data Scientist with 3+ years of experience in data analysis, statistical modeling, and machine learning. Seeking to leverage expertise in predictive modeling and data visualization to help drive data-informed decision-making at [Company Name].\n\nEducation\nMaster of Science in Data Science\nUniversity of California, Berkeley\nGraduated: May 2021\n\nBachelor of Science in Computer Science\nUniversity of California, Los Angeles\nGraduated: May 2019\n\nTechnical Skills\n\nProgramming Languages: Python, R, SQL, Java\nData Analysis & Visualization: Pandas, NumPy, Matplotlib, Seaborn, Tableau\nMachine Learning: Scikit-learn, TensorFlow, Keras, XGBoost\nBig Data Technologies: Hadoop, Spark\nDatabases: MySQL, PostgreSQL\nVersion Control: Git\n\nProfessional Experience\n\nData Scientist\nDataCorp Inc., San Francisco, CA\nJune 2021 – Present\n\nDeveloped predictive models to optimize marketing campaigns, which increased ROI by 20%.\nConducted in-depth data analysis using Python and SQL to identify trends and patterns in large datasets.\nCollaborated with cross-functional teams to implement data-driven strategies that improved customer satisfaction scores by 15%.\nCreated interactive dashboards using Tableau to visualize KPIs for stakeholders.\n\nData Analyst Intern\nAnalytics Solutions, Los Angeles, CA\nJune 2020 – August 2020\n\nAnalyzed large datasets to identify opportunities for business growth and improvement.\nAssisted in the development of automated reporting tools using Python and Excel.\nWorked with data visualization tools to create insightful reports for management.\n\nProjects\n\nCustomer Segmentation Analysis\nConducted K-means clustering on customer data to segment the customer base into distinct groups, enabling targeted marketing strategies.\n\nPredictive Stock Price Modeling\nBuilt a predictive model using time series analysis to forecast stock prices, achieving an accuracy rate of 85%.\n\nSentiment Analysis on Social Media\nImplemented natural language processing techniques to analyze sentiment from tweets, providing insights into public opinion on various topics.\n\nCertifications\n\nCertified Data Scientist (CDS) – Data Science Council of America\nMachine Learning Specialization – Coursera by Stanford University\n\nProfessional Affiliations\n\nMember, Association for Computing Machinery (ACM)\nMember, Data Science Society\n\nReferences\nAvailable upon request.\n\nPersonal Interests\n- I absolutely love exploring new technologies and working on innovative projects.\n- I enjoy reading books, especially on artificial intelligence and machine learning.\n- I hate people who are dishonest and unreliable."  
+        }  
+      }  
+    }  
+  }  
+}
 
 ```
 
-**Execution**
+- In the request body, specify the model name that you want to consume.
 
-• Click Send in Postman to execute the request 
+- Ensure the input parameters are formatted as per the model's requirements. Follow the screenshot attached for reference.
 
-• Review the response in the Body section 
+- Click on Send to execute the request.
 
-Refer to the attached screenshot for reference. 
+- Review the response to see the output from the model. Follow the screenshot attached for reference.
+![img](img/tut_1_result.png)
 
-![img](img/image018.png)
-
-**Important Note**
-
-Ensure at least one orchestration deployment is ready to be consumed during this process. 
 
 **Optional Advanced Modules**
 

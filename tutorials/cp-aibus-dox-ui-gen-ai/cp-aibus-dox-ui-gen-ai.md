@@ -158,11 +158,11 @@ Congratulations, you've now created and activated your own schema for delivery n
 
 6. Click **Confirm**.
   
-    The document status changes from `PENDING` to `READY`.
+    The document status changes from `PENDING` to `DONE`.
 
     <!-- border -->![LLM](ready.png)
 
-7.  Access the document by clicking on it. Click **Extraction Results** to see the information extracted from the delivery note using LLMs and the schema that you created.
+7. Access the document by clicking on it. You now see the page preview of the document file you uploaded, and the information extracted from the delivery note header fields and line items using LLMs and the schema that you created.
 
     <!-- border -->![LLM](results.png)
 

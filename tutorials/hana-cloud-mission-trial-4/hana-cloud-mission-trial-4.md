@@ -84,7 +84,7 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 -	One of the most important options you can get is the **SQL Endpoint** of your instance. To do so, click **Copy SQL Endpoint**. You will need this for multiple tasks, such as connecting to other systems.
 
-    ![HCC SQL Endpoint](hcc-sqlend.png)
+    ![HCC SQL Endpoint](hcc-sqlend2.png)
 
     To learn about more options to create and manage instances with SAP HANA Cloud Central, you can refer to the [**SAP HANA Cloud Administration with SAP HANA Cloud Central Guide**](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-cloud-administration-guide).
 
@@ -164,7 +164,7 @@ An important part of the SAP HANA database explorer is the **Catalog** browser. 
 
 3.	Then, click on **Open in SAP HANA database explorer**.
 
-    ![HCC Open DBX](hcc-open-dbx.png)
+    ![HCC Open DBX](hcc-open-dbx2.png)
 
 4.	The SAP HANA database explorer will open on a new tab. If this is the first-time you are accessing it, you will need to enter the credentials of your DBADMIN user.
 
