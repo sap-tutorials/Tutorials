@@ -19,12 +19,12 @@ parser: v2
 ## You will learn
 - How to create and update an SAP Mobile Services app for the SAP Service and Asset Manager mobile app using the MS App Create transaction `/MERP/CPMS_APPCREATE`.
 - How to review the created MS app.
-- Optional features:
+- Optional Features:
   1. Use an RFC Destination (Middleware Server) to Create the App.
   2. Add `sap-client` header to the Mobile Destinations.
   3. Enable Multiple Threads in Offline Configuration.
   4. Update the Usage Metering Middleware Server to use an RFC Destination.
-- Troubleshoot the following symptoms:
+- Troubleshoot:
   1. Prompted to sign-in after selecting the **Launch in Browser** icon when testing the Mobile Destinations.
   2. Missing Offline Configuration.
   3. Usage Metering Middleware Server Missing and/or Properties Missing.
@@ -51,7 +51,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 1. Execute the transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI, then select your required variant (i.e., `SAP&SAM_<version>`).
 
-2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please ensure the **Background Job User** will maintain authorization to run the Usage Metering background job (additional info below). To add the `sap-client` header to the Mobile Destinations please see Step 5 (recommended). To use an RFC Destination instead of the **Admin API** please see Step 4 (optional). Then execute the transaction.
+2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please ensure the **Background Job User** will maintain authorization to run the Usage Metering background job (parameter info below). To add the `sap-client` header to the Mobile Destinations please see Step 5 (recommended). To use an RFC Destination instead of the **Admin API** please see Step 4 (optional). Then execute the transaction.
 
     ![SelScreen](selscreen.png)
 
@@ -271,7 +271,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 2. Provide the destination name **`Z_SAM<version>_METERING`** and set **Connection Type** to **`G HTTP Connection to External Server`** (substituting `<version>` with your app version). 
 
-3. Provide the copied URL in **Host** field of the Target System Settings. Use the **Port** and **Path Prefix** as in the example below.
+3. Provide the copied URL without `https://` in **Host** field of the Target System Settings. Use the **Port** and **Path Prefix** as in the example below.
 
     ![RFCTechSetMeter](rfctechsetmeter.png)
 
