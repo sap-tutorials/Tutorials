@@ -23,7 +23,7 @@ parser: v2
   1. Use an RFC Destination (Middleware Server) to Create the App.
   2. Add `sap-client` header to the Mobile Destinations.
   3. Enable Multiple Threads in Offline Configuration.
-  4. Update the Metering Middleware Server to use an RFC Destination.
+  4. Update the Usage Metering Middleware Server to use an RFC Destination.
 - Troubleshoot the following symptoms:
   1. Prompted to sign-in after selecting the **Launch in Browser** icon when testing the Mobile Destinations.
   2. Missing Offline Configuration.
@@ -51,7 +51,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 1. Execute the transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI, then select your required variant (i.e., `SAP&SAM_<version>`).
 
-2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please review the **Background Job User** parameter (additional info below). To add the `sap-client` header to the Mobile Destinations please see Step 5 (optional). To use an RFC Destination instead of the **Admin API** please see Step 4 (optional). Then execute the transaction.
+2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please ensure the **Background Job User** will maintain authorization to run the Usage Metering background job (additional info below). To add the `sap-client` header to the Mobile Destinations please see Step 5 (recommended). To use an RFC Destination instead of the **Admin API** please see Step 4 (optional). Then execute the transaction.
 
     ![SelScreen](selscreen.png)
 
@@ -231,6 +231,14 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 3. If your app already exists and you are updating your app, select the option **Update Mobile Connectivity** when prompted.
 
+4. Alternately, you may edit the Mobile Destinations directly in the SAP Mobile Services **Mobile Connectivity** feature of your app. For each destination, click the pencil icon and navigate to the **Custom Headers** section. Add a custom header with the following values:
+
+    ![EditDest](editdest.png)
+
+    | Header Name  | Header Value                  |
+    | :----------- | :---------------------------- |
+    | `sap-client` | Your client (i.e., **`800`**) |
+
 ### Optional Feature 3 - Enable Multiple Threads in Offline Configuration
     
 1. Follow Step 2.1 and 2.2 then return to this Step before executing. Then click **Advanced Mode**.
@@ -243,11 +251,9 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 5. Execute the program **`/MERP/CORE_OFFLINE_CONFIG_PROG`** in transaction **SE38** from the SAP GUI, then select your required variant. 
 
-6. Under the **Mobile Services Offline OData Settings** section, check the `Calculate oMDO Download Phases` and `Enable Multiple Threads` options. Then, set `Number of Threads` to `3`. Then execute the transaction.
+6. Select the `Advanced Offline Configuration` radio button. Check the `Calculate oMDO Download Phases` and `Enable Multiple Threads` options. Then, set `Number of Threads` to `3`. Execute the transaction.
 
     ![OfflineProgMT](offlineprog_mt.png)
-
-    >**WARNING:** Any change that may affect the offline configuration (e.g., the **Defer Batch Response** setting is changed for the **OData Service Technical Name** provided when generating the offline configuration, or a new entity type is added to your mobile app configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
 
 7. Please ensure to save the generated file with a `.ini` file extension.
 
@@ -255,7 +261,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
     ![ImportOffline](importoffline.png)
 
-### Optional Feature 4 - Update the Metering Middleware Server to use an RFC Destination.
+### Optional Feature 4 - Update the Usage Metering Middleware Server to use an RFC Destination.
 
 1. Copy the **URL** of the **Server API**. from the APIs tab of your Mobile Services app.
 
@@ -281,11 +287,11 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 5. Save the RFC Destination.
 
-6. We will now update the Middleware Server with the RFC Destination created. To update the Middleware Server, execute transaction **/SYCLO/ADMIN** from the SAP GUI to open up the MAIF Admin Panel.
+6. We will now update the Usage Metering Middleware Server with the RFC Destination created. To update the Middleware Server, execute transaction **/SYCLO/ADMIN** from the SAP GUI to open up the MAIF Admin Panel.
 
 7. Navigate to the **Administration** > **Server Management** section. 
 
-8. Search for the Metering Middleware Server created during the app creation (i.e., `<ms_app_id>_MS_UNIFIED_SERVER`) and select. Please see Step 8 if the Metering Middleware server is missing.
+8. Select the Middleware Server with the name noted in Step 2.4. If the Usage Metering Middleware Server is missing then please see Step 8.
  
 9. Update the **RFC Destination** and click **Save**.
 
@@ -294,14 +300,6 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 ### Troubleshoot 1 - Prompted to sign-in after selecting the Launch in Browser icon
 
 1. This can occur when the `sap-client` header is not specified on the Mobile Destinations. Follow Optional Feature 2 to add the `sap-client` header.
-
-2. Alternately, you may edit the Mobile Destinations directly in the SAP Mobile Services **Mobile Connectivity** feature of your app. For each destination, click the pencil icon and navigate to the **Custom Headers** section. Add a custom header with the following values:
-
-    ![EditDest](editdest.png)
-
-    | Header Name  | Header Value                  |
-    | :----------- | :---------------------------- |
-    | `sap-client` | Your client (i.e., **`800`**) |
 
 ### Troubleshoot 2 - Missing Offline Configuration
 
@@ -312,8 +310,6 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 3. Execute the program **`/MERP/CORE_OFFLINE_CONFIG_PROG`** in transaction **SE38** from the SAP GUI, then select your required variant. Then execute the transaction.
 
     ![OfflineProg](offlineprog.png)
-
-    >**WARNING:** Any change that may affect the offline configuration (e.g., the **Defer Batch Response** setting is changed for the **OData Service Technical Name** provided when generating the offline configuration, or a new entity type is added to your mobile app configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
 
 4. Please ensure to save the generated file with a `.ini` file extension.
 
