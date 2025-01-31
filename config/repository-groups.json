@@ -1,0 +1,73 @@
+[
+    {
+        "name": "abap-core-development",
+        "description": null,
+        "urlBase": "sap-tutorials/abap-core-development",
+        "teamAdmin": null
+    },
+    {
+        "name": "btp-adai",
+        "description": null,
+        "urlBase": "sap-tutorials/btp-adai",
+        "teamAdmin": null
+    },
+    {
+        "name": "btp-dev-guidance",
+        "description": null,
+        "urlBase": "sap-tutorials/btp-dev-guidance",
+        "teamAdmin": null
+    },
+    {
+        "name": "btp-foundation",
+        "description": null,
+        "urlBase": "sap-tutorials/btp-foundation",
+        "teamAdmin": null
+    },
+    {
+        "name": "devtoberfest-2022",
+        "description": null,
+        "urlBase": "sap-tutorials/devtoberfest-2022",
+        "teamAdmin": null
+    },
+    {
+        "name": "sap-btp-sdk-android",
+        "urlBase": "sap-tutorials/sap-btp-sdk-android",
+        "teamAdmin": null
+    },
+    {
+        "name": "sap-btp-sdk-ios",
+        "description": null,
+        "urlBase": "sap-tutorials/sap-btp-sdk-ios",
+        "teamAdmin": null
+    },
+    {
+        "name": "sap-build-apps",
+        "description": null,
+        "urlBase": "sap-tutorials/sap-build-apps",
+        "teamAdmin": null
+    },
+    {
+        "name": "sap-build-process-automation",
+        "description": null,
+        "urlBase": "sap-tutorials/sap-build-process-automation",
+        "teamAdmin": null
+    },
+    {
+        "name": "sap-mobile-development-kit",
+        "description": null,
+        "urlBase": "sap-tutorials/sap-mobile-development-kit",
+        "teamAdmin": null
+    },
+    {
+        "name": "xpa-tutorials",
+        "description": null,
+        "urlBase": "sap-tutorials/xpa-tutorials",
+        "teamAdmin": null
+    },
+    {
+        "name": "Tutorials",
+        "description": "All other tutorials",
+        "urlBase": "sap-tutorials/Tutorials",
+        "teamAdmin": "rbrainey"
+    }
+]
