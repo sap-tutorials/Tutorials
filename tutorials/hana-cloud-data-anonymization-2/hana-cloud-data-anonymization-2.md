@@ -4,6 +4,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
+author_name: Hui Lu
+author_profile: https://github.com/Lynnyd
 ---
 
 # Understand How Data Anonymization Works in SAP HANA Cloud, SAP HANA Database
