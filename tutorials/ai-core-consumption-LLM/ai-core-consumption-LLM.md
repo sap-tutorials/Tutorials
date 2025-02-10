@@ -15,7 +15,7 @@ author_profile: https://github.com/dhrubpaul
 - How to inference foundational models on AI core
 
 ## Prerequisites
-- A BTP global account
+- A BTP Global Account
 If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
 [How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
 [SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
