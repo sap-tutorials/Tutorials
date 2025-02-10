@@ -87,7 +87,7 @@ console.log(process.env.AICORE_SERVICE_KEY);
 
 • [Create a service key](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key) for your AI Core instance and copy the JSON object.
 
-• Create a `.env`file in the **working directory** from which you run the code. Add the following line using the copied JSON:
+• Create a `.env` file in the **working directory** from which you run the code. Add the following line using the copied JSON:
   
  ```txt
     AICORE_SERVICE_KEY={"clientid": "...", "clientsecret": "...", "url": "...", "serviceurls": { "AI_API_URL": "..." } }
