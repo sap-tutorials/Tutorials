@@ -347,6 +347,69 @@ orchestrationConfig;
 
 [OPTION END]
 
+[OPTION BEGIN [SAP Cloud SDK for Java]]
+
+In this step, we will create an orchestration configuration using the core module of the SAP Cloud SDK for Java in a maven project. This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
+
+• Add the following dependencies to your `pom.xml` file:
+
+```xml
+<dependency>
+    <groupId>com.sap.ai.sdk</groupId>
+    <artifactId>core</artifactId>
+    <!-- Use the latest version here -->
+    <version>${ai-sdk.version}</version>
+</dependency>
+
+<dependency>
+    <groupId>com.sap.ai.sdk</groupId>
+    <artifactId>orchestration</artifactId>
+    <!-- Use the latest version here -->
+    <version>${ai-sdk.version}</version>
+</dependency>
+```
+• Add the following code to your project to create an orchestration configuration: 
+
+```java
+// Define a list of parameters you need for orchestration
+var parameterList = List.of(
+  AiParameterArgumentBinding.create()
+    .key("modelFilterList").value("null"),
+  AiParameterArgumentBinding.create()
+    .key("modelFilterListType").value("allow")
+);
+
+// Create a configuration data object for your configuration
+var configData = AiConfigurationBaseData.create()
+  .name("orchestration-config")                                         // Choose a meaningful name
+  .executableId("orchestration")                                        // Orchestration executable ID
+  .scenarioId("orchestration")                                          // Orchestration scenario ID
+  .addParameterBindingsItem((AiParameterArgumentBinding) parameterList) // Parameter list created with previous statement
+  .addInputArtifactBindingsItem((AiArtifactArgumentBinding) List.of()); // Input bindings not required, can be modified
+
+// Create the configuration, use the correct resource group
+var configResponse = new ConfigurationApi().create("default", configData);
+
+// Print configuration response message
+System.out.println(configResponse.getMessage());
+```
+• If not done automaticaly by your IDE, add the following imports:
+
+```java
+import com.sap.ai.sdk.core.client.ConfigurationApi;
+import com.sap.ai.sdk.core.model.AiArtifactArgumentBinding;
+import com.sap.ai.sdk.core.model.AiConfigurationBaseData;
+import com.sap.ai.sdk.core.model.AiParameterArgumentBinding;
+```
+
+**Note**: 
+
+• `scenarioId` and `executableId`: Both are set to "orchestration" for this tutorial. 
+
+• `name`: Choose a unique name for the configuration (e.g., "config-new-orchestration")
+
+[OPTION END]
+
 [OPTION BEGIN [Bruno]]
 #### Create Resource Group
 
