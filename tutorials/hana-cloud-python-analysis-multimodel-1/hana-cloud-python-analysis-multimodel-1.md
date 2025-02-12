@@ -4,6 +4,8 @@ auto_validation: true
 time: 15
 tags: [ tutorial>advanced, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-graph, software-product-function>sap-hana-spatial]
 primary_tag: products>sap-hana-cloud
+author_name: Christoph Morgen
+author_profile: https://github.com/cmog
 ---
 
 # Connect SAP HANA Database in SAP HANA Cloud to Python

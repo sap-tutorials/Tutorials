@@ -103,7 +103,7 @@ Continue with this tutorial once you have created an SAP HANA Cloud trial or fre
 
 ![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
-
+ 
 1. Once the SAP HANA Cloud instance is created, take note of the SQL endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in the mission.  
 
     ![SQL Endpoint](SQLEndpoint.png)
