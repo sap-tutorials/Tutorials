@@ -371,27 +371,28 @@ In this step, we will create an orchestration configuration using the core modul
 • Add the following code to your project to create an orchestration configuration: 
 
 ```java
-// Define a list of parameters you need for orchestration
-var parameterList = List.of(
-  AiParameterArgumentBinding.create()
-    .key("modelFilterList").value("null"),
-  AiParameterArgumentBinding.create()
-    .key("modelFilterListType").value("allow")
-);
+// Define the resource group, change this to your resource group name
+private static final String RESOURCE_GROUP = "default";
+
+// Define parameter and input artifact bindings you may need for orchestration
+final var modelFilterList =
+  AiParameterArgumentBinding.create().key("modelFilterList").value("null");
+final var modelFilterListType =
+  AiParameterArgumentBinding.create().key("modelFilterListType").value("allow");
 
 // Create a configuration data object for your configuration
-var configData = AiConfigurationBaseData.create()
-  .name("orchestration-config")                                         // Choose a meaningful name
-  .executableId("orchestration")                                        // Orchestration executable ID
-  .scenarioId("orchestration")                                          // Orchestration scenario ID
-  .addParameterBindingsItem((AiParameterArgumentBinding) parameterList) // Parameter list created with previous statement
-  .addInputArtifactBindingsItem((AiArtifactArgumentBinding) List.of()); // Input bindings not required, can be modified
+final var configurationData = AiConfigurationBaseData.create()
+  .name("orchestration-config")   // Choose a meaningful name
+  .executableId("orchestration")  // Orchestration executable ID
+  .scenarioId("orchestration")    // Orchestration scenario ID
+  .addParameterBindingsItem(modelFilterList)
+  .addParameterBindingsItem(modelFilterListType);
 
-// Create the configuration, use the correct resource group
-var configResponse = new ConfigurationApi().create("default", configData);
+// Create the configuration with your individual resource group
+final var configuration = new ConfigurationApi().create(RESOURCE_GROUP, configurationData);
 
-// Print configuration response message
-System.out.println(configResponse.getMessage());
+// Print the configuration response message
+System.out.println(configuration.getMessage());
 ```
 • If not done automaticaly by your IDE, add the following imports:
 
