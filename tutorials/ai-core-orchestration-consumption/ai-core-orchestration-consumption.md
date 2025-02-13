@@ -570,6 +570,33 @@ export async function deployOrchestration(
 
 [OPTION END]
 
+[OPTION BEGIN [SAP Cloud SDK for Java]]
+
+In this step, we will create a deployment from the configuration created in the last step using the core module of the SAP Cloud SDK for Java. 
+
+• Add the following code to your project to create an orchestration deployment:
+
+```java
+// Create a deployment creation request with the ID of the created configuration
+final var deploymentCreationRequest =
+  AiDeploymentCreationRequest.create().configurationId(configuration.getId());
+
+// Create the deployment with the deployment creation request
+final var deployment =
+  new DeploymentApi().create(RESOURCE_GROUP, deploymentCreationRequest);
+
+// Print the deployment response message
+System.out.println(deployment.getMessage());
+```
+• If not done automaticaly by your IDE, add the following imports:
+
+```java
+import com.sap.ai.sdk.core.client.DeploymentApi;
+import com.sap.ai.sdk.core.model.AiDeploymentCreationRequest;
+```
+
+[OPTION END]
+
 [OPTION BEGIN [Bruno]]
 #### Update Configuration ID and Create Deployment
 - Navigate to the create_deployment request.
