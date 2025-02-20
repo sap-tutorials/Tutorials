@@ -66,9 +66,9 @@ author_profile: https://github.com/I321506
 
 • SAP Cloud SDK for AI: Uses the `dotenv` library to load environment variables.  If you encounter issues with the dotenv library, ensure it is installed correctly by running:  
 
-```CODE 
-npm install dotenv 
-```
+    ```CODE 
+    npm install dotenv 
+    ```
 
 ```CODE
 import dotenv from 'dotenv';
@@ -96,98 +96,6 @@ console.log(process.env.AICORE_SERVICE_KEY);
     The value of `AICORE_SERVICE_KEY` must be a single line, so remove any line breaks from the service key JSON.
 
 • For other options of access configuration and detailed information on installation and usage of the **SAP Cloud SDK for AI (for Java)**, visit the official [GitHub repository](https://github.com/SAP/ai-sdk-java). This page provides comprehensive steps to set up and integrate the SDK effectively in your projects.
-
-[OPTION END]
-
-[OPTION BEGIN [Bruno]]
-#### Download and Import the Bruno Collection
--	Download the [bruno_collections](img/Bruno_Collection.json) file
-
--	Navigate to the Bruno Collections section
-
--	Upload the .json file to import the collection. Follow the screenshot attached for reference
-![img](img/img001.png)
-![img](img/img003.png)
-![img](img/img005.png)
-#### Set Environment Variables
-- From the imported collection, select the get_token query.
-
-- Click on "No Environment" and then select "Configure".
-
-![img](img/no_env.png)
-- Populate the following environment variables with values from the service key:
-  -	ai_auth_url → url from the service key.
-  -	ai_api_url → serviceurls.AI_API_URL from the service key.
-  -	client_id → clientid from the service key.
-  -	client_secret → clientsecret from the service key.
-  -	resource_group → Specify a resource group name.
-
-![img](img/img009.png)
-- Save the environment configuration.
-
-- Click on "No Environment" in the top-right corner and select "Grounding-test".
-![img](img/env_set.png)
-#### Generate the Token
-- Select the get_token request from the root folder of the imported collection.
-
-- Execute the request to generate the token.
-![img](img/get_token.png)
-
-**NOTE**: If the token expires at any point during execution, repeat this step to regenerate it.
-
-[OPTION END]
-
-
-### Create Configuration for Orchestration deployment 
-
-[OPTION BEGIN [AI Launchpad]]
-
-Go to the Configuration section within your chosen Resource Group. 
-
-![img](img/image008.png)
-
-• Fill in Deployment Details, Under configuration, input the following details: 
-
-      Name:       "orchestration" 
-
-      Executable: "orchestration" 
-
-      Scenario:   "orchestration" 
-
-      Version:    "0.0.1" 
-
-• Click Next after entering each detail. 
-
-![img](img/image009.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Python SDK]]
-
-• Create a folder named orchestration, then navigate to this folder using VS Code. 
-
-•  Inside the folder, create a new file with any name but ensure it has the .ipynb extension. 
-
-![img](img/image010.png)
-
-You'll create a configuration that defines the orchestration setup. Use the following code to initialize your configuration. 
-
-```CODE
-
-# Define scenario ID, executable ID, and configuration suffix 
-scenario_id = "orchestration" 
-executable_id = "orchestration" 
-config_suffix = "config-new"   # Enter your configuration name 
-config_name = f"{config_suffix}-orchestration" 
-
-# Create a new configuration 
-config = ai_core_client.configuration.create( 
-    scenario_id=scenario_id, 
-    executable_id=executable_id, 
-    name=config_name 
-) 
-print(f"Configuration created successfully with ID: {config.id} and Name: {config_name}") 
-```  
 
 [OPTION END]
 
