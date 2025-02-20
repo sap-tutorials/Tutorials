@@ -35,7 +35,7 @@ author_profile: https://github.com/I321506
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI Hub SDK]]
+[OPTION BEGIN [Python SDK]]
 
 •  Configure proxy modules by setting up environment variables for AI Core credentials.
 
@@ -48,7 +48,7 @@ author_profile: https://github.com/I321506
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK]]
+[OPTION BEGIN [JavaScript SDK]]
 
 • Download the service key for the AI Core service instance.  
 
@@ -83,7 +83,7 @@ console.log(process.env.AICORE_SERVICE_KEY);
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK for Java]]
+[OPTION BEGIN [Java SDK]]
 
 • [Create a service key](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key) for your AI Core instance and copy the JSON object.
 
@@ -163,7 +163,7 @@ Go to the Configuration section within your chosen Resource Group.
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 • Create a folder named orchestration, then navigate to this folder using VS Code. 
 
@@ -188,7 +188,7 @@ config = ai_core_client.configuration.create(
     name=config_name 
 ) 
 print(f"Configuration created successfully with ID: {config.id} and Name: {config_name}") 
-  
+```  
 
 [OPTION END]
 
@@ -255,7 +255,7 @@ Go to the Configuration section within your chosen Resource Group.
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 • Create a folder named orchestration, then navigate to this folder using VS Code. 
 
@@ -292,7 +292,7 @@ print(f"Configuration created successfully with ID: {config.id} and Name: {confi
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK ]]
+[OPTION BEGIN [JavaScript SDK]]
 
 In this step, we define a function to create an orchestration configuration using the ConfigurationApi from the SAP AI SDK. This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID.
 
@@ -347,7 +347,7 @@ orchestrationConfig;
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK for Java]]
+[OPTION BEGIN [Java SDK]]
 
 In this step, we will create an orchestration configuration using the core module of the SAP Cloud SDK for Java in a maven project. This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
 
@@ -394,14 +394,6 @@ var configuration = new ConfigurationApi().create(RESOURCE_GROUP, configurationD
 // Print the configuration response message
 System.out.println(configuration.getMessage());
 ```
-• If not done automaticaly by your IDE, add the following imports:
-
-```java
-import com.sap.ai.sdk.core.client.ConfigurationApi;
-import com.sap.ai.sdk.core.model.AiArtifactArgumentBinding;
-import com.sap.ai.sdk.core.model.AiConfigurationBaseData;
-import com.sap.ai.sdk.core.model.AiParameterArgumentBinding;
-```
 
 **Note**: 
 
@@ -447,7 +439,7 @@ Once the deployment begins, continue to the status page. Verify that the Deploym
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 With the configuration ID, you can proceed to deploy the orchestration and monitor its progress. 
 
@@ -505,7 +497,7 @@ Result: The code will display a loading spinner until the deployment status upda
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK ]]
+[OPTION BEGIN [JavaScript SDK]]
 
 This step involves creating a deployment using the specified configuration and resource group. The deployment is handled via the DeploymentApi, which streamlines the process of activating the orchestration setup. 
 
@@ -570,7 +562,7 @@ export async function deployOrchestration(
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK for Java]]
+[OPTION BEGIN [Java SDK]]
 
 In this step, we will create a deployment from the configuration created in the last step using the core module of the SAP Cloud SDK for Java. 
 
@@ -586,12 +578,6 @@ var deployment = new DeploymentApi().create(RESOURCE_GROUP, deploymentCreationRe
 
 // Print the deployment response message
 System.out.println(deployment.getMessage());
-```
-• If not done automaticaly by your IDE, add the following imports:
-
-```java
-import com.sap.ai.sdk.core.client.DeploymentApi;
-import com.sap.ai.sdk.core.model.AiDeploymentCreationRequest;
 ```
 
 [OPTION END]
@@ -774,7 +760,7 @@ Data masking and content filtering are available to enhance data privacy and saf
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 To begin the consumption process for the orchestration you’ve deployed, follow the process below: 
 
@@ -910,7 +896,7 @@ Data masking and content filtering are available to enhance data privacy and saf
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK ]]
+[OPTION BEGIN [JavaScript SDK]]
 
 To begin the consumption process for the orchestration you’ve deployed, follow the process below: 
 
@@ -1071,7 +1057,7 @@ Data masking and content filtering are available to enhance data privacy and saf
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK for Java]]
+[OPTION BEGIN [Java SDK]]
 
 In this step, we will consume an LLM through the orchestration service with the created deployment, using the core and orchestration module of the SAP Cloud SDK for Java.
 
@@ -1107,41 +1093,39 @@ The next step involves creating the prompt for the LLM including both `SystemMes
 
 ```java
 // Define system and user messages for prompt
-var systemMessage = new SystemMessage(
+var systemMessage = Message.system(
  """
   You are an AI assistant designed to screen resumes for HR purposes.
   Please assess the candidate qualifications based on the provided resume.
  """
 );
-var userMessage = new UserMessage("Candidate Resume: \n" + cvContent);
+var userMessage = Message.user("Candidate Resume: \n" + cvContent);
 
 // Define the prompt for resume screening
 var prompt = new OrchestrationPrompt(systemMessage, userMessage);
 
 ```
 
-We can define multiple models for the use case. Only use those models that are already deployed in your instances. For this example, we have selected the following three models:
+
+We can define model parameters and a list of models to use. Only use those models that are already deployed in your instances. For this example, we have selected the following parameters and models:
 
 ```java
-// List of models to iterate through
-var models = List.of("gpt-4o", "mistralai--mistral-large-instruct", "anthropic--claude-3.5-sonnet");
+
+// Map of model parameters, can be adapted if desired
+Map<String, Object> modelParams = Map.of(
+		"max_tokens", 1000,
+		"temperature", 0.6
+);
+
+// List of models to iterate through, can be adapted if desired
+var models = List.of(
+		OrchestrationAiModel.GPT_4O.withParams(modelParams),
+		OrchestrationAiModel.MISTRAL_LARGE_INSTRUCT.withParams(modelParams),
+		OrchestrationAiModel.CLAUDE_3_5_SONNET.withParams(modelParams)
+);
+
 ```
 
-With the following function we create an `OrchestrationModuleConfig` containing information about the `LLMModule`. This can be extended to contain information regarding templating, masking, filtering and grounding, if desired to use these functionality of orchestration.  
-
-```java
-// Function to create orchestration module configuration 
-OrchestrationModuleConfig createModuleConfig(String modelName) {
-var config = LLMModuleConfig.create()
-  .modelName(modelName)   
-  .modelParams(Map.of(    // add model parameters as needed 
-    "max_tokens", 1000,
-    "temperature", 0.6
-  ));
-
-return new OrchestrationModuleConfig().withLlmConfig(config);
-}
-```
 
 The following function writes the responses from different models, stored in a list, to a file: 
 
@@ -1151,12 +1135,12 @@ void createFileFromResponses (ArrayList<Map> responses) {
  // Format model responses
  var formattedResponses = responses.stream().
   map(response -> "Response from model " + response.get("model") +
-  ": \n\n" + response.get("response") + "\n" + "-".repeat(120));
+  ": \n\n" + response.get("response"));
 
  // Write model responses to provided file path
  try {
   Files.writeString(Path.of("src/main/resources/static/responses.txt"),
-   String.join("\n", formattedResponses.toList()));
+   String.join("\n\n" + "-".repeat(120) + "\n\n", formattedResponses.toList()));
  } catch (IOException e) {
   throw new RuntimeException(e);
  }
@@ -1177,34 +1161,22 @@ var responses = new ArrayList<Map>();
 
 // Iterate through the list of models
 for (var model: models) {
- System.out.println("\n=== Responses for model: %s ===\n".formatted(model));
+ System.out.println("\n=== Responses for model: %s ===\n"formatted(model.getName()));
 
  // Create orchestration module configuration for current model
- var moduleConfig = createModuleConfig(model);
+ var moduleConfig = new OrchestrationModuleConfig().withLlmConfig(model);
 
  // Prompt model with orchestration module configuration
  var response = client.chatCompletion(prompt, moduleConfig);
 
  // Add response to list of all model responses
- responses.add(Map.of("model", model, "response", response.getContent()));
+ responses.add(Map.of("model", model.getName(), "response", response.getContent()));
 
  System.out.println(response.getContent());
 }
 
 // Write all responses to a file
 createFileFromResponses(responses);
-```
-• If not done automaticaly by your IDE, add the following imports:
-
-```java
-import com.sap.ai.sdk.core.AiCoreService;
-
-import com.sap.ai.sdk.orchestration.OrchestrationClient;
-import com.sap.ai.sdk.orchestration.OrchestrationModuleConfig;
-import com.sap.ai.sdk.orchestration.OrchestrationPrompt;
-import com.sap.ai.sdk.orchestration.SystemMessage;
-import com.sap.ai.sdk.orchestration.UserMessage;
-import com.sap.ai.sdk.orchestration.model.LLMModuleConfig;
 ```
 
 
