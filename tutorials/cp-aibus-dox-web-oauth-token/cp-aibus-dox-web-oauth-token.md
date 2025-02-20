@@ -19,7 +19,7 @@ author_profile: https://github.com/Juliana-Morais
 ### Get OAuth access token details
 
 
-To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-free-key). 
+To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-free-booster-key). 
 
 <!-- border -->![DOX Service Key](service-key-details.png)
 
