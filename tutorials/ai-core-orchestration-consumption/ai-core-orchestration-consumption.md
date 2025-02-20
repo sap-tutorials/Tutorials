@@ -87,7 +87,7 @@ console.log(process.env.AICORE_SERVICE_KEY);
 
 • [Create a service key](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key) for your AI Core instance and copy the JSON object.
 
-• Create a `.env` file in the **working directory** from which you run the code. Add the following line using the copied JSON:
+• Create a `.env` file in the **working directory from which you run the code**. Add the following line using the copied JSON:
   
  ```txt
     AICORE_SERVICE_KEY={"clientid": "...", "clientsecret": "...", "url": "...", "serviceurls": { "AI_API_URL": "..." } }
@@ -95,8 +95,7 @@ console.log(process.env.AICORE_SERVICE_KEY);
   > [!IMPORTANT]
     The value of `AICORE_SERVICE_KEY` must be a single line, so remove any line breaks from the service key JSON.
 
-• For other options of access configuration and detailed information on installation and usage of the **SAP Cloud SDK for AI (for Java)**, visit the official 
-[GitHub repository](https://github.com/SAP/ai-sdk-java). This page provides comprehensive steps to set up and integrate the SDK effectively in your projects.
+• For other options of access configuration and detailed information on installation and usage of the **SAP Cloud SDK for AI (for Java)**, visit the official [GitHub repository](https://github.com/SAP/ai-sdk-java). This page provides comprehensive steps to set up and integrate the SDK effectively in your projects.
 
 [OPTION END]
 
@@ -349,7 +348,7 @@ orchestrationConfig;
 
 [OPTION BEGIN [Java SDK]]
 
-In this step, we will create an orchestration configuration using the core module of the SAP Cloud SDK for Java in a maven project. This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
+In this step, we will create an orchestration configuration using the core module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java) in a maven project. This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
 
 • Add the following dependencies to your `pom.xml` file:
 
@@ -564,7 +563,7 @@ export async function deployOrchestration(
 
 [OPTION BEGIN [Java SDK]]
 
-In this step, we will create a deployment from the configuration created in the last step using the core module of the SAP Cloud SDK for Java. 
+In this step, we will create a deployment from the configuration created in the previous step using the core module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java). 
 
 • Add the following code to your project to create an orchestration deployment:
 
@@ -1059,9 +1058,10 @@ Data masking and content filtering are available to enhance data privacy and saf
 
 [OPTION BEGIN [Java SDK]]
 
-In this step, we will consume an LLM through the orchestration service with the created deployment, using the core and orchestration module of the SAP Cloud SDK for Java.
+In this step, we will consume an LLM through the orchestration service with the created deployment, using the core and orchestration module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java).
 
-To begin the consumption process for the orchestration you’ve deployed, follow the steps below: 
+To begin the consumption process, follow the steps below: 
+
 
 **Prepare the CV File**
 
@@ -1113,15 +1113,15 @@ We can define model parameters and a list of models to use. Only use those model
 
 // Map of model parameters, can be adapted if desired
 Map<String, Object> modelParams = Map.of(
-		"max_tokens", 1000,
-		"temperature", 0.6
+  "max_tokens", 1000,
+  "temperature", 0.6
 );
 
 // List of models to iterate through, can be adapted if desired
 var models = List.of(
-		OrchestrationAiModel.GPT_4O.withParams(modelParams),
-		OrchestrationAiModel.MISTRAL_LARGE_INSTRUCT.withParams(modelParams),
-		OrchestrationAiModel.CLAUDE_3_5_SONNET.withParams(modelParams)
+  OrchestrationAiModel.GPT_4O.withParams(modelParams),
+  OrchestrationAiModel.MISTRAL_LARGE_INSTRUCT.withParams(modelParams),
+  OrchestrationAiModel.CLAUDE_3_5_SONNET.withParams(modelParams)
 );
 
 ```
@@ -1178,7 +1178,6 @@ for (var model: models) {
 // Write all responses to a file
 createFileFromResponses(responses);
 ```
-
 
 **Important Note**
 
