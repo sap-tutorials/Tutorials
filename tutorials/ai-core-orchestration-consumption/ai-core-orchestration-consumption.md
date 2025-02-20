@@ -1110,19 +1110,12 @@ var prompt = new OrchestrationPrompt(systemMessage, userMessage);
 We can define model parameters and a list of models to use. Only use those models that are already deployed in your instances. For this example, we have selected the following parameters and models:
 
 ```java
-
-// Map of model parameters, can be adapted if desired
-Map<String, Object> modelParams = Map.of(
-  "max_tokens", 1000,
-  "temperature", 0.6
-);
-
-// List of models to iterate through, can be adapted if desired
-var models = List.of(
-  OrchestrationAiModel.GPT_4O.withParams(modelParams),
-  OrchestrationAiModel.MISTRAL_LARGE_INSTRUCT.withParams(modelParams),
-  OrchestrationAiModel.CLAUDE_3_5_SONNET.withParams(modelParams)
-);
+// List of models with parameters to iterate through, can be adapted if desired
+var models = Stream.of(
+    OrchestrationAiModel.GPT_4O,
+    OrchestrationAiModel.MISTRAL_LARGE_INSTRUCT,
+    OrchestrationAiModel.CLAUDE_3_5_SONNET
+  ).map(model -> model.withParam(MAX_TOKENS, 1000).withParam(TEMPERATURE, 0.6)).toList();
 
 ```
 
