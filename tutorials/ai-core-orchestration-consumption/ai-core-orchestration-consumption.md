@@ -66,9 +66,9 @@ author_profile: https://github.com/I321506
 
 • SAP Cloud SDK for AI: Uses the `dotenv` library to load environment variables.  If you encounter issues with the dotenv library, ensure it is installed correctly by running:  
 
-    ```CODE 
-    npm install dotenv 
-    ```
+```CODE 
+npm install dotenv 
+```
 
 ```CODE
 import dotenv from 'dotenv';
@@ -89,11 +89,29 @@ console.log(process.env.AICORE_SERVICE_KEY);
 
 • Create a `.env` file in the **working directory from which you run the code**. Add the following line using the copied JSON:
   
- ```txt
-    AICORE_SERVICE_KEY={"clientid": "...", "clientsecret": "...", "url": "...", "serviceurls": { "AI_API_URL": "..." } }
-  ```
-  > [!IMPORTANT]
-    The value of `AICORE_SERVICE_KEY` must be a single line, so remove any line breaks from the service key JSON.
+```
+AICORE_SERVICE_KEY={"clientid": "...", "clientsecret": "...", "url": "...", "serviceurls": { "AI_API_URL": "..." } }
+```
+
+• **IMPORTANT:** The value of `AICORE_SERVICE_KEY` must be a single line, so remove any line breaks from the service key JSON.
+
+• This tutorial is designed for a Java [maven project](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html). Add the following dependencies to your project `pom.xml` file:
+
+```xml
+<dependency>
+    <groupId>com.sap.ai.sdk</groupId>
+    <artifactId>core</artifactId>
+    <!-- Use the latest version here -->
+    <version>${ai-sdk.version}</version>
+</dependency>
+
+<dependency>
+    <groupId>com.sap.ai.sdk</groupId>
+    <artifactId>orchestration</artifactId>
+    <!-- Use the latest version here -->
+    <version>${ai-sdk.version}</version>
+</dependency>
+```
 
 • For other options of access configuration and detailed information on installation and usage of the **SAP Cloud SDK for AI (for Java)**, visit the official [GitHub repository](https://github.com/SAP/ai-sdk-java). This page provides comprehensive steps to set up and integrate the SDK effectively in your projects.
 
@@ -256,25 +274,8 @@ orchestrationConfig;
 
 [OPTION BEGIN [Java SDK]]
 
-In this step, we will create an orchestration configuration using the core module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java) in a maven project. This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
+In this step, we will create an orchestration configuration using the core module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java). This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
 
-• Add the following dependencies to your `pom.xml` file:
-
-```xml
-<dependency>
-    <groupId>com.sap.ai.sdk</groupId>
-    <artifactId>core</artifactId>
-    <!-- Use the latest version here -->
-    <version>${ai-sdk.version}</version>
-</dependency>
-
-<dependency>
-    <groupId>com.sap.ai.sdk</groupId>
-    <artifactId>orchestration</artifactId>
-    <!-- Use the latest version here -->
-    <version>${ai-sdk.version}</version>
-</dependency>
-```
 • Add the following code to your project to create an orchestration configuration: 
 
 ```java
