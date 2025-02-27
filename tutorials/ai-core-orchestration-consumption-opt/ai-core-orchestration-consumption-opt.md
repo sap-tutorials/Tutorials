@@ -43,7 +43,7 @@ Familiarity with the orchestration workflow is recommended
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI Hub SDK]]
+[OPTION BEGIN [Python SDK]]
 
 - **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
 
@@ -73,7 +73,7 @@ print(cv_content)
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK]]
+[OPTION BEGIN [JavaScript SDK]]
 
 - **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
 
@@ -113,6 +113,43 @@ console.log(txtContent);
 ```
 
 [OPTION END]
+
+[OPTION BEGIN [Java SDK]]
+
+- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
+
+    -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
+
+    -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses.
+
+- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
+
+**NOTE** : If you are continuing with the same project from the previous tutorial, skip steps 1 and 2. Otherwise, create a new Java Maven project using the already deployed orchestration URL to access the Harmonized API. Please find detailed information on orchestration configuration and deployment in the previous tutorial or our [GitHub repository](https://github.com/SAP/ai-sdk-java). 
+
+
+
+- The [cv.txt](img/cv.txt) file, containing the resume content, must be added to the working directory. Use the following code to load the file content:
+
+
+```java
+// Adapt filepath to the location you stored the file
+var filePath = "path/to/cv.txt";
+
+// Read file into string
+String cvContent;
+try {
+ cvContent = new String(Files.readAllBytes(Paths.get(filePath)));
+} catch (IOException e) {
+ throw new RuntimeException(e);
+}
+
+// Print file content
+System.out.println(cvContent);
+
+```
+
+[OPTION END]
+
 
 [OPTION BEGIN [Bruno]]
 
@@ -226,7 +263,7 @@ You are a helpful AI assistant for HR. Summarize the following CV in 10 sentence
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 - To define how the AI should process the resume, we need a template comprising **SystemMessage** and **UserMessage** components: 
 
@@ -271,7 +308,7 @@ models = [
 ```
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK ]]
+[OPTION BEGIN [JavaScript SDK ]]
 
 - To define how the AI should process the resume, we need a template comprising **SystemMessage** and **UserMessage** components: 
 
@@ -316,6 +353,44 @@ const models = [
 
 [OPTION END]
 
+[OPTION BEGIN [Java SDK]]
+
+The next step involves creating the prompt for the LLM including both `SystemMessage` and `UserMessage` components.
+
+• `SystemMessage`: Defines the AI assistant's role and instructions. 
+
+• `UserMessage`: Represents the user's input (i.e., the CV content) to be processed by the LLM.
+
+```java
+// Define system and user messages for prompt
+var systemMessage = Message.system(
+ """
+  You are an AI assistant designed to screen resumes for HR purposes.
+  Please assess the candidate qualifications based on the provided resume.
+ """
+);
+var userMessage = Message.user("Candidate Resume: \n" + cvContent);
+
+// Define the prompt for resume screening
+var prompt = new OrchestrationPrompt(systemMessage, userMessage);
+
+```
+
+
+We can define model parameters and a list of models to use. Only use those models that are already deployed in your instances. For this example, we have selected the following parameters and models:
+
+```java
+// List of models with parameters to iterate through, can be adapted if desired
+var models = Stream.of(
+    OrchestrationAiModel.GPT_4O,
+    OrchestrationAiModel.MISTRAL_LARGE_INSTRUCT,
+    OrchestrationAiModel.CLAUDE_3_5_SONNET
+  ).map(model -> model.withParam(MAX_TOKENS, 1000).withParam(TEMPERATURE, 0.6)).toList();
+
+```
+
+[OPTION END]
+
 ### Setting Up Data Masking Parameters 
 
 [OPTION BEGIN [AI Launchpad]]
@@ -337,7 +412,7 @@ const models = [
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 - The **Data Masking** Module ensures data privacy by anonymizing or pseudonymizing sensitive information before it is processed. 
 
