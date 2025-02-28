@@ -511,7 +511,9 @@ secret.json()
 
 [OPTION END]
 
-### 7. Prepare knowledge base and verification
+### 7. Prepare knowledge base(data repository) and verification
+
+#### 7.a Using Pipeline API [Option-1]
  
 [OPTION BEGIN [Bruno]]
 
@@ -551,71 +553,13 @@ This request checks the current status of a specific pipeline, such as whether i
  
 Once the pipeline is successfully created, documents uploaded in SharePoint are converted into vectors via APIs. The conversion process can be validated upon successful pipeline execution.
 
-#### Verifying Vector Processing (Optional)
-
-These steps help inspect vector collections and documents to confirm successful processing.
-
- • **get_all_collections** – Lists all existing vector collections for validation.
-
-![img](img/image034.png)
-
- • **get_collection_creation_status_by_id** – Checks whether the collection was created successfully.
-
-![img](img/image035.png)
-
- • **get_collection_by_id** – Retrieves detailed information about a specific collection
-
-![img](img/image036.png)
-
- • **get_all_documents_by_collection_id** – Lists all stored documents to ensure correct ingestion.
-
-![img](img/image037.png)
-
- • **get_documents_by_id** – Fetches specific documents within a collection for debugging
-
-![img](img/image038.png)
-
- • **get_collection_deletion_status_by_id** – Confirms successful deletion of a collection if needed.
-
-![img](img/image039.png)
-
-#### Ensuring Data Retrieval for AI Processing (Optional)
-
-These steps confirm that data repositories are accessible for AI-powered searches and retrieval.
-
- • **dataRrepositories** – Lists all available repositories to ensure accessibility.
-
-![img](img/image040.png)
-
- • **dataRepositories by id** – Fetches details of a specific repository for targeted debugging.
-
-![img](img/image041.png)
-
-[OPTION END]
-
-[OPTION BEGIN [AI Launchpad]]
-
-Grounding is a crucial step in orchestration that ensures responses are enriched with relevant and accurate data from predefined sources. This section explains how grounding works in the AI Launchpad.
-
-**Input Variables**
-
-Input variables are parameters sent to the grounding service to facilitate data retrieval. These variables can be referenced in the template definition, allowing dynamic data incorporation based on user inputs.
-
-**Output Variable**
-
-The output variable holds the retrieved data from the grounding service. This data can then be utilized in the template definition to generate contextual and informed responses.
-
-**Selected Sources**
-
-You can specify the repositories from which the grounding module retrieves information. If no specific repositories are selected, grounding will include all available sources by default. Selecting relevant sources ensures precise and domain-specific data retrieval for improved orchestration outcomes.
-
-![img](img/image047.png)
-
 [OPTION END]
 
 [OPTION BEGIN [SAP Cloud SDK]]
 
 we are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+
+**Note:** At present, pipeline creation is not supported in the grounding feature of Cloud SDK, as we have utilized API requests to establish the pipeline.
 
 ```javascript
 
@@ -672,6 +616,8 @@ createPipeline().then(pipelineId => {
 
 we are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
 
+**Note:** At present, pipeline creation is not supported in the grounding feature of Gen AI SDK, as we have utilized API requests to establish the pipeline.
+
 ```python
 
 json_data = {
@@ -702,6 +648,70 @@ pipeline.json()['pipelineId']
 
 [OPTION END]
 
+#### 7.b Using Vector API [Option-2]
+
+[OPTION BEGIN [Bruno]]
+
+#### Create collection
+
+• Expand 06_vector and select create_collections request.
+
+• Replace value <collection_name> with the required collection name.
+
+• The metadata can be an array of key-value pairs to have some additional information.
+
+**Note:** Currently supported modelName is only text-embedding-ada-002-v2.
+
+![img](img/image066.png)
+
+#### Create documents
+
+• Click on the create_document request and replace the path parameter with the valid collection ID.
+
+• Replace value <metadata_key> with the required key of metadata and put corresponding values to it.  Multiple metadata can be specified here.
+
+• Replace values <chunk_1>, <chunk_2> with the required chunk of the documents. Add multiple chunks   based on the requirement. The metadata can also be specified for each chunk.
+
+![img](img/image067.png)
+
+#### Verifying Vector Processing (Optional)
+
+These steps help inspect vector collections and documents to confirm successful processing.
+
+ • **get_all_collections** – Lists all existing vector collections for validation.
+
+![img](img/image034.png)
+
+ • **get_collection_creation_status_by_id** – Checks whether the collection was created successfully.
+
+![img](img/image035.png)
+
+ • **get_collection_by_id** – Retrieves detailed information about a specific collection
+
+![img](img/image036.png)
+
+ • **get_all_documents_by_collection_id** – Lists all stored documents to ensure correct ingestion.
+
+![img](img/image037.png)
+
+ • **get_documents_by_id** – Fetches specific documents within a collection for debugging
+
+![img](img/image038.png)
+
+ • **get_collection_deletion_status_by_id** – Confirms successful deletion of a collection if needed.
+
+![img](img/image039.png)
+
+ • **dataRepositories** - List all the collection of Data repositories 
+
+![img](img/image040.png)
+
+ • **dataRepositories by id** – Fetches details of a specific repository for targeted debugging.
+
+![img](img/image041.png)
+
+[OPTION END]
+
 ### 8. Ensuring Accurate Responses with Grounding
 
 In the previous steps, we have completed the data preparation for grounding. Before initiating model inference or orchestration, ensure that there is an active orchestration deployment (**scenario ID: orchestration**). To verify the available orchestration deployments and their status, use the **get_deployment** API under the **"Deployments"** section in the **Bruno collection**. Additionally, update the **orchestration_service_url** in the environment. 
@@ -709,6 +719,8 @@ In the previous steps, we have completed the data preparation for grounding. Bef
 **NOTE:** If no deployments are found, please refer to this tutorial for guidance [tutorial] (https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html).
 
 [OPTION BEGIN [Bruno]] 
+
+#### Data Retrieval via Orchestration service [Option-1]
 
 This step uses the orchestration service to query grounded documents and retrieve content based on a specified prompt and grounding query. It integrates document grounding configurations and filters to provide precise results.
 
@@ -720,6 +732,16 @@ This step uses the orchestration service to query grounded documents and retriev
 
 ![img](img/image052.png)
 
+#### Data Retrieval using Vector APIs [Option-2]
+
+• Expand the 07_retrieval Click on the retrieval_vector request.
+
+• Replace value <query> with the required query to which the vector search has to be done.
+
+• Replace value <data_repository_id1> with the id of the data repository using which the vector  search has to be performed. Multiple data repository ids can be specified here.
+
+![img](img/image068.png)
+
 #### Responses Without External Knowledge Base
 
 ![img](img/image053.png)
@@ -727,6 +749,22 @@ This step uses the orchestration service to query grounded documents and retriev
 [OPTION END]
 
 [OPTION BEGIN [AI Launchpad]]
+
+Grounding is a crucial step in orchestration that ensures responses are enriched with relevant and accurate data from predefined sources. This section explains how grounding works in the AI Launchpad.
+
+**Input Variables**
+
+Input variables are parameters sent to the grounding service to facilitate data retrieval. These variables can be referenced in the template definition, allowing dynamic data incorporation based on user inputs.
+
+**Output Variable**
+
+The output variable holds the retrieved data from the grounding service. This data can then be utilized in the template definition to generate contextual and informed responses.
+
+**Selected Sources**
+
+You can specify the repositories from which the grounding module retrieves information. If no specific repositories are selected, grounding will include all available sources by default. Selecting relevant sources ensures precise and domain-specific data retrieval for improved orchestration outcomes.
+
+![img](img/image047.png)
 
 **Templating**
 
@@ -947,6 +985,8 @@ else:
 ```
 
 ![img](img/image064.png)
+
+![img](img/image065.png)
 
 [OPTION END]
 
