@@ -35,7 +35,7 @@ author_profile: https://github.com/I321506
 
 [OPTION END]
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Gen AI Hub SDK]]
 
 •  Configure proxy modules by setting up environment variables for AI Core credentials.
 
@@ -48,7 +48,7 @@ author_profile: https://github.com/I321506
 
 [OPTION END]
 
-[OPTION BEGIN [JavaScript SDK]]
+[OPTION BEGIN [SAP Cloud SDK for AI (JavaScript) ]]
 
 • [Create a service key](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key) for your AI Core service instance and copy the generated JSON object.  
 
@@ -67,40 +67,6 @@ The SDK parses the service key from the environment variable to interact with th
 **Tip:**  
 
 • Installing JavaScript Kernel for Jupyter Notebooks: If you want to use JavaScript in Jupyter Notebooks, you can refer to [Deno v1.37 blog post](https://deno.com/blog/v1.37) for detailed steps to install the Javascript kernel. Follow the instructions provided to set up the environment and enable JavaScript support in Jupyter.  
-
-[OPTION END]
-
-[OPTION BEGIN [Java SDK]]
-
-• [Create a service key](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key) for your AI Core instance and copy the JSON object.
-
-• Create a `.env` file in the **working directory from which you run the code**. Add the following line using the copied JSON:
-  
-```
-AICORE_SERVICE_KEY={"clientid": "...", "clientsecret": "...", "url": "...", "serviceurls": { "AI_API_URL": "..." } }
-```
-
-• **IMPORTANT:** The value of `AICORE_SERVICE_KEY` must be a single line, so remove any line breaks from the service key JSON.
-
-• This tutorial is designed for a Java [maven project](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html). Add the following dependencies to your project `pom.xml` file:
-
-```xml
-<dependency>
-    <groupId>com.sap.ai.sdk</groupId>
-    <artifactId>core</artifactId>
-    <!-- Use the latest version here -->
-    <version>${ai-sdk.version}</version>
-</dependency>
-
-<dependency>
-    <groupId>com.sap.ai.sdk</groupId>
-    <artifactId>orchestration</artifactId>
-    <!-- Use the latest version here -->
-    <version>${ai-sdk.version}</version>
-</dependency>
-```
-
-• For other options of access configuration and detailed information on installation and usage of the **SAP Cloud SDK for AI (for Java)**, visit the official [GitHub repository](https://github.com/SAP/ai-sdk-java). This page provides comprehensive steps to set up and integrate the SDK effectively in your projects.
 
 [OPTION END]
 
@@ -132,7 +98,9 @@ AICORE_SERVICE_KEY={"clientid": "...", "clientsecret": "...", "url": "...", "ser
 
 - Click on "No Environment" in the top-right corner and select "Grounding-test".
 ![img](img/env_set.png)
+
 #### Generate the Token
+
 - Select the get_token request from the root folder of the imported collection.
 
 - Execute the request to generate the token.
@@ -167,7 +135,7 @@ Go to the Configuration section within your chosen Resource Group.
 
 [OPTION END]
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Gen AI SDK]]
 
 • Create a folder named orchestration, then navigate to this folder using VS Code. 
 
@@ -177,7 +145,28 @@ Go to the Configuration section within your chosen Resource Group.
 
 You'll create a configuration that defines the orchestration setup. Use the following code to initialize your configuration. 
 
-```CODE
+```python
+
+import time
+import json
+import os
+from IPython.display import clear_output
+from ai_core_sdk.ai_core_v2_client import AICoreV2Client
+from ai_api_client_sdk.models.parameter_binding import ParameterBinding
+from enum import Enum
+
+# Create AI Core client instance
+def create_ai_core_client(credCF):
+    set_environment_vars(credCF)  # Ensure environment variables are set
+    return AICoreV2Client(
+        base_url=os.environ['AICORE_BASE_URL'],
+        auth_url=os.environ['AICORE_AUTH_URL'],
+        client_id=os.environ['AICORE_CLIENT_ID'],
+        client_secret=os.environ['AICORE_CLIENT_SECRET'],
+        resource_group=os.environ['AICORE_RESOURCE_GROUP']
+    )
+
+ai_core_client = create_ai_core_client(credCF)
 
 # Define scenario ID, executable ID, and configuration suffix 
 scenario_id = "orchestration" 
@@ -204,7 +193,7 @@ print(f"Configuration created successfully with ID: {config.id} and Name: {confi
 
 [OPTION END]
 
-[OPTION BEGIN [JavaScript SDK]]
+[OPTION BEGIN [SAP Cloud SDK for AI (JavaScript) ]]
 
 In this step, we will create an orchestration configuration using the `@sap-ai-sdk/ai-api` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api). This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
 
@@ -266,46 +255,8 @@ console.log(orchestrationConfig); // Print the configuration response message
 
 [OPTION END]
 
-[OPTION BEGIN [Java SDK]]
-
-In this step, we will create an orchestration configuration using the core module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java). This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
-
-• Add the following code to your project to create an orchestration configuration: 
-
-```java
-// Define the resource group, change this to your resource group name
-var RESOURCE_GROUP = "yourResourceGroup";
-
-// Define parameter and input artifact bindings you may need for orchestration
-var modelFilterList = AiParameterArgumentBinding.create()
-  .key("modelFilterList").value("null");
-var modelFilterListType = AiParameterArgumentBinding.create()
-  .key("modelFilterListType").value("allow");
-
-// Create a configuration data object for your configuration
-var configurationData = AiConfigurationBaseData.create()
-  .name("orchestration-config")   // Choose a meaningful name
-  .executableId("orchestration")  // Orchestration executable ID
-  .scenarioId("orchestration")    // Orchestration scenario ID
-  .addParameterBindingsItem(modelFilterList)
-  .addParameterBindingsItem(modelFilterListType);
-
-// Create the configuration with your individual resource group
-var configuration = new ConfigurationApi().create(RESOURCE_GROUP, configurationData);
-
-// Print the configuration response message
-System.out.println(configuration.getMessage());
-```
-
-**Note**: 
-
-• `scenarioId` and `executableId`: Both are set to "orchestration" for this tutorial. 
-
-• `name`: Choose a unique name for the configuration (e.g., "config-new-orchestration")
-
-[OPTION END]
-
 [OPTION BEGIN [Bruno]]
+
 #### Create Resource Group
 
 - Expand the 01_resource_group section in the collection.
@@ -317,6 +268,7 @@ System.out.println(configuration.getMessage());
 
 -	Follow the screenshot attached for reference.
 ![img](img/get_resource_group.png)
+
 #### Create Configuration
 - Navigate to the configuration request and execute it to create a configuration.
 
@@ -341,7 +293,7 @@ Once the deployment begins, continue to the status page. Verify that the Deploym
 
 [OPTION END]
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Gen AI SDK]]
 
 With the configuration ID, you can proceed to deploy the orchestration and monitor its progress. 
 
@@ -349,7 +301,7 @@ With the configuration ID, you can proceed to deploy the orchestration and monit
 
 Run the following code to create a deployment using the configuration ID obtained in Step 2. 
 
-```CODE
+```python
 
 # Create a deployment using the configuration ID from the previous cell 
 
@@ -364,7 +316,7 @@ print(f"Deployment created successfully with ID: {deployment.id}")
 
 Execute the following code to monitor the deployment until it’s fully active. The status should eventually display as "Running". 
 
-```CODE
+```PYTHON
 
 from ai_api_client_sdk.models.status import Status 
 
@@ -399,7 +351,7 @@ Result: The code will display a loading spinner until the deployment status upda
 
 [OPTION END]
 
-[OPTION BEGIN [JavaScript SDK]]
+[OPTION BEGIN [SAP Cloud SDK for AI (JavaScript) ]]
 
 In this step, we will create a deployment from the configuration created in the previous step using the `@sap-ai-sdk/ai-api` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api). 
 
@@ -435,26 +387,6 @@ console.log(deployment) // Print the deployment creation response
 
 [OPTION END]
 
-[OPTION BEGIN [Java SDK]]
-
-In this step, we will create a deployment from the configuration created in the previous step using the core module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java). 
-
-• Add the following code to your project to create an orchestration deployment:
-
-```java
-// Create a deployment creation request with the ID of the created configuration
-var deploymentCreationRequest =
-  AiDeploymentCreationRequest.create().configurationId(configuration.getId());
-
-// Create the deployment with the deployment creation request
-var deployment = new DeploymentApi().create(RESOURCE_GROUP, deploymentCreationRequest);
-
-// Print the deployment response message
-System.out.println(deployment.getMessage());
-```
-
-[OPTION END]
-
 [OPTION BEGIN [Bruno]]
 #### Update Configuration ID and Create Deployment
 - Navigate to the create_deployment request.
@@ -463,6 +395,7 @@ System.out.println(deployment.getMessage());
 
 - Execute the request to create a deployment. Follow the screenshot attached for reference.
 ![img](img/img021.png)
+
 #### Verify Deployment Status
 - Execute the get_deployment request repeatedly until:
     - The status is RUNNING.
@@ -470,6 +403,7 @@ System.out.println(deployment.getMessage());
 
 Follow the screenshot attached for reference.
 ![img](img/deployement_running.png)
+
 #### Update Environment Variable
 - Copy the deploymentUrl from the response.
 
@@ -633,7 +567,7 @@ Data masking and content filtering are available to enhance data privacy and saf
 
 [OPTION END]
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Gen AI SDK]]
 
 To begin the consumption process for the orchestration you’ve deployed, follow the process below: 
 
@@ -645,7 +579,7 @@ To begin the consumption process for the orchestration you’ve deployed, follow
 
 - Load the CV file using the following code to read its content
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.utils import load_text_file 
 
@@ -664,7 +598,7 @@ The next step involves creating a template that specifies how the AI should hand
 
 • UserMessage: Represents the user's input (i.e., the CV content) to be processed by the AI. 
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.models.message import SystemMessage, UserMessage 
 from gen_ai_hub.orchestration.models.template import Template, TemplateValue 
@@ -687,11 +621,9 @@ template = Template(
 
 ```
 
-We can define multiple models for the use case. Only use those models that are already deployed in your instances. For this example, we have selected the following three models:
-
 Here’s an example of how to configure them:
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.models.llm import LLM 
 from gen_ai_hub.orchestration.models.config import OrchestrationConfig 
@@ -715,15 +647,13 @@ for model in models:
 
 print("Model configurations created successfully:") 
 
-```
-
-**Note:** Make sure that the models you choose are already deployed in your instance. You can replace the models in this example with any other models from your deployment as required. 
+```  
 
 **Execute the Orchestration and Collect Results**
 
 Now, you can run the orchestration with the prepared configurations. The results will be saved in a text file for later review.
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.service import OrchestrationService 
 
@@ -769,7 +699,7 @@ Data masking and content filtering are available to enhance data privacy and saf
 
 [OPTION END]
 
-[OPTION BEGIN [JavaScript SDK]]
+[OPTION BEGIN [SAP Cloud SDK for AI (JavaScript) ]]
 
 In this step, we will consume the orchestration service using the `@sap-ai-sdk/orchestration` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration). 
 
@@ -815,7 +745,7 @@ const templatingConfig = {
 
 ```
 
-We can define multiple models for the use case. Only use those models that are already deployed in your instances. For this example, we have selected the following three models
+We can define multiple models for the use case. Since orchestration provides direct access to models without requiring separate deployments, you can use any available models. For this example, we have selected the following three models.
 
 ```javascript
 
@@ -912,132 +842,6 @@ Ensure at least one orchestration deployment is ready to be consumed during this
 - Grounding is available to integrate external, contextually relevant, domain-specific, or real-time data into your workflows. For more information on using this and/or additional modules, please refer to the official documentation of [SAP Cloud SDK for AI (Javascript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration).
 
 - Data masking and content filtering are available to enhance data privacy and safety. Data masking hides sensitive information like phone numbers or organization names, while content filtering can screen for categories such as hate self-harm, sexual content, and violence. In this tutorial, the response generated by the LLM models may carry sensitive information, such as names and phone numbers. For further enhancement, refer to the next tutorial on implementing these modules. 
-
-[OPTION END]
-
-[OPTION BEGIN [Java SDK]]
-
-In this step, we will consume an LLM through the orchestration service with the created deployment, using the core and orchestration module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java).
-
-To begin the consumption process, follow the steps below: 
-
-
-**Prepare the CV File**
-
-• Download the [cv.txt](img/cv.txt) file, which contains the CV used this tutorial. Add it to your project. 
-
-• Read the CV file from the correct path using the following code: 
-
-```java
-// Adapt filepath to the location you stored the file
-var filePath = "path/to/cv.txt";
-
-// Read file into string
-String cvContent;
-try {
- cvContent = new String(Files.readAllBytes(Paths.get(filePath)));
-} catch (IOException e) {
- throw new RuntimeException(e);
-}
-
-// Print file content
-System.out.println(cvContent);
-
-```
-The next step involves creating the prompt for the LLM including both `SystemMessage` and `UserMessage` components.
-
-• `SystemMessage`: Defines the AI assistant's role and instructions. 
-
-• `UserMessage`: Represents the user's input (i.e., the CV content) to be processed by the LLM.
-
-```java
-// Define system and user messages for prompt
-var systemMessage = Message.system(
- """
-  You are an AI assistant designed to screen resumes for HR purposes.
-  Please assess the candidate qualifications based on the provided resume.
- """
-);
-var userMessage = Message.user("Candidate Resume: \n" + cvContent);
-
-// Define the prompt for resume screening
-var prompt = new OrchestrationPrompt(systemMessage, userMessage);
-
-```
-
-
-We can define model parameters and a list of models to use. Only use those models that are already deployed in your instances. For this example, we have selected the following parameters and models:
-
-```java
-// List of models with parameters to iterate through, can be adapted if desired
-var models = Stream.of(
-    OrchestrationAiModel.GPT_4O,
-    OrchestrationAiModel.MISTRAL_LARGE_INSTRUCT,
-    OrchestrationAiModel.CLAUDE_3_5_SONNET
-  ).map(model -> model.withParam(MAX_TOKENS, 1000).withParam(TEMPERATURE, 0.6)).toList();
-
-```
-
-
-The following function writes the responses from different models, stored in a list, to a file: 
-
-```java
-// Function writitng responses to a file
-void createFileFromResponses (ArrayList<Map> responses) {
- // Format model responses
- var formattedResponses = responses.stream().
-  map(response -> "Response from model " + response.get("model") +
-  ": \n\n" + response.get("response"));
-
- // Write model responses to provided file path
- try {
-  Files.writeString(Path.of("src/main/resources/static/responses.txt"),
-   String.join("\n\n" + "-".repeat(120) + "\n\n", formattedResponses.toList()));
- } catch (IOException e) {
-  throw new RuntimeException(e);
- }
-}
-```
-
-**Generate Responses for Multiple Models** 
-
-This step outlines the process of generating responses for a set of queries using different models. We iterate through the list of models created earlier and query the model with the created prompt using an `OrchestrationClient`.   
-
-```java
-// Create the client used for interaction with orchestration service
-var client = new OrchestrationClient(new AiCoreService()
- .getInferenceDestination(RESOURCE_GROUP).forScenario("orchestration"));
-
-// A list to store all responses from the different models
-var responses = new ArrayList<Map>();
-
-// Iterate through the list of models
-for (var model: models) {
- System.out.println("\n=== Responses for model: %s ===\n"formatted(model.getName()));
-
- // Create orchestration module configuration for current model
- var moduleConfig = new OrchestrationModuleConfig().withLlmConfig(model);
-
- // Prompt model with orchestration module configuration
- var response = client.chatCompletion(prompt, moduleConfig);
-
- // Add response to list of all model responses
- responses.add(Map.of("model", model.getName(), "response", response.getContent()));
-
- System.out.println(response.getContent());
-}
-
-// Write all responses to a file
-createFileFromResponses(responses);
-```
-
-**Important Note**
-
-Ensure at least one orchestration deployment is ready to be consumed during this process.  
-
-**Optional Advanced Modules**
-
-Together with document grounding and templating, data masking and content filtering are available to enhance data privacy and safety. Data masking hides sensitive information like phone numbers or organization names, while content filtering can screen for categories such as hate self-harm, sexual content, and violence. In this tutorial, the response generated by the LLM models may carry sensitive information, such as names and phone numbers. For further enhancement, refer to the next tutorial on implementing these modules. 
 
 [OPTION END]
 
