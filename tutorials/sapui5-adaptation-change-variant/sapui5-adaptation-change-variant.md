@@ -145,7 +145,7 @@ In your workspace, navigate to the newly created SAPUI5 Adaptation Project under
 
 ### Enable variant management for the table
 
->The *List Report Quick Actions* are available for common changes in an adaptation project, while more sophisticated changes might require control property changes. For the sake of completeness, we show in the **Control Property Change** tab how the Clear button could alternatively be enabled via a control property change.
+>The *List Report Quick Actions* are available for common changes in an adaptation project, while more sophisticated changes might require manifest changes. For the sake of completeness, we show in the **Manifest Change** tab how the variant management could alternatively be enabled via a manifest change.
 
 [OPTION BEGIN [Quick Actions]]
 
@@ -157,7 +157,7 @@ In your workspace, navigate to the newly created SAPUI5 Adaptation Project under
 
 [OPTION END]
 
-[OPTION BEGIN [Control Property Change]]
+[OPTION BEGIN [Manifest Change]]
 
 1. In *UI Adaptation* mode, select the complete List Report Page and choose *Configuration* from the context menu.  
 
