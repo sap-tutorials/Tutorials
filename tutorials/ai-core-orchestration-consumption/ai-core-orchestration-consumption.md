@@ -1057,7 +1057,7 @@ var models = Stream.of(
 The following function writes the responses from different models, stored in a list, to a file: 
 
 ```java
-// Function writitng responses to a file
+// Function writing responses to a file
 void createFileFromResponses (ArrayList<Map> responses) {
  // Format model responses
  var formattedResponses = responses.stream().
@@ -1088,7 +1088,7 @@ var responses = new ArrayList<Map>();
 
 // Iterate through the list of models
 for (var model: models) {
- System.out.println("\n=== Responses for model: %s ===\n"formatted(model.getName()));
+ System.out.println("\n=== Responses for model: %s ===\n".formatted(model.getName()));
 
  // Create orchestration module configuration for current model
  var moduleConfig = new OrchestrationModuleConfig().withLlmConfig(model);
