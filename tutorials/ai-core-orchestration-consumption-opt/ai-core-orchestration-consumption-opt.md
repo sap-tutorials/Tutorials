@@ -990,18 +990,19 @@ async function generateResponsesForModels(txtContent) {
       'utf-8' 
     ); 
 }    
-  // Example usage with resume content 
-  generateResponsesForModels(txtContent);  
+// Example usage with resume content 
+generateResponsesForModels(txtContent);  
 
 ```
+
 - A **model_responses.txt** file will be generated, containing outputs from all the models used.
 
-  **Conclusion** :  
-  Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+**Conclusion** :  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
-  While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
+While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
-  By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
+By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
 
 [OPTION END]
 
