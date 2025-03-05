@@ -1041,6 +1041,12 @@ var RESOURCE_GROUP = "yourResourceGroup";
 var client = new OrchestrationClient(new AiCoreService()
  .getInferenceDestination(RESOURCE_GROUP).forScenario("orchestration"));
 
+// Create orchestration module configuration with masking and filtering
+var moduleConfig = new OrchestrationModuleConfig()
+.withMaskingConfig(dataMasking)
+.withInputFiltering(inputFilter)
+.withOutputFiltering(outputFilter);
+
 // A list to store all responses from the different models
 var responses = new ArrayList<Map>();
 
@@ -1048,15 +1054,8 @@ var responses = new ArrayList<Map>();
 for (var model: models) {
  System.out.println("\n=== Responses for model: %s ===\n".formatted(model.getName()));
 
- // Create orchestration module configuration for current model
- var moduleConfig = new OrchestrationModuleConfig()
-  .withLlmConfig(model)
-  .withMaskingConfig(dataMasking)
-  .withInputFiltering(inputFilter)
-  .withOutputFiltering(outputFilter);
-
- // Prompt model with orchestration module configuration
- var response = client.chatCompletion(prompt, moduleConfig);
+ // Prompt LLM with specific LLM config for model
+ var response = client.chatCompletion(prompt, moduleConfig.withLlmConfig(model));
 
  // Add response to list of all model responses
  responses.add(Map.of("model", model.getName(), "response", response.getContent()));
