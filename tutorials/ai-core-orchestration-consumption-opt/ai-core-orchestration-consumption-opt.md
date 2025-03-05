@@ -1019,7 +1019,7 @@ void createFileFromResponses (ArrayList<Map> responses) {
 
  // Write model responses to provided file path
  try {
-  Files.writeString(Path.of("provided/path/to/responses.txt"),
+  Files.writeString(Path.of("provided/path/to/model_responses.txt"),
    String.join("\n\n" + "-".repeat(120) + "\n\n", formattedResponses.toList()));
  } catch (IOException e) {
   throw new RuntimeException(e);
