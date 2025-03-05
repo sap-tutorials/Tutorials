@@ -1034,6 +1034,9 @@ This step outlines the process of generating responses for a set of queries usin
 **NOTE** : Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process.**  
  
 ```java
+// Define the resource group, change this to your resource group name
+var RESOURCE_GROUP = "yourResourceGroup";
+
 // Create the client used for interaction with orchestration service
 var client = new OrchestrationClient(new AiCoreService()
  .getInferenceDestination(RESOURCE_GROUP).forScenario("orchestration"));
