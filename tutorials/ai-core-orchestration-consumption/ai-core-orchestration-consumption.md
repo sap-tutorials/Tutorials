@@ -228,16 +228,19 @@ async function createOrchestrationConfiguration() {
   };
 
   try {
-      const responseData = await ConfigurationApi
+      const response = await ConfigurationApi
           .configurationCreate(requestBody, {'AI-Resource-Group': 'default'}) // Replace with your actual resource group name
           .execute();
       
-      console.log('Orchestration configuration created successfully:', responseData);
-      return responseData; // Return the configuration response
-  } catch (errorData: any) {
-      const apiError = errorData.response.data.error; // Handle API errors
-      console.error('Status code:', errorData.response.status);
-      throw new Error(`Configuration creation failed: ${apiError.message}`);
+      console.log('Orchestration configuration created successfully:', response);
+      return response; // Return the configuration response
+  } catch (error: any) {
+      const errorDetails = {
+        status: error.cause?.status || 500,
+        message: error.cause?.response?.data || error.message,
+      };
+      // Handle API errors
+      console.error('Configuration creation failed:', errorDetails);
   }
 }
 
@@ -368,14 +371,16 @@ async function createOrchestrationDeployment() {
    const configurationId = orchestrationConfig.id;
 
   try { 
-    const responseData = await DeploymentApi
+    const response = await DeploymentApi
       .deploymentCreate({ configurationId }, { 'AI-Resource-Group': 'default' }) // Replace with your actual resource group name
       .execute();   
     return `Orchestration deployment created with ID: ${response.id}`; 
-  } catch (errorData: any) { 
-    const apiError = errorData.response.data.error;
-    console.error('Status code:', errorData.response.status);
-    throw new Error(`Deployment creation failed: ${apiError.message}`);
+  } catch (error: any) { 
+      const errorDetails = {
+        status: error.cause?.status || 500,
+        message: error.cause?.response?.data || error.message,
+      };
+      console.error('Deployment creation failed:', errorDetails);
   } 
 } 
 
@@ -809,11 +814,11 @@ async function generateResponsesForModels(txtContent) {
             response: content, 
           }; 
         } catch (error: any) { 
-          console.error(`Error with model ${model}:`, error.response?.data || error.message);
-          return { 
-            model, 
-            response: undefined, 
-          }; 
+          const errorDetails = {
+            status: error.cause?.status || 500,
+            message: error.cause?.response?.data || error.message,
+          };
+          console.error(`Error with model ${model}:`, errorDetails);
         } 
       })
     );
