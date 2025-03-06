@@ -1,6 +1,6 @@
 ---
-author_name: Nikolay Penchev
-author_profile: https://github.com/NPenchev03
+author_name: Lilyana Rangelova
+author_profile: https://github.com/lilyanarangelova
 title: Getting Started with SAP Alert Notification Service for SAP BTP
 description: Learn how to enable SAP Alert Notification service in your SAP BTP trial account, so that you can use its features to create subscriptions and receive notifications about SAP BTP events to your preferred communication channel or monitoring tool.
 keywords: tutorial
