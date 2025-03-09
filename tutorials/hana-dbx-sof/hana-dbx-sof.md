@@ -587,19 +587,7 @@ For this step we will be using taxi data from New York City from June and July o
  
 The files shown below were downloaded from [NYC Taxi & Limousine Commission](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).
 
-NYC_Taxi_Trip_Data
-* taxi_zone_lookup.csv
-* YEAR=2023
-  * MONTH=06
-    * yellow_tripdata_2023-06.parquet
-  * MONTH=07
-    * yellow_tripdata_2023-07.parquet
-* YEAR=2024
-  * MONTH=06
-    * yellow_tripdata_2024-06.parquet
-  * YEAR=07
-    * yellow_tripdata_2024-07.parquet
-
+![partitioned](partitioned.png)
 
 1.  Upload the files specified above to your data lake Files instance.
 
