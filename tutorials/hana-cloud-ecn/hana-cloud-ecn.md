@@ -11,7 +11,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
 - An SAP BTP account
-- An SAP HANA Cloud instance
+- An SAP HANA Cloud instance (2024 QRC 4 or higher)
 
 ## You will learn
 - How to create and delete an ECN
@@ -35,7 +35,7 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
 
     ![instance details](instance-details.png)
 
-    Click on the memory, compute, network, or storage cards to open the Usage Monitor app.  Below notice that the compute is spiking at a set frequency.
+    Click on the memory, compute, network, or storage cards to open the Usage Monitor app.  Below notice that the compute is spiking at a set frequency which is every morning at 7 am.
     
     ![Usage Monitor](usage_monitor.png)
 
@@ -44,6 +44,7 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
     ```SQL
     CREATE USER USER4 PASSWORD "Password4"  NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
     GRANT CATALOG READ TO USER4; 
+    GRANT SELECT ON SCHEMA _SYS_STATISTICS TO USER4;  --Used by the Elastic Compute Node tab
     GRANT WORKLOAD ADMIN TO USER4; 
     CONNECT USER4 PASSWORD Password4;
     GRANT ALL PRIVILEGES ON SCHEMA USER4 TO DBADMIN;
@@ -76,7 +77,9 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
     CALL CPU_SPIKE();
     CALL CPU_SPIKE();
     CALL CPU_SPIKE();
-
+    CALL CPU_SPIKE();
+    CALL CPU_SPIKE();
+    CALL CPU_SPIKE();
 
     CREATE OR REPLACE PROCEDURE CPU_AND_MEMORY_SPIKE() LANGUAGE SQLSCRIPT AS
     BEGIN
@@ -90,6 +93,9 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
 
     CALL POPULATE_MYTABLE(750);
     --8 seconds, 30 sec CPU time, 9 GB of memory each call
+    CALL CPU_AND_MEMORY_SPIKE();
+    CALL CPU_AND_MEMORY_SPIKE();
+    CALL CPU_AND_MEMORY_SPIKE();
     CALL CPU_AND_MEMORY_SPIKE();
     CALL CPU_AND_MEMORY_SPIKE();
     CALL CPU_AND_MEMORY_SPIKE();
@@ -138,7 +144,7 @@ An ECN can be created in multiple ways.  Further details on the options and limi
             }
             ```
 
-        * Create the ECN using the BTP CLI.  Further details on using the BTP CLI can be found at [Executing SAP HANA Cloud Tasks from the Command Line](hana-cloud-automation-cli).
+    * Create the ECN using the BTP CLI or CF CLI.  Further details on using the the CLI's can be found at [Executing SAP HANA Cloud Tasks from the Command Line](hana-cloud-automation-cli).  An example using the BTP CLI is shown below.
 
             ```Shell
             btp login --sso
@@ -157,6 +163,8 @@ An ECN can be created in multiple ways.  Further details on the options and limi
     * In an instances detail pane.
 
         ![ECN details page](added-ecn-details.png)
+
+        Note that the status is also shown.
 
     * Through SQL
 
@@ -182,6 +190,12 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
     ```SQL
     ALTER WORKLOAD CLASS "WLC1" SET 'ROUTING LOCATION HINT' = 'ecn1';
     ```
+
+    * This can also be accomplished in the workload management app as shown below.
+
+        ![Workload management app](routing-ui-1.png)
+
+        ![Select the routing location](routing-ui-2.png)
 
     There are various ways that the workload can be mapped to the workload class.
 
@@ -244,6 +258,8 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
     Notice that the last time the query was run, it was executed on the ECN.  Notice also that the table location is not on the ECN.
 
+    It may also be of interest to compare the execution time between this run and after the table is replicated onto the ECN node in a subsequent step.
+
 ### Route to ECN with a hint
 An alternate approach without using a workload class is to use a hint.  
 
@@ -251,8 +267,11 @@ An alternate approach without using a workload class is to use a hint.
 
     ```SQL
     ALTER WORKLOAD CLASS "WLC1" DISABLE;
+
     SELECT * FROM M_VOLUMES;  --1024 is the VOLUME_ID for the ECN
+    
     CALL USER4.CPU_AND_MEMORY_SPIKE() with hint (RESULT_LAG('HANA_ATR'), route_to(1024));
+    
     SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP 
     FROM M_SQL_PLAN_CACHE 
     WHERE STATEMENT_STRING LIKE 'CALL %' 
@@ -262,16 +281,19 @@ An alternate approach without using a workload class is to use a hint.
     ![using a hint](hint.png)
 
 ### Replicate a table to the ECN
-A replica table can be stored on an ECN.  This may lead to lower resource consumption on the coordinator.  For additional details see [Advantages and Disadvantages of Table Replication](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/consider).  The following steps demonstrate replicating a table to the ECN and using it in a query.  
+A replica table can be stored on an ECN.  This may lead to lower resource consumption on the coordinator and reduced latency.  For additional details see [Advantages and Disadvantages of Table Replication](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/advantages-and-disadvantages-of-table-replication).  The following steps demonstrate replicating a table to the ECN and using it in a query.  
 
 1. Run the below in the SQL Console after replacing the host name with the value from the previous query against the M_VOLUMES table view.
 
     ```SQL
     ALTER WORKLOAD CLASS "WLC1" ENABLE;
+
     ALTER TABLE USER4.MYTABLE ADD ASYNCHRONOUS REPLICA AT '6101b9d8-bcad-44dc-98c4-388e64ce7370-ern-ecn1:30040';
+
     ALTER TABLE USER4.MYTABLE ENABLE ASYNCHRONOUS REPLICA;
     --ALTER TABLE USER4.MYTABLE DISABLE ASYNCHRONOUS REPLICA;
     --ALTER TABLE USER4.MYTABLE DROP REPLICA AT '6101b9d8-bcad-44dc-98c4-388e64ce7370-ern-ecn1:30040';
+    
     SELECT * FROM M_TABLE_LOCATIONS WHERE TABLE_NAME LIKE '%MYTABLE%';
     SELECT * FROM M_TABLE_REPLICAS;
     ```
