@@ -584,7 +584,7 @@ secret.json()
 
 [OPTION END]
 
-### 7. Prepare knowledge base(data repository) and verification
+### 7. Prepare knowledge base (data repository) and verification
  
 [OPTION BEGIN [Bruno]]
 
