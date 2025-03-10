@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Christopher Kollhed
-author_profile: https://github.com/chriskollhed
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-btp-cockpit]
@@ -40,7 +40,7 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 1.	In the SAP BTP Cockpit, click on your **subaccount**.
   
-    ![open the trial subaccount](subaccount.png)
+    ![open the trial subaccount](subaccount2.png)
 
 2.	Then click on **Entitlements** on the left-hand side menu and search for entitlements for SAP HANA.
 
@@ -120,7 +120,7 @@ There is also some built-in functionality that can help you with using SAP BTP C
 ### Understand Accounts, Directories, Subaccounts, and Spaces
 Your account on SAP Business Technology Platform is called a **global account**. As the administrator, you will have full control of your global account and be able to create directories, subaccounts, and instances. Subaccounts are a smaller part of your global account. Directories are groups of subaccounts under the global account.
 
-![BTP Global Account](BTP-global-account.png)
+![BTP Global Account](BTP-global-account2.png)
 
 Below you can see a simplified diagram of a global account in SAP BTP cockpit with different ways in which directories and  subaccounts are used to organize SAP HANA database and data lake instances.  Of course, once you use SAP HANA Cloud, you will most likely have many more databases, subaccounts, and perhaps even global accounts. These levels will then help you keep everything well-organized.
 

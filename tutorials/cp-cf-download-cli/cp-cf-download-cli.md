@@ -22,7 +22,7 @@ time: 15
 
 Download the latest Command Line Interface (CLI) from the Cloud Foundry web site.  Use the following URL:  
 
-<https://github.com/cloudfoundry/cli/wiki/V7-CLI-Installation-Guide>.
+<https://github.com/cloudfoundry/cli/wiki/V8-CLI-Installation-Guide>.
 
 On the Cloud Foundry website, choose either the command line installer or the binary from the table listed on the webpage. If you don't know which to use, choose the installer (not the binary) for your Operating System from the table.
 

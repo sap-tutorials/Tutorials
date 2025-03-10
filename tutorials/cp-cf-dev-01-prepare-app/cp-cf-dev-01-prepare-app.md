@@ -59,16 +59,15 @@ What is the value of the `name` parameter that exists already in the `manifest.y
 
 
 
-### Add a unique host name to the deployment descriptor
-
+### Ensure your application is available via a unique URL
 
 The host name for your app must be unique within a combination of region and runtime, in that it forms the most significant part of the fully qualified hostname in the app's URL space. For example, if your app host name is `myapp`, the fully qualified hostname for the Cloud Foundry runtime in the `EU10` region will be:
 
 `myapp.cfapps.eu10.hana.ondemand.com`
 
-If someone else is already using that hostname within that region and runtime, you won't be able to deploy your application.
+If someone else is already using that hostname within that region and runtime, you won't be able to deploy your application. As this is just a sample application, you can use the `random-route` manifest attribute to have a unique route URL generated for you.
 
-Add a parameter named `host` to the `manifest.yml` file and provide a unique value. For example, use your birth date or a random number or string. The contents of the file should look something like this when you're done (and don't forget to save your changes!):
+Change the value for `random-route` from `false` to `true` in the `manifest.yml` file:
 
 ```yaml
 ---
@@ -76,12 +75,9 @@ applications:
 - name: cf-nodejs
   memory: 192M
   instances: 1
-  random-route: false
-  host: my-unique-app-name-12345
+  random-route: true
 ```
 
-> The YAML format uses whitespace significantly -- make sure you add this new parameter correctly, as shown.
-
-
+To finish off, take a look at the [App manifest attribute reference](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html) to find out more about what you can specify, and, perhaps more importantly, what you [cannot specify any more](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#deprecated).
 
 ---

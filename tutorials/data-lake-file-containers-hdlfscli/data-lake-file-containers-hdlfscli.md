@@ -249,7 +249,7 @@ Verify that the files has been uploaded.
 hdlfscli -config myconfig lsr
 ```
 
-Now that the TPCH data files are in the data lake Files container, we can use SQL on Files to query the data. Learn how to do this in the tutorial [Use SQL on Files to Query Structured Data Files](https://developers.sap.com/tutorials/data-lake-file-containers-sof.html).
+Now that the TPCH data files are in the data lake Files container, we can use SQL on Files to query the data. Learn how to do this in the tutorial [Explore SAP HANA Cloud, SAP HANA Database SQL on Files](hana-dbx-sof).
 
 
 **[Troubleshoot]:** If you get this error while verifying the configuration, follow the steps below:

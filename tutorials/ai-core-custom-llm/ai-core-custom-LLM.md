@@ -12,7 +12,7 @@ author_profile: https://github.com/dhrubpaul
 
 ## You will learn
 - How to Deploy ollama on AI core
-- Add models to ollama and infrence models
+- Add models to ollama and inference models
 
 ## Prerequisites
 Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
@@ -97,7 +97,7 @@ Select **Security** from the navigation bar and click **New Access Token**.
 ###Creating a Docker Image
 
 Create a directory (folder) named `custom-llm`.
-Create a file `.dockerfile`. Paste the following snippet in the file.
+Create a file `Dockerfile`. Paste the following snippet in the file.
 
 ```dockerfile
 # Specify the base layers (default dependencies) to use
@@ -242,6 +242,16 @@ Use the following information for reference:
 
 - **Revision:** The is the unique ID of your GitHub commit. Set this to HEAD to have it automatically refer to the latest commit.
 
+**NOTE:**
+
+1. If creation of application fails, check the ollama.yaml file, and ensure that the names in lines #4, #7, #9, and #11 are unique, and haven't been used previously.
+
+2. Generate a fresh classic git token for authentication, with all necessary privileges provided during creation.
+
+3. Ensure that you have put the correct url in `YOUR_DOCKER_REGISTRY_URL` while setting up docket secret.
+
+4. Refresh the launchpad, and create a fresh application.   
+
 ### Creating configuration
 
 Go to **ML Operations** > **Configurations**. Click on the **Create** button.
@@ -274,7 +284,7 @@ Once the deployment is running, you can access the LLM’s using ollama.
 
 ### Pulling Gemma inside Ollama deployment
 
-Now we need to import Gemma to our ollama pod before we can infrence the model so here we would be using SAP AI API to call pull model call in Ollama.
+Now we need to import Gemma to our ollama pod before we can inference the model so here we would be using SAP AI API to call pull model call in Ollama.
 
 [OPTION BEGIN [Postman]]
 

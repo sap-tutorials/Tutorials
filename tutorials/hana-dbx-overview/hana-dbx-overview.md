@@ -38,6 +38,8 @@ The following tools also provide the ability to execute SQL queries.
 
   * [SAP HANA Database Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) is an extension for Visual Studio Code that offers a subset of the functionality in the SAP HANA database explorer.
 
+  * [SQL Notebook](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-developer-guide-for-cloud-foundry-multitarget-applications-sap-business-app-studio/test-your-sql-code-with-sql-notebook) is a tool available inside of the SAP Business Application Studio.  The SQL Notebook enable you to save your queries into .notebook file that combines Markdown cells with cells that control the connection (they start with #) and SAP HANA SQL statements.
+
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
 * From SAP HANA Cloud Central on either a SAP HANA or SAP data lake instance found under the 'Actions' column. 

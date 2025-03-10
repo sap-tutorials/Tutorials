@@ -91,7 +91,7 @@ In order to use the apps provided with SAP Omnichannel Promotion Pricing, you mu
 
 5. Select the role collection you've just created from the list and choose **Edit**.
 
-6. Under **Role Name**, select **`Configure_OPPS`** and **`Maintain_OPPS`** from the dropdown list.
+6. Under **Role Name**, select **`Configure_OPPS`** and **`Maintain_OPPS_Promotions`** from the dropdown list.
 
 7. Assign **User** or **User Groups** to your role collection and choose **Save**. 
 
@@ -119,7 +119,7 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 
 3. Search for **`promotion`**. This will display all **Promotion Pricing** services. The following services are offered with SAP Omnichannel Promotion Pricing:
 
-    <!-- border -->![Promotion Pricing Services](Service_marketplace.png)
+    <!-- border -->![Promotion Pricing Services](v2_Service_marketplace.PNG)
 
 4. Choose the tile of the **Promotion Pricing, Calculation** service.
 

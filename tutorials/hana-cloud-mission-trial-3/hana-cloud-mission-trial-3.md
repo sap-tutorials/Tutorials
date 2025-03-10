@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Christopher Kollhed
-author_profile: https://github.com/chriskollhed
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
@@ -51,6 +51,8 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
     ![Provisioning Wizard](wizard-type.png)
 
+    You may also choose the runtime environment.  Further details can be found at [What Runtime Environment is my SAP HANA Cloud Instance Using?](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/runtime-environments-for-sap-hana-cloud). 
+
 4.	Click on **Next Step** to continue.
 
 ### Choose your license, instance name, and password
@@ -86,7 +88,7 @@ In a production environment, you are able to select a performance class and choo
 
 1.	Here, you can select how much **Memory** you wish to allocate to this instance.
 
-    ![HDB Memory](ss-04-HDB-Memory.png)
+    ![HDB Memory](2-ss-04-HDB-Memory.png)
 
     As you increase your memory requirements, the **Compute** and **Storage** values will be automatically adjusted as well.
 
@@ -102,7 +104,7 @@ For a free tier instance, the size allocation is predefined to 32 GB for memory,
 
 For a trial instance, the size allocation is predefined to 16 GB for memory, 80 GB for storage and 1 vCPU for computation.
 
-![SAP HANA Database Memory Allocation](hdb-memory.png)
+![SAP HANA Database Memory Allocation](hdb-memory2.png)
 
 Click on **Next Step** to continue.
 
@@ -119,9 +121,9 @@ Here, you can select in this step if you want to create **replicas** of your ins
 
 1.	Select the availability zone for your instance and optionally, include a replica.
 
-    ![Availability Zone](avail-zone.png)
+    ![Availability Zone](avail-zone2.png)
 
-    To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/increasing-system-availability?locale=en-US).
+    To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/increasing-system-availability).
 
 2.	Click on **Next Step** to continue.
 
@@ -132,9 +134,9 @@ Here, you can select in this step if you want to create **replicas** of your ins
 
 In a free tier model or trial environment, availability zone and replicas are not supported.
 
-![HANA database replicas](hdb-replicas.png)
+![HANA database replicas](hdb-replicas2.png)
 
-To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/LATEST/en-US/2c325f7b30ba43ac93ca514eba505a33.html).
+To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/increasing-system-availability).
 
 Click on **Next Step** to continue.
 
@@ -152,7 +154,7 @@ Click on **Next Step** to continue.
 
 1.	Under **Advanced Settings**, you can choose to enable the **Script Server**, **Document Store**, and **Data Provisioning Server**. If your database does not have the required `vCPUs` for either of the first two options, you can click on the link on the error message, which will change your original setup and add more `vCPUs` automatically.
 
-    ![Advanced Settings](prod-advanced-settings.png)
+    ![Advanced Settings](prod-advanced-settings2.png)
 
 2.	You can now manage the allowed connections for your SAP HANA database instance, i.e., you can choose to allow access to your SAP HANA database instance from outside of the SAP Business Technology Platform. You can either limit it to SAP Business Technology Platform by denying all IP addresses, or allow specific applications to access it by inserting one or more specific IP addresses. Finally, you can also allow all connections from all IP addresses.
 
@@ -171,19 +173,21 @@ Click on **Next Step** to continue.
 
 Now you can configure the **Advanced Settings**.
 
-1. The Data Provisioning Server is not required in this tutorial mission.
+1. The Predictive Analysis Library (PAL) is not required for this tutorial mission.  Further details can be found at [Hands-on Tutorial: Machine Learning with SAP HANA Cloud](https://community.sap.com/t5/artificial-intelligence-and-machine-learning-blogs/hands-on-tutorial-machine-learning-with-sap-hana-cloud/ba-p/13683430).
 
-2.	You may manage the allowed connections for your SAP HANA database instance, i.e. allowing access to your SAP HANA database instance from outside of the SAP Business Technology Platform (SAP BTP). Selecting Allow only BTP IP addresses denies all IP addresses outside SAP BTP. You may choose to allow access to specific applications by inserting one or more specific IP addresses or you can allow connections from all IP addresses.
+2. The Data Provisioning Server is not required in this tutorial mission.
 
-3.	Next, you can also choose to enable the SAP Cloud Connector, which makes it easier to connect this SAP HANA database instance to an SAP HANA on-premises database. You can also set the connection preferences for your cloud connector under **Allowed connections**.
+3.	You may manage the allowed connections for your SAP HANA database instance, i.e. allowing access to your SAP HANA database instance from outside of the SAP Business Technology Platform (SAP BTP). Selecting Allow only BTP IP addresses denies all IP addresses outside SAP BTP. You may choose to allow access to specific applications by inserting one or more specific IP addresses or you can allow connections from all IP addresses.
+
+4.	Next, you can also choose to enable the SAP Cloud Connector, which makes it easier to connect this SAP HANA database instance to an SAP HANA on-premises database. You can also set the connection preferences for your cloud connector under **Allowed connections**.
 
     > Keep in mind that you can still change your configurations here at a later point, if you decide to do so.  
 
-    ![HDB advanced settings](hdb-advanced-settings.png)
+    ![HDB advanced settings](hdb-advanced-settings2.png)
 
-4. We will be using the instance mapping feature later in this tutorial mission.  Instance mapping enables an instance provisioned into the SAP BTP subaccount to be mapped into a runtime environment such as Cloud Foundry.
+5. We will be using the instance mapping feature later in this tutorial mission.  Instance mapping enables an instance provisioned into the SAP BTP subaccount to be mapped into a runtime environment such as Cloud Foundry.
 
-5.	Click on **Next Step** in the bottom left corner to continue.
+6.	Click on **Next Step** in the bottom left corner to continue.
 
 [OPTION END]
 
@@ -195,13 +199,13 @@ In the last step of the provisioning wizard, you have the option of also provisi
 > If you do not wish to enable a data lake, you can skip this step by clicking on **Review and Create** in the bottom-right corner.
 
 [OPTION BEGIN [Production]]
-1.	If you click on **Create data lake**, a managed SAP HANA Cloud, data lake will be provisioned alongside your SAP HANA database in SAP HANA Cloud.
+1.	If you click on **Create data lake**, a managed SAP HANA Cloud, data lake will be provisioned alongside your SAP HANA database in SAP HANA Cloud and will include a data lake Files instance.
 
-    ![Data Lake Enabled](hdl-prod-create.png)
+    ![Data Lake Enabled](hdl-prod-create2.png)
 
 2.	Next, give your data lake instance a name under **Instance Name**.
 
-    ![Data lake name](hdl-prod-name.png)
+    ![Data lake name](hdl-prod-name2.png)
 
     > When you add a managed data lake, the HDLADMIN user is automatically created and is given the same password as DBADMIN, which you set in the first step. If later you decide to change the password of one user, the password of the other user will **not** be automatically changed.   
 
@@ -209,7 +213,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
 4.	This is where you can adjust how many **coordinators** and **workers** you want for your data lake, as well the amount of **storage** you wish to allocate to this instance.
 
-    ![Data Lake IQ](hdl-prod-dlre.png)
+    ![Data Lake IQ](hdl-prod-dlre2.png)
 
     > The coordinator and worker size, as well as the number of workers will affect instance pricing. For details, see SAP HANA Cloud Capacity Unit Estimator.
 
@@ -217,22 +221,22 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
 6.	Now you can set up the **Advanced Settings** for the data lake. Here you can manage the allowed connections and choose - just like you did for your SAP HANA database in SAP HANA Cloud - if you want to allow only BTP IP addresses, all IP addresses or, specific IP addresses. The last option also gives you the option to **Copy IP addresses from the SAP HANA database** choosing again, who can have access to your data lake instance.
 
-    ![HDL Connections](hdl-prod-review.png)
+    ![HDL Connections](hdl-prod-review2.png)
 
 7.	Lastly, click on **Review and Create** to finish the provisioning process.
 
 [OPTION END]
 [OPTION BEGIN [Free Tier/Trial]]
 
-1.  Once you select **Create Data Lake** option, two more menu options will appear in the wizard with additional steps.
+1.  Once you select **Create Data Lake** option, two more menu options will appear in the wizard with additional steps.  Note that a data lake Files instance is not included in free tier or trial.
 
-    ![Create Data Lake](hdl-create.png)
+    ![Create Data Lake](hdl-create2.png)
 
 2. Next, give your data lake instance a name under **Instance Name**.
 
     >When you add a managed data lake, the HDLADMIN user is automatically created and is given the same password as DBADMIN, which you set in the first step. If later you decide to change the password of one user, the password of the other user will **not** be automatically changed.   
 
-    ![Name Data Lake](hdl-name.png)
+    ![Name Data Lake](hdl-name2.png)
 
 3.	In production environment this is where you can adjust how many **coordinators** and **workers** you want for your data lake, as well the amount of **storage** you wish to allocate to this instance. But in a free tier model or trial account, you can't change these as they are predefined settings.
 
@@ -240,7 +244,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
     >
     > The coordinator and worker size, as well as the number of workers will affect instance pricing. For details, see [SAP HANA Cloud Capacity Unit Estimator](https://hcsizingestimator.cfapps.eu10.hana.ondemand.com/).
 
-    ![Data lake size](hdl-size.png)
+    ![Data lake size](hdl-size2.png)
 
 4.	Click on **Next Step** to continue.
 
@@ -248,15 +252,14 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
     Note that backups are not available for instances under free tier or trial accounts.
 
-    ![Data lake advanced](hdl-advanced.png)
+    ![Data lake advanced](hdl-advanced2.png)
 
 6.	Lastly, click on **Review and Create** to finish the provisioning process and **Create Instance**.
 
-    ![Data Lake Create Instances](hdl-create-instance.png)
+    ![Data Lake Create Instances](hdl-create-instance2.png)
 
 [OPTION END]
 
-![Instances being created](creating.png)
 
 You are done! Your first SAP HANA Cloud, SAP HANA database and data lake instances will be created, and you can monitor their status to see when they will be ready to be used. This process usually takes a few minutes.
 
@@ -269,20 +272,20 @@ The final step is learning how to stop and start your instance.
 
 1.	To stop an instance, just click on **Stop** in the three dots menu next to the SAP HANA Cloud instance line in SAP HANA Cloud Central. Once your instance is stopped, the menu item will be updated to **Start**.
 
-    ![Three Dots](three-dots.png)
+    ![Three Dots](three-dots2.png)
 
 2.	To restart the instance, simply click on the **Start** menu item. Once it's ready to be used, it will show a green **Created** status on SAP BTP Cockpit, and a **Running** status on the SAP HANA Cloud Central.
 
 >Note that all these processes take a few minutes to be completed and to show an updated status. You can use the auto-refresh button to select how often you would like your instances list to periodically refresh.
 
->   ![Refresh Instances](time-refresh.png)
+>   ![Refresh Instances](time-refresh2.png)
 >
 
 ### Upgrade to Paid Tier (Free Tier Only)
 
 When you are ready to upgrade your free tier instance to Paid Tier, you can also choose the three dots menu (under Actions) next to the SAP HANA Cloud instance line in SAP HANA Cloud Central.  From here, click on **Upgrade to Paid Tier**.  Note that paid tier plans must be enabled in your SAP HANA Cloud entitlement in order for the **Upgrade to Paid Tier** menu item to appear.
 
-![upgrade to paid tier](upgrade-paid-tier2.png)
+![upgrade to paid tier](upgrade-paid-tier-2.png)
 
 A dialog box will appear indicating that there will be costs associated with the Paid Tier instance – an estimate is also included.  Click on **Upgrade to Paid Tier** to complete the process.
 

@@ -25,7 +25,7 @@ primary_tag: software-product>sap-hana-cloud
 ### Install a JDK
 Ensure that you have a Java Development Kit (JDK) installed and ensure that it is accessible from your path.  Details on supported versions can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download).
+An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download). If you don't already have a JDK installed, please install it from SapMachine. 
 
 To verify that the JDK is correctly set up, run the following:
 
@@ -160,8 +160,11 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/docs/SAP_HANA_CL
 
 3. Compile the `.java` file into a `.class` file using the following command:
 
-    ```Shell (Microsoft Windows)
+    ```Command Prompt (Microsoft Windows)
     javac -cp C:\SAP\hdbclient\ngdbc.jar;. JavaQuery.java
+    ```  
+    ```Powershell (Microsoft Windows)
+    javac -cp "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery.java
     ```  
 
     ```Shell (Linux or Mac)
@@ -170,8 +173,11 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/docs/SAP_HANA_CL
 
 4. Run `JavaQuery.class` and indicate where the SAP HANA JDBC driver is located.  Note that the host, port, UID and PWD will be retrieved from the `hdbuserstore`.
 
-    ```Shell (Microsoft Windows)
+    ```Command Prompt (Microsoft Windows)
     java -classpath C:\SAP\hdbclient\ngdbc.jar;. JavaQuery
+    ``` 
+    ```Powershell (Microsoft Windows)
+    java -classpath "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery
     ```  
 
     ```Shell (Linux or Mac)

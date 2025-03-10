@@ -145,7 +145,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     pico server.js
     ```
 
-4. Add the code below to `server.js`. Be sure to update the `serverNode` value and user credentials if necessary.
+4. Add the code below to `server.js`. Be sure to update the `serverNode` value (SQL Endpoint from your instance) and user credentials if necessary.
 
     ```JavaScript    
     var express = require('express');

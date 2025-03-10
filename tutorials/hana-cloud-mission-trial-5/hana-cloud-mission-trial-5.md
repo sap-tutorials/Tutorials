@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Christopher Kollhed
-author_profile: https://github.com/chriskollhed
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
@@ -39,10 +39,7 @@ Download the [SFLIGHT sample data](https://github.com/SAP/hana-xsa-opensap-hana7
 Note the location of the file.
 
 
-
-
 ### Open the SAP HANA database explorer
-
 
 1.	Under Instances and Subscriptions, open SAP HANA Cloud Central.
     ![HCC application](hcc-app.png)
@@ -54,11 +51,7 @@ Note the location of the file.
 3.	SAP HANA database explorer will open in a new tab.
 
 
-
-
-
 ### Import the data to your catalog
-
 
 1.	In the pane on the left, expand your database and right-click on **Catalog**.
 
@@ -97,10 +90,7 @@ Note the location of the file.
 >     ![Import CSV3.png](ss-09-import-CSV3.png)
 
 
-
-
 ### Preview the data
-
 
 Once the data is imported, you can take a look at it.
 

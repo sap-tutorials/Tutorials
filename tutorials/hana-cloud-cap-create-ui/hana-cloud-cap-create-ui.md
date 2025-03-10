@@ -85,7 +85,7 @@ Video tutorial version:
 
 You will use an [Application Router](https://www.npmjs.com/package/@sap/approuter) module. This was generated into a project using the initial wizard. This module is very important as it will become the entry point for your application. Every request coming to this module will be routed into the different backend services.
 
-1. You should see a folder named `app` in the root of your project.
+1. You should see a folder named `app/router` in the root of your project.
 
     ![New folder for App Router](new_folder_app_router.png)
 
@@ -110,6 +110,11 @@ You will use an [Application Router](https://www.npmjs.com/package/@sap/approute
         {
         "source": "^/app/(.*)$",
         "target": "$1",
+        "localDir": ".",
+        "cacheControl": "no-cache, no-store, must-revalidate"
+        },
+        {
+        "source": "^/appconfig/",
         "localDir": ".",
         "cacheControl": "no-cache, no-store, must-revalidate"
         },
@@ -165,7 +170,7 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
 
     ![Test UI](test_ui.png)
 
-1. If you wish you can open another terminal instance and change to the Application Router folder (`cd app/router/`).  Then run the command `npm start`.  This will run the Application Router which you can test from it's own port (5000). Nothing will really look different at this point, but you are passing all requests through the Application Router now. This will become important once we add security to our service and want to test it locally using the Application Router.
+1. If you wish you can open another terminal instance and change to the Application Router folder (`cd app/router/`).  Then run the command `npm start`.  This will run the Application Router which you can test from its own port (5000). Nothing will really look different at this point, but you are passing all requests through the Application Router now. This will become important once we add security to our service and want to test it locally using the Application Router.
 
 ### Enahance the Fiori UI via Annotations
 
@@ -177,7 +182,7 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
 
 3. Replace the `annotations.cds` with the following content:
 
-    ```CDS
+    ```cds
     using CatalogService as service from '../../srv/interaction_srv';
 
     annotate service.Interactions_Header with @(
@@ -352,6 +357,7 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
     ID @UI.Hidden;
     };
 
+    // Add Value Help for Locales
     annotate service.Interactions_Items.texts {
     locale @(
         ValueList.entity: 'Languages',
