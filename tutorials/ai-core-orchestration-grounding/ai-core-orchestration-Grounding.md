@@ -58,7 +58,7 @@ console.log("AI API URL:", AI_API_URL);
 
 [OPTION BEGIN [Java SDK]]
 
-To interact with SAP AI Core using the [Java SDK](https://github.com/SAP/ai-sdk-java), you first need to create a service key that grants secure access to your AI Core instance. Follow the step Set Up Your Environment and Configure Access in the [tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to establish your connection.
+To interact with SAP AI Core using the [Java SDK](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java), you first need to create a service key that grants secure access to your AI Core instance. Follow the step Set Up Your Environment and Configure Access in the [tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to establish your connection.
 
 [OPTION END]
 
@@ -749,7 +749,7 @@ createPipeline().then(pipelineId => {
 
 We are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
 
-**Note:** For this step, we are using the [document grounding module](https://github.com/SAP/ai-sdk-java/blob/main/docs/guides/GROUNDING.md) of the SDK so make sure to add the dependency to your project. 
+**Note:** For this step, we are using the [document grounding module](https://sap.github.io/ai-sdk/docs/java/guides/document-grounding) of the SDK so make sure to add the dependency to your project. 
 
 ```java
 // Request to create the pipeline
