@@ -7,12 +7,12 @@ primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
-# Using small language models on SAP AI Core
-<!-- description --> In this tutorial we are going to learn on how to deploy a custom LLM on AI core using ollama for the example we would be taking Gemma as a model from hugging face and deploy it on SAP AI core.
+# Utilizing Small Language Models on SAP AI Core through Ollama
+<!-- description --> In this tutorial we are going to learn on how to deploy a SLM on AI core using ollama for the example we would be taking llava-phi3 as a model from hugging face and deploy it on SAP AI core.
 
 ## You will learn
-- How to Deploy ollama on AI core
-- Add models to ollama and inference models
+- How to Deploy ollama on AI core.
+- Add SLM models to Ollama and perform inference with the models.
 
 ## Prerequisites
 Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
@@ -25,7 +25,7 @@ In this tutorial we are deploying ollama an open-source project that serves as a
 
 ![image](img/solution-architecture.png)
 
-We can pick any model from the above model hubs and connect it to AI core for the example we are going to deploy ollama on AI core and enable Gemma and inference the same.
+We can pick any model from the above model hubs and connect it to AI core for the example we are going to deploy ollama on AI core and enable llava-phi3 and inference the same.
 
 ### Adding workflow file to github
 Workflows for SAP AI Core are created using YAML or JSON files that are compatible with the SAP AI Core schema. Let’s start with adding a Argo Workflow file to manage: `ollama`.
