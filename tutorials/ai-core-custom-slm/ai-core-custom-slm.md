@@ -7,12 +7,12 @@ primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
-# Using small language models on SAP AI Core
+# Using Custom models on SAP AI Core VIA ollama
 <!-- description --> In this tutorial we are going to learn on how to deploy a custom LLM on AI core using ollama for the example we would be taking Gemma as a model from hugging face and deploy it on SAP AI core.
 
 ## You will learn
 - How to Deploy ollama on AI core
-- Add models to ollama and inference models
+- Add models to ollama and infrence models
 
 ## Prerequisites
 Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
@@ -284,7 +284,7 @@ Once the deployment is running, you can access the LLM’s using ollama.
 
 ### Pulling llava-phi3 and Performing Inference
 
-Now we need to import llava-phi3 to our ollama pod before we can inference the model so here we would be using SAP AI API to call pull model call in Ollama.
+Now we need to import llava-phi3 to our ollama pod before we can infrence the model so here we would be using SAP AI API to call pull model call in Ollama.
 
 [OPTION BEGIN [Postman]]
 
