@@ -689,7 +689,7 @@ const inputFilter = buildAzureContentSafetyFilter({
   Violence: 'ALLOW_SAFE_LOW_MEDIUM'
 });
 
-const outFilter = buildAzureContentSafetyFilter({
+const outputFilter = buildAzureContentSafetyFilter({
   Hate: 'ALLOW_ALL',
   SelfHarm: 'ALLOW_SAFE',
   Sexual: 'ALLOW_SAFE_LOW_MEDIUM',
@@ -699,7 +699,7 @@ const outFilter = buildAzureContentSafetyFilter({
 const filteringConfig = {
   filtering: {
     input: { filters: [inputFilter] },
-    output: { filters: [outFilter] }
+    output: { filters: [outputFilter] }
   }
 }
 
@@ -912,6 +912,8 @@ This step outlines the process of generating responses for a set of queries usin
 import { writeFile } from 'fs/promises';
 import { OrchestrationClient } from '@sap-ai-sdk/orchestration'; 
 
+const RESOURCE_GROUP = "YourResourceGroupId"; // Define the resource group, change this to your resource group name
+
 // Generate responses from multiple models using OrchestrationClient
 async function generateResponsesForModels(cvContent) { 
   // Initialize OrchestrationClient asynchronously for list of models
@@ -930,7 +932,7 @@ async function generateResponsesForModels(cvContent) {
             ...dataMaskingConfig,
             ...filteringConfig
           },
-          { resourceGroup: 'default' } // Define the resource group, change this to your resource group name
+          { resourceGroup: RESOURCE_GROUP } 
         );
 
         try { 
@@ -939,14 +941,10 @@ async function generateResponsesForModels(cvContent) {
             inputParams: { candidate_resume: cvContent }, 
           }); 
 
-          // Extract the response content 
-          const content = response.getContent(); 
-          console.log(`\n=== Responses for model: ${model} ===\n`);
-          console.log(content);
-          
+          // Extract the response content and return it
           return { 
             model, 
-            response: content, 
+            response: response.getContent(), 
           }; 
         } catch (error: any) { 
           const errorDetails = {
@@ -969,7 +967,9 @@ async function generateResponsesForModels(cvContent) {
 } 
 
 // Example usage
-generateResponsesForModels(cvContent); 
+const modelResponses = await generateResponsesForModels(cvContent); 
+console.log(`\n=== Responses for model: ${modelResponses.model} ===\n`);
+console.log(modelResponses.response);
 
 ```
 

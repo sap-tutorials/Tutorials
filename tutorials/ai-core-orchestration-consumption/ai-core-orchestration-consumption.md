@@ -242,32 +242,30 @@ npm install @sap-ai-sdk/ai-api
 ```javascript
 import { ConfigurationApi } from '@sap-ai-sdk/ai-api';
 
+const RESOURCE_GROUP = 'YourResourceGroupId'; // Please change to your desired resource group
+
 // Create orchestration configuration using ConfigurationApi
 async function createOrchestrationConfiguration() {
-  const requestBody = {
-      name: 'orchestration-config', // Choose a meaningful name
-      executableId: 'orchestration', // Orchestration executable ID
-      scenarioId: 'orchestration', // Orchestration scenario ID
-      parameterBindings: [
-          {
-              "key": "modelFilterList", // Define the parameters you need for orchestration
-              "value": "null"  // Example orchestration version
-          },
-          {
-              "key": "modelFilterListType",
-              "value": "allow"
-          }
-      ],
-      inputArtifactBindings: []  // Orchestrations may not require input bindings directly, but this can be modified
-  };
-
   try {
       const response = await ConfigurationApi
-          .configurationCreate(requestBody, {'AI-Resource-Group': 'default'}) // Replace with your actual resource group name
-          .execute();
-      
-      console.log('Orchestration configuration created successfully:', response);
-      return response; // Return the configuration response
+          .configurationCreate({
+            name: 'orchestration-config', // Choose a meaningful name
+            executableId: 'orchestration', // Orchestration executable ID
+            scenarioId: 'orchestration', // Orchestration scenario ID
+            parameterBindings: [
+                {
+                    "key": "modelFilterList", // Define the parameters you need for orchestration
+                    "value": "null"  // Example orchestration version
+                },
+                {
+                    "key": "modelFilterListType",
+                    "value": "allow"
+                }
+            ],
+            inputArtifactBindings: []  // Orchestrations may not require input bindings directly, but this can be modified
+        }, {'AI-Resource-Group': RESOURCE_GROUP}).execute();
+
+      return response;
   } catch (error: any) {
       const errorDetails = {
         status: error.cause?.status || 500,
@@ -279,8 +277,8 @@ async function createOrchestrationConfiguration() {
 }
 
 // usage
-const orchestrationConfig = await createOrchestrationConfiguration();
-console.log(orchestrationConfig); // Print the configuration response message
+const configuration = await createOrchestrationConfiguration();
+console.log(configuration?.message); // Print the configuration response message
 ```
 
 **Note**: 
@@ -441,13 +439,16 @@ import type { AiDeploymentCreationResponse } from '@sap-ai-sdk/ai-api';
 // Create Orchestration deployment using DeploymentApi
 async function createOrchestrationDeployment() { 
   // Fetch the configuration ID from the previous step 
-   const configurationId = orchestrationConfig.id;
+  const configurationId = orchestrationConfig.id;
 
   try { 
     const response = await DeploymentApi
-      .deploymentCreate({ configurationId }, { 'AI-Resource-Group': 'default' }) // Replace with your actual resource group name
-      .execute();   
-    return `Orchestration deployment created with ID: ${response.id}`; 
+      .deploymentCreate(
+        { configurationId }, 
+        { 'AI-Resource-Group': RESOURCE_GROUP }
+      ).execute();   
+
+    return response;
   } catch (error: any) { 
       const errorDetails = {
         status: error.cause?.status || 500,
@@ -459,7 +460,7 @@ async function createOrchestrationDeployment() {
 
 // usage
 const deployment = await createOrchestrationDeployment();
-console.log(deployment) // Print the deployment creation response
+console.log(deployment?.message) // Print the deployment creation response
 
 ```
 
@@ -891,7 +892,7 @@ async function generateResponsesForModels(cvContent) {
             },
             ...templatingConfig
           },
-          { resourceGroup: 'default' } // Define the resource group, change this to your resource group name
+          { resourceGroup: RESOURCE_GROUP }
         );
 
         try { 
@@ -900,14 +901,10 @@ async function generateResponsesForModels(cvContent) {
             inputParams: { candidate_resume: cvContent }, 
           }); 
 
-          // Extract the response content 
-          const content = response.getContent(); 
-          console.log(`\n=== Responses for model: ${model} ===\n`);
-          console.log(content);
-          
+          // Extract the response content and return it
           return { 
             model, 
-            response: content, 
+            response: response.getContent(), 
           }; 
         } catch (error: any) { 
           const errorDetails = {
@@ -930,7 +927,9 @@ async function generateResponsesForModels(cvContent) {
 } 
 
 // Example usage
-generateResponsesForModels(cvContent); 
+const modelResponses = await generateResponsesForModels(cvContent); 
+console.log(`\n=== Responses for model: ${modelResponses.model} ===\n`);
+console.log(modelResponses.response);
 
 ```
 

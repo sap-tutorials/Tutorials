@@ -35,25 +35,10 @@ This step enables the foundational setup of the AI Core instance by creating a s
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK]]
+[OPTION BEGIN [JavaScript SDK]]
 
-To interact with SAP AI Core using SAP Cloud SDK, you first need to create a service key that grants secure access to your AI Core instance. Follow the step Set Up Your Environment and Configure Access in the [tutorial] (https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to establish your connection.
+To interact with SAP AI Core using **SAP Cloud SDK for AI (for JavaScript)**, you first need to create a service key that grants secure access to your AI Core instance. Follow the step "Set Up Your Environment and Configure Access" in the [tutorial] (https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to establish your connection. 
 
-```javascript
-
-import dotenv from "dotenv";
-dotenv.config();
-
-const serviceKey = JSON.parse(process.env.AICORE_SERVICE_KEY);
-
-const AI_API_URL = serviceKey.serviceurls.AI_API_URL;
-const clientid = serviceKey.clientid;
-const clientsecret = serviceKey.clientsecret;
-const authUrl = serviceKey.url;
-
-console.log("AI API URL:", AI_API_URL);
-
-```
 [OPTION END]
 
 [OPTION BEGIN [Gen AI SDK]]
@@ -120,41 +105,9 @@ Environment variables centralize configuration settings required for seamless in
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK]]
+[OPTION BEGIN [JavaScript SDK]]
 
-This step generates an access token, required for authenticating API requests during the process.
-
-```javascript
-
-const getToken = async () => {
-    const headers = {
-        "Content-Type": "application/x-www-form-urlencoded",
-    };
-    const data = new URLSearchParams({
-        grant_type: "client_credentials",
-        client_id: clientid,
-        client_secret: clientsecret
-    });
-    try {
-        const response = await fetch(`${authUrl}/oauth/token`, {
-            method: "POST",
-            headers: headers,
-            body: data.toString()
-        });
-        if (!response.ok) throw new Error(`Token Request Failed: ${response.statusText}`);
-        const result = await response.json();
-        console.log("Access Token:", result.access_token);
-        return result.access_token;
-    } catch (error) {
-        console.error("Error getting token:", error);
-    }
-};
-// Fetch the token
-const token = await getToken();
-
-```
-
-![img](img/image055.png)
+The JavaScript SDK automatically retrieves the AI Core service credentials and resolves the access token needed for authentication. So, this step can be skipped. 
 
 [OPTION END]
 
@@ -241,51 +194,53 @@ print(token)
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK]]
+[OPTION BEGIN [JavaScript SDK]]
 
-Create a resource group in SAP AI Core by defining its ID and quota, ensuring efficient resource allocation for AI workloads.
+In this step, we will create a resource group in SAP AI Core using the `@sap-ai-sdk/ai-api` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api). 
+
+**NOTE**: In order to use the document grounding service, the resource group must be created with the document grounding label set to `true`. Therefore, existing resource groups without the label will not work for document grounding.
+
+• To start, install the dependency in your project.
+
+```
+npm install @sap-ai-sdk/ai-api
+```
+
+• Add the following code to your project to create a resource group.
 
 ```javascript
 
-const createResourceGroup = async (token, resource_group) => {
-    const headers = {
-        "Authorization": `Bearer ${token}`,
-        "Content-Type": "application/json"
-    };
+import { ResourceGroupApi } from '@sap-ai-sdk/ai-api';
 
-    const jsonData = {
-        resourceGroupId: resource_group,
-        labels: [
-            {
-                key: "ext.ai.sap.com/document-grounding",
-                value: "true",
-            },
-        ],
-    };
+const RESOURCE_GROUP = 'YourResourceGroupId' // Please change to your desired ID
 
+// Create resource group using ResourceGroupApi
+async function createResourceGroup() {
     try {
-        const response = await fetch(`${AI_API_URL}/v2/admin/resourceGroups`, {
-            method: "POST",
-            headers: headers,
-            body: JSON.stringify(jsonData)
-        });
-
-        if (!response.ok) throw new Error(`Resource Group Creation Failed: ${response.statusText}`);
-
-        const result = await response.json();
-        console.log("Resource Group Created:", result);
-    } catch (error) {
-        console.error("Error creating resource group:", error);
+      const response = await ResourceGroupApi.
+        kubesubmitV4ResourcegroupsCreate({
+            resourceGroupId: RESOURCE_GROUP,
+            labels: [
+                {
+                key: 'ext.ai.sap.com/document-grounding',
+                value: 'true',
+                }
+            ]
+        }).execute();
+        return response;
+    } catch (error: any) {
+      const errorDetails = {
+        status: error.cause?.status || 500,
+        message: error.cause?.response?.data || error.message,
+      };
+      console.error('Error while creating Resource Group:', errorDetails);
     }
-};
+}
 
-// Create resource group
-const resource_group = "default";  // Modify this as needed
-await createResourceGroup(token, resource_group);
+const resourceGroup = await createResourceGroup();
+console.log("Created Resource Group with ID: ", resourceGroup?.resourceGroupId)
 
 ```
-
-![img](img/image056.png)
 
 [OPTION END]
 
@@ -412,56 +367,56 @@ Generic secrets securely store SharePoint credentials required for document acce
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK]]
+[OPTION BEGIN [JavaScript SDK]]
 
-Generic secrets securely store SharePoint credentials required for document access
+In this step, we will create a generic secret in SAP AI Core using the `@sap-ai-sdk/ai-api` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api). 
+
+Generic secrets securely store SharePoint credentials required for document access. Please change the values to your SharePoint credentials.
 
 ```javascript
 
-import axios from 'axios';  // ES Module import
+import { SecretApi } from from '@sap-ai-sdk/ai-api';
 
-const options = {
-  method: 'POST',
-  url: 'https://api.ai.prodeuonly.eu-central-1.aws.ml.hana.ondemand.com/v2/admin/secrets',
-  headers: {  
-    "Authorization": `Bearer ${token}`,  
-    "Content-Type": "application/json",
-    "AI-Resource-Group": "default"
-  },
-  data: {
-    name: 'canary-rg1-secret',
-    data: {
-      type: 'SFRUUA==',
-      description: '<description of generic secret>',
-      clientId: '<client id>',
-      authentication: '<AUTHENTICATION>',
-      tokenServiceURL: '<token service url>',
-      password: '<password>',
-      proxyType: '<PROXY>',
-      url: '<URL>',
-      tokenServiceURLType: '<TOKEN SERVICE URL>',
-      user: '<user>',
-      clientSecret: '<clientSecret>',
-      scope: 'SCOPE',
-    },
-    labels: [
-      {
-        key: 'ext.ai.sap.com/document-grounding',
-        value: 'true',
-      },
-    ],
-  },
-};
-
-try {
-  const { data } = await axios.request(options);
-  console.log('Secret Created:', data);
-} catch (error) {
-  console.error('Error creating secret:', error.response ? error.response.data : error.message);
+// Create Secret using SecretApi
+async function createGenericSecret() {
+    try {
+        const response = await SecretApi.kubesubmitV4GenericSecretsCreate({
+            name: 'canary-rg1-secret',
+            data: {
+                type: 'SFRUUA==',
+                description: '<description of generic secret>',
+                clientId: '<client id>',
+                authentication: '<AUTHENTICATION>',
+                tokenServiceURL: '<token service url>',
+                password: '<password>',
+                proxyType: '<PROXY>',
+                url: '<URL>',
+                tokenServiceURLType: '<TOKEN SERVICE URL>',
+                user: '<user>',
+                clientSecret: '<clientSecret>',
+                scope: 'SCOPE'
+            },
+            labels: [
+                {
+                    key: 'ext.ai.sap.com/document-grounding',
+                    value: 'true',
+                },
+            ],
+        }).execute();
+        return response;
+    } catch (error: any) {
+        const errorDetails = {
+            status: error.cause?.status || 500,
+            message: error.cause?.response?.data || error.message,
+        };
+        console.error('Error while creating Resource Group:', errorDetails);
+    }
 }
 
+const secret = await createGenericSecret();
+console.log(secret?.message)
+
 ```
-![img](img/image057.png)
 
 [OPTION END]
 
@@ -506,8 +461,6 @@ secret = requests.post(f'{AI_API_URL}/v2/admin/secrets', headers=headers, json=j
 secret.json()
 
 ```
-
-![img](img/image062.png)
 
 [OPTION END]
 
@@ -555,60 +508,54 @@ Once the pipeline is successfully created, documents uploaded in SharePoint are 
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK]]
+[OPTION BEGIN [JavaScript SDK]]
 
-we are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+In this step, we will create a document-grounding pipeline in SAP AI Core using the `@sap-ai-sdk/document-grounding` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/document-grounding). 
 
-**Note:** At present, pipeline creation is not supported in the grounding feature of Cloud SDK, as we have utilized API requests to establish the pipeline.
+• To start, install the dependency in your project.
+
+```
+npm install @sap-ai-sdk/document-grounding
+```
+
+The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+
 
 ```javascript
 
-const jsonData = {
-  type: 'MSSharePoint',
-  configuration: {
-    destination: '<generic secret name>',
-    sharePoint: {
-      site: {
-        name: '<sharepoint site name>',
-        includePaths: [
-          "/<folder name>"
-        ]
-      }
-    }
-  }
-};
-
-const headers = {
-  "Authorization": `Bearer ${token}`,  // Use your actual token
-  "Content-Type": "application/json",
-  "AI-Resource-Group": "default"  // Replace with your resource group
-};
+import { PipelinesApi } from '@sap-ai-sdk/document-grounding';
 
 async function createPipeline() {
-  try {
-    while (true) {
-      const response = await axios.post(
-        `${AI_API_URL}/v2/lm/document-grounding/pipelines`, 
-        jsonData, 
-        { headers: headers }
-      );
-
-      if (response.status === 201) {
-        console.log('Pipeline Created:', response.data);
-        return response.data.pipelineId;
-      }
+    try {
+        const response = await PipelinesApi.createPipeline({
+            type: 'MSSharePoint',
+            configuration: {
+                destination: '<generic secret name>',
+                sharePoint: {
+                    site: {
+                        name: '<sharepoint site name>',
+                        includePaths: [
+                        '/<folder name>'
+                        ]
+                    }
+                }
+            }
+        },
+        { 'AI-Resource-Group': RESOURCE_GROUP }).execute();
+        return response;
+    } catch (error: any) {
+        const errorDetails = {
+            status: error.cause?.status || 500,
+            message: error.cause?.response?.data || error.message,
+        };
+        console.error('Error while creating Resource Group:', errorDetails);
     }
-  } catch (error) {
-    console.error('Error creating pipeline:', error.response ? error.response.data : error.message);
-  }
 }
 
-createPipeline().then(pipelineId => {
-  console.log('Pipeline ID:', pipelineId);
-});
+const pipeline = await createPipeline();
+console.log('Created Pipeline with ID:', pipeline?.pipelineId);
 
 ```
-![img](img/image058.png)
 
 [OPTION END]
 
@@ -794,7 +741,7 @@ After you have built your orchestration workflow, you can test it to generate ou
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK]]
+[OPTION BEGIN [JavaScript SDK]]
 
 We are configuring an AI Orchestration Pipeline using SAP AI Core. The pipeline integrates multiple AI modules to process and refine inputs efficiently. This setup enables **document grounding, LLM processing, templating, and content filtering**, ensuring accurate and safe AI-generated responses.
 
@@ -802,91 +749,81 @@ The configuration defines a document grounding module that retrieves relevant co
 
 ```javascript
 
-const jsonData = {
-  orchestration_config: {
-    module_configurations: {
-      grounding_module_config: {
-        type: "document_grounding_service",
-        config: {
-          filters: [
-            {
-              id: "filter1", 
-              data_repositories: ["23c**********************5ed6"],    // Replace the value with your data repository ID
-              search_config: {
-                max_chunk_count: 10
-              },
-              data_repository_type: "vector"
-            }
-          ],
-          input_params: ["groundingRequest"],
-          output_param: "groundingOutput"
-        }
-      },
-      llm_module_config: {
-        model_name: "gpt-4o",
-        model_params: {},
-        model_version: "latest"
-      },
-      templating_module_config: {
-        template: [
-          {
-            role: "user",
-            content: "You are a precise and reliable assistant. Using only the provided context, generate a concise and accurate summary relevant to the request. Do not infer or generate information beyond the given context. If the requested information is not available in the context, clearly state that. Request: {{ ?groundingRequest }} Context: {{ ?groundingOutput }}"
-          }
-        ],
-        defaults: {}
-      },
-      filtering_module_config: {
-        input: {
-          filters: [
-            {
-              type: "azure_content_safety",
-              config: {
-                Hate: 2,
-                SelfHarm: 2,
-                Sexual: 2,
-                Violence: 2
-              }}]
-        },
-        output: {
-          filters: [
-            {
-              type: "azure_content_safety",
-              config: {
-                Hate: 2,
-                SelfHarm: 2,
-                Sexual: 2,
-                Violence: 2
-              }}]}}}
-            },
-  input_params: {
-    groundingRequest: "Is there any complaint?"
-  }
-};
-
-const deploymentUrl = "https://api.ai.prodeuonly.**********************************.ondemand.com/v2/inference/deployments/db************3";
-const orchestrationUrl = `${deploymentUrl}/completion`;  // Define the orchestration API URL
-
-async function callOrchestration() {
-  try {
-    const response = await axios.post(orchestrationUrl, jsonData, { headers: headers });
+async function generateResponseWithGrounding() {
+    // Create an input content filter
+    const inputFilter = buildAzureContentSafetyFilter({
+        Hate: 'ALLOW_SAFE_LOW',
+        SelfHarm: 'ALLOW_SAFE_LOW',
+        Sexual: 'ALLOW_SAFE_LOW',
+        Violence: 'ALLOW_SAFE_LOW'
+    });
+      
+    // Create an output content filter
+    const outputFilter = buildAzureContentSafetyFilter({
+        Hate: 'ALLOW_SAFE_LOW',
+        SelfHarm: 'ALLOW_SAFE_LOW',
+        Sexual: 'ALLOW_SAFE_LOW',
+        Violence: 'ALLOW_SAFE_LOW'
+    });
     
-    if (response.status === 200) {
-      const result = response.data;  // Parse the JSON response
-      console.log(result);
-    } else {
-      console.error(`Error: ${response.status}, ${response.statusText}`);
+    // Create an orchestration module config for the model gpt-4o with templating, grounding and filtering
+    const orchestrationClient = new OrchestrationClient(
+        {
+            llm: {
+                model_name: "gpt-4o"
+            },
+            templating: {
+                template: [
+                    {
+                    role: "user",
+                    content: "You are a precise and reliable assistant. Using only the provided context, generate a concise and accurate summary relevant to the request. Do not infer or generate information beyond the given context. If the requested information is not available in the context, clearly state that. Request: {{ ?groundingRequest }} Context: {{ ?groundingOutput }}"
+                    }
+                ],
+            },
+            filtering: {
+                input: { filters: [inputFilter] },
+                output: { filters: [outputFilter] }
+            },
+            // Create a grounding configuration with a database filter
+            grounding: buildDocumentGroundingConfig({
+                input_params: ['groundingRequest'],
+                output_param: 'groundingOutput',
+                filters: [
+                    {
+                        id: 'filter1',
+                        data_repositories: ['23c**********************5ed6'], //Replace with the value of your data repository ID
+                        data_repository_type: 'vector',
+                        search_config: {
+                            max_chunk_count: 10
+                        } 
+                    }
+                ],
+            })
+        },
+        { resourceGroup: RESOURCE_GROUP }
+    )
+
+    try {
+        const response = await orchestrationClient.chatCompletion({
+            inputParams: {
+              groundingRequest: 'Is there any complaint?'
+            }
+        });
+
+        return response.getContent();
+    } catch (error: any) {
+        const errorDetails = {
+            status: error.cause?.status || 500,
+            message: error.cause?.response?.data || error.message,
+        };
+        console.error('Error while creating Resource Group:', errorDetails);
     }
-  } catch (error) {
-    console.error('Error:', error.response ? error.response.data : error.message);
-  }
 }
 
-callOrchestration();
+const groudingResponse = await generateResponseWithGrounding();
+console.log(groudingResponse);
 
 ``` 
-![img](img/image059.png)
-
 
 [OPTION END]
 
