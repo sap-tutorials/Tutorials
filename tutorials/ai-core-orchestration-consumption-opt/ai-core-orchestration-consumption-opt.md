@@ -83,33 +83,21 @@ print(cv_content)
 
 - Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
 
-**NOTE** : If you are continuing with the same notebook from the previous tutorial, skip steps 1 and 2. Otherwise, create a new notebook using the already deployed orchestration URL to access the Harmonized API.  
+**NOTE** : If you are continuing with the same project from the previous tutorial, skip steps 1 and 2. Otherwise, create a new project using the already deployed orchestration URL to access the Harmonized API.
 
-
+For detailed installation and usage of the **SAP Cloud SDK for AI (JavaScript)**, visit the official [GitHub repository](https://github.com/SAP/ai-sdk-js/tree/main?tab=readme-ov-file#sap-ai-sdkorchestration). This page provides comprehensive steps to set up, integrate and test the SDK effectively in your projects.
 
 - The [cv.txt](img/cv.txt) file, containing the resume content, must be added to the working directory. Use the following code to load the file content:
 
 
 ```javascript
 
-// Define the file path
-const filePath = './cv.txt';
+import { readFile } from 'fs/promises';
 
-let txtContent;
+const cvContent = await readFile('path/to/cv.txt', 'utf-8');
 
-try {
-    // Attempt to read the file content
-    txtContent = await Deno.readTextFile(filePath);
-    console.log(txtContent);
-} catch (error) {
-    // Handle errors that occur during file reading
-    console.error('Error reading the file:', error);
-}
-
-// Log the file content or undefined if an error occurred
-console.log(txtContent);
-
-
+//Print file content
+console.log(cvContent);
 ```
 
 [OPTION END]
@@ -310,18 +298,17 @@ models = [
 
 [OPTION BEGIN [JavaScript SDK ]]
 
-- To define how the AI should process the resume, we need a template comprising **SystemMessage** and **UserMessage** components: 
+The next step involves creating a template that specifies how the AI should handle the CV content. The template will include both `SystemMessage` and `UserMessage` components. 
 
-    - **SystemMessage**: Defines the assistant's role and instructions. 
+• `SystemMessage`: Defines the AI assistant's role and instructions. 
 
-    - **UserMessage**: Represents the user's input to be processed. 
+• `UserMessage`: Represents the user's input to be processed. 
 
-Use the following code to create the template: 
 
 ```javascript
 
-/ Define the template for resume screening 
-const templateConfig = { 
+// Define the system and user messages 
+const templatingConfig = { 
   templating: { 
     template: [ 
       { 
@@ -335,19 +322,19 @@ const templateConfig = {
     ], 
   }, 
 }; 
-console.log('Resume screening template configuration defined successfully.');  
 
 ```
-- Select the models to be used for this orchestration: 
+
+We will use multiple models for this tutorial. Since orchestration provides direct access to models without requiring separate deployments, you can use any available models. For this example, we have selected the following models:
 
 ```javascript
 
 // List of models to iterate through 
 const models = [ 
-    'gpt-4o', 
-    'mistralai--mistral-large-instruct', 
-    'anthropic--claude-3.5-sonnet', 
-  ];
+  'gpt-4o', 
+  'mistralai--mistral-large-instruct', 
+  'anthropic--claude-3.5-sonnet', 
+];
 
 ```
 
@@ -693,65 +680,35 @@ for model in models:
 
 ```javascript
 
-const filteringModuleConfig = { 
-  input: { 
-    filters: [ 
-      { 
-        type: 'azure_content_safety', 
-        config: { 
-          Hate: 6, 
-          SelfHarm: 0, 
-          Sexual: 4, 
-          Violence: 4, 
-        }, 
-      }, 
-    ], 
-  }, 
-  output: { 
-    filters: [ 
-      { 
-        type: 'azure_content_safety', 
-        config: { 
-          Hate: 6, 
-          SelfHarm: 0, 
-          Sexual: 4, 
-          Violence: 4, 
-        }, 
-      }, 
-    ], 
-  }, 
-}; 
-console.log('Content Filtering configuration defined successfully.');  
+import { buildAzureContentSafetyFilter } from '@sap-ai-sdk/orchestration'; 
 
+const inputFilter = buildAzureContentSafetyFilter({
+  Hate: 'ALLOW_ALL',
+  SelfHarm: 'ALLOW_SAFE',
+  Sexual: 'ALLOW_SAFE_LOW_MEDIUM',
+  Violence: 'ALLOW_SAFE_LOW_MEDIUM'
+});
+
+const outFilter = buildAzureContentSafetyFilter({
+  Hate: 'ALLOW_ALL',
+  SelfHarm: 'ALLOW_SAFE',
+  Sexual: 'ALLOW_SAFE_LOW_MEDIUM',
+  Violence: 'ALLOW_SAFE_LOW_MEDIUM'
+});
+
+const filteringConfig = {
+  filtering: {
+    input: { filters: [inputFilter] },
+    output: { filters: [outFilter] }
+  }
+}
+
+console.log('Content Filtering configuration defined successfully.');
 ```
 
-**NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case.  
+**NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case. 
 
- 
-- Then Combine the template, models, and modules into orchestration configurations: 
-
-```javascript
-
-// Function to create configuration for each model 
-const createModelConfig = (modelName) => ({ 
-  llm: { 
-    model_name: modelName, 
-    model_params: { 
-      max_tokens: 1000, 
-      temperature: 0.6, 
-    }, 
-  }, 
-  ...templateConfig, 
-  ...dataMaskingConfig, 
-  filtering_module_config: filteringModuleConfig,  
-}); 
-const deploymentConfig = { 
-  resourceGroup: 'default', 
-}; 
-
-```
-
-**NOTE** : Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process.**  
+Multiple filters can be applied for both input and output. In this tutorial, we are using Azure Content Filter, but you can choose from the available providers based on your use case. For more information on using this and/or additional modules, please refer to the official documentation of [SAP Cloud SDK for AI (Javascript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration).
 
 [OPTION END]
 
@@ -944,53 +901,75 @@ By incorporating these optional modules, you can tailor your Response to meet or
 
 [OPTION BEGIN [JavaScript SDK]]
 
-- Finally, execute the orchestration and collect the results: 
+**Generate Responses for Multiple Models** 
+
+This step outlines the process of generating responses for a set of queries using different models. The `generateResponsesForModels()` function iterates through each model and executes queries with the created template. 
+
+**Note**: Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process.
 
 ```javascript
 
-import {OrchestrationClient,buildAzureContentFilter} from '@sap-ai-sdk/orchestration'; 
-import { writeFileStrSync } from "https://deno.land/std@0.52.0/fs/mod.ts"; 
-// Function to generate responses from multiple models 
-async function generateResponsesForModels(txtContent) { 
-    const responses = []; 
-    for (const modelName of models) { 
-      console.log(`\n=== Responses for model: ${modelName} ===\n`); 
-      // Create configuration for the current model 
-      const modelConfig = createModelConfig(modelName); 
-      // console.log(modelConfig) 
-      // Initialize OrchestrationClient with dynamic model configuration 
-      const orchestrationClient = new OrchestrationClient({ 
-        ...deploymentConfig, 
-        ...modelConfig, 
-      }); 
-      try { 
-        // Run orchestration with the provided input (candidate resume content) 
-        const response = await orchestrationClient.chatCompletion({ 
-          inputParams: { candidate_resume: txtContent }, 
-        }); 
-        // Extract the response content 
-        const content = response.getContent(); 
-        console.log(`Response from ${modelName}:\n`, content); 
-        // Store the response in the list 
-        responses.push({ 
-          model: modelName, 
-          response: content, 
-        }); 
-      } catch (error) { 
-        console.error(`Error with model ${modelName}:`, error.response?.data || error.message); 
-      } 
-    } 
-    // Optionally save the responses to a file (similar to Python code) 
-    await writeFileStrSync( 
-      'model_responses_js1.txt', 
+import { writeFile } from 'fs/promises';
+import { OrchestrationClient } from '@sap-ai-sdk/orchestration'; 
+
+// Generate responses from multiple models using OrchestrationClient
+async function generateResponsesForModels(cvContent) { 
+  // Initialize OrchestrationClient asynchronously for list of models
+    const responses = await Promise.all(
+      models.map(async (model) => {
+        const orchestrationClient = new OrchestrationClient(
+          {
+            llm: {
+              model_name: model,
+              model_params: { 
+                max_tokens: 1000, 
+                temperature: 0.6, 
+              }, 
+            },
+            ...templatingConfig,
+            ...dataMaskingConfig,
+            ...filteringConfig
+          },
+          { resourceGroup: 'default' } // Define the resource group, change this to your resource group name
+        );
+
+        try { 
+          // Run orchestration with the provided input (candidate resume content) 
+          const response = await orchestrationClient.chatCompletion({ 
+            inputParams: { candidate_resume: cvContent }, 
+          }); 
+
+          // Extract the response content 
+          const content = response.getContent(); 
+          console.log(`\n=== Responses for model: ${model} ===\n`);
+          console.log(content);
+          
+          return { 
+            model, 
+            response: content, 
+          }; 
+        } catch (error: any) { 
+          const errorDetails = {
+            status: error.cause?.status || 500,
+            message: error.cause?.response?.data || error.message,
+          };
+          console.error(`Error with model ${model}:`, errorDetails);
+        } 
+      })
+    );
+
+    // Optionally save the responses to a file
+    await writeFile( 
+      'model_responses_js.txt', 
       responses 
         .map((res) => `Response from model ${res.model}:\n${res.response}\n${'-'.repeat(80)}\n`) 
         .join(''), 
       'utf-8' 
     ); 
-}    
-// Example usage with resume content 
-generateResponsesForModels(txtContent);  
+} 
+
+// Example usage
+generateResponsesForModels(cvContent); 
 
 ```
 

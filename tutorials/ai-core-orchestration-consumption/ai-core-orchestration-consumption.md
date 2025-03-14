@@ -242,7 +242,7 @@ npm install @sap-ai-sdk/ai-api
 ```javascript
 import { ConfigurationApi } from '@sap-ai-sdk/ai-api';
 
-// Function to create orchestration configuration
+// Create orchestration configuration using ConfigurationApi
 async function createOrchestrationConfiguration() {
   const requestBody = {
       name: 'orchestration-config', // Choose a meaningful name
@@ -438,7 +438,7 @@ In this step, we will create a deployment from the configuration created in the 
 import { DeploymentApi } from '@sap-ai-sdk/ai-api'; 
 import type { AiDeploymentCreationResponse } from '@sap-ai-sdk/ai-api'; 
 
-// Function to create Orchestration deployment
+// Create Orchestration deployment using DeploymentApi
 async function createOrchestrationDeployment() { 
   // Fetch the configuration ID from the previous step 
    const configurationId = orchestrationConfig.id;
@@ -803,7 +803,7 @@ In this step, we will consume the orchestration service using the `@sap-ai-sdk/o
 
 **Prepare the CV File**
 
-- Download the [cv.txt](img/cv.txt) file, which contains the CV data that will be used in this use case. 
+- Download the [cv.txt](img/cv.txt) file, which contains the CV data used in this tutorial. 
 
 - Place the cv.txt file in the current working directory. 
 
@@ -813,19 +813,22 @@ In this step, we will consume the orchestration service using the `@sap-ai-sdk/o
 
 import { readFile } from 'fs/promises';
 
-const txtContent = await readFile('cv.txt', 'utf-8');
+const cvContent = await readFile('path/to/cv.txt', 'utf-8');
+
+//Print file content
+console.log(cvContent);
 
 ```
 
-The next step involves creating a template that specifies how the AI should handle the CV content. The template will include both SystemMessage and UserMessage components. 
+The next step involves creating a template that specifies how the AI should handle the CV content. The template will include both `SystemMessage` and `UserMessage` components. 
 
-• SystemMessage: Defines the AI assistant's role and instructions. 
+• `SystemMessage`: Defines the AI assistant's role and instructions. 
 
-• UserMessage: Represents the user's input (i.e., the CV content) to be processed by the AI. 
+• `UserMessage`: Represents the user's input to be processed. 
 
 ```javascript
 
-// Define the template for resume screening 
+// Define the system and user messages 
 const templatingConfig = { 
   templating: { 
     template: [ 
@@ -840,10 +843,11 @@ const templatingConfig = {
     ], 
   }, 
 }; 
+console.log('Templating configuration defined successfully.');
 
 ```
 
-We can define multiple models for the use case. Since orchestration provides direct access to models without requiring separate deployments, you can use any available models. For this example, we have selected the following three models.
+We will use multiple models for this tutorial. Since orchestration provides direct access to models without requiring separate deployments, you can use any available models. For this example, we have selected the following models:
 
 ```javascript
 
@@ -858,24 +862,24 @@ const models = [
 
 **Generate Responses for Multiple Models** 
 
-This step outlines the process of generating responses for a set of queries using different models. The  `generateResponsesForModels()` function iterates through each model and executes queries to gather AI-generated responses. 
+This step outlines the process of generating responses for a set of queries using different models. The `generateResponsesForModels()` function iterates through each model and executes queries with the created template. 
  
 **Key Points:**
  
 Model Iteration: Asynchronously iterates over the list of model names to update the LLM configuration dynamically. 
 
-Query Execution: Uses OrchestrationClient to generate responses for each query. 
+Query Execution: Uses `OrchestrationClient` to generate responses for each query. 
 
 ```javascript
 
 import { writeFile } from 'fs/promises';
 import { OrchestrationClient } from '@sap-ai-sdk/orchestration'; 
 
-// Function to generate responses from multiple models 
-async function generateResponsesForModels(txtContent) { 
+// Generate responses from multiple models using OrchestrationClient
+async function generateResponsesForModels(cvContent) { 
+    // Initialize OrchestrationClient asynchronously for list of models
     const responses = await Promise.all(
       models.map(async (model) => {
-        // Initialize OrchestrationClient with dynamic model configuration
         const orchestrationClient = new OrchestrationClient(
           {
             llm: {
@@ -887,13 +891,13 @@ async function generateResponsesForModels(txtContent) {
             },
             ...templatingConfig
           },
-          { resourceGroup: 'default' }
+          { resourceGroup: 'default' } // Define the resource group, change this to your resource group name
         );
 
         try { 
           // Run orchestration with the provided input (candidate resume content) 
           const response = await orchestrationClient.chatCompletion({ 
-            inputParams: { candidate_resume: textContent }, 
+            inputParams: { candidate_resume: cvContent }, 
           }); 
 
           // Extract the response content 
@@ -901,7 +905,6 @@ async function generateResponsesForModels(txtContent) {
           console.log(`\n=== Responses for model: ${model} ===\n`);
           console.log(content);
           
-          // Store the response
           return { 
             model, 
             response: content, 
@@ -916,7 +919,7 @@ async function generateResponsesForModels(txtContent) {
       })
     );
 
-    // Optionally save the responses to a file (similar to Python code) 
+    // Optionally save the responses to a file
     await writeFile( 
       'model_responses_js.txt', 
       responses 
@@ -926,8 +929,8 @@ async function generateResponsesForModels(txtContent) {
     ); 
 } 
 
-  // Example usage with resume content 
-  generateResponsesForModels(txtContent); 
+// Example usage
+generateResponsesForModels(cvContent); 
 
 ```
 
@@ -937,9 +940,9 @@ Ensure at least one orchestration deployment is ready to be consumed during this
 
 **Optional Advanced Modules**
 
-- Grounding is available to integrate external, contextually relevant, domain-specific, or real-time data into your workflows. For more information on using this and/or additional modules, please refer to the official documentation of [SAP Cloud SDK for AI (Javascript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration).
-
 - Data masking and content filtering are available to enhance data privacy and safety. Data masking hides sensitive information like phone numbers or organization names, while content filtering can screen for categories such as hate self-harm, sexual content, and violence. In this tutorial, the response generated by the LLM models may carry sensitive information, such as names and phone numbers. For further enhancement, refer to the next tutorial on implementing these modules. 
+
+- Grounding is available to integrate external, contextually relevant, domain-specific, or real-time data into your workflows. For more information on using this and/or additional modules, please refer to the official documentation of [SAP Cloud SDK for AI (Javascript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration).
 
 [OPTION END]
 
