@@ -52,9 +52,7 @@ author_profile: https://github.com/I321506
 
 • [Create a service key](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key) for your AI Core service instance and copy the generated JSON object.  
 
-• Create a `.env` file in your working directory.
-
-• Inside the `.env` file, define an `AICORE_SERVICE_KEY` variable and initialize it with the copied JSON service key. Maintaining a single-line format will prevent parsing errors.
+• Set the copied service key as the `AICORE_SERVICE_KEY` environment variable in your local environment. Maintaining a single-line format will prevent parsing errors.
 
 ```
 AICORE_SERVICE_KEY='{"clientid":"...","clientsecret":"...","serviceurls":{"AI_API_URL":"..."}}'
@@ -64,7 +62,11 @@ The SDK parses the service key from the environment variable to interact with th
 
 • For detailed installation and usage of the **SAP Cloud SDK for AI (JavaScript)**, visit the official [GitHub repository](https://github.com/SAP/ai-sdk-js/tree/main?tab=readme-ov-file#sap-ai-sdkorchestration). This page provides comprehensive steps to set up, integrate and test the SDK effectively in your projects.
  
-**Tip:**  
+**Tip:** 
+
+• Ways to load environment variables might vary based on the framework you are using.
+
+• For example, while the SAP Cloud SDK for AI (JavaScript) uses the [dotenv](https://www.npmjs.com/package/dotenv) library to load environment variables, NextJS uses a [specific configuration](https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables) to load them.
 
 • Installing JavaScript Kernel for Jupyter Notebooks: If you want to use JavaScript in Jupyter Notebooks, you can refer to [Deno v1.37 blog post](https://deno.com/blog/v1.37) for detailed steps to install the Javascript kernel. Follow the instructions provided to set up the environment and enable JavaScript support in Jupyter.  
 
@@ -247,32 +249,17 @@ const RESOURCE_GROUP = 'YourResourceGroupId'; // Please change to your desired r
 // Create orchestration configuration using ConfigurationApi
 async function createOrchestrationConfiguration() {
   try {
-      const response = await ConfigurationApi
-          .configurationCreate({
-            name: 'orchestration-config', // Choose a meaningful name
-            executableId: 'orchestration', // Orchestration executable ID
-            scenarioId: 'orchestration', // Orchestration scenario ID
-            parameterBindings: [
-                {
-                    "key": "modelFilterList", // Define the parameters you need for orchestration
-                    "value": "null"  // Example orchestration version
-                },
-                {
-                    "key": "modelFilterListType",
-                    "value": "allow"
-                }
-            ],
-            inputArtifactBindings: []  // Orchestrations may not require input bindings directly, but this can be modified
-        }, {'AI-Resource-Group': RESOURCE_GROUP}).execute();
+    const response = await ConfigurationApi
+      .configurationCreate({
+        name: 'orchestration-config', // Choose a meaningful name
+        executableId: 'orchestration', // Orchestration executable ID
+        scenarioId: 'orchestration', // Orchestration scenario ID
+      }, {'AI-Resource-Group': RESOURCE_GROUP}).execute();
 
       return response;
   } catch (error: any) {
-      const errorDetails = {
-        status: error.cause?.status || 500,
-        message: error.cause?.response?.data || error.message,
-      };
       // Handle API errors
-      console.error('Configuration creation failed:', errorDetails);
+      console.error('Configuration creation failed:', error.stack);
   }
 }
 
@@ -280,13 +267,6 @@ async function createOrchestrationConfiguration() {
 const configuration = await createOrchestrationConfiguration();
 console.log(configuration?.message); // Print the configuration response message
 ```
-
-**Note**: 
-
-• `scenarioId` and `executableId`: Both are set to "orchestration" for this tutorial. 
-
-• `name`: Choose a unique name for the configuration (e.g., "config-new-orchestration")
-
 
 [OPTION END]
 
@@ -438,8 +418,8 @@ import type { AiDeploymentCreationResponse } from '@sap-ai-sdk/ai-api';
 
 // Create Orchestration deployment using DeploymentApi
 async function createOrchestrationDeployment() { 
-  // Fetch the configuration ID from the previous step 
-  const configurationId = orchestrationConfig.id;
+  // Extract the configuration ID from the result of the previous step 
+  const configurationId = configuration.id;
 
   try { 
     const response = await DeploymentApi
@@ -450,11 +430,7 @@ async function createOrchestrationDeployment() {
 
     return response;
   } catch (error: any) { 
-      const errorDetails = {
-        status: error.cause?.status || 500,
-        message: error.cause?.response?.data || error.message,
-      };
-      console.error('Deployment creation failed:', errorDetails);
+    console.error('Deployment creation failed:', error.stack);
   } 
 } 
 
@@ -816,35 +792,30 @@ import { readFile } from 'fs/promises';
 
 const cvContent = await readFile('path/to/cv.txt', 'utf-8');
 
-//Print file content
-console.log(cvContent);
-
 ```
 
-The next step involves creating a template that specifies how the AI should handle the CV content. The template will include both `SystemMessage` and `UserMessage` components. 
+The next step involves creating a template that specifies how the AI should handle the CV content. The template will include message components with different roles: 
 
-• `SystemMessage`: Defines the AI assistant's role and instructions. 
+• `system`: Defines the AI assistant's role and instructions. 
 
-• `UserMessage`: Represents the user's input to be processed. 
+• `user`: Represents the user's input to be processed. 
 
 ```javascript
+import type { TemplatingModuleConfig } from '@sap-ai-sdk/orchestration';
 
 // Define the system and user messages 
-const templatingConfig = { 
-  templating: { 
-    template: [ 
-      { 
-        role: 'system', 
-        content: 'You are a helpful AI assistant for HR. Summarize the following CV in 10 sentences, focusing on key qualifications, work experience, and achievements. Include personal contact information, organizational history, and personal interests.', 
-      }, 
-      { 
-        role: 'user', 
-        content: 'Candidate Resume:\n{{?candidate_resume}}', 
-      }, 
-    ], 
-  }, 
+const templatingConfig: TemplatingModuleConfig = {  
+  template: [ 
+    { 
+      role: 'system', 
+      content: 'You are a helpful AI assistant for HR. Summarize the following CV in 10 sentences, focusing on key qualifications, work experience, and achievements. Include personal contact information, organizational history, and personal interests.', 
+    }, 
+    { 
+      role: 'user', 
+      content: 'Candidate Resume:\n{{?candidate_resume}}', 
+    }, 
+  ],
 }; 
-console.log('Templating configuration defined successfully.');
 
 ```
 
@@ -877,7 +848,7 @@ import { writeFile } from 'fs/promises';
 import { OrchestrationClient } from '@sap-ai-sdk/orchestration'; 
 
 // Generate responses from multiple models using OrchestrationClient
-async function generateResponsesForModels(cvContent) { 
+async function generateResponsesForModels(cvContent: string) { 
     // Initialize OrchestrationClient asynchronously for list of models
     const responses = await Promise.all(
       models.map(async (model) => {
@@ -890,7 +861,7 @@ async function generateResponsesForModels(cvContent) {
                 temperature: 0.6, 
               }, 
             },
-            ...templatingConfig
+            template: templatingConfig
           },
           { resourceGroup: RESOURCE_GROUP }
         );
@@ -907,11 +878,7 @@ async function generateResponsesForModels(cvContent) {
             response: response.getContent(), 
           }; 
         } catch (error: any) { 
-          const errorDetails = {
-            status: error.cause?.status || 500,
-            message: error.cause?.response?.data || error.message,
-          };
-          console.error(`Error with model ${model}:`, errorDetails);
+          console.error(`Error with model ${model}:`, error.stack);
         } 
       })
     );
@@ -924,12 +891,15 @@ async function generateResponsesForModels(cvContent) {
         .join(''), 
       'utf-8' 
     ); 
+
+    return responses;
 } 
 
 // Example usage
 const modelResponses = await generateResponsesForModels(cvContent); 
-console.log(`\n=== Responses for model: ${modelResponses.model} ===\n`);
-console.log(modelResponses.response);
+modelResponses.map(response => {
+  console.log(`==== Response with Model: ${response.model} ====\n${response.response || 'No response available'}\n`);
+});
 
 ```
 

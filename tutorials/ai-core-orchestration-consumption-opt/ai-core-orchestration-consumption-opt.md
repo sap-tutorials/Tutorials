@@ -85,7 +85,7 @@ print(cv_content)
 
 **NOTE** : If you are continuing with the same project from the previous tutorial, skip steps 1 and 2. Otherwise, create a new project using the already deployed orchestration URL to access the Harmonized API.
 
-For detailed installation and usage of the **SAP Cloud SDK for AI (JavaScript)**, visit the official [GitHub repository](https://github.com/SAP/ai-sdk-js/tree/main?tab=readme-ov-file#sap-ai-sdkorchestration). This page provides comprehensive steps to set up, integrate and test the SDK effectively in your projects.
+For detailed installation, please refer to the official documentation of [`@sap-ai-sdk/orchestration`](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration) package.
 
 - The [cv.txt](img/cv.txt) file, containing the resume content, must be added to the working directory. Use the following code to load the file content:
 
@@ -96,8 +96,6 @@ import { readFile } from 'fs/promises';
 
 const cvContent = await readFile('path/to/cv.txt', 'utf-8');
 
-//Print file content
-console.log(cvContent);
 ```
 
 [OPTION END]
@@ -298,29 +296,29 @@ models = [
 
 [OPTION BEGIN [JavaScript SDK ]]
 
-The next step involves creating a template that specifies how the AI should handle the CV content. The template will include both `SystemMessage` and `UserMessage` components. 
+The next step involves creating a template that specifies how the CV content should be handled. The template will include message components with different roles:
 
-• `SystemMessage`: Defines the AI assistant's role and instructions. 
+• `system`: Defines the AI assistant's role and instructions. 
 
-• `UserMessage`: Represents the user's input to be processed. 
+• `user`: Represents the user's input to be processed. 
 
 
 ```javascript
 
+import type { TemplatingModuleConfig } from '@sap-ai-sdk/orchestration';
+
 // Define the system and user messages 
-const templatingConfig = { 
-  templating: { 
-    template: [ 
-      { 
-        role: 'system', 
-        content: 'You are a helpful AI assistant for HR. Summarize the following CV in 10 sentences, focusing on key qualifications, work experience, and achievements. Include personal contact information, organizational history, and personal interests.', 
-      }, 
-      { 
-        role: 'user', 
-        content: 'Candidate Resume:\n{{?candidate_resume}}', 
-      }, 
-    ], 
-  }, 
+const templating: TemplatingModuleConfig = { 
+  template: [ 
+    { 
+      role: 'system', 
+      content: 'You are a helpful AI assistant for HR. Summarize the following CV in 10 sentences, focusing on key qualifications, work experience, and achievements. Include personal contact information, organizational history, and personal interests.', 
+    }, 
+    { 
+      role: 'user', 
+      content: 'Candidate Resume:\n{{?candidate_resume}}', 
+    }, 
+  ], 
 }; 
 
 ```
@@ -448,25 +446,24 @@ For this tutorial, we use anonymization:
 
 ```javascript
 
+import type { MaskingModuleConfig } from '@sap-ai-sdk/orchestration';
+
 // Define the data masking configuration 
-const dataMaskingConfig = { 
-  masking: { 
-    masking_providers: [ 
-      { 
-        type: 'sap_data_privacy_integration', 
-        method: 'anonymization', 
-        entities: [ 
-          { type: 'profile-email' }, 
-          { type: 'profile-person' }, 
-          { type: 'profile-phone' }, 
-          { type: 'profile-org' }, 
-          { type: 'profile-location' }, 
-        ], 
-      }, 
-    ], 
-  }, 
+const masking: MaskingModuleConfig = { 
+  masking_providers: [ 
+    { 
+      type: 'sap_data_privacy_integration', 
+      method: 'anonymization', 
+      entities: [ 
+        { type: 'profile-email' }, 
+        { type: 'profile-person' }, 
+        { type: 'profile-phone' }, 
+        { type: 'profile-org' }, 
+        { type: 'profile-location' }, 
+      ], 
+    }, 
+  ], 
 }; 
-console.log('Data Masking configuration defined successfully.');
 
 ```
 
@@ -681,6 +678,7 @@ for model in models:
 ```javascript
 
 import { buildAzureContentSafetyFilter } from '@sap-ai-sdk/orchestration'; 
+import type { FilteringModuleConfig } from '@sap-ai-sdk/orchestration';
 
 const inputFilter = buildAzureContentSafetyFilter({
   Hate: 'ALLOW_ALL',
@@ -696,19 +694,20 @@ const outputFilter = buildAzureContentSafetyFilter({
   Violence: 'ALLOW_SAFE_LOW_MEDIUM'
 });
 
-const filteringConfig = {
+const filtering: FilteringModuleConfig = {
   filtering: {
     input: { filters: [inputFilter] },
     output: { filters: [outputFilter] }
   }
 }
 
-console.log('Content Filtering configuration defined successfully.');
 ```
 
 **NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case. 
 
-Multiple filters can be applied for both input and output. In this tutorial, we are using Azure Content Filter, but you can choose from the available providers based on your use case. For more information on using this and/or additional modules, please refer to the official documentation of [SAP Cloud SDK for AI (Javascript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration).
+Multiple content filters can be applied for both input and output. In this tutorial, we use Azure Content Safety Filter, but you can choose from the available providers based on your use case. For more information, please refer to the official documentation of [`@sap-ai-sdk/orchestration`](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration) package.
+
+The `filtering` configuration created in this step will be used in the next step to initialize an `OrchestrationClient` and consume the orchestration service.
 
 [OPTION END]
 
@@ -901,9 +900,9 @@ By incorporating these optional modules, you can tailor your Response to meet or
 
 [OPTION BEGIN [JavaScript SDK]]
 
-**Generate Responses for Multiple Models** 
+**Generate Responses with Multiple Models** 
 
-This step outlines the process of generating responses for a set of queries using different models. The `generateResponsesForModels()` function iterates through each model and executes queries with the created template. 
+This step outlines the process of generating responses for a set of queries using different models. The `generateResponsesWithModels()` function iterates through each model and executes queries with the created template. 
 
 **Note**: Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process.
 
@@ -915,7 +914,7 @@ import { OrchestrationClient } from '@sap-ai-sdk/orchestration';
 const RESOURCE_GROUP = "YourResourceGroupId"; // Define the resource group, change this to your resource group name
 
 // Generate responses from multiple models using OrchestrationClient
-async function generateResponsesForModels(cvContent) { 
+async function generateResponsesWithModels(cvContent: string) { 
   // Initialize OrchestrationClient asynchronously for list of models
     const responses = await Promise.all(
       models.map(async (model) => {
@@ -928,9 +927,9 @@ async function generateResponsesForModels(cvContent) {
                 temperature: 0.6, 
               }, 
             },
-            ...templatingConfig,
-            ...dataMaskingConfig,
-            ...filteringConfig
+            templating,
+            masking,
+            filtering
           },
           { resourceGroup: RESOURCE_GROUP } 
         );
@@ -941,17 +940,13 @@ async function generateResponsesForModels(cvContent) {
             inputParams: { candidate_resume: cvContent }, 
           }); 
 
-          // Extract the response content and return it
-          return { 
+          // Extract the response content and add it to list of responses
+          return {
             model, 
             response: response.getContent(), 
           }; 
         } catch (error: any) { 
-          const errorDetails = {
-            status: error.cause?.status || 500,
-            message: error.cause?.response?.data || error.message,
-          };
-          console.error(`Error with model ${model}:`, errorDetails);
+          console.error(`Error with model ${model}:`, error.stack);
         } 
       })
     );
@@ -964,12 +959,15 @@ async function generateResponsesForModels(cvContent) {
         .join(''), 
       'utf-8' 
     ); 
+
+    return responses;
 } 
 
 // Example usage
-const modelResponses = await generateResponsesForModels(cvContent); 
-console.log(`\n=== Responses for model: ${modelResponses.model} ===\n`);
-console.log(modelResponses.response);
+const modelResponses = await generateResponsesWithModels(cvContent); 
+modelResponses.map(response => {
+  console.log(`==== Response with Model: ${response.model} ====\n${response.response || 'No response available'}\n`);
+});
 
 ```
 

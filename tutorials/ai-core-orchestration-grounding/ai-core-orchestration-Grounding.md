@@ -229,11 +229,7 @@ async function createResourceGroup() {
         }).execute();
         return response;
     } catch (error: any) {
-      const errorDetails = {
-        status: error.cause?.status || 500,
-        message: error.cause?.response?.data || error.message,
-      };
-      console.error('Error while creating Resource Group:', errorDetails);
+      console.error('Error while creating Resource Group:', error.stack);
     }
 }
 
@@ -381,35 +377,31 @@ import { SecretApi } from from '@sap-ai-sdk/ai-api';
 async function createGenericSecret() {
     try {
         const response = await SecretApi.kubesubmitV4GenericSecretsCreate({
-            name: 'canary-rg1-secret',
-            data: {
-                type: 'SFRUUA==',
-                description: '<description of generic secret>',
-                clientId: '<client id>',
-                authentication: '<AUTHENTICATION>',
-                tokenServiceURL: '<token service url>',
-                password: '<password>',
-                proxyType: '<PROXY>',
-                url: '<URL>',
-                tokenServiceURLType: '<TOKEN SERVICE URL>',
-                user: '<user>',
-                clientSecret: '<clientSecret>',
-                scope: 'SCOPE'
+          name: 'canary-rg1-secret',
+          data: {
+            type: 'SFRUUA==',
+            description: '<DESCRIPTION_OF_GENERIC_SECRET>',
+            clientId: '<CLIENT_ID>',
+            authentication: '<AUTHENTICATION>',
+            tokenServiceURL: '<TOKEN_SERVICE_URL>',
+            password: '<PASSWORD>',
+            proxyType: '<PROXY>',
+            url: '<URL>',
+            tokenServiceURLType: '<TOKEN_SERVICE_URL_TYPE>',
+            user: '<USER>',
+            clientSecret: '<CLIENT_SECRET>',
+            scope: '<SCOPE>'
+          },
+          labels: [
+            {
+              key: 'ext.ai.sap.com/document-grounding',
+              value: 'true',
             },
-            labels: [
-                {
-                    key: 'ext.ai.sap.com/document-grounding',
-                    value: 'true',
-                },
-            ],
+          ],
         }).execute();
         return response;
     } catch (error: any) {
-        const errorDetails = {
-            status: error.cause?.status || 500,
-            message: error.cause?.response?.data || error.message,
-        };
-        console.error('Error while creating Resource Group:', errorDetails);
+        console.error('Error while creating Resource Group:', error.stack);
     }
 }
 
@@ -512,7 +504,7 @@ Once the pipeline is successfully created, documents uploaded in SharePoint are 
 
 In this step, we will create a document-grounding pipeline in SAP AI Core using the `@sap-ai-sdk/document-grounding` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/document-grounding). 
 
-• To start, install the dependency in your project.
+• To start, install the dependency to your project.
 
 ```
 npm install @sap-ai-sdk/document-grounding
@@ -544,11 +536,7 @@ async function createPipeline() {
         { 'AI-Resource-Group': RESOURCE_GROUP }).execute();
         return response;
     } catch (error: any) {
-        const errorDetails = {
-            status: error.cause?.status || 500,
-            message: error.cause?.response?.data || error.message,
-        };
-        console.error('Error while creating Resource Group:', errorDetails);
+        console.error('Error while creating Resource Group:', error.stack);
     }
 }
 
@@ -791,7 +779,7 @@ async function generateResponseWithGrounding() {
                 filters: [
                     {
                         id: 'filter1',
-                        data_repositories: ['23c**********************5ed6'], //Replace with the value of your data repository ID
+                        data_repositories: ['<DATA_REPOSITORY_UUID>'], //TODO: Replace with the value of your data repository ID
                         data_repository_type: 'vector',
                         search_config: {
                             max_chunk_count: 10
@@ -812,11 +800,7 @@ async function generateResponseWithGrounding() {
 
         return response.getContent();
     } catch (error: any) {
-        const errorDetails = {
-            status: error.cause?.status || 500,
-            message: error.cause?.response?.data || error.message,
-        };
-        console.error('Error while creating Resource Group:', errorDetails);
+        console.error('Error while creating Resource Group:', error.stack);
     }
 }
 
