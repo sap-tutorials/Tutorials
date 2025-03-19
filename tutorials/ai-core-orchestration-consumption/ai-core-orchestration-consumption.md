@@ -263,7 +263,6 @@ async function createOrchestrationConfiguration() {
   }
 }
 
-// usage
 const configuration = await createOrchestrationConfiguration();
 console.log(configuration?.message); // Print the configuration response message
 ```
@@ -433,8 +432,7 @@ async function createOrchestrationDeployment() {
     console.error('Deployment creation failed:', error.stack);
   } 
 } 
-
-// usage
+ 
 const deployment = await createOrchestrationDeployment();
 console.log(deployment?.message) // Print the deployment creation response
 
