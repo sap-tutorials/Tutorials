@@ -102,7 +102,7 @@ AICORE_SERVICE_KEY={"clientid": "...", "clientsecret": "...", "url": "...", "ser
 </dependency>
 ```
 
-• For other options of access configuration and detailed information on installation and usage of the **SAP Cloud SDK for AI (for Java)**, visit the official [GitHub repository](https://github.com/SAP/ai-sdk-java). This page provides comprehensive steps to set up and integrate the SDK effectively in your projects.
+• For other options of access configuration and detailed information on installation and usage of the **SAP Cloud SDK for AI (Java)**, visit the official [documentation platform](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java). This page provides comprehensive steps to set up and integrate the SDK effectively in your projects.
 
 [OPTION END]
 
@@ -271,7 +271,7 @@ console.log(configuration?.message); // Print the configuration response message
 
 [OPTION BEGIN [Java SDK]]
 
-In this step, we will create an orchestration configuration using the core module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java). This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
+In this step, we will create an orchestration configuration using the core module of the [SAP Cloud SDK for AI (Java)](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java). This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
 
 • Add the following code to your project to create an orchestration configuration: 
 
@@ -442,7 +442,7 @@ console.log(deployment?.message) // Print the deployment creation response
 
 [OPTION BEGIN [Java SDK]]
 
-In this step, we will create a deployment from the configuration created in the previous step using the core module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java). 
+In this step, we will create a deployment from the configuration created in the previous step using the core module of the [SAP Cloud SDK for AI (Java)](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java). 
 
 • Add the following code to your project to create an orchestration deployment:
 
@@ -915,7 +915,7 @@ Ensure at least one orchestration deployment is ready to be consumed during this
 
 [OPTION BEGIN [Java SDK]]
 
-In this step, we will consume an LLM through the orchestration service with the created deployment, using the core and orchestration module of the [SAP Cloud SDK for Java](https://github.com/SAP/cloud-sdk-java).
+In this step, we will consume an LLM through the orchestration service with the created deployment, using the core and orchestration module of the [SAP Cloud SDK for AI (Java)](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java).
 
 To begin the consumption process, follow the steps below: 
 

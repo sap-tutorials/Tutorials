@@ -41,9 +41,15 @@ To interact with SAP AI Core using **SAP Cloud SDK for AI (for JavaScript)**, yo
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Java SDK]]
 
-To interact with SAP AI Core using Gen AI SDK, you first need to create a service key that grants secure access to your AI Core instance. Follow the step Set Up Your Environment and Configure Access in the [tutorial] (https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to establish your connection.
+To interact with SAP AI Core using the [Java SDK](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java), you first need to create a service key that grants secure access to your AI Core instance. Follow the step Set Up Your Environment and Configure Access in the [tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to establish your connection.
+
+[OPTION END]
+
+[OPTION BEGIN [Python SDK]]
+
+To interact with SAP AI Core using the python Gen AI SDK, you first need to create a service key that grants secure access to your AI Core instance. Follow the step Set Up Your Environment and Configure Access in the [tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to establish your connection.
 
 [OPTION END]
 
@@ -111,7 +117,13 @@ The JavaScript SDK automatically retrieves the AI Core service credentials and r
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Java SDK]]
+
+As the access token is automatically initially requested and sent with every request to the server, this step is not necessary for the Java SDK.
+
+[OPTION END]
+
+[OPTION BEGIN [Python SDK]]
 
 This step generates an access token, required for authenticating API requests during the process.
 
@@ -240,7 +252,32 @@ console.log("Created Resource Group with ID: ", resourceGroup?.resourceGroupId)
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Java SDK]]
+
+Create a resource group in SAP AI Core. Please note that for using the document grounding service, your request must contain the document grounding label set to true. Therefore, existing resource groups without the label won't work. 
+
+```java
+// Your resource group ID, please change to your desired ID
+var RESOURCE_GROUP = "YourResourceGroupId"; 
+
+// Request to create the resource group
+var resourceGroupRequest = BckndResourceGroupsPostRequest.create()
+    .resourceGroupId(RESOURCE_GROUP)
+    .addLabelsItem(BckndResourceGroupLabel.create()
+        .key("ext.ai.sap.com/document-grounding")
+        .value("true")
+    );
+
+// Create resource group
+var resourceGroup = new ResourceGroupApi().create(resourceGroupRequest);
+
+System.out.println("Created Resource Group with ID: " + resourceGroup.getResourceGroupId());
+
+```
+
+[OPTION END]
+
+[OPTION BEGIN [Python SDK]]
 
 Create a resource group in SAP AI Core by defining its ID and quota, ensuring efficient resource allocation for AI workloads.
 
@@ -412,7 +449,43 @@ console.log(secret?.message)
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Java SDK]]
+
+Generic secrets securely store SharePoint credentials required for document access. Please change the values to your SharePoint credentials. 
+
+```java
+// Request to create the secret
+var secretRequest = BckndGenericSecretPostBody.create()
+    .name("canary-rg1-secret")
+    .data(Map.ofEntries(
+        Map.entry("type", "SFRUUA=="),
+        Map.entry("description", "<description of generic secret>"),
+        Map.entry("clientId", "<client id>"),
+        Map.entry("authentication", "<AUTHENTICATION>"),
+        Map.entry("tokenServiceUrl", "<token service url>"),
+        Map.entry("password", "<password>"),
+        Map.entry("proxyType", "<PROXY>"),
+        Map.entry("url", "<URL>"),
+        Map.entry("tokenServiceURLType", "<TOKEN SERVICE URL TYPE>"),
+        Map.entry("user", "<user>"),
+        Map.entry("clientSecret", "<clientSecret>"),
+        Map.entry("scope", "<SCOPE>")
+    ))
+    .addLabelsItem(BckndGenericSecretLabel.create()
+        .key("ext.ai.sap.com/document-grounding")
+        .value("true")
+    );
+
+// Create secret
+var secret = new SecretApi().create(secretRequest);
+
+System.out.println(secret.getMessage());
+
+```
+
+[OPTION END]
+
+[OPTION BEGIN [Python SDK]]
 
 Generic secrets securely store SharePoint credentials required for document access
 
@@ -456,11 +529,11 @@ secret.json()
 
 [OPTION END]
 
-### 7. Prepare knowledge base(data repository) and verification
-
-#### 7.a Using Pipeline API [Option-1]
+### 7. Prepare knowledge base (data repository) and verification
  
 [OPTION BEGIN [Bruno]]
+
+### 7.a Using Pipeline API 
 
 #### Create Pipeline
 
@@ -647,6 +720,131 @@ These steps help inspect vector collections and documents to confirm successful 
 
 [OPTION END]
 
+[OPTION BEGIN [JavaScript SDK]]
+
+we are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+
+**Note:** At present, pipeline creation is not supported in the grounding feature of Cloud SDK, as we have utilized API requests to establish the pipeline.
+
+```javascript
+
+const jsonData = {
+  type: 'MSSharePoint',
+  configuration: {
+    destination: '<generic secret name>',
+    sharePoint: {
+      site: {
+        name: '<sharepoint site name>',
+        includePaths: [
+          "/<folder name>"
+        ]
+      }
+    }
+  }
+};
+
+const headers = {
+  "Authorization": `Bearer ${token}`,  // Use your actual token
+  "Content-Type": "application/json",
+  "AI-Resource-Group": "default"  // Replace with your resource group
+};
+
+async function createPipeline() {
+  try {
+    while (true) {
+      const response = await axios.post(
+        `${AI_API_URL}/v2/lm/document-grounding/pipelines`, 
+        jsonData, 
+        { headers: headers }
+      );
+
+      if (response.status === 201) {
+        console.log('Pipeline Created:', response.data);
+        return response.data.pipelineId;
+      }
+    }
+  } catch (error) {
+    console.error('Error creating pipeline:', error.response ? error.response.data : error.message);
+  }
+}
+
+createPipeline().then(pipelineId => {
+  console.log('Pipeline ID:', pipelineId);
+});
+
+```
+![img](img/image058.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Java SDK]]
+
+We are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+
+**Note:** For this step, we are using the [document grounding module](https://sap.github.io/ai-sdk/docs/java/guides/document-grounding) of the SDK so make sure to add the dependency to your project. 
+
+```java
+// Request to create the pipeline
+var pipelineRequest = PipelinePostRequst.create()
+    .type("MSSharePoint")
+    ._configuration(PipelinePostRequstConfiguration.create()
+        .destination("<generic secret name>")
+        .sharePoint(PipelinePostRequstConfigurationSharePoint.create()
+            .site(PipelinePostRequstConfigurationSharePointSite.create()
+                .name("<sharepoint site name>")
+                .addIncludePathsItem("/<folder name>")
+            )
+        )
+    );
+
+// Create the pipeline
+var pipeline = new GroundingClient().pipelines().createPipeline(
+    RESOURCE_GROUP,
+    pipelineRequest
+);
+
+System.out.println("Created Pipeline with ID: " + pipeline.getPipelineId());
+
+```
+
+[OPTION END]
+
+[OPTION BEGIN [Python SDK]]
+
+we are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+
+**Note:** At present, pipeline creation is not supported in the grounding feature of Gen AI SDK, as we have utilized API requests to establish the pipeline.
+
+```python
+
+json_data = {
+    'type': 'MSSharePoint',
+    'configuration': {
+        'destination': '<generic secret name>',
+        'sharePoint': {
+            'site': {
+                'name': '<sharepoint site name>',
+                "includePaths": [
+          "/<folder name>"
+        ]
+            },
+        },
+    },
+}
+
+while True:
+    pipeline = requests.post(f'{AI_API_URL}/v2/lm/document-grounding/pipelines', headers=headers, json=json_data)
+    if(pipeline.status_code == 201):
+        break
+
+pipeline.json()['pipelineId']
+
+```
+
+![img](img/image063.png)
+
+[OPTION END]
+
 ### 8. Ensuring Accurate Responses with Grounding
 
 In the previous steps, we have completed the data preparation for grounding. Before initiating model inference or orchestration, ensure that there is an active orchestration deployment (**scenario ID: orchestration**). To verify the available orchestration deployments and their status, use the **get_deployment** API under the **"Deployments"** section in the **Bruno collection**. Additionally, update the **orchestration_service_url** in the environment. 
@@ -811,7 +1009,58 @@ console.log(groudingResponse);
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Java SDK]]
+
+We are configuring an AI Orchestration Pipeline using SAP AI Core. The pipeline integrates multiple AI modules to process and refine inputs efficiently. This setup enables **document grounding, LLM processing, templating, and content filtering**, ensuring accurate and safe AI-generated responses.
+
+The configuration defines a document grounding module that retrieves relevant context from a vector-based repository, a GPT-4o model for response generation, a templating module to structure responses, and Azure Content Safety filters to ensure compliance and content moderation. This orchestration streamlines AI-driven summarization while maintaining reliability and security.
+
+```java
+// Create a database filter used for the grounding configuration
+var dataBaseFilter = DocumentGroundingFilter.create()
+    .dataRepositoryType(DataRepositoryType.VECTOR)
+    .id("filter1")
+    .addDataRepositoriesItem("23c**********************5ed6")	//Replace with the value of your data repository ID
+    .searchConfig(GroundingFilterSearchConfiguration.create().maxChunkCount(10));
+
+// Create a grounding configuration with the database filter
+var groundingConfig = Grounding.create()
+    .filters(dataBaseFilter);
+
+// Create a grounding prompt which will combine the provided user message with the grounding output
+var groundingPrompt = groundingConfig.createGroundingPrompt("Is there any complaint?");
+
+// Create an input content filter 
+var inputFilter = new AzureContentFilter()
+    .hate(ALLOW_SAFE_LOW)
+    .selfHarm(ALLOW_SAFE_LOW)
+    .sexual(ALLOW_SAFE_LOW)
+    .violence(ALLOW_SAFE_LOW);
+
+// Create an output content filter 
+var outputFilter = new AzureContentFilter()
+    .hate(ALLOW_SAFE_LOW)
+    .selfHarm(ALLOW_SAFE_LOW)
+    .sexual(ALLOW_SAFE_LOW)
+    .violence(ALLOW_SAFE_LOW);
+
+// Create an orchestration module config for the model gpt-4o with grounding and filtering
+var orchestrationModuleConfig = new OrchestrationModuleConfig()
+    .withLlmConfig(OrchestrationAiModel.GPT_4O)
+    .withGrounding(groundingConfig)
+    .withInputFiltering(inputFilter)
+    .withOutputFiltering(outputFilter);
+
+// Prompt LLM with created grounding prompt and orchestration module configuration
+var response = client.chatCompletion(groundingPrompt, orchestrationModuleConfig);
+
+System.out.println(response.getContent());
+
+``` 
+
+[OPTION END]
+
+[OPTION BEGIN [Python SDK]]
 
 We are configuring an AI Orchestration Pipeline using SAP AI Core. The pipeline integrates multiple AI modules to process and refine inputs efficiently. This setup enables **document grounding, LLM processing, templating, and content filtering**, ensuring accurate and safe AI-generated responses.
 
