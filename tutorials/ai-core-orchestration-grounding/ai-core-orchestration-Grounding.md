@@ -22,7 +22,7 @@ author_profile: https://github.com/I321506
   - [How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
   - [SAP AI Core Documentation](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
 - AI Core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html).
-- An AI Core instance with a Standard Plan or Extended Plan.
+- An AI Core instance with Extended Plan.
 - Access to Microsoft SharePoint for grounding capabilities.
 
 ### 1. Create service key for AI Core instance
@@ -32,6 +32,46 @@ author_profile: https://github.com/I321506
 This step enables the foundational setup of the AI Core instance by creating a service key, which is crucial for accessing and managing the AI Core services in the development environment.
 
 •	You can follow steps in https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/enabling-service-in-cloud-foundry?locale=en-US to create an AI Core instance and service key in development environment
+
+#### Download and import Bruno collection
+
+This step prepares the workspace by importing pre-configured requests for easy interaction with AI Core services using Bruno collections.
+
+•	Download [Bruno_config.json](img/Bruno_config.json)
+
+•	Navigate to Bruno Collections and upload the .json file to import collections
+
+![img](img/image001.png)
+
+![img](img/image002.png)
+
+![img](img/image003.png)
+
+#### Set env variables
+
+Environment variables centralize configuration settings required for seamless integration between your service key and the imported collection.
+
+• Select the getToken query in the imported collection, click on **No Environment**, and configure the environment as canary-test.
+
+![img](img/image004.png)
+
+![img](img/image005.png)
+
+•	Set the values inside environment canary-test
+
+-	Populate values from the service key into the following variables:
+    - **ai_auth_url**
+    - **ai_api_url**
+    - **client_id**
+    - **client_secret**
+
+![img](img/image006.png)
+
+•	Add a resource group name at **resource_group**
+
+•	Save the configuration and set the active environment to canary-test.
+
+![img](img/image007.png)
 
 [OPTION END]
 
@@ -64,59 +104,20 @@ To interact with SAP AI Core using the [Java SDK](https://sap.github.io/ai-sdk/d
 
 [OPTION BEGIN [Python SDK]]
 
-To interact with SAP AI Core using the python Gen AI SDK, you first need to create a service key that grants secure access to your AI Core instance. Follow the step Set Up Your Environment and Configure Access in the [tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to establish your connection.
+To interact with SAP AI Core using the python Gen AI SDK, you first need to create a service key that grants secure access to your AI Core instance. 
+
+•  Configure proxy modules by setting up environment variables for AI Core credentials.
+
+•  Replace placeholder values in ~/.aicore/config.json with AI Core service keys from BTP.
+
+•  Optionally, set the AICORE_HOME environment variable to override the default config path.
+
+
+![img](img/image077.png)
 
 [OPTION END]
 
-### 2. Download and import Bruno collection
-
-[OPTION BEGIN [Bruno]]
-
-This step prepares the workspace by importing pre-configured requests for easy interaction with AI Core services using Bruno collections.
-
-•	Download [Bruno_config.json](img/Bruno_config.json)
-
-•	Navigate to Bruno Collections and upload the .json file to import collections
-
-![img](img/image001.png)
-
-![img](img/image002.png)
-
-![img](img/image003.png)
-
-[OPTION END]
-
-### 3. Set env variables
-
-[OPTION BEGIN [Bruno]]
-
-Environment variables centralize configuration settings required for seamless integration between your service key and the imported collection.
-
-• Select the getToken query in the imported collection, click on **No Environment**, and configure the environment as canary-test.
-
-![img](img/image004.png)
-
-![img](img/image005.png)
-
-•	Set the values inside environment canary-test
-
--	Populate values from the service key into the following variables:
-    - **ai_auth_url**
-    - **ai_api_url**
-    - **client_id**
-    - **client_secret**
-
-![img](img/image006.png)
-
-•	Add a resource group name at **resource_group**
-
-•	Save the configuration and set the active environment to canary-test.
-
-![img](img/image007.png)
-
-[OPTION END]
-
-### 4. Generate token
+### 2. Generate token
 
 [OPTION BEGIN [Bruno]]
 
@@ -204,7 +205,7 @@ print(token)
 
 [OPTION END]
 
-### 5. Create resource group 
+### 3. Create resource group 
 
 [OPTION BEGIN [Bruno]]
 
@@ -356,9 +357,11 @@ resource.json()
 
 [OPTION END]
 
-### 6. Create generic secret
+### 4. Create generic secret
 
 [OPTION BEGIN [Bruno]]
+
+#### **Generic secret for sharepoint (option-1)**
 
 Generic secrets securely store SharePoint credentials required for document access
 
@@ -377,6 +380,49 @@ Generic secrets securely store SharePoint credentials required for document acce
   3.	Validate the SharePoint access with the Technical User
 
 •	All values needs to be provided as base 64 encoded values
+
+#### **Generic secret for AWS S3 (option-2)**
+
+Generic secrets securely store AWS S3 credentials required for document access
+
+•	Expand **03_generic_secret** and select create request
+
+Use the below payload to create a secret for AWS S3 with NoAuthentication as authentication type.
+
+```CODE
+
+{
+  "name": "<generic secret name>",                        // Name of the generic secret to be created
+  "data": {
+    "url": "<url>",                                       // Base64 encoded value of url
+    "authentication": "Tm9BdXRoZW50aWNhdGlvbg=",          // Base64 encoded value for NoAuthentication
+    "description": "<description of generic secret>",     // Base64 encoded description of the secret
+    "access_key_id": "<access key id>",                   // Base64 encoded value of access key id
+    "bucket": "<bucket>",                                 // Base64 encoded value of bucket name
+    "host": "<host>",                                     // Base64 encoded value of host
+    "region": "<region>",                                 // Base64 encoded value of region
+    "secret_access_key": "<secret access key>",           // Base64 encoded value of secret access key
+    "username": "<username>",                             // Base64 encoded value of username
+    "type": "SFRUUA==",                                   // [Optional] Base64 encoded value for HTTP
+    "proxyType": "SW50ZXJuZXQ=",                          // [Optional] Base64 encoded value for Internet
+  },
+  "labels": [
+    {
+      "key": "ext.ai.sap.com/document-grounding",         // Label for Document Grounding feature
+      "value": "true"
+    },
+    {
+      "key": "ext.ai.sap.com/documentRepositoryType",     // Label for Document Repository Type
+      "value": "S3"
+    }
+  ]
+}
+
+```
+
+•Ensure that all values in the data dictionary are Base64-encoded as per AWS S3 credential requirements.
+
+![img](img/image072.png)
 
 [OPTION END]
 
@@ -542,7 +588,7 @@ System.out.println(secret.getMessage());
 
 Generic secrets securely store SharePoint credentials required for document access
 
-```python
+```Python
 
 headers = {
     'AI-Resource-Group': resource.json()['resourceGroupId'],
@@ -584,17 +630,19 @@ secret.json()
 
 [OPTION END]
 
-### 7. Prepare knowledge base (data repository) and verification
- 
+### 5. Prepare knowledge base (data repository) and verification
+
 [OPTION BEGIN [Bruno]]
 
-### 7.a Using Pipeline API 
-
+#### 5.a Using Pipeline API [Option-1]
+ 
 #### Create Pipeline
 
-- Pipelines define the process for grounding and retrieving content from SharePoint repositories.
+- Pipelines define the process for grounding and retrieving content from SharePoint and AWS S3 repositories.
 
-In this use case, we have added facility management emails as grounding documents, uploading them to the designated SharePoint folder. I’m attaching the sample email folder [sample_emails] (img/sample_emails) used in this scenario. For practice, you can also use these emails if needed.
+In this use case, we have added facility management emails as grounding documents, uploading them to the designated SharePoint folder. I’m attaching the sample email folder [sample_emails.zip] (img/sample_emails.zip) used in this scenario. For practice, you can also use these emails if needed.
+
+#### **Pipeline for MSSharePoint (Option-1)**
 
 •	**Expand 04_pipeline** and select **create_pipeline** request
 
@@ -605,6 +653,67 @@ In this use case, we have added facility management emails as grounding document
 •	Replace value **folder_name** with the name of the folder from which the documents have to be taken.Multiple folder names can be specified.
 
 ![img](img/image014.png)
+
+#### **Pipeline for AWS S3 (Option-2)**
+
+**Download and install AWS CLI from the AWS CLI official page.**
+
+Open Command Prompt and configure AWS CLI with your credentials:
+
+Enter your Access Key, Secret Key, Region, and Output Format when prompted.
+
+```COPY
+
+aws configure
+
+```
+![img](img/image074.png)
+
+**Upload a Grounding Document to AWS S3**
+
+To upload a grounding document to an S3 bucket, use:
+
+```CODE
+
+aws s3 cp <local-file-path> s3://<bucket-name>/<folder-name>/
+
+```
+
+**Verify File Upload**
+
+To check if the file is uploaded successfully, list the contents of the folder:
+
+```CODE
+
+aws s3 ls s3://<bucket-name>/<folder-name>/
+
+```
+![img](img/image076.png)
+
+**Create an AWS S3 Pipeline**
+
+**Expand 04_pipeline** and select **create_pipeline** request
+
+Use the below payload to create a pipeline for AWS S3.
+
+```CODE 
+
+{
+  "type": "S3",
+  "configuration": {
+    "destination": "<generic secret name>"  // Name of the generic secret created for S3
+  },
+  "metadata": {                             // [Optional]
+    "destination": "<generic secret name>", // Name of the generic secret created for S3 MetaData Server
+  }
+}
+
+```
+•	Replace value **generic_secret_name** with generic secret name created in step 8.
+
+**Note:**'metadata' is an optional field which takes the destination name created for the s3 metadata server.
+
+![img](img/image069.png)
 
 #### Get All Pipelines
 
@@ -626,7 +735,7 @@ This request checks the current status of a specific pipeline, such as whether i
  
 Once the pipeline is successfully created, documents uploaded in SharePoint are converted into vectors via APIs. The conversion process can be validated upon successful pipeline execution.
 
-### 7.b Using Vector API
+#### 5.b Using Vector API [Option-2]
 
 #### Create collection
 
@@ -813,7 +922,7 @@ pipeline.json()['pipelineId']
 
 [OPTION END]
 
-### 8. Ensuring Accurate Responses with Grounding
+### 6. Ensuring Accurate Responses with Grounding
 
 In the previous steps, we have completed the data preparation for grounding. Before initiating model inference or orchestration, ensure that there is an active orchestration deployment (**scenario ID: orchestration**). To verify the available orchestration deployments and their status, use the **get_deployment** API under the **"Deployments"** section in the **Bruno collection**. Additionally, update the **orchestration_service_url** in the environment. 
 
@@ -1042,99 +1151,78 @@ System.out.println(response.getContent());
 
 [OPTION END]
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [ Python SDK]]
 
 We are configuring an AI Orchestration Pipeline using SAP AI Core. The pipeline integrates multiple AI modules to process and refine inputs efficiently. This setup enables **document grounding, LLM processing, templating, and content filtering**, ensuring accurate and safe AI-generated responses.
 
 The configuration defines a document grounding module that retrieves relevant context from a vector-based repository, a GPT-4o model for response generation, a templating module to structure responses, and Azure Content Safety filters to ensure compliance and content moderation. This orchestration streamlines AI-driven summarization while maintaining reliability and security.
 
-```python
+``` python
 
-#JSON from Docuemnt grounding API
-json_data = {
-  "orchestration_config": {
-    "module_configurations": {
-      "grounding_module_config": {
-        "type": "document_grounding_service",
-        "config": {
-          "filters": [
-            {
-              "id": "filter1",
-              "data_repositories": [
-                "23c9*********************55ed6"   // Replace the value with your data repository ID
-              ],
-              "search_config": {
-                "max_chunk_count": 10
-              },
-              "data_repository_type": "vector"
-            }
-          ],
-          "input_params": [
-            "groundingRequest"
-          ],
-          "output_param": "groundingOutput"
-        }
-      },
-      "llm_module_config": {
-        "model_name": "gpt-4o",
-        "model_params": {},
-        "model_version": "latest"
-      },
-      "templating_module_config": {
-        "template": [
-          {
-            "role": "user",
-            "content": "You are a precise and reliable assistant. Using only the provided context, generate a concise and accurate summary relevant to the request. Do not infer or generate information beyond the given context. If the requested information is not available in the context, clearly state that. Request: {{ ?groundingRequest }} Context: {{ ?groundingOutput }}"
-          }
-        ],
-        "defaults": {}
-      },
-      "filtering_module_config": {
-        "input": {
-          "filters": [
-            {
-              "type": "azure_content_safety",
-              "config": {
-                "Hate": 2,
-                "SelfHarm": 2,
-                "Sexual": 2,
-                "Violence": 2
-              }
-            }
-          ]
-        },
-        "output": {
-          "filters": [
-            {
-              "type": "azure_content_safety",
-              "config": {
-                "Hate": 2,
-                "SelfHarm": 2,
-                "Sexual": 2,
-                "Violence": 2
-              }
-            }
-          ]
-        }
-      }
+# Import libraries
+from gen_ai_hub.proxy import get_proxy_client
+from gen_ai_hub.orchestration.models.config import OrchestrationConfig
+from gen_ai_hub.orchestration.models.document_grounding import (GroundingModule, DocumentGrounding, GroundingFilterSearch,DataRepositoryType, DocumentGroundingFilter)
+from gen_ai_hub.orchestration.models.llm import LLM
+from gen_ai_hub.orchestration.models.message import SystemMessage, UserMessage
+from gen_ai_hub.orchestration.models.template import Template, TemplateValue
+from gen_ai_hub.orchestration.service import OrchestrationService
+
+orchestration_service_url = "https://api.**********.hana.ondemand.com/v2/inference/deployments/d6**********98"
+
+# Set up the Orchestration Service
+aicore_client = get_proxy_client().ai_core_client
+orchestration_service = OrchestrationService(api_url=orchestration_service_url)
+llm = LLM(
+    name="gpt-4o",
+    parameters={
+        'temperature': 0.0,
     }
-  },
-  "input_params": {
-    "groundingRequest": "Is there any complaint?"
-  }
-}
+)
+template = Template(
+            messages=[
+                SystemMessage("""Facility Solutions Company provides services to luxury residential complexes, apartments,
+                individual homes, and commercial properties such as office buildings, retail spaces, industrial facilities, and educational institutions.
+                Customers are encouraged to reach out with maintenance requests, service deficiencies, follow-ups, or any issues they need by email.
+                """),
+                UserMessage("""You are a helpful assistant for any queries for answering questions.
+                Answer the request by providing relevant answers that fit to the request.
+                Request: {{ ?user_query }}
+                Context:{{ ?grounding_response }}
+                """),
+            ]
+        )
 
-deploymentUrl = "https://api.ai.prodeuonly.***************************************fb3"
-orchestration = requests.post(f'{deploymentUrl}/completion', headers=headers, json=json_data)       #call the orchestration completion api
+# Set up Document Grounding
+filters = [DocumentGroundingFilter(id="vector",
+                                   data_repositories=["69*************f9"], # Replace with data repository ID
+                                   search_config=GroundingFilterSearch(max_chunk_count=15),
+                                   data_repository_type=DataRepositoryType.VECTOR.value
+                                   )
+]
 
-# Get the response JSON
-if orchestration.status_code == 200:
-    result = orchestration.json()  # Parse JSON response
-    print(result)
-else:
-    print(f"Error: {orchestration.status_code}, {orchestration.text}")  
+grounding_config = GroundingModule(
+            type="document_grounding_service",
+            config=DocumentGrounding(input_params=["user_query"], output_param="grounding_response", filters=filters)
+        )
+
+config = OrchestrationConfig(
+    template=template,
+    llm=llm,
+    grounding=grounding_config
+)
+
+response = orchestration_service.run(config=config,
+                            template_values=[
+                                TemplateValue("user_query", "Is there any complaint?"),
+                            ])
+print(response.orchestration_result.choices[0].message.content)
 
 ```
+**Sample Response 1:**
+![img](img/image070.png)
+
+**Sample Response 2:**
 
 ![img](img/image064.png)
 
@@ -1144,7 +1232,7 @@ else:
 
 ### Conclusion
 
-**Adding Grounding significantly enhances the model's ability to provide Accurate and Context-specific responses. Without Grounding, the model generates generic replies, while with grounding, it retrieves precise information from the uploaded document. Screenshots showcasing both responses are provided for comparison.**
+Adding Grounding significantly enhances the model's ability to provide Accurate and Context-specific responses. Without Grounding, the model generates generic replies, while with grounding, it retrieves precise information from the uploaded document. Screenshots showcasing both responses are provided for comparison.
 
 
 
