@@ -3,8 +3,8 @@ author_name: Hoang Vu
 author_profile: https://github.com/sap-hoangvu
 keywords: signavio
 auto_validation: true
-time: 20
-tags: [tutorial>beginner, software-product-function>signavio-process-intelligence]
+time: 60
+tags: [tutorial>beginner, software-product>sap-signavio-process-intelligence, software-product>sap-business-application-studio, software-product>sap-build-code, software-product>sap-build, topic>odata, topic>api, topic>machine-learning, topic>python] 
 primary_tag: software-product>sap-signavio-process-intelligence
 parser: v2
 ---
@@ -40,42 +40,134 @@ An overview of the tutorial steps performed can be found below.
 <!-- border; size:1200px -->
 ![Overview](overview.png)
 
-### Activate OData API and Ingestion API in SAP Signavio Process Intelligence
+### Activate Ingestion API in SAP Signavio Process Intelligence
 
 1. Firstly we need to activate the **OData API** and **Ingestion API** that allows us to retrieve and push data in and out of the system. We start with activating the Ingestion API.
-2. This step can be easily performed in the system and should only take a few clicks. More information on how to activate the ingestion API and retrieve URL endpoint and API token can be found in the official [Signavio documentation](https://help.sap.com/docs/signavio-process-intelligence/user-guide/source-data-setup). 
-    
-    <!-- border; size:1200px -->
-    ![Ingestion API](API_token.png)
+2. Logon to SAP Signavio where you will enter the **SAP Signavio Collaboration Hub**. On the top right corner, click on the dots-icon and select **Process Intelligence**.
 
-3. Then we activate an **OData API** in SAP Signavio Process Intelligence that allows us to extract data from the system. We can follow [this blog post here](https://community.sap.com/t5/technology-blogs-by-sap/report-on-sap-signavio-process-intelligence-data-using-the-new-odata-api/ba-p/13780759) on **how to activate a OData API** in SAP Signavio Process Intelligence. 
+    <!-- border; size:1200px -->
+    ![SAP Signavio Collaboration Hub](hub.png)
+
+3. Once you have enter **SAP Signavio Process Intelligence**, you can click on **Data Integration** and create a new **Source Data**. 
+
+    <!-- border; size:1200px -->
+    ![SAP Signavio Process Intelligence](pintprocess.png)
+
+4. You will find a list of all created source data in your system. As we want to create a new one, click on the create button on the right side.
+
+    <!-- border; size:1200px -->
+    ![Create source data](source.png)
+
+5. Here we need to provide a respective name and select as Connection Type **Ingestion API**. As I want to consume this API from SAP Build Code, I name the respective source data **SAP Build Code**.
+
+    <!-- border; size:1200px -->
+    ![Source Data configuration](createsourcedata.png)
+
+6. Once we have created the Source Data, we can view the respective Connection that was automatically created with it. To view this information, we click on **Connection** on the top right corner.
+
+    <!-- border; size:1200px -->
+    ![Source Data and Connection](sourcedatatables.png)
+
+7. You can view the details of the Connection that is linked to the Source Data. By clicking on it, you can view the details of the Connection.
+
+    <!-- border; size:1200px -->
+    ![Connection details](sourcedataconnection.png)
+
+8. Here you can retrieve the details of the Connection itself. This includes the API endpoint that we will need to insert as **URL** from SAP Build Code and also the authentication mechanism using the **token**. Note down both infos as you will be using these in subsequent steps.
+
+    <!-- border; size:1200px -->
+    ![Credentials](credentials.png)
+
+9.  You have successfully activated the **Ingestion API**. More information on how to activate the ingestion API and retrieve URL endpoint and API token can be found in the official [Signavio documentation](https://help.sap.com/docs/signavio-process-intelligence/user-guide/source-data-setup). 
+
+### Activate OData API in SAP Signavio Process Intelligence
+
+1. Then we activate an **OData API** in SAP Signavio Process Intelligence that allows us to extract data from the system. 
+2. For that we search for the process where we want to expose data for via OData API.
+
+    <!-- border; size:1200px -->
+    ![SAP Signavio Process Intelligence - Process overview](process.png)
+
+3. Within the process, we need to enter the configuration area via the settings-icon on the top right corner.
+
+    <!-- border; size:1200px -->
+    ![SAP Signavio Process Intelligence - Process overview](processtab.png)
+
+4. Once we reach the configuration area, navigate to the tab **OData views**.
+
+    <!-- border; size:1200px -->
+    ![SAP Signavio Process Intelligence - Process overview](processsettings.png)
+
+5. Here we can create an OData view, that details out which data is getting exposed of the event log within the process.
 
     <!-- border; size:1200px -->
     ![Define data for API exposure](OData_sql.png)
 
-4. We create an API token and a respective OData view that defines which data from the event log we want to expose.
+6.  We create an API token and a respective OData view that defines which data from the event log we want to expose.  
 
     <!-- border; size:1200px -->
     ![OData view](OData_view.png)
 
 
-4. When we call the API endpoint using Postman, we can see the data and how the payload is structured. We see that there is a node called **value** and underneath it multiple records of the actual data of the event log.
+7. More information on the activation of the OData API can be found in [this blog post](https://community.sap.com/t5/technology-blogs-by-sap/report-on-sap-signavio-process-intelligence-data-using-the-new-odata-api/ba-p/13780759).
+
+8. When we call the API endpoint using Postman, we can see the data and how the payload is structured. We see that there is a node called **value** and underneath it multiple records of the actual data of the event log.
 
     <!-- border; size:1200px -->
     ![Postman response](Postman_response.png) 
 
-### Read event log data via OData API in SAP Build Code
+### Setup Python and Jupyter in SAP Build Code
 
-1. Before we can read data from the OData API, we need to establish a SAP Build Code environment and install the Python and Jupyter capabilities on it. We can follow [this blog post here](https://community.sap.com/t5/technology-blogs-by-sap/running-a-jupyter-notebook-in-sap-business-application-studio/ba-p/13565630) on **how to activate Python and Jupyter in SAP Build Code - Business Application Studio**. Once it is properly setup, you can run your first simple print command to check whether everything works correctly.
+1. Before we can read data from the OData API, we need to establish a SAP Build Code environment and install the Python and Jupyter capabilities on it.
+2. Log on to **SAP Build Code - Business Application Studio** and create a new dev space.
 
     <!-- border; size:1200px -->
-    ![Successful initial test](print.png)
+    ![Business Application Studio](bas.png) 
 
-2. Now instead of using Postman, we can also use Python in SAP Build Code to call our OData API. For that we can follow [this blog post here](https://community.sap.com/t5/technology-blogs-by-members/consuming-odata-service-based-on-odp-extractor-in-python/ba-p/13476294) on **how to call an OData API in Python**.
+3. Give the dev space a name, in this case I used **Signavio**, and then click on **Create Dev Space**.
 
-3. We then need to adapt the code to our API, that means changing the URL, providing the API token and also selecting the specific columns that we want to retrieve. **A sample python code** of how to call the OData API can be found below. 
-4. Once we receive the JSON response, we need to loop through the response and select the data we are interested in. In this example we are interested in `Case_ID`, `Country`, `Order_Amount` and `Product_Configuration`. 
-5. This basically filters the payload for only these fields and then saves it into a `csv` attachment. We also added a print command at the end so we can see what the actual data looks like that is being retrieved.
+    <!-- border; size:1200px -->
+    ![Create Dev Space](createdev.png) 
+
+4. Once the dev space has successfully deployed, it will show up as **Running** and you can enter it by clicking on it.
+
+    <!-- border; size:1200px -->
+    ![Enter Dev Space](basrunning.png) 
+
+5. Once you enter Business Application Studio, run following command to create a new terminal in the search bar in the top middle area : `>create new terminal`. Then click on the create new terminal submenu.
+
+    <!-- border; size:1200px -->
+    ![Create new terminal](terminal.png)
+
+6. Here we now need to update the pip package. For that, run the following command: `pip3 install --upgrade pip`
+
+    <!-- border; size:1200px -->
+    ![Update pip package](command.png)
+
+7. On the left side, search for **Extensions** and install the packages **Python** and **Jupyter**.
+   
+    <!-- border; size:1200px -->
+    ![Install Python and Jupyter](extensions.png)
+
+8. Once Python and Jupyter are installed, run the command: `>jupyter` and create a new Jupyter notebook.
+
+    <!-- border; size:1200px -->
+    ![Create new Jupyter notebook](searchjupyter.png)
+
+9. Now you need to initiate your environment using the prompts from the top search bar relating your pip package. A popup on the bottom right corner should appear highlighting you the progress of this initiation. Once it is complete run a simple command to test whether your environment works properly. For more information on these setup steps, you can follow [this blog post](https://community.sap.com/t5/technology-blogs-by-sap/running-a-jupyter-notebook-in-sap-business-application-studio/ba-p/13565630).
+
+    <!-- border; size:1200px -->
+    ![Initiate pip environment and run first test command](firstcommand.png)
+
+10. With that your Python and Jupyter setup in SAP Build Code - Business Application Studio is complete and you can now connect to SAP Signavio Process Intelligence.
+
+### Read event log data via OData API in SAP Build Code
+
+1. Now instead of using Postman, we can also use Python in SAP Build Code to call our OData API. For that we can follow [this blog post](https://community.sap.com/t5/technology-blogs-by-members/consuming-odata-service-based-on-odp-extractor-in-python/ba-p/13476294) on **how to call an OData API in Python**.
+
+2. We then need to adapt the code to our API, that means changing the URL, providing the API token and also selecting the specific columns that we want to retrieve. **A sample python code** of how to call the OData API can be found below. 
+3. Once we receive the JSON response, we need to loop through the response and select the data we are interested in. In this example we are interested in `Case_ID`, `Country`, `Order_Amount` and `Product_Configuration`. 
+4. This basically filters the payload for only these fields and then saves it into a `csv` attachment. We also added a print command at the end so we can see what the actual data looks like that is being retrieved.
 
     ```Python
     import requests 
