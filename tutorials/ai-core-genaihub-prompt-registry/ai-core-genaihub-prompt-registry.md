@@ -4,7 +4,7 @@ auto_validation: true
 time: 45
 primary_tag: software-product>sap-business-technology-platform
 tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
-author_name: Smita Naik
+author_name: Smita Naik,Dhrubajyoti Paul
 author_profile: https://github.com/I321506
 ---
 
