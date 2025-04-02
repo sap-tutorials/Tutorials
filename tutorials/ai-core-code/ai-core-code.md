@@ -152,10 +152,13 @@ Copy and edit the following command to build your docker image. The command foll
 ```BASH
 docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
 ```
+**If you have machine with Apple Silicon M1/M2/M3 Chip, use --platform linux/amd64**
+
+```BASH
+docker build --platform linux/amd64 -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
+```
 
 > **INFORMATION** In the command, `-t` indicates that there is a tag name, followed by a colon and version. The name is your descriptive string, and the version can be in any format, here `house-price` and `01`, respectively. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
-
-> **INFORMATION** The platform information relates to your operating system, for example `linux/amd64`.
 
 The result of this command should be:
 
