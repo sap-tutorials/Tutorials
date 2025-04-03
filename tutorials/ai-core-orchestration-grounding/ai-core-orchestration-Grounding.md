@@ -22,7 +22,7 @@ author_profile: https://github.com/I321506
   - [How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
   - [SAP AI Core Documentation](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
 - AI Core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html).
-- An AI Core instance with a Standard Plan or Extended Plan.
+- An AI Core instance with an Extended Plan.
 - Access to Microsoft SharePoint for grounding capabilities.
 
 ### 1. Create service key for AI Core instance
@@ -569,96 +569,9 @@ This request checks the current status of a specific pipeline, such as whether i
 
 ![img](img/image033.png)
  
-Once the pipeline is successfully created, documents uploaded in SharePoint are converted into vectors via APIs. The conversion process can be validated upon successful pipeline execution.
+Once the pipeline is successfully created, documents uploaded in SharePoint are converted into vectors via APIs. The conversion process can be validated upon successful pipeline execution. 
 
-[OPTION END]
-
-[OPTION BEGIN [JavaScript SDK]]
-
-In this step, we will create a document-grounding pipeline in SAP AI Core using the `@sap-ai-sdk/document-grounding` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/document-grounding). 
-
-• To start, install the dependency to your project.
-
-```
-npm install @sap-ai-sdk/document-grounding
-```
-
-The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
-
-
-```javascript
-
-import { PipelinesApi } from '@sap-ai-sdk/document-grounding';
-
-async function createPipeline() {
-    try {
-        const response = await PipelinesApi.createPipeline({
-            type: 'MSSharePoint',
-            configuration: {
-                destination: '<generic secret name>',
-                sharePoint: {
-                    site: {
-                        name: '<sharepoint site name>',
-                        includePaths: [
-                        '/<folder name>'
-                        ]
-                    }
-                }
-            }
-        },
-        { 'AI-Resource-Group': RESOURCE_GROUP }).execute();
-        return response;
-    } catch (error: any) {
-        console.error('Error while creating Resource Group:', error.stack);
-    }
-}
-
-const pipeline = await createPipeline();
-console.log('Created Pipeline with ID:', pipeline?.pipelineId);
-
-```
-
-[OPTION END]
-
-[OPTION BEGIN [Gen AI SDK]]
-
-we are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
-
-**Note:** At present, pipeline creation is not supported in the grounding feature of Gen AI SDK, as we have utilized API requests to establish the pipeline.
-
-```python
-
-json_data = {
-    'type': 'MSSharePoint',
-    'configuration': {
-        'destination': '<generic secret name>',
-        'sharePoint': {
-            'site': {
-                'name': '<sharepoint site name>',
-                "includePaths": [
-          "/<folder name>"
-        ]
-            },
-        },
-    },
-}
-
-while True:
-    pipeline = requests.post(f'{AI_API_URL}/v2/lm/document-grounding/pipelines', headers=headers, json=json_data)
-    if(pipeline.status_code == 201):
-        break
-
-pipeline.json()['pipelineId']
-
-```
-
-![img](img/image063.png)
-
-[OPTION END]
-
-#### 7.b Using Vector API [Option-2]
-
-[OPTION BEGIN [Bruno]]
+### 7.b Using Vector API
 
 #### Create collection
 
@@ -721,6 +634,53 @@ These steps help inspect vector collections and documents to confirm successful 
 [OPTION END]
 
 [OPTION BEGIN [JavaScript SDK]]
+
+### 7.a Using Pipeline API 
+
+In this step, we will create a document-grounding pipeline in SAP AI Core using the `@sap-ai-sdk/document-grounding` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/document-grounding). 
+
+• To start, install the dependency to your project.
+
+```
+npm install @sap-ai-sdk/document-grounding
+```
+
+The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+
+
+```javascript
+
+import { PipelinesApi } from '@sap-ai-sdk/document-grounding';
+
+async function createPipeline() {
+    try {
+        const response = await PipelinesApi.createPipeline({
+            type: 'MSSharePoint',
+            configuration: {
+                destination: '<generic secret name>',
+                sharePoint: {
+                    site: {
+                        name: '<sharepoint site name>',
+                        includePaths: [
+                        '/<folder name>'
+                        ]
+                    }
+                }
+            }
+        },
+        { 'AI-Resource-Group': RESOURCE_GROUP }).execute();
+        return response;
+    } catch (error: any) {
+        console.error('Error while creating Resource Group:', error.stack);
+    }
+}
+
+const pipeline = await createPipeline();
+console.log('Created Pipeline with ID:', pipeline?.pipelineId);
+
+```
+
+### 7.b Using Vector API 
 
 we are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
 
