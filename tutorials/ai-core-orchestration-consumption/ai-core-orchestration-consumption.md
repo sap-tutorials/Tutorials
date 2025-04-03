@@ -21,7 +21,7 @@ author_profile: https://github.com/I321506
 - [SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
 - If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 - Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
-- Ai core Instance with Standard Plan or Extended Plan
+- Ai core Instance with an Extended Plan
 
 ### Set Up Your Environment and Configure Access
 
