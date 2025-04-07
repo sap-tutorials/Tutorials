@@ -35,11 +35,11 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
 
     ![instance details](instance-details.png)
 
-    Click on the memory, compute, network, or storage cards to open the Usage Monitor app.  Below notice that the compute is spiking at a set frequency which is every morning at 7 am.
+    Click on the memory, compute, network, or storage cards to open the Usage Monitor app.  Below, notice that the compute is spiking at a set frequency which is every morning at 7 am.
     
     ![Usage Monitor](usage_monitor.png)
 
-2. The following examples are used for simulation purposes and can create a memory and CPU spike that will be moved to an ECN node.  The size of the spike can be adjusted by increasing or decreasing the number of rows in the table. 
+2. The following examples are used for simulation purposes and can create a memory and CPU spike that will be moved to an ECN node.  They are intended to be run on a test or trial instance and not a production instance.  The size of the spike can be adjusted by increasing or decreasing the number of rows in the table. 
 
     ```SQL
     CREATE USER USER4 PASSWORD "Password4"  NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
@@ -73,6 +73,7 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
     END;
 
     CALL POPULATE_MYTABLE(2000);
+
     --9 seconds and 32 seconds of CPU time each call
     CALL CPU_SPIKE();
     CALL CPU_SPIKE();
@@ -92,6 +93,7 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
     END;
 
     CALL POPULATE_MYTABLE(750);
+
     --8 seconds, 30 sec CPU time, 9 GB of memory each call
     CALL CPU_AND_MEMORY_SPIKE();
     CALL CPU_AND_MEMORY_SPIKE();
@@ -101,16 +103,22 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
     CALL CPU_AND_MEMORY_SPIKE();
     ```
 
-    After calling the stored procedure CPU_SPIKE and CPU_AND_MEMORY_SPIKE, you can see that the CPU and memory usage has spiked, and you may also see an alert.
+    After calling the stored procedure CPU_SPIKE and CPU_AND_MEMORY_SPIKE, you can see that the CPU and memory usage has spiked, and you may also see an alert.  Note that the metrics shown are polled once a minute, so the procedures are run multiple times.
 
     ![spike shown](usage_monitor_2.png)
+
+    The following SQL statement can also be used if expensive statement tracing is enabled.
+
+    ```SQL
+    SELECT START_TIME, STATEMENT_STRING, DURATION_MICROSEC, MEMORY_SIZE, CPU_TIME, DB_USER FROM M_EXPENSIVE_STATEMENTS;
+    ```
 
 ### Create an ECN
 An ECN can be created in multiple ways.  Further details on the options and limitations when creating an ECN node can be found at [ECN Scope and Limitations](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/ecn-scope-and-limitations).
 
 1. Examine the options for creating an ECN.  Create an ECN using one of the methods shown below.
 
-    * An ECN can be added using SAP HANA Cloud Central.
+    * An ECN can be added using the manage configuration wizard in SAP HANA Cloud Central.
     
         ![Add ECN](add-ecn.png)
 
@@ -144,7 +152,7 @@ An ECN can be created in multiple ways.  Further details on the options and limi
             }
             ```
 
-    * Create the ECN using the BTP CLI or CF CLI.  Further details on using the the CLI's can be found at [Executing SAP HANA Cloud Tasks from the Command Line](hana-cloud-automation-cli).  An example using the BTP CLI is shown below.
+    * Create the ECN using the BTP CLI or CF CLI.  Further details on using the CLI's can be found at [Executing SAP HANA Cloud Tasks from the Command Line](hana-cloud-automation-cli).  An example using the BTP CLI is shown below.
 
             ```Shell
             btp login --sso
@@ -220,6 +228,7 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
         SET 'APPLICATIONCOMPONENT' = 'ECN_APP';
         SELECT * FROM M_SESSION_CONTEXT WHERE KEY = 'APPLICATIONCOMPONENT';
         --UNSET 'APPLICATIONCOMPONENT';
+        --SELECT * FROM M_CONNECTIONS where CLIENT_APPLICATION != '';
         ```
 
         Additional details for these values can be found at  [CREATE WORKLOAD MAPPING](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-workload-mapping-statement-workload-management).
@@ -243,7 +252,6 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
 2. Run the query again using the ECN and verify that the query was run on the ECN node.
 
-
     ```SQL
     CALL CPU_AND_MEMORY_SPIKE();
 
@@ -256,7 +264,13 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
     ![ECN verification](ecn_ex1.png)
 
-    Notice that the last time the query was run, it was executed on the ECN.  Notice also that the table location is not on the ECN.
+    Notice that the last time the query was run, it was executed on the ECN as the HOST value ends in ecn1  .  Notice also that the table location is not on the ECN.
+
+    It is also possible to direct a query to a workload class through a hint as shown below.
+
+    ```SQL
+    CALL CPU_AND_MEMORY_SPIKE() WITH HINT(WORKLOAD_CLASS("WLC1"));
+    ```
 
     It may also be of interest to compare the execution time between this run and after the table is replicated onto the ECN node in a subsequent step.
 
@@ -393,6 +407,309 @@ The following steps demonstrate an approach to automating the creation, running 
     ```
 
     Instructions on using hdbsql and setting the user key can be found at [Executing SQL Statements from a shell](hana-cloud-automation-cli).
+
+### Use SAP Automation Pilot with an ECN
+The SAP Automation Pilot can be used to perform and schedule operations on services running in the SAP BTP.  The tutorial [Automating SAP HANA Cloud Tasks with the SAP Automation Pilot Service](https://developers.sap.com/tutorials/hana-cloud-automation-pilot.html) can be used to started with the SAP Automation Pilot.
+
+1. Import the catalog below into the SAP Automation Pilot.
+
+    ![import catalog](import.png)
+
+    ```JSON
+    {
+        "id": "CFECN-<<<TENANT_ID>>>",
+        "technicalName": "CFECN",
+        "name": "CF ECN",
+        "description": "Example commands for creating and deleting an SAP HANA Cloud Elastic Compute Node (ECN)",
+        "owner": "<<<TENANT_ID>>>",
+        "inputs": [
+            {
+            "id": "CFECN-<<<TENANT_ID>>>:HCInstance:1",
+            "name": "HCInstance",
+            "description": "Required parameters to connect to an SAP HANA Cloud database instance in the Cloud Foundry runtime environment.",
+            "catalog": "CFECN-<<<TENANT_ID>>>",
+            "owner": null,
+            "version": 1,
+            "keys": {
+                "db-user": {
+                "type": "string",
+                "sensitive": false,
+                "description": null
+                },
+                "cf-org-id": {
+                "type": "string",
+                "sensitive": false,
+                "description": "CF Org name or Org ID from subaccount overview page"
+                },
+                "param-delete": {
+                "type": "object",
+                "sensitive": false,
+                "description": "JSON string removing all ECN nodes"
+                },
+                "enable-workload-class": {
+                "type": "string",
+                "sensitive": false,
+                "description": null
+                },
+                "db-password": {
+                "type": "string",
+                "sensitive": true,
+                "description": null
+                },
+                "cf-region": {
+                "type": "string",
+                "sensitive": false,
+                "description": "Examine CF API Endpoint in the subaccount overview page.  Example values: cf-us10, cf-us10-001"
+                },
+                "password": {
+                "type": "string",
+                "sensitive": true,
+                "description": "BTP password for a user without 2 factor authentication"
+                },
+                "port": {
+                "type": "string",
+                "sensitive": false,
+                "description": null
+                },
+                "instance-name": {
+                "type": "string",
+                "sensitive": false,
+                "description": "Instance name of the SAP HANA Cloud database."
+                },
+                "disable-workload-class": {
+                "type": "string",
+                "sensitive": false,
+                "description": null
+                },
+                "host": {
+                "type": "string",
+                "sensitive": false,
+                "description": "HANA database host value.  Example value: 8cb535f6-dca6-4075-a110-afa10f2823f1.hana.prod-ca10.hanacloud.ondemand.com"
+                },
+                "param-create": {
+                "type": "object",
+                "sensitive": false,
+                "description": "JSON string describing the ECN node to create"
+                },
+                "user": {
+                "type": "string",
+                "sensitive": false,
+                "description": "BTP user"
+                },
+                "cf-space": {
+                "type": "string",
+                "sensitive": false,
+                "description": "Cloud Foundry space.  Value can be seen in the cloud foundry spaces page.  Example value: dev"
+                }
+            },
+            "values": {
+                "cf-region": "cf-ca10",
+                "db-user": "DBADMIN",
+                "port": "443",
+                "instance-name": "HC_HDB",
+                "disable-workload-class": "ALTER WORKLOAD CLASS \"WLC1\" DISABLE;",
+                "host": "8cb535f6-dca6-4075-a110-afa10f2823f1.hana.prod-ca10.hanacloud.ondemand.com",
+                "cf-org-id": "HANA Product Management_dan-van-leeuwen",
+                "param-delete": "{\"data\":{\"elasticreadnodes\":[]}}",
+                "enable-workload-class": "ALTER WORKLOAD CLASS \"WLC1\" ENABLE;",
+                "param-create": "{\"data\":{\"elasticreadnodes\":[{\"name\":\"ecn1\",\"vcpu\":2,\"memory\":32,\"storage\":120}]}}",
+                "user": "dan@hotmail.com",
+                "cf-space": "dev",
+                "db-password": "",
+                "password": ""
+            },
+            "tags": {}
+            }
+        ],
+        "commands": [
+            {
+            "configuration": {
+                "values": [
+                {
+                    "alias": "InstanceAlias",
+                    "valueFrom": {
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:HCInstance:1",
+                    "inputKey": null
+                    }
+                }
+                ],
+                "output": {},
+                "executors": [
+                {
+                    "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+                    "input": {
+                    "password": "$(.InstanceAlias.password)",
+                    "org": "$(.InstanceAlias.cf-org-id)",
+                    "serviceInstance": "$(.InstanceAlias.instance-name)",
+                    "region": "$(.InstanceAlias.cf-region)",
+                    "user": "$(.InstanceAlias.user)",
+                    "parameters": "$(.InstanceAlias.param-create)",
+                    "space": "$(.InstanceAlias.cf-space)"
+                    },
+                    "alias": "addECN",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": null,
+                    "pause": null,
+                    "when": null,
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                },
+                {
+                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                    "input": {
+                    "password": "$(.InstanceAlias.db-password)",
+                    "statement": "$(.InstanceAlias.enable-workload-class)",
+                    "connectionUrl": "jdbc:sap://$(.InstanceAlias.host):$(.InstanceAlias.port)",
+                    "user": "$(.InstanceAlias.db-user)"
+                    },
+                    "alias": "enableWorkloadClass",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": null,
+                    "pause": null,
+                    "when": null,
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                }
+                ],
+                "listeners": []
+            },
+            "id": "CFECN-<<<TENANT_ID>>>:AddECN:1",
+            "name": "AddECN",
+            "description": null,
+            "catalog": "CFECN-<<<TENANT_ID>>>",
+            "version": 1,
+            "inputKeys": {},
+            "outputKeys": {},
+            "tags": {},
+            "issues": []
+            },
+            {
+            "configuration": {
+                "values": [
+                {
+                    "alias": "InstanceAlias",
+                    "valueFrom": {
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:HCInstance:1",
+                    "inputKey": null
+                    }
+                }
+                ],
+                "output": {},
+                "executors": [
+                {
+                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                    "input": {
+                    "password": "$(.InstanceAlias.db-password)",
+                    "statement": "$(.InstanceAlias.disable-workload-class)",
+                    "connectionUrl": "jdbc:sap://$(.InstanceAlias.host):$(.InstanceAlias.port)",
+                    "user": "$(.InstanceAlias.db-user)"
+                    },
+                    "alias": "disableWorkloadClass",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": null,
+                    "pause": null,
+                    "when": null,
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                },
+                {
+                    "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+                    "input": {
+                    "password": "$(.InstanceAlias.password)",
+                    "org": "$(.InstanceAlias.cf-org-id)",
+                    "serviceInstance": "$(.InstanceAlias.instance-name)",
+                    "region": "$(.InstanceAlias.cf-region)",
+                    "user": "$(.InstanceAlias.user)",
+                    "parameters": "$(.InstanceAlias.param-delete)",
+                    "space": "$(.InstanceAlias.cf-space)"
+                    },
+                    "alias": "deleteECN",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": {
+                    "interval": "3m",
+                    "when": null
+                    },
+                    "pause": null,
+                    "when": null,
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                }
+                ],
+                "listeners": []
+            },
+            "id": "CFECN-<<<TENANT_ID>>>:DeleteECN:1",
+            "name": "DeleteECN",
+            "description": null,
+            "catalog": "CFECN-<<<TENANT_ID>>>",
+            "version": 1,
+            "inputKeys": {},
+            "outputKeys": {},
+            "tags": {},
+            "issues": []
+            }
+        ]
+    }
+    ```
+
+2. The catalog will appear under My Catalogs and is named CF ECN
+
+    ![catalog imported](imported.png)
+
+3. Examine the imported commands and inputs. The list of commands are shown below.
+
+    ![commands](commands.png)
+
+    The input is shown below. It provides a location where the details of the SAP HANA Cloud database and BTP credentials can be provided.
+
+    ![input](input.png)
+
+4. Open the input named HCInstance and edit its values to match the SAP HANA Cloud instance that you wish to work with.
+
+    ![edit input values](edit-input.png)
+
+5. Open the AddECN command.  Notice that it takes HCInstance as an additional value to the input and is referenced by the alias InstanceAlias.
+
+    ![additional value](addecn-input.png)
+
+    It contains an addECN executor which uses the built in command cf-sapcp:UpdateCfServiceInstance that will request the ECN node to be created.  Notice also that the parameter values are being set using the InstanceAlias.
+
+    ![add ECN executor](add-ecn-executor.png)
+    
+    It also contains the enableWorkloadClass executor which executes a SQL statement to enable a workload class which should be used to direct a workload to the just started ECN node.
+
+    ![enable workload class](enable-workload-class.png)
+
+6. Open the DeleteECN command.  Notice that a delay has been added before the ECN is deleted.  Depending on your workloads, you may wish to increase this delay or add a more involved check.
+
+    ![wait added before delete ECN](delete-ecn-executor.png)
+
+7. Try out the commands by pressing the Trigger button and assigning the input.
+
+    ![trigger AddECN](trigger.png)
+
+    The status of the execution can be seen in the Executions section.
+
+    ![executed](executed.png)
+
+8. Schedule the AddECN and DeleteECN commands.
+
+    ![Schedule](schedule.png)
 
 
 ### ECN advisor
