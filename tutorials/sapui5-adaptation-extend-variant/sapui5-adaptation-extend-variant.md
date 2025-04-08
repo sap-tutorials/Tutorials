@@ -1,11 +1,11 @@
 ---
 author_name: Markus Koenigstein
 author_profile: https://github.com/d027132
-contributors: [Elisabeth Riemann>https://github.com/ElRiemann]
+contributors: [Elisabeth Riemann>https://github.com/ElRiemann, Hitesh Parmar>https://github.com/hitesh-parmar]
 keywords: tutorial SAPUI5 
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, type>tutorial, software-product>sap-s-4hana-cloud, software-product>sap-s-4hana-public-cloud, software-product-function>sap-fiori-elements, software-product>sap-business-application-studio, programming-tool>sapui5 ]
+tags: [ tutorial>beginner, type>tutorial, software-product>sap-s-4hana-cloud, software-product>sap-s-4hana-cloud-public-edition, software-product-function>sap-fiori-elements, software-product>sap-business-application-studio, programming-tool>sapui5 ]
 primary_tag: software-product>sap-s-4hana-cloud
 parser: v2
 ---
@@ -58,10 +58,10 @@ Object Page:
 
 ### Access your SAPUI5 Adaptation Project
 
-1. Log onto SAP Business Application Studio (BAS) and access your SAP Fiori development space. 
-2. Expand the *Projects* folder and right-click on the adaptation project you created in Tutorial 1 and select *Open Adaptation Editor* from the context menu. 
+1. Log onto SAP Business Application Studio (BAS) and access your SAP Fiori development space.
+2. Expand the *Projects* folder and right-click on the adaptation project you created in Tutorial 1 and select *Open Adaptation Editor* from the context menu.
 3. The List Report of the Manage Credit Accounts application is displayed in *UI Adaptation* mode.  Switch to *Navigation* mode.
-4. Choose the `Go` button to populate the table with data. 
+4. Choose the `Go` button to populate the table with data.
 5. Select a business partner by choosing the chevron button to navigate to the Object Page.
 
 	![List Report: Select Business Partner](1_List Report Select Business Partner.png)
@@ -70,32 +70,27 @@ Object Page:
 
 Working with Adaptation Editor:
 
-1. On the Object Page, switch from *Navigation* to *UI Adaptation* mode and select the entire Object Page. After you’ve selected the Object Page in its entirety, choose the `Extend With Controller` button from the visual context menu.
+1. On the Object Page, switch from *Navigation* to *UI Adaptation* mode. Choose from the *Object Page Quick Actions* the action *Add Controller to Page*.
 
-	![Object Page: Extend with Controller](2_Object Page Extend with Controller.png)
+	![Object Page Quick Actions](ObjectPageQuickActions.png)
 
+2. In the *Extend With Controller* popup, enter a name in the *Controller Name* field (e.g. OPExtensionController) and choose *Create*.
 
-2. In the *Extend Controller* popup, enter a name in the *Controller Name* field (e.g. OPExtensionController) and choose *Extend*. 
+	- A corresponding .js file is generated in your workspace in the webapp folder under changes –> coding –> *OPExtensionController.js*.
 
-	- A corresponding .js file is generated in your workspace in the webapp folder under changes --> coding --> *OPExtensionController.js*. This file opens automatically in the main window of SAP Business Application Studio.  
+	![Object Page Extension Controller](OPExtensionController.png)
 
-3. Before you edit the .js file generated in step 2, add a coding fragment to the Object Page layout. Select the *ObjectPageLayout* area (outlined in blue) and choose the `Add: Fragment` button from the visual context menu. (Tip: Click the left-hand border to select the Object Page.) 
+3. Before you edit the .js file generated in step 2, add a coding fragment to the Object Page layout. Choose from the *Object Page Quick Actions* the action *Add Custom Section*.
 
-	- You want to add a new section to the Object Page in which you can include a chart visualization of the Payment Trends. New sections are defined in the sections Aggregation of the ObjectPageLayout control, so you’re going to add a new XML coding fragment to this aggregation. 
+	- You want to add a new section to the Object Page in which you can include a chart visualization of the Payment Trends. New sections are defined in the *sections* aggregation of the ObjectPageLayout control, so you’re going to add a new XML coding fragment to this aggregation. 
 
-	![Object Page: Add Fragment](3_Select Object Page Layout to Add Fragment.png)
+4. In the *Add Custom Section* popup, enter a name for the fragment (e.g. extension_chart) and choose Create.
 
-4. In the *Add Fragment* popup, you will see *Control type: sap.uxap.ObjectPageLayout, Target Aggregation: sections.* (This is only visible provided you’ve correctly selected the *ObjectPageLayout* area in which to add the fragment.)  
+5. Press *Save*.
 
-5. Select `Create New`.
+6. A corresponding .xml file is generated in your workspace in the webapp folder under *changes –> fragments –> extension_chart.fragment.xml*. 
 
-6. In the *Add Fragment* popup, enter a name (e.g. extension_chart) and choose `Create`.  
-
-	- A corresponding .xml file is generated in your workspace in the *webapp* folder under *changes --> fragments --> extension_chart.fragment.xml*. This file opens automatically in the main window of SAP Business Application Studio. 
-
-7.  Press *Save*.
-
-8. In the *extension_chart.fragment.xml* file generated in step 6, enter the following code: 
+7. In the *extension_chart.fragment.xml* file generated in step 5, enter the following code: 
 
 	```XML
 	<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:objectPage="sap.uxap" 
@@ -133,8 +128,9 @@ Working with Adaptation Editor:
 
 	![Extension Chart Fragment](4_Extension Chart Fragment XML.png)
 
-9. In the *OPExtensionController.js* file generated in step 2, enter the following code: 
-	- Hint: `<your initials>` needs to be replaced by the initials chosen for your project name. E.g., if the project name is creditaccounts.appvar.cl1 then you need to replace `<your initials>` with *cl1*.
+8. In the *OPExtensionController.js* file generated in step 2, enter the following code:
+
+    >`<your initials>` needs to be replaced by the initials chosen for your project name. E.g., if the project name is creditaccounts.appvar.cl1 then you need to replace `<your initials>` with *cl1*.
 
 	```JavaScript
 	/***

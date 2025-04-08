@@ -49,11 +49,21 @@ To connect the Migration Assessment application with your SAP Process Orchestrat
         - `/ConfigurationScenarioInService`
         - `/BPMFacadeBeanImplService`
         - `/ReceiverAgreementInService`
+        - `/ReceiverRuleInService`
+        - `/ReceiverDeterminationInService`
+        - `/InterfaceDeterminationInService`
 
     - ESR Content
-        - `/rep/read/ext`
         - `/dir/read/ext`
+        - `/dir/query/ext`
         - `/rep/support/SimpleQuery`
+        - `/rep/read/ext`
+        - `/rep/query/ext`
+        - `/rep/query/int`
+
+    - Message Monitoring
+
+        - `/mdt`
 
 
 4. Limit access to the previously mentioned endpoints and subpaths by changing **Access Policy** to **Path and All Sub-Paths**.
@@ -148,9 +158,19 @@ You're now ready to retrieve data from the connected SAP Process Orchestration s
 
       <!-- border -->![Image](Images/Picture13-1.png)
 
-2. Enter a **Request Name** and select the **System** you want to connect to, then choose **Create**.
+2. Enter a **Request Name** and select the **System Name** you want to connect to, then choose **Create**.
 
-      <!-- border -->![Image](Images/Picture14-1.png)
+      There are two options available: Complete Extraction and Custom Extraction
+
+      Choose Complete Extraction if you want to extract all integration scenarios from the selected system.
+
+      <!-- border -->![Image](Images/Picture14-2.png)
+
+      Choose Custom Extraction if you want to extract a subset of integration scenarios from the selected system. Use this option, for example, if you want to exclude specific integration scenarios or only need to extract a small selection.
+      
+      In the list of integration scenarios that were retrieved from the system, all are selected by default. Customize the list by deselecting and selecting integration scenarios to fit your needs. You can use the search function to find specific integration scenarios.
+
+      <!-- border -->![Image](Images/Picture14-3.png)
 
       The data extraction starts. Once the extraction finishes, the new request appears in the list of data extraction requests with the status **Completed**.
 
@@ -160,13 +180,13 @@ You're now ready to retrieve data from the connected SAP Process Orchestration s
 
 3. Choose **Log** to view the data extraction log, which provides you with details about the data extraction.
 
-      <!-- border -->![Image](Images/Picture15-1.png)
+      <!-- border -->![Image](Images/Picture15-2.png)
 
-      <!-- border -->![Image](Images/Picture16-1.png)
+      <!-- border -->![Image](Images/Picture16-2.png)
 
 4. After extracting the necessary data from your system, you can assess the integration scenarios associated with your data using    scenario evaluation requests, as described in the next step.Delete extractions you no longer need by selecting the data extraction and choosing **Delete**. Refresh the page to update the list.
     
-      <!-- border -->![Image](Images/Picture17-2.png)
+      <!-- border -->![Image](Images/Picture17-3.png)
 
 ---
 ### Create a Scenario Evaluation Request
@@ -183,23 +203,25 @@ To evaluate your integration scenarios using the information from data extractio
 
 5. Choose **Create**.
 
-      <!-- border -->![Image](Images/Picture18-1.png)
+      <!-- border -->![Image](Images/Picture18-2.png)
+
+      <!-- border -->![Image](Images/Picture18-3.png)
 
       The new request appears in the list of scenario evaluation requests and the evaluation runs.
 
-      <!-- border -->![Image](Images/Picture19-1.png)
+      <!-- border -->![Image](Images/Picture19-2.png)
 
 6. By choosing **Delete**, you can delete the unwanted scenario evaluation. Refresh the page to update the list of evaluations.	
 
-      <!-- border -->![Image](Images/Picture20-1.png)
+      <!-- border -->![Image](Images/Picture20-2.png)
 
 The following additional actions can be performed for a scenario evaluation request:
  
 **Open Dashboard**: It displays an analysis of your scenario evaluations with details specific about your integration flows such as assessment categories, adapters, and an overview of the rules used in the evaluation, which can be accessed and downloaded. You can switch between the data of all runs performed for the scenario evaluation request so far.
 
-   <!-- border -->![Image](Images/Picture21-1.png)
+   <!-- border -->![Image](Images/Picture21-2.png)
 
-   <!-- border -->![Image](Images/Picture22-1.png)
+   <!-- border -->![Image](Images/Picture22-2.png)
 
 ---
 
@@ -225,13 +247,19 @@ Under the **Overview** tab on the dashboard page, you can see four different vie
    
       For our example, the previous chart shows that there are 1,535 small (S) integration scenarios and 85 medium (M) integration scenarios. An estimation of efforts required to migrate these integration scenarios from the SAP Process Orchestration system to SAP Integration Suite needs to be performed. You'll learn more about these sizing classifications - S, M, L, XL - in the section on **Evaluation Results**.
 
-3. **Sender Adapters**
+3. **Modernization Recommendations**
+
+      This section contains recommendations for modernizing Integration scenarios.
+
+      <!-- border -->![Image](Images/Picture26-1.png)
+
+4. **Sender Adapters**
    
       This section shows the number and types of sender adapters in your on-premise system.
 
       <!-- border -->![Image](Images/Picture27.png)
 
-4. **Receiver Adapters**
+5. **Receiver Adapters**
    
       This section shows the number and types of receiver adapters in your on-premise system.
 
@@ -241,20 +269,20 @@ Under the **Overview** tab on the dashboard page, you can see four different vie
 
 ### Options available under Integration Scenarios tab in Dashboard
 
-On the dashboard under the **Integration Scenarios** tab, you can see the list of all the integration scenarios from your SAP Process Orchestration system. Here, you can also download all the integration scenarios, sizes of the integration scenarios (S, M, L, XL), and assessment categories assigned to each integration scenario, either in .pdf format or in .xslx format.
+On the dashboard under the **Integration Scenarios** tab, you can see the list of all the integration scenarios from your SAP Process Orchestration system. Here, you can also download all the integration scenarios, sizes of the integration scenarios (S, M, L, XL), and assessment categories assigned to each integration scenario, either in .pdf format (Generate report) or  in .xslx format (Export).
 
-   <!-- border -->![Image](Images/Picture29.png)
+   <!-- border -->![Image](Images/Picture29-1.png)
 
 
 **Trigger Analysis**:  With this functionality, you can schedule an additional evaluation run based on current extracted data. For example, you can trigger an analysis if there's been a rule update. By choosing **Trigger Analysis**, you can rerun an evaluation without having to create a new scenario  evaluation request. This way, you can have multiple evaluation runs for one evaluation request. If a new extraction request is created, you have to run another evaluation request.
 
-   <!-- border -->![Image](Images/Picture30.png)
+   <!-- border -->![Image](Images/Picture30-1.png)
 
 To compare the old and new evaluations, add the date on the evaluation run name so you can easily distinguish between the two evaluations and compare them in the dashboard later on.
 
-   <!-- border -->![Image](Images/Picture31.png)
+   <!-- border -->![Image](Images/Picture31-1.png)
 
-   <!-- border -->![Image](Images/Picture32.png)
+   <!-- border -->![Image](Images/Picture32-1.png)
 
 Under **Scenario Evaluation Run**, you can see all evaluation runs that were triggered for the same extracted data.
 
@@ -265,9 +293,9 @@ Under **Scenario Evaluation Run**, you can see all evaluation runs that were tri
 
 **Evaluation Results**
 
-- The **.xslx** file contains all the integration scenarios that were part of the request with migration effort according to the sizing classification, rules applied to them, weight, assessment categories, and status.
+- The **Export** contains .xslx file with all the integration scenarios that were part of the request with migration effort according to the sizing classification, rules applied to them, weight, assessment categories, and status.
   
-      <!-- border -->![Image](Images/Picture34.png)
+      <!-- border -->![Image](Images/Picture34-1.png)
 
 - The **Full Evaluation Results** sheet displays information about rules that were applied for each integration scenario as defined by SAP. Each line includes the rule ID, the value assigned to it, the weight considered for it, and the evaluation assessment category.
 
@@ -277,7 +305,7 @@ Under **Scenario Evaluation Run**, you can see all evaluation runs that were tri
 
       <!-- border -->![Image](Images/Picture36.png)
 
-- The option as **.pdf file** features the previously mentioned details about the integration scenarios while also providing a written summary of adapters and the assessment in general, with charts and tables. This file is suited as a report that can be used for example for management. The following screenshot shows the contents of the .pdf report.
+- The **Generate Report** contains .pdf file featuring the previously mentioned details about the integration scenarios while also providing a written summary of adapters and the assessment in general, with charts and tables. This file is suited as a report that can be used for example for management. The following screenshot shows the contents of the .pdf report.
 
       <!-- border -->![Image](Images/Picture37.png)
 

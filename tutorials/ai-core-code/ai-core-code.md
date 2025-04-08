@@ -152,10 +152,15 @@ Copy and edit the following command to build your docker image. The command foll
 ```BASH
 docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
 ```
+**If you have machine with Apple Silicon M1/M2/M3 Chip, use --platform linux/amd64**
+
+```BASH
+docker build --platform linux/amd64 -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
+```
 
 > **INFORMATION** In the command, `-t` indicates that there is a tag name, followed by a colon and version. The name is your descriptive string, and the version can be in any format, here `house-price` and `01`, respectively. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
 
-> **INFORMATION** The platform information relates to your operating system, for example `linux/amd64`.
+> **INFORMATION** The platform information relates to your operating system, for example, **linux/amd64**. By default, Docker builds the image for your machine’s native architecture. If you are using an ARM-based system (such as an Apple M1/M2 or Raspberry Pi), the build process may default to arm64, which could cause issues when running the container on an amd64 cluster. To avoid such compatibility problems, explicitly specify the platform using the --platform linux/amd64 flag when building the image.
 
 The result of this command should be:
 
