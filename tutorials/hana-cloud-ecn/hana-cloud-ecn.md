@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 15
+time: 30
 tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database,tutorial>license]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -720,6 +720,8 @@ SAP HANA Cloud Central includes an ECN advisor that provides recommendations for
 ![enable advisor](enable-advisor.png)
 
 ![set the threshold](thresholds.png)
+
+![recommendation](ecn-advisor-recommendation.png)
 
 There are a few requirements with the advisor:
     
