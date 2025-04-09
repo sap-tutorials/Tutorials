@@ -86,11 +86,11 @@ The following steps are required to create a bearer token that will be used in s
 
     ![HANA Cloud instance](HANA-Cloud-service.png)
 
-    Create a service binding if one does not exist.
+    Create a service binding (Other Environments) or service key (Cloud Foundry) if one does not exist.
 
     ![Create service key](create-service-key.png)
 
-    When creating a service key, a JSON file or parameters section is not needed and can be left empty.
+    When creating a service binding or service key, a JSON file or parameters section is not needed and can be left empty.
 
 2. View the created service key.  The next step will require the `host`, `uaa.url`, `clientid`, and `clientsecret` values.
 
@@ -352,7 +352,7 @@ The following instructions will show a few examples of how to view metering deta
     For additional details on the metering service REST API, see [Metrics in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/metrics), [Metering Metrics](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/metering-metrics), and [Metering Service on the Business Accelerator Hub](https://api.sap.com/api/MeteringAPI/overview).    
 
 ### Access alerts, metrics, and metering for multiple instances
-If you wish to access alerts, metrics, and metering for multiple instances with one API call, the service plan admin-api-access can be used as shown below.  This service plan is not available for trial instances.  For non trial instances, it supports both SAP HANA Cloud, SAP HANA database instances and data lake instances.
+If you wish to access alerts, metrics, and metering for multiple instances with one API call or update alert thresholds, the service plan admin-api-access can be used as shown below.  This service plan is not available for trial instances.  For non trial instances, it supports both SAP HANA Cloud, SAP HANA database instances and data lake instances.
 
 1. Ensure the service plan **admin-api-access** appears under the service **SAP HANA Cloud**.  If required, select **Add Service Plans** and enable the entitlement.
 
@@ -453,6 +453,65 @@ If you wish to access alerts, metrics, and metering for multiple instances with 
 
     ###
 
+    #Update the threshold of a specific alert for a specific instance
+    PATCH {{gateway_url}}/alerts/v1/serviceInstances/{{instanceID}}/rules
+    Authorization: Bearer {{bearer}}
+
+    {
+    "data": [
+        {
+        "alertRule": "HDBDiskUsage",
+        "severities": {
+            "NOTICE": {
+            "threshold": "91"
+            },
+            "WARNING": {
+            "threshold": "96"
+            },
+            "ERROR": {
+            "threshold": "99"
+            }
+        },
+        "enabled": true
+        }
+    ]
+    }
+
+    ###
+
+    #Verify the threshold values have changed for an alert rule for a specific instance
+    GET {{gateway_url}}/alerts/v1/serviceInstances/{{instanceID}}/rules/HDBDiskUsage
+    Authorization: Bearer {{bearer}}
+
+    ###
+
+    #Update the threshold of a specific alert for specific instance(s)
+    PATCH {{gateway_url}}/alerts/v1/rules
+    Authorization: Bearer {{bearer}}
+
+    {
+    "data": [
+        {
+        "serviceInstanceID": "{{instanceID}}",
+        "alertRule": "HDBDiskUsage",
+        "severities": {
+            "NOTICE": {
+            "threshold": "89"
+            },
+            "WARNING": {
+            "threshold": "94"
+            },
+            "ERROR": {
+            "threshold": "97"
+            }
+        },
+        "enabled": true
+        }
+    ]
+    }
+
+    ###
+
     #Metrics REST API calls -------------------------
 
     #Get the metric HDBMemoryUsed for multiple SAP HANA Cloud instances (values)
@@ -483,7 +542,7 @@ If you wish to access alerts, metrics, and metering for multiple instances with 
 
     #Get the metric DefaultNodeStorage for multiple SAP HANA Cloud data lake instances (values)
     GET {{gateway_url}}/metering/v1/values?names=DefaultNodeStorage&$filter=resourceType eq hana-cloud-hdl&startTimestamp={{startTSMetering}}&endTimestamp={{endTSMetering}}
-    Authorization: Bearer {{bearer}}&$orderby=values/value desc
+    Authorization: Bearer {{bearer}}
     
     ###
     ```
