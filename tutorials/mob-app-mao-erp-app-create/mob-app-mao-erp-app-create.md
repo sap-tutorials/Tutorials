@@ -14,15 +14,17 @@ parser: v2
 ## Prerequisites
 - Access to your SAP BTP Subaccount and Space.
 - Access to the SAP Mobile Services service in your SAP BTP subaccount.
-- Implement SAP Notes 3432545 and 3472370 in your system to get the latest updates for the SAP Service and Asset Manager Mobile Services App Create transaction `/MERP/CPMS_APPCREATE`. Note 3432545 (component MOB-APP-MAO-FND) contains updates to the Mobile Services App Admin classes on which note 3472370 (component MOB-APP-MAO-ERP) depends on. Please ensure note 3432545 can be implemented in your system before implementing note 3472370.
+- Implement SAP Notes 3504624 and 3524755 in your system to get the latest updates for the SAP Service and Asset Manager Mobile Services App Create transaction `/MERP/CPMS_APPCREATE`. Note 3504624 (component MOB-APP-MAO-FND) contains updates to the Mobile Services App Admin classes on which note 3524755 (component MOB-APP-MAO-ERP) depends on. Please ensure note 3504624 can be implemented in your system before implementing note 3524755.
 
 ## You will learn
 - How to create and update an SAP Mobile Services app for the SAP Service and Asset Manager mobile app using the MS App Create transaction `/MERP/CPMS_APPCREATE`.
 - How to review the created MS app.
-- Optional features:
-  1. Use an RFC Destination (Middleware Server).
+- Optional Features:
+  1. Use an RFC Destination (Middleware Server) to Create the App.
   2. Add `sap-client` header to the Mobile Destinations.
-- Troubleshoot the following symptoms:
+  3. Enable Multiple Threads in Offline Configuration.
+  4. Update the Usage Metering Middleware Server to use an RFC Destination.
+- Troubleshoot:
   1. Prompted to sign-in after selecting the **Launch in Browser** icon when testing the Mobile Destinations.
   2. Missing Offline Configuration.
   3. Usage Metering Middleware Server Missing and/or Properties Missing.
@@ -47,15 +49,14 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 ### Create the Mobile Services App via the MS App Create Transaction
 
-1. Execute the transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI, then select your desired variant.
+1. Execute the transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI, then select your required variant (i.e., `SAP&SAM_<version>`).
 
-2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please review the **Background Job User** parameter (additional info below). To add the `sap-client` header to the Mobile Destinations please see Step 5 (optional). To use an RFC Destination instead of the **Admin API** please see Step 4 (optional). Then execute the transaction.
+2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please ensure the **Background Job User** will maintain authorization to run the Usage Metering background job (parameter info below). To add the `sap-client` header to the Mobile Destinations please see Step 5 (recommended). To use an RFC Destination instead of the **Admin API** please see Step 4 (optional). Then execute the transaction.
 
     ![SelScreen](selscreen.png)
 
     | Parameter                          | What's the use?                                                                                                                                                                                                                                      |
     | :--------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Cloud Foundry** or **Neo**       | Only the SAP BTP Cloud Foundry Environment is supported currently.                                                                                                                                                                                   |
     | **MS Admin API or MW Server GUID** | Used to establish a connection from the SAP Backend to the SAP Mobile Services service.                                                                                                                                                              |
     | **OData Service Mobile App**       | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature.                                                                                                                           |
     | **OData Service Technical Name**   | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature.                                                                                                                           |
@@ -65,7 +66,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | **MS Application Description**     | The application description given to the SAP Mobile Services app.                                                                                                                                                                                    |
     | **MS Vendor Name**                 | The vendor name given to the SAP Mobile Services app.                                                                                                                                                                                                |
     | **MS Application Timeout**         | The maximum time in milliseconds before a client connection times out in your environment. After that timeout period, the connection is closed.                                                                                                      |
-    | **MS App License Type**            | The Service Plan used by Mobile Services                                                                                                                                                                                                             |
+    | **MS App License Type**            | The Service Plan used by Mobile Services. The plan `basic-plus-app` is recommended for SAP mobile applications.                                                                                                                                      |
     | **SCC X.509 Virtual Host**         | Used to generate the URL for the Mobile Services Mobile Destinations                                                                                                                                                                                 |
     | **Cloud Connector Location ID**    | Used to set **Cloud Connector Location Id** for the Mobile Services Mobile Destinations                                                                                                                                                              |
     | **Background Job User**            | Used to schedule the Usage Metering background job with a daily frequency. If no user is provided, then the user executing the transaction is used. Please ensure the **Background Job User** will maintain authorization to run the background job. |
@@ -82,16 +83,17 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 5. The Mobile Services app can be updated by re-executing the transaction and selecting the features to update when prompted. See additional info for each option below.
 
-    ![UpdateApp](updateapp.png)
-
     | Feature                             | What is Updated?                                                                                                                      |
     | :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
     | **Update Mobile Offline Access**    | Updates the offline configuration of your app.                                                                                        |
     | **Update Usage Metering**           | Creates Usage Metering Middleware Server and Background Job. Existing Middleware Server and Background Job are deleted.               |
     | **Compare Offline Configuration**   | Compare offline configuration properties, request groups and request download phases between the backend and the mobile services app. |
     | **Update Mobile Connectivity**      | Updates the offline and online destination settings of your app.                                                                      |
-    | **Update Mobile App Update**        | Assigns the feature to your app if not already assigned.                                                                              |
+    | **Add Mobile App Update**           | Assigns the feature to your app if not already assigned.                                                                              |
     | **Update Mobile Push Notification** | Updates the Predefined Global Push Configuration to **SAP ASSET MANAGER**.                                                            |
+    | **Add Mobile App Catalog**          | Assigns the feature to your app if not already assigned.                                                                              |
+    | **Add Mobile Cloud Build**          | Assigns the feature to your app if not already assigned.                                                                              |
+    | **Add Mobile Client Log Upload**    | Assigns the feature to your app if not already assigned.                                                                              |
 
 ### Review the Created Mobile Services App
 
@@ -101,7 +103,10 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 2. Select your app to see the **Assigned Features**. The following features should be assigned to your app:
 
+    - **Mobile App Catalog**
     - **Mobile App Update**
+    - **Mobile Client Log Upload**
+    - **Mobile Cloud Build**
     - **Mobile Connectivity**
     - **Mobile Offline Access**
     - **Mobile Push Notification**
@@ -159,7 +164,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
     ![SM37](sm37.png)
 
-### Optional Feature 1 - Use an RFC Destination (Middleware Server)
+### Optional Feature 1 - Use an RFC Destination (Middleware Server) to Create the App
 
 1. Execute transaction **SM59** from the SAP GUI. Then click the create icon.
 
@@ -216,7 +221,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     
 1. Follow Step 2.1 and 2.2 then return to this Step before executing. Then click **Advanced Mode**.
 
-2. Under the **Mobile Services Connection Configuration** section, provide the JSON payload below in the **Destination Headers** field of the offline and online destinations (substituting `<client>` with the desired client).
+2. Under the **Mobile Services Connection Configuration** section, provide the JSON payload below in the **Destination Headers** field of the offline and online destinations (substituting `<client>` with the required client).
 
     ```JSON
     {"name": "sap-client", "value": "<client>", "overwrite": false}
@@ -224,13 +229,9 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
     ![AddClient](addclient.png)
 
-3. If your app already exists and you are updating your app, select the **Mobile Connectivity** feature when prompted.
+3. If your app already exists and you are updating your app, select the option **Update Mobile Connectivity** when prompted.
 
-### Troubleshoot 1 - Prompted to sign-in after selecting the Launch in Browser icon
-
-1. This can occur when the `sap-client` header is not specified on the Mobile Destinations. Follow Optional Feature 2 to add the `sap-client` header.
-
-2. Alternately, you may edit the Mobile Destinations directly in the SAP Mobile Services **Mobile Connectivity** feature of your app. For each destination, click the pencil icon and navigate to the **Custom Headers** section. Add a custom header with the following values:
+4. Alternately, you may edit the Mobile Destinations directly in the SAP Mobile Services **Mobile Connectivity** feature of your app. For each destination, click the pencil icon and navigate to the **Custom Headers** section. Add a custom header with the following values:
 
     ![EditDest](editdest.png)
 
@@ -238,17 +239,77 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | :----------- | :---------------------------- |
     | `sap-client` | Your client (i.e., **`800`**) |
 
+### Optional Feature 3 - Enable Multiple Threads in Offline Configuration
+    
+1. Follow Step 2.1 and 2.2 then return to this Step before executing. Then click **Advanced Mode**.
+
+2. Under the **Mobile Services Offline OData Settings** section, check the `Calculate oMDO Download Phases` and `Enable Multiple Threads` options. Then, set `Number of Threads` to `3`. 
+
+3. If your app already exists and you are updating your app, select the option **Update Mobile Offline Access** when prompted. 
+
+4. Alternately, you may generate the offline configuration using the offline configuration program **`/MERP/CORE_OFFLINE_CONFIG_PROG`**. The generated file can then be uploaded in the SAP Mobile Services **Mobile Offline Access** feature of your app.
+
+5. Execute the program **`/MERP/CORE_OFFLINE_CONFIG_PROG`** in transaction **SE38** from the SAP GUI, then select your required variant. 
+
+6. Select the `Advanced Offline Configuration` radio button. Check the `Calculate oMDO Download Phases` and `Enable Multiple Threads` options. Then, set `Number of Threads` to `3`. Execute the transaction.
+
+    ![OfflineProgMT](offlineprog_mt.png)
+
+7. Please ensure to save the generated file with a `.ini` file extension.
+
+8. Import the file in the **Mobile Offline Access** feature of your app.
+
+    ![ImportOffline](importoffline.png)
+
+### Optional Feature 4 - Update the Usage Metering Middleware Server to use an RFC Destination.
+
+1. Copy the **URL** of the **Server API**. from the APIs tab of your Mobile Services app.
+
+    ![UIHost](uihost.png)
+
+2. Execute transaction **SM59** from the SAP GUI. Then click the create icon.
+
+2. Provide the destination name **`Z_SAM<version>_METERING`** and set **Connection Type** to **`G HTTP Connection to External Server`** (substituting `<version>` with your app version). 
+
+3. Provide the copied URL without `https://` in **Host** field of the Target System Settings. Use the **Port** and **Path Prefix** as in the example below.
+
+    ![RFCTechSetMeter](rfctechsetmeter.png)
+
+    | Field Name        | Value                                                      |
+    | :---------------- | :--------------------------------------------------------- |
+    | Target Host       | **`samcf-sam-cf-sam.example.hana.ondemand.com`**           |
+    | Service No.(Port) | **`443`**                                                  |
+    | Path Prefix       | **`/mobileservices/service-key/metering`**                 |
+ 
+4. In the **Logon & Security** tab, within the **Security Options** > **Status of Secure Protocol** section, of your RFC destination please set the **SSL** radio button to **Active**.
+ 
+    ![RFCSecSetMetering](rfcsecsetmetering.png)
+
+5. Save the RFC Destination.
+
+6. We will now update the Usage Metering Middleware Server with the RFC Destination created. To update the Middleware Server, execute transaction **/SYCLO/ADMIN** from the SAP GUI to open up the MAIF Admin Panel.
+
+7. Navigate to the **Administration** > **Server Management** section. 
+
+8. Select the Middleware Server with the name noted in Step 2.4. If the Usage Metering Middleware Server is missing then please see Step 8.
+ 
+9. Update the **RFC Destination** and click **Save**.
+
+    ![MDWMetering](mdwmetering.png)
+
+### Troubleshoot 1 - Prompted to sign-in after selecting the Launch in Browser icon
+
+1. This can occur when the `sap-client` header is not specified on the Mobile Destinations. Follow Optional Feature 2 to add the `sap-client` header.
+
 ### Troubleshoot 2 - Missing Offline Configuration
 
-1. Follow Step 2.5 and select the **Mobile Offline Access** feature when prompted. The offline configuration will be regenerated and sent to SAP Mobile Services. If the offline configuration is still missing in Mobile Services, you may try the next steps.
+1. Follow Step 2.5 and select the option **Update Mobile Offline Access** when prompted. The offline configuration will be regenerated and sent to SAP Mobile Services.
 
 2. Alternately, you may generate the offline configuration using the offline configuration program **`/MERP/CORE_OFFLINE_CONFIG_PROG`**. The generated file can then be uploaded in the SAP Mobile Services **Mobile Offline Access** feature of your app.
 
-3. Execute the program **`/MERP/CORE_OFFLINE_CONFIG_PROG`** in transaction **SE38** from the SAP GUI, then select your desired variant. Then execute the transaction.
+3. Execute the program **`/MERP/CORE_OFFLINE_CONFIG_PROG`** in transaction **SE38** from the SAP GUI, then select your required variant. Then execute the transaction.
 
     ![OfflineProg](offlineprog.png)
-
-    >**WARNING:** Any change that may affect the offline configuration (e.g., the **Defer Batch Response** setting is changed for the **OData Service Technical Name** provided when generating the offline configuration, or a new entity type is added to your mobile app configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
 
 4. Please ensure to save the generated file with a `.ini` file extension.
 
@@ -258,7 +319,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 ### Troubleshoot 3 - Usage Metering Middleware Server Missing and/or Properties Missing
 
-1. Follow Step 2.5 and select **Usage Metering** feature when prompted. If the Usage Metering Middleware Server and/or properties are still missing, you may try the next steps.
+1. Follow Step 2.5 and select **Usage Metering** feature when prompted.
 
 2. Alternately, you may create the Usage Metering Middleware Server manually. Execute transaction **/SYCLO/ADMIN** from the SAP GUI to open up the MAIF Admin Panel. 
 

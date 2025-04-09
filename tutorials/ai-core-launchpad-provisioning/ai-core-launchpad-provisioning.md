@@ -16,7 +16,7 @@ If you are an SAP Developer or SAP employee, please refer to the following links
 [How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
 [SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
 If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
-- A BTP global account
+- A BTP global account, For more details, refer to: [BTP global account](https://statics.teams.cdn.office.net/evergreen-assets/safelinks/1/atp-safelinks.html)
 
 ## You will learn
 - How to access your SAP BTP global account

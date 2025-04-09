@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "Tutorials"
+SPDX-PackageSupplier = "Joshua Margo (joshua.margo@sap.com)"
+SPDX-PackageDownloadLocation = "https://github.com/sap-tutorials/Tutorials"
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 SAP SE or an SAP affiliate company and https://github.com/sap-tutorials/Tutorials contributors"
+SPDX-License-Identifier = "CC-BY-4.0"

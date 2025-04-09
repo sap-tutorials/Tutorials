@@ -18,6 +18,7 @@ If you are an SAP Developer or SAP employee, please refer to the following links
 [How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
 [SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
 If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
+- An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to [SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans)
 - You have completed the client authorization for your preferred user interface. 
 - Access to SAP AI Core instance with the Extended plan 
 - Python and programming IDE (e.g. VSCode)

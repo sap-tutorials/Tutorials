@@ -30,7 +30,7 @@ A [data lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/w
 
 A [data lake Files](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/understanding-data-lake-files) instance provides storage for non-structured files such as images or PDF documents.  It can also store structured files such as CSV or Parquet files, and with the use of [SQL on Files](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-cloud-sap-hana-database-sql-on-files-guide), queries can be performed on the data contained in those files, without ingestion, and at a reduced cost, providing access to diverse datasets.
   
-With this new feature, SAP HANA Database SQL on Files, virtual tables can be created in SAP HANA Cloud, SAP HANA database that retrieve their data from a CSV, Parquet, or Delta table stored on a data lake Files instance.  Details can be found in [SAP HANA Cloud, SAP HANA Database SQL on Files Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-native-sql-on-files-overview) and [Unlocking the True Potential of Data in Files with SAP HANA Database SQL on Files in SAP HANA Cloud](https://community.sap.com/t5/technology-blogs-by-sap/unlocking-the-true-potential-of-data-in-files-with-sap-hana-database-sql-on/ba-p/13861585).
+In this tutorial, we will be using the SAP HANA Database SQL on Files feature which was released in QRC 3 of 2024.  Virtual tables can be created in SAP HANA Cloud, SAP HANA database that retrieve their data from a CSV, Parquet, or Delta table stored on a data lake Files instance.  Details can be found in [SAP HANA Cloud, SAP HANA Database SQL on Files Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-native-sql-on-files-overview) and [Unlocking the True Potential of Data in Files with SAP HANA Database SQL on Files in SAP HANA Cloud](https://community.sap.com/t5/technology-blogs-by-sap/unlocking-the-true-potential-of-data-in-files-with-sap-hana-database-sql-on/ba-p/13861585).
 
 ### View and Create Instances in SAP HANA Cloud Central
 [SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/subscribing-to-sap-hana-cloud-administration-tools) can be used to view and manage your SAP HANA Cloud instances running in a subaccount.  
@@ -147,9 +147,7 @@ Files can now be uploaded to the data lake Files instance.
 
     ![Upload titanic](upload-titanic.png)
 
-4. Examine the uploaded csv file and Parquet files.
-
-    Select the File Content tab to see the contents of the Parquet or CSV file.
+4. Examine the uploaded csv file.  A viewer is provided so that text files such as CSV can be viewed. 
 
     ![files uploaded](files-uploaded.png)
 
@@ -304,13 +302,7 @@ Virtual tables can now be created using the remote source HC_DL_FILES_rs.
 
     ![query titanic](query-titanic.png)
 
-    Notice above that the table, TITANIC_CSV in the catalog browser appears with an annotation indicating that it is a virtual table.
-
-    The list of virtual tables can be viewed with the below SQL query.
-
-    ```SQL
-    SELECT * FROM VIRTUAL_TABLES;
-    ```
+    Notice above that the table, TITANIC_CSV in the catalog browser appears with an annotation indicating that it is a virtual file.
 
 2. Create a virtual table that points to the Parquet file.
 
@@ -374,6 +366,42 @@ Virtual tables can now be created using the remote source HC_DL_FILES_rs.
     ```
 
     ![Titanic Query Results](query-titanic-p2.png)
+
+4. A wizard is available from the remote source in the Database Objects app that can help in the generation of a virtual table.
+
+    * Open the Database Objects app
+
+        ![](database-objects2.png)
+
+    * Locate the remote source
+
+        ![](database-objects3.png)
+
+    * From the remote source details page, select Create Virtual Table
+
+        ![](create-virtual-table-wizard.png)
+
+
+    * Specify the path to the Parquet table and press Next Step
+
+        ![](virtual-table2.png)
+
+    * Provide the schema and table name TITANIC_P2 and click Next Step
+
+        ![](virtual-table3.png)
+
+    * Choose to add all the columns, press Review and Create, and then Create
+
+        ![](virtual-table4.png)
+
+    The resultant table can be queried as shown below.
+
+    ```SQL
+    SELECT * FROM TITANIC_P2;
+    ```
+
+    ![](query-titanic-p2.png)
+
 
 ### Query virtual tables
 The data being stored on the data lake Files can now be queried using SQL similar to a regular table.  Virtual tables can also be joined with regular tables.

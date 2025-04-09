@@ -169,13 +169,13 @@ The following instructions will show how to view a triggered SAP HANA database a
 
     ![subaccount alerts view](subaccount-alerts-view.png)  
 
-    Filter can be set for Type, Severity, Instance, Instance Type, and Time Range. 
+    A filter can be set for Type, Severity, Instance, Instance Type, and Time Range. 
     
     ![alerts view in HCC](alerts-hcc.png) 
 
     Alerts can be filtered by Current or All. Current Alerts have a Start Time value but no End Time value, as the end time is added when the alert is closed.  Closed alerts appear in type filter All rather than Current.  
 
-    Additional details can be found in [Monitoring Alerts in SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/alerts).
+    Additional details can be found in [Open Alerts in SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/alerts).
     
 2. Details about a SQL statement from a long-running statement alert can be found out with the following query. The statement hash can be found in the alert description.
 

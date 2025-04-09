@@ -29,7 +29,7 @@ Add a new view to your SAPUI5 application by using an `easy-ui5` subgenerator.
 **Open** a new terminal session on root level of your project and execute:
 
 ```Terminal
-yo easy-ui5 project newview
+yo easy-ui5 project view
 ```
 
 | Parameter | Value
