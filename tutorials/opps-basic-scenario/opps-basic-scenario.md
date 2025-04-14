@@ -77,7 +77,7 @@ With the service instances and corresponding credentials that you set up (as des
 |  Field Name                                | Value
 |  :-------------                            | :-------------
 |  Display Name                              | Enter any name, for example **`OPPS trial data upload`**.
-|  Starting URL                              | **`https://ppservice-inbound-cf-oppstrialap21-trial.cfapps.ap21.hana.ondemand.com/`**
+|  Starting URL                              | **`https://data-upload.api.ap21.opps-trial.cloud.sap`**
 |  Resulting URL                             | (prefilled)
 |  Authentication Type                       | **`OAuth 2.0 Application Flow`**
 |  Client ID                                 | **`your clientid`** **
@@ -310,7 +310,6 @@ Let's check if this is the case. Navigate to the [Calculation service on the SAP
 >If you need a more detailed description, go to step 4 in the tutorial [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
 5. For the **Content Type**, choose `XML`.
 6. Copy the following raw data and paste it into the **Body** section:
-
 ```XML
 <PriceCalculate xmlns="http://www.sap.com/IXRetail/namespace/" InternalMajorVersion="2" InternalMinorVersion="1">
 	<ARTSHeader ActionCode="Calculate" MessageType="Request">
@@ -515,16 +514,15 @@ The response should look similar to this:
 
 
 
-### What to Do Next
+### What to do next
 
  Navigate to the intermediate group [Set up Complex Promotions with SAP Omnichannel Promotion Pricing](group.opps-complex-promotion) and continue with the next tutorial [Apply Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
 
 
-### Additional Information
+### Additional information
 
 * [Official Product Documentation](https://help.sap.com/docs/OPP)
 * [Trial Documentation](https://help.sap.com/docs/OPP/0c145d124b784b548b618cda8a5b2aba/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
 * [SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://help.sap.com/docs/OPP/7c87270e23c64c2aa922ce297a6df23d/67a9da084cf84e058cb3a3911971bdd0.html?version=Cloud)
-* [Video: SAP Omnichannel Promotion Pricing in a nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html)
 
 ---
