@@ -117,7 +117,7 @@ See also on SAP Help Portal: [Creating Service Instance and Service Key for Inbo
 
 ### Create an SAP Cloud Integration Destination
 
-The SAP Cloud Integration destination serves as the endpoint where SAP Content Agent Service imports the integration content. The destination has the fixed name `CloudIntegration`. You need the values of the service key from the SAP Process Integration Runtime instance created in the previous step.
+The SAP Cloud Integration destination serves as the endpoint where SAP Content Agent Service imports the integration content. The destination has the fixed name `CloudIntegration`. You need the values of the service key from the SAP Process Integration Runtime instance created in the target account during the previous step.
 
 1. Choose **Connectivity > Destinations** (1). To create a new destination, choose **Create Destination** (2).
 
