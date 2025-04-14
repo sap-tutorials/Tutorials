@@ -1,0 +1,1548 @@
+{
+  "name": "canary_testing_2411a",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "get_token",
+      "seq": 1,
+      "request": {
+        "url": "{{ai_auth_url}}/oauth/token",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "formUrlEncoded",
+          "formUrlEncoded": [
+            {
+              "name": "grant_type",
+              "value": "client_credentials",
+              "enabled": true
+            },
+            {
+              "name": "client_id",
+              "value": "{{client_id}}",
+              "enabled": true
+            },
+            {
+              "name": "client_secret",
+              "value": "{{client_secret}}",
+              "enabled": true
+            }
+          ],
+          "multipartForm": []
+        },
+        "script": {
+          "res": "if (res.getStatus() == 200) {\n  bru.setEnvVar(\"access_token\", res.body.access_token);\n}"
+        },
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        },
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "health",
+      "seq": 2,
+      "request": {
+        "url": "{{ai_api_url}}/api/v1/healthz",
+        "method": "GET",
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "{{access_token}}"
+          }
+        },
+        "query": []
+      }
+    },
+    {
+      "type": "folder",
+      "name": "01_resource_group",
+      "items": [
+        {
+          "type": "http",
+          "name": "create",
+          "seq": 1,
+          "request": {
+            "url": "{{ai_api_url}}/v2/admin/resourceGroups",
+            "method": "POST",
+            "headers": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"resourceGroupId\": \"{{resource_group}}\",\n  \"labels\": [\n    {\n      \"key\": \"ext.ai.sap.com/document-grounding\",\n      \"value\": \"true\"\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete_by_id",
+          "seq": 4,
+          "request": {
+            "url": "{{ai_api_url}}/v2/admin/resourceGroups/{{resource_group}}",
+            "method": "DELETE",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get",
+          "seq": 2,
+          "request": {
+            "url": "{{ai_api_url}}/v2/admin/resourceGroups",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_by_id",
+          "seq": 3,
+          "request": {
+            "url": "{{ai_api_url}}/v2/admin/resourceGroups/{{resource_group}}",
+            "method": "GET",
+            "headers": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "04_pipeline",
+      "items": [
+        {
+          "type": "http",
+          "name": "create_pipeline",
+          "seq": 1,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/pipelines",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              },
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"type\": \"MSSharePoint\",\n  \"configuration\": {\n    \"destination\": \"<generic_secret_name>\",\n    \"sharePoint\": {\n      \"site\": {\n        \"name\": \"<sharepoint_site_name>\",\n        \"includePaths\": [\n          \"/<folder_name>\"\n        ]\n      }\n    }\n  }\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete_pipeline_by_pipeline_id",
+          "seq": 5,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/pipelines/67d03dde-0942-4a47-a986-8e16f4781d38",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_all_pipelines",
+          "seq": 2,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/pipelines",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_pipeline_by_pipeline_id",
+          "seq": 3,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/pipelines/ad98838e-789c-4c57-8dc0-598d18be382c",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_pipeline_status_by_pipeline_id",
+          "seq": 4,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/pipelines/99de369b-3f0f-46d0-81ee-466fd877849c/status",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "02_deployments",
+      "items": [
+        {
+          "type": "http",
+          "name": "create_configuration",
+          "seq": 3,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/configurations",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"orchestration-config\",\n  \"executableId\": \"orchestration\",\n  \"scenarioId\": \"orchestration\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "create_deployment",
+          "seq": 5,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/deployments",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"ttl\": \"24H\",\n  \"configurationId\": \"7f4668bc-812c-4064-93cc-b4d18fef2ffa\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete_deployment_id",
+          "seq": 9,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/deployments/d768613fbb1f0277",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"ttl\": \"24H\",\n  \"configurationId\": \"866e5ef5-0e44-4f84-a246-6696ceafac17\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_configuration",
+          "seq": 4,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/configurations",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_deployment",
+          "seq": 6,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/deployments",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"ttl\": \"24H\",\n  \"configurationId\": \"866e5ef5-0e44-4f84-a246-6696ceafac17\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_deployment_id",
+          "seq": 7,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/deployments/d26f5b517f7faefc",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"ttl\": \"24H\",\n  \"configurationId\": \"866e5ef5-0e44-4f84-a246-6696ceafac17\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_scenario",
+          "seq": 1,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/scenarios",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_scenario_executable",
+          "seq": 2,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/scenarios/orchestration/executables",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "stop_deployment_id",
+          "seq": 8,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/deployments/d26f5b517f7faefc",
+            "method": "PATCH",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"targetStatus\": \"STOPPED\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "06_vector",
+      "items": [
+        {
+          "type": "http",
+          "name": "create_collections",
+          "seq": 2,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\": \"test-canary-collection\",\n  \"embeddingConfig\": {\n    \"modelName\": \"text-embedding-ada-002-v2\"\n  },\n  \"metadata\": [\n    {\n      \"key\": \"purpose\",\n      \"value\": [\n        \"demonstration\"\n      ]\n    },\n    {\n      \"key\": \"a-random-key\",\n      \"value\": [\n        \"hello world!\"\n      ]\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "create_documents",
+          "seq": 5,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections/f0a9eb18-6cc1-48b5-98ce-9cefe472702a/documents",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"documents\": [\n    {\n      \"metadata\": [\n        {\n          \"key\": \"url\",\n          \"value\": [\n            \"http://hello.com\",\n            \"123\"\n          ]\n        }\n      ],\n      \"chunks\": [\n        {\n          \"content\": \"Joule is the AI copilot that truly understands your business. Joule revolutionizes how you interact with your SAP business systems, making every touchpoint count and every task simpler.\",\n          \"metadata\": [\n            {\n              \"key\": \"index\",\n              \"value\": [\n                \"1\"\n              ]\n            }\n          ]\n        },\n        {\n          \"content\": \"It enables the companion of the Intelligent Enterprise, guiding you through content discovery within SAP Ecosystem, and giving a transparent role-based access to the relevant processes from everywhere. This is the one assistant experience, a unified and delightful user experience across SAP’s Ǯ solution portfolio.\",\n          \"metadata\": [\n            {\n              \"key\": \"index\",\n              \"value\": [\n                \"2\"\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete_collection_by_id",
+          "seq": 12,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections/fc64a71a-645e-4a2c-a77b-b36ff9b9abc4",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete_documents_by_id",
+          "seq": 11,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections/fc64a71a-645e-4a2c-a77b-b36ff9b9abc4/documents/b55cbf6a-9960-495b-9c53-1a062649f1d9",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_all_collections",
+          "seq": 1,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_all_documents_by_collection_id",
+          "seq": 6,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections/f0a9eb18-6cc1-48b5-98ce-9cefe472702a/documents",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_collection_by_id",
+          "seq": 4,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/document-grounding/vector/collections/f0a9eb18-6cc1-48b5-98ce-9cefe472702a",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_collection_creation_status_by_id",
+          "seq": 3,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections/f0a9eb18-6cc1-48b5-98ce-9cefe472702a/creationStatus",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_collection_deletion_status_by_id",
+          "seq": 13,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections/52634ed9-a385-4836-a853-33b52e2d5402/deletionStatus",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_documents_by_id",
+          "seq": 7,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections/0da1f790-619d-4110-96dc-bf22c6a3c114/documents/f397fa92-f2a8-4850-a362-3cd67de6e79b",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "insert_documents",
+          "seq": 9,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections/0da1f790-619d-4110-96dc-bf22c6a3c114/documents",
+            "method": "PATCH",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"documents\": [\n    {\n      \"id\": \"b55cbf6a-9960-495b-9c53-1a062649f1d9\",\n      \"metadata\": [\n        {\n          \"key\": \"url\",\n          \"value\": [\"http://hello1.com\"]\n        },\n        {\n          \"key\": \"test-insert\",\n          \"value\": [\"123\"]\n        }\n      ],\n      \"chunks\": [\n        {\n          \"content\": \"Joule is not the AI copilot that truly understands your business. Joule revolutionizes how you interact with your SAP business systems, making every touchpoint count and every task simpler.\",\n          \"metadata\": [\n            {\n              \"key\": \"index\",\n              \"value\": [\n                \"1\"\n              ]\n            }\n          ]\n        },\n        {\n          \"content\": \"It enables the companion of the Intelligent Enterprise, guiding you through content discovery within SAP Ecosystem, and giving a transparent role-based access to the relevant processes from everywhere. This is the one assistant experience, a unified and delightful user experience across SAP’s Ǯ solution portfolio.\",\n          \"metadata\": [\n            {\n              \"key\": \"index\",\n              \"value\": [\n                \"2\"\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "search",
+          "seq": 10,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/search",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"query\": \"is Joule an AI Copilot?\",\n  \"filters\": [\n    {\n      \"id\": \"string\",\n      \"collectionIds\": [\n        \"fc64a71a-645e-4a2c-a77b-b36ff9b9abc4\"\n      ],\n      \"configuration\": {},\n      \"collectionMetadata\": [],\n      \"documentMetadata\": [\n        {\n          \"key\": \"url\",\n          \"value\": [\n            \"http://hello1.com\"\n          ],\n          \"selectMode\": [\"ignoreIfKeyAbsent\"]\n        }\n      ],\n      \"chunkMetadata\": []\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "update_documents",
+          "seq": 8,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/vector/collections/f0a9eb18-6cc1-48b5-98ce-9cefe472702a/documents",
+            "method": "PATCH",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"documents\": [\n    {\n      \"id\": \"d4cf0a60-6296-4a37-9a42-75a1c8c8f272\",\n      \"metadata\": [\n        {\n          \"key\": \"url\",\n          \"value\": [\"http://hello1.com\"]\n        }\n      ],\n      \"chunks\": [\n        {\n          \"content\": \"Joule is not the AI copilot that truly understands your business. Joule revolutionizes how you interact with your SAP business systems, making every touchpoint count and every task simpler.\",\n          \"metadata\": [\n            {\n              \"key\": \"index\",\n              \"value\": [\n                \"1\"\n              ]\n            }\n          ]\n        },\n        {\n          \"content\": \"It enables the companion of the Intelligent Enterprise, guiding you through content discovery within SAP Ecosystem, and giving a transparent role-based access to the relevant processes from everywhere. This is the one assistant experience, a unified and delightful user experience across SAP’s Ǯ solution portfolio.\",\n          \"metadata\": [\n            {\n              \"key\": \"index\",\n              \"value\": [\n                \"2\"\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "07_retrieval",
+      "items": [
+        {
+          "type": "http",
+          "name": "dataRepositories by id",
+          "seq": 2,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/retrieval/dataRepositories/5f78c04d-469a-475e-acff-4560d7ed323f",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "dataRepositories",
+          "seq": 1,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/retrieval/dataRepositories",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "retrieval_pipeline",
+          "seq": 3,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/retrieval/search",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"query\": \"what is AI106 about and who are the presenters?\",\n  \"filters\": [\n    {\n      \"id\": \"string\",\n      \"searchConfiguration\": {},\n      \"dataRepositories\": [\n        \"5f78c04d-469a-475e-acff-4560d7ed323f\"\n      ],\n      \"dataRepositoryType\": \"vector\",\n      \"dataRepositoryMetadata\": [],\n      \"documentMetadata\": [],\n      \"chunkMetadata\": []\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "retrieval_vector",
+          "seq": 4,
+          "request": {
+            "url": "{{ai_api_url}}{{common_endpoint}}/retrieval/search",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"query\": \"is joule an ai copilot?\",\n  \"filters\": [\n    {\n      \"id\": \"string\",\n      \"searchConfiguration\": {\n        \"maxChunkCount\": 1\n      },\n      \"dataRepositories\": [\n        \"f0a9eb18-6cc1-48b5-98ce-9cefe472702a\"\n      ],\n      \"dataRepositoryType\": \"vector\",\n      \"dataRepositoryMetadata\": [],\n      \"documentMetadata\": [],\n      \"chunkMetadata\": []\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "03_generic_secret",
+      "items": [
+        {
+          "type": "http",
+          "name": "create",
+          "seq": 2,
+          "request": {
+            "url": "{{ai_api_url}}/v2/admin/secrets",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"<name>\",\n  \"data\": {\n    \"type\": \"SFRUUA==\",\n    \"description\": \"Z2VuZXJpYyBzZWNyZXQgZm9yIGdyb3VuZGluZw==\",\n    \"clientId\": \"<base64encodedValueOfClientId>\",\n    \"authentication\": \"T0F1dGgyUGFzc3dvcmQ=\",\n    \"tokenServiceURL\": \"<base64encodedValueOfTokenServiceUrl>\",\n    \"password\": \"<base64encodedValueOfPassword>\",\n    \"proxyType\": \"SW50ZXJuZXQ=\",\n    \"url\": \"<base64encodedValueOfUrl>\",\n    \"tokenServiceURLType\": \"RGVkaWNhdGVk\",\n    \"user\": \"<base64encodedValueOfUser>\",\n    \"clientSecret\": \"<base64encodedValueOfClientSecret>\",\n    \"scope\": \"aHR0cHM6Ly9ncmFwaC5taWNyb3NvZnQuY29tLy5kZWZhdWx0\"\n  },\n  \"labels\": [\n    {\n      \"key\": \"ext.ai.sap.com/document-grounding\",\n      \"value\": \"true\"\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "delete",
+          "seq": 3,
+          "request": {
+            "url": "{{ai_api_url}}/v2/admin/secrets/canary-rg-secret",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_all",
+          "seq": 1,
+          "request": {
+            "url": "{{ai_api_url}}/v2/admin/secrets",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "update",
+          "seq": 4,
+          "request": {
+            "url": "{{ai_api_url}}/v2/admin/secrets/canary-rg-secret",
+            "method": "PATCH",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"data\": {\n    \"clientId\": \"ZGMxZWE2MjktOTRiOC00ZmYzLWFiMTAtMWRkNjFkODEyODU0\"\n  }\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "05_orchestration",
+      "items": [
+        {
+          "type": "http",
+          "name": "completion",
+          "seq": 1,
+          "request": {
+            "url": "{{orchestration_service_url}}/completion",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "ai-resource-group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"orchestration_config\": {\n    \"module_configurations\": {\n      \"grounding_module_config\": {\n        \"type\": \"document_grounding_service\",\n        \"config\": {\n          \"filters\": [\n            {\n              \"id\": \"filter1\",\n              \"data_repositories\": [\n                \"5f78c04d-469a-475e-acff-4560d7ed323f\"\n              ],\n              \"search_config\": {\n                \"max_chunk_count\": 10\n              },\n              \"data_repository_type\": \"vector\"\n            }\n          ],\n          \"input_params\": [\n            \"groundingRequest\"\n          ],\n          \"output_param\": \"groundingOutput\"\n        }\n      },\n      \"llm_module_config\": {\n        \"model_name\": \"gpt-35-turbo\",\n        \"model_params\": {},\n        \"model_version\": \"latest\"\n      },\n      \"templating_module_config\": {\n        \"template\": [\n          {\n            \"role\": \"user\",\n            \"content\": \"You are a helpful assistant for any queries for answering questions.\\\\\\\\nAnswer the grounding request by providing relevant answers that fit to the request. \\\\\\\\n\\\\\\\\nRequest: {{ ?groundingRequest }}\\\\\\\\n\\\\\\\\nContext:{{ ?groundingOutput }}\"\n          }\n        ],\n        \"defaults\": {}\n      },\n      \"filtering_module_config\": {\n        \"input\": {\n          \"filters\": [\n            {\n              \"type\": \"azure_content_safety\",\n              \"config\": {\n                \"Hate\": 2,\n                \"SelfHarm\": 2,\n                \"Sexual\": 2,\n                \"Violence\": 2\n              }\n            }\n          ]\n        },\n        \"output\": {\n          \"filters\": [\n            {\n              \"type\": \"azure_content_safety\",\n              \"config\": {\n                \"Hate\": 2,\n                \"SelfHarm\": 2,\n                \"Sexual\": 2,\n                \"Violence\": 2\n              }\n            }\n          ]\n        }\n      }\n    }\n  },\n  \"input_params\": {\n    \"groundingRequest\": \"what is orchestration service?\"\n  },\n  \"return_module_results\": true\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "completion_help",
+          "seq": 2,
+          "request": {
+            "url": "{{orchestration_service_url}}/completion",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "ai-resource-group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"orchestration_config\": {\n    \"module_configurations\": {\n      \"grounding_module_config\": {\n        \"type\": \"document_grounding_service\",\n        \"config\": {\n          \"filters\": [\n            {\n              \"id\": \"filter1\",\n              \"data_repositories\": [\n                \"*\"\n              ],\n              \"search_config\": {},\n              \"data_repository_type\": \"help.sap.com\"\n            }\n          ],\n          \"input_params\": [\n            \"groundingRequest\"\n          ],\n          \"output_param\": \"groundingOutput\"\n        }\n      },\n      \"llm_module_config\": {\n        \"model_name\": \"gemini-1.5-pro\",\n        \"model_params\": {},\n        \"model_version\": \"001\"\n      },\n      \"templating_module_config\": {\n        \"template\": [\n          {\n            \"role\": \"user\",\n            \"content\": \"You are a helpful assistant for any queries for SAP Teched 2024.\\\\nAnswer the grounding request by providing relevant answers that fit to the request. \\\\n\\\\nRequest: {{ ?groundingRequest }}\\\\n\\\\nReports:{{ ?groundingOutput }}\"\n          }\n        ],\n        \"defaults\": {}\n      },\n      \"filtering_module_config\": {\n        \"input\": {\n          \"filters\": [\n            {\n              \"type\": \"azure_content_safety\",\n              \"config\": {\n                \"Hate\": 2,\n                \"SelfHarm\": 2,\n                \"Sexual\": 2,\n                \"Violence\": 2\n              }\n            }\n          ]\n        },\n        \"output\": {\n          \"filters\": [\n            {\n              \"type\": \"azure_content_safety\",\n              \"config\": {\n                \"Hate\": 2,\n                \"SelfHarm\": 2,\n                \"Sexual\": 2,\n                \"Violence\": 2\n              }\n            }\n          ]\n        }\n      }\n    }\n  },\n  \"input_params\": {\n    \"groundingRequest\": \"what is joule?\"\n  },\n  \"return_module_results\": true\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        },
+        {
+          "type": "http",
+          "name": "get_foundation_models",
+          "seq": 3,
+          "request": {
+            "url": "{{ai_api_url}}/v2/lm/scenarios/foundation-models/models",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "{{resource_group}}",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "bearer",
+              "bearer": {
+                "token": "{{access_token}}"
+              }
+            },
+            "query": []
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "Wb0lSEXeJqCoraQwlbtIe",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "ai_auth_url",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "ai_api_url",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "client_id",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "client_secret",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "resource_group",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "common_endpoint",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "orchestration_service_url",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "access_token",
+          "value": "",
+          "enabled": true,
+          "secret": true,
+          "type": "text"
+        }
+      ],
+      "name": "canary-test"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "canary_testing_2411a",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}

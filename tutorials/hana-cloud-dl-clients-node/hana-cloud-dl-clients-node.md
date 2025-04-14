@@ -81,6 +81,8 @@ The Node.js driver covered in this tutorial is `@sap\iq-client` which supports t
     npm install $IQDIR17/sdk/node
     ```
 
+    If the above command fails due to a permission error, either change the folder permission or run with sudo.
+
 4. The following command lists the Node.js modules that are now installed locally into the `DataLakeClientsTutorial\node` folder.
 
     ```Shell

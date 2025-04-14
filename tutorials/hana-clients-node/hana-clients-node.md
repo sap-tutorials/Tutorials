@@ -260,8 +260,12 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 4. To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
 
-    ```Shell (Microsoft Windows)
+    ```Command Prompt (Microsoft Windows)
     set DEBUG=*
+    node nodeQuery.js
+    ```  
+    ```Powershell (Microsoft Windows)
+    $env:DEBUG='*'
     node nodeQuery.js
     ```  
 
@@ -274,10 +278,15 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     The value of the environment variable DEBUG can be seen and removed with the commands below.
 
-    ```Shell (Microsoft Windows)
+    ```Command Prompt (Microsoft Windows)
     set DEBUG
     set DEBUG=
     set DEBUG
+    ```  
+    ```Powershell (Microsoft Windows)
+    $env:DEBUG
+    $env:DEBUG='*'
+    Remove-Item Env:DEBUG
     ```  
 
     ```Shell (Linux or Mac)
@@ -744,10 +753,10 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     Further details on using TypeScript within Visual Studio Code can be found at [TypeScript tutorial in Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-tutorial).
 
-9. Correct the error, compile, and run the app.  The error can be corrected by changing 2023 to "2023".
+9. Correct the error, compile, and run the app using the following commands. The error can be corrected by changing 2023 to "2023".
 
     ```Shell
-    tsc nodeQuery.TS.ts
+    tsc nodeQueryTS.ts
     node nodeQueryTS.js
     ```
 

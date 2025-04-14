@@ -44,7 +44,7 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 
 |  Version     | Notes
 |  :------------- | :-------------
-|  [SAP HANA Platform 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM)           | Released in November 2016. Current version is 2.0 SPS 07, which was released on April 4rd, 2023.
+|  [SAP HANA Platform 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM)           | Released in November 2016. Current version is 2.0 SPS 08, which was released on Nov 20th, 2024.
 |  **[SAP HANA, express edition](https://help.sap.com/docs/SAP_HANA_EXPRESS_EDITION)**    | Released in September 2016.  Current version is 2.0 SPS 07.
 |  **[SAP HANA Cloud](https://help.sap.com/docs/hana-cloud)**   | Released in March 2020.  New features are released quarterly.
 
@@ -103,7 +103,7 @@ Continue with this tutorial once you have created an SAP HANA Cloud trial or fre
 
 ![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
-
+ 
 1. Once the SAP HANA Cloud instance is created, take note of the SQL endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in the mission.  
 
     ![SQL Endpoint](SQLEndpoint.png)

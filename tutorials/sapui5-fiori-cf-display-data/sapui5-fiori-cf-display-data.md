@@ -23,7 +23,7 @@ author_profile: https://github.com/nicoschoenteich
 
 ### Rename "MainView" to "Products"
 
-The easy-ui5 generator creates projects with myui5apps that contain two views out of the box: The `App.view.xml`, which is the outer container of the application, and the `MainView.view.xml`, where you can start developing your application content right away. At this point, it makes sense to rename the `MainView.view.xml` to something more meaningful.
+The easy-ui5 generator creates projects with UI5 applications that contain two views out of the box: The `App.view.xml`, which is the outer container of the application, and the `MainView.view.xml`, where you can start developing your application content right away. At this point, it makes sense to rename the `MainView.view.xml` to something more meaningful.
 
 1. Rename the file `MainView.view.xml` to `Products.view.xml`.
 1. In the `Products.view.xml` file, **replace** all references to `MainView` with `Products`.

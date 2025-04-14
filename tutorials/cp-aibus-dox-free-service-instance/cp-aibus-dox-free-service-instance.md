@@ -60,7 +60,7 @@ To use Document Information Extraction, you need to make sure that your account 
 
   3.  In the dialog, select `Document Information Extraction`. Choose the `free` and `default (Application)` service plans. Click **Add 2 Service Plans**.
 
-    >You can also perform this tutorial series using the `blocks_of_100` service plan. For that, choose the `blocks_of_100` plan in this step (instead of free). For more information on the service plans available for Document Information Extraction and their usage details, see [Service Plans](https://help.sap.com/docs/DOCUMENT_INFORMATION_EXTRACTION/5fa7265b9ff64d73bac7cec61ee55ae6/2c17b2aa8d6b4fa8a5c6259a33feb360.html).
+    >You can also perform this tutorial series using the following service plans intended for productive use: Premium Edition (premium_edition) or Base Edition (blocks_of_100). To do so, choose either the `premium_edition` or the `blocks_of_100` plan in this step (instead of free). For more information on the service plans available for Document Information Extraction, see [Service Plans](https://help.sap.com/docs/DOCUMENT_INFORMATION_EXTRACTION/5fa7265b9ff64d73bac7cec61ee55ae6/2c17b2aa8d6b4fa8a5c6259a33feb360.html).
 
     <!-- border -->![Add Service Plan](add-service-plan.png)
 
@@ -98,7 +98,8 @@ Next, you will create an instance of the Document Information Extraction service
 
 2. In the dialog, choose the `free` plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create**.
 
-    >Choose `blocks_of_100` in this step (instead of free) if you're using the `blocks_of_100` plan to perform this tutorial series.
+    >Choose `blocks_of_100` in this step (instead of `free`) if you're using the `blocks_of_100` plan to perform this tutorial series.
+    >Choose `premium_edition` in this step (instead of `free`) if you're using the `premium_edition` plan to perform this tutorial series.
 
     <!-- border -->![Create Instance](create-instance-dialog.png)
 

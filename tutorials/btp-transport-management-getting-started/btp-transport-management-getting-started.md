@@ -4,8 +4,8 @@ author_profile: https://github.com/Anke2016
 keywords: tutorial
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit ]
-primary_tag: software-product>sap-btp--cloud-foundry-environment
+tags: [ tutorial>beginner, software-product>sap-cloud-transport-management, software-product>sap-content-agent-service, software-product>sap-integration-suite ]
+primary_tag: software-product>sap-cloud-transport-management
 parser: v2
 ---
 # Get Started with SAP Cloud Transport Management Service
@@ -16,6 +16,7 @@ parser: v2
  - If you do not have an SAP BTP account, follow the tutorial [Get an Account on SAP BTP Trial](hcp-create-trial-account).
 
 ## You will learn
+   - How to create a subaccount in an SAP BTP global account
    - How to configure entitlements to SAP Cloud Transport Management service
    - How to subscribe to SAP Cloud Transport Management service
    - How to set up role collections required for SAP Cloud Transport Management service
@@ -34,9 +35,75 @@ For more information about SAP Cloud Transport Management service, see the SAP H
 
 1. To access BTP Cockpit of your trial account, go to your [SAP BTP Trial landing page](https://account.hanatrial.ondemand.com/trial/#/home/trial) and choose **Go To Your Trial Account**. (The name of the button may vary.)    
 
-2. In your global trial account, navigate to your subaccount by clicking on the tile named **trial**.
+2. In your global trial account, you have the default **trial** subaccount.
 
-    ![Trial Subaccount](screenshots/BTP-Cockpit-Global-account.png)
+    ![Create CS Subaccount 00](screenshots/get-started-00.png)  
+
+    SAP recommends using SAP Cloud Transport Management in a separate administrative subaccount to facilitate access control and separation of concerns. Therefore, you need a separate subaccount where you subscribe to SAP Cloud Transport Management and create a service instance and key for API access to the service.
+
+3. To create that new subaccount for SAP Cloud Transport Management service, in the **Account Explorer** of your global account, choose **Create > Subaccount**.
+   
+    ![Create CS Subaccount 01](screenshots/get-started-01.png)  
+
+4. Enter a **Display Name** (1), here `Central Services` and select a **Region** (2). Choose **Create** (3).
+
+    ![Create CS Subaccount 02](screenshots/get-started-03.png)  
+
+    The new subaccount is created. 
+
+5. Click on the **Central Services** tile.
+
+    ![Create CS Subaccount 04](screenshots/get-started-04.png)  
+
+6. You're in the overview of the **Central Services** subaccount. You need to enable Cloud Foundry in the subaccount to create a Cloud Foundry org in which you can create a space. To do this, choose **Enable Cloud Foundry**.
+
+    ![Create CS Subaccount 05](screenshots/get-started-05.png)
+
+6. Keep the suggested values unchanged, and choose **Create**.
+
+    ![Create CS Subaccount 06](screenshots/get-started-06.png)
+
+    The Cloud Foundry org is created.
+
+    As a next step, create a space in the org. A space is a shared location on the platform in which you can deploy and maintain applications, and connect them to services. You can create multiple spaces within one org. 
+
+7. To create a space in this org, choose **Create Space**.
+
+    ![Create CS Subaccount 07](screenshots/get-started-07.png)
+
+6. Enter a space name, here `cTMS` (1), keep the default space roles unchanged, and choose **Create** (2).
+
+    ![Create CS Subaccount 08](screenshots/get-started-08.png)
+
+8. The new **cTMS** space is displayed in the list of spaces. 
+
+    ![Create CS Subaccount 09](screenshots/get-started-09.png)  
+    
+The following steps are required in SAP BTP trial, because the default **trial** subaccount has default entitlements for **SAP Cloud Transport Management** that you'll need in the **Central Services** subaccount. Entitlements are the service plans that you're entitled to use. To use the entitlements in the **Central Services** subaccount, remove them from **trial** first.  
+
+
+1. In your global account in SAP BTP trial, click on the **trial** tile.
+   
+    ![Create CS Subaccount 10](screenshots/get-started-10.png)
+
+2. Choose **Entitlements** from the navigation on the left (1), filter the entries for **transport** (2), and choose **Edit** (3). 
+
+    ![Create CS Subaccount 11](screenshots/get-started-11.png)
+
+3. To remove the entitlements for *Cloud Transport Management* from **trial**, click on the trash bin icons at the end of the row.
+
+    ![Create CS Subaccount 12](screenshots/get-started-12.png)
+
+4. Save your changes.
+
+    ![Create CS Subaccount 13](screenshots/get-started-13.png)
+
+    The entitlements for Cloud Transport Management were removed from the **trial** subaccount. 
+
+    ![Create CS Subaccount 14](screenshots/get-started-14.png)  
+
+See also on SAP Help Portal: [Managing Subaccounts Using the Cockpit](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/55d0b6d8b96846b8ae93b85194df0944.html?locale=en-US&state=PRODUCTION&version=Cloud), [Org Administration Using the Cockpit](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/c4c25cc63ac845779f76202360f98694.html?locale=en-US&state=PRODUCTION&version=Cloud)
+
 
 [OPTION END]
 
@@ -81,17 +148,31 @@ In general, entitlements are required to define access of a subaccount to a serv
 
 [OPTION BEGIN [Trial Account]]
 
->This step isn't necessary when you run this tutorial in a trial account. The trial account has preconfigured entitlements to SAP Cloud Transport Management service.
+Since you've removed the entitlements for SAP Cloud Transport Management service from the **trial** subaccount in the previous step, the entitlements are available in the **Central Services** subaccount. 
 
-1. To display the existing entitlements for SAP Cloud Transport Management, select the **Entitlements** link on your subaccount's overview screen.
+1.  In the **Account Explorer** of the global account, click on the **Central Services** tile.
 
-    ![SubaccountOverview](screenshots/Entitlements01.png)
+    ![Move Entitlements 15](screenshots/get-started-15.png)
 
-2. To filter for the entitlements for SAP Cloud Transport Management service, search for *Cloud Transport Management* (for example by entering *Transport Management* in the *Search* field).    
+2. In the subaccount overview, choose **Entitlements** from the navigation on the left (1), and choose **Edit** (2).
 
-3. You see that the *standard* instance plan (to access the Cloud Transport Management API) and the *lite* application plan (to access the user interface of SAP Cloud Transport Management) are assigned to **Cloud Transport Management**.     
+    ![Move Entitlements 16](screenshots/get-started-16.png)
 
-    ![Entitlements](screenshots/Entitlements02.png)
+3.  To add entitlements, choose **Add Service Plans**.
+
+    ![Move Entitlements 17](screenshots/get-started-17.png)
+
+4.  In the search field, filter for **transport** (1) and select **Cloud Transport Management** (2). 
+
+    ![Move Entitlements 18](screenshots/get-started-18.png)
+
+5.  Select both plans (1) - **standard** for API access to Cloud Transport Management, and **lite (Application)** for access to the user interface - and choose **Add 2 Service Plans** (2).
+
+    ![Move Entitlements 19](screenshots/get-started-19.png)
+
+6. Filter for **transport** (1) to see the assigned plans for SAP Cloud Transport Management service. Save your changes (2).
+
+    ![Move Entitlements 20](screenshots/get-started-20.png)
 
 [OPTION END]
 
@@ -130,27 +211,23 @@ To enable the usage of the user interface of SAP Cloud Transport Management serv
 
 [OPTION BEGIN [Trial Account]]
 
-1. In your subaccount, go to **Services > Service Marketplace**.
-
-2. Use the *Search* field to filter for *transport management*.
-
-3. The *Cloud Transport Management* tile is displayed.    
+1. In your subaccount, go to **Services > Service Marketplace** (1). Filter for **transport** (2). The *Cloud Transport Management* tile is displayed (3).    
 
     ![Subscription1](screenshots/Subscription01.png)
 
-4. Select the three dots (...) on the tile, and choose **Create**.
+2. Select the three dots (...) on the tile, and choose **Create**.
 
     ![Subscription2](screenshots/Subscription02.png)
 
-5. On the **New Instance or Subscription** dialog, from the **Plan** dropdown box, select **lite** and choose **Create**.
+3. On the **New Instance or Subscription** dialog, from the **Plan** dropdown box (1), select **lite** (2) and choose **Create** (3).
 
     ![Subscription3](screenshots/Subscription03.png)
 
-6. The subscription is in progress. Choose **View Subscription**.
+4. On the **Creation in Progress** dialog, choose **View Subscription**.
 
     ![Subscription4](screenshots/Subscription04.png)
 
-7. You've subscribed to the *Cloud Transport Management* application. 
+5. You've subscribed to the *Cloud Transport Management* application. 
 
     ![Subscription5](screenshots/Subscription05.png)
 
@@ -198,55 +275,55 @@ After successful subscription, you need to configure user access to the SAP Clou
 
 >Although the screenshots show the steps in the trial account, they are identical and therefore also valid for an enterprise account.
 
-1.  The **Go to Application** link allows you to start the user interface of SAP Cloud Transport Management. However, before you can use it, you'll need to set up role collections and assign roles and permissions to your user, which you will do in this step. Choose the **Roles** tab.
-
-    ![Subscription6](screenshots/Subscription06.png)
-
-2. On the **Roles** tab, the default role templates for SAP Cloud Transport Management are displayed.
-
-    ![Roles1](screenshots/Roles01.png)
-
-3. To create role collections for the roles that you want to use for the service, choose **Security > Role Collections** from the navigation on the left (1). Filter for role collections called *TMS* (2). The delivered role collections are displayed (3). To create a new role collection, choose **Create** (4).    
+1.  Before you can use the user interface of SAP Cloud Transport Management, you'll need to set up role collections and assign roles and permissions to your user, which you will do in this step. To create role collections for the roles that you want to use for the service, choose **Security > Role Collections** from the navigation on the left (1). Filter for role collections called *TMS* (2). The delivered role collections are displayed. To create a new role collection, choose **Create** (3).    
 
     ![Roles2](screenshots/Roles02.png)
 
-7. To create a role collection for administrative tasks, enter a name, here `TMS Admin`, and a description (optional), and choose **Create**.
+2. To create a role collection for administrative tasks, enter a name, here `TMS Admin` (1), a description (optional), and choose **Create** (2).
 
     ![Roles3](screenshots/Roles03.png)
 
-8. The role collection was created.
+3. The role collection was created.
 
     ![Roles4](screenshots/Roles04.png)
 
-9. To assign the SAP Cloud Transport Management **Administrator** role to the new role collection, return to the **Roles** tab of the subscription details. In the row of the **Administrator** role template, choose the **+** button.
+4. To assign the SAP Cloud Transport Management **Administrator** role to the new role collection, go to the **Roles** tab of the subscription details. To do this, choose **Services > Instances and Subscriptions** from the navigation on the left (1), and select the arrow at the end of the **Cloud Transport Management** row (2).
+
+    ![Roles3a](screenshots/Roles03a.png) 
+
+5. Select the **Roles** tab.
+
+    ![Subscription6](screenshots/Subscription06.png)
+
+5. On the **Roles** tab, the default role templates for SAP Cloud Transport Management are displayed. In the row of the **Administrator** role template, choose the **+** button.
 
     ![Roles5](screenshots/Roles05.png)
 
-10.  On the **Add to Role Collection** dialog box, select the **TMS Admin** role collection (1), and choose **Add** (2).
+7.  On the **Add to Role Collection** dialog box, select the **TMS Admin** role collection (1), and choose **Add** (2).
 
      ![Roles6](screenshots/Roles06.png)
 
-11. The role collection was added to the **Administrator** role template.
+8. The role collection was added to the **Administrator** role template.
 
      ![Roles7](screenshots/Roles07.png)
 
-12. You can now add users to the new role collection. To do this, choose **Security > Role Collections** from the navigation on the left. Filter for the *TMS* role collections. Select the arrow at the end of the **TMS Admin** row.
+9.  You can now add users to the new role collection. To do this, choose **Security > Role Collections** from the navigation on the left (1). Filter for the *TMS* role collections (2). Select the arrow at the end of the **TMS Admin** row (3).
 
      ![Roles8](screenshots/Roles08.png)
 
-13. In the details of the **TMS Admin** role collection, choose **Edit**.
+10. In the details of the **TMS Admin** role collection, choose **Edit**.
 
     ![Roles9](screenshots/Roles09.png)
 
-14. You can add individual users or user groups to the role collection. In the tutorial, add an individual user. To do this, select the identity provider (here: **Default identity provider**). In the ID field, enter an existing e-mail address and choose `Enter`. The **E-Mail** field is automatically filled with the selected e-mail address. Save your changes.
+11. You can add individual users or user groups to the role collection. In the tutorial, add an individual user. To do this, select the identity provider (here: **Default identity provider**). In the ID field, enter an existing e-mail address and choose `Enter` (1). The **E-Mail** field is automatically filled with the selected e-mail address. Save your changes (2).
 
     ![Roles10](screenshots/Roles10.png)
 
-15. The role collection was added to the selected user. You see that **1** user is displayed.
+12. The role collection was added to the selected user. You see that **1** user is displayed.
 
     ![Roles11](screenshots/Roles11.png)
 
-Repeat the steps, if you want to create other role collections for other tasks, such as the **Import Operator** for import tasks. 
+If you want to create other role collections for other tasks, such as the **Import Operator** for import tasks, you can repeat the steps. However, this is not required for the tutorial. 
 
 
 
@@ -260,7 +337,7 @@ A service instance is required to enable the usage of SAP Cloud Transport Manage
 
 >Although the screenshots show the steps in the trial account, they are identical and therefore also valid for an enterprise account.
 
-1. In your subaccount, choose **Services > Instances and Subscriptions** (1). Go to the **Instances** tab (2). Choose **Create** (3).
+1. In your subaccount, choose **Services > Instances and Subscriptions** (1). Choose **Create** (2).
 
     ![ServiceInstance1](screenshots/ServiceInstance01.png)
 
@@ -268,7 +345,8 @@ A service instance is required to enable the usage of SAP Cloud Transport Manage
 
     ![ServiceInstance3](screenshots/ServiceInstance03.png)
 
-5. After you've selected, you no longer see that you've selected the **Instances** type (1). Enter an **Instance Name** (2), and choose **Create** (3).
+5. Enter an **Instance Name** (1), and choose **Create** (2). 
+    >You don't have to choose **Next**, because the next step isn't necessary for SAP Cloud Transport Management. It's a default step when creating service instances, allowing you to enter JSON parameters, but SAP Cloud Transport Management doesn't support JSON parameters.
 
     ![ServiceInstance4](screenshots/ServiceInstance04.png)
 
@@ -280,7 +358,7 @@ A service instance is required to enable the usage of SAP Cloud Transport Manage
 
     ![ServiceInstance7](screenshots/ServiceInstance07.png)
 
-8. On the **New Service Key** dialog, enter a name for the service key, and choose **Create**.
+8. On the **New Service Key** dialog, enter a name for the service key (1), here `cTMS1-key`, and choose **Create** (2).
 
     ![ServiceInstance8](screenshots/ServiceInstance08.png)
 
@@ -303,13 +381,15 @@ See also on SAP Help Portal: [Creating a Service Instance and a Service Key](htt
 You should now be able to access the user interface of SAP Cloud Transport Management service. 
 
 
-1. To check this, in your subaccount, choose **Services > Instances and Subscriptions**. In the **Subscriptions** section, choose the **Cloud Transport Management** link or the *Go to Application* icon to the right of it.
+1. To check this, in your subaccount, choose **Services > Instances and Subscriptions** (1). In the **Subscriptions** section, choose the **Cloud Transport Management** link or the *Go to Application* icon to the right of it (2).
 
-    ![OpencTMSUI](screenshots/0300%20Open%20cTMS%20UI.png)
+    ![OpencTMSUI](screenshots/OpenCTMSUI.png)
 
-2. In a new tab, you should now see the **Overview** page of your SAP Cloud Transport Management instance. Currently, it looks quite empty which is expected from a new instance. 
+2. In a new tab, you should now see the **Overview** page of your **SAP Cloud Transport Management** service instance. Currently, it looks quite empty which is expected from a new instance. 
 
     ![cTMSUIAccessSuccessful](screenshots/0310%20cTMS%20UI%20access%20successful.png)
 
 
 This concludes the tutorial. Congratulations!
+
+For more information, see the [SAP Cloud Transport Management](https://help.sap.com/docs/cloud-transport-management) documentation on SAP Help Portal.

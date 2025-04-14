@@ -12,7 +12,7 @@ author_profile: https://github.com/dhrubpaul
 
 ## You will learn
 - How to Deploy ollama on AI core
-- Add models to ollama and infrence models
+- Add models to ollama and inference models
 
 ## Prerequisites
 Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
@@ -284,7 +284,7 @@ Once the deployment is running, you can access the LLM’s using ollama.
 
 ### Pulling Gemma inside Ollama deployment
 
-Now we need to import Gemma to our ollama pod before we can infrence the model so here we would be using SAP AI API to call pull model call in Ollama.
+Now we need to import Gemma to our ollama pod before we can inference the model so here we would be using SAP AI API to call pull model call in Ollama.
 
 [OPTION BEGIN [Postman]]
 

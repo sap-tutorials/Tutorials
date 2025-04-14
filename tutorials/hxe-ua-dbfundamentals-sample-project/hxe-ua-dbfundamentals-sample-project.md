@@ -1,8 +1,8 @@
 ---
 parser: v2
 primary_tag: products>sap-hana\,-express-edition
-author_name: Adrian Plata
-author_profile: https://github.com/aplata-sap
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 time: 15
 ---

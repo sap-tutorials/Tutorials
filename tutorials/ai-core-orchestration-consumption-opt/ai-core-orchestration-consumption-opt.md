@@ -43,7 +43,7 @@ Familiarity with the orchestration workflow is recommended
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI Hub SDK]]
+[OPTION BEGIN [Python SDK]]
 
 - **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
 
@@ -60,7 +60,7 @@ Familiarity with the orchestration workflow is recommended
 - The [cv.txt](img/cv.txt) file, containing the resume content, must be added to the working directory. Use the following code to load the file content:
 
 
-```CODE 
+```python
 
 from gen_ai_hub.orchestration.utils import load_text_file 
 # Load the CV file content 
@@ -73,7 +73,7 @@ print(cv_content)
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK]]
+[OPTION BEGIN [JavaScript SDK]]
 
 - **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
 
@@ -83,36 +83,59 @@ print(cv_content)
 
 - Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
 
-**NOTE** : If you are continuing with the same notebook from the previous tutorial, skip steps 1 and 2. Otherwise, create a new notebook using the already deployed orchestration URL to access the Harmonized API.  
+**NOTE** : If you are continuing with the same project from the previous tutorial, skip steps 1 and 2. Otherwise, create a new project using the already deployed orchestration URL to access the Harmonized API.
+
+For detailed installation, please refer to the official documentation of [`@sap-ai-sdk/orchestration`](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration) package.
+
+- The [cv.txt](img/cv.txt) file, containing the resume content, must be added to the working directory. Use the following code to load the file content:
+
+
+```javascript
+
+import { readFile } from 'fs/promises';
+
+const cvContent = await readFile('path/to/cv.txt', 'utf-8');
+
+```
+
+[OPTION END]
+
+[OPTION BEGIN [Java SDK]]
+
+- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
+
+    -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
+
+    -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses.
+
+- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
+
+**NOTE** : If you are continuing with the same project from the previous tutorial, skip steps 1 and 2. Otherwise, create a new Java Maven project using the already deployed orchestration URL to access the Harmonized API. Please find detailed information on orchestration configuration and deployment in the previous tutorial or in  our [documentation](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java). 
 
 
 
 - The [cv.txt](img/cv.txt) file, containing the resume content, must be added to the working directory. Use the following code to load the file content:
 
 
-```CODE 
+```java
+// Adapt filepath to the location you stored the file
+var filePath = "path/to/cv.txt";
 
-// Define the file path
-const filePath = './cv.txt';
-
-let txtContent;
-
+// Read file into string
+String cvContent;
 try {
-    // Attempt to read the file content
-    txtContent = await Deno.readTextFile(filePath);
-    console.log(txtContent);
-} catch (error) {
-    // Handle errors that occur during file reading
-    console.error('Error reading the file:', error);
+ cvContent = new String(Files.readAllBytes(Paths.get(filePath)));
+} catch (IOException e) {
+ throw new RuntimeException(e);
 }
 
-// Log the file content or undefined if an error occurred
-console.log(txtContent);
-
+// Print file content
+System.out.println(cvContent);
 
 ```
 
 [OPTION END]
+
 
 [OPTION BEGIN [Bruno]]
 
@@ -226,7 +249,7 @@ You are a helpful AI assistant for HR. Summarize the following CV in 10 sentence
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 - To define how the AI should process the resume, we need a template comprising **SystemMessage** and **UserMessage** components: 
 
@@ -236,7 +259,7 @@ You are a helpful AI assistant for HR. Summarize the following CV in 10 sentence
 
 Use the following code to create the template: 
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.models.message import SystemMessage, UserMessage 
 from gen_ai_hub.orchestration.models.template import Template, TemplateValue 
@@ -258,7 +281,7 @@ template = Template(
 ```
 - Select the models to be used for this orchestration: 
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.models.llm import LLM 
 # List of models to use 
@@ -271,46 +294,84 @@ models = [
 ```
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK ]]
+[OPTION BEGIN [JavaScript SDK ]]
 
-- To define how the AI should process the resume, we need a template comprising **SystemMessage** and **UserMessage** components: 
+The next step involves creating a template that specifies how the CV content should be handled. The template will include message components with different roles:
 
-    - **SystemMessage**: Defines the assistant's role and instructions. 
+• `system`: Defines the AI assistant's role and instructions. 
 
-    - **UserMessage**: Represents the user's input to be processed. 
+• `user`: Represents the user's input to be processed. 
 
-Use the following code to create the template: 
 
-```CODE
+```javascript
 
-/ Define the template for resume screening 
-const templateConfig = { 
-  templating: { 
-    template: [ 
-      { 
-        role: 'system', 
-        content: 'You are an AI assistant designed to screen resumes for HR purposes. Please assess the candidate qualifications based on the provided resume.', 
-      }, 
-      { 
-        role: 'user', 
-        content: 'Candidate Resume:\n{{?candidate_resume}}', 
-      }, 
-    ], 
-  }, 
+import type { TemplatingModuleConfig } from '@sap-ai-sdk/orchestration';
+
+// Define the system and user messages 
+const templating: TemplatingModuleConfig = { 
+  template: [ 
+    { 
+      role: 'system', 
+      content: 'You are a helpful AI assistant for HR. Summarize the following CV in 10 sentences, focusing on key qualifications, work experience, and achievements. Include personal contact information, organizational history, and personal interests.', 
+    }, 
+    { 
+      role: 'user', 
+      content: 'Candidate Resume:\n{{?candidate_resume}}', 
+    }, 
+  ], 
 }; 
-console.log('Resume screening template configuration defined successfully.');  
 
 ```
-- Select the models to be used for this orchestration: 
 
-```CODE
+We will use multiple models for this tutorial. Since orchestration provides direct access to models without requiring separate deployments, you can use any available models. For this example, we have selected the following models:
+
+```javascript
 
 // List of models to iterate through 
 const models = [ 
-    'gpt-4o', 
-    'mistralai--mistral-large-instruct', 
-    'anthropic--claude-3.5-sonnet', 
-  ];
+  'gpt-4o', 
+  'mistralai--mistral-large-instruct', 
+  'anthropic--claude-3.5-sonnet', 
+];
+
+```
+
+[OPTION END]
+
+[OPTION BEGIN [Java SDK]]
+
+The next step involves creating the prompt for the LLM including both `SystemMessage` and `UserMessage` components.
+
+• `SystemMessage`: Defines the AI assistant's role and instructions. 
+
+• `UserMessage`: Represents the user's input (i.e., the CV content) to be processed by the LLM.
+
+```java
+// Define system and user messages for prompt
+var systemMessage = Message.system(
+  """
+    You are a helpful AI assistant for HR. Summarize the following CV in 10 sentences,
+    using on key qualifications, work experience, and achievements. Include personal contact information, 
+    organizational history, and personal interests.
+  """
+);
+var userMessage = Message.user("Candidate Resume: \n" + cvContent);
+
+// Define the prompt for resume screening
+var prompt = new OrchestrationPrompt(systemMessage, userMessage);
+
+```
+
+
+We can define model parameters and a list of models to use. Only use those models that are already deployed in your instances. For this example, we have selected the following parameters and models:
+
+```java
+// List of models with parameters to iterate through, can be adapted if desired
+var models = Stream.of(
+    OrchestrationAiModel.GPT_4O,
+    OrchestrationAiModel.MISTRAL_LARGE_INSTRUCT,
+    OrchestrationAiModel.CLAUDE_3_5_SONNET
+  ).map(model -> model.withParam(MAX_TOKENS, 1000).withParam(TEMPERATURE, 0.6)).toList();
 
 ```
 
@@ -337,7 +398,7 @@ const models = [
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 - The **Data Masking** Module ensures data privacy by anonymizing or pseudonymizing sensitive information before it is processed. 
 
@@ -347,7 +408,7 @@ const models = [
 
 For this tutorial, we use anonymization: 
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.models.data_masking import DataMasking 
 from gen_ai_hub.orchestration.models.sap_data_privacy_integration import SAPDataPrivacyIntegration, MaskingMethod, ProfileEntity 
@@ -371,12 +432,9 @@ data_masking = DataMasking(
 
 **NOTE** : Here, we mask email, phone, person, organization, and location data.  
 
- 
-
-
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK ]]
+[OPTION BEGIN [JavaScript SDK]]
 
 - The **Data Masking** Module ensures data privacy by anonymizing or pseudonymizing sensitive information before it is processed. 
 
@@ -386,34 +444,52 @@ data_masking = DataMasking(
 
 For this tutorial, we use anonymization: 
 
-```CODE
+```javascript
+
+import type { MaskingModuleConfig } from '@sap-ai-sdk/orchestration';
 
 // Define the data masking configuration 
-const dataMaskingConfig = { 
-  masking: { 
-    masking_providers: [ 
-      { 
-        type: 'sap_data_privacy_integration', 
-        method: 'anonymization', 
-        entities: [ 
-          { type: 'profile-email' }, 
-          { type: 'profile-person' }, 
-          { type: 'profile-phone' }, 
-          { type: 'profile-org' }, 
-          { type: 'profile-location' }, 
-        ], 
-      }, 
-    ], 
-  }, 
+const masking: MaskingModuleConfig = { 
+  masking_providers: [ 
+    { 
+      type: 'sap_data_privacy_integration', 
+      method: 'anonymization', 
+      entities: [ 
+        { type: 'profile-email' }, 
+        { type: 'profile-person' }, 
+        { type: 'profile-phone' }, 
+        { type: 'profile-org' }, 
+        { type: 'profile-location' }, 
+      ], 
+    }, 
+  ], 
 }; 
-console.log('Data Masking configuration defined successfully.');
 
 ```
 
 **NOTE** : Here, we mask email, phone, person, organization, and location data.  
 
+[OPTION END]
 
+[OPTION BEGIN [Java SDK]]
 
+- The **Data Masking** Module ensures data privacy by anonymizing or pseudonymizing sensitive information before it is processed. 
+
+    - **Anonymization**: Irreversibly replaces personal identifiers with placeholders (e.g., MASKED_ENTITY). 
+
+    - **Pseudonymization**: Substitutes identifiers with reversible tokens (e.g., MASKED_ENTITY_ID).
+
+For this tutorial, we use anonymization: 
+
+```java
+// Define the data masking configuration
+var dataMasking = DpiMasking.anonymization().withEntities(EMAIL, PERSON, PHONE, ORG, LOCATION);
+
+System.out.println("Data Masking defined successfully.");
+
+```
+
+**NOTE** : Here, we mask email, phone, person, organization, and location data.  
 
 [OPTION END]
 
@@ -554,11 +630,11 @@ Navigate to the **Input Filtering** section.
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 - The **Content Filtering** Module allows screening of both input and output content to remove inappropriate or unwanted elements. This is achieved through configurable thresholds: 
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.models.azure_content_filter import AzureContentFilter 
 # Configure input and output content filters 
@@ -567,16 +643,12 @@ output_filter = AzureContentFilter(hate=6, sexual=4, self_harm=0, violence=4)
 
 ```
 
-
-
 **NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case.  
 
  
-
-
 - Then Combine the template, models, and modules into orchestration configurations: 
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.models.config import OrchestrationConfig 
 # Create configurations for each model 
@@ -595,84 +667,74 @@ for model in models:
 
 ```
 
-
-
 **NOTE** : Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process. 
-
-
- 
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK ]]
+[OPTION BEGIN [JavaScript SDK]]
 
 - The **Content Filtering** Module allows screening of both input and output content to remove inappropriate or unwanted elements. This is achieved through configurable thresholds: 
 
-```CODE
+```javascript
 
-const filteringModuleConfig = { 
-  input: { 
-    filters: [ 
-      { 
-        type: 'azure_content_safety', 
-        config: { 
-          Hate: 6, 
-          SelfHarm: 0, 
-          Sexual: 4, 
-          Violence: 4, 
-        }, 
-      }, 
-    ], 
-  }, 
-  output: { 
-    filters: [ 
-      { 
-        type: 'azure_content_safety', 
-        config: { 
-          Hate: 6, 
-          SelfHarm: 0, 
-          Sexual: 4, 
-          Violence: 4, 
-        }, 
-      }, 
-    ], 
-  }, 
-}; 
-console.log('Content Filtering configuration defined successfully.');  
+import { buildAzureContentSafetyFilter } from '@sap-ai-sdk/orchestration'; 
+import type { FilteringModuleConfig } from '@sap-ai-sdk/orchestration';
+
+const inputFilter = buildAzureContentSafetyFilter({
+  Hate: 'ALLOW_ALL',
+  SelfHarm: 'ALLOW_SAFE',
+  Sexual: 'ALLOW_SAFE_LOW_MEDIUM',
+  Violence: 'ALLOW_SAFE_LOW_MEDIUM'
+});
+
+const outputFilter = buildAzureContentSafetyFilter({
+  Hate: 'ALLOW_ALL',
+  SelfHarm: 'ALLOW_SAFE',
+  Sexual: 'ALLOW_SAFE_LOW_MEDIUM',
+  Violence: 'ALLOW_SAFE_LOW_MEDIUM'
+});
+
+const filtering: FilteringModuleConfig = {
+  filtering: {
+    input: { filters: [inputFilter] },
+    output: { filters: [outputFilter] }
+  }
+}
 
 ```
 
+**NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case. 
 
+Multiple content filters can be applied for both input and output. In this tutorial, we use Azure Content Safety Filter, but you can choose from the available providers based on your use case. For more information, please refer to the official documentation of [`@sap-ai-sdk/orchestration`](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration) package.
+
+The `filtering` configuration created in this step will be used in the next step to initialize an `OrchestrationClient` and consume the orchestration service.
+
+[OPTION END]
+
+[OPTION BEGIN [Java SDK]]
+
+- The **Content Filtering** Module allows screening of both input and output content to remove inappropriate or unwanted elements. This is achieved through configurable thresholds: 
+
+```java
+// Define an input content filter, adjust thresholds for your needs
+var inputFilter = new AzureContentFilter()
+  .hate(ALLOW_ALL)
+  .selfHarm(ALLOW_SAFE)
+  .sexual(ALLOW_SAFE_LOW_MEDIUM)
+  .violence(ALLOW_SAFE_LOW_MEDIUM);
+
+// Define an output content filter, adjust thresholds for your needs
+var outputFilter = new AzureContentFilter()
+  .hate(ALLOW_ALL)
+  .selfHarm(ALLOW_SAFE)
+  .sexual(ALLOW_SAFE_LOW_MEDIUM)
+  .violence(ALLOW_SAFE_LOW_MEDIUM);
+
+System.out.println("Content Filtering defined successfully.");
+
+```
 
 **NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case.  
-
- 
-
-
-- Then Combine the template, models, and modules into orchestration configurations: 
-
-```CODE
-
-// Function to create configuration for each model 
-const createModelConfig = (modelName) => ({ 
-  llm: { 
-    model_name: modelName, 
-    model_params: { 
-      max_tokens: 1000, 
-      temperature: 0.6, 
-    }, 
-  }, 
-  ...templateConfig, 
-  ...dataMaskingConfig, 
-  filtering_module_config: filteringModuleConfig,  
-}); 
-const deploymentConfig = { 
-  resourceGroup: 'default', 
-}; 
-
-```
-
-**NOTE** : Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process.**  
 
 [OPTION END]
 
@@ -783,21 +845,20 @@ The **Content Filtering** Module allows screening of both input and output conte
 
 ![img](img/image023.png)
 
-  **Conclusion** :  
-  Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+**Conclusion** :  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
-  While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
+While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
-  By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
-
+By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
 
 [OPTION END]
 
-[OPTION BEGIN [Gen AI SDK]]
+[OPTION BEGIN [Python SDK]]
 
 - Finally, execute the orchestration and collect the results: 
 
-```CODE
+```python
 
 from gen_ai_hub.orchestration.service import OrchestrationService 
 # Initialize an empty list to store the responses 
@@ -825,78 +886,173 @@ with open("model_responses.txt", "w") as file:
         file.write("-" * 80 + "\n")  # Add a separator between model responses  
 
 ```
+
 - A **model_responses.txt** file will be generated, containing outputs from all the models used.
 
-  **Conclusion** :  
-  Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+**Conclusion** :  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
-  While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
+While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
-  By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
-
+By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
 
 [OPTION END]
 
-[OPTION BEGIN [SAP Cloud SDK ]]
+[OPTION BEGIN [JavaScript SDK]]
 
-- Finally, execute the orchestration and collect the results: 
+**Generate Responses with Multiple Models** 
 
-```CODE
+This step outlines the process of generating responses for a set of queries using different models. The `generateResponsesWithModels()` function iterates through each model and executes queries with the created template. 
 
-import {OrchestrationClient,buildAzureContentFilter} from '@sap-ai-sdk/orchestration'; 
-import { writeFileStrSync } from "https://deno.land/std@0.52.0/fs/mod.ts"; 
-// Function to generate responses from multiple models 
-async function generateResponsesForModels(txtContent) { 
-    const responses = []; 
-    for (const modelName of models) { 
-      console.log(`\n=== Responses for model: ${modelName} ===\n`); 
-      // Create configuration for the current model 
-      const modelConfig = createModelConfig(modelName); 
-      // console.log(modelConfig) 
-      // Initialize OrchestrationClient with dynamic model configuration 
-      const orchestrationClient = new OrchestrationClient({ 
-        ...deploymentConfig, 
-        ...modelConfig, 
-      }); 
-      try { 
-        // Run orchestration with the provided input (candidate resume content) 
-        const response = await orchestrationClient.chatCompletion({ 
-          inputParams: { candidate_resume: txtContent }, 
-        }); 
-        // Extract the response content 
-        const content = response.getContent(); 
-        console.log(`Response from ${modelName}:\n`, content); 
-        // Store the response in the list 
-        responses.push({ 
-          model: modelName, 
-          response: content, 
-        }); 
-      } catch (error) { 
-        console.error(`Error with model ${modelName}:`, error.response?.data || error.message); 
-      } 
-    } 
-    // Optionally save the responses to a file (similar to Python code) 
-    await writeFileStrSync( 
-      'model_responses_js1.txt', 
+**Note**: Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process.
+
+```javascript
+
+import { writeFile } from 'fs/promises';
+import { OrchestrationClient } from '@sap-ai-sdk/orchestration'; 
+
+const RESOURCE_GROUP = "YourResourceGroupId"; // Define the resource group, change this to your resource group name
+
+// Generate responses from multiple models using OrchestrationClient
+async function generateResponsesWithModels(cvContent: string) { 
+  // Initialize OrchestrationClient asynchronously for list of models
+    const responses = await Promise.all(
+      models.map(async (model) => {
+        const orchestrationClient = new OrchestrationClient(
+          {
+            llm: {
+              model_name: model,
+              model_params: { 
+                max_tokens: 1000, 
+                temperature: 0.6, 
+              }, 
+            },
+            templating,
+            masking,
+            filtering
+          },
+          { resourceGroup: RESOURCE_GROUP } 
+        );
+
+        try { 
+          // Run orchestration with the provided input (candidate resume content) 
+          const response = await orchestrationClient.chatCompletion({ 
+            inputParams: { candidate_resume: cvContent }, 
+          }); 
+
+          // Extract the response content and add it to list of responses
+          return {
+            model, 
+            response: response.getContent(), 
+          }; 
+        } catch (error: any) { 
+          console.error(`Error with model ${model}:`, error.stack);
+        } 
+      })
+    );
+
+    // Optionally save the responses to a file
+    await writeFile( 
+      'model_responses_js.txt', 
       responses 
         .map((res) => `Response from model ${res.model}:\n${res.response}\n${'-'.repeat(80)}\n`) 
         .join(''), 
       'utf-8' 
     ); 
-}    
-  // Example usage with resume content 
-  generateResponsesForModels(txtContent);  
+
+    return responses;
+} 
+
+// Example usage
+const modelResponses = await generateResponsesWithModels(cvContent); 
+modelResponses.map(response => {
+  console.log(`==== Response with Model: ${response.model} ====\n${response.response || 'No response available'}\n`);
+});
 
 ```
+
 - A **model_responses.txt** file will be generated, containing outputs from all the models used.
 
-  **Conclusion** :  
-  Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+**Conclusion** :  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
-  While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
+While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
-  By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
+By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
 
+[OPTION END]
+
+[OPTION BEGIN [Java SDK]]
+
+The following function writes the responses from different models, stored in a list, to a file (same as in previous tutorial): 
+
+```java
+// Function writing responses to a file
+void createFileFromResponses (ArrayList<Map> responses) {
+ // Format model responses
+ var formattedResponses = responses.stream().
+  map(response -> "Response from model " + response.get("model") +
+  ": \n\n" + response.get("response"));
+
+ // Write model responses to provided file path
+ try {
+  Files.writeString(Path.of("provided/path/to/model_responses.txt"),
+   String.join("\n\n" + "-".repeat(120) + "\n\n", formattedResponses.toList()));
+ } catch (IOException e) {
+  throw new RuntimeException(e);
+ }
+}
+```
+
+**Generate Responses for Multiple Models** 
+
+This step outlines the process of generating responses for a set of queries using different models. We iterate through the list of models created earlier and query the model with the created prompt using an `OrchestrationClient`.   
+
+**NOTE** : Ensure that your orchestration deployment is in Running Status and ready to be consumed during this process.**  
+ 
+```java
+// Define the resource group, change this to your resource group name
+var RESOURCE_GROUP = "yourResourceGroup";
+
+// Create the client used for interaction with orchestration service
+var client = new OrchestrationClient(new AiCoreService()
+ .getInferenceDestination(RESOURCE_GROUP).forScenario("orchestration"));
+
+// Create orchestration module configuration with masking and filtering
+var moduleConfig = new OrchestrationModuleConfig()
+.withMaskingConfig(dataMasking)
+.withInputFiltering(inputFilter)
+.withOutputFiltering(outputFilter);
+
+// A list to store all responses from the different models
+var responses = new ArrayList<Map>();
+
+// Iterate through the list of models
+for (var model: models) {
+ System.out.println("\n=== Responses for model: %s ===\n".formatted(model.getName()));
+
+ // Prompt LLM with specific LLM config for model
+ var response = client.chatCompletion(prompt, moduleConfig.withLlmConfig(model));
+
+ // Add response to list of all model responses
+ responses.add(Map.of("model", model.getName(), "response", response.getContent()));
+
+ System.out.println(response.getContent());
+}
+
+// Write all responses to a file
+createFileFromResponses(responses);
+
+```
+
+- A **model_responses.txt** file will be generated, containing outputs from all the models used.
+
+**Conclusion** :  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+
+While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
+
+By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
 
 [OPTION END]
 
@@ -908,12 +1064,11 @@ async function generateResponsesForModels(txtContent) {
 
 By following these steps, you can successfully mask sensitive data and apply content filtering while consuming the deployed model.
 ![img](img/image.png)
-  **Conclusion** :  
-  Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+**Conclusion** :  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
-  While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filterin settings based on your specific requirements to handle sensitive or categorized data effectively.  
+While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filterin settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
-  By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
+By incorporating these optional modules, you can tailor your Response to meet organizational data security policies and ensure safe, reliable responses for diverse scenarios.  
  
 [OPTION END]
-

@@ -30,7 +30,7 @@ The core functionality of Document Information Extraction is to automatically ex
 >- [Use Generative AI to Process Business Documents] (https://developers.sap.com/mission.gen-ai-process-business-documents.html)
 >- [Shape Machine Learning to Process Custom Business Documents] (https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html)
 
->See also [Supported Document Types and File Formats] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-document-types-and-file-formats).
+>See also [Supported Document Types] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-document-types) and [Supported File Types] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-file-types-all).
 
 Upload to the service any standard document type file (in PDF format or single-page JPEG, PNG, and TIFF format) that has content in headers and tables, such as an invoice.
 
@@ -59,7 +59,7 @@ Upload to the service any standard document type file (in PDF format or single-p
 
     >**NOTE:**
 
-    >You must select a schema when you add documents. By default, Document Information Extraction proposes the appropriate preconfigured SAP schema for your document type. To see the header and line item fields that are available in an SAP schema, choose **Schema Configuration** on the left of the Documentation Information Extraction UI and then choose the desired schema to display its details.
+    >You must select a schema when you add documents. By default, Document Information Extraction proposes the appropriate preconfigured SAP schema for your document type. To see the header and line item fields that are available in an SAP schema, choose the desired **Schema** on the Select Document screen, and then choose **Extraction Fields** to display the schema details.
 
     >You can also create schemas of your own. To find out how to create schemas, see [Create Schema for Purchase Order Documents](cp-aibus-dox-schema) and [Create Schema for Custom Documents](cp-aibus-dox-schema-custom). 
     
@@ -73,9 +73,9 @@ Upload to the service any standard document type file (in PDF format or single-p
 
     <!-- border -->![DOX-UI-App](pending.png)
 
-    The status changes from PENDING to READY. This means the selected header fields and line items have been extracted, and the extraction results are ready to be validated and changed if necessary. If the status changes from PENDING to FAILED, this means it was not possible to get the extraction results, and you need to upload the documents again.
+    The status changes from PENDING to DONE. This means the selected header fields and line items have been extracted, and the extraction results are ready to be validated and changed if necessary. If the status changes from PENDING to FAILED, this means it was not possible to get the extraction results, and you need to upload the documents again.
 
-    <!-- border -->![DOX-UI-App](ready.png)
+    <!-- border -->![DOX-UI-App](done.png)
 
 
 >**CAUTION:**
@@ -89,9 +89,9 @@ A schema contains a list of header fields and line item fields representing the 
 
 You can either create your own schema from scratch or use a preconfigured SAP schema. The Document Information Extraction UI provides SAP schemas for the following standard document types:
 
-* Purchase order
+* Invoice
 * Payment advice
-* Invoice 
+* Purchase order
 
 In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can use these schemas unchanged to upload documents.
 
@@ -106,11 +106,7 @@ If you don’t want to configure your own schema, you can select the appropriate
 
     <!-- border -->![DOX-UI-App](choose.png)
 
-2. You see the page preview of the document file you uploaded. Click **Extraction Results**.
-
-    <!-- border -->![DOX-UI-App](extraction-results.png)
-
-    You see the Header Fields and Line Items extraction results.
+    You see the page preview of the document file you uploaded and the header fields and line items extraction results.
 
     <!-- border -->![DOX-UI-App](extraction-results-done.png)
 
@@ -120,7 +116,7 @@ If you don’t want to configure your own schema, you can select the appropriate
 
     <!-- border -->![DOX-UI-App](confidence.png)
 
-3. If corrections are needed, and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
+2. If corrections are needed, and the document status is DONE, you can **Edit** the Header Fields and Line Items extraction results.
 
     <!-- border -->![DOX-UI-App](edit-1.png)
 
@@ -130,11 +126,11 @@ If you don’t want to configure your own schema, you can select the appropriate
 
     <!-- border -->![DOX-UI-App](edit-currency-code-2.png)
 
-4. Click **+** to insert a new line item at the bottom.
+3. Click **+** to insert a new line item at the bottom.
 
     <!-- border -->![DOX-UI-App](edit-2.png)
 
-5. To edit fields, first select a value in the document page preview, and choose the appropriate name from the **Field** dropdown list on the **Assign Field** dialog. Then, add or change the extraction value, if necessary. Finally, click **Apply** to add the selected field to the Header Fields or Line Items extraction results.
+4. To edit fields, first select a value in the document page preview, and choose the appropriate name from the **Field** dropdown list on the **Assign Field** dialog. Then, add or change the extraction value, if necessary. Finally, click **Apply** to add the selected field to the Header Fields or Line Items extraction results.
 
     Here, you see an example where the value for the Buyer Contact field is selected in the document page preview and added to the Header Fields extraction results:
 
@@ -142,15 +138,15 @@ If you don’t want to configure your own schema, you can select the appropriate
 
     <!-- border -->![DOX-UI-App](edit-buyer-2.png)
 
-6. Save your changes.
+5. Save your changes.
 
     <!-- border -->![DOX-UI-App](save.png)
 
-7. You can also **Edit** and **Confirm** the document.
+6. You can also **Edit** and **Confirm** the document.
 
     <!-- border -->![DOX-UI-App](confirm.png)
 
-    The status changes from READY to CONFIRMED. This means the extraction results have been confirmed and can no longer be changed.
+    The status changes from DONE to CONFIRMED. This means the extraction results have been confirmed and can no longer be changed.
 
     <!-- border -->![DOX-UI-App](confirmed.png)
 
