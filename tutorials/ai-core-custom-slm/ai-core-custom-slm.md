@@ -79,7 +79,7 @@ spec:
             - containerPort: 8080
               protocol: TCP
 ```
-Replace `<YOUR_DOCKER_SECRET>` with Default and replace `<YOUR_DOCKER_USER>` with your docker username. 
+Replace `<YOUR_DOCKER_SECRET>` with the exact name of the Docker Registry Secret based on your configuration. This name must match the value used in the `imagePullSecrets.name` field of your YAML file.
 
 **NOTE** - we'll generate the docker image referred here in the following steps.
 
