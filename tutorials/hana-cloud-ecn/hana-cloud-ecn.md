@@ -362,14 +362,18 @@ Before removing the ECN node, disable the workload class so that new queries are
     btp.exe get services/instance <instance ID>
     ```
 
-### Node.js app demonstrating the routedirectexecute setting
-The below Node.js app is used to demonstrate that statements must be prepared first to be correctly routed as documented at [Statement Routing](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/077d30cc847443288d3f0574356de4e7.html).
+### Node.js app demonstrating prepared statements and the option routeDirectExecute on statement routing 
+The below Node.js app is used to demonstrate that statements must be prepared first to be routed to an ECN as documented at [Statement Routing](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/077d30cc847443288d3f0574356de4e7.html).
 
-The below code when run will not be executed on the ECN unless, the variable prepare is set to true or the routeDirectExecute option is set to true.
+Some tools such as the SQL Console in SAP HANA Cloud Central, the SAP HANA database explorer, and [hdbsql](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) by default, always prepare statements.
+
+![prepare before execute](prepare-before-execute.png)
+
+The below code when run, will not be executed on the ECN, unless the variable prepare is set to true or the routeDirectExecute option is set to true.
 
 Further details on creating applications that connect to an SAP HANA Cloud database can be found at [Use Clients to Query an SAP HANA Database](https://developers.sap.com/mission.hana-cloud-clients.html).
 
-1. Try running the below app and adjust the prepare and routeDirectExecute variables.
+1. Try running the below app and adjust the prepare and routeDirectExecute variables.  
 
     ```JavaScript
     'use strict';
@@ -432,6 +436,8 @@ Further details on creating applications that connect to an SAP HANA Cloud datab
     Output when the variable prepare is false but routeDirectExecute is true.
 
     ![routedirectexecute](route-direct-execute.png)
+
+    For further details on the methods of the connection class used above consult [prepare](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c63d283b3635469bb8afbefbbe7aea7b.html) and [execute](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/ef5564058b1747ce99fd3d1e03266b39.html).
 
 ### Procedure to check if the ECN is started
 The following procedure can be used to check if the ECN is available and then when it is to run a workload.
