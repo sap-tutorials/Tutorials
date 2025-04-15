@@ -212,7 +212,25 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     Notice that the structure of the Guest Notes does not need to be defined in advance.
 
-4. The JSON data can be returned as a JSON document, in a tabular result, or can be joined with data from a table.
+4. (Optional) You can use the [Support for JSON Schema](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/support-for-json-schema) feature to define rules for your documents to adhere to. The example below restricts the "title" property to only accept strings.
+   
+    ```SQL
+    CREATE COLLECTION "GUEST_NOTES_WITH_SCHEMA" JSON SCHEMA '{
+        "$schema": "http://json-schema.org/draft-07/schema#",
+            "properties": {
+                "title": {
+                    "type": "string"
+                }
+            }
+        }';
+
+    INSERT INTO "GUEST_NOTES_WITH_SCHEMA" VALUES ('{"title": 1, "FIRST_NAME": "Peter", "LAST_NAME": "Brown", "REQUEST": "requested an earl grey at 2:00"}'); -- throws error 
+    ```
+
+    ![Schema Validation Error](schema_validation_error.png)
+    
+
+5. The JSON data can be returned as a JSON document, in a tabular result, or can be joined with data from a table.
 
     ```SQL
     SELECT * FROM GUEST_NOTES;  --returns JSON
@@ -231,7 +249,7 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     For additional details see the [SELECT Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/select-statement) in the JSON Document Store guide.
 
-5. The properties of the JSON collection can also be viewed.  
+6. The properties of the JSON collection can also be viewed.  
 
     ![Collection properties](collection-properties.png)
 
