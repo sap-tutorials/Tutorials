@@ -297,7 +297,7 @@ Now we need to import llava-phi3 to our ollama pod before we can inference the m
 - Once you have deployed the model in SAP AI Core, you can use the pull endpoint to load additional models, such as llava-phi3.
 ```json
 { 
-     "name": " llava-phi3" 
+     "name": "llava-phi3" 
 }
 ```
 For your reference, please see the screenshots below.
