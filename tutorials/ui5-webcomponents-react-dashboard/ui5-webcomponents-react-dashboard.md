@@ -23,29 +23,27 @@ So far, you have built your first `Card` component. Now to take things further, 
 
 ### Add necessary imports
 
-To make things easier, first import all the components you will need in this step. Just copy the code below and replace the previous imported components in `MyApp.tsx`.
+To make things easier, first import all the components and enums you will need in this step. Just copy the code below and replace the previous imported components in `MyApp.tsx`.
 
 ```TypeScript / TSX
 import {
-  Avatar,
-  Card,
-  CardHeader,
-  Text,
-  ShellBar,
-  ShellBarItem,
-  List,
-  StandardListItem,
-  CustomListItem,
-  ValueState,
-  ProgressIndicator,
-  FlexBox,
-  FlexBoxJustifyContent,
-  FlexBoxWrap,
-  FlexBoxDirection,
-  AnalyticalTable,
-  Icon
+   Avatar,
+   Card,
+   CardHeader,
+   Text,
+   ShellBar,
+   ShellBarItem,
+   List,
+   ListItemStandard,
+   ListItemCustom,
+   ProgressIndicator,
+   FlexBox,
+   FlexBoxJustifyContent,
+   FlexBoxWrap,
+   FlexBoxDirection,
+   AnalyticalTable,
+   Icon,
 } from "@ui5/webcomponents-react";
-import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
 ```
 
 
@@ -69,40 +67,48 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     Use the `logo` and `profile` prop to achieve this. The `logo` prop accepts either an `img` tag or the `Avatar` component, the `profile` prop only accepts the `Avatar` component. First add the `logo` prop like this:
 
     ```TypeScript / TSX
-     <ShellBar logo={<img src="" />} primaryTitle="My App" />
+     <ShellBar logo={<img src="" alt="Company Logo" />} primaryTitle="My App" />
     ```
 
     Then pass the `profile` prop like this:
 
     ```TypeScript / TSX
     <ShellBar
-      logo={<img src="" />}
-      profile={<Avatar><img src="" /></Avatar>}
+      logo={<img src="" alt="Company Logo"/>}
+      profile={<Avatar><img src="" alt="User Avatar" /></Avatar>}
       primaryTitle="My App"
     />
     ```
 
-    You can use your own image, use an URL to an image or simply download the images below and add them to your `public` folder in your project.
+    You can use your own image, use a URL to an image or simply download the images below and add them inside your `src` folder and then import them.
 
     [`reactLogo.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/reactLogo.png)
 
     [`profilePictureExample.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/profilePictureExample.png)
 
+    Processed Assets:
+    [assets](assets.png)
+
+    ```TypeScript / TSX
+    import reactLogo from "./assets/reactLogo.png";
+    import profilePictureExample from "./assets/profilePictureExample.png";
+    ```
+
     ```TypeScript / TSX
     <ShellBar
-      logo={<img src="reactLogo.png" />}
+      logo={<img src={reactLogo} alt="Company Logo" />}
       profile={
         <Avatar>
-          <img src="profilePictureExample.png" />
+          <img src={profilePictureExample} alt="User Avatar" />
         </Avatar>
       }
       primaryTitle="My App"
     />
     ```
 
-3. Add custom elements
+3. Add custom items
 
-    By passing a `ShellBarItem` as `child` you are able to add custom elements to your `ShellBar`. The element is basically a `Button` with responsive behavior and styling adapted to the `ShellBar`.
+    By passing a `ShellBarItem` as `child` you are able to add custom items to your `ShellBar`. The element is basically a `Button` with responsive behavior and styling adapted to the `ShellBar`.
 
     ```TypeScript / TSX
     <ShellBar
@@ -114,7 +120,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
       }
       primaryTitle="My App"
     >
-      <ShellBarItem icon="add" text="Add" />
+      <ShellBarItem icon="activate" text="Activate" tooltip="activate" />
     </ShellBar>
     ```
 
@@ -125,18 +131,21 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     Add this line to your imports:
 
     ```TypeScript / TSX
-    import addIcon from "@ui5/webcomponents-icons/dist/add.js";
+    import activateIcon from "@ui5/webcomponents-icons/dist/activate.js";
     ```
 
-    Now your `ShellBarItem` shows up at the right side of the `ShellBar`.
+    Now your `ShellBarItem` shows up on the right side of the `ShellBar`.
 
     ![ShellBar](02_shellbar.png)
 
-    For maintainability reasons, replace `icon="add"` with the import name `icon={addIcon}`. Now if you replace the icon but forget to remove the import, modern IDEs or linters like [eslint](https://eslint.org/) will tell you that there is an unused import in your file.
+    For maintainability reasons, replace `icon="activate"` with the import name `icon={activateIcon}`. Now if you replace the icon but forget to remove the import, modern IDEs or linters like [eslint](https://eslint.org/) will tell you that there is an unused import in your file.
 
 Your component should now look like this:
 
 ```TypeScript / TSX
+import activateIcon from "@ui5/webcomponents-icons/dist/activate.js";
+import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
+import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
 import { useState } from "react";
 import {
   Avatar,
@@ -146,9 +155,8 @@ import {
   ShellBar,
   ShellBarItem,
   List,
-  CustomListItem,
-  StandardListItem,
-  ValueState,
+  ListItemStandard,
+  ListItemCustom,
   ProgressIndicator,
   FlexBox,
   FlexBoxJustifyContent,
@@ -157,12 +165,9 @@ import {
   AnalyticalTable,
   Icon,
 } from "@ui5/webcomponents-react";
-import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
-import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
-import addIcon from "@ui5/webcomponents-icons/dist/add.js";
-import listIcon from "@ui5/webcomponents-icons/dist/list.js";
+import reactLogo from "./assets/reactLogo.png";
+import profilePictureExample from "./assets/profilePictureExample.png";
 
 const dataset = [
   {
@@ -198,6 +203,12 @@ const dataset = [
 export function MyApp() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
+
+  const contentTitle =
+    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+  const switchToChart =
+    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+
   const handleHeaderClick = () => {
     if (toggleCharts === "lineChart") {
       setLoading(true);
@@ -213,53 +224,53 @@ export function MyApp() {
       }, 2000);
     }
   };
-  const contentTitle =
-    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-  const switchToChart =
-    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+
   return (
     <div>
       <ShellBar
-        logo={<img src="reactLogo.png" />}
+        logo={<img src={reactLogo} alt="Company Logo" />}
         profile={
           <Avatar>
-            <img src="profilePictureExample.png" />
+            <img src={profilePictureExample} alt="User Avatar" />
           </Avatar>
         }
         primaryTitle="My App"
       >
-        <ShellBarItem icon={addIcon} text="Add" />
+        <ShellBarItem icon={activateIcon} text="Activate" />
       </ShellBar>
       <Card
         header={
           <CardHeader
-            titleText="Stock Prices"
+            titleText="Prices"
             subtitleText={`Click here to switch to ${switchToChart}`}
             interactive
-            onClick={handleHeaderClick}
             avatar={
               <Icon
                 name={
                   toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
                 }
+                accessibleName={contentTitle}
               />
             }
+            onClick={handleHeaderClick}
           />
         }
         style={{ width: "300px" }}
       >
-        <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+        <Text style={{ padding: "var(--sapContent_Space_S)" }}>
+          {contentTitle}
+        </Text>
         {toggleCharts === "lineChart" ? (
           <LineChart
             dimensions={[{ accessor: "month" }]}
-            measures={[{ accessor: "data", label: "Stock Price" }]}
+            measures={[{ accessor: "data", label: "Price" }]}
             dataset={dataset}
             loading={loading}
           />
         ) : (
           <BarChart
             dimensions={[{ accessor: "month" }]}
-            measures={[{ accessor: "data", label: "Stock Price" }]}
+            measures={[{ accessor: "data", label: "Price" }]}
             dataset={dataset}
             loading={loading}
           />
@@ -300,35 +311,47 @@ export function MyApp() {
     <List></List>
     ```
 
-4. To render elements of the list, use the `StandardListItem` and pass a `string` as child.
+4. To render elements of the list, use the `ListItemStandard` and pass a `string` as child.
 
     ```TypeScript / TSX
      <List>
-       <StandardListItem>Activity 1</StandardListItem>
+       <ListItemStandard>Activity 1</ListItemStandard>
      </List>
     ```
 
-5. The user should know the status of the activities. Add the `additionalText` prop to the `StandardListItem`. To visualize if the status is neutral, positive or negative, also add the `additionalTextState` prop.
+5. Users should know the status of the activities. Add the `additionalText` prop to the `StandardListItem`. To visualize if the status is neutral, positive or negative, also add the `additionalTextState` prop.
+
+   You can either pass a supported string directly, or use the `ValueState` enum:
 
     ```TypeScript / TSX
-     <StandardListItem additionalText="finished" additionalTextState={ValueState.Success}>
-       Activity 1
-     </StandardListItem>
-     <StandardListItem additionalText="failed" additionalTextState={ValueState.Error}>
-       Activity 2
-     </StandardListItem>
+    import ValueState from '@ui5/webcomponents-base/dist/types/ValueState.js';
+    ```
+
+    ```TypeScript / TSX
+    <ListItemStandard
+      additionalText="finished"
+      additionalTextState={ValueState.Positive}
+    >
+      Activity 1
+    </ListItemStandard>
+    <ListItemStandard
+      additionalText="failed"
+      additionalTextState={ValueState.Negative}
+    >
+      Activity 2
+    </ListItemStandard>
     ```
 
 6. The "Progress" card shows two list items, but both of them are already completed. Let's create two more activities which are still in progress.
 
-    First, create two `CustomListItem`s below the completed items.
+    First, create two `ListItemCustom`s below the completed items.
 
     ```TypeScript / TSX
-    <CustomListItem></CustomListItem>
-    <CustomListItem></CustomListItem>
+    <ListItemCustom></ListItemCustom>
+    <ListItemCustom></ListItemCustom>
     ```
 
-    > The `CustomListItem` allows customizing the content of the list item and for this reason doesn't offer props like `additionalText`.
+    > The `ListItemCustom` allows customizing the content of the list item and for this reason doesn't offer props like `additionalText`.
 
     To show the progress, add the `ProgressIndicator` as child of the items, with the following props:
 
@@ -336,69 +359,68 @@ export function MyApp() {
     - `valueState`: The value-state (color) of the indicator
 
     ```TypeScript / TSX
-    <CustomListItem>
-      <ProgressIndicator value={89} valueState={ValueState.Success} />
-    </CustomListItem>
-    <CustomListItem>
-      <ProgressIndicator value={5} valueState={ValueState.Error} />
-    </CustomListItem>
+    <ListItemCustom>
+      <ProgressIndicator value={89} valueState={ValueState.Positive} />
+    </ListItemCustom>
+    <ListItemCustom>
+      <ProgressIndicator value={5} valueState={ValueState.Negative} />
+    </ListItemCustom>
     ```
 
 7. The indicators are displayed as part of the list item, but the title and status of the activities is still missing.
 For this, add two `Text` components above the indicator:
 
     ```TypeScript / TSX
-    <CustomListItem>
+    <ListItemCustom>
       <Text>Activity 3</Text>
       <Text>in progress</Text>
-      <ProgressIndicator value={89} valueState={ValueState.Success} />
-    </CustomListItem>
+      <ProgressIndicator value={89} valueState={ValueState.Positive} />
+    </ListItemCustom>
     ```
 
-8. All necessary information are now available in each item, but the formatting looks terrible. Let's fix that by using a flex box:
+8. All necessary information are now available in each item, but the formatting looks terrible. Let's fix that by using a flex-box:
 
     ```TypeScript / TSX
-    <CustomListItem>
-      <FlexBox direction={FlexBoxDirection.Column}>
+    <ListItemCustom>
+      <FlexBox direction={FlexBoxDirection.Column} fitContainer>
         <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
           <Text>Activity 3</Text>
           <Text>in progress</Text>
         </FlexBox>
-        <ProgressIndicator value={89} valueState={ValueState.Success} />
+        <ProgressIndicator value={89} valueState={ValueState.Positive} />
       </FlexBox>
-    </CustomListItem>
+    </ListItemCustom>
     ```
 
     > The `FlexBox` implements most of the [`CSS Flexbox`](https://www.w3schools.com/css/css3_flexbox.asp) behavior without being forced to actually use CSS or other styling methods.
 
-9. The content of the list item is now aligned correctly, but doesn't apply the correct padding, colors and dimensions. To fix this as well, pass the `style` prop, to use the default [React `inlineStyle` syntax](https://reactjs.org/docs/dom-elements.html):
+9. The content of the list item is now aligned correctly, but doesn't apply the correct padding, colors and dimensions. To fix this as well, pass the `style` prop, to use the default [React `inlineStyle` syntax](https://reactjs.org/docs/dom-elements.html). Again, we're using global CSS variables for this:
 
     ```TypeScript / TSX
-    <CustomListItem>
+    <ListItemCustom>
       <FlexBox
         direction={FlexBoxDirection.Column}
-        style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
+        fitContainer
+        style={{ paddingBlock: "var(--sapContent_Space_S)" }}
       >
         <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
-          <Text style={{ fontSize: ThemingParameters.sapFontLargeSize }}>
+          <Text style={{ fontSize: "var(--sapFontLargeSize)" }}>
             Activity 3
           </Text>
-          <Text style={{ color: ThemingParameters.sapCriticalTextColor }}>
+          <Text style={{ color: "var(--sapCriticalTextColor)" }}>
             in progress
           </Text>
         </FlexBox>
         <ProgressIndicator
           value={89}
-          valueState={ValueState.Success}
-          style={{ ...spacing.sapUiTinyMarginTop }}
+          valueState={ValueState.Positive}
+          style={{ marginBlockStart: "0.5rem" }}
         />
       </FlexBox>
-    </CustomListItem>
+    </ListItemCustom>
     ```
 
-    > The `ThemingParameters` used for the color of the status text, contain all available theme dependent styles of UI5 Web Components for React. You will find out more about this in [Tutorial 6](ui5-webcomponents-react-styling)
-
-10. Finally, apply the same layout and styles to the content of the second `CustomListItem`.
+10. Finally, apply the same layout and styles to the content of the second `ListItemCustom`.
 
 ![List](03_list.png)
 
@@ -471,9 +493,10 @@ For this, add two `Text` components above the indicator:
 
     ![Table](04_table.png)
 
-3. Add more properties
+4. Add more properties
 
-    You can add many more properties to the `AnalyticalTable` component. For example you can group the columns with `groupable`, search for entries in a column with `filterable`, and change the row height with `rowHeight`.
+   You can add many more properties to the `AnalyticalTable` component. For example, you can allow sorting, filtering and grouping via `sortable`, `filterable` and `groupable`, enable different selection modes with `selectionMode`, control how the table splits up available space between the columns with `scaleWidthMode` and many more.
+   Feel free to take a look at the [documentation](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/data-display-analyticaltable--docs) and explore the different examples before continuing.
 
     The default visible rows count is at 15. This number is a bit to high for a dashboard table. Reduce the `visibleRows` count to 5 by setting the corresponding prop.
 
@@ -489,9 +512,9 @@ For this, add two `Text` components above the indicator:
 
 At the moment, the dashboard doesn't really look like a dashboard. The components are way too close to each other and not aligned correctly. Let's change that.
 
-1. Add padding to each `Card`
+1. Add margin to each `Card`
 
-    To add a padding to the cards, you can use `spacing` again. Inside of the style property [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) the `spacing` object and append the style. Do this for each `Card` component.
+    To add a margin to the cards, you can use the global CSS vars again:
 
     ```TypeScript / TSX
     <Card
@@ -501,7 +524,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
           ...
         />
       }
-      style={{ width: "300px", ...spacing.sapUiContentPadding }}
+      style={{ width: "300px", margin: "var(--sapContent_Margin_Small)" }}
     >
     ```
 
@@ -513,7 +536,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
           ...
         />
       }
-      style={{ width: "300px", ...spacing.sapUiContentPadding }}
+      style={{ width: "300px", margin: "var(--sapContent_Margin_Small)" }}
     >
     ```
 
@@ -525,7 +548,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
           ...
         />
       }
-      style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
+      style={{ maxWidth: "900px", margin: "var(--sapContent_Margin_Small)" }}
     >
     ```
 
@@ -541,12 +564,19 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
         ...
     </FlexBox>
     ```
+   
+   _Note: You could also use the `gap` prop of the `FlexBox` component to apply the spacing._
 
 Your component should now look like this:
 
 <!-- border -->![Dashboard](05_dashboard.png)
 
 ```TypeScript / TSX
+import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
+import listIcon from "@ui5/webcomponents-icons/dist/list.js";
+import activateIcon from "@ui5/webcomponents-icons/dist/activate.js";
+import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
+import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
 import { useState } from "react";
 import {
   Avatar,
@@ -556,9 +586,8 @@ import {
   ShellBar,
   ShellBarItem,
   List,
-  CustomListItem,
-  StandardListItem,
-  ValueState,
+  ListItemStandard,
+  ListItemCustom,
   ProgressIndicator,
   FlexBox,
   FlexBoxJustifyContent,
@@ -567,13 +596,40 @@ import {
   AnalyticalTable,
   Icon,
 } from "@ui5/webcomponents-react";
-import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
-import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
-import addIcon from "@ui5/webcomponents-icons/dist/add.js";
-import listIcon from "@ui5/webcomponents-icons/dist/list.js";
-import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
+import reactLogo from "./assets/reactLogo.png";
+import profilePictureExample from "./assets/profilePictureExample.png";
+import ValueState from "@ui5/webcomponents-base/dist/types/ValueState.js";
+
+const tableData = new Array(500).fill(null).map((_, index) => {
+  return {
+    name: `name${index}`,
+    age: Math.floor(Math.random() * 100),
+    friend: {
+      name: `friend.Name${index}`,
+      age: Math.floor(Math.random() * 100),
+    },
+  };
+});
+
+const tableColumns = [
+  {
+    Header: "Name",
+    accessor: "name", // String-based value accessors!
+  },
+  {
+    Header: "Age",
+    accessor: "age",
+  },
+  {
+    Header: "Friend Name",
+    accessor: "friend.name",
+  },
+  {
+    Header: "Friend Age",
+    accessor: "friend.age",
+  },
+];
 
 const dataset = [
   {
@@ -606,39 +662,15 @@ const dataset = [
   },
 ];
 
-const tableData = new Array(500).fill(null).map((_, index) => {
-  return {
-    name: `name${index}`,
-    age: Math.floor(Math.random() * 100),
-    friend: {
-      name: `friend.Name${index}`,
-      age: Math.floor(Math.random() * 100),
-    },
-  };
-});
-
-const tableColumns = [
-  {
-    Header: "Name",
-    accessor: "name", // String-based value accessors!
-  },
-  {
-    Header: "Age",
-    accessor: "age",
-  },
-  {
-    Header: "Friend Name",
-    accessor: "friend.name",
-  },
-  {
-    Header: "Friend Age",
-    accessor: "friend.age",
-  },
-];
-
 export function MyApp() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
+
+  const contentTitle =
+    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+  const switchToChart =
+    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+
   const handleHeaderClick = () => {
     if (toggleCharts === "lineChart") {
       setLoading(true);
@@ -654,58 +686,58 @@ export function MyApp() {
       }, 2000);
     }
   };
-  const contentTitle =
-    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-  const switchToChart =
-    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+
   return (
     <div>
       <ShellBar
-        logo={<img src="reactLogo.png" />}
+        logo={<img src={reactLogo} alt="Company Logo" />}
         profile={
           <Avatar>
-            <img src="profilePictureExample.png" />
+            <img src={profilePictureExample} alt="User Avatar" />
           </Avatar>
         }
         primaryTitle="My App"
       >
-        <ShellBarItem icon={addIcon} text="Add" />
+        <ShellBarItem icon={activateIcon} text="Activate" />
       </ShellBar>
       <FlexBox
         justifyContent={FlexBoxJustifyContent.Center}
         wrap={FlexBoxWrap.Wrap}
-        style={spacing.sapUiContentPadding}
+        style={{ padding: "var(--sapContent_Space_M)" }}
       >
         <Card
           header={
             <CardHeader
-              titleText="Stock Prices"
+              titleText="Prices"
               subtitleText={`Click here to switch to ${switchToChart}`}
               interactive
-              onClick={handleHeaderClick}
               avatar={
                 <Icon
                   name={
                     toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
                   }
+                  accessibleName={contentTitle}
                 />
               }
+              onClick={handleHeaderClick}
             />
           }
-          style={{ width: "300px", ...spacing.sapUiContentPadding }}
+          style={{ width: "300px", margin: "var(--sapContent_Margin_Small)" }}
         >
-          <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+          <Text style={{ padding: "var(--sapContent_Space_S)" }}>
+            {contentTitle}
+          </Text>
           {toggleCharts === "lineChart" ? (
             <LineChart
               dimensions={[{ accessor: "month" }]}
-              measures={[{ accessor: "data", label: "Stock Price" }]}
+              measures={[{ accessor: "data", label: "Price" }]}
               dataset={dataset}
               loading={loading}
             />
           ) : (
             <BarChart
               dimensions={[{ accessor: "month" }]}
-              measures={[{ accessor: "data", label: "Stock Price" }]}
+              measures={[{ accessor: "data", label: "Price" }]}
               dataset={dataset}
               loading={loading}
             />
@@ -719,69 +751,63 @@ export function MyApp() {
               avatar={<Icon name={listIcon} />}
             />
           }
-          style={{ width: "300px", ...spacing.sapUiContentPadding }}
+          style={{ width: "300px", margin: "var(--sapContent_Margin_Small)" }}
         >
           <List>
-            <StandardListItem
+            <ListItemStandard
               additionalText="finished"
-              additionalTextState={ValueState.Success}
+              additionalTextState={ValueState.Positive}
             >
               Activity 1
-            </StandardListItem>
-            <StandardListItem
+            </ListItemStandard>
+            <ListItemStandard
               additionalText="failed"
-              additionalTextState={ValueState.Error}
+              additionalTextState={ValueState.Negative}
             >
               Activity 2
-            </StandardListItem>
-            <CustomListItem>
+            </ListItemStandard>
+            <ListItemCustom>
               <FlexBox
                 direction={FlexBoxDirection.Column}
-                style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
+                fitContainer
+                style={{ paddingBlock: "var(--sapContent_Space_S)" }}
               >
                 <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
-                  <Text
-                    style={{ fontSize: ThemingParameters.sapFontLargeSize }}
-                  >
+                  <Text style={{ fontSize: "var(--sapFontLargeSize)" }}>
                     Activity 3
                   </Text>
-                  <Text
-                    style={{ color: ThemingParameters.sapCriticalTextColor }}
-                  >
+                  <Text style={{ color: "var(--sapCriticalTextColor)" }}>
                     in progress
                   </Text>
                 </FlexBox>
                 <ProgressIndicator
                   value={89}
-                  valueState={ValueState.Success}
-                  style={{ ...spacing.sapUiTinyMarginTop }}
+                  valueState={ValueState.Positive}
+                  style={{ marginBlockStart: "0.5rem" }}
                 />
               </FlexBox>
-            </CustomListItem>
-            <CustomListItem>
+            </ListItemCustom>
+            <ListItemCustom>
               <FlexBox
                 direction={FlexBoxDirection.Column}
-                style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
+                fitContainer
+                style={{ paddingBlock: "var(--sapContent_Space_S)" }}
               >
                 <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
-                  <Text
-                    style={{ fontSize: ThemingParameters.sapFontLargeSize }}
-                  >
-                    Activity 4
+                  <Text style={{ fontSize: "var(--sapFontLargeSize)" }}>
+                    Activity 3
                   </Text>
-                  <Text
-                    style={{ color: ThemingParameters.sapCriticalTextColor }}
-                  >
+                  <Text style={{ color: "var(--sapCriticalTextColor)" }}>
                     in progress
                   </Text>
                 </FlexBox>
                 <ProgressIndicator
                   value={5}
-                  valueState={ValueState.Error}
-                  style={{ ...spacing.sapUiTinyMarginTop }}
+                  valueState={ValueState.Negative}
+                  style={{ marginBlockStart: "0.5rem" }}
                 />
               </FlexBox>
-            </CustomListItem>
+            </ListItemCustom>
           </List>
         </Card>
         <Card
@@ -791,7 +817,10 @@ export function MyApp() {
               avatar={<Icon name={tableViewIcon} />}
             />
           }
-          style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
+          style={{
+            maxWidth: "900px",
+            margin: "var(--sapContent_Margin_Small)",
+          }}
         >
           <AnalyticalTable
             data={tableData}

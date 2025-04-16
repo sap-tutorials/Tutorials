@@ -35,14 +35,10 @@ This first tutorial will start by creating a React application that is able to c
 
 UI5 Web Components for React provides various [templates](https://sap.github.io/ui5-webcomponents-react/?path=/docs/project-templates-examples--docs) for starting your project. In this tutorial, we'll use the Vite template.
 
-> #### Please note!
->
-> This tutorial currently works only with Version 1 (1.x.x) of UI5 Web Components and UI5 Web Components for React. It will be updated shortly.
-
 Navigate to a folder where you want to create your Web App and open a terminal there. Then use the following command:
 
 ```Shell
-npx degit SAP/ui5-webcomponents-react/templates/vite-ts#v1.29.x my-app
+npx degit SAP/ui5-webcomponents-react/templates/vite-ts#main my-app
 cd my-app
 npm i
 ```
@@ -77,7 +73,7 @@ These commands sets up a [Vite](https://vitejs.dev/) project, creating a React A
     ```
 
 > ### Structure of a React component
-This is a very simple component, but it already shows you the basic structure of all components. The file starts with the import statements in the first few lines. Then, the component will be defined as a function (or as a [class](https://reactjs.org/docs/react-component.html)). This function starts the definitions of the props and the logic, we'll add them in a later tutorial, and ends by returning JSX or HTML components in a return statement.
+This is a very simple component, but it already shows you the basic structure of all components. The file starts with the import statements in the first few lines. Then, the component will be defined as a function ([React docs](https://react.dev/learn/your-first-component#defining-a-component)) in PascalCase notation. This function starts the definitions of the props and the logic, we'll add them in a later tutorial, and ends by returning JSX or HTML components in a return statement.
 
 With this you created your first `React` component. To actually render the component you will have to add it to your `src/App.tsx`.
 
@@ -101,7 +97,7 @@ With this you created your first `React` component. To actually render the compo
     ```
 3. Add the component to the `return` value of `App()`.
 
-    ```TypeScript / TSX
+   ```TypeScript / TSX
     function App() {
       return (
         <>
@@ -111,37 +107,35 @@ With this you created your first `React` component. To actually render the compo
     }
     ```
 
-    > Note that `<MyApp />` is using a self closing syntax and is equivalent to `<MyApp></MyApp>`. All tags in JSX must be closed explicitly, this applies to HTML tags (like `img`) and JSX tags. [Here](https://beta.reactjs.org/learn/writing-markup-with-jsx) you can find out more about JSX in general.
+    > Note that `<MyApp />` is using a self closing syntax and is equivalent to `<MyApp></MyApp>`. All tags in JSX must be closed explicitly, this applies to HTML tags (like `img`) and custom JSX tags. [Here](https://react.dev/learn/writing-markup-with-jsx) you can find out more about JSX in general.
 
-4. Check whether the `ThemeProvider` component is used to wrap your `App` component inside `main.tsx`. The `ThemeProvider` is necessary for using `@ui5/webcomponents-react`, it enables theming, translations, etc.
+4. Open `main.tsx`. This is your entry file, let's take a look at the content in more detail.
 
-Your `App.tsx` file should now look like this:
+   Your file should look like this:
 
-```TypeScript / TSX
-import { MyApp } from "./MyApp";
-
-function App() {
-  return (
-    <>
-      <MyApp />
-    </>
-  );
-}
-
-export default App;
-```
-
-And the `createRoot` function inside the `main.tsx` file, like this:
-
-```TypeScript / TSX
-createRoot(document.getElementById('root') as HTMLElement).render(
-  <StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </StrictMode>
-);
-```
+   ```TypeScript / TSX
+   import '@ui5/webcomponents-react/dist/Assets.js';
+   import { ThemeProvider } from '@ui5/webcomponents-react';
+   import { StrictMode } from 'react';
+   import { createRoot } from 'react-dom/client';
+   import App from './App.tsx';
+   import './index.css';
+   
+   createRoot(document.getElementById('root') as HTMLElement).render(
+     <StrictMode>
+       <ThemeProvider>
+         <App />
+       </ThemeProvider>
+     </StrictMode>
+   );
+   ```
+   
+   - `Assets.js'`: This includes assets like translation files (CLDR), theming, etc. of the required packages.
+   - `ThemeProvider`: Inter alia, this provider makes your app react to theme and language changes and injects the CSS of __used__ components.
+   - `StrictMode`: The React `StrictMode` component enables addition development behaviors and warnings for the component tree inside. It is not required, but using it helps find common pitfalls and bugs in development. You can find out more about it [here](https://react.dev/reference/react/StrictMode).
+   - `createRoot`: This function lets you create the React root to display React components inside a browser DOM node ([React docs](https://react.dev/reference/react-dom/client/createRoot)). You will usually add this DOM node inside the `index.html` file.
+   - `App`: A React component.
+   - `index.css`: Global CSS file.
 
 
 ### Launch the app to start developing
@@ -160,7 +154,7 @@ The page will automatically reload if you make changes to the code. You will see
 
 > **TIP:** You can put a browser window next to the editor in your screen to see the changes live in action.
 
-><!-- border -->![split](./splitscreen.png)
+><!-- border -->![split](splitscreen.png)
 >
 >&nbsp;
 

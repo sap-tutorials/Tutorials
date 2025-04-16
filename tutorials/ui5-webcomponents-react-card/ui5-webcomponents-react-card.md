@@ -37,7 +37,7 @@ You can check out all available components in the [Storybook](https://sap.github
 
 2. So, you imported the `Card` component. Now it's time to use it. Replace the content of your `<div>` with a `<Card>`.
 
-    In the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/4-ui5-web-components-card--default-story), you can see that Cards can receive different props. For now only add some text as `children`.
+    In the [Storybook](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/data-display-card--docs), you can see that Cards can receive different props. For now only add some text as `children`.
 
     ```TypeScript / TSX
     <div>
@@ -85,15 +85,12 @@ The heading area of the `Card` component is empty, this is because it didn't rec
     </div>
     ```
 
-2. Now the `Card` has a header area, but the `font-family` of the content area differs from the `Card` header. All UI5 Web Components for React components use the same styling, this includes `font-family`, `color`, etc.  
-
-     Add the `Text` import to your `MyApp.tsx` file.
+3. Our template applies the SAP defined `font-family` for all texts that don't implement `font-family` themselves. (see `index.css` file)
+   To enable this on a single text without using CSS, you can use the `Text` component. Let's wrap the text content of the `Card` inside the `Text` component:
 
     ```TypeScript / TSX
     import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
     ```
-
-    And wrap the text within the `Text` component.
 
     ```TypeScript / TSX
     <div>
@@ -103,15 +100,14 @@ The heading area of the `Card` component is empty, this is because it didn't rec
     </div>
     ```
 
-The `font-family` of the content now corresponds to the `font-family` of the header.
-
 
 
 ### Style your component
 
-In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style). You can also style your component using CSS ([modules](https://github.com/css-modules/css-modules)) or even authoring tools like [JSS](https://cssinjs.org), but this will be covered in [Tutorial 6](ui5-webcomponents-react-styling) of the tutorial series.
+In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style).
+You can also style your component using CSS ([modules](https://github.com/css-modules/css-modules)) or even authoring tools like [JSS](https://cssinjs.org), but this and many more information regarding the styling approach of UI5 Web Components (for React) will be covered in [Tutorial 6](ui5-webcomponents-react-styling) of the tutorial series.
 
-The Card now spreads across the whole screen, this behavior is intended so it takes up the whole space of its container.
+The Card now spreads across the whole screen, this behavior is intended, so it takes up the whole space of its container.
 
 1. To restrict the `width` of the `Card`, add the `style` prop.
 
@@ -123,39 +119,27 @@ The Card now spreads across the whole screen, this behavior is intended so it ta
 
     ![Card02](02_card.png)
 
-2. The content of the card is way too close to the border of the `Card`, so a `padding` is needed. UI5 Web Components comes with a `Util` library, which includes `padding` sizes.
-
-    Execute this in your terminal:
-
-    ```Shell
-    npm install @ui5/webcomponents-react-base
-    ```
-
-    Then import:
-
-    ```TypeScript / TSX
-    import { spacing } from "@ui5/webcomponents-react-base";
-    ```
-
-    And finally add this to your `Text` component:
-
-    ```TypeScript / TSX
-    <Text style={spacing.sapUiContentPadding}>
+2. The content of the card is way too close to the border of the `Card`, so a `padding` is needed. You can define your own spacing, or use the standard SAP spacing variables. In this example we're using one of the global [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties) from the [theming-base-content](https://github.com/SAP/theming-base-content) repo, which are already included when using UI5 Web Components.
+   
+   The CSS Var in question is `--sapContent_Space_S` (`1rem`) and we're going to apply it via inline-style again:
+   
+   ```TypeScript / TSX
+    <Text style={{padding: "var(--sapContent_Space_S)"}}>
       This is the content area of the Card
     </Text>
-    ```
-    Hereby you get a standardized content-padding. `spacing` comes with many more properties, feel free to test them and see what they do.
+   ```
+
+    Hereby you get a standardized content-padding.
 
 After this step `MyApp.tsx` should look like this:
 ```TypeScript / TSX
 import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
-import { spacing } from "@ui5/webcomponents-react-base";
 
 export function MyApp() {
   return (
     <div>
       <Card header={<CardHeader titleText="Card" />} style={{ width: "300px" }}>
-        <Text style={spacing.sapUiContentPadding}>
+        <Text style={{ padding: "var(--sapContent_Space_S)" }}>
           This is the content area of the Card
         </Text>
       </Card>
@@ -171,7 +155,7 @@ And your application like this:
 ### Event handling
 
 
-1. The Card header can also be clickable. For this you need to set its `interactive` prop to true.
+1. The Card header can also be interactive, to enable this set `interactive` to `true`.
 
     ```TypeScript / TSX
     <Card
@@ -180,9 +164,11 @@ And your application like this:
     </Card>
     ```
 
-    We didn't pass a value to `interactive`, because it [defaults to true](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) if the value is omitted.
-
-2.  To make the header react to a click, add a function as value to the `onClick` prop.
+    _We didn't pass a value to `interactive`, because it [defaults to true](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) if the value is omitted._
+    
+    When you now click or focus the header, the appropriate styles are applied, so users know they can interact with it.     
+   
+2.  To make the header react to a click (or SPACE/ENTER press), add a function as value to the `onClick` prop.
 
     ```TypeScript / TSX
     <Card
@@ -206,10 +192,9 @@ And your application like this:
     ...
     ```
 
-The file now looks like this:
+The file should now look like this:
 ```TypeScript / TSX
-import { Card, Text, CardHeader } from "@ui5/webcomponents-react";
-import { spacing } from "@ui5/webcomponents-react-base";
+import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
 
 export function MyApp() {
   const handleHeaderClick = () => {
@@ -227,7 +212,7 @@ export function MyApp() {
         }
         style={{ width: "300px" }}
       >
-        <Text style={spacing.sapUiContentPadding}>
+        <Text style={{ padding: "var(--sapContent_Space_S)" }}>
           This is the content area of the Card
         </Text>
       </Card>
