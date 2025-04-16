@@ -105,7 +105,7 @@ The heading area of the `Card` component is empty, this is because it didn't rec
 ### Style your component
 
 In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style).
-You can also style your component using CSS ([modules](https://github.com/css-modules/css-modules)) or even authoring tools like [JSS](https://cssinjs.org), but this and many more information regarding the styling approach of UI5 Web Components (for React) will be covered in [Tutorial 6](ui5-webcomponents-react-styling) of the tutorial series.
+You can also style your component using CSS ([modules](https://github.com/css-modules/css-modules)), but this and many more information regarding the styling approach of UI5 Web Components (for React) will be covered in [chapter six](ui5-webcomponents-react-styling) of the tutorial series.
 
 The Card now spreads across the whole screen, this behavior is intended, so it takes up the whole space of its container.
 
@@ -121,7 +121,7 @@ The Card now spreads across the whole screen, this behavior is intended, so it t
 
 2. The content of the card is way too close to the border of the `Card`, so a `padding` is needed. You can define your own spacing, or use the standard SAP spacing variables. In this example we're using one of the global [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties) from the [theming-base-content](https://github.com/SAP/theming-base-content) repo, which are already included when using UI5 Web Components.
    
-   The CSS Var in question is `--sapContent_Space_S` (`1rem`) and we're going to apply it via inline-style again:
+   The CSS var in question is `--sapContent_Space_S` (`1rem`) and we're going to apply it via inline-style again:
    
    ```TypeScript / TSX
     <Text style={{padding: "var(--sapContent_Space_S)"}}>

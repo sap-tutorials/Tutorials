@@ -13,7 +13,7 @@ author_profile: https://github.com/Lukas742
 
 ## You will learn
 -  How to install and import charts
--  Learn about charts in UI5 web components for React
+-  Learn about charts in UI5 Web Components for React
 -  How to add dynamic rendering
 
 ## Intro
