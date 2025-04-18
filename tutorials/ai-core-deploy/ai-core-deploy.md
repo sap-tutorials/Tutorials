@@ -565,4 +565,4 @@ You can check the current running Pods Using in AI Launchpad, choosing the Deplo
 
 Similarly if you want to check for resource plan just visit the resources tab 
 
-<!-- border -->![resource](img/ail/resource2.jpg)
+<!-- border -->![resource](img/ail/resource2.jpg) 
