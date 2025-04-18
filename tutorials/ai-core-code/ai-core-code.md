@@ -147,7 +147,7 @@ Open your terminal and navigate to your `hello-aicore-code` directory.  You will
 
 <!-- border -->![image](img/navigate.png)
 
-Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGITRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
+Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
 ```BASH
 docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
@@ -563,7 +563,7 @@ response.__dict__
 
 [OPTION END]
 
-The execution will go from **UNKOWN** to **RUNNING** then to the **DEAD** state. Resolving this is covered in next step.
+The execution will go from **UNKNOWN** to **RUNNING** then to the **DEAD** state. Resolving this is covered in next step.
 
 
 ### Look for error logs in execution
