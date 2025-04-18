@@ -18,7 +18,7 @@ author_profile: https://github.com/dhrubpaul
 Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
 Ai core Instance with Standard Plan or Extended Plan
 Docker Desktop Setup [Download and Install](https://www.docker.com/products/docker-desktop)
-Github Account
+GitHub Account
 
 ### Architecture Overview
 In this tutorial we are deploying ollama an open-source project that serves as a powerful and user-friendly platform for running LLMs on on SAP AI core. which acts as a bridge between the complexities of LLM technology and the desire for an accessible and customizable AI experience.
@@ -30,7 +30,7 @@ We can pick any model from the above model hubs and connect it to AI core for th
 ### Adding workflow file to github
 Workflows for SAP AI Core are created using YAML or JSON files that are compatible with the SAP AI Core schema. Let’s start with adding a Argo Workflow file to manage: `ollama`.
 
-In your Github Create a new repository, click **Add file** > **Create new file**.
+In your GitHub Create a new repository, click **Add file** > **Create new file**.
 
 ![image](img/Picture1.png)
 
@@ -184,7 +184,7 @@ Select your SAP AI Core connection under the **Workspaces app**.
 
 Click **Docker Registry Secrets** in the **AI Core Administration app**. Click Add.
 
-A Pop up will appear on screen and add the following Json with the details to your Docker Creds.
+A Pop up will appear on screen and add the following Json with the details to your Docker credentials.
 
 ```json
 {
@@ -192,7 +192,7 @@ A Pop up will appear on screen and add the following Json with the details to yo
 }
 ```
 
-### Onboarding Github and application on AI core
+### Onboarding GitHub and application on AI core
 
 Select on your SAP AI Core connection under **Workspaces app** in the SAP AI Launchpad.
 
@@ -216,7 +216,7 @@ Use the following information as reference:
 
 - **Password:** Paste your GitHub Personal Access Token, generated in the previous step.
 
-> Note: Password does not gets validated at time of Adding Github Repository its just meant to save Github Creds to AI core. Passwords gets validated at time of creating Application or when Application refreshes connection to AI core.
+> Note: Password does not gets validated at time of Adding GitHub Repository its just meant to save GitHub credentials to AI core. Passwords gets validated at time of creating Application or when Application refreshes connection to AI core.
 
 You will see your GitHub onboarding completed in a few seconds. As a next steps we will enable an application on AI core.
 
@@ -288,7 +288,7 @@ Now we need to import Gemma to our ollama pod before we can inference the model 
 
 [OPTION BEGIN [Postman]]
 
-Setting up AI core Auth Creds
+Setting up AI core Auth Credentials
 ![image](img/setup_auth_creds.png)
 
 adding Resource groups to headers
