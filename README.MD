@@ -7,7 +7,7 @@ Welcome to the Markdown tutorial catalog for tutorials you can find on the [SAP 
 
 
 # How to contribute
-Contributions from external authors may be accepted in the future. However, for now you can provide us with feedback (e.g. outdated screens) and suggestions for improvements on existing tutorials by creating a GitHub issue.
+Contributions from external authors may be accepted in the future. However, for now you can provide us with feedback (e.g., outdated screens) and suggestions for improvements on existing tutorials by creating a GitHub issue.
 
 We have a large tutorial pipeline in the works, but in case you have something in mind right away, please [create a new issue](https://github.com/SAPDocuments/Tutorials/issues/new) with the Label `enhancement` and let us know what you'd like to see covered in a tutorial.
 

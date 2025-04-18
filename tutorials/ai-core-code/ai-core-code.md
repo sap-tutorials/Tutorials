@@ -147,7 +147,7 @@ Open your terminal and navigate to your `hello-aicore-code` directory.  You will
 
 <!-- border -->![image](img/navigate.png)
 
-Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGITRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
+Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
 ```BASH
 docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
@@ -568,7 +568,7 @@ response.__dict__
 
 [OPTION END]
 
-The execution will go from **UNKOWN** to **RUNNING** then to the **DEAD** state. Resolving this is covered in next step.
+The execution will go from **UNKNOWN** to **RUNNING** then to the **DEAD** state. Resolving this is covered in next step.
 
 
 ### Look for error logs in execution
@@ -717,13 +717,13 @@ Check the status of your execution. When the status turns to **COMPLETED**, you 
 
 ### Scheduling Execution (optional)
 
-AI core Also provides the functionality to auto shedule Executions based on Time. 
+AI core Also provides the functionality to auto schedule Executions based on Time. 
 
-To shedule an Execution at particular time of the day visit ML `operations > shedules` and click on Add
+To schedule an Execution at particular time of the day visit ML `operations > schedules` and click on Add
 
 <!-- border -->![image](img/ail/Schedule1.jpg)
 
-Choose senario as House price and click on next
+Choose scenario as House price and click on next
 
 <!-- border -->![image](img/ail/Schedule2.jpg)
 
@@ -731,7 +731,7 @@ Choose Executable and click on next.
 
 <!-- border -->![image](img/ail/Schedule3.jpg)
 
-Now a screen will appear where you can choose between the avilable Execution config and click on next
+Now a screen will appear where you can choose between the available Execution config and click on next
 
 <!-- border -->![image](img/ail/Schedule4.jpg)
 
