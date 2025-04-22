@@ -72,11 +72,11 @@ In this step we will use [CSS Modules](https://github.com/css-modules/css-module
    
 2. Explicitly import `@ui5/webcomponents-react-base` package
 
-   `@ui5/webcomponents-react-base` is already installed by `@ui5/webcomponents-react`, but as we want to import the `ThemingParameters` in the following step, it's recommended adding the package to the dependencies as well.
+    `@ui5/webcomponents-react-base` is already installed by `@ui5/webcomponents-react`, but as we want to import the `ThemingParameters` in the following step, it's recommended adding the package to the dependencies as well.
 
-   ```shell
-   npm install @ui5/webcomponents-react-base
-   ```
+    ```shell
+    npm install @ui5/webcomponents-react-base
+    ```
 
 3. Add inline-styles to apply `ThemingParameters` to the `<span>`
 
@@ -151,38 +151,38 @@ One example is applying a responsive content padding to the content of the dashb
 
 1. Install Common CSS
 
-   ```shell
-   npm i @sap-ui/common-css
-   ```
+    ```shell
+    npm i @sap-ui/common-css
+    ```
 
 2. Import the required classes in `Home.tsx`
 
-   ```ts
-   import '@sap-ui/common-css/dist/sap-content-paddings.css';
-   import '@sap-ui/common-css/dist/sap-container-type.css';
-   ```
+    ```ts
+    import '@sap-ui/common-css/dist/sap-content-paddings.css';
+    import '@sap-ui/common-css/dist/sap-container-type.css';
+    ```
 3. Apply the classes on elements
 
-   Add `div` that is wrapping the outer `FlexBox` and apply the `sap-container-type-inline-size` class:
+    Add `div` that is wrapping the outer `FlexBox` and apply the `sap-container-type-inline-size` class:
 
-   ```tsx
-   <div className="sap-container-type-inline-size">
-      <FlexBox
-        justifyContent={FlexBoxJustifyContent.Center}
-        wrap={FlexBoxWrap.Wrap}
-        ...
-   ```
-   
-   Remove `style` from the outer `FlexBox` and apply the `sap-content-paddings-container` class:
+    ```tsx
+    <div className="sap-container-type-inline-size">
+       <FlexBox
+         justifyContent={FlexBoxJustifyContent.Center}
+         wrap={FlexBoxWrap.Wrap}
+         ...
+    ```
+    
+    Remove `style` from the outer `FlexBox` and apply the `sap-content-paddings-container` class:
 
-   ```tsx
-   <FlexBox
-     justifyContent={FlexBoxJustifyContent.Center}
-     wrap={FlexBoxWrap.Wrap}
-     className="sap-content-paddings-container"
-   >
-   ```   
-   Now, the padding of the `FlexBox` is adjusted automatically according to the viewport size.
+    ```tsx
+    <FlexBox
+      justifyContent={FlexBoxJustifyContent.Center}
+      wrap={FlexBoxWrap.Wrap}
+      className="sap-content-paddings-container"
+    >
+    ```   
+    Now, the padding of the `FlexBox` is adjusted automatically according to the viewport size.
 
 ### Conclusion
 

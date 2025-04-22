@@ -97,7 +97,7 @@ With this you created your first `React` component. To actually render the compo
     ```
 3. Add the component to the `return` value of `App()`.
 
-   ```TypeScript / TSX
+    ```TypeScript / TSX
     function App() {
       return (
         <>
@@ -107,35 +107,35 @@ With this you created your first `React` component. To actually render the compo
     }
     ```
 
-    > Note that `<MyApp />` is using a self closing syntax and is equivalent to `<MyApp></MyApp>`. All tags in JSX must be closed explicitly, this applies to HTML tags (like `img`) and custom JSX tags. [Here](https://react.dev/learn/writing-markup-with-jsx) you can find out more about JSX in general.
+    > Note that `<MyApp />` is using a self-closing syntax and is equivalent to `<MyApp></MyApp>`. All tags in JSX must be closed explicitly, this applies to HTML tags (like `img`) and custom JSX tags. [Here](https://react.dev/learn/writing-markup-with-jsx) you can find out more about JSX in general.
 
 4. Open `main.tsx`. This is your entry file, let's take a look at the content in more detail.
 
-   Your file should look like this:
+    Your file should look like this:
 
-   ```TypeScript / TSX
-   import '@ui5/webcomponents-react/dist/Assets.js';
-   import { ThemeProvider } from '@ui5/webcomponents-react';
-   import { StrictMode } from 'react';
-   import { createRoot } from 'react-dom/client';
-   import App from './App.tsx';
-   import './index.css';
-   
-   createRoot(document.getElementById('root') as HTMLElement).render(
-     <StrictMode>
-       <ThemeProvider>
-         <App />
-       </ThemeProvider>
-     </StrictMode>
-   );
-   ```
-   
-   - `Assets.js'`: This includes assets like translation files (CLDR), theming, etc. of the required packages.
-   - `ThemeProvider`: Inter alia, this provider makes your app react to theme and language changes and injects the CSS of __used__ components.
-   - `StrictMode`: The React `StrictMode` component enables addition development behaviors and warnings for the component tree inside. It is not required, but using it helps find common pitfalls and bugs in development. You can find out more about it [here](https://react.dev/reference/react/StrictMode).
-   - `createRoot`: This function lets you create the React root to display React components inside a browser DOM node ([React docs](https://react.dev/reference/react-dom/client/createRoot)). You will usually add this DOM node inside the `index.html` file.
-   - `App`: A React component.
-   - `index.css`: Global CSS file.
+    ```TypeScript / TSX
+    import '@ui5/webcomponents-react/dist/Assets.js';
+    import { ThemeProvider } from '@ui5/webcomponents-react';
+    import { StrictMode } from 'react';
+    import { createRoot } from 'react-dom/client';
+    import App from './App.tsx';
+    import './index.css';
+    
+    createRoot(document.getElementById('root') as HTMLElement).render(
+      <StrictMode>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </StrictMode>
+    );
+    ```
+    
+    - `Assets.js'`: This includes assets like translation files (CLDR), theming, etc. of the required packages.
+    - `ThemeProvider`: Inter alia, this provider makes your app react to theme and language changes and injects the CSS of __used__ components.
+    - `StrictMode`: The React `StrictMode` component enables addition development behaviors and warnings for the component tree inside. It is not required, but using it helps find common pitfalls and bugs in development. You can find out more about it [here](https://react.dev/reference/react/StrictMode).
+    - `createRoot`: This function lets you create the React root to display React components inside a browser DOM node ([React docs](https://react.dev/reference/react-dom/client/createRoot)). You will usually add this DOM node inside the `index.html` file.
+    - `App`: A React component.
+    - `index.css`: Global CSS file.
 
 
 ### Launch the app to start developing
