@@ -29,7 +29,8 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
      npm install @ui5/webcomponents-react-charts
     ```
 
-   > **Note:** When facing issues with installing, please ensure you're using the same [minor version](https://semver.org/#summary) as the other `@ui5/webcomponents...` packages.
+    > **Note:**
+    When facing issues with installing, please ensure you're using the same [minor version](https://semver.org/#summary) as the other `@ui5/webcomponents...` packages.
 
 2. Then, import `LineChart` and `BarChart` into `MyApp.tsx`.
 
@@ -504,15 +505,15 @@ To make your `Card` look cleaner and to give the user the information that the h
     ```
 3. Add accessibility attributes to the `Icon`
 
-   If the `header` alone does not sufficiently describe the currently visible `Icon`, you can define an `accessibleName`. Its value will be applied as the `aria-label` of the internal element, which screen readers will pick up.
-   In case the `header` already explains the content and the icon is purely decorative, you can set its `mode` to `"Decorative"`, so it will be ignored by screen readers.
-   
-   ```
-     <Icon
-       name={
-         toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
-       }
-       accessibleName={contentTitle}
-     />
-   ```
+    If the `header` alone does not sufficiently describe the currently visible `Icon`, you can define an `accessibleName`. Its value will be applied as the `aria-label` of the internal element, which screen readers will pick up.
+    In case the `header` already explains the content and the icon is purely decorative, you can set its `mode` to `"Decorative"`, so it will be ignored by screen readers.
+    
+    ```
+      <Icon
+        name={
+          toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
+        }
+        accessibleName={contentTitle}
+      />
+    ```
 ---

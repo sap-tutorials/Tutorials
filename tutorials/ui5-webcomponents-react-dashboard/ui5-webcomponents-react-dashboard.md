@@ -87,7 +87,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     [`profilePictureExample.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/profilePictureExample.png)
 
     Processed Assets:
-    [assets](assets.png)
+    ![assets](assets.png)
 
     ```TypeScript / TSX
     import reactLogo from "./assets/reactLogo.png";
@@ -321,7 +321,7 @@ export function MyApp() {
 
 5. Users should know the status of the activities. Add the `additionalText` prop to the `StandardListItem`. To visualize if the status is neutral, positive or negative, also add the `additionalTextState` prop.
 
-   You can either pass a supported string directly, or use the `ValueState` enum:
+    You can either pass a supported string directly, or use the `ValueState` enum:
 
     ```TypeScript / TSX
     import ValueState from '@ui5/webcomponents-base/dist/types/ValueState.js';
@@ -422,7 +422,7 @@ For this, add two `Text` components above the indicator:
 
 10. Finally, apply the same layout and styles to the content of the second `ListItemCustom`.
 
-![List](03_list.png)
+    ![List](03_list.png)
 
 
 ### Add an `AnalyticalTable`
@@ -495,8 +495,8 @@ For this, add two `Text` components above the indicator:
 
 4. Add more properties
 
-   You can add many more properties to the `AnalyticalTable` component. For example, you can allow sorting, filtering and grouping via `sortable`, `filterable` and `groupable`, enable different selection modes with `selectionMode`, control how the table splits up available space between the columns with `scaleWidthMode` and many more.
-   Feel free to take a look at the [documentation](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/data-display-analyticaltable--docs) and explore the different examples before continuing.
+    You can add many more properties to the `AnalyticalTable` component. For example, you can allow sorting, filtering and grouping via `sortable`, `filterable` and `groupable`, enable different selection modes with `selectionMode`, control how the table splits up available space between the columns with `scaleWidthMode` and many more.
+    Feel free to take a look at the [documentation](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/data-display-analyticaltable--docs) and explore the different examples before continuing.
 
     The default visible rows count is at 15. This number is a bit to high for a dashboard table. Reduce the `visibleRows` count to 5 by setting the corresponding prop.
 
