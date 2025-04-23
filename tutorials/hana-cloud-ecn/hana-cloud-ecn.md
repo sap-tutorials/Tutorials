@@ -491,7 +491,7 @@ The following steps demonstrate an approach to automating the creation, running 
 
     Instructions on using hdbsql and setting the user key can be found at [Executing SQL Statements from a shell](hana-cloud-automation-cli).
 
-### Use SAP Automation Pilot with an ECN
+### Use SAP Automation Pilot to schedule the provisioning of an ECN
 The SAP Automation Pilot can be used to perform and schedule operations on services running in the SAP BTP.  The tutorial [Automating SAP HANA Cloud Tasks with the SAP Automation Pilot Service](https://developers.sap.com/tutorials/hana-cloud-automation-pilot.html) can be used to started with the SAP Automation Pilot.  The following step demonstrates how commands can be scheduled which will start and stop an ECN node and also execute SQL to enable or disable a workload class. 
 
 1. Import the catalog below into the SAP Automation Pilot.

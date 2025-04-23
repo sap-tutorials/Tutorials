@@ -13,11 +13,11 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
  - A licensed SAP HANA, data lake instance (non-trial / non-free tier)
  - Access to SAP Software Center
  - Basic understanding of the public key infrastructure (PKI)
- - Sample TPCH Data, which can be downloaded [here](https://help.sap.com/docs/hana-cloud-data-lake/quick-start-tutorial-for-standalone-data-lake/download-sample-tpch-data?version=2023_3_QRC)
+ - Sample TPCH Data, which can be downloaded [here](https://help.sap.com/docs/hana-cloud-data-lake/quick-start-tutorial-for-standalone-data-lake/download-sample-tpch-data)
 
 ## You will learn
   - How to install and use the SAP HANA, data lake Files storage Command Line Interface (HDLFSCLI)
-  - How to use the HDLFSCLI to put, manage, and remove files from an [SAP HANA, data lake Files container](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/sap-hana-cloud-data-lake-administration-for-data-lake-files?version=2023_3_QRC)
+  - How to use the HDLFSCLI to put, manage, and remove files from an [SAP HANA, data lake Files container](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/sap-hana-cloud-data-lake-administration-for-data-lake-files)
 
 ---
 
@@ -260,7 +260,7 @@ Copy the content of the **Client** field inside [ ] brackets. Then go to your Da
 
 Now, re-verify the configuration and it should work.
 
-For more information on HDLFSCLI, check the [SAP Help Portal documentation](https://help.sap.com/docs/hana-cloud-data-lake/utility-reference-for-data-lake-relational-engine/hdlfscli-data-lake-files-utility?version=2021_4_QRC).
+For more information on HDLFSCLI, check the [SAP Help Portal documentation](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/hdlfscli-data-lake-files-utility).
 
 ### Knowledge check
 
