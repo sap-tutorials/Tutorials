@@ -208,7 +208,7 @@ print(token)
 
 [OPTION BEGIN [JavaScript SDK]]
 
-In this step, we will create a resource group in SAP AI Core using the `@sap-ai-sdk/ai-api` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api). 
+In this step, we will create a resource group in SAP AI Core using the [`@sap-ai-sdk/ai-api`](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api) package of the SAP Cloud SDK for AI (JavaScript). For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/ai-core/ai-api).
 
 **NOTE**: In order to use the document grounding service, the resource group must be created with the document grounding label set to `true`. Therefore, existing resource groups without the label will not work for document grounding.
 
@@ -402,7 +402,7 @@ Generic secrets securely store SharePoint credentials required for document acce
 
 [OPTION BEGIN [JavaScript SDK]]
 
-In this step, we will create a generic secret in SAP AI Core using the `@sap-ai-sdk/ai-api` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api). 
+In this step, we will create a generic secret in SAP AI Core using the [`@sap-ai-sdk/ai-api`](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api) package of the SAP Cloud SDK for AI (JavaScript). For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/ai-core/ai-api).
 
 Generic secrets securely store SharePoint credentials required for document access. Please change the values to your SharePoint credentials.
 
@@ -637,7 +637,7 @@ These steps help inspect vector collections and documents to confirm successful 
 
 #### 7.a Using Pipeline API 
 
-In this step, we will create a document-grounding pipeline in SAP AI Core using the `@sap-ai-sdk/document-grounding` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/document-grounding). 
+In this step, we will create a document-grounding pipeline in SAP AI Core using the [`@sap-ai-sdk/document-grounding`](https://github.com/SAP/ai-sdk-js/tree/main/packages/document-grounding) package of the SAP Cloud SDK for AI (JavaScript). For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/ai-core/document-grounding).
 
 • To start, install the dependency to your project.
 
