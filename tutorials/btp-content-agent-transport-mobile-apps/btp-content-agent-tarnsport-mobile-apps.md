@@ -9,13 +9,12 @@ primary_tag: software-product>sap-btp--cloud-foundry-environment
 parser: v2
 ---
 # Transport Mobile apps using SAP Content Agent Service
-<!-- description --> Learn how to use SAP Content Agent UI to explore apps, select and transport to SAP Cloud Transport Management Service in an SAP BTP Trial account, or in an existing SAP BTP subaccount. 
+<!-- description --> Learn how to use SAP Content Agent UI to explore MDK apps, select and transport to SAP Cloud Transport Management Service in SAP BTP subaccount. 
 
 ## Prerequisites
 
- - If you do not have an SAP BTP account, follow the tutorial [Get an Account on SAP BTP Trial](hcp-create-trial-account).
- - If you are new SAP Mobile service, follow the tutorial [Create Your First MDK Application](https://developers.sap.com/mission.mobile-dev-kit-get-started.html)
- - You have configured MDK apps in the Mobile Services admin UI in the source account that you want to transport.
+
+ - You have an SAP BTP account as source where you have subscribed to SAP Mobile service, follow the tutorial [Create Your First MDK Application](https://developers.sap.com/mission.mobile-dev-kit-get-started.html)
  - You have configured Cloud Transport Management service in a central subaccount, follow turtorial [Get Started with SAP Cloud Transport Management Service](https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/btp-transport-management-getting-started.html)
 
 ## You will learn
@@ -121,3 +120,55 @@ You should now be able to access the user interface of SAP Content Agent service
 2. Navigate to *Content Types* tile and check the status of *SAP Mobile Services*. 
 
     ![accessSuccessful](screenshots/0310%20cTMS%20UI%20access%20successful.png)This concludes the tutorial. Congratulations!
+    
+
+### Get the Details of the SAP Cloud Transport Management Service Instance 
+
+
+Get the service key details of the SAP Cloud Transport Management instance that you created as part of tutorial [Step 5 in Get Started with SAP Cloud Transport Management](https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/btp-transport-management-getting-started.html).
+
+1. Go to the central administrative SAP BTP subaccount. To do this, click on the **Central Services** tile.
+
+
+    ![Find cTMS service key 1](screenshots/central-services.png)
+    
+    
+2. Choose **Instances and Subscriptions** and filter for **Cloud Transport Management** to get the service instance. Click on the key link to view credentials.
+
+    ![Find cTMS service key 2](screenshots/tms-instance.png)
+
+3. The key looks as follows. Leave the service key open so that you copy the required values in the next step, or note down the values of `uri` (you have to scroll down), as well as `clientid`, `clientsecret`, and `url` from the `uaa` section.   
+   
+    ![Find cTMS service key 3](screenshots/tms-service-key.png)
+
+ 
+### Create Destination to Cloud Transport Management in source account 
+
+The destination to SAP Cloud Transport Management service defines the endpoint of SAP Cloud Transport Management service that is used by SAP Content Agent for pushing the content to desired source node of transport route. The destination has the fixed name TransportManagementService.
+
+1. Open the **source** subaccount in a new tab.
+
+    ![Create cTMS Destination 0](screenshots/dev-source.png)
+    
+2. Under **Connectivity > Destinations** click on **Create Destination**.
+
+    ![Create cTMS Destination 1](screenshots/create-dest.png)
+
+3. In the **Destination Configuration** window, enter details for the following fields. 
+    >Keep the values of fields not mentioned in the table unchanged.
+
+    | Field | Value |
+    | ---------- | ------------- |
+    | **Name** | `TransportManagementService` |
+    | **Description** | For example: `Destination to SAP Cloud Transport Management` |
+    | **URL** | Enter the value of the `uri` from the service key details (scroll down to the bottom of the service key). For example: `https://transport-service-app-backend.ts.cfapps.us10.hana.ondemand.com` |
+    | **Authentication** | Select **OAuth2ClientCredentials**. |
+    | **Client ID** | Enter the value of `clientid` from the `uaa` section of the service key details. |
+    | **Client Secret** | Enter the value of the `clientsecret` from the `uaa` section of the service key details. |
+    | **Token Service URL** | Enter the value of `url` from the `uaa` section of the service key details and append `/oauth/token` to the URL. For example: `https://cpi-dev-12345678.authentication.us10.hana.ondemand.com/oauth/token` |
+
+
+    ![Create cTMS Destination 3](screenshots/CreatecTMSDest-06.png)
+
+See also on SAP Help Portal: [Create TransportManagementService Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/eed66f35f9d148c8ae5b2d46ff097d8c.html)
+
