@@ -111,10 +111,8 @@ You should now be able to access the user interface of SAP Content Agent service
 
 2. In a new tab, you should now see the **Overview** page of your SAP Content Agent service. Currently, the Activities Performed tile is empty as expected from a new instance. 	
 
-    ![accessSuccessful](screenshots/cas-overview.png)
-
- 
-
+    ![overview](screenshots/cas-overview.png) 
+    
 ---
 ### Get the Details of the SAP Cloud Transport Management Service Instance 
 
@@ -134,8 +132,7 @@ Get the service key details of the SAP Cloud Transport Management instance that 
 3. The key looks as follows. Leave the service key open so that you copy the required values in the next step, or note down the values of `uri` (you have to scroll down), as well as `clientid`, `clientsecret`, and `url` from the `uaa` section.   
    
     ![Find cTMS service key 3](screenshots/tms-service-key.png)
-
- 
+    
 ---
 ### Create Destination to Cloud Transport Management in source account 
 
@@ -202,9 +199,9 @@ Select the source node as the entry node of the transport route you want to choo
 
 8. An asynchronous process is started and you can view the progress and messages. 	
 
-		![Export 7](screenshots/transport-success.png)
-
----
+	![Export 8](screenshots/transport-success.png)
+	
+--- 
 ### View the status of transport request
 
 You can also use the "Activities Performed" page to see the past activities - export/ import done along with logs, content selected and transport information to track if the changes are deployed in the target account. 
