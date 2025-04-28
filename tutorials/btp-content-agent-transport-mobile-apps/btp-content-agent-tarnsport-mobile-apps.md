@@ -114,12 +114,8 @@ You should now be able to access the user interface of SAP Content Agent service
 
 2. In a new tab, you should now see the **Overview** page of your SAP Content Agent service. Currently, the Activities Performed tile is empty as expected from a new instance. 	
 
-    ![accessSuccessful](screenshots/0310%20cTMS%20UI%20access%20successful.png)
+    ![accessSuccessful](screenshots/cas-overview.png)
 
-
-2. Navigate to *Content Types* tile and check the status of *SAP Mobile Services*. 
-
-    ![accessSuccessful](screenshots/0310%20cTMS%20UI%20access%20successful.png)This concludes the tutorial. Congratulations!
     
 
 ### Get the Details of the SAP Cloud Transport Management Service Instance 
@@ -172,3 +168,40 @@ The destination to SAP Cloud Transport Management service defines the endpoint o
 
 See also on SAP Help Portal: [Create TransportManagementService Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/eed66f35f9d148c8ae5b2d46ff097d8c.html)
 
+
+### Use SAP Content Agent to export mobile apps to SAP Cloud Transport Management
+
+1. Login to SAP Content Agent UI from the DEV account.
+
+	![Export 1](screenshots/cas-overview.png)
+
+2. Navigate to the **Content Types** page to check status of *SAP Mobile service*. You should see a warning message *SAP Mobile service is active and ready for export.* Ignore the *Action Recommended* as in this scenario we do not perform direct import from Content Agent UI.  
+
+    ![Export 2](screenshots/content-type.png)
+    
+3. Check the status of SAP Cloud Transport Management is showing as "Connected" to verify the destination is configured correctly in the DEV account. 
+Select the source node as the entry node of the transport route you want to choose. 
+
+    ![Export 3](screenshots/tms-check.png)
+
+4. Go to the Export Wizard screen. Use the options to filter type as *Mobile Application* and search text using name of your app, for example *test*. 
+
+	![Export 4](screenshots/filter.png)
+
+5. Select the mobile app from the list you want to export. Upon clicking the checkbox you can view the subcomponents of selected app where some mandatory components are pre-checked for you. Go to Step 2.
+
+    	![Export 5](screenshots/mobile-app-select.png)
+    	
+6. Select the transport mode option as "SAP Cloud Transport Management" service. Choose the source node based on the entry node of desired transport route. Enter a description for creating the transport request. This would be visible in the SAP Cloud Transport Management transport requests view.
+
+	![Export 6](screenshots/mode.png)
+		
+7. Review your selection and proceed to the next step. This triggers an asynchronous process and you can view the progress and messages. 	
+
+	![Export 7](screenshots/review.png)
+
+8. You can also use the "Activities Performed" page to see the past activities - export/ import done along with logs, content selected and transport information to track if the changes are deployed in the target account. 
+
+		![Export 7](screenshots/transport-success.png)
+
+### View the status of transport request
