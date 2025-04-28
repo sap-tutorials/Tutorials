@@ -140,11 +140,11 @@ The destination to SAP Cloud Transport Management service defines the endpoint o
 
 1. Open the **source** subaccount in a new tab.
 
-    ![Create cTMS Destination 0](screenshots/dev-source.png)
+    ![Create cTMS Destination 1](screenshots/dev-source.png)
     
 2. Under **Connectivity > Destinations** click on **Create Destination**.
 
-    ![Create cTMS Destination 1](screenshots/create-dest.png)
+    ![Create cTMS Destination 2](screenshots/create-dest.png)
 
 3. In the **Destination Configuration** window, enter details for the following fields. 
     >Keep the values of fields not mentioned in the table unchanged.
@@ -160,7 +160,7 @@ The destination to SAP Cloud Transport Management service defines the endpoint o
     | **Token Service URL** | Enter the value of `url` from the `uaa` section of the service key details and append `/oauth/token` to the URL. For example: `https://cpi-dev-12345678.authentication.us10.hana.ondemand.com/oauth/token` |
 
 
-    ![Create cTMS Destination 3](screenshots/CreatecTMSDest-06.png)
+    ![Create cTMS Destination 3](screenshots/create-tms-destination.png)
 
 See also on SAP Help Portal: [Create TransportManagementService Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/eed66f35f9d148c8ae5b2d46ff097d8c.html)
 
@@ -201,7 +201,7 @@ Select the source node as the entry node of the transport route you want to choo
 
 	![Export 8](screenshots/transport-success.png)
 	
---- 
+---
 ### View the status of transport request
 
 You can also use the "Activities Performed" page to see the past activities - export/ import done along with logs, content selected and transport information to track if the changes are deployed in the target account. 
@@ -212,13 +212,13 @@ You can also use the "Activities Performed" page to see the past activities - ex
 	
 2. Select the tab *Activity Logs* to view the logs. You can also download them. 
 
-	![Activity 1](screenshots/activity2.png)
+	![Activity 2(screenshots/activity2.png)
 	
 3. Select the *Content Information* tab to view the mobile app details exported from source account with sub component information the activity for which you want to view further details
 
-	![Activity 1](screenshots/activity3.png)
+	![Activity 3](screenshots/activity3.png)
 	
 4. Select the *Transport Details* tab to see the the transport request status. You can also use the *View Transport Request ##* button to go to Cloud Transport Management UI and see further details.
 
-	![Activity 1](screenshots/activity4.png)
+	![Activity 4](screenshots/activity4.png)
 
