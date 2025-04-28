@@ -196,12 +196,31 @@ Select the source node as the entry node of the transport route you want to choo
 
 	![Export 6](screenshots/mode.png)
 		
-7. Review your selection and proceed to the next step. This triggers an asynchronous process and you can view the progress and messages. 	
+7. Review your selection and proceed to the next step. 
 
 	![Export 7](screenshots/review.png)
 
-8. You can also use the "Activities Performed" page to see the past activities - export/ import done along with logs, content selected and transport information to track if the changes are deployed in the target account. 
+8. An asynchronous process is started and you can view the progress and messages. 	
 
 		![Export 7](screenshots/transport-success.png)
 
 ### View the status of transport request
+
+You can also use the "Activities Performed" page to see the past activities - export/ import done along with logs, content selected and transport information to track if the changes are deployed in the target account. 
+
+1. Navigate to *Activities Performed* and select the activity for which you want to view further details
+
+	![Activity 1](screenshots/activity1.png)
+	
+2. Select the tab *Activity Logs* to view the logs. You can also download them. 
+
+	![Activity 1](screenshots/activity2.png)
+	
+3. Select the *Content Information* tab to view the mobile app details exported from source account with sub component information the activity for which you want to view further details
+
+	![Activity 1](screenshots/activity3.png)
+	
+4. Select the *Transport Details* tab to see the the transport request status. You can also use the *View Transport Request ##* button to go to Cloud Transport Management UI and see further details.
+
+	![Activity 1](screenshots/activity4.png)
+
