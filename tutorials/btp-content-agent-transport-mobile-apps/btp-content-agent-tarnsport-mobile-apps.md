@@ -29,6 +29,7 @@ parser: v2
 SAP Content Agent service acts as a local agent in SAP BTP account that helps to standardize content management operation for various BTP services.
 For more information about SAP Content Agent Service, see the SAP Help Portal at [SAP Content Agent Service](https://help.sap.com/docs/content-agent-service).
 
+---
 ### Open the SAP BTP cockpit
 
 
@@ -38,14 +39,14 @@ For more information about SAP Content Agent Service, see the SAP Help Portal at
 2. In your global account, navigate to the subaccount in which you want to use to transport Mobile apps. You might also want to create a new subaccount for this tutorial, if you have the necessary authorizations.
 
      <!-- border -->! [global-Subaccount](screenshots/global-account.png)
+     
 
 ---
-
 ### Subscribe to SAP Content Agent service
+
 
 To enable the usage of the user interface of SAP Content Agent service, subscribe to the free plan.
 
-[OPTION BEGIN [Trial Account]]
 
 1. In your subaccount, go to **Services > Service Marketplace**.
 
@@ -53,7 +54,7 @@ To enable the usage of the user interface of SAP Content Agent service, subscrib
 
 3. The *SAP Content Agent* tile is displayed.    
 
-    <!-- border -->! ![Subscription1](screenshots/service-marketplace.png)
+    ![Subscription1](screenshots/service-marketplace.png)
 
 4. Select the three dots (...) on the tile, and choose **Create**.
 
@@ -76,8 +77,6 @@ To enable the usage of the user interface of SAP Content Agent service, subscrib
 
 
 ---
-
-
 ### Set Up Role Collections
 
 After successful subscription, you need to configure user access to the application.  You can create role collections and assign roles to the role collections based on the application templates. Afterwards, you assign the role collections to users or user groups. 
@@ -101,8 +100,6 @@ Repeat the steps, if you want to add users other role collections for other task
 See also on SAP Help Portal: [Setting Up Role Collections](https://help.sap.com/docs/content-agent-service/user-guide/assign-user-roles-and-permissions?locale=en-US)
 
 ---
-
-
 ### Verify access to Content Agent service
 
 You should now be able to access the user interface of SAP Content Agent service. 
@@ -116,8 +113,9 @@ You should now be able to access the user interface of SAP Content Agent service
 
     ![accessSuccessful](screenshots/cas-overview.png)
 
-    
+ 
 
+---
 ### Get the Details of the SAP Cloud Transport Management Service Instance 
 
 
@@ -138,6 +136,7 @@ Get the service key details of the SAP Cloud Transport Management instance that 
     ![Find cTMS service key 3](screenshots/tms-service-key.png)
 
  
+---
 ### Create Destination to Cloud Transport Management in source account 
 
 The destination to SAP Cloud Transport Management service defines the endpoint of SAP Cloud Transport Management service that is used by SAP Content Agent for pushing the content to desired source node of transport route. The destination has the fixed name TransportManagementService.
@@ -169,6 +168,7 @@ The destination to SAP Cloud Transport Management service defines the endpoint o
 See also on SAP Help Portal: [Create TransportManagementService Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/eed66f35f9d148c8ae5b2d46ff097d8c.html)
 
 
+---
 ### Use SAP Content Agent to export mobile apps to SAP Cloud Transport Management
 
 1. Login to SAP Content Agent UI from the DEV account.
@@ -204,6 +204,7 @@ Select the source node as the entry node of the transport route you want to choo
 
 		![Export 7](screenshots/transport-success.png)
 
+---
 ### View the status of transport request
 
 You can also use the "Activities Performed" page to see the past activities - export/ import done along with logs, content selected and transport information to track if the changes are deployed in the target account. 
