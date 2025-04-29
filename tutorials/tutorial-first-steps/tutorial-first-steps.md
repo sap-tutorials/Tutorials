@@ -4,8 +4,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner ]
 primary_tag: topic>sap-community
-author_name: Joshua Margo
-author_profile: https://github.com/jmmargo  
+author_name: Riley Rainey
+author_profile: https://github.com/rbrainey
 ---
 
 # Get to Know SAP Tutorials
@@ -197,7 +197,7 @@ Select **View all badges**.
 ### What other achievements are there?
 
 
-You can also see a list of key achievements that can you obtain, like doing your first tutorial or completing 3 missions.
+You can also see a list of key achievements that you can obtain, like doing your first tutorial or completing 3 missions.
 
 Go back to the [developers home page](https://developers.sap.com), and make sure you are logged in with your SAP ID (top right). Scroll down a little and on your right are your achievements.
 

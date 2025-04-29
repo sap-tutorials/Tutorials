@@ -146,6 +146,39 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 3. Clicking OK will apply your filter selections. Keep the HOTELS filter selected and click OK. 
 
 
+
+### Dependency Viewer
+Database object dependencies can be visualized using a graphical dependency viewer. 
+
+The dependency viewer can be started in two ways: 
+
+1. By right-clicking an object in the catalog browser and choosing "Open Dependency Viewer" from the context menu
+
+    ![Catalog Browser Dependency Viewer](catalog_browser_dependency_viewer.png)
+
+2. By right-clicking a database connection.
+
+    ![Database Dependency Viewer](database_dependency_viewer.png)
+
+
+When starting the dependency viewer from an object in the catalog browser, the dependency viewer directly shows the dependencies of the selected object.
+
+The dependencies can be explored in both directions, incoming and outgoing. Schemas are indicated as boxes surrounding the objects.
+    ![Incoming and Outgoing Nodes](incoming_outgoing_nodes.png)
+
+Schemas can be collapsed by double-clicking them to focus on the relevant dependencies. Clicking on an object highlights it and its direct dependencies for easier analysis.
+
+When starting the dependency viewer from a database connection, it is initially empty. You can select an object to visualize via the "Select Object" dropdown. 
+This dropdown can also be used to switch to a different object if one was already previously selected.
+    ![Select Objects from Dependency Viewer](select_object_dv.png)
+
+If you want to simplify your graph, or only have specific object types visible, you can filter them using the Object Type filter by unselecting the undesired items.
+
+![Object Type Filter](object_type_filter.png)
+
+
+
+
 ### Visual Studio Code features
 Learn how to change settings and leverage features such as split editor, layout toggles, and the terminal.
 

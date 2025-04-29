@@ -7,7 +7,7 @@ primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
-
+ 
 # Ingest Live Data into your House Price Predictor with SAP AI Core
 <!-- description --> Build data pipelines and reuse code to train and generate models on different datasets.
 

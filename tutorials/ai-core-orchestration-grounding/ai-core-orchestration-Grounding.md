@@ -208,7 +208,7 @@ print(token)
 
 [OPTION BEGIN [JavaScript SDK]]
 
-In this step, we will create a resource group in SAP AI Core using the `@sap-ai-sdk/ai-api` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api). 
+In this step, we will create a resource group in SAP AI Core using the [`@sap-ai-sdk/ai-api`](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api) package of the SAP Cloud SDK for AI (JavaScript). For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/ai-core/ai-api).
 
 **NOTE**: In order to use the document grounding service, the resource group must be created with the document grounding label set to `true`. Therefore, existing resource groups without the label will not work for document grounding.
 
@@ -355,7 +355,7 @@ Generic secrets securely store SharePoint credentials required for document acce
 
     • Enter the secret in JSON format. For example:
 
-    ```CODE
+    ```json
       {
 
       "type": "SFRUUA==",
@@ -402,7 +402,7 @@ Generic secrets securely store SharePoint credentials required for document acce
 
 [OPTION BEGIN [JavaScript SDK]]
 
-In this step, we will create a generic secret in SAP AI Core using the `@sap-ai-sdk/ai-api` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api). 
+In this step, we will create a generic secret in SAP AI Core using the [`@sap-ai-sdk/ai-api`](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api) package of the SAP Cloud SDK for AI (JavaScript). For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/ai-core/ai-api).
 
 Generic secrets securely store SharePoint credentials required for document access. Please change the values to your SharePoint credentials.
 
@@ -533,9 +533,9 @@ secret.json()
  
 [OPTION BEGIN [Bruno]]
 
-### 7.a Using Pipeline API 
+#### 7.a Using Pipeline API 
 
-#### Create Pipeline
+##### Create Pipeline
 
 - Pipelines define the process for grounding and retrieving content from SharePoint repositories.
 
@@ -551,19 +551,19 @@ In this use case, we have added facility management emails as grounding document
 
 ![img](img/image014.png)
 
-#### Get All Pipelines
+##### Get All Pipelines
 
 This request retrieves a list of all existing pipelines within the resource group. It helps in managing and monitoring available pipelines for orchestration.
 
 ![img](img/image031.png)
 
-#### Get Pipeline by Pipeline ID
+##### Get Pipeline by Pipeline ID
 
 This request fetches details of a specific pipeline using its unique ID. It is useful for verifying the configuration and settings of a particular pipeline.
 
 ![img](img/image032.png)
 
-#### Get Pipeline Status by Pipeline ID
+##### Get Pipeline Status by Pipeline ID
 
 This request checks the current status of a specific pipeline, such as whether it is running, completed, or failed. It helps in tracking the execution progress.
 
@@ -571,9 +571,9 @@ This request checks the current status of a specific pipeline, such as whether i
  
 Once the pipeline is successfully created, documents uploaded in SharePoint are converted into vectors via APIs. The conversion process can be validated upon successful pipeline execution. 
 
-### 7.b Using Vector API
+#### 7.b Using Vector API
 
-#### Create collection
+##### Create collection
 
 • Expand 06_vector and select create_collections request.
 
@@ -585,7 +585,7 @@ Once the pipeline is successfully created, documents uploaded in SharePoint are 
 
 ![img](img/image066.png)
 
-#### Create documents
+##### Create documents
 
 • Click on the create_document request and replace the path parameter with the valid collection ID.
 
@@ -595,7 +595,7 @@ Once the pipeline is successfully created, documents uploaded in SharePoint are 
 
 ![img](img/image067.png)
 
-#### Verifying Vector Processing (Optional)
+##### Verifying Vector Processing (Optional)
 
 These steps help inspect vector collections and documents to confirm successful processing.
 
@@ -635,9 +635,9 @@ These steps help inspect vector collections and documents to confirm successful 
 
 [OPTION BEGIN [JavaScript SDK]]
 
-### 7.a Using Pipeline API 
+#### 7.a Using Pipeline API 
 
-In this step, we will create a document-grounding pipeline in SAP AI Core using the `@sap-ai-sdk/document-grounding` package of the [SAP Cloud SDK for AI (JavaScript)](https://github.com/SAP/ai-sdk-js/tree/main/packages/document-grounding). 
+In this step, we will create a document-grounding pipeline in SAP AI Core using the [`@sap-ai-sdk/document-grounding`](https://github.com/SAP/ai-sdk-js/tree/main/packages/document-grounding) package of the SAP Cloud SDK for AI (JavaScript). For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/ai-core/document-grounding).
 
 • To start, install the dependency to your project.
 
@@ -680,7 +680,7 @@ console.log('Created Pipeline with ID:', pipeline?.pipelineId);
 
 ```
 
-### 7.b Using Vector API 
+#### 7.b Using Vector API 
 
 we are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
 

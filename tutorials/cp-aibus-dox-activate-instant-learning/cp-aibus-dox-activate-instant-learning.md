@@ -20,7 +20,7 @@ Before using the instant learning feature, you need to activate it. This tutoria
 
 ---
 
-### Authorize Swagger UI
+### Access and authorize Swagger UI
 
 
 To use a trial account to perform this tutorial, first follow the steps described in [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key).
@@ -33,13 +33,13 @@ Finally, you need to access and authorize the Document Information Extraction Sw
 
 To access and authorize the Document Information Extraction Swagger UI, you'll need the following entries from the service key that you created for Document Information Extraction in the tutorials [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for Document Information Extraction and Get Service Key] (cp-aibus-dox-free-booster-key):
 
-- `url` 
+- `tenantuiurl` 
   
 - `swagger`
 
 >You'll find both of these entries **outside** the `uaa` section of the service key. (See the image below.)
 
-1. To access the Document Information Extraction Swagger UI, copy the  `url` value and paste it into a text editor. Then, copy the `swagger` value `/document-information-extraction/v1` and paste it onto the end of the `url` value. Finally, copy the entire string, paste it into the address bar of your web browser, and press **Enter**.
+1. To access the Document Information Extraction Swagger UI, copy the  `tenantuiurl` value and paste it into a text editor. Then, copy the `swagger` value `/document-information-extraction/v1/` and paste it onto the end of the `tenantuiurl` value. Finally, copy the entire string, paste it into the address bar of your web browser, and press **Enter**.
 
     <!-- border -->![DOX](service-key-details.png)
 

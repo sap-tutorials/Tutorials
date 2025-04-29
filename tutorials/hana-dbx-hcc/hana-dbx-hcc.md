@@ -263,6 +263,51 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
 
 
+### Statement library
+The statement library is a convenient location in the SQL Console to store and retrieve frequently executed SQL statements.  It provides a place to store statements that are used frequently as to not type them in repeatedly.
+
+The library is pre-populated with useful statements called ‘SYSTEM’ statements.
+![Statement Library System Statements](statement_libaray_system.png)
+
+You may also define custom statements that are only available to you. These are ‘USER’ statements.
+```SQL
+/*
+
+[DESCRIPTION]
+
+- Future guest check-ins across all hotels
+
+*/
+
+SELECT * FROM RESERVATION
+    WHERE ARRIVAL >= CURRENT_DATE;
+```
+
+1. Save your custom statement, add a name and an optional description.
+   
+    ![Statement Library Create User Statements](save_custom_statement.png)
+    ![Statement Library Save Statements](save_statement.png)
+
+2. View your custom statement in the statement library
+   
+    ![Statement Library View User Statements](statement_libaray_user.png)
+
+3. To run a statement, select one from the statement library and click the Run button.
+   
+    ![Run Saved Statement](run_saved_statement.png)
+
+> It is also possible to export and import SQL statements directly to/from the file system
+> 
+> ![Import or Export Statements](export_import_statements.png) 
+> 
+> Files can then be shared using a version control system such as git.
+
+User-defined statements can be edited. From the Statement library, select the desired statement, click open, and make the desired changes. Select Save to overwrite the previous statement.
+
+![Modify Saved Statements](replace_statement.png)
+
+
+
 ### A few things to note
 The SQL console within SAP HANA Cloud Central appears similar to the one within the SAP HANA database explorer but there are some differences.
 
@@ -274,6 +319,7 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
 
     * Ability to format results
     * Support for SAP Morning and Evening Horizon themes
+    * Additional details such as time of execution, duration, rows returned, and success or failure in the history tab 
 
 * The SAP HANA database explorer has some additional functionality
 
@@ -282,8 +328,13 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
     * Code completion of schema objects
     * SQL formatting
     * Viewer for spatial and graph data
+    * Analysis tab for tables and views 
+    * Ability to show dependent objects
+    * Ability to search for database objects across multiple databases
     * Ability to run statements in the background
     * Ability to run statements against multiple instances
+
+
 
 ### Knowledge check
 
