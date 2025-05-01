@@ -31,7 +31,7 @@ parser: v2
 SAP Content Agent service acts as a local agent in SAP BTP account that helps to standardize content management operation for various BTP services.
 For more information about SAP Content Agent Service, see the SAP Help Portal at [SAP Content Agent Service](https://help.sap.com/docs/content-agent-service).
 
-	![scenario](screenshots/Scenario.png)
+	![Scenario](screenshots/Scenario.png)
 ---
 ### Open the SAP BTP cockpit
 
@@ -41,7 +41,7 @@ For more information about SAP Content Agent Service, see the SAP Help Portal at
 
 2. In your global account, navigate to the subaccount in which you want to use to transport Mobile apps. You might also want to create a new subaccount for this tutorial, if you have the necessary authorizations.
 
-     <!-- border -->! [global-Subaccount](screenshots/global-account.png)  
+    ![global-acc](screenshots/global-account.png)
 ---
 ### Subscribe to SAP Content Agent service
 
