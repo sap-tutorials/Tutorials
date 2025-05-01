@@ -31,7 +31,7 @@ parser: v2
 SAP Content Agent service acts as a local agent in SAP BTP account that helps to standardize content management operation for various BTP services.
 For more information about SAP Content Agent Service, see the SAP Help Portal at [SAP Content Agent Service](https://help.sap.com/docs/content-agent-service).
 
-	! [global-Subaccount](screenshots/scenario.png)
+	![scenario](screenshots/Scenario.png)
 ---
 ### Open the SAP BTP cockpit
 
