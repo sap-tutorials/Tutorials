@@ -181,11 +181,7 @@ You need to configure a transport destination so that SAP Cloud Transport Manage
     | ---------- | ------------- |
     | **Name** | Enter a name, for example: `Quality_Target_Node` |
     | **Description** | For example: `Destination for Deploy Service targeted on target BTP account for Mobile Service` |
-    | **URL** | Specify the URL to the SAP Cloud Deployment service as the deploy end point of the destination : https://deploy-service.cf.<domain>/slprot/<myorg>/<myspace>/slp  
-    <domain>: Domain of your target subaccount derived from the Cloud Foundry API endpoint that you can find in the SAP BTP Cockpit in the Overview of your subaccount.
-    <myorg>/<myspace>: Names of your org and space 
-    example Sample URL with URL encoding for <myorg>: Example Company Test Org and <myspace>: Example Company Test Space: 
-    https://deploy-service.cf.eu10-004.hana.ondemand.com/slprot/Example%20Company%20Test%20Org/Example%20Company%20Test%20Space/slp |
+    | **URL** | Specify the URL to the SAP Cloud Deployment service as the deploy end point of the destination https://deploy-service.cf.<domain>/slprot/<myorg>/<myspace>/slp`  <domain>: Domain of your target subaccount derived from the Cloud Foundry API endpoint that you can find in the SAP BTP Cockpit in the Overview of your subaccount. <myorg>/<myspace>: Names of your org and space. For example, Sample URL with URL encoding for <myorg>: Example Company Test Org and <myspace>: Example Company Test Space: https://deploy-service.cf.eu10-004.hana.ondemand.com/slprot/Example%20Company%20Test%20Org/Example%20Company%20Test%20Space/slp |
     | **Authentication** | Select **BasicAuthentication**. |
     | *User** | Specify the user name (usually, an email address) of the user that is used for the deployment. User must be a valid platform user on Cloud Foundry environment and it must have the role SpaceDeveloper in the target space. |
     | **Password** | Specify the password of the user. |
