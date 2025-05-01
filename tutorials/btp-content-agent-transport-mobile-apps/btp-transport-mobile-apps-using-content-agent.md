@@ -14,8 +14,10 @@ parser: v2
 ## Prerequisites
 
 
- - You have an SAP BTP account as source where you have subscribed to SAP Mobile service, follow the tutorial [Create Your First MDK Application](https://developers.sap.com/mission.mobile-dev-kit-get-started.html)
- - You have configured Cloud Transport Management service in a central subaccount, follow turtorial [Get Started with SAP Cloud Transport Management Service](https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/btp-transport-management-getting-started.html)
+ - You have an SAP BTP account as source where you have subscribed to SAP Mobile service, follow the tutorial [Create Your First MDK Application](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
+ 
+ - You've set up SAP Cloud Transport Management service in the central administrative subaccount. If you haven't done that, follow the tutorial [Get Started with SAP Cloud Transport Management](https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/btp-transport-management-getting-started.html).
+
 
 ## You will learn
    - How to subscribe to SAP Content Agent service
@@ -116,15 +118,12 @@ You should now be able to access the user interface of SAP Content Agent service
 ---
 ### Get the Details of the SAP Cloud Transport Management Service Instance 
 
-
 Get the service key details of the SAP Cloud Transport Management instance that you created as part of tutorial [Step 5 in Get Started with SAP Cloud Transport Management](https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/btp-transport-management-getting-started.html).
 
 1. Go to the central administrative SAP BTP subaccount. To do this, click on the **Central Services** tile.
 
-
     ![Find cTMS service key 1](screenshots/central-services.png)
-    
-    
+        
 2. Choose **Instances and Subscriptions** and filter for **Cloud Transport Management** to get the service instance. Click on the key link to view credentials.
 
     ![Find cTMS service key 2](screenshots/tms-instance.png)
@@ -166,7 +165,41 @@ See also on SAP Help Portal: [Create TransportManagementService Destination](htt
 
 
 ---
-### Use SAP Content Agent to export mobile apps to SAP Cloud Transport Management
+### Create target node destination in central services account
+
+You need to configure a transport destination so that SAP Cloud Transport Management knows about the target endpoint of the deployment process. This is usually the endpoint of the deploy service on Cloud Foundry.
+
+1. You will use the Central Services subaccount that's subscribed to SAP Cloud Transport Management service.
+
+	![Create Destination to Target Subaccount 1](screenshots/central-services.png)
+2. In the Central Services subaccount, under Connectivity > Destinations click on *Create Destination*. 
+	
+	![Create Destination to Target Subaccount 2](screenshots/CreateTargDest-01.png)
+3. In the **Destination Configuration** window, enter details for the following fields and save the entries:
+
+    | Field | Value |
+    | ---------- | ------------- |
+    | **Name** | Enter a name, for example: `Quality_Target_Node` |
+    | **Description** | For example: `Destination for Deploy Service targeted on target BTP account for Mobile Service` |
+    | **URL** | Specify the URL to the SAP Cloud Deployment service as the deploy end point of the destination : https://deploy-service.cf.<domain>/slprot/<myorg>/<myspace>/slp  
+    <domain>: Domain of your target subaccount derived from the Cloud Foundry API endpoint that you can find in the SAP BTP Cockpit in the Overview of your subaccount.
+    <myorg>/<myspace>: Names of your org and space 
+    example Sample URL with URL encoding for <myorg>: Example Company Test Org and <myspace>: Example Company Test Space: 
+    https://deploy-service.cf.eu10-004.hana.ondemand.com/slprot/Example%20Company%20Test%20Org/Example%20Company%20Test%20Space/slp |
+    | **Authentication** | Select **BasicAuthentication**. |
+    | *User** | Specify the user name (usually, an email address) of the user that is used for the deployment. User must be a valid platform user on Cloud Foundry environment and it must have the role SpaceDeveloper in the target space. |
+    | **Password** | Specify the password of the user. |
+
+    ![Create Destination to Target Subaccount 3](screenshots/CreateTargDest-02.png)
+The destination was created.
+
+> In the Cloud Transport Management application select the target node configuration, you assign the previously created transport destination pointing the target subaccount.
+
+---
+### Set up landscape in Cloud Transport Management application
+
+---
+## Use SAP Content Agent to export mobile apps to SAP Cloud Transport Management
 
 1. Login to SAP Content Agent UI from the DEV account.
 
