@@ -458,7 +458,7 @@ A tool such as [jq](https://github.com/jqlang/jq) can be used to filter the resu
 The following examples require a non trial or free tier SAP HANA Cloud instance.
 
 #### Clone an instance
-An SAP HANA Cloud database instance may be cloned.  As an example, you may wish to periodically replace a QA instance with a new instance that has a copy of the latest data from a production instance.  
+An SAP HANA Cloud database instance may be cloned.  As an example, you may wish to periodically replace a QA instance with a new instance that has a copy of the latest data from a production instance.  The subaccounts can be in different hyperscalers and the configuration settings such as storage size of the target instance can be different than the source.  Additional details can be found at [Clone an SAP HANA Database Instance](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/clone-sap-hana-database-instance).
 
 1. Select an instance to clone.  It **cannot** have an attached data lake.  To verify that it does not have an attached data lake, confirm that it has the option **Add Data Lake** and that it has the option **Create Template to Clone Instance**.
 
@@ -538,8 +538,6 @@ An SAP HANA Cloud database instance may be cloned.  As an example, you may wish 
     After the command completes, a new SAP HANA Cloud instance named Clone is created that will have the same schema and data as the instance Clone_Source.  The data is stored in the files created when the template was created so the data in the clone reflects the data that was captured during the template creation.
     
     ![creating clone](creating-clone.png)
-
-Additional details can be found at [Clone an SAP HANA Database Instance](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/clone-sap-hana-database-instance).
 
 #### Perform a takeover
 A takeover from an SAP HANA instance to a replica can performed.  This can happen automatically or can be triggered from the SAP HANA Cloud Central actions menu or using the CLI command illustrated below.  Additional details on the topic of replicas can be found at [Increasing System Availability](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/increasing-system-availability).
