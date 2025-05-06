@@ -66,9 +66,11 @@ There are multiple ways to create a data lake:
 
     When a data lake is created in either of the previous two methods, it is configured to be maximally compatible with an SAP HANA database.  
 
-* A data lake can be created that is independent (standalone) of a SAP HANA database by using the **Create Instance** button and the option **SAP HANA Cloud, data lake**.  
+* A data lake can be created that is independent (standalone) of a SAP HANA database by using the **Create Instance** button.
 
     ![independent data lake](standalone.png)
+
+     On the **Type** page select the option **SAP HANA Cloud, data lake**.  
 
     ![Standalone data lake](standalone2.png)
 
@@ -82,7 +84,7 @@ There are multiple ways to create a data lake:
 
     >The HDLADMIN user has a [login policy](https://help.sap.com/docs/hana-cloud-data-lake/user-management-for-data-lake-relational-engine/login-policy-options) that enforces the [update of the password](https://help.sap.com/docs/hana-cloud-data-lake/user-management-for-data-lake-relational-engine/changing-password-single-control) after 180 days.  
 
-3. As this instance is a free tier or trial account, set allowed connections to **Allow all IP addresses** so that client applications can connect from any IP address.  
+3. If this instance is a free tier or trial instance or a test instance, set allowed connections to **Allow all IP addresses** so that client applications can connect from any IP address.  
 
     ![Allowed connections](allowed-connections.png)
 
@@ -93,11 +95,13 @@ There are multiple ways to create a data lake:
     >**Important:** SAP HANA Cloud, HANA data lake free tier or trial instances are shut down overnight and will need to be restarted before working with them the next day.
 
 ### Examine the Data Lake
-1. Once the data lake has been created, it's details can be examined.
+Once the data lake has been created, it's details can be examined.
 
-    ![Open in cockpit](open-cockpit.png)
+1. Click on the instance to show its details.
 
-    Input your credentials. These will be stored by SAP HANA Cloud Central.
+    ![Show instance details](open-cockpit.png)
+
+2. Input your credentials. These will be stored by SAP HANA Cloud Central.
 
     ![Credentials](credentials.png)
 
@@ -107,7 +111,6 @@ There are multiple ways to create a data lake:
 
 
 ### Create tables, views, functions, and procedures
-
 In this step, a sample HOTEL dataset will be created comprising tables, a view, and a stored procedure.
 
 1. From the action menu, select **Open SQL Console**.
@@ -287,7 +290,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
 
 ### Install the developer licensed version of the data lake client
-This version of the data lake client does not include cryptographic libraries as it makes use of the libraries that are available on the operating systems such as OpenSSL.  It is available for download after accepting SAP Developer License agreement.  Currently, this version is only available for Linux.  Either client can be used to complete the steps shown in this tutorial group.
+This version of the data lake client does not include cryptographic libraries as it makes use of the libraries that are available on the operating systems such as OpenSSL.  It is available for download after accepting the SAP Developer License agreement.  Currently, this version is only available for Linux.  Choose which client you would like to use and follow either step 6 or step 7.  Either client can be used to complete the steps shown in this tutorial group.
 
 1.  Open the HANA tab of [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools).
 
@@ -308,7 +311,7 @@ This version of the data lake client does not include cryptographic libraries as
     ./hdbinst
     ```  
 
-    [run the installer](hdbinst.png)  
+    ![run the installer](hdbinst.png)  
 
 5.  Configure the environment variables.  This can be done by calling hdlclienv.sh manually or it can be added to the Bash shell by referencing it in `.bashrc`.
 
@@ -349,7 +352,7 @@ This version of the data lake client does not include cryptographic libraries as
 
 
 ### Install the data lake client
-This version of the data lake client is available from the SAP Software Download Center and requires an S-user ID and only shows software that you have purchased.  Additional details can be found at [Software Downloads FAQ](https://support.sap.com/content/dam/support/en_us/library/ssp/my-support/help-for-sap-support-applications/online_help-software_downloads.html#faq).  Either client can be used to complete the steps shown in this tutorial group.
+This version of the data lake client is available from the SAP Software Download Center and requires an S-user ID and only shows software that you have purchased.  Additional details can be found at [Software Downloads FAQ](https://support.sap.com/content/dam/support/en_us/library/ssp/my-support/help-for-sap-support-applications/online_help-software_downloads.html#faq).  Either client can be used to complete the steps shown in this tutorial group.  Choose which client you would like to use and follow either step 6 or step 7.
 
 1.  Open [SAP for me](https://me.sap.com/softwarecenter) and navigate to **Support Packages & Patches** | **By Alphabetical Index (A-Z)**.
 
