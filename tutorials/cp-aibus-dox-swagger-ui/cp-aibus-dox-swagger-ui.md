@@ -21,22 +21,22 @@ The core functionality of Document Information Extraction is to automatically ex
 
 ---
 
-### Authorize Swagger UI
+### Access and authorize Swagger UI
 
 
-You will use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
+You'll use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
-In the service key you created for Document Information Extraction in the previous tutorial: [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-free-booster-key), you should find (outside the `uaa` section of the service key) an entry called `url` and another entry called `swagger` (as highlighted in the image below).
+You need the service key that you created for Document Information Extraction in the previous tutorial – either [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-free-booster-key). Outside the `uaa` section of the service key, you'll find an entry called `tenantuiurl` and another called `swagger` (highlighted in the image below).
 
-1. To access the Document Information Extraction Swagger UI, add the `swagger` value (`/document-information-extraction/v1`) to the `url` value, paste it in any web browser and press **Enter**.
+1. To access the Document Information Extraction Swagger UI, first copy the `tenantuiurl` value and paste it into a text editor. Then, copy the `swagger` value and paste it onto the end of the `tenantuiurl` value. Finally, copy the resulting string, paste it into the address bar of your web browser, and press **Enter**.
 
     <!-- border -->![DOX](service-key-details.png)
 
-2. To be able to use the Swagger UI endpoints you need to authorize yourself. In the top right corner, click **Authorize**.
+2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
     <!-- border -->![DOX](swagger0.png)
 
-3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
+3. Get the `access_token` value created in the previous tutorial [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
     ```
     Bearer <access_token>
@@ -47,9 +47,8 @@ In the service key you created for Document Information Extraction in the previo
 4. Click **Authorize**, and then click **Close**.
 
     <!-- border -->![DOX](Authorize2.png)
-
-
-
+    
+    
 
 ### See list of document fields you can extract
 

@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 30
+time: 40
 tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database,tutorial>license]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -187,11 +187,12 @@ An ECN can be created in multiple ways.  Further details on the options and limi
 ### Create a workload class
 Workload classes can be used to direct a specified workload to an ECN.  Further details on workload classes can be found at [Workload Management](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/workload-management).
 
-1. There are multiple ways to map a workload to an ECN node.  The first step is to create a workload class.
+1. Create a workload class.
 
     ```SQL    
     CREATE WORKLOAD CLASS "WLC1";
     ```
+2.  Route the an ECN.
 
     The workload class can set a routing hint to the ECN.
 
@@ -205,7 +206,7 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
         ![Select the routing location](routing-ui-2.png)
 
-    There are various ways that the workload can be mapped to the workload class.
+3. Map a workload to the workload class.
 
     * A mapping to a user can be added
 
@@ -233,7 +234,7 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
         Additional details for these values can be found at  [CREATE WORKLOAD MAPPING](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-workload-mapping-statement-workload-management).
 
-    A workload class can be enabled, disabled, or deleted.
+4. Enable the workload class.
 
     ```SQL
     ALTER WORKLOAD CLASS "WLC1" DISABLE;
@@ -250,7 +251,7 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
     ![workload class details](mappings.png)
 
-2. Run the query again using the ECN and verify that the query was run on the ECN node.
+5. Run the query again and verify that the query was run on the ECN node.
 
     ```SQL
     CALL CPU_AND_MEMORY_SPIKE();
@@ -264,7 +265,7 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
     ![ECN verification](ecn_ex1.png)
 
-    Notice that the last time the query was run, it was executed on the ECN as the HOST value ends in ecn1  .  Notice also that the table location is not on the ECN.
+    Notice that the last time the query was run, it was executed on the ECN as the HOST value ends in ecn1.  Notice also that the table location is not on the ECN.
 
     It is also possible to direct a query to a workload class through a hint as shown below.
 
@@ -347,7 +348,12 @@ Before removing the ECN node, disable the workload class so that new queries are
     ALTER WORKLOAD CLASS "WLC1" DISABLE;
     ```
 
-    If the ECN is removed and the workload class is still enabled, workloads directed to the ECN will fail with an error message "Client failed to reroute after a server change in workload class routing: Invalid routing location".  This behavior can be changed using the [force_reroute](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/wlc) setting.
+    If the ECN is removed and the workload class is still enabled, workloads directed to the ECN will fail with an error message "Client failed to reroute after a server change in workload class routing: Invalid routing location".  This behavior can be changed using the [force_reroute](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/routing-queries-to-replicas) setting.
+
+    ```SQL
+    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('distribution', 'force_reroute') = 'FALSE' WITH RECONFIGURE;
+    SELECT * FROM SYS.M_CONFIGURATION_PARAMETER_VALUES WHERE SECTION = 'distribution';
+    ```
     
 2. Remove the ECN.  
 
@@ -355,6 +361,83 @@ Before removing the ECN node, disable the workload class so that new queries are
     btp update services/instance --id <instance ID> --parameters no_ecn.json
     btp.exe get services/instance <instance ID>
     ```
+
+### Node.js app demonstrating prepared statements and the option routeDirectExecute on statement routing 
+The below Node.js app is used to demonstrate that statements must be prepared first to be routed to an ECN as documented at [Statement Routing](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/077d30cc847443288d3f0574356de4e7.html).
+
+Some tools such as the SQL Console in SAP HANA Cloud Central, the SAP HANA database explorer, and [hdbsql](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) by default, always prepare statements.
+
+![prepare before execute](prepare-before-execute.png)
+
+The below code when run, will not be executed on the ECN, unless the variable prepare is set to true or the routeDirectExecute option is set to true.
+
+Further details on creating applications that connect to an SAP HANA Cloud database can be found at [Use Clients to Query an SAP HANA Database](https://developers.sap.com/mission.hana-cloud-clients.html).
+
+1. Try running the below app and adjust the prepare and routeDirectExecute variables.  
+
+    ```JavaScript
+    'use strict';
+    var util = require('util');
+    var hana = require('@sap/hana-client');
+
+    //Used to specify if prepare should be called before executing a query
+    var prepare = false;  
+
+    var connOptions = {
+        //default value is false.  If a statement is not prepared before executed, it is not routed to the ECN.  Setting this value to true ensures a prepare.
+        //Further details at https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4fe9978ebac44f35b9369ef5a4a26f4c.html
+        routeDirectExecute: 'false',
+
+        //Specify the connection parameters
+        serverNode: 'host:port',
+        UID: 'USER4',
+        PWD: 'Password4',
+    };
+    console.log('routeDirectExecute: ' + connOptions.routeDirectExecute);
+
+    var connection = hana.createConnection();
+
+    connection.connect(connOptions);
+
+    var sql = 'SELECT SUM(VAL1) FROM MYTABLE;';
+    var result;
+    if (prepare) {
+        //Prepare before execute
+        console.log('prepare: ' + prepare);
+        const statement = connection.prepare(sql);
+        var results = statement.execQuery();
+        if (results.next()) {
+            result=results.getValues();
+        } ;
+    }
+    else {
+        //Direct execute, 
+        //Unless routeDirectExecute is set to true, this is not routed to ECN
+        console.log('prepare: ' + prepare);
+        result = connection.exec(sql);
+    }
+    console.log(util.inspect(result, { colors: false }));
+
+    //By looking at the host value, it can be determined if the previous query was run on the ECN node or not.
+    sql = "SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP FROM M_SQL_PLAN_CACHE WHERE STATEMENT_STRING LIKE 'SELECT SUM(VAL1) FROM MYTABLE;' ORDER BY LAST_EXECUTION_TIMESTAMP DESC;"
+    result = connection.exec(sql);
+    console.log(util.inspect(result[0], { colors: false }));
+    connection.disconnect();
+    ```
+
+    Output when the variable prepare is false.
+
+    ![prepare is false](no-prepare.png)
+    
+    Output when the variable prepare is true.
+
+    ![prepare is true](prepare.png)
+
+    Output when the variable prepare is false but routeDirectExecute is true.
+
+    ![routedirectexecute](route-direct-execute.png)
+
+    For further details on the methods of the connection class used above consult [prepare](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c63d283b3635469bb8afbefbbe7aea7b.html) and [execute](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/ef5564058b1747ce99fd3d1e03266b39.html).
 
 ### Procedure to check if the ECN is started
 The following procedure can be used to check if the ECN is available and then when it is to run a workload.
@@ -408,8 +491,8 @@ The following steps demonstrate an approach to automating the creation, running 
 
     Instructions on using hdbsql and setting the user key can be found at [Executing SQL Statements from a shell](hana-cloud-automation-cli).
 
-### Use SAP Automation Pilot with an ECN
-The SAP Automation Pilot can be used to perform and schedule operations on services running in the SAP BTP.  The tutorial [Automating SAP HANA Cloud Tasks with the SAP Automation Pilot Service](https://developers.sap.com/tutorials/hana-cloud-automation-pilot.html) can be used to started with the SAP Automation Pilot.
+### Use SAP Automation Pilot to schedule the provisioning of an ECN
+The SAP Automation Pilot can be used to perform and schedule operations on services running in the SAP BTP.  The tutorial [Automating SAP HANA Cloud Tasks with the SAP Automation Pilot Service](https://developers.sap.com/tutorials/hana-cloud-automation-pilot.html) can be used to started with the SAP Automation Pilot.  The following step demonstrates how commands can be scheduled which will start and stop an ECN node and also execute SQL to enable or disable a workload class. 
 
 1. Import the catalog below into the SAP Automation Pilot.
 
@@ -707,10 +790,13 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
 
     ![executed](executed.png)
 
+    If your SAP HANA Cloud instance has an allow list configured, add the IP from [IPs for requests from SAP Automation Pilot](https://help.sap.com/docs/automation-pilot/automation-pilot/what-is-sap-automation-pilot?version=Cloud).
+
+    If an error is shown authenticating with the BTP user, ensure that it is a technical user and does not have two factor authentication enabled.  The SAP Note [3085908](https://me.sap.com/notes/3085908) may also help with authentication issues.
+
 8. Schedule the AddECN and DeleteECN commands.
 
     ![Schedule](schedule.png)
-
 
 ### ECN advisor
 SAP HANA Cloud Central includes an ECN advisor that provides recommendations for workloads that may be applicable to be run on an ECN.

@@ -50,7 +50,7 @@ You configure the transport landscape in SAP Cloud Transport Management service.
 
 ### Create a Transport Destination
 
-The transport destination defines the endpoint of SAP Content Agent service in the target account. The name of the destination is not fixed.
+The transport destination defines the endpoint of the SAP Content Agent service subscribed in the target account. This destination is assigned to the target node in SAP Cloud Transport Management service. The name of the destination is not fixed.
 
 >Make sure that you have the details of the **service key of the SAP Content Agent instance** in the **target** subaccount at hand that you created in [Set Up the SAP Integration Suite Target Subaccount](btp-transport-management-cpi-03-set-up-target-account). 
 

@@ -23,11 +23,11 @@ primary_tag: software-product>sap-hana-cloud
 There are different tools that can be used to schedule commands.  SAP HANA enables stored procedures to be scheduled.  Linux provides a service called cron that can execute a script at a scheduled time.  The SAP Automation Pilot is a service in the SAP BTP that has a feature to enable commands to be scheduled.  This tutorial will demonstrate each of these methods of scheduling tasks.
 
 ### Scheduling SQL using CREATE SCHEDULER JOB
-In this step a diagnostic script from the [SQL Statement Collection for SAP HANA](https://me.sap.com/notes/1969700) will be used.  If you have not already done so, download the zip.  The download section shown below is near the bottom of the SAP Note.  
+In this step a diagnostic script from the [SQL Statement Collection for SAP HANA](https://me.sap.com/notes/1969700) will be used.  If you have not already done so, download SQLStatements_SHC.zip.  The download section shown below is near the bottom of the SAP Note.  
 
 ![download SQL statements](download-sql-statements.png)
 
-These scripts are for SAP HANA databases.  The script `HANA_Configuration_MiniChecks_SHC.txt` will be placed in a stored procedure and its output will be written to a table.  The procedure can be scheduled to run once a day.  It will check for configuration values that are outside of expected values.
+The script `HANA_Configuration_MiniChecks_SHC.txt` will be placed in a stored procedure and its output will be written to a table.  The procedure can be scheduled to run once a day.  It will check for configuration values that are outside of expected values.
 
 1. Create a table to hold the results.  Run the below SQL in the SAP HANA database explorer connected to an SAP HANA database.
 

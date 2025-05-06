@@ -157,3 +157,4 @@ Here are some of the tasks you can use the CLI for:
 - Subscribing to applications
 
 To find out more about the btp CLI, you can have a look at this tutorial: [Get Started with the SAP BTP command line interface (btp CLI)](cp-sapcp-getstarted).
+ 
