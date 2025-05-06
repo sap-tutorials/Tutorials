@@ -68,10 +68,9 @@ With the service instances and corresponding credentials that you set up (as des
 
     <!-- border -->![Data Upload Configure Environment](v2_Data Upload Configure Environment.png)
 
-
 4. In the following screen, enter the information from the table below:
 
-    ![Data Upload Configure Environment 3](v2_Data Upload Configure Environment 3.png)
+    <!-- border -->![Data Upload Configure Environment 3](v2_Data Upload Configure Environment 3.png)
 
 
 |  Field Name                                | Value
@@ -88,7 +87,7 @@ With the service instances and corresponding credentials that you set up (as des
 |  Apply this environment to all APIs in this package that are not yet configured           | Make sure that this is NOT selected.
 |  Save this environment for future sessions                | Make sure that this is selected.
 
-* Choose **Configure**.
+5. Choose **Configure**.
 
 >** From the service key that you have created for the Data Upload service in your SAP BTP account. For a detailed description, go to step 4 in the tutorial [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
 ![Service Key](v3_Service_Key.png)
