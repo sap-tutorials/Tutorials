@@ -572,7 +572,7 @@ For this tutorial, we use anonymization:
 
 - Upon sending the request, the response will return the masked result, where sensitive information like email, phone numbers, and other personal identifiers are anonymized. For reference, you can check the screenshot provided showing how the masked result will appear.
 
-![img](img/image.png)
+![img](img/data_masking.png)
 [OPTION END]
 
 
@@ -636,10 +636,16 @@ Navigate to the **Input Filtering** section.
 
 ```python
 
-from gen_ai_hub.orchestration.models.azure_content_filter import AzureContentFilter 
-# Configure input and output content filters 
-input_filter = AzureContentFilter(hate=6, sexual=4, self_harm=0, violence=4) 
-output_filter = AzureContentFilter(hate=6, sexual=4, self_harm=0, violence=4) 
+input_filter= AzureContentFilter(hate=AzureThreshold.ALLOW_SAFE,
+                                  violence=AzureThreshold.ALLOW_SAFE,
+                                  self_harm=AzureThreshold.ALLOW_SAFE,
+                                  sexual=AzureThreshold.ALLOW_SAFE)
+input_filter_llama = LlamaGuard38bFilter(hate=True)
+output_filter = AzureContentFilter(hate=AzureThreshold.ALLOW_SAFE,
+                                   violence=AzureThreshold.ALLOW_SAFE_LOW,
+                                   self_harm=AzureThreshold.ALLOW_SAFE_LOW_MEDIUM,
+                                   sexual=AzureThreshold.ALLOW_ALL)
+output_filter_llama = LlamaGuard38bFilter(hate=True)
 
 ```
 
@@ -650,20 +656,32 @@ output_filter = AzureContentFilter(hate=6, sexual=4, self_harm=0, violence=4)
 
 ```python
 
-from gen_ai_hub.orchestration.models.config import OrchestrationConfig 
-# Create configurations for each model 
-configs = [] 
-for model in models: 
-    # Create orchestration config for each model 
-    config = OrchestrationConfig( 
-        template=template,   
-        llm=model,   
-    ) 
-    # You may need to set content filtering and data masking separately, depending on the framework 
-    config.data_masking = data_masking  # Set data masking after the config is created 
-    config.input_filter = input_filter  # Set input filter 
-    config.output_filter = output_filter  # Set output filter      
-    configs.append(config) 
+from gen_ai_hub.orchestration.models.config import OrchestrationConfig
+from gen_ai_hub.orchestration.models.content_filtering import InputFiltering, OutputFiltering, ContentFiltering
+
+# Define content filtering
+content_filtering = ContentFiltering(
+    input_filtering=InputFiltering(filters=[input_filter, input_filter_llama]),
+    output_filtering=OutputFiltering(filters=[output_filter, output_filter_llama]),
+)
+# Create configurations for each model
+configs = []
+# Loop through models and create individual configurations
+for model in models:
+    config = OrchestrationConfig(
+        template=Template(
+            messages=[
+                SystemMessage("You are a helpful AI assistant."),
+                UserMessage("{{?candidate_resume}}"),
+            ]
+        ),
+        llm=model,  
+        filtering=content_filtering,  
+    )
+    
+config.data_masking = data_masking  # Set data masking after the config is created
+
+configs.append(config)
 
 ```
 
@@ -677,33 +695,55 @@ for model in models:
 
 ```javascript
 
-import { buildAzureContentSafetyFilter } from '@sap-ai-sdk/orchestration'; 
-import type { FilteringModuleConfig } from '@sap-ai-sdk/orchestration';
-
-const inputFilter = buildAzureContentSafetyFilter({
-  Hate: 'ALLOW_ALL',
+import { buildAzureContentSafetyFilter, buildLlamaGuardFilter, OrchestrationClient } from "https://esm.sh/@sap-ai-sdk/orchestration@latest";
+ 
+// Define Azure content filtering rules
+const azureFilter = buildAzureContentSafetyFilter({
+  Hate: 'ALLOW_SAFE_LOW',
+  Violence: 'ALLOW_SAFE_LOW_MEDIUM',
   SelfHarm: 'ALLOW_SAFE',
-  Sexual: 'ALLOW_SAFE_LOW_MEDIUM',
-  Violence: 'ALLOW_SAFE_LOW_MEDIUM'
+  Sexual: 'ALLOW_ALL'
 });
-
-const outputFilter = buildAzureContentSafetyFilter({
-  Hate: 'ALLOW_ALL',
-  SelfHarm: 'ALLOW_SAFE',
-  Sexual: 'ALLOW_SAFE_LOW_MEDIUM',
-  Violence: 'ALLOW_SAFE_LOW_MEDIUM'
-});
-
-const filtering: FilteringModuleConfig = {
-  filtering: {
-    input: { filters: [inputFilter] },
-    output: { filters: [outputFilter] }
+ 
+// Define Llama Guard filtering rules
+const llamaGuardFilter = buildLlamaGuardFilter('hate', 'violent_crimes');
+ 
+// Configure filtering with both filters applied
+const filteringModuleConfig = {
+  input: {
+    filters: [azureFilter, llamaGuardFilter] // Multiple filters applied for input
+  },
+  output: {
+    filters: [azureFilter, llamaGuardFilter] // Multiple filters applied for output
   }
-}
+};  
 
 ```
 
-**NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case. 
+**NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case.
+
+- Then Combine the template, models, and modules into orchestration configurations:
+
+```javascript
+
+// Function to create configuration for each model 
+const createModelConfig = (modelName) => ({ 
+    llm: { 
+      model_name: modelName, 
+      model_params: { 
+        max_tokens: 1000, 
+        temperature: 0.6, 
+      }, 
+    }, 
+    ...templateConfig, 
+    ...dataMaskingConfig, 
+    filtering_module_config: filteringModuleConfig,  
+  }); 
+  const deploymentConfig = { 
+    resourceGroup: 'llm-deployed', 
+  };
+
+```
 
 Multiple content filters can be applied for both input and output. In this tutorial, we use Azure Content Safety Filter, but you can choose from the available providers based on your use case. For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/orchestration/chat-completion) of the [`@sap-ai-sdk/orchestration`](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration) package.
 
@@ -1063,7 +1103,7 @@ By incorporating these optional modules, you can tailor your Response to meet or
     - Filtered Content: Content deemed unsafe based on the configured thresholds will be flagged or filtered out.
 
 By following these steps, you can successfully mask sensitive data and apply content filtering while consuming the deployed model.
-![img](img/image.png)
+![img](img/content_filtering.png)
 **Conclusion** :  
 Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
