@@ -378,7 +378,7 @@ ThreadContextExecutor.fromNewContext().execute(() -> {
     SPRING_PROFILES_ACTIVE: 'cloud'
     JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
     JBP_CONFIG_COMPONENTS: 'jres: [''com.sap.xs.java.buildpack.jre.SAPMachineJRE'']'
-    JBP_CONFIG_SAP_MACHINE_JRE: '{ use_offline_repository: false, version: 17.0.15 }' 
+    JBP_CONFIG_SAP_MACHINE_JRE: '{ use_offline_repository: false, version: 17.+ }' 
 +   xsuaa_connectivity_instance_name: my-xsuaa
   services:
 + - my-xsuaa
