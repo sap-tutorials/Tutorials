@@ -41,11 +41,9 @@ author_profile: https://github.com/I321506
 
 6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to [SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
 
-7. Orchestration Deployment:
+7. **Orchestration Deployment**:
     
-    Refer to the tutorial [the basic consumption of GenAI models using orchestration](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). 
-    
-    Ensure at least one orchestration deployment is ready to be consumed during this process. 
+    Refer to the tutorial [the basic consumption of GenAI models using orchestration](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) and ensure at least one orchestration deployment is ready to be consumed during this process. 
 
 8. Basic Knowledge:
     Familiarity with the orchestration workflow is recommended
