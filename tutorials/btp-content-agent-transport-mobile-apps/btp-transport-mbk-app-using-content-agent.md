@@ -311,7 +311,7 @@ You can also use the "Activities Performed" page to see the past activities - ex
 
 3. To login, follow the steps of [tutorial.](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
 
-4. From the home screen, navigate to Mobile Applications → Native/MDK. Confirm there are no apps listed in the page.
+4. From the home screen, navigate to **Mobile Applications > Native/MDK**. Confirm there are no apps listed in the page.
 
 	![Verify app 1](screenshots/verify-app-3.png)
 
@@ -333,10 +333,10 @@ In Cloud Transport Management, the content is automatically forwarded from the D
 3. When the import is successful, the status of the transport request changes to Succeeded. You can display more details about the import in the log of the transport request. To display the log, click on the log icon.
 ![Import Logs](screenshots/import-logs.png)
 
-### Verify The import In Target Account
+### Verify The Import In Target Account
 
 1. Launch the Mobile Services admin UI by opening the URL bookmarked earlier.
 
-2. From the home screen navigate to Mobile Applications → Native/MDK.
+2. From the home screen navigate to **Mobile Applications > Native/MDK**.
 
 	![Verify After Import](screenshots/verify-after-import.png)
