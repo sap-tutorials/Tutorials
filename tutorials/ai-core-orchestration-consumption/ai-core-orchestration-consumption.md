@@ -59,7 +59,7 @@ By the end of this tutorial,
    * you will have a foundational understanding of orchestration through its minimal usage, focusing on practical application of templates and how to switch between different models using harmonized APIs.
    * Learn how to implement the solution using **SAP AI Launchpad**, **Python SDK**, **Java**, **JavaScript**, and **Bruno**.
 
-   Refer to the [orchestration documentation](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/orchestration?version=CLOUD) for more information.
+   Refer to the [orchestration documentation](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/orchestration-8d022355037643cebf775cd3bf662cc5?locale=en-US&version=CLOUD) for more information.
 
 ### Set Up Your Environment and Configure Access
 
