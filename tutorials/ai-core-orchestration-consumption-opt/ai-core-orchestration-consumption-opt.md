@@ -15,13 +15,63 @@ author_profile: https://github.com/I321506
 - Inference of GenAI models using orchestration along with Data Masking and Content Filtering features
 
 ## Prerequisites
-- Setup Environment:
-Ensure your instance and AI Core credentials are properly configured according to the steps provided in the initial tutorial
-- Orchestration Deployment:
-Ensure at least one orchestration deployment is ready to be consumed during this process. 
-- Refer to [this tutorial understand the basic consumption of GenAI models using orchestration.](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html)
-- Basic Knowledge:
-Familiarity with the orchestration workflow is recommended
+1. **BTP Account**  
+   Set up your SAP Business Technology Platform (BTP) account.  
+   [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
+
+2. **For SAP Developers or Employees**  
+   Internal SAP stakeholders should refer to the following documentation:  
+   [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139)
+
+   [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
+
+3. **For External Developers, Customers, or Partners**  
+   Follow this tutorial to set up your environment and entitlements:  
+   [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
+
+   [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
+
+4. **Create BTP Instance and Service Key for SAP AI Core**  
+   Follow the steps to create an instance and generate a service key for SAP AI Core:  
+   [Create Service Key and Instance](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key?version=CLOUD)
+
+5. **AI Core Setup Guide**  
+   Step-by-step guide to set up and get started with SAP AI Core:  
+   [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-setup.html)
+
+6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to [SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
+
+7. Orchestration Deployment:
+    Refer to [this tutorial understand the basic consumption of GenAI models using orchestration.](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). Ensure at least one orchestration deployment is ready to be consumed during this process. 
+
+8. Basic Knowledge:
+    Familiarity with the orchestration workflow is recommended
+
+### Pre-Read
+
+This tutorial builds on the foundational orchestration concepts introduced in the [beginner's tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) and focuses on enhancing GenAI responses using orchestration modules such as **data masking** and **content filtering**.
+
+Previously in the [beginner's tutorials](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html), we used a **resume processing use case** to illustrate how to create orchestration workflow with the required modules only, consume models and easily switch different models using harmonized API. In this tutorial, we extend that use case to demonstrate how sensitive data can be protected and undesirable content filtered using optional orchestration modules such as **Data Masking**, **Content filtering**.
+
+**Data masking** in SAP AI Core allows you to anonymize or pseudonymize personal or confidential data before sending it to the generative AI model.  
+🔗 [Learn more about Data Masking in SAP AI Core](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/data-masking?version=CLOUD)
+
+**Content filtering** helps identify and block inappropriate, offensive, or non-compliant input and output content within an orchestration workflow.  
+🔗 [Learn more about Content Filtering in SAP AI Core](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/input-filtering?version=CLOUD)
+
+In this tutorial, we specifically focus on **data masking** and **content filtering**. Other orchestration modules such as **translation** and **grounding** are also available in SAP AI Core and it is covered in Separate tutorials.
+
+You will learn how to:
+
+- Integrate data masking within the orchestration flow to safeguard personal or confidential information.
+- Apply content filtering to identify and restrict inappropriate or non-compliant responses.
+- Use relevant SAP AI Core features and configurations to support these capabilities.
+
+By the end of this tutorial
+  * you'll understand how to design a secure and controlled orchestration pipeline suitable for **enterprise-grade GenAI applications**.
+  * Learn how to implement the solution using **SAP AI Launchpad**, **Python SDK**, **Java**, **JavaScript**, and **Bruno**.
+
+Refer to the [orchestration documentation](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/orchestration-8d022355037643cebf775cd3bf662cc5?locale=en-US&version=CLOUD) for more information.
 
 ### Accessing Orchestration Capabilities
 
