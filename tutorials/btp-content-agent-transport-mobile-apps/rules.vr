@@ -1,0 +1,90 @@
+
+[VALIDATE_3]
+###Rule
+multiple-choice
+
+###Question
+What role collections provide the access to export content using SAP Content Agent service
+
+###Match
+[x] Content Agent Admin
+[ ] Content Agent Import Operator
+[ ] Content Agent Viewer
+[x] Content Agent Export Operator
+
+[VALIDATE_3]
+
+[VALIDATE_5]
+###Rule
+single-choice
+
+###Question
+In which account the service instance for Cloud Transport Management service should be created?
+
+###Match
+[ ] Dev Source Account
+[x] Central Services Account
+[ ] Target Account
+[ ] None of the above
+
+[VALIDATE_5]
+
+[VALIDATE_6]
+###Rule
+single-choice
+
+###Question
+How to check the destination configuration is correct?
+
+###Match
+[ ] Using "Check Connection" in SAP BTP Cockpit Destination view.
+[x] Using "Connection Status" in SAP Content Agent UI
+
+[VALIDATE_6]
+
+
+[VALIDATE_7]
+###Rule
+single-choice
+
+###Question
+To import the transport request, what should be the destination endpoint of target node?
+
+###Match
+[ ] SAP Content Agent service
+[x] Deploy service
+[ ] Transport Management service
+[ ] None of the above
+
+[VALIDATE_7]
+
+[VALIDATE_10]
+###Rule
+single-choice
+
+###Question
+Where is the source node for transport request defined?
+
+###Match
+[ ] As additional property (sourceSystemId) in destination
+[x] Select source node in export screen of SAP Content Agent UI
+[ ] Add tag in Cloud Transport Management service
+[ ] None of the above
+
+[VALIDATE_10]
+
+[VALIDATE_13]
+###Rule
+multiple-choice
+
+###Question
+What are the various options to import the transport request?
+
+###Match
+[x] Import Selected
+[x] Import All
+[x] Enable Automatic Import
+[x] Import Scheduler
+
+
+[VALIDATE_13]
