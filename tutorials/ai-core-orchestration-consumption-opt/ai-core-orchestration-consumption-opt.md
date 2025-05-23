@@ -15,18 +15,21 @@ author_profile: https://github.com/I321506
 - Inference of GenAI models using orchestration along with Data Masking and Content Filtering features
 
 ## Prerequisites
+
 1. **BTP Account**  
    Set up your SAP Business Technology Platform (BTP) account.  
    [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
 
 2. **For SAP Developers or Employees**  
    Internal SAP stakeholders should refer to the following documentation:  
+   
    [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139)
 
    [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
 
 3. **For External Developers, Customers, or Partners**  
    Follow this tutorial to set up your environment and entitlements:  
+   
    [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 
    [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)

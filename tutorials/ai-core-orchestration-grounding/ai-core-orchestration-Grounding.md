@@ -24,12 +24,14 @@ Please ensure the following prerequisites are met before starting the tutorial:
 
 2. **For SAP Developers or Employees**  
    Internal SAP stakeholders should refer to the following documentation:  
+   
    [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139)
 
    [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
 
 3. **For External Developers, Customers, or Partners**  
    Follow this tutorial to set up your environment and entitlements:  
+   
    [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 
    [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
@@ -43,7 +45,8 @@ Please ensure the following prerequisites are met before starting the tutorial:
    Step-by-step guide to set up and get started with SAP AI Core:  
    [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-setup.html)
 
-6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to [SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
+6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to 
+[SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
 
 7. Access to Microsoft SharePoint for grounding capabilities.
 

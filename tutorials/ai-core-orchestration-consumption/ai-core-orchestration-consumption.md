@@ -15,18 +15,21 @@ author_profile: https://github.com/I321506
 - How to inference GenAI models Using Orchestration
 
 ## Prerequisites
+
 1. **Global BTP Account**  
    Set up your SAP Business Technology Platform (BTP) account.  
    [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
 
 2. **For SAP Developers or Employees**  
    Internal SAP stakeholders should refer to the following documentation:  
+   
    [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139)
 
    [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
 
 3. **For External Developers, Customers, or Partners**  
    Follow this tutorial to set up your environment and entitlements:  
+   
    [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
 
    [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
@@ -43,6 +46,7 @@ author_profile: https://github.com/I321506
 6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to [SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
 
 ### Pre-Read
+
 This tutorial provides a basic introduction to using **orchestration in SAP AI Core**.
 
 **Orchestration in SAP AI Core is a managed service that enables unified access, control, and execution of generative AI models through standardized APIs, templating, and configurable AI workflow components.**
