@@ -15,13 +15,41 @@ author_profile: https://github.com/I321506
 - How to inference GenAI models Using Orchestration
 
 ## Prerequisites
-- A BTP global account
-- If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** )  
-- [How to create a BTP Account (internal)](https://me.sap.com/notes/3493139)
-- [SAP AI Core](https://help.sap.com/docs/sap-ai-core?version=INTERNAL&locale=en-US&state=PRODUCTION)
-- If you are an external developer or a customer or a partner kindly refer to this [tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
-- Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
-- Ai core Instance with an Extended Plan
+1. **BTP Account**  
+   Set up your SAP Business Technology Platform (BTP) account.  
+   [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
+2. **For SAP Developers or Employees**  
+   Internal SAP stakeholders should refer to the following documentation: [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139), [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
+3. **For External Developers, Customers, or Partners**  
+   Follow this tutorial to set up your environment and entitlements: [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html), [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
+4. **Create BTP Instance and Service Key for SAP AI Core**  
+   Follow the steps to create an instance and generate a service key for SAP AI Core:  
+   [Create Service Key and Instance](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key?version=CLOUD)
+5. **AI Core Setup Guide**  
+   Step-by-step guide to set up and get started with SAP AI Core:  
+   [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-setup.html)
+6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to 
+[SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
+
+### Pre-Read
+
+This tutorial provides a basic introduction to using **orchestration in SAP AI Core**.
+
+**Orchestration in SAP AI Core is a managed service that enables unified access, control, and execution of generative AI models through standardized APIs, templating, and configurable AI workflow components.**
+
+You will learn how to deploy and configure orchestration to enable the consumption of **multiple GenAI models** within a single workflow.
+
+We will walk through a **step-by-step guide** and demonstrate the orchestration flow using a **resume processing use case**. This real-world scenario highlights how different models can collaborate within a cohesive pipeline using orchestration.
+
+> **Note:** In SAP AI Core, orchestration is provided by default with the creation of the default resource group. For any new or additional resource groups, you must deploy a separate orchestration setup.
+
+While orchestration in SAP AI Core offers capabilities such as **data masking, content filtering, translation, and grounding**, this tutorial focuses on the basic consumption flow using mandatory modules like **templating** and **model configuration**. Others modules are Optional and usage of those modules are covered in a separate tutorial.
+
+By the end of this tutorial, 
+   * you will have a foundational understanding of orchestration through its minimal usage, focusing on practical application of templates and how to switch between different models using harmonized APIs.
+   * Learn how to implement the solution using **SAP AI Launchpad**, **Python SDK**, **Java**, **JavaScript**, and **Bruno**.
+
+   Refer to the [orchestration documentation](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/orchestration-8d022355037643cebf775cd3bf662cc5?locale=en-US&version=CLOUD) for more information.
 
 ### Set Up Your Environment and Configure Access
 
