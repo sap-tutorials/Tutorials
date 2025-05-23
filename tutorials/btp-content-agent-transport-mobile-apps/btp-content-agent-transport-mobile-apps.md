@@ -218,10 +218,9 @@ Configure the landscape in SAP Cloud Transport Management service using the tran
     | **Name** (1)| here `TARGET_NODE`|
     | **Description** | This field is optional. For example, `SAP Mobile services Quality target node`. |
     | **Content Type** (2) | Select the type of content as **Multi-Target Application**. |
-    | **Destination** (3) | Select the destination created in the previous step. Here, this is **Quality_Target_Node**. |
-    
+    | **Destination** (3) | Select the destination created in the previous step. Here, this is **Quality_Target_Node**. |    
 
-   ![Create cTMS node 3](screenshots/CreateTranspLandsc-03.png)
+	![Create cTMS node 3](screenshots/CreateTranspLandsc-03.png)
 
 6.  The target node is created and is also visible on the canvas. To create a transport route to connect the two nodes, choose the connector icon. sOn the **Create Route** dialog, enter a name for the transport route, here `Route_DEV_TARGET` (1), select the source node `DEV_NODE` (2) and the target node `TARGET_NODE` (3), and click **OK** (4).
     
