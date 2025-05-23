@@ -15,39 +15,21 @@ author_profile: https://github.com/I321506
 - How to set up orchestration pipelines, enable document grounding, and perform vector retrieval using SAP AI Core's grounding capabilities
 
 ## Prerequisites  
-
-Please ensure the following prerequisites are met before starting the tutorial:
-
 1. **BTP Account**  
    Set up your SAP Business Technology Platform (BTP) account.  
    [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
-
 2. **For SAP Developers or Employees**  
-   Internal SAP stakeholders should refer to the following documentation:  
-   
-   [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139)
-
-   [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
-
+   Internal SAP stakeholders should refer to the following documentation: [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139), [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
 3. **For External Developers, Customers, or Partners**  
-   Follow this tutorial to set up your environment and entitlements:  
-   
-   [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html)
-
-   [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
-
-
+   Follow this tutorial to set up your environment and entitlements: [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html), [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
 4. **Create BTP Instance and Service Key for SAP AI Core**  
    Follow the steps to create an instance and generate a service key for SAP AI Core:  
    [Create Service Key and Instance](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key?version=CLOUD)
-
 5. **AI Core Setup Guide**  
    Step-by-step guide to set up and get started with SAP AI Core:  
    [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-setup.html)
-
 6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to 
 [SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
-
 7. Access to Microsoft SharePoint for grounding capabilities.
 
 ### Pre-read
@@ -56,7 +38,7 @@ In this tutorial, we explore how to extend orchestration capabilities in SAP AI 
 
 **Grounding** addresses key challenges such as hallucinations and lack of specificity by connecting the model to external knowledge sources during inference.
 
-In orchestration, **templating** and **model configuration** are mandatory. In this tutorial, we focus on one of the optional modules, **grounding**, and also incorporate other optional modules such as **data masking** and **content filtering**.
+In the Generative AI Hub orchestration workflow, **templating** and **model configuration** are mandatory. In this tutorial, we are focusing on the **grounding** module usage, but in our orchestration consumption request you will also find optional modules such as **data masking** and **content filtering**. In general this tutorial covers the usage of all orchestration modules.
 
 In this tutorial we are covering:
 
