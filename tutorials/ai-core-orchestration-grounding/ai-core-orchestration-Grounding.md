@@ -405,7 +405,7 @@ Use the below payload to create a secret for AWS S3 with NoAuthentication as aut
 
       "clientSecret": "<client secret>",
 
-      "scope": "SCOPE",
+      "scope": "SCOPE"
 
       }
 
