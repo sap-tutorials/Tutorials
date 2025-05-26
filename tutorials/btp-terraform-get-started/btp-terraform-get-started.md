@@ -12,7 +12,7 @@ time: 10
 
 <!-- description --> Learn how to use Terraform to manage resources on SAP Business Technology Platform using code.
 
-Terraform is an open-source tool that allows you to define and provide cloud infrastructure using a declarative configuration language. It helps in building, changing, and managing resources in a safe, consistent, and efficient manner. 
+Terraform is an open-source tool that allows you to define and provide cloud infrastructure using a declarative configuration language. It helps in building, changing, and managing resources in a safe, consistent, and efficient manner.
 
 By combining Terraform with [SAP Business Technology Platform (BTP)](https://www.sap.com/products/technology-platform.html), you can programmatically manage your BTP environments.
 
@@ -39,7 +39,7 @@ terraform {
   required_providers {
     btp = {
       source  = "SAP/btp"
-      version = "~>1.3.0"
+      version = "~>1.12.0"
     }
   }
 }
@@ -49,7 +49,7 @@ provider "btp" {
 }
 ```
 
-Replace `"4605efebtrial-ga"` with the subdomain of your own BTP trial account. 
+Replace `"4605efebtrial-ga"` with the subdomain of your own BTP trial account.
 
 After setting up the provider configuration, run the following command in the terminal to let Terraform download all necessary dependencies:
 
