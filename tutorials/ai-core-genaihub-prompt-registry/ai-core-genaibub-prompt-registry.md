@@ -75,7 +75,7 @@ For more information on prompt registry, refer to the official documentation:
 
 - The declarative approach allows you to manage prompt templates using Git repositories, ensuring automatic synchronization with the Prompt Registry. Instead of making API calls to create and update templates manually, you define them in YAML files, commit them to Git, and let the system handle synchronization. 
 
-- Create a prompt template and push it to your git repository.  The file must be named in the following format: “**your-template-name**.prompttemplate.ai.sap.yaml”. 
+- Create a prompt template and push it to your git repository.  The file must be named in the following format: **your-template-name**.prompttemplate.ai.sap.yaml
 
 - YAML File Structure: Copy the below code
 
