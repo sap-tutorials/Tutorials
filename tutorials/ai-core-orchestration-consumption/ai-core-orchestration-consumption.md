@@ -41,12 +41,14 @@ You will learn how to deploy and configure orchestration to enable the consumpti
 
 We will walk through a **step-by-step guide** and demonstrate the orchestration flow using a **resume processing use case**. This real-world scenario highlights how different models can collaborate within a cohesive pipeline using orchestration.
 
-> **Note:** In SAP AI Core, orchestration is provided by default with the creation of the default resource group. For any new or additional resource groups, you must deploy a separate orchestration setup.
+> **Note:** In SAP AI Core, orchestration deployment is available by default in the default resource group during the onboarding. For any new or additional resource groups, you must deploy a separate orchestration setup.
 
 While orchestration in SAP AI Core offers capabilities such as **data masking, content filtering, translation, and grounding**, this tutorial focuses on the basic consumption flow using mandatory modules like **templating** and **model configuration**. Others modules are Optional and usage of those modules are covered in a separate tutorial.
 
-By the end of this tutorial, 
+By the end of this tutorial,
+
    * you will have a foundational understanding of orchestration through its minimal usage, focusing on practical application of templates and how to switch between different models using harmonized APIs.
+
    * Learn how to implement the solution using **SAP AI Launchpad**, **Python SDK**, **Java**, **JavaScript**, and **Bruno**.
 
    Refer to the [orchestration documentation](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/orchestration-8d022355037643cebf775cd3bf662cc5?locale=en-US&version=CLOUD) for more information.
