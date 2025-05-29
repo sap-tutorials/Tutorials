@@ -56,7 +56,9 @@ You will learn how to:
 - Use relevant SAP AI Core features and configurations to support these capabilities.
 
 By the end of this tutorial
+
   * you'll understand how to design a secure and controlled orchestration pipeline suitable for **enterprise-grade GenAI applications**.
+  
   * Learn how to implement the solution using **SAP AI Launchpad**, **Python SDK**, **Java**, **JavaScript**, and **Bruno**.
 
 ### Accessing Orchestration Capabilities
@@ -188,7 +190,7 @@ System.out.println(cvContent);
 [OPTION END]
 
 
-### Configuring User-Specific Settings  
+### Template Configuration  
 
 [OPTION BEGIN [AI Launchpad]]
 

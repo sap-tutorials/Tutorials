@@ -59,7 +59,7 @@ There are two key approaches to managing prompts in a **Prompt Registry**:
 1.	**Imperative API (Direct API Control for Dynamic Prompt Management)**: The Imperative API allows you to create, update, and manage prompt templates dynamically via API calls. This approach is best suited for interactive design-time use cases, where you need to iteratively refine prompts and track their versions. Each change is explicitly made via CRUD operations, and you can manage versions manually.
 2.	**Declarative API (Git-based Sync for Automated Prompt Management)**: The Declarative API, on the other hand, integrates with SAP AI Core applications and is ideal for CI/CD pipelines. Instead of managing templates through direct API interactions, you define them as YAML files in a Git repository. The system automatically syncs these templates, ensuring that updates are seamlessly reflected in the prompt registry without manual intervention.
 
-### You will learn:
+**You will learn:**
 
 - Declarative approach to creating a prompt template. 
 - How to **register and sync** a prompt template in Generative AI Hub.
@@ -75,7 +75,7 @@ For more information on prompt registry, refer to the official documentation:
 
 - The declarative approach allows you to manage prompt templates using Git repositories, ensuring automatic synchronization with the Prompt Registry. Instead of making API calls to create and update templates manually, you define them in YAML files, commit them to Git, and let the system handle synchronization. 
 
-- Create a prompt template and push it to your git repository.  The file must be named in the following format: “**your-template-name**.prompttemplate.ai.sap.yaml”. 
+- Create a prompt template and push it to your git repository.  The file must be named in the following format: **your-template-name**.prompttemplate.ai.sap.yaml
 
 - YAML File Structure: Copy the below code
 
