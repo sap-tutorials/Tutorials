@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-author_name: DJ Adams
+author_name: Lalit Pareek
 author_profile: https://github.com/qmacro
 primary_tag: products>sap-business-technology-platform
 tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner ]
@@ -49,26 +49,11 @@ You will see a success message after activating your account.
 
 ### Log on to SAP BTP Trial
 
-After activation, or if you already had an SAP account, go to the <a href="https://account.hanatrial.ondemand.com/" target="new"><b>SAP BTP Trial</b></a> page and click **Log On**.
+After activation, or if you already had an SAP account, go to the <a href="https://www.sap.com/products/technology-platform/trial.html" target="new"><b>SAP BTP Trial</b></a> page, select **Try Now**, and follow the instructions.
 
-You will see an dialog to confirm the terms and condition for the SAP BTP Trial. **Check the check boxes** and click **Accept**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity.
+### Access the SAP BTP cockpit
 
-### Verify your account
-
-1. You will see a message that you need to verify your account with a phone number. Click **Verify your phone number** to trigger that flow.
-
-    <!-- border -->![verification popover](verification.png)
-
-2. Enter your phone number and click **New Code** to retrieve a code.
-
-3. Please enter this code as well and click **Continue** to verify your account. After the verification, you will be logged off automatically.
-
-
-### Access the welcome screen
-
-Click on **Log on** to log on to your verified account.
-
-You will see one main button on the welcome screen of the SAP BTP Cockpit. Click on **Go To Your Trial Account** to navigate to your global account.
+Once the signup process is complete, you can access the cockpit via <https://cockpit.hanatrial.ondemand.com/trial/>.
 
 > Bookmark the link for fast and quick access to the cockpit.  
 
