@@ -19,7 +19,7 @@ primary_tag: software-product>sap-hana-cloud
 
 
 ## You will learn
-- How to query your database using the SAP HANA database explorer using SQL statements
+- How to query your database using the SAP HANA Cloud Central using SQL Console
 - How to create new tables
 - How to join tables
 - How to extract specific data from tables
@@ -38,28 +38,28 @@ primary_tag: software-product>sap-hana-cloud
 ### Open the SQL console and set the schema
 
 
-1.	Go to the Instances tab in SAP HANA Cloud Central and open SAP HANA database explorer. 
+1.	Go to the Instances tab in SAP HANA Cloud Central and open SQL Console. 
 
-    ![Open DBx from HANA Cloud Central](open-dbx.png)
+    ![Open DBX from HANA Cloud Central](open-dbx.png)
 
-    Then open the SQL Console by clicking the icon in the left-hand top corner.
-
-    ![database explorer with highlight on Open SQL Console](ss-01-database-explorer-open-sql-console.png)
-
-    > You can also open the SQL console by right-clicking on a database name and selecting **Open SQL console** or by using the shortcut `Ctrl+Alt+C`.
+    > You can also open the SQL console by right-clicking on a database name and selecting **Open SQL console** or by using the shortcut `Ctrl+Alt+C`. 
     
 
-2.	Once the SQL console loads, ensure that the current schema is `SFLIGHT` by checking the top right-hand side of the console.
+2.	Once the SQL console loads, ensure that the current schema is `SFLIGHT` by checking the top center of the console.
 
 3.	If not, copy and paste the following statement to the console and run it:
 
     ```SQL
     SET SCHEMA SFLIGHT;
     ```  
+    ![SQL Console, with highlight on Current Schema](ss-02-sql-console-current-schema.png)
+
+    You can also change the schema by clicking on the current schema name in the center of the console, selecting `SFLIGHT` from the list, and then clicking the **Change** button.
+    ![Second Option to Change Current Schema in SQL Console](ss-02-sql-console-current-schema-second-option.png)
 
     The current schema will then display `SFLIGHT`.  
 
-    ![SQL Console, with highlight on Current Schema](ss-02-sql-console-current-schema.png)
+    
 
 
 ### Query the most popular travel agents
@@ -71,7 +71,7 @@ Let's find out which of the Best Run Travel agents are most popular. For this, w
 2.	The following query will create a new table and order the agencies based on their number of bookings. Copy and paste query to the console and then click on the **Run** button:
 
     ```SQL
-    CREATE TABLE SAGENCYDATA as (select SBOOK.AGENCYNUM, count(SBOOK.AGENCYNUM) as NUMBOOKINGS FROM SBOOK, STRAVELAG WHERE SBOOK.AGENCYNUM=STRAVELAG.AGENCYNUM group by SBOOK.AGENCYNUM ORDER BY count(SBOOK.AGENCYNUM) desc)
+    CREATE TABLE SAGENCYDATA as (select SBOOK.AGENCYNUM, count(SBOOK.AGENCYNUM) as NUMBOOKINGS FROM SBOOK, STRAVELAG WHERE SBOOK.AGENCYNUM=STRAVELAG.AGENCYNUM group by SBOOK.AGENCYNUM ORDER BY count(SBOOK.AGENCYNUM) desc);
     ```
 
 3.	You can view the contents of this table by running the following query:
@@ -129,7 +129,7 @@ To find the top booking days, we will first create two new tables:
 3.	Next, create the table `SAGBOOKDAYS` to store the daily bookings for each of the agencies. Use the following query:
 
     ```SQL
-    CREATE TABLE SAGBOOKDAYS AS (SELECT AGENCYNUM, dayname(ORDER_DATE) as ORDERDAY, count(dayname(ORDER_DATE)) AS DAYCOUNT FROM SBOOK GROUP BY AGENCYNUM, dayname(ORDER_DATE))
+    CREATE TABLE SAGBOOKDAYS AS (SELECT AGENCYNUM, dayname(ORDER_DATE) as ORDERDAY, count(dayname(ORDER_DATE)) AS DAYCOUNT FROM SBOOK GROUP BY AGENCYNUM, dayname(ORDER_DATE));
     ```
 
 4.	To view all contents of this new table, you can again use the `SELECT * FROM` query:
@@ -141,7 +141,7 @@ To find the top booking days, we will first create two new tables:
 5.	Now that you have created the 2 tables, join these tables based on the agency number (column `AGENCYNUM`). You also need to extract only the day with maximum number of bookings for each of the top 5 agencies. For this, use the following nested queries:
 
     ```SQL
-    SELECT SAGBOOKDAYS.AGENCYNUM, STOPAGENCY.NAME, SAGBOOKDAYS.ORDERDAY, SAGBOOKDAYS.DAYCOUNT FROM SAGBOOKDAYS INNER JOIN STOPAGENCY ON SAGBOOKDAYS.AGENCYNUM=STOPAGENCY.AGENCYNUM WHERE SAGBOOKDAYS.DAYCOUNT IN (SELECT max(DAYCOUNT) FROM SAGBOOKDAYS GROUP BY AGENCYNUM)
+    SELECT SAGBOOKDAYS.AGENCYNUM, STOPAGENCY.NAME, SAGBOOKDAYS.ORDERDAY, SAGBOOKDAYS.DAYCOUNT FROM SAGBOOKDAYS INNER JOIN STOPAGENCY ON SAGBOOKDAYS.AGENCYNUM = STOPAGENCY.AGENCYNUM WHERE SAGBOOKDAYS.DAYCOUNT IN (SELECT max(DAYCOUNT) FROM SAGBOOKDAYS GROUP BY AGENCYNUM);
     ```
 
 6.	Now you can see that the most bookings for the top 5 agencies have been done on **Thursdays**.
