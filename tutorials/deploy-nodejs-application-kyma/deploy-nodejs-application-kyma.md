@@ -93,8 +93,7 @@ Then you are ready to deploy it into the Kubernetes cluster with Kyma runtime.
 Enabling Istio sidecar proxy injection for a namespace allows istiod to watch all Pod creation operations in this namespace and automatically inject newly created Pods with an Istio sidecar proxy.
 Access the Kyma dashboard, switch the toggle to enable Istio sidecar proxy injection.
 
- 3.1 Select the namespace where you want to enable sidecar proxy injection.
-Click Edit.  
+ 3.1 Select the namespace where you want to enable sidecar proxy injection. Click Edit.  
 
  3.2 In the UI Form section, switch the toggle to enable Istio sidecar proxy injection.  
 
