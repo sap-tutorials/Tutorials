@@ -25,19 +25,7 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 
 ### Determine SAP BTP Subaccount Subdomain
 
-Open your subaccount in the Cockpit. In the overview page, find the subdomain for your deployment.
-
-For example:
-
-![image-20211214133316133](image-20211214133316133.png)
-
-
-
-### Determine Kyma Cluster Domain
-
-Find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file. For example: `e6803e4.kyma.shoot.live.k8s-hana.ondemand.com`.
-
-
+Open your subaccount in the Cockpit. Make sure you've already enabled SAP BTP, Kyma runtime on your cluster.
 
 
 ### Build Application to OCI Image
@@ -98,10 +86,23 @@ Then you are ready to deploy it into the Kubernetes cluster with Kyma runtime.
 
 **2.** Create a new namespace through the Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
 
-![image-20220214150615225](image-20220214150615225.png)
+![create_ns](create_ns.png)
 
 
+**3.** Enable Istio Sidecar Proxy Injection  
+Enabling Istio sidecar proxy injection for a namespace allows istiod to watch all Pod creation operations in this namespace and automatically inject newly created Pods with an Istio sidecar proxy.
+Access the Kyma dashboard, switch the toggle to enable Istio sidecar proxy injection.
 
+ 3.1 Select the namespace where you want to enable sidecar proxy injection.
+Click Edit.  
+
+ 3.2 In the UI Form section, switch the toggle to enable Istio sidecar proxy injection.  
+
+ 3.3 Click Save.
+
+ ![enable_ns_sidecar](enable_ns_sidecar.png)
+
+> For more details, refer to the [Enable Istio Sidecar Proxy Injection](https://kyma-project.io/#/istio/user/tutorials/01-40-enable-sidecar-injection?id=enable-sidecar-injection-for-a-namespace)
 
 
 ### Deploy Secret for Docker Hub
@@ -134,7 +135,7 @@ In the root directory `multitenancy-kyma-tutorial`, create a new YAML file calle
 ```yaml
 
 ---
-apiVersion: gateway.kyma-project.io/v1beta1
+apiVersion: gateway.kyma-project.io/v2
 kind: APIRule
 metadata:
   labels:
@@ -142,19 +143,13 @@ metadata:
     release: multitenancy
   name: kyma-multitenant-node-multitenancy
 spec:
-  gateway: kyma-gateway.kyma-system.svc.cluster.local
-  host: kyma-multitenant-node-multitenancy
+  gateway: kyma-system/kyma-gateway
+  hosts: 
+    - kyma-multitenant-node-multitenancy
   rules:
-  - accessStrategies:
-    - handler: allow
-    methods:
-    - GET
-    - POST
-    - PUT
-    - PATCH
-    - DELETE
-    - HEAD
-    path: /.*
+    - path: /*
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"]
+      noAuth: true
   service:
     name: kyma-multitenant-node-multitenancy
     port: 8080
@@ -178,6 +173,7 @@ spec:
       labels:
         app: kyma-multitenant-node-multitenancy
         release: multitenancy
+        sidecar.istio.io/inject: "true"  # Enable Istio sidecar injection on Deployment and all Pods
     spec:
       imagePullSecrets:
         - name: registry-secret # replace with your own registry secret
@@ -299,7 +295,7 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 
 **1.** Find the URL address of your application in the Kyma dashboard:
 
-![image-20220214153901104](1645680425240.jpg)
+![api_rule_host](api_rule_host.png)
 
 **2.** Access it in the browser, then the application will return the message that you defined before.
 
