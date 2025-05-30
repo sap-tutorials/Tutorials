@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 author_name: Lalit Pareek
-author_profile: https://github.com/qmacro
+author_profile: https://github.com/lpareek
 primary_tag: products>sap-business-technology-platform
 tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner ]
 time: 15
