@@ -40,7 +40,7 @@ In Kubernetes, you can create and bind to a service instance using the Service C
 ```YAML
 ################### XSUAA ###################
 ---
-apiVersion: services.cloud.sap.com/v1alpha1
+apiVersion: services.cloud.sap.com/v1
 kind: ServiceInstance
 metadata:
   name: xsuaa-service
@@ -61,7 +61,7 @@ spec:
       - https://*.<cluster-domain>/**
 
 ---
-apiVersion: services.cloud.sap.com/v1alpha1
+apiVersion: services.cloud.sap.com/v1
 kind: ServiceBinding
 metadata:
   name: xsuaa-service-binding
@@ -124,7 +124,7 @@ Now, mount the Secret just generated to the pods of both approuter and node appl
           secretName: xsuaa-service-binding
 ```
 
-> Secrets can be found in the directory `/etc/secrets/sapcp/<service-name>/<instance-name>`:
+> Secrets can be found in the pod directory `/etc/secrets/sapcp/<service-name>/<instance-name>`:
 >
 > ![image-20220117110402061](image-20220117110402061.png)
 
@@ -137,37 +137,86 @@ Now, mount the Secret just generated to the pods of both approuter and node appl
 
 **1.** Add libraries for enabling authentication in the `kyma-multitenant-node/app.js` file:
 
-```JavaScript[3-7]
+```JavaScript[3-6]
 var app = express();
 
 //**************************** Libraries for enabling authentication *****************************
 var passport = require('passport');
 var xsenv = require('@sap/xsenv');
-var JWTStrategy = require('@sap/xssec').JWTStrategy;
 //************************************************************************************************
 ```
 
-**2.** Enable authorization in the `kyma-multitenant-node/app.js` file:
+**2.** Enable authorization in the `kyma-multitenant-node/app.js` file:  
 
-```JavaScript[4-9]
+The properties **name** and **label** both are supported by CF and K8S. You are recommended to use `name` or `label` to get xsuaa credentials by. You can find the query value definition on `xsenv` package page.  
+
+> If you want to use name, get xsuaa credentials by: `xsenv.getServices({xsuaa: { label: 'xsuaa' }})`  
+
+> If you want to use label, get xsuaa credentials by: `xsenv.getServices({xsuaa: { name: 'xsuaa-service' }})`
+
+
+```JavaScript[4-20]
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 //*********************************** Enabling authorization  ***********************************
-var services = xsenv.getServices({ uaa: { tag: 'xsuaa' } }); //Get the XSUAA service
-passport.use(new JWTStrategy(services.uaa));
+console.log('Fetching xsuaa service...');
+const services = xsenv.getServices({xsuaa: { label: 'xsuaa' }});
+const credentials = services.xsuaa;
+const { XssecPassportStrategy, XsuaaService } = require("@sap/xssec");
+const authService = new XsuaaService(credentials) // or: IdentityService, XsaService, UaaService ...
+console.log( `Found XSUAA service credentials for client: ${services.xsuaa.clientid}` )
+passport.use(new XssecPassportStrategy(authService));
+
+console.log('Initializing passport...');
 app.use(passport.initialize());
-app.use(passport.authenticate('JWT', { session: false })); //Authenticate using JWT strategy
+
+console.log('Authenticating with JWT strategy...');
+app.use('/callback', passport.authenticate('JWT', { session: false }));
+app.use('/users', passport.authenticate('JWT', { session: false }));
+app.use('/user', passport.authenticate('JWT', { session: false }));
 //************************************************************************************************
 ```
 
-**3.** Add dependency `"@kubernetes/client-node"` in the `kyma-multitenant-node/package.js` file, for example:
+**3.** Add new route `/user` in `kyma-multitenant-node/routes/index.js`  
+
+Separate the `/` route as non-authenticated. Add a new route `/user` to verify user authentication in the subscribed multitenancy application from the consumer's side.
+
+```JavaScript[12-24]
+router.get("/", function(req, res, next) {
+    try {
+        var responseMsg = "Welcome to the Kyma Multitenant Application!";
+        res.send(responseMsg);
+    } catch (e) {
+        console.log("AuthInfo object undefined.");
+        var responseMsg = "Hello World!";
+        res.send(responseMsg);
+    }
+});
+
+router.get("/user", function(req, res, next) {
+    try {
+        var line1 = "Hello " + req.authInfo.getLogonName();
+        var line2 = "your tenant sub-domain is " + req.authInfo.getSubdomain();
+        var line3 = "your tenant zone id is " + req.authInfo.getZoneId();
+        var responseMsg = line1 + "; " + line2 + "; " + line3;
+        res.send(responseMsg);
+    } catch (e) {
+        console.log("AuthInfo object undefined.");
+        var responseMsg = "Cannot get user information. Please check your authentication.";
+        res.send(responseMsg);
+    }
+});
+```
+
+
+**4.** Add dependencies `@sap/xsenv`, `@sap/xssec` and `passport` in the `kyma-multitenant-node/package.json` file, for example:
 
 ```JSON[2-4]
     "dependencies": {
-        "@sap/xsenv": "^3",
-        "@sap/xssec": "^3",
-        "passport": "^0.4.0",
+        "@sap/xsenv": "^5.6.0",
+        "@sap/xssec": "^4.6.0",
+        "passport": "^0.7.0",
         ...
     }
 }
@@ -179,7 +228,7 @@ app.use(passport.authenticate('JWT', { session: false })); //Authenticate using 
 ### Enable Authentication for Approuter Application
 
 
-Update the `xs-app.json` file:
+Update the `/kyma-multitenant-approuter/xs-app.json` file:
 
 ```JSON[2,7]
 {
@@ -206,7 +255,7 @@ The application router must determine the tenant-specific subdomain for the UAA 
 
 **1.** Add a new `ConfigMap` to provide your Kyma cluster domain in the `k8s-deployment-approuter.yaml` file:
 
-```YAML
+```YAML[7]
 ---
 apiVersion: v1
 kind: ConfigMap
