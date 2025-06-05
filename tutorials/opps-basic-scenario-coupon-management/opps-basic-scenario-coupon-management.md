@@ -118,7 +118,7 @@ When creating the coupon, the **status** of the coupon is set as **inactive** be
 <!-- border -->![Coupon status change success](coupon_status_change_success.png)
 
 
-You have now successfully changed the status of the coupon code. 
+You have now successfully changed the status of the coupon. 
 
 
 ### Generate coupon codes
@@ -339,17 +339,16 @@ You can use the **Data Access** service for checking your uploaded data. If you 
 With this, you are all set to launch your promotional campaign. 
 
 
-### What to Do Next
+### What to do next
 
  You can now continue with the next tutorial [Reserve and Redeem a Multi-Code Coupon with SAP Omnichannel Promotion Pricing](opps-basic-scenario-reserve-and-redeem-multi-code-coupon).
 
 
-### Additional Information
+### Additional information
 
 * [Official Product Documentation](https://help.sap.com/docs/OPP)
 * [Coupon Management](https://help.sap.com/docs/omnichannel-promotion-pricing/service-guide/coupon-management)
 * [Trial Documentation](https://help.sap.com/docs/OPP/0c145d124b784b548b618cda8a5b2aba/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
 * [SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://help.sap.com/docs/OPP/7c87270e23c64c2aa922ce297a6df23d/67a9da084cf84e058cb3a3911971bdd0.html?version=Cloud)
-* [Video: SAP Omnichannel Promotion Pricing in a nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html)
 
 ---

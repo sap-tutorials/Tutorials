@@ -22,7 +22,7 @@ This tutorial will demonstrate how to install the SAP HANA client.  The next tut
 ---
 
 ### The SAP HANA Client
-The SAP HANA client provides a set of utilities and drivers to connect to and query a SAP HANA database from multiple programming APIs, such as Node.js, Python or Java as shown below.  
+The SAP HANA client provides a set of utilities and drivers to connect to and query a SAP HANA database from multiple programming APIs, such as Node.js, Python or Java as shown below.
 
 ![drivers](drivers.png)  
 
@@ -66,10 +66,13 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
     > If an older version is already installed, it can be upgraded or it can be uninstalled by running `hdbuninst` from the folder where the client is installed.  For example, `c:\sap\hdbclient\install\hdbuninst`
 
-4. After the installation process is completed, update your `Path` environment variable so that the SAP HANA client programs such as `hdbsql` can be found on your path.  On Microsoft Windows, click the **Start** icon and search for **environment variables**.
+4. After the installation process is completed, identify the environment variables that were set by the install.  On Microsoft Windows, click the **Start** icon and search for **environment variables**.  Press the OK button to ensure the changes made by the installer are now active in newly opened command prompts.
 
     ![Environment variable](env-variable.png)
 
+    These variables can be seen in a command prompt using the set command as shown below.
+
+    ![using set to view environment variables](env-variables.png)
 
     >For details on how to configure your path on a Mac see [this](https://blogs.sap.com/2020/04/03/quick-tip-how-to-add-hdbsql-to-a-path-on-macos/) blog post.
 

@@ -369,7 +369,7 @@ Some tools such as the SQL Console in SAP HANA Cloud Central, the SAP HANA datab
 
 ![prepare before execute](prepare-before-execute.png)
 
-The below code when run, will not be executed on the ECN, unless the variable prepare is set to true or the routeDirectExecute option is set to true.
+The below code when run, will not be executed on the ECN, unless the variable prepare is set to true or the [routeDirectExecute](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4fe9978ebac44f35b9369ef5a4a26f4c.html) option is set to true.
 
 Further details on creating applications that connect to an SAP HANA Cloud database can be found at [Use Clients to Query an SAP HANA Database](https://developers.sap.com/mission.hana-cloud-clients.html).
 
@@ -386,6 +386,7 @@ Further details on creating applications that connect to an SAP HANA Cloud datab
     var connOptions = {
         //default value is false.  If a statement is not prepared before executed, it is not routed to the ECN.  Setting this value to true ensures a prepare.
         //Further details at https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4fe9978ebac44f35b9369ef5a4a26f4c.html
+        //requires the presence of an ECN node.  See above documentation
         routeDirectExecute: 'false',
 
         //Specify the connection parameters
@@ -502,19 +503,39 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
     {
         "id": "CFECN-<<<TENANT_ID>>>",
         "technicalName": "CFECN",
-        "name": "CF ECN",
+        "name": "Elastic Compute Node Provisioning",
         "description": "Example commands for creating and deleting an SAP HANA Cloud Elastic Compute Node (ECN)",
         "owner": "<<<TENANT_ID>>>",
         "inputs": [
             {
-            "id": "CFECN-<<<TENANT_ID>>>:HCInstance:1",
-            "name": "HCInstance",
+            "id": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+            "name": "NonSensitive",
             "description": "Required parameters to connect to an SAP HANA Cloud database instance in the Cloud Foundry runtime environment.",
             "catalog": "CFECN-<<<TENANT_ID>>>",
             "owner": null,
             "version": 1,
             "keys": {
                 "db-user": {
+                "type": "string",
+                "sensitive": false,
+                "description": "The SQL database user that has privileges to enable or disable a workload class and execute SQL queries"
+                },
+                "cf-region": {
+                "type": "string",
+                "sensitive": false,
+                "description": "Examine CF API Endpoint in the subaccount overview page.  Example values: cf-us10, cf-us10-001"
+                },
+                "instance-id": {
+                "type": "string",
+                "sensitive": false,
+                "description": "A HANA Cloud Instance ID"
+                },
+                "instance-name": {
+                "type": "string",
+                "sensitive": false,
+                "description": "Instance name of the SAP HANA Cloud database."
+                },
+                "disable-workload-class": {
                 "type": "string",
                 "sensitive": false,
                 "description": null
@@ -534,72 +555,71 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
                 "sensitive": false,
                 "description": null
                 },
-                "db-password": {
-                "type": "string",
-                "sensitive": true,
-                "description": null
-                },
-                "cf-region": {
-                "type": "string",
-                "sensitive": false,
-                "description": "Examine CF API Endpoint in the subaccount overview page.  Example values: cf-us10, cf-us10-001"
-                },
-                "password": {
-                "type": "string",
-                "sensitive": true,
-                "description": "BTP password for a user without 2 factor authentication"
-                },
-                "port": {
-                "type": "string",
-                "sensitive": false,
-                "description": null
-                },
-                "instance-name": {
-                "type": "string",
-                "sensitive": false,
-                "description": "Instance name of the SAP HANA Cloud database."
-                },
-                "disable-workload-class": {
-                "type": "string",
-                "sensitive": false,
-                "description": null
-                },
-                "host": {
-                "type": "string",
-                "sensitive": false,
-                "description": "HANA database host value.  Example value: 8cb535f6-dca6-4075-a110-afa10f2823f1.hana.prod-ca10.hanacloud.ondemand.com"
-                },
                 "param-create": {
                 "type": "object",
                 "sensitive": false,
                 "description": "JSON string describing the ECN node to create"
                 },
-                "user": {
+                "cf-user": {
                 "type": "string",
                 "sensitive": false,
-                "description": "BTP user"
+                "description": "A Cloud Foundry user that has permissions to update the configuration of an SAP HANA Cloud instance running in the Cloud Foundry runtime."
                 },
                 "cf-space": {
                 "type": "string",
                 "sensitive": false,
                 "description": "Cloud Foundry space.  Value can be seen in the cloud foundry spaces page.  Example value: dev"
+                },
+                "sql-endpoint": {
+                "type": "string",
+                "sensitive": false,
+                "description": "The endpoint of the SAP HANA Cloud instance"
                 }
             },
             "values": {
-                "cf-region": "cf-ca10",
                 "db-user": "DBADMIN",
-                "port": "443",
+                "cf-region": "cf-ca10",
+                "instance-id": "e73809d6-196a-4dda-b2d2-25a8e307285a",
                 "instance-name": "HC_HDB",
                 "disable-workload-class": "ALTER WORKLOAD CLASS \"WLC1\" DISABLE;",
-                "host": "8cb535f6-dca6-4075-a110-afa10f2823f1.hana.prod-ca10.hanacloud.ondemand.com",
-                "cf-org-id": "HANA Product Management_dan-van-leeuwen",
+                "cf-org-id": "8a254868-6949-45f4-9005-e198a15e6839",
                 "param-delete": "{\"data\":{\"elasticreadnodes\":[]}}",
                 "enable-workload-class": "ALTER WORKLOAD CLASS \"WLC1\" ENABLE;",
                 "param-create": "{\"data\":{\"elasticreadnodes\":[{\"name\":\"ecn1\",\"vcpu\":2,\"memory\":32,\"storage\":120}]}}",
-                "user": "dan@hotmail.com",
+                "cf-user": "dan@hotmail.com",
                 "cf-space": "dev",
-                "db-password": "",
-                "password": ""
+                "sql-endpoint": "e73809d6-196a-4dda-b2d2-25a8e307285a.hana.prod-ca10.hanacloud.ondemand.com:443"
+            },
+            "tags": {}
+            },
+            {
+            "id": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
+            "name": "Sensitive",
+            "description": null,
+            "catalog": "CFECN-<<<TENANT_ID>>>",
+            "owner": null,
+            "version": 1,
+            "keys": {
+                "cf-password": {
+                "type": "string",
+                "sensitive": true,
+                "description": "The password to a Cloud Foundry user that has permissions to update the SAP HANA Cloud instance running in a Cloud Foundry runtime"
+                },
+                "service-manager-binding": {
+                "type": "string",
+                "sensitive": false,
+                "description": "Required for updating HANA Cloud instances provisioned to the subaccount. Further details at https://developers.sap.com/tutorials/hana-cloud-automation-rest.html"
+                },
+                "db-password": {
+                "type": "string",
+                "sensitive": true,
+                "description": "The SQL database password that has privileges to enable or disable a workload class and execute SQL queries"
+                }
+            },
+            "values": {
+                "service-manager-binding": "{\n    \"clientid\": \"sb-a6bfefa2-5ce6-46b5-ad3f-5e2e5801a395!b7113|service-manager!b16\",\n    \"clientsecret\": \"ab2f6ae1-34b3-4b0a-ba84-dfc397675edf$9uEmOt958OsnHnY_mVvNSZHRntaoLVgLgMmf5ZBOEkw=\",\n    \"url\": \"https://dan-van-leeuwen.authentication.ca10.hana.ondemand.com\",\n    \"xsappname\": \"a6bfefa2-5ce6-46b5-ad3f-5e2e5801a395!b7113|service-manager!b16\",\n    \"sm_url\": \"https://service-manager.cfapps.ca10.hana.ondemand.com\"\n}",
+                "cf-password": "",
+                "db-password": ""
             },
             "tags": {}
             }
@@ -609,28 +629,37 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
             "configuration": {
                 "values": [
                 {
-                    "alias": "InstanceAlias",
+                    "alias": "NonSensitiveAlias",
                     "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:HCInstance:1",
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+                    "inputKey": null
+                    }
+                },
+                {
+                    "alias": "SensitiveAlias",
+                    "valueFrom": {
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
                     "inputKey": null
                     }
                 }
                 ],
-                "output": {},
+                "output": {
+                "OutputKey1": "$(.test.output.result)",
+                "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
+                "OutputKey3": "$(.addECN.executed)"
+                },
                 "executors": [
                 {
-                    "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
                     "input": {
-                    "password": "$(.InstanceAlias.password)",
-                    "org": "$(.InstanceAlias.cf-org-id)",
-                    "serviceInstance": "$(.InstanceAlias.instance-name)",
-                    "region": "$(.InstanceAlias.cf-region)",
-                    "user": "$(.InstanceAlias.user)",
-                    "parameters": "$(.InstanceAlias.param-create)",
-                    "space": "$(.InstanceAlias.cf-space)"
+                    "password": "$(.SensitiveAlias.db-password)",
+                    "statement": "--Optional query can be written here which checks the state of the instance to ensure the ECN should be added.  As an example, on a public holiday, the memory use is low and an ECN may not be needed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n\n--SELECT * FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600) ORDER BY TIME DESC;\n\n--SELECT AVG(CPU) AS \"CONDITION_TEST\" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600);",
+                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                    "resultRowFormat": "OBJECT",
+                    "user": "$(.NonSensitiveAlias.db-user)"
                     },
-                    "alias": "addECN",
-                    "description": null,
+                    "alias": "test",
+                    "description": "A test to confirm that the ECN node should be started",
                     "progressMessage": null,
                     "initialDelay": null,
                     "pause": null,
@@ -642,19 +671,72 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
                     "dryRun": null
                 },
                 {
+                    "execute": "sm-sapcp:UpdateServiceInstance:1",
+                    "input": {
+                    "instanceId": "$(.NonSensitiveAlias.instance-id)",
+                    "serviceKey": "$(.SensitiveAlias.service-manager-binding)",
+                    "parameters": "$(.NonSensitiveAlias.param-create)"
+                    },
+                    "alias": "addECN",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": null,
+                    "pause": null,
+                    "when": {
+                    "semantic": "OR",
+                    "conditions": [
+                        {
+                        "semantic": "OR",
+                        "cases": [
+                            {
+                            "expression": "$(.test.output.result | toArray[0][0])",
+                            "operator": "EQUALS",
+                            "semantic": "OR",
+                            "values": [
+                                "{\"CONDITION_TEST\":\"1\"}"
+                            ]
+                            }
+                        ]
+                        }
+                    ]
+                    },
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                },
+                {
                     "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
                     "input": {
-                    "password": "$(.InstanceAlias.db-password)",
-                    "statement": "$(.InstanceAlias.enable-workload-class)",
-                    "connectionUrl": "jdbc:sap://$(.InstanceAlias.host):$(.InstanceAlias.port)",
-                    "user": "$(.InstanceAlias.db-user)"
+                    "password": "$(.SensitiveAlias.db-password)",
+                    "statement": "$(.NonSensitiveAlias.enable-workload-class)",
+                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                    "user": "$(.NonSensitiveAlias.db-user)"
                     },
                     "alias": "enableWorkloadClass",
                     "description": null,
                     "progressMessage": null,
                     "initialDelay": null,
                     "pause": null,
-                    "when": null,
+                    "when": {
+                    "semantic": "OR",
+                    "conditions": [
+                        {
+                        "semantic": "OR",
+                        "cases": [
+                            {
+                            "expression": "{\"CONDITION_TEST\":\"1\"}",
+                            "operator": "EQUALS",
+                            "semantic": "OR",
+                            "values": [
+                                "{\"CONDITION_TEST\":\"1\"}"
+                            ]
+                            }
+                        ]
+                        }
+                    ]
+                    },
                     "validate": null,
                     "autoRetry": null,
                     "repeat": null,
@@ -670,7 +752,23 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
             "catalog": "CFECN-<<<TENANT_ID>>>",
             "version": 1,
             "inputKeys": {},
-            "outputKeys": {},
+            "outputKeys": {
+                "OutputKey1": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                },
+                "OutputKey2": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                },
+                "OutputKey3": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                }
+            },
             "tags": {},
             "issues": []
             },
@@ -678,22 +776,184 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
             "configuration": {
                 "values": [
                 {
-                    "alias": "InstanceAlias",
+                    "alias": "NonSensitiveAlias",
                     "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:HCInstance:1",
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+                    "inputKey": null
+                    }
+                },
+                {
+                    "alias": "SensitiveAlias",
+                    "valueFrom": {
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
                     "inputKey": null
                     }
                 }
                 ],
-                "output": {},
+                "output": {
+                "OutputKey1": "$(.test.output.result)",
+                "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
+                "OutputKey3": "$(.addECN.executed)"
+                },
                 "executors": [
                 {
                     "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
                     "input": {
-                    "password": "$(.InstanceAlias.db-password)",
-                    "statement": "$(.InstanceAlias.disable-workload-class)",
-                    "connectionUrl": "jdbc:sap://$(.InstanceAlias.host):$(.InstanceAlias.port)",
-                    "user": "$(.InstanceAlias.db-user)"
+                    "password": "$(.SensitiveAlias.db-password)",
+                    "statement": "--Optional query can be written here which checks the state of the instance to ensure the ECN should be added.  As an example, on a public holiday, the memory use is low and an ECN may not be needed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n\n--SELECT * FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600) ORDER BY TIME DESC;\n\n--SELECT AVG(CPU) AS \"CONDITION_TEST\" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600);",
+                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                    "resultRowFormat": "OBJECT",
+                    "user": "$(.NonSensitiveAlias.db-user)"
+                    },
+                    "alias": "test",
+                    "description": "A test to confirm that the ECN node should be started",
+                    "progressMessage": null,
+                    "initialDelay": null,
+                    "pause": null,
+                    "when": null,
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                },
+                {
+                    "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+                    "input": {
+                    "password": "$(.SensitiveAlias.cf-password)",
+                    "org": "$(.NonSensitiveAlias.cf-org-id)",
+                    "serviceInstance": "$(.NonSensitiveAlias.instance-name)",
+                    "region": "$(.NonSensitiveAlias.cf-region)",
+                    "user": "$(.NonSensitiveAlias.cf-user)",
+                    "parameters": "$(.NonSensitiveAlias.param-create)",
+                    "space": "$(.NonSensitiveAlias.cf-space)"
+                    },
+                    "alias": "addECN",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": null,
+                    "pause": null,
+                    "when": {
+                    "semantic": "OR",
+                    "conditions": [
+                        {
+                        "semantic": "OR",
+                        "cases": [
+                            {
+                            "expression": "$(.test.output.result | toArray[0][0])",
+                            "operator": "EQUALS",
+                            "semantic": "OR",
+                            "values": [
+                                "{\"CONDITION_TEST\":\"1\"}"
+                            ]
+                            }
+                        ]
+                        }
+                    ]
+                    },
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                },
+                {
+                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                    "input": {
+                    "password": "$(.SensitiveAlias.db-password)",
+                    "statement": "$(.NonSensitiveAlias.enable-workload-class)",
+                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                    "user": "$(.NonSensitiveAlias.db-user)"
+                    },
+                    "alias": "enableWorkloadClass",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": null,
+                    "pause": null,
+                    "when": {
+                    "semantic": "OR",
+                    "conditions": [
+                        {
+                        "semantic": "OR",
+                        "cases": [
+                            {
+                            "expression": "{\"CONDITION_TEST\":\"1\"}",
+                            "operator": "EQUALS",
+                            "semantic": "OR",
+                            "values": [
+                                "{\"CONDITION_TEST\":\"1\"}"
+                            ]
+                            }
+                        ]
+                        }
+                    ]
+                    },
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                }
+                ],
+                "listeners": []
+            },
+            "id": "CFECN-<<<TENANT_ID>>>:CFAddECN:1",
+            "name": "CFAddECN",
+            "description": null,
+            "catalog": "CFECN-<<<TENANT_ID>>>",
+            "version": 1,
+            "inputKeys": {},
+            "outputKeys": {
+                "OutputKey1": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                },
+                "OutputKey2": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                },
+                "OutputKey3": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                }
+            },
+            "tags": {},
+            "issues": []
+            },
+            {
+            "configuration": {
+                "values": [
+                {
+                    "alias": "SensitiveAlias",
+                    "valueFrom": {
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
+                    "inputKey": null
+                    }
+                },
+                {
+                    "alias": "NonSensitiveAlias",
+                    "valueFrom": {
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+                    "inputKey": null
+                    }
+                }
+                ],
+                "output": {
+                "OutputKey1": "$(.test.output.result)",
+                "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
+                "OutputKey3": "$(.deleteECN.executed)"
+                },
+                "executors": [
+                {
+                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                    "input": {
+                    "password": "$(.SensitiveAlias.db-password)",
+                    "statement": "$(.NonSensitiveAlias.disable-workload-class)",
+                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                    "user": "$(.NonSensitiveAlias.db-user)"
                     },
                     "alias": "disableWorkloadClass",
                     "description": null,
@@ -708,21 +968,166 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
                     "dryRun": null
                 },
                 {
+                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                    "input": {
+                    "password": "$(.SensitiveAlias.db-password)",
+                    "statement": "--Write a query that confirms that workloads running on the ECN have completed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n--A simpler approach may be to set an initial delay on this executor and perhaps the deleteECN executor.  Max delay is 3 minutes.\n--A longer delay can be added by adding an new executor that uses the delay command\n",
+                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                    "resultRowFormat": "OBJECT",
+                    "user": "$(.NonSensitiveAlias.db-user)",
+                    "timeout": "4"
+                    },
+                    "alias": "test",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": {
+                    "interval": "5s",
+                    "when": null
+                    },
+                    "pause": null,
+                    "when": null,
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                },
+                {
                     "execute": "cf-sapcp:UpdateCfServiceInstance:1",
                     "input": {
-                    "password": "$(.InstanceAlias.password)",
-                    "org": "$(.InstanceAlias.cf-org-id)",
-                    "serviceInstance": "$(.InstanceAlias.instance-name)",
-                    "region": "$(.InstanceAlias.cf-region)",
-                    "user": "$(.InstanceAlias.user)",
-                    "parameters": "$(.InstanceAlias.param-delete)",
-                    "space": "$(.InstanceAlias.cf-space)"
+                    "password": "$(.SensitiveAlias.cf-password)",
+                    "org": "$(.NonSensitiveAlias.cf-org-id)",
+                    "serviceInstance": "$(.NonSensitiveAlias.instance-name)",
+                    "region": "$(.NonSensitiveAlias.cf-region)",
+                    "user": "$(.NonSensitiveAlias.cf-user)",
+                    "parameters": "$(.NonSensitiveAlias.param-delete)",
+                    "space": "$(.NonSensitiveAlias.cf-space)"
                     },
                     "alias": "deleteECN",
                     "description": null,
                     "progressMessage": null,
                     "initialDelay": {
-                    "interval": "3m",
+                    "interval": "5s",
+                    "when": null
+                    },
+                    "pause": null,
+                    "when": null,
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                }
+                ],
+                "listeners": []
+            },
+            "id": "CFECN-<<<TENANT_ID>>>:CFDeleteECN:1",
+            "name": "CFDeleteECN",
+            "description": null,
+            "catalog": "CFECN-<<<TENANT_ID>>>",
+            "version": 1,
+            "inputKeys": {},
+            "outputKeys": {
+                "OutputKey1": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                },
+                "OutputKey2": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                },
+                "OutputKey3": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                }
+            },
+            "tags": {},
+            "issues": []
+            },
+            {
+            "configuration": {
+                "values": [
+                {
+                    "alias": "SensitiveAlias",
+                    "valueFrom": {
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
+                    "inputKey": null
+                    }
+                },
+                {
+                    "alias": "NonSensitiveAlias",
+                    "valueFrom": {
+                    "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+                    "inputKey": null
+                    }
+                }
+                ],
+                "output": {
+                "OutputKey1": "$(.test.output.result)",
+                "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
+                "OutputKey3": "$(.deleteECN.executed)"
+                },
+                "executors": [
+                {
+                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                    "input": {
+                    "password": "$(.SensitiveAlias.db-password)",
+                    "statement": "$(.NonSensitiveAlias.disable-workload-class)",
+                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                    "user": "$(.NonSensitiveAlias.db-user)"
+                    },
+                    "alias": "disableWorkloadClass",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": null,
+                    "pause": null,
+                    "when": null,
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                },
+                {
+                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                    "input": {
+                    "password": "$(.SensitiveAlias.db-password)",
+                    "statement": "--Write a query that confirms that workloads running on the ECN have completed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n--A simpler approach may be to set an initial delay on this executor and perhaps the deleteECN executor.  Max delay is 3 minutes.\n--A longer delay can be added by adding an new executor that uses the delay command\n",
+                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                    "resultRowFormat": "OBJECT",
+                    "user": "$(.NonSensitiveAlias.db-user)",
+                    "timeout": "4"
+                    },
+                    "alias": "test",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": {
+                    "interval": "5s",
+                    "when": null
+                    },
+                    "pause": null,
+                    "when": null,
+                    "validate": null,
+                    "autoRetry": null,
+                    "repeat": null,
+                    "errorMessages": [],
+                    "dryRun": null
+                },
+                {
+                    "execute": "sm-sapcp:UpdateServiceInstance:1",
+                    "input": {
+                    "instanceId": "$(.NonSensitiveAlias.instance-id)",
+                    "serviceKey": "$(.SensitiveAlias.service-manager-binding)",
+                    "parameters": "$(.NonSensitiveAlias.param-delete)"
+                    },
+                    "alias": "deleteECN",
+                    "description": null,
+                    "progressMessage": null,
+                    "initialDelay": {
+                    "interval": "5s",
                     "when": null
                     },
                     "pause": null,
@@ -742,51 +1147,92 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
             "catalog": "CFECN-<<<TENANT_ID>>>",
             "version": 1,
             "inputKeys": {},
-            "outputKeys": {},
+            "outputKeys": {
+                "OutputKey1": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                },
+                "OutputKey2": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                },
+                "OutputKey3": {
+                "type": "string",
+                "sensitive": false,
+                "description": ""
+                }
+            },
             "tags": {},
             "issues": []
             }
         ]
-    }
+    }      
     ```
 
-2. The catalog will appear under My Catalogs and is named CF ECN
+2. The catalog will appear under My Catalogs and is named Elastic Compute Node Provisioning
 
     ![catalog imported](imported.png)
 
-3. Examine the imported commands and inputs. The list of commands are shown below.
+3. Examine the imported commands and inputs. The list of commands are shown below.  Notice that there is a set of commands for SAP HANA Cloud instances provisioned to the Cloud Foundry environment and another set for instances provisioned to a subaccount.
 
     ![commands](commands.png)
 
-    The input is shown below. It provides a location where the details of the SAP HANA Cloud database and BTP credentials can be provided.
+    The two inputs are shown below. They provide a location where the details are specified to update the SAP HANA Cloud database instance.  
+    Credentials are needed for a Cloud Foundry user that has permissions to update the SAP HANA Cloud database instance and for a SQL user that can enable or disable a workload class and run SQL queries in the database.
+
+    If you have an instance deployed to the subaccount, the cf- values are not needed/used.  Instructions on how to create the Sensitive input service-manager-binding can be found at [Create a Service Manager instance](hana-cloud-automation-rest).
+
+    A separate input named NonSensitive was created so that the input values that are not specified as sensitive can be displayed in the execution viewer.
 
     ![input](input.png)
 
-4. Open the input named HCInstance and edit its values to match the SAP HANA Cloud instance that you wish to work with.
+4. Open the inputs and edit their values to match the SAP HANA Cloud instance that you wish to work with.
 
     ![edit input values](edit-input.png)
 
-5. Open the AddECN command.  Notice that it takes HCInstance as an additional value to the input and is referenced by the alias InstanceAlias.
+5. Open the CFAddECN command.  Notice that it takes NonSensitive and Sensitive inputs as an additional value to the input.
 
     ![additional value](addecn-input.png)
 
-    It contains an addECN executor which uses the built in command cf-sapcp:UpdateCfServiceInstance that will request the ECN node to be created.  Notice also that the parameter values are being set using the InstanceAlias.
+    It contains a test executor that can be used to optionally perform an additional check such as checking the memory or CPU use.  
+
+    ![add check](add-check.png)
+
+    The addECN and enableWorkloadClass executors check the output of the test executor to see if they should run or not.
+
+    ![check condition](check-condition.png)
+
+    The addECN executor uses the built in command cf-sapcp:UpdateCfServiceInstance that will request the ECN node to be created.  Notice that the parameter values are being set using the inputs.
 
     ![add ECN executor](add-ecn-executor.png)
     
-    It also contains the enableWorkloadClass executor which executes a SQL statement to enable a workload class which should be used to direct a workload to the just started ECN node.
+    The enableWorkloadClass executor executes a SQL statement to enable a workload class which is used to direct a workload to the just started ECN node.
 
     ![enable workload class](enable-workload-class.png)
 
-6. Open the DeleteECN command.  Notice that a delay has been added before the ECN is deleted.  Depending on your workloads, you may wish to increase this delay or add a more involved check.
+6. Open the CFDeleteECN command.  Notice that a test can also be performed before the ECN is deleted.  Depending on your workloads, you may wish to increase this delay or add a more involved check.
 
     ![wait added before delete ECN](delete-ecn-executor.png)
 
-7. Try out the commands by pressing the Trigger button and assigning the input.
+7. Try out the commands by pressing the Trigger button.
 
     ![trigger AddECN](trigger.png)
 
-    The status of the execution can be seen in the Executions section.
+    Under Additional Features, select Execution Log to see details on the test condition.
+
+    ![enable execution log](enable-execution-log.png)
+
+    The non sensitive input values can be seen as shown below.
+
+    ![Step Input](step-input.png)
+
+    The test condition check result can be seen in the step logs.
+
+    ![condition check](step-logs.png)
+
+8. The status of the execution can be seen in the Executions section.
 
     ![executed](executed.png)
 
@@ -794,7 +1240,7 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
 
     If an error is shown authenticating with the BTP user, ensure that it is a technical user and does not have two factor authentication enabled.  The SAP Note [3085908](https://me.sap.com/notes/3085908) may also help with authentication issues.
 
-8. Schedule the AddECN and DeleteECN commands.
+9. Schedule the AddECN and DeleteECN commands.
 
     ![Schedule](schedule.png)
 

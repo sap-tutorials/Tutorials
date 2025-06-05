@@ -9,25 +9,63 @@ author_profile: https://github.com/I321506
 ---
 
 # Leveraging Orchestration Capabilities to Enhance Responses
-<!-- description -->  In this tutorial, we will explore advanced orchestration capabilities available in the Gen AI Hub, including features such as Data Masking and Content Filtering.
+<!-- description -->  In this tutorial, we will explore optional orchestration capabilities available in the Gen AI Hub, such as Data Masking and Content Filtering.
 
 ## You will learn
 - Inference of GenAI models using orchestration along with Data Masking and Content Filtering features
 
 ## Prerequisites
-- Setup Environment:
-Ensure your instance and AI Core credentials are properly configured according to the steps provided in the initial tutorial
-- Orchestration Deployment:
-Ensure at least one orchestration deployment is ready to be consumed during this process. 
-- Refer to [this tutorial understand the basic consumption of GenAI models using orchestration.](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html)
-- Basic Knowledge:
-Familiarity with the orchestration workflow is recommended
+1. **BTP Account**  
+   Set up your SAP Business Technology Platform (BTP) account.  
+   [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
+2. **For SAP Developers or Employees**  
+   Internal SAP stakeholders should refer to the following documentation: [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139), [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
+3. **For External Developers, Customers, or Partners**  
+   Follow this tutorial to set up your environment and entitlements: [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html), [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
+4. **Create BTP Instance and Service Key for SAP AI Core**  
+   Follow the steps to create an instance and generate a service key for SAP AI Core:  
+   [Create Service Key and Instance](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key?version=CLOUD)
+5. **AI Core Setup Guide**  
+   Step-by-step guide to set up and get started with SAP AI Core:  
+   [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-setup.html)
+6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to 
+[SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
+7. **Orchestration Deployment**:   
+    Refer to the tutorial [the basic consumption of GenAI models using orchestration](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) and ensure at least one orchestration deployment is ready to be consumed during this process. 
+8. Basic Knowledge:
+    Familiarity with the orchestration workflow is recommended
+
+### Pre-Read
+
+This tutorial builds on the foundational orchestration concepts introduced in the [beginner's tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) and focuses on enhancing GenAI responses using orchestration modules such as **data masking** and **content filtering**.
+
+Previously in the [beginner's tutorials](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html), we used a **resume processing use case** to illustrate how to create orchestration workflow with the required modules only, consume models and easily switch different models using harmonized API. In this tutorial, we extend that use case to demonstrate how sensitive data can be protected and undesirable content filtered using optional orchestration modules such as **Data Masking**, **Content filtering**.
+
+**Data masking** in SAP AI Core allows you to anonymize or pseudonymize personal or confidential data before sending it to the generative AI model.  
+🔗 [Learn more about Data Masking in SAP AI Core](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/data-masking?version=CLOUD)
+
+**Content filtering** helps identify and block inappropriate, offensive, or non-compliant input and output content within an orchestration workflow.  
+🔗 [Learn more about Content Filtering in SAP AI Core](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/input-filtering?version=CLOUD)
+
+In this tutorial, we specifically focus on **data masking** and **content filtering**. Other orchestration modules such as **translation** and **grounding** are also available in SAP AI Core and it is covered in Separate tutorials.
+
+You will learn how to:
+
+- Integrate data masking within the orchestration flow to safeguard personal or confidential information.
+- Apply content filtering to identify and restrict inappropriate or non-compliant responses.
+- Use relevant SAP AI Core features and configurations to support these capabilities.
+
+By the end of this tutorial
+
+  * you'll understand how to design a secure and controlled orchestration pipeline suitable for **enterprise-grade GenAI applications**.
+  
+  * Learn how to implement the solution using **SAP AI Launchpad**, **Python SDK**, **Java**, **JavaScript**, and **Bruno**.
 
 ### Accessing Orchestration Capabilities
 
 [OPTION BEGIN [AI Launchpad]]
 
-**In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
+**In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional modules to enhance data privacy and refine response quality. These enhancements include: 
 
   -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
   -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses. 
@@ -45,13 +83,13 @@ Familiarity with the orchestration workflow is recommended
 
 [OPTION BEGIN [Python SDK]]
 
-- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
+- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional modules to enhance data privacy and refine response quality. These enhancements include: 
 
     -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
 
     -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses.
 
-- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
+- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these modules to improve data privacy, security, and response quality. 
 
 **NOTE** : If you are continuing with the same notebook from the previous tutorial, skip steps 1 and 2. Otherwise, create a new notebook using the already deployed orchestration URL to access the Harmonized API. 
 
@@ -75,13 +113,13 @@ print(cv_content)
 
 [OPTION BEGIN [JavaScript SDK]]
 
-- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
+- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional modules to enhance data privacy and refine response quality. These enhancements include: 
 
     -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
 
     -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses.
 
-- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
+- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these modules to improve data privacy, security, and response quality. 
 
 **NOTE** : If you are continuing with the same project from the previous tutorial, skip steps 1 and 2. Otherwise, create a new project using the already deployed orchestration URL to access the Harmonized API.
 
@@ -102,13 +140,13 @@ const cvContent = await readFile('path/to/cv.txt', 'utf-8');
 
 [OPTION BEGIN [Java SDK]]
 
-- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
+- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional modules to enhance data privacy and refine response quality. These enhancements include: 
 
     -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
 
     -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses.
 
-- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
+- Here, we extend the use case introduced in Previous Tutorial, where orchestration was executed without incorporating data masking or content filtering. Here, we will include these modules to improve data privacy, security, and response quality. 
 
 **NOTE** : If you are continuing with the same project from the previous tutorial, skip steps 1 and 2. Otherwise, create a new Java Maven project using the already deployed orchestration URL to access the Harmonized API. Please find detailed information on orchestration configuration and deployment in the previous tutorial or in  our [documentation](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java). 
 
@@ -139,20 +177,20 @@ System.out.println(cvContent);
 
 [OPTION BEGIN [Bruno]]
 
-- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional advanced modules to enhance data privacy and refine response quality. These enhancements include: 
+- **In this tutorial**, we will build upon the orchestration framework introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html). The focus will shift from basic orchestration to leveraging optional modules to enhance data privacy and refine response quality. These enhancements include: 
 
     -	**Data Masking**: Hiding sensitive information like phone numbers, organizational details, or personal identifiers. 
 
     -	**Content Filtering**: Screening for categories such as hate speech, self-harm, explicit content, and violence to ensure safe and relevant responses.
 
-- Here, we extend the use case introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html), where orchestration was executed without incorporating data masking or content filtering. Here, we will include these advanced modules to improve data privacy, security, and response quality. 
+- Here, we extend the use case introduced in [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html), where orchestration was executed without incorporating data masking or content filtering. Here, we will include these modules to improve data privacy, security, and response quality. 
 
-**Bruno Setup** : If you have already completed the environment setup, configuration, and deployment as described in the [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html), you can directly proceed to the Data Masking Configuration. If you're new to this, please follow the steps in the [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to set up your environment, configure, and deploy the orchestration before proceeding with the advanced modules.  
+**Bruno Setup** : If you have already completed the environment setup, configuration, and deployment as described in the [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html), you can directly proceed to the Data Masking Configuration. If you're new to this, please follow the steps in the [Tutorial](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) to set up your environment, configure, and deploy the orchestration before proceeding with the modules.  
 
 [OPTION END]
 
 
-### Configuring User-Specific Settings  
+### Template Configuration  
 
 [OPTION BEGIN [AI Launchpad]]
 
@@ -572,7 +610,7 @@ For this tutorial, we use anonymization:
 
 - Upon sending the request, the response will return the masked result, where sensitive information like email, phone numbers, and other personal identifiers are anonymized. For reference, you can check the screenshot provided showing how the masked result will appear.
 
-![img](img/image.png)
+![img](img/data_masking.png)
 [OPTION END]
 
 
@@ -636,10 +674,16 @@ Navigate to the **Input Filtering** section.
 
 ```python
 
-from gen_ai_hub.orchestration.models.azure_content_filter import AzureContentFilter 
-# Configure input and output content filters 
-input_filter = AzureContentFilter(hate=6, sexual=4, self_harm=0, violence=4) 
-output_filter = AzureContentFilter(hate=6, sexual=4, self_harm=0, violence=4) 
+input_filter= AzureContentFilter(hate=AzureThreshold.ALLOW_SAFE,
+                                  violence=AzureThreshold.ALLOW_SAFE,
+                                  self_harm=AzureThreshold.ALLOW_SAFE,
+                                  sexual=AzureThreshold.ALLOW_SAFE)
+input_filter_llama = LlamaGuard38bFilter(hate=True)
+output_filter = AzureContentFilter(hate=AzureThreshold.ALLOW_SAFE,
+                                   violence=AzureThreshold.ALLOW_SAFE_LOW,
+                                   self_harm=AzureThreshold.ALLOW_SAFE_LOW_MEDIUM,
+                                   sexual=AzureThreshold.ALLOW_ALL)
+output_filter_llama = LlamaGuard38bFilter(hate=True)
 
 ```
 
@@ -650,20 +694,32 @@ output_filter = AzureContentFilter(hate=6, sexual=4, self_harm=0, violence=4)
 
 ```python
 
-from gen_ai_hub.orchestration.models.config import OrchestrationConfig 
-# Create configurations for each model 
-configs = [] 
-for model in models: 
-    # Create orchestration config for each model 
-    config = OrchestrationConfig( 
-        template=template,   
-        llm=model,   
-    ) 
-    # You may need to set content filtering and data masking separately, depending on the framework 
-    config.data_masking = data_masking  # Set data masking after the config is created 
-    config.input_filter = input_filter  # Set input filter 
-    config.output_filter = output_filter  # Set output filter      
-    configs.append(config) 
+from gen_ai_hub.orchestration.models.config import OrchestrationConfig
+from gen_ai_hub.orchestration.models.content_filtering import InputFiltering, OutputFiltering, ContentFiltering
+
+# Define content filtering
+content_filtering = ContentFiltering(
+    input_filtering=InputFiltering(filters=[input_filter, input_filter_llama]),
+    output_filtering=OutputFiltering(filters=[output_filter, output_filter_llama]),
+)
+# Create configurations for each model
+configs = []
+# Loop through models and create individual configurations
+for model in models:
+    config = OrchestrationConfig(
+        template=Template(
+            messages=[
+                SystemMessage("You are a helpful AI assistant."),
+                UserMessage("{{?candidate_resume}}"),
+            ]
+        ),
+        llm=model,  
+        filtering=content_filtering,  
+    )
+    
+config.data_masking = data_masking  # Set data masking after the config is created
+
+configs.append(config)
 
 ```
 
@@ -677,33 +733,55 @@ for model in models:
 
 ```javascript
 
-import { buildAzureContentSafetyFilter } from '@sap-ai-sdk/orchestration'; 
-import type { FilteringModuleConfig } from '@sap-ai-sdk/orchestration';
-
-const inputFilter = buildAzureContentSafetyFilter({
-  Hate: 'ALLOW_ALL',
+import { buildAzureContentSafetyFilter, buildLlamaGuardFilter, OrchestrationClient } from "https://esm.sh/@sap-ai-sdk/orchestration@latest";
+ 
+// Define Azure content filtering rules
+const azureFilter = buildAzureContentSafetyFilter({
+  Hate: 'ALLOW_SAFE_LOW',
+  Violence: 'ALLOW_SAFE_LOW_MEDIUM',
   SelfHarm: 'ALLOW_SAFE',
-  Sexual: 'ALLOW_SAFE_LOW_MEDIUM',
-  Violence: 'ALLOW_SAFE_LOW_MEDIUM'
+  Sexual: 'ALLOW_ALL'
 });
-
-const outputFilter = buildAzureContentSafetyFilter({
-  Hate: 'ALLOW_ALL',
-  SelfHarm: 'ALLOW_SAFE',
-  Sexual: 'ALLOW_SAFE_LOW_MEDIUM',
-  Violence: 'ALLOW_SAFE_LOW_MEDIUM'
-});
-
-const filtering: FilteringModuleConfig = {
-  filtering: {
-    input: { filters: [inputFilter] },
-    output: { filters: [outputFilter] }
+ 
+// Define Llama Guard filtering rules
+const llamaGuardFilter = buildLlamaGuardFilter('hate', 'violent_crimes');
+ 
+// Configure filtering with both filters applied
+const filteringModuleConfig = {
+  input: {
+    filters: [azureFilter, llamaGuardFilter] // Multiple filters applied for input
+  },
+  output: {
+    filters: [azureFilter, llamaGuardFilter] // Multiple filters applied for output
   }
-}
+};  
 
 ```
 
-**NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case. 
+**NOTE** : Adjust thresholds for hate, sexual, self-harm, and violence categories based on your use case.
+
+- Then Combine the template, models, and modules into orchestration configurations:
+
+```javascript
+
+// Function to create configuration for each model 
+const createModelConfig = (modelName) => ({ 
+    llm: { 
+      model_name: modelName, 
+      model_params: { 
+        max_tokens: 1000, 
+        temperature: 0.6, 
+      }, 
+    }, 
+    ...templateConfig, 
+    ...dataMaskingConfig, 
+    filtering_module_config: filteringModuleConfig,  
+  }); 
+  const deploymentConfig = { 
+    resourceGroup: 'llm-deployed', 
+  };
+
+```
 
 Multiple content filters can be applied for both input and output. In this tutorial, we use Azure Content Safety Filter, but you can choose from the available providers based on your use case. For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/orchestration/chat-completion) of the [`@sap-ai-sdk/orchestration`](https://github.com/SAP/ai-sdk-js/tree/main/packages/orchestration) package.
 
@@ -846,7 +924,7 @@ The **Content Filtering** Module allows screening of both input and output conte
 ![img](img/image023.png)
 
 **Conclusion** :  
-Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
 While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
@@ -890,7 +968,7 @@ with open("model_responses.txt", "w") as file:
 - A **model_responses.txt** file will be generated, containing outputs from all the models used.
 
 **Conclusion** :  
-Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
 While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
@@ -974,7 +1052,7 @@ modelResponses.map(response => {
 - A **model_responses.txt** file will be generated, containing outputs from all the models used.
 
 **Conclusion** :  
-Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
 While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
@@ -1048,7 +1126,7 @@ createFileFromResponses(responses);
 - A **model_responses.txt** file will be generated, containing outputs from all the models used.
 
 **Conclusion** :  
-Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
 While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filtering settings based on your specific requirements to handle sensitive or categorized data effectively.  
 
@@ -1063,9 +1141,9 @@ By incorporating these optional modules, you can tailor your Response to meet or
     - Filtered Content: Content deemed unsafe based on the configured thresholds will be flagged or filtered out.
 
 By following these steps, you can successfully mask sensitive data and apply content filtering while consuming the deployed model.
-![img](img/image.png)
+![img](img/content_filtering.png)
 **Conclusion** :  
-Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of advanced modules like data masking and content filtering to enhance privacy and ensure response quality.  
+Once the orchestration completes, you can observe that the output is now more refined, with sensitive information masked and inappropriate content filtered. This demonstrates the power of modules like data masking and content filtering to enhance privacy and ensure response quality.  
 
 While this tutorial used a resume screening use case, the same principles can be applied to other use cases. You can customize the Data Masking and Content Filterin settings based on your specific requirements to handle sensitive or categorized data effectively.  
 

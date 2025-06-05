@@ -205,7 +205,7 @@ You have successfully created the new user `report` and assigned it a role to ac
 1.	To test this, first log in with your new user by typing the following statement:
 
     ```SQL
-    CONNECT report PASSWORD <Your_Password>
+    CONNECT report PASSWORD <Your_Password>;
     ```
 
 2.	You should now see at the top of the screen, over the SQL console the user you connected with.
