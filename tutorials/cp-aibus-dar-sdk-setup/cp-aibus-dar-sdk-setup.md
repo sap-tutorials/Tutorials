@@ -27,7 +27,7 @@ The SDK is available in [GitHub](https://github.com/SAP/data-attribute-recommend
 ### Install Python
 
 
-First, you need to make sure that you have Python installed. Ideally, you have a Python version from 3.5 up to 3.8 as those are actively supported by the SDK.
+First, you need to make sure that you have Python installed. Ideally, you have a Python version from 3.8 up to 3.11 as those are actively supported by the SDK.
 
 [OPTION BEGIN [Windows]]
 
