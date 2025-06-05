@@ -43,7 +43,7 @@ Open up a terminal and enter `python3 --version` to check the version that you h
 
 ![Python Version](python-version.png)
 
-In case you have a Python installation, it will output the version. If you have a version lower than 3.5 head over [here](https://www.python.org/downloads/) and install an up-to-date version that is supported by the SDK.
+In case you have a Python installation, it will output the version. If you have a version lower than 3.8 head over [here](https://www.python.org/downloads/) and install an up-to-date version that is supported by the SDK.
 
 In case `command not found` is printed, you do not have Python installed. Head over [here](https://www.python.org/downloads/) and install an up-to-date version that is supported by the SDK. Then, close down and open up a new command prompt or terminal and run the command `python --version` again to check if the installation was successful.
 
