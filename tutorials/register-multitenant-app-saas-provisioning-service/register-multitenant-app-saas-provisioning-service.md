@@ -27,7 +27,7 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 ```YAML
 ################### SaaS Provisioning Service ###################
 ---
-apiVersion: services.cloud.sap.com/v1alpha1
+apiVersion: services.cloud.sap.com/v1
 kind: ServiceInstance
 metadata:
   name: saas-registry-service
@@ -39,14 +39,14 @@ spec:
     xsappname: multitenant-kyma-demo
     displayName: Multitenancy Sample in Kyma
     description: A NodeJS application to show how to use the SaaS registry to build a multi-tenant application on BTP Kyma Runtime'
-    category: 'Provider: TIA'
+    category: 'Provider: TIA' # Define the category of the application in the SaaS registry
     appUrls:
       # url registered in the kyma-broker which handles SaaS provisioning (subscription/deletion of saas instances)
       onSubscription: https://<subaccount-subdomain>-node.<cluster-domain>/callback/v1.0/tenants/{tenantId}
       onSubscriptionAsync: false
       onUnSubscriptionAsync: false
 ---
-apiVersion: services.cloud.sap.com/v1alpha1
+apiVersion: services.cloud.sap.com/v1
 kind: ServiceBinding
 metadata:
   name: saas-registry-service-binding

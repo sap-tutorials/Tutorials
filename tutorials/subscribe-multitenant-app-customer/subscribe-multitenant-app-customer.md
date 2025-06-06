@@ -21,7 +21,7 @@ primary_tag: software-product>sap-business-technology-platform
 ### Create New Subaccount
 
 
-Now, a consumer can subscribe to the application through the SAP BTP Account Cockpit.
+Now, a consumer can subscribe to the application through SAP BTP cockpit.
 
 Create a new subaccount for the customer in the same Global Account with the multitenant application provider subaccount, for example, called `Customer`.
 
