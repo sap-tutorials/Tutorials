@@ -11,7 +11,7 @@ parser: v2
 ---
 # Establish an Export Connection from SAP Content Agent Service in the Source Subaccount to SAP Cloud Transport Management Service 
 
-<!-- description --> To enable SAP Content Agent service to export the integration content to the import queue of SAP Cloud Transport Management service, establish an export connection to SAP Cloud Transport Management by creating a destination in the SAP Integration Suite source subaccount.
+<!-- description --> To enable SAP Content Agent to export the integration content to the import queue of SAP Cloud Transport Management service, establish an export connection to SAP Cloud Transport Management by creating a destination in the SAP Integration Suite source subaccount.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ parser: v2
 
 ## Scenario Overview
 
-The destination to SAP Cloud Transport Management service defines the endpoint of SAP Cloud Transport Management service. It contains the entry node of the transport landscape. Like this, SAP Content Agent service knows where to transfer the packaged integration content. The destination has the fixed name `TransportManagementService`.
+The destination to SAP Cloud Transport Management service defines the endpoint of SAP Cloud Transport Management service. It contains the entry node of the transport landscape. Like this, SAP Content Agent knows where to transfer the packaged integration content. The destination has the fixed name `TransportManagementService`.
 
    ![Scenario Overview](screenshots/ov-create-ctms-dest.png)
 
@@ -85,9 +85,3 @@ Before you start creating the destination to SAP Cloud Transport Management serv
 
 See also on SAP Help Portal: [Create TransportManagementService Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/eed66f35f9d148c8ae5b2d46ff097d8c.html)
 
-
-### Next Step
-
-To enable the transport, assign a transport-related role collection to your user and to all users that work with integration content, and enable the transport in the SAP Integration Suite user interface.  
-
-[Enable the Transport in SAP Integration Suite](btp-transport-management-cpi-06-enable-the-transport)

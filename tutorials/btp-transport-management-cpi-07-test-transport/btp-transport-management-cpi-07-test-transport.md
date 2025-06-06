@@ -144,8 +144,10 @@ You are in the SAP Integration Suite UI in the SAP Integration Suite **target** 
     ![Run Test Transport 15](screenshots/start-transport-14.png)
 
 
-Congratulations! You have successfully set up the scenario to transport SAP Integration Suite content using SAP Cloud Transport Management service and SAP Content Agent service. 
+Congratulations! You have successfully set up the scenario to transport SAP Integration Suite content using SAP Cloud Transport Management service and SAP Content Agent. 
 
 The configuration may require some initial effort. However, from now on, all integration content developers can transport their developments in the configured landscape in an automated and traceable way.
+
+If you want to explore the option of using the UI of SAP Content Agent to start the transport of SAP Integration Suite content and the required configuration for this scenario, see [Use the SAP Content Agent Service UI to Start the Transport](btp-transport-management-cpi-08-cas-ui). 
 
 
