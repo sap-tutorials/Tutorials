@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 40
+time: 45
 tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database,tutorial>license]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -11,7 +11,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
 - An SAP BTP account
-- An SAP HANA Cloud instance (2024 QRC 4 or higher)
+- A non trial/free tier SAP HANA Cloud instance
 
 ## You will learn
 - How to create and delete an ECN
@@ -42,6 +42,9 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
 2. The following examples are used for simulation purposes and can create a memory and CPU spike that will be moved to an ECN node.  They are intended to be run on a test or trial instance and not a production instance.  The size of the spike can be adjusted by increasing or decreasing the number of rows in the table. 
 
     ```SQL
+    SELECT AVG(CPU) AS "CPU Usage" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);  --avg of the past 1 minute
+    SELECT AVG(MEMORY_USED) AS "Memory Used" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);
+    
     CREATE USER USER4 PASSWORD "Password4"  NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
     GRANT CATALOG READ TO USER4; 
     GRANT SELECT ON SCHEMA _SYS_STATISTICS TO USER4;  --Used by the Elastic Compute Node tab
@@ -101,6 +104,9 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
     CALL CPU_AND_MEMORY_SPIKE();
     CALL CPU_AND_MEMORY_SPIKE();
     CALL CPU_AND_MEMORY_SPIKE();
+
+    SELECT AVG(CPU) AS "CPU Usage" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);  --avg of the past 1 minute
+    SELECT AVG(MEMORY_USED) AS "Memory Used" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);
     ```
 
     After calling the stored procedure CPU_SPIKE and CPU_AND_MEMORY_SPIKE, you can see that the CPU and memory usage has spiked, and you may also see an alert.  Note that the metrics shown are polled once a minute, so the procedures are run multiple times.
@@ -160,7 +166,300 @@ An ECN can be created in multiple ways.  Further details on the options and limi
             btp.exe get services/instance <instance ID>
             ```
 
-    * An ECN can be created using a REST API.  Further details are available at [REST API for the ECN](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/rest-api-for-ecn) and [Business Accelerator Hub](https://api.sap.com/api/ComputeAPI/overview).
+    * An ECN can be created using a REST API.  Further details are available at [REST API for the ECN](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/rest-api-for-ecn) and [Business Accelerator Hub](https://api.sap.com/api/ComputeAPI/overview).  The below file is a Python notebook that illustrates the REST API.  Follow the steps below if you wish to try out the REST API.
+        
+        * Create a file named `ecn_rest.ipynb`, copy the contents below into the file and open it in Visual Studio Code.
+
+            ```IPYNB
+            {
+                "cells": [
+                {
+                "cell_type": "code",
+                "execution_count": null,
+                "id": "38ad79f4-0ae3-4f3c-8248-6bebc03188b7",
+                "metadata": {},
+                "outputs": [],
+                "source": [
+                    "######################################\n",
+                    "##### Import Python dependencies #####\n",
+                    "######################################\n",
+                    "\n",
+                    "import requests\n",
+                    "import datetime as dt\n",
+                    "#import pytz\n",
+                    "\n",
+                    "############################\n",
+                    "##### Global variables #####\n",
+                    "############################\n",
+                    "\n",
+                    "# global variable for JWT\n",
+                    "hc_jwt = None\n",
+                    "\n",
+                    "# global variable for JWT expiration timestamp\n",
+                    "hc_jwt_exp = None\n",
+                    "\n",
+                    "# global variable that defines the timezone for JWT refresh handling\n",
+                    "#timezone = timezone('UTC')\n",
+                    "timezone = dt.timezone.utc\n",
+                    "\n",
+                    "#############################################################################\n",
+                    "##### MODIFICATION SECTION (Must be adjusted to match your environment) #####\n",
+                    "#############################################################################\n",
+                    "\n",
+                    "# Retrieve 'clientid' and 'clientsecret' from the /uaa/clientid and /uaa/clientsecret keys in the service binding JSON\n",
+                    "client_id = ''\n",
+                    "client_secret = ''\n",
+                    "\n",
+                    "# uaa_url is from the /uaa/url key provided in the service binding JSON\n",
+                    "uaa_url = 'https://dan-van-leeuwen.authentication.ca10.hana.ondemand.com'\n",
+                    "\n",
+                    "# Replace 'canary-eu21' with the landscape where your HANA Cloud instance exists\n",
+                    "ecn_rest_api_url = 'https://api.gateway.orchestration.prod-ca10.hanacloud.ondemand.com'\n",
+                    "\n",
+                    "# HANA Cloud instance ID\n",
+                    "hc_instance_id = 'e73809d6-196a-4dda-b2d2-25a8e307285a'\n",
+                    "\n",
+                    "####################################################################\n",
+                    "##### Retrieve JWT from UAA for the target HANA Cloud instance #####\n",
+                    "####################################################################\n",
+                    "\n",
+                    "# The following method makes the POST request for a JWT and (re)initializes the corresponding global variables\n",
+                    "def request_jwt():\n",
+                    "    global hc_jwt\n",
+                    "    global hc_jwt_exp\n",
+                    "\n",
+                    "    # To retrieve an outh token, we must GET or POST to the /oauth/token path\n",
+                    "    oauth_path = '/oauth/token'\n",
+                    "\n",
+                    "    # params defines the URL parameters we would like to use; the full URL with the below params would be: \n",
+                    "    # https://ps-hc-shared.authentication.eu21.hana.ondemand.com/oauth/token?grant_type=client_credentials\n",
+                    "    params = {'grant_type':'client_credentials'}\n",
+                    "    headers = {'accept':'application/json','content-type':'application/x-www-form-urlencoded'}\n",
+                    "    data = 'client_id='+client_id+'&client_secret='+client_secret\n",
+                    "\n",
+                    "    # HTTP request\n",
+                    "    uaa_response = requests.post(uaa_url+oauth_path, params=params, headers=headers, data=data)\n",
+                    "\n",
+                    "    # Decode JSON response into a Python dictionary object\n",
+                    "    uaa_response_json = uaa_response.json()\n",
+                    "\n",
+                    "    # Extract the JWT from the response (this will be used to authenticate each of our ECN API calls via the Authorization header)\n",
+                    "    hc_jwt = uaa_response_json[\"access_token\"]\n",
+                    "\n",
+                    "    # Extract expiration time in seconds (this can be used to proactively request a new JWT)\n",
+                    "    expires_in = uaa_response_json[\"expires_in\"]\n",
+                    "\n",
+                    "    # Calculate expiration timestamp\n",
+                    "    current_timestamp = dt.datetime.now(timezone)\n",
+                    "    #print('expires in', expires_in, 's') \n",
+                    "    hc_jwt_exp = current_timestamp + dt.timedelta(seconds=expires_in)\n",
+                    "\n",
+                    "# The following method checks if the JWT is expired; if the token is expired, it calls request_jwt()\n",
+                    "def refresh_jwt_check():\n",
+                    "    global hc_jwt_exp\n",
+                    "    \n",
+                    "    current_timestamp = dt.datetime.now(timezone)\n",
+                    "\n",
+                    "    # Refresh JWT 30 seconds before it expires\n",
+                    "    if (current_timestamp + dt.timedelta(seconds=30)) >= hc_jwt_exp:\n",
+                    "        print('New JWT requested')\n",
+                    "        request_jwt()\n",
+                    "    else:\n",
+                    "        print('JWT still valid')\n",
+                    "\n",
+                    "# Initialize access_token variable with a valid JWT and token_exp with token expiration timestamp\n",
+                    "request_jwt()\n",
+                    "print('JWT expires at:', hc_jwt_exp, '(UTC)')\n",
+                    "print(hc_jwt)"
+                ]
+                },
+                {
+                "cell_type": "code",
+                "execution_count": null,
+                "id": "396346d3-df2a-4868-893b-a1aaaba3a04a",
+                "metadata": {},
+                "outputs": [],
+                "source": [
+                    "#################################\n",
+                    "##### GET /compute/v1/plans #####\n",
+                    "#################################\n",
+                    "# List of supported elastic compute node sizes\n",
+                    "\n",
+                    "# Check JWT and refresh if required\n",
+                    "refresh_jwt_check()\n",
+                    "\n",
+                    "# Define endpoint and headers\n",
+                    "request_url = ecn_rest_api_url + '/compute/v1/plans'\n",
+                    "headers = {'authorization':'bearer '+hc_jwt}\n",
+                    "\n",
+                    "# HTTP request\n",
+                    "response = requests.get(request_url, headers=headers)\n",
+                    "print(response.text)"
+                ]
+                },
+                {
+                "cell_type": "code",
+                "execution_count": null,
+                "id": "8b4300de-ae53-434b-bdd8-52be2b3265aa",
+                "metadata": {},
+                "outputs": [],
+                "source": [
+                    "######################################################################\n",
+                    "##### GET /compute/v1/serviceInstances/{serviceInstanceID}/nodes #####\n",
+                    "######################################################################\n",
+                    "# List of elastic compute nodes attached to HANA service instance\n",
+                    "\n",
+                    "# Check JWT and refresh if required\n",
+                    "refresh_jwt_check()\n",
+                    "\n",
+                    "# Define endpoint, parameters, and headers\n",
+                    "request_url = ecn_rest_api_url + '/compute/v1/serviceInstances/' + hc_instance_id + '/nodes'\n",
+                    "params = {'serviceInstanceID':hc_instance_id}\n",
+                    "headers = {'authorization':'bearer '+hc_jwt}\n",
+                    "\n",
+                    "# HTTP request\n",
+                    "response = requests.get(request_url, params=params, headers=headers)\n",
+                    "print(response.text)\n",
+                    "print(response.headers)"
+                ]
+                },
+                {
+                "cell_type": "code",
+                "execution_count": null,
+                "id": "8cbb6f85-bef0-4979-a129-a55d65d9088c",
+                "metadata": {},
+                "outputs": [],
+                "source": [
+                    "#######################################################################\n",
+                    "##### POST /compute/v1/serviceInstances/{serviceInstanceID}/nodes #####\n",
+                    "#######################################################################\n",
+                    "# Provisions new elastic compute node with given plan\n",
+                    "\n",
+                    "# Check JWT and refresh if required\n",
+                    "refresh_jwt_check()\n",
+                    "\n",
+                    "# Define endpoint, parameters, headers, and data\n",
+                    "request_url = ecn_rest_api_url + '/compute/v1/serviceInstances/' + hc_instance_id + '/nodes'\n",
+                    "params = {'serviceInstanceID':hc_instance_id}\n",
+                    "headers = {'authorization':'bearer '+hc_jwt, 'content-type':'application/json'}\n",
+                    "json = {'name':'ecn1', \n",
+                    "        'plan':{\n",
+                    "            'memorySizeGiB':32,\n",
+                    "            'storageSizeGiB':120,\n",
+                    "            'vCPUs':8\n",
+                    "        }\n",
+                    "       }\n",
+                    "\n",
+                    "# HTTP request\n",
+                    "response = requests.post(request_url, params=params, headers=headers, json=json)\n",
+                    "print(response.text)\n",
+                    "print(response.headers)"
+                ]
+                },
+                {
+                "cell_type": "code",
+                "execution_count": null,
+                "id": "7b513505-31c1-4a25-9763-42e73074072c",
+                "metadata": {},
+                "outputs": [],
+                "source": [
+                    "#############################################################################\n",
+                    "##### GET /compute/v1/serviceInstances/{serviceInstanceID}/nodes/{name} #####\n",
+                    "#############################################################################\n",
+                    "# Get plan and status of the elastic compute node\n",
+                    "\n",
+                    "# Check JWT and refresh if required\n",
+                    "refresh_jwt_check()\n",
+                    "\n",
+                    "# Define endpoint, parameters, and headers\n",
+                    "request_url = ecn_rest_api_url + '/compute/v1/serviceInstances/' + hc_instance_id + '/nodes/' + json['name']\n",
+                    "params = {'serviceInstanceID':hc_instance_id, 'name':json['name']}\n",
+                    "headers = {'authorization':'bearer '+hc_jwt}\n",
+                    "\n",
+                    "# HTTP request\n",
+                    "response = requests.get(request_url, params=params, headers=headers)\n",
+                    "print(response.text)"
+                ]
+                },
+                {
+                "cell_type": "code",
+                "execution_count": null,
+                "id": "51011b85-3e3a-4252-9c36-7da1f0ce360e",
+                "metadata": {},
+                "outputs": [],
+                "source": [
+                    "################################################################################\n",
+                    "##### DELETE /compute/v1/serviceInstances/{serviceInstanceID}/nodes/{name} #####\n",
+                    "################################################################################\n",
+                    "# Deprovision elastic compute node\n",
+                    "\n",
+                    "# Check JWT and refresh if required\n",
+                    "refresh_jwt_check()\n",
+                    "\n",
+                    "# Define endpoint, parameters, and headers\n",
+                    "request_url = ecn_rest_api_url + '/compute/v1/serviceInstances/' + hc_instance_id + '/nodes/' + json['name']\n",
+                    "params = {'serviceInstanceID':hc_instance_id, 'name':json['name']}\n",
+                    "headers = {'authorization':'bearer '+hc_jwt}\n",
+                    "\n",
+                    "# HTTP request\n",
+                    "response = requests.delete(request_url, params=params, headers=headers)\n",
+                    "print(response.text)\n",
+                    "print(response.headers)"
+                ]
+                }
+                ],
+                "metadata": {
+                "kernelspec": {
+                "display_name": "Python 3",
+                "language": "python",
+                "name": "python3"
+                },
+                "language_info": {
+                "codemirror_mode": {
+                    "name": "ipython",
+                    "version": 3
+                },
+                "file_extension": ".py",
+                "mimetype": "text/x-python",
+                "name": "python",
+                "nbconvert_exporter": "python",
+                "pygments_lexer": "ipython3",
+                "version": "3.13.3"
+                }
+                },
+                "nbformat": 4,
+                "nbformat_minor": 5
+            }
+            ```
+
+        * The modification section requires values from a service key (Cloud Foundry), or a service binding (subaccount/other environment) that can be added to an SAP HANA Cloud instance.
+
+            Create a service key.  
+            
+            ![service key](service-key.png)
+
+            Copy the values from the service key into the modification section.
+
+            ![modification section](modification-section.png)
+
+        * Try out the notebook by executing each cell and viewing its output.
+
+            ![get ECN node details](get-ecn-node-details.png)
+
+            Visual Studio Code may ask you to enter extensions related to Jupyter and Python such as the ones shown below if they are not already installed.
+
+            ![extensions](extensions.png)
+
+            You may need to install a library such as requests if it is missing.
+
+            ```Shell
+            pip list 
+            pip install requests
+            ```
+
+            You can choose to which Python environment to run by selecting the area shown below.
+
+            ![python environments](python-env.png)
         
 2. Once the ECN has been created, its details can be viewed.
 
@@ -261,6 +560,7 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
         WHERE STATEMENT_STRING LIKE 'CALL CPU_AND_MEMORY_SPIKE()' 
         ORDER BY LAST_EXECUTION_TIMESTAMP DESC;
     --ALTER SYSTEM CLEAR SQL PLAN CACHE;
+    SELECT * FROM M_SERVICE_STATISTICS WHERE SERVICE_NAME = 'computeserver';
     ```
 
     ![ECN verification](ecn_ex1.png)

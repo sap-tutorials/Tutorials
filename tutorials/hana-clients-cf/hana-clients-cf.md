@@ -20,7 +20,7 @@ primary_tag: software-product>sap-hana-cloud
 ## Intro
 In the previous tutorials, applications that queried SAP HANA were run on a local machine.  In this tutorial, a simple application will be run within the SAP BTP which uses Cloud Foundry or within the SAP HANA, express edition which uses XS advanced (and is also based on Cloud Foundry).  
 
-For additional details, consult  [The XS Advanced Programming Model](https://help.sap.com/docs/SAP_HANA_PLATFORM/4505d0bdaf4948449b7f7379d24d0f0d/df19a03dc07e4ba19db4e0006c1da429.html).
+For additional details, consult [Developing Applications on SAP BTP, Cloud Foundry runtime](https://learning.sap.com/learning-journeys/developing-applications-on-sap-btp-cloud-foundry-runtime) or [The XS Advanced Programming Model](https://help.sap.com/docs/SAP_HANA_PLATFORM/4505d0bdaf4948449b7f7379d24d0f0d/df19a03dc07e4ba19db4e0006c1da429.html).
 
 ---
 
