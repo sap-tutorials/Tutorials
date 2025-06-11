@@ -34,7 +34,7 @@ In this group of tutorials our goal is to create a site using SAP Build Work Zon
 
 
 1. [Log onto SAP BTP](https://cockpit.hanatrial.ondemand.com) and click **Go To Your Trial Account**.
-
+    
     ![Enter trial account](1_enter_trial_account.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (select the region closest to you). Your user profile will be set up for you automatically.
@@ -47,9 +47,8 @@ In this group of tutorials our goal is to create a site using SAP Build Work Zon
 
     
 3. Click the **trial** tile to navigate to your trial subaccount in the SAP BTP cockpit. If you're using your own subaccount, you can select it instead.
-
+    
     ![Open trial account](3-open-subaccount.png)
-
 
 
 ### Get an SAP Cloud Identity services tenant 
@@ -59,7 +58,7 @@ To access SAP Build Work Zone, standard edition you need to first create a SAP C
 1. Click **Service Marketplace** in the left navigation panel.
 
     > The Service Marketplace provides you access to all services and applications that you can access from the SAP BTP cockpit.
-
+    
     ![Go to marketplace](4-go-to-marketplace.png)
 
 2. In the Service Marketplace, search for the **Cloud Identity Services** tile.
@@ -67,11 +66,11 @@ To access SAP Build Work Zone, standard edition you need to first create a SAP C
     ![Cloud Identity services tile](5-find-identity-services-tile.png)
 
 3. Click the tile and then click **Create**.
-
+    
     ![Create](6-create-IAS-tenant.png)
 
 4. In the **New Instance or Subscription** screen, under **Subscriptions**, select the `default` plan and click **Next**.
-
+    
     ![Select default plan](7-select-default-plan.png)
 
 5. Navigate to the next steps and then click **Create**.
@@ -104,7 +103,7 @@ You now have a SAP Cloud Identity tenant.
 ### Create a trust between SAP BTP and the tenant you created in SAP Cloud Identity services
 
 1. In the SAP BTP Cockpit, go to **Security** -> **Trust Configuration**.
-
+    
     ![Create trust](14-create-trust.png)
 
 2. Click **Establish Trust**.
@@ -120,7 +119,7 @@ Before you can access SAP Build Work Zone, standard edition, you first need to s
 
 >SAP Build Work Zone, standard edition offers 2 types of standard plans. The **Applications Plan** which is used to access your applications from a site. In this case, you need to create a subscription to SAP Build Work Zone, standard edition, which you will do in this step. The 2nd plan is the **Service Plan** which is used to integrate with other services. This plan is not required for the scope of this tutorial.
 
-1. Go to the **Service Marketplace** from the side panel and search for `SAP Build Work Zone, standard`.
+1. From your trial subaccount, go to the **Service Marketplace** from the side panel and search for `SAP Build Work Zone, standard`.
 
     ![Search for Work Zone STD](15-search-wz-std.png)
 
@@ -129,26 +128,26 @@ Before you can access SAP Build Work Zone, standard edition, you first need to s
 2. Click the tile. The SAP Build Work Zone, standard edition **Overview** tab is in focus.
 
 3.  Under the **Applications Plans** tab, click the Actions icon (...), and select **Create** to create a new subscription.
-
+    
     ![Create subscription](16-create-subscription.png)
 
     >You can also use the **Create** button at the top right of the screen.
 
-7. In the **New Instance or Subscription** dialog box that opens, leave the basic information that appears there and click **Create**.
+4. In the **New Instance or Subscription** dialog box that opens, leave the basic information that appears there and click **Create**.
 
     ![Create](17-create.png)
 
     > Note that to work in SAP Build Work Zone, standard edition, to integrate content from the backend, you need to create a subscription. If you also want to integrate custom developed apps or plugins, you need to also create an instance.
 
-8. You'll get confirmation that your subscription is being created. Click **View Subscription** to see the progress.
+5. You'll get confirmation that your subscription is being created. Click **View Subscription** to see the progress.
 
     >This step will redirect you to the **Services** -> **Instances and Subscriptions** screen. This screen provides you with an overview of all services and applications that are currently active.
 
-9. From the **Instances and Subscriptions** screen, you'll see that you are subscribed to **SAP Build Work Zone, standard edition**.
-
+6. From the **Instances and Subscriptions** screen, you'll see that you are subscribed to **SAP Build Work Zone, standard edition**.
+    
     ![Subscribed](18-subscribed.png)
 
-Now that you have a subscription, all the SAP Build Work Zone, standard edition role collections are exposed in the cockpit, and you can proceed to the mapping between the role collection and the group that you created in SAP Cloud Identity services.
+Now that you have a subscription, all the SAP Build Work Zone, standard edition role collections are exposed in the cockpit. You can now proceed to the mapping between the role collection and the group that you created in SAP Cloud Identity services.
 
 
 ### Map the Launchpad_Admin role in SAP BTP with the Identity Services group
@@ -157,17 +156,17 @@ Now that you have a subscription, all the SAP Build Work Zone, standard edition 
 
 2. Click the tenant that you created in SAP Cloud Identity services.
 
-     ![Click tenant](19-click-tenant.png)
+    ![Click tenant](19-click-tenant.png)
 
-3. On the right, in the screen that opens, click on the **Attribute Mappings** tab and click **Edit**.
+3. On the right, in the screen that opens, click on the **Attribute Mappings** tab, and click **Edit**.
 
     ![Edit attribute](20-edit-attribute.png)
 
 4. Under the **Role Collection** column, search for the `Launchpad_Admin` role from the dropdown list. 
 
-    ![Edit attribute](21-select-role.png)
+    ![Select role](21-select-role.png)
 
-5. Enter the Attribute as `Groups` and enter the Value as `Admin`. Then click the **+** to add the attributes and **Save**.
+5. Enter the Attribute as `Groups` and enter the Value as `Admin`. Now click the **+** to add the attributes and **Save**.
 
 The mapping is complete. You can now go ahead and access SAP Build Work Zone, standard edition.
 
@@ -175,13 +174,13 @@ The mapping is complete. You can now go ahead and access SAP Build Work Zone, st
 ### Access SAP Build Work Zone, standard edition
 
 1. From the side panel, click **Instances and Subscriptions**.
-
+    
     ![Open Subscriptions](15-instances-and-subscriptions.png)
 
 2. Under the **Subscriptions** tab, click  **SAP Build Work Zone, standard edition**.  Click **Go to Application** on the right.
 
     ![Go to application](16-go-to-application.png)
 
-   The **Site Directory** opens. This is where you'll create and manage your sites.
-
-  ![Open Site Directory](17-open-site-directory.png)
+The **Site Directory** opens. From here you'll create and manage your sites.
+    
+![Open Site Directory](17-open-site-directory.png)
