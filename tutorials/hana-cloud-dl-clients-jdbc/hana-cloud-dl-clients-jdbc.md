@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 ### Install a JDK
-Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path. Details of the driver and supported versions can be found at [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/3bd02ce86c5f101482b78476939fb83a.html) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).
+Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path. Further details of the driver can be found at [JDBC Driver](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/jdbc-driver).
 
 An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download).
 
@@ -34,7 +34,7 @@ javac -version
 
 If these commands fail, ensure that the folder they are located in is included in your path.  
 
-The following command will install Java on openSUSE Leap 15.4.
+For Linux, the following command will install Java on openSUSE Leap 15.4.
 
 ```Shell (Linux)
 sudo zypper install java-11-openjdk-devel
@@ -42,7 +42,7 @@ sudo zypper install java-11-openjdk-devel
 
 
 ### The data lake Relational Engine JDBC driver
-The data lake Relational Engine JDBC driver is a type 2 driver, which means it has a native (non-Java) component. For additional details see [Type 2 driver – Native-API driver](https://en.wikipedia.org/wiki/JDBC_driver#Type_2_driver_%E2%80%93_Native-API_driver). The driver is located in `%IQDIR17%\Java\sajdbc4.jar` on Microsoft Windows and `$IQDIR17/java/sajdbc4.jar` on Linux.  The native component is at `%IQDIR17%\Bin64\dbjdbc17.dll` on Microsoft Windows and `$IQDIR17\lib64\libdbjdbc17.so` on Linux.
+The data lake Relational Engine JDBC driver is a type 2 driver, which means it has a native (non-Java) component. For additional details see [Type 2 driver – Native-API driver](https://en.wikipedia.org/wiki/JDBC_driver#Type_2_driver_%E2%80%93_Native-API_driver). The driver is located in `%IQDIR17%\java\sajdbc4.jar` on Microsoft Windows and `$IQDIR17/java/sajdbc4.jar` on Linux.  The native component is at `%IQDIR17%\Bin64\dbjdbc17.dll` on Microsoft Windows and `$IQDIR17\lib64\libdbjdbc17.so` on Linux.
 
 See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/jdbc-drivers) for additional details.
 
@@ -104,7 +104,7 @@ See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-clo
     }
     ```
 
-3. Compile the `.java` file into a `.class` file using the following command:
+3. Save and close `JavaQuery.java`. Compile the `.java` file into a `.class` file using the following command:
 
     ```Shell (Microsoft Windows)
     javac -cp %IQDIR17%\Java\sajdbc4.jar;. JavaQuery.java

@@ -39,7 +39,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![Add ODBC user data source](ODBC-add.png)  
 
-5. Select **SAP IQ** and click **Finish**.
+5. Select **SAP HANA Cloud, data lake Relational Engine** and click **Finish**.
 
     ![New data source](Create-new-data-source-1.png)
 

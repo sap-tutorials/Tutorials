@@ -82,7 +82,13 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     </ItemGroup>
     ```
 
-    Note that if the developer licensed version of the data lake Client was installed for Linux, the path might be similar to /home/dan/sap/hdlclient/sdk/dotnet/Sap.Data.SQLAnywhere.Core.v2.1.dll
+    Note that if the developer licensed version of the data lake Client was installed the path might be similar to 
+    
+    ```
+    C:\SAP\hdlclient\sdk\dotnet\Sap.Data.SQLAnywhere.Core.v2.1.dll
+    or
+    /home/dan/sap/hdlclient/sdk/dotnet/Sap.Data.SQLAnywhere.Core.v2.1.dll    
+    ```
     
     ![dotNET.csproj code](dotNET-csproj-code.png)
 

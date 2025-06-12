@@ -41,7 +41,7 @@ On Linux, follow the instructions for the appropriate Linux version: [Installing
 ### Configure the environment
 The data lake Relational Engine Client interface for Go, like the other data lake Relational Engine client interfaces (except JDBC), makes use of a C library named SQLDBC.  
 
-The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Build the Go Driver](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a895964984f210158925ce02750eb580/0f3109338be048e187caa9646199e3db.html?state=DRAFT) in the SAP HANA Cloud, Data Lake Client Interfaces Reference Guide. In order to use the Go Driver, a 64-bit `gcc` compiler is required.
+The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https://golang.org/cmd/cgo/).  For further information on the following steps, consult [Go (golang) Driver](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/go-golang-driver) in the SAP HANA Cloud, Data Lake Client Interfaces Reference Guide. In order to use the Go Driver, a 64-bit `gcc` compiler is required.
 
 1. To check if a 64-bit `gcc` compiler is installed, run the following command:
 
@@ -77,7 +77,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
     GOPATH is set to a location such as `C:\Users\user\go` or `$HOME/go` and defines the root of your workspace which stores your codebase.
 
-3. Set the `CGO_LDFLAGS` environment variable to point to the location of the HDLRE client library as shown below and set the `LD_LIBRARY_PATH` if needed. 
+3. Set the `CGO_LDFLAGS` environment variable to point to the location of the HDLRE client library as shown below.
 
     On Windows, add a **NEW** variable. Set the variable name to **CGO_LDFLAGS** and the value as the location of `dbcapi` library: `C:\SAP\dlclient\IQ-17_1\Bin64\dbcapi.dll`
 
@@ -90,15 +90,14 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     
     ```Shell (Linux)
     echo $LD_LIBRARY_PATH
-    echo $CGO_LDFLAGS
     pico .bash_profile 
     ```
 
     ```Shell (Linux)
-    export LD_LIBRARY_PATH=$HOME/sap/dlclient/IQ-17_1/lib64
-    export LD_LIBRARY_PATH=$HOME/sap/hdlclient/lib64
     export CGO_LDFLAGS=$HOME/sap/dlclient/IQ-17_1/lib64/libdbcapi_r.so
     export CGO_LDFLAGS=$HOME/sap/hdlclient/lib64/libdbcapi_r.so
+    export LD_LIBRARY_PATH=$HOME/sap/dlclient/IQ-17_1/lib64
+    export LD_LIBRARY_PATH=$HOME/sap/hdlclient/lib64
     ```
     ![.bash_profile contents](bashProfileAfterCGO.png)
 
@@ -121,7 +120,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 ### Create a Go application that queries an SAP data lake Relational Engine
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
     
-    ```Shell (Microsoft Windows)
+    ```Shell (Windows)
     mkdir %HOMEPATH%\DataLakeClientsTutorial\go
     cd %HOMEPATH%\DataLakeClientsTutorial\go
     notepad goQuery.go
@@ -201,10 +200,11 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
 4. Add the code below to `go.mod` under the go 1.23.4 (version) line:
     
-    >Make any necessary changes to ensure the path to the driver folder is correct.
+    >Ensure you have the correct path to the driver folder. The path depends on your installation.  Note that two example locations are provided. Choose the one that's closest to your installation and edit it if necessary.
 
     ```Code (Windows)
     replace SAP/go-hdlre/driver v0.1.0 => C:\SAP\dlclient\IQ-17_1\SDK\golang\SAP\go-hdlre\driver   
+    replace SAP/go-hdlre/driver v0.1.0 => C:\SAP\hdlclient\sdk\golang\SAP\go-hdlre\driver
     require SAP/go-hdlre/driver v0.1.0 
     ```
     
@@ -216,10 +216,15 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
     ![go.mod contents](goModContents.png)
 
-5. Run the application:
+5. Run the application or build and run the application:
 
     ```Shell
     go run goQuery.go
+    ```
+
+    ```Shell Microsoft Windows
+    go build goQuery.go
+    goQuery.exe
     ```
 
     ![Result](results.png)
