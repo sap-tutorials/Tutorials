@@ -28,7 +28,7 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 Open your subaccount in SAP BTP cockpit. Make sure you've already enabled SAP BTP, Kyma runtime on your cluster.
 
 
-### Build Application to OCI Image
+### Build Application as OCI Image
 
 
 In order to run your code on Kyma Runtime (or on any Kubernetes-based platform), you need to provide an OCI image (aka Docker image) for your application. While you are in principle free to choose your image building tool, we recommend using [Cloud Native Buildpacks (CNB)](https://buildpacks.io/).
