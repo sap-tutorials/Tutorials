@@ -93,8 +93,8 @@ docker push <docker-hub-account>/multitenant-kyma-backend:v2
 
 ### Create Namespace
 
+If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), you have created a namespace in Kyma dashboard called `multitenancy-ns`. If not, create a new namespace `multitenancy-ns` through Kyma dashboard or `kubectl` CLI:
 
-Then you are ready to deploy it into the Kubernetes cluster with Kyma runtime.
 
 **1.** Select the `Link to dashboard` to open the Kyma dashboard.
 
