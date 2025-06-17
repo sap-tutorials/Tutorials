@@ -77,11 +77,11 @@ In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the
 }
 ```
 
-### Determine SAP BTP Subaccount Subdomain and Cluster Domain  
+### Determine SAP BTP Subaccount Subdomain and Cluster Domain
 
 Open your subaccount in SAP BTP cockpit. In the overview page, find the subaccount's subdomain.  
 
-Find your cluster domain in the APIServerURL. You will get the URL as this format:  
+Find your cluster domain in the APIServerURL field. It contains the URL in the following format:  
 > Example: https://api.xxxxx.kyma.ondemand.com  
 
 Your `clusterdomain` will be `xxxxx.kyma.ondemand.com`.  
@@ -97,6 +97,7 @@ Your `clusterdomain` will be `xxxxx.kyma.ondemand.com`.
 
 The destinations configuration can be provided by the `destinations` environment variable or by destination service.
 
+In order to provide the `destinations` environment variable to the approuter application, create a `ConfigMap` object that can be referenced later.
 In order to provide the `destinations` environment variable to the approuter application, create a `ConfigMap` object that can be referenced later.
 
 Create a new deployment YAML file named `k8s-deployment-approuter.yaml` for the approuter app with the following content:
