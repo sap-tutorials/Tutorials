@@ -77,7 +77,7 @@ In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the
 }
 ```
 
-### Determine SAP BTP Subaccount Subdomain and cluster domain  
+### Determine SAP BTP Subaccount Subdomain and Cluster Domain
 
 Open your subaccount in SAP BTP cockpit. In the overview page, find the `subaccount-subdomain` for your deployment YAML file definition.  
 
