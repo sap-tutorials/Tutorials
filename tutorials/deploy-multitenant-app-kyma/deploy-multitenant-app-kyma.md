@@ -41,7 +41,7 @@ Open your subaccount in SAP BTP cockpit. Make sure you've already enabled SAP BT
 <p> </p>
     The command-line tool `pack` supports providing a buildpack and your local source code and creating an OCI image from it. We are working on a process to provide recommended and supported buildpacks. In the meantime, you can use the community-supported [Paketo Buildpacks](https://paketo.io/).
 <p> </p>
-    If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in SAP BTP, Kyma runtime](deploy-nodejs-application-kyma), you have installed the command-line tool `pack`, if not, please follow this official guide: [Install Pack](https://buildpacks.io/docs/tools/pack/).
+    If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in SAP BTP, Kyma runtime](deploy-nodejs-application-kyma), you have installed the command-line tool `pack`. If not, please follow this official guide: [Install Pack](https://buildpacks.io/docs/tools/pack/).
 
     For example (macOS):  
 ```Shell / Bash
