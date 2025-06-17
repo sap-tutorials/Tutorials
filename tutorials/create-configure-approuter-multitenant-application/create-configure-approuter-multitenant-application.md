@@ -81,7 +81,7 @@ In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the
 
 Open your subaccount in SAP BTP cockpit. In the overview page, find the `subaccount-subdomain` for your deployment YAML file definition.  
 
-Find your cluster domain in the APIServerURL. You will get the URL as this format:  
+Find your cluster domain in the APIServerURL field. It contains the URL in the following format:  
 > Example: https://api.xxxxx.kyma.ondemand.com  
 
 Your `clusterdomain` will be `xxxxx.kyma.ondemand.com`.  
