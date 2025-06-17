@@ -28,7 +28,7 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 Open your subaccount in SAP BTP cockpit. Make sure you've already enabled SAP BTP, Kyma runtime on your cluster.
 
 
-### Build Application to OCI Image
+### Build Application as OCI Image
 
 
 In order to run your code on Kyma Runtime (or on any Kubernetes-based platform), you need to provide an OCI image (aka Docker image) for your application. While you are in principle free to choose your image building tool, we recommend using [Cloud Native Buildpacks (CNB)](https://buildpacks.io/).
@@ -86,21 +86,14 @@ Then you are ready to deploy it into the Kubernetes cluster with Kyma runtime.
 
 **2.** Create a new namespace through Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
 
-<!-- border -->![create_ns](create_ns.png)
+<!-- border -->![create_namespace](create_namespace.png)
 
 
 **3.** Enable Istio Sidecar Proxy Injection  
-Enabling Istio sidecar proxy injection for a namespace allows istiod to watch all Pod creation operations in this namespace and automatically inject newly created Pods with an Istio sidecar proxy. Access Kyma dashboard, switch the toggle to enable Istio sidecar proxy injection.  
+Enabling Istio sidecar proxy injection for a namespace allows istiod to watch all Pod creation operations in this namespace and automatically inject newly created Pods with an Istio sidecar proxy.  
+Switch the toggle to enable Istio sidecar proxy injection. Click `Create` to finish namespace creation.  
 
- 3.1 Select the namespace where you want to enable sidecar proxy injection. 
- 
- 3.2 Click Edit.  
-
- 3.3 In the UI Form section, switch the toggle to enable Istio sidecar proxy injection.  
-
- 3.4 Click Save.
-
- <!-- border -->![enable_ns_sidecar](enable_ns_sidecar.png)
+<!-- border -->![enable_ns_sidecar](enable_ns_sidecar.png)
 
 > For more details, refer to the [Enable Istio Sidecar Proxy Injection](https://kyma-project.io/#/istio/user/tutorials/01-40-enable-sidecar-injection?id=enable-sidecar-injection-for-a-namespace)
 
@@ -286,6 +279,14 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 ```
 
 
+### Check Application Deployment state
+
+
+Launch Kyma dashboard from SAP BTP cockpit, then navigate to the `multitenancy-ns` namespace.
+
+Go to `Workloads`, and then select `Deployments`. You will see deployment of **kyma-multitenant-node-multitenancy** displayed, with its `Pods` status shown in green. At this point, your application has been deployed successfully.
+
+<!-- border -->![deploy_succeed.png](deploy_succeed.png)
 
 
 
@@ -297,7 +298,7 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 
 <!-- border -->![api_rule_host](api_rule_host.png)
 
-**2.** Access it in the browser, then the application will return the message that you defined before.
+**2.** Access it in the browser, then the application will return the message "Hello World!".
 
 
 

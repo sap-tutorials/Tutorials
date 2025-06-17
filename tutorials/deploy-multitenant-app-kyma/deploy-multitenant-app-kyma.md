@@ -32,7 +32,7 @@ Open your subaccount in SAP BTP cockpit. Make sure you've already enabled SAP BT
 
 
 
-### Build Application to OCI Image
+### Build Application as OCI Image
 
 
 1. Install tool
@@ -41,7 +41,7 @@ Open your subaccount in SAP BTP cockpit. Make sure you've already enabled SAP BT
 <p> </p>
     The command-line tool `pack` supports providing a buildpack and your local source code and creating an OCI image from it. We are working on a process to provide recommended and supported buildpacks. In the meantime, you can use the community-supported [Paketo Buildpacks](https://paketo.io/).
 <p> </p>
-    If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in SAP BTP, Kyma runtime](deploy-nodejs-application-kyma), you have installed the command-line tool `pack`, if not, please follow this official guide: [Install Pack](https://buildpacks.io/docs/tools/pack/).
+    If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in SAP BTP, Kyma runtime](deploy-nodejs-application-kyma), you have installed the command-line tool `pack`. If not, please follow this official guide: [Install Pack](https://buildpacks.io/docs/tools/pack/).
 
     For example (macOS):  
 ```Shell / Bash
@@ -100,23 +100,16 @@ Then you are ready to deploy it into the Kubernetes cluster with Kyma runtime.
 
 <!-- border -->![image-20220112154735200](image-20220112154735200.png)
 
-**2.** Create a new namespace through the Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
+**2.** Create a new namespace through Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
 
-<!-- border -->![create_ns](create_ns.png)
+<!-- border -->![create_namespace](create_namespace.png)
 
 
 **3.** Enable Istio Sidecar Proxy Injection  
-Enabling Istio sidecar proxy injection for a namespace allows istiod to watch all Pod creation operations in this namespace and automatically inject newly created Pods with an Istio sidecar proxy. Access the Kyma dashboard, switch the toggle to enable Istio sidecar proxy injection.
+Enabling Istio sidecar proxy injection for a namespace allows istiod to watch all Pod creation operations in this namespace and automatically inject newly created Pods with an Istio sidecar proxy.  
+Switch the toggle to enable Istio sidecar proxy injection. Click `Create` to finish namespace creation.  
 
- 3.1 Select the namespace where you want to enable sidecar proxy injection.  
- 
- 3.2 Click Edit.  
-
- 3.3 In the UI Form section, switch the toggle to enable Istio sidecar proxy injection.  
-
- 3.4 Click Save.
-
- <!-- border -->![enable_ns_sidecar](enable_ns_sidecar.png)
+<!-- border -->![enable_ns_sidecar](enable_ns_sidecar.png)
 
 > For more details, refer to the [Enable Istio Sidecar Proxy Injection](https://kyma-project.io/#/istio/user/tutorials/01-40-enable-sidecar-injection?id=enable-sidecar-injection-for-a-namespace)
 
@@ -167,6 +160,16 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-approuter.yaml
 ```Shell / Bash
 kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 ```
+
+
+### Check Application Deployment state
+
+
+Launch Kyma dashboard from SAP BTP cockpit, then navigate to the `multitenancy-ns` namespace.
+
+Go to `Workloads`, and then select `Deployments`. You will see deployments of **kyma-multitenant-approuter-multitenancy** and **kyma-multitenant-node-multitenancy** displayed, with their `Pods` statuses shown in green. At this point, your multitenant application has been deployed successfully.
+
+<!-- border -->![deploy_multi_succeed](deploy_multi_succeed.png)
 
 
 

@@ -82,7 +82,7 @@ Payload of subscription PUT and DELETE methods:
 ### Implement Subscription Callbacks
 
 
-A tenant-specific URL should be provided to customers in the onboarding process, at the same time, the URL should be exposed to the Internet as well. Otherwise, customers still cannot access the tenant. URL is exposed in Kyma runtime through `APIRule`, which needs to be created dynamically through the onboarding/offboarding process using [Kubernetes client for NodeJS](https://github.com/kubernetes-client/javascript).
+A tenant-specific URL should be provided to customers in the onboarding process and exposed to the Internet at the same time. Otherwise, customers cannot access the tenant. The URL is exposed in Kyma runtime through `APIRule`, which must be created dynamically during the onboarding/offboarding process using [Kubernetes client for NodeJS](https://github.com/kubernetes-client/javascript).
 
 In the `kyma-multitenant-node/routes/index.js` file, implement the `subscription` and `unsubscription` callbacks. Replace the placeholder with your cluster domain.
 
