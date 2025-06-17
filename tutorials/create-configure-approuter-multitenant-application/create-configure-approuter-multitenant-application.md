@@ -97,7 +97,7 @@ Your `clusterdomain` will be `xxxxx.kyma.ondemand.com`.
 
 The destinations configuration can be provided by the `destinations` environment variable or by destination service.
 
-In order to provide `destinations` environment variable to the approuter application, you should create a `ConfigMap` object for reference later.
+In order to provide the `destinations` environment variable to the approuter application, create a `ConfigMap` object that can be referenced later.
 
 Create a new deployment YAML file named `k8s-deployment-approuter.yaml` for the approuter app with the following content:
 
