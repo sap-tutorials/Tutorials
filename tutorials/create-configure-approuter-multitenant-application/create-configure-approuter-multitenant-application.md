@@ -86,7 +86,7 @@ Find your cluster domain in the APIServerURL field. It contains the URL in the f
 
 Your `clusterdomain` is `xxxxx.kyma.ondemand.com`.  
 
-`subaccount-subdomain` and `clusterdomain` will be quoted in subsequent deployment definition.  
+`subdomain` and `clusterdomain` will be quoted in subsequent deployment definition.  
 
 <!-- border -->![check_subdomain_clusterdomain](./check_subdomain_clusterdomain.png)
 
