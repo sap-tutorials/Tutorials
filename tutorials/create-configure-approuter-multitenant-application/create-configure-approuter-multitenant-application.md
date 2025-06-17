@@ -84,7 +84,7 @@ Open your subaccount in SAP BTP cockpit. In the overview page, find the subaccou
 Find your cluster domain in the APIServerURL field. It contains the URL in the following format:  
 > Example: https://api.xxxxx.kyma.ondemand.com  
 
-Your `clusterdomain` will be `xxxxx.kyma.ondemand.com`.  
+Your `clusterdomain` is `xxxxx.kyma.ondemand.com`.  
 
 `subaccount-subdomain` and `clusterdomain` will be quoted in subsequent deployment definition.  
 
