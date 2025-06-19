@@ -6,11 +6,11 @@ tags: [ tutorial>beginner, programming-tool>node-js]
 primary_tag: software-product>sap-btp\, kyma-runtime
 ---
 
-# Deploy a Node.js Application in the Kyma Runtime
-<!-- description --> Build a basic Node.js application into OCI image and push it into Docker registry. Besides, describe the corresponding Kubernetes objects for the application. Based on the above, deploy the application into the Kyma runtime.
+# Deploy a Node.js Application in SAP BTP, Kyma runtime
+<!-- description --> Build a basic Node.js application into OCI image and push it into Docker registry. Besides, describe the corresponding Kubernetes objects for the application. Based on the above, deploy the application into SAP BTP, Kyma runtime.
 
 ## Prerequisites
-- You have a Kyma runtime environment on SAP Business Technology Platform (BTP) and the relevant command line tools. If not, please follow the tutorials [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started) and [Install the Kubernetes Command Line Tool](cp-kyma-download-cli).
+- You have a Kyma runtime environment on SAP Business Technology Platform (BTP) and the relevant command line tools. If not, please follow the tutorials [Enable SAP BTP, Kyma runtime](cp-kyma-getting-started) and [Install the Kubernetes Command Line Tool](cp-kyma-download-cli).
 - You have installed [Docker](https://docs.docker.com/get-started/#download-and-install-docker).
 - You have [Docker Hub](https://hub.docker.com/) account.
 - You have finished the tutorial [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create).
@@ -25,25 +25,13 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 
 ### Determine SAP BTP Subaccount Subdomain
 
-Open your subaccount in the Cockpit. In the overview page, find the subdomain for your deployment.
-
-For example:
-
-![image-20211214133316133](image-20211214133316133.png)
+Open your subaccount in SAP BTP cockpit. Make sure you've already enabled SAP BTP, Kyma runtime on your cluster.
 
 
-
-### Determine Kyma Cluster Domain
-
-Find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file. For example: `e6803e4.kyma.shoot.live.k8s-hana.ondemand.com`.
+### Build Application as OCI Image
 
 
-
-
-### Build Application to OCI Image
-
-
-In order to run your code on the Kyma Runtime (or on any Kubernetes-based platform), you need to provide an OCI image (aka Docker image) for your application. While you are in principle free to choose your image building tool, we recommend using [Cloud Native Buildpacks (CNB)](https://buildpacks.io/).
+In order to run your code on Kyma Runtime (or on any Kubernetes-based platform), you need to provide an OCI image (aka Docker image) for your application. While you are in principle free to choose your image building tool, we recommend using [Cloud Native Buildpacks (CNB)](https://buildpacks.io/).
 
 The command-line tool `pack` supports providing a buildpack and your local source code and creating an OCI image from it. We are working on a process to provide recommended and supported buildpacks. In the meantime, you can use the community-supported [Paketo Buildpacks](https://paketo.io/).
 
@@ -92,16 +80,22 @@ docker push <docker-hub-account>/multitenant-kyma-backend:v1
 
 Then you are ready to deploy it into the Kubernetes cluster with Kyma runtime.
 
-**1.** Select the `Link to dashboard` to open the Kyma dashboard.
+**1.** Select the `Link to dashboard` to open Kyma dashboard.
 
-![image-20220112154735200](image-20220112154735200.png)
+<!-- border -->![image-20220112154735200](image-20220112154735200.png)
 
-**2.** Create a new namespace through the Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
+**2.** Create a new namespace through Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
 
-![image-20220214150615225](image-20220214150615225.png)
+<!-- border -->![create_namespace](create_namespace.png)
 
 
+**3.** Enable Istio Sidecar Proxy Injection  
+Enabling Istio sidecar proxy injection for a namespace allows istiod to watch all Pod creation operations in this namespace and automatically inject newly created Pods with an Istio sidecar proxy.  
+Switch the toggle to enable Istio sidecar proxy injection. Click `Create` to finish namespace creation.  
 
+<!-- border -->![enable_ns_sidecar](enable_ns_sidecar.png)
+
+> For more details, refer to the [Enable Istio Sidecar Proxy Injection](https://kyma-project.io/#/istio/user/tutorials/01-40-enable-sidecar-injection?id=enable-sidecar-injection-for-a-namespace)
 
 
 ### Deploy Secret for Docker Hub
@@ -134,7 +128,7 @@ In the root directory `multitenancy-kyma-tutorial`, create a new YAML file calle
 ```yaml
 
 ---
-apiVersion: gateway.kyma-project.io/v1beta1
+apiVersion: gateway.kyma-project.io/v2
 kind: APIRule
 metadata:
   labels:
@@ -142,19 +136,13 @@ metadata:
     release: multitenancy
   name: kyma-multitenant-node-multitenancy
 spec:
-  gateway: kyma-gateway.kyma-system.svc.cluster.local
-  host: kyma-multitenant-node-multitenancy
+  gateway: kyma-system/kyma-gateway
+  hosts: 
+    - kyma-multitenant-node-multitenancy
   rules:
-  - accessStrategies:
-    - handler: allow
-    methods:
-    - GET
-    - POST
-    - PUT
-    - PATCH
-    - DELETE
-    - HEAD
-    path: /.*
+    - path: /*
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"]
+      noAuth: true
   service:
     name: kyma-multitenant-node-multitenancy
     port: 8080
@@ -178,6 +166,7 @@ spec:
       labels:
         app: kyma-multitenant-node-multitenancy
         release: multitenancy
+        sidecar.istio.io/inject: "true"  # Enable Istio sidecar injection on Deployment and all Pods
     spec:
       imagePullSecrets:
         - name: registry-secret # replace with your own registry secret
@@ -279,7 +268,7 @@ spec:
 
 
 
-### Deploy Application into Kyma Runtime
+### Deploy Application into SAP BTP, Kyma runtime
 
 
 
@@ -290,6 +279,14 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 ```
 
 
+### Check Application Deployment state
+
+
+Launch Kyma dashboard from SAP BTP cockpit, then navigate to the `multitenancy-ns` namespace.
+
+Go to `Workloads`, and then select `Deployments`. You will see deployment of **kyma-multitenant-node-multitenancy** displayed, with its `Pods` status shown in green. At this point, your application has been deployed successfully.
+
+<!-- border -->![deploy_succeed.png](deploy_succeed.png)
 
 
 
@@ -297,11 +294,11 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 
 
 
-**1.** Find the URL address of your application in the Kyma dashboard:
+**1.** Find the URL address of your application in Kyma dashboard:
 
-![image-20220214153901104](1645680425240.jpg)
+<!-- border -->![api_rule_host](api_rule_host.png)
 
-**2.** Access it in the browser, then the application will return the message that you defined before.
+**2.** Access it in the browser, then the application will return the message "Hello World!".
 
 
 
