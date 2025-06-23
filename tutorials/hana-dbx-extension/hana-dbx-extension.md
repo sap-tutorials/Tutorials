@@ -68,6 +68,22 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
 
     ![Successful Connection](successfulConnection.png)
 
+3. To edit your database connection, right click on the database connection name and select **Edit Database**. 
+
+![Edit Database Connection](edit-database-connection.png)
+
+Here you can edit your values for the **Host**, **Port**, **User** and **Password**.
+
+![Edit Database Connection values](edit-database-connection-values.png)
+
+4. To delete your database connection, right click on the database connection name and select **Delete Database**. Then a pop-up will ask you to confirm the deletion.
+
+![Delete Database Connection](delete-database-connection.png)
+
+Then a pop-up will ask you to confirm the deletion for you database connection.
+
+![Delete Database Connection Pop Up](delete-database-connection-popup.png)
+
 ### Make connections through Cloud Foundry (Optional)
 The SAP HANA database explorer extension also allows you to connect to the database connections you may have specified in the Cloud Foundry, web-based SAP HANA database explorer. These connections are managed by the web-based SAP HANA database explorer and cannot be edited in the extension. In order to complete this section of the tutorial, ensure that you have the [Cloud Foundry CLI](https://tools.hana.ondemand.com/#cloud) installed and added to your path.
 
@@ -229,6 +245,11 @@ Learn how to change settings and leverage features such as split editor, layout 
    
 
     ![Compare Tables](compareTables.png)
+
+    Instead of a split editor, you can alternatively create a new window by dragging an open tab outside of your current window editor.
+    
+    ![New Window Editor](New-Window-Editor.png)
+
 
 4. Additionally, Visual Studio Code has other features to help organize your workspace. The icons in the top right corners allow you to toggle (hide/show) different parts of the workspace which you can also do by resizing and snapping different areas. Click on the second icon to toggle the panel and use the Terminal to create a new file for your SQL code.
 

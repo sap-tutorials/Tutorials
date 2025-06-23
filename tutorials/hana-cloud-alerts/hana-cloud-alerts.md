@@ -187,6 +187,10 @@ The following instructions will show how to view a triggered SAP HANA database a
 
     ![using the statement hash](long-running-statement-hash.png)
 
+    You can find the statement hash here:
+    
+    ![statement hash](long-running-root-statement-hash.png)
+
 3. The test alert will resolve itself after 5 minutes or be resolved (indicated by the parameter value of 0) by executing the following statement.
 
     ```SQL
