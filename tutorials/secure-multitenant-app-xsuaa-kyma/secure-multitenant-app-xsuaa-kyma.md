@@ -150,9 +150,11 @@ var xsenv = require('@sap/xsenv');
 
 The properties **name** and **label** both are supported by CF and K8S. You are recommended to use `name` or `label` to get xsuaa credentials by. You can find the query value definition on `xsenv` package page.  
 
-> If you want to use name, get xsuaa credentials by: `xsenv.getServices({xsuaa: { label: 'xsuaa' }})`  
+> If you want to use the label, which maps to *Service name*, get the XSUAA credentials with:  
+`xsenv.getServices({xsuaa: { label: 'xsuaa' }})`
 
-> If you want to use label, get xsuaa credentials by: `xsenv.getServices({xsuaa: { name: 'xsuaa-service' }})`
+> If you want to use the name, which maps to *Service instance name*, get the XSUAA credentials with:  
+`xsenv.getServices({xsuaa: { name: 'xsuaa-service' }})`
 
 
 ```JavaScript[4-20]

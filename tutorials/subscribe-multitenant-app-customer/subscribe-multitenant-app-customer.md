@@ -45,6 +45,8 @@ As of now, a consumer can subscribe to the application through SAP BTP cockpit.
 <p> </p>
 <!-- border -->![image-20220114180542931](image-20220114180542931.png)
     The multitenant application will display the logged-in user's name and customer's tenant-related information, shown as below:
+
+    > Please add the context path `/user` to the end of the URL.
 <p> </p>
 <!-- border -->![image-20220114180726352](image-20220114180726352.png)
 
