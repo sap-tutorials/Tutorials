@@ -17,7 +17,6 @@ time: 10
 ## You will learn  
   - How to create a Git repository on SAP BTP and synchronize your project in SAP Web IDE with the Git repository on SAP BTP
 
----
 
 ### Open overview screen of cockpit
 

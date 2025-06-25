@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Kerstin Bier
-author_profile: https://github.com/bierke
+author_name: Fiona Murphy
+author_profile: https://github.com/MCMANUSF
 auto_validation: true
 primary_tag: software-product>sap-translation-hub
 tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, programming-tool>sapui5, tutorial>license ]
@@ -18,7 +18,7 @@ time: 10
   - How to translate an SAP Fiori app using SAP Translation Hub
 
 
----
+
 ### Open overview screen of cockpit
 
 To go to the overview screen of the SAP BTP cockpit, choose your user ID at the top of the screen.
