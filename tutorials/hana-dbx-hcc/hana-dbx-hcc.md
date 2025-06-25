@@ -33,7 +33,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![open SQL console from an instance](open-sql-console-instance.png)
 
-    Notice that it is now connected to the instance named `HC_HDB` as shown by the name of the tab and the instance label.
+    Notice that it is now connected to the instance named `HC_HDB` as shown by the name of the tab and the connection label.
 
     ![SQL console connected to HC_HDB](sql-console-connected.png)
 
@@ -54,7 +54,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![change credentials](change-credenitals2.png)
 
-    You can also use the following SQL for an SAP HANA database to change and change the connected user.
+    You can also use the following SQL for an SAP HANA database to change the connected user.
 
     ```SQL
     CONNECT USER1 PASSWORD Password1;
@@ -150,22 +150,22 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
     Run All | F8
     Run Statement |	F9
     Text Completion | Ctrl+Space 
+    Save to statement library | Ctrl+S
 
     >The shortcut keys may vary depending on the OS and browser used.
 
     For the complete list see [Common Keyboard Shortcuts for the SQL Console](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/keyboard-shortcuts-for-sql-console).
 
-5. Examine the **Messages** tab.
+5. Examine the **History** tab.
 
-    ![messages tab](messages-tab.png)
+    ![history tab](messages-history-tab.png)
 
-    Notice that details of the statements executed are shown including metrics information such as the amount of memory consumed.
+    Notice details for each executed statement are displayed, including metrics such as memory consumption. Statements can be quickly located using the search functionality. Selected statements may be inserted back into the SQL console or copied for further use.
 
-6. Examine the **History** tab.
+    The columns can also be changed by selecting the gear icon in the right corner.
+    
+    ![history-tab-columns tab](history-tab-columns.png)
 
-    ![history view](history.png)
-
-    Notice that the statements can be located using a search and that a selected item can be inserted back into the SQL console or copied.
 
 7. Examine the **SQL Console Settings**.  
 
@@ -202,9 +202,11 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
         ![no formatting](no-formatting.png)
 
-        The below is the result when this setting is enabled.
+        Enable Result Format Settings in the settings.
 
         ![format settings](result-format-settings.png)
+
+        The below is the result when this setting is enabled.
 
         ![result formatted](formatted.png)
 
@@ -257,7 +259,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     ![SQL results](result-viewer.png)
 
-9. The SQL in a SQL console is not persisted across browser reloads.  The SQL can be downloaded  and then later imported using the icons shown below.
+9. The SQL in a SQL console is not persisted across browser reloads.  The SQL can be downloaded  and then later imported using the tools shown below.
 
     ![download and import](download-and-import.png)
 
@@ -267,6 +269,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 The statement library is a convenient location in the SQL Console to store and retrieve frequently executed SQL statements.  It provides a place to store statements that are used frequently as to not type them in repeatedly.
 
 The library is pre-populated with useful statements called ‘SYSTEM’ statements.
+
 ![Statement Library System Statements](statement_libaray_system.png)
 
 You may also define custom statements that are only available to you. These are ‘USER’ statements.
@@ -286,6 +289,9 @@ SELECT * FROM RESERVATION
 1. Save your custom statement, add a name and an optional description.
    
     ![Statement Library Create User Statements](save_custom_statement.png)
+
+    Set the name to `All Future Check-ins`.
+
     ![Statement Library Save Statements](save_statement.png)
 
 2. View your custom statement in the statement library
