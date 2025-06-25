@@ -44,6 +44,7 @@ As of now, a consumer can subscribe to the application through SAP BTP cockpit.
 4. Once it is subscribed, you can try to access it by clicking **Go to Application**:
 <p> </p>
 <!-- border -->![image-20220114180542931](image-20220114180542931.png)
+
     The multitenant application will display the logged-in user's name and customer's tenant-related information, shown as below:
 
     > Please add the context path `/user` to the end of the URL.
