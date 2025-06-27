@@ -199,7 +199,7 @@ An ECN can be created in multiple ways.  Further details on the options and limi
                     "hc_jwt_exp = None\n",
                     "\n",
                     "# global variable that defines the timezone for JWT refresh handling\n",
-                    "#timezone = timezone('UTC')\n",
+                    "#timezone = pytz.timezone('UTC')\n",
                     "timezone = dt.timezone.utc\n",
                     "\n",
                     "#############################################################################\n",
