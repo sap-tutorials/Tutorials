@@ -9,7 +9,7 @@ author_profile: https://github.com/JCurrie27
 <!-- description --> Troubleshoot common installation issues.
 
 ## Prerequisites  
-- **Setup:** You are following the instructions to install SAP HANA 2.0, express edition in the [Installing SAP HANA 2.0, express edition (Binary Installer Method)](http://developers.sap.com/tutorials/hxe-ua-installing-binary.html) tutorial or [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) tutorial.
+- **Setup:** You are following the instructions to install SAP HANA 2.0, express edition in the [Installing SAP HANA 2.0, express edition (Binary Installer Method)](http://developers.sap.com/tutorials/hxe-ua-installing-binary.html) tutorial.
 
 
 ## How-To Details
@@ -45,30 +45,6 @@ Check that socket activation is enabled and started. In a shell enter:
 If the status is inactive, start socket activation:
 
 `systemctl` start `uuidd.socket`
-
-### Virtual Machine: Checking Resource Usage
-
-**Issue:** You are having memory issues on your VM and want to check resource usage.
-
-**Solution:** If you have HANA studio, right-click on the system and select **Configuration and Monitoring > Open Administration** and check the Overview and Landscape tabs for anything in red.
-
-If you don't have HANA Studio, run the following queries in `hdbsql` to view SAP HANA resource usage:
-
-`select service_name, round(effective_allocation_limit/1024/1024/1024, 1) as MemLimit, round(total_memory_used_size/1024/1024/1024,1) as MemUsed from m_service_memory;`
-
-If the `MemUsed` is close to the `MemLimit`, you may encounter problems allocating memory.
-
-Alternatively, you can run the Linux `free` command at the command line to see free resources:
-
-`free -g`
-
-The key number is in the second row (-/+ buffers/cache) in the **free** column. If this number is low, (e.g. 0 GB) you may have run out of memory when performing your recent operation.
-
-You can also run the following command to see if you are running out of disk space on the VM's `filesystem`:  
-
-`df -h`
-
-Look for the **Use%** for the `/dev/sda1 filesystem`. If it is down to just a few GB, you may have run out of disk space when performing your recent operation.
 
 ### SAP HANA XS Applications Run Error
 
@@ -130,64 +106,6 @@ Linux: **`/tmp/hxedm[yymmdd].log`**
 
 Windows: **`%TEMP%\hxedm_[yymmdd].log`**
 
-### Unable to Obtain an IPv4 Address in VMware
-
-**Issue:** You are unable to obtain an `IPv4` `hxehost` IP address. You are using a `VMware` `hypervisor`.
-
-`VMware` defaults to `bridged` networking. You may need to adjust `VMware's` network adapter settings in certain circumstances.
-
-If you are behind a proxy or a firewall, your institution's network may prevent `VMware` from assigning an `IPv4` address when you attempt to locate your `hxehost` `IP` address.
-
-**Solution:**
-
-1. In `VMware`, change your network adapter settings from `Bridged` to `NAT`.
-
-2. Wait a few minutes.
-
-3. At the command prompt, enter `sudo ifconfig` to see if an `IPv4` address is now assigned. You do not need to restart your VM.
-
-### VMware Fusion on Mac OS X: hxexsa.ova Installation Fails
-
-**Issue:** You use `VMware` Fusion on `Mac OS X`. You import and start `hxexsa.ova`. You receive an error message.
-
-This error displays: "`XSA` cockpit apps failed to start at this point of time. Please retry by running `hxe_cockpit.sh` script"
-
-**Solution:**
-
-- Shut down the instance.
-
-- Re-import `hxexsa.ova`.
-
-- Start SAP HANA 2.0, express edition installation again, and this time choose to run `XSA` configuration in the background.
-
-### Upgrade Script Hangs While Upgrading VM Installation
-
-**Issue:** When you run `hxe_upgrade.sh`, you notice the upgrade hangs.
-
-**Solution:** The VM is low on memory. Run the `hxe_gc` memory management script.
-
-1. Open a new terminal to your VM.
-
-2. Run the memory management script.
-
-    The `hxe_gc` memory management script frees up available VM memory.
-
-    - In your VM, log in as `hxeadm` and enter:
-
-    ```
-    cd /usr/sap/HXE/home/bin
-    ```
-
-    - Execute:
-
-    ```
-    hxe_gc.sh
-    ```
-
-    - When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation.
-
-    The cleanup process runs. The command prompt returns when the cleanup process is finished.
-
 ### Memory Limit Exceeded - No Additional Local Capacity
 
 **Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition.
@@ -233,15 +151,7 @@ This will stop the XS app and free any resources it may have been using.
 
 **Issue:** Your local machine has run out of disk space.
 
-**Solution:** You have a few options. You can physically install more disk space, make more disk available to your VM (for VM installations), or free up additional disk space by uninstalling and deleting unnecessary files and programs.
-
-You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) homepage to view cloud offerings.
-
-### Local Disk Space Threshold Limited
-
-**Issue:** Your local machine has limited how much disk space your Virtual Machine can use for SAP HANA, express edition.
-
-**Solution:** If your virtual machine is limiting how much disk space SAP HANA, express edition is allowed to use, and you have exceeded that amount, visit the virtual machine's documentation to increase the virtual machine's disk space threshold.
+**Solution:** You have a few options. You can physically install more disk space, or free up additional disk space by uninstalling and deleting unnecessary files and programs.
 
 You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) homepage to view cloud offerings.
 

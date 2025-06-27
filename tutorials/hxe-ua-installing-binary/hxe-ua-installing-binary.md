@@ -29,7 +29,6 @@ Extract the contents of the following files:
 
 -   `hxe.tgz`
 -   `eml.tgz` (if you are installing the External Machine Learning Library)
--   `hsa.tgz` (if you are installing streaming analytics)
 -   `sdi.tgz` (if you are installing smart data integration)
 -   `apl.tgz` (if you are installing the Automated Predictive Library)
 
@@ -41,9 +40,6 @@ tar -xvzf <download_path>/hxe.tgz
 tar -xvzf <download_path>/eml.tgz
 ```
 
-```bash
-tar -xvzf <download_path>/hsa.tgz
-```
 
 ```bash
 tar -xvzf <download_path>/sdi.tgz
@@ -81,9 +77,7 @@ sudo ./setup_hxe.sh
 Follow the prompts to configure your installation.
 
 > Note:
-> The master password you specify during installation is used for the <sid>`adm` and `sapadm` OS users, the telemetry technical user, and the SYSTEM user. The password is also used for the following users in additional components:
-> 
-> -   `SYS_STREAMING` and `SYS_STREAMING_ADMIN` (streaming analytics)
+> The master password you specify during installation is used for the <sid>`adm` and `sapadm` OS users, the telemetry technical user, and the SYSTEM user. 
 > 
 > SAP HANA, express edition requires a `very strong password` that complies with these rules:
 > 

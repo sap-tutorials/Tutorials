@@ -34,9 +34,9 @@ You can use the XS command line client to perform a wide variety of developer- a
 
 Install the Download Manager to your client machine and download the client package.
 
-1.  Save the Download Manager installation files to your client machine and open it. For instructions on downloading and running the Download Manager, see either the [Installing SAP HANA 2.0, express edition (Binary Installer Method)](https://developers.sap.com/tutorials/hxe-ua-installing-binary.html) or [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](https://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) tutorials, or go straight to the SAP HANA, express edition [registration page](https://www.sap.com/products/technology-platform/hana/express-trial.html).
+1.  Save the Download Manager installation files to your client machine and open it. For instructions on downloading and running the Download Manager, see the [Installing SAP HANA 2.0, express edition (Binary Installer Method)](https://developers.sap.com/tutorials/hxe-ua-installing-binary.html tutorial, or go straight to the SAP HANA, express edition [registration page](https://www.sap.com/products/technology-platform/hana/express-trial.html).
 
-2.  In Download Manager, in the `Image` pull-down, select either `Virtual Machine` or `Binary Installer`.
+2.  In Download Manager, in the `Image` pull-down, select `Binary Installer`.
 
 3.  Click `Browse` and select a directory where your client package will be saved.
 

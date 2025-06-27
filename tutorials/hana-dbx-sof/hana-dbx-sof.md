@@ -30,7 +30,7 @@ A [data lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/w
 
 A [data lake Files](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/understanding-data-lake-files) instance provides storage for non-structured files such as images or PDF documents.  It can also store structured files such as CSV or Parquet files, and with the use of [SQL on Files](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-cloud-sap-hana-database-sql-on-files-guide), queries can be performed on the data contained in those files, without ingestion, and at a reduced cost, providing access to diverse datasets.
   
-In this tutorial, we will be using the SAP HANA Database SQL on Files feature which was released in QRC 3 of 2024.  Virtual tables can be created in SAP HANA Cloud, SAP HANA database that retrieve their data from a CSV, Parquet, or Delta table stored on a data lake Files instance.  Details can be found in [SAP HANA Cloud, SAP HANA Database SQL on Files Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-native-sql-on-files-overview) and [Unlocking the True Potential of Data in Files with SAP HANA Database SQL on Files in SAP HANA Cloud](https://community.sap.com/t5/technology-blogs-by-sap/unlocking-the-true-potential-of-data-in-files-with-sap-hana-database-sql-on/ba-p/13861585).
+With this new feature, SAP HANA Database SQL on Files, virtual tables can be created in SAP HANA Cloud, SAP HANA database that retrieve their data from a CSV, Parquet, or Delta table stored on a data lake Files instance.  Details can be found in [SAP HANA Cloud, SAP HANA Database SQL on Files Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-native-sql-on-files-overview) and [Unlocking the True Potential of Data in Files with SAP HANA Database SQL on Files in SAP HANA Cloud](https://community.sap.com/t5/technology-blogs-by-sap/unlocking-the-true-potential-of-data-in-files-with-sap-hana-database-sql-on/ba-p/13861585).
 
 ### View and Create Instances in SAP HANA Cloud Central
 [SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/subscribing-to-sap-hana-cloud-administration-tools) can be used to view and manage your SAP HANA Cloud instances running in a subaccount.  
@@ -79,7 +79,11 @@ Follow the steps below to connect to the database using the SQL Console.
     
     ![open the SAP HANA SQL console](open-console.png)
 
-3. If you do not wish to use the DBADMIN user, run the following query to create a database user that can be used for the steps in this tutorial.
+3. If you do not wish to use the DBADMIN user or schema, run the following query to create a database user and schema that can be used for the steps in this tutorial. Set the schema name as your own.
+    ```SQL
+    CREATE SCHEMA "YOUR_NAME";
+    SET SCHEMA YOUR_NAME;
+    ```
 
     ```SQL
     CREATE USERGROUP HC_UG SET PARAMETER 'minimal_password_length' = '8', 'force_first_password_change' = 'FALSE';
@@ -144,10 +148,12 @@ Files can now be uploaded to the data lake Files instance.
 3. Upload these files into a folder of your choosing such as your first name.  
 
     ![upload files](upload-files.png)
+    
+    <!--border -->![Upload titanic](upload-titanic.png)
 
-    ![Upload titanic](upload-titanic.png)
+4. Examine the uploaded csv file and Parquet files.
 
-4. Examine the uploaded csv file.  A viewer is provided so that text files such as CSV can be viewed. 
+    Select the File Content tab to see the contents of the Parquet or CSV file.
 
     ![files uploaded](files-uploaded.png)
 
@@ -245,16 +251,17 @@ A remote source provides a connection from an SAP HANA database to the data lake
     SELECT * FROM PSE_CERTIFICATES;
     ```
 
-    For further details see [Set Up an X.509 Mutual Authentication Environment](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-data-access-guide/set-up-x-509-mutual-authentication-environment).
+    For further details see [Set Up an X.509 Mutual Authentication Environment](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-data-access-guide/set-up-x-509-mutual-authentication-environment).     
+    
+    Create a credential for export using the previously created PSE.
 
     ```SQL
-    --Create a credential for export using the previously created PSE.
     CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HC_DL_FILES_PSE;
     SELECT * FROM CREDENTIALS;
     ```
 
+    Replace the endpoint value below by coping the Instance ID from you database.
     ```SQL
-    --Replace the endpoint value below
     CREATE REMOTE SOURCE HC_DL_FILES_RS ADAPTER "file" CONFIGURATION '
     provider=hdlf;
     endpoint=b5183d42-9150-4bb2-9f51-80d51b8f5c4b.files.hdl.prod-us10.hanacloud.ondemand.com;'
@@ -276,10 +283,9 @@ A remote source provides a connection from an SAP HANA database to the data lake
 ### Create virtual tables
 Virtual tables can now be created using the remote source HC_DL_FILES_rs.  
 
-1. Create a virtual table that points to the CSV file.  
+1. Create a virtual table that points to the CSV file. Update `YOUR_NAME` before executing and ensure the letter case is correct.
 
     ```SQL
-    --Update YOUR_NAME before executing and ensure the case is correct
     --DROP TABLE TITANIC_CSV;
     CREATE VIRTUAL TABLE TITANIC_CSV (
         PASSENGERID INTEGER,
@@ -302,12 +308,17 @@ Virtual tables can now be created using the remote source HC_DL_FILES_rs.
 
     ![query titanic](query-titanic.png)
 
-    Notice above that the table, TITANIC_CSV in the catalog browser appears with an annotation indicating that it is a virtual file.
+    Notice above that the table, TITANIC_CSV in the catalog browser appears with an annotation indicating that it is a virtual table.
 
-2. Create a virtual table that points to the Parquet file.
+    The list of virtual tables can be viewed with the below SQL query.
 
     ```SQL
-    --Update YOUR_NAME before executing and ensure the case is correct
+    SELECT * FROM VIRTUAL_TABLES;
+    ```
+
+2. Create a virtual table that points to the Parquet file. Update `YOUR_NAME` before executing and ensure the letter case is correct.
+
+    ```SQL
     --DROP TABLE TITANIC_P;
     CREATE VIRTUAL TABLE TITANIC_P (
         PASSENGERID BIGINT,
@@ -327,10 +338,10 @@ Virtual tables can now be created using the remote source HC_DL_FILES_rs.
     SELECT * FROM TITANIC_P;
     ```
 
-3. The file structure of a parquet file can be determined by calling the below stored procedure.
+3. The file structure of a parquet file can be determined by calling the below stored procedure. Update `YOUR_NAME` before executing and ensure the letter case is correct.
 
     ```SQL
-    --Update YOUR_NAME before executing and ensure the case is correct
+    
     CALL GET_REMOTE_SOURCE_FILE_COLUMNS(
       REMOTE_SOURCE_NAME => 'HC_DL_FILES_rs',
       REMOTE_FILE_PATH => '/YOUR_NAME/titanic.parquet',
@@ -340,6 +351,7 @@ Virtual tables can now be created using the remote source HC_DL_FILES_rs.
     ```
 
     ![remote source file columns](remote-source-file-columns.png) 
+    
 4. A wizard is available from the remote source in the Database Objects app that can help in the generation of a virtual table.
     - Open the Database Objects app
         ![Database Objects App](database-objects2.png)
@@ -366,42 +378,6 @@ Virtual tables can now be created using the remote source HC_DL_FILES_rs.
     ```
 
     ![Titanic Query Results](query-titanic-p2.png)
-
-4. A wizard is available from the remote source in the Database Objects app that can help in the generation of a virtual table.
-
-    * Open the Database Objects app
-
-        ![](database-objects2.png)
-
-    * Locate the remote source
-
-        ![](database-objects3.png)
-
-    * From the remote source details page, select Create Virtual Table
-
-        ![](create-virtual-table-wizard.png)
-
-
-    * Specify the path to the Parquet table and press Next Step
-
-        ![](virtual-table2.png)
-
-    * Provide the schema and table name TITANIC_P2 and click Next Step
-
-        ![](virtual-table3.png)
-
-    * Choose to add all the columns, press Review and Create, and then Create
-
-        ![](virtual-table4.png)
-
-    The resultant table can be queried as shown below.
-
-    ```SQL
-    SELECT * FROM TITANIC_P2;
-    ```
-
-    ![](query-titanic-p2.png)
-
 
 ### Query virtual tables
 The data being stored on the data lake Files can now be queried using SQL similar to a regular table.  Virtual tables can also be joined with regular tables.
@@ -563,19 +539,16 @@ An alternative approach that enables you to only include a subset of the data or
 ### Export to data lake Files from an SAP HANA Cloud, SAP HANA database table
 Data from an SAP HANA Cloud, SAP HANA table or view can be exported to data lake Files as shown below.  
 
-1. Create a credential for export.
+1. Create a credential for export using the previously created PSE.
 
     ```SQL 
-    --Create a credential for export using the previously created PSE.
     CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE _SAP_DB_ACCESS_PSE_CLIENT_IDENTITY;
     SELECT * FROM CREDENTIALS;
     ```
 
-2. Export using CSV.
+2. Export using CSV. Update `YOUR_NAME` before executing and ensure the letter case is correct. Then replace the endpoint value below by copying your Files REST API Endpoint from your data lake.
 
     ```SQL
-    --Update YOUR_NAME before executing and ensure the case is correct
-    --Replace the endpoint value below
     EXPORT INTO CSV FILE
         'hdlfs://b5183d42-9150-4bb2-9f51-80d51b8f5c4b.files.hdl.prod-us10.hanacloud.ondemand.com/YOUR_NAME/titanic_export.csv'
     FROM TITANIC_SURVIVORS
@@ -584,11 +557,9 @@ Data from an SAP HANA Cloud, SAP HANA table or view can be exported to data lake
         COLUMN LIST IN FIRST ROW;
     ```
 
-3. Export using Parquet.
+3. Export using Parquet. Update `YOUR_NAME` before executing and ensure the letter case is correct. Then replace the endpoint value below by copying your Files REST API Endpoint from your data lake.
 
     ```SQL
-    --Update YOUR_NAME before executing and ensure the case is correct
-    --Replace the endpoint value below
     EXPORT INTO PARQUET FILE
         'hdlfs://b5183d42-9150-4bb2-9f51-80d51b8f5c4b.files.hdl.prod-us10.hanacloud.ondemand.com/YOUR_NAME/titanic_export.parquet'
     FROM TITANIC_SURVIVORS
