@@ -175,7 +175,7 @@ A default installation will contain one [system](https://help.sap.com/docs/SAP_H
 
 The system database contains information about the tenant database(s) and is used for overall administration.  The default port for the system database is **39013**.  Later in this tutorial mission, a connection to the tenant database will be made and tables will be created and populated with data.  For more information, see [SAP HANA Tenant Databases Operations Guide](https://help.sap.com/docs/SAP_HANA_PLATFORM/78209c1d3a9b41cd8624338e42a12bf6/0ba9f43aed594a449d497fabf6bc381e.html).
 
-The SAP HANA, express edition VM install includes a command line tool (part of the SAP HANA client install) called [HDBSQL](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c22c67c3bb571014afebeb4a76c3d95d.html) that can be used to query the database.  
+The SAP HANA, express edition includes a command line tool (part of the SAP HANA client install) called [HDBSQL](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c22c67c3bb571014afebeb4a76c3d95d.html) that can be used to query the database.  
 
 
 The following steps will demonstrate connecting to and examining a SAP HANA, express edition database.  
