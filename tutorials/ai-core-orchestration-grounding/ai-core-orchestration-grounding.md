@@ -895,6 +895,81 @@ After you have built your orchestration workflow, you can test it to generate ou
 
 [OPTION END]
 
+[OPTION BEGIN [JavaScript SDK]]
+
+We are configuring an AI Orchestration Pipeline using SAP AI Core. The pipeline integrates multiple AI modules to process and refine inputs efficiently. This setup enables **document grounding, LLM processing, templating, and content filtering**, ensuring accurate and safe AI-generated responses.
+
+The configuration defines a document grounding module that retrieves relevant context from a vector-based repository, a GPT-4o model for response generation, a templating module to structure responses, and Azure Content Safety filters to ensure compliance and content moderation. This orchestration streamlines AI-driven summarization while maintaining reliability and security.
+
+```javascript
+// Create an orchestration module config for the model gpt-4o with grounding and filtering
+const orchestrationModuleConfig: OrchestrationModuleConfig = {
+  llm: {
+    model_name: 'gpt-4o'
+  },
+  grounding: buildDocumentGroundingConfig({
+    input_params: ['groundingRequest'],
+    output_param: 'groundingOutput',
+    // Create a database filter used for the grounding configuration
+    filters: [
+      {
+        data_repository_type: 'vector',
+        data_repositories: ['23c**********************5ed6'], //Replace with the value of your data repository ID
+        id: 'filter1',
+        search_config: {
+          max_chunk_count: 10
+        }
+      }
+    ]
+  }),
+  // Create input and ouput content filters 
+  filtering: {
+    input: {
+      filters: [
+        buildAzureContentSafetyFilter({
+          Hate: 'ALLOW_SAFE_LOW',
+          SelfHarm: 'ALLOW_SAFE_LOW',
+          Sexual: 'ALLOW_SAFE_LOW',
+          Violence: 'ALLOW_SAFE_LOW'
+        })
+      ]
+    },
+    output: {
+      filters: [
+        buildAzureContentSafetyFilter({
+          Hate: 'ALLOW_SAFE_LOW',
+          SelfHarm: 'ALLOW_SAFE_LOW',
+          Sexual: 'ALLOW_SAFE_LOW',
+          Violence: 'ALLOW_SAFE_LOW'
+        })
+      ]
+    }
+  }
+};
+
+// Prompt LLM with a grounding prompt and orchestration module configuration
+const groundingResult = await new OrchestrationClient(
+  orchestrationModuleConfig,
+  { resourceGroup: RESOURCE_GROUP }
+).chatCompletion({
+  messages: [
+    {
+      role: 'user',
+      content:
+        'UserQuestion: {{?groundingRequest}} Context: {{?groundingOutput}}'
+    }
+  ],
+  inputParams: {
+    // Create a grounding prompt which will combine the provided user message with the grounding output
+    groundingRequest: 'Is there any complaint?' 
+  }
+});
+
+console.log(groundingResult.getContent());
+```
+
+[OPTION END]
+
 [OPTION BEGIN [Java SDK]]
 
 We are configuring an AI Orchestration Pipeline using SAP AI Core. The pipeline integrates multiple AI modules to process and refine inputs efficiently. This setup enables **document grounding, LLM processing, templating, and content filtering**, ensuring accurate and safe AI-generated responses.
@@ -1028,10 +1103,3 @@ print(response.orchestration_result.choices[0].message.content)
 ### Conclusion
 
 Adding Grounding significantly enhances the model's ability to provide Accurate and Context-specific responses. Without Grounding, the model generates generic replies, while with grounding, it retrieves precise information from the uploaded document. Screenshots showcasing both responses are provided for comparison.
-
-
-
-
-
-
-
