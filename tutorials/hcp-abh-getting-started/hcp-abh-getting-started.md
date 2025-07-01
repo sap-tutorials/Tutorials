@@ -19,7 +19,7 @@ tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap
 SAP Business Accelerator Hub is a website to discover, explore, and test APIs from various SAP products such as SAP S/4HANA, SAP SuccessFactors, SAP Customer Experience, SAP BTP, and selected partners. Apart from various product APIs, you can find detailed information on business processes and partner assets. The new workspace feature also enables you to consume integration and workflow content.
 
 Want to learn more about the new SAP SAP Business Accelerator Hub? Not sure where to get started? Go to [api.sap.com] (https://api.sap.com), and begin your journey.
-
+ 
 ---
 
 ### Go to the SAP Business Accelerator Hub

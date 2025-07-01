@@ -10,12 +10,12 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 <!-- description --> Use the tenant-aware approuter application in SAP BTP, Kyma runtime.
 
 ## Prerequisites
-- You have finished the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), or cloned the repository: [btp-kyma-runtime-multitenancy-tutorial](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial) to find the source for both missions.
+- You have finished the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in SAP BTP, Kyma runtime](deploy-nodejs-application-kyma), or cloned the repository: [btp-kyma-runtime-multitenancy-tutorial](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial) to find the source for both missions.
 
 ## You will learn
 - What is SAP Application Router
 - How to create and configure Application Router
-- How to configure Destination for Application Router in Kyma Runtime
+- How to configure Destination for Application Router in Kyma runtime
 - How to describe Kubernetes objects for Application Router
 
 
@@ -45,8 +45,8 @@ cd kyma-multitenant-approuter
 {
     "name": "kyma_multitenant_approuter",
     "dependencies": {
-        "@sap/xsenv": "^3",
-        "@sap/approuter": "^8"
+        "@sap/xsenv": "^5",
+        "@sap/approuter": "^20"
     },
     "scripts": {
         "start": "node node_modules/@sap/approuter/approuter.js"
@@ -77,6 +77,18 @@ In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the
 }
 ```
 
+### Determine SAP BTP Subaccount Subdomain and Cluster Domain
+
+Open your subaccount in SAP BTP cockpit. In the overview page, find the subaccount's subdomain.  
+
+Find your cluster domain in the APIServerURL field. It contains the URL in the following format:  
+> Example: https://api.xxxxx.kyma.ondemand.com  
+
+Your `clusterdomain` is `xxxxx.kyma.ondemand.com`.  
+
+`subdomain` and `clusterdomain` will be quoted in subsequent deployment definition.  
+
+<!-- border -->![check_subdomain_clusterdomain](./check_subdomain_clusterdomain.png)
 
 
 
@@ -85,7 +97,7 @@ In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the
 
 The destinations configuration can be provided by the `destinations` environment variable or by destination service.
 
-In order to provide `destinations` environment variable to the approuter application, you should create a `ConfigMap` object for the approuter's reference.
+In order to provide the `destinations` environment variable to the approuter application, create a `ConfigMap` object that can be referenced later.
 
 Create a new deployment YAML file named `k8s-deployment-approuter.yaml` for the approuter app with the following content:
 
@@ -98,7 +110,7 @@ metadata:
 data:
   destinations: |
     [
-      {"name":"dest_kyma_multitenant_node","url":"https://<subaccount-subdomain>-node.<cluster-domain>","forwardAuthToken" : true}
+      {"name":"dest_kyma_multitenant_node","url":"https://<subaccount-subdomain>-node.<clusterdomain>","forwardAuthToken" : true}
     ]
 ```
 
@@ -115,7 +127,7 @@ data:
 ### Define Deployment
 
 
-Define the deployment object by adding the following code snippets in the file `k8s-deployment-approuter.yaml`:
+Create a YAML file for the approuter app called `k8s-deployment-approuter.yaml`:
 
 ```YAML
 ---
@@ -140,6 +152,7 @@ spec:
       labels:
         app: kyma-multitenant-approuter-multitenancy
         release: multitenancy
+        sidecar.istio.io/inject: "true"  # Enable Istio sidecar injection on Deployment and all Pods
     spec:
       automountServiceAccountToken: false
       imagePullSecrets:
@@ -237,7 +250,7 @@ spec:
     app: kyma-multitenant-approuter-multitenancy
     release: multitenancy
 ---
-apiVersion: gateway.kyma-project.io/v1alpha1
+apiVersion: gateway.kyma-project.io/v2
 kind: APIRule
 metadata:
   creationTimestamp: null
@@ -246,20 +259,14 @@ metadata:
     release: multitenancy
   name: kyma-multitenant-approuter-multitenancy
 spec:
-  gateway: kyma-gateway.kyma-system.svc.cluster.local
+  gateway: kyma-system/kyma-gateway
+  hosts: 
+    - <subaccount-subdomain>-approuter.<clusterdomain>   # Replace <subaccount-subdomain> with the subdomain of your subaccount, and <clusterdomain> with the domain of your Kyma cluster
   rules:
-  - accessStrategies:
-    - handler: allow
-    methods:
-    - GET
-    - POST
-    - PUT
-    - PATCH
-    - DELETE
-    - HEAD
-    path: /.*
+    - path: /*
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"]
+      noAuth: true
   service:  
-    host: <subaccount-subdomain>-approuter.<cluster-domain>
     name: kyma-multitenant-approuter-multitenancy
     port: 8080
 ```
