@@ -813,6 +813,37 @@ System.out.println("Created Pipeline with ID: " + pipeline.getPipelineId());
 
 [OPTION END]
 
+[OPTION BEGIN [JavaScript SDK]]
+
+We are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+
+**Note:** For this step, we are using the [document grounding module](https://sap.github.io/ai-sdk/docs/js/ai-core/document-grounding) of the SDK so make sure to add the dependency to your project. 
+
+```javascript
+// Request body for pipeline creation request
+const pipelineRequest: PipelinePostRequst = {
+  type: 'MSSharePoint',
+  configuration: {
+    destination: '<generic secret name>',
+    sharePoint: {
+      site: {
+        name: '<sharepoint site name>',
+        includePaths: ['/<folder name>']
+      }
+    }
+  }
+};
+
+// Create the pipeline
+const pipeline = await PipelinesApi.createPipeline(pipelineRequest, {
+  'AI-Resource-Group': RESOURCE_GROUP
+}).execute();
+
+console.log('Created Pipeline with ID: ', pipeline.pipelineId);
+```
+
+[OPTION END]
+
 ### 6. Ensuring Accurate Responses with Grounding
 
 In the previous steps, we have completed the data preparation for grounding. Before initiating model inference or orchestration, ensure that there is an active orchestration deployment (**scenario ID: orchestration**). To verify the available orchestration deployments and their status, use the **get_deployment** API under the **"Deployments"** section in the **Bruno collection**. Additionally, update the **orchestration_service_url** in the environment. 
