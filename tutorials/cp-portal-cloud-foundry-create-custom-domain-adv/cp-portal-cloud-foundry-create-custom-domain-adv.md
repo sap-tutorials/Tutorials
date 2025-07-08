@@ -80,7 +80,17 @@ To make sure that your domain is trusted by way of activated server certificates
 
     <!-- border -->![Custom domain for runtime destinations](8-custom-domain-for-runtime.png) 
 
-7. From the Cloud Identity Services dashboard go to the **Applications & Resources** tab, create a custom domain for your SAP Cloud Identity Services tenant. For example, `ias.mycompany.com`.
+    If you have content providers in multiple subaccounts (for example, dev/test/prod), make sure that every subaccount has its own custom domain for the SAP Build Work Zone subscription and destination. The destination content could be similar, but the destination’s name should be different.
+    
+    Here's an example:
+
+    | :------------- | :------------- | :------------- | :-------------
+    | **Runtime Destination Domain**     | **DNS CNAME** | **SaaS Route**        | **SAP Build Work Zone Domain**
+    | xyz200.mycompany.com       | CNAME api.cf.eu10.hana.ondemand.com. | portal-prod-sapdelim-xyz200.launchpad.cfapps.eu10.hana.ondemand.com | prod.mycompany.com
+    | xyz300.mycompany.com    |  CNAME api.cf.eu10.hana.ondemand.com. | portal-qa-sapdelim-xyz300.launchpad.cfapps.eu10.hana.ondemand.com  | qa.mycompany.com.
+    | xyz400.mycompany.com     |  CNAME api.cf.eu10.hana.ondemand.com. | portal-dev-sapdelim-xyz400.launchpad.cfapps.eu10.hana.ondemand.com  | dev.mycompany.com.
+
+7. From the Cloud Identity Services dashboard go to the **Applications & Resources** tab, and create a custom domain for your SAP Cloud Identity Services tenant. For example, `ias.mycompany.com`.
 
 
 The custom domains are created and displayed in a list, along with their corresponding landscape and status.
