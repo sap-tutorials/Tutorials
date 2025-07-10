@@ -147,18 +147,18 @@ Get Auth Token:
 
 > **Note:**  Refer to the fields such as `url`, `clientid`, `clientsecret`, and `AI_API_URL` in your SAP AI Core service key, and replace the corresponding placeholder values in the curl requests below.
 
-```bash
+```
 curl --request POST \
   --url <replace with the url field from your SAP AI Core service key>/oauth/token \
   --header 'Content-Type: application/x-www-form-urlencoded' \
   --data grant_type=client_credentials \
   --data 'client_id=<replace with the clientid from your service key>' \
   --data 'client_secret=<replace with the clientsecret from your service key>'
- ```
+```
 
 From the response, note the value of the `access_token`. You’ll use this token in the next step to `retrieve your deployments` using the following example curl request:
 
-```bash
+```
 curl --request GET \
   --url <replace with the AI_API_URL from your SAP AI Core service key>/v2/lm/deployments \
   --header 'AI-Resource-Group: default' \
@@ -166,6 +166,7 @@ curl --request GET \
 ```
 
 In the response, search for the deployment where the `configurationName is defaultOrchestrationConfig`, and note the `deploymentUrl` associated with this deployment. The `deploymentUrl` is your `orchestration Url`.
+
 ![Get Orchestration Deployment response](img/aicore_get_orchestration_deployment.png)
 
 

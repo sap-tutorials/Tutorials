@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>artificial-intelligence, software-product>sap-ai-core ]
-primary_tag: software-product>sap-ai-core
+tags: [ tutorial>beginner, topic>artificial-intelligence, software-product>sap-ai-launchpad ]
+primary_tag: software-product>sap-ai-launchpad
 author_name: Smita Naik
 author_profile: https://github.com/I321506
 ---

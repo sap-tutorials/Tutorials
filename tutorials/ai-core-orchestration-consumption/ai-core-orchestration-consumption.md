@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 45
-primary_tag: software-product>sap-business-technology-platform
-tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
+primary_tag: software-product>sap-ai-core
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
 author_name: Smita Naik
 author_profile: https://github.com/I321506
 ---
@@ -63,16 +63,27 @@ By the end of this tutorial,
 
 •	Navigate to the desired Resource Group where you plan to deploy the orchestration.
 
+For the detailed step follow the tutorial - Setup Generative AI Hub in SAP AI Launchpad
+
 [OPTION END]
 
 [OPTION BEGIN [Python SDK]]
 
-•  Configure proxy modules by setting up environment variables for AI Core credentials.
+**Installing sap-ai-sdk-gen**
 
-•  Replace placeholder values in ~/.aicore/config.json with AI Core service keys from BTP.
+To install the **SAP Cloud SDK for AI (Python) - generative package** in your system, open your terminal or command prompt and run the following command.
 
-•  Optionally, set the AICORE_HOME environment variable to override the default config path.
+``` python
 
+pip install sap-ai-sdk-gen
+
+```
+
+Once the package is installed, you need to configure proxy modules to use the large language models. We recommend setting these values as environment variables for AI Core credentials via a configuration file. The default path for this file is ~/.aicore/config.json.
+
+Open Notepad and replace the placeholder values in the JSON file with your AI Core service keys, which you downloaded from BTP. Save the file by pressing Command + S. When prompted, navigate to ~/.aicore/ and save the file as config.json.
+
+The configuration file should be:
 
 ![img](img/image005.png)
 
@@ -89,6 +100,18 @@ AICORE_SERVICE_KEY='{"clientid":"...","clientsecret":"...","serviceurls":{"AI_AP
 ```
 
 The SDK parses the service key from the environment variable to interact with the AI Core service. 
+
+
+• Optionally, set the AICORE_HOME environment variable to override the default config path.
+
+• Install the required packages:
+
+``` 
+  npm install @sap-ai-sdk/ai-api @sap-ai-sdk/orchestration dotenv
+```
+
+• For detailed setup and usage,refer to the official [GitHub repository](https://github.com/SAP/ai-sdk-js/tree/main?tab=readme-ov-file#sap-ai-sdkorchestration) of **SAP Cloud SDK for AI**.
+
 
 • For detailed installation and usage of the **SAP Cloud SDK for AI (JavaScript)**, visit the official [GitHub repository](https://github.com/SAP/ai-sdk-js) and [Documentation](https://sap.github.io/ai-sdk/). This page provides comprehensive steps to set up, integrate and test the SDK effectively in your projects.
  
@@ -177,7 +200,18 @@ AICORE_SERVICE_KEY={"clientid": "...", "clientsecret": "...", "url": "...", "ser
 [OPTION END]
 
 
-### Create Configuration for Orchestration deployment 
+### Create Configuration for Orchestration deployment - Optional Step
+
+> Execute this step only if orchestration deployment is not available. Other wise **skip** this step and proceed to the next step `Consume LLM's in Generative AI Hub through Orchestration`
+
+> As part of the SAP AI Core onboarding process, an `orchestration deployment` is automatically created in the `default resource group`.
+
+> This means you can start using orchestration in the Generative AI Hub right away—no need to create a separate deployment.
+
+In this step you will be:
+
+* creating the configuration required for the orchestration deployment
+* Creating the Orchestration deployment
 
 [OPTION BEGIN [AI Launchpad]]
 
@@ -198,6 +232,14 @@ Go to the Configuration section within your chosen Resource Group.
 • Click Next after entering each detail. 
 
 ![img](img/image009.png)
+
+When prompted, click on Create Deployment. Continue through the setup by clicking Next until you reach the deployment confirmation. 
+
+![img](img/image014.png)
+
+Once the deployment begins, continue to the status page. Verify that the Deployment Status changes to Running (see attached screenshot for reference). 
+
+![img](img/image015.png)
 
 [OPTION END]
 
@@ -257,127 +299,6 @@ print(f"Configuration created successfully with ID: {config.id} and Name: {confi
 
 ![img](img/image011.png)
 
-[OPTION END]
-
-[OPTION BEGIN [JavaScript SDK]]
-
-In this step, we will create an orchestration configuration using the [`@sap-ai-sdk/ai-api`](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api) package of the SAP Cloud SDK for AI (JavaScript). For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/ai-core/ai-api). This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
-
-• To start, install the dependency in your project.
-
-```
-npm install @sap-ai-sdk/ai-api
-```
-
-• Add the following code to your project to create an orchestration configuration:
-
-```javascript
-import { ConfigurationApi } from '@sap-ai-sdk/ai-api';
-
-const RESOURCE_GROUP = 'YourResourceGroupId'; // Please change to your desired resource group
-
-// Create orchestration configuration using ConfigurationApi
-async function createOrchestrationConfiguration() {
-  try {
-    const response = await ConfigurationApi
-      .configurationCreate({
-        name: 'orchestration-config', // Choose a meaningful name
-        executableId: 'orchestration', // Orchestration executable ID
-        scenarioId: 'orchestration', // Orchestration scenario ID
-      }, {'AI-Resource-Group': RESOURCE_GROUP}).execute();
-
-      return response;
-  } catch (error: any) {
-      // Handle API errors
-      console.error('Configuration creation failed:', error.stack);
-  }
-}
-
-const configuration = await createOrchestrationConfiguration();
-console.log(configuration?.message); // Print the configuration response message
-```
-
-[OPTION END]
-
-[OPTION BEGIN [Java SDK]]
-
-In this step, we will create an orchestration configuration using the core module of the [SAP Cloud SDK for AI (Java)](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java). This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
-
-• Add the following code to your project to create an orchestration configuration: 
-
-```java
-// Define the resource group, change this to your resource group name
-var RESOURCE_GROUP = "yourResourceGroup";
-
-// Define parameter and input artifact bindings you may need for orchestration
-var modelFilterList = AiParameterArgumentBinding.create()
-  .key("modelFilterList").value("null");
-var modelFilterListType = AiParameterArgumentBinding.create()
-  .key("modelFilterListType").value("allow");
-
-// Create a configuration data object for your configuration
-var configurationData = AiConfigurationBaseData.create()
-  .name("orchestration-config")   // Choose a meaningful name
-  .executableId("orchestration")  // Orchestration executable ID
-  .scenarioId("orchestration")    // Orchestration scenario ID
-  .addParameterBindingsItem(modelFilterList)
-  .addParameterBindingsItem(modelFilterListType);
-
-// Create the configuration with your individual resource group
-var configuration = new ConfigurationApi().create(RESOURCE_GROUP, configurationData);
-
-// Print the configuration response message
-System.out.println(configuration.getMessage());
-```
-
-**Note**: 
-
-• `scenarioId` and `executableId`: Both are set to "orchestration" for this tutorial. 
-
-• `name`: Choose a unique name for the configuration (e.g., "config-new-orchestration")
-
-[OPTION END]
-
-[OPTION BEGIN [Bruno]]
-
-#### Create Resource Group
-
-- Expand the 01_resource_group section in the collection.
-
-- Click on the create request and execute it to create a resource group.
-![img](img/resource_group.png)
--	Next, execute the get_by_id request to verify the resource group status.
-    -	Ensure the status is PROVISIONED.
-
--	Follow the screenshot attached for reference.
-![img](img/get_resource_group.png)
-
-#### Create Configuration
-- Navigate to the configuration request and execute it to create a configuration.
-
-- Copy the ID from the response for use in subsequent steps.
-
-- Follow the screenshot attached for reference.
-![img](img/deployment_create_config.png)
-
-[OPTION END]
-
-### Create and Monitor Orchestration deployment
-
-[OPTION BEGIN [AI Launchpad]]
-
-When prompted, click on Create Deployment. Continue through the setup by clicking Next until you reach the deployment confirmation. 
-
-![img](img/image014.png)
-
-Once the deployment begins, continue to the status page. Verify that the Deployment Status changes to Running (see attached screenshot for reference). 
-
-![img](img/image015.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Python SDK]]
-
 With the configuration ID, you can proceed to deploy the orchestration and monitor its progress. 
 
 **Create the Deployment:** 
@@ -436,6 +357,42 @@ Result: The code will display a loading spinner until the deployment status upda
 
 [OPTION BEGIN [JavaScript SDK]]
 
+In this step, we will create an orchestration configuration using the [`@sap-ai-sdk/ai-api`](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api) package of the SAP Cloud SDK for AI (JavaScript). For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/ai-core/ai-api). This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
+
+• To start, install the dependency in your project.
+
+```
+npm install @sap-ai-sdk/ai-api
+```
+
+• Add the following code to your project to create an orchestration configuration:
+
+```javascript
+import { ConfigurationApi } from '@sap-ai-sdk/ai-api';
+
+const RESOURCE_GROUP = 'YourResourceGroupId'; // Please change to your desired resource group
+
+// Create orchestration configuration using ConfigurationApi
+async function createOrchestrationConfiguration() {
+  try {
+    const response = await ConfigurationApi
+      .configurationCreate({
+        name: 'orchestration-config', // Choose a meaningful name
+        executableId: 'orchestration', // Orchestration executable ID
+        scenarioId: 'orchestration', // Orchestration scenario ID
+      }, {'AI-Resource-Group': RESOURCE_GROUP}).execute();
+
+      return response;
+  } catch (error: any) {
+      // Handle API errors
+      console.error('Configuration creation failed:', error.stack);
+  }
+}
+
+const configuration = await createOrchestrationConfiguration();
+console.log(configuration?.message); // Print the configuration response message
+```
+
 In this step, we will create a deployment from the configuration created in the previous step using the [`@sap-ai-sdk/ai-api`](https://github.com/SAP/ai-sdk-js/tree/main/packages/ai-api) package of the SAP Cloud SDK for AI (JavaScript). For more information, refer to the official [documentation](https://sap.github.io/ai-sdk/docs/js/ai-core/ai-api).
 
 • Add the following code to your project to create an orchestration deployment:
@@ -472,6 +429,41 @@ console.log(deployment?.message) // Print the deployment creation response
 
 [OPTION BEGIN [Java SDK]]
 
+In this step, we will create an orchestration configuration using the core module of the [SAP Cloud SDK for AI (Java)](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java). This configuration integrates various parameters needed for orchestration, such as the executable ID and scenario ID. 
+
+• Add the following code to your project to create an orchestration configuration: 
+
+```java
+// Define the resource group, change this to your resource group name
+var RESOURCE_GROUP = "yourResourceGroup";
+
+// Define parameter and input artifact bindings you may need for orchestration
+var modelFilterList = AiParameterArgumentBinding.create()
+  .key("modelFilterList").value("null");
+var modelFilterListType = AiParameterArgumentBinding.create()
+  .key("modelFilterListType").value("allow");
+
+// Create a configuration data object for your configuration
+var configurationData = AiConfigurationBaseData.create()
+  .name("orchestration-config")   // Choose a meaningful name
+  .executableId("orchestration")  // Orchestration executable ID
+  .scenarioId("orchestration")    // Orchestration scenario ID
+  .addParameterBindingsItem(modelFilterList)
+  .addParameterBindingsItem(modelFilterListType);
+
+// Create the configuration with your individual resource group
+var configuration = new ConfigurationApi().create(RESOURCE_GROUP, configurationData);
+
+// Print the configuration response message
+System.out.println(configuration.getMessage());
+```
+
+**Note**: 
+
+• `scenarioId` and `executableId`: Both are set to "orchestration" for this tutorial. 
+
+• `name`: Choose a unique name for the configuration (e.g., "config-new-orchestration")
+
 In this step, we will create a deployment from the configuration created in the previous step using the core module of the [SAP Cloud SDK for AI (Java)](https://sap.github.io/ai-sdk/docs/java/overview-cloud-sdk-for-ai-java). 
 
 • Add the following code to your project to create an orchestration deployment:
@@ -491,7 +483,27 @@ System.out.println(deployment.getMessage());
 [OPTION END]
 
 [OPTION BEGIN [Bruno]]
-#### Update Configuration ID and Create Deployment
+
+#### Create Resource Group
+
+- Expand the 01_resource_group section in the collection.
+
+- Click on the create request and execute it to create a resource group.
+![img](img/resource_group.png)
+-	Next, execute the get_by_id request to verify the resource group status.
+    -	Ensure the status is PROVISIONED.
+
+-	Follow the screenshot attached for reference.
+![img](img/get_resource_group.png)
+
+#### Create Configuration
+- Navigate to the configuration request and execute it to create a configuration.
+
+- Copy the ID from the response for use in subsequent steps.
+
+- Follow the screenshot attached for reference.
+![img](img/deployment_create_config.png)
+
 - Navigate to the create_deployment request.
 
 - Update the Configuration ID in the request body with the ID obtained in the previous step.
@@ -514,9 +526,10 @@ Follow the screenshot attached for reference.
 
 - Save the updated environment. Follow the screenshot attached for reference.
 ![img](img/service_update_creds.png)
+
 [OPTION END]
 
-### Consume Deployed Orchestration
+###  Consume LLM's in Generative AI Hub through Orchestration
 
 [OPTION BEGIN [AI Launchpad]]
 
