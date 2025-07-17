@@ -230,7 +230,7 @@ The following instructions show one example of triggering the [data lake locked 
 
 ### Set up email notification when an alert occurs
 
-The SAP Business Technology Platform (BTP) includes a service called the SAP Alert Notification service (ANS) that provides a common way for other services or applications running in the SAP BTP to send out notifications such as an email, a post to a Microsoft Teams or Slack channel, the creation of a ticket in `ServiceNow`, or a webhook to send events to any Internet REST endpoint.  The SAP HANA Cloud database and data lake pass on events to the SAP ANS when an alert is triggered.  
+The SAP Business Technology Platform (BTP) includes a service called the [SAP Alert Notification service for SAP BTP](https://help.sap.com/docs/alert-notification) (ANS) that provides a common way for other services or applications running in the SAP BTP to send out notifications such as an email, a post to a Microsoft Teams or Slack channel, the creation of a ticket in `ServiceNow`, or a webhook to send events to any Internet REST endpoint.  The SAP HANA Cloud database and data lake pass on events to the SAP ANS when an alert is triggered.  
 
 ![BTP with HC and ANS](btp-hc-ans.png)
 
@@ -242,7 +242,7 @@ In this step, the Alert Notification Service will be configured to act on the in
 
     ![find the Alert Notification Service](ans.png)
 
-    > The SAP Alert Notification service must be in the same Cloud Foundry subaccount as the SAP HANA Cloud instances which it will be receiving notifications from.
+    > The SAP Alert Notification service must be in the same subaccount as the SAP HANA Cloud instances which it will be receiving notifications from.
 
     >---
 
@@ -251,13 +251,13 @@ In this step, the Alert Notification Service will be configured to act on the in
     >![Add entitlements](entitlements.png)
     >![Add Alert entitlement](entitlements-alerts.png)
 
-2. Provide a name for the Alert Notification service instance and press the **Create** button.
+2. Select the Cloud Foundry runtime environment and provide a name for the Alert Notification service instance and press the **Create** button.
 
     ![ANS basic information](ans-basic.png)
 
-    | Service | Plan | Instance Name |
-    | -------- | ----- | --- | 
-    | `Alert Notification` | `standard` | `ANS-1` | 
+    | Service | Plan | Runtime Environment | Instance Name |
+    | ------- | ---- | ------------------- | ------------- |
+    | `Alert Notification` | `standard` | 'Cloud Foundry' | `ANS-1` | 
 
 
 3. Once the instance has been created, click on **Manage Instance**.
