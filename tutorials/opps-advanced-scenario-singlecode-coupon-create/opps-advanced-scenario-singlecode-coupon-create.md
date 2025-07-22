@@ -131,14 +131,13 @@ Now that you have created the coupon object and set it to active, you create the
 5. Copy the following data and paste it into the body:
 ```json
 { 
-"codeValue": "ANNIVERSARY25", 
-"validFrom": "2026-01-01" 
+"codeValue": "ANNIVERSARY25"
 }
 ```
 6. Choose **Run**.
 7. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Create coupon code response](3_create_coupon_code_response200.png)
+<!-- border -->![Create coupon code response](3_create_coupon_code_response200_v2.png)
 
 With this, you have created the coupon code `ANNIVERSARY25`. Your marketing system can now read the coupon information from the Coupon Management service and drive your promotional campaign, for example by distributing the coupon code to your target customers.
 

@@ -110,6 +110,7 @@ You define the default site in the Site Directory of your SAP Build Work Zone, s
     | xyz200.mycompany.com       | CNAME api.cf.eu10.hana.ondemand.com. | portal-prod-sapdelim-xyz200.launchpad.cfapps.eu10.hana.ondemand.com | prod.mycompany.com
     | xyz300.mycompany.com    |  CNAME api.cf.eu10.hana.ondemand.com. | portal-qa-sapdelim-xyz300.launchpad.cfapps.eu10.hana.ondemand.com  | qa.mycompany.com.
     | xyz400.mycompany.com     |  CNAME api.cf.eu10.hana.ondemand.com. | portal-dev-sapdelim-xyz400.launchpad.cfapps.eu10.hana.ondemand.com  | dev.mycompany.com.
+   
 
 7. Create a custom domain for SAP Cloud Identity Services. For example, `ias.mycompany.com`.
 
@@ -120,7 +121,7 @@ The custom domains are created and displayed in a list, along with their corresp
 ### Use custom domain in Identity Authentication
 
 The purpose of this step is to configure a custom domain for your Cloud Identity Service tenant. Use the custom domain that you've created in step 2 above.  
- You will use it later when establishing trust to your SAP BTP subaccount and in the Domain Name System (DNS) setup. 
+ You'll use it later when establishing trust to your SAP BTP subaccount and in the Domain Name System (DNS) setup. 
 
 For more information, see [Use Custom Domain in Identity Authentication](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/use-custom-domain-in-identity-authentication)
 
@@ -266,14 +267,6 @@ Example of a runtime destination mapping:
 | Custom route        | `prod.mycompany.com`
 | Standard route      | `subprod-sapdelim-xyz200.launchpad.cfapps.us10.hana.ondemand.com` 
 
-
-### Switch to SAP Cloud Identity Services - Identity Authentication
-
-In this step, you'll create a trust between SAP Build Work Zone, standard edition and your Cloud Identity Services tenant. This trust will appear as an additional application in the administration console of Cloud Identity Services. 
-
-For more information, see [Switching to SAP Cloud Identity Services - Identity Authentication](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/switching-to-sap-cloud-identity-services-identity-authentication).
-
-<!-- border -->![Switching to IAS](25-switching-to-IAS.png)
 
 ### Create a CNAME record
 

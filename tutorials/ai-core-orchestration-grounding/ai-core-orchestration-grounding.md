@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 45
-primary_tag: software-product>sap-business-technology-platform
-tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
+primary_tag: software-product>sap-ai-core
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
 author_name: Smita Naik
 author_profile: https://github.com/I321506
 ---
@@ -358,6 +358,8 @@ Use the below payload to create a secret for AWS S3 with NoAuthentication as aut
 
 [OPTION BEGIN [AI Launchpad]]
 
+#### **Generic secret for sharepoint (option-1)**
+
 1. In the **Workspaces** app, choose the AI API connection.
 
 2. If you want to add your secret at the resource group level, choose the resource group. Alternatively you can use the toggles in the header or dialog box, where you will be prompted to specify a resource group.
@@ -405,13 +407,68 @@ Use the below payload to create a secret for AWS S3 with NoAuthentication as aut
 
       "clientSecret": "<client secret>",
 
-      "scope": "SCOPE"
+      "scope": "SCOPE",
+
+      "labels": [
+
+      {
+
+      "key": "ext.ai.sap.com/document-grounding",
+
+      "value": "true"
+
+      }
+
+      ]
 
       }
 
     ```
 
-    For the label option **ext.ai.sap.com** select **document-grounding** and **true**.
+#### **Generic secret for AWS S3 (option-2)**
+
+1. **Open the Workspaces app** and choose the **AI API connection**.
+
+2. If needed, toggle between **tenant-level** and **resource-group-level** secret creation.
+
+3. Navigate to the **SAP AI Core Administration** app and go to **Generic Secrets**.
+
+4. Choose **Add** to create a new secret.
+
+5. Fill out the form as follows:
+   - **Resource Group**: `<your-resource-group>`
+   - **Name**: `aws-credentials-1`
+   - **Secret (JSON format)**:
+  
+```json
+  {
+    "access_key_id": "<YOUR_AWS_ACCESS_KEY_ID>",
+    "secret_access_key": "<YOUR_AWS_SECRET_ACCESS_KEY>",
+    "bucket": "<YOUR_BUCKET_NAME>",
+    "host": "<YOUR_S3_HOST_URL>",
+    "region": "<YOUR_AWS_REGION>",
+    "url": "<FULL_S3_ENDPOINT_URL>",
+    "username": "<OPTIONAL_USER_IDENTIFIER>",
+    "authentication": "NoAuthentication",
+    "description": "AWS S3 credentials for document grounding",
+    "type": "HTTP",
+    "proxyType": "Internet"
+  }
+
+```
+
+**Labels**
+
+Add the following key-value pairs as labels:
+| Key                                             | Value |
+|--------------------------------------------------|-------|
+| ext.ai.sap.com/document-grounding              | true  |
+| ext.ai.sap.com/documentRepositoryType          | S3    |
+
+![img](img/image078.png)
+
+
+1. Click Add to save the secret.
 
 [OPTION END]
 
@@ -667,34 +724,60 @@ These steps help inspect vector collections and documents to confirm successful 
 
 [OPTION END]
 
-[OPTION BEGIN [JavaScript SDK]]
+[OPTION BEGIN [AI Launchpad]]
 
-We are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+To enable document grounding, the next step is to **create a Data Repository** in SAP Generative AI Hub using the secrets you configured earlier (in Step 5).
 
-**Note:** For this step, we are using the [document grounding module](https://sap.github.io/ai-sdk/docs/js/ai-core/document-grounding) of the SDK so make sure to add the dependency to your project. 
+#### **Navigation Path**
 
-```javascript
-// Request body for pipeline creation request
-const pipelineRequest: PipelinePostRequst = {
-  type: 'MSSharePoint',
-  configuration: {
-    destination: '<generic secret name>',
-    sharePoint: {
-      site: {
-        name: '<sharepoint site name>',
-        includePaths: ['/<folder name>']
-      }
-    }
-  }
-};
+In the **SAP AI Launchpad**:
 
-// Create the pipeline
-const pipeline = await PipelinesApi.createPipeline(pipelineRequest, {
-  'AI-Resource-Group': RESOURCE_GROUP
-}).execute();
+1. Navigate to **Generative AI Hub** from the side menu.
+2. Click on **Grounding Management**.
+3. Click **Create** to open the *Create Data Repository* wizard.
 
-console.log('Created Pipeline with ID: ', pipeline.pipelineId);
-```
+#### 🔹 Option 1: Microsoft SharePoint Configuration
+
+> 📸 _Refer to Screenshot: SharePoint Setup (see below)_
+
+1. In the **Create Data Repository** form:
+   - **Embedding Model**: Leave as default (`Text Embedding 3 Large`).
+   - **Document Store Type**: Select `MSSharePoint`.
+   - **Document Grounding Generic Secret**: Select the secret you created in **Step 5**.
+   - **Document Store Name**: Provide a name for your repository. For example:  
+     ```
+     Dev_blr3_document
+     ```
+   - **Include Paths**: Enter the SharePoint folder path that contains your documents to test grounding.  
+     Example:
+     ```
+     SharedDocuments/Sample_docs/UA_test
+     ```
+
+2. Click **Create** to finalize the setup.
+
+![img](img/image079.png)
+
+---
+
+#### 🔹 Option 2: AWS S3 Configuration
+
+> 📸 _Refer to Screenshot: S3 Setup (see below)_
+
+1. In the **Create Data Repository** form:
+   - **Embedding Model**: Leave as default (`Text Embedding 3 Large`).
+   - **Document Store Type**: Select `S3`.
+   - **Document Grounding Generic Secret**: Select the AWS secret you created in **Step 5** (e.g., `aws-credentials-1`).
+
+2. Once selected, you're ready to proceed. The required S3 bucket, region, and credentials are handled through the secret.
+
+3. Click **Create** to finish.
+
+![img](img/image080.png)
+
+---
+
+> ✅ After completing this step, your knowledge base (data repository) will be linked to your document source. The documents will be embedded and made available for grounding in the chat experience.
 
 [OPTION END]
 
@@ -726,6 +809,37 @@ var pipeline = new GroundingClient().pipelines().createPipeline(
 
 System.out.println("Created Pipeline with ID: " + pipeline.getPipelineId());
 
+```
+
+[OPTION END]
+
+[OPTION BEGIN [JavaScript SDK]]
+
+We are creating a document-grounding pipeline using SAP AI Core. The pipeline is configured to integrate with Microsoft SharePoint as a data source, enabling AI-driven document processing. This setup allows seamless ingestion of documents from a specified SharePoint site, ensuring efficient data retrieval and processing.
+
+**Note:** For this step, we are using the [document grounding module](https://sap.github.io/ai-sdk/docs/js/ai-core/document-grounding) of the SDK so make sure to add the dependency to your project. 
+
+```javascript
+// Request body for pipeline creation request
+const pipelineRequest: PipelinePostRequst = {
+  type: 'MSSharePoint',
+  configuration: {
+    destination: '<generic secret name>',
+    sharePoint: {
+      site: {
+        name: '<sharepoint site name>',
+        includePaths: ['/<folder name>']
+      }
+    }
+  }
+};
+
+// Create the pipeline
+const pipeline = await PipelinesApi.createPipeline(pipelineRequest, {
+  'AI-Resource-Group': RESOURCE_GROUP
+}).execute();
+
+console.log('Created Pipeline with ID: ', pipeline.pipelineId);
 ```
 
 [OPTION END]
@@ -1020,10 +1134,3 @@ print(response.orchestration_result.choices[0].message.content)
 ### Conclusion
 
 Adding Grounding significantly enhances the model's ability to provide Accurate and Context-specific responses. Without Grounding, the model generates generic replies, while with grounding, it retrieves precise information from the uploaded document. Screenshots showcasing both responses are provided for comparison.
-
-
-
-
-
-
-
