@@ -61,12 +61,12 @@ Multimodal assistants are the future of enterprise automation. With varied input
 Clone the project from the repository:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/SAP-samples/aicore-genai-samples.git
 ```
 
-> [GitHub Link](https://github.tools.sap/MLF/aicore-examples.git)
+> [GitHub Link](https://github.com/SAP-samples/aicore-genai-samples/tree/main/genai-sample-apps/Multimodal%20Intelligent%20Response%20Assistant)
 
-![Image](img/image007.png)
+![Image](img/git_clone.png)
 
 #### 📦 Install Requirements
 In **VS Code**, open the cloned folder and install dependencies:
