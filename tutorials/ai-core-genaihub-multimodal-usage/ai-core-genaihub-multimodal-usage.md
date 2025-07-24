@@ -53,6 +53,7 @@ Multimodal assistants are the future of enterprise automation. With varied input
 #### Demo Video
 > **Watch the walkthrough:**
 - You can find the demo video of the application [here](https://video.sap.com/media/t/1_4nixy23y).
+![Image](img/video_image.png)
 
 ---
 
