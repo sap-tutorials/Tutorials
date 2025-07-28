@@ -2,14 +2,14 @@
 parser: v2
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
 # Create Template for Purchase Order Documents
-<!-- description --> Create a template for purchase order documents to extract information from similar documents using the Document Information Extraction service.
+<!-- description --> Create a template for purchase order documents to extract information from similar documents using SAP Document AI.
 
 ## You will learn
   - How to create a template for purchase order documents using your schema
@@ -21,9 +21,9 @@ author_profile: https://github.com/Juliana-Morais
 ### Create template
 
 
-In [Create Schema for Purchase Order Documents](cp-aibus-dox-ui-schema), you defined a schema that includes a list of header and line item fields you want to extract from purchase order documents. In this tutorial, you'll create a template that uses your schema and associate documents with your template. You'll **Edit** the extraction results of the associated documents to teach the Document Information Extraction service where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
+In [Create Schema for Purchase Order Documents](cp-aibus-dox-ui-schema), you defined a schema that includes a list of header and line item fields you want to extract from purchase order documents. In this tutorial, you'll create a template that uses your schema and associate documents with your template. You'll **Edit** the extraction results of the associated documents to teach SAP Document AI where certain field values are located on the document to improve the accuracy of the extraction prediction for similar documents.
 
-In the Document Information Extraction UI, access **Template** on the left navigation pane and click **+** to create a new template.
+In the SAP Document AI basic UI, access **Template** on the left navigation pane and click **+** to create a new template.
 
 <!-- border -->![Template](access-template.png)
 
@@ -54,7 +54,7 @@ In the dialog, proceed as follows:
 
 >**CAUTION:**
 
->When using the free tier option for Document Information Extraction or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
+>When using the free tier option for SAP Document AI or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
 
 
 

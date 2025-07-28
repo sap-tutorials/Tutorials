@@ -2,22 +2,22 @@
 parser: v2
 auto_validation: true
 time: 25
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Machine Learning to Enrich Business Data with Swagger UI
-<!-- description --> Create, update, list and delete enrichment data using the Data API business entity from Document Information Extraction, one of the SAP AI Business Services in SAP Business Technology Platform (SAP BTP).
+<!-- description --> Create, update, list and delete enrichment data using the Data API business entity from SAP Document AI, one of the SAP AI Business Services in SAP Business Technology Platform (SAP BTP).
 
 ## You will learn
   - How to create, update, list and delete enrichment data using the business entity
 
 ## Intro
-You can also use Document Information Extraction to enrich the information extracted from documents with your own master data records. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
+You can also use SAP Document AI to enrich the information extracted from documents with your own master data records. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
 
-When enriching data with Document Information Extraction, you use 2 types of entities that you find in business documents. The `business entity` represents different kinds of organizations with which you deal as a company. It can represent, for example, suppliers and customers. The `employee entity` represents an employee in the company.
+When enriching data with SAP Document AI, you use 2 types of entities that you find in business documents. The `business entity` represents different kinds of organizations with which you deal as a company. It can represent, for example, suppliers and customers. The `employee entity` represents an employee in the company.
 
 When you finish this tutorial, you will have explored all Data API functionalities to create, update, list and delete enrichment data using the `business entity` type. See [Enrichment Data API documentation](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/ca4b609107dd47a78d880cb5eaceb8c8.html).
 
@@ -26,9 +26,9 @@ When you finish this tutorial, you will have explored all Data API functionaliti
 ### Get client
 
 
-After performing step 1 of the tutorial [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client.
+After performing step 1 of the tutorial [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) to access and authorize the SAP Document AI Swagger UI, you need to create a client.
 
-When you create a service instance for Document Information Extraction, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
+When you create a service instance for SAP Document AI, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
 
 Free tier and trial users can only create one client. To see your list of clients:
 
@@ -72,7 +72,7 @@ You should receive a response like the following:
 ### Create client
 
 
-Use the **POST /clients** endpoint to create your own client. The **`clientId`** value created here will be used in other service endpoints.
+Use the **POST /clients** endpoint to create your own client. The **`clientId`** value created here will be used in other SAP Document AI endpoints.
 
 1. Expand the **POST /clients** endpoint.
 
@@ -93,7 +93,7 @@ You can repeat step 1 to see the **`clientId`** and **`clientName`** of the clie
 
 >**CAUTION:**
 
->When using the free tier option for Document Information Extraction or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
+>When using the free tier option for SAP Document AI or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
 
 
 
@@ -237,7 +237,7 @@ You should receive a response like the following:
 ### Upload document to get prediction with enrichment data
 
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
+>SAP Document AI uses a globally pretrained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint. To have the enrichment data in the prediction, you need to have the following part in the query of the **POST /document/jobs** endpoint (it is usually already there by default):
 
@@ -261,11 +261,11 @@ Do the following:
 2. Click **Try it out**.
 
 3. Right click [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf), then click ***Save link as*** to download locally the document file for this enrich business data example.
-> You can also upload to the service and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 4, matches your document fields.
+> You can also upload to SAP Document AI and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 4, matches your document fields.
 
-4. Upload the document file you want to enrich.
+1. Upload the document file you want to enrich.
 
-5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_29`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example), the enrichment data type `businessEntity` and subtype `supplier`.
+2. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_29`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example), the enrichment data type `businessEntity` and subtype `supplier`.
 
     ```JSON
     {
@@ -311,7 +311,7 @@ Do the following:
     }
     ```
 
-6. Click **Execute**.
+3. Click **Execute**.
 
 This is how the request should look like:
 
@@ -352,7 +352,7 @@ You should receive a response like the following:
 >
 > In this example, in the response, one of the extracted fields is the sender name Sliced Invoices. This information is enriched with the supplier ID enrichment data created in step 4. The prediction suggests the supplier ID BE0001 (from sender name Sliced Invoices) with higher probability than the supplier ID BE0002 (from sender name Sliced).
 
-You have now successfully used the business entity to get enrichment data predictions for the document you uploaded to Document Information Extraction.
+You have now successfully used the business entity to get enrichment data predictions for the document you uploaded to SAP Document AI.
 
 
 

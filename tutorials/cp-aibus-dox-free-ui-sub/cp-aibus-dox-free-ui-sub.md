@@ -2,28 +2,28 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Use Free Tier to Subscribe to Document Information Extraction UI
-<!-- description --> Use the free tier service plan to get access to the Document Information Extraction user interface application, using SAP Business Technology Platform (SAP BTP).
+# Use Free Tier to Subscribe to SAP Document AI Basic UI
+<!-- description --> Use the free tier service plan to get access to the SAP Document AI user interface application, using SAP Business Technology Platform (SAP BTP).
 
 ## Prerequisites
-- You have created a service instance for Document Information Extraction: [Use Free Tier to Create a Service Instance for Document Information Extraction](cp-aibus-dox-free-service-instance)
+- You have created a service instance for SAP Document AI: [Use Free Tier to Create a Service Instance for SAP Document AI](cp-aibus-dox-free-service-instance)
 
 ## You will learn
-  - How to check your subaccount entitlements and add Document Information Extraction UI
-  - How to subscribe, assign role collection and access Document Information Extraction UI
+  - How to check your subaccount entitlements and add SAP Document AI basic UI
+  - How to subscribe, assign role collection and access SAP Document AI basic UI
 
 ---
 
 ### Access the SAP BTP cockpit
 
 
-After completing the prerequisite tutorial [Use Free Tier to Create a Service Instance for Document Information Extraction](cp-aibus-dox-free-service-instance), to create a service instance for Document Information Extraction, you can start with the steps to subscribe to the Document Information Extraction UI.
+After completing the prerequisite tutorial [Use Free Tier to Create a Service Instance for SAP Document AI](cp-aibus-dox-free-service-instance), to create a service instance for SAP Document AI, you can start with the steps to subscribe to the SAP Document AI basic UI.
 
 1. Open the [SAP BTP cockpit](https://account.hana.ondemand.com/cockpit#/home/allaccounts).
 
@@ -42,15 +42,15 @@ After completing the prerequisite tutorial [Use Free Tier to Create a Service In
 
 1. On the navigation side bar, click **Service Marketplace**.
 
-    <!-- border -->![DOX-UI](access-service-marketplace.png)
+    <!-- border -->![DOX-UI](access-marketplace.png)
 
-2. Search for **Document Information Extraction** and click the tile.
+2. Search for **SAP Document AI** and click the tile.
 
-    <!-- border -->![DOX-UI](tile.png)
+    <!-- border -->![DOX-UI](access-service.png)
 
 3. Click **Create**.
 
-    <!-- border -->![DOX-UI](subscribe.png)
+    <!-- border -->![DOX-UI](create.png)
 
 4. In the dialog, choose the `default (Subscription)` plan and click **Create** once again.
 
@@ -91,8 +91,8 @@ Go back to **Instances and Subscriptions**, click the dots to open the menu and 
 
 <!-- border -->![DOX-UI](go-to-app.png)
 
-The Document Information Extraction UI is displayed:
+The SAP Document AI basic UI is displayed:
 
 <!-- border -->![DOX-UI](app.png)
 
-You've successfully subscribed to the Document Information Extraction application.
+You've successfully subscribed to the SAP Document AI application.

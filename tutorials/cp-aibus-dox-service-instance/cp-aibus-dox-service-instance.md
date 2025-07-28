@@ -2,22 +2,22 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Use Trial to Create a Service Instance for Document Information Extraction
-<!-- description --> Create a service instance and the associated service key for Document Information Extraction, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
+# Use Trial to Create a Service Instance for SAP Document AI
+<!-- description --> Create a service instance and the associated service key for SAP Document AI, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 
 ## Prerequisites
 - You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
 - You have a subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## You will learn
-  - How to check your Document Information Extraction entitlements
-  - How to create a service instance of Document Information Extraction
+  - How to check your SAP Document AI entitlements
+  - How to create a service instance of SAP Document AI
   - How to create a service key for your service instance
 ---
 
@@ -47,25 +47,25 @@ author_profile: https://github.com/Juliana-Morais
 ### Check entitlements
 
 
-To try out Document Information Extraction, you need to make sure that your subaccount is properly configured.
+To try out SAP Document AI, you need to make sure that your subaccount is properly configured.
 
 1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-2. Search for **Document Information Extraction Trial**. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
+2. Search for **SAP Document AI Trial**. ***If you find it in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
     <!-- border -->![Entitlements](check-entitlements.png)
 
-***ONLY if you DO NOT find the service in your list, proceed as follows:***
+***ONLY if you DO NOT find **SAP Document AI Trial** in your list, proceed as follows:***
 
-  1. Click **Configure Entitlements**.
+  1. Click **Edit**.
 
-    ![Configure Entitlements](configure-entitlements.png)
+    ![Configure Entitlements](edit.png)
 
   2. Click **Add Service Plans**.
 
     ![Add Service Plan](add-service-plans.png)
 
-  3. Select **Document Information Extraction Trial**, and choose the **`blocks_of_100`** service plan. Click **Add 1 Service Plan**.
+  3. Select **SAP Document AI Trial**, and choose the **`blocks_of_100`** service plan. Click **Add 1 Service Plan**.
 
     <!-- border -->![Add Service Plan](add-entitlements.png)
 
@@ -73,13 +73,13 @@ To try out Document Information Extraction, you need to make sure that your suba
 
     <!-- border -->![Add Service Plan](save-entitlements.png)    
 
-You're now entitled to use Document Information Extraction and create instances of the service.
+You're now entitled to use SAP Document AI and create service instances.
 
 >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 
 
-### Access service via Service Marketplace
+### Access SAP Document AI Trial via Service Marketplace
 
 
 The **Service Marketplace** is where you find all the services available on SAP BTP.
@@ -88,22 +88,22 @@ The **Service Marketplace** is where you find all the services available on SAP 
 
     <!-- border -->![Service Marketplace](access-service-marketplace.png)
 
-2. Next, search for **Document Information Extraction Trial** and click the tile to access the service.
+2. Next, search for **SAP Document AI Trial** and click the tile to access it.
 
-    <!-- border -->![Document Information Extraction in Service Marketplace](access-dox.png)
+    <!-- border -->![SAP Document AI in Service Marketplace](access-dox.png)
 
 
 
 ### Create service instance
 
 
-You will now create an instance of your service.
+You will now create a service instance.
 
 Click **Create Instance** to start the creation dialog.
 
 <!-- border -->![Service Instance](create-instance.png)
 
-In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create**.
+In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-ai-instance` and click **Create**.
 
 <!-- border -->![Create Instance](create-instance-dialog.png)
 
@@ -111,7 +111,7 @@ In the following dialog, click on **View Instance** to be navigated to the list 
 
 <!-- border -->![View Instances](view-instance.png)
 
-You've successfully created a service instance for Document Information Extraction.
+You've successfully created a service instance for SAP Document AI.
 
 
 
@@ -124,7 +124,7 @@ You are now able to create a service key for your new service instance. Service 
 
       <!-- border -->![Service Key](create-service-keys.png)
 
-  2. In the dialog, enter a name for your service key, for example, `doc-info-extraction-key`. Click **Create** to create the service key.
+  2. In the dialog, enter a name for your service key, for example, `doc-ai-key`. Click **Create** to create the service key.
 
       <!-- border -->![Create Service Key](create-service-key-name.png)
 
@@ -132,4 +132,4 @@ You've successfully created a service key for your service instance. You can now
 
 <!-- border -->![View Service Key](view-service-key.png)
 
-You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
+You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for SAP Document AI Using Any Web Browser](cp-aibus-dox-web-oauth-token).
