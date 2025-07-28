@@ -52,7 +52,8 @@ Multimodal assistants are the future of enterprise automation. With varied input
 
 #### Demo Video
 > **Watch the walkthrough:**
-- You can find the demo video of the application [here](https://video.sap.com/media/t/1_4nixy23y).
+- You can find the **demo video** of the application [here](https://video.sap.com/media/t/1_4nixy23y).
+![Image](img/video_image.png)
 
 ---
 
@@ -61,12 +62,12 @@ Multimodal assistants are the future of enterprise automation. With varied input
 Clone the project from the repository:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/SAP-samples/aicore-genai-samples.git
 ```
 
-> [GitHub Link](https://github.tools.sap/MLF/aicore-examples.git)
+> [GitHub Link](https://github.com/SAP-samples/aicore-genai-samples/tree/main/genai-sample-apps/Multimodal%20Intelligent%20Response%20Assistant)
 
-![Image](img/image007.png)
+![Image](img/git_clone.png)
 
 #### ðŸ“¦ Install Requirements
 In **VS Code**, open the cloned folder and install dependencies:
@@ -179,7 +180,8 @@ The assistant delivers accurate, context-aware responses across media types. Itâ
 
 #### Demo Video
 > **Watch the walkthrough:**
-- You can find the demo video of the application [here](https://video.sap.com/media/t/1_4nixy23y).
+- You can find the **demo video** of the application [here](https://video.sap.com/media/t/1_4nixy23y).
+![Image](img/video_image.png)
 
 ---
 
