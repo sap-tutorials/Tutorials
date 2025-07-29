@@ -83,6 +83,10 @@ To access SAP Build Work Zone, standard edition you need to first create a SAP C
 
     ![Select groups](9-select-groups.png)
 
+8. Click **+ Create** to open the **Create Group** wizard.
+
+    ![Select groups](10-open-group-wizard.png)
+
 8. Name the group whatever you prefer.  For this tutorial, let’s name it `Admin` and under Display Name, re-enter `Admin`.
 
     ![Name group](11-group-name.png)
