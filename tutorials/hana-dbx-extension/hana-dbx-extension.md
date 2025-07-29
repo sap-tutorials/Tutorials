@@ -84,7 +84,7 @@ Then a pop-up will ask you to confirm the deletion for you database connection.
 
 ![Delete Database Connection Pop Up](delete-database-connection-popup.png)
 
-### Make connections through Cloud Foundry (Optional)
+
 The SAP HANA database explorer extension also allows you to connect to the database connections you may have specified in the Cloud Foundry, web-based SAP HANA database explorer. These connections are managed by the web-based SAP HANA database explorer and cannot be edited in the extension. In order to complete this section of the tutorial, ensure that you have the [Cloud Foundry CLI](https://tools.hana.ondemand.com/#cloud) installed and added to your path.
 
 1. Open the terminal through Visual Studio Code by navigating to **Terminal** > **New Terminal** in the Visual Studio Code. 
@@ -191,6 +191,9 @@ This dropdown can also be used to switch to a different object if one was alread
 If you want to simplify your graph, or only have specific object types visible, you can filter them using the Object Type filter by unselecting the undesired items.
 
 ![Object Type Filter](object_type_filter.png)
+
+> Note: If you get a Database URL error message, open **settings.json** from `C:\Users\User_Name\AppData\Roaming\Code\User` and remove the line `"SAP HANA Database Explorer.URL":` and the following url.
+ ![Edit settings.json](settingjsonedit.png)
 
 
 
