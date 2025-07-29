@@ -249,6 +249,7 @@ In this step, the Alert Notification Service will be configured to act on the in
     >If the SAP Alert Notification service does not appear, it may be that the entitlement needs to be added to the subaccount.  To do so, navigate to the subaccount, select **Entitlements**, **Edit**, **Add Service Plans**, and **Alert Notification**.
 
     >![Add entitlements](entitlements.png)
+    
     >![Add Alert entitlement](entitlements-alerts.png)
 
 2. Select the Cloud Foundry runtime environment and provide a name for the Alert Notification service instance and press the **Create** button.
