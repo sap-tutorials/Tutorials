@@ -26,7 +26,7 @@ In this tutorial we'll create a site for a company called `JobCore`. We'll then 
 
 When you access the SAP Build Work Zone, standard edition, the Site Directory is in focus. From here you'll create your new site.
 
-> In the side panel, you'll see four tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Channel Manager** where you manage different channels that expose business content that you can integrate into your sites. The fourth icon opens **Settings** where you can configure various settings related to your subaccount.
+> In the side panel, you'll see a number of tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Channel Manager** where you manage different channels that expose business content that you can integrate into your sites. The **Import Monitor** where you can monitor the status of your import processes, and there is also the  **Settings** where you can configure various settings related to your subaccount.
 
 
 1. Click **Create Site**.
@@ -44,7 +44,7 @@ You've just created a site called `JobCore`.
 ### Select the Spaces and Pages - New Experience view mode
 
 
-When you create a site, you are directed to the **Site Settings** screen. In this screen, you'll select the new experience view mode. This is also where you will assign roles to your site.
+When you create a site, you are directed to the **Site Settings** screen. In this screen, you'll select the new experience view mode. 
 
 > By enabling **Spaces and Pages – New Experience** view mode, you'll be able to create spaces and pages locally in dedicated editors. You will be able to design your pages by adding sections with UI integration cards and app tiles. If you integrate spaces and pages from remote content providers, they will be displayed side by side with spaces you create.   
 
@@ -61,7 +61,7 @@ When you create a site, you are directed to the **Site Settings** screen. In thi
 
 ### Navigate back to the Site Directory to view the site tile.
 
-  ![Navigate to site directory](3-to-site-directory.png)
+  ![Navigate to site directory](6_go_to_site_directory.png)
 
 
   Your site is empty for now. In the next tutorials, you're going to add business apps to your site.
