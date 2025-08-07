@@ -2,38 +2,38 @@
 parser: v2
 auto_validation: true
 time: 25
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Use Trial to Extract Information from Standard Documents with Generative AI and Document Information Extraction
-<!-- description --> Learn how to use Document Information Extraction with generative AI to automate the extraction of information from standard documents using large language models (LLMs) and the service's machine learning models.
+# Use Trial to Extract Information from Standard Documents with Generative AI and SAP Document AI
+<!-- description --> Learn how to use SAP Document AI with generative AI to automate the extraction of information from standard documents using large language models (LLMs) and the solution's machine learning models.
 
 ## Prerequisites
 - You've created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You've access to the Document Information Extraction UI, as described in the tutorial [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app)
+- You've access to the SAP Document AI basic UI, as described in the tutorial [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app)
 
 ## You will learn
   - How to create and activate your own schema for standard documents
   - How to define the fields that you want to extract from a standard document 
-  - How to upload a standard document to the Document Information Extraction UI
-  - How to get extraction results using the schema you’ve created, LLMs, and the service's machine learning models.
+  - How to upload a standard document to the SAP Document AI basic UI
+  - How to get extraction results using the schema you’ve created, LLMs, and the solution's machine learning models.
 
 ## Intro
-In the tutorial [Use Trial to Extract Information from Custom Documents with Generative AI and Document Information Extraction](cp-aibus-dox-ui-gen-ai), you created a schema and defined the fields that you wanted to extract from custom document types using LLMs. In addition, you used the schema to extract field values from the documents that you uploaded to the service.
+In the tutorial [Use Trial to Extract Information from Custom Documents with Generative AI and SAP Document AI](cp-aibus-dox-ui-gen-ai), you created a schema and defined the fields that you wanted to extract from custom document types using LLMs. In addition, you used the schema to extract field values from the documents that you uploaded to SAP Document AI.
 
-It's also possible to use LLMs to extract information from standard document types (invoice, payment advice, and purchase order). In this tutorial, we're going to create a schema for a standard document type (invoice) and use both generative AI and the service's machine learning models to get the extraction results.
+It's also possible to use LLMs to extract information from standard document types (invoice, payment advice, and purchase order). In this tutorial, we're going to create a schema for a standard document type (invoice) and use both generative AI and the solution's machine learning models to get the extraction results.
 
 ---
 
 ### Create schema
 
 
-Before you upload our sample invoice file to the service, you’ll create a corresponding schema. 
+Before you upload our sample invoice file to SAP Document AI, you’ll create a corresponding schema. 
 
-1. Open the Document Information Extraction UI, as described in the tutorial [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app).
+1. Open the SAP Document AI basic UI, as described in the tutorial [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app).
 
 2. In the left navigation pane, click **Schema Configuration**.
 
@@ -68,7 +68,7 @@ Default extractors are only available for standard documents. See the list of al
 
 You can also optionally add a field label (user-friendly name) and a description.
 
->A description is an optional entry that you add to provide an explanation or additional context for a field. Descriptions are particularly useful with fields that use generative AI to extract information. Document Information Extraction uses your descriptions as prompts for the LLM. So, when wording a description, it's helpful to imagine that you’re explaining what you want to extract to a person with no prior knowledge.
+>A description is an optional entry that you add to provide an explanation or additional context for a field. Descriptions are particularly useful with fields that use generative AI to extract information. SAP Document AI uses your descriptions as prompts for the LLM. So, when wording a description, it's helpful to imagine that you’re explaining what you want to extract to a person with no prior knowledge.
 >
 >In this tutorial, we'll use descriptions when creating each of the fields for which extraction is handled using generative AI.
 
@@ -80,7 +80,7 @@ As your first header field, add the total amount of the invoice.
 
 3. Use `auto` as the **Setup Type** and `grossAmount` as the **Default Extractor**.
 
-    >Note that your schema supports various combinations of setup types and extraction methods. When you use the setup type `auto` with a default extractor, the service's pre-trained ML models are used to extract the information from the document. When you use the setup type `auto` without a default extractor, generative AI (LLMs) is used instead. The setup type `manual` supports extraction using a template. For more information, see [Setup Types](https://help.sap.com/docs/document-information-extraction/document-information-extraction/setup-types). For further details of this approach, see the tutorial mission [Shape Machine Learning to Process Custom Business Documents](https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html). 
+    >Note that your schema supports various combinations of setup types and extraction methods. When you use the setup type `auto` with a default extractor, the solution's pretrained machine learning models are used to extract the information from the document. When you use the setup type `auto` without a default extractor, generative AI (LLMs) is used instead. The setup type `manual` supports extraction using a template. For more information, see [Setup Types](https://help.sap.com/docs/document-information-extraction/document-information-extraction/setup-types). For further details of this approach, see the tutorial mission [Shape Machine Learning to Process Custom Business Documents](https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html). 
 
 4. Click **Save**.
    
@@ -134,7 +134,7 @@ Line item fields:
 
 <!-- border -->![LLM](all-line-item-fields.png)
 
->Note that the Document Information Extraction UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
+>Note that the SAP Document AI basic UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
 
 
 
@@ -178,7 +178,7 @@ Congratulations, you've now created and activated your own schema for invoice do
 
     <!-- border -->![LLM](done.png)
 
-7. Access the document by clicking on it. You now see the page preview of the document file you uploaded, and the information extracted from the invoice header fields and line items using LLMs, the service's pre-trained ML models, and the schema that you created.
+7. Access the document by clicking on it. You now see the page preview of the document file you uploaded, and the information extracted from the invoice header fields and line items using LLMs, the solution's pretrained machine learning models, and the schema that you created.
 
     <!-- border -->![LLM](results.png)
 
@@ -186,6 +186,6 @@ Congratulations, you've now created and activated your own schema for invoice do
 
  Congratulations, you've completed this tutorial.
  
- You've now successfully extracted information from an invoice document using the schema configuration feature from Document Information Extraction, LLMs, and the service's pre-trained ML models.
+ You've now successfully extracted information from an invoice document using the schema configuration feature from SAP Document AI, LLMs, and the solution's pretrained machine learning models.
  
  Feel free to repeat the steps using your own standard documents.

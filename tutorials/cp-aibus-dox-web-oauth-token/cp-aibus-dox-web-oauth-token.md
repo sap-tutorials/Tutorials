@@ -2,14 +2,14 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Get OAuth Access Token for Document Information Extraction via Web Browser
-<!-- description --> Retrieve your OAuth access token, which will grant you access to the service APIs.
+# Get OAuth Access Token for SAP Document AI via Web Browser
+<!-- description --> Retrieve your OAuth access token, which will grant you access to SAP Document AI APIs.
 
 ## You will learn
   - How to use your service key values to get an OAuth access token via any web browser
@@ -19,7 +19,7 @@ author_profile: https://github.com/Juliana-Morais
 ### Get OAuth access token details
 
 
-To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-free-booster-key). 
+To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Use Trial to Set Up Account for SAP Document AI and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for SAP Document AI and Get Service Key](cp-aibus-dox-free-booster-key). 
 
 <!-- border -->![DOX Service Key](service-key-details.png)
 
@@ -53,5 +53,5 @@ You should receive a response like the following:
 
 Once the token has been generated, make sure to copy and save it locally for easy access. The token is valid for 12 hours (43199 seconds). After that, you'll need to generate a new one.
 
-You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui).
+You have successfully generated your OAuth access token for SAP Document AI and you are now all set to [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui).
 
