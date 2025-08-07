@@ -1,0 +1,6 @@
+[
+    { "mdFormat": "products>sap-business-technology-platform" },
+    { "mdFormat": "programming-tool>abap-development" },
+    { "mdFormat": "software-product>sap-build" },
+    { "mdFormat": "software-product-function>sap-cloud-application-programming-model" }
+]
