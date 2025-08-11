@@ -69,5 +69,11 @@
         "description": "All other tutorials",
         "urlBase": "sap-tutorials/Tutorials",
         "teamAdmin": "rbrainey"
+    },
+     {
+        "name": "sandbox",
+        "description": "A playground for testing and experimenting with the Tutorial system",
+        "urlBase": "sap-tutorials/sandbox",
+        "teamAdmin": "rbrainey"
     }
 ]
