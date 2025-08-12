@@ -19,7 +19,7 @@ author_profile: https://github.com/LindsayBert
 
 
 ## You will learn
-  - How to create an SAP Cloud Identity services tenant, create a trust with SAP Business Technology Platform 
+  - How to create an SAP Cloud Identity services tenant, and create a trust with SAP Business Technology Platform 
   - How to subscribe to SAP Build Work Zone, standard edition
   - How to map the user you created in SAP Cloud Identity services to the Identity Authenticaton group you created
   - How to access SAP Build Work Zone, standard edition
@@ -61,11 +61,11 @@ To access SAP Build Work Zone, standard edition you need to first create a SAP C
     
     ![Go to marketplace](4-go-to-marketplace.png)
 
-2. In the Service Marketplace, search for the **Cloud Identity Services** tile.
+2. In the **Service Marketplace**, search for the **Cloud Identity Services** tile.
 
     ![Cloud Identity services tile](5-find-identity-services-tile.png)
 
-3. Click the tile, and then click **Create**.
+3. Click the tile and then click **Create**.
     
     ![Create](6-create-IAS-tenant.png)
 
@@ -75,7 +75,7 @@ To access SAP Build Work Zone, standard edition you need to first create a SAP C
 
 5. Navigate to the next steps and then click **Create**.
 
-6. You'll receive an email to activate your account. Once you’ve activated your account and press **Continue**, the Cloud Identity Services Administration Console opens.
+6. You will receive an email to activate your account. Once you’ve activated your account and press **Continue**, the Cloud Identity Services Administration Console opens.
 
     ![IAS email](8-IAS-email.png)
 
@@ -83,21 +83,21 @@ To access SAP Build Work Zone, standard edition you need to first create a SAP C
 
     ![Select groups](9-select-groups.png)
 
-8. Click **+ Create** to open the **Create Group** wizard.
+8. Click **Create Group**
 
-    ![Select groups](10-open-group-wizard.png)
+    ![Create group](10-open-group-wizard.png)
 
-8. Name the group whatever you prefer.  For this tutorial, let’s name it `Admin` and under Display Name, re-enter `Admin`.
+9. Name the group whatever you prefer.  For this tutorial, let’s name it `Admin` and under Display Name, re-enter `Admin`.
 
     ![Name group](11-group-name.png)
 
-9. Click **Next Step**, and then **Next Step** again, and then **Finish**.
+10. Click **Next Step**, and then **Next Step** again, and then **Finish**.
 
-10. Still under the **Users & Authentications** tab, select **User Management** and add your user by clicking **+ Add**.
+11. Still under the **Users & Authentications** tab, select **User Management** and add your user by clicking **+ Add**.
 
     ![Add user](12-add-user.png)
 
-11. Whether you add a new user or use an existing one, you must assign the group to this user. Click your user details, select **Groups**, and assign your user to the `Admin` group.
+12. Whether you add a new user or use an existing one, you must assign the group to this user. Click your user details, select **Groups**, and assign your user to the `Admin` group.
 
     ![Add user](13-Assign-user-to-group.png)
 
@@ -106,15 +106,17 @@ You now have a SAP Cloud Identity tenant.
 
 ### Create a trust between SAP BTP and the tenant you created in SAP Cloud Identity services
 
-1. In the SAP BTP Cockpit, go to **Security** -> **Trust Configuration**.
+1. In the SAP BTP cockpit, go to **Security** -> **Trust Configuration** and click **Establish Trust**.
     
     ![Create trust](14-create-trust.png)
 
-2. Click **Establish Trust**.
+2. In the **Configure Tenant** screen, select your SAP Cloud Identity tenant that you created and click through the wizard until you get to **Finish**.
 
-3. In the **Configure Tenant** screen, select your SAP Cloud Identity tenant that you created and click through the wizard until you get to **Finish**.
+    ![Configure tenant screen](14a-configure-tenant-wizard.png)
 
-You now have a trust between your SAP Cloud Identity services tenant and SAP BTP. 
+    You now have a trust between your SAP Cloud Identity services tenant and SAP BTP. You will see the following message:
+
+    ![Trust configured message](14b-created-trust-message.png)
 
 
 ### Subscribe to SAP Build Work Zone, standard edition
