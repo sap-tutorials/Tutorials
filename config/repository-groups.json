@@ -24,9 +24,39 @@
         "teamAdmin": null
     },
     {
+        "name": "btp-onboarding",
+        "description": null,
+        "urlBase": "sap-tutorials/btp-onboarding",
+        "teamAdmin": null
+    },
+    {
+        "name": "community",
+        "description": null,
+        "urlBase": "sap-tutorials/community",
+        "teamAdmin": null
+    }, 
+    {
+        "name": "data-warehouse-cloud",
+        "description": null,
+        "urlBase": "sap-tutorials/data-warehouse-cloud",
+        "teamAdmin": null
+    },  
+    {
+        "name": "developer-advocates",
+        "description": null,
+        "urlBase": "sap-tutorials/developer-advocates",
+        "teamAdmin": null
+    },  
+    {
         "name": "devtoberfest-2022",
         "description": null,
         "urlBase": "sap-tutorials/devtoberfest-2022",
+        "teamAdmin": null
+    },
+    {
+        "name": "eda",
+        "description": null,
+        "urlBase": "sap-tutorials/eda",
         "teamAdmin": null
     },
     {
@@ -70,7 +100,13 @@
         "urlBase": "sap-tutorials/Tutorials",
         "teamAdmin": "rbrainey"
     },
-     {
+    {
+        "name": "meta-tutorials",
+        "description": "Tutorials about Tutorials",
+        "urlBase": "sap-tutorials/meta-tutorials",
+        "teamAdmin": "rbrainey"
+    },
+    {
         "name": "sandbox",
         "description": "A playground for testing and experimenting with the Tutorial system",
         "urlBase": "sap-tutorials/sandbox",
