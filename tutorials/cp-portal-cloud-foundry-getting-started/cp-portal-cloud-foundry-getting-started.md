@@ -75,7 +75,7 @@ To access SAP Build Work Zone, standard edition you need to first create a SAP C
 
 5. Navigate to the next steps and then click **Create**.
 
-6. You will receive an email to activate your account. Once you’ve activated your account and press **Continue**, the Cloud Identity Services Administration Console opens.
+6. You'll receive an email to activate your account. Once you’ve activated your account and press **Continue**, the Cloud Identity Services Administration Console opens.
 
     ![IAS email](8-IAS-email.png)
 
