@@ -21,7 +21,7 @@ Use the **Content Manager** to add apps to SAP Build Work Zone.
 ### Open the Content Manager
 
 
-Click the Content Manager icon in the left panel to open the **Content Manager**.
+From the Site Manager, click the **Content Manager** icon from the left panel to open it.
 
 <!-- border -->![Content manager icon](1-content-manager-icon.png)
 
@@ -103,7 +103,7 @@ To view the app in runtime, you must assign the app to a role.
 ### Assign the app to the Everyone role.
 
 
->Spaces must be assigned to a role so that users assigned to a specific role are able to access the space and see the relevant pages assigned to it. Content assigned to the `Everyone` role is visible to all users. 
+>Content assigned to the `Everyone` role is visible to all users. 
 
 1. In the **Content Manager**, click the **Everyone** role.
 
@@ -114,16 +114,14 @@ To view the app in runtime, you must assign the app to a role.
     <!-- border -->![Edit](8a-click-edit.png)
 
 
-3. All available apps are shown in the editor. In the **Assignment Status** column you can see that the `External Community` app is not assigned. Click the toggle to assign the app to the `Everyone` role.
+3. All available apps are shown in the editor. In the **Assignment Status** column you can see that the `External Community` is red and is not assigned to the role. Click the toggle to change the toggle to green and click **Save** to assign the app to the `Everyone` role.
 
     <!-- border -->![Assign app to role](9-assign-role.png)
-
-4. Click **Save**.
 
 
 Congratulations you've created a site with two apps.
 
-In the next tutorial, you're going to add these apps to a page.
+In the next tutorial, you're going to add this app, and the one you created in the tutorial before to a page in your site.
 
 
 

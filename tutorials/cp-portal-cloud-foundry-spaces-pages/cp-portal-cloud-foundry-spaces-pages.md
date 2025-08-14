@@ -21,7 +21,8 @@ author_profile: https://github.com/LindsayBert
   - How to create a space and assign pages to it                    
 
 ## Intro  
-If you select the **Spaces and Pages - New Experience** view mode, you can create custom Spaces and Pages. A Space consists of Pages, a page consists of a single or multiple sections, a section consists of a single or multiple tiles (apps) and Cards.
+If you select the **Spaces and Pages - New Experience** view mode, you can create custom Spaces and Pages. These are referred to as local spaces and pages. You can create your pages and then assign these pages either to an existing space or a new space that you create. Last you would need to assign the space to a role so that users with this role can access the spaces and the pages assigned to them.
+
 
 
 ### Create a page
@@ -37,40 +38,35 @@ If you select the **Spaces and Pages - New Experience** view mode, you can creat
 3. Enter a title for the page: `Overview`.
 
     ![Enter a title](3-enter-title.png)
-
-4. Click **Save**.
+    
 
 ### Add apps to the page    
 
-1. Click **Add Section**.
+1. Click **Add Section**
 
     ![Add a section](4-add-section.png)
 
-2. Give the section a title, `My Apps` and click **Add Widget**.
+2. For the header enter `My Apps`, and click **Add Widget**.
 
-    ![Enter title for section](5-section-title.png)
+    ![Enter title for section](5-add-section-title.png)
 
-3. In the **Add Widgets** screen, click **Tiles**.
+3. In the **Add Apps** screen, select the `New Orders` and `External Community` apps that you created and click **Add**.
 
-    > In this screen you'll see all the apps that you can access from your subaccount. 
+    > In this screen you'll see all the apps that you can access from your subaccount - so far we only have 2 apps in our subaccount. 
 
     ![Select tiles](6-select-tiles.png)
 
-4. Select the `External Community` and the `New Orders` apps and click **Add**.
+    > You can add more apps to your page - they will display side by side in a section.
 
-    > You can select one or more apps to add to your page - they will display side by side in a section.
-
-    ![Select apps and add them to your page](7-select-apps.png)
-
-5. Click **Save**. This is how your page looks:
+4. Click **Save**. This is how your page looks:
 
     ![View page](8-view-page.png)
 
-6. Go back to your Content Manager using the breadcrumbs at the top.
+5. Go back to your Content Manager using the breadcrumbs at the top.
 
     ![Go back to Content Manager](9-go-back-to-content-manager.png)
 
-7. See that the page you created is in the list of content items.
+6. See that the page you created is in the list of content items.
 
     ![View app in content items list](10-page-in-list.png)
 
@@ -85,15 +81,11 @@ If you select the **Spaces and Pages - New Experience** view mode, you can creat
 
     ![Enter title of space](12-space-title.png)
 
-3.  In the **Pages** tab, you'll see a list of pages and from here you can assign as many pages as you want to the space. We only have 1 page - the `Overview` page. From the **Assignment Status** column, click the toggle to assign the `Overview` page to the `Home` space.
+3.  In the **Pages** tab, you'll see a list of pages and from here you can assign as many pages as you want to the space. We only have 1 page - the `Overview` page. In the **Assignment Status** column, you'll see the toggle is red meaning that the page is not yet assigned to the space. Click the toggle to assign the `Overview` page to the `Home` space and click **Save**.
 
     ![Assign page to space](13-assign-page-to-space.png)
 
-4. Click **Save**. 
-
-    ![Save space](14-save-space.png)
-
-5. Go back to the Content Manager using the breadcrumbs at the top. You'll see that the space you created is added to the list of content items.
+4. Go back to the Content Manager using the breadcrumbs at the top. You'll see that the space you created is added to the list of content items.
 
 
 ### Assign the space to a role
@@ -110,9 +102,13 @@ In this step, you'll assign the space to the `Everyone` role.
 
     ![Edit space](16-edit-space.png)
 
-3. Under the **Spaces** tab, you'll see the `Home` space you just created. Click the toggle to assign the `Home` space to the `Everyone` role. Then click **Save**.
+3. Under the **Spaces** tab, you'll see the `Home` space you just created. Click the toggle to assign the `Home` space to the `Everyone` role. 
 
     ![Assign space to role](17-assign-space-to-role.png)
+
+4. Click **Save**.
+
+    ![Save assignment](17a-save.png)
 
 ### View the runtime site
 
