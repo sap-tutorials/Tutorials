@@ -157,7 +157,7 @@ Now you can create a development project within your new space. Follow these ste
 
     ![DB Information](ss-06-DB-information.png)
 
-6.	To bind your project to your SAP HANA Cloud, SAP HANA database, you must log on to Cloud Foundry.
+6.	To bind your project to your SAP HANA Cloud, SAP HANA database, you must log on to Cloud Foundry if you have not already done so.
 
     ![bind to HDI](bind-to-hdi2.png)
 

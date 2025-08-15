@@ -29,25 +29,29 @@ This tutorial is meant to be an introduction to this topic.  For additional cont
 ---
 
 
-### Create a knowledge graph
->Before you can create a knowledge graph, please ensure your HANA Instance is version 2025.2 or above, and your instance has Triple Store activated. Here are the steps to doing this:
->
->1: Go to Manage Configuration on your SAP HANA Cloud Database
-![Manage Configuration](manage_config.png)
->
->2: Under the General Tab, change the version of your instance to 2025.2 or above
-![Change Instance Version](change_version.png)
->
->3: Under the Advanced Settings Tab, check off the Triple Store option if it's not already on.
-![Add Triple Store](add_triple_store.png)
-*The knowledge graph feature is not available for trial or free tier users.*
-
-
-To learn more about knowledge graphs see [Connecting the Facts: SAP HANA Cloud’s Knowledge Graph Engine for Business Context](https://community.sap.com/t5/technology-blogs-by-sap/connecting-the-facts-sap-hana-cloud-s-knowledge-graph-engine-for-business/ba-p/13888597) and [Choosing Between Knowledge Graphs and Property Graphs in SAP HANA Cloud and Why Both Matter](https://community.sap.com/t5/technology-blogs-by-sap/choosing-between-knowledge-graphs-and-property-graphs-in-sap-hana-cloud-and/ba-p/14074575).
-
+### Enable the triple store and Create a knowledge graph
 The following steps will create a knowledge graph that provides information on additional hotel amenities, explore the created knowledge graph using the database objects app, and then will perform a query on the knowledge graph.
 
-1. Execute the following in the SQL Console. This query creates a KG with several hotels and amenities such as an indoor pool, hot tub, fitness center, etc.
+Before you can create a knowledge graph, please ensure your HANA Instance is version 2025.2 or above, and your instance has triple store activated. Here are the steps to doing this:
+
+1. Go to Manage Configuration on your SAP HANA Cloud Database.
+
+    ![Manage Configuration](manage_config.png)
+
+2. Under the General Tab, change the version of your instance to 2025.2 or above
+
+    ![Change Instance Version](change_version.png)
+
+3. Under the Advanced Settings Tab, check off the Triple Store option if it's not already on.
+
+    ![Add Triple Store](add_triple_store.png)
+
+    *The knowledge graph feature is not available for trial or free tier users.*
+    
+    To learn more about knowledge graphs see [Connecting the Facts: SAP HANA Cloud’s Knowledge Graph Engine for Business Context](https://community.sap.com/t5/technology-blogs-by-sap/connecting-the-facts-sap-hana-cloud-s-knowledge-graph-engine-for-business/ba-p/13888597) and [Choosing Between Knowledge Graphs and Property Graphs in SAP HANA Cloud and Why Both Matter](https://community.sap.com/t5/technology-blogs-by-sap/choosing-between-knowledge-graphs-and-property-graphs-in-sap-hana-cloud-and/ba-p/14074575).
+
+
+4. Execute the following in the SQL Console. This query creates a KG with several hotels and amenities such as an indoor pool, hot tub, fitness center, etc.
 
     ```SQL
     --CALL SPARQL_EXECUTE('DROP GRAPH <kg_hotels>', '', ?, ?);
@@ -158,26 +162,30 @@ The following steps will create a knowledge graph that provides information on a
     Additional examples can be found at [SAP HANA Cloud, SAP HANA Database SPARQL Reference Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sparql-reference-guide/sap-hana-cloud-sap-hana-database-sparql-reference-guide)
 
 
-2. To visualize and examine the knowledge graph database objects, you must first enable the feature in your preferences. 
-    Click on your account
-        ![Account Settings](go_preferences_RDF.png)
+5. To visualize and examine the knowledge graph database objects, you must first enable the feature in your preferences.  Click on your account
+
+    ![Account Settings](go_preferences_RDF.png)
 
     Go to the Database Objects tab
-        ![Database Objects Tab](go_database_objects.png)
+
+    ![Database Objects Tab](go_database_objects.png)
 
     Enable RDF Named Graphs
-        ![Enable RDF Graphs](enable_RDF_graphs.png)
+    
+    ![Enable RDF Graphs](enable_RDF_graphs.png)
 
     You will now have the RDF Named Graphs view available. Click on it to view the graphs you have created
-        ![RDF Named Graphs View](RDF_view.png)
+        
+    ![RDF Named Graphs View](RDF_view.png)
 
     The DEFAULT graph is where content goes when it doesn't have a name. For more information, review the [DEFAULT_GRAPHS and Named Graphs help page](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/default-graph-and-named-graphs).
 
-    Click on the kg_hotels graph, and open the graph ontology to see the nodes
-        ![Graph Ontology View](view_graph.png)
+    Click on the kg_hotels graph, and open the graph ontology to see the nodes.
+    
+    ![Graph Ontology View](view_graph.png)
 
 
-3. Run a query to find hotels that have an indoor pool.
+6. Run a query to find hotels that have an indoor pool.
 
     ```SQL
     SELECT *
@@ -199,7 +207,6 @@ The following steps will create a knowledge graph that provides information on a
     ```
 
     Further examples of creating SPARQL statements can be found at [SPARQL SELECT Queries Using SPARQL_TABLE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sparql-select-queries-using-sparql-table).
-
 
 
 ### Create a property graph workspace
