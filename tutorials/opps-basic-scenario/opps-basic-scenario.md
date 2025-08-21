@@ -309,6 +309,7 @@ Let's check if this is the case. Navigate to the [Calculation service on the SAP
 >If you need a more detailed description, go to step 4 in the tutorial [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
 5. For the **Content Type**, choose `XML`.
 6. Copy the following raw data and paste it into the **Body** section:
+
 ```XML
 <PriceCalculate xmlns="http://www.sap.com/IXRetail/namespace/" InternalMajorVersion="2" InternalMinorVersion="1">
 	<ARTSHeader ActionCode="Calculate" MessageType="Request">
@@ -338,8 +339,8 @@ Let's check if this is the case. Navigate to the [Calculation service on the SAP
 </PriceCalculate>
 ```
 
-7. Choose **Run**.
-8. Make sure you get the HTTP response **200**. The response should look similar to this:
+1. Choose **Run**.
+2. Make sure you get the HTTP response **200**. The response should look similar to this:
 
 
 ```JSON
