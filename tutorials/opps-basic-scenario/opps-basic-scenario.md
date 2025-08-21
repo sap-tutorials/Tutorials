@@ -337,10 +337,11 @@ Let's check if this is the case. Navigate to the [Calculation service on the SAP
    </PriceCalculateBody>
 </PriceCalculate>
 ```
-7. Choose **Run**.
-8. Make sure you get the HTTP response **200**.
 
-The response should look similar to this:
+7. Choose **Run**.
+8. Make sure you get the HTTP response **200**. The response should look similar to this:
+
+
 ```JSON
 {
   "ARTSHeader": {
