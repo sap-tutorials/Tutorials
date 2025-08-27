@@ -54,11 +54,15 @@ The transport destination defines the endpoint of the SAP Content Agent subscrib
 
 >Make sure that you have the details of the **service key of the SAP Content Agent instance** in the **target** subaccount at hand that you created in [Set Up the SAP Integration Suite Target Subaccount](btp-transport-management-cpi-03-set-up-target-account). 
 
-1. In the **Central Services** subaccount, choose **Connectivity > Destinations** (1). To create a new destination, choose **Create Destination** (2).
+1. In the **Central Services** subaccount, choose **Connectivity > Destinations** (1), and choose **Create** (2).
 
-    ![Create Destination to Target Subaccount 2](screenshots/CreateTargDest-02.png)
+    ![Create Destination to Target Subaccount 2](screenshots/CreateTargDest-04n.png)
 
-2. In the **Destination Configuration** window, enter details for the following fields (1), and save the entries (2):
+2. In the **Create New Destination** dialog, choose **From Scratch** (1), and **Create** (2).
+
+    ![Create Destination to Target Subaccount 3](screenshots/CreateTargDest-04an.png)
+
+2. In the **Create Destination** window, enter details for the following fields (1), and choose **Create** (2):
     >Keep the values of fields not mentioned in the table unchanged.
 
     | Field | Value |
@@ -71,11 +75,12 @@ The transport destination defines the endpoint of the SAP Content Agent subscrib
     | **Client Secret** | Enter the value of the `clientsecret` from the `uaa` section of the service key details. |
     | **Token Service URL** | Enter the value of `url` from the `uaa` section of the service key details and append `/oauth/token` to the URL. For example: `https://87654321trial.authentication.us10.hana.ondemand.com/oauth/token` |
 
-    ![Create Destination to Target Subaccount 3](screenshots/CreateTargDest-03.png)
+    ![Create Destination to Target Subaccount 3](screenshots/CreateTargDest-05n.png)
 
 3. The destination was created.
 
-    ![Create Destination to Target Subaccount 4](screenshots/CreateTargDest-04.png)
+    ![Create Destination to Target Subaccount 4](screenshots/CreateTargDest-06.png)
+    >You can test the destination by displaying its details, and choosing **Check Connection**. However, a successful check result doesn't guarantee successful deployment. We recommend that you run a test transport after completing the entire configuration of the transport scenario. This helps ensure that you've correctly completed all configuration tasks and have all necessary authorizations.
 
 
 See also on SAP Help Portal: [Create Target Node Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/06bd9e2d55084eaf9235844118ddb84c.html)
