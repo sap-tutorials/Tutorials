@@ -324,13 +324,13 @@ The first task in preparing the HDLRE instance is creating a remote server that 
 
     ![HDLRE SQL Console](hdlre_sql_console.png)
 
-4. Run the following SQL query against the HDLRE instance using HDLADMIN. Notice, you are naming the remote server `HDB_SERVER`. Replace the `<HANA Host Name>` with the host copied from the properties modal.
+4. Run the following SQL query against the HDLRE instance using HDLADMIN. Notice, you are naming the remote server `HDB_SERVER`. Replace the `<HANA Host Name>` with the host copied from the properties modal.  Additional details can be found at [CREATE SERVER Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-server-statement-for-data-lake-relational-engine).
 
     ```SQL
     CREATE SERVER HDB_SERVER CLASS 'HANAODBC' USING
     'Driver=libodbcHDB.so;
     ConnectTimeout=0;
-    CommunicationTimeout=15000000;
+    CommunicationTimeout=15000;
     RECONNECT=0;
     ServerNode=<HANA Host Name>:443;
     ENCRYPT=TRUE;';
@@ -348,9 +348,12 @@ The first task in preparing the HDLRE instance is creating a remote server that 
 
     >If you would prefer to use USER1 instead of HDLADMIN, execute the `GRANT MANAGE ANY USER TO USER1;` query as described [here](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-externlogin-statement-for-data-lake-relational-engine).
 
-6. Do a quick test to ensure everything has been set up successfully. You will create a temporary table that points to your TOURIST_REVIEWS table in SAP HDB. Then run a select against that table to ensure you are getting data back.
+6. Do a quick test to ensure everything has been set up successfully. You will create a temporary table that points to your TOURIST_REVIEWS table in SAP HDB. Then run a select against that table to ensure you are getting data back.  Additional details can be found at [CREATE EXISTING TABLE Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-existing-table-statement-for-data-lake-relational-engine).
 
     ```SQL
+    CREATE EXISTING LOCAL TEMPORARY TABLE VT_HDB_TOURIST_REVIEWS AT 'HDB_SERVER..HOTELS.TOURIST_REVIEWS';
+    /* 
+    --If you wish to only include specific columns, the column list can also be provided
     CREATE EXISTING LOCAL TEMPORARY TABLE VT_HDB_TOURIST_REVIEWS
     (
         REVIEW_ID           INTEGER          NOT NULL,
@@ -359,7 +362,7 @@ The first task in preparing the HDLRE instance is creating a remote server that 
         REVIEW              NVARCHAR(500)    NOT NULL,
         REVIEW_DATE         DATE             NOT NULL,
         PRIMARY KEY (REVIEW_ID)
-    ) AT 'HDB_SERVER..HOTELS.TOURIST_REVIEWS';
+    ) AT 'HDB_SERVER..HOTELS.TOURIST_REVIEWS'; */
 
     SELECT * FROM VT_HDB_TOURIST_REVIEWS;
     --DROP TABLE VT_HDB_TOURIST_REVIEWS;

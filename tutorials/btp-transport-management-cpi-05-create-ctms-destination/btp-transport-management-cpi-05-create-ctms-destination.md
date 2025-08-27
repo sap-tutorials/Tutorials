@@ -60,11 +60,15 @@ Before you start creating the destination to SAP Cloud Transport Management serv
 
     ![Create cTMS Destination 0](screenshots/CreatecTMSDest-03a.png)
 
-2. Choose **Connectivity > Destinations** (1). The two existing destinations are displayed. To create a new destination, choose **Create Destination** (2).
+2. Choose **Connectivity > Destinations** (1). The two existing destinations are displayed. To create a new destination, choose **Create** (2).
 
-    ![Create cTMS Destination 1](screenshots/CreatecTMSDest-04.png)
+    ![Create cTMS Destination 1](screenshots/CreatecTMSDest-04n.png)
 
-3. In the **Destination Configuration** window, enter details for the following fields (1), and then choose **New Property** to add an additional property (2). 
+3. In the **Create New Destination** dialog, choose **From Scratch** (1), and **Create** (2).
+
+    ![Create cTMS Destination 2](screenshots/CreatecTMSDest-04an.png)
+
+4. In the **Create Destination** window, enter details for the following fields (1), and then scroll down (2).
     >Keep the values of fields not mentioned in the table unchanged.
 
     | Field | Value |
@@ -77,11 +81,20 @@ Before you start creating the destination to SAP Cloud Transport Management serv
     | **Client Secret** | Enter the value of the `clientsecret` from the `uaa` section of the service key details. |
     | **Token Service URL** | Enter the value of `url` from the `uaa` section of the service key details and append `/oauth/token` to the URL. For example: `https://cpi-dev-12345678.authentication.us10.hana.ondemand.com/oauth/token` |
 
-    ![Create cTMS Destination 2](screenshots/CreatecTMSDest-05.png)
+    ![Create cTMS Destination 3](screenshots/CreatecTMSDest-05n.png)
 
-4. As the additional property, enter `sourceSystemId`, and as the value, enter `DEV_NODE` (1). Save the destination (2).
+5. You need to add the name of the source node of the SAP Integration Suite source subaccount as configured in SAP Cloud Transport Management service, here `DEV_NODE`, as an additional property to the destination. This way, SAP Content Agent knows which transport node to use when exporting the integration content. To do this, choose **Add Property**. 
 
-    ![Create cTMS Destination 3](screenshots/CreatecTMSDest-06.png)
+    ![Create cTMS Destination 4](screenshots/CreatecTMSDest-05an.png)
+
+7. Enter `sourceSystemId` as the property (1), and `DEV_NODE` as the value (2). Choose **Create** (3).
+
+    ![Create cTMS Destination 5](screenshots/CreatecTMSDest-05bn.png)  
+
+9. The destination was created. 
+
+    ![Create cTMS Destination 6](screenshots/CreatecTMSDest-07n.png)
+    >You can test the destination by displaying its details, and choosing **Check Connection**. However, a successful check result doesn't guarantee successful export. We recommend that you run a test transport after completing the entire configuration of the transport scenario. This helps ensure that you've correctly completed all configuration tasks and have all necessary authorizations.
 
 See also on SAP Help Portal: [Create TransportManagementService Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/eed66f35f9d148c8ae5b2d46ff097d8c.html)
 
