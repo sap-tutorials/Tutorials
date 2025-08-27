@@ -119,11 +119,15 @@ See also on SAP Help Portal: [Creating Service Instance and Service Key for Inbo
 
 The SAP Cloud Integration destination serves as the endpoint where SAP Content Agent imports the integration content. The destination has the fixed name `CloudIntegration`. You need the values of the service key from the SAP Process Integration Runtime instance created in the target account during the previous step.
 
-1. Choose **Connectivity > Destinations** (1). To create a new destination, choose **Create Destination** (2).
+1. Choose **Connectivity > Destinations** (1). To create a new destination, and choose **Create** (2).
 
-    ![Create Cloud Integration Destination 1](screenshots/create-ci-dest-target-01.png)
+    ![Create Cloud Integration Destination 1](screenshots/create-ci-dest-target-01n.png)
 
-2. In the **Destination Configuration** window, enter details for the following fields (1), and save the entries (2):
+2. In the **Create New Destination** dialog, choose **From Scratch** (1), and **Create** (2).
+
+    ![Create Cloud Integration Destination 2](screenshots/create-ci-dest-target-01an.png)
+
+3. In the **Create Destination** window, enter details for the following fields (1), and choose **Create** (2):
     >Keep the values of fields not mentioned in the table unchanged.
     
     | Field | Value |
@@ -136,7 +140,12 @@ The SAP Cloud Integration destination serves as the endpoint where SAP Content A
     | **Client Secret** | Enter the value of the `clientsecret` from the service key details. |
     | **Token Service URL** | Enter the value of `tokenurl` from the service key details. For example: `https://87654321trial.authentication.us10.hana.ondemand.com/oauth/token` |
 
-    ![Create Cloud Integration Destination 2](screenshots/create-ci-dest-target-02.png)
+    ![Create Cloud Integration Destination 3](screenshots/create-ci-dest-target-02n.png)
+
+4. The destination was created.
+
+    ![Create Destination to Target Subaccount 4](screenshots/create-ci-dest-target-03n.png)
+    >You can test the destination by displaying its details, and choosing **Check Connection**. However, a successful check result doesn't guarantee successful deployment. We recommend that you run a test transport after completing the entire configuration of the transport scenario. This helps ensure that you've correctly completed all configuration tasks and have all necessary authorizations.
 
 See also on SAP Help Portal: [Create SAP Cloud Integration Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/c17c4004049d4d9dba373d72ce5610cd.html)
 

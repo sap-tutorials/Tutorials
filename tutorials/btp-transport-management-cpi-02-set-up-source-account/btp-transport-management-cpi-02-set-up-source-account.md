@@ -97,46 +97,63 @@ The details of the service key of the SAP Content Agent instance are required fo
 
     ![Create Service Key 2](screenshots/CreateServiceKeyCAS_02.png)
 
-3. The service key was created. Select the three dots **...** in the service key row, and choose **View**.
+3. The service key was created. 
 
-    ![Create Service Key 3](screenshots/CreateServiceKeyCAS_03.png)
-
-4. The service key looks as follows. Leave the service key open so that you copy the required values in the next step, or note down the values of  `url`, as well as `clientid`, `clientsecret`, and  `url` from the `uaa` section.  
-
-    ![Create Service Key 4](screenshots/CreateServiceKeyCAS_04.png)
-
-    You'll need them in the next step when you create the SAP Content Agent destination.
+    ![Create Service Key 3](screenshots/ServiceKeyCAScreated.png)
 
 See also on SAP Help Portal: [Create Service Key](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/c0ec2ba3016644a19cd6322fbc72ea2a.html)
 
 ### Create an SAP Content Agent Destination in the SAP BTP Source Account
 
-The destination to SAP Content Agent defines which SAP Content Agent the SAP Integration Suite communicates with. The destination has the fixed name `ContentAssemblyService`. To create it, you need some values from the service key of the SAP Content Agent instance that you've created in the previous step. 
+The destination to SAP Content Agent defines which SAP Content Agent the SAP Integration Suite communicates with. The destination has the fixed name `ContentAssemblyService`. In the Destination editor, you can create it using the **Service Key** option. This approach eliminates the need to manually copy values from the service key to the destination.  
 
-1. Open SAP BTP Cockpit of your SAP Integration Suite source subaccount in another browser window or tab, and choose **Connectivity > Destinations** (1), and choose **Create Destination** (2).
+1. In the SAP BTP Cockpit of your SAP Integration Suite source subaccount, choose **Connectivity > Destinations** (1), and choose **Create** (2).
 
-    ![Create CAS Destination 1](screenshots/CreateCASDest-1.png)
+    ![Create CAS Destination 1](screenshots/CreateCASDest-1n.png)
 
-2. In the **Destination Configuration** window, enter details for the following fields (1), and save the entries (2):
+2. In the **Create New Destination** dialog, choose **Service Instance** (1), and **Create** (2).
+
+    ![Create CAS Destination 2](screenshots/CreateCASDest-1an.png)
+
+3. In the **Choose Service Instance** step, all service instances that exist in the subaccount are displayed. Here, the **cpi_dev** instance is the only one available. Select it (1), and choose **Next** (2).
+
+    ![Create CAS Destination 3](screenshots/CreateCASDest-1bn.png)
+
+4. In the **Choose Service Key** step, you can leave the **Choose existing service key** option selected. Select the **cas-on-cpi-dev** service key from the dropdown menu (1), and choose **Next** (2).
+
+    ![Create CAS Destination 4](screenshots/CreateCASDest-1cn.png)
+
+5. In the **Destination Details** step, enter the values for the following fields (1-2), and then scroll down (3):
     >Keep the values of fields not mentioned in the table unchanged.
     
     | Field | Value |
     | ---------- | ------------- |
     | **Name** | `ContentAssemblyService` |
     | **Description** | For example: `Destination to SAP Content Agent Service` |
-    | **URL** | Enter the value of the first `url` from the details of the service key of the SAP Content Agent instance in the SAP BTP source account that you created in the previous step. |
-    | **Authentication** | Select **OAuth2ClientCredentials**. |
-    | **Client ID** | Enter the value of `clientid` from the `uaa` section of the service key details. |
-    | **Client Secret** | Enter the value of the `clientsecret` from the `uaa` section of the service key details. |
-    | **Token Service URL** | Enter the value of `url` from the `uaa` section of the service key details and append `/oauth/token` to the URL. For example: `https://12345678trial.authentication.us10.hana.ondemand.com/oauth/token` |
+    
+    ![Create CAS Destination 5](screenshots/CreateCASDest-1dn.png)
 
-    ![Create CAS Destination 2](screenshots/CreateCASDest-2.png)
+6. The other values relevant for the destination were already taken over from the service key of the instance. Choose **Next**.
 
-    When you use **Check Connection** to test the connection, you'll probably get a *Connection to "ContentAssemblyService" established. Response returned: "401: Unauthorized"* message.  
+    ![Create CAS Destination 6](screenshots/CreateCASDest-1en.png)
+   
+7. In the **Review** step, verify all values of the destination, and choose **Create** to create it.
 
-    ![Create CAS Destination 3](screenshots/CreateCASDest-3.png)  
+    ![Create CAS Destination 7](screenshots/CreateCASDest-1fn.png)
 
-    "*Connection to "ContentAssemblyService" established.*" means that the URL specified in the destination can be reached. The *"401: Unauthorized"* response is the expected response. However, such a successful check doesn't guarantee successful deployment. We recommend that you run a test transport after completing the entire configuration of the transport scenario to know whether you are actually missing authorizations.
+8. The destination was created. Click anywhere in the row to display the details. 
+
+    ![Create CAS Destination 8](screenshots/CreateCASDest-2n.png)
+   
+9.  In the details, choose **Check Connection** to test the connection. 
+
+    ![Create CAS Destination 9](screenshots/CreateCASDest-3n.png) 
+
+10. The result should display **HTTP request (without authentication) to ContentAssemblyService destination succeeded.**
+
+    ![Create CAS Destination 10](screenshots/CreateCASDest-4n.png)
+
+    This result means that the URL specified in the destination can be reached. However, such a successful check doesn't guarantee successful deployment. We recommend that you run a test transport after completing the entire configuration of the transport scenario to know whether you actually have all necessary authorizations.
 
 See also on SAP Help Portal: [Create SAP Content Agent Service Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/a4da0c26ced74bbfbc60e7f607dc05ab.html)
 
@@ -194,18 +211,22 @@ The details of the service key of the SAP Process Integration Runtime instance a
 
     ![Create Service Key 4](screenshots/CreatePIServiceKey-04.png)
 
-    You'll need them in the next step when you create the SAP Cloud Integration destination.
+    You'll need them in the next step when you create the SAP Cloud Integration destination. Unlike the SAP Content Agent destination, you must create the SAP Cloud Integration destination from scratch.
 
 
 ### Create an SAP Cloud Integration Destination
 
 The SAP Cloud Integration destination serves as the endpoint where SAP Content Agent collects the content to be packed into an MTA and exported to SAP Cloud Transport Management service. The destination has the fixed name `CloudIntegration`. 
 
-1. In the SAP Integration Suite source subaccount, choose **Connectivity > Destinations** (1). The destination to SAP Content Agent is displayed. To create a new one, choose **Create Destination** (2).
+1. In the SAP Integration Suite source subaccount, choose **Connectivity > Destinations** (1). The destination to SAP Content Agent is displayed. To create a new one, choose **Create** (2).
 
-    ![Create Cloud Integration Destination 1](screenshots/CreateCPIDest-01.png)
+    ![Create Cloud Integration Destination 1](screenshots/CreateCPIDest-01n.png)
 
-2. In the **Destination Configuration** window, enter details for the following fields (1), and save the entries (2):
+2. In the **Create New Destination** dialog, choose **From Scratch** (1), and **Create** (2).
+
+    ![Create Cloud Integration Destination 2](screenshots/CreateCPIDest-01an.png)
+
+3. In the **Destination Configuration** window, enter details for the following fields (1), and then scroll down (2):
     >Keep the values of fields not mentioned in the table unchanged.
     
     | Field | Value |
@@ -218,11 +239,17 @@ The SAP Cloud Integration destination serves as the endpoint where SAP Content A
     | **Client Secret** | Enter the value of the `clientsecret` from the service key details. |
     | **Token Service URL** | Enter the value of `tokenurl` from the service key details. For example: `https://12345678trial.authentication.us10.hana.ondemand.com/oauth/token` |
 
-    ![Create Cloud Integration Destination 2](screenshots/CreateCPIDest-04.png)
+    ![Create Cloud Integration Destination 3](screenshots/CreateCPIDest-01bn.png)
 
-3. The destination was created.  
+4. Leave the **Use default client trust store** checkbox selected, and choose **Create**.
+
+    ![Create Cloud Integration Destination 4](screenshots/CreateCPIDest-01cn.png)
+
+5. The SAP Cloud Integration destination was created.  
    
-    ![Create Cloud Integration Destination 3](screenshots/CreateCPIDest-05.png)
+    ![Create Cloud Integration Destination 5](screenshots/CreateCPIDest-01dn.png)
+
+    >You can also perform a connection check to verify that the destination URL is reachable. This process is similar to the one described earlier for the SAP Content Agent destination.
 
 See also on SAP Help Portal: [Create SAP Cloud Integration Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/c17c4004049d4d9dba373d72ce5610cd.html)
 
