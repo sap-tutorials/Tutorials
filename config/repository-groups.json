@@ -6,6 +6,12 @@
         "teamAdmin": null
     },
     {
+        "name": "ai-core",
+        "description": null,
+        "urlBase": "sap-tutorials/ai-core",
+        "teamAdmin": null
+    },
+    {
         "name": "btp-adai",
         "description": null,
         "urlBase": "sap-tutorials/btp-adai",
@@ -29,6 +35,12 @@
         "urlBase": "sap-tutorials/btp-onboarding",
         "teamAdmin": null
     },
+    {
+        "name": "commerce-cloud-easy-extension",
+        "description": null,
+        "urlBase": "sap-tutorials/commerce-cloud-easy-extension",
+        "teamAdmin": null
+    }, 
     {
         "name": "community",
         "description": null,
