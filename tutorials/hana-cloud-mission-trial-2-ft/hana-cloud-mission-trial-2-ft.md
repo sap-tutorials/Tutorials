@@ -44,7 +44,7 @@ In this tutorial, you will learn how to create an SAP Business Technology Platfo
 
 - The free tier means you can try out selected services up to a specified capacity limit and switch easily to the paid tier, without losing any work.  
 
-- The configuration of your free tier instance of SAP HANA Cloud, SAP HANA database is **30 GB of memory, 2 vCPUs, and 120 GB of storage**.
+- The configuration of your free tier instance of SAP HANA Cloud, SAP HANA database is *16 GB of memory, 1 vCPU, and 80 GB of storage**.
 
 - If you do not restart your instance within **30 days**, it will be **deleted**.  Additional details are available at [SAP HANA Database License](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-license).  An [alert](https://help.sap.com/docs/alert-notification/sap-alert-notification-for-sap-btp/hdb-free-tier-instance-expiration) is sent if the instance is not started for 15 days.  Further details on how to view and receive alerts can be found at [Alerts in SAP HANA Database and Data Lake](https://developers.sap.com/tutorials/hana-cloud-alerts.html).
 
