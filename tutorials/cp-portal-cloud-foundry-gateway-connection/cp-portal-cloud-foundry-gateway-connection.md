@@ -47,12 +47,15 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
     <!-- border -->![Open destinations](3-open-destinations.png)
 
-2. Click **Create Destination**.
+2. Click **Create**.
 
     <!-- border -->![New destination](4-create-destination.png)
 
+3. Select destination type.
 
-3.  Add the following destination properties:
+    <!-- border -->![Select destination type](4a -select-destination-type.png)
+
+3.  Add the following main destination properties:
 
     >Important: If you haven't already created a user in ES5 (see prerequisites above), please do so now and follow the steps in this topic:  [Create an Account on the Gateway Demo System](gateway-demo-signup).
 
@@ -67,9 +70,13 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
     |  User Name          | Your ES5 Gateway user
     |  Password    | Your ES5 Gateway password
 
-4. Make sure that the **Use default JDK truststore** checkbox is checked.
+4. Make sure that the **Use default client truststore** checkbox is checked. Your screen will look like this:
+
+    <!-- border -->![Main destination properties](5-main-destination-properties.png)
+
 
 5. Enter the following **Additional Properties** depending on your scenario. Click the **New Property** button each time to add a new property.
+
 
     >If you're not sure which ones to enter, enter all of them. Also make sure that you enter the values correctly, for example, the value 'true' must always be lower case.
 
@@ -88,21 +95,8 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
     Your screen will look like this:
 
-    ![Destination Properties](5-destination-properties.png)
+    ![Additional properties](6-additional-destination-properties.png)
 
 6. Click **Save**.
-
-
-7. Click **Check Connection** to make sure that everything is working.
-
-    <!-- border -->![Check connection](6-check-connection.png)
-
-    You'll get confirmation that the connection is established.
-
-    ![Connection established](7-connection-established.png)
-
-    >This isn't an error. The check connection operation tries to open the ES5 URL and gets redirected to the login page.
-
-
 
 ---
