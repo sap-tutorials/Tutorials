@@ -29,9 +29,7 @@ A few notes to remember about free tier model and trial accounts:
 
 - The instance summary card: Trial (left) and free tier (middle) does not display a cost estimate. If you are using free tier, ensure you see the free tier indicator icon since paid tier (right) will show you a cost estimate meaning charges will be incurred if you create an instance.
 
-    ![Trial Tier Summary Card](trial-tier.png)
-    ![Free Tier Summary Card](free-tier.png)
-    ![Production Tier Summary Card](production-tier.png)
+    ![Estimator for each tier](estimator-tiers.png)
 
 ---
 
@@ -47,7 +45,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
     ![Create instance in SAP HANA Cloud Central](hcc-create-instance.png)
 
-3.	Here you must choose the **Type** of instance to create.  Select **SAP HANA Cloud, SAP HANA Database**.
+3.	Here you must choose the **Type** of instance to create.  Select **SAP HANA Database**.
 
     > If you would like to learn more about **SAP HANA Cloud, Data Lake**, and [Get Started with a Standalone SAP HANA Cloud, Data Lake](mission.hana-cloud-data-lake-get-started), navigate to the linked mission for the basics.
 
@@ -153,7 +151,7 @@ Click on **Next Step** to continue.
 
 [OPTION BEGIN [Production]]
 
-1.	Under **Advanced Settings**, you can choose to enable the **Script Server**, **Document Store**, and **Data Provisioning Server**. If your database does not have the required `vCPUs` for either of the first two options, you can click on the link on the error message, which will change your original setup and add more `vCPUs` automatically.
+1.	Under **Advanced Settings**, you can choose to enable additional features such as the **Script Server**, **Document Store**, **Triple Store**, **Natural Language Processing (NLP)**, and **Data Provisioning Server**.  If your database does not have the required `vCPUs` for either of the first two options, you can click on the link on the error message, which will change your original setup and add more `vCPUs` automatically.
 
     ![Advanced Settings](prod-advanced-settings2.png)
 
