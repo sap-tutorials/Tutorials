@@ -286,7 +286,6 @@ This step will configure the SAP Alert Notification service to invoke the previo
     **Before pressing the Close button**, copy and save the Event Trigger URL as this value is not available once closed.
 
     ![build event trigger inputs](build-event-trigger-inputs.png)
-    ![build event trigger inputs mapping](build-event-trigger-inputs-mapping.png)
 
 3. Open the SAP Alert Notification service UI and create a new action to call the previously created trigger.
 
