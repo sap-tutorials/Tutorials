@@ -19,7 +19,7 @@ primary_tag: software-product>sap-hana-cloud
 - How the SAP BTP cockpit is structured and where to find SAP HANA Cloud in it
 
 ## Intro
-This tutorial is part of a mission, in which you will learn in a hands-on, end-to-end setting how to use SAP HANA Cloud, SAP HANA database. SAP offers two free options to use SAP HANA Cloud. This tutorial covers the second option, which is using SAP HANA Cloud free tier. The free tier option can be easily upgraded to a paid version but does require payment details, while the trial allows you to use SAP HANA Cloud in a test environment and does not require payment details to sign up. If you would like to learn more about the free tier option (SAP HANA Cloud trial), navigate to the [next tutorial](hana-cloud-mission-trial-2-ft).
+This tutorial is part of a mission, in which you will learn in a hands-on, end-to-end setting how to use SAP HANA Cloud, SAP HANA database. SAP offers two free options to use SAP HANA Cloud. This tutorial covers the first option, which is using SAP HANA Cloud trial. The free tier option can be easily upgraded to a paid version but does require payment details, while the trial allows you to use SAP HANA Cloud in a test environment and does not require payment details to sign up. If you would like to learn more about the free tier option (SAP HANA Cloud trial), navigate to the [next tutorial](hana-cloud-mission-trial-2-ft).
 
 
 >![Alex Banner](banner-alex.png)
