@@ -109,14 +109,14 @@ Click on an instance to see further details of an instance including:
 
 **Provide database authentication**
 
-If this is the first-time you are accessing a database instance, you will need to **Choose Authentication** and enter the credentials of your DBADMIN user.
+Initially, you are signed in with the DBADMIN database user and the password specified during the instance provisioning wizard.  This can be changed using this is the first-time you are accessing a database instance, you will need to **Choose Authentication** and enter the credentials of your DBADMIN user.
 
 ![Choose authentication](choose-auth.png)
 
 
 ### Get to know the SAP HANA database explorer
 
-SAP HANA database explorer allows you to interact with SAP HANA databases, as well as use the SAP Graph and Spatial engines. You also have access to the SQL console.
+SAP HANA database explorer allows you to interact with SAP HANA databases, as well as use the SAP Graph and Spatial engines. You also have access to the SQL console.  It can be accessed from the actions menu of an instance.
 
 >**Note**: The SQL console and catalog details can now be accessed directly in HANA Cloud Central by clicking on the SQL console or database objects toolbar items or through the actions menu.
 >

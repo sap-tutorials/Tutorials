@@ -51,27 +51,28 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
     ![Provisioning Wizard](wizard-type.png)
 
-    You may also choose the runtime environment.  Further details can be found at [What Runtime Environment is my SAP HANA Cloud Instance Using?](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/runtime-environments-for-sap-hana-cloud). 
+    If you have multiple types of service plans enabled in your SAP HANA Cloud entitlement, a **License** section will appear. To use the free tier model, click on **Free Tier** so that it is highlighted as shown below. Note that if you have enabled only one type of service plan in your SAP HANA Cloud entitlement (e.g. free tier only), the License section does not appear and that service plan type will be used automatically.
+
+    ![Free tier option](select-ft.png)
 
 4.	Click on **Next Step** to continue.
 
 ### Choose your license, instance name, and password
 
-1. If you have multiple types of service plans enabled in your SAP HANA Cloud entitlement, a **License** section will appear just before the Basics section. To use the free tier model, click on **Free Tier** so that it is highlighted as shown below. Note that if you have enabled only one type of service plan in your SAP HANA Cloud entitlement (e.g. free tier only), the License section does not appear and that service plan type will be used automatically.
-
-    ![Free tier option](select-ft.png)
-
-2.	In the **Basics** section, enter a name for your instance in the field **Instance Name**, such as `HC_HDB`.
+1.	In the **Basics** section, enter a name for your instance in the field **Instance Name**, such as `HC_HDB`.
 
     > This field does not allow any spaces in the name. Keep in mind that you will not be able to change the name after the instance has been created.
 
-3.	Insert a password in the **Administrator Password** field.
+2.	Insert a password in the **Administrator Password** field.
 
-4.	Confirm it by typing it again in the **Confirm Administrator Password** field.
+3.	Confirm it by typing it again in the **Confirm Administrator Password** field.
 
     ![HANA step 1](hdb-instance-name.png)
 
     > This password is the admin password for this instance, so make sure to use a strong password.  If needed, the password can be reset via the actions menu [Reset DBADMIN Password](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/649092e9d9be41c59930179ce4f3d59e.html?locale=en-US) in SAP HANA Cloud Central if your user has the role SAP HANA Cloud Security Administrator.
+
+4. You may also choose the runtime environment.  Further details can be found at [What Runtime Environment is my SAP HANA Cloud Instance Using?](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/runtime-environments-for-sap-hana-cloud) 
+
 
 5.	Now click on **Next Step** to continue.  
 
