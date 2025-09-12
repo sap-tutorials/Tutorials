@@ -24,7 +24,7 @@ In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Wo
 ### Open Content Manager
 
 
- Click the Content Manager icon in the side panel to open the **Content Manager**.
+ Click the **Content Manager** icon in the side panel to open the **Content Manager**.
 
 > When you open the **Content Manager** you'll see a list of content items that have been added to your subaccount. From here you can manually configure new content items and view any other available content items. You can also access the **Content Explorer** where you can explore exposed content from available channels, select the content, and add it to your own content.
 
@@ -54,11 +54,11 @@ In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Wo
 
     <!-- border -->![Enter app properties](3-add-app-properties.png)
 
-    > When working in your own environment, it's better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case in the  **App UI Technology** dropdown list, you would select `SAPUI5`. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
+    > When working in your own environment, it's better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case, in the  **App UI Technology** dropdown list, you would select `SAPUI5`. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
 
 4. Click the **Navigation** tab to specify the intent of your app.
 
-    > The unique combination of a semantic object and an action is called an intent. It is used to define navigation to an application.
+    > The unique combination of a semantic object and an action is called an intent. It's used to define navigation to an application.
 
 5. Enter the following values:
 
@@ -112,14 +112,12 @@ For end users to access the app in runtime, you must assign the app to a role.
 
     <!-- border -->![Click Edit](9-edit.png)
 
-3. Under the **Apps** tab, you'll see that your `New Orders` app has an **X** in the **Assignment Status** column. Click the toggle to assign the app to the `Everyone` role.
+3. Under the **Apps** tab, you'll see that your `New Orders` app has a red **X** in the **Assignment Status** column. Click the toggle to change the icon to green and then click **Save**. This action assigns the app to the `Everyone` role.
 
     <!-- border -->![Assign app to role](10-assign-app-to-role.png)
 
     
     > If you have many apps, you can type some letters of your app name in the search bar, (for example, `Or`) to search for the app.
-
-4. Click **Save**.
 
 
 You've successfully created an SAPUI5 app. In the next tutorial, you'll create another app (URL app) and then you'll add both apps to a page.

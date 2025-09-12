@@ -29,9 +29,9 @@ Ensure you have Node.js installed and check its version. Enter the following com
 node -v  
 ```  
 
-If Node.js is installed, the currently installed version is returned, such as v20.10.0.
+If Node.js is installed, the currently installed version is returned, such as v22.16.0.
 
-If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
+If Node.js is not installed, download the long-term support (LTS) version of the Node.js installer from [Download Node.js](https://nodejs.org/en/download/).
 
 >If an install for Node.js is not provided on Linux, you may choose to install it via a package manager. For more details, please navigate to [this link](https://nodejs.org/en/download/package-manager/).
 
@@ -44,6 +44,11 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 
 ### Install the data lake Relational Engine client for Node.js
 The Node.js driver covered in this tutorial is `@sap\iq-client` which supports the latest Node.js versions and includes a promise library.  An alternate driver is the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.
+The SQL Anywhere driver can be installed by running this command.
+
+ ```Shell (Microsoft Windows)
+npm install sqlanywhere
+ ```
 
 1. Add the dependencies to the driver.
 
@@ -57,7 +62,7 @@ The Node.js driver covered in this tutorial is `@sap\iq-client` which supports t
     npm install
     ```
 
-2. Create a folder named `node` and enter the newly created directory.
+2. Open a new Shell and create a folder named `node` and enter the newly created directory.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\DataLakeClientsTutorial\node
@@ -112,7 +117,7 @@ The Node.js driver covered in this tutorial is `@sap\iq-client` which supports t
     const { PerformanceObserver, performance } = require('perf_hooks');
     var t0;
     var util = require('util');
-    var datalakeIQ = require('@sap/iq-client');
+    var datalakeRE = require('@sap/iq-client');
 
     var connOptions = {
         host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
@@ -122,7 +127,7 @@ The Node.js driver covered in this tutorial is `@sap\iq-client` which supports t
     };
 
     //Synchronous example querying a table
-    var connection = datalakeIQ.createConnection();
+    var connection = datalakeRE.createConnection();
     connection.connect(connOptions);
 
     var sql = 'select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;';
@@ -146,7 +151,7 @@ The Node.js driver covered in this tutorial is `@sap\iq-client` which supports t
 
     Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
 
-    >To enable debug logging of the SAP IQ Node.js client, enter the following command and then rerun the app.
+    >To enable debug logging of the Node.js client, enter the following command and then rerun the app.
 
     >```Shell (Microsoft Windows)
     >set DEBUG=*
@@ -200,7 +205,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
     const { PerformanceObserver, performance } = require('perf_hooks');
     var t0;
     var util = require('util');
-    var datalakeIQ = require('@sap/iq-client');
+    var datalakeRE = require('@sap/iq-client');
 
     var connOptions = {
         host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
@@ -210,7 +215,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
     };
 
     //Asynchronous example calling a stored procedure with callbacks
-    var connection = datalakeIQ.createConnection();
+    var connection = datalakeRE.createConnection();
 
     connection.connect(connOptions, function(err) {
         if (err) {
@@ -296,7 +301,7 @@ The Node.js driver for the data lake Relational Engine client provides support f
     const { PerformanceObserver, performance } = require('perf_hooks');
     var t0;
     var util = require('util');
-    var datalakeIQ = require('@sap/iq-client');
+    var datalakeRE = require('@sap/iq-client');
     var PromiseModule = require('@sap/iq-client/extension/Promise.js');
 
     var connOptions = {
@@ -308,7 +313,7 @@ The Node.js driver for the data lake Relational Engine client provides support f
     };
 
     //Asynchronous example calling a stored procedure that uses the promise module
-    var connection = datalakeIQ.createConnection();
+    var connection = datalakeRE.createConnection();
     var statement;
 
     PromiseModule.connect(connection, connOptions)
@@ -379,7 +384,7 @@ The Node.js driver for the data lake Relational Engine client provides support f
 
 
 ### Debug the application
-Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
+Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux. Ensure that Node.js is added to your path in environment variables such as 	C:\Program Files\nodejs.
 
 1. If required, download [Visual Studio Code.](https://code.visualstudio.com/Download).
 
@@ -396,6 +401,13 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
     Notice that the program stops running at the breakpoint that was set. Observe the variable values in the leftmost pane.  Step through code.
 
     ![VS Code Debugging](debugging.png)
+
+    If "Can't find Node.js binary 'node': path does not exist" error pops up, open a Shell and run the following command.
+    ```Shell
+    code .
+    ```
+    Then restart VSCode.
+
 
 ### Knowledge check
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP data lake Relational Engine database.

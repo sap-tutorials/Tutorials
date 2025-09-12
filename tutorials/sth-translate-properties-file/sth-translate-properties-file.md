@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Kerstin Bier
-author_profile: https://github.com/bierke
+author_name: Fiona Murphy
+author_profile: https://github.com/MCMANUSF
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>machine-learning]
@@ -18,7 +18,7 @@ primary_tag: software-product>sap-translation-hub
   - How to translate a properties file using SAP Translation Hub
 
 
----
+
 ### Open overview screen of cockpit
 
 In your SAP BTP account, choose **Services** in the navigation area on the left.

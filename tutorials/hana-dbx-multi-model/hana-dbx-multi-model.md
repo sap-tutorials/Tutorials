@@ -2,34 +2,217 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph, tutorial>license]
 primary_tag: software-product>sap-hana-cloud
 ---
 
-# Try Out Multi-Model Functionality with the SAP HANA Database Explorer
-<!-- description --> Explore graph, JSON document store, and spatial capabilities in the SAP HANA database explorer.
+# Try Out Multi-Model Functionality with the SAP HANA Database Explorer and Database Objects App
+<!-- description --> Explore knowledge graph, property graph, JSON document store, and spatial capabilities in the SAP HANA database explorer.
 
 ## Prerequisites
- - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
+- A productive SAP HANA Cloud database
 - You have completed the first 3 tutorials in this group.
 
 ## You will learn
-  - How to create a graph, a document store, and import spatial data.
-  - How the SAP HANA database explorer can be used with multi-model data.
+  - How to create a knowledge graph, a property graph, a document store, and import spatial data.
+  - How the SAP HANA database explorer and the database objects app can be used with multi-model data.
 
 ## Intro
-A graph can be used to show the connections between items such as the connections between airports or between people or groups in a social network.
+A [knowledge graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sap-hana-cloud-sap-hana-database-knowledge-graph-engine-guide) can be used to store facts in triples providing additional meaning and relationships. 
 
-SAP HANA provides the ability to store and perform queries on spatial data such as a point, a line segment, or a polygon.
+A [property graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-property-graph-engine-reference/sap-hana-cloud-sap-hana-database-property-graph-engine-reference) can be used to show the connections between items such as the connections between airports or between people or groups in a social network.
+
+SAP HANA Cloud provides the ability to store and perform queries on spatial data such as a point, a line segment, or a polygon.  Additional details can be found at [SAP HANA Cloud, SAP HANA Database Spatial Reference](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/sap-hana-cloud-sap-hana-database-spatial-reference).
 
 This tutorial is meant to be an introduction to this topic.  For additional content see the tutorial groups [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started),  [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data), and the multi-model chapters in [Basic Trial - Introduction to SAP HANA Cloud](https://www.sap.com/products/technology-platform/hana/trial.html) that is available once you sign up for the basic trial.
 
 ---
 
-### Create a graph workspace
-The following steps will create a graph workspace that can display the distance between hotels in a state.
 
-In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
+### Enable the triple store and Create a knowledge graph
+The following steps will create a knowledge graph that provides information on additional hotel amenities, explore the created knowledge graph using the database objects app, and then will perform a query on the knowledge graph.
+
+Before you can create a knowledge graph, please ensure your HANA Instance is version 2025.2 or above, and your instance has triple store activated. Here are the steps to doing this:
+
+1. Go to Manage Configuration on your SAP HANA Cloud Database.
+
+    ![Manage Configuration](manage_config.png)
+
+2. Under the General Tab, change the version of your instance to 2025.2 or above
+
+    ![Change Instance Version](change_version.png)
+
+3. Under the Advanced Settings Tab, check off the Triple Store option if it's not already on.
+
+    ![Add Triple Store](add_triple_store.png)
+
+    *The knowledge graph feature is not available for trial or free tier users.*
+    
+    To learn more about knowledge graphs see [Connecting the Facts: SAP HANA Cloud’s Knowledge Graph Engine for Business Context](https://community.sap.com/t5/technology-blogs-by-sap/connecting-the-facts-sap-hana-cloud-s-knowledge-graph-engine-for-business/ba-p/13888597) and [Choosing Between Knowledge Graphs and Property Graphs in SAP HANA Cloud and Why Both Matter](https://community.sap.com/t5/technology-blogs-by-sap/choosing-between-knowledge-graphs-and-property-graphs-in-sap-hana-cloud-and/ba-p/14074575).
+
+
+4. Execute the following in the SQL Console. This query creates a KG with several hotels and amenities such as an indoor pool, hot tub, fitness center, etc.
+
+    ```SQL
+    --CALL SPARQL_EXECUTE('DROP GRAPH <kg_hotels>', '', ?, ?);
+    CALL SPARQL_EXECUTE('
+        INSERT DATA { GRAPH <kg_hotels> { 
+            <http://example.org/hotels/Delta> a <Hotel>;
+            <name> "Delta";
+            <city> "Waterloo";
+            <yearBuilt> 2012 .
+        
+            <http://example.org/hotels/hotelamenities/IndoorPool1> a <IndoorPool>;
+            <included_at> <http://example.org/hotels/Delta>;
+            <length> 25;
+            <width> 10.
+        
+            <http://example.org/hotels/hotelamenities/Hottub1> a <Hottub>;
+            <included_at> <http://example.org/hotels/Delta>;
+            <length> 6;
+            <width> 6.
+        
+            <http://example.org/hotels/hotelamenities/FitnessCenter1> a <FitnessCenter>;
+            <included_at> <http://example.org/hotels/Delta>.
+        
+            <http://example.org/hotels/hotelamenities/Keurig> a <CoffeeMaker>;
+            <included_at> <http://example.org/hotels/Delta>. 
+
+            <http://example.org/hotels/Sunshine> a <Hotel>;
+            <name> "Sunshine";
+            <city> "Clearwater";
+            <yearBuilt> 1975 .
+        
+            <http://example.org/hotels/hotelamenities/Restaurant1> a <Restaurant>;
+            <included_at> <http://example.org/hotels/Sunshine>;
+            <seating> 95.
+        
+            <http://example.org/hotels/hotelamenities/FitnessCenter2> a <FitnessCenter>;
+            <included_at> <http://example.org/hotels/Sunshine>.
+        
+            <http://example.org/hotels/hotelamenities/Laundry1> a <DryCleaning>;
+            <included_at> <http://example.org/hotels/Sunshine>. 
+            
+            <http://example.org/hotels/Congress> a <Hotel>;
+            <name> "Congress";
+            <city> "Seattle";
+            <yearBuilt> 2012 .
+        
+            <http://example.org/hotels/hotelamenities/IndoorPool2> a <IndoorPool>;
+            <included_at> <http://example.org/hotels/Congress>;
+            <length> 30;
+            <width> 15.
+        
+            <http://example.org/hotels/hotelamenities/Restaurant2> a <Restaurant>;
+            <included_at> <http://example.org/hotels/Congress>;
+            <seating> 122.
+        
+            <http://example.org/hotels/hotelamenities/FitnessCenter3> a <FitnessCenter>;
+            <included_at> <http://example.org/hotels/Congress>.
+        
+            <http://example.org/hotels/hotelamenities/Spa1> a <Spa>;
+            <included_at> <http://example.org/hotels/Congress>. 
+
+            <http://example.org/hotels/OceanStar> a <Hotel>;
+            <name> "Ocean Star";
+            <city> "Atlantic City";
+            <yearBuilt> 2012 .
+        
+            <http://example.org/hotels/hotelamenities/IndoorPool3> a <IndoorPool>;
+            <included_at> <http://example.org/hotels/OceanStar>;
+            <length> 50;
+            <width> 30.
+        
+            <http://example.org/hotels/hotelamenities/Restaurant2> a <Restaurant>;
+            <included_at> <http://example.org/hotels/OceanStar>;
+            <seating> 205.
+        
+            <http://example.org/hotels/hotelamenities/Cleaning1> a <CleaningServices>;
+            <included_at> <http://example.org/hotels/OceanStar>.
+        
+            <http://example.org/hotels/hotelamenities/Spa2> a <Spa>;
+            <included_at> <http://example.org/hotels/OceanStar>. 
+
+            <http://example.org/hotels/LongIsland> a <Hotel>;
+            <name> "LongIsland";
+            <city> "Long Island";
+            <yearBuilt> 2021 .
+        
+            <http://example.org/hotels/hotelamenities/Entertainment1> a <Entertainment>;
+            <included_at> <http://example.org/hotels/LongIsland>.
+        
+            <http://example.org/hotels/hotelamenities/Restaurant3> a <Restaurant>;
+            <included_at> <http://example.org/hotels/LongIsland>;
+            <seating> 122.
+        
+            <http://example.org/hotels/hotelamenities/Cleaning2> a <CleaningServices>;
+            <included_at> <http://example.org/hotels/LongIsland>.
+        
+            <http://example.org/hotels/hotelamenities/Spa3> a <Spa>;
+            <included_at> <http://example.org/hotels/LongIsland>. 
+            
+            <http://example.org/hotels/hotelamenities/Hottub2> a <Hottub>;
+            <included_at> <http://example.org/hotels/LongIsland>. 
+        } 
+        }
+        ', '', ?, ?
+    );
+    ```
+    
+    Additional examples can be found at [SAP HANA Cloud, SAP HANA Database SPARQL Reference Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sparql-reference-guide/sap-hana-cloud-sap-hana-database-sparql-reference-guide)
+
+
+5. To visualize and examine the knowledge graph database objects, you must first enable the feature in your preferences.  Click on your account
+
+    ![Account Settings](go_preferences_RDF.png)
+
+    Go to the Database Objects tab
+
+    ![Database Objects Tab](go_database_objects.png)
+
+    Enable RDF Named Graphs
+    
+    ![Enable RDF Graphs](enable_RDF_graphs.png)
+
+    You will now have the RDF Named Graphs view available. Click on it to view the graphs you have created
+        
+    ![RDF Named Graphs View](RDF_view.png)
+
+    The DEFAULT graph is where content goes when it doesn't have a name. For more information, review the [DEFAULT_GRAPHS and Named Graphs help page](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/default-graph-and-named-graphs).
+
+    Click on the kg_hotels graph, and open the graph ontology to see the nodes.
+    
+    ![Graph Ontology View](view_graph.png)
+
+
+6. Run a query to find hotels that have an indoor pool.
+
+    ```SQL
+    SELECT *
+    FROM SPARQL_TABLE('
+    PREFIX ex: <http://example.org/hotels/>
+    SELECT ?hotel ?hotelName ?city ?yearBuilt ?poolLength ?poolWidth
+    FROM <kg_hotels>
+    WHERE {
+        ?hotel a <Hotel> ;
+    <name> ?hotelName ;
+    <city> ?city ;
+    <yearBuilt> ?yearBuilt .
+        ?pool a <IndoorPool> ;
+    <included_at> ?hotel ;
+    <length> ?poolLength ;
+    <width> ?poolWidth .
+    }
+    ');
+    ```
+
+    Further examples of creating SPARQL statements can be found at [SPARQL SELECT Queries Using SPARQL_TABLE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sparql-select-queries-using-sparql-table).
+
+
+### Create a property graph workspace
+The following steps will create a property graph workspace that can display the distance between hotels in a state.
+
+In SAP HANA Cloud, a property graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
 
 1. Create a vertex table that represents distances between hotels by executing the following in the SQL console.
 
@@ -105,16 +288,16 @@ In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertice
 For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Reference](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/sap-hana-cloud-sap-hana-database-graph-reference).
 
 
-### Explore a graph using the graph viewer
-1. Open the graph viewer.
+### Explore a property graph using the viewer
+1. Open the property graph viewer.
 
     ![DISTANCEGRAPH graph viewer](distance-graph-workspace-viewer.png)
 
-    The graph viewer will open in a new tab as shown below.
+    The property graph viewer will open in a new tab as shown below.
 
     ![DISTANCEGRAPH graph viewer](distance-graph-viewer.png)
 
-2. Set the vertex and edge names using the graph viewer settings.
+2. Set the vertex and edge names using the property graph viewer settings.
 
     Set the vertex label to `NAME`.
 
@@ -124,7 +307,7 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH edge labels](edge-label.png)
 
-3. Optionally, adjust a few of the graph vertices to accommodate viewing by dragging and dropping graph vertices.
+3. Optionally, adjust a few of the property graph vertices to accommodate viewing by dragging and dropping property graph vertices.
 
     ![DISTANCEGRAPH better viewing](graph-viewer-wider.png)
 
@@ -136,14 +319,14 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH edge filter](edge-filter.png)
 
-5. Highlight the Long Island vertex using the graph viewer settings. You may do so by selecting a color. 
+5. Highlight the Long Island vertex using the property graph viewer settings. You may do so by selecting a color. 
 
     ![DISTANCEGRAPH highlighted Long Island](long-island.png)
 
-Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/appendix-open-flights-and-company-graph-examples).  The company graph example does not currently display in the SAP HANA database explorer graph viewer as it does not currently support the display of homogeneous graphs.  Graph workspaces may also be viewed using the [SAP HANA plug-in for Cytoscape](https://github.com/SAP/sap-hana-plugin-for-cytoscape).
+Additional property graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/appendix-open-flights-and-company-graph-examples).  The company graph example does not currently display in the SAP HANA database explorer property graph viewer as it does not currently support the display of homogeneous graphs.  Property graph workspaces may also be viewed using the [SAP HANA plug-in for Cytoscape](https://github.com/SAP/sap-hana-plugin-for-cytoscape).
 
 
-### Use graph algorithms in the SAP HANA database explorer
+### Use property graph algorithms in the SAP HANA database explorer
 The shortest path algorithm can be used to provide the optimal route between two vertices. The nearest neighbor algorithm can be used to show only the vertices that are connected to a specified vertex.
 
 The following steps will walk through using the shortest path algorithm to determine the optimal route from Airport Hotel in Rosemont, IL to Regency Hotel in Seattle, WA.
@@ -176,7 +359,7 @@ The following steps will walk through using the shortest path algorithm to deter
     INSERT INTO DISTANCES VALUES (40,21,20,4348);
     ```
 
-2. After removing the previously applied filters, navigate to the graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path", specify the values shown below, and click Apply.
+2. After removing the previously applied filters, navigate to the property graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path", specify the values shown below, and click Apply.
 
     ![Graph Algorithms](graph-algorithms.png)
 

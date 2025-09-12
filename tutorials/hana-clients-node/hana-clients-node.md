@@ -339,11 +339,11 @@ Connection pooling can improve performance when making multiple, brief connectio
 
     var pool = null;
 
-    queryTable(false, "1st Run");
+    queryTable(false, "1st Run");       //don't use the connection pool
     queryTable(false, "2nd Run");
-    queryTable(true, "1st Run");
+    queryTable(true, "1st Run");        //use the connection pool
     queryTable(true, "2nd Run");
-    queryTable(true, "3rd Run", true); //change user
+    queryTable(true, "3rd Run", true);  //change user
     console.log("Connections in use :" + pool.getInUseCount());
     console.log("Connections in the pool :" + pool.getPooledCount());
 
@@ -400,7 +400,7 @@ Connection pooling can improve performance when making multiple, brief connectio
     node nodeQueryConnectionPool.js
     ```
 
-    Notice below that the time taken to establish a connection is approx 900 ms which but becomes almost instantaneous when the connection pool is used or about 85 ms when a connection from the pool requires changing the user.
+    Notice below that the time taken to establish a connection is approx 900 ms but becomes almost instantaneous when the connection pool is used or about 85 ms when a connection from the pool requires changing the user.
 
     ![Running nodeQueryConnectionPool.js](node-query-connection-pool.png)
 

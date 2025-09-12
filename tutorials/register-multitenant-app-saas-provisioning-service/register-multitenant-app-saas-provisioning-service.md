@@ -7,13 +7,13 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 ---
 
 # Register a Multitenant Application to the SAP SaaS Provisioning Service
-<!-- description --> Register a Node.js application to the SAP SaaS Provisioning Service (saas-registry) in the Kyma runtime to make it available for subscription to SaaS consumer tenants.
+<!-- description --> Register a Node.js application to the SAP SaaS Provisioning Service (saas-registry) in Kyma runtime to make it available for subscription to SaaS consumer tenants.
 
 ## Prerequisites
 - You have finished the tutorial [Implement Subscription Callbacks for a Multitenant Application](implement-subscription-callback-multitenant)
 
 ## You will learn
-- How to create SaaS Provisioning Service instance for multitenancy in the Kyma runtime
+- How to create SaaS Provisioning Service instance for multitenancy in Kyma runtime
 - How to consume SaaS Provisioning Service instance credential from the backend application
 
 
@@ -22,12 +22,13 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 ### Create SAP SaaS Provisioning Service Instance and Credential
 
 
-**1.** Create an instance and binding of SAP SaaS Provisioning Service by adding the following part to the deployment file `k8s-deployment-services.yaml`:
+**1.** Create an instance and binding of SAP SaaS Provisioning Service by adding the following part to the deployment file `k8s-deployment-services.yaml`:  
+> Replace `<subaccount-subdomain>` with the subdomain of your subaccount, and `<clusterdomain>` with the domain of your Kyma cluster
 
 ```YAML
 ################### SaaS Provisioning Service ###################
 ---
-apiVersion: services.cloud.sap.com/v1alpha1
+apiVersion: services.cloud.sap.com/v1
 kind: ServiceInstance
 metadata:
   name: saas-registry-service
@@ -39,14 +40,14 @@ spec:
     xsappname: multitenant-kyma-demo
     displayName: Multitenancy Sample in Kyma
     description: A NodeJS application to show how to use the SaaS registry to build a multi-tenant application on BTP Kyma Runtime'
-    category: 'Provider: TIA'
+    category: 'Provider: TIA' # Define the category of the application in the SaaS registry
     appUrls:
       # url registered in the kyma-broker which handles SaaS provisioning (subscription/deletion of saas instances)
       onSubscription: https://<subaccount-subdomain>-node.<cluster-domain>/callback/v1.0/tenants/{tenantId}
       onSubscriptionAsync: false
       onUnSubscriptionAsync: false
 ---
-apiVersion: services.cloud.sap.com/v1alpha1
+apiVersion: services.cloud.sap.com/v1
 kind: ServiceBinding
 metadata:
   name: saas-registry-service-binding

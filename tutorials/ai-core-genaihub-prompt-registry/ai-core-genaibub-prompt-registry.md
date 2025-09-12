@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 45
-primary_tag: software-product>sap-business-technology-platform
-tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
+primary_tag: software-product>sap-ai-core
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
 author_name: Smita Naik
 author_profile: https://github.com/I321506
 ---
@@ -17,18 +17,31 @@ author_profile: https://github.com/I321506
 - How to apply Grounding techniques, Data Masking, and Content Filtering to refine responses.
 
 ## Prerequisites
-- Setup Environment:
-Ensure your instance and AI Core credentials are properly configured according to the steps provided in the initial tutorial
-- Orchestration Deployment:
-Ensure at least one orchestration deployment is ready to be consumed during this process. 
-- Refer to [this tutorial understand the basic consumption of GenAI models using orchestration.](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html)
-- Basic Knowledge:
-Familiarity with the orchestration workflow is recommended
+1. **BTP Account**  
+   Set up your SAP Business Technology Platform (BTP) account.  
+   [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
+2. **For SAP Developers or Employees**  
+   Internal SAP stakeholders should refer to the following documentation: [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139), [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
+3. **For External Developers, Customers, or Partners**  
+   Follow this tutorial to set up your environment and entitlements: [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html), [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
+4. **Create BTP Instance and Service Key for SAP AI Core**  
+   Follow the steps to create an instance and generate a service key for SAP AI Core:  
+   [Create Service Key and Instance](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key?version=CLOUD)
+5. **AI Core Setup Guide**  
+   Step-by-step guide to set up and get started with SAP AI Core:  
+   [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-setup.html)
+6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to 
+[SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
+7. **Orchestration Deployment**:
+    Refer to the tutorial [the basic consumption of GenAI models using orchestration](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html) and ensure at least one orchestration deployment is ready to be consumed during this process. 
+8. Basic Knowledge:
+    Familiarity with the orchestration workflow is recommended
 
-### Prompt Registry
+### Pre-read
 
-[OPTION BEGIN [AI Launchpad]]
+In this tutorial, we explore the **Prompt Registry** feature within the **Generative AI Hub**, focusing on how to efficiently manage and utilize prompt templates in orchestration pipelines.
 
+Prompt templates allow for dynamic and structured interactions with AI models. This tutorial will guide you through the end-to-end process of integrating these templates into your orchestration workflows.
 A **Prompt Registry** is a centralized system for storing, managing, and versioning prompt templates used in AI-driven applications. It allows developers and teams to reuse, modify, and track changes in prompts efficiently. This is particularly useful in large-scale AI projects where prompts need to be standardized, refined, and deployed across different models or scenarios. 
 
 **Why Use a Prompt Registry?** 
@@ -46,9 +59,15 @@ There are two key approaches to managing prompts in a **Prompt Registry**:
 1.	**Imperative API (Direct API Control for Dynamic Prompt Management)**: The Imperative API allows you to create, update, and manage prompt templates dynamically via API calls. This approach is best suited for interactive design-time use cases, where you need to iteratively refine prompts and track their versions. Each change is explicitly made via CRUD operations, and you can manage versions manually.
 2.	**Declarative API (Git-based Sync for Automated Prompt Management)**: The Declarative API, on the other hand, integrates with SAP AI Core applications and is ideal for CI/CD pipelines. Instead of managing templates through direct API interactions, you define them as YAML files in a Git repository. The system automatically syncs these templates, ensuring that updates are seamlessly reflected in the prompt registry without manual intervention.
 
-Next, let's dive into the Declarative approach to creating a prompt template. 
+**You will learn:**
 
-[OPTION END]
+- Declarative approach to creating a prompt template. 
+- How to **register and sync** a prompt template in Generative AI Hub.
+- How to **consume the registered prompt** within an orchestration workflow.
+- How to apply **Grounding**, **Data Masking**, and **Content Filtering** to improve the quality, safety, and relevance of AI-generated responses.
+
+For more information on prompt registry, refer to the official documentation:  
+[Prompt Registry in SAP Generative AI Hub – Help Portal](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/prompt-registry?version=CLOUD)
 
 ### Create a Prompt Template (Declarative)  
 
@@ -56,7 +75,7 @@ Next, let's dive into the Declarative approach to creating a prompt template.
 
 - The declarative approach allows you to manage prompt templates using Git repositories, ensuring automatic synchronization with the Prompt Registry. Instead of making API calls to create and update templates manually, you define them in YAML files, commit them to Git, and let the system handle synchronization. 
 
-- Create a prompt template and push it to your git repository.  The file must be named in the following format: “**your-template-name**.prompttemplate.ai.sap.yaml”. 
+- Create a prompt template and push it to your git repository.  The file must be named in the following format: **your-template-name**.prompttemplate.ai.sap.yaml
 
 - YAML File Structure: Copy the below code
 

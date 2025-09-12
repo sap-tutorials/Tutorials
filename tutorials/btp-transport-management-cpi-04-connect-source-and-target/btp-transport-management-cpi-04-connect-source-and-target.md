@@ -10,7 +10,7 @@ primary_tag: software-product>sap-cloud-transport-management
 parser: v2
 ---
 # Create a Transport Destination and Configure the SAP Integration Suite Transport Landscape
-<!-- description --> Create a transport destination in the administrative subaccount in the SAP BTP source account using the credentials of the service key of the SAP Content Agent service instance on the target subaccount. Then configure the SAP Integration Suite transport landscape in SAP Cloud Transport Management service using the transport destination.  
+<!-- description --> Create a transport destination in the administrative subaccount in the SAP BTP source account using the credentials of the service key of the SAP Content Agent instance on the target subaccount. Then configure the SAP Integration Suite transport landscape in SAP Cloud Transport Management service using the transport destination.  
 
 ## Prerequisites
 
@@ -29,9 +29,9 @@ parser: v2
 
 In this tutorial, you are back in the SAP BTP source account, in the central administrative subaccount used for SAP Cloud Transport Management service.  
 
-You configure a transport destination so that SAP Cloud Transport Management knows about the target endpoint of the deployment process. This is usually the deploy endpoint of the service whose content is to be transported. When SAP Content Agent is used for deployment, this is the endpoint of SAP Content Agent service in the target account. The transport destination is used to pass the transported integration content to SAP Content Agent service on the target subaccount, and SAP Content Agent will use the *CloudIntegration* destination to import this content. 
+You configure a transport destination so that SAP Cloud Transport Management knows about the target endpoint of the deployment process. This is usually the deploy endpoint of the service whose content is to be transported. When SAP Content Agent is used for deployment, this is the endpoint of SAP Content Agent in the target account. The transport destination is used to pass the transported integration content to SAP Content Agent on the target subaccount, and SAP Content Agent will use the *CloudIntegration* destination to import this content. 
 
-You configure the transport landscape in SAP Cloud Transport Management service. This includes transport nodes as representations of the source and target endpoints of the deployment processes in the landscape, as well as transport routes to connect the transport nodes. In this tutorial, you create a source node representing your SAP Integration Suite source subaccount, and a target node representing your SAP Integration Suite target subaccount. In the target node configuration, you assign the previously created transport destination pointing to SAP Content Agent service in the target subaccount. 
+You configure the transport landscape in SAP Cloud Transport Management service. This includes transport nodes as representations of the source and target endpoints of the deployment processes in the landscape, as well as transport routes to connect the transport nodes. In this tutorial, you create a source node representing your SAP Integration Suite source subaccount, and a target node representing your SAP Integration Suite target subaccount. In the target node configuration, you assign the previously created transport destination pointing to SAP Content Agent in the target subaccount. 
 
    ![Scenario Overview](screenshots/ov-connect-source-target.png)
 
@@ -50,15 +50,19 @@ You configure the transport landscape in SAP Cloud Transport Management service.
 
 ### Create a Transport Destination
 
-The transport destination defines the endpoint of the SAP Content Agent service subscribed in the target account. This destination is assigned to the target node in SAP Cloud Transport Management service. The name of the destination is not fixed.
+The transport destination defines the endpoint of the SAP Content Agent subscribed in the target account. This destination is assigned to the target node in SAP Cloud Transport Management service. The name of the destination is not fixed.
 
 >Make sure that you have the details of the **service key of the SAP Content Agent instance** in the **target** subaccount at hand that you created in [Set Up the SAP Integration Suite Target Subaccount](btp-transport-management-cpi-03-set-up-target-account). 
 
-1. In the **Central Services** subaccount, choose **Connectivity > Destinations** (1). To create a new destination, choose **Create Destination** (2).
+1. In the **Central Services** subaccount, choose **Connectivity > Destinations** (1), and choose **Create** (2).
 
-    ![Create Destination to Target Subaccount 2](screenshots/CreateTargDest-02.png)
+    ![Create Destination to Target Subaccount 2](screenshots/CreateTargDest-04n.png)
 
-3. In the **Destination Configuration** window, enter details for the following fields (1), and save the entries (2):
+2. In the **Create New Destination** dialog, choose **From Scratch** (1), and **Create** (2).
+
+    ![Create Destination to Target Subaccount 3](screenshots/CreateTargDest-04an.png)
+
+2. In the **Create Destination** window, enter details for the following fields (1), and choose **Create** (2):
     >Keep the values of fields not mentioned in the table unchanged.
 
     | Field | Value |
@@ -71,11 +75,12 @@ The transport destination defines the endpoint of the SAP Content Agent service 
     | **Client Secret** | Enter the value of the `clientsecret` from the `uaa` section of the service key details. |
     | **Token Service URL** | Enter the value of `url` from the `uaa` section of the service key details and append `/oauth/token` to the URL. For example: `https://87654321trial.authentication.us10.hana.ondemand.com/oauth/token` |
 
-    ![Create Destination to Target Subaccount 3](screenshots/CreateTargDest-03.png)
+    ![Create Destination to Target Subaccount 3](screenshots/CreateTargDest-05n.png)
 
-4. The destination was created.
+3. The destination was created.
 
-    ![Create Destination to Target Subaccount 4](screenshots/CreateTargDest-04.png)
+    ![Create Destination to Target Subaccount 4](screenshots/CreateTargDest-06.png)
+    >You can test the destination by displaying its details, and choosing **Check Connection**. However, a successful check result doesn't guarantee successful deployment. We recommend that you run a test transport after completing the entire configuration of the transport scenario. This helps ensure that you've correctly completed all configuration tasks and have all necessary authorizations.
 
 
 See also on SAP Help Portal: [Create Target Node Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/06bd9e2d55084eaf9235844118ddb84c.html)
@@ -115,7 +120,7 @@ Perform this step in the SAP Cloud Transport Management UI.
     | **Name** (1)| here `TARGET_NODE`|
     | **Description** | This field is optional. For example, `SAP Integration Suite target node`. |
     | **Content Type** (2) | Select the type of content that is transported. For SAP Integration Suite, this is **Multi-Target Application**. |
-    | **Destination** (3) | Select the destination that points to SAP Content Agent service in the target subaccount. Here, this is **CAS_on_target**. |
+    | **Destination** (3) | Select the destination that points to SAP Content Agent in the target subaccount. Here, this is **CAS_on_target**. |
 
     ![Set up the transport landscape 6](screenshots/CreateTranspLandsc-06.png)
 
@@ -136,10 +141,4 @@ You've configured the transport landscape. When you export content from your SAP
 
 See also on SAP Help Portal: [Configuring the Landscape](https://help.sap.com/docs/TRANSPORT_MANAGEMENT_SERVICE/7f7160ec0d8546c6b3eab72fb5ad6fd8/3e7b04236d804a4eb80e42c6360209f1.html)
 
-
-### Next Step 
-
-To enable SAP Content Agent service to export the integration content to the import queue of SAP Cloud Transport Management service, establish an export connection to SAP Cloud Transport Management by creating a destination in the SAP Integration Suite source subaccount.  
-
-[Establish an Export Connection from SAP Content Agent Service in the Source Subaccount to SAP Cloud Transport Management Service](btp-transport-management-cpi-05-create-ctms-destination)
 

@@ -10,7 +10,7 @@ primary_tag: software-product>sap-cloud-transport-management
 parser: v2
 ---
 # Set Up the SAP Integration Suite Target Subaccount 
-<!-- description --> Perform all required configuration tasks in the SAP Integration Suite target subaccount to configure the transport scenario: "Transport SAP Integration Suite content using SAP Cloud Transport Management service and SAP Content Agent service". 
+<!-- description --> Perform all required configuration tasks in the SAP Integration Suite target subaccount to configure the transport scenario: "Transport SAP Integration Suite content using SAP Cloud Transport Management service and SAP Content Agent". 
 
 ## Prerequisites
 
@@ -21,13 +21,13 @@ parser: v2
 ## You will learn
 
    - How to set up SAP Integration Suite in the target subaccount (subscribe to SAP Integration Suite, activate its capabilities, and assign roles required for SAP Integration Suite, as well as create a service instance and key for SAP Process Integration Runtime)
-   - How to create a service instance and a service key to access the APIs of SAP Content Agent service in the target subaccount
+   - How to create a service instance and a service key to access the APIs of SAP Content Agent in the target subaccount
    - How to create the transport destination required for the transport scenario in the target subaccount
 
 
 ## Scenario Overview
 
-In this tutorial, you or your colleague subscribe to SAP Integration Suite in the **trial** subaccount of the SAP BTP target account. You create service instances for **SAP Content Agent** service and **Process Integration Runtime** to get API access to the services. You create **service keys** required to connect the SAP BTP source account with the SAP BTP target account (using a destination to SAP Content Agent service in the target account) and for the SAP Cloud Integration destination **CloudIntegration**, based on the data from the service keys. 
+In this tutorial, you or your colleague subscribe to SAP Integration Suite in the **trial** subaccount of the SAP BTP target account. You create service instances for **SAP Content Agent** service and **Process Integration Runtime** to get API access to the services. You create **service keys** required to connect the SAP BTP source account with the SAP BTP target account (using a destination to SAP Content Agent in the target account) and for the SAP Cloud Integration destination **CloudIntegration**, based on the data from the service keys. 
 
    ![Scenario Overview](screenshots/ov-set-up-target-subaccount.png)
 
@@ -92,7 +92,7 @@ See also on SAP Help Portal: [Creating Service Instance and Service Key for Inbo
 
 ### Create a Service Key for the SAP Process Integration Runtime Instance
 
-The details of the service key of the SAP Process Integration Runtime instance are required for the configuration of the SAP Cloud Integration destination. The destination is required for the communication of SAP Content Agent service with SAP Process Integration Runtime.
+The details of the service key of the SAP Process Integration Runtime instance are required for the configuration of the SAP Cloud Integration destination. The destination is required for the communication of SAP Content Agent with SAP Process Integration Runtime.
 
 >If you've used the **Enable Integration Suite** booster to assign roles and create service instances, you can skip this step. A service key for the SAP Process Integration Runtime instance was already created. 
 
@@ -117,13 +117,17 @@ See also on SAP Help Portal: [Creating Service Instance and Service Key for Inbo
 
 ### Create an SAP Cloud Integration Destination
 
-The SAP Cloud Integration destination serves as the endpoint where SAP Content Agent Service imports the integration content. The destination has the fixed name `CloudIntegration`. You need the values of the service key from the SAP Process Integration Runtime instance created in the target account during the previous step.
+The SAP Cloud Integration destination serves as the endpoint where SAP Content Agent imports the integration content. The destination has the fixed name `CloudIntegration`. You need the values of the service key from the SAP Process Integration Runtime instance created in the target account during the previous step.
 
-1. Choose **Connectivity > Destinations** (1). To create a new destination, choose **Create Destination** (2).
+1. Choose **Connectivity > Destinations** (1). To create a new destination, and choose **Create** (2).
 
-    ![Create Cloud Integration Destination 1](screenshots/create-ci-dest-target-01.png)
+    ![Create Cloud Integration Destination 1](screenshots/create-ci-dest-target-01n.png)
 
-2. In the **Destination Configuration** window, enter details for the following fields (1), and save the entries (2):
+2. In the **Create New Destination** dialog, choose **From Scratch** (1), and **Create** (2).
+
+    ![Create Cloud Integration Destination 2](screenshots/create-ci-dest-target-01an.png)
+
+3. In the **Create Destination** window, enter details for the following fields (1), and choose **Create** (2):
     >Keep the values of fields not mentioned in the table unchanged.
     
     | Field | Value |
@@ -136,13 +140,18 @@ The SAP Cloud Integration destination serves as the endpoint where SAP Content A
     | **Client Secret** | Enter the value of the `clientsecret` from the service key details. |
     | **Token Service URL** | Enter the value of `tokenurl` from the service key details. For example: `https://87654321trial.authentication.us10.hana.ondemand.com/oauth/token` |
 
-    ![Create Cloud Integration Destination 2](screenshots/create-ci-dest-target-02.png)
+    ![Create Cloud Integration Destination 3](screenshots/create-ci-dest-target-02n.png)
+
+4. The destination was created.
+
+    ![Create Destination to Target Subaccount 4](screenshots/create-ci-dest-target-03n.png)
+    >You can test the destination by displaying its details, and choosing **Check Connection**. However, a successful check result doesn't guarantee successful deployment. We recommend that you run a test transport after completing the entire configuration of the transport scenario. This helps ensure that you've correctly completed all configuration tasks and have all necessary authorizations.
 
 See also on SAP Help Portal: [Create SAP Cloud Integration Destination](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/c17c4004049d4d9dba373d72ce5610cd.html)
 
 ### Create a Service Instance for SAP Content Agent Service
 
-For the transport scenario, API access to SAP Content Agent service is required also on the target subaccount. First create a service instance.
+For the transport scenario, API access to SAP Content Agent is required also on the target subaccount. First create a service instance.
 
 1. Choose **Services > Service Marketplace** (1), and filter for *Content Agent Service* (2). On the **Content Agent Service** tile, select the three dots **…**, and choose **Create** (3).
 
@@ -156,7 +165,7 @@ For the transport scenario, API access to SAP Content Agent service is required 
 
     ![Create CAS Instance 3](screenshots/create-cas-instance-target-03.png)
 
-    The SAP Content Agent service instance *CAS-deploy* was created. 
+    The SAP Content Agent instance *CAS-deploy* was created. 
 
     ![Create CAS Instance 4](screenshots/create-cas-instance-target-04.png)
 
@@ -165,7 +174,7 @@ See also on SAP Help Portal: [Create Instance](https://help.sap.com/docs/CONTENT
 
 ### Create a Service Key for the SAP Content Agent Service Instance
 
-The details of the service key of the SAP Content Agent service instance are required for the configuration of the destination to SAP Content Agent service in the target subaccount that you'll configure in the SAP BTP source account as part of the next tutorial [Create a Transport Destination and Configure the SAP Integration Suite Transport Landscape](btp-transport-management-cpi-04-connect-source-and-target).
+The details of the service key of the SAP Content Agent instance are required for the configuration of the destination to SAP Content Agent in the target subaccount that you'll configure in the SAP BTP source account as part of the next tutorial [Create a Transport Destination and Configure the SAP Integration Suite Transport Landscape](btp-transport-management-cpi-04-connect-source-and-target).
 
 1. To create a service key for the SAP Content Agent instance, in the service instance row, select the three dots **…**, and choose **Create Service Key**.
 
@@ -183,15 +192,9 @@ The details of the service key of the SAP Content Agent service instance are req
 
     ![Create CAS Service Key 4](screenshots/create-cas-service-key-target-04.png)  
 
-    You'll need them in the next tutorial [Create a Transport Destination and Configure the SAP Integration Suite Transport Landscape](btp-transport-management-cpi-04-connect-source-and-target) to create the transport destination (called **CAS_on_Target**) in the central administrative subaccount that points to SAP Content Agent service in the target subaccount. 
+    You'll need them in the next tutorial [Create a Transport Destination and Configure the SAP Integration Suite Transport Landscape](btp-transport-management-cpi-04-connect-source-and-target) to create the transport destination (called **CAS_on_Target**) in the central administrative subaccount that points to SAP Content Agent in the target subaccount. 
 
 
 See also on SAP Help Portal: [Create Service Key](https://help.sap.com/docs/CONTENT_AGENT_SERVICE/ae1a4f2d150d468d9ff56e13f9898e07/c0ec2ba3016644a19cd6322fbc72ea2a.html)
 
 
-
-### Next Step
-
-Create a transport destination in the central administrative subaccount in the SAP BTP source account to address SAP Content Agent service on the target subaccount.  
-
-[Create a Transport Destination and Configure the SAP Integration Suite Transport Landscape](btp-transport-management-cpi-04-connect-source-and-target)

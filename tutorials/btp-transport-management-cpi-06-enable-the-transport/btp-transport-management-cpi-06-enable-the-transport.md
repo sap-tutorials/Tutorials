@@ -115,9 +115,3 @@ See also on SAP Help Portal: [Configuring User Access to SAP Integration Suite](
 You've now completed all configuration steps required to transport integration content from your source subaccount to your target subaccount. 
 
 See also on SAP Help Portal: [Content Transport Using Cloud Transport Management](https://help.sap.com/docs/SAP_INTEGRATION_SUITE/51ab953548be4459bfe8539ecaeee98d/d458b172b98d4112a08499541fddfc54.html)
-
-### Next step
-
-Test that you've correctly completed all configuration steps required to transport SAP Integration Suite content using SAP Cloud Transport Management service and SAP Content Agent service. To do this, run a test transport of some integration content to make sure your configuration setup works correctly. 
-
-[Run a Test Transport](btp-transport-management-cpi-07-test-transport)

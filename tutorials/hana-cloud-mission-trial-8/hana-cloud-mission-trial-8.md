@@ -157,7 +157,7 @@ Now you can create a development project within your new space. Follow these ste
 
     ![DB Information](ss-06-DB-information.png)
 
-6.	To bind your project to your SAP HANA Cloud, SAP HANA database, you must log on to Cloud Foundry.
+6.	To bind your project to your SAP HANA Cloud, SAP HANA database, you must log on to Cloud Foundry if you have not already done so.
 
     ![bind to HDI](bind-to-hdi2.png)
 
@@ -250,7 +250,7 @@ Now that your project is created and you know the basics of how to navigate SAP 
 
     ![Open .hdbgrants file](open-hdbgrants.png)
 
-2.	For the purposes of this tutorial, we would like to grant the roles we have previously created to object owners and application users. The object owner will be assigned the role `genericRoleForOO` and the application user the role `genericRoleForAP`.
+2.	For the purposes of this tutorial, we would like to grant the roles we have previously created to object owners and application users. To view this tutorial, click [here](https://developers.sap.com/tutorials/hana-cloud-mission-trial-6.html). The object owner will be assigned the role `genericRoleForOO` and the application user the role `genericRoleForAP`.
 
     To do so, replace the contents of the `hdbgrants` file with the following:
 

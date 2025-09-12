@@ -5,7 +5,7 @@ time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
 primary_tag: products>sap-hana-cloud
 author_name: Hui Li
-author_profile: https://github.com/huili03
+author_profile: https://github.com/i545413
 ---
 
 # Understand How Data Anonymization Works in SAP HANA Cloud, SAP HANA Database

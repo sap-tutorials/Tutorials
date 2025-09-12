@@ -189,11 +189,11 @@ The parameter `value="housepricemodel"` refers to the artifact name, which refer
 
 Your code should resemble:
 
-<!-- border -->![image](img/ail/ModelA.png)
+<!-- border -->![image](img/ail/modelA.png)
 
 After execution, this is shown in SAP AI Launchpad.
 
-<!-- border -->![image](img/ail/ModelB.png)
+<!-- border -->![image](img/ail/modelB.png)
 
 
 ### Custom metrics for model inspection

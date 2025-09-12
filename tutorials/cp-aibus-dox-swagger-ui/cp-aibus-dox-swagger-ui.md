@@ -2,33 +2,33 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
 # Use Machine Learning to Extract Information from Documents with Swagger UI
-<!-- description --> Get machine learning model predictions for the documents you upload to Document Information Extraction.
+<!-- description --> Get machine learning model predictions for the documents you upload to SAP Document AI.
 
 ## You will learn
-  - How to call and test Document Information Extraction
+  - How to call and test SAP Document AI
   - How to access and use Swagger UI (User Interface)
-  - How to extract information from files with Document Information Extraction
+  - How to extract information from files with SAP Document AI
 
 ## Intro
-The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to Document Information Extraction.
+The core functionality of SAP Document AI is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to SAP Document AI.
 
 ---
 
 ### Access and authorize Swagger UI
 
 
-You'll use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
+You'll use Swagger UI, via any web browser, to call the SAP Document AI APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
-You need the service key that you created for Document Information Extraction in the previous tutorial – either [Use Trial to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-free-booster-key). Outside the `uaa` section of the service key, you'll find an entry called `tenantuiurl` and another called `swagger` (highlighted in the image below).
+You need the service key that you created for SAP Document AI in the previous tutorial – either [Use Trial to Set Up Account for SAP Document AI and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for SAP Document AI and Get Service Key](cp-aibus-dox-free-booster-key). Outside the `uaa` section of the service key, you'll find an entry called `tenantuiurl` and another called `swagger` (highlighted in the image below).
 
-1. To access the Document Information Extraction Swagger UI, first copy the `tenantuiurl` value and paste it into a text editor. Then, copy the `swagger` value and paste it onto the end of the `tenantuiurl` value. Finally, copy the resulting string, paste it into the address bar of your web browser, and press **Enter**.
+1. To access the SAP Document AI Swagger UI, first copy the `tenantuiurl` value and paste it into a text editor. Then, copy the `swagger` value and paste it onto the end of the `tenantuiurl` value. Finally, copy the resulting string, paste it into the address bar of your web browser, and press **Enter**.
 
     <!-- border -->![DOX](service-key-details.png)
 
@@ -36,7 +36,7 @@ You need the service key that you created for Document Information Extraction in
 
     <!-- border -->![DOX](swagger0.png)
 
-3. Get the `access_token` value created in the previous tutorial [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
+3. Get the `access_token` value created in the previous tutorial [Get OAuth Access Token for SAP Document AI Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
     ```
     Bearer <access_token>
@@ -53,7 +53,7 @@ You need the service key that you created for Document Information Extraction in
 ### See list of document fields you can extract
 
 
-Use the **GET /capabilities** endpoint to see the list of document fields and enrichment data for each document type you can process with Document Information Extraction.
+Use the **GET /capabilities** endpoint to see the list of document fields and enrichment data for each document type you can process with SAP Document AI.
 
 Click the endpoint name to expand it, click **Try it out**, and then **Execute**.
 
@@ -65,14 +65,14 @@ You should receive a response like the following:
 
 <!-- border -->![DOX](capabilitiesResponse.png)
 
->If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`Bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for Document Information Extraction via Web Browser](cp-aibus-dox-web-oauth-token).
+>If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`Bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for SAP Document AI via Web Browser](cp-aibus-dox-web-oauth-token).
 
 
 
 ### Get client
 
 
-When you create a service instance for Document Information Extraction, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
+When you create a service instance for SAP Document AI, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
 
 Free tier and trial users can only create one client. To see your list of clients:
 
@@ -116,7 +116,7 @@ You should receive a response like the following:
 ### Create client
 
 
-Use the **POST /clients** endpoint to create your own client. The **`clientId`** value created here will be used in other service endpoints.
+Use the **POST /clients** endpoint to create your own client. The **`clientId`** value created here will be used in other SAP Document AI endpoints.
 
 1. Expand the **POST /clients** endpoint.
 
@@ -137,18 +137,18 @@ You can repeat step 3 to see the **`clientId`** and **`clientName`** of the clie
 
 >**CAUTION:**
 
->When using the free tier option for Document Information Extraction or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
+>When using the free tier option for SAP Document AI or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
 
 
 
 ### Upload document
 
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
+>SAP Document AI uses a globally pretrained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
-Use the **POST /document/jobs** endpoint to upload to the service any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice.
+Use the **POST /document/jobs** endpoint to upload to SAP Document AI any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice.
 
->As an alternative to uploading your own document to the service, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
+>As an alternative to uploading your own document to SAP Document AI, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
 >- [Sample Invoice 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
 
@@ -248,9 +248,9 @@ In the response, you will find some general information about the document you u
 
 The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about its prediction. A confidence of 1 means that the model is 100% sure about its prediction.
 
-If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE**, then it means that the service is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
+If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE**, then it means that SAP Document AI is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
 
-You have now successfully used our machine learning model to get field value predictions for the document you uploaded to the Document Information Extraction service.
+You have now successfully used our machine learning model to get field value predictions for the document you uploaded to SAP Document AI.
 
 You can repeat step 4 and delete the client you created in step 5.
 

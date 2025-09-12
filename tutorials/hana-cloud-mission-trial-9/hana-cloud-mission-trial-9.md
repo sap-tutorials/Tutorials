@@ -120,6 +120,7 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 
 
 1.	Since we want to see the top 5 results from this join, we will add a **Rank** node next. Click on the rank icon (![Rank](icon-rank.png)) then click **on the link** between Join node and Aggregation node. This will add a Rank node in between them.
+    ![Add Rank Node](gif-04-add-rank-node.gif)
 
     >To make it easier to view the nodes, you can click on the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to rearrange the canvas.
 
@@ -188,7 +189,8 @@ Now that we know the top 5 partners, we need to next find out on which days the 
 
 1.	Continue working on the same calculation view.
 
-2.	We will join the output of our rank node to the table `SAGBOOKDAYS`, which we previously created. Add a join node **between** the rank node and the aggregation node.
+2.	We will join the output of our rank node to the table `SAGBOOKDAYS`, which we previously created. Add a join node **between** the rank node and the aggregation node by clicking their connection link.
+
 
     >Remember, you can use the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to keep the canvas tidy.
 

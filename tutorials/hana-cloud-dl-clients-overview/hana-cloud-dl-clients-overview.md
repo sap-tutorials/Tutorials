@@ -16,10 +16,11 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - Information about SAP HANA Cloud, data lake Relational Engine
   - How to install the data lake client
   - How to create sample tables, views, and procedures
-  - How to connect using SAP HANA Central, SAP HANA database explorer, and the Interactive SQL Client
+  - How to connect using the SQL Console and database objects apps in SAP HANA Cloud Central
+  - How to connect using the Interactive SQL Client (DBISQL)
 
 ## Intro
-This tutorial group will provide guidance on setting up an instance of [SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/sap-hana-cloud-data-lake-developer-guide-for-data-lake-relational-engine).  
+This tutorial group will provide guidance on setting up an instance of [SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/sap-hana-cloud-data-lake-developer-guide-for-data-lake-relational-engine) and [SAP HANA Cloud, Data Lake Client Interfaces](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/sap-hana-cloud-data-lake-client-connections).  
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the Feedback link shown below.
 > 
@@ -41,18 +42,18 @@ SAP HANA Cloud is composed of multiple components.
     >Note, that the data lake Files component, is currently not available in free tier or trial accounts.
 
 ### Choose where to deploy the database instances
-The SAP BTP platform provides multiple runtime environments such as Cloud Foundry and Kyma.  When a SAP HANA Cloud or data lake instance is created, it can be created in a BTP subaccount or in a Cloud Foundry space.  SAP HANA Cloud Central can be used to provision and manage instances in the BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the BTP subaccount (Other Environments) and one that was provisioned into Cloud Foundry.
+The SAP Business Technology Platform (SAP BTP)  provides multiple runtime environments such as Cloud Foundry and Kyma.  When a data lake instance is created, it can be created in an SAP BTP subaccount or in a Cloud Foundry space.  SAP HANA Cloud Central can be used to provision and manage instances in the SAP BTP subaccount or in a Cloud Foundry space.  In the screenshot below, there is an instance of a data lake that was provisioned in the SAP BTP subaccount (Other Environments) and one that was provisioned into Cloud Foundry.
 
 ![Runtime Environments](runtime.png)
 
-The multi-environment tooling (once a subscription and setup is complete) can be accessed under subscriptions.
+SAP HANA Cloud Central can be accessed (once a subscription and setup is complete) under instances and subscriptions.
 
 ![multi environment tools](multi-env-tools.png)
 
 ### Create a data lake instance
 >To complete the tutorials in this group, a SAP HANA Cloud, data lake instance is needed.  There are two different free options available, which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial).
 
-The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/docs/hana-cloud-data-lake/quick-start-tutorial-for-standalone-data-lake/quick-start-tutorial-for-standalone-data-lake).
+The following steps provide instructions on how to create a data lake instance in the SAP BTP trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/docs/hana-cloud-data-lake/quick-start-tutorial-for-standalone-data-lake/quick-start-tutorial-for-standalone-data-lake).
 
 There are multiple ways to create a data lake:  
 
@@ -66,38 +67,44 @@ There are multiple ways to create a data lake:
 
     When a data lake is created in either of the previous two methods, it is configured to be maximally compatible with an SAP HANA database.  
 
-* A data lake can be created that is independent (standalone) of a SAP HANA database by using the **Create Instance** button and the option **SAP HANA Cloud, data lake**.  
+* A data lake can be created that is independent (standalone) of a SAP HANA database by using the **Create Instance** button.
 
     ![independent data lake](standalone.png)
+
+     On the **Type** page, select the option **SAP HANA Cloud, data lake**.  
 
     ![Standalone data lake](standalone2.png)
 
     A standalone data lake can be configured with additional options such a collation value of UTF8BIN and blank padding set to ON to be more compatible with an on-premise SAP IQ.
 
+Perform the following steps to create a data lake Relational Engine.
+
 1. Open SAP HANA Cloud Central.  
 
 2. If a data lake is not already present, add one using one of the three methods previously described.
 
-    Take note when creating the data lake that the administration user is HDLADMIN.
+    Take note that when creating the data lake Relational Engine instance, the administration user is HDLADMIN.
 
-    >The HDLADMIN user has a [login policy](https://help.sap.com/docs/hana-cloud-data-lake/user-management-for-data-lake-relational-engine/login-policy-options) that enforces the [update of the password](https://help.sap.com/docs/hana-cloud-data-lake/user-management-for-data-lake-relational-engine/changing-password-single-control) after 180 days.  
+    >The HDLADMIN user has a [login policy](https://help.sap.com/docs/hana-cloud-data-lake/security-for-data-lake-relational-engine/login-policy-options) that enforces the [update of the password](https://help.sap.com/docs/hana-cloud-data-lake/security-for-data-lake-relational-engine/changing-password-single-control) after 180 days.  
 
-3. As this instance is a free tier or trial account, set allowed connections to **Allow all IP addresses** so that client applications can connect from any IP address.  
+3. If this instance is a free tier or trial instance or a test instance, set allowed connections to **Allow all IP addresses** so that client applications can connect from any IP address.  
 
     ![Allowed connections](allowed-connections.png)
 
-4. After a while, press the **Refresh** button or enable auto-refresh and the status should change from CREATING to RUNNING once the instance has been created.
+4. Press the **Refresh** button or enable auto-refresh and wait for the status to change from CREATING to RUNNING.
 
     ![data lake running](data-lake-running.png)
 
     >**Important:** SAP HANA Cloud, HANA data lake free tier or trial instances are shut down overnight and will need to be restarted before working with them the next day.
 
 ### Examine the Data Lake
-1. Once the data lake has been created, it's details can be examined.
+Once the data lake has been created, it's details can be examined.
 
-    ![Open in cockpit](open-cockpit.png)
+1. Click on the instance to show its details.
 
-    Input your credentials. These will be stored by SAP HANA Cloud Central.
+    ![Show instance details](open-cockpit.png)
+
+2. Input your credentials. These will be stored by SAP HANA Cloud Central.
 
     ![Credentials](credentials.png)
 
@@ -107,7 +114,6 @@ There are multiple ways to create a data lake:
 
 
 ### Create tables, views, functions, and procedures
-
 In this step, a sample HOTEL dataset will be created comprising tables, a view, and a stored procedure.
 
 1. From the action menu, select **Open SQL Console**.
@@ -123,16 +129,11 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
     CALL sa_conn_properties(CONNECTION_PROPERTY('Number'));
     ```
 
-    ![SAP HANA database explorer](sql-console-query.png)
+    ![Query's in SQL Console](sql-console-query.png)
 
     Additional details can be found at [System Functions](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/system-functions) and [Stored Procedures in Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/system-procedures-for-data-lake-relational-engine).
 
-
-3.  From the actions menu, select **Open in SAP HANA Database Explorer**.
-
-    ![open the SAP HANA database explorer](open-dbx.png)
-
-    In the SAP HANA database explorer, execute the following SQL statements.
+3.  Execute the below SQL statements
 
     ```SQL
     ---- drops the schema and all objects it contains
@@ -274,20 +275,20 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
             ORDER BY CUS.NAME ASC;
         END;
     ```
+    
+4.  Open the database objects app.  Select the instance, select **Tables**, and set the schema filter to be **HOTELS** to limit the returned tables to be those that were just created in the HOTELS schema. 
 
-    Select **Tables**, and set the schema filter to be **HOTELS** to limit the returned tables to be those that were just created in the HOTEL schema.
-
-    ![DBX Create](sql-commands.png)
+    ![database objects app](database-objects.png)
 
     Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-table-statement-for-data-lake-relational-engine), [CREATE VIEW Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-view-statement-for-data-lake-relational-engine), and [CREATE PROCEDURE Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-procedure-statement-for-data-lake-relational-engine).
 
-    > Identifiers such as the column names in a table are [case-insensitive](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/sap-hana-cloud-data-lake-sql-reference-for-data-lake-relational-engine).
+    >Identifiers such as the column names in a table are [case-insensitive](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/case-sensitivity-of-identifiers).
 
-For additional details on the SAP HANA database explorer, see the tutorial [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started), which showcases many of its features.
+For additional details on the SQL Console and database objects app, see the tutorials [Query Databases Using the SQL Console in SAP HANA Cloud Central](https://developers.sap.com/tutorials/hana-dbx-hcc.html) and [Browse and Explore Catalog Objects with the Database Objects App](https://developers.sap.com/tutorials/hana-dbx-database-objects.html), which showcases many of their features.
 
 
-### Install the developer licensed version of the data lake client
-This version of the data lake client does not include cryptographic libraries as it makes use of the libraries that are available on the operating systems such as OpenSSL.  It is available for download after accepting SAP Developer License agreement.  Currently, this version is only available for Linux.  Either client can be used to complete the steps shown in this tutorial group.
+### Install the developer licensed version of the data lake client for Linux
+This version of the data lake client does not include cryptographic libraries as it makes use of the libraries that are available on the operating systems such as OpenSSL.  The data lake client is available for download after accepting the SAP Developer License agreement.  Currently, this version is available for Microsoft Windows and Linux.  Choose which client you would like to use and follow either step 6, 7 or 8.  Either client can be used to complete the steps shown in this tutorial group.
 
 1.  Open the HANA tab of [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools).
 
@@ -304,13 +305,12 @@ This version of the data lake client does not include cryptographic libraries as
 4.  Start the installer.
 
     ```Shell (Linux)
-    cd ebf*
     ./hdbinst
     ```  
 
-    [run the installer](hdbinst.png)  
+    ![run the installer](hdbinst.png)  
 
-5.  Configure the environment variables.  This can be done by calling hdlclienv.sh manually or it can be added to the Bash shell by referencing it in `.bashrc`.
+5.  Configure the environment variables.  This can be done by calling `hdlclienv.sh` manually or it can be added to the Bash shell by referencing it in `.bashrc`.
 
     Open the `.bashrc`.
 
@@ -343,19 +343,63 @@ This version of the data lake client does not include cryptographic libraries as
     echo $IQDIR17
     ```
 
-    >In the case that the Data Lake Client needs to be uninstalled, run the `hdbuninst` file located in the directory `~/sap/hdlclient/install`.  
+    >In the case that the data lake client needs to be uninstalled, run the `hdbuninst` file located in the directory `~/sap/hdlclient/install`.  
 
     ---
 
+### Install the developer licensed version of the data lake client for Microsoft Windows
+This version of the data lake client does not include cryptographic libraries and requires openSSL to be installed separately to provide cryptography.  The data lake client is available for download after accepting the SAP Developer License agreement.  Currently, this version is available for Microsoft Windows and Linux.  Choose which client you would like to use and follow either step 6, 7 or 8.  Either client can be used to complete the steps shown in this tutorial group.
 
-### Install the data lake client
-This version of the data lake client is available from the SAP Software Download Center and requires an S-user ID and only shows software that you have purchased.  Additional details can be found at [Software Downloads FAQ](https://support.sap.com/content/dam/support/en_us/library/ssp/my-support/help-for-sap-support-applications/online_help-software_downloads.html#faq).  Either client can be used to complete the steps shown in this tutorial group.
+Ensure that [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud) is installed before proceeding with the following steps. The DBISQL tool requires [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud)
+
+1.  Open the HANA tab of [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools).
+
+2.  Download the SAP HANA Data Lake Client 1.0.
+
+    ![download](development-tools-win.png)
+
+3.  Run hdbsetup.exe.
+
+    ![run the installer](windows-dev-lic-installer.png)  
+
+
+
+4. Examine the installation log and take note if the required crypto libraries were located in the machines path.
+
+    ![crypto check](crypto-check.png)
+
+    If these libraries were not found but are on your machine perhaps as part of the [git client](https://git-scm.com/downloads/win), add that folder to your path (For example, C:\Git\mingw64\bin).  See also [Install the SAP HANA Data Lake Client (Developer License) in GUI Mode on Microsoft Windows](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/install-sap-hana-data-lake-client-in-gui-mode-on-microsoft-windows). 
+
+5.  After the installation process is completed, open Microsoft Windows, click the **Start** icon and search for **environment variables**. Create a new variable, set the variable name to **JAVA_HOME** and the variable value as the location where JVM has been unzipped such as C:\SAP\SAPJVM8\jre. Press the **OK** to ensure the changes made by the installer are now active.
+
+    ![JAVA_HOME creation](java-home-creation.png)
+
+
+6.  Ensure that the following System variables exist.
+
+    ![Environment variables](env-variables.png)
+
+
+7. It is also possible to run a batch file that will temporarily set the environment variables.  This can be done by calling hdlclienv.bat from within a command prompt.
+
+    ![screenshot showing calling hdlclienv.bat](calling-hdlclienv.png)
+
+    Then once called, the variables set can be seen by calling SET.
+
+    ![variables set](effect-of-call-bat-file.png)
+ 
+>In the case the data lake client needs to be uninstalled, run the `hdbuninst` file located in the directory `C:\SAP\hdlclient\install`.  
+
+
+
+### Install the data lake client downloaded from SAP Software Center
+This version of the data lake client is available from the SAP Software Center and requires an S-user ID and only shows software that you have purchased.  Additional details can be found at [Software Downloads FAQ](https://support.sap.com/content/dam/support/en_us/library/ssp/my-support/help-for-sap-support-applications/online_help-software_downloads.html#faq).  Either client can be used to complete the steps shown in this tutorial group.  Choose which client you would like to use and follow either step 6 or step 7.
 
 1.  Open [SAP for me](https://me.sap.com/softwarecenter) and navigate to **Support Packages & Patches** | **By Alphabetical Index (A-Z)**.
 
     ![SAP for Me Download Software](sap-for-me.png)
 
- 2. Navigate to **H | HANA CLOUD CLIENTS | HANA CLOUD CLIENTS 1.0 | HANA DATALAKE CLIENT 1.0**. Select the platform (Windows or Linux) and download the latest version of the archive.
+ 2. Navigate to **H | HANA CLOUD CLIENTS | HANA CLOUD CLIENTS 1.0 | HANA DATALAKE CLIENT 1.0**. Select the platform (Microsoft Windows or Linux) and download the latest version of the archive.
 
     ![data lake software downloads](dl-software-downloads.png)
 
@@ -391,7 +435,10 @@ This version of the data lake client is available from the SAP Software Download
         ./setup.bin
         ```
 
-3.  Specify an install folder such as C:\sap\DLClient (for Windows) or /home/dan/sap/dlclient (for Linux) and install all the features.  Choosing a similarly structured path will ensure a smooth experience throughout the tutorial and help reduce issues with paths.
+        >If the installation fails on Linux due to an InvocationTargetException, try installing Java first before proceeding with the installation again.
+
+
+3.  Specify an install folder such as C:\sap\DLClient (for Microsoft Windows) or /home/dan/sap/dlclient (for Linux) and install all the features.  Choosing a similarly structured path will ensure a smooth experience throughout the tutorial and help reduce issues with paths.
 
     ![GUI Installer](windows-gui-install.png)
 
@@ -405,7 +452,7 @@ This version of the data lake client is available from the SAP Software Download
 
   * On Microsoft Windows, open a new command prompt window and run the following to see the installation location.
 
-    ```Shell (Windows)
+    ```Shell (Microsoft Windows)
     ECHO %IQDIR17%
     ```
 
@@ -444,15 +491,71 @@ This version of the data lake client is available from the SAP Software Download
 
     >In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.  
 
-    ---
-
-    >If the installation fails on Linux due to an InvocationTargetException, try installing Java first before proceeding with the installation again.
-    
+        
 
 ### Connect with the Interactive SQL Client (DBISQL)
 The data lake client install includes [dbisql Interactive SQL Utility](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/dbisql-interactive-sql-utility), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
 
-1. Start the GUI version of DBISQL by searching from the Microsoft Windows Start menu. It can also be accessed by entering `dbisql` in the command prompt.
+1. DBISQL requires SAP JVM 8.0.  Verify that you have this installed by entering java -version as shown below.
+
+    ```Shell
+    java -version
+    ```
+
+    ![java version](java-version.png)
+
+    If you do not have this version on Microsoft Windows, it can be downloaded and configured as shown below
+
+    * Download [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud) and unzip it to c:\SAP\SAPJVM8
+
+    * In your environment variables, add the bin subdirectory of JAVA_HOME to the existing Path environment variable.
+
+        ![Windows Java variables](windows-java-home.png)
+
+    * Open a new command prompt and test the change.
+
+        ```Shell (Microsoft Windows)
+        java -version
+        dbisql
+        ```
+    The Data Lake Relational Engine should start, this may take a moment.
+
+    If you do not have this version on Linux, it can be downloaded and installed as shown below.
+
+    * Download and install [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud)
+
+        ```Shell (Linux)
+        unzip sapjvm-8.1.102-linux-x64.zip
+        mv ./sapjvm_8 ~/
+        ```
+
+    * Add the following to your bashrc. 
+
+        ```Shell (Linux)
+        export JAVA_HOME=~/sapjvm_8
+        export PATH=$PATH:$JAVA_HOME/bin
+        ```
+
+    * Apply and test the changes.
+        ```Shell (Linux)
+        source ~/.bashrc
+        java -version
+        dbisql
+        ```
+
+    If a further error occurs such as libXext.so.6: cannot open shared object file, install the missing components.
+
+        ```Shell (Linux)
+        sudo zypper install libXext6
+        sudo zypper install libXrender1
+        sudo zypper install libXtst6
+        sudo zypper install libXi6
+        ```
+    
+    If an error occurs mentioning that saip17.jar file has moved or has been deleted, examine 
+    C:\Users\Public\Documents\DBISQL 17.1.6\dbisql_64.rep and optionally comment out with # the plugins that are not loading.  
+
+2. Start the GUI version of DBISQL by entering `dbisql` in the command prompt.
 
     If the error "This file could not be found: java" occurs, follow the instructions below.
 
@@ -486,13 +589,13 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
         sudo zypper install libXi6
         ```
 
-2. Specify the connection type.
+3. Specify the connection type.
 
     ![Connection type](dbisql-connection-type.png)
 
     >The Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
 
-3. Provide the connection details. See below on how to obtain the instance ID and landscape values.
+4. Provide the connection details. See below on how to obtain the instance ID and landscape values.
 
     ![instance ID and landscape](connect-to-dl-iq.png)
 
@@ -500,13 +603,19 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 
     >![copy sql endpoint](dbisql-copy-endpoint.png)
     >
-    > A failure to connect could be caused by the allowed connections list, which is editable in SAP HANA Cloud Central.  
+    > A failure to connect could be caused by the allowed connections list, which is editable in SAP HANA Cloud Central. 
 
+    Paste the folling code in the console and click run.
+    >
+    >```SQL
+    >SELECT * FROM SYS.SYSINFO;
+    >```
+    >
     ![DBISQL Connected](dbisql-connected.png)
 
     >DBISQL can also be started without a GUI.
     >
-    >```Shell (Windows)
+    >```Shell (Microsoft Windows)
     dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.xxxx-xxxx.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
     >```
     >

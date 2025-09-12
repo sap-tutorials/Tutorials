@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Kerstin Bier
-author_profile: https://github.com/bierke
+author_name: Fiona Murphy
+author_profile: https://github.com/MCMANUSF
 primary_tag: software-product>sap-translation-hub
 auto_validation: true
 tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, tutorial>license ]
