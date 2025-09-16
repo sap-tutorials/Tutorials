@@ -103,6 +103,7 @@ Click on an instance to see further details of an instance including:
   * *Auditing*
   * *Performance Details including expensive statements*
 
+    
     ![HCC Instance details](HCC-instance-details.png)
 
     Based on this information, you can make important decisions on how to manage and optimize your instances.   

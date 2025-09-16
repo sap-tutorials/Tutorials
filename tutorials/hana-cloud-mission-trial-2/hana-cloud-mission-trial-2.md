@@ -42,6 +42,8 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
   
     ![open the trial subaccount](subaccount2.png)
 
+    > Currently, the trial version of SAP HANA Cloud is offered only in AWS US East. 
+
 2.	Then click on **Entitlements** on the left-hand side menu and search for entitlements for SAP HANA.
 
     ![BTP Entitlements](BTP-entitlements.png)
