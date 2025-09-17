@@ -42,6 +42,7 @@ Note the location of the file.
 ### Open the SAP HANA database explorer
 
 1.	Under Instances and Subscriptions, open SAP HANA Cloud Central.
+    
     ![HCC application](hcc-app.png)
 
 2.	In the **Actions** column, click on the **three dots** and select the option to **Open in SAP HANA Database Explorer**.
