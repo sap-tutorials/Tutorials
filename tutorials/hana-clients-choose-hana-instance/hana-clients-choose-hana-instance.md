@@ -39,13 +39,13 @@ For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.co
 
 ---
 
-### Overview of SAP HANA Cloud and SAP HANA, express edition
+### Overview of SAP HANA Cloud and SAP HANA On-premise
 There are multiple versions of SAP HANA.  The information below is a list of links for the documentation of each version.
 
 |  Version     | Notes
 |  :------------- | :-------------
 |  [SAP HANA Platform 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM)           | Released in November 2016. Current version is 2.0 SPS 08, which was released on Nov 20th, 2024.
-|  **[SAP HANA, express edition](https://help.sap.com/docs/SAP_HANA_EXPRESS_EDITION)**    | Released in September 2016.  Current version is 2.0 SPS 07.
+|  **[SAP HANA, express edition](https://help.sap.com/docs/SAP_HANA_EXPRESS_EDITION)**    | Released in September 2016.  Current version is 2.0 SPS 08.
 |  **[SAP HANA Cloud](https://help.sap.com/docs/hana-cloud)**   | Released in March 2020.  New features are released quarterly.
 
 
@@ -67,7 +67,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
   Here are a few differences between SAP HANA Cloud and an on-premise version:  
 
-  * Every SAP HANA Cloud instance is one SAP HANA database.  An on-premise version can have multiple databases per install, which is known as multi-tenant.  
+  * Every SAP HANA Cloud instance is one SAP HANA database.  SAP HANA Cloud as of 2024 QRC 4 offers [multitenancy](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-multitenancy/introducing-sap-hana-cloud-multitenancy) support.  For further details see [The next step towards cost-effectiveness and scalability with SAP HANA Cloud Multitenancy](https://community.sap.com/t5/technology-blog-posts-by-sap/the-next-step-towards-cost-effectiveness-and-scalability-with-sap-hana/ba-p/13885564).  On-premise SAP HANA also has a concept of  tenant databases (a system database and one or more tenant databases) but in a different manner from SAP HANA Cloud.  For further details see [SAP HANA Tenant Databases](https://help.sap.com/docs/SAP_HANA_PLATFORM/eb3777d5495d46c5b2fa773206bbfb46/0baadba82dd9407cbb852ae98f49f6bd.html).  
 
   * Connections to an SAP HANA Cloud instance must be secure and require a minimum SAP HANA client version of 2.4.167.
 
