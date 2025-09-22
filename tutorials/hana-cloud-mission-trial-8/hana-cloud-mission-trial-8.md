@@ -285,11 +285,11 @@ Now that the connection to your database is established and the grants file is c
 
     ![Deployment successful](deployment-end.png)
 
-3.  In the SAP HANA Projects, under Database Connections, click on the icon ![Container](icon-container.png) Open HDI Container for the HDI container as shown below.
+3. To establish a connection from the **SAP HANA database explorer** to the **HDI Container**, navigate to the SAP HANA Projects and go to Database Connections. Click on the icon ![Container](icon-container.png) to open the HDI Container as shown below.
 
     ![Open HDI container in dbx](open-hdi.png)
 
-    You now have a connection to the HDI container in the SAP HANA database explorer and can query and view its contents.  Execute the below SQL to see the current user and schema.
+    This will create a connection to the HDI container in the SAP HANA database explorer, allowing you to query and view its contents.  Execute the below SQL to see the current user and schema.
 
     ```SQL
     SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
