@@ -21,7 +21,7 @@ primary_tag: software-product>sap-hana-cloud
 ## Intro
 A few notes to remember about free tier model and trial accounts:
 
--	If you are using a free tier model or trial account, you will only be able to create one instance with a predefined size (32 GB of memory, 2 vCPUs, and 120 GB of storage for free tier and 16 GB of memory, 1 vCPU, and 80 GB of storage for trial). However, the process to create the instance is very similar to production environments, the difference being that in a production environment you have the ability to further customize your instance. For example, you are able to change advanced settings for your SAP HANA Cloud instance.  
+-	If you are using a free tier model or trial account, you will only be able to create one instance with a predefined size (16 GB of memory, 1 vCPU, and 80 GB of storage for trial). However, the process to create the instance is very similar to production environments, the difference being that in a production environment you have the ability to further customize your instance. For example, you are able to change advanced settings for your SAP HANA Cloud instance.  
 
 -	Free tier model and trial instances will be **stopped on a nightly basis**. Each time you start working with your free tier model or trial instance, you need to restart it.
 
@@ -29,11 +29,13 @@ A few notes to remember about free tier model and trial accounts:
 
 - The instance summary card: Trial (left) and free tier (middle) does not display a cost estimate. If you are using free tier, ensure you see the free tier indicator icon since paid tier (right) will show you a cost estimate meaning charges will be incurred if you create an instance.
 
-    ![Summary Card Differences](estimate.png)
+    ![Estimator for each tier](estimator-tiers.png)
 
 ---
 
 ### Start the Provisioning Wizard
+
+[OPTION BEGIN [Trial]]
 
 To create your first instance of SAP HANA Cloud, SAP HANA database, you need to follow these steps:
 
@@ -45,33 +47,82 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
     ![Create instance in SAP HANA Cloud Central](hcc-create-instance.png)
 
-3.	Here you must choose the **Type** of instance to create.  Select **SAP HANA Cloud, SAP HANA Database**.
+3.	Here you must choose the **Type** of instance to create.  Select **SAP HANA Database**. With the trial account, you have the option to manually configure your SAP HANA Database.
 
     > If you would like to learn more about **SAP HANA Cloud, Data Lake**, and [Get Started with a Standalone SAP HANA Cloud, Data Lake](mission.hana-cloud-data-lake-get-started), navigate to the linked mission for the basics.
 
-    ![Provisioning Wizard](wizard-type.png)
-
-    You may also choose the runtime environment.  Further details can be found at [What Runtime Environment is my SAP HANA Cloud Instance Using?](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/runtime-environments-for-sap-hana-cloud). 
+    ![Trial Provisioning Wizard](trial-step-1.png)
 
 4.	Click on **Next Step** to continue.
 
+[OPTION END]
+
+[OPTION BEGIN [Free Tier]]
+
+To create your first instance of SAP HANA Cloud, SAP HANA database, you need to follow these steps:
+
+1. In SAP BTP cockpit, open SAP HANA Cloud Central by clicking on the subscription to SAP HANA Cloud in the **Subscriptions** tab. With a Free Tier Service Plan, you have the option to configure your instance manually or clone a SAP HANA Database. Select **Configure manually** as shown below.
+
+    ![HCC ME tooling](hcc-app.png)
+
+2.	On the top-right corner of the screen, click on **Create Instance**.
+
+    ![Create instance in SAP HANA Cloud Central](hcc-create-instance.png)
+
+3.	Here you must choose the **Type** of instance to create. Select **SAP HANA Database**. 
+    
+    Note that if you have enabled only one type of service plan in your SAP HANA Cloud entitlement (e.g. free tier only), the License section does not appear and that service plan type will be used automatically.
+
+    > If you would like to learn more about **SAP HANA Cloud, Data Lake**, and [Get Started with a Standalone SAP HANA Cloud, Data Lake](mission.hana-cloud-data-lake-get-started), navigate to the linked mission for the basics.
+
+    ![Free Tier Provisioning Wizard](free-tier-step-1.png)
+
+4.	Click on **Next Step** to continue.
+
+[OPTION END]
+
+[OPTION BEGIN [Production]]
+
+To create your first instance of SAP HANA Cloud, SAP HANA database, you need to follow these steps:
+
+1. In SAP BTP cockpit, open SAP HANA Cloud Central by clicking on the subscription to SAP HANA Cloud in the **Subscriptions** tab. 
+
+    ![HCC ME tooling](hcc-app.png)
+
+2.	On the top-right corner of the screen, click on **Create Instance**.
+
+    ![Create instance in SAP HANA Cloud Central](hcc-create-instance.png)
+
+3.	Here you must choose the **Type** of instance to create. 
+    
+    A **License** section will appear. To use the free tier model, click on **Free Tier** so that it is highlighted as shown below. Select **SAP HANA Database**. You have multiple options to configure your instance. Select **Configure manually**.
+    
+    Note that if you have enabled only one type of service plan in your SAP HANA Cloud entitlement (e.g. free tier only), the License section does not appear and that service plan type will be used automatically.
+
+    > If you would like to learn more about **SAP HANA Cloud, Data Lake**, and [Get Started with a Standalone SAP HANA Cloud, Data Lake](mission.hana-cloud-data-lake-get-started), navigate to the linked mission for the basics.
+
+    ![Paid Tier Provisioning Wizard](paid-tier-step-1.png)
+
+4.	Click on **Next Step** to continue.
+
+[OPTION END]
+
 ### Choose your license, instance name, and password
 
-1. If you have multiple types of service plans enabled in your SAP HANA Cloud entitlement, a **License** section will appear just before the Basics section. To use the free tier model, click on **Free Tier** so that it is highlighted as shown below. Note that if you have enabled only one type of service plan in your SAP HANA Cloud entitlement (e.g. free tier only), the License section does not appear and that service plan type will be used automatically.
-
-    ![Free tier option](select-ft.png)
-
-2.	In the **Basics** section, enter a name for your instance in the field **Instance Name**, such as `HC_HDB`.
+1.	In the **Basics** section, enter a name for your instance in the field **Instance Name**, such as `HC_HDB`.
 
     > This field does not allow any spaces in the name. Keep in mind that you will not be able to change the name after the instance has been created.
 
-3.	Insert a password in the **Administrator Password** field.
+2.	Insert a password in the **Administrator Password** field.
 
-4.	Confirm it by typing it again in the **Confirm Administrator Password** field.
+3.	Confirm it by typing it again in the **Confirm Administrator Password** field.
 
     ![HANA step 1](hdb-instance-name.png)
 
     > This password is the admin password for this instance, so make sure to use a strong password.  If needed, the password can be reset via the actions menu [Reset DBADMIN Password](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/649092e9d9be41c59930179ce4f3d59e.html?locale=en-US) in SAP HANA Cloud Central if your user has the role SAP HANA Cloud Security Administrator.
+
+4. You may also choose the runtime environment.  Further details can be found at [What Runtime Environment is my SAP HANA Cloud Instance Using?](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/runtime-environments-for-sap-hana-cloud) 
+
 
 5.	Now click on **Next Step** to continue.  
 
@@ -92,6 +143,8 @@ In a production environment, you are able to select a performance class and choo
 
     As you increase your memory requirements, the **Compute** and **Storage** values will be automatically adjusted as well.
 
+    One the right, the **total estimate** of how many capacity units the service will consume is provided.
+
     Follow this [link](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-size) to learn more about the memory allocation.
 
 2.	Click on **Next Step** to continue.
@@ -100,9 +153,8 @@ In a production environment, you are able to select a performance class and choo
 
 [OPTION BEGIN [Free Tier/Trial]]
 
-For a free tier instance, the size allocation is predefined to 32 GB for memory, 120 GB for storage and 2 vCPUs for computation.
+For a free tier and trial instance, the size allocation is predefined to 16 GB for memory, 80 GB for storage and 1 vCPUs for computation.
 
-For a trial instance, the size allocation is predefined to 16 GB for memory, 80 GB for storage and 1 vCPU for computation.
 
 ![SAP HANA Database Memory Allocation](hdb-memory2.png)
 
@@ -152,7 +204,7 @@ Click on **Next Step** to continue.
 
 [OPTION BEGIN [Production]]
 
-1.	Under **Advanced Settings**, you can choose to enable the **Script Server**, **Document Store**, and **Data Provisioning Server**. If your database does not have the required `vCPUs` for either of the first two options, you can click on the link on the error message, which will change your original setup and add more `vCPUs` automatically.
+1.	Under **Advanced Settings**, you can choose to enable additional features such as the **Script Server**, **Document Store**, **Triple Store**, **Natural Language Processing (NLP)**, and **Data Provisioning Server**.  If your database does not have the required `vCPUs` for either of the first two options, you can click on the link on the error message, which will change your original setup and add more `vCPUs` automatically.
 
     ![Advanced Settings](prod-advanced-settings2.png)
 
@@ -165,8 +217,10 @@ Click on **Next Step** to continue.
     >Select whether you want your SAP HANA database to connect to your on-premises remote sources through the cloud connector. For details, see the [SAP HANA Database Connectivity Documentation](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-data-access-guide/data-access-in-sap-hana-cloud-sap-hana-database?locale=en-US).
     >
     > Keep in mind that you can still change your configurations here at a later point, if you decide to do so.  
+    
+4. Instance mapping enables an instance provisioned into the SAP BTP subaccount to be mapped into a runtime environment such as Cloud Foundry. Step-by-step instructions can be found in the [Create a Development Project in SAP Business Application Studio](hana-cloud-mission-trial-8) tutorial.
 
-4.	Click on **Next Step** in the bottom left corner to continue.
+5.	Click on **Next Step** in the bottom left corner to continue.
 
 [OPTION END]
 [OPTION BEGIN [Free Tier/Trial]]
@@ -185,7 +239,7 @@ Now you can configure the **Advanced Settings**.
 
     ![HDB advanced settings](hdb-advanced-settings2.png)
 
-5. We will be using the instance mapping feature later in this tutorial mission.  Instance mapping enables an instance provisioned into the SAP BTP subaccount to be mapped into a runtime environment such as Cloud Foundry.
+5. Instance mapping enables an instance provisioned into the SAP BTP subaccount to be mapped into a runtime environment such as Cloud Foundry. Step-by-step instructions can be found in the [Create a Development Project in SAP Business Application Studio](hana-cloud-mission-trial-8) tutorial.
 
 6.	Click on **Next Step** in the bottom left corner to continue.
 

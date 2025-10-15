@@ -58,17 +58,24 @@ These are the requirements to follow along:
 
 ### Prepare your database in SAP HANA Cloud
 
-1. Sign-up for the SAP HANA Cloud trial. If you already have a trial account with SAP Cloud Platform, check your trial entitlements to add SAP HANA Cloud.
+1. Sign-up for the SAP HANA Cloud trial. If you already have a trial account with SAP Cloud Platform, check your trial entitlements to add SAP HANA Cloud. For more information check out [Jump Start Your SAP HANA Cloud, SAP HANA Database (free tier or trial)](mission.hana-cloud-database-get-started).
 
 2. [Provision an SAP HANA Cloud, SAP HANA database in trial](hana-cloud-mission-trial-2).
 
 3. Make sure your SAP HANA Cloud, SAP HANA database is running in your trial account.
 
-4. Create a user and assign this user the privileges **CREATE SCHEMA** and **IMPORT**. If you are unsure how to create users and assign privileges, [you can read more here](https://github.com/SAP-samples/teched2020-DAT260/tree/main/exercises/ex0#setup-sap-hana-cloud-trial-instance-).
+4. Create a user and assign this user the privileges **CREATE SCHEMA** and **IMPORT**. If you are unsure how to create users and assign privileges, you can read more [here](hana-cloud-mission-trial-6).
+
+    Take the following code for example.
+    ```SQL
+    CREATE USER USER1 PASSWORD "Password1";
+    -- Grant CREATE SCHEMA privilege
+    GRANT CREATE SCHEMA TO USER1;
+    -- Grant IMPORT system privilege
+    GRANT IMPORT TO USER1;
+    ```
 
 5. From BTP cockpit or SAP HANA Cloud Central, open your trial instance in the SAP HANA Database Explorer and log in with this user's credentials.
-
-
 
 
 ### Import the sample data to your instance
@@ -145,7 +152,25 @@ SELECT ST_GeomFromText('POINT(8.642057 49.293432)', 4326) AS SHAPE FROM DUMMY;
 
 DBeaver.io is an open source database client with support for SAP HANA Cloud. The free community edition can be downloaded on [dbeaver.io](https://dbeaver.io/download/).
 
-Refer to this [blog post](https://blogs.sap.com/2020/01/08/good-things-come-together-dbeaver-sap-hana-spatial-beer/) on how to set up the connection to your system.
+1. To set up a connection to DBeaver, select the New Database Connection icon in the upper left corner. Search **HANA** and select the SAP HANA database option. Then select **Next**.
+    ![DBeaver database connection](DBeaver-database-connection.png)
+
+2. Select **HANA Cloud** under the `Edition` dropdown. Locate your SQL Endpoint for your SAP HANA Cloud database and paste it into DBeaver's `Host` field, removing the `:443` at the end.
+    ![Copy SQL Endpoint](copy-sql-endpoint.png)
+
+    The `Port` should auto-populate with 443. Finally, enter your user and password.
+    ![DBeaver connection](DBeaver-connection.png)
+
+
+3. Click **Test Connection**. If this is your first time connecting to SAP HANA using DBeaver, DBeaver will prompt you to download the necessary driver. Click the download option in the pop-up window. Once the driver is installed and the connection test is successful, click **Finish**.
+
+    ![Test connection](test-connection.png)
+
+4. The connection should be visible on the side panel in DBeaver.
+    ![Dbeaver connection name](dbeaver-connection-name.png)
+
+
+
 The example query above will simply return the results while showing a map preview of the geometries.
 
 <!-- border -->![dbeaver_preview](ss-06-dbeaver-preview.png)

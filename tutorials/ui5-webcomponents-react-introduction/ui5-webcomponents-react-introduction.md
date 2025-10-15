@@ -23,7 +23,7 @@ author_profile: https://github.com/Lukas742
 
 
 ## Intro
-React is a great front-end development tool for building single-page applications (SPA). [UI5 Web Components for React](https://github.com/SAP/ui5-webcomponents-react) provides a SAP Fiori-compliant React implementation by leveraging the [UI5 web components](https://github.com/SAP/ui5-webcomponents).
+React is a great front-end development tool for building single-page applications (SPA). [UI5 Web Components for React](https://github.com/UI5/webcomponents-react) provides a SAP Fiori-compliant React implementation by leveraging the [UI5 web components](https://github.com/UI5/webcomponents).
 
 SAP Fiori provides a consistent and holistic user experience for SAP software. By creating visually pleasing designs with a strong focus on ease of use, the experience is intuitive and simple, across all devices.
 
@@ -33,12 +33,12 @@ This first tutorial will start by creating a React application that is able to c
 
 ### Bootstrap the app with the Vite template
 
-UI5 Web Components for React provides various [templates](https://sap.github.io/ui5-webcomponents-react/?path=/docs/project-templates-examples--docs) for starting your project. In this tutorial, we'll use the Vite template.
+UI5 Web Components for React provides various [templates](https://ui5.github.io/webcomponents-react/?path=/docs/project-templates-examples--docs) for starting your project. In this tutorial, we'll use the Vite template.
 
 Navigate to a folder where you want to create your Web App and open a terminal there. Then use the following command:
 
 ```Shell
-npx degit SAP/ui5-webcomponents-react/templates/vite-ts#main my-app
+npx degit UI5/webcomponents-react/templates/vite-ts#main my-app
 cd my-app
 npm i
 ```

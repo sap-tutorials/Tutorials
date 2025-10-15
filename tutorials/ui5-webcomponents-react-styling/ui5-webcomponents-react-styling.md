@@ -42,7 +42,7 @@ The `sapTile_TitleTextColor` CSS Variable is used in the `CardHeader` component 
 
 As a consequence, all HTML Elements in the subtree where this style was applied are now displaying their texts in `limegreen` instead of `rgb(29, 45, 62)` which would be the default value for Horizon. You can change CSS Variables on any level - in the head, or on every single element by using either CSS classes or element style.
 
-A full list of all supported CSS Variables can be found in the [`ThemingParameters`](https://sap.github.io/ui5-webcomponents-react/?path=/docs/knowledge-base-public-utils--docs#theming-parameters) object or in the [theming-base-content](https://github.com/SAP/theming-base-content) repository.
+A full list of all supported CSS Variables can be found in the [`ThemingParameters`](https://ui5.github.io/webcomponents-react/?path=/docs/knowledge-base-public-utils--docs#theming-parameters) object or in the [theming-base-content](https://github.com/SAP/theming-base-content) repository.
 
 > **Warning:** Overriding the value of CSS variables changes it for all themes and therefore can cause inconsistencies! 
 
@@ -50,7 +50,7 @@ A full list of all supported CSS Variables can be found in the [`ThemingParamete
 ### Style your own component
 
 
-If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components, you can use the global CSS vars ([`ThemingParameters`](https://sap.github.io/ui5-webcomponents-react/?path=/docs/knowledge-base-public-utils--docs#theming-parameters)). If you want to style your components with a CSS-in-JS library like [`react-jss`](https://cssinjs.org/react-jss), or want to use the React inline styling, you can use the `ThemingParameters` directly.
+If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components, you can use the global CSS vars ([`ThemingParameters`](https://ui5.github.io/webcomponents-react/?path=/docs/knowledge-base-public-utils--docs#theming-parameters)). If you want to style your components with a CSS-in-JS library like [`react-jss`](https://cssinjs.org/react-jss), or want to use the React inline styling, you can use the `ThemingParameters` directly.
 
 In this step we will use [CSS Modules](https://github.com/css-modules/css-modules) and inline styling to style a custom component.
 
@@ -187,9 +187,9 @@ One example is applying a responsive content padding to the content of the dashb
 ### Conclusion
 
 In this tutorial mission, you learned the basics of how to build a single page application using UI5 Web Components for React, with routing, styling, and general component behavior and modern React APIs.
-If you have questions about UI5 Web Components for React, or found something that isn't right, then please feel free to join the [OpenUI5 Slack community](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/) and visit us in the [`#webcomponents-react`](https://openui5.slack.com/archives/CSQEJ2J04) channel, or come directly to our [GitHub page](https://github.com/SAP/ui5-webcomponents-react), where you can file [issues](https://github.com/SAP/ui5-webcomponents-react/issues/new/choose) or participate in [discussions](https://github.com/SAP/ui5-webcomponents-react/discussions).
+If you have questions about UI5 Web Components for React, or found something that isn't right, then please feel free to join the [OpenUI5 Slack community](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/) and visit us in the [`#webcomponents-react`](https://openui5.slack.com/archives/CSQEJ2J04) channel, or come directly to our [GitHub page](https://github.com/UI5/webcomponents-react), where you can file [issues](https://github.com/UI5/webcomponents-react/issues/new/choose) or participate in [discussions](https://github.com/UI5/webcomponents-react/discussions).
 
-If you enjoyed this tutorial, you can help us out a lot by starring our repo and become one of our wonderful [✨stargazers✨](https://github.com/SAP/ui5-webcomponents-react/stargazers)!
+If you enjoyed this tutorial, you can help us out a lot by starring our repo and become one of our wonderful [✨stargazers✨](https://github.com/UI5/webcomponents-react/stargazers)!
 
 
 

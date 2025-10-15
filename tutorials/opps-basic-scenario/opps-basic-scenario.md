@@ -62,30 +62,28 @@ With the service instances and corresponding credentials that you set up (as des
 
 2. Select **Data Upload**.  
 
-    <!-- border -->![API Business Hub Starting Page](v2_API Business Hub Starting Page.png)
+    <!-- border -->![API Business Hub Starting Page](v3_API Business Hub Starting Page.PNG)
 
 3. Navigate to the **Try Out** section and choose **Add New Environment**.
 
-    <!-- border -->![Data Upload Configure Environment](v2_Data Upload Configure Environment.png)
+    <!-- border -->![Data Upload Configure Environment](v3_Data Upload Configure Environment.PNG)
 
 4. In the following screen, enter the information from the table below:
 
-    <!-- border -->![Data Upload Configure Environment 3](v2_Data Upload Configure Environment 3.png)
-
-
-|  Field Name                                | Value
-|  :-------------                            | :-------------
-|  Display Name                              | Enter any name, for example **`OPPS trial data upload`**.
-|  Starting URL                              | **`https://data-upload.api.ap21.opps-trial.cloud.sap`**
-|  Resulting URL                             | (prefilled)
-|  Authentication Type                       | **`OAuth 2.0 Application Flow`**
-|  Client ID                                 | **`your clientid`** **
-|  Client Secret                             | **`your clientsecret`** **
-|  Token URL                                 | (prefilled)
-|  Identityzone                              | **`your identityzone`** **
-|  Region                                    | **`ap21`**
-|  Apply this environment to all APIs in this package that are not yet configured           | Make sure that this is NOT selected.
-|  Save this environment for future sessions                | Make sure that this is selected.
+ 
+    |  Field Name                                | Value
+    |  :-------------                            | :-------------
+    |  Display Name                              | Enter any name, for example **`OPPS trial data upload`**.
+    |  Starting URL                              | **`https://data-upload.api.ap21.opps-trial.cloud.sap`**
+    |  Resulting URL                             | (prefilled)
+    |  Authentication Type                       | **`OAuth 2.0 Application Flow`**
+    |  Client ID                                 | **`your clientid`** **
+    |  Client Secret                             | **`your clientsecret`** **
+    |  Token URL                                 | (prefilled)
+    |  Identityzone                              | **`your identityzone`** **
+    |  Region                                    | **`ap21`**
+    |  Save for future sessions                  | Make sure that this is selected.
+    |  Apply this environment to all non-configured APIs in this package           | Make sure that this is NOT selected.
 
 5. Choose **Configure**.
 
@@ -106,14 +104,13 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on the
 
 ## Upload regular sales price
 
-<!-- border -->![Data Upload Regular Sales Price 1](v2_Data Upload Regular Sales Price 1.png)
+<!-- border -->![Data Upload Regular Sales Price 1](v3_Data Upload Regular Sales Price 1.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select the trial environment you have just created for the Data Upload service.
 3. On the left-hand side, choose **Upload Prices Using OAuth2**.
 4. Open the **POST** request `/idocinbound`
-5. For the **Content Type**, choose `XML`.
-6. Copy the following raw data and paste it into the **Body** section:
+5. Copy the following raw data and paste it into the **Body** section:
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <_-ROP_-BASE_PRICE01>
@@ -143,8 +140,9 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on the
 	</IDOC>
 </_-ROP_-BASE_PRICE01>
 ```
-7. Choose **Run**.
-8. Make sure you get the HTTP response **200**.
+1. Below the body, choose `XML` as the content type.
+2. Choose **Run**.
+3. Make sure you get the HTTP response **200**.
 
 <!-- border -->![Data Upload Regular Sales Price 2](Data Upload Regular Sales Price 2.png)
 
@@ -152,14 +150,13 @@ With this, you uploaded the regular sales price of **10 Euro** for the product *
 
 ## Upload promotional rule
 
-<!-- border -->![Data Upload Regular Promotional Rule 1](v2_Data Upload Regular Promotional Rule 1.png)
+<!-- border -->![Data Upload Regular Promotional Rule 1](v3_Data Upload Regular Promotional Rule 1.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select the trial environment you have just created for the Data Upload service.
 3. On the left-hand side, choose **Upload Promotions Using OAuth2**.
 4. Open the **POST** request `/idocinbound`.
-5. For the **Content Type**, choose `XML`.
-6. Copy the following raw data and paste it into the **Body** section:
+5. Copy the following raw data and paste it into the **Body** section:
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <_-ROP_-PROMOTION02>
@@ -245,6 +242,7 @@ With this, you uploaded the regular sales price of **10 Euro** for the product *
 	</IDOC>
 </_-ROP_-PROMOTION02>
 ```
+6. Below the body, choose `XML` as the content type.
 7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
@@ -260,7 +258,7 @@ Navigate to the [Data Access service of SAP Omnichannel Promotion Pricing on the
 
 ## Check uploaded regular sales price
 
-<!-- border -->![Data Access Service Base Price 1](v2_Data Access Service Base Price 1.png)
+<!-- border -->![Data Access Service Base Price 1](v3_Data Access Service Base Price 1.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select your trial environment you have created for the Data Access service.
@@ -274,7 +272,7 @@ Navigate to the [Data Access service of SAP Omnichannel Promotion Pricing on the
 
 ### Check uploaded promotional rule
 
-<!-- border -->![Data Access Service Promotional Rule 1](v2_Data Access Service Promotional Rule 1.png)
+<!-- border -->![Data Access Service Promotional Rule 1](v3_Data Access Service Promotional Rule 1.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select your trial environment for the Data Access service.
@@ -298,17 +296,16 @@ You can now calculate the effective sales price based on the data you have uploa
 
 Let's check if this is the case. Navigate to the [Calculation service on the SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/resource).
 
-<!-- border -->![Calculation](v2_Calculation 2.png)
-
-<!-- border -->![Calculation2b](v2_Calculation 2b.png)
+<!-- border -->![Calculation](v3_Calculation 2.PNG)
+<!-- border -->![Calculation2b](v3_Calculation 2b.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select your trial environment for the Calculation service.
 3. Open the **POST** request `/restapi/{tenantName}`.
 4. In the field **tenantName** enter the `identityzone` from the service key you have created for the Calculation service in your SAP BTP account.
 >If you need a more detailed description, go to step 4 in the tutorial [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
-5. For the **Content Type**, choose `XML`.
-6. Copy the following raw data and paste it into the **Body** section:
+5. Copy the following raw data and paste it into the **Body** section:
+
 ```XML
 <PriceCalculate xmlns="http://www.sap.com/IXRetail/namespace/" InternalMajorVersion="2" InternalMinorVersion="1">
 	<ARTSHeader ActionCode="Calculate" MessageType="Request">
@@ -337,10 +334,11 @@ Let's check if this is the case. Navigate to the [Calculation service on the SAP
    </PriceCalculateBody>
 </PriceCalculate>
 ```
+6. Below the body, choose `XML` as the content type.
 7. Choose **Run**.
-8. Make sure you get the HTTP response **200**.
+8. Make sure you get the HTTP response **200**. The response should look similar to this:
 
-The response should look similar to this:
+
 ```JSON
 {
   "ARTSHeader": {

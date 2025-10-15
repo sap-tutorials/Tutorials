@@ -18,7 +18,7 @@ author_profile: https://github.com/Lukas742
 
 
 ## Intro
-Integrate the first component into your App. You can find **all** available components in the [Storybook](https://sap.github.io/ui5-webcomponents-react).
+Integrate the first component into your App. You can find **all** available components in the [Storybook](https://ui5.github.io/webcomponents-react).
 There you can try out the different components and also take a look at the coding and the available props.
 
 ---
@@ -27,7 +27,7 @@ There you can try out the different components and also take a look at the codin
 
 First you need to import the components you want to use.
 
-You can check out all available components in the [Storybook](https://sap.github.io/ui5-webcomponents-react). Take your time to play around a little, change some `props` and take a look at the coding.
+You can check out all available components in the [Storybook](https://ui5.github.io/webcomponents-react). Take your time to play around a little, change some `props` and take a look at the coding.
 
 1. Start with importing a `Card` component into your `MyApp.tsx` file.
 
@@ -37,7 +37,7 @@ You can check out all available components in the [Storybook](https://sap.github
 
 2. So, you imported the `Card` component. Now it's time to use it. Replace the content of your `<div>` with a `<Card>`.
 
-    In the [Storybook](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/data-display-card--docs), you can see that Cards can receive different props. For now only add some text as `children`.
+    In the [Storybook](https://ui5.github.io/webcomponents-react/v2/?path=/docs/data-display-card--docs), you can see that Cards can receive different props. For now only add some text as `children`.
 
     ```TypeScript / TSX
     <div>

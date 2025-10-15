@@ -104,7 +104,7 @@ Replace the placeholder as per your application configuration **your-client_id**
 When making the call, you will use your app’s geolocation as the **base URI** followed by the endpoint. For example, if your geolocation is https://us.api.concursolutions.com, you will call https://us.api.concursolutions.com/oauth2/v0/token.
 
 
-### Add Code to obtain an Refesh Token
+### Add Code to obtain an Refresh Token
 
 The first time you request for a **refreshToken** This is used to get a new accessToken when one has expired.
 
@@ -112,7 +112,7 @@ The first time you request for a **refreshToken** This is used to get a new acce
 
 ```
 
-### Obtain a Refesh token
+### Obtain a Refresh token
 # @name refeshTokenCall
 POST {{hostname}}/oauth2/v0/token HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
@@ -174,7 +174,7 @@ Using VS Code extension you can make these API calls easily by giving the refere
 
 We have Three Request in the script.
 
-1. First request for a **refesh token.** This is use to get new access token when one has expired.
+1. First request for a **refresh token.** This is use to get new access token when one has expired.
    
 2. Second request for a **access token.** this is use to access protected resources on SAP Concur services.
 
