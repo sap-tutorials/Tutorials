@@ -351,24 +351,30 @@ Virtual tables can now be created using the remote source HC_DL_FILES_rs.
     ```
 
     ![remote source file columns](remote-source-file-columns.png) 
-    
+
 4. A wizard is available from the remote source in the Database Objects app that can help in the generation of a virtual table.
     - Open the Database Objects app
+        
         ![Database Objects App](database-objects2.png)
 
    - Locate the remote source
+        
         ![Locate Remote Source](database-objects3.png)
 
    - From the remote source details page, select Create Virtual Table
+        
         ![Create Virtual Table](create-virtual-table-wizard.png)
 
    - Specify the path to the Parquet table and press Next Step
+        
         ![Parquet table](virtual-table2.png)
 
     - Provide the schema and table name TITANIC_P2 and click Next Step
+        
         ![Virtual Table](virtual-table3.png)
     
     - Choose to add all the columns, press Review and Create, and then Create
+        
         ![Create Virtual Table](virtual-table4.png)
 
     The resultant table can be queried as shown below.
