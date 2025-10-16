@@ -33,9 +33,9 @@ The first step is to check if Python and pip are installed.
     python --version
     python3 --version
     ```
-    If Python is installed, the command will return a value such as Python 3.12.1.
+    If Python is installed, the command will return a value such as Python 3.13.0
 
-    >In some Linux distributions, 'python' refers to Python 2, while 'python3' refers to Python 3. However, as Python 2 is now obsolete, 'python' may refer to Python 3 instead.
+    >In some Linux distributions, 'python' refers to Python 2, while 'python3' refers to Python 3. However, as Python 2 is now obsolete, 'python' may refer to Python 3 instead.  It may also be referred to by its specific version such as python3.13.
 
     If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
@@ -231,7 +231,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     pico pythonQuery.py
     ```
 
-2. Copy the following code into `pythonQuery.py`:
+2. Copy the following code into `pythonQuery.py`.
 
     ```Python
     #Import your dependencies

@@ -29,7 +29,7 @@ This tutorial is meant to be an introduction to this topic.  For additional cont
 ---
 
 
-### Enable the triple store and Create a knowledge graph
+### Enable the triple store and create a knowledge graph
 The following steps will create a knowledge graph that provides information on additional hotel amenities, explore the created knowledge graph using the database objects app, and then will perform a query on the knowledge graph.
 
 Before you can create a knowledge graph, please ensure your HANA Instance is version 2025.2 or above, and your instance has triple store activated. Here are the steps to doing this:
