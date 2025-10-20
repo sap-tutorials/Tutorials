@@ -37,7 +37,7 @@ SAP HANA Cloud is composed of multiple components.
 
     [Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-relational-engine) is a disk-based, column-oriented relational database for storing and analyzing large amounts of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/docs/SAP_IQ), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Some of the client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/docs/SAP_SQL_Anywhere) and SAP Adaptive Server Enterprise.
 
-    [Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-files) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or delta tables.  Structured files can use [SQL on Files](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-cloud-sap-hana-database-sql-on-files-guide), which enables SQL queries to be performed on them.  
+    [Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-files) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or Delta table, or Iceberg table.  Structured files can use [SQL on Files](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-cloud-sap-hana-database-sql-on-files-guide), which enables SQL queries to be performed on them.  
 
     >Note, that the data lake Files component, is currently not available in free tier or trial accounts.
 
@@ -555,47 +555,13 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     If an error occurs mentioning that saip17.jar file has moved or has been deleted, examine 
     C:\Users\Public\Documents\DBISQL 17.1.6\dbisql_64.rep and optionally comment out with # the plugins that are not loading.  
 
-2. Start the GUI version of DBISQL by entering `dbisql` in the command prompt.
-
-    If the error "This file could not be found: java" occurs, follow the instructions below.
-
-    * Download and install [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud)
-
-        ```Shell (Linux)
-        unzip sapjvm-8.1.102-linux-x64.zip
-        mv ./sapjvm_8 ~/
-        ```
-
-    * Add the following to your bashrc. 
-
-        ```Shell (Linux)
-        export JAVA_HOME=~/sapjvm_8
-        export PATH=$PATH:$JAVA_HOME/bin
-        ```
-
-    * Apply and test the changes.
-        ```Shell (Linux)
-        source ~/.bashrc
-        java -version
-        dbisql
-        ```
-
-    If a further error occurs such as libXext.so.6: cannot open shared object file, install the missing components.
-
-        ```Shell (Linux)
-        sudo zypper install libXext6
-        sudo zypper install libXrender1
-        sudo zypper install libXtst6
-        sudo zypper install libXi6
-        ```
-
-3. Specify the connection type.
+2. Specify the connection type.
 
     ![Connection type](dbisql-connection-type.png)
 
     >The Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
 
-4. Provide the connection details. See below on how to obtain the instance ID and landscape values.
+3. Provide the connection details. See below on how to obtain the instance ID and landscape values.
 
     ![instance ID and landscape](connect-to-dl-iq.png)
 
@@ -777,7 +743,7 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 
     ![DBISQL in batch mode](dbisql-batch.png)
 
-    See [Connection Parameters](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/a6d47d6e84f210158d4980b069eff5dd.html) for additional documentation on the parameters used to connect.
+    See [Connection Parameters](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/connection-parameters) for additional documentation on the parameters used to connect.
 
 
 ### Knowledge check    

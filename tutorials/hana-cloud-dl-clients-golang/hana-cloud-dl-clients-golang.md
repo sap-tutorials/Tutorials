@@ -63,7 +63,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
     ![Add bin to path](add-bin-to-path.png)  
 
-    On Linux, install the System GNU C compiler for your version of Linux.  Note that if you are using openSUSE, minGW is included in the installation for Go through YaST.
+    On Linux (if needed), install the System GNU C compiler for your version of Linux.  Note that if you are using openSUSE, minGW is included in the installation for Go through YaST.
     
     ![gcc 64-bit](gccLinux.png)
 
@@ -73,7 +73,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     go env
     ```
 
-    Notice that GOROOT is set to a location such as `C:\go` or `/usr/lib64/go/1.19`.  This is the location that the Go SDK is installed to.  
+    Notice that GOROOT is set to a location such as `C:\go` or `/usr/lib64/go/1.23`.  This is the location that the Go SDK is installed to.  
 
     GOPATH is set to a location such as `C:\Users\user\go` or `$HOME/go` and defines the root of your workspace which stores your codebase.
 
@@ -86,19 +86,23 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     >It is also possible on Microsoft Windows to set this using the SETX command from a shell.
 
 
-    On Linux, open the '.bashrc' or '.bash_profile' and first check and if needed the following lines.  Note that the path may be different depending on the data lake client install used.
+    On Linux, check if the following variable are defined.  
     
     ```Shell (Linux)
+    echo $CGO_LDFLAGS
     echo $LD_LIBRARY_PATH
-    pico .bash_profile 
     ```
 
+    If needed, open the '.bashrc' or '.bash_profile' and add the following lines.  Note that the path may be different depending on the data lake client install used.
+
     ```Shell (Linux)
+    pico .bashrc
     export CGO_LDFLAGS=$HOME/sap/dlclient/IQ-17_1/lib64/libdbcapi_r.so
     export CGO_LDFLAGS=$HOME/sap/hdlclient/lib64/libdbcapi_r.so
     export LD_LIBRARY_PATH=$HOME/sap/dlclient/IQ-17_1/lib64
     export LD_LIBRARY_PATH=$HOME/sap/hdlclient/lib64
     ```
+    
     ![.bash_profile contents](bashProfileAfterCGO.png)
 
 4. Navigate to the driver folder and create a Go module.  Note that the path may be different depending on the data lake client install used.
@@ -116,6 +120,8 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     go mod tidy
     ```
     ![createModule](createModule.png)
+
+    The contents of the data lake Client folder is not writeable so you may need to change the permissions on the driver folder or copy files to a new location. 
 
 ### Create a Go application that queries an SAP data lake Relational Engine
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
