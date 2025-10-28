@@ -75,7 +75,7 @@ The first step is to check if Python and pip are installed.
 ### Install the sqlanydb Python driver
 The `sqlanydb` package is the python driver for the data lake Relational Engine and is available as part of the data lake Relational Engine install and is available at [PyPI](https://pypi.org/project/sqlanydb/).
 
-1. Navigate to your Data Lake Client installation folder and enter the following command to install `sqlanydb`.
+1. Navigate to your Data Lake Client installation folder and enter the following command to install `sqlanydb`. Depending on which install of the data lake client was used, execute:
 
     ```Shell (Microsoft Windows)
     cd %IQDIR17%\SDK\Python
@@ -90,7 +90,7 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
     >If the error 'no module named setuptools' appears, the following may be used as a workaround until this issue is resolved.
 
-    >```Shell
+    ```Shell
     pip install setuptools
     ```
 

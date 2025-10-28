@@ -18,7 +18,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - How to use both the synchronous and asynchronous driver interfaces
 
 ## Intro
-Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs).  
+Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs). On Microsoft Windows, in this tutorial, the shell used is the Command Prompt.
 
 ---
 
@@ -75,6 +75,8 @@ The Node.js driver covered in this tutorial is [@sap\iq-client](https://www.npmj
 
 ### Create a synchronous Node.js application that queries SAP data lake Relational Engine
 1. Create a new file named `nodeQuery.js` in an editor.
+
+Depending on what version of the data lake client was used, execute:
 
     ```Shell (Microsoft Windows)
     notepad nodeQuery.js
