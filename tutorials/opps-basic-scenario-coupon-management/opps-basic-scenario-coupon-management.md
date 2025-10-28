@@ -79,7 +79,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Coupon creation success](coupon_object_creation_success.png)
+<!-- border -->![Coupon creation success](v2coupon_object_creation_success.png)
 
 With this, you have created a multi-code coupon with the ID **COFFEE LOVER** and a validity period from **October 1, 2026 to December 31, 2026**.
 
