@@ -42,9 +42,10 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
 2. The following examples are used for simulation purposes and can create a memory and CPU spike that will be moved to an ECN node.  They are intended to be run on a test or trial instance and not a production instance.  The size of the spike can be adjusted by increasing or decreasing the number of rows in the table. 
 
     ```SQL
-    SELECT AVG(CPU) AS "CPU Usage" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);  --avg of the past 1 minute
-    SELECT AVG(MEMORY_USED) AS "Memory Used" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);
-    
+    SELECT AVG(CPU) AS "CPU Usage %" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);  --avg of the past 1 minute
+    SELECT AVG(MEMORY_USED/1024/1024/1024) AS "Memory Used GB" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);
+    SELECT MEMORY_SIZE/1024/1024/1024 AS MEM_GB, DURATION_MICROSEC/1000000/60 AS DUR_MIN, CPU_TIME/1000000 AS CPU_TIME_SECS, STATEMENT_STRING, STATEMENT_START_TIME, * FROM M_EXPENSIVE_STATEMENTS ORDER BY MEMORY_SIZE DESC; --requires expensive tracing to be enabled
+
     CREATE USER USER4 PASSWORD "Password4"  NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
     GRANT CATALOG READ TO USER4; 
     GRANT SELECT ON SCHEMA _SYS_STATISTICS TO USER4;  --Used by the Elastic Compute Node tab

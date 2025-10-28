@@ -59,10 +59,15 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
     >
     ![Edit Environment Variables](editEnvironmentVariables.png)
 
-    Look for the `Path` environment variable and double click to edit. Select **Browse** and manually browse through your File Explorer to find the bin folder.
+    Look for the `Path` environment variable within **User variables** and double click to edit. Select **Browse** and manually browse through your File Explorer to find the bin folder. Click "OK" on all environment variable windows to update.
 
     ![Add bin to path](add-bin-to-path.png)  
 
+    On Windows, to ensure the gcc compiler is installed, open a new Command prompt window and run the following command:
+
+    ```Shell
+    gcc --version
+    ```
     On Linux (if needed), install the System GNU C compiler for your version of Linux.  Note that if you are using openSUSE, minGW is included in the installation for Go through YaST.
     
     ![gcc 64-bit](gccLinux.png)
@@ -79,7 +84,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
 3. Set the `CGO_LDFLAGS` environment variable to point to the location of the HDLRE client library as shown below.
 
-    On Windows, add a **NEW** variable. Set the variable name to **CGO_LDFLAGS** and the value as the location of `dbcapi` library: `C:\SAP\dlclient\IQ-17_1\Bin64\dbcapi.dll`
+    On Windows, search **Edit the System Environment Variables** and click on **Environment Variables**. Add a **NEW** user variable. Set the variable name to **CGO_LDFLAGS** and the value as the location of `dbcapi` library: `C:\SAP\hdlclient\IQ-17_1\bin64\dbcapi.dll`
 
     ![Set Environment Variables](setEnvVar.png)
 

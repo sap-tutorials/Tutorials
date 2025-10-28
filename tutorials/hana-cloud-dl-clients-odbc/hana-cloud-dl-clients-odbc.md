@@ -120,11 +120,19 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![specify the data source name](data-source1.png)  
 
-    Connect using **USER1**. The **host** and **port** values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the **Copy SQL Endpoint** menu option and then click on Login.
+    In the **ODBC tab** of the configuration window, fill in the **Data source name**.
 
+    Switch to the **Login tab** and enter in the **USER1** credentials.
+    
+    Retrieve the SQL Endpoint for your data lake instance. You can find this via the SAP BTP Cockpit or by using the **Copy SQL Endpoint** menu option in SAP HANA Cloud Central and input into **Host** field. 
+
+    ![SQL Endpoint](sql-endpoint.png)
+    
+    Select the **Connect to SAP HANA CLOUD, data lake Relational Engine** action. 
+    
     ![specify the credentials, host and port](data-source2.png)  
 
-7. Verify the connection by clicking on **Test Connection**.
+7. Verify the connection by clicking on **Test Connection** in the ODBC tab.
 
     ![test connection](data-source4.png)  
 

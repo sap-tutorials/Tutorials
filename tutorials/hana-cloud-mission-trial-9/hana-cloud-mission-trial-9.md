@@ -72,7 +72,7 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 
     ![Select user-provided service](add-user-provided-service.png)
 
-5. Search for the `SAGENCYDATA` table, which we created in a previous tutorial.
+5. Uncheck Show only local objects and search for the `SAGENCYDATA` table, which we created in a previous tutorial.
 
     > If you want to see all objects available via the connection service, enter `**` in the search field.
 
