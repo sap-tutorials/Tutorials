@@ -18,16 +18,16 @@ parser: v2
     - Where to find documentation in order to complete the configuration
 
 ## Overview
-Instead of using the default domain that's assigned to your subaccount, you can purchase a custom domain with a unique name that's easily recognizable by your users, making them more secure about accessing your site. For example, if your default domain is `subaccount.workzone.cfapps.eu10.hana.ondemand.com`, you can purchase the domain `mycompany.com`, create a custom domain `prod.mycompany.com`, and securely expose your site under this custom domain. Using the same domain for a site as well as for all the embedded content including Identity Authentication, enables broader integration scenarios, by avoiding third-party cookies with the respective security drawbacks. Note that if you decide to use a custom domain, make sure that you update links and inform end users to update their bookmarks. If users want to still use the default `ondemand.com` domain, this is possible. 
+Instead of using the default domain that's assigned to your subaccount, you can purchase a custom domain with a unique name that's easily recognizable by your users, making them more secure about accessing your site. For example, if your default domain is `subaccount.workzone.cfapps.eu10.hana.ondemand.com`, you can purchase the domain `mycompany.com`, create a custom domain `prod.mycompany.com`, and securely expose your site under this custom domain. Using the same domain for a site as well as for all the embedded content including Identity Authentication, enables broader integration scenarios, by avoiding third-party cookies with the respective security drawbacks. Note, if you decide to use a custom domain, make sure that you update links and inform end users to update their bookmarks. If users want to still use the default `ondemand.com` domain, this is possible. 
 
 
 ## Illustration of the custom domain configuration process
-To make sure that your domain is trusted by way of activated server certificates and that all application data is protected, you must set up secure TLS/SSL communication. Then, make your application reachable via your custom domain and route traffic to it.
+To make sure that your domain is trusted by way of activated server certificates and that all application data is protected, you must set up secure TLS/SSL communication. Then make your application reachable via your custom domain and route traffic to it.
 
 <!-- border -->![Configuration Process](1-configuration-process-diagram.png)
 
 ## Prerequisites
- - You have entitled the Custom Domain Manager to your subaccount. For more information, see [Manage Entitlements Using the Cockpit](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html).
+ - You've entitled the Custom Domain Manager to your subaccount. For more information, see [Manage Entitlements Using the Cockpit](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html).
  - You have entitled the SAP Custom Domain service (plan: custom_domains) to your subaccount. Every server certificate requires 1 unit of quota.
  - You have subscribed to the Custom Domain Manager in the SAP BTP cockpit. For more information, see [Initial Setup](https://help.sap.com/docs/custom-domain/custom-domain-manager/initial-setup?version=Cloud).
  - You have acquired the domain names to be used by your applications. Have a look at the [Prerequisites](https://help.sap.com/docs/custom-domain/custom-domain-manager/prerequisites?version=Cloud). 
@@ -72,11 +72,11 @@ To make sure that your domain is trusted by way of activated server certificates
 
     <!-- border -->![Select domain](6-select-domain.png)  
 
-    - From the **Create Subdomain Name** step, enter a subdomain name, for example `prod` and click **Finish**. The result is a new custom domain. For example, `prod.mycompany.com`
+    - From the **Create Subdomain Name** step, enter a single subdomain name, for example `prod` and click **Finish**. The result is a new custom domain. For example, `prod.mycompany.com`
 
     <!-- border -->![Select subdomain](7-select-subdomain.png) 
 
-6. Create a custom domain for every runtime destination. For example: `xyz200.mycompany.com` (xyz200 in this example is the on-premise backend). The custom domain for the runtime destination must be part of this hierarchy, otherwise an error will occur. This is because SAP Build Work Zone code suppresses the subdomain (for example, `prod.mycompany.com`) used for the SAP Build Work Zone site when performing requests to on-premise backend applications.
+6. Create a custom domain for every runtime destination. For example: `xyz200.mycompany.com` (xyz200 in this example is the on-premise backend). The custom domain for the runtime destination must be part of this hierarchy, meaning it should be a **single** subdomain under the reserved domain, otherwise an error will occur. This is because SAP Build Work Zone code suppresses the subdomain (for example, `prod.mycompany.com`) used for the SAP Build Work Zone site when performing requests to on-premise backend applications.
 
     <!-- border -->![Custom domain for runtime destinations](8-custom-domain-for-runtime.png) 
 
@@ -275,7 +275,7 @@ For more information, see [Configure the DNS for a Custom Domain](https://help.s
 
 ### Configure the redirect URL
 
-In this step, you'll configure an OpenID Connect application in the administration console of SAP Cloud Identity Services for the authorization code flow.
+In this step, (which is only relevant for subscriptions that were created prior to Sep 4th), 2025, you'll configure an OpenID Connect application in the administration console of SAP Cloud Identity Services for the authorization code flow.
 
 1. Sign in to the administration console for SAP Cloud Identity Services.
 
