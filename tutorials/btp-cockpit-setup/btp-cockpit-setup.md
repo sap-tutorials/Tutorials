@@ -28,10 +28,11 @@ There are a couple of ways to do SAP Business Technology Platform (BTP) tutorial
 
     A plan limits the quantity of the service that's available.  Maybe you need a lot of some service in a production subaccount, and maybe you need less for development or testing.  When you assign an entitlement to a subaccount, you also select the plan for use in that subaccount as well.
 
+    **Free tier plans are only available to SAP Customer and Partner BTP accounts.  If you are an Individual wishing to evaluate SAP BTP services, you should use SAP BTP Trial**
+
     For more information, see:
 
     - [Trial Accounts and Free Tier](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html?q=free%20tier) on SAP Help Portal,
-    - the blog [Exploring BTP's New Free Tier Plans](https://blogs.sap.com/2021/07/01/exploring-btps-new-free-tier-plans) by [Riley Rainey](https://people.sap.com/riley.rainey),
     - posts and announcements on the [SAP BTP topic page](https://community.sap.com/topics/business-technology-platform) -- there's a quick link there to post your questions, too.
 
 

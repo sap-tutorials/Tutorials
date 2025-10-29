@@ -32,10 +32,6 @@ Decide what optional installation packages you want to install.
 
 |Optional Installation Package|Description|
 |-----------------------------|-----------|
-|Text analysis files for additional languages|Downloads `additional_lang.tgz`. For languages other than English and German, this package is required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the server.)|
-|SAP Enterprise Architecture Designer|Downloads `eadesigner.tgz`. SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment.|
-|SAP HANA streaming analytics|Downloads `hsa.tgz`, which contains SAP HANA streaming analytics.|
-|SAP HANA Interactive Education|Downloads `shine.tgz`. SHINE makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).|
 |SAP HANA External Machine Learning Library|Downloads `eml.tgz`. The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of `Google TensorFlow`, as an external machine learning framework, with SAP HANA, express edition.|
 |SAP HANA Automated Predictive Library|Downloads `apl.tgz`. SAP HANA Automated Predictive Library (APL) is an application function library which exposes the data mining capabilities of the Automated Analytics engine in SAP HANA, express edition through a set of functions.|
 |Clients|Downloads client packages and the SAP HANA Machine Learning Python API.|
@@ -49,10 +45,6 @@ Optional installation packages have their own tutorials. Use this table to find 
 
 |Optional Installation Package|Installation Tutorial|
 |-----------------------------|---------------------|
-|Text analysis files for additional languages|[Install the Optional Text Analysis Files Package for SAP HANA, express edition](hxe-ua-text-analysis-binary)|
-|SAP Enterprise Architecture Designer| [Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition](hxe-ua-installing-eads-binary) |
-|SAP HANA streaming analytics|[Get started with SAP HANA streaming analytics for SAP HANA, express edition](https://developers.sap.com/group.sds-hxe-get-started.html)|
-|SAP HANA Interactive Education| [Install the Optional SAP HANA Interactive Education Package for SAP HANA, express edition](hxe-ua-shine-binary) |
 |SAP HANA External Machine Learning Library|[Install the Optional SAP HANA External Machine Learning Library Package for SAP HANA, express edition](hxe-ua-eml-binary)|
 |SAP HANA Automated Predictive Library|[Install the Optional SAP HANA Automated Predictive Library Package for SAP HANA, express edition](hxe-ua-apl-binary)|
 |Clients| [Install the SAP HANA, express edition Clients](https://developers.sap.com/group.hxe-install-clients.html) |

@@ -8,7 +8,7 @@ author_name: Smita Naik
 author_profile: https://github.com/I321506
 ---
 
-# Orchestration with Grounding Capabilities in SAP AI Core
+# Orchestration with Grounding Capabilities in SAP AI Core (Interview Question Generation Use Case)
 <!-- description --> This tutorial offers a step-by-step guide on setting up document grounding capabilities, creating pipelines, and leveraging SAP AI Core for tailored use cases. In this scenario, we demonstrate generating interview questions based on job description (JD). By integrating vector-based data repositories as the grounding source, we enable precise retrieval of contextual insights from the documents. This approach ensures that the questions are both relevant and comprehensive, aligning with the role's requirements. Follow this guide to implement a seamless pipeline for generating role-specific interview questions with SAP AI Core.
 
 ## You will learn

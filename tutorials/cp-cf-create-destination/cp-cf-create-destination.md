@@ -52,6 +52,10 @@ Click on the **Destinations** button on the left panel and click **Create Destin
 
 ![destination](./destination.png)
 
+Select **From Scratch** when prompted:
+
+![destination from scratch](./from-scratch.png)
+
 ### Create a new destination
 
 Enter/confirm all fields in the destination configuration section with the information below and confirm with **Save**:
@@ -81,7 +85,6 @@ When specifying a URL with the HTTPS scheme, a checkbox **Use default JDK trusts
 
 ### Check the connection
 
-Click on the **Check Connection** icon on the newly created destination to see if everything works as expected:
+Click on the **Check Connection** button for the newly created destination to see if everything works as expected:
 
 ![check destination function](./checkdest.png)
-

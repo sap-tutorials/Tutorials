@@ -7,7 +7,7 @@ primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
-
+ 
 # Ingest Live Data into your House Price Predictor with SAP AI Core
 <!-- description --> Build data pipelines and reuse code to train and generate models on different datasets.
 
@@ -537,6 +537,14 @@ print(response.__dict__)
 - The Resource Group must be `default`
 - The `Name` field is your choice of identifier for your secret within SAP AI Core. 
 - Entries to the other fields are found in your AWS account.
+**Endpoint**
+- This is where you specify the host for your S3 service.
+- Use the endpoint URL associated with your AWS S3 bucket’s region.
+- Example for the EU Central region:**s3-eu-central-1.amazonaws.com**
+- If you are using the standard AWS global endpoint, you can use: **s3.amazonaws.com**
+
+**Note:** This value corresponds to the host element in the credentials you receive when creating the S3 Object Store in BTP. AWS may provide multiple URLs, endpoints, and URIs, so ensure you enter the one specific to your bucket’s region or your S3 service host.
+has context menu
 
 > ### Why not put a complete path to train.csv as `pathPrefix`?
 > You might have noticed that previously you uploaded data to `example-dataset/house-price-toy/data/jan/train.csv` but here in object store secret the `pathPrefix` is you set the value `example-dataset/house-price-toy`. This is because the use of `pathPrefix` is to restrict access to particular directory of your cloud storage.

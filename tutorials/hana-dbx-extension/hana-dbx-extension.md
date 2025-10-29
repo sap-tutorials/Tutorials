@@ -68,7 +68,23 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
 
     ![Successful Connection](successfulConnection.png)
 
-### Make connections through Cloud Foundry (Optional)
+3. To edit your database connection, right click on the database connection name and select **Edit Database**. 
+
+![Edit Database Connection](edit-database-connection.png)
+
+Here you can edit your values for the **Host**, **Port**, **User** and **Password**.
+
+![Edit Database Connection values](edit-database-connection-values.png)
+
+4. To delete your database connection, right click on the database connection name and select **Delete Database**. Then a pop-up will ask you to confirm the deletion.
+
+![Delete Database Connection](delete-database-connection.png)
+
+Then a pop-up will ask you to confirm the deletion for you database connection.
+
+![Delete Database Connection Pop Up](delete-database-connection-popup.png)
+
+
 The SAP HANA database explorer extension also allows you to connect to the database connections you may have specified in the Cloud Foundry, web-based SAP HANA database explorer. These connections are managed by the web-based SAP HANA database explorer and cannot be edited in the extension. In order to complete this section of the tutorial, ensure that you have the [Cloud Foundry CLI](https://tools.hana.ondemand.com/#cloud) installed and added to your path.
 
 1. Open the terminal through Visual Studio Code by navigating to **Terminal** > **New Terminal** in the Visual Studio Code. 
@@ -146,6 +162,42 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 3. Clicking OK will apply your filter selections. Keep the HOTELS filter selected and click OK. 
 
 
+
+### Dependency Viewer
+Database object dependencies can be visualized using a graphical dependency viewer. 
+
+The dependency viewer can be started in two ways: 
+
+1. By right-clicking an object in the catalog browser and choosing "Open Dependency Viewer" from the context menu
+
+    ![Catalog Browser Dependency Viewer](catalog_browser_dependency_viewer.png)
+
+2. By right-clicking a database connection.
+
+    ![Database Dependency Viewer](database_dependency_viewer.png)
+
+
+When starting the dependency viewer from an object in the catalog browser, the dependency viewer directly shows the dependencies of the selected object.
+
+The dependencies can be explored in both directions, incoming and outgoing. Schemas are indicated as boxes surrounding the objects.
+    ![Incoming and Outgoing Nodes](incoming_outgoing_nodes.png)
+
+Schemas can be collapsed by double-clicking them to focus on the relevant dependencies. Clicking on an object highlights it and its direct dependencies for easier analysis.
+
+When starting the dependency viewer from a database connection, it is initially empty. You can select an object to visualize via the "Select Object" dropdown. 
+This dropdown can also be used to switch to a different object if one was already previously selected.
+    ![Select Objects from Dependency Viewer](select_object_dv.png)
+
+If you want to simplify your graph, or only have specific object types visible, you can filter them using the Object Type filter by unselecting the undesired items.
+
+![Object Type Filter](object_type_filter.png)
+
+> Note: If you get a Database URL error message, open **settings.json** from `C:\Users\User_Name\AppData\Roaming\Code\User` and remove the line `"SAP HANA Database Explorer.URL":` and the following url.
+ ![Edit settings.json](settingjsonedit.png)
+
+
+
+
 ### Visual Studio Code features
 Learn how to change settings and leverage features such as split editor, layout toggles, and the terminal.
 
@@ -196,6 +248,11 @@ Learn how to change settings and leverage features such as split editor, layout 
    
 
     ![Compare Tables](compareTables.png)
+
+    Instead of a split editor, you can alternatively create a new window by dragging an open tab outside of your current window editor.
+    
+    ![New Window Editor](New-Window-Editor.png)
+
 
 4. Additionally, Visual Studio Code has other features to help organize your workspace. The icons in the top right corners allow you to toggle (hide/show) different parts of the workspace which you can also do by resizing and snapping different areas. Click on the second icon to toggle the panel and use the Terminal to create a new file for your SQL code.
 

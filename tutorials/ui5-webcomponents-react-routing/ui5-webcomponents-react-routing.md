@@ -18,7 +18,7 @@ author_profile: https://github.com/Lukas742
 
 
 ## Intro
-In this tutorial, you will learn how to create routes to different paths of your application. For this you will create a new page and set up routing between the page and the dashboard.
+In this tutorial, you will learn how to create routes to different paths of your application using [React Router](https://reactrouter.com/). For this you will create a new page and set up routing between the page and the dashboard.
 
 ---
 
@@ -83,22 +83,24 @@ export function Detail() {
     `MyApp.tsx` should now look like this:
 
     ```TypeScript / TSX
+    import activateIcon from "@ui5/webcomponents-icons/dist/activate.js";
     import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
-    import addIcon from "@ui5/webcomponents-icons/dist/add.js";
-
+    import profilePictureExample from "./assets/profilePictureExample.png";
+    import reactLogo from "./assets/reactLogo.png";
+    
     export function MyApp() {
       return (
         <div>
           <ShellBar
-            logo={<img src="reactLogo.png" />}
+            logo={<img src={reactLogo} alt="Company Logo" />}
             profile={
               <Avatar>
-                <img src="profilePictureExample.png" />
+                <img src={profilePictureExample} alt="User Avatar" />
               </Avatar>
             }
             primaryTitle="My App"
           >
-            <ShellBarItem icon={addIcon} text="Add" />
+            <ShellBarItem icon={activateIcon} text="Activate" />
           </ShellBar>
         </div>
       );
@@ -108,30 +110,59 @@ export function Detail() {
     And `Home.tsx` like this:
 
     ```TypeScript / TSX
-    import { useState } from "react";
-    import {
-      AnalyticalTable,
-      Card,
-      CardHeader,
-      CustomListItem,
-      FlexBox,
-      FlexBoxDirection,
-      FlexBoxJustifyContent,
-      FlexBoxWrap,
-      Icon,
-      List,
-      ProgressIndicator,
-      StandardListItem,
-      Text,
-      ValueState,
-    } from "@ui5/webcomponents-react";
-    import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
-    import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
+    import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
+    import listIcon from "@ui5/webcomponents-icons/dist/list.js";
     import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
     import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
-    import listIcon from "@ui5/webcomponents-icons/dist/list.js";
-    import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
-
+    import { useState } from "react";
+    import {
+      Card,
+      CardHeader,
+      Text,
+      List,
+      ListItemStandard,
+      ListItemCustom,
+      ProgressIndicator,
+      FlexBox,
+      FlexBoxJustifyContent,
+      FlexBoxWrap,
+      FlexBoxDirection,
+      AnalyticalTable,
+      Icon,
+    } from "@ui5/webcomponents-react";
+    import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
+    import ValueState from "@ui5/webcomponents-base/dist/types/ValueState.js";
+    
+    const tableData = new Array(500).fill(null).map((_, index) => {
+      return {
+        name: `name${index}`,
+        age: Math.floor(Math.random() * 100),
+        friend: {
+          name: `friend.Name${index}`,
+          age: Math.floor(Math.random() * 100),
+        },
+      };
+    });
+    
+    const tableColumns = [
+      {
+        Header: "Name",
+        accessor: "name", // String-based value accessors!
+      },
+      {
+        Header: "Age",
+        accessor: "age",
+      },
+      {
+        Header: "Friend Name",
+        accessor: "friend.name",
+      },
+      {
+        Header: "Friend Age",
+        accessor: "friend.age",
+      },
+    ];
+    
     const dataset = [
       {
         month: "January",
@@ -162,40 +193,16 @@ export function Detail() {
         data: 40,
       },
     ];
-
-    const tableData = new Array(500).fill(null).map((_, index) => {
-      return {
-        name: `name${index}`,
-        age: Math.floor(Math.random() * 100),
-        friend: {
-          name: `friend.Name${index}`,
-          age: Math.floor(Math.random() * 100),
-        },
-      };
-    });
-
-    const tableColumns = [
-      {
-        Header: "Name",
-        accessor: "name", // String-based value accessors!
-      },
-      {
-        Header: "Age",
-        accessor: "age",
-      },
-      {
-        Header: "Friend Name",
-        accessor: "friend.name",
-      },
-      {
-        Header: "Friend Age",
-        accessor: "friend.age",
-      },
-    ];
-
+    
     export function Home() {
       const [toggleCharts, setToggleCharts] = useState("lineChart");
       const [loading, setLoading] = useState(false);
+    
+      const contentTitle =
+        toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+      const switchToChart =
+        toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+    
       const handleHeaderClick = () => {
         if (toggleCharts === "lineChart") {
           setLoading(true);
@@ -211,142 +218,136 @@ export function Detail() {
           }, 2000);
         }
       };
-      const contentTitle =
-        toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-      const switchToChart =
-        toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
       return (
-        <>
-          <FlexBox
-            justifyContent={FlexBoxJustifyContent.Center}
-            wrap={FlexBoxWrap.Wrap}
-            style={spacing.sapUiContentPadding}
-          >
-            <Card
-              header={
-                <CardHeader
-                  titleText="Stock Prices"
-                  subtitleText={`Click here to switch to ${switchToChart}`}
-                  interactive
-                  onClick={handleHeaderClick}
-                  avatar={
-                    <Icon
-                      name={
-                        toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
-                      }
-                    />
-                  }
-                />
-              }
-              style={{ width: "300px", ...spacing.sapUiContentPadding }}
-            >
-              <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-              {toggleCharts === "lineChart" ? (
-                <LineChart
-                  dimensions={[{ accessor: "month" }]}
-                  measures={[{ accessor: "data", label: "Stock Price" }]}
-                  dataset={dataset}
-                  loading={loading}
-                />
-              ) : (
-                <BarChart
-                  dimensions={[{ accessor: "month" }]}
-                  measures={[{ accessor: "data", label: "Stock Price" }]}
-                  dataset={dataset}
-                  loading={loading}
-                />
-              )}
-            </Card>
-            <Card
-              header={
-                <CardHeader
-                  titleText="Progress"
-                  subtitleText="List"
-                  avatar={<Icon name={listIcon} />}
-                />
-              }
-              style={{ width: "300px", ...spacing.sapUiContentPadding }}
-            >
-              <List>
-                <StandardListItem
-                  additionalText="finished"
-                  additionalTextState={ValueState.Success}
-                >
-                  Activity 1
-                </StandardListItem>
-                <StandardListItem
-                  additionalText="failed"
-                  additionalTextState={ValueState.Error}
-                >
-                  Activity 2
-                </StandardListItem>
-                <CustomListItem>
-                  <FlexBox
-                    direction={FlexBoxDirection.Column}
-                    style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
-                  >
-                    <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
-                      <Text
-                        style={{ fontSize: ThemingParameters.sapFontLargeSize }}
-                      >
-                        Activity 3
-                      </Text>
-                      <Text
-                        style={{ color: ThemingParameters.sapCriticalTextColor }}
-                      >
-                        in progress
-                      </Text>
-                    </FlexBox>
-                    <ProgressIndicator
-                      value={89}
-                      valueState={ValueState.Success}
-                      style={{ ...spacing.sapUiTinyMarginTop }}
-                    />
-                  </FlexBox>
-                </CustomListItem>
-                <CustomListItem>
-                  <FlexBox
-                    direction={FlexBoxDirection.Column}
-                    style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
-                  >
-                    <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
-                      <Text
-                        style={{ fontSize: ThemingParameters.sapFontLargeSize }}
-                      >
-                        Activity 4
-                      </Text>
-                      <Text
-                        style={{ color: ThemingParameters.sapCriticalTextColor }}
-                      >
-                        in progress
-                      </Text>
-                    </FlexBox>
-                    <ProgressIndicator
-                      value={5}
-                      valueState={ValueState.Error}
-                      style={{ ...spacing.sapUiTinyMarginTop }}
-                    />
-                  </FlexBox>
-                </CustomListItem>
-              </List>
-            </Card>
-            <Card
-              header={
-                <CardHeader
-                  titleText="AnalyticalTable"
-                  avatar={<Icon name={tableViewIcon} />}
-                />
-              }
-              style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
-            >
-              <AnalyticalTable
-                data={tableData}
-                columns={tableColumns}
-                visibleRows={5}
+        <FlexBox
+          justifyContent={FlexBoxJustifyContent.Center}
+          wrap={FlexBoxWrap.Wrap}
+          style={{ padding: "var(--sapContent_Space_M)" }}
+        >
+          <Card
+            header={
+              <CardHeader
+                titleText="Prices"
+                subtitleText={`Click here to switch to ${switchToChart}`}
+                interactive
+                avatar={
+                  <Icon
+                    name={
+                      toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
+                    }
+                    accessibleName={contentTitle}
+                  />
+                }
+                onClick={handleHeaderClick}
               />
-            </Card>
-          </FlexBox>
-        </>
+            }
+            style={{ width: "300px", margin: "var(--sapContent_Margin_Small)" }}
+          >
+            <Text style={{ padding: "var(--sapContent_Space_S)" }}>
+              {contentTitle}
+            </Text>
+            {toggleCharts === "lineChart" ? (
+              <LineChart
+                dimensions={[{ accessor: "month" }]}
+                measures={[{ accessor: "data", label: "Price" }]}
+                dataset={dataset}
+                loading={loading}
+              />
+            ) : (
+              <BarChart
+                dimensions={[{ accessor: "month" }]}
+                measures={[{ accessor: "data", label: "Price" }]}
+                dataset={dataset}
+                loading={loading}
+              />
+            )}
+          </Card>
+          <Card
+            header={
+              <CardHeader
+                titleText="Progress"
+                subtitleText="List"
+                avatar={<Icon name={listIcon} />}
+              />
+            }
+            style={{ width: "300px", margin: "var(--sapContent_Margin_Small)" }}
+          >
+            <List>
+              <ListItemStandard
+                additionalText="finished"
+                additionalTextState={ValueState.Positive}
+              >
+                Activity 1
+              </ListItemStandard>
+              <ListItemStandard
+                additionalText="failed"
+                additionalTextState={ValueState.Negative}
+              >
+                Activity 2
+              </ListItemStandard>
+              <ListItemCustom>
+                <FlexBox
+                  direction={FlexBoxDirection.Column}
+                  fitContainer
+                  style={{ paddingBlock: "var(--sapContent_Space_S)" }}
+                >
+                  <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+                    <Text style={{ fontSize: "var(--sapFontLargeSize)" }}>
+                      Activity 3
+                    </Text>
+                    <Text style={{ color: "var(--sapCriticalTextColor)" }}>
+                      in progress
+                    </Text>
+                  </FlexBox>
+                  <ProgressIndicator
+                    value={89}
+                    valueState={ValueState.Positive}
+                    style={{ marginBlockStart: "0.5rem" }}
+                  />
+                </FlexBox>
+              </ListItemCustom>
+              <ListItemCustom>
+                <FlexBox
+                  direction={FlexBoxDirection.Column}
+                  fitContainer
+                  style={{ paddingBlock: "var(--sapContent_Space_S)" }}
+                >
+                  <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+                    <Text style={{ fontSize: "var(--sapFontLargeSize)" }}>
+                      Activity 3
+                    </Text>
+                    <Text style={{ color: "var(--sapCriticalTextColor)" }}>
+                      in progress
+                    </Text>
+                  </FlexBox>
+                  <ProgressIndicator
+                    value={5}
+                    valueState={ValueState.Negative}
+                    style={{ marginBlockStart: "0.5rem" }}
+                  />
+                </FlexBox>
+              </ListItemCustom>
+            </List>
+          </Card>
+          <Card
+            header={
+              <CardHeader
+                titleText="AnalyticalTable"
+                avatar={<Icon name={tableViewIcon} />}
+              />
+            }
+            style={{
+              maxWidth: "900px",
+              margin: "var(--sapContent_Margin_Small)",
+            }}
+          >
+            <AnalyticalTable
+              data={tableData}
+              columns={tableColumns}
+              visibleRows={5}
+            />
+          </Card>
+        </FlexBox>
       );
     }
     ```
@@ -368,15 +369,15 @@ export function Detail() {
     return (
       <>
         <ShellBar
-          logo={<img src="reactLogo.png" />}
+          logo={<img src={reactLogo} alt="Company Logo" />}
           profile={
             <Avatar>
-              <img src="profilePictureExample.png" />
+              <img src={profilePictureExample} alt="User Avatar" />
             </Avatar>
           }
           primaryTitle="My App"
         >
-          <ShellBarItem icon={addIcon} text="Add" />
+          <ShellBarItem icon={activateIcon} text="Activate" />
         </ShellBar>
         <Routes>
           <Route path="/home" element={<Home />} />
@@ -398,7 +399,7 @@ Your current URL now displays the `#/home` path. If you replace `home` with `det
 ### Handle navigation
 
 
-Except for changing the URL of the App the user doesn't have options to navigate to the `Detail` page. The page could contain some more information about activities and should therefore be connected to the `Progress Card`.
+Except for changing the URL of the App users don't have options to navigate to the `Detail` page. The page could contain some more information about activities and should therefore be connected to the `Progress Card`.
 
 1. Go into your `Home` component and add `interactive` and `onClick={handleProgressHeaderClick}` to your second `CardHeader` component.
 
@@ -413,7 +414,7 @@ Except for changing the URL of the App the user doesn't have options to navigate
           onClick={handleProgressHeaderClick}
         />
       }
-      style={{ width: "300px", ...spacing.sapUiContentPadding }}
+      style={{ width: "300px", margin: "var(--sapContent_Margin_Small)" }}
     >
     ```
 
@@ -446,8 +447,12 @@ Except for changing the URL of the App the user doesn't have options to navigate
 
     ```TypeScript / TSX
     <ShellBar
-      logo={<img src="reactLogo.png" />}
-      profile={<Avatar image="profilePictureExample.png" />}
+      logo={<img src={reactLogo} alt="Company Logo" />}
+      profile={
+        <Avatar>
+          <img src={profilePictureExample} alt="User Avatar" />
+        </Avatar>
+      }
       primaryTitle="My App"
       onLogoClick={handleLogoClick}
     >
@@ -462,11 +467,14 @@ If needed, you can compare your files with the following code references:
 `MyApp.tsx`:
 
 ```TypeScript / TSX
+import activateIcon from "@ui5/webcomponents-icons/dist/activate.js";
 import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
-import addIcon from "@ui5/webcomponents-icons/dist/add.js";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import profilePictureExample from "./assets/profilePictureExample.png";
+import reactLogo from "./assets/reactLogo.png";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "./Home";
 import { Detail } from "./Detail";
+import { useNavigate } from "react-router-dom";
 
 export function MyApp() {
   const navigate = useNavigate();
@@ -476,21 +484,21 @@ export function MyApp() {
   return (
     <>
       <ShellBar
-        logo={<img src="reactLogo.png" />}
+        logo={<img src={reactLogo} alt="Company Logo" />}
         profile={
           <Avatar>
-            <img src="profilePictureExample.png" />
+            <img src={profilePictureExample} alt="User Avatar" />
           </Avatar>
         }
         primaryTitle="My App"
         onLogoClick={handleLogoClick}
       >
-        <ShellBarItem icon={addIcon} text="Add" />
+        <ShellBarItem icon={activateIcon} text="Activate" />
       </ShellBar>
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/detail" element={<Detail />} />
-        <Route path="/" element={<Navigate replace to="/home" />} />
+        <Route path="*" element={<Navigate replace to="/home" />} />
       </Routes>
     </>
   );
@@ -500,30 +508,59 @@ export function MyApp() {
 `Home.tsx`:
 
 ```TypeScript / TSX
-import { useState } from "react";
-import {
-  AnalyticalTable,
-  Card,
-  CardHeader,
-  CustomListItem,
-  FlexBox,
-  FlexBoxDirection,
-  FlexBoxJustifyContent,
-  FlexBoxWrap,
-  Icon,
-  List,
-  ProgressIndicator,
-  StandardListItem,
-  Text,
-  ValueState,
-} from "@ui5/webcomponents-react";
-import { spacing, ThemingParameters } from "@ui5/webcomponents-react-base";
-import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
+import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
+import listIcon from "@ui5/webcomponents-icons/dist/list.js";
 import lineChartIcon from "@ui5/webcomponents-icons/dist/line-chart.js";
 import barChartIcon from "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
-import listIcon from "@ui5/webcomponents-icons/dist/list.js";
-import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
+import { useState } from "react";
+import {
+  Card,
+  CardHeader,
+  Text,
+  List,
+  ListItemStandard,
+  ListItemCustom,
+  ProgressIndicator,
+  FlexBox,
+  FlexBoxJustifyContent,
+  FlexBoxWrap,
+  FlexBoxDirection,
+  AnalyticalTable,
+  Icon,
+} from "@ui5/webcomponents-react";
+import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
+import ValueState from "@ui5/webcomponents-base/dist/types/ValueState.js";
 import { useNavigate } from "react-router-dom";
+
+const tableData = new Array(500).fill(null).map((_, index) => {
+  return {
+    name: `name${index}`,
+    age: Math.floor(Math.random() * 100),
+    friend: {
+      name: `friend.Name${index}`,
+      age: Math.floor(Math.random() * 100),
+    },
+  };
+});
+
+const tableColumns = [
+  {
+    Header: "Name",
+    accessor: "name", // String-based value accessors!
+  },
+  {
+    Header: "Age",
+    accessor: "age",
+  },
+  {
+    Header: "Friend Name",
+    accessor: "friend.name",
+  },
+  {
+    Header: "Friend Age",
+    accessor: "friend.age",
+  },
+];
 
 const dataset = [
   {
@@ -556,40 +593,16 @@ const dataset = [
   },
 ];
 
-const tableData = new Array(500).fill(null).map((_, index) => {
-  return {
-    name: `name${index}`,
-    age: Math.floor(Math.random() * 100),
-    friend: {
-      name: `friend.Name${index}`,
-      age: Math.floor(Math.random() * 100),
-    },
-  };
-});
-
-const tableColumns = [
-  {
-    Header: "Name",
-    accessor: "name", // String-based value accessors!
-  },
-  {
-    Header: "Age",
-    accessor: "age",
-  },
-  {
-    Header: "Friend Name",
-    accessor: "friend.name",
-  },
-  {
-    Header: "Friend Age",
-    accessor: "friend.age",
-  },
-];
-
 export function Home() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const contentTitle =
+    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+  const switchToChart =
+    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+
   const handleHeaderClick = () => {
     if (toggleCharts === "lineChart") {
       setLoading(true);
@@ -605,147 +618,143 @@ export function Home() {
       }, 2000);
     }
   };
-  const contentTitle =
-    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-  const switchToChart =
-    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+
   const handleProgressHeaderClick = () => {
     navigate("/detail");
   };
+
   return (
-    <>
-      <FlexBox
-        justifyContent={FlexBoxJustifyContent.Center}
-        wrap={FlexBoxWrap.Wrap}
-        style={spacing.sapUiContentPadding}
-      >
-        <Card
-          header={
-            <CardHeader
-              titleText="Stock Prices"
-              subtitleText={`Click here to switch to ${switchToChart}`}
-              interactive
-              onClick={handleHeaderClick}
-              avatar={
-                <Icon
-                  name={
-                    toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
-                  }
-                />
-              }
-            />
-          }
-          style={{ width: "300px", ...spacing.sapUiContentPadding }}
-        >
-          <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-          {toggleCharts === "lineChart" ? (
-            <LineChart
-              dimensions={[{ accessor: "month" }]}
-              measures={[{ accessor: "data", label: "Stock Price" }]}
-              dataset={dataset}
-              loading={loading}
-            />
-          ) : (
-            <BarChart
-              dimensions={[{ accessor: "month" }]}
-              measures={[{ accessor: "data", label: "Stock Price" }]}
-              dataset={dataset}
-              loading={loading}
-            />
-          )}
-        </Card>
-        <Card
-          header={
-            <CardHeader
-              titleText="Progress"
-              subtitleText="List"
-              avatar={<Icon name={listIcon} />}
-              interactive
-              onClick={handleProgressHeaderClick}
-            />
-          }
-          style={{ width: "300px", ...spacing.sapUiContentPadding }}
-        >
-          <List>
-            <StandardListItem
-              additionalText="finished"
-              additionalTextState={ValueState.Success}
-            >
-              Activity 1
-            </StandardListItem>
-            <StandardListItem
-              additionalText="failed"
-              additionalTextState={ValueState.Error}
-            >
-              Activity 2
-            </StandardListItem>
-            <CustomListItem>
-              <FlexBox
-                direction={FlexBoxDirection.Column}
-                style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
-              >
-                <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
-                  <Text
-                    style={{ fontSize: ThemingParameters.sapFontLargeSize }}
-                  >
-                    Activity 3
-                  </Text>
-                  <Text
-                    style={{ color: ThemingParameters.sapCriticalTextColor }}
-                  >
-                    in progress
-                  </Text>
-                </FlexBox>
-                <ProgressIndicator
-                  value={89}
-                  valueState={ValueState.Success}
-                  style={{ ...spacing.sapUiTinyMarginTop }}
-                />
-              </FlexBox>
-            </CustomListItem>
-            <CustomListItem>
-              <FlexBox
-                direction={FlexBoxDirection.Column}
-                style={{ width: "100%", ...spacing.sapUiSmallMarginTopBottom }}
-              >
-                <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
-                  <Text
-                    style={{ fontSize: ThemingParameters.sapFontLargeSize }}
-                  >
-                    Activity 4
-                  </Text>
-                  <Text
-                    style={{ color: ThemingParameters.sapCriticalTextColor }}
-                  >
-                    in progress
-                  </Text>
-                </FlexBox>
-                <ProgressIndicator
-                  value={5}
-                  valueState={ValueState.Error}
-                  style={{ ...spacing.sapUiTinyMarginTop }}
-                />
-              </FlexBox>
-            </CustomListItem>
-          </List>
-        </Card>
-        <Card
-          header={
-            <CardHeader
-              titleText="AnalyticalTable"
-              avatar={<Icon name={tableViewIcon} />}
-            />
-          }
-          style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
-        >
-          <AnalyticalTable
-            data={tableData}
-            columns={tableColumns}
-            visibleRows={5}
+    <FlexBox
+      justifyContent={FlexBoxJustifyContent.Center}
+      wrap={FlexBoxWrap.Wrap}
+      style={{ padding: "var(--sapContent_Space_M)" }}
+    >
+      <Card
+        header={
+          <CardHeader
+            titleText="Prices"
+            subtitleText={`Click here to switch to ${switchToChart}`}
+            interactive
+            avatar={
+              <Icon
+                name={
+                  toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
+                }
+                accessibleName={contentTitle}
+              />
+            }
+            onClick={handleHeaderClick}
           />
-        </Card>
-      </FlexBox>
-    </>
+        }
+        style={{ width: "300px", margin: "var(--sapContent_Margin_Small)" }}
+      >
+        <Text style={{ padding: "var(--sapContent_Space_S)" }}>
+          {contentTitle}
+        </Text>
+        {toggleCharts === "lineChart" ? (
+          <LineChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data", label: "Price" }]}
+            dataset={dataset}
+            loading={loading}
+          />
+        ) : (
+          <BarChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data", label: "Price" }]}
+            dataset={dataset}
+            loading={loading}
+          />
+        )}
+      </Card>
+      <Card
+        header={
+          <CardHeader
+            titleText="Progress"
+            subtitleText="List"
+            avatar={<Icon name={listIcon} />}
+            interactive
+            onClick={handleProgressHeaderClick}
+          />
+        }
+        style={{ width: "300px", margin: "var(--sapContent_Margin_Small)" }}
+      >
+        <List>
+          <ListItemStandard
+            additionalText="finished"
+            additionalTextState={ValueState.Positive}
+          >
+            Activity 1
+          </ListItemStandard>
+          <ListItemStandard
+            additionalText="failed"
+            additionalTextState={ValueState.Negative}
+          >
+            Activity 2
+          </ListItemStandard>
+          <ListItemCustom>
+            <FlexBox
+              direction={FlexBoxDirection.Column}
+              fitContainer
+              style={{ paddingBlock: "var(--sapContent_Space_S)" }}
+            >
+              <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+                <Text style={{ fontSize: "var(--sapFontLargeSize)" }}>
+                  Activity 3
+                </Text>
+                <Text style={{ color: "var(--sapCriticalTextColor)" }}>
+                  in progress
+                </Text>
+              </FlexBox>
+              <ProgressIndicator
+                value={89}
+                valueState={ValueState.Positive}
+                style={{ marginBlockStart: "0.5rem" }}
+              />
+            </FlexBox>
+          </ListItemCustom>
+          <ListItemCustom>
+            <FlexBox
+              direction={FlexBoxDirection.Column}
+              fitContainer
+              style={{ paddingBlock: "var(--sapContent_Space_S)" }}
+            >
+              <FlexBox justifyContent={FlexBoxJustifyContent.SpaceBetween}>
+                <Text style={{ fontSize: "var(--sapFontLargeSize)" }}>
+                  Activity 3
+                </Text>
+                <Text style={{ color: "var(--sapCriticalTextColor)" }}>
+                  in progress
+                </Text>
+              </FlexBox>
+              <ProgressIndicator
+                value={5}
+                valueState={ValueState.Negative}
+                style={{ marginBlockStart: "0.5rem" }}
+              />
+            </FlexBox>
+          </ListItemCustom>
+        </List>
+      </Card>
+      <Card
+        header={
+          <CardHeader
+            titleText="AnalyticalTable"
+            avatar={<Icon name={tableViewIcon} />}
+          />
+        }
+        style={{
+          maxWidth: "900px",
+          margin: "var(--sapContent_Margin_Small)",
+        }}
+      >
+        <AnalyticalTable
+          data={tableData}
+          columns={tableColumns}
+          visibleRows={5}
+        />
+      </Card>
+    </FlexBox>
   );
 }
 ```

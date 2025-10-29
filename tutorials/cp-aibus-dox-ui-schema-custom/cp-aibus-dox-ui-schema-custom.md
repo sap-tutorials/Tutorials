@@ -2,44 +2,44 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction, tutorial>free-tier]
+tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai, tutorial>free-tier]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
 # Create Schema for Custom Documents
-<!-- description --> Create a schema for custom documents (which are not supported out of the box) to extract information from similar documents using the Document Information Extraction service.
+<!-- description --> Create a schema for custom documents (which are not supported out of the box) to extract information from similar documents using SAP Document AI.
 
 ## You will learn
   - How to create a schema for custom documents
   - How to add standard and custom data fields for the header information of custom documents
 
 ## Intro
-The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. The service supports extraction from the following standard document types out of the box: invoices, payment advices, and purchase orders.
+The core functionality of SAP Document AI is to automatically extract structured information from documents using machine learning. SAP Document AI supports extraction from the following standard document types out of the box: invoices, payment advices, and purchase orders.
 
 You can also use the [Schema Configuration](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/3c7862e30fc2488ea95f58f1d77e424e.html) and [Template](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/1eeb08998f49409681c06a01febc3172.html) features to extract information from custom documents that are different from the standard document types. You can customize the information extracted from custom document types by creating a schema and adding the specific information that you have in your documents.
 
-In this tutorial, we'll use power of attorney documents as an example of a custom document type that is not supported by Document Information Extraction out of the box. A power of attorney document is a legal instrument authorizing one to act as the attorney or agent for another person in specified or all legal or financial matters.
+In this tutorial, we'll use power of attorney documents as an example of a custom document type that is not supported by SAP Document AI out of the box. A power of attorney document is a legal instrument authorizing one to act as the attorney or agent for another person in specified or all legal or financial matters.
 
-If you are new to the Document Information Extraction UI, first try out the tutorial: [Use Machine Learning to Extract Information from Documents with Document Information Extraction UI](cp-aibus-dox-ui).
+If you are new to the SAP Document AI basic UI, first try out the tutorial: [Use Machine Learning to Extract Information from Documents with SAP Document AI Basic UI](cp-aibus-dox-ui).
 
 ---
 
 ### Access schema configuration
 
 
-1. Open the Document Information Extraction UI, as described in the tutorial: [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app) or [Use Free Tier to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-free-booster-app).
+1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app) or [Use Free Tier to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-free-booster-app).
 
 
-    >If you **HAVE NOT** just used the **Set up account for Document Information Extraction** booster to create a service instance for Document Information Extraction and subscribe to the Document Information Extraction UI, observe the following:
+    >If you **HAVE NOT** just used the **Set up account for SAP Document AI** booster to create a service instance for SAP Document AI and subscribe to the SAP Document AI basic UI, observe the following:
 
-    >- To access the [Schema Configuration](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/3c7862e30fc2488ea95f58f1d77e424e.html) and [Template](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/1eeb08998f49409681c06a01febc3172.html) features, ensure that you use the `blocks_of_100` plan to create the service instance for Document Information Extraction Trial.
+    >- To access the [Schema Configuration](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/3c7862e30fc2488ea95f58f1d77e424e.html) and [Template](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/1eeb08998f49409681c06a01febc3172.html) features, ensure that you use the `blocks_of_100` plan to create the service instance for SAP Document AI Trial.
 
     ><!-- border -->![Access](plan.png)
 
 
-    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details about how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to Document Information Extraction UI](cp-aibus-dox-free-ui-sub).
+    >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details about how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to SAP Document AI Basic UI](cp-aibus-dox-free-ui-sub).
 
     ><!-- border -->![Access](roles.png)
 
@@ -53,7 +53,7 @@ If you are new to the Document Information Extraction UI, first try out the tuto
 
     <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
 
-Here, you find the SAP schemas. The Document Information Extraction UI provides preconfigured SAP schemas for the following standard document types:
+Here, you find the SAP schemas. The SAP Document AI basic UI provides preconfigured SAP schemas for the following standard document types:
 
 * Purchase order
 * Payment advice
@@ -68,7 +68,7 @@ In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`)
 
 >**CAUTION:**
 
->When using the free tier option for Document Information Extraction or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
+>When using the free tier option for SAP Document AI or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
 
 
 
@@ -101,7 +101,7 @@ To define your first header field, click **Add**.
 
 For each field, you have to enter a name, a data type, and a setup type. Adding a description is optional. Default extractors aren't available for custom documents. The available data types are `string`, `number`, `date`, `discount`, `currency`, and `country/region`. 
 
-The available setup types are `auto` and `manual`. The setup type `auto` supports extraction using the service’s machine learning models. You must specify a default extractor (standard fields supported by Document Information Extraction) for this setup type. It can only be used in schemas created for standard document types. The setup type `manual` supports extraction using a template. It’s available in schemas created for standard or custom document types.
+The available setup types are `auto` and `manual`. The setup type `auto` supports extraction using the solution's machine learning models. You must specify a default extractor (standard fields supported by SAP Document AI) for this setup type. It can only be used in schemas created for standard document types. The setup type `manual` supports extraction using a template. It’s available in schemas created for standard or custom document types.
 
 If you'd like to find out more about setup types and how they relate to document types, extraction methods, and default extractors, see [Setup Types](https://help.sap.com/docs/document-information-extraction/document-information-extraction/setup-types).
 
@@ -119,7 +119,7 @@ The field now displays in your list of header fields, where you again find all t
 
 <!-- border -->![View Number](added-number.png)
 
-Click **Add** again to open the `Add Data Field` dialog.
+Click **Add** again to open the `Header Field` dialog.
 
 1. Enter a name for your second header field, `fullName`, for example.
 
@@ -144,7 +144,7 @@ Go ahead and add the header fields shown in the table and image below. Pay atten
 
 <!-- border -->![All Header Fields](all-header-fields.png)
 
->**NOTE:** The Document Information Extraction UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
+>**NOTE:** The SAP Document AI basic UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
 
 
 
@@ -164,4 +164,4 @@ Now, the status of your schema changes to `ACTIVE`. To make changes to your sche
 
 Congratulations, you've created and activated your own schema for power of attorney documents.
 
-In the next tutorial: [Create Template for Custom Documents](cp-aibus-dox-ui-template-custom), you'll create a template that uses your schema, and associate documents with your template to show the Document Information Extraction service where each field is located in the document.
+In the next tutorial: [Create Template for Custom Documents](cp-aibus-dox-ui-template-custom), you'll create a template that uses your schema, and associate documents with your template to show SAP Document AI where each field is located in the document.

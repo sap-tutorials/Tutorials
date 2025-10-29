@@ -37,10 +37,11 @@ This tutorial will demonstrate the integration between a triggered database aler
 The following steps demonstrate how to subscribe to the SAP Automation Pilot service and explore some basic concepts such as commands, inputs, and executions.  
 
 1. In the SAP BTP Cockpit, at the subaccount level, in one of the [supported regions](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/4536e41c57aa442095ccbac977965f26.html), select **Service Marketplace**, then from the Automation Pilot tile select **Create** to create a subscription to the SAP Automation Pilot service.
+    > Note: For trial accounts, SAP Automation Pilot is automatically available from the Service Marketplace, so you can proceed directly to creating a subscription.
 
     ![create SAP Automation Pilot](create-autopilot-service.png)
 
-    >If the Automation Pilot service does not appear, it may be that the entitlement needs to be added to the subaccount.  To do so, navigate to the subaccount, select **Entitlements**, **Configure Entitlements**, **Add Service Plans**, select **Automation Pilot**, and add a plan such as free or standard.
+    >If the Automation Pilot service does not appear, it may be that the entitlement needs to be added to the subaccount.  To do so, navigate to the subaccount, select **Entitlements**, **Configure Entitlements**, **Add Service Plans**, select **Automation Pilot**, and add a plan such as free or standard. Do not forget to save the changes made to Entitlements,
 
     > ![add entitlement](add-entitlement.png)
 
@@ -54,7 +55,12 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     ![Assign Admin Role](admin-role.png)
 
+    Then assign the following Role Collections:
+    
+    ![Assign Role Collections](assign_role_collections.png)
+
     For additional details, see [Permissions and Roles](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/e4b6193a71354aa5854c2c5dc1f4325f.html).
+
 
 3. Once the SAP Automation Pilot service has been created, open its application.  
 
@@ -80,13 +86,13 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     Notice that there are a set of input keys and output keys.
 
-7. Open the input **`WelcomeScriptInput`** which is used by the previously mentioned command examples.
+7. Under **Inputs**, open the input **`WelcomeScriptInput`**.
 
     ![script input](script-input.png)
 
     Examine the description of the input keys and their types.
 
-8. Open the command **`PythonScriptCommandExample`**.  
+8. Open the command **`PythonScriptCommandExample`** in **Commands**.  
 
     Scroll down to the **Configuration** section, select input and notice that it has as an additional value `WelcomeScriptInput` shown in the previous step with an alias of  `scriptInput`.
 
@@ -110,7 +116,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
     print(f"{env}{arg1} {stdin}{arg2}")
     ```
 
-10. Trigger the command.  
+10. Trigger the command.
 
     ![Trigger command](trigger-command.png)
 
@@ -141,49 +147,56 @@ This step will create a catalog that contains a command and an input.  The input
 
     ![create a catalog](create-catalog.png)
 
+    ![create catalog wizard](create-catalog-2.png)
+
     Specify the values below.
 
     | Label | Value |
     | -------- | ----- |
-    | Name | `ResizeHCDB` |
+    | Name | `rsHCDB` |
     | Display name | `Resize SAP HANA Cloud Database` |
+
+    > If the error `[400] Violation in field 'catalog': size must be between 0 and 20` is encountered, please ensure that the catalog ID is between 0 and 20 characters.
 
 2. Create an input named `BTPTechnicalUser` in the just created catalog.
 
     ![create input](create-input.png)
 
+    ![Create input Selection](create-input-selection.png)
+
 3. Add two keys to the input.
 
     | Key Name | Type | Sensitive | Value |
     | -------- | ----- | --- | --- |
-    | user | String | no | BTP user that is a member of the space where the SAP HANA Cloud database instance exists |
-    | password | String | yes | password of the BTP user |
+    | User | String | no | BTP user that is a member of the space where the SAP HANA Cloud database instance exists |
+    | Password | String | yes | password of the BTP user |
 
 
     ![input with keys](input.png)
 
-    >Note these credentials will be used by a Cloud Foundry command to return the details of a SAP HANA database service.  Ensure the user can log in successfully to a site such as [SAP Community](https://community.sap.com/) and **not** have two-factor authentication enabled.  The user should appear under the members list at the space level in the BTP Cockpit and have the role space developer.  Additional details on creating a technical user can be found at [Creating a Technical User for Cloud Platform Integration](https://blogs.sap.com/2018/08/17/creating-a-technical-user-for-cloud-platform-integration/).
+    >Note these credentials will be used by a Cloud Foundry command to return the details of a SAP HANA database service.  Ensure the user can log in successfully to a site such as [SAP Community](https://community.sap.com/) and **not** have two-factor authentication enabled.  The user should appear under the members list at the space level in the BTP Cockpit and have the role space developer.
 
     >![space members](space-members.png)
 
-4. Create a command named `ResizeHANACloudStorage` in the previously created catalog and add the following input keys to the command under the section **Contract**.
+4. Create a command named `ResizeHANACloudStorage` in the previously created catalog, `Resize SAP HANA Cloud Database`, and add the following input keys to the command under the section **Contract**.
 
     | Key Name | Type | Sensitive |
     | -------- | ----- | --- |
     | `alertJSON` | object | no |
-    | `password` | String | yes |
-    | `user` | String | no |
+    | `Password` | String | yes |
+    | `User` | String | no |
 
     ![new command with inputs](command.png)
 
     The values for these keys will be set in step 3 when a trigger from an alert is created for this command.  
 
-5. In the command `ResizeHANACloudStorage`, add an output key under the section **Contract**.
+5. In the command `ResizeHANACloudStorage`, add an output key under the section **Contract**. 
 
     | Key Name | Type | Sensitive |
     | -------- | ----- | --- |
     | `storageSize` | object | no |
 
+    ![new command with output](command-output.png)
 
 6. Under **Configuration**, add an executor.  
 
@@ -195,8 +208,8 @@ This step will create a catalog that contains a command and an input.  The input
 
     | Label | Value |
     | -------- | ----- |
-    | Command | `cf-sapcp:GetCfServiceInstance:1` |
     | Alias | `getHANACloudDBDetails` |
+    | Command | `GetCfServiceInstance` |
     | Automap Parameters | `true` |
 
     ![Add an executor](getHANACloudDBDetails.png)
@@ -205,7 +218,6 @@ This step will create a catalog that contains a command and an input.  The input
 
 7. Select the newly created executor.
 
-    ![parameters](getHANACloudDBDetails-parameters.png)
 
     Notice that it has a set of input parameters that will need to be set.  These values will come from the JSON data of the alert and the previously created input named `BTPTechnicalUser`.  As `automap parameters` was enabled, the values for user and password have been set from the command's input keys.
 
@@ -220,6 +232,8 @@ This step will create a catalog that contains a command and an input.  The input
     | serviceInstance | `$(.execution.input.alertJSON.resource.tags.resourceId)` |
     | space | `$(.execution.input.alertJSON.resource.tags.spaceId)` |
     | includeParameters | `true` |
+
+    ![parameters](getHANACloudDBDetails-parameters.png)
 
     > For additional details on the use of the $(...) used above, see [Dynamic Expression](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/22621f87e7574f9e9fd1b1b95fe7a61d.html).
 
@@ -249,7 +263,7 @@ This step will create a catalog that contains a command and an input.  The input
 This step will configure the SAP Alert Notification service to invoke the previously created command when a database alert is received.  
 
 1. Create a new service account named `AutoPi` with **Execute** permission and **Basic** Authentication.
-
+    ![Service account from home page](service-account-home.png)
     ![service account](service-account.png)
 
     **Save the username and password** as they will be required in sub-step 3.
@@ -411,8 +425,8 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
     | Label | Value |
     | -------- | ----- |
-    | Command | `scripts-sapcp:ExecuteScript:2` |
     | Alias | `calculateNewStorageSize` |
+    | Command | `ExecuteScript (Version: 2)` |
     | Automap Parameters | `true` |
 
 2. Select the newly created executor and choose to edit its parameters.

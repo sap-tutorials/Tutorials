@@ -54,7 +54,7 @@ The following installation of the project's dependencies might take a while.
 Let's have a look at the generated code. Go to the newly created directory and open the code with your favorite editor (here Neovim):
 
 ```Bash
-cd com.myorg.myui5project/
+cd tutorial.myui5project/
 code .
 ```
 

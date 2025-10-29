@@ -37,6 +37,8 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 -	If your trial account remains inactive, you will be asked to extend your trial every 30 days. If you regularly log in to your trial account, your trial account will be automatically extended up to 90 days.
 
+- Basic and Advanced trial instances cannot be upgraded to a paid instance; only Free Tier instances have the option to upgrade to a paid instance.
+
 -	If you already use other services in SAP Business Technology Platform, those will not be affected or limited in any way by your participation in the SAP HANA Cloud trial.
 
 -	Trial database instances are stopped on a nightly basis. Each time you start working with your trial instance, you need to restart it first.
@@ -52,11 +54,13 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 In this step, you can learn how to sign up for the trial of SAP HANA Cloud. If you already have an SAP BTP trial account, proceed to the next step to add the appropriate entitlements to your account.
 
 
-1.	Click on [this link](https://www.sap.com/products/technology-platform/pricing.html) to get to the try and buy  page. Don't forget to come back here after you signed up. Once you received your confirmation email, you can continue with this mission.
+1.	Click on [this link](https://www.sap.com/products/technology-platform/pricing.html) to get to the try and buy page. 
 
     ![Screenshot Trial signup1](ss-01-trial-Signup1.png)
 
-2.	You will then receive a confirmation email with a link to access your trial.
+    Select the Advanced trial option.  
+
+2.	You will then receive a popup and an email with a link to access the [SAP BTP Trial](https://cockpit.hanatrial.ondemand.com/trial/#/home/trial).
 
     ![Open the trial](ss-02-Trial-Signup2.png)
 

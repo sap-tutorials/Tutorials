@@ -27,7 +27,7 @@ The first step is to check if you have the .NET SDK  installed and what version 
 ```Shell
 dotnet --version  
 ```  
-If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 6.0.201.  
+If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 9.0.101.  
 
 If the .NET SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows.
 > Note: Select the 'Download .NET SDK x64' option.
@@ -82,7 +82,13 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     </ItemGroup>
     ```
 
-    Note that if the developer licensed version of the data lake Client was installed for Linux, the path might be similar to /home/dan/sap/hdlclient/sdk/dotnet/Sap.Data.SQLAnywhere.Core.v2.1.dll
+    Note that if the developer licensed version of the data lake Client was installed the path might be similar to 
+    
+    ```
+    C:\SAP\hdlclient\sdk\dotnet\Sap.Data.SQLAnywhere.Core.v2.1.dll
+    or
+    /home/dan/sap/hdlclient/sdk/dotnet/Sap.Data.SQLAnywhere.Core.v2.1.dll    
+    ```
     
     ![dotNET.csproj code](dotNET-csproj-code.png)
 

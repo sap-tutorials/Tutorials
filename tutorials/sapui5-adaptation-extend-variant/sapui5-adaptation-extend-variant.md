@@ -1,11 +1,11 @@
 ---
 author_name: Markus Koenigstein
-author_profile: https://github.com/d027132
+author_profile: https://profile.sap.com/profile/id88a2e6fab371c5f2d7365285d9ef5e5aab1bc33533e39f616162a3849064560d
 contributors: [Elisabeth Riemann>https://github.com/ElRiemann, Hitesh Parmar>https://github.com/hitesh-parmar]
 keywords: tutorial SAPUI5 
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, type>tutorial, software-product>sap-s-4hana-cloud, software-product>sap-s-4hana-public-cloud, software-product-function>sap-fiori-elements, software-product>sap-business-application-studio, programming-tool>sapui5 ]
+tags: [ tutorial>beginner, type>tutorial, software-product>sap-s-4hana-cloud, software-product>sap-s-4hana-cloud-public-edition, software-product-function>sap-fiori-elements, software-product>sap-business-application-studio, programming-tool>sapui5 ]
 primary_tag: software-product>sap-s-4hana-cloud
 parser: v2
 ---

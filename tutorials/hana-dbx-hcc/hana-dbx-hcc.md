@@ -33,7 +33,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![open SQL console from an instance](open-sql-console-instance.png)
 
-    Notice that it is now connected to the instance named `HC_HDB` as shown by the name of the tab and the instance label.
+    Notice that it is now connected to the instance named `HC_HDB` as shown by the name of the tab and the connection label.
 
     ![SQL console connected to HC_HDB](sql-console-connected.png)
 
@@ -54,7 +54,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![change credentials](change-credenitals2.png)
 
-    You can also use the following SQL for an SAP HANA database to change and change the connected user.
+    You can also use the following SQL for an SAP HANA database to change the connected user.
 
     ```SQL
     CONNECT USER1 PASSWORD Password1;
@@ -150,24 +150,24 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
     Run All | F8
     Run Statement |	F9
     Text Completion | Ctrl+Space 
+    Save to statement library | Ctrl+S
 
     >The shortcut keys may vary depending on the OS and browser used.
 
     For the complete list see [Common Keyboard Shortcuts for the SQL Console](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/keyboard-shortcuts-for-sql-console).
 
-5. Examine the **Messages** tab.
+5. Examine the **History** tab.
 
-    ![messages tab](messages-tab.png)
+    ![history tab](messages-history-tab.png)
 
-    Notice that details of the statements executed are shown including metrics information such as the amount of memory consumed.
+    Notice details for each executed statement are displayed, including metrics such as memory consumption. Statements can be quickly located using the search functionality. Selected statements may be inserted back into the SQL console or copied for further use.
 
-6. Examine the **History** tab.
+    The columns can also be changed by selecting the gear icon in the right corner.
+    
+    ![history-tab-columns tab](history-tab-columns.png)
 
-    ![history view](history.png)
 
-    Notice that the statements can be located using a search and that a selected item can be inserted back into the SQL console or copied.
-
-7. Examine the **SQL Console Settings**.  
+6. Examine the **SQL Console Settings**.  
 
     ![connection settings](connection-settings.png)
 
@@ -202,13 +202,15 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
         ![no formatting](no-formatting.png)
 
-        The below is the result when this setting is enabled.
+        Enable Result Format Settings in the settings.
 
         ![format settings](result-format-settings.png)
 
+        The below is the result when this setting is enabled.
+
         ![result formatted](formatted.png)
 
-8. Execute the following SQL statements.
+7. Execute the following SQL statements.
 
     ```SQL
     SELECT HEXTOBIN ('48656C6C6F20776F726C64') BINARY_EXAMPLE FROM DUMMY;
@@ -257,9 +259,58 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     ![SQL results](result-viewer.png)
 
-9. The SQL in a SQL console is not persisted across browser reloads.  The SQL can be downloaded  and then later imported using the icons shown below.
+8. The SQL in a SQL console is not persisted across browser reloads.  The SQL can be downloaded  and then later imported using the tools shown below.
 
     ![download and import](download-and-import.png)
+
+
+
+### Statement library
+The statement library is a convenient location in the SQL Console to store and retrieve frequently executed SQL statements.  It provides a place to store statements that are used frequently as to not type them in repeatedly.
+
+The library is pre-populated with useful statements called ‘SYSTEM’ statements.
+
+![Statement Library System Statements](statement_libaray_system.png)
+
+You may also define custom statements that are only available to you. These are ‘USER’ statements.
+```SQL
+/*
+
+[DESCRIPTION]
+
+- Future guest check-ins across all hotels
+
+*/
+
+SELECT * FROM RESERVATION
+    WHERE ARRIVAL >= CURRENT_DATE;
+```
+
+1. Save your custom statement, add a name and an optional description.
+   
+    ![Statement Library Create User Statements](save_custom_statement.png)
+
+    Set the name to `All Future Check-ins`.
+
+    ![Statement Library Save Statements](save_statement.png)
+
+2. View your custom statement in the statement library
+   
+    ![Statement Library View User Statements](statement_libaray_user.png)
+
+3. To run a statement, select one from the statement library and click the Run button.
+   
+    ![Run Saved Statement](run_saved_statement.png)
+
+> It is also possible to export and import SQL statements directly to/from the file system
+> 
+> ![Import or Export Statements](export_import_statements.png) 
+> 
+> Files can then be shared using a version control system such as git.
+
+User-defined statements can be edited. From the Statement library, select the desired statement, click open, and make the desired changes. Select Save to overwrite the previous statement.
+
+![Modify Saved Statements](replace_statement.png)
 
 
 
@@ -274,16 +325,19 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
 
     * Ability to format results
     * Support for SAP Morning and Evening Horizon themes
+    * Additional details such as time of execution, duration, rows returned, and success or failure in the history tab 
 
 * The SAP HANA database explorer has some additional functionality
 
     * Persistency of SQL tabs and their contents
     * SQL debugging
     * Code completion of schema objects
-    * SQL formatting
     * Viewer for spatial and graph data
+    * Analysis tab for tables and views 
+    * Ability to search for database objects across multiple databases
     * Ability to run statements in the background
     * Ability to run statements against multiple instances
+
 
 ### Knowledge check
 

@@ -8,29 +8,29 @@ author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
 # Using small language models on SAP AI Core
-<!-- description --> In this tutorial we are going to learn on how to deploy a custom LLM on AI core using ollama for the example we would be taking Gemma as a model from hugging face and deploy it on SAP AI core.
+<!-- description --> In this tutorial we are going to learn on how to deploy a custom LLM on AI core using Ollama for the example we would be taking Gemma as a model from hugging face and deploy it on SAP AI core.
 
 ## You will learn
-- How to Deploy ollama on AI core
-- Add models to ollama and inference models
+- How to Deploy Ollama on AI core
+- Add models to Ollama and inference models
 
 ## Prerequisites
 Ai core setup and basic knowledge: [Link to documentation](https://developers.sap.com/tutorials/ai-core-setup.html)
 Ai core Instance with Standard Plan or Extended Plan
 Docker Desktop Setup [Download and Install](https://www.docker.com/products/docker-desktop)
-Github Account
+GitHub Account
 
 ### Architecture Overview
-In this tutorial we are deploying ollama an open-source project that serves as a powerful and user-friendly platform for running LLMs on on SAP AI core. which acts as a bridge between the complexities of LLM technology and the desire for an accessible and customizable AI experience.
+In this tutorial we are deploying Ollama an open-source project that serves as a powerful and user-friendly platform for running LLMs on on SAP AI core. which acts as a bridge between the complexities of LLM technology and the desire for an accessible and customizable AI experience.
 
 ![image](img/solution-architecture.png)
 
-We can pick any model from the above model hubs and connect it to AI core for the example we are going to deploy ollama on AI core and enable Gemma and inference the same.
+We can pick any model from the above model hubs and connect it to AI core for the example we are going to deploy Ollama on AI core and enable Gemma and inference the same.
 
 ### Adding workflow file to github
 Workflows for SAP AI Core are created using YAML or JSON files that are compatible with the SAP AI Core schema. Let’s start with adding a Argo Workflow file to manage: `ollama`.
 
-In your Github Create a new repository, click **Add file** > **Create new file**.
+In your GitHub Create a new repository, click **Add file** > **Create new file**.
 
 ![image](img/Picture1.png)
 
@@ -79,7 +79,7 @@ spec:
             - containerPort: 8080
               protocol: TCP
 ```
-Replace `<YOUR_DOCKER_SECRET>` with Default and replace `<YOUR_DOCKER_USER>` with your docker username. 
+Replace `<YOUR_DOCKER_SECRET>` with the exact name of the Docker Registry Secret based on your configuration. This name must match the value used in the `imagePullSecrets.name` field of your YAML file.
 
 **NOTE** - we'll generate the docker image referred here in the following steps.
 
@@ -113,10 +113,10 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install ollama
+# Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
-# Expose port and set environment variables for ollama
+# Expose port and set environment variables for Ollama
 ENV ollama_HOST=0.0.0.0
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64
@@ -153,7 +153,7 @@ RUN mkdir -p /nonexistent/.ollama && \
     chmod -R 770 /nonexistent
 #   chmod -R 777 /nonexistent/.ollama
 
-# Start nginx and ollama service
+# Start nginx and Ollama service
 CMD service nginx start && /usr/local/bin/ollama serve
 
 ```
@@ -192,7 +192,7 @@ A Pop up will appear on screen and add the following Json with the details to yo
 }
 ```
 
-### Onboarding Github and application on AI core
+### Onboarding GitHub and application on AI core
 
 Select on your SAP AI Core connection under **Workspaces app** in the SAP AI Launchpad.
 
@@ -216,7 +216,7 @@ Use the following information as reference:
 
 - **Password:** Paste your GitHub Personal Access Token, generated in the previous step.
 
-> Note: Password does not gets validated at time of Adding Github Repository its just meant to save Github Creds to AI core. Passwords gets validated at time of creating Application or when Application refreshes connection to AI core.
+> Note: Password does not gets validated at time of Adding GitHub Repository its just meant to save GitHub credentials to AI core. Passwords gets validated at time of creating Application or when Application refreshes connection to AI core.
 
 You will see your GitHub onboarding completed in a few seconds. As a next steps we will enable an application on AI core.
 
@@ -280,15 +280,15 @@ Once you create the deployment, wait for the current status to be set to RUNNING
 
 ![image](img/Picture14.png)
 
-Once the deployment is running, you can access the LLM’s using ollama.
+Once the deployment is running, you can access the LLM’s using Ollama.
 
 ### Pulling llava-phi3 and Performing Inference
 
-Now we need to import llava-phi3 to our ollama pod before we can inference the model so here we would be using SAP AI API to call pull model call in Ollama.
+Now we need to import llava-phi3 to our Ollama pod before we can inference the model so here we would be using SAP AI API to call pull model call in Ollama.
 
 [OPTION BEGIN [Postman]]
 
-- Setting up AI core Auth Creds
+- Setting up AI core Auth Credentials
 ![img](img/image.png)
 
 - adding Resource groups to headers
@@ -297,12 +297,12 @@ Now we need to import llava-phi3 to our ollama pod before we can inference the m
 - Once you have deployed the model in SAP AI Core, you can use the pull endpoint to load additional models, such as llava-phi3.
 ```json
 { 
-     "name": " llava-phi3" 
+     "name": "llava-phi3" 
 }
 ```
 For your reference, please see the screenshots below.
 ![img](img/image007.png)
-- Once the model is pulled to AI core we can check the list of models deployed under ollama deployment via the following.
+- Once the model is pulled to AI core we can check the list of models deployed under Ollama deployment via the following.
 ```
 Endpoint: {{deploymentUrl}}/v1/api/tags
 ```

@@ -40,12 +40,11 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 
 ### Create the calculation view
 
-
 1.	Within your project in the SAP Business Application Studio, click on **View** from the side menu. Then click on **Command Palette**. Alternatively, use `Ctrl+Shift+P` to access it.
 
 2.	Type **SAP HANA: Create HANA database artifact** and press `Enter` or click on the right option.
 
-3. Under **Path**, change the path so the calculation view is created inside the `src` folder of your project.	
+3. Under **Path**, ensure that the path to the calculation view is created inside the `src` folder of your project.	
 
 4. You will see a form appear on the right-side of the screen. Select **Calculation View** as your artifact type.
 
@@ -58,7 +57,6 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 
 
 ### Create a join node
-
 
 1.	The calculation view will open automatically upon creation.
 
@@ -74,18 +72,20 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 
     ![Select user-provided service](add-user-provided-service.png)
 
-5. Search for the `SAGENCYDATA` table, which we created in a previous tutorial.
+5. Uncheck Show only local objects and search for the `SAGENCYDATA` table, which we created in a previous tutorial.
 
     > If you want to see all objects available via the connection service, enter `**` in the search field.
 
 
-6.	We can find the top 5 partners for Best Run Travel by joining the `SAGENCY` table with the `STRAVELAG` table. Add the `STRAVELAG` table to the join node.
+6.	We can find the top 5 partners for Best Run Travel by joining the `SAGENCY` table with the `STRAVELAG` table.  Also add the `STRAVELAG` table to the join node.
 
 7.	Once both objects are selected, click on **Create Synonym**.
 
     ![Create synonym](create-synonym.png)
 
 8.	Click on **Finish** without selecting any other options.
+  
+    ![finish](create-synonym-finish.png)
 
 9.	In your file explorer, a new file will appear ending with `.hdbsynonym`. In this file, your synonyms are defined and stored. Go back to the calculation view editor and you should see the two tables in the join node.
 
@@ -93,7 +93,6 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 
 
 ### Define the mapping of the join node
-
 
 1.	To properly join the two tables, you need to define how they relate to each other. This is done by editing the join node.
 
@@ -115,14 +114,15 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 
 
 
-
 ### Add a rank node
 
+1.	Since we want to see the top 5 results from this join, we will add a **Rank** node next. 
 
-1.	Since we want to see the top 5 results from this join, we will add a **Rank** node next. Click on the rank icon (![Rank](icon-rank.png)) then click **on the link** between Join node and Aggregation node. This will add a Rank node in between them.
+    Click on the rank icon. (![Rank](icon-rank.png)) then click **on the link** between Join node and Aggregation node. This will add a Rank node in between them.
+
+    ![Add Rank Node](gif-04-add-rank-node.gif)
 
     >To make it easier to view the nodes, you can click on the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to rearrange the canvas.
-
 
 2.	Next, double click the Rank node to open the settings.
 
@@ -153,11 +153,7 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
     ![Mapping Aggregation](ss-09-mapping-aggregation.png)
 
 
-
-
 ### Deploy the calculation view
-
-
 1.	Now deploy the calculation view. In the SAP HANA Project panel next to the calculation view name or on the top right corner of the screen, click on the deploy icon (![Deploy](icon-deploy.png)). This will deploy the calculation view. Once this is successfully completed, it's time to check the output so far.
 
 2.	To access the data preview, click on the HDI container icon (![Container](icon-container.png)) next to the name of the project. This will open a new tab with the SAP HANA database explorer.
@@ -177,22 +173,24 @@ In this tutorial, you will learn how to create a calculation in SAP Business App
 > You can also preview the results of your calculation view directly in the calculation view editor in SAP Business Application Studio. Right-click on the aggregation node and select **Data Preview**. This will open the data preview inside the calculation view editor.
 >
 > ![Data Preview in BAS](ss-12-data-preview-in-BAS.png)
-
-
+>
+> ![Data Preview in BAS Result](ss-12-data-preview-in-BAS2.png)
 
 
 ### Add a third table to the view
-
-
 Now that we know the top 5 partners, we need to next find out on which days the top 5 travel agencies have the most bookings. To achieve this, we will add the table `SAGBOOKDAYS` to our view.
 
 1.	Continue working on the same calculation view.
 
-2.	We will join the output of our rank node to the table `SAGBOOKDAYS`, which we previously created. Add a join node **between** the rank node and the aggregation node.
+2.	We will join the output of our rank node to the table `SAGBOOKDAYS`, which we previously created. Add a join node **between** the rank node and the aggregation node by clicking their connection link.
+
 
     >Remember, you can use the **Auto Layout** icon (![Auto Layout](icon-auto-layout.png)) to keep the canvas tidy.
 
-3.	Since the Join node is connected to **Rank 1**, its output is already added to the join node. So, you only need to add the `SAGBOOKDAYS` table by clicking on the plus icon. Follow the steps you previously took to add a table and create a synonym.
+3.	Since the Join node is connected to **Rank 1**, its output is already added to the join node. So, you only need to add the `SAGBOOKDAYS` table by clicking on the plus icon on the mapping tab. Follow the steps you previously took to add a table and create a synonym.
+
+    ![Create synonym for SAGBOOKDAYS table](create-synonym-2a.png)
+
 
     ![Create synonym for SAGBOOKDAYS table](create-synonym-2.png)
 

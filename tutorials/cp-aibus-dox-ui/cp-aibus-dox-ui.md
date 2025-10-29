@@ -2,39 +2,39 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
 ---
 
-# Use Machine Learning to Extract Information from Documents with Document Information Extraction Trial UI
-<!-- description --> Get machine learning model predictions for the documents you upload using the Document Information Extraction Trial UI.
+# Use Machine Learning to Extract Information from Documents with the SAP Document AI Basic UI
+<!-- description --> Get machine learning model predictions for the documents you upload using the SAP Document AI basic UI.
 
 ## You will learn
-  - How to use the Document Information Extraction Trial UI to upload new documents
+  - How to use the SAP Document AI basic UI to upload new documents
   - What schemas and SAP schemas are and how to use them
   - How to see and edit the extraction results
   - How to delete documents
 
 ## Intro
-The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to Document Information Extraction Trial UI.
+The core functionality of SAP Document AI is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to the SAP Document AI basic UI.
 
 ---
 
 ### Upload documents
 
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices, payment advices, and purchase orders in the languages and for the countries and regions listed in [Supported Languages and Countries/Regions](https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-languages-and-countries-regions). If you're interested in processing other document types, try out the following tutorial missions:
+>SAP Document AI uses a globally pretrained machine learning model that currently obtains better accuracy results with invoices, payment advices, and purchase orders in the languages and for the countries and regions listed in [Supported Languages and Countries/Regions](https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-languages-and-countries-regions). If you're interested in processing other document types, try out the following tutorial missions:
 
 >- [Use Generative AI to Process Business Documents] (https://developers.sap.com/mission.gen-ai-process-business-documents.html)
 >- [Shape Machine Learning to Process Custom Business Documents] (https://developers.sap.com/mission.btp-aibus-shape-ml-custom.html)
 
 >See also [Supported Document Types] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-document-types) and [Supported File Types] (https://help.sap.com/docs/document-information-extraction/document-information-extraction/supported-file-types-all).
 
-Upload to the service any standard document type file (in PDF format or single-page JPEG, PNG, and TIFF format) that has content in headers and tables, such as an invoice.
+Upload to SAP Document AI any standard document type file (in PDF format or single-page JPEG, PNG, and TIFF format) that has content in headers and tables, such as an invoice.
 
->As an alternative to uploading your own documents to the service, you can use the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
+>As an alternative to uploading your own documents to SAP Document AI, you can use the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
 >- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
 
@@ -43,7 +43,7 @@ Upload to the service any standard document type file (in PDF format or single-p
 >- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
 
 
-1. Open the Document Information Extraction Trial UI, as described in the tutorial: [Use Trial to Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app).   
+1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app).   
 
 2. In the top right, click **+** (Upload Document).
 
@@ -59,7 +59,7 @@ Upload to the service any standard document type file (in PDF format or single-p
 
     >**NOTE:**
 
-    >You must select a schema when you add documents. By default, Document Information Extraction proposes the appropriate preconfigured SAP schema for your document type. To see the header and line item fields that are available in an SAP schema, choose the desired **Schema** on the Select Document screen, and then choose **Extraction Fields** to display the schema details.
+    >You must select a schema when you add documents. By default, SAP Document AI proposes the appropriate preconfigured SAP schema for your document type. To see the header and line item fields that are available in an SAP schema, choose the desired **Schema** on the Select Document screen, and then choose **Extraction Fields** to display the schema details.
 
     >You can also create schemas of your own. To find out how to create schemas, see [Create Schema for Purchase Order Documents](cp-aibus-dox-schema) and [Create Schema for Custom Documents](cp-aibus-dox-schema-custom). 
     
@@ -80,14 +80,14 @@ Upload to the service any standard document type file (in PDF format or single-p
 
 >**CAUTION:**
 
->When using the free tier option for Document Information Extraction or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
+>When using the free tier option for SAP Document AI or a trial account, be aware of the technical limits listed in [Free Tier Option and Trial Account Technical Constraints](https://help.sap.com/docs/document-information-extraction/document-information-extraction/free-tier-option-and-trial-account-technical-constraints).
 
 ### Understand schemas
 
 
-A schema contains a list of header fields and line item fields representing the target information that you want to extract from a particular type of document. You must select a schema when you add documents to the Document Information Extraction UI.
+A schema contains a list of header fields and line item fields representing the target information that you want to extract from a particular type of document. You must select a schema when you add documents to the SAP Document AI basic UI.
 
-You can either create your own schema from scratch or use a preconfigured SAP schema. The Document Information Extraction UI provides SAP schemas for the following standard document types:
+You can either create your own schema from scratch or use a preconfigured SAP schema. The SAP Document AI basic UI provides SAP schemas for the following standard document types:
 
 * Invoice
 * Payment advice
@@ -95,7 +95,7 @@ You can either create your own schema from scratch or use a preconfigured SAP sc
 
 In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`). You can use these schemas unchanged to upload documents.
 
-If you don’t want to configure your own schema, you can select the appropriate SAP schema unedited when you add a document on the Document Information Extraction UI. No configuration is needed when you use SAP schemas in this way. Alternatively, you can copy a suitable SAP schema and edit the default fields in line with your needs.
+If you don’t want to configure your own schema, you can select the appropriate SAP schema unedited when you add a document on the SAP Document AI basic UI. No configuration is needed when you use SAP schemas in this way. Alternatively, you can copy a suitable SAP schema and edit the default fields in line with your needs.
 
 >**NOTE:** You can’t edit or delete original SAP schemas. Always create a copy and then edit the default fields, as required.
 

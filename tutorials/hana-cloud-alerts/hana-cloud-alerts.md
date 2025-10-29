@@ -31,58 +31,44 @@ Alternatively, alert details can be pushed to several configured channels such a
 ### Examine SAP HANA Cloud, HANA Database alert definitions
 In this step, the SAP HANA cockpit will be used to examine three alert definitions.
 
-1. Open the SAP HANA cockpit from HANA Cloud Central.
+1. Open Alerts from HANA Cloud Central.
 
-    ![Open SAP HANA Cockpit](open-cockpit.png)
+    ![Open Alerts](open-alerts.png)
 
-2. In the Monitoring view, open the Alert Definitions app.
+    >SAP HANA Cloud Central  has an alerts app to view triggered alerts.  It displays alerts for all instances in a subaccount and additionally displays additional alerts that do not originate from the SAP HANA embedded statistics server (ESS).  Events corresponding to ESS alerts have an alert ID.  
 
-    ![alerts app in the cockpit](alerts-app-cockpit.png)
+2. The three alerts that will be triggered in step 2 of this tutorial are `HDBCSTableRecordCount`, `HDBLongRunningStatement`, and `HDBTestAlert`.
 
-    >SAP HANA Cloud Central also has an alerts app to view triggered alerts.  It displays alerts for all instances in a subaccount and additionally displays additional alerts that do not originate from the SAP HANA embedded statistics server (ESS).  Events corresponding to ESS alerts have an alert ID.  
+    You can find these alerts by selecting Configure Alert Rules.
 
-3. The three alerts that will be triggered in step 2 of this tutorial are shown below.
+    ![Configure Alert Rules](configure-alert-rules.png)
 
-    ![alerts definitions in the cockpit](alert-defintions-cockpit.png)  
+    Then select an instance and search for the alerts. 
 
-    Notice that alerts have a name, ID, description, category, and a suggested user action such as an SAP Note.
+    ![Configure Alert Rules Search](configure-alert-rules-search.png)
 
-    ![restarted-services-alert-details](alert-definitions-cockpit-details.png)
+    > Notice that alerts have a name, description, and categories.
 
     The categories are shown below.
 
     | SAP HANA Database Categories |
     | ----------- |
-    | Other |
-    | Availability |
-    | Memory |
-    | Disk |
-    | Configuration |
-    | Sessions/Transactions |
-    | Backup |
-    | Diagnosis Files |
-    | Security |
+    | Schedule |
+    | Interval |
+    | Threshold |
 
-4. Alerts may have severity and threshold levels.
 
-    | Severity |
-    | ----------- |
-    | High |
-    | Medium |
-    | Low |
-    | Information |    
-
-    As an example, long-running statements (ID 39), has its threshold values set to 60 minutes for Medium, 45 minutes for Low, and 30 minutes for Info.  These will be set to much lower thresholds of 3, 2 and 1 minutes in step 2.
+3. Alerts may have threshold levels.
+    As an example, long-running statements, has its threshold values set to 60 minutes for Warning, 45 minutes for Notice, and 30 minutes for Information.  These will be set to much lower thresholds of 3, 2 and 1 minutes in step 2.
 
     ![long running statement updated thresholds](long-running-thresholds.png)
 
-5. Alert checks are scheduled to run at a specified interval and can be enabled or disabled.  For example, record count of non-partitioned column-store tables ( ID 17 ) has an interval value of 1 hour, meaning that this check is performed each hour and is currently enabled.
+4. Alert checks are scheduled to run at a specified interval and can be enabled or disabled.  For example, record count of non-partitioned column-store tables (`HDBCSTableRecordCount`) has an interval value of 1 hour, meaning that this check is performed each hour and is currently enabled.
 
     ![enabled and interval](restarted-services-interval.png)
 
-    Note that the check for an alert can be manually triggered by pressing the **Check Now** button.
 
-6. Alerts also have a retention period.  Once triggered, depending on their type, they will remain for a set duration such as 14 or 42 days.
+5. Alerts also have a retention period.  Once triggered, depending on their type, they will remain for a set duration such as 14 or 42 days.
 
 For additional details, consult [Alerts in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/alerts-in-sap-hana-cloud) in the administration guide for SAP HANA cockpit.
 
@@ -99,33 +85,32 @@ The following instructions demonstrate a few examples of triggering alerts in a 
 2. Execute the following query in the SQL console to trigger a high (indicated by the parameter value of 4) severity test alert.
 
     ```SQL
-    CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
+    CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');
     ```
+    ![Severity Test Alert](severity_test_alert.png)
 
     > The alert will be viewed in the alerts app in step 3.
 
-3. Trigger the long-running statements (ID 39) alert.
+3. Trigger the long-running statements alert.
 
-    * Go to the **Long-running statements** alert in the **Alert Definitions** app. 
+    Click **Configure Alert Rules** and select your instance. Then, search for the **Long-running statements** alert (`HDBLongRunningStatement`) in search bar. 
+
+    Select **Edit** and set  the thresholds to 180, 120, and 60 seconds. The interval time set to 5 minutes by default.
+
+    ![Threshold setting](alert-threshold.png)
     
-        Click **edit** to set the thresholds and interval.  
-    
-        Set  the thresholds to 180, 120, and 60 seconds with an interval time set to 1 minute.
+    Execute the following SQL. 
 
-        ![Threshold setting](alert-threshold.png)
-    
-    * Execute the following SQL
+    ```SQL
+    DO BEGIN 
+    USING SQLSCRIPT_SYNC AS SYNCLIB;
+    CALL SYNCLIB:SLEEP_SECONDS( 300 );  --the SQL runs for 5 minutes
+    -- Now execute a query
+    SELECT * FROM M_TABLES;
+    END;
+    ```
 
-        ```SQL
-        DO BEGIN
-        USING SQLSCRIPT_SYNC AS SYNCLIB;
-        CALL SYNCLIB:SLEEP_SECONDS( 300 );  --runs for 5 minutes
-        -- Now execute a query
-        SELECT * FROM M_TABLES;
-        END;
-        ```
-
-4. The record count of non-partitioned column-store tables (ID 17) alert can be triggered by executing the following SQL.  
+4. The record count of non-partitioned column-store tables alert can be triggered by executing the following SQL.  
 
     ```SQL
     --The default threshold for 'Record count of non-partitioned column-store tables' is 300 million
@@ -153,29 +138,23 @@ The following instructions demonstrate a few examples of triggering alerts in a 
     -- DROP TABLE MYTABLE;
     ```
 
-    As the default interval time for this check is 1 hour, the check can be manually trigged by pressing the Check Now button in the alert definitions app within the SAP HANA cockpit.
-
-    ![check now](check-now.png)
-
     > Note that two other alerts may also be triggered by the above SQL: table growth of non-partitioned column-store tables and record count of column-store table partitions.
 
 ### View SAP HANA database alerts using the alerts app
 
 The following instructions will show how to view a triggered SAP HANA database alert in SAP HANA Cloud Central.
 
-1. In SAP HANA Cloud Central,  alerts can be seen for all instances in an SAP BTP subaccount.  
-
-    Navigate to the alerts tab.
+1. In SAP HANA Cloud Central,  alerts can be seen for all instances in an SAP BTP subaccount. Navigate to the alerts tab.
 
     ![subaccount alerts view](subaccount-alerts-view.png)  
 
-    Filter can be set for Type, Severity, Instance, Instance Type, and Time Range. 
+    A filter can be set for Type, Severity, Instance, Instance Type, and Time Range.
     
     ![alerts view in HCC](alerts-hcc.png) 
 
     Alerts can be filtered by Current or All. Current Alerts have a Start Time value but no End Time value, as the end time is added when the alert is closed.  Closed alerts appear in type filter All rather than Current.  
 
-    Additional details can be found in [Monitoring Alerts in SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/alerts).
+    Additional details can be found in [Open Alerts in SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/alerts).
     
 2. Details about a SQL statement from a long-running statement alert can be found out with the following query. The statement hash can be found in the alert description.
 
@@ -186,6 +165,10 @@ The following instructions will show how to view a triggered SAP HANA database a
     ```
 
     ![using the statement hash](long-running-statement-hash.png)
+
+    You can find the statement hash here:
+    
+    ![statement hash](long-running-root-statement-hash.png)
 
 3. The test alert will resolve itself after 5 minutes or be resolved (indicated by the parameter value of 0) by executing the following statement.
 
@@ -247,7 +230,7 @@ The following instructions show one example of triggering the [data lake locked 
 
 ### Set up email notification when an alert occurs
 
-The SAP Business Technology Platform (BTP) includes a service called the SAP Alert Notification service (ANS) that provides a common way for other services or applications running in the SAP BTP to send out notifications such as an email, a post to a Microsoft Teams or Slack channel, the creation of a ticket in `ServiceNow`, or a webhook to send events to any Internet REST endpoint.  The SAP HANA Cloud database and data lake pass on events to the SAP ANS when an alert is triggered.  
+The SAP Business Technology Platform (BTP) includes a service called the [SAP Alert Notification service for SAP BTP](https://help.sap.com/docs/alert-notification) (ANS) that provides a common way for other services or applications running in the SAP BTP to send out notifications such as an email, a post to a Microsoft Teams or Slack channel, the creation of a ticket in `ServiceNow`, or a webhook to send events to any Internet REST endpoint.  The SAP HANA Cloud database and data lake pass on events to the SAP ANS when an alert is triggered.  
 
 ![BTP with HC and ANS](btp-hc-ans.png)
 
@@ -259,21 +242,23 @@ In this step, the Alert Notification Service will be configured to act on the in
 
     ![find the Alert Notification Service](ans.png)
 
-    > The SAP Alert Notification service must be in the same Cloud Foundry subaccount as the SAP HANA Cloud instances which it will be receiving notifications from.
+    > The SAP Alert Notification service must be in the same subaccount as the SAP HANA Cloud instances which it will be receiving notifications from.
 
     >---
 
-    >If the SAP Alert Notification service does not appear, it may be that the entitlement needs to be added to the subaccount.  To do so, navigate to the subaccount, select Entitlements, Configure Entitlements, Add Service Plans, and Alert Notification.
+    >If the SAP Alert Notification service does not appear, it may be that the entitlement needs to be added to the subaccount.  To do so, navigate to the subaccount, select **Entitlements**, **Edit**, **Add Service Plans**, and **Alert Notification**.
 
     >![Add entitlements](entitlements.png)
+    
+    >![Add Alert entitlement](entitlements-alerts.png)
 
-2. Provide a name for the Alert Notification service instance and press the **Create** button.
+2. Select the Cloud Foundry runtime environment and provide a name for the Alert Notification service instance and press the **Create** button.
 
     ![ANS basic information](ans-basic.png)
 
-    | Service | Plan | Instance Name |
-    | -------- | ----- | --- | 
-    | `Alert Notification` | `standard` | `ANS-1` | 
+    | Service | Plan | Runtime Environment | Instance Name |
+    | ------- | ---- | ------------------- | ------------- |
+    | `Alert Notification` | `standard` | 'Cloud Foundry' | `ANS-1` | 
 
 
 3. Once the instance has been created, click on **Manage Instance**.

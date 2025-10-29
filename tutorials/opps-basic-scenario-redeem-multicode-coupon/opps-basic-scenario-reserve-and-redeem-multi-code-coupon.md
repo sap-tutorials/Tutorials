@@ -183,16 +183,15 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Redemption success](redemption_success.png)
+<!-- border -->![Redemption success](v2redemption_success.png)
 
 With this, you have successfully redeemed the coupon code. The redemption information is returned to the POS which then confirms the completion of payment. Your customer has now successfully purchased the coffee machine at a discounted price.
 
-### Additional Information
+### Additional information
 
 * [Official Product Documentation](https://help.sap.com/docs/OPP)
 * [Coupon Management](https://help.sap.com/docs/omnichannel-promotion-pricing/service-guide/coupon-management)
 * [Trial Documentation](https://help.sap.com/docs/OPP/0c145d124b784b548b618cda8a5b2aba/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
 * [SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://help.sap.com/docs/OPP/7c87270e23c64c2aa922ce297a6df23d/67a9da084cf84e058cb3a3911971bdd0.html?version=Cloud)
-* [Video: SAP Omnichannel Promotion Pricing in a nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html) 
 
 ---

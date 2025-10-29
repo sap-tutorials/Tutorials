@@ -34,4 +34,4 @@ The Platform-independent DM can be started with the following command.
 java -jar HXEDownloadManager.jar
 ```
 
-![Download Manager](Download_Manager.png)
+![Download Manager](Download_Manager_SPS08.png)

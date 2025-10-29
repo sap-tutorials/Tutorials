@@ -1,11 +1,11 @@
 ---
 author_name: Markus Koenigstein
-author_profile: https://github.com/d027132
+author_profile: https://profile.sap.com/profile/id88a2e6fab371c5f2d7365285d9ef5e5aab1bc33533e39f616162a3849064560d
 contributors: [Elisabeth Riemann>https://github.com/ElRiemann, Hitesh Parmar>https://github.com/hitesh-parmar]
 keywords: tutorial SAPUI5 
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, type>tutorial, software-product>sap-s-4hana-cloud, software-product>sap-s-4hana-public-cloud, software-product-function>sap-fiori-elements, software-product>sap-business-application-studio, programming-tool>sapui5 ]
+tags: [ tutorial>beginner, type>tutorial, software-product>sap-s-4hana-cloud, software-product>sap-s-4hana-cloud-public-edition, software-product-function>sap-fiori-elements, software-product>sap-business-application-studio, programming-tool>sapui5 ]
 primary_tag: software-product>sap-s-4hana-cloud
 parser: v2
 ---
@@ -21,14 +21,18 @@ parser: v2
 - Add simple source code to the Manifest file to change the table properties.
 
 ## Prerequisites
-For more information about how to set up and work with SAP Business Application Studio, see:
-- [SAP Fiori Applications in the ABAP Environment](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/c79fa657501546fa8d9a4eee07409b7b.html)
-- [Integration SAP Business Application Studio](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/22bc724fd51a4aa4a4d1c5854db7e026.html)
-- [Develop an SAP Fiori Application UI and Deploy it to SAP S/4HANA Cloud Using SAP Business Application Studio](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/2a4ae231df8843379df7a36fa3462d4c.html)
-- Before you can start working with SAPUI5 Adaptation Projects in SAP Business Application Studio, you must first perform the following steps in SAP S/4HANA Cloud, ABAP environment using ABAP Development Tools (ADT):
-    <ol type="1"><li>[Create a transport request](https://help.sap.com/docs/SAP_S4HANA_CLOUD/25cf71e63940453397a32dc2b7676947/4ec223686e391014adc9fffe4e204223.html)
+Before you can start working with SAPUI5 Adaptation Projects in SAP Business Application Studio, you must first perform the following steps in SAP S/4HANA Cloud, ABAP environment using ABAP Development Tools (ADT):
+    <ol type="1"><li>[Download the Eclipse IDE and add the ABAP Development Tools (ADT) Plugin](https://developers.sap.com/tutorials/abap-install-adt.html)
     </li><li>[Create an ABAP Package](https://help.sap.com/docs/abap-cloud/abap-development-tools-user-guide/creating-abap-packages)
+    </li><li>[Create a transport request](https://help.sap.com/docs/SAP_S4HANA_CLOUD/25cf71e63940453397a32dc2b7676947/4ec223686e391014adc9fffe4e204223.html)
+    </li><li>[Get an Account on SAP BTP Trial](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
     </li></ol>
+
+For more information about how to set up and work with SAP Business Application Studio, see:
+
+  - [SAP Fiori Applications in the ABAP Environment](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/c79fa657501546fa8d9a4eee07409b7b.html)
+  - [Integration SAP Business Application Studio](https://help.sap.com/docs/SAP_S4HANA_CLOUD/0f69f8fb28ac4bf48d2b57b9637e81fa/22bc724fd51a4aa4a4d1c5854db7e026.html)
+  - [Develop an SAP Fiori Application UI and Deploy it to SAP S/4HANA Cloud Using SAP Business Application Studio](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/2a4ae231df8843379df7a36fa3462d4c.html)
 
 ## Intro
 **Important information**
@@ -86,31 +90,42 @@ Watch this short video to see what changes you’ll make once you complete the t
 ### Create an application variant by SAPUI5 Adaptation Project in SAP Business Application Studio
 
 1. Log onto SAP Business Application Studio (BAS) and access your SAP Fiori development space.
-2. Choose *New Project from Template*, select the *Adaptation Project* template, and choose the *Start* button.  
+2. Choose *New Project from Template* (which can be selected from either the *File* menu, or which is available directly on the *Get Started* screen), select the *SAPUI5 Adaptation Project* template, and choose the *Start* button. 
 
     ![Original Manage Credit Accounts: Object Page](3_BAS_CreateAdaptationProject.png)
 
-3. Select *ABAP* as the target environment in which you want to create your new application variant and choose `Next`.  
-4. Enter the basic information required for your adaptation project:
+3. On the *System and Application Selection* screen, select from the `System` dropdown list the SAP S/4HANA Cloud system you want to use.
+    - Ensure that *Project Type: cloudReady* is shown. (Select for this tutorial another system / a cloud system if *Project Type: onPremise* should be shown.)
+4. From the dropdown list in the *Application* field, choose the SAP Fiori application that you wish to use as the basis for your application variant. Choose `F4596 Manage Credit Accounts`.
+5. Press the `Next` button.
+6. On the *Project Attributes* screen, enter the basic information required for your adaptation project:
     - Project Name: uniquely identifiable name `creditaccounts.appvar.<your initials>`, e.g. creditaccounts.appvar.cl1.  
     - Application Title: uniquely identifiable name `<Manage Credit Accounts Simplified><your initials>`.
-    - Press the Next button.
-5. On the *Adaptation Project – Configuration* screen, select from the Select System dropdown list the SAP S/4HANA Cloud system you want to use.
-    - Ensure that *Project Type: cloudReady* is shown. (Select for this tutorial another system / a cloud system if *Project Type: onPremise* should be shown.)
-6. From the dropdown list in the *Select Application* field, choose the SAP Fiori application that you wish to use as the basis for your application variant. Choose *F4596 Manage Credit Accounts*.
-7. Press the *Next* button.
-8. Configure the *Fiori Launchpad* Configuration settings. In the Inbound ID field, select the inbound ID from the dropdown list *BusinessPartner-manageCreditAccounts*.
-9.  In the *Title* field, enter the title of your application variant of *Manage Credit Accounts* that is to be displayed on the new tile. `<Manage Credit Accounts Simplified>`
-10. In the *Subtitle* field (optional), you can enter the subtitle to be displayed on the new tile. `Simplified`.
-11. Configure the *Deployment Configuration* settings.
-	
-	- Enter a unique SAPUI5 ABAP Repository name, for example, `ZMCA<your initials>`, e.g. `ZMCACL1`
-	- Enter an optional deployment description.
-	- Enter the name of the package in the Package field (created under prerequisites [Create ABAP Package](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/d33ab697df394140874519c8c066ea82.html)).
-	- Enter the name of your transport request in the Transport Request field (created under prerequisites [Create a transport request](https://help.sap.com/docs/SAP_S4HANA_CLOUD/25cf71e63940453397a32dc2b7676947/4ec223686e391014adc9fffe4e204223.html)).
+    - Add Deployment Configuration: Yes
+    - Add SAP Fiori Launchpad Configuration: Yes
+7. Press the `Next` button.
+8. Configure the *Deployment Configuration* settings.
 
-12. To create your new SAPUI5 Adaptation Project, press the *Finish* button.  
-13. As soon as your SAPUI5 Adaptation Project has been created, the following message is displayed *“The project has been generated and will be saved for future use.”* You can view the adaptation project in your Projects folder and expand the nodes in your workspace.
+    - Enter a unique *SAPUI5 ABAP Repository* name, for example, `ZMCA<your initials>`, e.g. `ZMCACL1`
+    - Enter an optional deployment description.
+    - Choose `Enter Manually` for the field *Select How You Want to Enter the Package*.
+    - Enter the name of the package in the *Package* field (created under prerequisites [Create ABAP Package](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/d33ab697df394140874519c8c066ea82.html)).
+    - Choose `Enter Manually` for the field *Select How You Want to Enter the Transport Request*.
+    - Enter the name of your transport request in the *Transport Request* field (created under prerequisites [Create a transport request](https://help.sap.com/docs/SAP_S4HANA_CLOUD/25cf71e63940453397a32dc2b7676947/4ec223686e391014adc9fffe4e204223.html)).
+
+9. Press the `Next` button.
+10. Configure the *SAP Fiori Launchpad Configuration – Tile Settings* settings.
+    - Choose `Add a New Tile` for the field *Choose a Tile Handling Action*.
+    - Choose `Yes` for the field *Copy Configuration from an Existing Inbound*.
+11. Press the `Next` button.
+12. Configure the *SAP Fiori Launchpad* Configuration settings.
+    - In the *Inbound ID* field, select the inbound ID from the dropdown list `BusinessPartner-manageCreditAccounts`.
+    - In the *Semantic Object* field, enter the name of the semantic object of the original application `BusinessPartner`.
+    - In the *Action* field, enter a unique new action `manageCreditAccountsAppVariant1`.
+    - In the *Title* field, enter the title of your application variant of Manage Credit Accounts that is to be displayed on the new tile `<Manage Credit Accounts Simplified>`
+    - In the *Subtitle* field (optional), you can enter the subtitle to be displayed on the new tile `Simplified`.
+13. To create your new SAPUI5 Adaptation Project, press the *Finish* button.
+14. As soon as your SAPUI5 Adaptation Project has been created, the *Application Information* page is displayed. You can view the adaptation project in your Projects folder and expand the nodes in your workspace.
 
 **Context Infos for Next Steps: Define changes to your newly created application variant**
 

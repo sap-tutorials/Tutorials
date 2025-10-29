@@ -147,15 +147,20 @@ Open your terminal and navigate to your `hello-aicore-code` directory.  You will
 
 <!-- border -->![image](img/navigate.png)
 
-Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGITRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
+Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
 ```BASH
 docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
 ```
+**If you have machine with Apple Silicon M1/M2/M3 Chip, use --platform linux/amd64**
+
+```BASH
+docker build --platform linux/amd64 -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:01 .
+```
 
 > **INFORMATION** In the command, `-t` indicates that there is a tag name, followed by a colon and version. The name is your descriptive string, and the version can be in any format, here `house-price` and `01`, respectively. The `.` (dot) at the end instructs Docker to look for the filename `Dockerfile` in the present directory.
 
-> **INFORMATION** The platform information relates to your operating system, for example `linux/amd64`.
+> **INFORMATION** The platform information relates to your operating system, for example, **linux/amd64**. By default, Docker builds the image for your machine’s native architecture. If you are using an ARM-based system (such as an Apple M1/M2 or Raspberry Pi), the build process may default to arm64, which could cause issues when running the container on an amd64 cluster. To avoid such compatibility problems, explicitly specify the platform using the --platform linux/amd64 flag when building the image.
 
 The result of this command should be:
 
@@ -563,7 +568,7 @@ response.__dict__
 
 [OPTION END]
 
-The execution will go from **UNKOWN** to **RUNNING** then to the **DEAD** state. Resolving this is covered in next step.
+The execution will go from **UNKNOWN** to **RUNNING** then to the **DEAD** state. Resolving this is covered in next step.
 
 
 ### Look for error logs in execution
@@ -712,13 +717,13 @@ Check the status of your execution. When the status turns to **COMPLETED**, you 
 
 ### Scheduling Execution (optional)
 
-AI core Also provides the functionality to auto shedule Executions based on Time. 
+AI core Also provides the functionality to auto schedule Executions based on Time. 
 
-To shedule an Execution at particular time of the day visit ML `operations > shedules` and click on Add
+To schedule an Execution at particular time of the day visit ML `operations > schedules` and click on Add
 
 <!-- border -->![image](img/ail/Schedule1.jpg)
 
-Choose senario as House price and click on next
+Choose scenario as House price and click on next
 
 <!-- border -->![image](img/ail/Schedule2.jpg)
 
@@ -726,7 +731,7 @@ Choose Executable and click on next.
 
 <!-- border -->![image](img/ail/Schedule3.jpg)
 
-Now a screen will appear where you can choose between the avilable Execution config and click on next
+Now a screen will appear where you can choose between the available Execution config and click on next
 
 <!-- border -->![image](img/ail/Schedule4.jpg)
 

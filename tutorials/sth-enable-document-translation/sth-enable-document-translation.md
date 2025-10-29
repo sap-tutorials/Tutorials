@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Ana Medina
-author_profile: https://github.com/MEDINAA5
+author_name: Fiona Murphy
+author_profile: https://github.com/MCMANUSF
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>machine-learning]

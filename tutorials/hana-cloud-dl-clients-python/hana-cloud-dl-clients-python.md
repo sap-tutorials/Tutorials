@@ -33,9 +33,9 @@ The first step is to check if Python and pip are installed.
     python --version
     python3 --version
     ```
-    If Python is installed, the command will return a value such as Python 3.12.1.
+    If Python is installed, the command will return a value such as Python 3.13.0
 
-    >In some Linux distributions, 'python' refers to Python 2, while 'python3' refers to Python 3. However, as Python 2 is now obsolete, 'python' may refer to Python 3 instead.
+    >In some Linux distributions, 'python' refers to Python 2, while 'python3' refers to Python 3. However, as Python 2 is now obsolete, 'python' may refer to Python 3 instead.  It may also be referred to by its specific version such as python3.13.
 
     If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
@@ -61,7 +61,7 @@ The first step is to check if Python and pip are installed.
 
     The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.  Again, use the pip or pip3 command that returns a version 3.4 or greater of Python.
 
-    >On Linux or Mac, if you encounter permission issues, one way to solve the issue is to use `sudo` before the command.
+    >On Linux, if you encounter permission issues, one way to solve the issue is to use `sudo` before the command.
 
     >---
 
@@ -75,18 +75,22 @@ The first step is to check if Python and pip are installed.
 ### Install the sqlanydb Python driver
 The `sqlanydb` package is the python driver for the data lake Relational Engine and is available as part of the data lake Relational Engine install and is available at [PyPI](https://pypi.org/project/sqlanydb/).
 
-1. Navigate to your Data Lake Client installation folder and enter the following command to install `sqlanydb`.
+1. Navigate to your Data Lake Client installation folder and enter the following command to install `sqlanydb`. Depending on which install of the data lake client was used, execute:
+
+    ```Shell (Microsoft Windows)
+    cd %IQDIR17%\SDK\Python
+    pip install sqlanydb-1.0.14.tar.gz
+    ```
 
     ```Shell (Microsoft Windows)
     cd %IQDIR17%\SDK\Python
     python setup.py install
     ```
 
-    This should create additional build directories in the current folder.
 
     >If the error 'no module named setuptools' appears, the following may be used as a workaround until this issue is resolved.
 
-    >```Shell
+    ```Shell
     pip install setuptools
     ```
 
@@ -129,7 +133,7 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     pip install sqlanydb-1.0.14.tar.gz
     ```
 
-2. On Microsoft Windows, create a user environment variable named `SQLANY_API_DLL` and set it to `%IQDIR17%\Bin64\dbcapi.dll`.
+2. On Microsoft Windows for the non developer licensed install, create a user environment variable named `SQLANY_API_DLL` and set it to `%IQDIR17%\Bin64\dbcapi.dll`.
 
     ![add a variable named SQLANY_API_DLL](add-variable.png)
 
@@ -176,7 +180,7 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     conn.close()
     ```
 
-3. Run the app. Make sure your data lake Relational Engine is running before executing the app.
+3. Save and close `pythonQuery.py`. Run the app. Make sure your data lake Relational Engine is running before executing the app.
 
     ```Shell
     python pythonQuery.py
@@ -190,7 +194,7 @@ For further information on the Python Driver, visit [Python and Database Access]
 ### Install the Python ODBC bridge using pip and PyPI
 This is an alternate method of connecting to a data lake Relation Engine from a Python app. The Python ODBC bridge is an open source Python module available on [`PyPI`](https://pypi.org/project/pyodbc/).  The performance characteristics between the two drivers may vary depending on the use case.
 
-1. Ensure that you have created a connection to the data lake Relational Engine using ODBC as shown in step 1 or 2 of the [Connect to Data Lake Relational Engine Using the ODBC Driver](hana-cloud-dl-clients-odbc) tutorial.
+1. Ensure that you have created a connection to the data lake Relational Engine using ODBC as shown in step 1 (Windows) or 2 (Linux) of the [Connect to Data Lake Relational Engine Using the ODBC Driver](hana-cloud-dl-clients-odbc) tutorial.
 
 2. The repository that contains Python packages is [PyPI](https://pypi.org/) and includes a package for the `pyodbc` driver.
 
@@ -227,7 +231,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     pico pythonQuery.py
     ```
 
-2. Copy the following code into `pythonQuery.py`:
+2. Copy the following code into `pythonQuery.py`.
 
     ```Python
     #Import your dependencies
@@ -251,7 +255,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     curs.close()
     conn.close()
     ```
-
+    Save and close `pythongQuery.py`.
 3. The `dsn` value refers to the data source name in the Microsoft Windows ODBC Administrator or the Linux `.odbc.ini` file.
 
     ![ODBC Administrator](odbcWindow.png)

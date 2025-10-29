@@ -143,7 +143,7 @@ Optional: Once you have set up the roles and authorizations, you can do the foll
 
 4. Choose the three dot symbol **°°°**  and **Create Service Key**.
 
-      <!-- border -->![Three Dot Symbol](v2_Three-Dot-Symbol.png)
+      <!-- border -->![Create service key](create_service_key.png)
 
 5. In the popup, enter a name for the service key. 
 
@@ -165,9 +165,8 @@ You have now successfully set up your SAP Omnichannel Promotion Pricing trial on
 
 ---
 
-### Additional Information
+### Additional information
 
 * Basic Tutorial: [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario)
 * [Official Product Documentation](https://help.sap.com/docs/OPP)
 * [Trial Documentation](https://help.sap.com/docs/OPP/0c145d124b784b548b618cda8a5b2aba/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
-* [Video: SAP Omnichannel Promotion Pricing in a Nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html)
