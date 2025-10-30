@@ -275,7 +275,7 @@ For more information, see [Configure the DNS for a Custom Domain](https://help.s
 
 ### Configure the redirect URL
 
-In this step, (which is only relevant for subscriptions that were created prior to Sep 4th), 2025, you'll configure an OpenID Connect application in the administration console of SAP Cloud Identity Services for the authorization code flow.
+In this step, (which is only relevant for subscriptions that were created prior to Sep 4th 2025), you'll configure an OpenID Connect application in the administration console of SAP Cloud Identity Services for the authorization code flow.
 
 1. Sign in to the administration console for SAP Cloud Identity Services.
 
