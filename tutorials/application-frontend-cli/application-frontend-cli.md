@@ -12,9 +12,10 @@ author_profile: https://github.com/tahelMilstein
 <!-- description --> Learn how to create and deploy your first "Hello World" application using Application Frontend Service and the afctl CLI, including version management basics.
 
 ## Prerequisites 
-
-- You have an account in SAP BTP Trial landscape us10-trial. If you don't have one yet, follow the instructions in [Get a Free Account on SAP BTP Trial](hcp-create-trial-account) 
-- Completed the setup steps in the [Application frontend trial setup](../application-frontend-trial-setup/application-frontend-trial-setup.md) guide.  
+  - SAP Business Technology Platform subaccount
+  - Cloud Foundry environment enabled in subaccount
+  - [Subscription to Application Frontend service](application-frontend-trial-setup)
+  - Subscription to SAP Business Application Studio
 
 ## You will learn
 - How to log in to **Application Frontend Service** using the CLI.  
@@ -23,8 +24,28 @@ author_profile: https://github.com/tahelMilstein
 - Activate and manage different application versions using `afctl`.
 
 ---
+### Enable Application Frontend CLI locally or in SAP Business Appication Studio 
 
-### Install Application Frontend CLI
+#### Option 1 - Create SAP Business Appication Studio Dev Space:
+<ol>
+    <li>Navigate to BTP Cockpit subaccount.</li>
+    <li>Navigate to <strong>Services > Instances and Subscriptions</strong></li>
+    <li>In the <strong>Subscriptions</strong> table click on <strong>SAP Business Application Studio</strong> link.
+</ol>
+
+<!-- border -->![Open SAP Business Application Studio from BTP Cockpit](open-bas-1.png)
+
+<ol start="4">
+    <li>Click <strong>CreateDevSpace</strong>.</li>
+    <li>Enter Dev Space name (e.g. <code>MyDevSpace</code>).</li>
+    <li>Select <strong>SAP Fiori</strong> kind of application.</li>
+    <li>Select <strong>Application Frontend Service CLI</strong> additional SAP extension.</li>
+    <li>Click <strong>Create Dev Space</strong>.</li>
+</ol>
+
+<!-- border -->![Create Dev Space](create-bas-ws-1.png)
+
+#### Option 2 - Install Application Frontend CLI locally
 
 Before you start, make sure you have the required tools installed locally.
 
