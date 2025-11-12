@@ -24,9 +24,9 @@ author_profile: https://github.com/tahelMilstein
 - Activate and manage different application versions using `afctl`.
 
 ---
-### Enable Application Frontend CLI locally or in SAP Business Appication Studio 
+### Enable Application Frontend CLI locally or in SAP Business Application Studio 
 
-#### Option 1 - Create SAP Business Appication Studio Dev Space:
+#### Option 1 - Create SAP Business Application Studio Dev Space:
 <ol>
     <li>Navigate to BTP Cockpit subaccount.</li>
     <li>Navigate to <strong>Services > Instances and Subscriptions</strong></li>
