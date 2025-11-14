@@ -12,7 +12,6 @@ primary_tag: software-product>sap-hana-cloud
 <!-- description --> Learn how to create your own calculation views in SAP HANA Cloud, SAP HANA database with SAP Business Application Studio using Join and Rank nodes.
 
 ## Prerequisites
-- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-2) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-2-ft), or a production environment of SAP HANA Cloud, SAP HANA database
 - You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-3)
 - You have completed the tutorial to [import the sample data needed for this mission](hana-cloud-mission-trial-5)
 - You have [set up a development project in SAP Business Application Studio and connected it to your database](hana-cloud-mission-trial-8)
