@@ -33,7 +33,7 @@ author_profile: https://github.com/neelamegams
     "description": "Sample SAPUI5 app",
     "private": true,
     "engines": {
-        "node": ">=22.6.0",
+        "node": ">=20.19.4",
         "npm": ">=10.8.2"
     },
     "scripts": {
@@ -143,9 +143,7 @@ sap.ui.define(
     }
 );
 ```
-
 > Our `index.html` is actively looking for a `Component.js` file in our UI5 app. This is an important naming convention, so don't change the name of this file. We have set up our component by initializing the UIComponent from the UI5 library. We extended it with some metadata, referencing the `manifest.json`, which we will create next.
-
 2. Add a controller `App.controller.js` in the path `webapp/controller` and paste the following code into it:
 ```js
 sap.ui.define(
@@ -196,18 +194,22 @@ sap.ui.define(
 > The `manifest.json` is our application descriptor file and holds **metadata** about our app.
 2. Install additional libraries to the `ui5.yaml` by running the following command from the project root folder.
 ```bash
-ui5 add sap.ui.core sap.m sap.f themelib_sap_horizon
+    ui5 add sap.ui.core sap.m sap.f themelib_sap_horizon
+```
+3. Upgrade to the latest SAPUI5 version by running the following command
+```bash
+    ui5 use sapui5@latest
 ```
 
 ### Run the Sample App locally
 
 1. Install the dependencies from the project root folder.
 ```bash
-npm install
+    npm install
 ```
 2. Start the server locally!
 ```bash
-ui5 serve -o index.html
+    ui5 serve -o index.html
 ```
 3. A new SAPUI5 App with 2 tiles would be shown in a new window that opens and would like the the application shown in the image below.
 
