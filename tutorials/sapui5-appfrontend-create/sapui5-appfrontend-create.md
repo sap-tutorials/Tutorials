@@ -2,13 +2,7 @@
 parser: v2
 auto_validation: true
 primary_tag: programming-tool>html5
-tags:
-    [
-        tutorial>beginner,
-        programming-tool>html5,
-        programming-tool>sapui5,
-        topic>user-interface
-    ]
+tags:[ tutorial>beginner, programming-tool>html5, programming-tool>sapui5, topic>user-interface ]
 time: 20
 author_name: Shrinivasan Neelamegam
 author_profile: https://github.com/neelamegams
