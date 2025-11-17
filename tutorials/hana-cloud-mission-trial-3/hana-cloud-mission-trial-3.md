@@ -18,7 +18,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## You will learn
 
-- How the provisioning wizard in SAP HANA Cloud can be used to configure the settings and features of an SAP HANA Cloud database instance. 
+- How the provisioning wizard in SAP HANA Cloud can be used to configure the settings and features of an SAP HANA Cloud database instance.
 
 ## Intro
 
