@@ -33,7 +33,7 @@ author_profile: https://github.com/neelamegams
     "description": "Sample SAPUI5 app",
     "private": true,
     "engines": {
-        "node": ">=20.19.4",
+        "node": ">=22.6.0",
         "npm": ">=10.8.2"
     },
     "scripts": {
