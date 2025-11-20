@@ -211,6 +211,6 @@ sap.ui.define(
 ```bash
     ui5 serve -o index.html
 ```
-3. A new SAPUI5 App with 2 tiles would be shown in a new window that opens and would like the the application shown in the image below.
+3. A new SAPUI5 app with two tiles will open in a new window and appear as shown in the screenshot below.
 
 ![SAPUI5 Application](images/ui5app.png)
