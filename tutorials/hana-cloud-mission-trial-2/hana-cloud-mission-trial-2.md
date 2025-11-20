@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-fun
 primary_tag: software-product>sap-hana-cloud
 ---
 
-# Start Using SAP HANA Cloud Free Tier Service In SAP BTP Cockpit
+# Start Using SAP HANA Cloud Free Tier Service in SAP BTP Cockpit
 
 <!-- description --> Learn how to get started with SAP HANA Cloud free tier service in the SAP Business Technology Platform (SAP BTP).
 

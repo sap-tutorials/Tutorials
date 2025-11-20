@@ -8,7 +8,7 @@ tags: [tutorial>beginner, software-product>sap-hana-cloud]
 primary_tag: software-product>sap-hana-cloud
 ---
 
-# Understand How The SAP HANA Cloud Free Tier Service Can Be Used In A SAP BTP Trial Or Productive Account
+# Understand How the SAP HANA Cloud Free Tier Service can be Used in a SAP BTP Trial or Productive Account
 
 <!-- description --> Learn about the process to sign up for a SAP Business Technology Platform (SAP BTP) trial or productive account and the details of the SAP HANA Cloud free tier service plan.
 
