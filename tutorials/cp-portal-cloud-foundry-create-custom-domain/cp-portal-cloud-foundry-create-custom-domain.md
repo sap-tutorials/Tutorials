@@ -18,7 +18,7 @@ parser: v2
     - Where to find documentation in order to complete the configuration
 
 ## Overview
-Instead of using the default domain that is assigned to your subaccount, you can purchase a custom domain with a unique name that's easily recognizable by your users, making them more secure about accessing your site. For example, if your default domain is `subaccount.launchpad.cfapps.eu10.hana.ondemand.com`, you can purchase the domain `mycompany.com`, create a custom domain `prod.mycompany.com`, and securely expose your site under this custom domain. Using the same domain for a site as well as for all the embedded content including Identity Authentication, enables broader integration scenarios, by avoiding third-party cookies with the respective security drawbacks. Note that if you decide to use a custom domain, make sure that you update links and inform end users to update their bookmarks. If users want to still use the default `ondemand.com` domain, this is possible. Note that there is no option to block the default domain.
+Instead of using the default domain that is assigned to your subaccount, you can purchase a custom domain with a unique name that's easily recognizable by your users, making them more secure about accessing your site. For example, if your default domain is `subaccount.launchpad.cfapps.eu10.hana.ondemand.com`, you can purchase the domain `mycompany.com`, create a custom domain `prod.mycompany.com`, and securely expose your site under this custom domain. Using the same domain for a site as well as for all the embedded content including Identity Authentication, enables broader integration scenarios, by avoiding third-party cookies with the respective security drawbacks. Note, if you decide to use a custom domain, make sure that you update links and inform end users to update their bookmarks. If users want to still use the default `ondemand.com` domain, this is possible. Note that there is no option to block the default domain.
 
 
 ## Illustration of the custom domain configuration process
@@ -93,11 +93,11 @@ You define the default site in the Site Directory of your SAP Build Work Zone, s
 
     <!-- border -->![Select domain](6-select-domain.png)  
 
-    - From the **Create Subdomain Name** step, enter a subdomain name, for example `prod` and click **Finish**. The result is a new custom domain. For example, `prod.mycompany.com`
+    - From the **Create Subdomain Name** step, enter a single subdomain name, for example `prod` and click **Finish**. The result is a new custom domain. For example, `prod.mycompany.com`
 
     <!-- border -->![Select subdomain](7-select-subdomain.png) 
 
-6. Create a custom domain for every runtime destination. For example: `xyz200.mycompany.com` (xyz200 in this example is the on-premise backend). The custom domain for the runtime destination must be part of this hierarchy, otherwise an error will occur. This is because SAP Build Work Zone code suppresses the subdomain (for example, `prod.mycompany.com`) used for the SAP Build Work Zone site when performing requests to on-premise backend applications.
+6. Create a custom domain for every runtime destination. For example: `xyz200.mycompany.com` (xyz200 in this example is the on-premise backend). The custom domain for the runtime destination must be part of this hierarchy, meaning it should be a **single** subdomain under the reserved domain, otherwise an error will occur. This is because SAP Build Work Zone code suppresses the subdomain (for example, `prod.mycompany.com`) used for the SAP Build Work Zone site when performing requests to on-premise backend applications.
 
     <!-- border -->![Custom domain for runtime destinations](8-custom-domain-for-runtime.png) 
 
@@ -296,7 +296,7 @@ For more information, see [Configure the DNS for a Custom Domain](https://help.s
 
 ### Configure the redirect URL
 
-In this step, you'll configure an OpenID Connect application in the administration console of SAP Cloud Identity Services for the authorization code flow.
+In this step, (which is only relevant for subscriptions that were created prior to September 4th 2025), you'll configure an OpenID Connect application in the administration console of SAP Cloud Identity Services for the authorization code flow.
 
 1. Sign in to the administration console for SAP Cloud Identity Services.
 

@@ -21,49 +21,6 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 
 ---
 
-### Configure a data source using Microsoft Windows ODBC Data Source Administrator
-The ODBC Data Source Administrator can be used to view the installed ODBC drivers and to create data sources for an installed driver.  
-
-1. Open the administrator by entering **ODBC** after clicking on the Microsoft Windows start icon.  
-
-    ![start ODBC Administrator](start-odbc.png)
-
-2. Click the **Drivers** tab and view the installed drivers. The SAP HANA Cloud, data lake Relational Engine driver is visible. 
-
-    ![odbc admin drivers](drivers-1.png)
-
-    
-3. Click the **User DSN** tab to view the data sources.  
-
-4. Click **Add** to create a new data source to connect to a data lake Relational Engine database.  
-
-    ![Add ODBC user data source](ODBC-add.png)  
-
-5. Select **SAP HANA Cloud, data lake Relational Engine** and click **Finish**.
-
-    ![New data source](Create-new-data-source-1.png)
-
-6. Configure the data source.
-
-    ![specify the data source name](data-source1.png)  
-
-    Connect using **USER1**. The **host** and **port** values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the **Copy SQL Endpoint** menu option and then click on Login.
-
-    ![specify the credentials, host and port](data-source2.png)  
-
-7. Verify the connection by clicking on **Test Connection**.
-
-    ![test connection](data-source4.png)  
-
-    >If the test fails, try pressing the OK button to save the data source, then try the test again.
-
-8. Press OK to save the data source.  
-
-    >The saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
-
-For additional details see [Connection Properties](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/a6d47d6e84f210158d4980b069eff5dd.html).
-
-
 ### Configure a data source on Linux with unixODBC
 1. On SUSE Linux, unixODBC can be installed using Zypper or YaST.
 
@@ -137,6 +94,55 @@ dsn is the name set in the odbc.ini file in the previous step.
     isql -v HC_DL USER1 Password1 -m6
     >```
 
+### Configure a data source using Microsoft Windows ODBC Data Source Administrator
+The ODBC Data Source Administrator can be used to view the installed ODBC drivers and to create data sources for an installed driver.  
+
+1. Open the administrator by entering **ODBC** after clicking on the Microsoft Windows start icon.  
+
+    ![start ODBC Administrator](start-odbc.png)
+
+2. Click the **Drivers** tab and view the installed drivers. The SAP HANA Cloud, data lake Relational Engine driver is visible. 
+
+    ![odbc admin drivers](drivers-1.png)
+
+    
+3. Click the **User DSN** tab to view the data sources.  
+
+4. Click **Add** to create a new data source to connect to a data lake Relational Engine database.  
+
+    ![Add ODBC user data source](ODBC-add.png)  
+
+5. Select **SAP HANA Cloud, data lake Relational Engine** and click **Finish**.
+
+    ![New data source](Create-new-data-source-1.png)
+
+6. Configure the data source.
+
+    ![specify the data source name](data-source1.png)  
+
+    In the **ODBC tab** of the configuration window, fill in the **Data source name**.
+
+    Switch to the **Login tab** and enter in the **USER1** credentials.
+    
+    Retrieve the SQL Endpoint for your data lake instance. You can find this via the SAP BTP Cockpit or by using the **Copy SQL Endpoint** menu option in SAP HANA Cloud Central and input into **Host** field. 
+
+    ![SQL Endpoint](sql-endpoint.png)
+    
+    Select the **Connect to SAP HANA CLOUD, data lake Relational Engine** action. 
+    
+    ![specify the credentials, host and port](data-source2.png)  
+
+7. Verify the connection by clicking on **Test Connection** in the ODBC tab.
+
+    ![test connection](data-source4.png)  
+
+    >If the test fails, try pressing the OK button to save the data source, then try the test again.
+
+8. Press OK to save the data source.  
+
+    >The saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
+
+For additional details see [Connection Properties](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/a6d47d6e84f210158d4980b069eff5dd.html).
 
 ### Use a data lake data source from Microsoft Excel
 An application that supports ODBC can now make use of the created data source. One example on Windows is Microsoft Excel.  

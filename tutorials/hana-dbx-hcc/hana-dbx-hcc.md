@@ -167,7 +167,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
     ![history-tab-columns tab](history-tab-columns.png)
 
 
-7. Examine the **SQL Console Settings**.  
+6. Examine the **SQL Console Settings**.  
 
     ![connection settings](connection-settings.png)
 
@@ -210,7 +210,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
         ![result formatted](formatted.png)
 
-8. Execute the following SQL statements.
+7. Execute the following SQL statements.
 
     ```SQL
     SELECT HEXTOBIN ('48656C6C6F20776F726C64') BINARY_EXAMPLE FROM DUMMY;
@@ -259,7 +259,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     ![SQL results](result-viewer.png)
 
-9. The SQL in a SQL console is not persisted across browser reloads.  The SQL can be downloaded  and then later imported using the tools shown below.
+8. The SQL in a SQL console is not persisted across browser reloads.  The SQL can be downloaded  and then later imported using the tools shown below.
 
     ![download and import](download-and-import.png)
 
@@ -332,14 +332,11 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
     * Persistency of SQL tabs and their contents
     * SQL debugging
     * Code completion of schema objects
-    * SQL formatting
     * Viewer for spatial and graph data
     * Analysis tab for tables and views 
-    * Ability to show dependent objects
     * Ability to search for database objects across multiple databases
     * Ability to run statements in the background
     * Ability to run statements against multiple instances
-
 
 
 ### Knowledge check

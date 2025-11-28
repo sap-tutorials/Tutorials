@@ -52,7 +52,7 @@ import {
 
 The `ShellBar` is the central navigation element in your Web Application and should therefore be visible on all pages.
 
-> Again, you can try it out in the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/docs/layouts-floorplans-shellbar--docs).
+> Again, you can try it out in the [Storybook](https://ui5.github.io/webcomponents-react/?path=/docs/layouts-floorplans-shellbar--docs).
 
 1. Start with adding the `ShellBar` above your `Card` component and add a `primaryTitle` prop.
 
@@ -496,7 +496,7 @@ For this, add two `Text` components above the indicator:
 4. Add more properties
 
     You can add many more properties to the `AnalyticalTable` component. For example, you can allow sorting, filtering and grouping via `sortable`, `filterable` and `groupable`, enable different selection modes with `selectionMode`, control how the table splits up available space between the columns with `scaleWidthMode` and many more.
-    Feel free to take a look at the [documentation](https://sap.github.io/ui5-webcomponents-react/v2/?path=/docs/data-display-analyticaltable--docs) and explore the different examples before continuing.
+    Feel free to take a look at the [documentation](https://ui5.github.io/webcomponents-react/v2/?path=/docs/data-display-analyticaltable--docs) and explore the different examples before continuing.
 
     The default visible rows count is at 15. This number is a bit to high for a dashboard table. Reduce the `visibleRows` count to 5 by setting the corresponding prop.
 

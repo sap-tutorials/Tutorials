@@ -16,14 +16,17 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - How to create and debug a Java application that connects to and queries a data lake Relational Engine database
 
 ## Intro
-[Java Database Connectivity](https://en.wikipedia.org/wiki/Java_Database_Connectivity) (JDBC) provides an [API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) for accessing databases from Java. An application written to the JDBC standard can be ported to other databases. Database vendors provide JDBC drivers for their database products.
+[Java Database Connectivity](https://en.wikipedia.org/wiki/Java_Database_Connectivity) (JDBC) provides an [API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) for accessing databases from Java. An application written to the JDBC standard can be ported to other databases. Database vendors provide JDBC drivers for their database products. Further details of the SAP JDBC driver can be found at [JDBC Driver](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/jdbc-driver).
+
 
 ---
 
 ### Install a JDK
-Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path. Further details of the driver can be found at [JDBC Driver](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/jdbc-driver).
+Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path.
 
-An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download).
+You should already have the SAP Java Virtual Machine (JVM) installed after completing the [SAP HANA Cloud, Data Lake Client Interfaces Overview](https://developers.sap.com/tutorials/hana-cloud-dl-clients-overview.html#f86d9ece-1bd4-4add-81a4-aedc6b290e97) prerequisite tutorial.
+
+If not, you can download an OpenJDK from at [SapMachine](https://sap.github.io/SapMachine/#download).
 
 To verify that the JDK is correctly set up, run the following:
 
@@ -104,7 +107,9 @@ See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-clo
     }
     ```
 
-3. Save and close `JavaQuery.java`. Compile the `.java` file into a `.class` file using the following command:
+3. Save and close `JavaQuery.java`. On Microsoft Windows, ensure that you are using the command prompt to run the following. 
+
+    Compile the `.java` file into a `.class` file using the following command:
 
     ```Shell (Microsoft Windows)
     javac -cp %IQDIR17%\Java\sajdbc4.jar;. JavaQuery.java

@@ -645,7 +645,7 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
 
     Choose **Insert Snippet**.
 
-    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_3.png)
+    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_3.png)
 
     The **anonnotations.xml** file editor opens with newly added annotations for side effect source.
 
@@ -655,18 +655,18 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
 
     Choose **Insert Snippet**.
 
-    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_5.png)
+    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_5.png)
 
     The **anonnotations.xml** is adopted with a new lines.
 
-    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_6.png)
+    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_6.png)
 
 
-8. Refresh the application and choose **Go** to load data into the list report table. Select any of the items within the table to open the object page. Choose **Edit** to start chaning data of the draft.
+8. Refresh the application and choose **Go** to load data into the list report table. Select any of the items within the table to open the object page. Choose **Edit** to start chaining data of the draft.
 
     Change the amount of **Booking Fee** and step out of the field. The side effect is triggered and the **Total Price** is recalculated.
 
-    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_7.png)
+    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_7.png)
 
     >**Self study (OPTIONAL)**: at this point the recalculation is triggered if the **Booking Fee** amount is changed. What do you need to change in the backend and side effects to trigger **Total Price** recalculation, if the **Flight Price** of a **Booking** is changed on the UI? Hint: the **Travel** entity has an association to **Booking** entity with the property **FlightPrice**. 
     
@@ -725,13 +725,13 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
 
 11. (OPTIONAL) Switch again to the SAP Business Application Studio and the **Configure Side Effects Guide**. Configure the property **FlightPrice** via navigation property **Booking** as a source and the property **TotalPrice** remains as a target for the new side effect.
 
-    >Change the side effect qulifier name as this will be an additional side effect. 
+    >Change the side effect qualifier name as this will be an additional side effect. 
 
     <!-- border -->![Add Side Effect Source Options](SideEffectGuide_8.png)
 
-    Choose **Insert Snippet** for source and then in **step 2** insert curresponding snippet for **TotalPrice as target**.
+    Choose **Insert Snippet** for source and then in **step 2** insert corresponding snippet for **TotalPrice as target**.
 
-    The resulting **anonnotations.xml** file opens with newly added source and target annotations for your second side effect.
+    The resulting **annotations.xml** file opens with newly added source and target annotations for your second side effect.
 
     <!-- border -->![Annotations result in the file](SideEffectGuide_9.png)
 
@@ -739,7 +739,7 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
 
     Now change the amount of **Flight Price** and step out of the field. The side effect is triggered and the **Total Price** is recalculated.
 
-    <!-- border -->![Chech and insert Code Snippet](SideEffectGuide_10.png)
+    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_10.png)
 
 
 ---

@@ -21,7 +21,7 @@ When working with Terraform, a description of a target state is provided in a fi
 ## You will learn
   - How to use the Terraform Provider for SAP BTP
   - How to create an SAP BTP subaccount that contains entitlements
-  - How to create a subscription to SAP HANA CLoud Central
+  - How to create a subscription to SAP HANA Cloud Central
   - How to create and update one or more SAP HANA Cloud instances
 
 ---

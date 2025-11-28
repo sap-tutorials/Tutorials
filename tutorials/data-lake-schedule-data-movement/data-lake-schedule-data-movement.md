@@ -182,7 +182,7 @@ CREATE TABLE HDLRE_CUSTOMER
 );
 ```
 
-Here I will break down [creating an event](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/2021_4_QRC/en-US/a617091784f210158db2e43f0733ae5d.html?q=CREATE%20EVENT) in HDLRE. In the following SQL you create an event called `PullCustomerDataFromHANA`. Immediately after you create a schedule `SchedulePullCustomerDataFromHANA`. The schedule is scheduled to start at 12:00am and repeat the event every Sunday. Below the "HANDLER" you define the SQL script to be executed. The script creates a local temporary table (this table will be lost once the connection is dropped) and then inserts the data from that the temporary table into your `HDLRE_CUSTOMER` table which persists inside of your HDLRE instance. So, every Sunday the event is copying the data from your HANA table to your HDLRE table.
+Here I will break down [creating an event](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-event-statement-for-data-lake-relational-engine) in HDLRE. In the following SQL you create an event called `PullCustomerDataFromHANA`. Immediately after you create a schedule `SchedulePullCustomerDataFromHANA`. The schedule is scheduled to start at 12:00am and repeat the event every Sunday. Below the "HANDLER" you define the SQL script to be executed. The script creates a local temporary table (this table will be lost once the connection is dropped) and then inserts the data from that the temporary table into your `HDLRE_CUSTOMER` table which persists inside of your HDLRE instance. So, every Sunday the event is copying the data from your HANA table to your HDLRE table.
 
 ```SQL
 CREATE EVENT PullCustomerDataFromHANA

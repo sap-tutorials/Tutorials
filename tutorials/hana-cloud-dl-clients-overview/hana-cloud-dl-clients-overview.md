@@ -20,7 +20,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - How to connect using the Interactive SQL Client (DBISQL)
 
 ## Intro
-This tutorial group will provide guidance on setting up an instance of [SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/sap-hana-cloud-data-lake-developer-guide-for-data-lake-relational-engine) and [SAP HANA Cloud, Data Lake Client Interfaces](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/sap-hana-cloud-data-lake-client-connections).  
+This tutorial group will provide guidance on setting up an instance of [SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/sap-hana-cloud-data-lake-developer-guide-for-data-lake-relational-engine) and [SAP HANA Cloud, Data Lake Client Interfaces](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/sap-hana-cloud-data-lake-client-connections).  On Microsoft Windows, in this tutorial, the shell used is the Command Prompt.
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the Feedback link shown below.
 > 
@@ -37,7 +37,7 @@ SAP HANA Cloud is composed of multiple components.
 
     [Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-relational-engine) is a disk-based, column-oriented relational database for storing and analyzing large amounts of infrequently updated data. It descends from [SAP IQ](https://help.sap.com/docs/SAP_IQ), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Some of the client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/docs/SAP_SQL_Anywhere) and SAP Adaptive Server Enterprise.
 
-    [Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-files) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or delta tables.  Structured files can use [SQL on Files](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-cloud-sap-hana-database-sql-on-files-guide), which enables SQL queries to be performed on them.  
+    [Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/data-lake-files) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or Delta table, or Iceberg table.  Structured files can use [SQL on Files](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-cloud-sap-hana-database-sql-on-files-guide), which enables SQL queries to be performed on them.  
 
     >Note, that the data lake Files component, is currently not available in free tier or trial accounts.
 
@@ -290,6 +290,9 @@ For additional details on the SQL Console and database objects app, see the tuto
 ### Install the developer licensed version of the data lake client for Linux
 This version of the data lake client does not include cryptographic libraries as it makes use of the libraries that are available on the operating systems such as OpenSSL.  The data lake client is available for download after accepting the SAP Developer License agreement.  Currently, this version is available for Microsoft Windows and Linux.  Choose which client you would like to use and follow either step 6, 7 or 8.  Either client can be used to complete the steps shown in this tutorial group.
 
+Ensure that [SAP JVM (Java Virtual Machine) 8.0](https://tools.hana.ondemand.com/#cloud) is installed before proceeding with the following steps.  The DBISQL tool requires [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud) 
+
+
 1.  Open the HANA tab of [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools).
 
 2.  Download the SAP HANA Data Lake Client 1.0.
@@ -350,7 +353,7 @@ This version of the data lake client does not include cryptographic libraries as
 ### Install the developer licensed version of the data lake client for Microsoft Windows
 This version of the data lake client does not include cryptographic libraries and requires openSSL to be installed separately to provide cryptography.  The data lake client is available for download after accepting the SAP Developer License agreement.  Currently, this version is available for Microsoft Windows and Linux.  Choose which client you would like to use and follow either step 6, 7 or 8.  Either client can be used to complete the steps shown in this tutorial group.
 
-Ensure that [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud) is installed before proceeding with the following steps. The DBISQL tool requires [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud)
+Ensure that [SAP JVM (Java Virtual Machine) 8.0](https://tools.hana.ondemand.com/#cloud) is installed before proceeding with the following steps.  The DBISQL tool requires [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud)
 
 1.  Open the HANA tab of [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools).
 
@@ -370,7 +373,11 @@ Ensure that [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud) is installed b
 
     If these libraries were not found but are on your machine perhaps as part of the [git client](https://git-scm.com/downloads/win), add that folder to your path (For example, C:\Git\mingw64\bin).  See also [Install the SAP HANA Data Lake Client (Developer License) in GUI Mode on Microsoft Windows](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/install-sap-hana-data-lake-client-in-gui-mode-on-microsoft-windows). 
 
-5.  After the installation process is completed, open Microsoft Windows, click the **Start** icon and search for **environment variables**. Create a new variable, set the variable name to **JAVA_HOME** and the variable value as the location where JVM has been unzipped such as C:\SAP\SAPJVM8\jre. Press the **OK** to ensure the changes made by the installer are now active.
+5.  After the installation process is completed, open Microsoft Windows, click the **Start** icon and search for **Edit the system environment variables** and press the "Environment Variables" button under the "Advanced" tab.
+
+    ![Open Environment Variables](open-environment-var.png)
+
+    Create a new variable, set the variable name to **JAVA_HOME** and the variable value as the location where JVM has been unzipped such as C:\SAP\SAPJVM8. Press the **OK** to ensure the changes made by the installer are now active.
 
     ![JAVA_HOME creation](java-home-creation.png)
 
@@ -555,47 +562,13 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     If an error occurs mentioning that saip17.jar file has moved or has been deleted, examine 
     C:\Users\Public\Documents\DBISQL 17.1.6\dbisql_64.rep and optionally comment out with # the plugins that are not loading.  
 
-2. Start the GUI version of DBISQL by entering `dbisql` in the command prompt.
-
-    If the error "This file could not be found: java" occurs, follow the instructions below.
-
-    * Download and install [SAP JVM 8.0](https://tools.hana.ondemand.com/#cloud)
-
-        ```Shell (Linux)
-        unzip sapjvm-8.1.102-linux-x64.zip
-        mv ./sapjvm_8 ~/
-        ```
-
-    * Add the following to your bashrc. 
-
-        ```Shell (Linux)
-        export JAVA_HOME=~/sapjvm_8
-        export PATH=$PATH:$JAVA_HOME/bin
-        ```
-
-    * Apply and test the changes.
-        ```Shell (Linux)
-        source ~/.bashrc
-        java -version
-        dbisql
-        ```
-
-    If a further error occurs such as libXext.so.6: cannot open shared object file, install the missing components.
-
-        ```Shell (Linux)
-        sudo zypper install libXext6
-        sudo zypper install libXrender1
-        sudo zypper install libXtst6
-        sudo zypper install libXi6
-        ```
-
-3. Specify the connection type.
+2. Specify the connection type.
 
     ![Connection type](dbisql-connection-type.png)
 
     >The Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
 
-4. Provide the connection details. See below on how to obtain the instance ID and landscape values.
+3. Provide the connection details. See below on how to obtain the instance ID and landscape values.
 
     ![instance ID and landscape](connect-to-dl-iq.png)
 
@@ -777,7 +750,7 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 
     ![DBISQL in batch mode](dbisql-batch.png)
 
-    See [Connection Parameters](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/a6d47d6e84f210158d4980b069eff5dd.html) for additional documentation on the parameters used to connect.
+    See [Connection Parameters](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/connection-parameters) for additional documentation on the parameters used to connect.
 
 
 ### Knowledge check    
