@@ -28,7 +28,7 @@ Click [here](https://cap.cloud.sap/docs/about/) for more information about the S
 
     Click **Create Dev Space**.
 
-    ![Start the Dev Space](create-dev-space-BAS.png)
+    !![Start the Dev Space](create-dev-space-BAS.png)
 
     Your development space is now ready to use. Wait until the status has changed from **STARTING** to **RUNNING**. After the initial creation this is done automatically.
 
@@ -54,16 +54,15 @@ Once you are in the development space, you will see a **Welcome** page from whic
 
 2. Click the link **Clone from Git**.
 
-    ![Click on link "Clone from Git"](click-clone-from-git.png)
+    !![Click on link "Clone from Git"](click-clone-from-git.png)
 
     Paste the repository link into the input field and press **Enter**.
 
-    ![Enter the github repository URL](enter-github-repository.png)
+    !![Enter the github repository URL](enter-github-repository.png)
 
-3. Wait until the cloning has finished. When you see a toast message in the lower right corner, click **Open** to open the project.
-    You see your project in the explorer panel as shown in the image below:
+3. Wait until the cloning has finished. Click **Open** to open the project. You see your project in the explorer panel as shown in the image below:
 
-    ![Explorer service structure](explorer-project-tree.png)
+    !![Explorer service structure](explorer-project-tree.png)
 
 [DONE]
 [ACCORDION-END]

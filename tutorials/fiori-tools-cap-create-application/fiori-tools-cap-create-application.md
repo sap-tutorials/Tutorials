@@ -48,7 +48,7 @@ contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>ht
     Module Name: `incidents`  
 
     Application Title: `Incidents Management`  
-    
+
     Application Namespace: `sap.fe.demo`  
 
     Keep the rest as default.
@@ -82,6 +82,8 @@ Your SAP Fiori elements application needs a server to run. This server is provid
 2. When the quick pick is shown, select **watch-incidents** script
 
     !![Select watch script](select-watch-script.png)
+
+    Your app should now start in a new window. If not, you can click on the link from the terminal or click on **Open in New Tab** as shown below.
 
     A dialog window may pop up and you can choose the option as follows.
 
