@@ -101,10 +101,6 @@ In this step, you will learn how to enhance the value help defined in the projec
 In this step, you will learn how to configure the application to load data automatically when started without the need of pressing the **Go** button.  
 
 1. In the Page Editor, select the **table** node on the outline to show the properties of the table.  
-
-    <!-- border -->
-    ![Table Properties](t3-initial-load-table-properties.PNG)
-
 2.  In the Properties pane, locate the **Initial Load** property and set it to **Enabled**.  
 
     <!-- border -->
