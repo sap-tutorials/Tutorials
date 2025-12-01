@@ -21,7 +21,7 @@ contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>ht
 
 2. Select the tile **List Report Page** and click **Next**.
 
-    ![Choose tile "List Report Object Page"](choose-tile-list-report.png)
+    !![Choose tile "List Report Object Page"](choose-tile-list-report.png)
 
 3. Now you connect the application template with your OData service. The OData service you use for this example was already prepared during the previous tutorial:  [Prepare Your Development Environment](fiori-tools-cap-prepare-dev-env)
 
@@ -33,17 +33,27 @@ contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>ht
 
     When finished, click **Next**.
 
-    ![Select service related parameters](enter-service-parameters.png)
+    !![Select service related parameters](enter-service-parameters.png)
 
 4. For your application you need to choose the main entity set from the OData service. Objects of this type will be displayed in the list report.
 
     In your application, start with **Incidents**. As your application will not have a sub-object page, you do not need a navigation entity. Leave **Yes** selected for the prompt **Automatically add table columns to the list page and a section to the object page if none already exists?**.
 
+    Leave the selected **Table Type**.
+
     When finished, click **Next**.
 
-5. Maintain specific attributes of the application project as follows (Minimum SAPUI5 version is updated automatically):
+5. Maintain specific attributes of the application project as follows:
 
-    ![Provide project attributes](provide-project-attributes.png)
+    Module Name: `incidents`  
+
+    Application Title: `Incidents Management`  
+    
+    Application Namespace: `sap.fe.demo`  
+
+    Keep the rest as default.
+
+    !![Provide project attributes](provide-project-attributes.png)
 
     >Be sure to choose exactly the **Module name** and the **Application namespace** as shown above, because these are referenced in the sample code.
 
@@ -53,11 +63,11 @@ contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>ht
 
     After the project is generated, an Application Information page is shown giving you an overview of project details and tasks that you may perform on this project. It is recommended that you keep this page open as it will be used in other steps. You can open it any time using selecting menu **View->Command Palette...** and select **Fiori: Open Application Info**
     
-     ![Application Information page](application-info-page.png)
+     !![Application Information page](application-info-page.png)
 
     You will also see a new folder `incidents` inside the `app` folder.
 
-    ![Review the generated artifacts](review-generated-artifacts.png)
+    !![Review the generated artifacts](review-generated-artifacts.png)
 
 [DONE]
 [ACCORDION-END]
@@ -67,17 +77,17 @@ contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>ht
 Your SAP Fiori elements application needs a server to run. This server is provided by the command line client and development toolkit for the SAP Cloud Application Programming Model. The setup for using the server was done in the previous tutorial [Prepare Your Development Environment](fiori-tools-cap-prepare-dev-env).
 
 1. Select the tile **Preview Application** from **Application Information** page.
-   ![Select watch script](preview-application.png)
+   !![Select watch script](preview-application.png)
 
 2. When the quick pick is shown, select **watch-incidents** script
 
-    ![Select watch script](select-watch-script.png)
+    !![Select watch script](select-watch-script.png)
 
     A dialog window may pop up and you can choose the option as follows.
 
     Click  **Open in New Tab**.
 
-    ![Click button Open in New Tab on popup](click-open-in-new-tab.png)
+    !![Click button Open in New Tab on popup](click-open-in-new-tab.png)
 
     >Please check for a browser popup blocker in case the popup windows are not visible.
 
@@ -85,7 +95,7 @@ Your SAP Fiori elements application needs a server to run. This server is provid
 
     Press **Go**. The list report table will then show the data from the sample service.
 
-    ![List Report with items](list-report-go.png)
+    !![List Report with items](list-report-go.png)
 
     Filter fields, actions, and table columns are defined by the annotations in the Core Data Service (CDS) files. These files are part of the OData service definition.
 
