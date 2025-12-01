@@ -3,8 +3,8 @@ author_name: Dimitri Herber
 author_profile: https://github.com/fakirdi
 auto_validation: true
 time: 15
-tags: [ software-product-function>sap-fiori-elements, software-product-function>sap-fiori-tools, tutorial>beginner, software-product-function>sap-fiori, software-product-function>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product-function>sap-business-technology-platform]
-primary_tag: software-product-function>sap-fiori
+tags: [ software-product-function>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-fiori
 parser: v2
 contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
@@ -28,51 +28,62 @@ contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>ht
 
 1. Open the object page of your application by clicking one of the incidents within the list report table. You´ll see the field group **Incident Details** on the **Incident Overview** section.
 
-    !![Annotation Cursor](t4-annotation-section-field-1.PNG)
+    <!-- border -->
+    ![Annotation Cursor](t4-annotation-section-field-1.PNG)
 
 2. Open the Page Editor for the object page of your app: from the Application Information page, click on **ObjectPage** within Pages.
 
-   !![Open Object Page](t4-open-object-page-app-info.png)
+    <!-- border -->
+    ![Open Object Page](t4-open-object-page-app-info.png)
 
     The Page Editor view opens up listing all the major page elements in the application outline structure.
 
-3. Expand the nodes **Sections -> Incident Overview -> Subsections -> Incident Details -> Form**, press the **+** icon in the **Fields** sub-node and choose **Add Basic Fields**.
+3. Expand the nodes **Sections - Incident Overview - Subsections - Incident Details - Form**, press the **+** icon in the **Fields** sub-node and choose **Add Basic Fields**.
     
-    !![Add Fields Icon](t4-add-section-fields.png)
+    <!-- border -->
+    ![Add Fields Icon](t4-add-section-fields.png)
 
 4. When prompted, choose **description** in **Fields** and press **Add**. 
 
-    !![Add Fields Dialog](t4-add-fields-dialog.png)
+    <!-- border -->
+    ![Add Fields Dialog](t4-add-fields-dialog.png)
     
 5. Application preview automatically refreshes (if started) to show the additional field **Incident Description** within the field group **Incident Details**.
 
-    !![Annotation Cursor](t4-annotation-section-field-2.PNG)
+    <!-- border -->
+    ![Annotation Cursor](t4-annotation-section-field-2.PNG)
 
 
 ### Add new field group to a section
 
 In the previous step, you added a new field to an existing field group. Now you will add a new field group to the section **Incident Overview**. 
 
-1. In Page editor, expand the nodes **Sections -> Incident Overview** if not already expanded, press the **+** icon in the **Subsections** sub-node and choose **Add Form Section**. 
+1. In Page editor, expand the nodes **Sections - Incident Overview** if not already expanded, press the **+** icon in the **Subsections** sub-node and choose **Add Form Section**. 
 
-    !![Add Section Icon](t4-add-section.png)
+    <!-- border -->
+    ![Add Section Icon](t4-add-section.png)
 
 2. When prompted, type **General Information** in the **Label** field and press **Add**. 
 
-    !![Add Sections Dialog](t4-add-section-dialog.png)
+    <!-- border -->
+    ![Add Sections Dialog](t4-add-section-dialog.png)
 
     General Information section is visible in the outline.
 
 3. Expand the nodes **General Information -> Form**, press **+** icon in the **Fields** node and choose **Add Basic Fields**. 
 
-   ![Add Fields Icon](t4-add-section-fields-icon.png)
+    <!-- border -->
+    ![Add Fields Icon](t4-add-section-fields-icon.png)
 
 4. When prompted, choose **priority_code**, **category_code** and **incidentStatus_code** as **Fields** and press **Add**.
 
-    !![Add Fields Dialog](t4-add-section-fields-dialog.png)
+    <!-- border -->
+    ![Add Fields Dialog](t4-add-section-fields-dialog.png)
 
     Application preview refreshes and shows the additional field group **General Information** within the section **Incident Overview**.
-    !![Annotation Cursor](t4-annotation-section-field-group.PNG)
+    
+    <!-- border -->
+    ![Annotation Cursor](t4-annotation-section-field-group.PNG)
 
 ### Add custom section to the object page
 
@@ -82,15 +93,18 @@ To simplify this exercise, you will find prepared content in the `ext` folder of
 
 1. Using drag&drop move the existing folder `ext` located in `test-resources` to the `webapp` folder of the incidents application.
 
-    !![Annotation Cursor](t4-annotation-custom-section-ext-4.png)
+    <!-- border -->
+    ![Annotation Cursor](t4-annotation-custom-section-ext-4.png)
 
 2. In Page Editor, press the **+** icon in the **Sections** node and choose **Add Custom Section**.
 
-    !![Annotation Cursor](t4-annotation-custom-section-page-editor-add-section.PNG)
+    <!-- border -->
+    ![Annotation Cursor](t4-annotation-custom-section-page-editor-add-section.PNG)
 
 3. In the **Add Custom Section** dialog, modify the content of the fields as showed in the image below and press **Add**.
 
-    !![Annotation Cursor](t4-annotation-custom-section-add-section-dialog.PNG)
+    <!-- border -->
+    ![Annotation Cursor](t4-annotation-custom-section-add-section-dialog.PNG)
 
     >The content of field **Fragment Name** represents one of the prepared artifacts located in the `ext` folder.
 
@@ -98,6 +112,7 @@ To simplify this exercise, you will find prepared content in the `ext` folder of
 
     You have now finished the creation of the new custom section. Once the application preview is refreshed, check the new section displayed on the object page.
     
+    <!-- border -->
     ![Annotation Cursor](t4-annotation-custom-section-on-object-page.PNG)
 
 ### Add new column to Incident Process Flow table
@@ -106,25 +121,30 @@ Now you are going to add a new column to the object page table **Incidents Proce
 
 1. In Page editor, expand the nodes **Sections->Incident Process Flow->Table**, press the **+** icon in the **Columns** sub-node and choose **Add Basic Columns**. 
 
-    !![Add Columns Icon](t4-add-column-icon.png)
+    <!-- border -->
+    ![Add Columns Icon](t4-add-column-icon.png)
 
 2. When prompted, choose **stepStatus** in the **Columns** field and press **Add**. 
 
-    !![Add Column Dialog](t4-add-column-dialog.png)
+    <!-- border -->
+    ![Add Column Dialog](t4-add-column-dialog.png)
 
     **Process Step Status** column is added at the bottom of the columns list section in the outline.
 
 3. Drag the newly added column to the top of the columns list and drop it there.
 
+    <!-- border -->
     ![Move Column](t4-move-column.png)
 
 4. Choose the **Process Step Status** column to display its properties in the Properties pane to the right of the outline. In the **Criticality** field, change the value to **criticality**.
 
-    !![Define Criticality](t4-add-column-criticality.png)
+    <!-- border -->
+    ![Define Criticality](t4-add-column-criticality.png)
    
     Once the application preview is refreshed, the new column added to the object page table.
  
-    !![Annotation Cursor](t4-annotation-LSP-table-column.PNG)
+    <!-- border -->
+    ![Annotation Cursor](t4-annotation-LSP-table-column.PNG)
 
 ### Enable the flexible column layout
 
@@ -134,11 +154,14 @@ The flexible column layout allows you to have the list report and the object pag
 
     In the **Property Panel** select the **Flexible Column Layout** and choose the `Mid-Expanded` option for the two column layout.
     
-    !![Annotation Cursor](t4-flexible-column-layout-global-page-settings.PNG)
+    <!-- border -->
+    ![Annotation Cursor](t4-flexible-column-layout-global-page-settings.PNG)
 
 2. In the application preview, the list report and object page are now shown in a two column layout.
     When you click on a different row in the list report the object page will update accordingly.
-    !![Annotation Cursor](t4-flexible-column-layout-final.PNG)
+
+    <!-- border -->
+    ![Annotation Cursor](t4-flexible-column-layout-final.PNG)
 
 ### Summary
 
@@ -146,7 +169,8 @@ At this point, your list report object page application is complete.
 
 > To prepare your app for translation, you can generate the translation keys for all the language dependent fields in your app. For that, choose the globe button at the top of the screen  and, once prompted, press **Create**. 
 
-!![Prepare for Translation](t4-i18n.png)
+<!-- border -->
+![Prepare for Translation](t4-i18n.png)
 
 Over the past four tutorials, you have used the SAP Business Technology Platform, SAP Fiori tools and SAP Fiori elements to build this application. You have learned how to:
 
