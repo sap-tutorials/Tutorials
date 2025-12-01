@@ -3,8 +3,8 @@ author_name: Dimitri Herber
 author_profile: https://github.com/fakirdi
 auto_validation: true
 time: 15
-tags: [products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
-primary_tag: products>sap-fiori
+tags: [software-product-function>sap-fiori-elements, software-product-function>sap-fiori-tools, tutorial>beginner, software-product-function>sap-fiori, software-product-function>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product-function>sap-business-technology-platform]
+primary_tag: software-product-function>sap-fiori
 parser: v2
 contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
