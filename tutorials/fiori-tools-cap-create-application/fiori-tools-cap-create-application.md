@@ -3,7 +3,7 @@ title: Create an SAP Fiori Elements Application
 description: Create an SAP Fiori elements application of type list report object page based on the SAP Cloud Application Programming Model.
 auto_validation: true
 time: 15
-tags: [ software-product-function>sap-fiori, software-product-function>sap-fiori-tools, tutorial>beginner, software-product-function>sap-fiori, software-product-function>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product-function>sap-business-technology-platform]
+tags: [ software-product-function>sap-fiori, software-product-function>sap-fiori-tools, tutorial>beginner, software-product-function>sap-fiori, software-product-function>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product-function>sap-business-technology-platform ]
 primary_tag: software-product>sap-fiori
 contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
