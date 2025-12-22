@@ -36,8 +36,7 @@ The Northwind OData services are available in several versions. Most tutorials c
 ### Enter your SAP BTP account
 
 - For (free) Trial Accounts: <https://account.hanatrial.ondemand.com>
-- For Free Tier and Enterprise Accounts on **feature set A**: <https://account.hana.ondemand.com>
-- For Free Tier and Enterprise Accounts on **feature set B**: <https://cockpit.btp.cloud.sap>
+- For Free Tier and Enterprise Accounts: <https://cockpit.btp.cloud.sap>
 
 ### Access your subaccount
 
