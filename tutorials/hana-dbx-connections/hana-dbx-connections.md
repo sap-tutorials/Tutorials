@@ -7,16 +7,20 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Add Databases to the SAP HANA Database Explorer
+
 <!-- description --> This tutorial will explore different instance types, such as SAP HANA Cockpit Database, SAP HANA Cloud, data lake Relational Engine, data lake Files, and SAP HANA Deployment Infrastructure (HDI) that can be added, along with the different operations that can be performed on them.
 
 ## Prerequisites
-- An SAP HANA database such as SAP HANA Cloud free tier, trial or the SAP HANA, express edition that includes the SAP HANA database explorer
+
+- An SAP HANA database such as SAP HANA Cloud free tier or the SAP HANA, express edition that includes the SAP HANA database explorer
 
 ## You will learn
+
 - How to add different instance types in the SAP HANA database explorer
 - Additional operations that can be performed on an instance
 
 ## Intro
+
 Instances in the SAP HANA database explorer represent SAP HANA, data lake Relational Engine, or data lake Files connections that you browse and interact with.  
 
 SQL consoles are associated with a database instance.
@@ -28,7 +32,8 @@ SQL consoles are associated with a database instance.
 ### Add an SAP HANA cockpit database instance
 Instances shown in SAP HANA Cloud Central or in the SAP HANA cockpit can be opened in the SAP HANA database explorer.
 
-1.  From SAP HANA Cloud Central, choose **Open in SAP HANA Database Explorer**.  
+1. From SAP HANA Cloud Central, choose **Open in SAP HANA Database Explorer**.  
+
 
     ![Open in the database explorer](from-directory.png)
 
@@ -47,19 +52,20 @@ Instances shown in SAP HANA Cloud Central or in the SAP HANA cockpit can be open
     Hover over the database to see a summary and note that the type is Cockpit Database. 
 
 ### Add an SAP HANA database connection
+
 Instances can also be added directly to the SAP HANA database explorer.  To connect to an SAP HANA Cloud or on-premise database, the host, port, user name, and  password must be provided.  
 
-1.  In the SAP HANA database explorer, press the **+** button to add a new instance.
+1. In the SAP HANA database explorer, press the **+** button to add a new instance.
 
     ![Add a new database](new-connection0.png)
 
-2.  For Instance Type, choose **SAP HANA Database**.
+2. For Instance Type, choose **SAP HANA Database**.
 
     ![Database types](connection-type.png)
 
     >An SAP HANA, express edition or on-premise database can have two types of databases; system and tenant.  This is known as multitenant.  System databases are used to manage one or more tenant databases and are only applicable to on-premise systems.  For further details, see [Server Architecture of Tenant Databases](https://help.sap.com/docs/SAP_HANA_PLATFORM/78209c1d3a9b41cd8624338e42a12bf6/f9aba40d6c4c4ae48cce461db4d42d88.html).
 
-3.  Provide the host, port, user name, password, and name to show in display. Below are instructions on how to obtain the host name and port number.
+3. Provide the host, port, user name, password, and name to show in display. Below are instructions on how to obtain the host name and port number.
 
     ![encrypted connection](encrypted.png)
 
@@ -96,7 +102,7 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
 
     >Instructions on using X.509 certificate are provided at [Authenticate to SAP HANA Cloud using X.509](tutorials/hana-clients-x509).
 
-4.  After pressing OK, a new instance will appear whose type is SAP HANA Database.
+4. After pressing OK, a new instance will appear whose type is SAP HANA Database.
 
     ![new database](new-connection.png)
 
@@ -122,7 +128,7 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
     >
     >For additional details, see [Add Instances to the SAP HANA Database Explorer](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/add-instances-to-sap-hana-database-explorer) and the [SET Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/20fd82b675191014b22c8af08d0b319c.html).
 
-5.  It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](hana-clients-x509) on how to create a client certificate and how to configure SAP HANA Cloud for use with certificate authentication.
+5. It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](tutorials/hana-clients-x509) on how to create a client certificate and how to configure SAP HANA Cloud for use with certificate authentication.
 
     ![X.509 certificate authentication](cert-auth.png)
 
@@ -162,7 +168,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     Diagnostic files can also be viewed in the Logs directory.
 
-4.  It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](hana-clients-x509) on how to create a certificate.  The below SQL can be used to configure the data lake Relational Engine to enable X.509 certificate authentication.
+4.  It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](tutorials/hana-clients-x509) on how to create a certificate.  The below SQL can be used to configure the data lake Relational Engine to enable X.509 certificate authentication.
 
     ```SQL
     CREATE LOGIN POLICY X509Policy LOGIN_MODE=X509;  --valid for 180 days by default
@@ -181,7 +187,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 ### Add a data lake Files container (Optional)
 A [data lake Files container](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/understanding-data-lake-files) provides storage for non structured files such as images or PDF documents.  It can also store structured files such as CSV, parquet, or ORC files and with the use of [SQL on Files](https://help.sap.com/docs/hana-cloud-data-lake/administration-guide-for-sql-on-files/using-sql-on-files), queries can be performed on the data contained in those files.  An example of using the data lake Files container is shown as a target for an export operation at [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import).
 
-1. A connection can be added to a data lake Files container.  A data lake Files container is not currently available in trial or free tier instances of SAP HANA Cloud.
+1. A connection can be added to a data lake Files container.  A data lake Files container is not currently available in free tier instances of SAP HANA Cloud.
 
     ![Add a data lake Files container](add-data-lake-file-container.png)
 
