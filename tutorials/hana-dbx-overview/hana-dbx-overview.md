@@ -7,19 +7,23 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # SAP HANA Database Explorer Overview
-<!-- description --> Learn about the SAP HANA database explorer and how to start using it with SAP HANA Cloud trial, free tier, SAP HANA, express edition, or SAP HANA Cloud basic trial.
+
+<!-- description --> Learn about the SAP HANA database explorer and how to start using it with SAP HANA Cloud free tier, SAP HANA, express edition, or SAP HANA Cloud basic trial.
 
 ## Prerequisites
- - A machine that can run SAP HANA, express edition if the other options are not used
+
+- A machine that can run SAP HANA, express edition if the other options are not used
 
 ## You will learn
-  - About the features provided by the SAP HANA database explorer
-  - Details about the version differences between the SAP HANA database explorer in SAP HANA Cloud and in an on-premise installation such as SAP HANA, express edition
-  - How to get started with SAP HANA Cloud trial, free tier, SAP HANA, express edition, or SAP HANA Cloud basic trial
+
+- About the features provided by the SAP HANA database explorer
+- Details about the version differences between the SAP HANA database explorer in SAP HANA Cloud and in an on-premise installation such as SAP HANA, express edition
+- How to get started with SAP HANA Cloud free tier, SAP HANA, express edition, or SAP HANA Cloud basic trial
+
 ---
 
-
 ## Intro
+
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
 ### SAP HANA database explorer overview
@@ -104,13 +108,13 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 
 
-### SAP HANA Cloud trial or free tier
+### SAP HANA Cloud free tier
 
-To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3 and 4 in this tutorial provide two  different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.  Alternatively, step 7 provides a quick and easy way to try out SAP HANA Cloud although you will be given access to a user with fewer permissions.  Trial is only available on the US10 landscape and is in a separate SAP BTP trial account whereas free tier is available in multiple production SAP BTP accounts and provides a seamless transition from a free tier to a paid plan.
+To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3 and 4 in this tutorial provide two  different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.  Alternatively, step 7 provides a quick and easy way to try out SAP HANA Cloud although you will be given access to a user with fewer permissions.  The SAP BTP Trial is available on the US10 and AP21 landscapes.  If a free tier instance is used in a productive subaccount, a seamless transition from a free tier to a paid plan is available.
 
 ![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
->SAP HANA Cloud trial or free tier instances are shut down overnight (i.e. 10:00 PM based on the location where your instance was provisioned) and will need to be restarted before working with them the next day. The tutorial group [Automating SAP HANA Cloud Tasks](https://developers.sap.com/group.sap-hana-cloud-automating.html) provides some examples of using tools such as the BTP CLI or the SAP Automation Pilot to help with repetitive tasks such as starting and stopping instances.
+>SAP HANA Cloud free tier instances are shut down overnight (i.e. 10:00 PM based on the location where your instance was provisioned) and will need to be restarted before working with them the next day. The tutorial group [Automating SAP HANA Cloud Tasks](https://developers.sap.com/group.sap-hana-cloud-automating.html) provides some examples of using tools such as the BTP CLI or the SAP Automation Pilot to help with repetitive tasks such as starting and stopping instances.
 
 >---
 
@@ -118,21 +122,21 @@ To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3
 
 The instructions on how to setup a free SAP HANA Cloud trial or free tier within SAP BTP are well covered in several other sources listed below.  
 
-  * [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial)
+- [Set Up Your SAP HANA Cloud, SAP HANA Database and Understand the Basics](group.hana-cloud-get-started-1-trial)
 
-  * [SAP Learning Journey - Provisioning and Administering Databases in SAP HANA Cloud](https://learning.sap.com/learning-journey/provision-and-administer-databases-in-sap-hana-cloud)
+- [SAP Learning Journey - Provisioning and Administering Databases in SAP HANA Cloud](https://learning.sap.com/learning-journey/provision-and-administer-databases-in-sap-hana-cloud)
 
-  * [SAP Discovery Center - SAP HANA Cloud, SAP HANA Database Fundamentals](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
+- [SAP Discovery Center - SAP HANA Cloud, SAP HANA Database Fundamentals](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
 
-  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics) (Only the first 3 steps of this tutorial are needed for basic setup of SAP HANA Cloud.)
+- [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics) (Only the first 3 steps of this tutorial are needed for basic setup of SAP HANA Cloud.)
 
   For more information on the SAP BTP see the following:
 
-  * <https://www.sap.com/products/business-technology-platform/products.html>
+  - <https://www.sap.com/products/business-technology-platform/products.html>
 
-  * <https://developers.sap.com/topics/business-technology-platform.html>
+  - <https://developers.sap.com/topics/business-technology-platform.html>
 
-  * <https://help.sap.com/docs/btp>
+  - <https://help.sap.com/docs/btp>
 
 Continue on to the next tutorial in this group once you have access to an SAP HANA instance.
 
@@ -140,7 +144,7 @@ Continue on to the next tutorial in this group once you have access to an SAP HA
 
 >This step only needs to be completed if you currently do not have access to an SAP HANA instance and did not setup an SAP HANA instance through the SAP HANA Cloud as explained in step 3.
 
-An alternative option to using the SAP HANA Cloud trial or free tier is to use the SAP HANA, express edition.  SAP provides a free, streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html).
+An alternative option to using the SAP HANA Cloud free tier is to use the SAP HANA, express edition.  SAP provides a free, streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html).
 
 SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides a binary install as well as virtual machine images that can be run on Microsoft Windows, macOS and Linux machines.  This is described in the [Getting Started with SAP HANA 2.0, express edition (Binary Installer Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/32c9e0c8afba4c87814e61d6a1141280) or [Getting Started with SAP HANA 2.0, express edition (Virtual Machine Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/8c3bbc4a904d42efac77c09da0bccf64).  The **Applications** option adds XS Advanced, the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
 
@@ -155,6 +159,7 @@ Once installed, a useful starting point is the page below.
 It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, and the SAP HANA cockpit manager.
 
 ### SAP HANA Cloud Basic Trial
+
 The SAP HANA Cloud Basic Trial provides a database user and password that has access to a specific schema free for 30 days.  The database user can be used with the SAP HANA database explorer.  The provided database user can be used to create database objects within the provided schema but cannot create new schemas or users.  To get started, click on Try Now on Discover SAP HANA Cloud section of the trial page of [SAP HANA Cloud](https://www.sap.com/products/technology-platform/hana/trial.html).
 
 ![experience SAP HANA Cloud](experience.png)
@@ -169,6 +174,6 @@ A tutorial is available to be used with the basic trial.
 
 ### Knowledge check
 
-Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial, free tier, or SAP HANA, express edition. You've also learned how to start, stop, and manage an instance of SAP HANA Cloud via the Cloud Foundry Command Line Interface.
+Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud free tier, or SAP HANA, express edition. You've also learned how to start, stop, and manage an instance of SAP HANA Cloud via the Cloud Foundry Command Line Interface.
 
 ---

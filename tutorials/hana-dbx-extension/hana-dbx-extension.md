@@ -7,22 +7,25 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Use the SAP HANA Database Explorer Extension
+
 <!-- description --> Learn how the SAP HANA database explorer for Visual Studio Code extension can be used to connect to both SAP HANA Cloud and on-premise databases, about related general Visual Studio Code features, how to use the catalog browser, and how to execute SQL queries.  The SAP HANA database explorer for Visual Studio Code extension contains similar functionality to that in the web-based SAP HANA database explorer although not all functionality is available.
 
-
 ## Prerequisites
-- An SAP HANA database such as SAP HANA Cloud (free tier or trial) or an on-premise SAP HANA database such as the SAP HANA, express edition
+
+- An SAP HANA database such as SAP HANA Cloud free tier or an on-premise SAP HANA database such as the SAP HANA, express edition
 - You have completed the first 3 tutorials in this group
 
 ## You will learn
-  - How to setup the Visual Studio Code SAP HANA database explorer extension
-  - How to connect to an SAP HANA Cloud database, SAP HANA database and SAP HANA User store (to retrieve connection details)
-  - How to explore and examine objects in an SAP HANA database
+
+- How to setup the Visual Studio Code SAP HANA database explorer extension
+- How to connect to an SAP HANA Cloud database, SAP HANA database and SAP HANA User store (to retrieve connection details)
+- How to explore and examine objects in an SAP HANA database
 
 ---
 
-### Set up 
-1.  If needed, download [Visual Studio Code](https://code.visualstudio.com/download) for your computer. 
+### Set up
+
+1. If needed, download [Visual Studio Code](https://code.visualstudio.com/download) for your computer. 
     
      ![Download Visual Studio Code](downloadVSCode.png)
 
@@ -43,7 +46,8 @@ primary_tag: software-product>sap-hana-cloud
     * SAP HANA Database Explorer Connections are database connections retrieved by logging into Cloud Foundry and querying for the set of connections that the Cloud Foundry, web-based SAP HANA database explorer have created. 
 
 
-### Add a local database connection  
+### Add a local database connection
+
 The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-premise databases as well as an SAP HANA User Store.  In this tutorial, a connection to an SAP HANA Cloud database will be made, but the steps to connect to the other types are very similar. Adding local connections do not require authentication to the SAP Business Technology Platform (BTP) or Cloud Foundry.
 
 1. Hover over the **Database List** section and click the **+** button to **Add SAP HANA Database**.
@@ -52,7 +56,7 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
 
     A form to add a database will open.
 
-2.  Select **SAP HANA Cloud** as your database type and enter values for the **Host**, **Port**, **User** and **Password**, such as USER1 and Password1.  You may also change the display name, as desired.
+2. Select **SAP HANA Cloud** as your database type and enter values for the **Host**, **Port**, **User** and **Password**, such as USER1 and Password1.  You may also change the display name, as desired.
    
     This tutorial uses the HOTELS schema. Set the default schema value in the **Advanced Options** as shown below. Subsequent SQL consoles you open will now start with this schema value. 
     

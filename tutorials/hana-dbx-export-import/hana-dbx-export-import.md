@@ -7,14 +7,17 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Export and Import Data and Schema with SAP HANA Database Explorer
+
 <!-- description --> Use wizards or SQL statements to export and import data and schema using CSV, Apache Parquet, or binary formats.
 
 ## Prerequisites
-- An SAP HANA database such as SAP HANA Cloud trial, free tier, or the SAP HANA, express edition that includes the SAP HANA database explorer
+
+- An SAP HANA database such as SAP HANA Cloud free tier, or the SAP HANA, express edition that includes the SAP HANA database explorer
 - Data lake Files, Amazon AWS, Google Cloud, or Microsoft Azure accounts will be needed for optional steps in this tutorial.
 - You have completed the first 3 tutorials in this group.
 
 ## You will learn
+
 - How to export and import data using the export and import data wizards, SQL statements export into and import from, and the download option in the SQL console results tab
 - How to export and import schema objects using export and import catalog wizards and the SQL statements export and import
 - How to use cloud storage providers as a target when exporting or importing
@@ -152,7 +155,8 @@ The following steps are for illustrative purposes only and are not meant to be f
     ```
 
 ### Use data lake Files for export and import from an SAP HANA Cloud, SAP HANA database (optional)
-The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier or trial.
+
+The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not included in the free tier service plan.
 
 1. Complete steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
 
@@ -271,7 +275,7 @@ The following steps walk through the process of exporting to and importing data 
     ```
 
 ### Use data lake Files for export and import from an SAP HANA Cloud, data lake Relational Engine database (optional)
-The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, data lake Relational Engine database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier or trial.  The following steps assume you have followed the first two sub steps in the previous step so that a data lake Files connection has been added to the SAP HANA database explorer.
+The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, data lake Relational Engine database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier.  The following steps assume you have followed the first two sub steps in the previous step so that a data lake Files connection has been added to the SAP HANA database explorer.
 
 1. Create a database credential for the data lake Files container.  This step is required if you wish to export to a data lake Files instance that is not the one associated with the data lake Relational Engine.  Further details are described at [Unloading Data to Data Lake Files from Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/unloading-data-to-data-lake-files).  Open a SQL Console connected to a data lake Relational Engine instance and execute the below SQL statements.
 

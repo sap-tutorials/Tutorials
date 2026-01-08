@@ -7,29 +7,33 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Query Databases Using the SQL Console in SAP HANA Cloud Central
+
 <!-- description --> Learn how the SQL console can be used within SAP HANA Cloud Central to quickly query a selected database.  
 
 ## Prerequisites
+
 - An SAP HANA Cloud database
 - You have completed [this](hana-dbx-create-schema) tutorial which creates a database schema for an SAP HANA Cloud, SAP HANA database.
 - You have completed [this](hana-cloud-dl-clients-overview) tutorial which creates a database schema for an SAP HANA Cloud, data lake Relational Engine
 
 ## You will learn
-  - How to open a SQL console, specify the credentials, and set the current schema
-  - An overview of the functionality provided in the SQL console
+
+- How to open a SQL console, specify the credentials, and set the current schema
+- An overview of the functionality provided in the SQL console
 
 ---
 
 ### Open a SQL console
+
 This step demonstrates how a SQL console can quickly be opened from within SAP HANA Cloud Central and how to change the SQL console's credentials and schema.
 
-1.  In **SAP HANA Cloud Central** open a SQL console by selecting **SQL Console** in the left pane.  Notice that the SQL console is not associated with a database when opened in this way.
+1. In **SAP HANA Cloud Central** open a SQL console by selecting **SQL Console** in the left pane.  Notice that the SQL console is not associated with a database when opened in this way.
 
     ![open SQL console](open-sql-console.png)
 
     Additional SQL consoles can also be opened by selecting the **+** icon.
 
-2.  This time select **Instances**, select a database, and choose **Open SQL Console** from the actions menu.
+2. This time select **Instances**, select a database, and choose **Open SQL Console** from the actions menu.
 
     ![open SQL console from an instance](open-sql-console-instance.png)
 
@@ -45,8 +49,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![Current user](current-user.png)
 
-
-4.  If you wish to connect to the database using a different set of credentials, select the **Connect this SQL console to a different instance** icon, select the current database and uncheck **Use cached credentials if possible**.
+4. If you wish to connect to the database using a different set of credentials, select the **Connect this SQL console to a different instance** icon, select the current database and uncheck **Use cached credentials if possible**.
 
     ![Change credentials](change-credentials.png)
 
@@ -71,7 +74,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![Show current user for a data lake Relational Engine](current-user-dl.png)
 
-5.  The current schema can be set and viewed for a SAP HANA database using the SQL statements below.
+5. The current schema can be set and viewed for a SAP HANA database using the SQL statements below.
 
     ```SQL
     SET SCHEMA HOTELS;
@@ -96,6 +99,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
     ![available themes](themes.png)
 
 ### Execute SQL
+
 This step demonstrates how to execute a SQL query, examine the statement help, view the query results, messages, and history tabs within a SQL console.  
 
 1. Execute the following SQL statements.
@@ -133,7 +137,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     ![statement help panel](statement-help.png)
 
-    Notice that for SAP HANA Cloud, SAP HANA databases, links to the related documentation and details on the objects used in the SQL statement are shown.
+    Notice that for SAP HANA Cloud, SAP HANA databases, links to the related documentation and details on the objects used in the SQL statement are shown including a link which will open the database objects app where additional details of the object can be viewed.
 
 4. Commonly used shortcut keys are listed below.  Try a few of them out.
 
@@ -171,7 +175,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     ![connection settings](connection-settings.png)
 
-    * Execute the following SQL which is used to illustrate the result behavior settings.
+    - Execute the following SQL which is used to illustrate the result behavior settings.
 
         ```SQL
         SELECT * FROM M_SYSTEM_INFORMATION_STATEMENTS;
@@ -192,7 +196,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
         ![one thousand row limit](settings-result2.png)
 
-    * Execute the following SQL which is used to illustrate the result display display settings.
+    - Execute the following SQL which is used to illustrate the result display display settings.
 
         ```SQL
         SELECT CURRENT_DATE, CURRENT_TIMESTAMP(7), RAND() * 10 FROM DUMMY;
@@ -263,9 +267,8 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     ![download and import](download-and-import.png)
 
-
-
 ### Statement library
+
 The statement library is a convenient location in the SQL Console to store and retrieve frequently executed SQL statements.  It provides a place to store statements that are used frequently as to not type them in repeatedly.
 
 The library is pre-populated with useful statements called ‘SYSTEM’ statements.
@@ -273,6 +276,7 @@ The library is pre-populated with useful statements called ‘SYSTEM’ statemen
 ![Statement Library System Statements](statement_libaray_system.png)
 
 You may also define custom statements that are only available to you. These are ‘USER’ statements.
+
 ```SQL
 /*
 
@@ -298,9 +302,11 @@ SELECT * FROM RESERVATION
    
     ![Statement Library View User Statements](statement_libaray_user.png)
 
-3. To run a statement, select one from the statement library and click the Run button.
+3. To run a statement, select one from the statement library and click the Run button.  
    
     ![Run Saved Statement](run_saved_statement.png)
+
+    If you select multiple saved statements, you additionally have the option to open them together in one tab or in individual tabs.
 
 > It is also possible to export and import SQL statements directly to/from the file system
 > 
@@ -312,32 +318,26 @@ User-defined statements can be edited. From the Statement library, select the de
 
 ![Modify Saved Statements](replace_statement.png)
 
-
-
 ### A few things to note
+
 The SQL console within SAP HANA Cloud Central appears similar to the one within the SAP HANA database explorer but there are some differences.
 
-* Opening the SQL console within the SAP HANA Cloud Central can be done much quicker than opening the full SAP HANA database explorer.
+- The SQL console that you access from within SAP HANA Cloud Central can only connect to databases that are within the same BTP subaccount as SAP HANA Cloud Central.
 
-* The SQL console that you access from within SAP HANA Cloud Central can only connect to databases that are within the same BTP subaccount as SAP HANA Cloud Central. 
+- The SQL console in SAP HANA Cloud Central has the following additional features
 
-* The SQL console in SAP HANA Cloud Central has the following additional features
+  - Ability to format results
+  - Support for SAP Morning and Evening Horizon themes
+  - Additional details such as time of execution, duration, rows returned, and success or failure in the history tab
 
-    * Ability to format results
-    * Support for SAP Morning and Evening Horizon themes
-    * Additional details such as time of execution, duration, rows returned, and success or failure in the history tab 
+- The SAP HANA database explorer has some additional functionality
 
-* The SAP HANA database explorer has some additional functionality
-
-    * Persistency of SQL tabs and their contents
-    * SQL debugging
-    * Code completion of schema objects
-    * Viewer for spatial and graph data
-    * Analysis tab for tables and views 
-    * Ability to search for database objects across multiple databases
-    * Ability to run statements in the background
-    * Ability to run statements against multiple instances
-
+  - SQL debugging
+  - Code completion of schema objects
+  - Viewer for spatial
+  - Analysis tab for tables and views
+  - Ability to search for database objects across multiple databases
+  - Ability to run statements against multiple instances
 
 ### Knowledge check
 
