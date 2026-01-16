@@ -53,7 +53,7 @@ Root
 **Dataset and Configuration**:
 To run this evaluation, All required input files must be placed inside the folder structure provided in the repository:
 
-You can download or clone the complete folder from the link below and place your files inside the respective folders [Download / Open Full Folder Structure](https://github.tools.sap/I321506/tutorial-aicore/tree/main/jupyter_notebook_simplified_workflow)
+You can download or clone the complete folder from the link below and place your files inside the respective folders [Download / Open Full Folder Structure](https://github.com/SAP-samples/aicore-genai-samples/blob/main/genai-sample-apps/prompt-evaluation)
 
     1.  **Prompt Template Configuration (`PUT_YOUR_PROMPT_TEMPLATE_HERE`)**
         *   Place one or more prompt template configurations as JSON files in this folder. 
