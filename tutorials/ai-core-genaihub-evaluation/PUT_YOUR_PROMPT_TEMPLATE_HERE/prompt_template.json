@@ -1,0 +1,8 @@
+{
+  "template": [
+    {
+      "role": "user",
+      "content": "List the benefits and side effects of the drug in the following consumer health question: {{?question}}."
+    }
+  ]
+}

@@ -9,20 +9,16 @@ author_profile: https://github.com/I321506
 ---
 
 # Prompt optimization
-<!-- description -->  This tutorial demonstrates how to use Prompt Optimization in SAP AI Core to automatically refine prompt templates using labeled datasets and evaluation metrics.The process optimizes a prompt for a specific model, stores metrics in the ML Tracking Service, and saves the optimized prompt and results back to the Prompt Registry and Object Store.
+<!-- description -->  This tutorial demonstrates how to use Prompt Optimization in SAP AI Core to automatically refine prompt templates using labeled datasets and evaluation metrics.
+The process optimizes a prompt for a specific model, stores metrics in the ML Tracking Service, and saves the optimized prompt and results back to the Prompt Registry and Object Store.
 
 ## You will learn
-
 - How to prepare datasets and object stores for prompt optimization.
-
 - How to create and register prompt templates in the Prompt Registry.
-
 - How to configure and run prompt optimization via AI Launchpad, Bruno, and the Python SDK.
-
 - How to monitor executions, review metrics, and save optimized prompts for reuse.
 
 ## Prerequisites
-
 1. **BTP Account**  
    Set up your SAP Business Technology Platform (BTP) account.  
    [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
@@ -38,45 +34,34 @@ author_profile: https://github.com/I321506
    [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-setup.html)
 6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to 
 [SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
+7. You've prepared a prompt template and your template is available in the prompt registry. For more information, see [Save a Template](https://help.sap.com/docs/AI_LAUNCHPAD/3f71b1e9d5124e26ace1aa1edb11e450/49d4248485644184ab3ca2ddf36119a6.html?locale=en-US&state=DRAFT&version=DEV)
 
-## Pre-Read
-
+### Pre-Read
 Before starting this tutorial, ensure that you:
-
 - Understand the basics of Generative AI workflows in SAP AI Core.
-
-- Are familiar with creating and managing prompt templates, artifacts, and object stores 
-
+- Are familiar with creating and managing prompt templates, artifacts, and object stores
 - Have the required roles such as genai_manager or custom_evaluation.
-
 - Have completed the Quick Start tutorial or equivalent setup for SAP AI Core and AI Launchpad access.
   
-## Architecture Overview
+### Architecture Overview
 
 - Prompt Optimization in SAP AI Core connects the Prompt Registry, Object Store, and ML Tracking Service to form an end-to-end optimization workflow.
-
 - The dataset (for example, Test-Data.json) is stored in the Object Store and registered as an artifact.
-
 - During execution, the system uses the selected prompt template, metric, and model to evaluate multiple prompt variants.
-
 - Metrics are tracked in the ML Tracking Service, and both the optimized prompt and results are saved back to the registry and object store.
-
 - This process runs as an execution and is model-specific, ensuring the optimized prompt aligns with the target model’s behavior.
+
 ![img](img/image_arch.png)
 
-## Notebook Reference
+### Notebook Reference
 
 For hands-on execution and end-to-end reference, use the accompanying [Prompt Optimization Notebook](https://github.com/SAP-samples/aicore-genai-samples/blob/main/genai-sample-apps/prompt-optimizer/prompt-optimizer.ipynb). It includes complete Python code examples that align with each step of this tutorial — from dataset preparation and artifact registration to configuration creation, execution, and result retrieval.
 
-    💡 Even though this tutorial provides stepwise code snippets for clarity,
-    the notebook contains all required imports, object initializations, and helper functions to run the flow seamlessly in one place.
+💡 Even though this tutorial provides stepwise code snippets for clarity, the notebook contains all required imports, object initializations, and helper functions to run the flow seamlessly in one place.
 
 **To use the notebook:**
-
 - Download and open [notebook](https://github.com/SAP-samples/aicore-genai-samples/blob/main/genai-sample-apps/prompt-optimizer/prompt-optimizer.ipynb) in your preferred environment (e.g., VS Code, JupyterLab).
-
 - Configure your environment variables such as AICORE_BASE_URL, AICORE_AUTH_TOKEN, and object store credentials .
-
 - Execute each cell in order to reproduce the complete prompt optimization workflow demonstrated in this tutorial.
 
 ### Environment Variables Setup
@@ -91,7 +76,7 @@ For hands-on execution and end-to-end reference, use the accompanying [Prompt Op
 - When prompted, enter your AI Core credentials (such as Client ID, Client Secret, and Base URL).
     - Note: If you're unsure about where to find these credentials, refer to this [guide](https://developers.sap.com/tutorials/ai-core-generative-ai.html#1c4f36d7-f345-4822-be00-c15f133ff7d8). 
 
-- Once the workspace is successfully created, select your desired Resource Group to begin the optimization process.
+- Once the workspace is successfully created, select your desired Resource Group to begin the evaluation process.
 
 Refer to the screenshot below for guidance:
 ![img](img/image_34.png)
@@ -110,13 +95,56 @@ AICORE_CLIENT_ID=<AICORE CLIENT ID>
 AICORE_CLIENT_SECRET=<AICORE CLIENT SECRET>
 AICORE_AUTH_URL=<AICORE AUTH URL>
 AICORE_BASE_URL=<AICORE BASE URL>
-AICORE_RESOURCE_GROUP=<AICORE RESOURCE GROUP> 
+AICORE_RESOURCE_GROUP=<AICORE RESOURCE GROUP>
+
+# AWS CREDENTIALS
+AWS_ACCESS_KEY=<AWS ACCESS KEY>
+AWS_BUCKET_ID=<AWS BUCKET ID>
+AWS_REGION=<AWS REGION>
+AWS_SECRET_ACCESS_KEY=<AWS SECRET ACCESS KEY> 
+
+# ORCHESTRATION DEPLOYMENT URL
+DEPLOYMENT_URL=<DEPLOYMENT URL>
 ```
 
 **Note:** Replace placeholders (e.g., CLIENT_ID, CLIENT_SECRET, etc) with your actual environment credentials.
 
 Refer to the below screenshot for clarity:
 ![img](img/image_1.png)
+
+#### Connect to AI Core Instance
+
+Once the environment variables are set and dependencies are installed, run the following code to connect to your instance:
+
+```PYTHON
+# Loading the credentials from the env file
+from gen_ai_hub.proxy.gen_ai_hub_proxy import GenAIHubProxyClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv(override=True)
+
+# Fetching environment variables
+AICORE_BASE_URL = os.getenv("AICORE_BASE_URL")
+AICORE_RESOURCE_GROUP = os.getenv("AICORE_RESOURCE_GROUP")
+AICORE_AUTH_URL = os.getenv("AICORE_AUTH_URL")
+AICORE_CLIENT_ID = os.getenv("AICORE_CLIENT_ID")
+AICORE_CLIENT_SECRET = os.getenv("AICORE_CLIENT_SECRET")
+
+AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY")
+AWS_BUCKET_ID = os.getenv("AWS_BUCKET_ID")
+AWS_REGION = os.getenv("AWS_REGION")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+# Initializing the GenAIHubProxyClient
+client = GenAIHubProxyClient(
+    base_url=AICORE_BASE_URL,
+    auth_url=AICORE_AUTH_URL,
+    client_id=AICORE_CLIENT_ID,
+    client_secret=AICORE_CLIENT_SECRET,
+    resource_group=AICORE_RESOURCE_GROUP
+)
+```
 
 [OPTION END]
 
@@ -152,7 +180,7 @@ In the **Secret** field, use the following structure to provide your AWS credent
 ```
 [OPTION END]
 
-[OPTION BEGIN [Python]]
+[OPTION BEGIN [Python SDK]]
 
 If you’re running this tutorial in a Python environment and need to create a new S3-based object store, you can register it manually:
 
@@ -248,9 +276,9 @@ Each record should contain a sample input message and its corresponding expected
 
 Each record must include:
 
-- input – the user message or text prompt
+    - input – the user message or text prompt
 
-- answer – the expected model response (in valid JSON format)
+    - answer – the expected model response (in valid JSON format)
 
 Example record from facility-train.json:
 
@@ -259,18 +287,18 @@ Example record from facility-train.json:
     {
         "fields": {
             "input": "Subject: Urgent Assistance Required for Specialized Cleaning Services\n\nDear ProCare 
-            Facility Solutions Support Team. Could you please arrange for a specialized cleaning team to 
-            visit our home at the earliest convenience? We would greatly appreciate it if this could be 
-            prioritized since we want to host a large party this week.\n\nThank you for your prompt 
-            attention to this matter. We look forward to your swift response and assistance.\n\nBest 
-            regards,\n[Sender]"
+			Facility Solutions Support Team. Could you please arrange for a specialized cleaning team to 
+			visit our home at the earliest convenience? We would greatly appreciate it if this could be 
+			prioritized since we want to host a large party this week.\n\nThank you for your prompt 
+			attention to this matter. We look forward to your swift response and assistance.\n\nBest 
+			regards,\n[Sender]"
         },
         "answer": "{\"categories\": {\"routine_maintenance_requests\": false, 
-        \"customer_feedback_and_complaints\": false, \"training_and_support_requests\": false, 
-        \"quality_and_safety_concerns\": false, \"sustainability_and_environmental_practices\": false, 
-        \"cleaning_services_scheduling\": false, \"specialized_cleaning_services\": true, 
-        \"emergency_repair_services\": false, \"facility_management_issues\": false, 
-        \"general_inquiries\": false}, \"sentiment\": \"neutral\", \"urgency\": \"high\"}"
+		\"customer_feedback_and_complaints\": false, \"training_and_support_requests\": false, 
+		\"quality_and_safety_concerns\": false, \"sustainability_and_environmental_practices\": false, 
+		\"cleaning_services_scheduling\": false, \"specialized_cleaning_services\": true, 
+		\"emergency_repair_services\": false, \"facility_management_issues\": false, 
+		\"general_inquiries\": false}, \"sentiment\": \"neutral\", \"urgency\": \"high\"}"
     },
   {...}
 ]
@@ -339,6 +367,16 @@ A wizard appears to guide you through the process of uploading an artifact for o
     - Add your object store.
 
     - Specify the relative subpath for your file in the object store.
+
+8. (Optional) Choose Add Labels to include key-value tags that describe your artifact.
+
+    - Use the ➕ icon to add more labels or the ✖ icon to delete labels.
+
+    **Example:**
+
+    - Key: prompt-optimization
+
+    - Value: true
 
 9. Review all information and choose Add to complete the artifact registration.
 
@@ -454,7 +492,54 @@ After registration, the artifact will be visible in AI Launchpad → Workspaces 
 
 [OPTION END]
 
-[OPTION BEGIN [Bruno]]
+[OPTION BEGIN [Bruno]] 
+
+Before registering a dataset artifact in Bruno, you must upload your json file to the SAP AI Core object store using the Dataset API.
+Bruno cannot upload files directly to S3; therefore, this step is required.
+
+**Prerequisites**
+
+    - An object store secret must already exist in your resource group.Typically, this is the default secret named **default**.
+
+    - The Dataset API currently supports:
+
+        - S3 object stores only
+
+        - json file uploads
+
+**Upload Your Dataset**
+
+Use the Dataset API – Upload File request in Bruno:
+
+```bash
+PUT:{{ai_api_url}}/v2/lm/dataset/files/{{secretName}}/{{datasetPath}}
+```
+
+**Headers**
+
+```json
+Authorization: Bearer {{token}}
+AI-Resource-Group: {{resourceGroup}}
+Content-Type: text/csv
+```
+
+**Body**
+
+Upload your .csv file directly as binary in Bruno’s Body 
+
+Example Path Values:
+
+    - secretName: default
+
+    - datasetPath: dataset/facility-train.json
+
+![img](img/image_br_dt.png)
+
+**Note:** 
+
+Save the ai://… URL — you will use this when creating the dataset artifact.
+
+**Register the Dataset Artifact**
 
 - Click  on **Register artifact** under lm -> artifacts in bruno collection to register the artifact
 
@@ -493,7 +578,6 @@ The template is registered in the Prompt Registry and later referenced by the op
 In the Message Blocks section:
 
 - Add a System and user role message:
-  
 ```json
 system: |-
   You are a helpful assistant.
@@ -520,6 +604,7 @@ user: |-
       "facility_management_issues": <true/false>
     }
   }
+
   Your response must:
   - Contain only this JSON structure (no extra text).
   - Be valid JSON (parsable without errors).
@@ -559,242 +644,46 @@ Go to Generative AI Hub → Prompt Management → Templates and confirm:
 In your notebook or Python environment, you can define and register the same template programmatically using the SAP Generative AI SDK.
 
 ```python
-from logging import PlaceHolder
-from pydantic import BaseModel
-from typing import List
-import re
-import requests
-import json
+from gen_ai_hub.prompt_registry.client import PromptTemplateClient
+from gen_ai_hub.prompt_registry.models.prompt_template import PromptTemplateSpec, PromptTemplate
 
-class PromptTemplate(BaseModel):
-    role: str
-    content: str
+# Initialize Prompt Registry Client
+prompt_registry_client = PromptTemplateClient(proxy_client=client)
 
-
-class PromptTemplateSpec(BaseModel):
-    template: List[PromptTemplate]
-
-
-    @property
-    def placeholders(self):
-        placeholders = set()
-        pattern = re.compile(r'\{\{\s*\?\s*(\w+)\s*\}\}')
-        for message in self.template:
-            placeholders.update(pattern.findall(message.content))
-        return placeholders
-
-    @classmethod
-    def from_optimizer_result(cls, input_):
-        placeholders = input_["user_message_template_fields"]
-        def replace(msg):
-            for key in placeholders:
-                msg = msg.replace("{"+key+"}", "{{?"+ key + "}}")
-            return msg
-
-        return cls(
-            template=[
-                {
-                    "role": "system",
-                    "content": replace(input_["system_prompt"]),
-                },{
-                    "role": "user",
-                    "content": replace(input_["user_message_template"]),
-                }
-            ]
+prompt_template_spec = PromptTemplateSpec(
+    template=[
+        PromptTemplate(
+            role="system",
+            content=(
+                "You are a helpful assistant."
+            )
+        ),
+        PromptTemplate(
+            role="user",
+            content=(
+                """Giving the following message:
+                ---
+                {{?input}}
+                ---
+                Extract and return a json with the follwoing keys and values:
+                - "urgency" as one of `high`, `medium`, `low`
+                - "sentiment" as one of `negative`, `neutral`, `positive`
+                - "categories" Create a dictionary with categories as keys and boolean values (True/False), where the value indicates whether the category is one of the best matching support category tags from: `emergency_repair_services`, `routine_maintenance_requests`, `quality_and_safety_concerns`, `specialized_cleaning_services`, `general_inquiries`, `sustainability_and_environmental_practices`, `training_and_support_requests`, `cleaning_services_scheduling`, `customer_feedback_and_complaints`, `facility_management_issues`
+                Your complete message should be a valid json string that can be read directly and only contain the keys mentioned in the list above. Never enclose it in ```json...```, no newlines, no unnessacary whitespaces."""
+            )
         )
-
-    def escape_curly_brackets(self) -> "PromptTemplateSpec":
-        # 1. Hide each {{?key}} placeholder with a unique token
-        placeholder_pattern = re.compile(r'\{\{\s*\?\s*(\w+)\s*\}\}')
-        mapping = {}
-        counter = 1
-
-        def _hide(match):
-            nonlocal counter
-            token = f"__PLACEHOLDER_{counter}__"
-            mapping[token] = match.group(0)
-            counter += 1
-            return token
-
-        new_templates = []
-        for msg in self.template:
-            # a) hide custom placeholders
-            hidden = placeholder_pattern.sub(_hide, msg.content)
-            # b) escape all remaining braces
-            escaped = hidden.replace('{', '{{').replace('}', '}}')
-            # c) restore the original placeholders
-            print(mapping)
-            for token, original in mapping.items():
-                escaped = escaped.replace(token, original)
-
-            new_templates.append(PromptTemplate(role=msg.role, content=escaped))
-
-        # return a fresh copy
-        return PromptTemplateSpec(template=new_templates)
-
-
-
-def fetch_prompt_template(prompt_template: str) -> PromptTemplateSpec:
-    headers = {
-        **client.request_header,
-        "Content-Type": "application/json",
-    }
-    url = f"{client.ai_core_client.base_url}/lm/promptTemplates"
-    scenario, sep, name = prompt_template.partition("/")
-    if sep:
-        name, sep, version = name.partition(":")
-    if sep:
-        body = {"name": name,
-                "version": version,
-                "scenario": scenario,
-                "includeSpec": True
-            }
-        response =  requests.get(url, headers=headers, params=body)
-        response.raise_for_status()
-        response = response.json()
-        if response["count"] > 0:
-            response = response["resources"][0]
-        else:
-            raise ValueError(f"Prompt template {name} not found.")
-    else:
-        url += f"/{prompt_template}"
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        response = response.json()
-    return PromptTemplateSpec.model_validate(response["spec"])
-
-def load_prompt_template(prompt: str | pathlib.Path | list | dict | PromptTemplateSpec) -> PromptTemplateSpec:
-    if isinstance(prompt, PromptTemplateSpec):
-        return prompt
-    if isinstance(prompt, (str, pathlib.Path)) and pathlib.Path(prompt).exists():
-        with open(prompt, "r") as f:
-            prompt = yaml.safe_load(f)
-    elif isinstance(prompt, str):
-        return fetch_prompt_template(prompt)
-    if isinstance(prompt, dict):
-        # expect dict with keys "system" [optional] and "user"
-        messages = []
-        if "system" in prompt:
-            messages.append({"role": "system", "content": prompt["system"]})
-        messages.append({"role": "user", "content": prompt["user"]})
-        return PromptTemplateSpec(template=messages)
-    elif isinstance(prompt, list):
-        # expect list of dicts with keys "role" and "content"
-        return PromptTemplateSpec(template=messages)
-    else:
-        raise ValueError("Prompt must be a string, Path, list or dict")
-
-
-def push_prompt_template(prompt_template: PromptTemplateSpec,
-                         prompt_template_name_registry: str,
-                         prompt_template_version: str,
-                         scenario: str,
-                         update=False):
-    headers = {
-        **client.request_header,
-        "Content-Type": "application/json",
-    }
-    url = f"{client.ai_core_client.base_url}/lm/promptTemplates"
-    body = {"name": prompt_template_name_registry,
-            "version": prompt_template_version,
-            "scenario": scenario}
-    res = requests.get(url, headers=headers, params=body).json()
-    if res["count"] > 0 and not update:
-        print(f"Prompt template {prompt_template_name_registry} already exists. Use update=True to update.")
-        return res["resources"][0]
-    # Prepare body
-
-    body["spec"] = prompt_template.model_dump()
-    # Prepare headers
-    response = requests.post(url, headers=headers, json=body)
-    # Handle response
-    if response.status_code == 201:
-        response = response.json()
-    elif response.status_code in (400, 409, 413):
-        # Return error details
-        raise requests.HTTPError(f"Upload failed ({response.status_code}): {response.text}")
-    else:
-        response.raise_for_status()
-    return response.json()
-
-
-import re
-
-def convert_py_notation(template):
-    pattern = re.compile(r'\{\{\s*\?\s*(\w+)\s*\}\}')
-    return pattern.sub(lambda match: "{" + match.group(1) + "}", template)
-
-
-def validate_prompt(prompt: PromptTemplateSpec):
-    values = {k: "???" for k in prompt.placeholders}
-
-    for message in prompt.template:
-        if message.role == "user":
-            try:
-                convert_py_notation(message.content).format(**values)
-            except KeyError as err:
-                msg = ["Unexpected key error when running test formatting."]
-                msg += ["This is most likeyly due to unescaped curly brackets."]
-                msg += ["You can try fixing this by running `prompt = prompt.escape_curly_brackets()` and use the new prompt template."]
-                raise ValueError("\n".join(msg)) from err
-    return True
-
-
-
-
-from rich.console import Console
-from rich.highlighter import RegexHighlighter
-from rich.theme import Theme
-from rich.panel import Panel
-from rich import print
-
-class TemplateHighlighter(RegexHighlighter):
-    """Apply style to anything that looks like an email."""
-
-    base_style = "template."
-    highlights = [r"(?P<placeholder>\{\{\s*\?[^\{\}\s]+\s*\}\})"]
-
-highlighter = TemplateHighlighter()
-theme = Theme({"template.placeholder": "bold magenta", "example.email": "bold magenta"})
-console = Console(highlighter=highlighter, theme=theme)
-
-
-def print_prompt_template(prompt_template: PromptTemplateSpec | str | pathlib.Path, addition: str | None = None):
-
-    prompt_template = load_prompt_template(prompt_template)
-    addition = f' - {addition}' if addition else ''
-
-    for message in prompt_template.template:
-        if message.role == "system":
-            console.print(Panel(highlighter(message.content), title="System Message" + addition, border_style="red"))
-        elif message.role == "user":
-            console.print(Panel(highlighter(message.content), title="User Message" + addition, border_style="green"))
-        else:
-            console.print(Panel(highlighter(message.content), title="Assistant Message" + addition))
-```
-```Python
-base_prompt_template = "./facility_prompt.yaml" # local path to the prompt template or Prompt Repository identifier
-
-
-prompt = load_prompt_template(base_prompt_template) # .escape_curly_brackets() if validation fails.
-print_prompt_template(prompt)
-print(f"Prompt template loaded successfully. Placeholders found are: {prompt.placeholders}")
-assert validate_prompt(prompt)
-```
-```Python
-base_template = load_prompt_template(base_prompt_template)
-prompt_template_name_registry, _, prompt_template_version = base_prompt_template_registry.partition(":")
-prompt = push_prompt_template(prompt_template=base_template,
-                              prompt_template_name_registry=prompt_template_name_registry,
-                              prompt_template_version=prompt_template_version,
-                              scenario=scenario,
-                              update=False
+    ]
 )
 
-print(f"Prompt present in registry under id {prompt['id']}")
+# Create prompt template in registry
+template = prompt_registry_client.create_prompt_template(
+    scenario="genai-optimizations",
+    name="facility-json-template",
+    version="1.0.0",
+    prompt_template_spec=prompt_template_spec
+)
 
-print('\n\n=== Base Prompt ===')
-print_prompt_template(prompt["id"])
+print(f"✅ Created Prompt Template with ID: {template.id}")
 ```
 **Notes**
 
@@ -952,23 +841,6 @@ def create_config(metric: str,
 
     return response.id
 
-# Config parameters
-scenario = "genai-optimizations"
-
-base_prompt_template_registry = "evaluate-base:0.0.1"  # name:version for the template in the registry
-
-dataset_secret="default" # secret name in the object store you want to use to store the dataset
-dataset_remote_path="datasets/facility-train.json" # remote path in the object store to store the dataset
-
-reference_model = "gpt-4o:2024-08-06"
-# Dictionary of models to optimize with their corresponding prompt template names under which the optimized prompt should be stored in the registry
-targets = {
-    "gemini-2.5-pro:001": "evaluate-base-gemini-2_5-pro:0.0.1"
-}
-
-# Metric to use for optimization
-metric = "JSON_Match"
-
 # Create the configuration
 configuration_id = create_config(
     metric=metric,
@@ -1041,16 +913,9 @@ When the execution completes, the optimized prompt and results will be stored au
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-- Navigate to the **Generative AI Hub** in the SAP AI Core Launchpad.
+Once you complete Review your inputs and click Create in the Register an Optimization Configuration step, the Optimization job starts automatically.
 
-- In the left-side menu, click on **Configurations/create Execution**.
-
-- Click the **Create Execution** button to begin setting up a new prompt execution.
-
-![img](img/image_ail09.png)
-
-You can monitor the progress and results directly from the Launchpad UI under **Optimizations → Executions**
-Once completed, you can inspect logs, review metrics, and view the optimized prompt details.
+After the job reaches Completed status, you can inspect logs, review evaluation metrics, and view the optimized prompt details.
 
 [OPTION END]
 

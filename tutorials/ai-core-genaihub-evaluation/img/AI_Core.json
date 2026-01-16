@@ -1,0 +1,1578 @@
+{
+  "name": "AI Core",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "get_token",
+      "filename": "get_token.bru",
+      "seq": 1,
+      "request": {
+        "url": "{{ai_auth_url}}/oauth/token",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "formUrlEncoded",
+          "formUrlEncoded": [
+            {
+              "name": "grant_type",
+              "value": "client_credentials",
+              "enabled": true
+            },
+            {
+              "name": "client_id",
+              "value": "{{client_id}}",
+              "enabled": true
+            },
+            {
+              "name": "client_secret",
+              "value": "{{client_secret}}",
+              "enabled": true
+            }
+          ],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {
+          "res": "if (res.getStatus() == 200) {\n  bru.setEnvVar(\"access_token\", res.body.access_token);\n}"
+        },
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "folder",
+      "name": "admin",
+      "filename": "admin",
+      "root": {
+        "meta": {
+          "name": "admin"
+        }
+      },
+      "items": [
+        {
+          "type": "folder",
+          "name": "objectStoreSecrets",
+          "filename": "objectStoreSecrets",
+          "root": {
+            "meta": {
+              "name": "objectStoreSecrets"
+            }
+          },
+          "items": [
+            {
+              "type": "http",
+              "name": "Create a secret",
+              "filename": "Create a secret.bru",
+              "seq": 1,
+              "request": {
+                "url": "{{baseUrl}}/v2/admin/objectStoreSecrets",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "<Resource-Group>",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Authorization",
+                    "value": "<access_token>",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n        \"name\": \"genai-data\",\n        \"data\": {\n            \"AWS_ACCESS_KEY_ID\": \"<AWS_ACCESS_KEY_ID>\",\n            \"AWS_SECRET_ACCESS_KEY\": \"<AWS_SECRET_ACCESS_KEY>\"\n        },\n        \"type\": \"S3\",\n        \"bucket\": \"<BUCKET_ID>\",\n        \"endpoint\": \"https://s3.eu-central-1.amazonaws.com\",\n        \"region\": \"<REGION>\",\n        \"pathPrefix\": \"\"    \n    }",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Create a secret based on the configuration in the request body\n",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Get a list of metadata of available secrets.",
+              "filename": "Get a list of metadata of available secrets.bru",
+              "seq": 2,
+              "request": {
+                "url": "{{baseUrl}}/admin/objectStoreSecrets?$top=<integer>&$skip=<integer>&$count=<boolean>",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "<Resource-Group>",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [
+                  {
+                    "name": "$top",
+                    "value": "<integer>",
+                    "type": "query",
+                    "enabled": true
+                  },
+                  {
+                    "name": "$skip",
+                    "value": "<integer>",
+                    "type": "query",
+                    "enabled": true
+                  },
+                  {
+                    "name": "$count",
+                    "value": "<boolean>",
+                    "type": "query",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Retrieve a list of metadata of the stored secrets.\n",
+                "auth": {
+                  "mode": "oauth2",
+                  "oauth2": {
+                    "grantType": "authorization_code",
+                    "callbackUrl": "",
+                    "authorizationUrl": "",
+                    "accessTokenUrl": "",
+                    "refreshTokenUrl": "",
+                    "clientId": "",
+                    "clientSecret": "",
+                    "scope": "",
+                    "credentialsPlacement": "basic_auth_header",
+                    "pkce": false,
+                    "credentialsId": "credentials",
+                    "tokenPlacement": "header",
+                    "tokenHeaderPrefix": "Bearer",
+                    "tokenQueryKey": "access_token",
+                    "autoFetchToken": true,
+                    "autoRefreshToken": false
+                  }
+                }
+              }
+            },
+            {
+              "type": "folder",
+              "name": "{objectStoreName}",
+              "filename": "{objectStoreName}",
+              "root": {
+                "meta": {
+                  "name": "{objectStoreName}"
+                }
+              },
+              "items": [
+                {
+                  "type": "http",
+                  "name": "Delete object store secret",
+                  "filename": "Delete object store secret.bru",
+                  "seq": 2,
+                  "request": {
+                    "url": "{{baseUrl}}/admin/objectStoreSecrets/:objectStoreName",
+                    "method": "DELETE",
+                    "headers": [
+                      {
+                        "name": "AI-Resource-Group",
+                        "value": "<Resource-Group>",
+                        "enabled": true
+                      },
+                      {
+                        "name": "Accept",
+                        "value": "application/json",
+                        "enabled": true
+                      }
+                    ],
+                    "params": [
+                      {
+                        "name": "objectStoreName",
+                        "value": "qKoZ-aHSe",
+                        "type": "path",
+                        "enabled": true
+                      }
+                    ],
+                    "body": {
+                      "mode": "none",
+                      "formUrlEncoded": [],
+                      "multipartForm": [],
+                      "file": []
+                    },
+                    "script": {},
+                    "vars": {},
+                    "assertions": [],
+                    "tests": "",
+                    "docs": "Delete a secret with the name of objectStoreName if it exists.",
+                    "auth": {
+                      "mode": "oauth2",
+                      "oauth2": {
+                        "grantType": "authorization_code",
+                        "callbackUrl": "",
+                        "authorizationUrl": "",
+                        "accessTokenUrl": "",
+                        "refreshTokenUrl": "",
+                        "clientId": "",
+                        "clientSecret": "",
+                        "scope": "",
+                        "credentialsPlacement": "basic_auth_header",
+                        "pkce": false,
+                        "credentialsId": "credentials",
+                        "tokenPlacement": "header",
+                        "tokenHeaderPrefix": "Bearer",
+                        "tokenQueryKey": "access_token",
+                        "autoFetchToken": true,
+                        "autoRefreshToken": false
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "http",
+                  "name": "Returns the of metadata of secrets which match the query parameter.",
+                  "filename": "Returns the of metadata of secrets which match the query parameter.bru",
+                  "seq": 1,
+                  "request": {
+                    "url": "{{baseUrl}}/v2/admin/objectStoreSecrets",
+                    "method": "GET",
+                    "headers": [
+                      {
+                        "name": "AI-Resource-Group",
+                        "value": "<Resource-Group>",
+                        "enabled": true
+                      },
+                      {
+                        "name": "Accept",
+                        "value": "application/json",
+                        "enabled": true
+                      }
+                    ],
+                    "params": [],
+                    "body": {
+                      "mode": "none",
+                      "formUrlEncoded": [],
+                      "multipartForm": [],
+                      "file": []
+                    },
+                    "script": {},
+                    "vars": {},
+                    "assertions": [],
+                    "tests": "",
+                    "docs": "This retrieves the metadata of the stored secret which match the parameter objectStoreName.\nThe fetched secret is constructed like objectStoreName-object-store-secret\nThe base64 encoded field for the stored secret is not returned.\n",
+                    "auth": {
+                      "mode": "oauth2",
+                      "oauth2": {
+                        "grantType": "authorization_code",
+                        "callbackUrl": "",
+                        "authorizationUrl": "",
+                        "accessTokenUrl": "",
+                        "refreshTokenUrl": "",
+                        "clientId": "",
+                        "clientSecret": "",
+                        "scope": "",
+                        "credentialsPlacement": "basic_auth_header",
+                        "pkce": false,
+                        "credentialsId": "credentials",
+                        "tokenPlacement": "header",
+                        "tokenHeaderPrefix": "Bearer",
+                        "tokenQueryKey": "access_token",
+                        "autoFetchToken": true,
+                        "autoRefreshToken": false
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "http",
+                  "name": "Update object store secret",
+                  "filename": "Update object store secret.bru",
+                  "seq": 3,
+                  "request": {
+                    "url": "{{baseUrl}}/admin/objectStoreSecrets/:objectStoreName",
+                    "method": "PATCH",
+                    "headers": [
+                      {
+                        "name": "AI-Resource-Group",
+                        "value": "<Resource-Group>",
+                        "enabled": true
+                      },
+                      {
+                        "name": "Content-Type",
+                        "value": "application/json",
+                        "enabled": true
+                      },
+                      {
+                        "name": "Accept",
+                        "value": "application/json",
+                        "enabled": true
+                      }
+                    ],
+                    "params": [
+                      {
+                        "name": "objectStoreName",
+                        "value": "qKoZ-aHSe",
+                        "type": "path",
+                        "enabled": true
+                      }
+                    ],
+                    "body": {
+                      "mode": "json",
+                      "json": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"data\": {},\n  \"bucket\": \"<string>\",\n  \"endpoint\": \"<string>\",\n  \"region\": \"<string>\",\n  \"pathPrefix\": \"<string>\",\n  \"verifyssl\": \"<string>\",\n  \"usehttps\": \"1\"\n}",
+                      "formUrlEncoded": [],
+                      "multipartForm": [],
+                      "file": []
+                    },
+                    "script": {},
+                    "vars": {},
+                    "assertions": [],
+                    "tests": "",
+                    "docs": "Update a secret with name of objectStoreName if it exists.\n",
+                    "auth": {
+                      "mode": "oauth2",
+                      "oauth2": {
+                        "grantType": "authorization_code",
+                        "callbackUrl": "",
+                        "authorizationUrl": "",
+                        "accessTokenUrl": "",
+                        "refreshTokenUrl": "",
+                        "clientId": "",
+                        "clientSecret": "",
+                        "scope": "",
+                        "credentialsPlacement": "basic_auth_header",
+                        "pkce": false,
+                        "credentialsId": "credentials",
+                        "tokenPlacement": "header",
+                        "tokenHeaderPrefix": "Bearer",
+                        "tokenQueryKey": "access_token",
+                        "autoFetchToken": true,
+                        "autoRefreshToken": false
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "lm",
+      "filename": "lm",
+      "root": {
+        "meta": {
+          "name": "lm"
+        }
+      },
+      "items": [
+        {
+          "type": "folder",
+          "name": "configurations",
+          "filename": "configurations",
+          "root": {
+            "meta": {
+              "name": "configurations"
+            }
+          },
+          "items": [
+            {
+              "type": "http",
+              "name": "Create configuration Copy",
+              "filename": "Create configuration Copy.bru",
+              "seq": 3,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/configurations",
+                "method": "DELETE",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n    \"id\": \"<configuration_ID>\"\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Create a new configuration linked to a specific scenario and executable for use in an execution\nor deployment.\n",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Create configuration",
+              "filename": "Create configuration.bru",
+              "seq": 2,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/configurations",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"name\": \"genai-eval-conf\",\n  \"scenarioId\": \"genai-evaluations\",\n  \"executableId\": \"genai-evaluations-simplified\",\n  \"inputArtifactBindings\": [\n    {\n      \"key\": \"datasetFolder\",\n      \"artifactId\": \"<artifactId>\"\n    }\n  ],\n  \"parameterBindings\": [\n    {\n      \"key\": \"repetitions\",\n      \"value\": \"1\"\n    },\n    {\n      \"key\": \"orchestrationDeploymentURL\",\n      \"value\": \"<ORCHESTRATION_DEPLOYMENT_URL>\"\n\n    },\n    {\n      \"key\": \"metrics\",\n      \"value\": \"language_match\"\n    },\n    {\n      \"key\": \"testDataset\",\n      \"value\": \"{\\\"path\\\": \\\"testdata/global_customer_queries.csv\\\", \\\"type\\\": \\\"csv\\\"}\"\n    },\n    {\n      \"key\": \"promptTemplate\",\n      \"value\": \"<promptTemplate>\"\n    },\n    {\n      \"key\": \"models\",\n      \"value\": \"gpt-4.1:latest\"\n    }\n  ]\n}\n",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Create a new configuration linked to a specific scenario and executable for use in an execution\nor deployment.\n",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Get list of configurations",
+              "filename": "Get list of configurations.bru",
+              "seq": 1,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/configurations",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Retrieve a list of configurations. Filter results by scenario ID or a list of executable IDs.\nSearch for configurations containing the search string as substring in the configuration name.\n",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "folder",
+              "name": "{configurationId}",
+              "filename": "{configurationId}",
+              "root": {
+                "meta": {
+                  "name": "{configurationId}"
+                }
+              },
+              "items": [
+                {
+                  "type": "http",
+                  "name": "Get configuration by ID",
+                  "filename": "Get configuration by ID.bru",
+                  "seq": 1,
+                  "request": {
+                    "url": "{{baseUrl}}/v2/lm/configurations",
+                    "method": "GET",
+                    "headers": [
+                      {
+                        "name": "AI-Resource-Group",
+                        "value": "{{resource_group}}",
+                        "enabled": true
+                      },
+                      {
+                        "name": "Accept",
+                        "value": "application/json",
+                        "enabled": true
+                      }
+                    ],
+                    "params": [],
+                    "body": {
+                      "mode": "none",
+                      "formUrlEncoded": [],
+                      "multipartForm": [],
+                      "file": []
+                    },
+                    "script": {},
+                    "vars": {},
+                    "assertions": [],
+                    "tests": "",
+                    "docs": "Retrieve details for configuration with configurationId.",
+                    "auth": {
+                      "mode": "bearer",
+                      "bearer": {
+                        "token": "{{access_token}}"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "$count",
+              "filename": "$count",
+              "root": {
+                "meta": {
+                  "name": "$count"
+                }
+              },
+              "items": [
+                {
+                  "type": "http",
+                  "name": "Get number of configurations",
+                  "filename": "Get number of configurations.bru",
+                  "seq": 1,
+                  "request": {
+                    "url": "{{baseUrl}}/lm/configurations/$count?scenarioId=iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN&$search=}\"NI2Kn!V&searchCaseInsensitive=false&executableIds=T_jtbUJzwg0e.okSV667jeZejqVb,3e0cmfc4c-6YavNz92uztZE",
+                    "method": "GET",
+                    "headers": [
+                      {
+                        "name": "AI-Resource-Group",
+                        "value": "<Resource-Group>",
+                        "enabled": true
+                      },
+                      {
+                        "name": "Accept",
+                        "value": "text/plain",
+                        "enabled": true
+                      }
+                    ],
+                    "params": [
+                      {
+                        "name": "scenarioId",
+                        "value": "iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "$search",
+                        "value": "}\"NI2Kn!V",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "searchCaseInsensitive",
+                        "value": "false",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "executableIds",
+                        "value": "T_jtbUJzwg0e.okSV667jeZejqVb,3e0cmfc4c-6YavNz92uztZE",
+                        "type": "query",
+                        "enabled": true
+                      }
+                    ],
+                    "body": {
+                      "mode": "none",
+                      "formUrlEncoded": [],
+                      "multipartForm": [],
+                      "file": []
+                    },
+                    "script": {},
+                    "vars": {},
+                    "assertions": [],
+                    "tests": "",
+                    "docs": "Retrieve the number of available configurations that match the specified filter criteria.\nFilter criteria include a scenarioId or executableIdsList. Search by substring of configuration name is also possible.\n",
+                    "auth": {
+                      "mode": "oauth2",
+                      "oauth2": {
+                        "grantType": "authorization_code",
+                        "callbackUrl": "",
+                        "authorizationUrl": "",
+                        "accessTokenUrl": "",
+                        "refreshTokenUrl": "",
+                        "clientId": "",
+                        "clientSecret": "",
+                        "scope": "",
+                        "credentialsPlacement": "basic_auth_header",
+                        "pkce": false,
+                        "credentialsId": "credentials",
+                        "tokenPlacement": "header",
+                        "tokenHeaderPrefix": "Bearer",
+                        "tokenQueryKey": "access_token",
+                        "autoFetchToken": true,
+                        "autoRefreshToken": false
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "artifacts",
+          "filename": "artifacts",
+          "root": {
+            "meta": {
+              "name": "artifacts"
+            }
+          },
+          "items": [
+            {
+              "type": "http",
+              "name": "Get list of artifacts",
+              "filename": "Get list of artifacts.bru",
+              "seq": 2,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/artifacts",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "<Resource-Group>",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [
+                  {
+                    "name": "scenarioId",
+                    "value": "iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "executionId",
+                    "value": "iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "name",
+                    "value": "[G7 ovyt8i",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "kind",
+                    "value": "other",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "artifactLabelSelector",
+                    "value": "ext.ai.sap.com/bXN1EAk=D*",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "$top",
+                    "value": "10000",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "$skip",
+                    "value": "<integer>",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "$search",
+                    "value": "}\"NI2Kn!V",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "searchCaseInsensitive",
+                    "value": "false",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "$expand",
+                    "value": "scenario",
+                    "type": "query",
+                    "enabled": false
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Retrieve a list of artifacts that matches the specified filter criteria.\nFilter criteria include scenario ID, execution ID, an artifact name, artifact kind, or artifact labels.\nUse top/skip parameters to paginate the result list.\nSearch by substring of artifact name or description, if required.\n",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Register artifact",
+              "filename": "Register artifact.bru",
+              "seq": 1,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/artifacts",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n    \"name\": \"aiconfig\",\n    \"kind\": \"dataset\",\n    \"url\": \"ai://genai-data/genaiEvaluation/14af1af80b974edb8731632d17286343\",\n    \"scenarioId\": \"genai-evaluations\"\n}\n",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Register an artifact for use in a configuration, for example a model or a dataset.",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "folder",
+              "name": "$count",
+              "filename": "$count",
+              "root": {
+                "meta": {
+                  "name": "$count"
+                }
+              },
+              "items": [
+                {
+                  "type": "http",
+                  "name": "Get number of artifacts",
+                  "filename": "Get number of artifacts.bru",
+                  "seq": 1,
+                  "request": {
+                    "url": "{{baseUrl}}/lm/artifacts/$count?scenarioId=iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN&executionId=iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN&name=[G7 ovyt8i&kind=other&$search=}\"NI2Kn!V&searchCaseInsensitive=false&artifactLabelSelector=ext.ai.sap.com/bXN1EAk=D*",
+                    "method": "GET",
+                    "headers": [
+                      {
+                        "name": "AI-Resource-Group",
+                        "value": "<Resource-Group>",
+                        "enabled": true
+                      },
+                      {
+                        "name": "Accept",
+                        "value": "text/plain",
+                        "enabled": true
+                      }
+                    ],
+                    "params": [
+                      {
+                        "name": "scenarioId",
+                        "value": "iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "executionId",
+                        "value": "iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "name",
+                        "value": "[G7 ovyt8i",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "kind",
+                        "value": "other",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "$search",
+                        "value": "}\"NI2Kn!V",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "searchCaseInsensitive",
+                        "value": "false",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "artifactLabelSelector",
+                        "value": "ext.ai.sap.com/bXN1EAk=D*",
+                        "type": "query",
+                        "enabled": true
+                      }
+                    ],
+                    "body": {
+                      "mode": "none",
+                      "formUrlEncoded": [],
+                      "multipartForm": [],
+                      "file": []
+                    },
+                    "script": {},
+                    "vars": {},
+                    "assertions": [],
+                    "tests": "",
+                    "docs": "Retrieve  the number of available artifacts that match the specified filter criteria.\nFilter criteria include a scenarioId, executionId, an artifact name, artifact kind, or artifact labels.\nSearch by substring of artifact name or description is also possible.\n",
+                    "auth": {
+                      "mode": "oauth2",
+                      "oauth2": {
+                        "grantType": "authorization_code",
+                        "callbackUrl": "",
+                        "authorizationUrl": "",
+                        "accessTokenUrl": "",
+                        "refreshTokenUrl": "",
+                        "clientId": "",
+                        "clientSecret": "",
+                        "scope": "",
+                        "credentialsPlacement": "basic_auth_header",
+                        "pkce": false,
+                        "credentialsId": "credentials",
+                        "tokenPlacement": "header",
+                        "tokenHeaderPrefix": "Bearer",
+                        "tokenQueryKey": "access_token",
+                        "autoFetchToken": true,
+                        "autoRefreshToken": false
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "executions",
+          "filename": "executions",
+          "root": {
+            "meta": {
+              "name": "executions"
+            }
+          },
+          "items": [
+            {
+              "type": "http",
+              "name": "Create execution",
+              "filename": "Create execution.bru",
+              "seq": 2,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/executions",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"configurationId\": \"<configuration_Id>\"\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Create an execution using the configuration specified by configurationId.",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Get list of executions",
+              "filename": "Get list of executions.bru",
+              "seq": 1,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/executions/<execution_Id>",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [
+                  {
+                    "name": "scenarioId",
+                    "value": "iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "executionScheduleId",
+                    "value": "iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "status",
+                    "value": "DEAD",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "$top",
+                    "value": "10000",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "$skip",
+                    "value": "<integer>",
+                    "type": "query",
+                    "enabled": false
+                  },
+                  {
+                    "name": "$select",
+                    "value": "status",
+                    "type": "query",
+                    "enabled": false
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Retrieve a list of executions that match the specified filter criteria.\nFilter criteria include a list of executableIds, a scenarioId, a configurationId, or a execution status.\nWith top/skip parameters it is possible to paginate the result list.\nWith select parameter it is possible to select only status.\n",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "folder",
+              "name": "$count",
+              "filename": "$count",
+              "root": {
+                "meta": {
+                  "name": "$count"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "deployments",
+          "filename": "deployments",
+          "root": {
+            "meta": {
+              "name": "deployments"
+            }
+          },
+          "items": [
+            {
+              "type": "http",
+              "name": "Create deployment",
+              "filename": "Create deployment.bru",
+              "seq": 2,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/deployments",
+                "method": "POST",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "json",
+                  "json": "{\n  \"configurationId\": \"<configuration_Id>\"\n}",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Create a deployment using the configuration specified by configurationId after synchronously checking the\ncorrectness of the configuration.\n",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Get list of deployments",
+              "filename": "Get list of deployments.bru",
+              "seq": 1,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/deployments",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "Retrieve a list of deployments that match the specified filter criteria.\nFilter criteria include a list of executableIds, a scenarioId, a configurationId, or a deployment status.\nWith top/skip parameters it is possible to paginate the result list.\nWith select parameter it is possible to select only status.\n",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "folder",
+              "name": "$count",
+              "filename": "$count",
+              "root": {
+                "meta": {
+                  "name": "$count"
+                }
+              },
+              "items": [
+                {
+                  "type": "http",
+                  "name": "Get number of deployments",
+                  "filename": "Get number of deployments.bru",
+                  "seq": 1,
+                  "request": {
+                    "url": "{{baseUrl}}/lm/deployments/$count?executableIds=T_jtbUJzwg0e.okSV667jeZejqVb,3e0cmfc4c-6YavNz92uztZE&configurationId=iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN&scenarioId=iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN&status=DEAD",
+                    "method": "GET",
+                    "headers": [
+                      {
+                        "name": "AI-Resource-Group",
+                        "value": "<Resource-Group>",
+                        "enabled": true
+                      },
+                      {
+                        "name": "Accept",
+                        "value": "text/plain",
+                        "enabled": true
+                      }
+                    ],
+                    "params": [
+                      {
+                        "name": "executableIds",
+                        "value": "T_jtbUJzwg0e.okSV667jeZejqVb,3e0cmfc4c-6YavNz92uztZE",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "configurationId",
+                        "value": "iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "scenarioId",
+                        "value": "iiwMZ8.BjeF0SgmlZJM11XXkDUxP7Sg5GQLKEEsaWb.om5wMy1gN3AtN",
+                        "type": "query",
+                        "enabled": true
+                      },
+                      {
+                        "name": "status",
+                        "value": "DEAD",
+                        "type": "query",
+                        "enabled": true
+                      }
+                    ],
+                    "body": {
+                      "mode": "none",
+                      "formUrlEncoded": [],
+                      "multipartForm": [],
+                      "file": []
+                    },
+                    "script": {},
+                    "vars": {},
+                    "assertions": [],
+                    "tests": "",
+                    "docs": "Retrieve the number of available deployments. The number can be filtered by\nscenarioId, configurationId, executableIdsList or by deployment status.\n",
+                    "auth": {
+                      "mode": "oauth2",
+                      "oauth2": {
+                        "grantType": "authorization_code",
+                        "callbackUrl": "",
+                        "authorizationUrl": "",
+                        "accessTokenUrl": "",
+                        "refreshTokenUrl": "",
+                        "clientId": "",
+                        "clientSecret": "",
+                        "scope": "",
+                        "credentialsPlacement": "basic_auth_header",
+                        "pkce": false,
+                        "credentialsId": "credentials",
+                        "tokenPlacement": "header",
+                        "tokenHeaderPrefix": "Bearer",
+                        "tokenQueryKey": "access_token",
+                        "autoFetchToken": true,
+                        "autoRefreshToken": false
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "metrics",
+          "filename": "metrics",
+          "root": {
+            "meta": {
+              "name": "metrics"
+            }
+          },
+          "items": [
+            {
+              "type": "http",
+              "name": "Evaluation Metrics via Execution ID",
+              "filename": "Evaluation Metrics via Execution ID.bru",
+              "seq": 4,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/metrics?tagFilters=evaluation.ai.sap.com/child-of=<Execution_ID>",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [
+                  {
+                    "name": "tagFilters",
+                "url": "{{baseUrl}}/v2/lm/metrics?tagFilters=evaluation.ai.sap.com/child-of=<Execution_ID>",
+                    "value": "evaluation.ai.sap.com/child-of=<Execution_ID>",
+                    "type": "query",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            },
+            {
+              "type": "http",
+              "name": "Metrics by Run Name",
+              "filename": "Metrics by Run Name.bru",
+              "seq": 5,
+              "request": {
+                "url": "{{baseUrl}}/v2/lm/metrics?tagFilters=evaluation.ai.sap.com/run-name=run1",
+                "method": "GET",
+                "headers": [
+                  {
+                    "name": "AI-Resource-Group",
+                    "value": "{{resource_group}}",
+                    "enabled": true
+                  },
+                  {
+                    "name": "Accept",
+                    "value": "application/json",
+                    "enabled": true
+                  }
+                ],
+                "params": [
+                  {
+                    "name": "tagFilters",
+                    "value": "evaluation.ai.sap.com/run-name=run1",
+                    "type": "query",
+                    "enabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "none",
+                  "formUrlEncoded": [],
+                  "multipartForm": [],
+                  "file": []
+                },
+                "script": {},
+                "vars": {},
+                "assertions": [],
+                "tests": "",
+                "docs": "",
+                "auth": {
+                  "mode": "bearer",
+                  "bearer": {
+                    "token": "{{access_token}}"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "lWUmIcEkGnkMxwNBILLmY",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "ai_auth_url",
+          "value": "<AI_Auth_Url>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "ai_api_url",
+          "value": "<Ai_Api_Url>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "client_id",
+          "value": "<CLIENT_ID>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "client_secret",
+          "value": "<CLIENT_SECRET>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "resource_group",
+          "value": "<resource_group>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "orchestration_service_url",
+          "value": "<ORCHESTRATION_URL>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "access_token",
+          "value": "",
+          "enabled": true,
+          "secret": true,
+          "type": "text"
+        }
+      ],
+      "name": "intprod"
+    }
+  ],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "oauth2",
+        "oauth2": {
+          "grantType": "authorization_code",
+          "callbackUrl": "",
+          "authorizationUrl": "",
+          "accessTokenUrl": "",
+          "refreshTokenUrl": "",
+          "clientId": "",
+          "clientSecret": "",
+          "scope": "",
+          "state": "",
+          "pkce": false,
+          "credentialsPlacement": "basic_auth_header",
+          "credentialsId": "credentials",
+          "tokenPlacement": "header",
+          "tokenHeaderPrefix": "Bearer",
+          "tokenQueryKey": "access_token",
+          "autoFetchToken": true,
+          "autoRefreshToken": false
+        }
+      },
+      "vars": {
+        "req": [
+          {
+            "name": "region",
+            "value": "prod.eu-central-1.aws",
+            "enabled": true,
+            "local": false,
+            "uid": "oYVk4DuVpyYqqP2roBVjE"
+          },
+          {
+            "name": "baseUrl",
+            "value": "<BASE_URL>",
+            "enabled": true,
+            "local": false,
+            "uid": "I4KjDm7FxpSRwUYzjwfPG"
+          },
+          {
+            "name": "auth_url",
+            "value": "<AI_Auth_Url>",
+            "enabled": true,
+            "local": false,
+            "uid": "zuftvyCURtA9XYErCYDgo"
+          },
+          {
+            "name": "client_id",
+            "value": "<CLIENT_ID>",
+            "enabled": true,
+            "local": false,
+            "uid": "JfGEVKm71BYTgR8UkQUGv"
+          },
+          {
+            "name": "client_secret",
+            "value": "<CLIENT_SECRET>",
+            "enabled": true,
+            "local": false,
+            "uid": "ls3RYTJ40baTl8eYmilGt"
+          },
+          {
+            "name": "AWS_ACCESS_KEY_ID",
+            "value": "<AWS_ACCESS_KEY_ID>",
+            "enabled": true,
+            "local": false,
+            "uid": "2O0YTTAdmYltm5XiHMhP2"
+          },
+          {
+            "name": "AWS_SECRET_ACCESS_KEY",
+            "value": "<AWS_SECRET_ACCESS_KEY>",
+            "enabled": true,
+            "local": false,
+            "uid": "8rc4RYyPcHXyTkAnnI981"
+          },
+          {
+            "name": "BUCKET_NAME",
+            "value": "<BUCKET_NAME>",
+            "enabled": true,
+            "local": false,
+            "uid": "HqFIe8Rvc14i41WIAGGkl"
+          },
+          {
+            "name": "DATABASE_URL",
+            "value": "https://s3-eu-central-1.amazonaws.com",
+            "enabled": true,
+            "local": false,
+            "uid": "aWIwuJZH5XQ5Guu2D69Sq"
+          }
+        ]
+      }
+    },
+    "docs": "Provides tools to manage your scenarios and workflows in SAP AI Core. Execute pipelines as a batch job, for example to pre-process or train your models, or perform batch inference.  Serve inference requests of trained models. Deploy а trained machine learning model as a web service to serve inference requests with high performance.  Register your own Docker registry, synchronize your AI content from your own git repository, and register your own object store for training data and trained models.\n",
+    "meta": {
+      "name": "AI Core"
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "AI Core",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.10747432708740234,
+    "filesCount": 151
+  }
+}
