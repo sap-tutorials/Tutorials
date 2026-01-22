@@ -23,10 +23,8 @@ There are myriad resources on the Web about OData. After all, it's a standard
 that's been around since 2007. There are a few key resources that are important
 to know about, and in this tutorial, you'll find out about them.
 
-**This series of tutorials on OData is to replace the original "Take a Deep Dive into OData" that you might already know. We're building out the content of this new series in the open, as a work in progress, and would love to hear your feedback, what you would like to see, what you think of the co
-
 ---
 
-### 
+### First section
 
 ...
