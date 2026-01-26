@@ -20,8 +20,9 @@ time: 10
 ## Intro
 
 There are myriad resources on the Web about OData. After all, it's a standard
-that's been around since 2007. There are a few key resources that are important
-to know about, and in this tutorial, you'll find out about them.
+that's been around since 2007. There are some key resources that are important
+to know about, and in this tutorial, you'll find out about them and become more
+comfortable navigating them.
 
 ---
 
@@ -71,8 +72,8 @@ document's official name, such as:
 
 Looking at this document as a typical example, what can we discern? Well:
 
-- it is in an HTML representation
-- it represents part 1 of the OData protocol standard
+- it is in an HTML format
+- it represents part 1 of the OData standard
 - that standard being at version 4.01 (the latest)
 - that part being about the protocol (as opposed to the URL conventions, in
   this case)
@@ -82,12 +83,16 @@ We'll come back to this particular document later on in this tutorial.
 ### Get an overview of the OData standards documents
 
 Going back to the list of work products, let's enumerate them and think
-briefly about what they are.
+briefly about what they are. Doing this is important if we want to be able
+to make sense of them, to navigate between and within them, and ultimately
+to find whatever we're looking for.
 
 Open up the [OData TC
 page](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=e7cac2a9-2d18-4640-b94d-018dc7d3f0e2)
-in a window separate to this one and jump to the "Technical Work Produced by
-the Committee" section, ready to scroll through it as you work through this section.
+in a window separate to this one and jump to the [Technical Work Produced by
+the
+Committee](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=e7cac2a9-2d18-4640-b94d-018dc7d3f0e2#technical)
+section, ready to scroll through it as you work through this section.
 
 #### The main standard
 
@@ -115,9 +120,9 @@ Notice that each of these documents is available in different formats:
 - an authorititave source format
 - other formats (downstream from the source format)
 
-In this case, the authoritative source format is `.docx`, but in other OData
-standards documents cases, it is sometimes `.md`. Practically, one can use the
-`.html` format, as `.docx` is not compatible with the open Web.
+In this case, the authoritative source format for parts 1 and 2 is `.docx`, but
+in other OData standards documents cases, it is sometimes `.md`. Practically,
+one can use the `.html` format, as `.docx` is not compatible with the open Web.
 
 #### CSDL as a supporting standard
 
@@ -143,15 +148,17 @@ Next in the list of supporting standards is:
 
 - OData JSON Format Version 4.01 OASIS Standard
 
-This is the formal description of the JSON format for resources such as
-entities and entity sets transmitted and received in the context of OData
-operations. In other words, it describes everything we need to know (and more)
-about OData JSON payloads.
+This is the formal description of the JSON format used to represent resources
+such as entities and entity sets transmitted and received in the context of
+OData operations. In other words, it describes everything we need to know (and
+more) about OData JSON payloads. In earlier versions of the OData standard, a
+version of the XML-based Atom Syndication Format was used, but this has been
+largely superseded by this JSON format.
 
 #### Extension standards
 
 The OData standard is extensible, and in that context, the next two standards
-documents listed in the work products section are on extensions:
+documents listed in the work products section are in this category:
 
 - OData Extension for Data Aggregation Version 4.0 Committee Specification 03
 - OData Extension for Temporal Data Version 4.0 Committee Specification 01
@@ -163,26 +170,6 @@ there's also a vocabulary, expressed in EDMX (and other formats) and containing
 annotation definitions relating to the given extension, definitions to be used
 in OData service metadata documents.
 
-#### Lifecycle stage identifiers
-
-The extension standards documents are both examples of the different stages
-that a document can be in.
-
-All the documents thus far have been "OASIS Standard" documents, symbolized as
-"os", which also forms part of each document's unique URL, such as:
-
-<https://docs.oasis-open.org/odata/odata-json-format/v4.01/os/odata-json-format-v4.01-os.html>
-
-However, both extension standards are still at the Committee
-Specification ("cs") stage, the extension for Data Aggregation being at
-"cs03":
-
-<https://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/cs03/odata-data-aggregation-ext-v4.0-cs03.html>
-
-and the extension for Temporal Data being at "cs01":
-
-<https://docs.oasis-open.org/odata/odata-temporal-ext/v4.0/cs01/odata-temporal-ext-v4.0-cs01.html>
-
 #### Other supporting standards
 
 There is one more standard listed in the work products, that describes a method
@@ -193,5 +180,161 @@ is:
 
 By now, we know the drill. This is a standards document that is available in
 various formats, and in the lifecycle it is at the first iteration of the
-Committee Specification stage.
+Committee Specification stage, i.e. "cs01".
 
+#### Lifecycle stage identifiers
+
+In each case, the URLs pointing to the standards resources contain a path info
+section that indicates the stage that resource is in. The stage also appears in
+the final "filename" section of the URL. Let's have a look at the relative path
+info sections of the URLs representing the authoritative sources for each of
+the standards we've seen.
+
+First, there are the main standards:
+
+- `/odata/odata/v4.01/os/part1-protocol/odata-v4.01-os-part1-protocol.docx`
+- `/odata/odata/v4.01/os/part2-url-conventions/odata-v4.01-os-part2-url-conventions.docx`
+- `/odata/odata/v4.01/os/abnf/`
+- `/odata/odata-csdl-json/v4.01/os/odata-csdl-json-v4.01-os.docx`
+- `/odata/odata-csdl-xml/v4.01/os/odata-csdl-xml-v4.01-os.docx`
+- `/odata/odata-json-format/v4.01/os/odata-json-format-v4.01-os.docx`
+
+These are all "OASIS Standard" documents, with the "os" stage identifier.
+
+Here are the rest of the standards:
+
+- `/odata/odata-data-aggregation-ext/v4.0/cs03/odata-data-aggregation-ext-v4.0-cs03.md`
+- `/odata/odata-temporal-ext/v4.0/cs01/odata-temporal-ext-v4.0-cs01.docx`
+- `/odata/repeatable-requests/v1.0/cs01/repeatable-requests-v1.0-cs01.docx`
+
+All these are at various iteration levels of the "Committee Specification"
+stage ("cs"), with the extension for data aggregation being at level 03, and
+the other two being at level 01.
+
+### Explore the document URL chains
+
+We now know about the different technical work artifacts and how they are
+manifested, with the document URLs, each of which:
+
+- describes a specific part of the overall OData standard
+- tied to a particular specification lifecycle stage
+- is in a format indicated in the URL
+
+Now, as a final step in learning about the OData standards resources, we should
+make sure we understand the myriad specification URLs at the top of any given
+document.
+
+By way of an example, visit the (HTML version of the) [OData Version 4.01 Part
+1:
+Protocol](https://docs.oasis-open.org/odata/odata/v4.01/os/part1-protocol/odata-v4.01-os-part1-protocol.html).
+The first section looks like this:
+
+![odata-protocol-doc-first-section](odata-protocol-doc-first-section.png)
+
+There are a lot of URLs here! But the pattern is straightforward, and discerning
+it is straightforward given what we now know. We should start by noticing the three
+groups:
+
+- This stage
+- Previous stage
+- Latest stage
+
+The URLs are there to allow the navigation forwards and backwards through time, through
+the different specification lifecycle stages the given document has been through.
+
+> We should ignore the `.docx` and `.pdf` formats for the purposes of this
+> exploration, and focus only on the `.html` format, for easy navigation. Note
+> that the screenshot shows these HTML links with the standard "visited" color
+> purple (as opposed to the standard blue of "unvisited" links), indicating that
+> these are indeed the key links that have been navigated, while this section of
+> the tutorial being written.
+
+The URLs for the "Latest stage" links do not contain any specification
+lifecycle indicators, and so can and should be used to generically and
+canonically refer to the latest stage version of the document in question.
+
+The URLs for the links in the "This stage" and "Previous stage" sections do
+contain specification lifecycle indicators, and as such, are pointers to
+specific stage versions.
+
+Thus requesting the resource at either of these two URLs ... will result in the
+same resource content:
+
+- <https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html>
+- <https://docs.oasis-open.org/odata/odata/v4.01/os/part1-protocol/odata-v4.01-os-part1-protocol.html>
+
+Following the "Previous stage" HTML link:
+
+- <https://docs.oasis-open.org/odata/odata/v4.01/cs02/part1-protocol/odata-v4.01-cs02-part1-protocol.html>
+
+leads to an earlier specification lifecycle stage (Committee Specification 02),
+which, in turn, via its own "Previous stage" link, leads to the next earliest,
+which is at the specification lifecycle stage with the indicator "csprd06" -
+Committee Specification / Public Review Draft 06:
+
+- <https://docs.oasis-open.org/odata/odata/v4.01/csprd06/part1-protocol/odata-v4.01-csprd06-part1-protocol.html>
+
+And so on, back in time.
+
+We can visualize the "This", "Previous" and "Latest" link sets for the "OData
+Version 4.01 Part 1: Protocol" document like this:
+
+```text
++--------------+    +--------------------------------------+
+|              |    |                                      |
+|    Latest    |--->|           OASIS Standard             |
+|    stage     |    |                                      |
+|              |    |                                      |
++--------------+    +--------------------------------------+
+                                       |
+                                    previous
+                                       V
+                    +--------------------------------------+
+                    |                                      |
+                    |     Committee Specification 02       |
+                    |                                      |
+                    |                                      |
+                    +--------------------------------------+
+                                       |
+                                    previous
+                                       V
+                    +--------------------------------------+
+                    |                                      |
+                    |   Committee Specification Draft 06   |
+                    |      / Public Review Draft 06        |
+                    |                                      |
+                    +--------------------------------------+
+                                       |
+                                    previous
+                                       V
+                    +--------------------------------------+
+                    |                                      |
+                    |   Committee Specification Draft 05   |
+                    |      / Public Review Draft 05        |
+                    |                                      |
+                    +--------------------------------------+
+                                       |
+                                    previous
+                                       V
+                    +--------------------------------------+
+                    |                                      |
+                    |     Committee Specification 01       |
+                    |                                      |
+                    |                                      |
+                    +--------------------------------------+
+                                       |
+                                    previous
+                                       V
+                    +--------------------------------------+
+                    |                                      |
+                    |                 ...                  |
+                    |                                      |
+                    |                                      |
+                    +--------------------------------------+
+```
+
+## Further info
+
+- [Guidelines for Visualizing Links](https://www.nngroup.com/articles/guidelines-for-visualizing-links/)
+- [OASIS document tree](https://github.com/qmacro/odata-specs/blob/master/overview.md)
+- [OData Vocabularies](https://github.com/oasis-tcs/odata-vocabularies)
