@@ -74,9 +74,9 @@ Looking at this document as a typical example, what can we discern? Well:
 
 - it is in an HTML format
 - it represents part 1 of the OData standard
-- that standard being at version 4.01 (the latest)
-- that part being about the protocol (as opposed to the URL conventions, in
-  this case)
+- that part being about the protocol (as opposed to the URL conventions)
+- the standard is at version 4.01 (the latest)
+- the specification lifecycle stage is "os" i.e. the final one (OASIS Standard)
 
 We'll come back to this particular document later on in this tutorial.
 
@@ -179,15 +179,14 @@ is:
 - Repeatable Requests Version 1.0 Committee Specification 01
 
 By now, we know the drill. This is a standards document that is available in
-various formats, and in the lifecycle it is at the first iteration of the
-Committee Specification stage, i.e. "cs01".
+various formats, and is at a particular specification lifecycle stage.
 
 #### Lifecycle stage identifiers
 
 In each case, the URLs pointing to the standards resources contain a path info
 section that indicates the stage that resource is in. The stage also appears in
-the final "filename" section of the URL. Let's have a look at the relative path
-info sections of the URLs representing the authoritative sources for each of
+the final "filename" section. Let's have a look at the relative path info
+sections of the URLs representing the authoritative sources for each of
 the standards we've seen.
 
 First, there are the main standards:
@@ -199,7 +198,7 @@ First, there are the main standards:
 - `/odata/odata-csdl-xml/v4.01/os/odata-csdl-xml-v4.01-os.docx`
 - `/odata/odata-json-format/v4.01/os/odata-json-format-v4.01-os.docx`
 
-These are all "OASIS Standard" documents, with the "os" stage identifier.
+These are all "OASIS Standard" documents, each with the "os" stage identifier.
 
 Here are the rest of the standards:
 
@@ -217,7 +216,7 @@ We now know about the different technical work artifacts and how they are
 manifested, with the document URLs, each of which:
 
 - describes a specific part of the overall OData standard
-- tied to a particular specification lifecycle stage
+- is tied to a particular specification lifecycle stage
 - is in a format indicated in the URL
 
 Now, as a final step in learning about the OData standards resources, we should
@@ -231,8 +230,8 @@ The first section looks like this:
 
 ![odata-protocol-doc-first-section](odata-protocol-doc-first-section.png)
 
-There are a lot of URLs here! But the pattern is straightforward, and discerning
-it is straightforward given what we now know. We should start by noticing the three
+There are a lot of URLs here! But the pattern is straightforward, and following
+it is easy given what we now know. We should start by noticing the three
 groups:
 
 - This stage
@@ -247,10 +246,10 @@ the different specification lifecycle stages the given document has been through
 > that the screenshot shows these HTML links with the standard "visited" color
 > purple (as opposed to the standard blue of "unvisited" links), indicating that
 > these are indeed the key links that have been navigated, while this section of
-> the tutorial being written.
+> the tutorial was being written.
 
 The URLs for the "Latest stage" links do not contain any specification
-lifecycle indicators, and so can and should be used to generically and
+lifecycle indicators, and so can - and should - be used to generically and
 canonically refer to the latest stage version of the document in question.
 
 The URLs for the links in the "This stage" and "Previous stage" sections do
@@ -260,19 +259,19 @@ specific stage versions.
 Thus requesting the resource at either of these two URLs ... will result in the
 same resource content:
 
-- <https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html>
-- <https://docs.oasis-open.org/odata/odata/v4.01/os/part1-protocol/odata-v4.01-os-part1-protocol.html>
+- [/odata/odata/v4.01/odata-v4.01-part1-protocol.html](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html)
+- [/odata/odata/v4.01/os/part1-protocol/odata-v4.01-os-part1-protocol.html](https://docs.oasis-open.org/odata/odata/v4.01/os/part1-protocol/odata-v4.01-os-part1-protocol.html)
 
 Following the "Previous stage" HTML link:
 
-- <https://docs.oasis-open.org/odata/odata/v4.01/cs02/part1-protocol/odata-v4.01-cs02-part1-protocol.html>
+- [/odata/odata/v4.01/cs02/part1-protocol/odata-v4.01-cs02-part1-protocol.html](https://docs.oasis-open.org/odata/odata/v4.01/cs02/part1-protocol/odata-v4.01-cs02-part1-protocol.html)
 
 leads to an earlier specification lifecycle stage (Committee Specification 02),
 which, in turn, via its own "Previous stage" link, leads to the next earliest,
 which is at the specification lifecycle stage with the indicator "csprd06" -
 Committee Specification / Public Review Draft 06:
 
-- <https://docs.oasis-open.org/odata/odata/v4.01/csprd06/part1-protocol/odata-v4.01-csprd06-part1-protocol.html>
+- [/odata/odata/v4.01/csprd06/part1-protocol/odata-v4.01-csprd06-part1-protocol.html](https://docs.oasis-open.org/odata/odata/v4.01/csprd06/part1-protocol/odata-v4.01-csprd06-part1-protocol.html)
 
 And so on, back in time.
 
