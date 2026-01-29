@@ -5,7 +5,7 @@ author_profile: https://github.com/qmacro
 auto_validation: false
 primary_tag: software-product>sap-business-technology-platform
 tags: [ software-product>sap-business-technology-platform, topic>cloud, programming-tool>odata, tutorial>beginner ]
-time: 10
+time: 20
 ---
 
 # Get to know the OData standards resources on the Web
