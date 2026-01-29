@@ -215,6 +215,12 @@ Explain plan provides a compiled plan in tabular form without executing it.  Thi
 
     ![Explain plan Results](explainPlanResults.png)
 
+    To clear any cached parameters the below SQL can be run.
+
+    ```SQL
+    ALTER SYSTEM CLEAR SQL PLAN CACHE;
+    ```
+
 For further details see the links below.
 
 [View Execution Plans for SQL Statements, Procedures, and Anonymous Blocks](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/view-execution-plans-for-sql-statements-procedures-and-anonymous-blocks-sap-hana-cloud-database)

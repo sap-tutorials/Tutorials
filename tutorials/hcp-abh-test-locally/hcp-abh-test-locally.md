@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap
  - A trial account on the SAP Business Technology Platform
  - A subscription to the SAP Business Application Studio, with a basic dev space set up
 
-See [Create a Dev Space for Business Applications](/tutorials/appstudio-devspace-create.html).
+See [Create a Dev Space for Business Applications](https://developers.sap.com/tutorials/appstudio-devspace-create.html).
 
 ## You will learn
 - How to use command line tools like `curl` and `jq` with REST / OData APIs.

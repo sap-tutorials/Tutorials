@@ -36,8 +36,7 @@ The Northwind OData services are available in several versions. Most tutorials c
 ### Enter your SAP BTP account
 
 - For (free) Trial Accounts: <https://account.hanatrial.ondemand.com>
-- For Free Tier and Enterprise Accounts on **feature set A**: <https://account.hana.ondemand.com>
-- For Free Tier and Enterprise Accounts on **feature set B**: <https://cockpit.btp.cloud.sap>
+- For Free Tier and Enterprise Accounts: <https://cockpit.btp.cloud.sap>
 
 ### Access your subaccount
 
@@ -51,6 +50,10 @@ Click on the tile of your Cloud Foundry subaccount:
 Click on the **Destinations** button on the left panel and click **Create Destination** to open a new destination configuration form:
 
 ![destination](./destination.png)
+
+Select **From Scratch** when prompted:
+
+![destination from scratch](./from-scratch.png)
 
 ### Create a new destination
 
@@ -81,7 +84,6 @@ When specifying a URL with the HTTPS scheme, a checkbox **Use default JDK trusts
 
 ### Check the connection
 
-Click on the **Check Connection** icon on the newly created destination to see if everything works as expected:
+Click on the **Check Connection** button for the newly created destination to see if everything works as expected:
 
 ![check destination function](./checkdest.png)
-

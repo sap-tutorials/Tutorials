@@ -55,7 +55,7 @@ Trace settings can also be configured using environment variables, or via connec
 
     The `%p` will be replaced with the process ID of the traced application. Including `%p` in the file name ensures that each process can write its own trace file.
 
-    >The next step provides an example of sending the trace output to `stdout` or `stderr`.  Another option for Node.js applications is to specify a callback to receive the trace output to using the `onTrace` method which is shown in the tutorial [Connect Using the SAP HANA Node.js Interface](hana-clients-node)
+    >The next step provides an example of sending the trace output to `stdout` or `stderr`.  Another option for Node.js applications is to specify a callback to receive the trace output to using the `onTrace` method which is shown in the tutorial [Connect Using the SAP HANA Node.js Interface](hana-clients-node).
 
     Example trace categories include:  
 
@@ -112,7 +112,7 @@ Trace settings can also be configured using environment variables, or via connec
     BUILD MODE: rel
     APPLICATION: C:\SAP\hdbclient\hdbsql.exe
     HOST: W-R90XC65K
-    OS USER: I826567
+    OS USER: I234567
     CURRENT DIRECTORY: c:\temp\traces
     TRACE FILE NAME: c:\temp\traces\SQLDBC-55652.txt
     PROCESS ID: 55652
@@ -144,6 +144,7 @@ Trace settings can also be configured using environment variables, or via connec
 
     ```Shell
     hdbsqldbc_cons TRACE OFF
+    hdbsqldbc_cons SHOW ALL
     ```
 
 
@@ -163,7 +164,30 @@ The following are some additional options for tracing.
     hdbsqldbc_cons TRACE ONLY ON ERROR 10
     ```
 
-3.  In situations where `hdbsqldbc_cons` is not accessible, perhaps because a driver was installed directly using npm or pip, trace settings can be set using environment variables.
+3. Filtering can be used to reduce the size of trace files.  Place the following SQL statements into a file named sql.sql to try this out.
+
+    ```SQL
+    SELECT 'tracetestUSER1' FROM DUMMY; 
+    CONNECT USER2 PASSWORD Password1;
+    SELECT 'tracetestUSER2' FROM DUMMY;
+    ```
+
+    Execute the commands below to reset the trace settings, enable SQL trace for USER2, and then to run the above SQL statements which will execute as USER1 and then as USER2.  
+
+    ```Shell
+    hdbsqldbc_cons TRACE OFF
+    hdbsqldbc_cons TRACE SQL ON LEVEL INFO
+    hdbsqldbc_cons TRACE FILTER SQL USER USER2
+    hdbsql -U User1UserKey -I sql.sql
+    ```
+
+    The expected result is that the resulting trace file only traces the query from USER2.
+
+4.  In situations where `hdbsqldbc_cons` is not accessible, perhaps because a driver was installed directly using npm or pip, trace settings can be set using environment variables.  The following values can be used in the trace file name.  
+
+    * %p represents the process ID
+    * %a represents the application user
+    * %c represents the connection ID
 
     ```Shell (Windows)
     set HDB_SQLDBC_TRACEFILE=c:\temp\traces\SQLDBC-%p.txt
@@ -198,7 +222,7 @@ The following are some additional options for tracing.
 
     ![Environment Variable Values](EnvironmentVariable.png)
 
-4.  Trace information can be directed to `stdout` or `stderr`.  See below for a few examples.
+5.  Trace information can be directed to `stdout` or `stderr`.  See below for a few examples.
 
     ```Shell
     hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=sql=warning "SELECT * FROM HOTELS.CUSTOMER"
@@ -212,7 +236,7 @@ The following are some additional options for tracing.
     set HDB_SQLDBC_TRACEFILE=
     ```
 
-5.  Tracing can also be enabled in an application's connection properties.  For further details see `traceFile` and `traceOptions` in [SQLDBC Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/f6fb06ffe4484f6fa61f10082b11663d.html).
+6.  Tracing can also be enabled in an application's connection properties.  For further details see `traceFile` and `traceOptions` in [SQLDBC Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/f6fb06ffe4484f6fa61f10082b11663d.html).
 
 
 ### Tracing a JDBC Connection

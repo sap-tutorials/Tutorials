@@ -7,20 +7,22 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Browse Schema with the Database Browser in SAP HANA Database Explorer
+
 <!-- description --> See how the database browser can be used to explore and examine objects in an SAP HANA database.
 
 ## Prerequisites
-- An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
+
+- An SAP HANA database such as SAP HANA Cloud free tier or the SAP HANA, express edition that includes the SAP HANA database explorer
 - You have completed the first 3 tutorials in this group
 
 ## You will learn
-  - How a schema filter can be used in the database browser
-  - How to explore and examine objects in an SAP HANA database
+
+- How a schema filter can be used in the database browser
+- How to explore and examine objects in an SAP HANA database
 
 ---
 
 ### Schemas
-
 
 1. Many objects within an SAP HANA database belong to a schema.  A schema allows objects, like tables, views, functions, and stored procedures, to be grouped together.  The current schema in the SQL console is shown at the top of the SQL console.  
 

@@ -42,7 +42,7 @@ In this tutorial, you'll use the **Content Manager** in SAP Build Work Zone, sta
 ### Configure the Web Dynpro ABAP app
 
 
-1.  In the **Content Manager**, click **Create** and then select **App** from the list.
+1.  In the **Content Manager**, click **+ New** and then select **App** from the list.
 
     <!-- border -->![Create new app](4-new-app.png)
 
@@ -109,9 +109,9 @@ If you're not sure what view mode is selected, go to the **Site Settings** scree
     
  2. On the right side of the screen, under **View Mode**, you can see which mode you're working in. To change it, click **Edit** and then **Save** your changes.
 
- 3. Once you're done, go back to the Content Manager using the breadcrumbs at the top of the screen.
+ 3. Once you're done, go back to the Site Manager by clicking **Go to Site Directory**.
 
-    ![Site Settings](26-site-settings-screen.png)
+    ![Site Settings](29-go-to-site-manager.png)
 
 
 ### Assign the app to the Everyone role
@@ -133,9 +133,11 @@ If you're not sure what view mode is selected, go to the **Site Settings** scree
 
 >If you have many apps, you can type some letters of your app name in the search bar, (for example, `se`) to search for the app.
 
+
 ### Add the App to Your Page
 
->**This step is only if you're working with Spaces and Pages.** 
+
+>**Do this step only if you're working with Spaces and Pages.** 
 
 In a previous tutorial, you've already created a Space called `Home` and a Page called `Overview`. Now let's add the Web Dynpro app to the page.
 

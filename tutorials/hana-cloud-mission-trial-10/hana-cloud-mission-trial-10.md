@@ -9,10 +9,9 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Grant Access to Calculation Views
-<!-- description --> Learn how to create a user and grant others access to your calculation views within the SAP HANA database in SAP HANA Cloud.
+<!-- description --> Learn how to create a user and grant others access to your calculation view within the SAP HANA database in SAP HANA Cloud.
 
 ## Prerequisites
-- You have access to [SAP HANA Cloud trial](hana-cloud-mission-trial-2) or [SAP HANA Cloud free tier](hana-cloud-mission-trial-2-ft), or a production environment of SAP HANA Cloud, SAP HANA database
 - You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-3)
 - You have completed the tutorial to [import the sample data needed for this mission](hana-cloud-mission-trial-5)
 - You have [set up a development project in SAP Business Application Studio and connected it to your database](hana-cloud-mission-trial-8).
@@ -40,10 +39,9 @@ In this tutorial, you will learn how to make the calculation view you created pr
 
 ### Generate a SELECT statement on the column view
 
+To allow others to see the results of your calculation view, you need to grant them the privilege to run SELECT statements on this calculation view.
 
-To allow others to see the results of your calculation view, you need to grant them the privilege to run `SELECT` statements on this calculation view.
-
-To run `SELECT` statements on calculation views in the new environment, first make sure that the you have the correct schema name. This schema is not the `SFLIGHT` schema we previously created, but rather the schema automatically created for the calculation view.
+To run SELECT statements on calculation views in the new environment, first make sure that the you have the correct schema name. This schema is not the `SFLIGHT` schema we previously created, but rather the schema automatically created for the calculation view.
 
 1. To find out the schema name, open the **SAP HANA database explorer**.
 
@@ -75,17 +73,13 @@ To run `SELECT` statements on calculation views in the new environment, first ma
 
     ![Select Statement](ss-02-select-statement.png)
 
-
-
-
 ### Create a role
-
 
 Great, now that you have the right schema name, next you will have to grant the authorization to `SELECT` on the Calculation View. This is done by creating an `.hdbrole` file in your development project that grants the `SELECT` privilege.
 
 1.	Go to your project in SAP Business Application Studio and start your development space if needed.
 
-2.	You need the command **SAP HANA: Create HANA database artifact** that you got to know in the previous tutorial. Access it by clicking on **View** on the top menu and selecting **Find command** or pressing `Ctrl+Shift+P`. Unless you see it in your recently used commands, type `SAP HANA` and select it from the list.
+2.	You need the command **SAP HANA: Create HANA database artifact** that you got to know in the previous tutorial. Access it by clicking on **View** menu and selecting **Command Palette** or press `Ctrl+Shift+P`. Unless you see it in your recently used commands, type `SAP HANA` and select **SAP HANA: Create HANA database artifact** from the list.
 
 3.	In the wizard, make sure the path to save the role file is in the `src` folder of your project.
 
@@ -101,12 +95,7 @@ Great, now that you have the right schema name, next you will have to grant the 
 
 Your role will appear in the file explorer of your project and you can add privileges to it.
 
-
-
-
-
 ### Add privileges to the role
-
 
 In this step, you have two options to add privileges to your role: You can use the **Role Editor** wizard or the **Text Editor**. Click on the option you prefer under the title of this step.
 
@@ -156,33 +145,30 @@ Deploy the `.hdbrole` file by clicking on the deploy icon (![Deploy](icon-deploy
 After you are done, deploy the whole project again. When that is completed successfully, you may continue.
 
 
-
-### Create a new user in the SAP HANA database explorer
-
+### Create a new database user in SAP HANA Cloud Central
 
 Now that you have the role created and granted privileges to this role, it's time to grant this role to a user. We will create the public user `report` that shall have read-only access to the calculation view.
 
-1.	Go back to your tab with the **SAP HANA database explorer** and open a SQL Console by clicking on the SQL icon (![SQL](icon-sql.png)) at the top left corner. Make sure that the connection is opened for an user that has system privileges `ROLE ADMIN` and `USER ADMIN`, e.g., database user `DBADMIN`.
+1.	Open the SQL Console in SAP HANA Cloud Central.  Make sure that the connection is opened for an user that has system privileges `ROLE ADMIN` and `USER ADMIN`, e.g., database user `DBADMIN`.
 
 2.	Paste the following statement in the SQL Console. Change the password in the statement and then run.
 
     ```SQL
-    CREATE USER report PASSWORD <your_password> NO FORCE_FIRST_PASSWORD_CHANGE set usergroup default;
+    CREATE USER report PASSWORD Password1 NO FORCE_FIRST_PASSWORD_CHANGE set usergroup default;
     ```
 
     > Using the clause `NO FORCE_FIRST_PASSWORD_CHANGE` is not considered a security best practice! We will only use this option for the purpose of this tutorial, in our example to make a user available to multiple individuals. If you create users in your productive environment, please consider forcing a password change for the first log in and giving individuals different users.
+
+    ![create user report](create-user-report.png)
 
 3.	Now that our new user `report` is created, we need to grant the user access to the role `PublicAccessSchema`.
 
 4.	Use the following statement.
 
     ```SQL
-    GRANT <SCHEMA_NAME>."PublicAccessSchema" to report;
+    GRANT HDI_TUTORIAL."PublicAccessSchema" to report;
     ```
-
-5. Replace the `<schema name>` with the calculation view schema you copied in the beginning of this tutorial.
-
-6. Make sure to remove the `<>` characters and then run the statement.
+   Notice that the schema name is the value you copied in the beginning of this tutorial.
 
 > ### Custom vs. default roles
 >
@@ -199,24 +185,27 @@ Now that you have the role created and granted privileges to this role, it's tim
 
 ### Connect as the new user
 
-
 You have successfully created the new user `report` and assigned it a role to access your calculation view. With the new user credentials, anyone who has the credentials for this user can run `SELECT` statements on your calculation view.
 
 1.	To test this, first log in with your new user by typing the following statement:
 
     ```SQL
-    CONNECT report PASSWORD <Your_Password>;
+    CONNECT report PASSWORD Password1;
     ```
 
 2.	You should now see at the top of the screen, over the SQL console the user you connected with.
 
-3.	Since you granted this user `SELECT` privileges, you should be able to run `SELECT` statements on the column view.
+3.	Since you granted this user `SELECT` privileges, you should be able to now run the statement below with the user report.
 
-4.	Go back to the SQL console you opened in STEP 1, when you generated a `SELECT` statement of the column view. If you have closed it in the meantime, simply right-click on the column view and click on **Generate a SELECT Statement**.
-
-5.	Copy the whole statement from this SQL console and paste it to the console that you used to connect with the user `report`.
-
-6.	Execute the statement using the `report`-user console. When you see the results of this query you know that your test was successful, and the user can now access your view.
+    ```SQL
+    SELECT TOP 1000 
+        "AGENCYNUM",
+        "NAME",
+        "ORDERDAY",
+        "NUMBOOKINGS",
+        "DAYCOUNT"
+    FROM "HDI_TUTORIAL"."calculationView";
+    ```
 
     ![Final results of the last query](final-result.png)
 

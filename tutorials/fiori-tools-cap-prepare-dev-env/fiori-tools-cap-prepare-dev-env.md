@@ -3,7 +3,7 @@ title: Prepare Your Development Environment for SAP Fiori Elements
 description: Set up your development environment with SAP Business Application Studio to create an SAP Fiori elements application based on the SAP Cloud Application Programming Model.
 auto_validation: true
 time: 20 minutes
-tags: [ products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
+tags: [ software-product-function>sap-fiori-elements, tutorial>beginner, software-product-function>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product-function>sap-business-technology-platform ]
 primary_tag: products>sap-fiori
 contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
 ---
@@ -28,7 +28,7 @@ Click [here](https://cap.cloud.sap/docs/about/) for more information about the S
 
     Click **Create Dev Space**.
 
-    ![Start the Dev Space](create-dev-space-BAS.png)
+    !![Start the Dev Space](create-dev-space-BAS.png)
 
     Your development space is now ready to use. Wait until the status has changed from **STARTING** to **RUNNING**. After the initial creation this is done automatically.
 
@@ -54,16 +54,15 @@ Once you are in the development space, you will see a **Welcome** page from whic
 
 2. Click the link **Clone from Git**.
 
-    ![Click on link "Clone from Git"](click-clone-from-git.png)
+    !![Click on link "Clone from Git"](click-clone-from-git.png)
 
     Paste the repository link into the input field and press **Enter**.
 
-    ![Enter the github repository URL](enter-github-repository.png)
+    !![Enter the github repository URL](enter-github-repository.png)
 
-3. Wait until the cloning has finished. When you see a toast message in the lower right corner, click **Open** to open the project.
-    You see your project in the explorer panel as shown in the image below:
+3. Wait until the cloning has finished. Click **Open** to open the project. You see your project in the explorer panel as shown in the image below:
 
-    ![Explorer service structure](explorer-project-tree.png)
+    !![Explorer service structure](explorer-project-tree.png)
 
 [DONE]
 [ACCORDION-END]

@@ -7,14 +7,17 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Export and Import Data and Schema with SAP HANA Database Explorer
+
 <!-- description --> Use wizards or SQL statements to export and import data and schema using CSV, Apache Parquet, or binary formats.
 
 ## Prerequisites
-- An SAP HANA database such as SAP HANA Cloud trial, free tier, or the SAP HANA, express edition that includes the SAP HANA database explorer
+
+- An SAP HANA database such as SAP HANA Cloud free tier, or the SAP HANA, express edition that includes the SAP HANA database explorer
 - Data lake Files, Amazon AWS, Google Cloud, or Microsoft Azure accounts will be needed for optional steps in this tutorial.
 - You have completed the first 3 tutorials in this group.
 
 ## You will learn
+
 - How to export and import data using the export and import data wizards, SQL statements export into and import from, and the download option in the SQL console results tab
 - How to export and import schema objects using export and import catalog wizards and the SQL statements export and import
 - How to use cloud storage providers as a target when exporting or importing
@@ -49,7 +52,7 @@ Methods to import into tables
 | Method  | Version       | Source          | Format(s)       | Notes |
 | ------- | -------------|------------------------| ----------------| ------------|
 | [Import data wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-data-into-new-or-existing-table-sap-hana-cloud-database)   | All    | local computer         | CSV             | 1 GB max, 2 MB per row in SAP HANA Cloud, HANA database; 200 MB max SAP HANA on-premise |
-| [Import data wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-data-into-new-or-existing-table-sap-hana-cloud-database)   | SAP HANA Cloud, HANA database    | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)   | |
+| [Import data wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-data-into-new-or-existing-table-sap-hana-cloud-database)   | SAP HANA Cloud, HANA database    | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)   | Target table can be created |
 | [Import data wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-data-into-new-or-existing-table-sap-hana-cloud-database)    | SAP HANA Cloud, HANA database   | data lake Files, local computer, S3, Azure, GCS, Alibaba OSS   | `ESRI shapefiles` | An example of importing an `ESRI shapefile` can be found in [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model) tutorial. |
 | [Import data wizard](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
 | [Import from statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/import-from-statement-data-import-export) | SAP HANA Cloud, HANA database | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON  (for document stores)  | |
@@ -152,7 +155,8 @@ The following steps are for illustrative purposes only and are not meant to be f
     ```
 
 ### Use data lake Files for export and import from an SAP HANA Cloud, SAP HANA database (optional)
-The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier or trial.
+
+The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not included in the free tier service plan.
 
 1. Complete steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
 
@@ -271,7 +275,7 @@ The following steps walk through the process of exporting to and importing data 
     ```
 
 ### Use data lake Files for export and import from an SAP HANA Cloud, data lake Relational Engine database (optional)
-The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, data lake Relational Engine database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier or trial.  The following steps assume you have followed the first two sub steps in the previous step so that a data lake Files connection has been added to the SAP HANA database explorer.
+The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, data lake Relational Engine database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier.  The following steps assume you have followed the first two sub steps in the previous step so that a data lake Files connection has been added to the SAP HANA database explorer.
 
 1. Create a database credential for the data lake Files container.  This step is required if you wish to export to a data lake Files instance that is not the one associated with the data lake Relational Engine.  Further details are described at [Unloading Data to Data Lake Files from Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/unloading-data-to-data-lake-files).  Open a SQL Console connected to a data lake Relational Engine instance and execute the below SQL statements.
 
@@ -491,9 +495,9 @@ Methods to export catalog objects
 | Method                  | Version | Target                             | Format(s)                             | Limitations |
 | ------------------------|---------|-------------------------------|---------------------------------------|-------------|
 | [Export catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/export-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database) | All | Local computer | CSV, Binary, \*Parquet | 2 GB max |
-| [Export catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/export-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database)  | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS | CSV, Binary, Parquet | \*\* |
+| [Export catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/export-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database)  | SAP HANA Cloud, HANA database | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Binary, Parquet | \*\* |
 | [Export catalog wizard](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary | \*\* |
-| [Export statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/export-statement-data-import-export) | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS                 | CSV, Binary, Parquet | ** |
+| [Export statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/export-statement-data-import-export) | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS, Alibaba OSS                 | CSV, Binary, Parquet | ** |
 | [Export statement](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a04f6754767/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA on-premise     | HANA file system                 | CSV, Binary data | \*\* |
 
 
@@ -502,9 +506,9 @@ Methods to import catalog objects
 | Method                  | Version | Source                             | Format(s)                             | Limitations |
 | ------------------------|---------|-------------------------------|---------------------------------------|-------------|
 | [Import catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database) | All  | Local computer | CSV, Binary   | 2 GB max |
-| [Import catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database)  | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS  | CSV, Binary, Parquet                          | \*\* |
+| [Import catalog wizard](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/import-schemas-tables-and-other-catalog-objects-sap-hana-cloud-database)  | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS, Alibaba OSS  | CSV, Binary, Parquet                          | \*\* |
 | [Import catalog wizard](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/80f63855e7854cd3a6144e0021b5f748.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary                | 2 GB max per object,  \*\* |
-| [Import statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/import-statement-data-import-export) | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS                 | CSV, Binary,  Parquet                          | \*\* |
+| [Import statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/import-statement-data-import-export) | SAP HANA Cloud, HANA database | data lake Files, S3, Azure, GCS, Alibaba OSS                 | CSV, Binary,  Parquet                          | \*\* |
 | [Import statement](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a04f6754767/20f75ade751910148492a90e5e375b8f.html) | SAP HANA on-premise | SAP HANA file system       | CSV, Binary                        | \*\* |
 
 > \* SAP HANA Cloud, HANA database only
@@ -599,25 +603,28 @@ The following steps walk through the process of using Microsoft Azure storage se
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
     SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
-    CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----MIIDdzCCAl+gAwIBAgIEAgAAuTANBgkqhkiG9w0BAQUFADBaMQswCQYDVQQGEwJJ
-    RTESMBAGA1UEChMJQmFsdGltb3JlMRMwEQYDVQQLEwpDeWJlclRydXN0MSIwIAYD
-    VQQDExlCYWx0aW1vcmUgQ3liZXJUcnVzdCBSb290MB4XDTAwMDUxMjE4NDYwMFoX
-    DTI1MDUxMjIzNTkwMFowWjELMAkGA1UEBhMCSUUxEjAQBgNVBAoTCUJhbHRpbW9y
-    ZTETMBEGA1UECxMKQ3liZXJUcnVzdDEiMCAGA1UEAxMZQmFsdGltb3JlIEN5YmVy
-    VHJ1c3QgUm9vdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKMEuyKr
-    mD1X6CZymrV51Cni4eiVgLGw41uOKymaZN+hXe2wCQVt2yguzmKiYv60iNoS6zjr
-    IZ3AQSsBUnuId9Mcj8e6uYi1agnnc+gRQKfRzMpijS3ljwumUNKoUMMo6vWrJYeK
-    mpYcqWe4PwzV9/lSEy/CG9VwcPCPwBLKBsua4dnKM3p31vjsufFoREJIE9LAwqSu
-    XmD+tqYF/LTdB1kC1FkYmGP1pWPgkAx9XbIGevOF6uvUA65ehD5f/xXtabz5OTZy
-    dc93Uk3zyZAsuT3lySNTPx8kmCFcB5kpvcY67Oduhjprl3RjM71oGDHweI12v/ye
-    jl0qhqdNkNwnGjkCAwEAAaNFMEMwHQYDVR0OBBYEFOWdWTCCR1jMrPoIVDaGezq1
-    BE3wMBIGA1UdEwEB/wQIMAYBAf8CAQMwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3
-    DQEBBQUAA4IBAQCFDF2O5G9RaEIFoN27TyclhAO992T9Ldcw46QQF+vaKSm2eT92
-    9hkTI7gQCvlYpNRhcL0EYWoSihfVCr3FvDB81ukMJY2GQE/szKN+OMY3EU/t3Wgx
-    jkzSswF07r51XgdIGn9w/xZchMB5hbgF/X++ZRGjD8ACtPhSNzkE1akxehi/oCr0
-    Epn3o0WC4zxe9Z2etciefC7IpJ5OCBRLbf1wbWsaY71k5h+3zvDyny67G7fyUIhz
-    ksLi4xaNmjICq44Y3ekQEe5+NauQrz4wlHrQMz2nZQ/1/I6eYs9HRCwBXbsdtTLS
-    R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
+    CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
+    MIIDjjCCAnagAwIBAgIQAzrx5qcRqaC7KGSxHQn65TANBgkqhkiG9w0BAQsFADBh
+    MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+    d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBH
+    MjAeFw0xMzA4MDExMjAwMDBaFw0zODAxMTUxMjAwMDBaMGExCzAJBgNVBAYTAlVT
+    MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+    b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IEcyMIIBIjANBgkqhkiG
+    9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuzfNNNx7a8myaJCtSnX/RrohCgiN9RlUyfuI
+    2/Ou8jqJkTx65qsGGmvPrC3oXgkkRLpimn7Wo6h+4FR1IAWsULecYxpsMNzaHxmx
+    1x7e/dfgy5SDN67sH0NO3Xss0r0upS/kqbitOtSZpLYl6ZtrAGCSYP9PIUkY92eQ
+    q2EGnI/yuum06ZIya7XzV+hdG82MHauVBJVJ8zUtluNJbd134/tJS7SsVQepj5Wz
+    tCO7TG1F8PapspUwtP1MVYwnSlcUfIKdzXOS0xZKBgyMUNGPHgm+F6HmIcr9g+UQ
+    vIOlCsRnKPZzFBQ9RnbDhxSJITRNrw9FDKZJobq7nMWxM4MphQIDAQABo0IwQDAP
+    BgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAdBgNVHQ4EFgQUTiJUIBiV
+    5uNu5g/6+rkS7QYXjzkwDQYJKoZIhvcNAQELBQADggEBAGBnKJRvDkhj6zHd6mcY
+    1Yl9PMWLSn/pvtsrF9+wX3N3KjITOYFnQoQj8kVnNeyIv/iPsGEMNKSuIEyExtv4
+    NeF22d+mQrvHRAiGfzZ0JFrabA0UWTW98kndth/Jsw1HKj2ZL7tcu7XUIOGZX1NG
+    Fdtom/DzMNU+MeKNhJ7jitralj41E6Vf8PlwUHBHQRFXGU7Aj64GxJUTFy8bJZ91
+    8rGOmaFvE7FBcf6IKshPECBV1/MUReXgRPTqh5Uykw7+U0b6LJ3/iyK5S9kJRaTe
+    pLiaWN0bfVKfjllDiIGknibVb63dDcY3fe0Dkhvld1927jyNxF1WW6LZZm6zNTfl
+    MrY=
+    -----END CERTIFICATE-----' COMMENT 'Azure';
     --DROP CERTIFICATE <CERTIFICATE_ID>;
     ```
     Now you can add the certificate to the PSE. Execute the following to retrieve the certificate ID.

@@ -72,7 +72,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
         An example of configuring this setting is shown in [Allow connections to SAP HANA Cloud instance from selected IP addresses — using the command line](https://blogs.sap.com/2020/10/30/allow-connections-to-sap-hana-cloud-instance-from-selected-ip-addresses-using-the-command-line/).
     
-    - The SAP HANA Cloud, HANA database trial instance will be automatically stopped overnight.   That means you need to restart your instance before working with it each new day.
+    - The SAP HANA Cloud, HANA database free tier instance will be automatically stopped overnight.   That means you need to restart your instance before working with it each new day.
 
 
     - Connections to a HANA Cloud instance must use encryption.  The default encryption library on Windows is mscrypto and on Linux and macOS it is OpenSSL.  The following example demonstrates how one could use the SAP provided conmmoncrypto library instead of the default encryption library.  Note, the following steps require that the SAP HANA Client be downloaded from the SAP Software Downloads as the download includes the SAP Common Crypto library (libsapcrypto).  Note that the environment variables can also be set by running source hdbclienv.sh or hdbclienv.bat.

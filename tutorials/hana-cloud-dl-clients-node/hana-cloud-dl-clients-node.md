@@ -18,7 +18,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - How to use both the synchronous and asynchronous driver interfaces
 
 ## Intro
-Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/en/learn/).  
+Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs). On Microsoft Windows, in this tutorial, the shell used is the Command Prompt.
 
 ---
 
@@ -43,26 +43,9 @@ If Node.js is not installed, download the long-term support (LTS) version of the
 
 
 ### Install the data lake Relational Engine client for Node.js
-The Node.js driver covered in this tutorial is `@sap\iq-client` which supports the latest Node.js versions and includes a promise library.  An alternate driver is the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.
-The SQL Anywhere driver can be installed by running this command.
+The Node.js driver covered in this tutorial is [@sap\iq-client](https://www.npmjs.com/package/@sap/iq-client) which supports the latest Node.js versions and includes a promise library.  An alternate driver is the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.  
 
- ```Shell (Microsoft Windows)
-npm install sqlanywhere
- ```
-
-1. Add the dependencies to the driver.
-
-    ```Shell (Microsoft Windows)
-    cd %IQDIR17%\sdk\node
-    npm install
-    ```
-
-    ```Shell (Linux)
-    cd $IQDIR17/sdk/node
-    npm install
-    ```
-
-2. Open a new Shell and create a folder named `node` and enter the newly created directory.
+1. Open a new Shell and create a folder named `node` and enter the newly created directory.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\DataLakeClientsTutorial\node
@@ -74,21 +57,14 @@ npm install sqlanywhere
     cd $HOME/DataLakeClientsTutorial/node
     ```
 
-3. Initialize the project and install the `@sap\iq-client` driver from the install folder.
+2. Initialize the project and install the `@sap\iq-client` driver from npm.
 
-    ```Shell (Microsoft Windows)
+    ```Shell 
     npm init -y
-    npm install %IQDIR17%\sdk\node
+    npm install @sap/iq-client
     ```
 
-    ```Shell (Linux)
-    npm init -y
-    npm install $IQDIR17/sdk/node
-    ```
-
-    If the above command fails due to a permission error, either change the folder permission or run with sudo.
-
-4. The following command lists the Node.js modules that are now installed locally into the `DataLakeClientsTutorial\node` folder.
+3. The following command lists the Node.js modules that are now installed locally into the `DataLakeClientsTutorial\node` folder.
 
     ```Shell
     npm list
@@ -99,6 +75,8 @@ npm install sqlanywhere
 
 ### Create a synchronous Node.js application that queries SAP data lake Relational Engine
 1. Create a new file named `nodeQuery.js` in an editor.
+
+Depending on what version of the data lake client was used, execute:
 
     ```Shell (Microsoft Windows)
     notepad nodeQuery.js
@@ -146,6 +124,8 @@ npm install sqlanywhere
     ```
 
     ![Running nodeQuery.js](node-query-sync.png)
+
+    If an error appears such as Error: `libdbcapi_r.so` is missing, its location can be specified using an environment variable such as IQ_DBCAPI_DIR.
 
     Note the above app makes use of some of the data lake Relational Engine client Node.js driver methods, such as [connect](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/connect-string-object-function-method), [exec](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/exec-ute-string-array-object-function-method) and [disconnect](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/disconnect-close-end-function-method).
 

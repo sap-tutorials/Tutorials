@@ -7,17 +7,21 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Try Out Multi-Model Functionality with the SAP HANA Database Explorer and Database Objects App
+
 <!-- description --> Explore knowledge graph, property graph, JSON document store, and spatial capabilities in the SAP HANA database explorer.
 
 ## Prerequisites
+
 - A productive SAP HANA Cloud database
 - You have completed the first 3 tutorials in this group.
 
 ## You will learn
-  - How to create a knowledge graph, a property graph, a document store, and import spatial data.
-  - How the SAP HANA database explorer and the database objects app can be used with multi-model data.
+
+- How to create a knowledge graph, a property graph, a document store, and import spatial data.
+- How the SAP HANA database explorer and the database objects app can be used with multi-model data.
 
 ## Intro
+
 A [knowledge graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sap-hana-cloud-sap-hana-database-knowledge-graph-engine-guide) can be used to store facts in triples providing additional meaning and relationships. 
 
 A [property graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-property-graph-engine-reference/sap-hana-cloud-sap-hana-database-property-graph-engine-reference) can be used to show the connections between items such as the connections between airports or between people or groups in a social network.
@@ -28,8 +32,8 @@ This tutorial is meant to be an introduction to this topic.  For additional cont
 
 ---
 
-
 ### Enable the triple store and Create a knowledge graph
+
 The following steps will create a knowledge graph that provides information on additional hotel amenities, explore the created knowledge graph using the database objects app, and then will perform a query on the knowledge graph.
 
 Before you can create a knowledge graph, please ensure your HANA Instance is version 2025.2 or above, and your instance has triple store activated. Here are the steps to doing this:
@@ -46,7 +50,7 @@ Before you can create a knowledge graph, please ensure your HANA Instance is ver
 
     ![Add Triple Store](add_triple_store.png)
 
-    *The knowledge graph feature is not available for trial or free tier users.*
+    *The knowledge graph feature is not available for free tier instances.*
     
     To learn more about knowledge graphs see [Connecting the Facts: SAP HANA Cloud’s Knowledge Graph Engine for Business Context](https://community.sap.com/t5/technology-blogs-by-sap/connecting-the-facts-sap-hana-cloud-s-knowledge-graph-engine-for-business/ba-p/13888597) and [Choosing Between Knowledge Graphs and Property Graphs in SAP HANA Cloud and Why Both Matter](https://community.sap.com/t5/technology-blogs-by-sap/choosing-between-knowledge-graphs-and-property-graphs-in-sap-hana-cloud-and/ba-p/14074575).
 
@@ -369,7 +373,7 @@ SAP HANA provides the ability to store and query JSON data.  This can be useful 
 
 The following steps will demonstrate how to create a JSON collection that can be used to collect notes about customers staying at a hotel.
 
->The creation of a JSON collection is not supported in the SAP HANA Cloud free tier or trial.
+>The creation of a JSON collection is not supported in the SAP HANA Cloud free tier.
 
 1. Enable the JSON document store.  
 
