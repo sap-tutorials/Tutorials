@@ -37,33 +37,7 @@ To connect the Migration Assessment application with your SAP Process Orchestrat
 
       <!-- border -->![Image](Images/2023-01-23_23-54-52.jpg)
 
-3. Make sure that your SAP Cloud Connector exposes the following API paths correctly. They're used to extract data from your SAP Process Orchestration system:
-
-    -  Directory Content
-        - `/CommunicationChannelInService`
-        - `/IntegratedConfigurationInService`
-        - `/SenderAgreementInService`
-        - `/AlertRuleInService`
-        - `/IntegratedConfiguration750InService`
-        - `/ValueMappingInService`
-        - `/ConfigurationScenarioInService`
-        - `/BPMFacadeBeanImplService`
-        - `/ReceiverAgreementInService`
-        - `/ReceiverRuleInService`
-        - `/ReceiverDeterminationInService`
-        - `/InterfaceDeterminationInService`
-
-    - ESR Content
-        - `/dir/read/ext`
-        - `/dir/query/ext`
-        - `/rep/support/SimpleQuery`
-        - `/rep/read/ext`
-        - `/rep/query/ext`
-        - `/rep/query/int`
-
-    - Message Monitoring
-
-        - `/mdt`
+3. Make sure that your SAP Cloud Connector exposes the following API paths correctly. They're used to extract data from your SAP Process Orchestration system. See [Add an SAP Process Orchestration System](https://help.sap.com/docs/integration-suite/sap-integration-suite/add-sap-process-orchestration-system).
 
 
 4. Limit access to the previously mentioned endpoints and subpaths by changing **Access Policy** to **Path and All Sub-Paths**.
