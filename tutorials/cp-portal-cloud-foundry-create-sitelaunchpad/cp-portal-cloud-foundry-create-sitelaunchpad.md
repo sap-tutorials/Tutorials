@@ -26,7 +26,7 @@ In this tutorial we'll create a site for a company called `JobCore`. We'll then 
 
 When you access the SAP Build Work Zone, standard edition, the Site Directory is in focus. From here you'll create your new site.
 
-> In the side panel, you'll see five tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps, groups, spaces, pages, roles and catalogs. The **Channel Manager** where you manage different channels that expose business content that you can integrate into your sites. The fourth icon opens the **Transport Manager** where you can track the status of your imports. The fifth icon opens **Settings** where you can configure various settings related to your subaccount.
+> In the side panel, you'll see five tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps, groups, spaces, pages, roles and catalogs. The **Channel Manager** where you manage different channels that expose business content that you can integrate into your sites. The fourth icon opens the **Import Monitor** where you can track the status of your imports. The fifth icon opens **Settings** where you can configure various settings related to your subaccount.
 
 
 1. Click **Create Site**.

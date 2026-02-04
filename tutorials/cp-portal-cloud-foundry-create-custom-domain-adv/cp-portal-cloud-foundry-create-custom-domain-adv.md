@@ -44,7 +44,9 @@ To make sure that your domain is trusted by way of activated server certificates
 
 ### Manage reserved and custom domains
 
-> To make your applications reachable and secure under your own domain, use the **Custom Domain Manager** to create and manage your reserved and custom domains. The reserved domain should be your parent domain (for example, `mycompany.com`). The custom domain is created based on your reserved domain (for example, `prod.mycompany.com`).
+> To make your applications reachable and secure under your own domain, use the **Custom Domain Manager** to create and manage your reserved and custom domains. The reserved domain should be your parent domain (for example, `prod.mycompany.com`). The custom domain is created based on your reserved domain (for example, `workzone.prod.mycompany.com`).
+The best practice is to use 3 different subaccounts for **Dev**, **QA** and, **Prod**, so we recommend creating 3 reserved domains accordingly. Example: **dev.mycompany.com**, **qa.mycompany.com**, **prod.mycompany.com**.
+Then perform the custom domain configuration steps such as creating custom domains, server certificate etc, for all 3 subaccounts.
 
 1. Open the SAP BTP cockpit, and log on to the **Custom Domain Manager**.
 
@@ -64,19 +66,19 @@ To make sure that your domain is trusted by way of activated server certificates
 
 5. A wizard opens displaying your subscribed applications, in their corresponding landscapes. Now do the following:
 
-    - From the **Select Subscribed Application Name** step,  select `SAP Build Work Zone, advanced edition`  as the SaaS application and click **Next Step**.
+    - From the **Select Subscribed Application Name** step,  select `SAP Build Work Zone, advanced edition` as the SaaS application and click **Next Step**.
 
     <!-- border -->![Select reserved domain](5-select-Saas-application.png) 
 
-    - From the **Select Reserved Domain** step, select the desired domain from the list of **Reserved Domains** which in our case is `mycompany.com`. Now click **Next Step**.
+    - From the **Select Reserved Domain** step, select the desired domain from the list of **Reserved Domains** which in our case is `prod.mycompany.com`. Now click **Next Step**.
 
     <!-- border -->![Select domain](6-select-domain.png)  
 
-    - From the **Create Subdomain Name** step, enter a single subdomain name, for example `prod` and click **Finish**. The result is a new custom domain. For example, `prod.mycompany.com`
+    - From the **Create Subdomain Name** step, enter a single subdomain name, for example `prod` and click **Finish**. The result is a new custom domain. For example, `workzone.prod.mycompany.com`
 
     <!-- border -->![Select subdomain](7-select-subdomain.png) 
 
-6. Create a custom domain for every runtime destination. For example: `xyz200.mycompany.com` (xyz200 in this example is the on-premise backend). The custom domain for the runtime destination must be part of this hierarchy, meaning it should be a **single** subdomain under the reserved domain, otherwise an error will occur. This is because SAP Build Work Zone code suppresses the subdomain (for example, `prod.mycompany.com`) used for the SAP Build Work Zone site when performing requests to on-premise backend applications.
+6. Create a custom domain for every runtime destination. For example: `xyz200.prod.mycompany.com` (xyz200 in this example is the on-premise backend). The custom domain for the runtime destination must be part of this hierarchy, meaning it should be a **single** subdomain under the reserved domain, otherwise an error will occur. This is because SAP Build Work Zone code suppresses the subdomain (for example, `workzone.prod.mycompany.com`) used for the SAP Build Work Zone site when performing requests to on-premise backend applications.
 
     <!-- border -->![Custom domain for runtime destinations](8-custom-domain-for-runtime.png) 
 
@@ -86,16 +88,14 @@ To make sure that your domain is trusted by way of activated server certificates
 
     | :------------- | :------------- | :------------- | :-------------
     | **Runtime Destination Domain**     | **DNS CNAME** | **SaaS Route**        | **SAP Build Work Zone Domain**
-    | xyz200.mycompany.com       | CNAME api.cf.eu10.hana.ondemand.com. | portal-prod-sapdelim-xyz200.launchpad.cfapps.eu10.hana.ondemand.com | prod.mycompany.com
-    | xyz300.mycompany.com    |  CNAME api.cf.eu10.hana.ondemand.com. | portal-qa-sapdelim-xyz300.launchpad.cfapps.eu10.hana.ondemand.com  | qa.mycompany.com.
-    | xyz400.mycompany.com     |  CNAME api.cf.eu10.hana.ondemand.com. | portal-dev-sapdelim-xyz400.launchpad.cfapps.eu10.hana.ondemand.com  | dev.mycompany.com.
+    | xyz200.prod.mycompany.com       | CNAME api.cf.eu10.hana.ondemand.com. | portal-prod-sapdelim-xyz200.workzone.cfapps.eu10.hana.ondemand.com | workzone.prod.mycompany.com
+    | xyz300.qa.mycompany.com    |  CNAME api.cf.eu10.hana.ondemand.com. | portal-qa-sapdelim-xyz300.workzone.cfapps.eu10.hana.ondemand.com  | workzone.qa.mycompany.com.
+    | xyz400.dev.mycompany.com     |  CNAME api.cf.eu10.hana.ondemand.com. | portal-dev-sapdelim-xyz400.workzone.cfapps.eu10.hana.ondemand.com  | workzone.dev.mycompany.com.
 
-7. From the Cloud Identity Services dashboard go to the **Applications & Resources** tab, and create a custom domain for your SAP Cloud Identity Services tenant. For example, `ias.mycompany.com`.
+7. From the Cloud Identity Services dashboard go to the **Applications & Resources** tab, and create a custom domain for your SAP Cloud Identity Services tenant. For example, `ias.prod.mycompany.com`.
 
 
 The custom domains are created and displayed in a list, along with their corresponding landscape and status.
-
-> Repeat the above steps for creating custom domains in your `DEV`, `QA`, and `PROD` environments.
 
 ### Use custom domain in Identity Authentication
 
@@ -148,8 +148,8 @@ This step is done in the Custom Domain Manager. You'll create a new server certi
 
     <!-- border -->![Wildcard custom domain](14a-select-wildcard-custom-domain.png)
 
-    > A wildcard certificate secures multiple applications of a domain. So a domain called `*.mycompany.com` covers any application under the domain `mycompany.com`, for example `prod.mycompany.com`, but not the domain `mycompany.com` itself. 
-     This also works with subdomains, so the subdomain `*.prod.mycompany.com` covers any application under the subdomain `prod.mycompany.com`, for example, `myapp.prod.mycompany.com`, but not the subdomain `prod.mycompany.com` itself.
+    > A wildcard certificate secures multiple applications of a domain. So a domain called `prod.mycompany.com` covers any application under the domain `prod.mycompany.com`, for example `workzone.prod.mycompany.com`, but not the domain `prod.mycompany.com` itself. 
+     This also works with subdomains, so the subdomain `*workzone.prod.mycompany.com` covers any application under the subdomain `workzone.prod.mycompany.com`, for example, `myapp.workzone.prod.mycompany.com`, but not the subdomain `workzone.prod.mycompany.com` itself.
 
 3. The wizard opens with the **General Information** step in focus. Now do the following:
 
@@ -243,7 +243,7 @@ Example of a runtime destination mapping:
 
 | :------------- | :-------------
 | App Name            | `SAP Build Work Zone, advanced edition`
-| Custom route        | `prod.mycompany.com`
+| Custom route        | `workzone.prod.mycompany.com`
 | Standard route      | `subprod-sapdelim-xyz200.workzone.cfapps.us10.hana.ondemand.com` 
 
 
@@ -254,17 +254,17 @@ In this step, you'll create a `CNAME` record in the Domain Name Service (DNS) so
 Example: 
 
 :------------- | :-------------
-| name        | `prod.mycompany.com`
+| name        | `workzone.prod.mycompany.com`
 | type        | `CNAME`
 | data        | `api.cf.eu10.hana.ondemand.com`
 | TTL          | `14400`
 
-You also need to configure the Domain Name System (DNS) in order to route traffic to an application on your custom domain. For each custom domain that you use, you must create a CNAME mapping from the custom domain to its Cloud Foundry domain. For example, you must create a separate `CNAME` mapping for your runtime destination custom domain in case you're using tunnelled access to access your on-premise apps.
+You must also configure the Domain Name System (DNS) in order to route traffic to an application on your custom domain. For each custom domain that you use, you must create a CNAME mapping from the custom domain to its Cloud Foundry domain. For example, you must create a separate `CNAME` mapping for your runtime destination custom domain in case you're using tunnelled access to access your on-premise apps.
 
 Example:
 
 :------------- | :-------------
-| name        | `<runtime destination>.mycompany.com `
+| name        | `<runtime destination>.prod.mycompany.com `
 | type        | `CNAME`
 | data        | `api.cf.eu10.hana.ondemand.com`
 | TTL          | `14400`
@@ -295,7 +295,7 @@ In this step, (which is only relevant for subscriptions that were created prior 
 6. Manually enter the communication settings negotiated between Identity Authentication and the client as follows:
 
     - Name (mandatory)              Provide a name of your choice.
-    - Redirect URIs (mandatory)     The redirection URIs to which the response can be sent. You can add up to 20 redirect URIs. Example: `https://prod.mycompany.com/**` or `https://*.mycompany.com/**` 
+    - Redirect URIs (mandatory)     The redirection URIs to which the response can be sent. You can add up to 20 redirect URIs. Example: `https://workzone.prod.mycompany.com/**` or `https://*prod.mycompany.com/**` 
         
 
     The above URI covers both login and logout flows, so there's no need to add also a URI to the Front-Channel Logout URIs.
