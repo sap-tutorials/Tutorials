@@ -24,7 +24,7 @@ primary_tag: software-product>sap-hana-cloud
 
 This tutorial will provide tips and pointers on setting up an instance of [SAP HANA](https://www.sap.com/products/hana.html) running in the cloud or on-premise so that it can then be connected to using a few of the [SAP HANA Client](https://help.sap.com/docs/SAP_HANA_CLIENT) interfaces.  
 
-For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.com/docs/SAP_HANA_PLATFORM/eb3777d5495d46c5b2fa773206bbfb46/d3b1adcdbb571014a93eff11ad9a1d89.html).
+For more information on SAP HANA Cloud, consult [Introduction to SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/feature-scope-description-for-sap-hana-cloud-3dd959f1b8574cb0ba19ab05cfc0d3ae/introduction-to-sap-hana-cloud).
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the **Feedback** link located on the top right of this page.
 
@@ -70,14 +70,13 @@ Here are a few benefits of using SAP HANA Cloud:
 
 - The ability is provided to expand data storage from in-memory, to native storage extensions, to a data lake, while providing a common access layer that enables you to have further control over performance and cost.  See also [Lower Your Data Management Costs With SAP HANA Cloud](https://blogs.sap.com/2019/10/29/lower-your-data-management-costs-with-sap-hana-cloud/).
 
-
 Here are a few differences between SAP HANA Cloud and an on-premise version:  
 
 - Every SAP HANA Cloud instance is one SAP HANA database.  SAP HANA Cloud as of 2024 QRC 4 offers [multitenancy](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-multitenancy/introducing-sap-hana-cloud-multitenancy) support.  For further details see [The next step towards cost-effectiveness and scalability with SAP HANA Cloud Multitenancy](https://community.sap.com/t5/technology-blog-posts-by-sap/the-next-step-towards-cost-effectiveness-and-scalability-with-sap-hana/ba-p/13885564).  On-premise SAP HANA also has a concept of  tenant databases (a system database and one or more tenant databases) but in a different manner from SAP HANA Cloud.  For further details see [SAP HANA Tenant Databases](https://help.sap.com/docs/SAP_HANA_PLATFORM/eb3777d5495d46c5b2fa773206bbfb46/0baadba82dd9407cbb852ae98f49f6bd.html).  
 
-- Connections to an SAP HANA Cloud instance must be secure and require a minimum SAP HANA client version of 2.4.167.
-
 - The administration user for SAP HANA Cloud is named DBADMIN while for an SAP HANA 2.0 database it is SYSTEM.  For additional details see [Predefined Users](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/predefined-users), [SAP HANA Cloud Administrator DBADMIN](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/user-management-with-sap-hana-database-administrator-dbadmin), and [Predefined Users in HANA 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM/b3ee5778bc2e4a089d3299b82ec762a7/de4ee8bbbb5710148a04f023da147c8d.html).  
+
+- The administration tool for SAP HANA Cloud is SAP HANA Cloud Central.  The administration tools for the on-premise include the SAP HANA cockpit and the SAP HANA database explorer.
 
 Information on the instance size steps for SAP HANA Cloud, SAP HANA databases can be found at [Create an SAP HANA Database Instance Using SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/create-sap-hana-database-instance-using-sap-hana-cloud-central).  Service plan, pricing and data center availability can be found at [SAP HANA Cloud Service (SAP Discovery Center)](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan).  Details on limitations can be found at [System Limitations](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/system-limitations).  Compatibility information can be found at [Compatibility with Other SAP HANA Versions](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/compatibility-with-other-sap-hana-versions).  Additional details can be found at [What is SAP HANA?](https://www.sap.com/products/technology-platform/hana/what-is-sap-hana.html).
 
@@ -157,13 +156,12 @@ Continue with this tutorial once you have created an SAP HANA Cloud instance as 
 
 Congratulations! You have connected to SAP HANA Cloud and performed a few queries.
 
-
 ### SAP HANA, express edition
 >This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not setup an SAP HANA instance through the SAP HANA Cloud free tier as explained in step 3.
 
 SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html).  
 
-SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides a binary install as well as virtual machine images that can be run on Microsoft Windows, macOS and Linux machines.  This is described in the [Getting Started with SAP HANA 2.0, express edition (Binary Installer Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/32c9e0c8afba4c87814e61d6a1141280) or [Getting Started with SAP HANA 2.0, express edition (Virtual Machine Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/8c3bbc4a904d42efac77c09da0bccf64).  A database-only option and a database + XS Advanced Applications option are available. The database + XS Advanced Applications install includes the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
+SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides a binary install as well as [docker images](https://hub.docker.com/u/saplabs).  This is described in the [Getting Started with SAP HANA 2.0, express edition (Binary Installer Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/32c9e0c8afba4c87814e61d6a1141280).  A database-only option and a database + XS Advanced Applications option are available. The database + XS Advanced Applications install includes the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
 
 ![SAP HANA express download manager](express-download-manager.png)
 

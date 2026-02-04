@@ -475,6 +475,8 @@ A virtual table can be changed so that the data is stored in the SAP HANA Cloud 
     ALTER VIRTUAL TABLE TITANIC_CSV ADD SHARED SNAPSHOT REPLICA;
     ```
 
+    Additional details can be found at [ALTER VIRTUAL TABLE Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/alter-virtual-table-statement-data-definition).
+
 3. Run the same query on the replica table and examine the time taken.
 
     ```SQL

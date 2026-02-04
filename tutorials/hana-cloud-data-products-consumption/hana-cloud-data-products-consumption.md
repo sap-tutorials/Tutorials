@@ -17,7 +17,7 @@ For additional details on these topics see:
 * [SAP Business Data Cloud | SAP Community](https://pages.community.sap.com/topics/business-data-cloud)
 * [Provisioning and Administering Databases in SAP HANA Cloud](https://learning.sap.com/courses/provisioning-and-administering-databases-in-sap-hana-cloud)
 * [Basic Trial - Introduction to SAP HANA Cloud](https://learning.sap.com/courses/prd-hc-introduction)
-* [Data Product Support in SAP HANA Cloud | SAP Help Portal](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/data-product-support-in-sap-hana-cloud-internal?state=DRAFT&version=dev)
+* [Data Product Support in SAP HANA Cloud | SAP Help Portal](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/data-product-support-in-sap-hana-cloud-internal)
 
 ## Prerequisites
 
@@ -35,13 +35,13 @@ For additional details on these topics see:
 
 ### Set up a formation
 
-A formation is a logical grouping of SAP systems that simplify the connectivity setup and to provide a unified view of the systems.  For further details see [How Data Products Become Available in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/how-data-products-become-available-in-sap-hana-cloud?state=DRAFT&version=dev).
+A formation is a logical grouping of SAP systems that simplify the connectivity setup and to provide a unified view of the systems.  For further details see [How Data Products Become Available in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/how-data-products-become-available-in-sap-hana-cloud), [Automating Integrations Using Formations](https://help.sap.com/docs/btp/sap-business-technology-platform/including-sap-systems-in-formation?locale=en-US&version=Cloud), and [Creating SAP Business Data Cloud Formations](https://help.sap.com/docs/business-data-cloud/administering-sap-business-data-cloud/creating-sap-business-data-cloud-formations?locale=en-US).
 
 1. Navigate to formations in the [SAP Business Technology (SAP BTP) Cockpit](https://cockpit.btp.cloud.sap/cockpit#) and select Create Formation.
 
     ![Formations in SAP BTP Cockpit](create-formation-1.png)
 
-2. Create a new formation of type Business Data Cloud.
+2. Create a new formation of type Integrations with SAP Business Data Cloud.
 
     ![Step 1 of create formation](create-formation-2.png)
 
@@ -93,7 +93,7 @@ Now that trust has been established between SAP BDC and SAP HANA Cloud, a data p
 
 ### Install a data product into SAP HANA Cloud
 
-The data product that was previously shared can now be installed into SAP HANA Cloud which will create a remote source to the data product and create virtual tables for each object in the data product.
+The data product that was previously shared can now be installed into SAP HANA Cloud which will create a remote source to the data product and create virtual tables for each object in the data product.  
 
 1. Open SAP HANA Cloud Central and select the SAP HANA Cloud instance in which you wish to install the data product.
 
@@ -102,6 +102,12 @@ The data product that was previously shared can now be installed into SAP HANA C
 2. Select the previously shared data product and choose install.
 
     ![Install the data product](install-a-data-product2.png)
+
+3. The database user that is currently connected will be granted read access to the virtual tables.  The below SQL is an example of granting an additional user access to the schema that contains the virtual tables.
+
+    ```SQL
+    GRANT SELECT ON SCHEMA "_SAP_DATAPRODUCT_sap_s4com_dataProduct_SalesOrder_v1_4a6dc5d7-7af5-4b74-8ac7-b9ed0d1e6e95" TO USER1;
+    ```
 
 ### Examine the remote source and virtual tables
 
