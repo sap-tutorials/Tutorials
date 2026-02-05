@@ -267,7 +267,7 @@ Example of a runtime destination mapping:
 
 | :------------- | :-------------
 | App Name            | `SAP Launchpad`
-| Custom route        | `workzone.prod.mycompany.com`
+| Custom route        | `xyz200.prod.mycompany.com`
 | Standard route      | `subprod-sapdelim-xyz200.launchpad.cfapps.us10.hana.ondemand.com` 
 
 
