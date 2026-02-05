@@ -243,7 +243,7 @@ Example of a runtime destination mapping:
 
 | :------------- | :-------------
 | App Name            | `SAP Build Work Zone, advanced edition`
-| Custom route        | `workzone.prod.mycompany.com`
+| Custom route        | `xyz200.prod.mycompany.com`
 | Standard route      | `subprod-sapdelim-xyz200.workzone.cfapps.us10.hana.ondemand.com` 
 
 
