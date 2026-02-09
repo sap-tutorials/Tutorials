@@ -1,9 +1,9 @@
 {
 	"_version": "1.14.0",
 	"sap.app": {
-		"id": "ns.products_by_category_card",
+		"id": "ns.orders_by_shipper",
 		"type": "card",
-		"title": "Products by Category Card",
+		"title": "Orders by Shipper",
 		"subTitle": "UI5 Integration Card of Type List",
 		"applicationVersion": {
 			"version": "1.0.0"
@@ -20,82 +20,77 @@
 		"type": "List",
 		"configuration": {
 			"destinations": {
-				"ES5": {
-					"name": "ES5",
-				   "defaultUrl": "/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/"
+				"Northwind": {
+					"name": "Northwind",
+					"label": "Northwind V4 Service URL",
+					"defaultUrl": "https://services.odata.org/V4/Northwind/Northwind.svc"
 				}
 			},
 			"parameters": {
-				"title" : {
-					"value": "List Card with Top {{parameters.maxItems}} Products"
+				"title": {
+					"value": "Orders by Shipper"
 				},
-				"subTitle": {
-					"value": "These are the top sellers this month"
+				"maxOrdersShown": {
+					"value": "4",
+					"type": "integer",
+					"label": "Numbers of orders",
+					"description": "How many orders to show in the list."
 				},
-				"maxItems": {
-					"value": 4
-						},
-						"selectedCategoryName": {
-							"value": "Computer Systems"
-						}		
-					 },
-					 "filters": {
-						 "mainCategory": {
-							 "value": "{{parameters.selectedCategoryName}}",
-							 "type": "string",
-							 "label": "Main Category",
-							 "description": "Filter products by main category.",
-							 "item": {
-								 "path": "/d/results",
-								 "template": {
-									 "key": "{Id}",
-									 "title": "{Name}"
-								 }
-							 },
-							 "data": {
-								 "request": {
-									 "url": "{{destinations.ES5}}/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/MainCategories",
-									 "withCredentials": true
-								 }
-							 }
-						 }
-					 }	 
+				"selectedShipperID": {
+					"value": 3,
+					"label": "The default selected shipper"
+				}
+			},
+			"filters": {
+				"shipper": {
+					"value": "{parameters>/selectedShipperID/value}",
+					"type": "Select",
+					"label": "Shipper",
+					"item": {
+						"path": "/value",
+						"template": {
+							"key": "{ShipperID}",
+							"title": "{CompanyName}"
+						}
+					},
+					"data": {
+						"request": {
+							"url": "https://services.odata.org/V4/Northwind/Northwind.svc/Shippers"
+						}
+					}
+				}
+			}
 		},
 		"data": {
 			"request": {
-		"url": "{{destinations.ES5}}/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/Products",
-		"parameters": {
-			"$filter": "MainCategoryName eq '{filters>/mainCategory/value}'"
+				"url": "https://services.odata.org/V4/Northwind/Northwind.svc/Orders",
+				"parameters": {
+					"$top": "{parameters>/maxOrdersShown/value}",
+					"$filter": "Shipper/ShipperID eq {filters>/shipper/value}"
+				}
+			},
+			"path": "/value"
 		},
-		"withCredentials": true
-									},
-						"path": "/d/results"
-				},
         "designtime": "dt/configuration",
 		"header": {
-			"title": "Products filtered by {filters>/mainCategory/selectedItem/title} category",
-			"subTitle": "{{parameters.subTitle}}",
+			"title": "Orders by Shipper {filters>/shipper/selectedItem/title}",
 			"icon": {
 				"src": "sap-icon://desktop-mobile"
 			},
 			"status": {
-				"text": "{{parameters.maxItems}} of 20"
+				"text": "{parameters>/maxOrdersShown/value}"
 			}
 		},
 		"content": {
-            "item": {
-                "title": "{Name}",
-                "description": "{Description}",
-                "icon": {
-                    "src": "{ImageUrl}"
-                },
-                "info": {
-                    "value": "{AverageRating}",
-                    "state": "{= ${AverageRating} > 3.5 ? 'Success' : 'Warning' }"
-                }
-            },
-			"maxItems": "{{parameters.maxItems}}"
-        }
+			"item": {
+				"title": "{ShipName}",
+				"description": "{ShipAddress}",
+				"info": {
+					"value": "{ShipCountry}"
+				}
+			},
+			"maxItems": "{parameters>/maxOrdersShown/value}"
+		}
 	},
     "sap.platform.mobilecards": {
         "compatible": false
