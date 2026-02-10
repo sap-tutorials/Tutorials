@@ -145,4 +145,4 @@ SELECT "SalesOrderItemText", COUNT("SalesOrderItemText") FROM "_SAP_DATAPRODUCT_
 
 ### Knowledge check
 
-Congratulations! You have now used the SAP HANA database explorer extension for Visual Studio Code to create tables and functions within an SAP HANA database and have become familiar with some of the features it provides.
+Congratulations! You have now learned how to install and query a data product using SAP HANA Cloud.  See the blog post [Consuming Data Products in SAP HANA Cloud via SAP Business Application Studio/SAP Build Code](https://community.sap.com/t5/technology-blog-posts-by-sap/consuming-data-products-in-sap-hana-cloud-via-sap-business-application/ba-p/14320009) to learn how to use a data product from within a calculation view.
