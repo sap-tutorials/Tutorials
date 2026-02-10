@@ -460,3 +460,4 @@ The use of "OData-Protocol" is a reference to a related document in the OData V4
 
 - [Accuracy and precision in language](https://qmacro.org/blog/posts/2024/01/22/accuracy-and-precision-in-language/) on the distinction between "blog" and "post".
 - [Monday morning thoughts: OData](https://qmacro.org/blog/posts/2018/08/20/monday-morning-thoughts-odata/) has further details on the journey from RSS, through Atom and AtomPub, to OData.
+
