@@ -39,6 +39,10 @@ This tutorial provides a basic introduction to using **orchestration in SAP AI C
 
 You will learn how to deploy and configure orchestration to enable the consumption of **multiple GenAI models** within a single workflow.
 
+Please note that:
+- The **model** and **model-version** referenced in the tutorial may differ from the current offerings. Refer to the [SAP Note](https://me.sap.com/notes/3437766) for the list of available models.
+- The AILaunchpad screenshots in tutorial may slightly vary from the current AILaunchpad UI.
+
 We will walk through a **step-by-step guide** and demonstrate the orchestration flow using a **resume processing use case**. This real-world scenario highlights how different models can collaborate within a cohesive pipeline using orchestration.
 
 > **Note:** In SAP AI Core, orchestration deployment is available by default in the default resource group during the onboarding. For any new or additional resource groups, you must deploy a separate orchestration setup.
@@ -531,7 +535,10 @@ Follow the screenshot attached for reference.
 
 ###  Consume LLM's in Generative AI Hub through Orchestration
 
+Please note that the **model** and **model-version** referenced in the tutorial may differ from the current offerings. Refer to the [SAP Note](https://me.sap.com/notes/3437766) for the list of available models.
+
 [OPTION BEGIN [AI Launchpad]]
+
 
 • Navigate to the resource group where your orchestration has been deployed. 
 
@@ -541,6 +548,8 @@ Follow the screenshot attached for reference.
 
 • In the Templating section, locate the message icon with three tabs: User, Assistance, and System. 
 
+Please take note that the screenshots in tutorial may slightly vary from the current AILaunchpad UI.
+
 
 Click on the User tab, Enter the following details: 
 
@@ -548,7 +557,7 @@ Click on the User tab, Enter the following details:
 
 ```CODE
 
-Here is a candidate's resume: {{?candidate_resume}} 
+Here is a candidate's resume: {{ ?candidate_resume }} 
 
 ```
 **Variable Definitions:** 
@@ -726,7 +735,7 @@ template = Template(
                       organizational history, and personal interests"""), 
 
         UserMessage( 
-            "Here is a candidate's resume: {{?candidate_resume}}" 
+            "Here is a candidate's resume: {{ ?candidate_resume }}" 
         ), 
     ], 
 
@@ -853,7 +862,7 @@ const templatingConfig: TemplatingModuleConfig = {
     }, 
     { 
       role: 'user', 
-      content: 'Candidate Resume:\n{{?candidate_resume}}', 
+      content: 'Candidate Resume:\n{{ ?candidate_resume }}', 
     }, 
   ],
 }; 
@@ -1110,7 +1119,7 @@ Together with document grounding and templating, data masking and content filter
           },  
           {  
             "role": "user",  
-            "content": "Candidate Resume:\n{{?candidate_resume}}"  
+            "content": "Candidate Resume:\n{{ ?candidate_resume }}"  
           }  
         ],  
         "defaults": {  
