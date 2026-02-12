@@ -102,6 +102,12 @@ At this point, visit <http://localhost:4004>, where the default start page will 
 
 Links to the Northbreeze OData service document, metadata document, and entitysets for the three available entities are shown.
 
+### Visit the publicly available read-only service
+
+In case you haven't yet got round to running your own instance of the Northbreeze service, there's a publicly available instance that is read-only. So you can try out any of the read-only activities in subsequent tutorials in this mission (for other activities you will have to set up and run your own, as described in this tutorial).
+
+Head over to <https://odd.cfapps.eu10.hana.ondemand.com/> ("odd" is short for "OData Deep Dive") to see the start page, and take a look around.
+
 ## Further info
 
 - [Capire](https://cap.cloud.sap/docs/) - the official CAP documentation

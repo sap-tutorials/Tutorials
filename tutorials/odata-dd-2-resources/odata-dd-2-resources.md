@@ -242,4 +242,3 @@ We can visualize the "This", "Previous" and "Latest" link sets for the "OData Ve
 - [Guidelines for Visualizing Links](https://www.nngroup.com/articles/guidelines-for-visualizing-links/)
 - [OASIS document tree](https://github.com/qmacro/odata-specs/blob/master/overview.md)
 - [OData Vocabularies](https://github.com/oasis-tcs/odata-vocabularies)
-
