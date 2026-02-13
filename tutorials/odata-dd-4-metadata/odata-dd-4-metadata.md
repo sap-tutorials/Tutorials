@@ -85,7 +85,7 @@ It also contains, as children:
 - a number of vocabulary references
 - a single `DataServices` element
 
-(we will look briefly at namespaces and vocabularies in subsequent steps).
+(we will look briefly at namespaces in a subsequent step, and vocabularies in a subsequent tutorial).
 
 The primary area of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers.
 
