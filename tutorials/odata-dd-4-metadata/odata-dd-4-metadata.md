@@ -85,11 +85,9 @@ It also contains, as children:
 - a number of vocabulary references
 - a single `DataServices` element
 
-(we will look briefly at namespaces in a subsequent step, and vocabularies in a subsequent tutorial).
+The primary area of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers. But it helps if we are comfortable with the rest of the document, the "context" for the content of the `DataServices` element so to speak, if only to be able to mentally ignore it, to move past it and get to what we're looking for.
 
-The primary area of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers.
-
-But it helps if we are comfortable with the rest of the document, the "context" for the content of the `DataServices` element so to speak, if only to be able to mentally ignore it, to move past it and get to what we're looking for.
+So we will look briefly at namespaces in the next step. We'll look at OData vocabularies, and OData annotations for that matter, in subsequent tutorials.
 
 ### Understand the XML namespaces
 
@@ -135,4 +133,39 @@ As the primary area of interest in such resources is what's in the `DataServices
 
 ### Understand the DataServices context
 
-As described in the OData standards document [OData Version 4.0. Part 3: Common Schema Definition Language (CSDL) Plus Errata 03](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html), specifically in [section 3.1 Element edmx:Edmx](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752501), the root `Edmx` element (a) is mandatory and (b) must contain a single `DataServices` element, and optionally some `Reference` elements.
+To understand the context of the `DataServices` element, let's use what we now know from learning how to navigate the OData standards documents in the [Resources](https://developers.sap.com/tutorials/odata-dd-2-resources.html) tutorial in this mission.
+
+We should refer to the OData standards document "OData Version 4.0. Part 3: Common Schema Definition Language (CSDL)", the latest version being available at the canonical URL <https://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part3-csdl.html>, which brings us specifically to the "Plus Errata 03" version which has its own URL <https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html>. 
+
+In this document, [section 3 Entity Model Wrapper](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752500) tells us all about this context:
+
+- the root `edmx:Edmx` element (a) is mandatory and (b) must contain a single `edmx:DataServices` element
+- that single `edmx:DataServices` element must contain one or more `edm:Schema` elements
+- it is in these `edm:Schema` elements that our OData service schemas (service and entity detail) are defined
+
+In our case, there's one schema, and therefore a single `edm:Schema` element.
+
+> the `edm` prefix to the `Schema` element name here is from the documentation; in our particular metadata document the namespace represented by this prefix, `http://docs.oasis-open.org/odata/ns/edm`, is defined as the default (see the previous step). From now on, element names in the standards document that are prefixed with `edm` will be written here without the prefix, to stay close to our specific metadata document.
+
+So we can now jump to [section 5 Schema](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752520) to know what to expect inside the `Schema`. The section tells us to expect one or more of the following elements:
+
+- `Action`
+- `Annotations`
+- `Annotation`
+- `ComplexType`
+- `EntityContainer`
+- `EntityType`
+- `EnumType`
+- `Function`
+- `Term`
+- `TypeDefinition`
+
+If we inspect what's in our `Schema`, we see these elements at the next level:
+
+- `Annotation` (and `Annotations`)
+- `EntityContainer`
+- `EntityType`
+
+We'll cover annotations in a subseqent tutorial, so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time.
+
+
