@@ -87,7 +87,7 @@ It also contains, as children:
 
 (we will look briefly at namespaces and vocabularies in subsequent steps).
 
-The primary content of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers.
+The primary area of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers.
 
 But it helps if we are comfortable with the rest of the document, the "context" for the content of the `DataServices` element so to speak, if only to be able to mentally ignore it, to move past it and get to what we're looking for.
 
@@ -95,14 +95,14 @@ But it helps if we are comfortable with the rest of the document, the "context" 
 
 While not critical to getting to the heart of what the metadata document conveys, its worth dwelling for a moment on all those element name prefixes (such as the `edmx` part of `<edmx:Edmx>`, `<edmx:Reference>` and so on).
 
-> There are actually three different types of namespaces at play in these OData metadata document resources:
+> There are actually two different types of namespaces at play in these OData metadata document resources:
 >
-> - the XML namespaces: which are the subject of this step
-> - the OData namespaces: found in the `<edmx:Include>` and `<Schema>` elements, which we'll look at in a subsequent step
+> - the XML namespaces: the subject of this step
+> - the OData namespaces: found in `Namespace` attributes of the `<edmx:Include>` and `<Schema>` elements, which we'll look at in a subsequent step
 
-For the usual reasons, namespaces are used in XML to compartmentalize element and attribute names, which serve to allow the use of various XML vocabularies (not to be confused with the OData vocabularies which we'll look at next) together in a single document, without element and attribute name collisions.
+For the usual reasons, namespaces are used in XML to compartmentalize element and attribute names, which allow the use of various XML vocabularies (not to be confused with the OData vocabularies which we'll look at next) together in a single document, without element and attribute name collisions.
 
-They are declared with `xmlns` attributes, which are either in the pure `xmlns` form, or in a `xmlns:prefix` form. The first form is how a default namespace is declared, the second is how non-default (named) namespaces are declared. Any element can be specified with a namespace prefix (such as `edmx:Reference`) or without (such as `<Schema>`). Elements without a specific namespace prefix are considered to belong to the default namespace.
+These XML namespaces are declared with `xmlns` attributes, which are either in the pure `xmlns` form, or in a `xmlns:prefix` form. The first form is how a default namespace is declared, the second is how non-default (named) namespaces are declared. Any element can be specified with a namespace prefix (such as `edmx:Reference`) or without (such as `<Schema>`). Elements without a specific namespace prefix are considered to belong to the default namespace.
 
 So, if we look again at the entire XML structure, differently compacted this time:
 
@@ -124,12 +124,14 @@ So, if we look again at the entire XML structure, differently compacted this tim
 </edmx:Edmx>
 ```
 
-we see that there are two namespaces at play, a default one and a named one (i.e. using a prefix):
+we see that there are two XML namespaces at play, a named one (i.e. using a prefix) and a default one:
 
 Namespace|Prefix|Covers
 -|-|-
 `http://docs.oasis-open.org/odata/ns/edmx`|`edmx`|`Edmx`, `Reference`, `Include`, `DataServices`
 `http://docs.oasis-open.org/odata/ns/edm`|(default)|`Schema`, `EntityContainer`, `EntitySet`, `EntityType` etc
+
+As the primary area of interest in such resources is what's in the `DataServices` section (the entity type definitions, the entitysets, annotations and so on) it makes sense to specify the namespace that encompasses the elements that are used for such definitions ... as the the default, affording clarity in such declarations (i.e. less "busy", as the element names aren't prefixed).
 
 ### Understand the DataServices context
 
