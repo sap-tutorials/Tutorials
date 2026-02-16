@@ -258,12 +258,8 @@ Let's have a brief look at where this `Main` OData namespace is used. Here's ano
       </EntityContainer>
       <EntityType Name="Products">
         ...
-        <NavigationProperty Name="Category" Type="Main.Categories" Partner="Products">
-          <ReferentialConstraint Property="Category_CategoryID" ReferencedProperty="CategoryID"/>
-        </NavigationProperty>
-        <NavigationProperty Name="Supplier" Type="Main.Suppliers" Partner="Products">
-          <ReferentialConstraint Property="Supplier_SupplierID" ReferencedProperty="SupplierID"/>
-        </NavigationProperty>
+        <NavigationProperty Name="Category" Type="Main.Categories" Partner="Products"> ... </NavigationProperty>
+        <NavigationProperty Name="Supplier" Type="Main.Suppliers" Partner="Products"> ... </NavigationProperty>
       </EntityType>
       <EntityType Name="Categories">
         ...
@@ -286,10 +282,123 @@ The `Main` namespace is used to prefix the "variable building blocks" of the sch
 
 Following that to the "Categories" `EntityType` we see that:
 
-- there's another `NavigationProperty` "Products" that leads back to the `Main.Products` type, this time in a `Collection( ... )` expression, denoting a zero-or-more relationship
+- there's another `NavigationProperty` "Products" that leads back to the `Main.Products` type, this time in a `Collection( ... )` expression (denoting a zero-or-more relationship)
 
 Finally:
 
 - annotations have targets, which are expressed as containees (such as the "Products" `EntitySet`) of the `Main.EntityContainer` element
 
+### Consider the entity container
 
+The `EntityContainer` element within the `Schema` represents the "shop front" of the OData service. It's here that the entitysets are declared. If there are any actions or functions defined in the service, they would be found listed here too, via `<ActionImport>` and `<FunctionImport>` elements respectively.
+
+If there are any relationships emanating from the `EntityType` upon which an `EntitySet` is based, these are declared in that definition. For example, the "Products" `EntityType` has relationships with "Categories" and "Suppliers", as declared with the `NavigationPropertyBinding` elements within the "Products" `EntitySet`:
+
+```xml
+<EntitySet Name="Products" EntityType="Main.Products">
+  <NavigationPropertyBinding Path="Category" Target="Categories"/>
+  <NavigationPropertyBinding Path="Supplier" Target="Suppliers"/>
+</EntitySet>
+```
+
+Thus the `EntityContainer` is a great machine-readable overview of the entire service. At a high level (from an entityset perspective), it corresponds with the content of the service document, which looks like this:
+
+```json
+{
+  "@odata.context": "$metadata",
+  "@odata.metadataEtag": "...",
+  "value": [
+    {
+      "name": "Products",
+      "url": "Products"
+    },
+    {
+      "name": "Categories",
+      "url": "Categories"
+    },
+    {
+      "name": "Suppliers",
+      "url": "Suppliers"
+    }
+  ]
+}
+```
+
+### Take a look at the entity type definitions
+
+Last but certainly not least, we come to the `EntityType` elements within the `Schema`. These correspond directly to the business objects, or entities, in our data model, and as such, are described using elements that reflect such detail. Let's take one of the types as an example:
+
+```xml
+<EntityType Name="Products">
+  <Key>
+    <PropertyRef Name="ProductID"/>
+  </Key>
+  <Property Name="ProductID" Type="Edm.Int32" Nullable="false"/>
+  <Property Name="ProductName" Type="Edm.String"/>
+  <Property Name="QuantityPerUnit" Type="Edm.String"/>
+  <Property Name="UnitPrice" Type="Edm.Decimal" Scale="variable"/>
+  <NavigationProperty Name="Category" Type="Main.Categories" Partner="Products">
+    <ReferentialConstraint Property="Category_CategoryID" ReferencedProperty="CategoryID"/>
+  </NavigationProperty>
+  <Property Name="Category_CategoryID" Type="Edm.Int32"/>
+  <NavigationProperty Name="Supplier" Type="Main.Suppliers" Partner="Products">
+    <ReferentialConstraint Property="Supplier_SupplierID" ReferencedProperty="SupplierID"/>
+  </NavigationProperty>
+  <Property Name="Supplier_SupplierID" Type="Edm.Int32"/>
+  <Property Name="UnitsInStock" Type="Edm.Int32"/>
+  <Property Name="UnitsOnOrder" Type="Edm.Int32"/>
+  <Property Name="ReorderLevel" Type="Edm.Int32"/>
+  <Property Name="Discontinued" Type="Edm.Boolean"/>
+</EntityType>
+```
+
+The `EntityType` clearly defines:
+
+- the individual properties and their [types](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752517)
+- which property or properties make up the entity's key structure
+- the navigation properties, their relationship conditions, and the type of the navigation (relation)'s target
+
+> Some of the `Property` elements have more information in further attributes (such as `Nullable="false"` for key properties, and `Scale="variable"` for how long the decimal place value can be).
+
+Mostly these definitions are self-explanatory, but it's worth digging in a little to the detail of navigation properties. Let's take the "Category" one here, and also look at the relevant part of the "Category" `EntityType`:
+
+```xml
+<Schema Namespace="Main" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+  ...
+  <EntityType Name="Products">
+    ...
+    <NavigationProperty Name="Category" Type="Main.Categories" Partner="Products">
+      <ReferentialConstraint Property="Category_CategoryID" ReferencedProperty="CategoryID"/>
+    </NavigationProperty>
+    <Property Name="Category_CategoryID" Type="Edm.Int32"/>
+    ...
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryID"/>
+    </Key>
+    <Property Name="CategoryID" Type="Edm.Int32" Nullable="false"/>
+    <NavigationProperty Name="Products" Type="Collection(Main.Products)" Partner="Category"/>
+  </EntityType>
+  ...
+</Schema>
+```
+
+If we stare at this for a moment, we see that this relation:
+
+```text
++----------+  N:1 +------------+
+| Products |------| Categories |
++----------+      +------------+
+```
+
+is expressed beautifully, in that in the "Products" `EntityType`:
+
+- there is a `Property` "Category_CategoryID" to hold the actual category foreign key
+- there is also a `NavigationProperty` "Category" along which we can traverse the relationship with, say, the OData system query option `$expand`
+- the `ReferentialConstraint` that is contained within (and therefore qualifies) the `NavigationProperty` says that the value of "Category_CategoryID" must equal the value of the property "CategoryID" in the target ("Main.Categories")
+
+Moreover, in the "Categories" `EntityType`, we see that:
+
+- the "CategoryID" property is indeed the key property
+- there's a reverse `NavigationProperty` "Products" but the type is a _collection_ of `Main.Products` signifying a to-many relationship (as in "N" in the relation diagram above)
