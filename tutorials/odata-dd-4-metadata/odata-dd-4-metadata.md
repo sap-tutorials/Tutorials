@@ -44,7 +44,7 @@ Initially the content of this resource can be a little overwhelming. Here's what
 
 But if we [stare at it](https://qmacro.org/blog/posts/2017/02/19/the-beauty-of-recursion-and-list-machinery/#initial-recognition) for long enough, it becomes less overwhelming and we start to see the structure.
 
-### Consider the high level XML structure 
+### Consider the high level XML structure
 
 Regard this drastically reduced version of the entire metadata document XML structure:
 
@@ -135,7 +135,7 @@ As the primary area of interest in such resources is what's in the `DataServices
 
 To understand the context of the `DataServices` element, let's use what we learned in the [Resources](https://developers.sap.com/tutorials/odata-dd-2-resources.html) tutorial in this mission on navigating OData standards documents.
 
-We should refer to the OData standards document "OData Version 4.0. Part 3: Common Schema Definition Language (CSDL)", the latest version being available at the canonical URL <https://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part3-csdl.html>, which brings us specifically to the "Oasis Standard Plus Errata 03" version which has its own URL <https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html>. 
+We should refer to the OData standards document "OData Version 4.0. Part 3: Common Schema Definition Language (CSDL)", the latest version being available at the canonical URL <https://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part3-csdl.html>, which brings us specifically to the "Oasis Standard Plus Errata 03" version which has its own URL <https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html>.
 
 The document's "Abstract" section tells us that we're on the right track:
 
@@ -149,9 +149,11 @@ In this document, [section 3 Entity Model Wrapper](https://docs.oasis-open.org/o
 
 In our case, there's one schema, and therefore a single `edm:Schema` element.
 
+### Get acquainted with the schema element
+
 > The `edm` prefix to the `Schema` element name here is from the documentation; in our particular metadata document the namespace represented by this prefix, `http://docs.oasis-open.org/odata/ns/edm`, is defined as the default (see the previous step). From now on, element names in the standards document that are prefixed with `edm` will be written here without the prefix, to stay close to our specific metadata document.
 
-So we can now jump to [section 5 Schema](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752520) to know what to expect inside the `Schema`. The section tells us to expect one or more of the following elements:
+To become acquainted with the `Schema` element, we can now jump to [section 5 Schema](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752520) to know what to expect inside it. The section tells us to expect one or more of the following elements:
 
 - `Action`
 - `Annotations`
@@ -170,9 +172,7 @@ If we inspect what's in our `Schema`, we see these elements at the next level:
 - `EntityContainer`
 - `EntityType`
 
-We'll cover annotations in a subseqent tutorial, so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time.
-
-If we visualize our path through this metadata document, we've now found our way to what we really want to know:
+Visualizing our path through this metadata document, we've now found our way to what we really want to know:
 
 ```text
 +------+
@@ -196,3 +196,69 @@ If we visualize our path through this metadata document, we've now found our way
 ```
 
 Note that there is [only a single entity container](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752596), but multiple entity types and annotations.
+
+We'll cover annotations in a subseqent tutorial, so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time to round out this tutorial.
+
+Before we do, we should make a note of one more thing at this level, and that's the `Namespace` attribute in the `<Schema>` element:
+
+```xml
+<Schema Namespace="Main" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+   ...
+</Schema>
+```
+
+Both attributes of this element relate to namespaces:
+
+- `xmlns` gives us the XML namespace (as discussed previously)
+- `Namespace` is an OData mechanism
+
+That OData namespace mechanism is described in the aforementioned CSDL standards document, in [section 5.1.1 Attribute namespace](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752522), thus:
+
+> "A schema is identified by a namespace. All `edm:Schema` elements MUST have a namespace defined through a `Namespace` attribute which MUST be unique within the document, and SHOULD be globally unique ... It is combined with the name of elements in the entity model to create unique qualified names ..."
+
+The value of this `Namespace` attribute is `Main` (this OData service is served from a CAP server, which generates the value from the service name).
+
+This is certainly unique within the metadata document itself, but the value is certainly not globally unique.
+
+This is fine according to the "MUST" and "SHOULD" terms, which are defined according to [RFC2119](https://www.ietf.org/rfc/rfc2119.txt) (see [section 1.1 Terminology](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752492)):
+
+- "MUST" means that the definition is an absolute requirement (which is fulfilled, here)
+- "SHOULD" means that the definition is a recommendation
+
+Incidentally, the equivalent value for this OData namespace definition in similar
+
+Let's have a brief look at where this `Main` OData namespace is used. Here's another drastically reduced version of the entire XML document, showing where `Main` is found:
+
+```xml
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="Main" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="Products" EntityType="Main.Products"> ... </EntitySet>
+        <EntitySet Name="Categories" EntityType="Main.Categories"> ... </EntitySet>
+        <EntitySet Name="Suppliers" EntityType="Main.Suppliers"> ... </EntitySet>
+      </EntityContainer>
+      <EntityType Name="Products">
+        ...
+        <NavigationProperty Name="Category" Type="Main.Categories" Partner="Products">
+          <ReferentialConstraint Property="Category_CategoryID" ReferencedProperty="CategoryID"/>
+        </NavigationProperty>
+        <NavigationProperty Name="Supplier" Type="Main.Suppliers" Partner="Products">
+          <ReferentialConstraint Property="Supplier_SupplierID" ReferencedProperty="SupplierID"/>
+        </NavigationProperty>
+      </EntityType>
+      <EntityType Name="Categories">
+        ...
+        <NavigationProperty Name="Products" Type="Collection(Main.Products)" Partner="Category"/>
+      </EntityType>
+      ...
+      <Annotations Target="Main.EntityContainer/Products">
+        <Annotation Term="Capabilities.DeleteRestrictions"> ... </Annotation>
+        ...
+      </Annotations>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
+```
+
+The `Main` namespace is used to prefix the "variable building blocks" of the schema when referencing them. So the `EntitySet` "Products" refers to `Main.Products` as the type of the entity contained. Within the corresponding `EntityType` definition we see that the `NavigationProperty` "Category" is of type `Main.Categories`. Following that to the "Categories" `EntityType` we see that there's another `NavigationProperty` "Products" that leads back to the `Main.Products` type, this time in a `Collection( ... )` expression, denoting a zero-or-more relationship.
