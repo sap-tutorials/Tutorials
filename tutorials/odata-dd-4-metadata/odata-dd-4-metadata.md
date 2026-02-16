@@ -227,7 +227,23 @@ This is fine according to the "MUST" and "SHOULD" terms, which are defined accor
 - "MUST" means that the definition is an absolute requirement (which is fulfilled, here)
 - "SHOULD" means that the definition is a recommendation
 
-Incidentally, the equivalent value for this OData namespace definition in similar
+Incidentally, here are some values for this OData namespace definition from similar services curated and maintained by OASIS:
+
+- [Northwind](https://services.odata.org/V4/Northwind/Northwind.svc/$metadata):
+
+  ```xml
+  <Schema
+    xmlns="http://docs.oasis-open.org/odata/ns/edm"
+    Namespace="NorthwindModel">
+  ```
+
+- [TripPin](https://services.odata.org/V4/TripPinServiceRW/$metadata):
+
+  ```xml
+  <Schema
+    xmlns="http://docs.oasis-open.org/odata/ns/edm"
+    Namespace="Microsoft.OData.SampleService.Models.TripPin">
+  ```
 
 Let's have a brief look at where this `Main` OData namespace is used. Here's another drastically reduced version of the entire XML document, showing where `Main` is found:
 
