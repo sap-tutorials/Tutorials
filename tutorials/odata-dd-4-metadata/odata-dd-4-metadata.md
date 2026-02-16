@@ -26,9 +26,10 @@ Throughout this tutorial you should endeavor to use your own instance of the Nor
 
 ---
 
+<!-- 1 -->
 ### Retrieve the Northbreeze metadata document
 
-Head over to your Northbreeze service and request the metadata document resource. The URL is formed from the OData service root (where the service document is):
+Head over to your Northbreeze service and request the metadata document resource. The URL is formed from the OData service root:
 
 <https://odd.cfapps.eu10.hana.ondemand.com/northbreeze>
 
@@ -36,6 +37,7 @@ with `$metadata` added as a further path segment:
 
 <https://odd.cfapps.eu10.hana.ondemand.com/northbreeze/$metadata>
 
+<!-- 2 -->
 ### Take a first look at the content
 
 Initially the content of this resource can be a little overwhelming. Here's what the first part looks like:
@@ -44,6 +46,7 @@ Initially the content of this resource can be a little overwhelming. Here's what
 
 But if we [stare at it](https://qmacro.org/blog/posts/2017/02/19/the-beauty-of-recursion-and-list-machinery/#initial-recognition) for long enough, it becomes less overwhelming and we start to see the structure.
 
+<!-- 3 -->
 ### Consider the high level XML structure
 
 Regard this drastically reduced version of the entire metadata document XML structure:
@@ -90,6 +93,7 @@ The primary area of interest to us in any metadata document is the content withi
 
 So we will look briefly at namespaces in the next step. We'll look at OData vocabularies, and OData annotations for that matter, in subsequent tutorials.
 
+<!-- 4 -->
 ### Understand the XML namespaces
 
 While not critical to getting to the heart of what the metadata document conveys, its worth dwelling for a moment on all those element name prefixes (such as the `edmx` part of `<edmx:Edmx>`, `<edmx:Reference>` and so on).
@@ -131,6 +135,7 @@ Namespace|Prefix|Covers
 
 As the primary area of interest in such resources is what's in the `DataServices` section (the entity type definitions, the entitysets, annotations and so on) it makes sense to specify the namespace that encompasses the elements that are used for such definitions ... as the the default, affording clarity in such declarations (i.e. less "busy", as the element names aren't prefixed).
 
+<!-- 5 -->
 ### Learn about the DataServices context
 
 To understand the context of the `DataServices` element, let's use what we learned in the [Resources](https://developers.sap.com/tutorials/odata-dd-2-resources.html) tutorial in this mission on navigating OData standards documents.
@@ -149,6 +154,7 @@ In this document, [section 3 Entity Model Wrapper](https://docs.oasis-open.org/o
 
 In our case, there's one schema, and therefore a single `edm:Schema` element.
 
+<!-- 6 -->
 ### Get acquainted with the schema element
 
 > The `edm` prefix to the `Schema` element name here is from the documentation; in our particular metadata document the namespace represented by this prefix, `http://docs.oasis-open.org/odata/ns/edm`, is defined as the default (see the previous step). From now on, element names in the standards document that are prefixed with `edm` will be written here without the prefix, to stay close to our specific metadata document.
@@ -195,10 +201,11 @@ Visualizing our path through this metadata document, we've now found our way to 
                          +------------+     +------------+
 ```
 
-Note that there is [only a single entity container](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752596), but multiple entity types and annotations.
+Note that there is only a single entity container (see [section 13 Entity Container](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752596)), but multiple entity types and annotations.
 
 We'll cover annotations in a subseqent tutorial, so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time to round out this tutorial.
 
+<!-- 7 -->
 ### Take a brief look at the OData namespace
 
 Before we do, we should make a note of one more thing at this level, and that's the `Namespace` attribute in the `<Schema>` element:
@@ -288,6 +295,7 @@ Finally:
 
 - annotations have targets, which are expressed as containees (such as the "Products" `EntitySet`) of the `Main.EntityContainer` element
 
+<!-- 8 -->
 ### Consider the entity container
 
 The `EntityContainer` element within the `Schema` represents the "shop front" of the OData service. It's here that the entitysets are declared. If there are any actions or functions defined in the service, they would be found listed here too, via `<ActionImport>` and `<FunctionImport>` elements respectively.
@@ -324,6 +332,7 @@ Thus the `EntityContainer` is a great machine-readable overview of the entire se
 }
 ```
 
+<!-- 9 -->
 ### Take a look at the entity type definitions
 
 Last but certainly not least, we come to the `EntityType` elements within the `Schema`. These correspond directly to the business objects, or entities, in our data model, and as such, are described using elements that reflect such detail. Let's take one of the types as an example:
@@ -384,7 +393,7 @@ Mostly these definitions are self-explanatory, but it's worth digging in a littl
 </Schema>
 ```
 
-If we stare at this for a moment, we see that this relation:
+If we stare at this for a moment, this relation is expressed beautifully:
 
 ```text
 +----------+  N:1 +------------+
@@ -392,13 +401,17 @@ If we stare at this for a moment, we see that this relation:
 +----------+      +------------+
 ```
 
-is expressed beautifully, in that in the "Products" `EntityType`:
+Looking at the "Products" `EntityType`, we see that:
 
 - there is a `Property` "Category_CategoryID" to hold the actual category foreign key
-- there is also a `NavigationProperty` "Category" along which we can traverse the relationship with, say, the OData system query option `$expand`
+- there is also a `NavigationProperty` "Category" [along which we can traverse the relationship](https://odd.cfapps.eu10.hana.ondemand.com/northbreeze/Products?$top=3&$expand=Category) with, say, the OData system query option `$expand`
 - the `ReferentialConstraint` that is contained within (and therefore qualifies) the `NavigationProperty` says that the value of "Category_CategoryID" must equal the value of the property "CategoryID" in the target ("Main.Categories")
 
-Moreover, in the "Categories" `EntityType`, we see that:
+Looking at the "Categories" `EntityType`, we see that:
 
 - the "CategoryID" property is indeed the key property
 - there's a reverse `NavigationProperty` "Products" but the type is a _collection_ of `Main.Products` signifying a to-many relationship (as in "N" in the relation diagram above)
+
+### Further info
+
+- [Serving OData APIs](https://cap.cloud.sap/docs/guides/protocols/odata) in Capire
