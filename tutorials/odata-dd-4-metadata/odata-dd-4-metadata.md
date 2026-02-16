@@ -78,14 +78,15 @@ It allows us to see the overall structure of this resource, and start to feel a 
 The outermost (or "root") element is `Edmx`, which has:
 
 - a `Version` attribute which reflects the OData version
+- a namespace prefix
 - a namespace declaration
 
 It also contains, as children:
 
-- a number of vocabulary references
+- a number of references to vocabularies
 - a single `DataServices` element
 
-The primary area of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers. But it helps if we are comfortable with the rest of the document, the "context" for the content of the `DataServices` element so to speak, if only to be able to mentally ignore it, to move past it and get to what we're looking for.
+The primary area of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers. But it helps if we are comfortable with the rest of the document, the "context" for the content of the `DataServices` element so to speak, if only to be able to mentally put it aside, move past it and get to what we're looking for.
 
 So we will look briefly at namespaces in the next step. We'll look at OData vocabularies, and OData annotations for that matter, in subsequent tutorials.
 
@@ -93,10 +94,9 @@ So we will look briefly at namespaces in the next step. We'll look at OData voca
 
 While not critical to getting to the heart of what the metadata document conveys, its worth dwelling for a moment on all those element name prefixes (such as the `edmx` part of `<edmx:Edmx>`, `<edmx:Reference>` and so on).
 
-> There are actually two different types of namespaces at play in these OData metadata document resources:
->
-> - the XML namespaces: the subject of this step
-> - the OData namespaces: found in `Namespace` attributes of the `<edmx:Include>` and `<Schema>` elements, which we'll look at in a subsequent step
+These are artifacts relating to the use of XML namespaces.
+
+> There are actually two different types of namespaces at play in these OData metadata document resources. There are the XML namespaces, which are the subject of this step. There are also OData namespaces. These are found in `Namespace` attributes of the `<edmx:Include>` and `<Schema>` elements. We'll look at the schema namespace in a later step in this tutorial, and at the namespaces in the `<edmx:Include>` elements in a subsequent tutorial.
 
 For the usual reasons, namespaces are used in XML to compartmentalize element and attribute names, which allow the use of various XML vocabularies (not to be confused with the OData vocabularies which we'll look at next) together in a single document, without element and attribute name collisions.
 
@@ -133,9 +133,13 @@ As the primary area of interest in such resources is what's in the `DataServices
 
 ### Learn about the DataServices context
 
-To understand the context of the `DataServices` element, let's use what we now know from learning how to navigate the OData standards documents in the [Resources](https://developers.sap.com/tutorials/odata-dd-2-resources.html) tutorial in this mission.
+To understand the context of the `DataServices` element, let's use what we learned in the [Resources](https://developers.sap.com/tutorials/odata-dd-2-resources.html) tutorial in this mission on navigating OData standards documents.
 
 We should refer to the OData standards document "OData Version 4.0. Part 3: Common Schema Definition Language (CSDL)", the latest version being available at the canonical URL <https://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part3-csdl.html>, which brings us specifically to the "Oasis Standard Plus Errata 03" version which has its own URL <https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html>. 
+
+The document's "Abstract" section tells us that we're on the right track:
+
+> "OData services are described by an Entity Data Model (EDM). The Common Schema Definition Language (CSDL) defines an XML representation of the entity data model exposed by an OData service."
 
 In this document, [section 3 Entity Model Wrapper](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752500) tells us all about this context:
 
@@ -168,4 +172,27 @@ If we inspect what's in our `Schema`, we see these elements at the next level:
 
 We'll cover annotations in a subseqent tutorial, so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time.
 
+If we visualize our path through this metadata document, we've now found our way to what we really want to know:
 
+```text
++------+
+| Edmx |--+
++------+  |
+          |
+   +--------------+
+   | DataServices |--+
+   +--------------+  |
+                     |
+                 +--------+
+                 | Schema |
+                 +--------+
+                     |
+           +---------+-------+------------------+
+           |                 |                  |
+ +-----------------+   +------------+     +------------+
+ | EntityContainer |   | EntityType |-+   | Annotation |-+
+ +-----------------+   +------------+ |   +------------+ |
+                         +------------+     +------------+
+```
+
+Note that there is [only a single entity container](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752596), but multiple entity types and annotations.
