@@ -199,6 +199,8 @@ Note that there is [only a single entity container](https://docs.oasis-open.org/
 
 We'll cover annotations in a subseqent tutorial, so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time to round out this tutorial.
 
+### Take a brief look at the OData namespace
+
 Before we do, we should make a note of one more thing at this level, and that's the `Namespace` attribute in the `<Schema>` element:
 
 ```xml
