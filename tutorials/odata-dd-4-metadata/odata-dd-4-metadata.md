@@ -279,4 +279,17 @@ Let's have a brief look at where this `Main` OData namespace is used. Here's ano
 </edmx:Edmx>
 ```
 
-The `Main` namespace is used to prefix the "variable building blocks" of the schema when referencing them. So the `EntitySet` "Products" refers to `Main.Products` as the type of the entity contained. Within the corresponding `EntityType` definition we see that the `NavigationProperty` "Category" is of type `Main.Categories`. Following that to the "Categories" `EntityType` we see that there's another `NavigationProperty` "Products" that leads back to the `Main.Products` type, this time in a `Collection( ... )` expression, denoting a zero-or-more relationship.
+The `Main` namespace is used to prefix the "variable building blocks" of the schema when referencing them. So:
+
+- the `EntitySet` "Products" refers to `Main.Products` as the type of the entity contained
+- within the corresponding `EntityType` definition we see that the `NavigationProperty` "Category" is of type `Main.Categories`
+
+Following that to the "Categories" `EntityType` we see that:
+
+- there's another `NavigationProperty` "Products" that leads back to the `Main.Products` type, this time in a `Collection( ... )` expression, denoting a zero-or-more relationship
+
+Finally:
+
+- annotations have targets, which are expressed as containees (such as the "Products" `EntitySet`) of the `Main.EntityContainer` element
+
+
