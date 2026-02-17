@@ -20,7 +20,7 @@ time: 20
 
 ## Intro
 
-...
+The members of the OData Technical Committee have worked hard on OData as a robust, well-defined and extensible standard. In this tutorial we'll look at a key extensibility mechanism in the form of Vocabularies, and a dominant use thereof in the form of Annotations.
 
 ---
 
