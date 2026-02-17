@@ -8,7 +8,7 @@ tags: [ software-product>sap-business-technology-platform, topic>cloud, programm
 time: 30
 ---
 
-# Learn how to read OData metadata
+# Learn how to read OData metadata documents
 
 <!-- description --> Take a tour of a simple metadata document and get to know its key sections.
 
@@ -91,7 +91,7 @@ It also contains, as children:
 
 The primary area of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers. But it helps if we are comfortable with the rest of the document, the "context" for the content of the `DataServices` element so to speak, if only to be able to mentally put it aside, move past it and get to what we're looking for.
 
-So we will look briefly at namespaces in the next step. We'll look at OData vocabularies, and OData annotations for that matter, in subsequent tutorials.
+So we will look briefly at namespaces in the next step. We'll look at OData annotations & vocabularies in the next tutorial.
 
 <!-- 4 -->
 ### Understand the XML namespaces
