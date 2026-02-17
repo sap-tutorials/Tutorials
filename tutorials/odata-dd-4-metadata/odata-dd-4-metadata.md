@@ -22,7 +22,7 @@ time: 30
 
 A key resource in any OData service is its metadata document. In this tutorial you'll take a tour of a simple metadata document (the one for the Northbreeze service introduced in the [previous tutorial in this mission](https://developers.sap.com/tutorials/odata-dd-3-northbreeze.html)).
 
-Throughout this tutorial you should endeavor to use your own instance of the Northbreeze service (see the [previous tutorial](https://developers.sap.com/tutorials/odata-dd-3-northbreeze.html)); for illustration purposes, URLs for the publicly available instance will be used here.
+Throughout this tutorial you should endeavor to use your own instance of the Northbreeze service (see the previous [Northbreeze](https://developers.sap.com/tutorials/odata-dd-3-northbreeze.html) tutorial); for illustration purposes, URLs for the publicly available instance will be used here.
 
 ---
 
@@ -91,7 +91,7 @@ It also contains, as children:
 
 The primary area of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers. But it helps if we are comfortable with the rest of the document, the "context" for the content of the `DataServices` element so to speak, if only to be able to mentally put it aside, move past it and get to what we're looking for.
 
-So we will look briefly at namespaces in the next step. We'll look at OData annotations & vocabularies in the next tutorial.
+So we will look briefly at namespaces in the next step. We'll look at OData annotations & vocabularies in the next tutorial on [Annotations](https://developers.sap.com/tutorials/odata-dd-5-annotations.html).
 
 <!-- 4 -->
 ### Understand the XML namespaces
@@ -100,7 +100,7 @@ While not critical to getting to the heart of what the metadata document conveys
 
 These are artifacts relating to the use of XML namespaces.
 
-> There are actually two different types of namespaces at play in these OData metadata document resources. There are the XML namespaces, which are the subject of this step. There are also OData namespaces. These are found in `Namespace` attributes of the `<edmx:Include>` and `<Schema>` elements. We'll look at the schema namespace in a later step in this tutorial, and at the namespaces in the `<edmx:Include>` elements in a subsequent tutorial.
+> There are actually two different types of namespaces at play in these OData metadata document resources. There are the XML namespaces, which are the subject of this step. There are also OData namespaces. These are found in `Namespace` attributes of the `<edmx:Include>` and `<Schema>` elements. We'll look at the schema namespace in a later step in this tutorial, and at the namespaces in the `<edmx:Include>` elements in the next tutorial.
 
 For the usual reasons, namespaces are used in XML to compartmentalize element and attribute names, which allow the use of various XML vocabularies (not to be confused with the OData vocabularies which we'll look at next) together in a single document, without element and attribute name collisions.
 
@@ -203,7 +203,7 @@ Visualizing our path through this metadata document, we've now found our way to 
 
 Note that there is only a single entity container (see [section 13 Entity Container](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752596)), but multiple entity types and annotations.
 
-We'll cover annotations in a subseqent tutorial, so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time to round out this tutorial.
+Annotations are covered in [the next tutorial](https://developers.sap.com/tutorials/odata-dd-5-annotations.html), so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time to round out our brief look at the metadata document.
 
 <!-- 7 -->
 ### Take a brief look at the OData namespace
