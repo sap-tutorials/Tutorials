@@ -138,7 +138,7 @@ As the primary area of interest in such resources is what's in the `DataServices
 <!-- 5 -->
 ### Learn about the DataServices context
 
-To understand the context of the `DataServices` element, let's use what we learned in the [Resources](https://developers.sap.com/tutorials/odata-dd-2-resources.html) tutorial in this mission on navigating OData standards documents.
+To understand the context of the `DataServices` element, let's use what we learned in the [Standards](https://developers.sap.com/tutorials/odata-dd-2-standards.html) tutorial in this mission on navigating OData standards documents.
 
 We should refer to the OData standards document "OData Version 4.0. Part 3: Common Schema Definition Language (CSDL)", the latest version being available at the canonical URL <https://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part3-csdl.html>, which brings us specifically to the "Oasis Standard Plus Errata 03" version which has its own URL <https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html>.
 
