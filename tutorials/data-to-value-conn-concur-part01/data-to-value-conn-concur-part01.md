@@ -4,7 +4,7 @@ author_profile: https://github.com/alphageek7443
 keywords: tutorial
 auto_validation: true
 time: 20
-tags: [ software-product>sap-concur, tutorial>advanced ]
+tags: [ software-product>sap-concur, tutorial>advanced, software-product>sap-datasphere ]
 primary_tag: software-product>sap-datasphere
 parser: v2
 ---
@@ -89,14 +89,12 @@ Visual Studio Code (or just VSCode) is a free source code editor developed and m
 3. Copy the below code to the file
    
 ```
-
 ###
 @hostname = <your-company-base_URI>
 @your-client_id = <your-client_id>
 @your-client_secret = <your-client_secret>
 @username = <your-company_uuid>
 @password = <your-company_request_token>
-
 ```
 
 Replace the placeholder as per your application configuration **your-client_id**, **your-client_secret**, **your-company_uuid** and **your-company_request_token** you have generated in previous step.
@@ -111,7 +109,6 @@ The first time you request for a **refreshToken** This is used to get a new acce
 1. Copy below code just below the above code to Obtain a **refresh token** and store it to a variable. 
 
 ```
-
 ### Obtain a Refresh token
 # @name refeshTokenCall
 POST {{hostname}}/oauth2/v0/token HTTP/1.1
@@ -128,7 +125,6 @@ client_id={{your-client_id}}
 
 ###
 @refeshToken = {{refeshTokenCall.response.body.refresh_token}}
-
 ```
 
 ### Obtain an Access Token
@@ -138,7 +134,6 @@ The Oauth2 service generates access tokens for authenticated applications. The t
 1. Copy below code just below the above code to Obtain a **access Token** and store it to a variable.
 
 ```
-
 ### Obtain an Access Token
 # @name accessTokenCall
 POST {{hostname}}/oauth2/v0/token HTTP/1.1
@@ -153,19 +148,16 @@ client_id={{your-client_id}}
 
 ###
 @accessToken = {{accessTokenCall.response.body.access_token}}
-
 ```
 
 ### Calling an API with the Access Token
 The base URI for all subsequent calls. Armed with the accessToken you can start making calls to an SAP Concur API. Here’s an example How you can retrieve Expense Report by utilizing the appropriate base URI with the access token.
 
 ```
-
 ### Get Expense Report
 # @name getExpenseReport
 GET {{hostname}}/api/v3.0/expense/reports?limit=100&user=ALL HTTP/1.1
 Authorization: Bearer {{accessToken}}
-
 ```
 
 ### Test it out
