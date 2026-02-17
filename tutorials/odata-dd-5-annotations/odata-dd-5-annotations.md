@@ -64,7 +64,7 @@ import { "Org.OData.Core.V1" as "Core" } from "https://oasis-tcs.github.io/.../O
 Note that each of the referenced external documents in our OData metadata document are resources in GitHub repositories:
 
 - two belonging to OASIS in <https://oasis-tcs.github.io/odata-vocabularies/>
-- one belongint to SAP in <https://sap.github.io/odata-vocabularies/>
+- one belonging to SAP in <https://sap.github.io/odata-vocabularies/>
 
 Taking the first of the three `<edmx:Reference>` elements here, we see that:
 
@@ -74,7 +74,7 @@ Taking the first of the three `<edmx:Reference>` elements here, we see that:
 
 ![OASIS OData TC - Vocabularies](oasis-vocabularies-toc.png)
 
-If we look at the XML representation of the "Capabilities" vocabulary in CSDL form, we see this:
+If we look specifically at the XML representation of the "Capabilities" vocabulary in CSDL form, we see this:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -107,7 +107,7 @@ It's another EDMX document! There is a beauty to the OData specifications that i
 - this document _also_ has references to vocabularies
 - there is a single `<Schema>` element, with the OData namespace "Org.Data.Capabilities.V1"
 
-And that specific schema is exactly the one that's referenced in the `<edmx:Include>` element:
+And that specific schema is exactly the one that's referenced in the `<edmx:Include>` element within the `<edmx:Reference>` element:
 
 ```xml
 <edmx:Reference
@@ -116,4 +116,14 @@ And that specific schema is exactly the one that's referenced in the `<edmx:Incl
 </edmx:Reference>
 ```
 
-It just so happens that in this referenced CSDL document, there _is_ only one schema, but there could be more. So an `<edmx:Include>` element forms an important part of the `<edmx:Reference>` (indeed, [section 3.3 Element edmx:Reference](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752504) states that at least one `<edmx:Include>` or `<edmx:IncludeAnnotation>` is mandatory) and serves to identify a particular schema to be included, from the referenced vocabulary. The `<edmx:Include>` element does one more thing here - it specifies a short name, in the form of a value for an `Alias` attribute, which can be used to refer to that imported vocabulary schema. Just like the `as` aliasing in our imaginary JavaScript equivalent example earlier.
+It just so happens that in this referenced CSDL document, there _is_ only one schema, but there could be more.
+
+So an `<edmx:Include>` element forms an important part of the `<edmx:Reference>`.
+
+> Indeed, [section 3.3 Element edmx:Reference](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752504) states that at least one `<edmx:Include>` or `<edmx:IncludeAnnotation>` is mandatory.
+
+The `<edmx:Include>` element serves to identify a particular schema to be included, from the referenced vocabulary.
+
+It also does one more thing here - it specifies a short name, in the form of a value for an `Alias` attribute, which can be used to refer to that imported vocabulary schema. Just like the `as` aliasing in our imaginary JavaScript equivalent example earlier. So instead of the full name "Org.OData.Capabilities.V1" being needed to prefix vocabulary terms, the short form "Capabilities" can be used, as we'll see in subsequent steps.
+
+
