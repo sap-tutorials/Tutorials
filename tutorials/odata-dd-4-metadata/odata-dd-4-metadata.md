@@ -415,3 +415,4 @@ Looking at the "Categories" `EntityType`, we see that:
 ### Further info
 
 - [Serving OData APIs](https://cap.cloud.sap/docs/guides/protocols/odata) in Capire
+- [ABAP RESTful Application Programming Model](https://help.sap.com/docs/abap-cloud/abap-rap/abap-restful-application-programming-model)
