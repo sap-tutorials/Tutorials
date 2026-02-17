@@ -7,7 +7,7 @@ primary_tag: software-product>sap-business-technology-platform
 tags: [ software-product>sap-business-technology-platform, topic>cloud, programming-tool>odata, tutorial>beginner ]
 time: 20
 ---
-
+ 
 # Learn about OData's origins
 
 <!-- description --> Discover OData's origins in RSS and Atom.
