@@ -68,7 +68,7 @@ Regard this drastically reduced version of the entire metadata document XML stru
       <EntityType Name="Products"></EntityType>
       <EntityType Name="Categories"></EntityType>
       <EntityType Name="Suppliers"></EntityType>
-      <Annotations Target="Main.EntityContainer/Products">
+      <Annotations Target="Main.EntityContainer/Categories">
         <Annotation Term="Capabilities.DeleteRestrictions"></Annotation>
       </Annotations>
     </Schema>
@@ -273,7 +273,7 @@ Let's have a brief look at where this `Main` OData namespace is used. Here's ano
         <NavigationProperty Name="Products" Type="Collection(Main.Products)" Partner="Category"/>
       </EntityType>
       ...
-      <Annotations Target="Main.EntityContainer/Products">
+      <Annotations Target="Main.EntityContainer/Categories">
         <Annotation Term="Capabilities.DeleteRestrictions"> ... </Annotation>
         ...
       </Annotations>
