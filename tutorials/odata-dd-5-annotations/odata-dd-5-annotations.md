@@ -20,7 +20,7 @@ time: 20
 
 ## Intro
 
-The members of the OData Technical Committee have worked hard on OData as a robust, well-defined and extensible standard. In this tutorial we'll look at a key extensibility mechanism in the form of Vocabularies, and a dominant use thereof in the form of Annotations.
+The members of the OData Technical Committee have worked hard on OData as a robust, well-defined and extensible standard. In this tutorial we'll look at a key extensibility mechanism in the form of vocabularies, and a dominant use thereof in the form of annotations.
 
 ---
 
@@ -134,3 +134,70 @@ So an `<edmx:Include>` element forms an important part of the `<edmx:Reference>`
 > Indeed, [section 3.3 Element edmx:Reference](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752504) states that at least one `<edmx:Include>` or `<edmx:IncludeAnnotation>` is mandatory.
 
 The `<edmx:Include>` element serves to identify a particular schema to be included, from the referenced vocabulary. It also does one more thing here - it specifies a short name, in the form of a value for an `Alias` attribute, which can be used to refer to that imported vocabulary schema. Just like the `as` aliasing in our imaginary JavaScript equivalent example earlier. So instead of the full name "Org.OData.Capabilities.V1" being needed to prefix vocabulary terms, the short form "Capabilities" can be used, as we'll see in subsequent steps.
+
+### A first look at the annotations
+
+Now we understand that annotations are organized into vocabularies, and have seen how such vocabulary resources are referenced to be included into an OData metadata document, let's now take a first look at what annotations are used in this particular OData metadata document, and how.
+
+We should first take a brief look at the CSDL specification, and learn that:
+
+- "Vocabulary annotations can be specified as a child of the model element being annotated or as a child of an `edm:Annotations` element that targets the model element." (from [section 4.6 Annotations](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752519))
+- "An annotation applies a term to a model element and defines how to calculate a value for the applied term." (from [section 14 Vocabulary and Annotation](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Vocabulary_and_Annotation))
+
+Additionally:
+
+- "A service SHOULD NOT require a client to interpret annotations. Clients SHOULD ignore unknown terms and silently treat unexpected or invalid values (including invalid type, invalid literal expression, etc.) as an unknown value for the term." ( also from [section 14 Vocabulary and Annotation](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Vocabulary_and_Annotation))
+
+With the information from the first two points here, we can see in our OData metadata document that both approaches to annotation are used.
+
+First, we see the "annotation as child element" approach where the annotation "Core.Links" is applied directly to the `<Schema>` element via the `<Annotation>` element which appears a direct child of `<Schema>`:
+
+```xml
+<Schema Namespace="Main" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+  <Annotation Term="Core.Links">
+    <Collection>
+      <Record>
+        <PropertyValue Property="rel" String="author"/>
+        <PropertyValue Property="href" String="https://cap.cloud.sap"/>
+      </Record>
+    </Collection>
+  </Annotation>
+  ...
+</Schema>
+```
+
+Further on in the metadata document we see an example of the other approach, where `<Annotation>` elements appear as direct children of a containing `<Annotations>` element, and the elements to which the annotations are applied are specified in `Target` attributes):
+
+> Again, as explained in the previous [Metadata](https://developers.sap.com/tutorials/odata-dd-4-metadata.html) tutorial, in the "Get acquainted with the schema element" step, we'll leave out the XML namespace prefix `edm` her when writing elements that belong to that namespace.
+
+
+```xml
+<Schema Namespace="Main" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+  ...
+  <EntityContainer Name="EntityContainer">
+    <EntitySet Name="Categories" EntityType="Main.Categories">
+      <NavigationPropertyBinding Path="Products" Target="Products"/>
+    </EntitySet>
+  </EntityContainer>
+  ...
+  <Annotations Target="Main.EntityContainer/Categories">
+    <Annotation Term="Capabilities.DeleteRestrictions">
+      <Record Type="Capabilities.DeleteRestrictionsType">
+        <PropertyValue Property="Deletable" Bool="false"/>
+      </Record>
+    </Annotation>
+    <Annotation Term="Capabilities.InsertRestrictions">
+      <Record Type="Capabilities.InsertRestrictionsType">
+        <PropertyValue Property="Insertable" Bool="false"/>
+      </Record>
+    </Annotation>
+    <Annotation Term="Capabilities.UpdateRestrictions">
+      <Record Type="Capabilities.UpdateRestrictionsType">
+        <PropertyValue Property="Updatable" Bool="false"/>
+      </Record>
+    </Annotation>
+  </Annotations>
+</Schema>
+```
+
+Here, three different annotations terms "Capabilities.DeleteRestrictions", "Capabilities.InsertRestrictions" and "Capabilities.UpdateRestrictions" are being applied, via `Target="Main.EntityContainer/Categories"` to the "Categories" entityset in the entity container named "EntityContainer" in the "Main" OData namespace.
