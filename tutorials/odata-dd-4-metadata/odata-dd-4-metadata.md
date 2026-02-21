@@ -91,7 +91,7 @@ It also contains, as children:
 
 The primary area of interest to us in any metadata document is the content within the `DataServices` element, as that's [where the rubber meets the road](https://en.wiktionary.org/wiki/the_rubber_meets_the_road) with respect to what the OData service represents for us as architects or developers. But it helps if we are comfortable with the rest of the document, the "context" for the content of the `DataServices` element so to speak, if only to be able to mentally put it aside, move past it and get to what we're looking for.
 
-So we will look briefly at namespaces in the next step. We'll look at OData annotations & vocabularies in the next tutorial on [Annotations](https://developers.sap.com/tutorials/odata-dd-5-annotations.html).
+So we will look briefly at namespaces in the next step. We'll look at OData vocabularies & annotations in the next couple of tutorials.
 
 <!-- 4 -->
 ### Understand the XML namespaces
@@ -203,7 +203,7 @@ Visualizing our path through this metadata document, we've now found our way to 
 
 Note that there is only a single entity container (see [section 13 Entity Container](https://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752596)), but multiple entity types and annotations.
 
-Annotations are covered in [the next tutorial](https://developers.sap.com/tutorials/odata-dd-5-annotations.html), so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time to round out our brief look at the metadata document.
+Annotations are covered in a subsequent tutorial, so that leaves the `EntityContainer` and `EntityType` elements. Let's take these one at a time to round out our brief look at the metadata document.
 
 <!-- 7 -->
 ### Take a brief look at the OData namespace
