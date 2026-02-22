@@ -8,7 +8,7 @@ tags: [ software-product>sap-business-technology-platform, topic>cloud, programm
 time: 20
 ---
 
-# Understand how to read annotations in OData metadata documents
+# Learn how to read annotations in OData metadata documents
 
 <!-- description --> Annotations from different vocabularies can be found throughout OData metadata documents.
 
