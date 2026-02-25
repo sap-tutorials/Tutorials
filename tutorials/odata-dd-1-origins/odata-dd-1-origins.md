@@ -19,8 +19,6 @@ time: 20
 
 ## Intro
 
-*This series of tutorials on OData is to replace the original "Take a Deep Dive into OData" which you may already know, and which we're now retiring. We're building out the content of this new series in the open, as a work in progress, and would love to hear your feedback, what you would like to see and what you think of the content as we create it. As you can see, it's very early days. Please let us know your thoughts on this new mission [via this issue link](https://github.com/sap-tutorials/Tutorials/issues/new?title=Early%20feedback%20on%20the%20new%20OData%20mission&body=Let%20us%20know%20your%20thoughts%20on%20this%20new%20series%20-%20what%20you%20like,%20dislike,%20would%20like%20to%20see.%20Thank%20you!).*
-
 OData is an open standard that is both a data format and a protocol for consuming and manipulating data in a uniform way. It's ISO/IEC approved and managed by the [OASIS organization](https://www.oasis-open.org/).
 
 OData has its origins in the world of weblogs and syndication, but now serves to power a great deal of the API and integration activities in typical SAP enterprise environments. This tutorial will help you understand OData's origins.
