@@ -25,6 +25,8 @@ OData is an open standard that is both a data format and a protocol for consumin
 
 OData has its origins in the world of weblogs and syndication, but now serves to power a great deal of the API and integration activities in typical SAP enterprise environments. This tutorial will help you understand OData's origins.
 
+> This tutorial belongs to the OData Deep Dive mission, a re-write of the original. The re-write is a work in progess, please proceed with caution! More info can be found in the blog post [OData Deep Dive rewrite in the open](https://qmacro.org/blog/posts/2026/02/02/odata-deep-dive-rewrite-in-the-open/).
+
 ---
 
 ### Examine RSS, an ancestor of OData

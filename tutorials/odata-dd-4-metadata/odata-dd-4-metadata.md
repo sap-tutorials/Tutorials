@@ -24,6 +24,8 @@ A key resource in any OData service is its metadata document. In this tutorial y
 
 Throughout this tutorial you should endeavor to use your own instance of the Northbreeze service (see the previous [Northbreeze](https://developers.sap.com/tutorials/odata-dd-3-northbreeze.html) tutorial); for illustration purposes, URLs for the publicly available instance will be used here.
 
+> This tutorial belongs to the OData Deep Dive mission, a re-write of the original. The re-write is a work in progess, please proceed with caution! More info can be found in the blog post [OData Deep Dive rewrite in the open](https://qmacro.org/blog/posts/2026/02/02/odata-deep-dive-rewrite-in-the-open/).
+
 ---
 
 <!-- 1 -->

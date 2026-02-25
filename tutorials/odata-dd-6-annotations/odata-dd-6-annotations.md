@@ -26,6 +26,10 @@ In all cases, annotations consist of two parts:
 
 In this tutorial we'll examine the terms, along with their types and possible values, in our [Northbreeze OData metadata document](https://odd.cfapps.eu10.hana.ondemand.com/northbreeze/$metadata).
 
+> This tutorial belongs to the OData Deep Dive mission, a re-write of the original. The re-write is a work in progess, please proceed with caution! More info can be found in the blog post [OData Deep Dive rewrite in the open](https://qmacro.org/blog/posts/2026/02/02/odata-deep-dive-rewrite-in-the-open/).
+
+---
+
 ### Revisit the Core.Links annotation
 
 One of the annotations we took a brief first look at in the previous tutorial was "Core.Links", where "Core" is the vocabulary alias, referring here to "Org.OData.Core.V1".
@@ -248,4 +252,3 @@ By the way, this OData service is being served by a CAP Node.js server, where th
 
 - the [@readonly](https://cap.cloud.sap/docs/guides/services/constraints#readonly) section of the Input Validation topic in Capire
 - if you're wondering why there's a third vocabulary [com.sap.vocabularies.Common.v1](https://sap.github.io/odata-vocabularies/vocabularies/Common.xml) included in the references section of this OData service's metadata document, but there are no "Common" terms used, that's just because this is served by a CAP server, and the CAP compiler will by default always include references to both the "Core" and "Common" vocabularies (see the `csn2annotationEdm` function in `@sap/cds-compiler/lib/edm/annotations/genericTranslations.js` for details)
-

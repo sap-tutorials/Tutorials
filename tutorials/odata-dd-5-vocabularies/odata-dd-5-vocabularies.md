@@ -21,6 +21,8 @@ time: 20
 
 The members of the OData Technical Committee have worked hard on OData as a robust, well-defined and extensible standard. In this tutorial we'll look at a key extensibility mechanism in the form of vocabularies, and how they're used to organize annotations.
 
+> This tutorial belongs to the OData Deep Dive mission, a re-write of the original. The re-write is a work in progess, please proceed with caution! More info can be found in the blog post [OData Deep Dive rewrite in the open](https://qmacro.org/blog/posts/2026/02/02/odata-deep-dive-rewrite-in-the-open/).
+
 ---
 
 ### Examine the rest of the entity model wrapper
@@ -253,4 +255,3 @@ In the next tutorial we'll dig in to the detail of the annotations used in this 
 ### Further info
 
 - [OData @ SAP - SAP Vocabularies](https://sap.github.io/odata-vocabularies/)
-

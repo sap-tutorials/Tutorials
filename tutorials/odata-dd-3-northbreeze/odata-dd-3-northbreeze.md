@@ -22,11 +22,13 @@ In order to take you through various OData concepts in the [OData Deep Dive](htt
 
 The service is provided by a CAP server, and the definition is in a publicly available repository, along with the definition of a container image.
 
+> This tutorial belongs to the OData Deep Dive mission, a re-write of the original. The re-write is a work in progess, please proceed with caution! More info can be found in the blog post [OData Deep Dive rewrite in the open](https://qmacro.org/blog/posts/2026/02/02/odata-deep-dive-rewrite-in-the-open/).
+
 You will need:
 
 - A Docker engine (in the form of Docker Desktop, Podman, or similar)
 
-> This tutorial is a work-in-progress; further updates need to include:
+> This tutorial is to receive further updates to include:
 >
 > - Making multi-arch images available
 > - Running as a dev container in VS Code and GitHub Codespaces
