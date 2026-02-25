@@ -7,7 +7,7 @@ primary_tag: software-product>sap-business-technology-platform
 tags: [ software-product>sap-business-technology-platform, topic>cloud, programming-tool>odata, tutorial>beginner ]
 time: 20
 ---
- 
+
 # Learn about OData's origins
 
 <!-- description --> Discover OData's origins in RSS and Atom.
@@ -124,7 +124,7 @@ Beyond news feeds like this, the archetypal use case for RSS (and indeed Atom) i
 
 ### Examine the Atom Syndication Format
 
-Atom is a format very similar to RSS, serving the same purpose, that came about for reasons that are not relevant for this tutorial (but see the Further Info section for a link to more background details if you're curious). It's known as the [Atom Syndication Format](https://tools.ietf.org/html/rfc4287).
+Atom is a format very similar to RSS, serving the same purpose, that came about for reasons that are not relevant for this tutorial (but see the Further Info section for a link to more background details if you're curious). It's known as the Atom Syndication Format, described in [RFC 4287](https://tools.ietf.org/html/rfc4287).
 
 Some may call Atom a successor to RSS. Unlike RSS, which is just a _format_ specification, Atom also has a related _protocol_ which we'll look at shortly.
 
@@ -458,5 +458,5 @@ The use of "OData-Protocol" is a reference to a related document in the OData V4
 
 ### Further info
 
-- [Accuracy and precision in language](https://qmacro.org/blog/posts/2024/01/22/accuracy-and-precision-in-language/) on the distinction between "blog" and "post".
-- [Monday morning thoughts: OData](https://qmacro.org/blog/posts/2018/08/20/monday-morning-thoughts-odata/) has further details on the journey from RSS, through Atom and AtomPub, to OData.
+- [Accuracy and precision in language](https://qmacro.org/blog/posts/2024/01/22/accuracy-and-precision-in-language/) on the distinction between "blog" and "post"
+- [Monday morning thoughts: OData](https://qmacro.org/blog/posts/2018/08/20/monday-morning-thoughts-odata/) has further details on the journey from RSS, through Atom and AtomPub, to OData

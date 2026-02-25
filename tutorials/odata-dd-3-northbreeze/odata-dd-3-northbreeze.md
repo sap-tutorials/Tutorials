@@ -40,7 +40,7 @@ You will need:
 
 The OData service is deliberately simple and contains a small handful of entities in the domain model, and a single service made available via the OData V4 protocol.
 
-Head to <https://github.com/qmacro/northbreeze> and take a look around, especially in the CAP project directory [northbreeze](https://github.com/qmacro/odata-dd-server/tree/main/northbreeze).
+Head to <https://github.com/qmacro/odata-dd-server> and take a look around, especially in the CAP project directory [northbreeze](https://github.com/qmacro/odata-dd-server/tree/main/northbreeze).
 
 ### Run as a Docker container
 
@@ -104,10 +104,10 @@ Links to the Northbreeze OData service document, metadata document, and entityse
 
 ### Visit the publicly available read-only service
 
-In case you haven't yet got round to running your own instance of the Northbreeze service, there's a publicly available instance that is read-only. So you can try out any of the read-only activities in subsequent tutorials in this mission (for other activities you will have to set up and run your own, as described in this tutorial).
+In case you haven't yet got round to running your own instance of the Northbreeze service, there's a publicly available instance that is fully read-only. So you can try out any of the read-only activities in subsequent tutorials in this mission (for other activities you will have to set up and run your own, as described in this tutorial).
 
 Head over to <https://odd.cfapps.eu10.hana.ondemand.com/> ("odd" is short for "OData Deep Dive") to see the start page, and take a look around.
 
-## Further info
+### Further info
 
 - [Capire](https://cap.cloud.sap/docs/) - the official CAP documentation

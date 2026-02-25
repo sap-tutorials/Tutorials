@@ -7,7 +7,7 @@ primary_tag: software-product>sap-business-technology-platform
 tags: [ software-product>sap-business-technology-platform, topic>cloud, programming-tool>odata, tutorial>beginner ]
 time: 20
 ---
- 
+
 # Get to know the OData standards resources on the Web
 
 <!-- description --> Get acquainted with the OData standards and how to navigate them.
