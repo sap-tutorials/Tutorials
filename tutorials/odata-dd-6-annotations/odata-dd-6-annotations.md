@@ -248,3 +248,4 @@ By the way, this OData service is being served by a CAP Node.js server, where th
 
 - the [@readonly](https://cap.cloud.sap/docs/guides/services/constraints#readonly) section of the Input Validation topic in Capire
 - if you're wondering why there's a third vocabulary [com.sap.vocabularies.Common.v1](https://sap.github.io/odata-vocabularies/vocabularies/Common.xml) included in the references section of this OData service's metadata document, but there are no "Common" terms used, that's just because this is served by a CAP server, and the CAP compiler will by default always include references to both the "Core" and "Common" vocabularies (see the `csn2annotationEdm` function in `@sap/cds-compiler/lib/edm/annotations/genericTranslations.js` for details)
+

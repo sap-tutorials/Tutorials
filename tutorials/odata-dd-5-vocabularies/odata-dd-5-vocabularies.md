@@ -253,3 +253,4 @@ In the next tutorial we'll dig in to the detail of the annotations used in this 
 ### Further info
 
 - [OData @ SAP - SAP Vocabularies](https://sap.github.io/odata-vocabularies/)
+
