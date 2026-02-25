@@ -65,7 +65,7 @@ Within the "Org.OData.Core.V1" schema, we find two elements, right next to each 
 </Term>
 
 <ComplexType Name="Link">
-  <Annotation Term="Core.Description" String="The Link term is inspired by the `atom:link` element, see [RFC4287](https://tools.ietf.org/html/rfc4287#section-4.2.7), and the `Link` HTTP header, see [RFC5988](https://tools.ietf.org/html/rfc5988)" />
+  <Annotation Term="Core.Description" String="The Link type is inspired by the `atom:link` element, see [RFC4287](https://tools.ietf.org/html/rfc4287#section-4.2.7), and the `Link` HTTP header, see [RFC5988](https://tools.ietf.org/html/rfc5988)" />
   <Property Name="rel" Type="Edm.String" Nullable="false">
     <Annotation Term="Core.Description" String="Link relation type, see [IANA Link Relations](http://www.iana.org/assignments/link-relations/link-relations.xhtml)" />
   </Property>
@@ -97,7 +97,7 @@ Namespace: Core
 
     +-- Description: "Link to related information"
     |
-    |               +-- Description: "The Link term (sic) is inspired by ..."
+    |               +-- Description: "The Link type is inspired by ..."
     V               |
 +-------+    +------V----------------+ 
 |       |    | +----------+          ++
