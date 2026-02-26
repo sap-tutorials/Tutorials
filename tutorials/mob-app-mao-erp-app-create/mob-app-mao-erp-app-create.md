@@ -14,7 +14,7 @@ parser: v2
 ## Prerequisites
 - Access to your SAP BTP Subaccount and Space.
 - Access to the SAP Mobile Services service in your SAP BTP subaccount.
-- Implement SAP Notes 3717111 and 3717172 in your system to get the latest updates for the SAP Service and Asset Manager Mobile Services App Create transaction `/MERP/CPMS_APPCREATE`. Note 3717111 (component MOB-APP-MAO-FND) contains updates to the Mobile Services App Admin classes on which note 3717172 (component MOB-APP-MAO-ERP) depends on. Please ensure note 3717111 can be implemented in your system before implementing note 3717172.
+- Latest App Create and Metrics Updates. Please review SAP Note 3703174 for the latest updates.
 
 ## You will learn
 - How to create and update an SAP Mobile Services app for the SAP Service and Asset Manager mobile app using the MS App Create transaction `/MERP/CPMS_APPCREATE`.
