@@ -46,7 +46,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 1. Execute the transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI, then select your required variant (i.e., `SAP&SAM_<version>`).
 
-2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please ensure the **Background Job User** will maintain authorization to run the Usage Metering background job (parameter info below). To use an RFC Destination to create the app instead of the **Admin API** please see Step 4 (optional). The app is created as the Metrics Host by default, to set up the app as the Metrics Sattelite please see Step 7. Then execute the transaction.
+2. Fill in the **Admin API**, **SCC Location Id** and **Virtual Host**. Please ensure the **Background Job User** will maintain authorization to run the Usage Metering background job (parameter info below). To use an RFC Destination to create the app instead of the **Admin API** please see Step 4 (optional). The app is created as the Metrics Host by default, to set up the app as the Metrics Satellite please see Step 6. Then execute the transaction.
 
     ![SelScreen](selscreen.png)
 
@@ -67,7 +67,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | **Client** | Used to set `sap-client` header for Mobile Services Mobile Destinations. Defaulted to current System Client. |
     | **Background Job User** | Used to schedule the Usage Metering background job with a daily frequency. If no user is provided, then the user executing the transaction is used. Please ensure the **Background Job User** will maintain authorization to run the background job. |
     | **Client Role** | Used by the Metrics report to determine user counts (i.e., 0 user counts sent for non-productive systems). Defaulted to System Client Role defined in transaction SCC4. Stored in MAIF Product Table. |
-    | **Satellite System** | See step X to use Satellite Systems. |
+    | **Satellite System** | See Step 6 to use Satellite Systems. |
    
     >**WARNING:** Any change that may affect the offline configuration (e.g., a new entity type is added to your mobile app configuration, or the **Defer Batch Response** setting is changed for the **OData Service Technical Name** provided when generating the offline configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
 
@@ -126,15 +126,15 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | :-----------| :----------- |
     | `sap-client` | Your client (i.e., **`800`**) |
 
-5. From your app's **Mobile Connectivity** feature, select the **Service Keys** tab. You should see a Service Key with the properties below. The Key should be automatically maintained as the `X-API-Key` property in the Additional Properties of the Usage Metering Middleware Server which we will review in Step 3.7.
+5. From your app's **Mobile Connectivity** feature, select the **Service Keys** tab. You should see a Service Key with the properties below. The Key should be automatically maintained as the `X-API-Key` property in the Additional Properties of the Usage Metering Middleware Server which we will review in Step 3.9.
 
-    | Field Name | Value                                       |
-    | :--------- | :------------------------------------------ |
-    | Alias      | **`<system><client>`** (i.e., **`PRD001`**) |
-    | Roles      | **`sap_application_metering`**              |
-    | Type       | **`API Key`**                               |
+    | Field Name | Value |
+    | :--------- | :---- |
+    | Alias | **`<system><client>`** (i.e., **`PRD001`**) |
+    | Roles | **`sap_application_metering`** |
+    | Type | **`API Key`** |
 
-6. From your app's overview screen, if you select the **Offline Access** feature you should be able to display and edit the offline configuration. If the offline configuration is missing, then please see Step 7.
+6. From your app's overview screen, if you select the **Offline Access** feature you should be able to display and edit the offline configuration. If the offline configuration is missing, then please see Step 8.
 
 7. From your app's overview screen, select the **APIs** tab to view the onboarding QR code which you can scan from the SAP Service and Asset Manager mobile app.
 
@@ -142,44 +142,43 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
     ![MDW](mdw.png)
 
-9.  Verify that the Middleware Server has the following **Basic Info** and **Additional Properties**. If the Middleware Server's **Basic Info** or **Additional Properties** are not as expected then please see Step 8.
+9.  Verify that the Middleware Server has the following **Basic Info** and **Additional Properties**. If the Middleware Server's **Basic Info** or **Additional Properties** are not as expected then please see Step 9.
 
     **Basic Info**
 
     ![MDWBasicInfo](mdwbasicinfo.png)
 
-    | Field Name             | Value                                              |
-    | :--------------------- | -------------------------------------------------- |
-    | Mobile Application     | **`<mobile_app>`**                                 |
-    | Server Name            | **`<ms_app_id>_MS_UNIFIED_SERVER`**                |
-    | `Middleware Svr SerNo` | **`SCP`**                                          |
-    | Server GUID            | **`<autogenerated_guid>`**                         |
-    | Port                   | **`00443`**                                        |
-    | UI Host Name           | **`https://example.cfapps.sap.hana.ondemand.com`** |
+    | Field Name | Value |
+    | :--------- | ----- |
+    | Mobile Application | **`<mobile_app>`** |
+    | Server Name | **`<ms_app_id>_MS_UNIFIED_SERVER`** |
+    | `Middleware Svr SerNo` | **`SCP`** |
+    | Server GUID | **`<autogenerated_guid>`** |
+    | Port | **`00443`** |
+    | UI Host Name | **`https://example.cfapps.sap.hana.ondemand.com`** |
 
     **Additional Properties**
 
     ![MDWAdditionalProperties](mdwadditionalproperties.png)
 
-    | Property Group | Property Name      | Property Value                             |
-    | :------------- | :----------------- | :----------------------------------------- |
-    | **`METERING`** | **`Host`**         | **`X`**                                    |
-    | **`METERING`** | **`X-API-Key`**    | **`<autogenerated_key>`**                  |
+    | Property Group | Property Name | Property Value |
+    | :------------- | :------------ | :------------- |
+    | **`METERING`** | **`Host`** | **`X`** |
+    | **`METERING`** | **`X-API-Key`** | **`<autogenerated_key>`** |
     | **`METERING`** | **`service_path`** | **`/mobileservices/service-key/metering`** |
 
-10.  To verify that the Usage Metering Background Job is scheduled, please execute transaction **SM37** from the SAP GUI and search for the job name noted in Step 2.4. If the background job is missing, then please see Step 9.
-
+10.  To verify that the Usage Metering Background Job is scheduled, please execute transaction **SM37** from the SAP GUI and search for the job name noted in Step 2.4. If the background job is missing, then please see Step 10.
     ![SM37](sm37.png)
 
 11. Execute transaction **/SYCLO/CONFIGPANEL** from the SAP GUI to open up the MAIF Configuraiton Panel. Navigate to **Mobile Application Configuration** > **System Components**. You should see a system component with the properties below.
 
     ![SystemComponent](syscomp.png)
 
-    | Field Name       | Value                   |
-    | :--------------- | :---------------------- |
+    | Field Name | Value |
+    | :--------- | :---- |
     | System Component | **`MS_UNIFIED_SERVER`** |
-    | System Role      | **`Host`**              |
-    | Active Flag      | Selected                |
+    | System Role | **`Host`** |
+    | Active Flag | Selected |
 
 12. To ensure the Metrics Requests are sent successfully execute transaction **SE38** and execute program **`/MFND/CORE_CLOUD_METRICS_PROG`**. Provide `SAP_SERVICE_ASSET_MANAGER` in `Product Technical Name` and execute.
 
@@ -214,11 +213,11 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
     **Admin API:** `https://mobile-service-cockpit-example.sap.hana.ondemand.com/cockpit/v1/org/ExampleOrg/space/ExampleSpace`
 
-    | Field Name        | Value                                                      |
-    | :---------------- | :--------------------------------------------------------- |
-    | Target Host       | **`mobile-service-cockpit-example.sap.hana.ondemand.com`** |
-    | Service No.(Port) | **`443`**                                                  |
-    | Path Prefix       | **`/cockpit/v1/org/ExampleOrg/space/ExampleSpace/app`**    |
+    | Field Name | Value |
+    | :--------- | :---- |
+    | Target Host | **`mobile-service-cockpit-example.sap.hana.ondemand.com`** |
+    | Service No.(Port) | **`443`** |
+    | Path Prefix | **`/cockpit/v1/org/ExampleOrg/space/ExampleSpace/app`** |
 
     >**HTTP Proxy Options** are available in the RFC Destination Technical Settings if required.
  
@@ -242,14 +241,14 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
     ![MDWCreate](mdwcreate.png)
 
-    | Field Name             | Value                      |
-    | :--------------------- | :------------------------- |
-    | Mobile Application     | **`<mobile_app>`**         |
-    | Server Name            | **`Z_MS_ADMIN_API`**       |
-    | Server GUID            | **`<autogenerated_guid>`** |
-    | Port                   | **`07003`**                |
-    | `Middleware Svr SerNo` | **`SCP`**                  |
-    | RFC Destination        | **`Z_MS_ADMIN_API`**       |
+    | Field Name | Value |
+    | :--------- | :---- |
+    | Mobile Application | **`<mobile_app>`** |
+    | Server Name | **`Z_MS_ADMIN_API`** |
+    | Server GUID | **`<autogenerated_guid>`** |
+    | Port | **`07003`** |
+    | `Middleware Svr SerNo` | **`SCP`** |
+    | RFC Destination | **`Z_MS_ADMIN_API`** |
 
 10. You may now use the generated **Server GUID** instead of the **Admin API** in Step 2.2 . You may use F4 Help on the **Admin API or Middleware Server GUID** field of the MS App Create transaction to search for the created Middleware Server.
 
@@ -285,7 +284,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 7. Navigate to the **Administration** > **Server Management** section. 
 
-8. Select the Middleware Server with the name noted in Step 2.4. If the Usage Metering Middleware Server is missing then please see Step 8.
+8. Select the Middleware Server with the name noted in Step 2.4. If the Usage Metering Middleware Server is missing then please see Step 9.
  
 9. Update the **RFC Destination** and click **Save**.
 
@@ -293,19 +292,19 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 ### Optional Feature 3 - Set up Satellite Systems
     
-1. Please ensure app has been created and reviewed (steps 2 and 3) in the host system.
+1. Please ensure app has been created and reviewed (Steps 2 and 3) in the Host System.
 
-2. Please follow steps 1 and 2.1 then return to this step. Check `Sattelite System`. The `Host RFC Destination` may be provided to create middleware server in the host system used to get the metrics from the sattelite system. If you do not provide the `Host RFC Destination` please ensure you manually create the middleware server in the host system.
+2. Follow Steps 1 and 2 and Check `Satellite System` before executing. The `Host RFC Destination` may be provided to create middleware server in the Host System used to get the metrics from the Satellite System. If you do not provide the `Host RFC Destination` please ensure you manually create the middleware server in the Host System.
 
     ![SatelliteSettings](satsettings.png)
 
-3. Please take note of the **Middleware Server** created on the host system with RFC.
+3. Please take note of the **Middleware Server** created on the Host System with RFC.
 
     ![SatelliteOutput](satoutput.png)
 
-4. Execute transaction **/SYCLO/ADMIN** from the SAP GUI to open up the MAIF Admin Panel. Navigate to the **Administration** > **Server Management** section.
+4. In the Host System execute transaction **/SYCLO/ADMIN** from the SAP GUI to open up the MAIF Admin Panel. Navigate to the **Administration** > **Server Management** section.
 
-5. Select Middleware Server noted above. Manually create Satellite Middleware Server if not created automatically via RFC in the previous step. Edit the middleware server and provide an RFC Destination to the Satellite System.
+5. Select Middleware Server noted above. Create Satellite Middleware Server if not created automatically via RFC in the previous step. Edit the middleware server and provide an RFC Destination to the Satellite System. Ensure the RFC authentication is automatic.
     
     **Basic Info**
     
@@ -331,14 +330,10 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | **`METERING`** | **`X-API-Key`** | **`<autogenerated_key>`** |
     | **`METERING`** | **`service_path`** | **`/mobileservices/service-key/metering`** |
 
-12. To ensure the Satellite Metrics are gathered successfully execute transaction **SE38** and execute program **`/MFND/CORE_CLOUD_METRICS_PROG`** in the host system. Provide `SAP_SERVICE_ASSET_MANAGER` in `Product Technical Name` and execute.
+12. To ensure the Satellite Metrics are gathered successfully execute transaction **SE38** and execute program **`/MFND/CORE_CLOUD_METRICS_PROG`** in the Host System. Provide `SAP_SERVICE_ASSET_MANAGER` in `Product Technical Name` and execute.
 
     **Successful Output**
     ![SatMetricOutput](satmetricoutput.png)
-
-13. If Satellite RFC Destination authorization is not automatic, please sign into satellite system when prompted.
-
-13. Upon successful execution, we can check the MAIF Product Table in the satellite system. Execute transaction **SE16** and display table `/SMFND/D_SAPPROD`. Check field `HAS_METER_SERV` is set and field `METER_SERV_TS` is updated.
 
 ### Optional Feature 3 - Enable Multiple Threads in Offline Configuration
     
