@@ -7,7 +7,7 @@ primary_tag: software-product>sap-business-technology-platform
 tags: [ software-product>sap-business-technology-platform, topic>cloud, programming-tool>odata, tutorial>beginner ]
 time: 20
 ---
- 
+
 # Get to know the OData standards resources on the Web
 
 <!-- description --> Get acquainted with the OData standards and how to navigate them.
@@ -20,6 +20,8 @@ time: 20
 ## Intro
 
 There are myriad resources on the Web about OData. After all, it's a standard that's been around since 2007. There are some key resources that are important to know about, and in this tutorial, you'll find out about them and become more comfortable navigating them.
+
+> This tutorial belongs to the OData Deep Dive mission, a re-write of the original. The re-write is a work in progess, please proceed with caution! More info can be found in the blog post [OData Deep Dive rewrite in the open](https://qmacro.org/blog/posts/2026/02/02/odata-deep-dive-rewrite-in-the-open/).
 
 ---
 
