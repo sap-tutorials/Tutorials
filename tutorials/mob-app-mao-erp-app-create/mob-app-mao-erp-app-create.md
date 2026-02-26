@@ -295,7 +295,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     
 1. Please ensure app has been created and reviewed (Steps 2 and 3) in the Host System.
 
-2. Follow Steps 1 and 2 and Check `Satellite System` before executing. The `Host RFC Destination` may be provided to create middleware server in the Host System used to get the metrics from the Satellite System. If you do not provide the `Host RFC Destination` please ensure you manually create the middleware server in the Host System.
+2. Follow Steps 1 and 2 and Check `Satellite System` before executing. The `Host RFC Destination` may be provided to create Middleware Server in the Host System used to get the metrics from the Satellite System. If you do not provide the `Host RFC Destination` please ensure you manually create the Middleware Server in the Host System.
 
     ![SatelliteSettings](satsettings.png)
 
@@ -305,7 +305,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
 
 4. In the Host System execute transaction **/SYCLO/ADMIN** from the SAP GUI to open up the MAIF Admin Panel. Navigate to the **Administration** > **Server Management** section.
 
-5. Select Middleware Server noted above. Create Satellite Middleware Server if not created automatically via RFC in the previous step. Edit the middleware server and provide an RFC Destination to the Satellite System. Ensure the RFC authentication is automatic.
+5. Select Middleware Server noted above. Create Satellite Middleware Server if not created automatically via RFC in the previous step. Edit the Middleware Server and provide an RFC Destination to the Satellite System. Ensure the RFC authentication is automatic.
     
     **Basic Info**
     
