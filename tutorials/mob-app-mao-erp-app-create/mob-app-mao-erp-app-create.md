@@ -14,7 +14,7 @@ parser: v2
 ## Prerequisites
 - Access to your SAP BTP Subaccount and Space.
 - Access to the SAP Mobile Services service in your SAP BTP subaccount.
-- Latest App Create and Metrics Updates. Please review SAP Note 3703174 for the latest updates.
+- Latest App Create and Metrics Updates. Please review [SAP Note 3703174](https://me.sap.com/notes/3703174) for the latest updates.
 
 ## You will learn
 - How to create and update a SAP Service and Asset Manager Mobile Services App with Metrics using transaction `/MERP/CPMS_APPCREATE`.
@@ -42,7 +42,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
 
     ![CCInfo](ccinfo.png)
 
-### Create the Mobile Services App via the MS App Create Transaction
+### Create a SAP Service and Asset Manager Mobile Services App with Metrics
 
 1. Execute the transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI, then select your required variant (i.e., `SAP&SAM_<version>`).
 
@@ -169,7 +169,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
 
     ![SM37](sm37.png)
 
-10. Execute transaction **/SYCLO/CONFIGPANEL** from the SAP GUI to open up the MAIF Configuraiton Panel. Navigate to **Mobile Application Configuration** > **System Components**. You should see a system component with the properties below.
+10. Execute transaction **/SYCLO/CONFIGPANEL** from the SAP GUI to open up the MAIF Configuration Panel. Navigate to **Mobile Application Configuration** > **System Components**. You should see a system component with the properties below.
 
     ![SystemComponent](syscomp.png)
 
@@ -198,7 +198,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
     | **Persona** | Users having authorization for the Persona. |
     | **Mobile Application** | Sync Info for the previous day. |
 
-    >Persona Authorization configuration can be found in the MAIF Configuration Panel. Execute transaction **/SYCLO/CONFIGPANEL** from the SAP GUI to open up the MAIF Configuraiton Panel and navigate to **Mobile Application Configuration** > **Application Persona**.
+    >Persona Authorization configuration can be found in the MAIF Configuration Panel. Execute transaction **/SYCLO/CONFIGPANEL** from the SAP GUI to open up the MAIF Configuration Panel and navigate to **Mobile Application Configuration** > **Application Persona**.
 
 ### Optional Feature 1 - Use a RFC Destination (Middleware Server) to Create the App
 
@@ -249,7 +249,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
     | `Middleware Svr SerNo` | **`SCP`** |
     | RFC Destination | **`Z_MS_ADMIN_API`** |
 
-10. You may now use the generated **Server GUID** instead of the **Admin API** in Step 2.2 . You may use F4 Help on the **Admin API or Middleware Server GUID** field of the MS App Create transaction to search for the created Middleware Server.
+10. You may now use the generated **Server GUID** instead of the **Admin API** in Step 2.2 . You may use F4 Help on the **Admin API or Middleware Server GUID** field to search for the created Middleware Server.
 
     ![ServerGUID](serverguid.png)
 
