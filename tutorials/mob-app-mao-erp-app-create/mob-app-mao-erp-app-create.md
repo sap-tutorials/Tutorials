@@ -293,7 +293,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     
 1. Please ensure app has been created and reviewed (Steps 2 and 3) in the Host System.
 
-2. Follow Steps 1 and 2 and Check `Satellite System` before executing. The `Host RFC Destination` may be provided to create the Satellite Middleware Server in the Host System that will be used to retrieve the Metrics from the Satellite System. If you do not provide the `Host RFC Destination` please ensure you manually create the Satellite Middleware Server in the Host System.
+2. Follow Steps 1 and 2 and Check `Satellite System` before executing. The `Host RFC Destination` may be provided to create the Satellite Middleware Server in the Host System that will be used to retrieve the Metrics from the Satellite System. If you do not provide the `Host RFC Destination` please ensure you manually create the Satellite Middleware Server in the Host System. If you are updating an existing app please select **Usage Metering** feature when prompted.
 
     ![SatelliteSettings](satsettings.png)
 
@@ -335,7 +335,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     **Successful Output**
     ![SatMetricOutput](satmetricoutput.png)
 
-### Optional Feature 3 - Enable Multiple Threads in Offline Configuration
+### Optional Feature 4 - Enable Multiple Threads in Offline Configuration
     
 1. Follow Step 2.1 and 2.2 then return to this Step before executing. Then click **Advanced Mode**.
 
