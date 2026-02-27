@@ -20,7 +20,7 @@ parser: v2
 - How to create and update a SAP Service and Asset Manager Mobile Services App with Metrics using transaction `/MERP/CPMS_APPCREATE`.
 - How to review the SAP Service and Asset Manager Mobile Services App with Metrics
 - Optional Features:
-  1. Use an RFC Destination (Middleware Server) to create the App.
+  1. Use an RFC Destination (Middleware Server) to create the Mobile Services App.
   2. Use an RFC Destination to send Metrics to Cloud Reporting.
   3. Set up Satellite Systems.
   4. Enable Multiple Threads in Offline Configuration.
@@ -30,7 +30,7 @@ parser: v2
   3. Usage Metering Background Job Missing.
 
 ## Intro
-In this mission you will learn to create and update a SAP Service and Asset Manager Mobile Services App with Metrics using transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI. The Mobile Services app created by the transaction may be used to onboard your SAP Service and Asset Manager mobile app.
+In this mission you will learn to create and update a SAP Service and Asset Manager Mobile Services App with Metrics using transaction **`/MERP/CPMS_APPCREATE`** from the SAP GUI. The Mobile Services App created by the transaction may be used to onboard your SAP Service and Asset Manager mobile app.
 
 ### Gather the Required Information
 
@@ -56,10 +56,10 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
     | **OData Service Mobile App** | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature. |
     | **OData Service Technical Name** | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature. |
     | **OData Service Group Version** | Used to generate the mobile app's offline configuration sent to the SAP Mobile Services **Mobile Offline Access** feature. |
-    | **MS Application ID** | The unique application identifier given to the SAP Mobile Services app. |
-    | **MS Application Name** | The application name given to the SAP Mobile Services app. |
-    | **MS Application Description** | The application description given to the SAP Mobile Services app. |
-    | **MS Vendor Name** | The vendor name given to the SAP Mobile Services app. |
+    | **MS Application ID** | The unique application identifier given to the SAP Mobile Services App. |
+    | **MS Application Name** | The application name given to the SAP Mobile Services App. |
+    | **MS Application Description** | The application description given to the SAP Mobile Services App. |
+    | **MS Vendor Name** | The vendor name given to the SAP Mobile Services App. |
     | **MS Application Timeout** | The maximum time in milliseconds before a client connection times out in your environment. After that timeout period, the connection is closed. |
     | **MS App License Type** | The Service Plan used by Mobile Services. The plan `basic-plus-app` is recommended for SAP mobile applications. |
     | **SCC X.509 Virtual Host** | Used to generate the URL for the Mobile Services Mobile Destinations. |
@@ -79,13 +79,13 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
 
     ![Output](output.png)
 
-5. The Mobile Services app can be updated by re-executing the transaction and selecting the features to update when prompted. See additional info for each option below.
+5. The Mobile Services App can be updated by re-executing the transaction and selecting the features to update when prompted. See additional info for each option below.
 
     | Feature | What is Updated? |
     | :------ | :--------------- |
     | **Update Mobile Offline Access** | Updates the offline configuration of your app. |
     | **Update Usage Metering** | Creates Usage Metering Middleware Server and Background Job. Existing Middleware Server and Background Job are deleted. Updates Client Role in Product Table. Updates MS_UNIFIED_SERVER system component. |
-    | **Compare Offline Configuration** | Compare offline configuration properties, request groups and request download phases between the backend and the mobile services app. |
+    | **Compare Offline Configuration** | Compare offline configuration properties, request groups and request download phases between the backend and the Mobile Services App. |
     | **Update Mobile Connectivity** | Updates the offline and online destination settings of your app. |
     | **Add Mobile App Update** | Assigns the feature to your app if not already assigned. |
     | **Update Mobile Push Notification** | Updates the Predefined Global Push Configuration to **SAP ASSET MANAGER**. |
@@ -255,7 +255,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
 
 ### Optional Feature 2 - Use an RFC Destination to send Metrics to Cloud Reporting
 
-1. Copy the **URL** of the **Server API**. from the APIs tab of your Mobile Services app.
+1. Copy the **URL** of the **Server API**. from the APIs tab of your Mobile Services App.
 
     ![UIHost](uihost.png)
 
@@ -400,7 +400,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
     | Port | **`00443`** |
     | UI Host Name | **`https://example.cfapps.sap.hana.ondemand.com`** |
 
-    >The **UI Host Name** can be found in the **APIs** tab of your Mobile Services app. Copy the **URL** of the **Server API**.
+    >The **UI Host Name** can be found in the **APIs** tab of your Mobile Services App. Copy the **URL** of the **Server API**.
     >
     >![UIHost](uihost.png)<div>&nbsp;</div>
 
@@ -414,7 +414,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
     | **`METERING`** | **`X-API-Key`** | **`<autogenerated_key>`** |
     | **`METERING`** | **`service_path`** | **`/mobileservices/service-key/metering`** |
 
-    >To generate **X-API-Key** go to the **Mobile Connectivity** feature of your Mobile Services app and select the **Service Keys** tab. Click the add icon "**+**" to add a Service Key with the following values and copy the generated key.
+    >To generate **X-API-Key** go to the **Mobile Connectivity** feature of your Mobile Services App and select the **Service Keys** tab. Click the add icon "**+**" to add a Service Key with the following values and copy the generated key.
     >
     >![AddServiceKey](addservicekey.png)
     >
