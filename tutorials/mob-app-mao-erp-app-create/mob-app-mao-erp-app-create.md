@@ -124,7 +124,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | :-----------| :----------- |
     | `sap-client` | Your client (i.e., **`800`**) |
 
-4. From your app's **Mobile Connectivity** feature, select the **Service Keys** tab. You should see a Service Key with the properties below. The Key should be automatically maintained as the `X-API-Key` property in the Additional Properties of the Usage Metering Middleware Server which we will review in Step 3.9.
+4. From your app's **Mobile Connectivity** feature, select the **Service Keys** tab. You should see a Service Key with the properties below. The Key should be automatically maintained as the `X-API-Key` property in the Additional Properties of the Usage Metering Middleware Server which we will review in Step 3.8.
 
     | Field Name | Value |
     | :--------- | :---- |
