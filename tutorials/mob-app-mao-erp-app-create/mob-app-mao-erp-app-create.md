@@ -109,7 +109,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     - **Offline Access**
     - **Push Notification**
 
-3. From your app's overview screen, select the **Connectivity** feature. You should see two Mobile Destinations created with the properties below. Under the **Actions** column, selecting the **Launch in Browser** icon should return the metadata.
+3. From your app's overview screen, select the **Connectivity** feature. You should see two Mobile Destinations created with the properties below. The `sap-client` header should be automatically added to the destinations **Custom Headers** section. Under the **Actions** column, selecting the **Launch in Browser** icon should return the metadata. 
 
     ![Destinations](destinations.png)
 
@@ -118,15 +118,13 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | `DEST_SAM<version>_PPROP` | **`http://<host>:<port>/sap/opu/odata/MERP/SAP_SRV_ASSET_MANAGER_<version>`** |
     | `DEST_SAM<version>_ONLINE_PPROP` | **`http://<host>:<port>/sap/opu/odata/MERP/SAP_ONLINE_LOOKUP_EXT_<version>`** |
 
-4. The `sap-client` header should be automatically added to the destinations. The client can be edited in the **Custom Headers** section.
-
-    ![EditDest](editdest.png)
+    **Custom Headers**
 
     | Header Name | Header Value |
     | :-----------| :----------- |
     | `sap-client` | Your client (i.e., **`800`**) |
 
-5. From your app's **Mobile Connectivity** feature, select the **Service Keys** tab. You should see a Service Key with the properties below. The Key should be automatically maintained as the `X-API-Key` property in the Additional Properties of the Usage Metering Middleware Server which we will review in Step 3.9.
+4. From your app's **Mobile Connectivity** feature, select the **Service Keys** tab. You should see a Service Key with the properties below. The Key should be automatically maintained as the `X-API-Key` property in the Additional Properties of the Usage Metering Middleware Server which we will review in Step 3.9.
 
     | Field Name | Value |
     | :--------- | :---- |
@@ -134,15 +132,15 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     | Roles | **`sap_application_metering`** |
     | Type | **`API Key`** |
 
-6. From your app's overview screen, if you select the **Offline Access** feature you should be able to display and edit the offline configuration. If the offline configuration is missing, then please see Step 8.
+5. From your app's overview screen, if you select the **Offline Access** feature you should be able to display and edit the offline configuration. If the offline configuration is missing, then please see Step 8.
 
-7. From your app's overview screen, select the **APIs** tab to view the onboarding QR code which you can scan from the SAP Service and Asset Manager mobile app.
+6. From your app's overview screen, select the **APIs** tab to view the onboarding QR code which you can scan from the SAP Service and Asset Manager mobile app.
 
-8. We will now check the Usage Metering Middleware Server. Execute transaction **/SYCLO/ADMIN** from the SAP GUI to open up the MAIF Admin Panel. Navigate to **Administration** > **Server Management**. Select the Middleware Server with the name noted in Step 2.4. If the Usage Metering Middleware Server is missing then please see Step 8.
+7. We will now check the Usage Metering Middleware Server. Execute transaction **/SYCLO/ADMIN** from the SAP GUI to open up the MAIF Admin Panel. Navigate to **Administration** > **Server Management**. Select the Middleware Server with the name noted in Step 2.4. If the Usage Metering Middleware Server is missing then please see Step 8.
 
     ![MDW](mdw.png)
 
-9.  Verify that the Middleware Server has the following **Basic Info** and **Additional Properties**. If the Middleware Server's **Basic Info** or **Additional Properties** are not as expected then please see Step 9.
+8. Verify that the Middleware Server has the following **Basic Info** and **Additional Properties**. If the Middleware Server's **Basic Info** or **Additional Properties** are not as expected then please see Step 9.
 
     **Basic Info**
 
@@ -295,7 +293,7 @@ In this mission you will learn how to create and update an SAP Mobile Services a
     
 1. Please ensure app has been created and reviewed (Steps 2 and 3) in the Host System.
 
-2. Follow Steps 1 and 2 and Check `Satellite System` before executing. The `Host RFC Destination` may be provided to create Middleware Server in the Host System used to retrieve the Metrics from the Satellite System. If you do not provide the `Host RFC Destination` please ensure you manually create the Middleware Server in the Host System.
+2. Follow Steps 1 and 2 and Check `Satellite System` before executing. The `Host RFC Destination` may be provided to create the Satellite Middleware Server in the Host System that will be used to retrieve the Metrics from the Satellite System. If you do not provide the `Host RFC Destination` please ensure you manually create the Satellite Middleware Server in the Host System.
 
     ![SatelliteSettings](satsettings.png)
 
