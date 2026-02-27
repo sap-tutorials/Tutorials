@@ -93,7 +93,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
     | **Add Mobile Cloud Build** | Assigns the feature to your app if not already assigned. |
     | **Add Mobile Client Log Upload** | Assigns the feature to your app if not already assigned. |
 
-### Review the Created Mobile Services App
+### Review a SAP Service and Asset Manager Mobile Services App with Metrics
 
 1. In the **Native/MDK** section of the SAP Mobile Services service in your SAP BTP subaccount you should see your app in a **Started State** with the **MS Application ID** you provided in Step 2.2.
 
@@ -200,7 +200,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
 
     >Persona Authorization configuration can be found in the MAIF Configuration Panel. Execute transaction **/SYCLO/CONFIGPANEL** from the SAP GUI to open up the MAIF Configuration Panel and navigate to **Mobile Application Configuration** > **Application Persona**.
 
-### Optional Feature 1 - Use a RFC Destination (Middleware Server) to Create the App
+### Optional Feature 1 - Use a RFC Destination (Middleware Server) to Create the Mobile Services App
 
 1. Execute transaction **SM59** from the SAP GUI. Then click the create icon.
 
