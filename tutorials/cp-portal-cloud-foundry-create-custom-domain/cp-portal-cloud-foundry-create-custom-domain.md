@@ -32,7 +32,6 @@ To make sure that your domain is trusted by way of activated server certificates
  - You have subscribed to the Custom Domain Manager in the SAP BTP cockpit. For more information, see [Initial Setup](https://help.sap.com/docs/custom-domain/custom-domain-manager/initial-setup?version=Cloud).
  - You have acquired the domain names to be used by your applications. Have a look at the [Prerequisites](https://help.sap.com/docs/custom-domain/custom-domain-manager/prerequisites?version=Cloud). 
  - You have entitled the SAP Build Work Zone, standard edition application to your subaccount. 
- - You have subscribed to the SAP Build Work Zone, standard edition application by using the SAP BTP cockpit. For more information, see [Initial Setup](https://help.sap.com/docs/WZ_STD/8c8e1958338140699bd4811b37b82ece/initial-setup).
  - You have a tenant of SAP Cloud Identity Services.
  - You have access to the Domain Name System (DNS) management dashboard.
  - If you're using tunnelled access to access on-premise apps, you have to configure clickjacking protection as follows:
@@ -133,6 +132,8 @@ For more information, see [Use Custom Domain in Identity Authentication](https:/
 In this step you'll create a trust between your SAP BTP subaccount and your Cloud Identity Services tenant. This trust is required for user authentication. After completion, your SAP BTP subaccount will appear as an application in the administration console of Cloud Identity Services.
 
 For more information, see [Establish Trust and Federation Between SAP Authorization and Trust Management Service and SAP Cloud Identity Services](https://help.sap.com/docs/btp/sap-business-technology-platform/establish-trust-and-federation-between-uaa-and-identity-authentication)
+
+>After the trust configuration has been established, you should subscribe to the SAP Build Work Zone, standard edition application in the the SAP BTP cockpit. For more information, see  [Initial Setup](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/initial-setup).
 
 ### Manage Transport Layer Security (TLS) configurations
 
