@@ -663,6 +663,9 @@ Navigate to the Model Configuration section and:
 [OPTION BEGIN [Python SDK]]
 
 ```python
+from gen_ai_hub.orchestration.models.content_filtering import ContentFiltering,InputFiltering, OutputFiltering
+from gen_ai_hub.orchestration.models.azure_content_filter import AzureContentFilter, AzureThreshold
+from gen_ai_hub.orchestration.models.llama_guard_3_filter import LlamaGuard38bFilter
 
 input_filter= AzureContentFilter(hate=AzureThreshold.ALLOW_SAFE,
                                   violence=AzureThreshold.ALLOW_SAFE,
