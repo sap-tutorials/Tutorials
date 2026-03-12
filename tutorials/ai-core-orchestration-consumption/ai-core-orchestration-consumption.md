@@ -911,7 +911,7 @@ async function generateResponsesForModels(cvContent: string) {
                 temperature: 0.6, 
               }, 
             },
-            template: templatingConfig
+            templating: templatingConfig
           },
           { resourceGroup: RESOURCE_GROUP }
         );
