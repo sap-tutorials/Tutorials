@@ -59,9 +59,10 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     dotnet new console -o dotNET
     ```
 
-2. Add the SAP HANA .NET data provider which is available on [nuget](https://www.nuget.org/packages/Sap.Data.Hana.Net.v8.0/).
+2. Add the SAP HANA .NET data provider which is available on [nuget](https://www.nuget.org/packages/Sap.Data.Hana.Net.v8.0/).  A list of available providers from SAP is available at [SAP-SE](https://www.nuget.org/profiles/SAP-SE).
 
     ```Shell
+    cd dotNET
     dotnet add package Sap.Data.Hana.Net.v8.0
     ```
 
@@ -96,7 +97,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
             {
                 try
                 {
-                    using (var conn = new HanaConnection("Server=999deec0-ccb7-4a5e-b317-d419e19be648.hana.prod-us10.hanacloud.ondemand.com:443;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
+                    using (var conn = new HanaConnection("Server=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.hana.prod-xxxx.hanacloud.ondemand.com:443;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
 
                     // encrypt and sslValidateCertificate should be true for HANA Cloud connections
                     // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default

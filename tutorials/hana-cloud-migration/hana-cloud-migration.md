@@ -33,7 +33,7 @@ The following topics may be of help when planning a migration to SAP HANA Cloud:
 
 * [SAP HANA Cloud Migration Guide (product documentation)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/sap-hana-cloud-migration-guide)
 
-* [Migration to SAP HANA Cloud (sap.com)](https://www.sap.com/products/technology-platform/hana/cloud-migration.html)
+* [Migration to SAP HANA Cloud (sap.com)](https://www.sap.com/products/technology-platform/hana/cloud-migration./)
 
 * [Migrating your SAP HANA on-premise to SAP HANA Cloud (video)](https://www.sap.com/assetdetail/2023/01/8a0f1b28-597e-0010-bca6-c68f7e60039b.html)
 
@@ -116,7 +116,7 @@ In order to connect from the Self-Service Migration tool running in the public i
 
 ![SAP Cloud Connector](cloud-connector.png)
 
-The cloud connector provides connectivity from a public internet where SAP HANA Cloud is running to an on-premise SAP HANA database.  Step-by-step instructions are provided at [Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector](hana-dbx-remote-sources#b30ac17a-9705-4be4-bc30-d6dbdddfa6d8).
+The cloud connector provides connectivity from a public internet where SAP HANA Cloud is running to an on-premise SAP HANA database.  Step-by-step instructions are provided at [Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector](hana-dbx-remote-sources).
 
 Once the cloud connector has been installed and configured to connect to a BTP subaccount, it will appear as shown below in the SAP BTP Cockpit.
 
