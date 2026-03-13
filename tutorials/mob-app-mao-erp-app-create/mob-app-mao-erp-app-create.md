@@ -67,7 +67,7 @@ In this mission you will learn to create and update a SAP Service and Asset Mana
     | **Client** | Used to set `sap-client` header for Mobile Services Mobile Destinations. Defaulted to current System Client. |
     | **Background Job User** | Used to schedule the Usage Metering background job with a daily frequency. If no user is provided, then the user executing the transaction is used. Please ensure the **Background Job User** will maintain authorization to run the background job. |
     | **Client Role** | Used by the Metrics report to determine user counts (i.e., 0 user counts sent for non-productive systems). Defaulted to System Client Role defined in transaction SCC4. Stored in MAIF Product Table. |
-    | **Satellite System** | See Step 6 to use Satellite Systems. |
+    | **Satellite System** | Satellite Systems can be setup to avoid duplicate User Counts when multiple Production Systems are in use. Metrics from a Satellite Sytem will be retrieved via the Metrics Report executed in the Host System ensuring duplicate SAP Users are only counted once. See Step 6 to set up Satellite Systems. |
    
     >**WARNING:** Any change that may affect the offline configuration (e.g., a new entity type is added to your mobile app configuration, or the **Defer Batch Response** setting is changed for the **OData Service Technical Name** provided when generating the offline configuration) will require you to update the offline configuration in Mobile Services and reset your mobile app. See Step 2.5 to update.
 
