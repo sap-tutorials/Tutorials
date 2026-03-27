@@ -23,6 +23,8 @@ In this tutorial, we will simulate the process of replacing RFC Receiver communi
 - Generate SOAP Web Services from RFC Function Modules
 - Test your Consumer Proxy internally in ABAP backend system.
 
+**Important:** When modernizing, be aware that RFC calls silently truncate values that exceed fixed-length ABAP fields (40 Characters), but SOAP and OData will reject them outright with length errors. To prevent integration failures, ensure you explicitly validate or truncate these fields in your integration flow, or adjust the backend lengths accordingly.
+
 On this Tutorial, we **won't** cover:
 
   - The development of the integration flow on SAP Cloud Integration.
