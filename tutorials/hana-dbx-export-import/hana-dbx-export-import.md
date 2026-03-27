@@ -563,15 +563,15 @@ The following steps walk through the process of using Microsoft Azure storage se
 
 1. Log in to the [Microsoft Azure Portal](https://portal.azure.com/).
 
-2. Create a resource group.
+2. Create a resource group under the All services, General, Resource Manager.
 
     ![Resource Group](resourceGroup.png)
 
-3. Create a storage Service
+3. Create a storage Service under All services, Storage, Storage accounts.
 
     ![Storage Account](storageAccount.png)
 
-4. Create a blob container.
+4. Create a blob container using the All services, Storage, Storage browser.
 
     ![Blob Container](createBlobContainer.png)
 

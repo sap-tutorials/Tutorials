@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 5 
+time: 5
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-build-work-zone--standard-edition, software-product>sap-build-work-zone--standard-edition ]
 primary_tag: software-product>sap-build-work-zone--standard-edition
 author_name: Lindsay Bert
@@ -93,7 +93,7 @@ To access SAP Build Work Zone, standard edition you need to first create a SAP C
 
 10. Click **Next Step**, and then **Next Step** again, and then **Finish**.
 
-11. Still under the **Users & Authentications** tab, select **User Management** and add your user by clicking **+ Add**.
+11. Still under the **Users & Authorizations** tab, select **User Management** and add your user by clicking **+ Add**.
 
     ![Add user](12-add-user.png)
 

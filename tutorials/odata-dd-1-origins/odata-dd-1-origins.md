@@ -19,11 +19,11 @@ time: 20
 
 ## Intro
 
-*This series of tutorials on OData is to replace the original "Take a Deep Dive into OData" which you may already know, and which we're now retiring. We're building out the content of this new series in the open, as a work in progress, and would love to hear your feedback, what you would like to see and what you think of the content as we create it. As you can see, it's very early days. Please let us know your thoughts on this new mission [via this issue link](https://github.com/sap-tutorials/Tutorials/issues/new?title=Early%20feedback%20on%20the%20new%20OData%20mission&body=Let%20us%20know%20your%20thoughts%20on%20this%20new%20series%20-%20what%20you%20like,%20dislike,%20would%20like%20to%20see.%20Thank%20you!).*
-
 OData is an open standard that is both a data format and a protocol for consuming and manipulating data in a uniform way. It's ISO/IEC approved and managed by the [OASIS organization](https://www.oasis-open.org/).
 
 OData has its origins in the world of weblogs and syndication, but now serves to power a great deal of the API and integration activities in typical SAP enterprise environments. This tutorial will help you understand OData's origins.
+
+> This tutorial belongs to the OData Deep Dive mission, a re-write of the original. The re-write is a work in progess, please proceed with caution! More info can be found in the blog post [OData Deep Dive rewrite in the open](https://qmacro.org/blog/posts/2026/02/02/odata-deep-dive-rewrite-in-the-open/).
 
 ---
 
@@ -124,7 +124,7 @@ Beyond news feeds like this, the archetypal use case for RSS (and indeed Atom) i
 
 ### Examine the Atom Syndication Format
 
-Atom is a format very similar to RSS, serving the same purpose, that came about for reasons that are not relevant for this tutorial (but see the Further Info section for a link to more background details if you're curious). It's known as the [Atom Syndication Format](https://tools.ietf.org/html/rfc4287).
+Atom is a format very similar to RSS, serving the same purpose, that came about for reasons that are not relevant for this tutorial (but see the Further Info section for a link to more background details if you're curious). It's known as the Atom Syndication Format, described in [RFC 4287](https://tools.ietf.org/html/rfc4287).
 
 Some may call Atom a successor to RSS. Unlike RSS, which is just a _format_ specification, Atom also has a related _protocol_ which we'll look at shortly.
 
@@ -458,5 +458,5 @@ The use of "OData-Protocol" is a reference to a related document in the OData V4
 
 ### Further info
 
-- [Accuracy and precision in language](https://qmacro.org/blog/posts/2024/01/22/accuracy-and-precision-in-language/) on the distinction between "blog" and "post".
-- [Monday morning thoughts: OData](https://qmacro.org/blog/posts/2018/08/20/monday-morning-thoughts-odata/) has further details on the journey from RSS, through Atom and AtomPub, to OData.
+- [Accuracy and precision in language](https://qmacro.org/blog/posts/2024/01/22/accuracy-and-precision-in-language/) on the distinction between "blog" and "post"
+- [Monday morning thoughts: OData](https://qmacro.org/blog/posts/2018/08/20/monday-morning-thoughts-odata/) has further details on the journey from RSS, through Atom and AtomPub, to OData

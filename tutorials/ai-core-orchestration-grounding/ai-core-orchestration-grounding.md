@@ -16,21 +16,23 @@ author_profile: https://github.com/I321506
 
 ## Prerequisites  
 1. **BTP Account**  
-   Set up your SAP Business Technology Platform (BTP) account.  
+   If you do not already have a commerical SAP Business Technology Platform (BTP) account, you can use **BTP Advanced Trial**.  
    [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
 2. **For SAP Developers or Employees**  
    Internal SAP stakeholders should refer to the following documentation: [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139), [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
 3. **For External Developers, Customers, or Partners**  
    Follow this tutorial to set up your environment and entitlements: [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html), [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
 4. **Create BTP Instance and Service Key for SAP AI Core**  
-   Follow the steps to create an instance and generate a service key for SAP AI Core:  
+   Follow the steps to create an instance and generate a service key for SAP AI Core. Ensure to use service plan **extended**:  
    [Create Service Key and Instance](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key?version=CLOUD)
 5. **AI Core Setup Guide**  
    Step-by-step guide to set up and get started with SAP AI Core:  
-   [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-setup.html)
-6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to 
+   [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-genaihub-provisioning.html)
+6. An **Extended** SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard plans. For more details, refer to 
 [SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
-7. Access to Microsoft SharePoint for grounding capabilities.
+7. **AI Launchpad Setup Guide**
+ Step-by-step guide to set up AI Launchpad:
+ [AI Launchpad Tutorial](https://developers.sap.com/tutorials/ai-launchpad-provisioning.html)
 
 ### Pre-read
 
@@ -324,7 +326,7 @@ Use the below payload to create a secret for AWS S3 with NoAuthentication as aut
 {
   "name": "<generic secret name>",                        // Name of the generic secret to be created
   "data": {
-    "url": "<url>",                                       // Base64 encoded value of url
+    "url": "<url>",                                       // Base64-encoded value in the format https://s3.<region>.amazonaws.com
     "authentication": "Tm9BdXRoZW50aWNhdGlvbg=",          // Base64 encoded value for NoAuthentication
     "description": "<description of generic secret>",     // Base64 encoded description of the secret
     "access_key_id": "<access key id>",                   // Base64 encoded value of access key id
