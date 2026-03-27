@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner ]
+tags: [ tutorial>beginner, topic>sap-community ]
 primary_tag: topic>sap-community
 author_name: Riley Rainey
 author_profile: https://github.com/rbrainey
@@ -203,6 +203,11 @@ Go back to the [developers home page](https://developers.sap.com), and make sure
 
 ![Achievements](achievements.png)
 
+```json
+{
+  "key": "value"
+}
+```
 
 
 ### Test yourself
