@@ -7,21 +7,26 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the ODBC Driver
+
 <!-- description --> Configure a data source to connect to the previously created data lake Relational Engine and then use the data source in unixODBC and Microsoft Excel.
 
 ## Prerequisites
- - You have completed the first tutorial in this group.
+
+- You have completed the first tutorial in this group.
 
 ## You will learn
-  - How to create an ODBC data source for a data lake Relational Engine connection
-  - How to use the configured data source with other applications
+
+- How to create an ODBC data source for a data lake Relational Engine connection
+- How to use the configured data source with other applications
 
 ## Intro
+
 [Open Database Connectivity](https://en.wikipedia.org/wiki/Open_Database_Connectivity) (ODBC) provides an [API](https://docs.microsoft.com/en-us/sql/odbc/reference/syntax/odbc-api-reference?view=sql-server-ver15) for accessing databases. Database vendors provide ODBC drivers for their database products. An application written to the ODBC standard can be ported to other databases that also provide an ODBC interface.
 
 ---
 
 ### Configure a data source on Linux with unixODBC
+
 1. On SUSE Linux, unixODBC can be installed using Zypper or YaST.
 
     ```Shell (Linux)
@@ -33,10 +38,12 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
     For more details on how to accomplish this, please follow the second step of [this tutorial](hxe-ua-dbfundamentals-odbc).
 
 2. The following commands can be used to confirm that unixODBC is installed and determine the location of the .odbc.ini file (if it exists).
+
     ```Shell (Linux)
     cd /etc/unixODBC
     odbcinst -j
     ```
+
     ![odbcinst -j](odbcinst-1.png)
 
 3. Navigate to the directory where the `.odbc.ini` file is located, similar to the one highlighted in the screenshot above. Open or create the `.odbc.ini` file with the following command:
@@ -65,10 +72,11 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
     dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL" -nogui
     isql -v HC_DL USER1 Password1
     ```
-dsn is the name set in the odbc.ini file in the previous step.
+
+    dsn is the name set in the odbc.ini file in the previous step.
 
     **DBISQL**
-    
+
     Some example queries you can run are listed below.
 
     ```SQL
@@ -95,6 +103,7 @@ dsn is the name set in the odbc.ini file in the previous step.
     >```
 
 ### Configure a data source using Microsoft Windows ODBC Data Source Administrator
+
 The ODBC Data Source Administrator can be used to view the installed ODBC drivers and to create data sources for an installed driver.  
 
 1. Open the administrator by entering **ODBC** after clicking on the Microsoft Windows start icon.  
@@ -105,7 +114,6 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![odbc admin drivers](drivers-1.png)
 
-    
 3. Click the **User DSN** tab to view the data sources.  
 
 4. Click **Add** to create a new data source to connect to a data lake Relational Engine database.  
@@ -123,13 +131,13 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
     In the **ODBC tab** of the configuration window, fill in the **Data source name**.
 
     Switch to the **Login tab** and enter in the **USER1** credentials.
-    
+
     Retrieve the SQL Endpoint for your data lake instance. You can find this via the SAP BTP Cockpit or by using the **Copy SQL Endpoint** menu option in SAP HANA Cloud Central and input into **Host** field. 
 
     ![SQL Endpoint](sql-endpoint.png)
-    
+
     Select the **Connect to SAP HANA CLOUD, data lake Relational Engine** action. 
-    
+
     ![specify the credentials, host and port](data-source2.png)  
 
 7. Verify the connection by clicking on **Test Connection** in the ODBC tab.
@@ -145,17 +153,18 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 For additional details see [Connection Properties](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/a6d47d6e84f210158d4980b069eff5dd.html).
 
 ### Use a data lake data source from Microsoft Excel
+
 An application that supports ODBC can now make use of the created data source. One example on Windows is Microsoft Excel.  
 
 The following steps demonstrate how to use Microsoft Excel to query data in data lake Relational Engine using the ODBC connector.  
 
 1. Open Microsoft Excel.
 
-2.  In the **Data** tab, select **Get Data | From Other Sources | From ODBC**.
+2. In the **Data** tab, select **Get Data | From Other Sources | From ODBC**.
 
     ![Excel ODBC](ExcelODBC.png)
 
-3.  Select the previously created data source that contains the connection information to data lake Relational Engine.
+3. Select the previously created data source that contains the connection information to data lake Relational Engine.
 
     ![Excel DSN](ExcelDSN.png)  
 
@@ -176,6 +185,7 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 For further information on programming an application to use the ODBC client driver, see [ODBC CLI](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/a3171c5084f210159caebadd9e149481.html).
 
 ### Knowledge check
+
 Congratulations! You have configured an ODBC data source to contain connection information for a SAP HANA Cloud, data lake Relational Engine database and used that data source from unixODBC and Microsoft Excel.
 
 ---

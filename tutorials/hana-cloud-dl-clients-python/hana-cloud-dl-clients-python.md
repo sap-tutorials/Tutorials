@@ -1,4 +1,4 @@
-            ---
+---
 parser: v2
 auto_validation: true
 time: 15
@@ -7,24 +7,27 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using Python Drivers
+
 <!-- description --> Create and debug a Python application that connects to a data lake Relational Engine using the sqlanydb python driver or the pyodbc bridge.
 
 ## Prerequisites
- - You have completed the first 2 tutorials in this group
 
+- You have completed the first 2 tutorials in this group
 
 ## You will learn
-  - How to install Python, the `sqlanydb`, and `pyodbc` Python drivers
-  - How to create, run, and debug a Python application that connects to and queries a data lake Relational Engine database
+- How to install Python, the `sqlanydb`, and `pyodbc` Python drivers
+- How to create, run, and debug a Python application that connects to and queries a data lake Relational Engine database
 
 ---
 
 ## Intro
+
 In the 2023 Stack Overflow’s annual developer survey, Python ranked 3rd in the [Most popular technologies](https://survey.stackoverflow.co/2023/#most-popular-technologies-language) section. For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/) or [The Python Tutorial](https://docs.python.org/3/tutorial/).
 
 The following steps create a simple Python app that can connect to and query an SAP HANA data lake Relational Engine.  
 
 ### Install Python
+
 The first step is to check if Python and pip are installed.
 
 1. Enter the commands below.
@@ -33,6 +36,7 @@ The first step is to check if Python and pip are installed.
     python --version
     python3 --version
     ```
+
     If Python is installed, the command will return a value such as Python 3.13.0
 
     >In some Linux distributions, 'python' refers to Python 2, while 'python3' refers to Python 3. However, as Python 2 is now obsolete, 'python' may refer to Python 3 instead.  It may also be referred to by its specific version such as python3.13.
@@ -49,7 +53,6 @@ The first step is to check if Python and pip are installed.
     python3.13 --version
     ```
 
-
 2. Enter the commands below.
 
     ```Shell
@@ -57,9 +60,10 @@ The first step is to check if Python and pip are installed.
     pip3 --version
     pip install --upgrade pip
     ```
+
     >If you encounter issues with user permissions, run command prompt as an administrator and try again.
 
-    The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.  Again, use the pip or pip3 command that returns a version 3.4 or greater of Python.
+    The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.  
 
     >On Linux, if you encounter permission issues, one way to solve the issue is to use `sudo` before the command.
 
@@ -71,29 +75,16 @@ The first step is to check if Python and pip are installed.
     zypper install python3-pip
     >```
 
-
 ### Install the sqlanydb Python driver
+
 The `sqlanydb` package is the python driver for the data lake Relational Engine and is available as part of the data lake Relational Engine install and is available at [PyPI](https://pypi.org/project/sqlanydb/).
 
-1. Navigate to your Data Lake Client installation folder and enter the following command to install `sqlanydb`. Depending on which install of the data lake client was used, execute:
+1. Navigate to your Data Lake Client installation folder and enter the following command to install the python driver named `sqlanydb`.
 
     ```Shell (Microsoft Windows)
-    cd %IQDIR17%\SDK\Python
+    cd %HDL_CLIENT_HOME%\SDK\Python
     pip install sqlanydb-1.0.14.tar.gz
     ```
-
-    ```Shell (Microsoft Windows)
-    cd %IQDIR17%\SDK\Python
-    python setup.py install
-    ```
-
-
-    >If the error 'no module named setuptools' appears, the following may be used as a workaround until this issue is resolved.
-
-    ```Shell
-    pip install setuptools
-    ```
-
 
     On Linux the rest of the steps will be executed in a virtual environment.
 
@@ -102,13 +93,15 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     ```Shell(Linux)
     mkdir $HOME/pyvenv
     ```
-    Now, use the venv command to create a virtual environment inside the given folder, here python-virtualenv is the name of the virtual enviroment that is to be created.
+
+    Now, use the venv command to create a virtual environment inside the given folder, here python-virtualenv is the name of the virtual environment that is to be created.
 
     ```Shell(Linux)
     cd $HOME/pyvenv
     python3 -m venv pyvenv/python-virtualenv
     ```
-    We now activate the virtual enviroment , which we will use to complete the rest of the steps for linux based systems.
+
+    We now activate the virtual environment, which we will use to complete the rest of the steps for linux based systems.
 
     ```Shell(Linux)
     source pyvenv/python-virtualenv/bin/activate
@@ -118,27 +111,15 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
     ![python-install](virtualenv.png)
 
-    Depending on which install of the data lake client was used, execute
-
-    
-    ```Shell (Linux)
-    cd $IQDIR17/sdk/python
-    python3 setup.py install
-    ```
-
-    or 
+    Now install the driver named 'sqlanydb'.
 
     ```Shell (Linux)
-    cd $IQDIR17/sdk/python
+    cd $HDL_CLIENT_HOME/sdk/python
     pip install sqlanydb-1.0.14.tar.gz
     ```
 
-2. On Microsoft Windows for the non developer licensed install, create a user environment variable named `SQLANY_API_DLL` and set it to `%IQDIR17%\Bin64\dbcapi.dll`.
-
-    ![add a variable named SQLANY_API_DLL](add-variable.png)
-
-
 ### Create a Python application that uses sqlanydb to query the data lake Relational Engine
+
 1. In a shell, create a folder named `python-sqlanydb`, enter the newly created directory, and open a file name `pythonQuery.py` in an editor.
 
     ```Shell (Microsoft Windows)
@@ -190,8 +171,8 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
 For further information on the Python Driver, visit [Python and Database Access](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/python-and-database-access).
 
-
 ### Install the Python ODBC bridge using pip and PyPI
+
 This is an alternate method of connecting to a data lake Relation Engine from a Python app. The Python ODBC bridge is an open source Python module available on [`PyPI`](https://pypi.org/project/pyodbc/).  The performance characteristics between the two drivers may vary depending on the use case.
 
 1. Ensure that you have created a connection to the data lake Relational Engine using ODBC as shown in step 1 (Windows) or 2 (Linux) of the [Connect to Data Lake Relational Engine Using the ODBC Driver](hana-cloud-dl-clients-odbc) tutorial.
@@ -213,8 +194,8 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
 
     >If this command fails on Linux, you may need to install gcc-c++, python3-devel, and unixodbc-dev.
 
-
 ### Create a Python application that uses pyodbc to query the data lake Relational Engine
+
 1. In a shell, create a folder named `python-pyodbc`, enter the newly created directory, and open a file name `pythonQuery.py` in an editor.
 
     ```Shell (Microsoft Windows)
@@ -255,7 +236,9 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     curs.close()
     conn.close()
     ```
+
     Save and close `pythongQuery.py`.
+
 3. The `dsn` value refers to the data source name in the Microsoft Windows ODBC Administrator or the Linux `.odbc.ini` file.
 
     ![ODBC Administrator](odbcWindow.png)
@@ -276,8 +259,8 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
 
 The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification](https://www.python.org/dev/peps/pep-0249/), which defines a set of methods that provide a consistent database interface, independent of the actual database being used.   
 
-
 ### Debug the application
+
 Visual Studio Code provides plugins for Python and can be used to debug an application.  
 
 1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
@@ -305,7 +288,5 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 ### Knowledge check
 
 Congratulations! You have now created and debugged a Python application that connects to and queries a data lake Relational Engine database.
-
-
 
 ---

@@ -7,21 +7,25 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the JDBC Driver
+
 <!-- description --> Create and debug a Java application that connects to the data lake Relational Engine.
 
 ## Prerequisites
- - You have completed the first tutorial in this group.
+
+- You have completed the first tutorial in this group.
 
 ## You will learn
-  - How to create and debug a Java application that connects to and queries a data lake Relational Engine database
+
+- How to create and debug a Java application that connects to and queries a data lake Relational Engine database
 
 ## Intro
-[Java Database Connectivity](https://en.wikipedia.org/wiki/Java_Database_Connectivity) (JDBC) provides an [API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) for accessing databases from Java. An application written to the JDBC standard can be ported to other databases. Database vendors provide JDBC drivers for their database products. Further details of the SAP JDBC driver can be found at [JDBC Driver](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/jdbc-driver).
 
+[Java Database Connectivity](https://en.wikipedia.org/wiki/Java_Database_Connectivity) (JDBC) provides an [API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) for accessing databases from Java. An application written to the JDBC standard can be ported to other databases. Database vendors provide JDBC drivers for their database products. Further details of the SAP JDBC driver can be found at [JDBC Driver](https://help.sap.com/docs/hana-cloud-data-lake/client-interfaces/jdbc-driver).
 
 ---
 
 ### Install a JDK
+
 Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path.
 
 You should already have the SAP Java Virtual Machine (JVM) installed after completing the [SAP HANA Cloud, Data Lake Client Interfaces Overview](https://developers.sap.com/tutorials/hana-cloud-dl-clients-overview.html#f86d9ece-1bd4-4add-81a4-aedc6b290e97) prerequisite tutorial.
@@ -43,17 +47,17 @@ For Linux, the following command will install Java on openSUSE Leap 15.4.
 sudo zypper install java-11-openjdk-devel
 ```
 
-
 ### The data lake Relational Engine JDBC driver
-The data lake Relational Engine JDBC driver is a type 2 driver, which means it has a native (non-Java) component. For additional details see [Type 2 driver – Native-API driver](https://en.wikipedia.org/wiki/JDBC_driver#Type_2_driver_%E2%80%93_Native-API_driver). The driver is located in `%IQDIR17%\java\sajdbc4.jar` on Microsoft Windows and `$IQDIR17/java/sajdbc4.jar` on Linux.  The native component is at `%IQDIR17%\Bin64\dbjdbc17.dll` on Microsoft Windows and `$IQDIR17\lib64\libdbjdbc17.so` on Linux.
+
+The data lake Relational Engine JDBC driver is a type 2 driver, which means it has a native (non-Java) component. For additional details see [Type 2 driver – Native-API driver](https://en.wikipedia.org/wiki/JDBC_driver#Type_2_driver_%E2%80%93_Native-API_driver). The driver is located in `%HDL_CLIENT_HOME%\java\sajdbc4.jar` on Microsoft Windows and `$HDL_CLIENT_HOME/java/sajdbc4.jar` on Linux.  The native component is at `%HDL_CLIENT_HOME%\Bin64\dbjdbc17.dll` on Microsoft Windows and `$HDL_CLIENT_HOME\lib64\libdbjdbc17.so` on Linux.
 
 See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/jdbc-drivers) for additional details.
 
-
 ### Create a Java application that queries data lake Relational Engine
+
 1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
 
-    >The HOMEPATH environment variable should resolve to your user in your users folder such as c:\users\dan.  Its value can be seen on Microsoft Windows by entering echo %HOMEPATH% into a shell.
+    >The HOMEPATH environment variable should resolve to your user in your user's folder such as c:\users\dan.  Its value can be seen on Microsoft Windows by entering echo %HOMEPATH% into a shell.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\DataLakeClientsTutorial\java
@@ -112,19 +116,19 @@ See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-clo
     Compile the `.java` file into a `.class` file using the following command:
 
     ```Shell (Microsoft Windows)
-    javac -cp %IQDIR17%\Java\sajdbc4.jar;. JavaQuery.java
+    javac -cp %HDL_CLIENT_HOME%\Java\sajdbc4.jar;. JavaQuery.java
     ```  
     ```Shell (Linux)
-    javac -cp $IQDIR17/java/sajdbc4.jar:. JavaQuery.java
+    javac -cp $HDL_CLIENT_HOME/java/sajdbc4.jar:. JavaQuery.java
     ```  
 
 4. Run `JavaQuery.class` and indicate where the JDBC driver is located.  
 
     ```Shell (Microsoft Windows)
-    java -classpath %IQDIR17%\Java\sajdbc4.jar;. JavaQuery
+    java -classpath %HDL_CLIENT_HOME%\Java\sajdbc4.jar;. JavaQuery
     ```  
     ```Shell (Linux)
-    java -classpath $IQDIR17/java/sajdbc4.jar:. JavaQuery
+    java -classpath $HDL_CLIENT_HOME/java/sajdbc4.jar:. JavaQuery
     ```  
 
     ![Java Query](jdbc-query.png)
@@ -132,6 +136,7 @@ See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-clo
 See [JDBC Program Structure](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/3bd5a89b6c5f1014ad1bae9e04645f43.html) for additional details.  
 
 ### Debug the application
+
 Visual Studio Code can run and debug a Java application. It is a lightweight but powerful source code editor available on Microsoft Windows, macOS, and Linux.
 
 1. If required, [Download Visual Studio Code](https://code.visualstudio.com/Download).
@@ -148,7 +153,7 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
 
     ![referenced libraries](ref-libraries.png)
 
-    The JDBC driver is located at `%IQDIR17%\Java\sajdbc4.jar` on Microsoft Windows and `$IQDIR17/java/sajdbc4.jar` on Linux.
+    The JDBC driver is located at `%HDL_CLIENT_HOME%\Java\sajdbc4.jar` on Microsoft Windows and `$HDL_CLIENT_HOME/java/sajdbc4.jar` on Linux.
 
 5. Place a breakpoint and then select **Run | Start Debugging**.  
 
@@ -159,6 +164,7 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
     ![VS Code Debugging](debugging.png)
 
 ### Knowledge check
+
 Congratulations! You have now created and debugged a Java application that connects to and queries a data lake Relational Engine database.
 
 ---
