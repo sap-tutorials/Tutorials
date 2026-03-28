@@ -7,22 +7,27 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the Node.js Driver
+
 <!-- description --> Create and debug a Node.js application that connects to data lake Relational Engine.
 
 ## Prerequisites
- - You have completed the first tutorial in this group.
+
+- You have completed the first tutorial in this group.
 
 ## You will learn
-  - How to install Node.js and the data lake Relational Engine Node.js driver
-  - How to create and debug a Node.js application
-  - How to use both the synchronous and asynchronous driver interfaces
+
+- How to install Node.js and the data lake Relational Engine Node.js driver
+- How to create and debug a Node.js application
+- How to use both the synchronous and asynchronous driver interfaces
 
 ## Intro
+
 Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs). On Microsoft Windows, in this tutorial, the shell used is the Command Prompt.
 
 ---
 
 ### Install Node.js
+
 Ensure you have Node.js installed and check its version. Enter the following command:
 
 ```Shell
@@ -41,8 +46,8 @@ If Node.js is not installed, download the long-term support (LTS) version of the
 >
 >![Chocolatey](Chocolatey.png)
 
-
 ### Install the data lake Relational Engine client for Node.js
+
 The Node.js driver covered in this tutorial is [@sap\iq-client](https://www.npmjs.com/package/@sap/iq-client) which supports the latest Node.js versions and includes a promise library.  An alternate driver is the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.  
 
 1. Open a new Shell and create a folder named `node` and enter the newly created directory.
@@ -72,11 +77,11 @@ The Node.js driver covered in this tutorial is [@sap\iq-client](https://www.npmj
 
     ![npm list](npm-list.png)
 
-
 ### Create a synchronous Node.js application that queries SAP data lake Relational Engine
+
 1. Create a new file named `nodeQuery.js` in an editor.
 
-Depending on what version of the data lake client was used, execute:
+    Depending on what version of the data lake client was used, execute:
 
     ```Shell (Microsoft Windows)
     notepad nodeQuery.js
@@ -84,7 +89,7 @@ Depending on what version of the data lake client was used, execute:
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
+    ```Shell (Linux)
     pico nodeQuery.js
     ```
 
@@ -117,7 +122,7 @@ Depending on what version of the data lake client was used, execute:
     connection.disconnect();
     ```  
 
-4. Run the app.  
+3. Run the app.  
 
     ```Shell
     node nodeQuery.js
@@ -126,6 +131,12 @@ Depending on what version of the data lake client was used, execute:
     ![Running nodeQuery.js](node-query-sync.png)
 
     If an error appears such as Error: `libdbcapi_r.so` is missing, its location can be specified using an environment variable such as IQ_DBCAPI_DIR.
+
+    ```Shell (Linux)
+    IQ_DBCAPI_DIR=$HDL_CLIENT_HOME/lib64 
+    export IQ_DBCAPI_DIR
+    echo $IQ_DBCAPI_DIR
+    ```
 
     Note the above app makes use of some of the data lake Relational Engine client Node.js driver methods, such as [connect](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/connect-string-object-function-method), [exec](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/exec-ute-string-array-object-function-method) and [disconnect](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/disconnect-close-end-function-method).
 
@@ -138,9 +149,7 @@ Depending on what version of the data lake client was used, execute:
     >node nodeQuery.js
     >```  
 
-    Linux or Mac
-    
-    >```Shell
+    >```Shell(Linux)
     >export DEBUG=*
     >node nodeQuery.js
     >```  
@@ -153,9 +162,7 @@ Depending on what version of the data lake client was used, execute:
     >set DEBUG
     >set DEBUG=
     >set DEBUG
-    >```   
-
-    Linux or Mac
+    >```
 
     >```Shell (Linux)
     >printenv | grep DEBUG
@@ -164,6 +171,7 @@ Depending on what version of the data lake client was used, execute:
     >```  
 
 ### Create an asynchronous app that uses callbacks
+
 Asynchronous programming enables non-blocking code execution which is demonstrated in the below example.
 
 1. Open a file named `nodeQueryCallback.js` in an editor.
@@ -254,12 +262,13 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
     ```Shell
     node nodeQueryCallback.js
     ```
+
     ![Running nodeQueryCallback.js](Node-query-callback.png)
 
     Notice that asynchronous method calls use callback functions.
 
-
 ### Create an asynchronous app that uses promises
+
 The Node.js driver for the data lake Relational Engine client provides support for promises.  The following example demonstrates this.  Notice that there is less nesting of code then the previous example.
 
 1. Open a file named `nodeQueryPromise.js` in an editor.
@@ -270,7 +279,7 @@ The Node.js driver for the data lake Relational Engine client provides support f
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
+    ```Shell (Linux)
     pico nodeQueryPromise.js
     ```
 
@@ -353,20 +362,21 @@ The Node.js driver for the data lake Relational Engine client provides support f
     }    
     ```  
 
-4. Run the app.  
+3. Run the app.  
 
     ```Shell
     node nodeQueryPromise.js
     ```
+
     ![Running nodeQueryPromise.js](Node-query-promise.png)
 
     The above code makes use of the [promise module](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/promise-module).  Additional details on promises can be found at [Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 
-
 ### Debug the application
-Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux. Ensure that Node.js is added to your path in environment variables such as 	C:\Program Files\nodejs.
 
-1. If required, download [Visual Studio Code.](https://code.visualstudio.com/Download).
+Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux. Ensure that Node.js is added to your path in environment variables such as C:\Program Files\nodejs.
+
+1. If required, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
 2. In Visual Studio Code, choose **File | Add Folder to Workspace** and then add the `DataLakeClientsTutorial` folder.
 
@@ -383,13 +393,15 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
     ![VS Code Debugging](debugging.png)
 
     If "Can't find Node.js binary 'node': path does not exist" error pops up, open a Shell and run the following command.
+
     ```Shell
     code .
     ```
+
     Then restart VSCode.
 
-
 ### Knowledge check
+
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP data lake Relational Engine database.
 
 ---
