@@ -65,9 +65,7 @@ This collection includes:
     - Feedback APIs
     - Label management APIs
 
-👉 Download the Bruno collection from the link below:
-
-[Download Bruno Collection](ADD GITHUB LINK TO DOWNLOAD BRUNO COLLECTION HERE)
+👉 Download the Bruno collection from here: [Bruno_collections](img/FeedbackService_Test) 
 
 **Import the Bruno Collection**
 
