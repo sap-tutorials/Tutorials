@@ -32,17 +32,17 @@ primary_tag: software-product>sap-hana-cloud
 The `dotnet` tool command can be used to install and manage tools that extend .NET.  The following are a few examples that can be run to show help, to list the local and globally installed tools, to uninstall `dotnet-ef` if an incompatible version is installed, and to search the repository for version details of the `dotnet-ef` tool.
 
 ```Shell
-dotnet tool -?
-dotnet tool list -?
+dotnet tool -h
+dotnet tool list -h
 dotnet tool list
 dotnet tool list -g
 dotnet tool uninstall dotnet-ef -g
 dotnet tool search dotnet-ef --detail
 ```
 
-The SAP HANA Client 2.27 release supports EF Core 8.0 among other versions.  For a list versions and support dates see [EF Core releases and planning](https://learn.microsoft.com/en-us/ef/core/what-is-new/) and SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
+The SAP HANA Client 2.28 release supports EF Core 9.0 among other versions.  For a list versions and support dates see [EF Core releases and planning](https://learn.microsoft.com/en-us/ef/core/what-is-new/) and SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-Run the following command to install version 8 of the dotnet-ef tool.
+Run the following command to install version 9 of the dotnet-ef tool.
 
 ```Shell
 dotnet tool install dotnet-ef --version 9.0.14 -g
@@ -140,7 +140,6 @@ dotnet ef -h
     ```
 
     Be sure to update the host URL and optionally the user name and password.  Note that calls to EnsureDeleted and EnsureCreated will delete and recreate the objects in the schema USER2. As documented at [RelationalDatabaseCreator.EnsureDeleted Method](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.storage.relationaldatabasecreator.ensuredeleted), it will delete all objects in the schema USER2.
-
 
 6. Open an editor to edit the file `Program.cs`.
 

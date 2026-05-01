@@ -22,7 +22,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Intro
 
-This tutorial will provide tips and pointers on setting up an instance of [SAP HANA](https://www.sap.com/products/hana.html) running in the cloud or on-premise so that it can then be connected to using a few of the [SAP HANA Client](https://help.sap.com/docs/SAP_HANA_CLIENT) interfaces.  
+This tutorial covers how to configure an [SAP HANA](https://www.sap.com/products/hana.html) instance in the cloud or on-premise, to enable connections through various [SAP HANA Client](https://help.sap.com/docs/SAP_HANA_CLIENT) interfaces, along with tips to streamline the process and avoid common pitfalls.
 
 For more information on SAP HANA Cloud, consult [Introduction to SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/feature-scope-description-for-sap-hana-cloud-3dd959f1b8574cb0ba19ab05cfc0d3ae/introduction-to-sap-hana-cloud).
 
@@ -40,7 +40,6 @@ For more information on SAP HANA Cloud, consult [Introduction to SAP HANA Cloud]
 
 >**IMPORTANT**: Complete the first 3 tutorials, and then you can select any of the following tutorials about connecting with different client interfaces.
 
-
 ---
 
 ### Overview of SAP HANA Cloud and SAP HANA On-premise
@@ -52,7 +51,6 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 |  [SAP HANA Platform 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM)           | Released in November 2016. Current version is 2.0 SPS 08, which was released on Nov 20th, 2024.
 |  **[SAP HANA, express edition](https://help.sap.com/docs/SAP_HANA_EXPRESS_EDITION)**    | Released in September 2016.  Current version is 2.0 SPS 08.
 |  **[SAP HANA Cloud](https://help.sap.com/docs/hana-cloud)**   | Released in March 2020.  New features are released quarterly.
-
 
 ### SAP HANA Cloud
 
@@ -86,43 +84,39 @@ Information on the instance size steps for SAP HANA Cloud, SAP HANA databases ca
 
 The instructions on how to setup a free SAP HANA Cloud instance within the SAP Business Technology Platform (SAP BTP) are well covered in a number of other sources listed below.  The SAP BTP Trial is available on the US10 and AP21 landscapes.  When using the free SAP HANA Cloud service in productive landscapes, there is an option to transition the service from free tier to a paid service.
 
-* [Set Up Your SAP HANA Cloud, SAP HANA Database and Understand the Basics](group.hana-cloud-get-started-1-trial)
+- [Set Up Your SAP HANA Cloud, SAP HANA Database and Understand the Basics](group.hana-cloud-get-started-1-trial)
 
-* [SAP Learning Journey - Provisioning and Administering Databases in SAP HANA Cloud](https://learning.sap.com/learning-journey/provision-and-administer-databases-in-sap-hana-cloud)
+- [SAP Learning Journey - Provisioning and Administering Databases in SAP HANA Cloud](https://learning.sap.com/learning-journey/provision-and-administer-databases-in-sap-hana-cloud)
 
-* [SAP Discovery Center - SAP HANA Cloud, SAP HANA Database Fundamentals](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
+- [SAP Discovery Center - SAP HANA Cloud, SAP HANA Database Fundamentals](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
 
-* [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
-
+- [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
 For more information on SAP BTP see the following product pages and help documentation:
 
-* [https://www.sap.com/products/business-technology-platform.html](https://www.sap.com/products/business-technology-platform.html)
+- [https://www.sap.com/products/business-technology-platform.html](https://www.sap.com/products/business-technology-platform.html)
 
-* [https://developers.sap.com/topics/business-technology-platform.html](https://developers.sap.com/topics/business-technology-platform.html)  
+- [https://developers.sap.com/topics/business-technology-platform.html](https://developers.sap.com/topics/business-technology-platform.html)  
 
-* [https://help.sap.com/docs/btp](https://help.sap.com/docs/btp)
-
+- [https://help.sap.com/docs/btp](https://help.sap.com/docs/btp)
 
 Continue with this tutorial once you have created an SAP HANA Cloud instance as shown below.
 
 ![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
- 
-1. Once the SAP HANA Cloud instance is created, take note of the SQL endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in the mission.  
+1. Once the SAP HANA Cloud instance is created, take note of the SQL endpoint (host:port) needed to connect to the database. The endpoint can be obtained within the Actions menu on the Instances page. This will be needed in subsequent tutorials in the mission.  
 
     ![SQL Endpoint](SQLEndpoint.png)
 
     >The SAP HANA Cloud, HANA database free tier instances are shut down on a nightly basis and will need to be restarted before working with them the next day.  
 
-2. Open a SQL console for your database instance from SAP HANA Cloud Central.
+2. From the Actions menu, Open a SQL console for your database instance.
 
     ![Open SQL console](sql-cons.png)
 
     If needed, you will be asked to enter the credentials for the database.  Enter **DBADMIN** and the password that was specified when the instance was created.
 
     The SAP HANA database explorer provides the ability to browse catalog objects and execute SQL statements from the SQL console.  For more information, see the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started), [SQL Console](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sql-console) and [SAP HANA Database Explorer](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/getting-started-with-sap-hana-database-explorer).  
-
 
 3. Run the following query to see the name of the database you are currently connected to.  
 
@@ -157,7 +151,8 @@ Continue with this tutorial once you have created an SAP HANA Cloud instance as 
 Congratulations! You have connected to SAP HANA Cloud and performed a few queries.
 
 ### SAP HANA, express edition
->This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not setup an SAP HANA instance through the SAP HANA Cloud free tier as explained in step 3.
+
+>This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not set up an SAP HANA instance through the SAP HANA Cloud free tier as explained in step 3.
 
 SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html).  
 
@@ -171,9 +166,9 @@ Choose an option and proceed to install SAP HANA, express edition.  The server-o
 
 At this point, you should have a running instance of SAP HANA, express edition.
 
-
 ### Connect to SAP HANA, express edition
->This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not setup an SAP HANA instance using the SAP HANA Cloud free tier as explained in step 3.
+
+>This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not set up an SAP HANA instance using the SAP HANA Cloud free tier as explained in step 3.
 
 A default installation will contain one [system](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/39da3d057f56427ab1bb7f738ca9e7ce.html) database named **SYSTEMDB** and one [tenant](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/623afd167e6b48bf956ebb7f2142f058.html) database named **HXE**.
 
@@ -181,10 +176,9 @@ The system database contains information about the tenant database(s) and is use
 
 The SAP HANA, express edition includes a command line tool (part of the SAP HANA client install) called [HDBSQL](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c22c67c3bb571014afebeb4a76c3d95d.html) that can be used to query the database.  
 
-
 The following steps will demonstrate connecting to and examining a SAP HANA, express edition database.  
 
-1.  Enter the following to connect to the system database:
+1. Enter the following to connect to the system database:
 
     ```Shell
     hdbsql -n localhost:39013 -u SYSTEM -p Your_Password
@@ -197,18 +191,20 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
     The example above uses localhost since hdbsql is running on the same machine that the database is trying to connect to.  The host name, `hxehost`, is seen in the terminal above.  
 
     >If hdbsql is not found and you are logged in with another user, try connecting as the user `hxeadm` and run the command again.
+
     ```Shell
     su hxeadm
     ```
+
     If the hdbsql command cannot be found, simply read through the following examples.  The installation and further examples of running HDBSQL will be covered in subsequent tutorials.
 
-2.  Determine the IP address of the machine that is running SAP HANA, express edition.  Record the value as it will be needed in later tutorials in the mission.  It is important to note the IP address or host name of the machine, as this will be needed in later tutorials.
+2. Determine the IP address of the machine that is running SAP HANA, express edition.  Record the value as it will be needed in later tutorials in the mission.  It is important to note the IP address or host name of the machine, as this will be needed in later tutorials.
 
     ```Shell
     ip addr
     ```
 
-3.  The following are a some examples of [interactive options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) followed by a SQL query, which when run against **SYSTEMDB** returns information about the databases running on the SAP HANA instance.
+3. The following are a some examples of [interactive options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) followed by a SQL query, which when run against **SYSTEMDB** returns information about the databases running on the SAP HANA instance.
 
     ```SQL
     \al on
@@ -232,20 +228,20 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
 
     If the SQL statement returns more than one screen of text, entering a space will show the next screen of results.  See also the pager option `\pa`.  
 
-4.  Enter one of the below commands to exit from viewing the results of the select statement.  Note that commands can be prefixed with a forward slash(\\) or a colon(:).
+4. Enter one of the below commands to exit from viewing the results of the select statement.  Note that commands can be prefixed with a forward slash(\\) or a colon(:).
 
     ```HDBSQL
     \q
     :q
     ```
 
-5.  Connect using the instance number and database name as shown below.
+5. Connect using the instance number and database name as shown below.
 
     ```Shell
     hdbsql -n localhost -i 90 -d HXE -u SYSTEM -p Your_Password
     ```
 
-6.  Enter the following to display database connection information.
+6. Enter the following to display database connection information.
 
     ```HDBSQL
     \s
@@ -257,8 +253,8 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
 
     For further information, see [Port Assignment in Tenant Databases](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/440f6efe693d4b82ade2d8b182eb1efb.html) and [Connecting to SAP HANA Databases and Servers](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/b250e7fef8614ea0a0973d58eb73bda8.html).  
 
-
 ### Knowledge check
+
 Congratulations!  You now have access to an SAP HANA instance and understand some of the differences between SAP HANA Cloud and SAP HANA, express edition.
 
 ---

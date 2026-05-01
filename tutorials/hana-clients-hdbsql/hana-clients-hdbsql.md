@@ -7,21 +7,26 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Create a User, Tables and Import Data Using SAP HANA HDBSQL
+
 <!-- description --> Use the command line tool HDBSQL to connect to a SAP HANA database, create a user, and create tables which will be used in subsequent tutorials in this mission.
 
 ## Prerequisites
- - You have completed the first 2 tutorials in this mission.
+
+- You have completed the first 2 tutorials in this mission.
 
 ## You will learn
-  - How to connect to SAP HANA from a client machine using HDBSQL
-  - How to create a user, schema, tables and import data
+
+- How to connect to SAP HANA from a client machine using HDBSQL
+- How to create a user, schema, tables and import data
 
 ## Intro
+
 HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  HDBSQL is a basic tool for executing SQL scripts and providing an interface for interactive queries.  Another option to execute SQL operations is the [SQL Console](hana-dbx-hcc) that is part of SAP HANA Cloud Central or the [SAP HANA database explorer](group.hana-cloud-get-started) which is part of an on-premise install of the SAP HANA Cockpit or a server + applications SAP HANA, express edition install.  
 
 ---
 
 ### Connect to SAP HANA using hdbsql
+
 This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c22c67c3bb571014afebeb4a76c3d95d.html) from the SAP HANA client installation.
 
 1. Copy and paste the following command to see the command line options and press the space bar to advance though the information.  
@@ -30,7 +35,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
     hdbsql -h | more
     ```
 
-2. Connect to either SAP HANA Cloud or SAP HANA, express edition using host, port, and credentials.  Details on where to find these values are covered in the third and fifth steps of the [first tutorial](hana-clients-choose-hana-instance) in this mission.   
+2. Connect to either SAP HANA Cloud or SAP HANA, express edition using host, port, and credentials.  Details on where to find these values are covered in the third and fifth steps of the [first tutorial](hana-clients-choose-hana-instance) in this mission.
 
     - To connect to SAP HANA Cloud, see the following general command.  
 
@@ -71,9 +76,8 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         ![screenshot showing the allowlist](allowlist.png)
 
         An example of configuring this setting is shown in [Allow connections to SAP HANA Cloud instance from selected IP addresses — using the command line](https://blogs.sap.com/2020/10/30/allow-connections-to-sap-hana-cloud-instance-from-selected-ip-addresses-using-the-command-line/).
-    
-    - The SAP HANA Cloud, HANA database free tier instance will be automatically stopped overnight.   That means you need to restart your instance before working with it each new day.
 
+    - The SAP HANA Cloud, HANA database free tier instance will be automatically stopped overnight.   That means you need to restart your instance before working with it each new day.
 
     - Connections to a HANA Cloud instance must use encryption.  The default encryption library on Windows is mscrypto and on Linux and macOS it is OpenSSL.  The following example demonstrates how one could use the SAP provided conmmoncrypto library instead of the default encryption library.  Note, the following steps require that the SAP HANA Client be downloaded from the SAP Software Downloads as the download includes the SAP Common Crypto library (libsapcrypto).  Note that the environment variables can also be set by running source hdbclienv.sh or hdbclienv.bat.
 
@@ -124,13 +128,13 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         ```
 
         For additional details see [Server Certificate Authentication](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/a95754380f4c4c05b728524f9cd652e3.html).
-      
+
     - If you are on a Linux or Mac machine and the hdbsql connection fails with the error message below, it indicates that the OpenSSL library could not locate a trust store in the default location.  
-        
+
       _Cannot create SSL context:  SSL trust store cannot be found: `/Users/user1/.ssl/trust.pem`_
 
       A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients) and [3397584 - HANA Cloud Connections will switch from "DigiCert Global Root CA" to "DigiCert TLS RSA4096 Root G5"](https://me.sap.com/notes/3397584).  
-        
+
       It can be downloaded from [Download PEM](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem), renamed to `trust.pem` and saved to the specified location.  For further details, see [Secure connection from HDBSQL to SAP HANA Cloud](https://blogs.sap.com/2020/04/14/secure-connection-from-hdbsql-to-sap-hana-cloud/).
 
 4. Type `\s` for status information
@@ -143,13 +147,12 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
     ![Connect to HANA Cloud](Connect-to-host-server-cloud.png)
 
-
     Notice that for the HANA, express edition, the version number is 2.x.  
 
     ![Connect to HXE](Connect-to-host-server.png)  
 
-
 ### Create user and schema
+
 This step creates two users and a schema.  `USER1` will be the owner of the tables that will be created in a subsequent step and will be used to connect to the database. 
 
 On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
@@ -168,6 +171,7 @@ On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` 
     >The end of this tutorial contains SQL statements to delete the user, schema and objects created.  This may be helpful if you wish to recreate the sample dataset used in this tutorial.
 
     To verify that the user was created, enter the following command.
+
     ```SQL
     SELECT USER_NAME FROM USERS;
     ```
@@ -198,6 +202,7 @@ For further information on SQL to create a user or schema, see [CREATE USER Stat
  [Grant Statement(Access Control)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control), and [Privileges](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/privileges).
 
 ### Store connection details in secure user store (hdbuserstore)
+
 Remembering and entering IP addresses, ports, user IDs and passwords can be difficult. [SAP HANA User Store](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/708e5fe0e44a4764a1b6b5ea549b88f4.html) offers a convenient means of storing this information and making it available to the SAP HANA client interfaces.
 
 1. Exit out of `hdbsql` and type `hdbuserstore` to see a list of available commands such as Set, List and Delete.
@@ -206,6 +211,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     \q
     hdbuserstore
     ```
+
     `hdbuserstore` is included with the install of the SAP HANA client.
 
 2. Using `hdbuserstore`, specify a key named `USER1UserKey` that has the host, port and credentials.  Details on where to find these values are covered in the third and fifth steps of the [first tutorial](hana-clients-choose-hana-instance) in this mission.
@@ -228,9 +234,11 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 [Using Stored Connection Information](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/708e5fe0e44a4764a1b6b5ea549b88f4.html) contains details on how an application can use a `hdbuserstore` key.
 
 ### Create tables and insert data
+
 1. Exit HDBSQL by entering \q.
 
 2. Create a folder for the exercises in this tutorial, enter that directory, and begin editing a file named `hotel.sql`.
+
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\sql
     cd %HOMEPATH%\HANAClientsTutorial\sql
@@ -442,9 +450,8 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     For further information, see [CREATE TABLE Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-table-statement-data-definition) and [INSERT Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/insert-statement-data-manipulation).
 
-
 5. Identifiers such as table names are automatically upper cased unless they are within "".  
-    
+
     ```SQL
     SELECT * FROM HoTeLs.RoOm;  --succeeds
     SELECT * FROM "HoTeLs"."RoOm"; --fails
@@ -453,7 +460,6 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     For further details, consult [Identifiers and case sensitivity](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/introduction-to-sql#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
-    
     Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
 
     ```SQL
@@ -464,6 +470,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     ```
 
 ### Interactive, non-interactive, substitution variables, and prepared statements
+
 1. HDBSQL can [run commands](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
 
     ```SQL
@@ -495,6 +502,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     ```Shell
     hdbsql -A -U USER1UserKey -V nameParam=J% -I findCustomers.sql
     ```
+
     The -V option specifies a named variable that can be used within the SQL specified after the -I option. 
 
     ![example of substitution parameters](subst.png)
@@ -526,10 +534,8 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     In the above examples, the statements are prepared first, then the parameters are sent afterwards during the execute phase. In the previous step which used substitution variables, however, there is no separate prepare step.  If a statement is going to be executed repeatedly, but with different parameters, in general, prepared statements can execute quicker.
 
-
 ### Knowledge check
+
 Congratulations! You have now created a user and some tables using HDBSQL.  This user will be used to connect and query the data in the following tutorials.
-
-
 
 ---

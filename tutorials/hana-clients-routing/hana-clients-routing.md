@@ -52,7 +52,7 @@ The following steps demonstrate how a replica can be added to an SAP HANA Cloud 
 
 ### Hint based routing
 
-Individual read only queries can be routed to the replica.  There are some conditions such as the isolation level must be read commited.  Further details can be found at [Hint-Based Statement Routing for Active/Active (Read Enabled)](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/a6aa1cc4e070420c97e31fb1afd2ad3d.html).  The following steps attempt to demonstrate this.
+Individual read only queries can be routed to the replica.  There are some conditions such as the isolation level must be read committed.  Further details can be found at [Hint-Based Statement Routing for Active/Active (Read Enabled)](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/a6aa1cc4e070420c97e31fb1afd2ad3d.html).  The following steps attempt to demonstrate this.
 
 1. Verify the version of the SAP HANA client which needs to be 2.28 or higher by executing the below SQL.
 
