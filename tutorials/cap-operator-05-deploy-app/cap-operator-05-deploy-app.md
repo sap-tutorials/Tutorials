@@ -120,7 +120,6 @@ CAP Operator provides a plugin to generate a Helm chart for your CAP application
     appName: <your-app-name>
     capOperatorSubdomain: cap-op
     clusterDomain: <cluster-shoot-domain> # Value obtained in the previous step
-    globalAccountId: <your-global-account-id>
     providerSubaccountId: <your-provider-subaccount-id>
     providerSubdomain: <your-provider-subdomain>
     tenantId: <your-provider-tenant-id>
@@ -132,10 +131,6 @@ CAP Operator provides a plugin to generate a Helm chart for your CAP application
     > **`capOperatorSubdomain`**: In Kyma clusters, CAP Operator subdomain default value is `cap-op`.
 
     > **`clusterDomain`**: Use the domain string you retrieved in the previous step.
-
-    > **`globalAccountId`**: You can find this in the URL of your browser when you are viewing your subaccount in the SAP BTP Cockpit.
-
-    > <!-- border; size:540px --> ![Save changes](./img/global-account-id.png)
 
     > **`providerSubaccountId`**, **`providerSubdomain`** and **`providerTenantId`**: In the SAP BTP cockpit, go to your subaccount **Overview** and check the **General** section. You can find all three values there.
 
