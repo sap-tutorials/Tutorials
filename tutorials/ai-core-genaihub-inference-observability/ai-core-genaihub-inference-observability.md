@@ -65,7 +65,7 @@ This collection includes:
     - Feedback APIs
     - Label management APIs
 
-👉 Download the Bruno collection from here: [Bruno_collections](img/FeedbackService_Test) 
+👉 Download the Bruno collection from here: [Bruno_collections](https://github.com/SAP-samples/aicore-genai-samples/tree/main/genai-sample-apps/inference_observability/bruno_collection) 
 
 **Import the Bruno Collection**
 
