@@ -169,5 +169,3 @@ We can see that reservations for suites only make up a small part of the overall
 ### Knowledge check
 
 Congratulations! You have now used the database browser to view details of objects within an SAP HANA database and have become familiar with some of the features it provides.
-
-
