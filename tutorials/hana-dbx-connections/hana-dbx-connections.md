@@ -30,10 +30,10 @@ SQL consoles are associated with a database instance.
 ---
 
 ### Add an SAP HANA cockpit database instance
+
 Instances shown in SAP HANA Cloud Central or in the SAP HANA cockpit can be opened in the SAP HANA database explorer.
 
 1. From SAP HANA Cloud Central, choose **Open in SAP HANA Database Explorer**.  
-
 
     ![Open in the database explorer](from-directory.png)
 
@@ -49,7 +49,7 @@ Instances shown in SAP HANA Cloud Central or in the SAP HANA cockpit can be open
 
     ![databaseid parameter](open-in-dbx2.png)
 
-    Hover over the database to see a summary and note that the type is Cockpit Database. 
+    Hover over the database to see a summary and note that the type is Cockpit Database.
 
 ### Add an SAP HANA database connection
 
@@ -69,7 +69,6 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
 
     ![encrypted connection](encrypted.png)
 
-
     >---
 
     >When connecting to an SAP HANA Cloud instance, the connection must use TLS.
@@ -86,7 +85,7 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
 
     >Remember to remove the colon and port number from the host name and add the port to the port field.
 
-    ![Image of where the port number is](remove-port-number.png) 
+    ![Image of where the port number is](remove-port-number.png)
 
     >---
 
@@ -133,9 +132,10 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
     ![X.509 certificate authentication](cert-auth.png)
 
 ### Add a data lake Relational Engine database
+
 A data lake Relational Engine is a column oriented, disk based relational store that can be used to economically  store data that is not updated frequently.  Additional details can be found at [What is SAP HANA Cloud, Data Lake](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/sap-hana-cloud-data-lake-welcome-guide).
 
-1.  A data lake can be added to an already created SAP HANA Cloud database that does not have a data lake already associated with it or it can be added as a standalone database.
+1. A data lake can be added to an already created SAP HANA Cloud database that does not have a data lake already associated with it or it can be added as a standalone database.
 
     ![add a data lake](add-data-lake.png)
 
@@ -143,7 +143,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     ![allowed connections](allow-all.png)
 
-2.  In the SAP HANA database explorer, choose to add a new connection of type **Data Lake Relational Engine**.
+2. In the SAP HANA database explorer, choose to add a new connection of type **Data Lake Relational Engine**.
 
     ![add database](add-database-dl.png)
 
@@ -155,7 +155,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     ![Copy SQL Endpoint](copy-sql-endpoint.png)
 
-3.  The catalog browser can be used to view database objects and a SQL console can be opened to query the database.
+3. The catalog browser can be used to view database objects and a SQL console can be opened to query the database.
 
     ```SQL
     SELECT CURRENT USER FROM DUMMY;
@@ -168,7 +168,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     Diagnostic files can also be viewed in the Logs directory.
 
-4.  It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](tutorials/hana-clients-x509) on how to create a certificate.  The below SQL can be used to configure the data lake Relational Engine to enable X.509 certificate authentication.
+4. It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](tutorials/hana-clients-x509) on how to create a certificate.  The below SQL can be used to configure the data lake Relational Engine to enable X.509 certificate authentication.
 
     ```SQL
     CREATE LOGIN POLICY X509Policy LOGIN_MODE=X509;  --valid for 180 days by default
@@ -185,6 +185,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
     Additional details on the SQL above can be found at [Login Policy Options](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/login-policy-options), [Create X509 Provider Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-x509-provider-statement-for-data-lake-relational-engine), and [Grant X509 Login Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/grant-x509-login-statement-for-data-lake-relational-engine).
 
 ### Add a data lake Files container (Optional)
+
 A [data lake Files container](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/understanding-data-lake-files) provides storage for non structured files such as images or PDF documents.  It can also store structured files such as CSV, parquet, or ORC files and with the use of [SQL on Files](https://help.sap.com/docs/hana-cloud-data-lake/administration-guide-for-sql-on-files/using-sql-on-files), queries can be performed on the data contained in those files.  An example of using the data lake Files container is shown as a target for an export operation at [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import).
 
 1. A connection can be added to a data lake Files container.  A data lake Files container is not currently available in free tier instances of SAP HANA Cloud.
@@ -201,12 +202,11 @@ A [data lake Files container](https://help.sap.com/docs/hana-cloud-data-lake/use
 
     ![upload a file](upload-data-lake-file-container.png)
 
-
-
 ### Additional database connection features
+
 Instances have additional actions that can be performed on them such as renaming, connecting as a different user, changing the connection of a SQL console, and viewing an overview of the connected SAP HANA Cloud, SAP HANA database.  
 
-1.  To rename an instance, right-click on an instance and choose **Properties**.
+1. To rename an instance, right-click on an instance and choose **Properties**.
 
     ![database properties](properties.png)
 
@@ -214,11 +214,11 @@ Instances have additional actions that can be performed on them such as renaming
 
     ![renaming a connection](properties2.png)
 
-2.  To connect to the same instance but with different credentials, right-click an instance and choose **Add Database with Different User**.  This can be useful when you wish to connect to the same instance but with a different set of credentials perhaps because you need elevated permissions.  The USER1 database user will be created in the next tutorial.
+2. To connect to the same instance but with different credentials, right-click an instance and choose **Add Database with Different User**.  This can be useful when you wish to connect to the same instance but with a different set of credentials perhaps because you need elevated permissions.  The USER1 database user will be created in the next tutorial.
 
     ![connecting as a different user](clone.png)
 
-3.  When a SQL console opens, it connects to the currently selected database instance and displays the current schema and instance name.  
+3. When a SQL console opens, it connects to the currently selected database instance and displays the current schema and instance name.  
 
     ![SQL console connections](SQL-Console-Connections.png)
 
@@ -226,18 +226,18 @@ Instances have additional actions that can be performed on them such as renaming
 
     > Subsequent tutorials assume the connected user is DBADMIN or SYSTEM.
 
-4.  To see information about an SAP HANA database, right-click on an instance and choose **Show Overview**.  This provides a quick overview of the database that you are connected to including the database version.
+4. To see information about an SAP HANA database, right-click on an instance and choose **Show Overview**.  This provides a quick overview of the database that you are connected to including the database version.
 
     ![database overview](overview.png)
 
-5.  Groups and filters can be used to organize and quickly find databases.
+5. Groups and filters can be used to organize and quickly find databases.
 
     ![Using groups](groups.png)
 
     >These groups are separate from the mechanism used in the on-premise SAP HANA Cockpit Manager or the groups seen in Run SQL on Multiple Databases dialog which use groups based on the cloud foundry space name for SAP HANA Cloud instances.  For further details, see step 7.
 
-
 ### Database usage
+
 An SAP HANA database can be set to have a specified usage, such as development or production.  The following SQL statements will display the current usage value and then change it to production.
 
 ```SQL
@@ -258,11 +258,12 @@ ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') UNSET ('system_infor
 ```
 
 ### Database groups (Optional)
+
 SAP HANA cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
 
 ![run on multiple](run-on-multiple.png)  
 
-1. With SAP HANA Cloud, all databases created in a Cloud Foundry space are placed in a group.  As seen below, the space name is dev.    
+1. With SAP HANA Cloud, all databases created in a Cloud Foundry space are placed in a group.  As seen below, the space name is dev.
 
     ![group by space](group-by-space.png)
 
@@ -276,7 +277,7 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
     ![run on multiple](run-on-multiple.png)  
 
-    The space dev is represented by its GUID in the selection dialog below.    
+    The space dev is represented by its GUID in the selection dialog below.
 
     ![run on multiple databases in HXE](run-on-multiple-hc.png)
 
@@ -292,33 +293,33 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
     These groups appear when running SQL against multiple databases. There are also three predefined groups named DEVELOPMENT, ALL, and PRODUCTION.
 
-    ![run on multiple](run-on-multiple.png)  <br><br>
+    ![run on multiple](run-on-multiple.png)
 
     ![run on multiple databases in HXE](run-on-multiple-hxe.png)
 
     >The ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA Cockpit Manager requires the SAP HANA database explorer to be opened from the SAP HANA cockpit.
 
-
 ### Native HANA development with HDI (Optional)
+
 An SAP HANA Deployment Infrastructure (HDI) container can be created by using SAP Business Application Studio or the SAP HANA Web IDE.  An HDI container can contain database objects such as tables, views, functions, stored procedures, and calculation views.  HDI containers support the use case where multiple versions of the same data model are deployed into the same database instance. This might be done by multiple developers working on a project.  Using HDI helps ensure a consistent deployment.  Objects within an HDI container all share the same schema and are accessed by a technical user.  Further details can be found at [SAP HANA Deployment Infrastructure in the Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-deployment-infrastructure-hdi-reference/sap-hana-deployment-infrastructure-in-cloud).
 
 The SAP Business Application Studio is the recommended tool for SAP HANA native application development with SAP HANA Cloud HANA databases while the SAP HANA Web IDE is the recommended tool for HANA 2.0 on-premise databases.  For additional details see [SAP Business Application Studio and SAP Web IDE Full-Stack](https://blogs.sap.com/2021/02/09/sap-business-application-studio-and-sap-web-ide-full-stack/).  
 
 The following steps demonstrate how to use the SAP Business Application Studio or the SAP HANA Web IDE to create and deploy an HDI container containing a table and then view container in the SAP HANA database explorer.  
 
-
 ### Create and deploy an HDI container with the SAP Business Application Studio (Optional)
-1.  Open the SAP BTP cockpit and from the Service Marketplace under the subaccount level (named trial in the screenshot below) find and open the **SAP Business Application Studio**.  
+
+1. Open the SAP BTP cockpit and from the Service Marketplace under the subaccount level (named trial in the screenshot below) find and open the **SAP Business Application Studio**.  
 
     ![service marketplace](bas-service-marketplace.png)
 
-2.  Create a new **SAP HANA Native Application** dev space.
+2. Create a new **SAP HANA Native Application** dev space.
 
     ![create a dev space](dev-space.png)
 
-3.  Once the dev space is running, open it.  
+3. Once the dev space is running, open it.  
 
-4.  Set the cloud foundry org and space by pressing F1 or Ctrl + Shift + P to open the command palette.  Search for the command **CF Set Org and Space**.
+4. Set the cloud foundry org and space by pressing F1 or Ctrl + Shift + P to open the command palette.  Search for the command **CF Set Org and Space**.
 
     ![set CF org and space](set-org-and-space.png)
 
@@ -326,36 +327,35 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     ![api endpoint](api-endpoint-hc.png)
 
-5.  From the Welcome tab (can be opened from the command palette if it is not open), choose **Start from template**.
+5. From the Welcome tab (can be opened from the command palette if it is not open), choose **Start from template**.
 
     ![start from template](start-from-template.png)
 
-6.  Select **SAP HANA Database Project**.
+6. Select **SAP HANA Database Project**.
 
     ![SAP HANA Database Application](sap-hana-database-application.png)
 
-7.  Provide the following values and click **Finish**.
+7. Provide the following values and click **Finish**.
 
     |  Setting        | Value
     |  :------------- | :-------------
     |  Project name:  | `myHANAProj`
     |  Module name:   | `db`
-    |  Namespace:     |
+    |  Namespace:     | ``
     |  Schema name:   | `mySchema`
-    |  SAP HANA Database Version: | HANA Cloud    
+    |  SAP HANA Database Version: | HANA Cloud
     |  Bind database  | Yes
 
-8.  Once the project generation finishes, open the tool palette (F1) and choose  **SAP HANA: Create SAP HANA Database Artifact**.  Provide the following values and click **Create**.
+8. Once the project generation finishes, open the tool palette (F1) and choose  **SAP HANA: Create SAP HANA Database Artifact**.  Provide the following values and click **Create**.
 
     |  Setting     | Value
     |  :------------- | :-------------
     |  Path:    | `/home/user/projects/myHANAProj/db/src`
     |  Version: | HANA Cloud
     |  Artifact Type:    | `Table (hdbtable)`
-    |  Name:    | `myTable`   
+    |  Name:    | `myTable`
 
-
-9.  Paste the below content into the file.
+9. Paste the below content into the file.
 
     ```SQL
     COLUMN TABLE myTable
@@ -377,12 +377,9 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     ![hdi container and table](dbx-hdi-hc2.png)
 
-
-
 ### Create and deploy an HDI container with the SAP HANA Web IDE (Optional)
 
-
-1.  Open SAP HANA Web IDE for SAP HANA if using SAP HANA, express edition or an on-premise install.
+1. Open SAP HANA Web IDE for SAP HANA if using SAP HANA, express edition or an on-premise install.
 
     ![open web ide on-premise](open-web-ide-on-premise.png)
 
@@ -399,15 +396,15 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     >
     >![login for XSA](hxe-login.png)
 
-2.  Ensure that the SAP HANA extensions are enabled.
+2. Ensure that the SAP HANA extensions are enabled.
 
     ![SAP HANA plugins](extensions.png)
 
-3.  Open the development pane.
+3. Open the development pane.
 
     ![Development pane](development.png)
 
-4.  Create a new HANA database project.
+4. Create a new HANA database project.
 
     Right-click **Workspace** and choose **New** | **Project from Template**.
 
@@ -424,8 +421,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  Namespace:     | Clear the default value
     |  SAP HANA Database Version: | Choose the appropriate version such as 2.0 SPS 07
 
-
-5.  After the wizard finishes, create a table by right-clicking on the `src` folder and choosing **New** | **Database Artifact**.  
+5. After the wizard finishes, create a table by right-clicking on the `src` folder and choosing **New** | **Database Artifact**.  
 
     Specify a file name of `test` and a file type of `.hdbtable`.
 
@@ -441,7 +437,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     ![test table](test-table.png)
 
-6.  Deploy the HDI container.  Right-click the **db** folder and choose **Build** | **Build**.
+6. Deploy the HDI container.  Right-click the **db** folder and choose **Build** | **Build**.
 
     ![Build and deploy the HDI container](build.png)
 
@@ -449,7 +445,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     ![console](build-finished.png)
 
-7.  Once complete, the HDI container can be opened in the SAP HANA database explorer by right-clicking on the **db** folder and choosing **Open HDI Container**.
+7. Once complete, the HDI container can be opened in the SAP HANA database explorer by right-clicking on the **db** folder and choosing **Open HDI Container**.
 
     Alternatively, it can be added via the Add Database dialog.
 
@@ -474,6 +470,5 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 Congratulations! You have added different databases to the SAP HANA database explorer.
 
 In the next tutorial, additional tables, views, functions, and procedures that will be used in subsequent tutorials in this group will be created directly in the database rather than in an HDI container.
-
 
 ---

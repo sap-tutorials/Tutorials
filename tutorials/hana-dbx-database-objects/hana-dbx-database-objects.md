@@ -32,17 +32,16 @@ The database objects app is a built-in tool in SAP HANA Cloud Central that enabl
 1. Ensure that your database instance is running before attempting to open the Database Objects app. Once it is active, you can access the app directly by selecting its icon from the left‑hand navigation panel on the Instances page.
 
     ![DBObj Navigation](DbObjNav.png)
-    
+
     You can also open the Database Objects app through the SQL Console. Make sure you are connected to the correct database, then click the three‑dot menu in the top‑right corner and select Open Database Objects.
 
     ![DBObj Navigation SQL Console](NavSQLConsole.png)
 
 2. Upon opening database objects, click “Select an Instance” at the top of the page to choose the database you want to work with. You can browse the list or use the search field to quickly find your instance.
 
-
     ![Instances](Instances.png)
-    
-    ![Select Database](SelectDatabase.png)     
+
+    ![Select Database](SelectDatabase.png)
 
     Once selected, the **Schema** and **Search** filter are both available to use. Select the **Schema** filter and search for the HOTELS schema.  
 
@@ -72,7 +71,7 @@ Information for tables includes columns, indexes, properties, runtime informatio
 
     ![Column Data](ColumnData.png)
 
-3. Explore the **Runtime Information** tab, where further information about the table can be found. This information includes the total number of rows, disk size, partitions and memory consumption for the table, as well as individual columns. 
+3. Explore the **Runtime Information** tab, where further information about the table can be found. This information includes the total number of rows, disk size, partitions and memory consumption for the table, as well as individual columns.
 
     ![Runtime Information](RuntimeInformation.png)
 
@@ -97,7 +96,7 @@ Information for tables includes columns, indexes, properties, runtime informatio
     Select the Generate SQL Statement dropdown and click SELECT Statement to navigate to the SQL Console.
 
     ![Average Price Function Generate Statement](GenerateFuncStatement.png)
-    
+
     Input *'suite'* in the single quotes of the SELECT statement to get the average price for suites.
 
     ![Function Call](FuncCall.png)
@@ -116,13 +115,13 @@ To learn more about exploring database instances in Database Explorer refer to t
 
 1. Select the **Recent** tab to view all the recent objects you opened.  
 
-    ![Recents](Recent.png)
+    ![Recent](Recent.png)
 
 2. Navigate to an object and click the star icon on the top right of the screen to favorite it. Allows for easy access to the object through the **Favorites** tab.  
 
     ![Favorite Icon](FavIcon.png)
 
-    Once selected as a favorite. Navigate to the **Favorites** tab to see it. 
+    Once selected as a favorite. Navigate to the **Favorites** tab to see it.
 
     ![Favorite](Fav.png)
 
@@ -130,7 +129,7 @@ To learn more about exploring database instances in Database Explorer refer to t
 
     ![Filter Favorites](FilterFav.png)
 
-4. Navigate to HANA Cloud Central settings to customize preferences for the Database Objects App. 
+4. Navigate to HANA Cloud Central settings to customize preferences for the Database Objects App.
 
     ![settings](SettingsFunc.png)
 

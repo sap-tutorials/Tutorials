@@ -28,7 +28,7 @@ The following steps will create a sample hotel dataset using create and insert s
 
 ### Create a usergroup, users, roles, and a schema
 
-1. In the SAP HANA database explorer, select the database HC_HDB and open a SQL console. 
+1. In the SAP HANA database explorer, select the database HC_HDB and open a SQL console.
 
     ![Open SQL console](open-sql-console.png)
 
@@ -71,7 +71,7 @@ The following steps will create a sample hotel dataset using create and insert s
     ```
 
     A schema provides a way to group database objects together.  
-    
+
     Privileges can be assigned to users directly or a better practice is to assign users to a role that has a set of privileges.
 
     It is recommended to not use the DBADMIN user for day-to-day operations in production environments.  Having specific users for specific tasks also will aid in auditing.  For additional details see [Deactivate the DBADMIN User](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/deactivate-dbadmin-user).
@@ -82,9 +82,9 @@ The following steps will create a sample hotel dataset using create and insert s
 
     >![roles management](roles-cockpit.png)
 
-3. Add another SAP HANA database connection using USER1. 
+3. Add another SAP HANA database connection using USER1.
 
-    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTELS in the advanced options. 
+    Select the Add instance icon and provide the details to connect to your SAP HANA database.  Provide the user name of USER1 and password of Password1 as well as set the schema to be HOTELS in the advanced options.
 
     ![add new user1 connection](user1-connection0.png)
 
@@ -118,7 +118,7 @@ The following steps will create a sample hotel dataset using create and insert s
 5. The following statements can be used to delete the schema and objects it contains as well as the users, user group and roles once the tutorials are complete.  
 
     **Do not execute the below until the tutorials are complete**.  
-    
+
     ```SQL
     -- DO NOT EXECUTE THIS UNLESS YOU WISH TO CLEAN UP THE TUTORIAL OBJECTS
     CONNECT DBADMIN PASSWORD myPassword;
@@ -383,7 +383,7 @@ The following steps will demonstrate these settings.
     SELECT 	key, value
     FROM m_session_context
     WHERE connection_id = current_connection
-    	AND key = 'DDL_AUTO_COMMIT';
+        AND key = 'DDL_AUTO_COMMIT';
     ```
 
     Additional details can be found at [SET TRANSACTION AUTOCOMMIT DDL Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/set-transaction-autocommit-ddl-statement-transaction-management).
@@ -447,13 +447,13 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     		H.NAME AS HOTEL_NAME,
         R.ARRIVAL,
         R.DEPARTURE,
-    		CUS.TITLE,
-    		CUS.FIRSTNAME,
-    		CUS.NAME AS CUSTOMER_NAME,
-    		CUS.ADDRESS AS CUSTOMER_ADDRESS
-    	FROM RESERVATION R
-    		LEFT JOIN HOTEL H ON H.HNO = R.HNO
-    		LEFT JOIN CUSTOMER CUS ON CUS.CNO = R.CNO
+            CUS.TITLE,
+            CUS.FIRSTNAME,
+            CUS.NAME AS CUSTOMER_NAME,
+            CUS.ADDRESS AS CUSTOMER_ADDRESS
+        FROM RESERVATION R
+            LEFT JOIN HOTEL H ON H.HNO = R.HNO
+            LEFT JOIN CUSTOMER CUS ON CUS.CNO = R.CNO
       ORDER BY H.NAME, R.ARRIVAL DESC;
     ```
 
@@ -469,13 +469,13 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
     ```SQL
     CREATE OR REPLACE VIEW HOTEL_ROOMS_VIEW AS
-    	SELECT
-    		H.NAME AS HOTEL_NAME,
-    		R.TYPE,
-    		R.FREE,
-    		R.PRICE
-    	FROM ROOM R
-    		LEFT JOIN HOTEL H ON R.HNO = H.HNO
+        SELECT
+            H.NAME AS HOTEL_NAME,
+            R.TYPE,
+            R.FREE,
+            R.PRICE
+        FROM ROOM R
+            LEFT JOIN HOTEL H ON R.HNO = H.HNO
             ORDER BY H.NAME;
     ```
 
@@ -640,7 +640,7 @@ FROM TABLE_COLUMNS WHERE SCHEMA_NAME = 'HOTELS' ORDER BY TABLE_NAME ASC, COLUMN_
 
 ### Schedule a stored procedure
 
-Procedures can also be scheduled in SAP HANA Cloud. Schedule a job using the code provided below. 
+Procedures can also be scheduled in SAP HANA Cloud. Schedule a job using the code provided below.
 
 ```SQL
 SELECT CURRENT_DATE, CURRENT_TIME FROM DUMMY;  --be sure to schedule an event in the future
@@ -656,9 +656,9 @@ SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
 Details about the scheduled job can also be viewed including its properties, parameters, history, and CREATE statement by opening the **Job Scheduler** in the Catalog Browser and clicking on your scheduled job. Ensure you are filtering by the HOTELS schema. Additionally, you have the ability to disable/enable the scheduled job.
 
 ![View Scheduled Job](view_job.png)
-    
+
 For additional details see [Scheduling Administrative Tasks](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/scheduling-administrative-tasks) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-scheduler-job-statement-data-definition).
 
 ### Knowledge check
 
-Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, stored procedures, and scheduled jobs. 
+Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, stored procedures, and scheduled jobs.

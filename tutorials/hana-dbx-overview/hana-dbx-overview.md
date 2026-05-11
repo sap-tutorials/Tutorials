@@ -36,31 +36,31 @@ It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP 
 
 The following tools also provide the ability to execute SQL queries.
 
-  * `hdbsql` is a text-based tool that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
+- `hdbsql` is a text-based tool that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
-  * `dbisql` is a tool that can be used to query a data lake Relational Engine. For additional details see [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
+- `dbisql` is a tool that can be used to query a data lake Relational Engine. For additional details see [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
 
-  * [SAP HANA Database Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) is an extension for Visual Studio Code that offers a subset of the functionality in the SAP HANA database explorer.
+- [SAP HANA Database Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) is an extension for Visual Studio Code that offers a subset of the functionality in the SAP HANA database explorer.
 
-  * [SQL Notebook](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-developer-guide-for-cloud-foundry-multitarget-applications-sap-business-app-studio/test-your-sql-code-with-sql-notebook) is a tool available inside of the SAP Business Application Studio.  The SQL Notebook enable you to save your queries into .notebook file that combines Markdown cells with cells that control the connection (they start with #) and SAP HANA SQL statements.
+- [SQL Notebook](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-developer-guide-for-cloud-foundry-multitarget-applications-sap-business-app-studio/test-your-sql-code-with-sql-notebook) is a tool available inside of the SAP Business Application Studio.  The SQL Notebook enable you to save your queries into .notebook file that combines Markdown cells with cells that control the connection (they start with #) and SAP HANA SQL statements.
 
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
-* From SAP HANA Cloud Central on either a SAP HANA or SAP data lake instance found under the 'Actions' column. 
+- From SAP HANA Cloud Central on either a SAP HANA or SAP data lake instance found under the 'Actions' column.
 
     ![opening the SAP HANA database explorer from SAP HANA Cloud Central](from-hcc.png)
 
-* From the SAP HANA cockpit  
+- From the SAP HANA cockpit  
 
     ![opening the SAP HANA database explorer from the SAP HANA Cockpit](open-dbx-from-hana-cockpit.png)
 
-* From the Business Application Studio in a SAP HANA Native Application development space
+- From the Business Application Studio in a SAP HANA Native Application development space
 
     The command palette or the SAP HANA Projects panel can be used to open the SAP HANA database explorer.
 
     ![BAS Open SAP HANA Database Explorer](BusinessAppStudioOpenDBX.png)
 
-* From the SAP Web IDE for SAP HANA with the extension enabled
+- From the SAP Web IDE for SAP HANA with the extension enabled
 
     ![opening the SAP HANA database explorer from the SAP Web IDE](open-dbx-from-web-ide.png)
 
