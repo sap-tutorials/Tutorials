@@ -33,11 +33,11 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
 >The SAP HANA Cloud free tier or trial is limited to creating one SAP HANA database and one data lake instance.
 
-The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, express edition database to an SAP HANA Cloud, SAP HANA  database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud, SAP HANA  database to an SAP HANA Cloud, data lake Relational Engine. The example in step 3 demonstrates connecting from SAP HANA Cloud, data lake Relational Engine to an SAP HANA Cloud, SAP HANA  database. The example in step 4 demonstrates connecting from one SAP HANA Cloud, data lake Relational Engine to another. The example in step 5 demonstrates connecting from SAP HANA Cloud, database via the Cloud Connector to an SAP HANA, express edition database.    
+The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, express edition database to an SAP HANA Cloud, SAP HANA  database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud, SAP HANA  database to an SAP HANA Cloud, data lake Relational Engine. The example in step 3 demonstrates connecting from SAP HANA Cloud, data lake Relational Engine to an SAP HANA Cloud, SAP HANA  database. The example in step 4 demonstrates connecting from one SAP HANA Cloud, data lake Relational Engine to another. The example in step 5 demonstrates connecting from SAP HANA Cloud, database via the Cloud Connector to an SAP HANA, express edition database.
 
 ---
 
-###  Connect from SAP HANA, express edition to SAP HANA Cloud, SAP HANA database
+### Connect from SAP HANA, express edition to SAP HANA Cloud, SAP HANA database
 
 1. From SAP HANA Cloud Central, select an SAP HANA database instance (HDB), open the SAP HANA database explorer, and execute the following SQL statements to create the `tourist_reviews` table.
 
@@ -70,7 +70,6 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     ```
 
     ![tourist reviews in HANA Cloud](tourist-reviews-in-HC.png)
-
 
 3. To create a remote source from SAP HANA, express edition to SAP HANA Cloud, open the SAP HANA database explorer from the SAP HANA, express edition.
 
@@ -195,7 +194,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ![open database explorer](open-dbx-data-lake.png)
 
-3.  Execute the following SQL to create a table named `tourist_reviews` in the HDLRE.
+3. Execute the following SQL to create a table named `tourist_reviews` in the HDLRE.
 
     >If needed, first create the required schema and role.
 

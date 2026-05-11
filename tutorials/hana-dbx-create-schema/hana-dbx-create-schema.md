@@ -71,7 +71,7 @@ The following steps will create a sample hotel dataset using create and insert s
     ```
 
     A schema provides a way to group database objects together.  
-    
+
     Privileges can be assigned to users directly or a better practice is to assign users to a role that has a set of privileges.
 
     It is recommended to not use the DBADMIN user for day-to-day operations in production environments.  Having specific users for specific tasks also will aid in auditing.  For additional details see [Deactivate the DBADMIN User](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/deactivate-dbadmin-user).
@@ -118,7 +118,7 @@ The following steps will create a sample hotel dataset using create and insert s
 5. The following statements can be used to delete the schema and objects it contains as well as the users, user group and roles once the tutorials are complete.  
 
     **Do not execute the below until the tutorials are complete**.  
-    
+
     ```SQL
     -- DO NOT EXECUTE THIS UNLESS YOU WISH TO CLEAN UP THE TUTORIAL OBJECTS
     CONNECT DBADMIN PASSWORD myPassword;

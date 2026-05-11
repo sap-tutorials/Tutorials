@@ -52,9 +52,7 @@ primary_tag: software-product>sap-hana-cloud
 
     The schema filter persists between reloads of the SAP HANA database explorer.
 
-
 ### Table editor
-
 
 1. Right-click **Tables** in the catalog tree and choose **Show Tables**.  
 
@@ -64,10 +62,9 @@ primary_tag: software-product>sap-hana-cloud
 
     ![All Tables](AllTables.png)
 
-2.  Filters can be applied to the columns.  The filter is applied to the data that is already fetched.
+2. Filters can be applied to the columns.  The filter is applied to the data that is already fetched.
 
     ![column filter](column-filter.png)
-
 
 3. The set of columns to be displayed can be set.
 
@@ -105,8 +102,6 @@ primary_tag: software-product>sap-hana-cloud
 
     ![SQL Query](SQLQuery.png)
 
-
-
 ### Analysis
 
 An analysis view is provided to help get quick insights into the data of a table.
@@ -127,10 +122,7 @@ An analysis view is provided to help get quick insights into the data of a table
 
 We can see that reservations for suites only make up a small part of the overall bookings but account for the largest share of the total revenue.
 
-
-
 ### Additional features
-
 
 1. Right-click the tab of an open object such as CUSTOMER and choose  **Display In Database Browser** to reveal the object in the database browser.
 
@@ -140,7 +132,7 @@ We can see that reservations for suites only make up a small part of the overall
 
     ![Object Displayed In Catalog](ObjectOpenedInCatalog.png)
 
-2.  A list of objects that make use of a selected object can be found using the **Find Dependencies** menu item.  
+2. A list of objects that make use of a selected object can be found using the **Find Dependencies** menu item.  
 
     Right-click the ROOM table and choose **Find Dependencies**.
 
