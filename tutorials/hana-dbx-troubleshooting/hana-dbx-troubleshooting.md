@@ -173,7 +173,7 @@ The [SQLScript code analyzer](https://help.sap.com/docs/hana-cloud-database/sap-
 
     ![Analyze procedure](AnalyzeSQLScriptCode.png)
 
-4. Notice that three issues were raised.   
+4. Notice that three issues were raised.
 
     ![cod analysis](SQLAnalyzer.png)
 
@@ -182,8 +182,9 @@ The [SQLScript code analyzer](https://help.sap.com/docs/hana-cloud-database/sap-
     ![Create statement](reservationGenerator2Create.png)
 
 5. To address these issues, make the following changes and rerun the SQL in the SQL console tab.  
-    * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
-    * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/is-sql-injection-safe-function-security) function.  Uncomment lines 24 - 26 to try this.
+    - The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
+
+    - The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/is-sql-injection-safe-function-security) function.  Uncomment lines 24 - 26 to try this.
 
     >The above changes can be made in the SQL console.  The Create Statement tab is read only.
 
@@ -260,23 +261,23 @@ The SQL Analyzer provides a graphical view of how a SQL statement was executed w
 
     Once the file has been downloaded it can then be opened in Visual Studio Code or SAP Business Application Studio as shown below.
 
-    * In Visual Studio Code:
+    - In Visual Studio Code:
 
-        * Install the plugin
+        - Install the plugin
 
             ![VS Code Ex](vsCodeExtension.png)
 
-        * Add the plan file
+        - Add the plan file
 
             ![Add Plan File](VSCodeAddPlanFile.png)
 
-    * In SAP Business Application Studio:
+    - In SAP Business Application Studio:
 
-        * Add the additional extension
+        - Add the additional extension
 
             ![performance tools plugin](bas-sql-analyzer.png)
 
-        * Add the plan file
+        - Add the plan file
 
             ![Add plan file](bas-add-plan-file.png)
 
@@ -438,7 +439,7 @@ The SAP HANA database provides a set of monitoring views (as indicated by 'M') e
 
     Navigate to the *Attachments* section and download `SQLStatements.zip`.
 
-    ![Attachments section](attachments-section.png) 
+    ![Attachments section](attachments-section.png)
 
     Upload the file to your Statement Library, which can be accessed by right-clicking on the database. This file contains a query named `HANA_TraceFiles_Content`. It includes relevant SAP notes that match certain strings in the trace files. File names suffixed with 'SHC' are specific to SAP HANA Cloud.
 

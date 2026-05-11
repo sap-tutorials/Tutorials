@@ -176,7 +176,7 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     ```SQL
     INSERT INTO HOTELS.VT_TOURIST_REVIEWS(review_id, review_date, destination_id, destination_rating, review) VALUES(3, '2020-08-21', 1, 5, 'The harbour cruise was fantastic.  It was great to see the city from a different viewpoint');
     SELECT * FROM HOTELS.VT_TOURIST_REVIEWS;
-    ```    
+    ```
 
     Notice that the virtual table is editable.
 
@@ -229,10 +229,10 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ```SQL
     CREATE REMOTE SOURCE HC_DL
-    	ADAPTER "IQODBC"
-    		CONFIGURATION 'Driver=libdbodbc17_r.so;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)'
-    			WITH CREDENTIAL TYPE 'PASSWORD'
-    				USING 'user=USER1;password=Password1';
+        ADAPTER "IQODBC"
+            CONFIGURATION 'Driver=libdbodbc17_r.so;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)'
+                WITH CREDENTIAL TYPE 'PASSWORD'
+                    USING 'user=USER1;password=Password1';
     CALL PUBLIC.CHECK_REMOTE_SOURCE('HC_DL');
     ```
 
@@ -284,7 +284,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
     ```SQL
     INSERT INTO VT_DL_TOURIST_REVIEWS VALUES(3, '2020-08-21', 1, 5, 'The harbour cruise was fantastic.  It was great to see the city from a different viewpoint');
     SELECT * FROM VT_DL_TOURIST_REVIEWS;
-    ```    
+    ```
 
     Notice that the remote data source is updateable.  Data stored in an HDLRE is stored on disk, which has cost advantages compared to memory storage. HDLRE can also be used to store large amounts of data.
 
@@ -312,9 +312,9 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 ### Connect from a data lake Relational Engine to SAP HANA Cloud, SAP HANA database
 
-The first task in preparing the HDLRE instance is creating a remote server that connects the HDLRE to the HDB instance that contains the data you want to access. 
+The first task in preparing the HDLRE instance is creating a remote server that connects the HDLRE to the HDB instance that contains the data you want to access.
 
-1. First, right click the HDB in Database Explorer and select properties. 
+1. First, right click the HDB in Database Explorer and select properties.
 
     ![HANA Database Properties Button](HDB_properties.png)
 
@@ -410,7 +410,7 @@ When connecting from one HDLRE instance to another, the steps follow a similar p
 
     >If you would prefer to use USER1 instead of HDLADMIN, execute the `GRANT MANAGE ANY USER TO USER1;` query as described [here](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-externlogin-statement-for-data-lake-relational-engine).
 
-6. Do a quick test to ensure everything has been set up successfully. You will create a temporary table that points to your TOURIST_REVIEWS table in your target HDLRE. Then run a select against that table to ensure you are getting data back. 
+6. Do a quick test to ensure everything has been set up successfully. You will create a temporary table that points to your TOURIST_REVIEWS table in your target HDLRE. Then run a select against that table to ensure you are getting data back.
 
     ```SQL
     CREATE EXISTING LOCAL TEMPORARY TABLE VT_HDLRE_TOURIST_REVIEWS

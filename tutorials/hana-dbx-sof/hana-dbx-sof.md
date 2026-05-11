@@ -18,7 +18,7 @@ primary_tag: software-product>sap-hana-cloud
 ## You will learn
 
 - How to create and configure a data lake Files instance
-- How to upload and view files on a data lake Files instance 
+- How to upload and view files on a data lake Files instance
 - How to create a remote source that connects an SAP HANA Cloud database to a data lake Files instance
 - How to create and query virtual tables that are based on CSV or PARQUET files stored on a data lake Files instance
 - How to create a snapshot replica table
@@ -43,7 +43,7 @@ A SAP HANA database and a Data lake Files instance are required to complete this
 
 ![SAP HANA Cloud Central](hcc.png)
 
-If you have not already done so, use the **Create Instance** button to create the required instances.  Note that the version must be 2024 QRC 3 or higher. 
+If you have not already done so, use the **Create Instance** button to create the required instances.  Note that the version must be 2024 QRC 3 or higher.
 
 1. Create an SAP HANA Cloud, SAP HANA database instance.
 
@@ -69,7 +69,7 @@ Details on how to create the certificates and configure the data lake Files inst
 
 ![trust and authorization](trust-authorization-dlf.png)
 
-The authorization pattern indicates that client certificates that are trusted by the CA specified in the trusts section that match the provided pattern (SAP employees in Waterloo) will have the privileges assigned to the role. 
+The authorization pattern indicates that client certificates that are trusted by the CA specified in the trusts section that match the provided pattern (SAP employees in Waterloo) will have the privileges assigned to the role.
 
 See also [Setting Up Initial Access to HANA Cloud data lake Files](https://community.sap.com/t5/technology-blogs-by-sap/setting-up-initial-access-to-hana-cloud-data-lake-files/ba-p/13519656) and [Configuring Data Lake Files](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/configuring-data-lake-files).
 
@@ -148,7 +148,7 @@ Files can now be uploaded to the data lake Files instance.
 
     ![header row](header-row.png)
 
-    When using SQL on Files with a CSV file, the source file may or may not have a header row.  The option COLUMN LIST IN FIRST ROW can be specified in the [CREATE VIRTUAL TABLE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-virtual-table-statement-data-definition) statement.  Since the header names must match the column names in the virtual table using case sensitivity, we will simply remove the header. 
+    When using SQL on Files with a CSV file, the source file may or may not have a header row.  The option COLUMN LIST IN FIRST ROW can be specified in the [CREATE VIRTUAL TABLE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-virtual-table-statement-data-definition) statement.  Since the header names must match the column names in the virtual table using case sensitivity, we will simply remove the header.
 
     - Remove the header row or the first row which contains the names of the columns.  
 
@@ -362,7 +362,7 @@ Virtual tables can now be created using the remote source HC_DL_FILES_rs.
     )
     ```
 
-    ![remote source file columns](remote-source-file-columns.png) 
+    ![remote source file columns](remote-source-file-columns.png)
 
 4. A wizard is available from the remote source in the Database Objects app that can help in the generation of a virtual table.
     - Open the Database Objects app
@@ -437,7 +437,7 @@ The following are some sample queries that can be performed on the previously cr
 
 4. Survival rate based on age
 
-    ```SQL 
+    ```SQL
     SELECT 
     SUM(CASE WHEN AGE < 18 AND SURVIVED = 0 THEN 1 ELSE 0 END) AS "DIED UNDER 18",
     SUM(CASE WHEN AGE < 18 AND SURVIVED = 1 THEN 1 ELSE 0 END) AS "SURVIVED UNDER 18",
@@ -499,7 +499,7 @@ A virtual table can be changed so that the data is stored in the SAP HANA Cloud 
 
     ![replica table query](replica-table.png)
 
-4. Add yourself as a passenger on the Titanic by editing the titanic_nh.csv file you downloaded earlier and including a new row. An example row is shown below.   
+4. Add yourself as a passenger on the Titanic by editing the titanic_nh.csv file you downloaded earlier and including a new row. An example row is shown below.
 
     ```CSV
     892,1,2,"van Leeuwen, Mr. Dan",male,52,0,0,1234,75,A50,C
@@ -507,7 +507,7 @@ A virtual table can be changed so that the data is stored in the SAP HANA Cloud 
 
     Ensure there is a new line character after the added row.
 
-    Upload this modified file to your instance, replacing the existing one. 
+    Upload this modified file to your instance, replacing the existing one.
 
 5. Execute the following SQL (update to reflect your name) and notice that the replica table does not contain the newly inserted row.
 
@@ -566,7 +566,7 @@ Data from an SAP HANA Cloud, SAP HANA table or view can be exported to data lake
 
 1. Create a credential for export using the previously created PSE.
 
-    ```SQL 
+    ```SQL
     CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE _SAP_DB_ACCESS_PSE_CLIENT_IDENTITY;
     SELECT * FROM CREDENTIALS;
     ```
@@ -614,7 +614,7 @@ The files shown below were downloaded from [NYC Taxi & Limousine Commission](htt
 
 1. Upload the files specified above to your data lake Files instance.
 
-     ![Partitioned data](partitoned-data.png) 
+     ![Partitioned data](partitoned-data.png)
 
      Well-organized and maintained directory-based partitioning can improve query performance by allowing unnecessary files to be pruned during query execution.
 

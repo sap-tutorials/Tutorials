@@ -49,7 +49,7 @@ Instances shown in SAP HANA Cloud Central or in the SAP HANA cockpit can be open
 
     ![databaseid parameter](open-in-dbx2.png)
 
-    Hover over the database to see a summary and note that the type is Cockpit Database. 
+    Hover over the database to see a summary and note that the type is Cockpit Database.
 
 ### Add an SAP HANA database connection
 
@@ -85,7 +85,7 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
 
     >Remember to remove the colon and port number from the host name and add the port to the port field.
 
-    ![Image of where the port number is](remove-port-number.png) 
+    ![Image of where the port number is](remove-port-number.png)
 
     >---
 
@@ -263,7 +263,7 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
 ![run on multiple](run-on-multiple.png)  
 
-1. With SAP HANA Cloud, all databases created in a Cloud Foundry space are placed in a group.  As seen below, the space name is dev.    
+1. With SAP HANA Cloud, all databases created in a Cloud Foundry space are placed in a group.  As seen below, the space name is dev.
 
     ![group by space](group-by-space.png)
 
@@ -277,7 +277,7 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
     ![run on multiple](run-on-multiple.png)  
 
-    The space dev is represented by its GUID in the selection dialog below.    
+    The space dev is represented by its GUID in the selection dialog below.
 
     ![run on multiple databases in HXE](run-on-multiple-hc.png)
 
@@ -293,7 +293,7 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
     These groups appear when running SQL against multiple databases. There are also three predefined groups named DEVELOPMENT, ALL, and PRODUCTION.
 
-    ![run on multiple](run-on-multiple.png)  <br><br>
+    ![run on multiple](run-on-multiple.png)
 
     ![run on multiple databases in HXE](run-on-multiple-hxe.png)
 
@@ -341,9 +341,9 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  :------------- | :-------------
     |  Project name:  | `myHANAProj`
     |  Module name:   | `db`
-    |  Namespace:     |
+    |  Namespace:     | ``
     |  Schema name:   | `mySchema`
-    |  SAP HANA Database Version: | HANA Cloud    
+    |  SAP HANA Database Version: | HANA Cloud
     |  Bind database  | Yes
 
 8. Once the project generation finishes, open the tool palette (F1) and choose  **SAP HANA: Create SAP HANA Database Artifact**.  Provide the following values and click **Create**.
@@ -353,7 +353,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  Path:    | `/home/user/projects/myHANAProj/db/src`
     |  Version: | HANA Cloud
     |  Artifact Type:    | `Table (hdbtable)`
-    |  Name:    | `myTable`   
+    |  Name:    | `myTable`
 
 9. Paste the below content into the file.
 

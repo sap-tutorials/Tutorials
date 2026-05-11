@@ -25,7 +25,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ### Set up
 
-1. If needed, download [Visual Studio Code](https://code.visualstudio.com/download) for your computer. 
+1. If needed, download [Visual Studio Code](https://code.visualstudio.com/download) for your computer.
 
      ![Download Visual Studio Code](downloadVSCode.png)
 
@@ -35,15 +35,15 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Install extension](installExtension.png)
 
-3. Open the extension from the new icon in the activity bar (left) and navigate to the **Database List**. 
+3. Open the extension from the new icon in the activity bar (left) and navigate to the **Database List**.
 
     ![Open extension](openExtension.png)
 
-    There are two types of connections you can make with the extension. 
+    There are two types of connections you can make with the extension.
 
     - Local Connections are connections to an SAP HANA database (cloud or on-premise) added via the + icon.
 
-    - SAP HANA Database Explorer Connections are database connections retrieved by logging into Cloud Foundry and querying for the set of connections that the Cloud Foundry, web-based SAP HANA database explorer have created. 
+    - SAP HANA Database Explorer Connections are database connections retrieved by logging into Cloud Foundry and querying for the set of connections that the Cloud Foundry, web-based SAP HANA database explorer have created.
 
 ### Add a local database connection
 
@@ -57,7 +57,7 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
 
 2. Select **SAP HANA Cloud** as your database type and enter values for the **Host**, **Port**, **User** and **Password**, such as USER1 and Password1.  You may also change the display name, as desired.
 
-    This tutorial uses the HOTELS schema. Set the default schema value in the **Advanced Options** as shown below. Subsequent SQL consoles you open will now start with this schema value. 
+    This tutorial uses the HOTELS schema. Set the default schema value in the **Advanced Options** as shown below. Subsequent SQL consoles you open will now start with this schema value.
 
     ```Advanced Options Field
     currentSchema=HOTELS;
@@ -71,7 +71,7 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
 
     ![Successful Connection](successfulConnection.png)
 
-3. To edit your database connection, right click on the database connection name and select **Edit Database**. 
+3. To edit your database connection, right click on the database connection name and select **Edit Database**.
 
     ![Edit Database Connection](edit-database-connection.png)
 
@@ -89,7 +89,7 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
 
 The SAP HANA database explorer extension also allows you to connect to the database connections you may have specified in the Cloud Foundry, web-based SAP HANA database explorer. These connections are managed by the web-based SAP HANA database explorer and cannot be edited in the extension. In order to complete this section of the tutorial, ensure that you have the [Cloud Foundry CLI](https://tools.hana.ondemand.com/#cloud) installed and added to your path.
 
-1. Open the terminal through Visual Studio Code by navigating to **Terminal** > **New Terminal** in the Visual Studio Code. 
+1. Open the terminal through Visual Studio Code by navigating to **Terminal** > **New Terminal** in the Visual Studio Code.
 
     ![Open Terminal](openTerminal.png)
 
@@ -106,7 +106,7 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
     ![API Endpoint](cloudFoundryEnvironment.png)
 
-3. Verify that the URL is set correctly in the SAP HANA database explorer settings. 
+3. Verify that the URL is set correctly in the SAP HANA database explorer settings.
 
     Click **File > Preferences > Settings**, search for **SAP HANA database explorer: URL**, and replace the region with the correct region for your sub-account (e.g. us10).
 
@@ -114,21 +114,21 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
     ![Change URL Region](changeRegion.png)
 
-4. Login to Cloud Foundry with the following commands. 
+4. Login to Cloud Foundry with the following commands.
 
     To login with email and password:
 
-    ```Terminal 
+    ```Terminal
     cf login 
     ```
 
     To login with single sign-on:
 
-    ```Terminal 
+    ```Terminal
     cf login --sso
     ```
 
-    >Logging in with single sign-on will require you to click on the provided link, copy the code provided, and then paste the code in the terminal by right-clicking and clicking enter. 
+    >Logging in with single sign-on will require you to click on the provided link, copy the code provided, and then paste the code in the terminal by right-clicking and clicking enter.
 
     >For more login options:
 
@@ -136,11 +136,11 @@ The SAP HANA database explorer extension also allows you to connect to the datab
     cf login -help
     ```
 
-5. After pressing the refresh button you should see the same database instances list from the web-based SAP HANA database explorer (Cloud Foundry edition) appear in your Database List. 
+5. After pressing the refresh button you should see the same database instances list from the web-based SAP HANA database explorer (Cloud Foundry edition) appear in your Database List.
 
     ![database list](dbx.png)
 
-    To open an SAP HANA SQL console in Visual Studio Code, hover over the connection and click the console icon. 
+    To open an SAP HANA SQL console in Visual Studio Code, hover over the connection and click the console icon.
 
     ![Cloud Foundry SQL console](cfConsole.png)
 
@@ -150,25 +150,25 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
 ### Using the Database List and Catalog Browser
 
-1. Select **Schemas** to open the list of schemas in the Catalog Browser. 
+1. Select **Schemas** to open the list of schemas in the Catalog Browser.
 
     As you can see, since the current Schema was set to HOTELS using advanced options when adding the database, this list is already filtered for you.  By hovering or clicking on the Catalog Browser section, you will see a filter icon and a refresh icon.
 
-2. Click on the filter icon. 
+2. Click on the filter icon.
 
     ![Open Schemas](openSchemas.png)
 
     This will open a list of all schemas. Selecting/deselecting all schemas will list all of the schemas in the Catalog Browser and show you all artifacts under the catalog if opened in the Catalog Browser. By selecting specific schemas, only the selected ones will be in the Catalog Browser, while also filtering other artifacts such as tables and procedures.
 
-    ![Filter Hotel](filterHotel.png) 
+    ![Filter Hotel](filterHotel.png)
 
-3. Clicking OK will apply your filter selections. Keep the HOTELS filter selected and click OK. 
+3. Clicking OK will apply your filter selections. Keep the HOTELS filter selected and click OK.
 
 ### Dependency Viewer
 
-Database object dependencies can be visualized using a graphical dependency viewer. 
+Database object dependencies can be visualized using a graphical dependency viewer.
 
-The dependency viewer can be started in two ways: 
+The dependency viewer can be started in two ways:
 
 1. By right-clicking an object in the catalog browser and choosing "Open Dependency Viewer" from the context menu
 
@@ -185,7 +185,7 @@ The dependencies can be explored in both directions, incoming and outgoing. Sche
 
 Schemas can be collapsed by double-clicking them to focus on the relevant dependencies. Clicking on an object highlights it and its direct dependencies for easier analysis.
 
-When starting the dependency viewer from a database connection, it is initially empty. You can select an object to visualize via the "Select Object" dropdown. 
+When starting the dependency viewer from a database connection, it is initially empty. You can select an object to visualize via the "Select Object" dropdown.
 This dropdown can also be used to switch to a different object if one was already previously selected.
     ![Select Objects from Dependency Viewer](select_object_dv.png)
 
@@ -210,7 +210,7 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     ![Open Settings](dbx-settings.png)
 
-    - **Max Sql Result Size**: Here you can change the maximum amount of SQL results that you want to allow to be returned by any queries that you run. 
+    - **Max Sql Result Size**: Here you can change the maximum amount of SQL results that you want to allow to be returned by any queries that you run.
 
     - **Show Database Explorer Connections**: By selecting/deselecting this checkbox, you can show/hide the SAP HANA Database Explorer connections in your Database List. Note that this will not affect your local connections that are only available in Visual Studio Code.
 
@@ -222,7 +222,7 @@ Learn how to change settings and leverage features such as split editor, layout 
     SELECT * FROM CUSTOMER;
     ```
 
-    Open another SQL console, click the split editor icon, and then drag one of the SQL console tabs into the new space to the right. 
+    Open another SQL console, click the split editor icon, and then drag one of the SQL console tabs into the new space to the right.
 
     ![Split Editor](splitEditors.png)
 
@@ -262,7 +262,7 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     ![Create Notepad File](notepadTerminal.png)
 
-    Paste the following code into the file and save it as a SQL file by adding `.sql` to the file name. This function will return the average rating of a specific destination from the TOURIST_REVIEWS table. 
+    Paste the following code into the file and save it as a SQL file by adding `.sql` to the file name. This function will return the average rating of a specific destination from the TOURIST_REVIEWS table.
 
     ```SQL
     CREATE OR REPLACE FUNCTION AVERAGE_RATING(destination_id INT)
@@ -304,7 +304,7 @@ The extension also allows you to import and export SQL files to and from your co
 
     ![Run Function](runFunction.png)
 
-2. Click on the Messages tab to see more information such as execution time and memory usage of the SQL statement(s) that you ran. 
+2. Click on the Messages tab to see more information such as execution time and memory usage of the SQL statement(s) that you ran.
 
     ![Messages Tab](messagesTab.png)
 
@@ -316,7 +316,7 @@ The extension also allows you to import and export SQL files to and from your co
 
     ![History Tab](historyTab.png)
 
-    > Note that certain capabilities (as listed) are only available in the web application of SAP HANA database explorer and are not currently available in the extension. A few examples are listed below: 
+    > Note that certain capabilities (as listed) are only available in the web application of SAP HANA database explorer and are not currently available in the extension. A few examples are listed below:
     >
     > - Execute SQL on multiple databases or as a background activity
     > - Global Search

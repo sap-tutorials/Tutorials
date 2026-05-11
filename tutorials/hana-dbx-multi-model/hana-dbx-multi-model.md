@@ -320,7 +320,7 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH edge filter](edge-filter.png)
 
-5. Highlight the Long Island vertex using the property graph viewer settings. You may do so by selecting a color. 
+5. Highlight the Long Island vertex using the property graph viewer settings. You may do so by selecting a color.
 
     ![DISTANCEGRAPH highlighted Long Island](long-island.png)
 
@@ -397,7 +397,7 @@ The following steps will demonstrate how to create a JSON collection that can be
     Notice that the structure of the Guest Notes does not need to be defined in advance.
 
 4. (Optional) You can use the [Support for JSON Schema](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/support-for-json-schema) feature to define rules for your documents to adhere to. The example below restricts the "title" property to only accept strings.
-   
+
     ```SQL
     CREATE COLLECTION "GUEST_NOTES_WITH_SCHEMA" JSON SCHEMA '{
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -446,9 +446,9 @@ Further examples can be found in the [The Small JSON Document Store Cookbook](ht
 
 JSON collections can be imported using the import data wizard but are required to be in a specified format as mentioned at [Import and Export](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/import-and-export).  An alternative method of performing an import is shown in this step.
 
-1. Find a JSON collection to be imported.  The example below uses the Parks dataset from [City of Waterloo Open Data](https://opendata-city-of-waterloo.opendata.arcgis.com/) downloaded as a GeoJSON file. 
+1. Find a JSON collection to be imported.  The example below uses the Parks dataset from [City of Waterloo Open Data](https://opendata-city-of-waterloo.opendata.arcgis.com/) downloaded as a GeoJSON file.
 
-2. Create a Python application and update the host variable below. 
+2. Create a Python application and update the host variable below.
 
     ```Shell (Microsoft Windows)
     notepad loadJSON.py

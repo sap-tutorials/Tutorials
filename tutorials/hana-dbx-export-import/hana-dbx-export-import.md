@@ -550,7 +550,7 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
     ![Open Import Data Wizard](importCatalogWizard.png)
 
-    Browse to the previously downloaded .tar.gz file and complete the wizard. You can also rename the schema, if desired. 
+    Browse to the previously downloaded .tar.gz file and complete the wizard. You can also rename the schema, if desired.
 
     ![Choose file to import](importCatalogWizard2.png)
 
