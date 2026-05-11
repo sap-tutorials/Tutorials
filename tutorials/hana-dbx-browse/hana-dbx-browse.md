@@ -20,8 +20,6 @@ primary_tag: software-product>sap-hana-cloud
 - How a schema filter can be used in the database browser
 - How to explore and examine objects in an SAP HANA database
 
----
-
 ### Schemas
 
 1. Many objects within an SAP HANA database belong to a schema.  A schema allows objects, like tables, views, functions, and stored procedures, to be grouped together.  The current schema in the SQL console is shown at the top of the SQL console.  
