@@ -7,19 +7,23 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Automating SAP HANA Cloud Tasks with a REST API
+
 <!-- description --> Learn how the SAP Service Manager's REST API can be used in a REST Client or in a Node.js application with instances that have been provisioned to the subaccount.
 
 ## Prerequisites
+
 - An SAP BTP account
 - An SAP HANA Cloud instance
 
 ## You will learn
-  - How to create and access an SAP Service Manager instance
-  - How to use the SAP Service Manager's REST API from a REST client and an application
+
+- How to create and access an SAP Service Manager instance
+- How to use the SAP Service Manager's REST API from a REST client and an application
 
 ---
 
 ### Create a Service Manager instance
+
 A service manager instance will be created.  It can then be used to manage SAP HANA Cloud instances within the subaccount.
 
 1. In the SAP BTP Cockpit, in the subaccount, create a new SAP Service Manager instance.
@@ -27,7 +31,7 @@ A service manager instance will be created.  It can then be used to manage SAP H
     ![create a service manager instance](create-service-manager-instance0.png)
 
     After clicking **Create**, the instance will be shown as seen below.
- 
+
     ![create a service manager instance](create-service-manager-instance.png)
 
 2. Create a service binding by clicking on the just created service manager instance and choose **Create** under **Service Bindings**.
@@ -39,8 +43,9 @@ A service manager instance will be created.  It can then be used to manage SAP H
     ![service manager binding](service-manager-binding.png)
 
 ### Try out the REST APIs
+
 The [SAP Service Manager's APIs](https://help.sap.com/docs/service-manager/sap-service-manager/working-with-sap-service-manager-apis) are available through a REST API.  Details of the REST API can be seen in the [Business Accelerator Hub](https://api.sap.com/api/APIServiceManager/resource/Service_Instances).
- 
+
 The API's can be invoked using a tool such as the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) for Visual Studio Code.  Additional details on how to use the REST Client can be found at the tutorial [Access SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
 
 1. Create a folder and a text file that will contain REST API calls and open the file with Visual Studio Code.
@@ -234,7 +239,7 @@ The API's can be invoked using a tool such as the [REST Client](https://marketpl
 3. Provide a value for the `instanceid` variable on line 21.  This can be obtained from the action's menu item **Copy Instance ID** in SAP HANA Cloud Central.
 
 4. Request a bearer token (line 28) by clicking **Send Request**.  The token is valid for 30 minutes as described in the expires_in field in the response.
-    
+
     Copy the returned `access_token` value to the bearer variable (line 18) which is then used for credentials in subsequent requests (line36).  
 
     ![request a bearer token](request-token.png)
@@ -245,6 +250,7 @@ The API's can be invoked using a tool such as the [REST Client](https://marketpl
 
 
 ### Accessing the REST API from a Node.js application
+
 In this step, a [Node.js](https://nodejs.org/en) application will be used to update the description of an SAP HANA Cloud instance.  Before proceeding ensure that Node.js is installed.  Instructions on installing Node.js can be found at [Connect Using the SAP HANA Node.js Interface](hana-clients-node).
 
 1. Initialize a Node.js project, install node-fetch, and create and open a JavaScript file.
@@ -257,7 +263,7 @@ In this step, a [Node.js](https://nodejs.org/en) application will be used to upd
     code updateDesc.js
     ```
 
-2. Copy the below code into **updateDesc.js**. 
+2. Copy the below code into **updateDesc.js**.
 
     Highlighted values are to be updated with details from your binding key. Sensitive values could alternatively be read from environment variables.  Remember to also update the instance ID.
 
@@ -329,7 +335,6 @@ In this step, a [Node.js](https://nodejs.org/en) application will be used to upd
     The result can be seen in SAP HANA Cloud Central.
 
     ![Updated description](updated-description.png)
-
 
 ### Knowledge check
 

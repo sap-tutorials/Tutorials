@@ -50,7 +50,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
     ![Create instance in SAP HANA Cloud Central](hcc-create-instance.png)
 
-3. Here you must choose the **Type** of instance to create. Select **SAP HANA Database**. 
+3. Here you must choose the **Type** of instance to create. Select **SAP HANA Database**.
 
     Note that if you have enabled only one type of service plan in your SAP HANA Cloud entitlement (e.g. free tier only), the License section does not appear, and that service plan type will be used automatically.
 
@@ -102,7 +102,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
     > This password is the admin password for this instance, so make sure to use a strong password.  If needed, the password can be reset via the actions menu [Reset DBADMIN Password](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/649092e9d9be41c59930179ce4f3d59e.html?locale=en-US) in SAP HANA Cloud Central if your user has the role SAP HANA Cloud Security Administrator.
 
-4. You may also choose the runtime environment.  Further details can be found at [What Runtime Environment is my SAP HANA Cloud Instance Using?](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/runtime-environments-for-sap-hana-cloud) 
+4. You may also choose the runtime environment.  Further details can be found at [What Runtime Environment is my SAP HANA Cloud Instance Using?](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/runtime-environments-for-sap-hana-cloud)
 
 5. Now click on **Next Step** to continue.  
 
@@ -236,7 +236,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
 2. Next, give your data lake instance a name under **Instance Name**.
 
-    >When you add a managed data lake, the HDLADMIN user is automatically created and is given the same password as DBADMIN, which you set in the first step. If later you decide to change the password of one user, the password of the other user will **not** be automatically changed.   
+    >When you add a managed data lake, the HDLADMIN user is automatically created and is given the same password as DBADMIN, which you set in the first step. If later you decide to change the password of one user, the password of the other user will **not** be automatically changed.
 
     ![Name Data Lake](hdl-name2.png)
 
@@ -272,7 +272,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
     ![Data lake name](hdl-prod-name2.png)
 
-    > When you add a managed data lake, the HDLADMIN user is automatically created and is given the same password as DBADMIN, which you set in the first step. If later you decide to change the password of one user, the password of the other user will **not** be automatically changed.   
+    > When you add a managed data lake, the HDLADMIN user is automatically created and is given the same password as DBADMIN, which you set in the first step. If later you decide to change the password of one user, the password of the other user will **not** be automatically changed.
 
 3. Click on **Next Step** to continue.
 
@@ -324,5 +324,3 @@ A dialog box will appear indicating that there will be costs associated with the
 Now you know how to provision an instance of SAP HANA Cloud using SAP BTP Cockpit and SAP HANA Cloud Central. In the next tutorial, learn about the tools that help to manage and access your database instance.
 
 ### Knowledge Check
-
----

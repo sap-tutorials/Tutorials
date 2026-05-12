@@ -54,7 +54,7 @@ In this step, you can learn how to sign up for the SAP BTP trial or a productive
 
 To sign up for an SAP BTP trial account follow the below steps.
 
-1. Click on [this link](https://www.sap.com/products/technology-platform/pricing.html) to get to the try and buy page. 
+1. Click on [this link](https://www.sap.com/products/technology-platform/pricing.html) to get to the try and buy page.
 
     ![Screenshot Trial signup1](ss-01-trial-Signup1.png)
 
