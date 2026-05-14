@@ -57,7 +57,7 @@ Before a service can be used in the SAP BTP Cockpit, it must have its entitlemen
       - `hana-cloud-connection-free`
       - `relational-data-lake-free`
 
-    - SAP HANA Schemas & HDI Containers: 
+    - SAP HANA Schemas & HDI Containers:
       - `hdi-shared`
       - `schema`
       - `securestore`
@@ -74,7 +74,7 @@ Before a service can be used in the SAP BTP Cockpit, it must have its entitlemen
 
 ### Add a subscription to SAP HANA Cloud tools
 
-1. From SAP BTP Cockpit, click on **Services** and then **Service Marketplace**.  Search for **SAP HANA Cloud** and click **Create** in the top-right corner. 
+1. From SAP BTP Cockpit, click on **Services** and then **Service Marketplace**.  Search for **SAP HANA Cloud** and click **Create** in the top-right corner.
 
     ![Create an instance of SAP HANA Cloud](create-subscription.png)
   
@@ -99,7 +99,6 @@ Before a service can be used in the SAP BTP Cockpit, it must have its entitlemen
     ![hana cloud central](hcc-app.png)
 
 Congratulations, you have added free tier services to your account on SAP BTP! You now have the ability to [provision your free tier instance of SAP HANA Cloud](hana-cloud-mission-trial-3) and start your journey.
-
 
 ### Get to know SAP BTP cockpit
 
@@ -135,7 +134,4 @@ Below you can see a simplified diagram of a global account in SAP BTP Cockpit wi
 
 You have completed the second tutorial of this mission! Learn in the [next tutorial](hana-cloud-mission-trial-3) how to provision an instance of SAP HANA Cloud, SAP HANA database.  
 
-
 ### Knowledge Check
-
----

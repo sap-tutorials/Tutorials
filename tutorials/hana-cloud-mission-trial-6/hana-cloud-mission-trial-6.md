@@ -17,7 +17,6 @@ primary_tag: software-product>sap-hana-cloud
 - You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-3)
 - You have completed the tutorial to [import data in SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-5)
 
-
 ## You will learn
 
 - The basics about the role-based security model in SAP HANA Cloud, SAP HANA database
@@ -114,7 +113,7 @@ In this step, you can find instructions on both of these options. Click on **SQL
     ```
 
     Paste the following queries in a SQL console and execute the statements.
-        
+
     ```SQL
     -- Assign privileges that these roles should grant
     GRANT SELECT ON SCHEMA SFLIGHT TO "genericRoleForOO" WITH GRANT OPTION;
@@ -152,7 +151,7 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
 6. Create another role named `genericRoleForAP`, which represents a generic role for an application user. Leave the rest of the settings as is. This role will be used in a later tutorial when you create a development project using SAP Business Application Studio.
 
-7. Now that you created the necessary roles, it's time to assign privileges to it. You have a few options here. You can add some of the existing roles into this one, combining the privileges into one single role. You can also select individual privileges, be it system, object, or analytic privileges. 
+7. Now that you created the necessary roles, it's time to assign privileges to it. You have a few options here. You can add some of the existing roles into this one, combining the privileges into one single role. You can also select individual privileges, be it system, object, or analytic privileges.
 
     For the `genericRoleForAP` user, go to the **Object Privileges** tab and select **Edit Object Privileges**, then **Add Object** at the top of the table.
 
@@ -164,13 +163,13 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
     ![Select SLFIGHT object](select-sflight-hcc.png)
 
-    Press **Select** at the bottom-right corner. 
+    Press **Select** at the bottom-right corner.
 
-9. Under **Select Privileges**, scroll to find **SELECT** and click on the checkbox. This will grant SELECT privileges to your user. 
+9. Under **Select Privileges**, scroll to find **SELECT** and click on the checkbox. This will grant SELECT privileges to your user.
 
     ![Select privileges for user](select-privileges-hcc.png)
 
-    Press **OK** when done. Then press **Save** to ensure that your changes are saved. 
+    Press **OK** when done. Then press **Save** to ensure that your changes are saved.
 
 10. Repeat steps 8 - 9 for the `genericRoleForOO` role. When you reach the **Add Objects with Privileges** pop-up, scroll to `SELECT` and click the checkbox **and** enable the toggle under **Grantable to Others**.
 
@@ -194,7 +193,7 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
     Select **Password** for the authentication method.
 
-     Set the password to `Password1`. 
+     Set the password to `Password1`.
 
     After retyping the password to confirm it, select **No** under **Force Password Change on Next Logon**. Press **Save** when finished.
 
@@ -218,7 +217,7 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
     ![Enable the toggles to be grantable to others](grantable-to-others-toggle-hcc.png)
 
-    Press **Save** at the top of the table when finished. 
+    Press **Save** at the top of the table when finished.
 
 >You can follow the steps on our technical documentation to create each user and make decisions about the roles, privileges and authorizations to give them: [Creating a Database User](https://help.sap.com/viewer/9630e508caef4578b34db22014998dba/LATEST/en-US/0c27278700ea47f9944db7f1b569e7dd.html).
 
@@ -230,8 +229,6 @@ You have completed the fourth tutorial of this mission! Now you know how you can
 
 You now know all the basics to start working with our sample data and help Alex gain business insights about their company, **Best Run Travel**.
 
-Learn in the next tutorial how to query the database using SQL statements. 
+Learn in the next tutorial how to query the database using SQL statements.
 
 ### Knowledge Check
-
----
