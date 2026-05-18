@@ -179,6 +179,7 @@ And your application like this:
           onClick={handleHeaderClick}
         />
       }
+    >
       ...
     </Card>
     ```
