@@ -132,7 +132,7 @@ With this you created your first `React` component. To actually render the compo
     
     - `Assets.js'`: This includes assets like translation files (CLDR), theming, etc. of the required packages.
     - `ThemeProvider`: Inter alia, this provider makes your app react to theme and language changes and injects the CSS of __used__ components.
-    - `StrictMode`: The React `StrictMode` component enables addition development behaviors and warnings for the component tree inside. It is not required, but using it helps find common pitfalls and bugs in development. You can find out more about it [here](https://react.dev/reference/react/StrictMode).
+    - `StrictMode`: The React `StrictMode` component enables additional development behaviors and warnings for the component tree inside. It is not required, but using it helps find common pitfalls and bugs in development. You can find out more about it [here](https://react.dev/reference/react/StrictMode).
     - `createRoot`: This function lets you create the React root to display React components inside a browser DOM node ([React docs](https://react.dev/reference/react-dom/client/createRoot)). You will usually add this DOM node inside the `index.html` file.
     - `App`: A React component.
     - `index.css`: Global CSS file.
