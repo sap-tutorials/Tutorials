@@ -598,9 +598,9 @@ To test translation in Bruno:
 }
 
 ```
-  3. Click Send.
+3. Click Send.
 
-  4. The response will show the model output in the target language, with the input also translated before being passed to the LLM.
+4. The response will show the model output in the target language, with the input also translated before being passed to the LLM.
 [OPTION END]
 
 ### Defining Content Filtering Rules
