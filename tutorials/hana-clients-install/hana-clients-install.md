@@ -35,7 +35,7 @@ For a complete list, see [SAP HANA Client Interface Programming Reference](https
 
 For a list of newly added features, see [New and Changed Features in the SAP HANA Client](https://help.sap.com/docs/SAP_HANA_CLIENT/79ae9d3916b84356a89744c65793b924/22485d2937c4427fbbedefe3cc158571.html) or the [release notes](https://launchpad.support.sap.com/#/notes/2941449).
 
-The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a `2.20.x` client can connect to SAP HANA Cloud or SAP HANA 2.0.  For more information, see [SAP HANA client and server cross-version compatibility](https://launchpad.support.sap.com/#/notes/0001906576).
+The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a `2.28.x` client can connect to SAP HANA Cloud or SAP HANA 2.0.  For more information, see  [SAP HANA Client and SAP HANA Cloud Compatibility](https://me.sap.com/notes/3082128) and [SAP HANA client and server cross-version compatibility](https://me.sap.com/notes/0001906576).
 
 ### Install from SAP Development Tools
 
@@ -161,12 +161,12 @@ Another download location is the [SAP Software Center](https://me.sap.com/softwa
 
 2. Extract the software using SAPCAR.
 
-    The downloaded file is a `.sar` file and the utility SAPCAR is needed to extract it.  [SAPCAR](https://help.sap.com/docs/sap-cc/install-guide/downloading-sapcar-utility?locale=en-US) can also be downloaded from SAP Software Center.
+    The downloaded file is a `.sar` file and the utility SAPCAR is needed to extract it.  [SAPCAR](https://help.sap.com/docs/sap-cc/install-guide/downloading-sapcar-utility?locale=en-US) can also be downloaded from SAP Software Center.  Select the latest available version such as SAPCAR 7.54.
 
     The command to extract a `.sar` file is shown below.  The command options are extract, verbose and file. Make sure the `.sar` file you want to extract is in the same directory as the SAPCAR executable.
 
     ```Shell (Microsoft Windows Command Prompt)
-    SAPCAR_1010-70006231.EXE -xvf IMDB_CLIENT*.SAR
+    SAPCAR_600-70009506.EXE -xvf IMDB_CLIENT*.SAR
     ```
 
     ```Shell (Linux or Mac)
