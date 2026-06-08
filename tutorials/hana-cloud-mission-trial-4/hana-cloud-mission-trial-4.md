@@ -92,21 +92,20 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 Click on an instance to see further details of an instance including:
 
-    - *Memory*
-    - *Compute*
-    - *Network*
-    - *Storage*
-    - *Consumption*
-    - *User & Authorization Management*
-    - *Workload Management*
-    - *Data Replication*
-    - *Auditing*
-    - *Performance Details including expensive statements*
+- *Memory*
+- *Compute*
+- *Network*
+- *Storage*
+- *Consumption*
+- *User & Authorization Management*
+- *Workload Management*
+- *Data Replication*
+- *Auditing*
+- *Performance Details including expensive statements*
 
-    
     ![HCC Instance details](HCC-instance-details.png)
 
-    Based on this information, you can make important decisions on how to manage and optimize your instances.   
+    Based on this information, you can make important decisions on how to manage and optimize your instances.
 
 **Provide database authentication**
 
