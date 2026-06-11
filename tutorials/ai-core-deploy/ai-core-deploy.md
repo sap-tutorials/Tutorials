@@ -183,8 +183,36 @@ docker push docker.io/<YOUR_DOCKER_USERNAME>/house-server:01
 
 
 
-### Create a serving executable
+### Set Compute Resources for Serving - Pre Read
 
+SAP AI Core allows you to configure compute resources for serving workloads using either an instance type or a resource plan. You must specify at least one of these options.
+
+  - If you specify an **instance type**, a resource plan is not required.
+
+  - If you specify a **resource plan**, an instance type is not required.
+
+```YAML
+labels:
+  ai.sap.com/resourcePlan: <yourChoiceOfResourcePlace>
+  (or)
+  ai.sap.com/instanceType: <yourChoiceOfInstanceType>
+```
+
+**Note:**
+
+  - Resource plans are suitable for most standard serving workloads.
+
+  - Instance types are recommended for GPU-based or performance-critical serving scenarios.
+
+**Reference:**
+
+  - [SAP Help Portal – Choose an Instance (SAP AI Core)](https://help.sap.com/docs/sap-ai-core/predictive-ai-db13d59d17204c01b3b79c24fb82a19a/choose-instance)
+
+  - [SAP Note 3660109 – Available Instance Types](https://me.sap.com/notes/3660109)
+
+
+
+### Create a serving executable
 
 Create an executable (YAML file) named `house-price-server.yaml` in your GitHub repository. You may use the existing GitHub path which is already tracked synced to your application of SAP AI Core.
 
@@ -219,7 +247,7 @@ spec:
         autoscaling.knative.dev/target: 1
         autoscaling.knative.dev/targetBurstCapacity: 0
       labels: |
-        ai.sap.com/resourcePlan: starter # computing power
+        ai.sap.com/resourcePlan: starter  # or ai.sap.com/instanceType: <yourChoiceOfInstanceType>
     spec: |
       predictor:
         imagePullSecrets:
@@ -247,7 +275,7 @@ spec:
 
 1. You use an input artifacts placeholder `housepricemodel` for your model.
 2. You use an input parameters placeholder `greetmessage` to pass any value in a string.
-3. You use the `starter` computing resource plan with `ai.sap.com/resourcePlan`. To start, using a non-GPU based resource plan for serving (like `starter`) is cost effective. Find out more about available resource plans in [the help portal](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/57f4f19d9b3b46208ee1d72017d0eab6.html?locale=en-US).
+3. You configure compute resources using the **ai.sap.com/resourcePlan** label. In this tutorial, the starter resource plan is used for serving, as it is cost-effective for non-GPU workloads. Alternatively, you can use **ai.sap.com/instanceType** for advanced or GPU-enabled serving scenarios. Learn more in the [SAP Help Portal – Choose an Instance](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/57f4f19d9b3b46208ee1d72017d0eab6.html?locale=en-US).
 4. You set the auto scaling of the server with the parameters: `minReplicas` and `maxReplicas`.
 5. You set the serving code to use through a Docker `image`, and the credentials to access it via `imagePullSecrets`. You must ensure that if you are using a public docker registry that has the file type `docker.io`, your secret points to the URL `https://index.docker.io`. You may delete and recreate the docker registry secret. This will not affect training templates running in parallel.
 6. You use the placeholder `env` to pass your `inputs` values as environment variables in your Docker image.

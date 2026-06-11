@@ -7,32 +7,36 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Export and Import Data and Schema with SAP HANA Database Explorer
+
 <!-- description --> Use wizards or SQL statements to export and import data and schema using CSV, Apache Parquet, or binary formats.
 
 ## Prerequisites
-- An SAP HANA database such as SAP HANA Cloud trial, free tier, or the SAP HANA, express edition that includes the SAP HANA database explorer
+
+- An SAP HANA database such as SAP HANA Cloud free tier, or the SAP HANA, express edition that includes the SAP HANA database explorer
 - Data lake Files, Amazon AWS, Google Cloud, or Microsoft Azure accounts will be needed for optional steps in this tutorial.
 - You have completed the first 3 tutorials in this group.
 
 ## You will learn
+
 - How to export and import data using the export and import data wizards, SQL statements export into and import from, and the download option in the SQL console results tab
 - How to export and import schema objects using export and import catalog wizards and the SQL statements export and import
 - How to use cloud storage providers as a target when exporting or importing
 
 ## Intro
+
 The following steps will demonstrate a few ways to export and import data such as the contents of tables or views as well how to export and import database schema or catalog objects.  
 
 >A few differences between exporting and importing data and importing and exporting catalog objects are:  
 >
->    - Data export and import works with one table or view
->    - Catalog export or import works with more than one object at one time
->    - Catalog export or import can include additional objects such as functions and procedures
->    - Catalog export or import includes the SQL to recreate the object
-
+> - Data export and import works with one table or view
+> - Catalog export or import works with more than one object at one time
+> - Catalog export or import can include additional objects such as functions and procedures
+> - Catalog export or import includes the SQL to recreate the object
 
 ---
 
 ### Export and import data
+
 The following tables list the different options available in the SAP HANA database explorer to export and import data from a single table or view.
 
 Methods to export tables or views
@@ -109,8 +113,8 @@ The following steps will attempt to demonstrate an export and import of data fro
     IMPORT FROM CSV FILE '/tmp/export/maintenance.csv' INTO MAINTENANCE WITH COLUMN LIST IN FIRST ROW ERROR LOG 'error_log.txt' FAIL ON INVALID DATA;
     ```
 
-
 ### Use cloud storage services for export and import (optional)
+
 The following steps are for illustrative purposes only and are not meant to be followed. Complete steps for working with cloud storage services are provided in steps 3, 4, 6, and 7.
 
 1. With SAP HANA Cloud, an export data wizard is available.  
@@ -152,7 +156,8 @@ The following steps are for illustrative purposes only and are not meant to be f
     ```
 
 ### Use data lake Files for export and import from an SAP HANA Cloud, SAP HANA database (optional)
-The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier or trial.
+
+The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not included in the free tier service plan.
 
 1. Complete steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
 
@@ -211,7 +216,9 @@ The following steps walk through the process of exporting to and importing data 
     ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
     --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
     ```
+
     Then, set the own certificate with the client private key, client certificate, and Root Certification Authority of the client certificate in plain text. Make sure you have completed steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
+
     ```SQL
     ALTER PSE HTTPS SET OWN CERTIFICATE
     '<Contents from client.key>
@@ -223,12 +230,13 @@ The following steps walk through the process of exporting to and importing data 
 
     The above commands create a personal security environment (PSE), create a certificate, and add the certificate to the PSE.
 
-4.  Execute the following SQL to store a credential in the database for the user.
+4. Execute the following SQL to store a credential in the database for the user.
 
     ```SQL
     SELECT * FROM CREDENTIALS;
     CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
     ```
+
     You can now use the Database Credential to import/export data.
 
 5. Export the table `MAINTENANCE` into the data lake Files container.
@@ -271,7 +279,8 @@ The following steps walk through the process of exporting to and importing data 
     ```
 
 ### Use data lake Files for export and import from an SAP HANA Cloud, data lake Relational Engine database (optional)
-The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, data lake Relational Engine database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier or trial.  The following steps assume you have followed the first two sub steps in the previous step so that a data lake Files connection has been added to the SAP HANA database explorer.
+
+The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, data lake Relational Engine database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier.  The following steps assume you have followed the first two sub steps in the previous step so that a data lake Files connection has been added to the SAP HANA database explorer.
 
 1. Create a database credential for the data lake Files container.  This step is required if you wish to export to a data lake Files instance that is not the one associated with the data lake Relational Engine.  Further details are described at [Unloading Data to Data Lake Files from Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/unloading-data-to-data-lake-files).  Open a SQL Console connected to a data lake Relational Engine instance and execute the below SQL statements.
 
@@ -307,7 +316,7 @@ The following steps walk through the process of exporting to and importing data 
     WITH CREDENTIAL 'DL_FILES';
     ```
 
-3.  Import or load the data back into the MAINTENANCE table.
+3. Import or load the data back into the MAINTENANCE table.
 
     ```SQL
     DELETE FROM HOTELS.MAINTENANCE;
@@ -320,6 +329,7 @@ The following steps walk through the process of exporting to and importing data 
 Additional details can be found at [Unloading Data to Data Lake Files from Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/unloading-data-to-data-lake-files) and [Loading Data From Data Lake Files to Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/loading-data-from-data-lake-files).
 
 ### Use Google Cloud Storage (GCS) for data exports and imports (optional)
+
 The following steps walk through the process of exporting to and importing data from Google Cloud Storage service with a SAP HANA Cloud, SAP HANA database.
 
 1. Sign in to the [Google Cloud Console](https://console.cloud.google.com/).
@@ -456,7 +466,7 @@ The following steps walk through the process of exporting to and importing data 
 
     >An alternative to the above SQL commands is to use the Export Data Wizard. The Wizard can be accessed by right clicking a table or view and choosing **Export Data**. When using the export wizard, the "gs://" prefix is not needed when specifying the GCS Path.
     >
-    >    ![Export Data Wizard](exportGCSWizard.png)
+    > ![Export Data Wizard](exportGCSWizard.png)
 
 12. Verify the export was completed successfully by refreshing your bucket within Google Cloud Console.
 
@@ -467,7 +477,6 @@ The following steps walk through the process of exporting to and importing data 
     ```SQL
     DELETE FROM MAINTENANCE;
     ```
-
 
 14. Run the following commands within the SQL console to perform an import using a Google Cloud Storage bucket.
 
@@ -484,6 +493,7 @@ The following steps walk through the process of exporting to and importing data 
 For additional details see the topic [Importing and Exporting Data](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/importing-and-exporting-data) in the SAP HANA Cloud Administration Guide.
 
 ### Export and import schema or catalog objects
+
 The following tables list the different options available in the SAP HANA database explorer to export and import catalog objects.
 
 Methods to export catalog objects
@@ -495,7 +505,6 @@ Methods to export catalog objects
 | [Export catalog wizard](https://help.sap.com/docs/SAP_HANA_COCKPIT/f69e86dc57384ca7be4b8005a3f2d4ab/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary | \*\* |
 | [Export statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/export-statement-data-import-export) | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS, Alibaba OSS                 | CSV, Binary, Parquet | ** |
 | [Export statement](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a04f6754767/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA on-premise     | HANA file system                 | CSV, Binary data | \*\* |
-
 
 Methods to import catalog objects
 
@@ -537,11 +546,11 @@ Similar to the first section, the maintenance table will be exported and re-impo
     DROP TABLE MAINTENANCE;
     ```
 
-3. Right-click on the instance `HC_HDB (USER1)` and choose **Import Catalog**.  
+4. Right-click on the instance `HC_HDB (USER1)` and choose **Import Catalog**.  
 
     ![Open Import Data Wizard](importCatalogWizard.png)
 
-    Browse to the previously downloaded .tar.gz file and complete the wizard. You can also rename the schema, if desired. 
+    Browse to the previously downloaded .tar.gz file and complete the wizard. You can also rename the schema, if desired.
 
     ![Choose file to import](importCatalogWizard2.png)
 
@@ -559,15 +568,15 @@ The following steps walk through the process of using Microsoft Azure storage se
 
 1. Log in to the [Microsoft Azure Portal](https://portal.azure.com/).
 
-2. Create a resource group.
+2. Create a resource group under the All services, General, Resource Manager.
 
     ![Resource Group](resourceGroup.png)
 
-3. Create a storage Service
+3. Create a storage Service under All services, Storage, Storage accounts.
 
     ![Storage Account](storageAccount.png)
 
-4. Create a blob container.
+4. Create a blob container using the All services, Storage, Storage browser.
 
     ![Blob Container](createBlobContainer.png)
 
@@ -623,11 +632,13 @@ The following steps walk through the process of using Microsoft Azure storage se
     -----END CERTIFICATE-----' COMMENT 'Azure';
     --DROP CERTIFICATE <CERTIFICATE_ID>;
     ```
+
     Now you can add the certificate to the PSE. Execute the following to retrieve the certificate ID.
 
     ```SQL
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'Azure';
     ```
+
     Add the certificate ID (ex: 123456) from the previous statement into `<CERTIFICATE_ID>`. Set the purpose to remote source.
 
     ```SQL
@@ -642,7 +653,6 @@ The following steps walk through the process of using Microsoft Azure storage se
     The certificate string above is from the root certificate used for the Azure Portal.
 
     ![Certificate](certificate.png)
-
 
 8. Start the export catalog wizard and export the maintenance table to the storage service.
 
@@ -694,8 +704,8 @@ The following steps walk through the process of using Microsoft Azure storage se
 
     For additional details see the topic [Importing and Exporting Data](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/importing-and-exporting-data) in the SAP HANA Cloud Administration Guide.
 
-
 ### Use Amazon Web Services (AWS) S3 for exports and imports of catalog objects (optional)
+
 The following steps walk through the process of AWS S3 storage service as a target for an export catalog operation.
 
 1. Log in to the [AWS S3 Management Console](https://console.aws.amazon.com/s3/home).
@@ -751,7 +761,6 @@ The following steps walk through the process of AWS S3 storage service as a targ
     ```
 
     Use the `access_key` and `secret_key` from Step 3. Additionally, if you didn't follow step 3 as you have an existing IAM user, then [generate an access key and secret key for an existing IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-
 
     Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-credential-statement-access-control) and [CREDENTIALS System View](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/credentials-system-view).
 
@@ -839,7 +848,7 @@ The following steps walk through the process of AWS S3 storage service as a targ
     ```SQL
     --EXPORT MAINTENANCE AS PARQUET INTO 's3-<region>://<bucket>/<objectKey>' WITH CREDENTIAL 'AWS';
     EXPORT MAINTENANCE AS PARQUET INTO 's3-us-east-1://maitrysawsbucket/maintenance' WITH CREDENTIAL 'AWS';
-    ```    
+    ```
 
     > An error regarding an invalid SSL certificate indicates an incorrect SSL certificate is being used.  Additionally, if MFA (Multi-factor Authentication) is enabled, then the export may fail, so ensure that MFA is disabled before exporting.
 
@@ -870,20 +879,19 @@ The following steps walk through the process of AWS S3 storage service as a targ
     ```SQL
     --IMPORT MAINTENANCE AS PARQUET FROM 's3-<region>://<access_key>:<secret_key>@<bucket>/<object_id>' WITH REPLACE;
     IMPORT MAINTENANCE AS PARQUET FROM 's3-us-east-1://AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance' WITH REPLACE;
-    ```    
+    ```
 
     Alternatively, the previously stored credentials can be used for import:
 
     ```SQL
     --EXPORT MAINTENANCE AS PARQUET FROM 's3-<region>://<bucket>/<objectKey>' WITH CREDENTIAL 'AWS';
     IMPORT MAINTENANCE AS PARQUET FROM 's3-us-east-1://maitrysawsbucket/maintenance' WITH CREDENTIAL 'AWS';
-    ```    
+    ```
 
     For additional details see the topic [Importing and Exporting Data](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/importing-and-exporting-data) in the SAP HANA Cloud Administration Guide.
 
 ### Knowledge check
+
 Congratulations! You have imported and exported data and catalog objects.
-
-
 
 ---

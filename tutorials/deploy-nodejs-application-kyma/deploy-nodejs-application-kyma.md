@@ -176,6 +176,8 @@ spec:
           value: "8080"
         - name: TMPDIR
           value: /tmp
+        - name: BP_NODE_OPTIMIZE_MEMORY
+          value: "false"
         image: <docker-hub-account>/multitenant-kyma-backend:v1  # replace with your Docker Hub account name
         name: kyma-multitenant-node-multitenancy
         ports:

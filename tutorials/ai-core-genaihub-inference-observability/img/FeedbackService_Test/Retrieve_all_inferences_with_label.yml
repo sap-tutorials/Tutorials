@@ -1,0 +1,108 @@
+info:
+  name: Retrieve all inferences with label
+  type: http
+  seq: 16
+
+http:
+  method: GET
+  url: "{{AI_API}}/observability/inferences?labelSelector=ext.ai.sap.com/medium=Mobile"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource-group}}"
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: labelSelector
+      value: ext.ai.sap.com/medium=Mobile
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/observability/inferences?labelSelector=ext.ai.sap.com/medium=Mobile"
+      method: GET
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: default
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: labelSelector
+          value: ext.ai.sap.com/medium=Mobile
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: content-type
+          value: application/json
+        - name: date
+          value: Tue, 17 Mar 2026 10:59:44 GMT
+        - name: server
+          value: istio-envoy
+        - name: x-upstream-service-time
+          value: "298"
+        - name: transfer-encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+            "count": 1,
+            "resources": [
+              {
+                "id": "<INFERENCE_ID>",
+                "labels": [
+                  {
+                    "key": "ext.ai.sap.com/use-case",
+                    "value": "Accounting"
+                  },
+                  {
+                    "key": "ext.ai.sap.com/medium",
+                    "value": "Mobile"
+                  }
+                ],
+                "source": "llmaccess",
+                "resourceGroup": "default",
+                "deploymentId": "<DEPLOYMENT_ID>",
+                "modelName": "gpt-4o",
+                "modelVersion": "2024-08-06",
+                "streaming": true,
+                "responseHttpCode": 200,
+                "inputTokens": 21,
+                "outputTokens": 15,
+                "latency": 637.341,
+                "request": "{\"url\": \"http://rg-openai-exploration-us.openai.azure.com/openai/deployments/gpt-4o-2024-08-06/chat/completions?api-version=2025-03-01-preview\", \"headers\": {\"Content-Type\": \"application/json\", \"api-key\": \"<AWS_ACCESS_KEY_ID>\"}, \"body\": \"{\\\"messages\\\": [{\\\"role\\\": \\\"system\\\", \\\"content\\\": \\\"You are a helpful assistant.\\\"}, {\\\"role\\\": \\\"user\\\", \\\"content\\\": \\\"Tell me a joke\\\"}], \\\"temperature\\\": 1, \\\"stream\\\": true}\"}",
+                "response": "{\"choices\":[],\"created\":0,\"id\":\"\",\"model\":\"\",\"object\":\"\",\"prompt_filter_results\":[{\"prompt_index\":0,\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}}}]}, {\"choices\":[{\"content_filter_results\":{},\"delta\":{\"content\":\"\",\"refusal\":null,\"role\":\"assistant\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"Vqem\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\"Why\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"lYY\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\" don't\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\" skeleton\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"6CVftWn8HPiXo\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\"s\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"ipq7o\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\" fight\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\" each\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"O\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\" other\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\"?\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"SN28G\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\"  \\n\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"LX\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\"They\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"2u\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\" don't\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\" have\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"2\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\" the\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"Ai\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\" guts\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"D\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{\"hate\":{\"filtered\":false,\"severity\":\"safe\"},\"protected_material_text\":{\"detected\":false,\"filtered\":false},\"self_harm\":{\"filtered\":false,\"severity\":\"safe\"},\"sexual\":{\"filtered\":false,\"severity\":\"safe\"},\"violence\":{\"filtered\":false,\"severity\":\"safe\"}},\"delta\":{\"content\":\"!\"},\"finish_reason\":null,\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"ndseD\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, {\"choices\":[{\"content_filter_results\":{},\"delta\":{},\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null}],\"created\":1773229703,\"id\":\"<COMPLETION_ID>\",\"model\":\"gpt-4o-2024-08-06\",\"obfuscation\":\"\",\"object\":\"chat.completion.chunk\",\"system_fingerprint\":\"<SYSTEM_FINGERPRINT>\"}, [DONE]",
+                "createdAt": "2026-03-11T11:48:24.3133655Z",
+                "objectStoreSecretName": "feedback-service-e2e-test-secret",
+                "feedback": [
+                  {
+                    "content": {
+                      "stars": 5
+                    }
+                  },
+                  {
+                    "content": "This was another great suggestions"
+                  },
+                  {
+                    "content": "This was a good response"
+                  },
+                  {
+                    "content": "This was a great suggestions"
+                  }
+                ]
+              }
+            ]
+          }

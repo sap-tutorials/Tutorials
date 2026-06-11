@@ -1,0 +1,55 @@
+info:
+  name: Check resource group status
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{AI_API}}/admin/resourceGroups/{{resource-group}}"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: Content-Type
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/admin/resourceGroups/{{resource-group}}"
+      method: GET
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: Content-Type
+          value: application/json
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Thu, 26 Mar 2026 11:41:42 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "281"
+        - name: x-upstream-service-time
+          value: "53"
+      body:
+        type: json
+        data: |-
+          {
+            "resourceGroupId": "test-inference-obs",
+            "status": "PROVISIONED",
+            "tenantId": "882ce703-31d9-4330-927c-d5e427ebfb87",
+            "zoneId": "882ce703-31d9-4330-927c-d5e427ebfb87",
+            "labels": [],
+            "statusMessage": "All onboarding steps are completed.",
+            "createdAt": "2026-03-26T11:41:25+00:00"
+          }

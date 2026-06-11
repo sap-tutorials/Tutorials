@@ -1,0 +1,198 @@
+info:
+  name: Call orchestration service
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{deploymentUrl}}/v2/completion"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource_group}}"
+    - name: Content-Type
+      value: application/json
+    - name: ai-inference-observability-persistence-mode
+      value: full
+    - name: ai-inference-observability-labels
+      value: ext.ai.sap.com/test=true
+    - name: ai-object-store-secret-name
+      value: inference-observability
+  body:
+    type: json
+    data: |-
+      {
+        "config": {
+          "modules": {
+            "prompt_templating": {
+              "prompt": {
+                "template": [
+                  {
+                    "role": "user",
+                    "content": "What is the speed of light?"
+                  }
+                ]
+              },
+              "model": {
+                "name": "gpt-5-mini",
+                "version": "latest",
+                "params": {
+                  "max_completion_tokens": 3000
+                }
+              }
+            }
+          }
+        }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if ( res.status == 200 ){
+          bru.setEnvVar("inferenceId", res.getHeader("ai-inference-id"));
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{deploymentUrl}}/v2/completion"
+      method: POST
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: "{{resource-group}}"
+        - name: Content-Type
+          value: application/json
+        - name: ai-inference-observability-persistence-mode
+          value: full
+        - name: ai-inference-observability-labels
+          value: ext.ai.sap.com/test=true
+          disabled: true
+        - name: ai-object-store-secret-name
+          value: inference-observability
+      body:
+        type: json
+        data: |-
+          {
+            "config": {
+              "modules": {
+                "prompt_templating": {
+                  "prompt": {
+                    "template": [
+                      {
+                        "role": "user",
+                        "content": "What is the speed of light?"
+                      }
+                    ]
+                  },
+                  "model": {
+                    "name": "gpt-5-mini",
+                    "version": "latest",
+                    "params": {
+                      "max_completion_tokens": 3000
+                    }
+                  }
+                }
+              }
+            }
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Thu, 26 Mar 2026 13:11:20 GMT
+        - name: content-type
+          value: application/json
+        - name: ai-inference-id
+          value: 493452f3-6f81-4300-9bb7-52a58e6dcf99
+        - name: content-length
+          value: "1996"
+        - name: x-upstream-service-time
+          value: "11624"
+      body:
+        type: json
+        data: |-
+          {
+            "request_id": "<REQUEST_ID>",
+            "intermediate_results": {
+              "templating": [
+                {
+                  "content": "What is the speed of light?",
+                  "role": "user"
+                }
+              ],
+              "llm": {
+                "id": "<COMPLETION_ID>",
+                "object": "chat.completion",
+                "created": 1774530681,
+                "model": "gpt-5-mini-2025-08-07",
+                "choices": [
+                  {
+                    "index": 0,
+                    "message": {
+                      "role": "assistant",
+                      "content": "The speed of light in vacuum (symbol c) is exactly 299,792,458 metres per second by definition of the metre. That is about 3.00 × 10^8 m/s, ≈186,282 miles per second, or ≈1.079×10^9 km/h. \n\nNote: in materials (air, glass, water, etc.) light travels more slowly; c is the maximum speed at which information and causal effects can propagate according to relativity."
+                    },
+                    "finish_reason": "stop"
+                  }
+                ],
+                "usage": {
+                  "completion_tokens": 367,
+                  "prompt_tokens": 13,
+                  "total_tokens": 380,
+                  "prompt_tokens_details": {
+                    "audio_tokens": 0,
+                    "cached_tokens": 0
+                  },
+                  "completion_tokens_details": {
+                    "accepted_prediction_tokens": 0,
+                    "audio_tokens": 0,
+                    "reasoning_tokens": 256,
+                    "rejected_prediction_tokens": 0
+                  }
+                }
+              }
+            },
+            "final_result": {
+              "id": "<COMPLETION_ID>",
+              "object": "chat.completion",
+              "created": 1774530681,
+              "model": "gpt-5-mini-2025-08-07",
+              "choices": [
+                {
+                  "index": 0,
+                  "message": {
+                    "role": "assistant",
+                    "content": "The speed of light in vacuum (symbol c) is exactly 299,792,458 metres per second by definition of the metre. That is about 3.00 × 10^8 m/s, ≈186,282 miles per second, or ≈1.079×10^9 km/h. \n\nNote: in materials (air, glass, water, etc.) light travels more slowly; c is the maximum speed at which information and causal effects can propagate according to relativity."
+                  },
+                  "finish_reason": "stop"
+                }
+              ],
+              "usage": {
+                "completion_tokens": 367,
+                "prompt_tokens": 13,
+                "total_tokens": 380,
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": 0,
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 256,
+                  "rejected_prediction_tokens": 0
+                }
+              }
+            }
+          }

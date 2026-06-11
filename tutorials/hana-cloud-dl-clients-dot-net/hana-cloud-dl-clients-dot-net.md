@@ -7,26 +7,32 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 ---
 
 # Connect to Data Lake Relational Engine Using the .NET Driver
+
 <!-- description --> Create and debug a .NET application that connects to a data lake Relational Engine.
 
 ## Prerequisites
- - You have completed the first tutorial in this group.
+
+- You have completed the first tutorial in this group.
 
 ## You will learn
-  - How to install the .NET SDK
-  - How to create and debug a .NET application that queries a data lake Relational Engine
+
+- How to install the .NET SDK
+- How to create and debug a .NET application that queries a data lake Relational Engine
 
 ## Intro
+
 [.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open-source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
 ### Install the .NET SDK
+
 The first step is to check if you have the .NET SDK  installed and what version it is.  Enter the following command:
 
 ```Shell
 dotnet --version  
 ```  
+
 If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 9.0.101.  
 
 If the .NET SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows.
@@ -38,9 +44,9 @@ On Linux, follow the instructions for the appropriate Linux version such as [Ins
 
 In order for the shell to recognize that the .NET SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
-
 ### Create a .NET application that queries a data lake Relational Engine
-1.  Create a new console app with the below commands:
+
+1. Create a new console app with the below commands:
 
     ```Shell (Microsoft Windows)
     cd %HOMEPATH%/DataLakeClientsTutorial
@@ -52,7 +58,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     dotnet new console -o dotNET
     ```
 
-2.  Open the `dotNET.csproj` file:
+2. Open the `dotNET.csproj` file:
 
     ```Shell (Microsoft Windows)
     cd dotNET
@@ -69,7 +75,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     ```Shell (Microsoft Windows)
     <ItemGroup>
       <Reference Include="Sap.Data.SQLAnywhere.Core.v2.1">
-        <HintPath>C:\SAP\DLClient\IQ-17_1\Assembly\Core2.1\Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
+        <HintPath>C:\SAP\hdlclient\sdk\dotnet\Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
       </Reference>
     </ItemGroup>
     ```
@@ -77,33 +83,27 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     ```Shell (Linux)
     <ItemGroup>
       <Reference Include="Sap.Data.SQLAnywhere.Core.v2.1">
-        <HintPath>/home/dan/sap/dlclient/IQ-17_1/assembly/core2.1/Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
+        <HintPath>/home/dan/sap/hdlclient/sdk/dotnet/Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
       </Reference>
     </ItemGroup>
     ```
 
-    Note that if the developer licensed version of the data lake Client was installed the path might be similar to 
-    
-    ```
-    C:\SAP\hdlclient\sdk\dotnet\Sap.Data.SQLAnywhere.Core.v2.1.dll
-    or
-    /home/dan/sap/hdlclient/sdk/dotnet/Sap.Data.SQLAnywhere.Core.v2.1.dll    
-    ```
-    
-    ![dotNET.csproj code](dotNET-csproj-code.png)
+    ![dotNET.csproj updates](dotNET-csproj-code.png)
 
     Once the `dotNet.csproj` file has been updated, save and close the file.
 
-3.  Run the app to validate that data lake driver can be loaded:
+3. Run the app to validate that data lake driver can be loaded:
 
     ```Shell
     dotnet run
     ```
-    >If an error occurs, double check that the hintpath is correct and that the IQ.sh variables have been set.
+
+    >If an error occurs, double check that the hintpath is correct and on Linux that the script hdlclienv.sh to set the variables has been run.
 
     ![Result of running the app](result0.png)
 
-4.  Open an editor to edit the file `Program.cs`.
+4. Open an editor to edit the file `Program.cs`.
+
     ```Shell (Windows)
     notepad Program.cs
     ```
@@ -111,8 +111,8 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     ```Shell (Linux)
     pico Program.cs
     ```
- 
-5.  Replace the entire contents of `Program.cs` with the code below. Update the host value in the connection string.
+
+5. Replace the entire contents of `Program.cs` with the code below. Update the host value in the connection string.
 
     ```C#
     using System;

@@ -1,0 +1,92 @@
+info:
+  name: Check deployment status
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{AI_API}}/lm/deployments/{{deploymentId}}"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource-group}}"
+    - name: Content-Type
+      value: application/json
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if ( res.status === 200 ){
+          let data = res.getBody();
+          if ( data.status == "RUNNING" ){
+             bru.setEnvVar("deploymentUrl", data.deploymentUrl);
+          }
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/lm/deployments/{{deploymentId}}"
+      method: GET
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: "{{resource-group}}"
+        - name: Content-Type
+          value: application/json
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: date
+          value: Thu, 26 Mar 2026 12:21:25 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "722"
+        - name: access-control-allow-origin
+          value: "null"
+        - name: access-control-allow-credentials
+          value: "false"
+        - name: cache-control
+          value: no-store, must-revalidate
+        - name: x-upstream-service-time
+          value: "41"
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<DEPLOYMENT_ID>",
+            "createdAt": "2026-03-26T11:44:12Z",
+            "modifiedAt": "2026-03-26T11:44:12Z",
+            "status": "RUNNING",
+            "details": {
+              "scaling": {
+                "backendDetails": {},
+                "backend_details": {}
+              },
+              "resources": {
+                "backendDetails": {},
+                "backend_details": {}
+              }
+            },
+            "scenarioId": "orchestration",
+            "configurationId": "<CONFIGURATION_ID>",
+            "latestRunningConfigurationId": "<CONFIGURATION_ID>",
+            "lastOperation": "CREATE",
+            "targetStatus": "RUNNING",
+            "submissionTime": "2026-03-26T11:45:18Z",
+            "startTime": "2026-03-26T11:46:33Z",
+            "configurationName": "orchestration-config",
+            "deploymentUrl": "<DEPLOYMENT_URL>"
+          }

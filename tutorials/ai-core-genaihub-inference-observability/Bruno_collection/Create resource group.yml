@@ -1,0 +1,64 @@
+info:
+  name: Create resource group
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{AI_API}}/admin/resourceGroups"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "resourceGroupId": "{{resource-group}}"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/admin/resourceGroups"
+      method: POST
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "resourceGroupId": "{{resource-group}}"
+          }
+    response:
+      status: 202
+      statusText: Accepted
+      headers:
+        - name: date
+          value: Thu, 26 Mar 2026 14:03:49 GMT
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "95"
+        - name: location
+          value: /resourcegroups/inferenceobservability
+        - name: x-upstream-service-time
+          value: "143"
+      body:
+        type: json
+        data: |-
+          {
+            "resourceGroupId": "inferenceobservability",
+            "tenantId": "882ce703-31d9-4330-927c-d5e427ebfb87"
+          }

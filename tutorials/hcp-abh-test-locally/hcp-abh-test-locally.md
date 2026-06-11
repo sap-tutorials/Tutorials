@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap
 
 ## Prerequisites
  - A trial account on the SAP Business Technology Platform
- - A subscription to the SAP Business Application Studio, with a basic dev space set up
+ - A subscription to the SAP Business Application Studio
 
 See [Create a Dev Space for Business Applications](https://developers.sap.com/tutorials/appstudio-devspace-create.html).
 
@@ -60,7 +60,7 @@ These notes might help you to better examine and understand the invocation:
 - The `--request GET` option is actually unnecessary as `curl` will use the method appropriate to the rest of the options given; in this case it will automatically use `GET`.
 - The OData system query options have been URL-encoded (this is actually called [Percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding)). Specifically, the occurrences of `%24` are just `$` characters, encoded. Knowing this may make reading the URL easier, in that they are the start of normal OData query parameters `$inlinecount=allpages` and `$top=50`.
 - The `DataServiceVersion: 2.0` header is to explicitly signal that the request is for OData V2; this is optional, and arguably unnecessary as the OData API only supports V2 anyway.
-- Perhaps the most interesting header here is the `Accept: application/json`. This forms part of standard HTTP [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Content_negotiation) and here represents a desire for the resource being requested to be returned in a JSON representation. If the value of this header were to be set to `application/xml` then the entity set resource would be returned in an XML representation, aligned with what OData supports.
+- Perhaps the most interesting header here is the `Accept: application/json`. This forms part of standard HTTP [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Content_negotiation) and here represents a desire for the resource being requested to be returned in a JSON representation. If the value of this header were to be set to `application/xml` then the entityset resource would be returned in an XML representation, aligned with what OData supports.
 
 
 ### Get ready to run the code snippet
@@ -71,11 +71,13 @@ In the SAP Business Application Studio, create a dev space, giving it a name and
 
 > You can choose any kind of dev space, but to emphasize that the command line tools you'll be using are available in all of them, we want you to choose this "Basic" kind.
 
-Once the dev space has started up, open up a terminal with the menu path **Terminal -> New Terminal** (the menu is available via the three horizontal bar icon in the top left). Now you have a shell prompt in which to run the code snippet, specifically invoking `curl`. At this point you may wish to maximize the terminal with the up arrow (`^`) button on the right hand side.
+Once the dev space has started up, open up a terminal with the menu path **Terminal -> New Terminal** (the menu is available via the three horizontal bar icon in the top left). Now you have a shell prompt in which to run the code snippet, specifically invoking `curl`. At this point you may wish to maximize the terminal with the appropriate button on the right hand side.
 
-Copy the code snippet from the SAP Business Accelerator Hub page and paste it into the terminal. When you run the command, you should see output that looks something like this:
+Copy the code snippet from the SAP Business Accelerator Hub page and paste it into the terminal, making sure to either omit the last escaped newline (the `\` symbol at the end of the last line) or include the whitespace and comment that follows the command, when copying. When you run the command, you should see output that looks something like this:
 
 ![request complete, JSON representation shown, unformatted](json-output-unformatted.png)
+
+> Because of the default behavior of dev space terminals in the SAP Business Application Studio, which includes "sticky scroll" being enabled, it looks like a trailing backslash was indeed the last thing pasted in, but that's not the case - the trailing comment was included too.
 
 You'll notice that the output is not formatted and is not easy to read. To address this you can use the command line JSON processor [jq](https://jqlang.org/). It's not just a JSON formatter, it's an entire language for handling, processing, generating and modifying JSON data, but here we'll just use its most basic feature, which is the identity function `.`. This just emits what's received, with no transformations. How is that useful? Well, unless you say otherwise (with the `-c` and `-M` options, in case you're curious), `jq` will, by default, pretty-print (and colorize) any JSON it emits.
 
@@ -127,7 +129,9 @@ The output should now appear pretty-printed, something like this (all but one of
 }
 ```
 
-The formatted output represents the results of a simple call to the Campaign Collection API endpoint - an OData entity set.
+The formatted output represents the results of a simple call to the Campaign Collection API endpoint - an OData entityset.
+
+> Depending on the parameter settings in the Try Out facility, you may or may not see the `$inlinecount=allpages` option in use, which causes a top level `__count` property to be included in the resource output. You may wish to experiment with setting a value for `$inlinecount` in the Parameters section.
 
 ### Modify your request
 

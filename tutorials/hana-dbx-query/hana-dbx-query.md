@@ -7,19 +7,24 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Query with the SQL Console in SAP HANA Database Explorer
+
 <!-- description --> Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
 
 ## Prerequisites
- - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
- - You have completed the first 3 tutorials in this group.
+
+- An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the
+ SAP HANA database explorer
+- You have completed the first 3 tutorials in this group.
 
 ## You will learn
-  - How to run SQL queries using the SQL console and add filters to the results
-  - How to use different features of the SQL console including keyboard shortcuts, autocomplete, statement help, and the statement library
+
+- How to run SQL queries using the SQL console and add filters to the results
+- How to use different features of the SQL console including keyboard shortcuts, autocomplete, statement help, and the statement library
 
 ---
 
 ### Execute SQL
+
 1. Select a connection and open the SQL console.
 
     ![open SQL console](open-sql-console.png)
@@ -116,8 +121,8 @@ primary_tag: software-product>sap-hana-cloud
 
     To see an example on viewing spatial data, see [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model).
 
-
 ### Shortcuts
+
 1. Keyboard shortcuts are available to provide alternate methods of completing frequently performed tasks. Right-click in the SQL console and choose **Keyboard Shortcuts**.
 
     ![Open Keyboard Shortcuts](OpenKeyboardShortcuts.png)
@@ -162,9 +167,8 @@ primary_tag: software-product>sap-hana-cloud
 
     ![run selected](runSelected.png)
 
-
-
 ### Autocomplete
+
 1. Once a statement is started, press `Ctrl+Space` to see a list of possible statements based on what you have typed.  
 
     ![Code Completion Options](CodeCompletionOptions.png)
@@ -183,8 +187,8 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Code Completion Table](CodeCompletionTable.png)
 
-
 ### Statement help panel
+
 1. On the right-hand side of the SQL console, there is a statement help panel that provides more information about statement syntax, and any tables, functions, stored procedures, or SQL functions that have been referenced.
 
     ![Help Panel](HelpPanel.png)
@@ -242,9 +246,8 @@ primary_tag: software-product>sap-hana-cloud
 
     >Left-click the name of the SQL function in the SQL Functions section to open the SAP help showing detailed information on the function.
 
-
-
 ### SQL console preferences
+
 1. Select **SQL Console** or **SQL Code Completion** from the Global Preferences to see the configurable preference settings for the SQL console.
 
     ![Error Handling Settings](SQLConsolePrefs.png)
@@ -261,7 +264,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Limit results](limitResults.png)
 
-3.  The default behavior when an error is encountered is to show the following dialog.  
+3. The default behavior when an error is encountered is to show the following dialog.  
 
     ![SQL Error Prompt](SQLErrorPrompt.png)
 
@@ -279,8 +282,8 @@ primary_tag: software-product>sap-hana-cloud
 
   For additional details, consult [SQL Console Preferences](https://help.sap.com/docs/hana-cloud/sap-hana-database-explorer/sql-console-preferences).
 
-
 ### Statement library
+
 The statement library contains a mix of pre-populated system statements and user-saved statements.
 
 1. Frequently used statements can be saved to the statement library for easy access.  Enter the statement below into the SQL console and click the **Add to Statement Library** icon.
@@ -299,7 +302,6 @@ The statement library contains a mix of pre-populated system statements and user
     ```
 
     ![Add to Statement Library](AddToStatementLibrary.png)
-
 
 2. A dialog will appear where you can name the query to be saved.
 
@@ -329,8 +331,8 @@ The statement library contains a mix of pre-populated system statements and user
 
     ![Update Statement](UpdateStatement.png)
 
-
 ### Knowledge check
+
 Congratulations! You have now explored selected features of the SQL console.
 
 ---

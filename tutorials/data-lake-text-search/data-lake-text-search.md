@@ -236,7 +236,7 @@ The above creates the index on both columns using the configuration that you def
 ### Query the Table Using the CONTAINS function
 
 
-To make use of the text index that you created above, you can use the CONTAINS function. The CONTAINS function when used on a text index allows you to search your text columns for key words, partial key words (using * operator), and words that are near each other. Learn more about what's possible with text searching in the (SAP Help documentation)[https://help.sap.com/viewer/a8937bea84f21015a80bc776cf758d50/2021_4_QRC/en-US/a5f9128284f21015be99d1a8e8925c94.html?q=CONTAINS%20text%20search]. Try a simple query on your index.
+To make use of the text index that you created above, you can use the CONTAINS function. The CONTAINS function when used on a text index allows you to search your text columns for key words, partial key words (using * operator), and words that are near each other. Learn more about what's possible with text searching in the (SAP Help documentation)[https://help.sap.com/docs/hana-cloud-data-lake/administration-guide-for-data-lake-relational-engine/contains-conditions-for-full-text-searches]. Try a simple query on your index.
 
 ```SQL
 SELECT Actor1Geo_FullName, Actor2Geo_FullName FROM EVENT CONTAINS(EVENT.Actor1Geo_FullName, 'United States');
@@ -304,7 +304,7 @@ Notice, all the entries with the closest match to the exact search term have the
 
 ### Knowledge check
 
-You now know how to create a text index on a `text` or `varchar` column, configure that text index, and use the CONTAINS function to perform a text search on your data. Be sure to check out the SAP Help documentation for more information on [text indexes](https://help.sap.com/viewer/a8937bea84f21015a80bc776cf758d50/2021_4_QRC/en-US/a5efed9884f210158fd8bd686e7be818.html) and performing [text search](https://help.sap.com/viewer/a8937bea84f21015a80bc776cf758d50/2021_4_QRC/en-US/a5f8abf084f2101580319c6ef971d09c.html).
+You now know how to create a text index on a `text` or `varchar` column, configure that text index, and use the CONTAINS function to perform a text search on your data. Be sure to check out the SAP Help documentation for more information on [text indexes](https://help.sap.com/docs/hana-cloud-data-lake/administration-guide-for-data-lake-relational-engine-sap-hana-db-managed/text-indexes-in-data-lake-relational-engine-sap-hana-db-managed).
 
 
 

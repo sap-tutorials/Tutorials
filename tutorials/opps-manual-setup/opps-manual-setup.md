@@ -36,7 +36,7 @@ primary_tag: products>sap-business-technology-platform
 
 2. Navigate to your subaccount. It is usually named `trial`.
 
-In case you plan to use the trial subaccount that was initially created when setting up your SAP BTP trial account, please proceed with the following steps: 
+If you plan to use the trial subaccount that was initially created when setting up your SAP BTP trial account, please proceed with the following steps: 
 
 1. In the navigation pane, open **Services > Service Marketplace**.
 
@@ -48,7 +48,7 @@ In case you plan to use the trial subaccount that was initially created when set
 
 <!-- The subscription process is finished once the status icon changes from **Processing** to **Subscribed**. -->
 
-
+<!--
 In case you plan to use a manually created subaccount or want to add new services not present at the time of creating your subaccount, please proceed with the following steps:
 
 1. In the navigation pane, open **Entitlements**.
@@ -74,7 +74,7 @@ In case you plan to use a manually created subaccount or want to add new service
 11. In the notification box shown in the header choose **Enable Cloud Foundry**.
 
 12. Navigate back to your subaccount and choose **Create Space**.
-
+-->
 
 ### Set up roles and authorizations
 
@@ -93,9 +93,9 @@ In order to use the apps provided with SAP Omnichannel Promotion Pricing, you mu
 
 6. Under **Role Name**, select **`Configure_OPPS`** and **`Maintain_OPPS_Promotions`** from the dropdown list.
 
-7. Assign **User** or **User Groups** to your role collection and choose **Save**. 
+7. Assign yourself as a **User** or assign a **User Groups** to your role collection and choose **Save**. 
 
-Optional: Once you have set up the roles and authorizations, you can do the following steps: 
+Optional: Once you have set up the roles and authorizations, you can check out our apps as follows: 
 
 1. Navigate back to your subaccount. 
 

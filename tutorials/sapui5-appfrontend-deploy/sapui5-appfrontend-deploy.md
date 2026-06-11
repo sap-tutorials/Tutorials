@@ -14,7 +14,7 @@ author_profile: https://github.com/neelamegams
 
 ## Prerequisites
 
-- Make sure the node version is atleast **22.6.0**
+- Make sure the node version is atleast **22.6.0** and upgrade if necessary
 - Install **afctl** globally, run `npm install -g @sap/appfront-cli`
 - Install **cf cli** as per the instructions [here] (https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
 - Install **Cloud MTA Build Tool** as per the instructions [here] (https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-developer-guide-for-cloud-foundry-multitarget-applications-sap-web-ide-full-stack/cloud-mta-build-tool-mbt#download-and-install-the-mta-build-tool)

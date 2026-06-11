@@ -1,0 +1,63 @@
+info:
+  name: Get inference feedback
+  type: http
+  seq: 14
+
+http:
+  method: GET
+  url: "{{AI_API}}/observability/inferences/{{inferenceId}}/feedback"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource-group}}"
+    - name: Content-Type
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/observability/inferences/4ba60b4a-30ee-9070-9671-3fbca68ed085/feedback"
+      method: GET
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: default
+        - name: Content-Encoding
+          value: application/json
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: content-type
+          value: application/json
+        - name: date
+          value: Tue, 17 Mar 2026 09:47:40 GMT
+        - name: content-length
+          value: "118"
+        - name: server
+          value: istio-envoy
+        - name: x-upstream-service-time
+          value: "597"
+      body:
+        type: json
+        data: |-
+          {
+            "count": 2,
+            "resources": [
+              {
+                "content": "This was another great suggestions"
+              },
+              {
+                "content": "This was a great suggestions"
+              }
+            ]
+          }

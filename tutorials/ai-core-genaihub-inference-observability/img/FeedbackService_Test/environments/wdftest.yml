@@ -1,0 +1,24 @@
+name: credentials
+variables:
+  - name: ai_auth_url
+    value: <ai_auth_url>
+  - name: ai_api_url
+    value: <ai_api_url>
+  - name: client_id
+    value: <client_id>
+  - name: client_secret
+    value: <client_secret>
+  - name: resource_group
+    value: <resource_group>
+  - name: common_endpoint
+    value: /v2/lm/document-grounding
+  - name: deploymentUrl
+    value: <deploymentUrl>
+  - name: credentials
+    value: dW5**********==
+  - name: access_token
+    value: <access_token>
+  - name: AWS_ACCESS_KEY_ID
+    value: <AWS_ACCESS_KEY_ID>
+  - name: AWS_SECRET_ACCESS_KEY
+    value: <AWS_SECRET_ACCESS_KEY>

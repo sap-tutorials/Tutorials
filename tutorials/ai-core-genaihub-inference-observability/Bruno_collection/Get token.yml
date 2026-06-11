@@ -1,0 +1,49 @@
+info:
+  name: Get token
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{ai_auth_url}}/oauth/token"
+  headers:
+    - name: Content-Type
+      value: application/x-www-form-urlencoded
+  params:
+    - name: grant_type
+      value: client_credentials
+      type: query
+      disabled: true
+  body:
+    type: form-urlencoded
+    data:
+      - name: grant_type
+        value: client_credentials
+      - name: client_id
+        value: "{{client_id}}"
+      - name: client_secret
+        value: "{{client_secret}}"
+  auth:
+    type: bearer
+    token: "{{access_token}}"
+
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        const client_id = bru.getEnvVar("CLIENT_ID");
+        const client_secret = bru.getEnvVar("CLIENT_SECRET");
+        const credentials = btoa(client_id + ":" + client_secret);
+        bru.setEnvVar("credentials", credentials);
+    - type: after-response
+      code: |-
+        if ( res.status === 200 ) {
+          let data = res.getBody();
+          bru.setEnvVar("access_token", data.access_token);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

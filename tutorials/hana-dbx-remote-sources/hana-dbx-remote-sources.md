@@ -7,18 +7,22 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Access Remote Sources with SAP HANA Database Explorer
+
 <!-- description --> Use SAP HANA federation capabilities to query data from other SAP HANA and SAP HANA Cloud, data lake Relational Engine databases using SAP HANA smart data access (SDA) and the Cloud Connector.
 
 ## Prerequisites
- - You have completed the first 3 tutorials in this group
- - Two SAP HANA databases and an SAP HANA Cloud, data lake instance
+
+- You have completed the first 3 tutorials in this group
+- Two SAP HANA databases and an SAP HANA Cloud, data lake instance
 
 ## You will learn
-  - How to use SAP HANA smart data access (SDA) to create connections (remote sources) to other databases
-  - How to create virtual tables from a remote source
-  - How to setup the Cloud Connector to enable a remote source from SAP HANA Cloud to an on-premise SAP HANA database
+
+- How to use SAP HANA smart data access (SDA) to create connections (remote sources) to other databases
+- How to create virtual tables from a remote source
+- How to setup the Cloud Connector to enable a remote source from SAP HANA Cloud to an on-premise SAP HANA database
 
 ## Intro
+
 Remote sources are connections to other databases.  Virtual tables use a remote source to create a local table that points to data stored in another database.  Federated queries make use of virtual and non virtual tables.
 
 To illustrate these concepts, a table will be created in the remote database that contains fictitious review data from some of the top tourist sites near a given hotel.  There is likely a correlation between hotel stays and the desire for customers to visit nearby tourist attractions or restaurants.
@@ -29,15 +33,16 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
 >The SAP HANA Cloud free tier or trial is limited to creating one SAP HANA database and one data lake instance.
 
-The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, express edition database to an SAP HANA Cloud, SAP HANA  database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud, SAP HANA  database to an SAP HANA Cloud, data lake Relational Engine. The example in step 3 demonstrates connecting from SAP HANA Cloud, data lake Relational Engine to an SAP HANA Cloud, SAP HANA  database. The example in step 4 demonstrates connecting from one SAP HANA Cloud, data lake Relational Engine to another. The example in step 5 demonstrates connecting from SAP HANA Cloud, database via the Cloud Connector to an SAP HANA, express edition database.    
-
+The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, express edition database to an SAP HANA Cloud, SAP HANA  database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud, SAP HANA  database to an SAP HANA Cloud, data lake Relational Engine. The example in step 3 demonstrates connecting from SAP HANA Cloud, data lake Relational Engine to an SAP HANA Cloud, SAP HANA  database. The example in step 4 demonstrates connecting from one SAP HANA Cloud, data lake Relational Engine to another. The example in step 5 demonstrates connecting from SAP HANA Cloud, database via the Cloud Connector to an SAP HANA, express edition database.
 
 ---
 
-###  Connect from SAP HANA, express edition to SAP HANA Cloud, SAP HANA database
+### Connect from SAP HANA, express edition to SAP HANA Cloud, SAP HANA database
+
 1. From SAP HANA Cloud Central, select an SAP HANA database instance (HDB), open the SAP HANA database explorer, and execute the following SQL statements to create the `tourist_reviews` table.
 
     >If needed, first create a schema and user.
+
     ```SQL
     CREATE SCHEMA HOTELS;
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change;
@@ -66,7 +71,6 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 
     ![tourist reviews in HANA Cloud](tourist-reviews-in-HC.png)
 
-
 3. To create a remote source from SAP HANA, express edition to SAP HANA Cloud, open the SAP HANA database explorer from the SAP HANA, express edition.
 
     >This step is optional for SAP HANA Cloud Trial users if you do not have an SAP HANA, express edition database.  If you do not have an SAP HANA, express edition database, proceed to the next step which is Connect from SAP HANA Cloud to SAP HANA Cloud, data lake Relational Engine.
@@ -85,7 +89,6 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
      Add a source name and specify the server, port, and credentials (USER1, Password1). The Extra Adapter properties can be retreived by copying the `sslTrustStore` in the SQL query above.
 
      ![Add remote source properties](AddRemoteSource2.png)
-
 
     Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-remote-source-statement-access-control).
 
@@ -111,9 +114,8 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 
     ![on-premise to cloud remote connection](onprem-to-cloud-connection.png)
 
-
     Open the SAP HANA database explorer from the SAP HANA, express edition.  
-    
+
     >If needed, create the HOTELS schema and a user who can access the schema.
 
     ```SQL
@@ -156,10 +158,10 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     SELECT * FROM HOTELS.VT_TOURIST_REVIEWS;
     SELECT C.NAME, TR.REVIEW, REVIEW_DATE
     FROM
-	    HOTELS.RESERVATION AS R JOIN
-	    HOTELS.VT_TOURIST_REVIEWS AS TR
-	    ON TR.REVIEW_DATE = R.ARRIVAL JOIN
-	    HOTELS.CUSTOMER AS C
+        HOTELS.RESERVATION AS R JOIN
+        HOTELS.VT_TOURIST_REVIEWS AS TR
+        ON TR.REVIEW_DATE = R.ARRIVAL JOIN
+        HOTELS.CUSTOMER AS C
       ON C.CNO = R.CNO;
     ```
 
@@ -174,15 +176,14 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     ```SQL
     INSERT INTO HOTELS.VT_TOURIST_REVIEWS(review_id, review_date, destination_id, destination_rating, review) VALUES(3, '2020-08-21', 1, 5, 'The harbour cruise was fantastic.  It was great to see the city from a different viewpoint');
     SELECT * FROM HOTELS.VT_TOURIST_REVIEWS;
-    ```    
+    ```
 
     Notice that the virtual table is editable.
 
-
 A benefit of a virtual table is that there is no data movement.  There is only one location where the data is persisted.  As seen above, this can lead to longer query times when accessing remote data.
 
-
 ### Connect from SAP HANA Cloud, SAP HANA database to a data lake Relational Engine
+
 [SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) can be used to store large amounts of data that is not accessed and updated as frequently as data in an SAP HANA database.  The following steps create the table `tourist_reviews` in SAP HANA Cloud, data lake Relational Engine and access the table from the associated HDB instance.
 
 1. If needed, in SAP HANA Cloud Central, add an SAP HANA Cloud, data lake (HDLRE) instance to your SAP HANA Cloud instance, by choosing **Actions > Add Data Lake**.
@@ -193,10 +194,10 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ![open database explorer](open-dbx-data-lake.png)
 
-3.  Execute the following SQL to create a table named `tourist_reviews` in the HDLRE.
+3. Execute the following SQL to create a table named `tourist_reviews` in the HDLRE.
 
     >If needed, first create the required schema and role.
-    
+
     ```SQL
     --Create a schema for the sample hotel dataset 
     CREATE SCHEMA HOTELS;
@@ -228,10 +229,10 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ```SQL
     CREATE REMOTE SOURCE HC_DL
-    	ADAPTER "IQODBC"
-    		CONFIGURATION 'Driver=libdbodbc17_r.so;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)'
-    			WITH CREDENTIAL TYPE 'PASSWORD'
-    				USING 'user=USER1;password=Password1';
+        ADAPTER "IQODBC"
+            CONFIGURATION 'Driver=libdbodbc17_r.so;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)'
+                WITH CREDENTIAL TYPE 'PASSWORD'
+                    USING 'user=USER1;password=Password1';
     CALL PUBLIC.CHECK_REMOTE_SOURCE('HC_DL');
     ```
 
@@ -283,12 +284,13 @@ A benefit of a virtual table is that there is no data movement.  There is only o
     ```SQL
     INSERT INTO VT_DL_TOURIST_REVIEWS VALUES(3, '2020-08-21', 1, 5, 'The harbour cruise was fantastic.  It was great to see the city from a different viewpoint');
     SELECT * FROM VT_DL_TOURIST_REVIEWS;
-    ```    
+    ```
 
     Notice that the remote data source is updateable.  Data stored in an HDLRE is stored on disk, which has cost advantages compared to memory storage. HDLRE can also be used to store large amounts of data.
 
     > Another approach is to use a relational container.  For additional details see [Manage Relational Containers in Data Lake Relational Engine (SAP HANA DB-Managed)](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/9220e7fec0fe4503b5c5a6e21d584e63/0b494fedebb243fc9bd92c87bac7ddd4.html).  An example follows.
     >
+
     ```SQL
     CALL SYSHDL.CREATE_CONTAINER('HOTELS_CONTAINER', 'DBADMIN');
     CREATE VIRTUAL TABLE TOURIST_REVIEWS (
@@ -308,11 +310,11 @@ A benefit of a virtual table is that there is no data movement.  There is only o
     CALL SYSHDL.DELETE_CONTAINER('HOTELS_CONTAINER');
     ```
 
-
 ### Connect from a data lake Relational Engine to SAP HANA Cloud, SAP HANA database
-The first task in preparing the HDLRE instance is creating a remote server that connects the HDLRE to the HDB instance that contains the data you want to access. 
 
-1. First, right click the HDB in Database Explorer and select properties. 
+The first task in preparing the HDLRE instance is creating a remote server that connects the HDLRE to the HDB instance that contains the data you want to access.
+
+1. First, right click the HDB in Database Explorer and select properties.
 
     ![HANA Database Properties Button](HDB_properties.png)
 
@@ -337,7 +339,7 @@ The first task in preparing the HDLRE instance is creating a remote server that 
     ```
 
 5. Now that the remote server is created, you must create the `EXTERNLOGIN` that will map your HDLRE user to the HANA user credentials and allow access to the HDB. Notice below in the `CREATE EXTERNLOGIN` statement you are granting your HDLRE user permission to use the HANA user for the `HDB_SERVER` that was created above.
-   
+
     ```SQL
     -- Replace `<HDL USER NAME>` with the current HDLRE user that is being used and replace `<HANA USER NAME>` and `<HANA PASSWORD>` with the target HANA database user password.
 
@@ -367,19 +369,19 @@ The first task in preparing the HDLRE instance is creating a remote server that 
     SELECT * FROM VT_HDB_TOURIST_REVIEWS;
     --DROP TABLE VT_HDB_TOURIST_REVIEWS;
     ```
+
     ![Test Query Results](test_query.png)
 
-
-
 ### Connect from a data lake Relational Engine to another data lake Relational Engine
+
 When connecting from one HDLRE instance to another, the steps follow a similar pattern to connecting from an HDLRE to an HDB instance (Step 2 of this tutorial).
 
 1. First, right click the HDLRE instance you want to connect to in Database Explorer (your target instance) and select properties.
-    
+
     ![Target HDLRE Properties](target_hdlre_properties.png)
 
 2. In the properties modal, copy the “Host” value to use when creating a remote server to the HDB.
-    
+
     ![Host Value of Target HDLRE](target_hdlre_hostID.png)
 
 3. Open your main HDLRE in SAP HANA database explorer and open an SQL Console.
@@ -387,7 +389,7 @@ When connecting from one HDLRE instance to another, the steps follow a similar p
     ![Open HDLRE SQL Console](hdlre_sql_console1.png)
 
 4. Run the following SQL query against the HDLRE instance using a user with the `MANAGE ANY REMOTE SERVER` privilege to create a remote server. Notice, you are naming the remote server HDLRE_SERVER. Replace the `<HANA Host Name>` with the host copied from the properties modal.
-   
+
     ```SQL
     CREATE SERVER HDLRE_SERVER CLASS 'IQODBC' USING 
     'DRIVER=libodbc17_r.so;
@@ -408,8 +410,8 @@ When connecting from one HDLRE instance to another, the steps follow a similar p
 
     >If you would prefer to use USER1 instead of HDLADMIN, execute the `GRANT MANAGE ANY USER TO USER1;` query as described [here](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-externlogin-statement-for-data-lake-relational-engine).
 
-6. Do a quick test to ensure everything has been set up successfully. You will create a temporary table that points to your TOURIST_REVIEWS table in your target HDLRE. Then run a select against that table to ensure you are getting data back. 
-   
+6. Do a quick test to ensure everything has been set up successfully. You will create a temporary table that points to your TOURIST_REVIEWS table in your target HDLRE. Then run a select against that table to ensure you are getting data back.
+
     ```SQL
     CREATE EXISTING LOCAL TEMPORARY TABLE VT_HDLRE_TOURIST_REVIEWS
     (
@@ -427,13 +429,14 @@ When connecting from one HDLRE instance to another, the steps follow a similar p
     ![HDLRE Temporary Table Test](successful_hdlre_table.png)
 
 ### Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector (optional)
+
 The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/cloud-connector?version=Cloud) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.
 
 1. Enable the Cloud Connector connectivity in SAP HANA Cloud Central: Actions > Manage Configuration > Edit.
 
     ![Enable the Cloud Connector](enable-cloud-connector.png)
 
-2.  [Download the Cloud Connector](https://tools.hana.ondemand.com/#cloud).  The software needs to run on a machine that can access your on-premise SAP HANA instance.  In this example, the Cloud Connector is running on Windows and is accessing an SAP HANA, express edition database running in a VM on the same machine.  
+2. [Download the Cloud Connector](https://tools.hana.ondemand.com/#cloud).  The software needs to run on a machine that can access your on-premise SAP HANA instance.  In this example, the Cloud Connector is running on Windows and is accessing an SAP HANA, express edition database running in a VM on the same machine.  
 
 3. As described at [Installation on Microsoft Windows OS](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/installation-on-microsoft-windows-os?version=Cloud), a Java JDK is required.  
 
@@ -454,18 +457,11 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
 
     The initial user name and password are Administrator and manage.
 
-5. Configure the Cloud Connector to connect to the Cloud Foundry subaccount.     
+5. Configure the Cloud Connector to connect to the Cloud Foundry subaccount using Configure  using authentication data.
 
     ![subaccount](cloud-connector-subaccount.png)
 
-    >The location ID is used when multiple Cloud Connectors are connected to the same subaccount
-
-    >---
-
-    >If you are an SAP employee, you may need to enter your password + a  time-based passcode as the password.
-
-
-    The region and subaccount ID can be found in the SAP BTP cockpit.
+    Authentication Data can be downloaded from the SAP BTP cockpit
 
     ![cloud Foundry sub account](cloud-foundry-sub-account.png)
 
@@ -477,7 +473,7 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
 
 6. Configure the Cloud Connector to connect to the on-premise database.
 
-    Select **Cloud To On-Premise** and press the **+** icon.
+    Select **Cloud To On-Premises** and press the **+** icon.
 
     Select **SAP HANA** for the back-end type.
 
@@ -505,10 +501,10 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
 
     ```SQL
     CREATE REMOTE SOURCE REMOTE_HANA_EXPRESS
-    	ADAPTER "hanaodbc"
-    		CONFIGURATION 'ServerNode=hxehost:39015;use_haas_socks_proxy=true;driver=libodbcHDB.so;'
-    			WITH CREDENTIAL TYPE 'PASSWORD'
-    				USING 'user=User1;password=Password1';
+        ADAPTER "hanaodbc"
+            CONFIGURATION 'ServerNode=hxehost:39015;use_haas_socks_proxy=true;driver=libodbcHDB.so;'
+                WITH CREDENTIAL TYPE 'PASSWORD'
+                    USING 'user=User1;password=Password1';
     CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HANA_EXPRESS');
     ```  
 
@@ -532,11 +528,8 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
 
 For further information, see [Data Replication and Data Virtualization](group.hana-cloud-extend-2-data-replication), and [Getting Started with SAP HANA Cloud | Remote Data Source](https://blogs.sap.com/2020/08/03/getting-started-with-sap-hana-cloud-vii-smart-data-access/).
 
-
 ### Knowledge check
 
 Congratulations!  You have now used remote sources to access data running on a different SAP HANA instance and on an SAP HANA Cloud, data lake Relational Engine.
-
-
 
 ---

@@ -3,7 +3,7 @@ author_name: Dimitri Herber
 author_profile: https://github.com/fakirdi
 auto_validation: true
 time: 15
-tags: [products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
+tags: [software-product-function>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
 primary_tag: products>sap-fiori
 parser: v2
 contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>https://github.com/jo-fiess ]
@@ -23,33 +23,36 @@ contributors: [ Hitesh Parmar>https://github.com/hitesh-parmar, Joachim Fiess>ht
   - How to configure the list report to load data automatically
   
 
-
 In SAP Fiori elements applications, UI annotations are used to refine the user interface. All annotations are documented in the [OData 4.0 Vocabularies](https://sap.github.io/odata-vocabularies/vocabularies/UI.html). With SAP Fiori Tools - Application modeler, you don't have to be an annotation expert, as the necessary UI annotations are automatically generated when you add or modify the UI elements for your application. You can easily navigate to the annotations behind the UI elements to review and/or manually update them in the code editor.
-
 
 ### Add filter field to the filter bar
 
 In this step, you will learn how to add filters to the List Report page of your application using the Page Editor and see the auto generated annotation code in the local annotation file.
 
-1. From the Application Information page, click on the **ListReport** page
-   
+1. From the Application Information page, click on the **ListReport** page.
+
+    <!-- border -->
     ![Open List Report Page](t3-open-list-report-page-app-info.png)
 
     The Page Editor view opens up listing all the major page elements in the application outline structure.
 
 2. Press the **+** icon in the **Filter Fields** sub-node of the **Filter Bar** node on the outline. It becomes visible, once you hover over the sub-node.
    
+    <!-- border -->
     ![Add Filter Fields Icon](t3-add-filter-fields.png)
 
 3.  When prompted, choose **category_code** as **Filter Field** and press **Add**.
     
-    ![Add Filter Fields Icon](t3-add-filter-fields-dialog.png)
+    <!-- border -->
+    ![Add Filter Fields Icon](t3-add-filter-fields-dialog.png)  
 
-    The new filter field is added to the filter bar. The application preview (if started) is automatically refreshed to display it.
+    The new filter field is added to the filter bar. The application preview (if started) is automatically refreshed to display it.  
 
     ![New Filter Field](t3-annotation-selection-field-category.PNG)
 
+
 > This is enabled by copying the `UI.SelectionFields` annotation to the local annotation file and updating it with `category_code` property in the background. You can press ![Navigate to source code](t3-navigate-source-code.png) (Navigate to source code) icon displayed in the **Filter Fields** sub-node on hover to see the updated annotation in the local annotation file.
+
 
 ```CDS
 SelectionFields : [
@@ -80,11 +83,13 @@ In this step, you will learn how to enhance the value help defined in the projec
 
     - In the Properties pane displayed to the right of the outline, find the **Display Type** property. Currently it shows **Value Help (base layer)**, indicating that value help is defined in the layer lower than this app. To enhance the value help settings, choose **Value Help** instead.
 
+      <!-- border -->
       ![Filter Properties](t3-initial-load-filter-properties.png)
 
-    - In the pop-up dialog, make sure **Display as Dropdown** is switched on, press **Add Column** under **Results List**,  choose **desc** in the **Property** column and press **Apply**.
+    - In the pop-up dialog, make sure **Display as Dropdown** is switched on, press **Add Column** under **Results List**,  choose **desc** in the **Property** column and press **Apply**.  
 
-        ![Value Help Dialog](t3-value-help-dialog-updated.png)
+      <!-- border -->
+      ![Value Help Dialog](t3-value-help-dialog-updated.png)
 
 3. Application preview is refreshed and displays the **Category** filter as drop-down list and shows the value help with the description column.
 
@@ -93,17 +98,19 @@ In this step, you will learn how to enhance the value help defined in the projec
 
 ### Configure the application to load data automatically
 
-In this step, you will learn how to configure the application to load data automatically when started without the need of pressing the **Go** button.
+In this step, you will learn how to configure the application to load data automatically when started without the need of pressing the **Go** button.  
 
-1. In the Page Editor, select the **table** node on the outline to show the properties of the table.
+1. In the Page Editor, select the **table** node on the outline to show the properties of the table.  
+2.  In the Properties pane, locate the **Initial Load** property and set it to **Enabled**.  
 
-    ![Table Properties](t3-initial-load-table-properties.PNG)
-2.  In the Properties pane, locate the **Initial Load** property and set it to **Enabled**.
-
+    <!-- border -->
     ![Initial Load](t3-initial-load-table-properties-initial-load-true.PNG)
->To easily find the specific property in the Properties pane, you can use the Search Properties field in the top right corner.
-1. After the application is refreshed, the table data will be loaded automatically.
 
+>To easily find the specific property in the Properties pane, you can use the Search Properties field in the top right corner.
+
+3. After the application is refreshed, the table data will be loaded automatically.  
+
+    <!-- border -->
     ![Add Column](t3-initial-load-table-preview.png)
 
 
@@ -113,18 +120,21 @@ In this step, you will learn how to enhance the list report table with additiona
 
 1. In the Page Editor, press the **+** icon in the **Column** sub-node of the **Table** node on the outline and choose **Add Basic Columns**.
 
+    <!-- border -->
     ![Add Column](t3-add-column.png)
 
 2. When prompted, choose **title** in the **Columns** field
 
+    <!-- border -->
     ![Add Column Dialog](t3-add-title-column.png)
 
     > You can filter the list of suggestions by typing a few characters of the option you want to choose. This will filter the list of suggestions.
 
 3. Press **Add**.
 
-    The application preview refreshes and displays the column added to the table.
+    The application preview refreshes and displays the column added to the table.  
 
+    <!-- border -->
     ![Annotation Cursor](t3-annotation-line-item-LR.PNG)
 
     > If your preview window is not wide enough, the last column is not visible unless its Importance property is set to High or Medium.

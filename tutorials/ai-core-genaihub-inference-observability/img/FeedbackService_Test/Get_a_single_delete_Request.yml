@@ -1,0 +1,63 @@
+info:
+  name: Get a single delete Request
+  type: http
+  seq: 19
+
+http:
+  method: GET
+  url: "{{AI_API}}/observability/inferencesDeleteRequests/{{deleteRequestId}}"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource-group}}"
+    - name: Content-Type
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/observability/inferencesDeleteRequests/{{deleteRequestId}}"
+      method: GET
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: "{{resource-group}}"
+        - name: Content-Type
+          value: application/json
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: content-type
+          value: application/json
+        - name: date
+          value: Thu, 26 Mar 2026 14:33:56 GMT
+        - name: content-length
+          value: "193"
+        - name: x-upstream-service-time
+          value: "21"
+      body:
+        type: json
+        data: |-
+          {
+            "status": "COMPLETED",
+            "filters": {
+              "labelSelectors": [
+                {
+                  "key": "ext.ai.sap.com/medium",
+                  "value": "Mobile"
+                }
+              ]
+            },
+            "submittedAt": "2026-03-26T14:16:33.0235469Z",
+            "completedAt": "2026-03-26T14:20:10.1378612Z"
+          }

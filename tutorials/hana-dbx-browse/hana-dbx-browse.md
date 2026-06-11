@@ -7,20 +7,20 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Browse Schema with the Database Browser in SAP HANA Database Explorer
+
 <!-- description --> See how the database browser can be used to explore and examine objects in an SAP HANA database.
 
 ## Prerequisites
-- An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
+
+- An SAP HANA database such as SAP HANA Cloud free tier or the SAP HANA, express edition that includes the SAP HANA database explorer
 - You have completed the first 3 tutorials in this group
 
 ## You will learn
-  - How a schema filter can be used in the database browser
-  - How to explore and examine objects in an SAP HANA database
 
----
+- How a schema filter can be used in the database browser
+- How to explore and examine objects in an SAP HANA database
 
 ### Schemas
-
 
 1. Many objects within an SAP HANA database belong to a schema.  A schema allows objects, like tables, views, functions, and stored procedures, to be grouped together.  The current schema in the SQL console is shown at the top of the SQL console.  
 
@@ -52,9 +52,7 @@ primary_tag: software-product>sap-hana-cloud
 
     The schema filter persists between reloads of the SAP HANA database explorer.
 
-
 ### Table editor
-
 
 1. Right-click **Tables** in the catalog tree and choose **Show Tables**.  
 
@@ -64,10 +62,9 @@ primary_tag: software-product>sap-hana-cloud
 
     ![All Tables](AllTables.png)
 
-2.  Filters can be applied to the columns.  The filter is applied to the data that is already fetched.
+2. Filters can be applied to the columns.  The filter is applied to the data that is already fetched.
 
     ![column filter](column-filter.png)
-
 
 3. The set of columns to be displayed can be set.
 
@@ -105,8 +102,6 @@ primary_tag: software-product>sap-hana-cloud
 
     ![SQL Query](SQLQuery.png)
 
-
-
 ### Analysis
 
 An analysis view is provided to help get quick insights into the data of a table.
@@ -127,10 +122,7 @@ An analysis view is provided to help get quick insights into the data of a table
 
 We can see that reservations for suites only make up a small part of the overall bookings but account for the largest share of the total revenue.
 
-
-
 ### Additional features
-
 
 1. Right-click the tab of an open object such as CUSTOMER and choose  **Display In Database Browser** to reveal the object in the database browser.
 
@@ -140,7 +132,7 @@ We can see that reservations for suites only make up a small part of the overall
 
     ![Object Displayed In Catalog](ObjectOpenedInCatalog.png)
 
-2.  A list of objects that make use of a selected object can be found using the **Find Dependencies** menu item.  
+2. A list of objects that make use of a selected object can be found using the **Find Dependencies** menu item.  
 
     Right-click the ROOM table and choose **Find Dependencies**.
 
@@ -167,5 +159,3 @@ We can see that reservations for suites only make up a small part of the overall
 ### Knowledge check
 
 Congratulations! You have now used the database browser to view details of objects within an SAP HANA database and have become familiar with some of the features it provides.
-
-

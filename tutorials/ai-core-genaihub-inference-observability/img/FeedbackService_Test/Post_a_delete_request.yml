@@ -1,0 +1,84 @@
+info:
+  name: Post a delete request
+  type: http
+  seq: 17
+
+http:
+  method: POST
+  url: "{{AI_API}}/observability/inferencesDeleteRequests"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource-group}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "labelSelectors": [
+          {
+            "key": "ext.ai.sap.com/medium",
+            "value": "Mobile"
+          }
+        ]
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status === 202){
+          let data = res.body;
+          bru.setEnvVar("deleteRequestId", data.id);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/observability/inferencesDeleteRequests"
+      method: POST
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: "{{resource-group}}"
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "labelSelectors": [
+              {
+                "key": "ext.ai.sap.com/medium",
+                "value": "Mobile"
+              }
+            ]
+          }
+    response:
+      status: 202
+      statusText: Accepted
+      headers:
+        - name: content-type
+          value: application/json
+        - name: date
+          value: Thu, 26 Mar 2026 14:16:33 GMT
+        - name: content-length
+          value: "46"
+        - name: x-upstream-service-time
+          value: "50"
+      body:
+        type: json
+        data: |-
+          {
+            "id": "<DELETE_REQUEST_ID>"
+          }
