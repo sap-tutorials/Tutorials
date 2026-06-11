@@ -88,44 +88,43 @@ author_profile: https://github.com/ARiesterer
 
     - `opaTests.qunit.html`
 
-        This is the file that is started when you execute the tests via console command or **Preview Application** (see Step 3 of this tutorial). Within this html-file, the java-script file `OpaTests.qunit.js` is started.
+        This is the file that is started when you execute the tests via console command or **Preview Application** (see Step 4 of this tutorial). Within this html-file, the java-script file `OpaTests.qunit.js` is started.
 
     - `OpaTests.qunit.js`
 
-        This file imports the page objects and the OPA journeys that you execute. The journeys are started using the `JourneyRunner`, which allows you to define some advanced options related to the OPA configuration (see details about the `JourneyRunner` in chapter 3 of this step).
+        This file imports the OPA journeys that you execute. The journeys are started using the `JourneyRunner` (called within the journey file), which allows you to define some advanced options related to the OPA configuration (see details about the `JourneyRunner` in chapter 3 of this step).
 
         ```javascript
-        sap.ui.require(
-            [
-                'sap/fe/test/JourneyRunner',
-                'sap/fe/demo/travellist/test/integration/FirstJourney',
-                'sap/fe/demo/travellist/test/integration/pages/TravelList',
-                'sap/fe/demo/travellist/test/integration/pages/TravelObjectPage',
-                'sap/fe/demo/travellist/test/integration/pages/BookingObjectPage'
-            ],
-            function(JourneyRunner, opaJourney, TravelList, TravelObjectPage, BookingObjectPage) {
-                'use strict';
-                var JourneyRunner = new JourneyRunner({
-                    // start index.html in web folder
-                    launchUrl: sap.ui.require.toUrl('sap/fe/demo/travellist') + '/test/flpSandbox.html'
-                });
-            
-                JourneyRunner.run(
-                    {
-                        pages: { 
-                            onTheTravelList: TravelList,
-                            onTheTravelObjectPage: TravelObjectPage,
-                            onTheBookingObjectPage: BookingObjectPage
-                        }
-                    },
-                    opaJourney.run
-                );
+            sap.ui.loader.config({
+            shim: {
+                "sap/ui/qunit/qunit-junit": {
+                    deps: ["sap/ui/thirdparty/qunit-2"]
+                },
+                "sap/ui/qunit/qunit-coverage": {
+                    deps: ["sap/ui/thirdparty/qunit-2"]
+                },
+                "sap/ui/thirdparty/sinon-qunit": {
+                    deps: ["sap/ui/thirdparty/qunit-2", "sap/ui/thirdparty/sinon"]
+                },
+                "sap/ui/qunit/sinon-qunit-bridge": {
+                    deps: ["sap/ui/thirdparty/qunit-2", "sap/ui/thirdparty/sinon-4"]
+                }
             }
-        );
+        });
+
+        window.QUnit = Object.assign({}, window.QUnit, { config: { autostart: false } });
+
+        sap.ui.require(
+        [
+            "sap/ui/thirdparty/qunit-2",
+            "sap/ui/qunit/qunit-junit",
+            "sap/ui/qunit/qunit-coverage",
+            "sap/fe/demo/travellist/test/integration/FirstJourney"
+        ], function (QUnit) {
+            "use strict";
+            QUnit.start();
+        });
         ```
-
-        >The `launchUrl:` parameter (see line 13 in the coding fragment above) contains the `/index.html` as a starting page in your file. Please change this to `/test/flpSandbox.html`. This is necessary to start the application within the shell, which allows you to use test functions that are related to the shell controls (see Step 6, chapter 5: Navigate back to the list-report).
-
 
       - `FirstJourney.js`
 
@@ -133,15 +132,15 @@ author_profile: https://github.com/ARiesterer
 
         ```javascript
         sap.ui.define([
-            "sap/ui/test/opaQunit"
-        ], function (opaTest) {
+            "sap/ui/test/opaQunit",
+            "./pages/JourneyRunner"
+        ], function (opaTest, runner) {
             "use strict";
 
-            var Journey = {
-                run: function() {
-                    QUnit.module("First journey");
+            function journey() {
+                QUnit.module("First journey");
 
-                    opaTest("Start application", function (Given, When, Then) {
+                opaTest("Start application", function (Given, When, Then) {
                         Given.iStartMyApp("travellist-tile");
                         Then.onTheTravelList.iSeeThisPage();
                     });
@@ -159,13 +158,13 @@ author_profile: https://github.com/ARiesterer
                         // Cleanup
                         Given.iTearDownMyApp();
                     });
-                }
             }
-            return Journey;
+
+            runner.run([journey]);
         });
         ```
 
-        >In line 10 of the coding fragment above, the application is started by using the function `iStartMyApp()`. Please add the name (semantic object and action) as a parameter to the function `iStartMyApp("travellist-tile")`. You can find the name of your application in the file **/webapp/test/flpSandbox.html** in the `applications:` parameter, which should look similar to the one listed below. Line 3 contains the name of the application.
+        >In line 11 of the coding fragment above, the application is started by using the function `iStartMyApp()`. Please add the name (semantic object and action) as a parameter to the function `iStartMyApp("travellist-tile")`. You can find the name of your application in the file **/webapp/test/flpSandbox.html** in the `applications:` parameter, which should look similar to the one listed below. Line 3 contains the name of the application.
 
 
         ```flpSandbox.html
@@ -207,15 +206,85 @@ author_profile: https://github.com/ARiesterer
         });
         ```
 
-3. The `JourneyRunner` class
+3. The `JourneyRunner` file
 
-    This class is used to simplify the start of OPA journeys and to control central OPA5 configuration parameters. An instance of the class is created in the file `OpaTests.qunit.js` (see chapter 2 in this step). The instance defines the application and the page objects, which are used for the OPA test, and the `run` method of the class executes the journey.
+    This file creates and exports a shared, pre-configured JourneyRunner instance that all OPA5 integration test journey files in this project consume. Rather than each journey
+    file bootstrapping its own runner or relying on a central orchestrator, this module acts as a single configuration point — and every journey simply imports it, defines its
+    tests, and calls runner.run(...).
+
+    ```javascript
+    sap.ui.define([
+        "sap/fe/test/JourneyRunner",
+        "sap/fe/demo/travellist/test/integration/pages/TravelList",
+        "sap/fe/demo/travellist/test/integration/pages/TravelObjectPage"
+    ], function (JourneyRunner, TravelList, TravelObjectPage) {
+        'use strict';
+
+        var runner = new JourneyRunner({
+            launchUrl: sap.ui.require.toUrl('sap/fe/demo/travellist') + '/test/flpSandbox.html#project1-tile',
+            pages: {
+                onTheTravelList: TravelList,
+                onTheTravelObjectPage: TravelObjectPage
+            },
+            async: true
+        });
+
+        return runner;
+    });
+    ```
+
+    Each journey is self-contained: it starts the app with Given.iStartMyApp(), exercises a focused set of scenarios, and tears down with Given.iTearDownMyApp(). No journey
+    depends on the state left behind by another.
+
+    Previously, a pattern common in SAP Fiori apps placed all journey registrations inside a single central file — typically opaTests.qunit.js — which would import and coordinate
+    every journey. In this project, opaTests.qunit.js is now only a test suite loader: it lists the journey modules to load and calls QUnit.start(). It has no knowledge of
+    pages, the launch URL, or test logic.
+
+    That responsibility has been moved into the individual journey files via the shared JourneyRunner. The result is:
+
+    - No central runner that needs to be modified when a new journey is added.
+    - Journey files are portable — each one carries its own runner reference and can be run in isolation.
+    - Adding a new journey requires only: creating a new journey file following the same pattern, and registering its module path in opaTests.qunit.js.
 
     Please see further options of this class in the SAPUI5 documentation under
 
     ```URL
     https://sapui5.hana.ondemand.com/#/api/sap.fe.test.JourneyRunner
     ```
+
+&nbsp;
+
+
+### Journey test files generated by SAP Fiori tools
+
+1. How journey test files are generated
+
+    Journey test files are dynamically generated by SAP Fiori tools in two ways:
+
+    - **During app generation**: When you create a new SAP Fiori elements application using the SAP Fiori tools app generator, the journey files are created as part of the initial project scaffold.
+
+    - **Using the Application Info command**: After the app already exists, you can trigger generation at any time via the **Application Info** page in SAP Fiori tools. From there, use the option to add or regenerate OPA tests for the current project.
+
+2. How the generated tests are determined
+
+    SAP Fiori tools analyses your project to decide which tests to generate. It uses the `@sap/ux-specification` library to inspect your project configuration and OData service annotations. This gives the tooling an understanding of your application — for example, which pages exist, which entity sets they are based on, and which UI features (filter bars, tables, actions, navigation) are present or configured through annotations.
+
+    Based on this analysis, the generated journey files include tests that exercise the features actually present in your application at the time of generation. This means tests reflect the real state of the app rather than a generic template.
+
+3. How many journey will be created
+
+    A separate journey file is generated for each page in the application. For example, a typical list-report/object-page application produces (at minimum):
+
+    - A journey file for the list-report page
+    - A journey file for the object-page
+
+    Each journey file focuses on the interactions and assertions relevant to that specific page, keeping the tests organized and easy to maintain.
+
+4. Regenerating journey files
+
+    Because the generated tests reflect the features and annotations present at a specific point in time, you may want to regenerate them as your application evolves. If you add new OData annotations, enable additional UI features, or change the page structure, you can re-run the generation step via the **Application Info** command in SAP Fiori tools. The tooling will produce updated journey files that reflect the current state of the project.
+
+    >Regenerating the journey files will overwrite the previously generated content. Any custom tests you have added directly to the generated files should be moved to separate journey files before regenerating, to avoid losing your changes.
 
 &nbsp;
 
@@ -435,7 +504,7 @@ In the following chapters, you will add further tests for the list-report to get
           .and.iExecuteDelete();
     });
     ```
-    Since these actions are related to the list-report table, you use the identifier `onTable()` to access the corresponding functions. You don´t need to provide a parameter for `onTable()`, since there´s only one table available on the list-report. For more functions related to the list-report table, please have a look at the content of **TableActions** and **TableAssertions** within the API documentation (see step 4 of this tutorial).
+    Since these actions are related to the list-report table, you use the identifier `onTable()` to access the corresponding functions. You don´t need to provide a parameter for `onTable()`, since there´s only one table available on the list-report. For more functions related to the list-report table, please have a look at the content of **TableActions** and **TableAssertions** within the API documentation (see step 5 of this tutorial).
 
     >There are several test functions for pressing and checking standard buttons like Edit, Delete and Save, that are managed by the SAP Fiori elements framework. Such test functions are e.g. iExecuteEdit/iCheckEdit, iExecuteDelete()/iCheckDelete(), etc. The test library provides the functions iExecuteAction() and iCheckAction() to perform action and assertions on custom action buttons. To identify the button you need to provide an identifier as a parameter for the function (see the related API documentation).
 

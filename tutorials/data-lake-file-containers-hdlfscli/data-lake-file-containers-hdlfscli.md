@@ -118,7 +118,6 @@ Some HDLFSCLI help documentation should appear if it is successfully installed a
 
 [OPTION END]
 
-
 ### Generate Certificates
 
 To connect the HDLFSCLI to an SAP HANA, data lake Files container, a certificate will need to be generated to make a secure connection. Below are the steps required to create a self-signed certificate to get started using the HDLFSCLI. You will require an installation of OpenSSL. Use your preferred Linux package installer to install OpenSSL if it is not already installed. If you're using a Windows machine, then Windows Subsystem for Linux (WSL) will have OpenSSL installed. Alternatively, OpenSSL can be installed for Windows from [here](https://slproweb.com/products/Win32OpenSSL.html).
@@ -126,6 +125,18 @@ To connect the HDLFSCLI to an SAP HANA, data lake Files container, a certificate
 Then, follow these steps to creating your self-signed certificate.
 
 Make sure the certificate fields are not all exactly the same between the Certificate Authority (CA) and client certificates. Otherwise, it is assumed to be a self-signed cert and the cert validation below will fail.
+
+Create a folder.
+
+```Shell (Microsoft Windows)
+mkdir %HOMEPATH%\certs
+cd %HOMEPATH%\certs
+```
+
+```Shell (Linux or Mac)
+mkdir -p $HOME/certs
+cd $HOME/certs
+```
 
 Create a private key for the CA (2048 bits).
 
@@ -141,7 +152,7 @@ openssl req -x509 -new -key ca.key -days 200 -out ca.crt
 
 Create a signing request for the client certificate.
 
-Provide at least a common name and fill other fields as desired. Also, leave the email-Id field blank.
+Provide at least a common name and fill other fields as desired.  Leave the email-Id field blank. The Common Name must be different from the one used for the CA public certificate.
 
 ```Shell
 openssl req -new -nodes -newkey rsa:2048 -out client.csr -keyout client.key

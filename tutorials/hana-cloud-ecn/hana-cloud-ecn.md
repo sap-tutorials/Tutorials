@@ -504,6 +504,8 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
         ![Workload management app](routing-ui-1.png)
 
+        After clicking on the routing location, the ECN node ecn1 can be selected.
+
         ![Select the routing location](routing-ui-2.png)
 
 3. Map a workload to the workload class.

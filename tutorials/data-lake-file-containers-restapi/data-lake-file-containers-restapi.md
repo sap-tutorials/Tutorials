@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
   - Users without access to the HDLFSCLI can use the REST API to perform File Store operations.
 
 ## Intro
-SAP HANA data lake file containers are accessible via a REST API. The official REST API reference can be found [here](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/latest/en-US/html/index.html). However, below are some python demonstrations using some of the common endpoints. Although this tutorial doesn't cover other endpoint testing tools, these endpoints and the contents of the request body can be used in any other http interface such as PostMan or CURL.
+SAP HANA data lake file containers are accessible via a REST API. The official REST API reference can be found [here](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/latest/en-US/index.html). However, below are some python demonstrations using some of the common endpoints. Although this tutorial doesn't cover other endpoint testing tools, these endpoints and the contents of the request body can be used in any other http interface such as PostMan or CURL.
 
 ---
 
@@ -270,7 +270,7 @@ Upon attempting to access the files via the command line, an error message indic
 
 ### Explore and Experiment!
 
-These endpoints along with the others documented in the [REST API reference](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/latest/en-US/html/index.html) can be used by any application to manipulate or manage the files in the HANA Data Lake File Container. Other endpoints not demonstrated here include DELETE, APPEND, GETRESTORSNAPSHOT, WHOAMI, RENAME, and RESTORESNAPSHOT.
+These endpoints along with the others documented in the [REST API reference](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/latest/en-US/index.html) can be used by any application to manipulate or manage the files in the HANA Data Lake File Container. Other endpoints not demonstrated here include DELETE, APPEND, GETRESTORSNAPSHOT, WHOAMI, RENAME, and RESTORESNAPSHOT.
 
 To replicate these requests in other languages or HTTP tools, copy the request headers, FILES REST API + request URL, and body contents.
 

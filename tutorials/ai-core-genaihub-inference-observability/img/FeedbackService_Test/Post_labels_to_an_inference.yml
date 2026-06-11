@@ -1,0 +1,73 @@
+info:
+  name: Post labels to an inference
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{AI_API}}/observability/inferences/{{inferenceId}}/labels"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource-group}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      [
+        {
+          "key": "ext.ai.sap.com/medium",
+          "value": "Mobile"
+        }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/observability/inferences/<INFERENCE_ID>/labels"
+      method: POST
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: default
+        - name: Content-Encoding
+          value: application/json
+      body:
+        type: json
+        data: |-
+          [
+            {
+              "key": "ext.ai.sap.com/medium",
+              "value": "Mobile"
+            }
+          ]
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: content-type
+          value: application/json
+        - name: date
+          value: Tue, 17 Mar 2026 10:07:05 GMT
+        - name: content-length
+          value: "38"
+        - name: server
+          value: istio-envoy
+        - name: x-upstream-service-time
+          value: "206"
+      body:
+        type: json
+        data: |-
+          {
+            "message": "inference label stored."
+          }
