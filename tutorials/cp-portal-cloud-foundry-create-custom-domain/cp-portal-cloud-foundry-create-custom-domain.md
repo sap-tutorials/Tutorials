@@ -3,7 +3,7 @@ author_name: Boaz Wimmer, Hani Lachnish, Lindsay Bert
 author_profile: https://github.com/LindsayBert  
 keywords: tutorial
 auto_validation: true
-time: 120 minutes
+time: 120
 tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-build-work-zone--standard-edition ]
 primary_tag: software-product>sap-build-work-zone--standard-edition
 parser: v2
@@ -34,6 +34,9 @@ To make sure that your domain is trusted by way of activated server certificates
  - You have entitled the SAP Build Work Zone, standard edition application to your subaccount. 
  - You have a tenant of SAP Cloud Identity Services.
  - You have access to the Domain Name System (DNS) management dashboard.
+ - You have created an OIDC trust between your SAP BTP subaccount and your Cloud Identity Services tenant. For more information, see [Establish Trust and Federation Between SAP Authorization and Trust Management Service and SAP Cloud Identity Services](https://help.sap.com/docs/btp/sap-business-technology-platform/establish-trust-and-federation-between-uaa-and-identity-authentication?version=Cloud)
+ - You have subscribed the SAP Build Work Zone, standard edition application to your subaccount. For more information, see [Initial Setup](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/initial-setup).
+ - You have subscribed to the Custom Domain Manager in the same SAP BTP subaccount in which SAP Build Work Zone, standard edition application is subscribed. For more information, see [Initial Setup](https://help.sap.com/docs/custom-domain/custom-domain-manager/initial-setup?version=Cloud)
  - If you're using tunnelled access to access on-premise apps, you have to configure clickjacking protection as follows:
         - SAP S/4HANA Cloud - [Protect Against Clickjacking](https://help.sap.com/docs/SAP_S4HANA_CLOUD/4fc8d03390c342da8a60f8ee387bca1a/3d1ea8b1a0e145bb851d36d0da376e17.html?version=2502.VAL).
         - SAP S/4HANA - [Using an Allowlist for Clickjacking Framing Protection](https://help.sap.com/docs/SAP_NETWEAVER_AS_ABAP_751_IP/864321b9b3dd487d94c70f6a007b0397/966b6233e5404ebe80513ae082131132.html?version=7.51.17).
@@ -84,11 +87,12 @@ Then perform the custom domain configuration steps such as creating custom domai
 
 4. Switch to the **Custom Domains** tab and click **Create**, and select **for your Subaccount's SaaS Subscriptions**. 
 
+
     <!-- border -->![Select create](4a-create.png) 
 
 5. A wizard opens displaying your subscribed applications, in their corresponding landscapes. Now do the following:
 
-    - From the **Select Subscribed Application Name** step,  select `SAP Build Work Zone, standard edition`  as the SaaS application and click **Next Step**.
+    - From the **Select Deployment Type** step,  select `SAP Build Work Zone, standard edition`  as the SaaS application and click **Next Step**.
 
     <!-- border -->![Select reserved domain](5-select-Saas-application.png) 
 
@@ -125,27 +129,20 @@ The custom domains are created and displayed in a list, along with their corresp
 The purpose of this step is to configure a custom domain for your Cloud Identity Service tenant. Use the custom domain that you've created in step 2 above.  
  You'll use it later when establishing trust to your SAP BTP subaccount and in the Domain Name System (DNS) setup. 
 
+ This configuration is strongly recommended when your browser is blocking third party cookies, to avoid cross-origin domain issues. 
+
 For more information, see [Use Custom Domain in Identity Authentication](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/use-custom-domain-in-identity-authentication)
-
-### Establish trust between your SAP BTP subaccount and SAP Cloud Identity Services
-
-In this step you'll create a trust between your SAP BTP subaccount and your Cloud Identity Services tenant. This trust is required for user authentication. After completion, your SAP BTP subaccount will appear as an application in the administration console of Cloud Identity Services.
-
-For more information, see [Establish Trust and Federation Between SAP Authorization and Trust Management Service and SAP Cloud Identity Services](https://help.sap.com/docs/btp/sap-business-technology-platform/establish-trust-and-federation-between-uaa-and-identity-authentication)
-
->After the trust configuration has been established, you should subscribe to the SAP Build Work Zone, standard edition application in the the SAP BTP cockpit. For more information, see  [Initial Setup](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/initial-setup).
 
 ### Manage Transport Layer Security (TLS) configurations
 
 This step is done in the Custom Domain Manager. You'll create new TLS configurations that can be used for one or mulitple server certificate activations.
 
-1. Choose the **TLS Configurations** tile.
+1. Choose the **Server Identities** tile.
 
     <!-- border -->![Select TLS tile](10-TLS-tile.png)
 
-2. Click **Create** to open a wizard to create each required configuration.
-
-    <!-- border -->![Create configuration](10a-create-configuration.png)
+2. Click **Create**.
+    <!-- border -->![Create configuration](10a-create-TLS-configurations.png)
 
 3. Enter a configuration name, for example `myTLS` and click **Next Step**.
 
@@ -163,40 +160,50 @@ For more information, see the **Custom Domain Manager** documentation: [Manage T
 
 ### Manage server certificates
 
-This step is done in the Custom Domain Manager. You'll create a new server certificate for custom domains associated with the SAP Build Work Zone, standard edition application and runtime destinations. You will also create a certificate for your custom domains from a trusted certificate authority (CA).
+This step is done in the Custom Domain Manager. You'll create a new server certificate for custom domains associated with the SAP Build Work Zone, standard edition application and runtime destinations. You will also create a certificate for your custom domains from a trusted certificate authority (CA). Make sure that the Cloud Foundry environment is enabled for your subaccount.
 
-1. Choose the **Server Certificates** tile.
+1. Choose the **Server Identities** tile.
 
      <!-- border -->![Server certificates tile](14-server-certificate-tile.png)
 
-2. Choose **Create** and select **for your (wildcard) Custom Domains**.
+2. Choose **Create**.
 
-    <!-- border -->![Wildcard custom domain](14a-select-wildcard-custom-domain.png)
+     <!-- border -->!(14a-choose-create.png)
 
     > A wildcard certificate secures multiple applications of a domain. So a domain called `*.prod.mycompany.com` covers any application under the domain `prod.mycompany.com`, for example `workzone.prod.mycompany.com`, but not the domain `prod.mycompany.com` itself. 
     This also works with subdomains, so the subdomain `*workzone.prod.mycompany.com` covers any application under the subdomain `workzone.prod.mycompany.com`, for example, `myapp.workzone.prod.mycompany.com`, but not the subdomain `workzone.prod.mycompany.com` itself.
 
-3. The wizard opens with the **General Information** step in focus. Now do the following:
+3. The wizard opens with the **Select Name** step in focus. Now do the following:
 
-    - Enter the desired alias, keep the key size with the default value, and then click **Next Step**.
+    - Enter the desired name, and then click **Next Step**.
 
-        <!-- border -->![Alias and key size](15-alias-key-size.png)
+        <!-- border -->![Alias and key size](15-select-name.png)
 
-    - In the **Select Landscape** step, keep the landscape with the default value, which should be the main landscape (e.g. `cf-eu10`). Then click **Next Step**.
+    - In the **Select Target** step, keep the landscape with the default value, which should be the main landscape (e.g. `cf-eu10`). Then click **Next Step**.
 
-        <!-- border -->![Select landscape](16-select-landscape.png)
+        <!-- border -->![Select target](16-select-target.png)
 
-    - In the **Set Subject Alternative Names** step, select the domains which you want to assign to the server certificate.
+    - In the **Select Custom Domains** step, select the domains which you want to assign to the server certificate.
 
         <!-- border -->![Select domains](17-select-domains.png)
 
-    - In the **Set Subject** step, keep the **CommonName (CN)** parameter with the default value, then click **Finish**. 
+    - In the **Certificate Subject** step, keep the **CommonName (CN)** parameter with the default value, then click **Next Step**. 
 
         > Note that the `CommonName` can't be longer than 64 characters.
 
         <!-- border -->![Set subject](18-set-subject.png)
 
+    - In the **Key Configuration** step, keep the default Key Type.
+
+        <!-- border -->![Set keyconfiguration](18a-key-configuration.png)
+
+    - In the **Summary** step, click the **Finish** button.
+    
+        <!-- border -->![Summary step](18b-summary-step.png)
+
 4. Select the server certificate that you created to expand the details section. To order and install your new server certificate, you must first create the certificate signing request and then send this file to a trusted certificate authority of your choice to get it signed.
+
+    <!-- border -->![Server certificate details](19a-server-certificate-details.png)
 
     <!-- border -->![Server certificates signature](19-server-certificate-signature.png)
 
@@ -235,9 +242,6 @@ Now you can map the application to your custom domain as follows:
 
     <!-- border -->![Create route](20a-create-route.png)
 
-3. In the **Select Tenant** step, leave as is and click **Next Step**.
-
-    <!-- border -->![Select tenant](21-select-tenant.png)
 
 4. In the **Select Saas Subscription** step, select the **SAP Build Work Zone, standard edition** subscription and click **Next Step**.
 
@@ -311,7 +315,7 @@ In this step, (which is only relevant for subscriptions that were created prior 
 3. Choose the SAP Build Work Zone, standard edition <`your subaccount name`> application.
 
     > Note: Type the subaccount GUID in the search field to filter the list items. One of the applications, named `SAP BTP Subaccount <your subaccount name>` will refer to the trust between your SAP BTP subaccount and the SAP Cloud Identity Service tenant. The redirect URI for this trust, which is created automatically, will be for example: https://mysubaccount.authentication.eu10.hana.ondemand.com/login/callback/sap.custom.
-      The second application, named `SAP Build Work Zone, standard edition <your subaccount name>`, will refer to the trust between your Cloud Identity Service tenant and the SAP Build Work Zone, standard edition subscription. You need to add your custom domain to the redirect URI of this trust.
+      The second application, named `SAP Build Work Zone, standard edition <your subaccount name>`, will refer to the trust between your Cloud Identity Service tenant and the SAP Build Work Zone, standard edition subscription. **You need to add your custom domain to the redirect URI of this trust**.
     
 
 4. Click the **Trust** tab.
@@ -357,3 +361,4 @@ Another example is having two site aliases for one domain: `workzone.prod.mydoma
 `https://prod.mydomain/site/alias1?sap-language=en#Shell-home` and `https://workzone.prod.mydomain/site/alias2?sap-language=en#Shell-home` 
 
 For more information about using a site alias, see [Configure a Site Alias](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/configure-site-alias).
+
