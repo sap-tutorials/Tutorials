@@ -29,15 +29,15 @@ Alternatively, alert details can be pushed to several configured channels such a
 ---
 
 ### Examine SAP HANA Cloud, HANA Database alert definitions
-In this step, the SAP HANA cockpit will be used to examine three alert definitions.
+In this step, SAP HANA Cloud Central will be used to examine alert definitions.
 
 1. Open Alerts from HANA Cloud Central.
 
     ![Open Alerts](open-alerts.png)
 
-    >SAP HANA Cloud Central  has an alerts app to view triggered alerts.  It displays alerts for all instances in a subaccount and additionally displays additional alerts that do not originate from the SAP HANA embedded statistics server (ESS).  Events corresponding to ESS alerts have an alert ID.  
+    >SAP HANA Cloud Central has an alerts app to view triggered alerts.  It displays alerts for all instances in a subaccount and additionally displays additional alerts that do not originate from the SAP HANA embedded statistics server (ESS).  Events corresponding to ESS alerts have an alert ID.  
 
-2. The three alerts that will be triggered in step 2 of this tutorial are `HDBCSTableRecordCount`, `HDBLongRunningStatement`, and `HDBTestAlert`.
+2. The three alerts that will be triggered in step 3 of this tutorial are `HDBCSTableRecordCount`, `HDBLongRunningStatement`, and `HDBTestAlert`.
 
     You can find these alerts by selecting Configure Alert Rules.
 
@@ -51,15 +51,15 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
 
     The categories are shown below.
 
-    | SAP HANA Database Categories |
-    | ----------- |
-    | Schedule |
-    | Interval |
-    | Threshold |
+    | SAP HANA Database Categories | Description |
+    | ----------- | ----------- |
+    | Schedule | Checks run at a fixed point in time, such as once a day |
+    | Interval | Checks run repeatedly on a recurring schedule, such as every hour |
+    | Threshold | Triggered when a measured value crosses a defined limit, such as disk usage exceeding 90% |
 
 
 3. Alerts may have threshold levels.
-    As an example, long-running statements, has its threshold values set to 60 minutes for Warning, 45 minutes for Notice, and 30 minutes for Information.  These will be set to much lower thresholds of 3, 2 and 1 minutes in step 2.
+    As an example, long-running statements, has its threshold values set to 60 minutes for Warning, 45 minutes for Notice, and 30 minutes for Information.  These will be set to much lower thresholds of 3, 2 and 1 minutes in step 3.
 
     ![long running statement updated thresholds](long-running-thresholds.png)
 
@@ -67,10 +67,33 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
 
     ![enabled and interval](restarted-services-interval.png)
 
-
 5. Alerts also have a retention period.  Once triggered, depending on their type, they will remain for a set duration such as 14 or 42 days.
 
-For additional details, consult [Alerts in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/alerts-in-sap-hana-cloud) in the administration guide for SAP HANA cockpit.
+For additional details, consult [Alerts in SAP HANA Cloud](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/alerts-in-sap-hana-cloud) in the SAP HANA Cloud administration guide.
+
+
+### Apply alert rules to multiple instances using alert rule sets
+Alert rule sets allow you to define a named collection of alert rules with custom thresholds and apply them to multiple instances at once. This is useful for enforcing consistent alerting standards across an environment without having to configure each instance individually.
+
+> SAP HANA Cloud Central makes it possible to manage alert rules across all instances in a subaccount from a single place. Alert rule sets are the recommended approach when the same thresholds should apply to more than one instance.
+
+1. Navigate to the **Configure Alert Rules** panel, and select the **Alert Rule Sets** tab.
+
+    ![Alert Rule Sets tab](alert-rule-sets.png)
+
+    Click **Create Alert Rule Set**.
+ 
+2. Provide a title for the rule set, then select the alert rules you want to include and configure their thresholds.
+
+3. Select the instances the rule set should apply to. Instances can be filtered by environment, region, or type, or selected individually.
+
+4. Review the selected instances and rule set configuration, then click **Create** to apply. The configured alert thresholds will be applied to all selected instances.
+
+5. To verify consistency across instances or identify configuration differences, use the **Compare Alert Rules** button in the Alerts app, located next to **Configure Alert Rules**.
+
+    Select up to 10 instances to compare. The comparison view shows the alert rule configuration for each selected instance side by side, making it easy to spot differences in thresholds or enabled/disabled states.
+
+    > This is useful for validating that a rule set was applied consistently, identifying configuration drift between instances, or planning standardization before applying a rule set.
 
 
 ### Trigger alerts in a SAP HANA database
@@ -148,7 +171,7 @@ The following instructions will show how to view a triggered SAP HANA database a
 
     ![subaccount alerts view](subaccount-alerts-view.png)  
 
-    A filter can be set for Type, Severity, Instance, Instance Type, and Time Range.
+    A filter can be set for Type, Severity, Instance, Instance Type, Time Range, and Category.
     
     ![alerts view in HCC](alerts-hcc.png) 
 
@@ -178,6 +201,10 @@ The following instructions will show how to view a triggered SAP HANA database a
 
     Additional details on the test alert are available at [SAP Note 3004477 - Usage of statistics server test alert (ID 999)](https://launchpad.support.sap.com/#/notes/3004477).
     
+4. Active alerts for each instance can also be seen at a glance directly from the **Instances** page in SAP HANA Cloud Central, without navigating to the Alerts app. The **Alerts** column displays a count of active alerts per instance, grouped by severity using icons — a warning icon for warnings and an info icon for informational alerts. Navigate to the Alerts app for full details on any triggered alert.
+
+    ![Alerts column on instances page](instances-alerts-column.png)
+
 Alerts can also be accessed via a REST API as shown at [Accessing SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
 
 ### Trigger an alert in SAP HANA Cloud data lake
