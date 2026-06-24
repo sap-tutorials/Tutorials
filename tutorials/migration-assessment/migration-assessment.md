@@ -12,7 +12,7 @@ primary_tag: software-product>sap-integration-suite
 <!-- description --> Use the Migration Assessment Application to automatically assess the SAP Process Orchestration scenarios you want to migrate to SAP Integration Suite.
 
 ## Prerequisites
-- You’ve completed the tutorial [Use the Migration Assessment Application](https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/migration-assessment-enablement.html) or refer [Activating Capabilities](https://help.sap.com/docs/integration-suite/sap-integration-suite/activating-and-managing-capabilities).
+- You’ve completed the tutorial [Use the Migration Assessment Application](https://developers-prod-aqua.wcms-prod.c.eu-de-2.cloud.sap/tutorials/migration-assessment-enablement.html) or refer [Activating Capabilities](https://help.sap.com/docs/integration-suite/sap-integration-suite/activating-and-managing-capabilities).
 - Your user has the required access rights. See [Configuring User Access](https://help.sap.com/docs/integration-suite/sap-integration-suite/configuring-user-access). 
   
 
