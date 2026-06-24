@@ -15,7 +15,7 @@ parser: v2
 ## Prerequisites
 
  - You have an SAP BTP account as source where you have subscribed to SAP Mobile service. For more information, follow the tutorial [Create Your First MDK Application.](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
- - You've set up SAP Cloud Transport Management service in the central administrative subaccount. If you haven't done that, follow the tutorial [Get Started with SAP Cloud Transport Management](https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/btp-transport-management-getting-started.html).
+ - You've set up SAP Cloud Transport Management service in the central administrative subaccount. If you haven't done that, follow the tutorial [Get Started with SAP Cloud Transport Management](hhttps://developers.sap.com/tutorials/btp-transport-management-getting-started.html).
  - You have an SAP BTP account as source where you have subscribed to SAP Mobile service and is empty. 
 
 
@@ -107,7 +107,7 @@ You should now be able to access the user interface of SAP Content Agent service
 ---
 ### Get Details Of SAP Cloud Transport Management Service Instance 
 
-Get the service key details of the SAP Cloud Transport Management instance that you created as part of tutorial [Step 5 in Get Started with SAP Cloud Transport Management](https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/btp-transport-management-getting-started.html).
+Get the service key details of the SAP Cloud Transport Management instance that you created as part of tutorial [Step 5 in Get Started with SAP Cloud Transport Management](https://developers-prod-aqua.wcms-prod.c.eu-de-2.cloud.sap/tutorials/btp-transport-management-getting-started.html).
 
 1. Go to the central administrative SAP BTP subaccount. To do this, click on the **Central Services** tile.
 
