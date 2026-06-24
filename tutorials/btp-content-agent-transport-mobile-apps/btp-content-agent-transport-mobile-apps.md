@@ -15,7 +15,7 @@ parser: v2
 ## Prerequisites
 
  - You have an SAP BTP account as source where you have subscribed to SAP Mobile service. For more information, follow the tutorial [Create Your First MDK Application.](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
- - You've set up SAP Cloud Transport Management service in the central administrative subaccount. If you haven't done that, follow the tutorial [Get Started with SAP Cloud Transport Management](hhttps://developers.sap.com/tutorials/btp-transport-management-getting-started.html).
+ - You've set up SAP Cloud Transport Management service in the central administrative subaccount. If you haven't done that, follow the tutorial [Get Started with SAP Cloud Transport Management](https://developers-prod-aqua.wcms-prod.c.eu-de-2.cloud.sap/tutorials/btp-transport-management-getting-started.html).
  - You have an SAP BTP account as source where you have subscribed to SAP Mobile service and is empty. 
 
 
@@ -218,9 +218,10 @@ Configure the landscape in SAP Cloud Transport Management service using the tran
     | **Name** (1)| here `TARGET_NODE`|
     | **Description** | This field is optional. For example, `SAP Mobile services Quality target node`. |
     | **Content Type** (2) | Select the type of content as **Multi-Target Application**. |
-    | **Destination** (3) | Select the destination created in the previous step. Here, this is **Quality_Target_Node**. |    
+    | **Destination** (3) | Select the destination created in the previous step. Here, this is **Quality_Target_Node**. |
+    
 
-	![Create cTMS node 3](screenshots/CreateTranspLandsc-03.png)
+   ![Create cTMS node 3](screenshots/CreateTranspLandsc-03.png)
 
 6.  The target node is created and is also visible on the canvas. To create a transport route to connect the two nodes, choose the connector icon. sOn the **Create Route** dialog, enter a name for the transport route, here `Route_DEV_TARGET` (1), select the source node `DEV_NODE` (2) and the target node `TARGET_NODE` (3), and click **OK** (4).
     
