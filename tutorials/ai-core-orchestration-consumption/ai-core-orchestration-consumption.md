@@ -639,7 +639,7 @@ Personal Interests
 - I love traveling and experiencing new cultures. 
 - I enjoy playing video games, especially competitive ones. 
 - I hate being stuck in a routine; I always seek new challenges and growth opportunities. 
--I hate working in Azure cloud -"Azure cloud is the most irritating platform i have ever used" 
+- I hate working in xyz cloud -"xyz cloud is the most irritating platform i have ever used" 
 ```
 
 ![img](img/image019.png)
