@@ -132,7 +132,7 @@ CAP Operator provides a plugin to generate a Helm chart for your CAP application
 
     > **`providerSubaccountId`**: In the SAP BTP cockpit, go to your subaccount **Overview** and check the **General** section. You can find the provider subaccount ID.
 
-    > <!-- border; size:540px --> ![Save changes](./img/provider-subdomain-tenant-id.png)
+    > <!-- border; size:540px --> ![Save changes](./img/provider-subaccount-id.png)
 
     > **`imagePullSecret`**: Only include this line if you are using a private registry. If you followed Step 2, set this to `regcred`.
 
