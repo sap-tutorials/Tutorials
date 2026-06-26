@@ -121,8 +121,6 @@ CAP Operator provides a plugin to generate a Helm chart for your CAP application
     capOperatorSubdomain: cap-op
     clusterDomain: <cluster-shoot-domain> # Value obtained in the previous step
     providerSubaccountId: <your-provider-subaccount-id>
-    providerSubdomain: <your-provider-subdomain>
-    tenantId: <your-provider-tenant-id>
     imagePullSecret: regcred # Only include if you performed Step 2
     ```
 
@@ -132,7 +130,7 @@ CAP Operator provides a plugin to generate a Helm chart for your CAP application
 
     > **`clusterDomain`**: Use the domain string you retrieved in the previous step.
 
-    > **`providerSubaccountId`**, **`providerSubdomain`** and **`providerTenantId`**: In the SAP BTP cockpit, go to your subaccount **Overview** and check the **General** section. You can find all three values there.
+    > **`providerSubaccountId`**: In the SAP BTP cockpit, go to your subaccount **Overview** and check the **General** section. You can find the provider subaccount ID.
 
     > <!-- border; size:540px --> ![Save changes](./img/provider-subdomain-tenant-id.png)
 
