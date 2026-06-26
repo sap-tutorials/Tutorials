@@ -120,7 +120,7 @@ For more information, refer to the official [documentation](https://sap.github.i
 
 ```javascript
 
-import { readFile } from 'fs/promises';
+import { readFile } from 'node:fs/promises';
 
 const cvContent = await readFile('path/to/support-request.txt', 'utf-8');
 
@@ -255,9 +255,9 @@ models = [
 
 ```javascript
 
-import type { TemplatingModuleConfig } from '@sap-ai-sdk/orchestration';
+import type { PromptTemplate } from '@sap-ai-sdk/orchestration';
 
-const templating: TemplatingModuleConfig = {
+const templating: PromptTemplate = {
   template: [
     {
       role: 'system',
@@ -384,23 +384,22 @@ For this tutorial, we use anonymization:
 
 ```javascript
 
-import type { MaskingModuleConfig } from '@sap-ai-sdk/orchestration';
+import { buildDpiMaskingProvider } from '@sap-ai-sdk/orchestration';
 
 // Define the data masking configuration 
-const masking: MaskingModuleConfig = { 
-  masking_providers: [ 
-    { 
-      type: 'sap_data_privacy_integration', 
+const masking = { 
+  masking_providers: [
+    buildDpiMaskingProvider({ 
       method: 'anonymization', 
       entities: [ 
-        { type: 'profile-email' }, 
-        { type: 'profile-person' }, 
-        { type: 'profile-phone' }, 
-        { type: 'profile-org' }, 
-        { type: 'profile-location' }, 
+        'profile-email',
+        'profile-person',
+        'profile-phone',
+        'profile-org',
+        'profile-location',
       ], 
-    }, 
-  ], 
+    })
+  ]
 }; 
 
 ```
@@ -513,20 +512,20 @@ Use the buildTranslationConfig helper to configure translation.
 import { buildTranslationConfig } from "@sap-ai-sdk/orchestration";
 
 // Build input translation config: German -> English
-const inputTranslationConfig = buildTranslationConfig({
+const inputTranslationConfig = buildTranslationConfig('input', {
   sourceLanguage: 'de-DE',   
   targetLanguage: 'en-US',   
 });
 
 // Build output translation config: English -> German
-const outputTranslationConfig = buildTranslationConfig({
+const outputTranslationConfig = buildTranslationConfig('output', {
   sourceLanguage: 'en-US',   
   targetLanguage: 'de-DE',   
 });
 
 const translationModuleConfig = {
-  inputTranslation: inputTranslationConfig,
-  outputTranslation: outputTranslationConfig,
+  input: inputTranslationConfig,
+  output: outputTranslationConfig,
 };
 
 console.log('✅ Translation configuration defined successfully (with buildTranslationConfig).');
@@ -722,26 +721,34 @@ for model in models:
 
 ```javascript
 
-import { buildAzureContentSafetyFilter, buildLlamaGuardFilter, OrchestrationClient } from "https://esm.sh/@sap-ai-sdk/orchestration@latest";
+import { buildAzureContentSafetyFilter, buildLlamaGuard38BFilter, OrchestrationClient } from '@sap-ai-sdk/orchestration';
  
 // Define Azure content filtering rules
-const azureFilter = buildAzureContentSafetyFilter({
-  Hate: 'ALLOW_SAFE_LOW',
-  Violence: 'ALLOW_SAFE_LOW_MEDIUM',
-  SelfHarm: 'ALLOW_SAFE',
-  Sexual: 'ALLOW_ALL'
+const azureInputFilter = buildAzureContentSafetyFilter('input', {
+  hate: 'ALLOW_SAFE_LOW',
+  violence: 'ALLOW_SAFE_LOW_MEDIUM',
+  self_harm: 'ALLOW_SAFE',
+  sexual: 'ALLOW_ALL'
+});
+
+const azureOutputFilter = buildAzureContentSafetyFilter('output', {
+  hate: 'ALLOW_SAFE_LOW',
+  violence: 'ALLOW_SAFE_LOW_MEDIUM',
+  self_harm: 'ALLOW_SAFE',
+  sexual: 'ALLOW_ALL'
 });
  
 // Define Llama Guard filtering rules
-const llamaGuardFilter = buildLlamaGuardFilter('hate', 'violent_crimes');
+const llamaGuardInputFilter = buildLlamaGuard38BFilter('input', ['hate', 'violent_crimes']);
+const llamaGuardOutputFilter = buildLlamaGuard38BFilter('output', ['hate', 'violent_crimes']);
  
 // Configure filtering with both filters applied
 const filteringModuleConfig = {
   input: {
-    filters: [azureFilter, llamaGuardFilter] // Multiple filters applied for input
+    filters: [azureInputFilter, llamaGuardInputFilter]
   },
   output: {
-    filters: [azureFilter, llamaGuardFilter] // Multiple filters applied for output
+    filters: [azureOutputFilter, llamaGuardOutputFilter]
   }
 };  
 
@@ -755,17 +762,21 @@ const filteringModuleConfig = {
 
 // Function to create configuration for each model 
 const createModelConfig = (modelName) => ({ 
-    llm: { 
-      model_name: modelName, 
-      model_params: { 
-        max_tokens: 1000, 
-        temperature: 0.6, 
-      }, 
-    }, 
-    ...templateConfig, 
-    ...dataMaskingConfig, 
-    filtering_module_config: filteringModuleConfig,  
-    ...translationModuleConfig
+    promptTemplating: {
+      prompt: {
+        template: templating.template,
+      },
+      model: {
+        name: modelName,
+        params: { 
+          max_tokens: 1000, 
+          temperature: 0.6, 
+        },
+      },
+    },
+    masking: masking,
+    filtering: filteringModuleConfig,
+    translation: translationModuleConfig,
   }); 
   const deploymentConfig = { 
     resourceGroup: '<RESOURCE GROUP>', 
@@ -952,7 +963,7 @@ with open("model_responses.txt", "w") as file:
 ```javascript
 
 import { OrchestrationClient } from '@sap-ai-sdk/orchestration';
-import { writeFileStrSync } from "https://deno.land/std@0.52.0/fs/mod.ts";
+import { writeFile } from 'node:fs/promises';
 
 // Function to generate responses from multiple models
 async function generateResponsesForModels(support_request) {
@@ -962,14 +973,14 @@ async function generateResponsesForModels(support_request) {
 
         const modelConfig = createModelConfig(modelName);
 
-        const orchestrationClient = new OrchestrationClient({
-            ...deploymentConfig,
-            ...modelConfig,
-        });
+        const orchestrationClient = new OrchestrationClient(
+            modelConfig,
+            deploymentConfig
+        );
 
         try {
             const response = await orchestrationClient.chatCompletion({
-                inputParams: { input_text: support_request },
+                placeholderValues: { input_text: support_request },
             });
 
             const content = response.getContent();
@@ -984,7 +995,7 @@ async function generateResponsesForModels(support_request) {
         }
     }
 
-    await writeFileStrSync(
+    await writeFile(
         'model_responses_js.txt',
         responses.map(res => `Response from model ${res.model}:\n${res.response}\n${'-'.repeat(80)}\n`).join(''),
         'utf-8'

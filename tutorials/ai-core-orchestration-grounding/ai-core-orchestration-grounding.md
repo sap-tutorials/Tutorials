@@ -482,7 +482,7 @@ Generic secrets securely store SharePoint credentials required for document acce
 
 ```javascript
 
-import { SecretApi } from from '@sap-ai-sdk/ai-api';
+import { SecretApi } from '@sap-ai-sdk/ai-api';
 
 // Create Secret using SecretApi
 async function createGenericSecret() {
@@ -823,7 +823,7 @@ We are creating a document-grounding pipeline using SAP AI Core. The pipeline is
 
 ```javascript
 // Request body for pipeline creation request
-const pipelineRequest: PipelinePostRequst = {
+const pipelineRequest = {
   type: 'MSSharePoint',
   configuration: {
     destination: '<generic secret name>',
@@ -936,13 +936,17 @@ The configuration defines a document grounding module that retrieves relevant co
 
 ```javascript
 // Create an orchestration module config for the model gpt-4o with grounding and filtering
-const orchestrationModuleConfig: OrchestrationModuleConfig = {
-  llm: {
-    model_name: 'gpt-4o'
+const orchestrationModuleConfig = {
+  promptTemplating: {
+    model: {
+      name: 'gpt-4o'
+    }
   },
   grounding: buildDocumentGroundingConfig({
-    input_params: ['groundingRequest'],
-    output_param: 'groundingOutput',
+    placeholders: {
+      input: ['groundingRequest'],
+      output: 'groundingOutput',
+    },
     // Create a database filter used for the grounding configuration
     filters: [
       {
@@ -955,25 +959,25 @@ const orchestrationModuleConfig: OrchestrationModuleConfig = {
       }
     ]
   }),
-  // Create input and ouput content filters 
+  // Create input and output content filters 
   filtering: {
     input: {
       filters: [
-        buildAzureContentSafetyFilter({
-          Hate: 'ALLOW_SAFE_LOW',
-          SelfHarm: 'ALLOW_SAFE_LOW',
-          Sexual: 'ALLOW_SAFE_LOW',
-          Violence: 'ALLOW_SAFE_LOW'
+        buildAzureContentSafetyFilter('input', {
+          hate: 'ALLOW_SAFE_LOW',
+          self_harm: 'ALLOW_SAFE_LOW',
+          sexual: 'ALLOW_SAFE_LOW',
+          violence: 'ALLOW_SAFE_LOW'
         })
       ]
     },
     output: {
       filters: [
-        buildAzureContentSafetyFilter({
-          Hate: 'ALLOW_SAFE_LOW',
-          SelfHarm: 'ALLOW_SAFE_LOW',
-          Sexual: 'ALLOW_SAFE_LOW',
-          Violence: 'ALLOW_SAFE_LOW'
+        buildAzureContentSafetyFilter('output', {
+          hate: 'ALLOW_SAFE_LOW',
+          self_harm: 'ALLOW_SAFE_LOW',
+          sexual: 'ALLOW_SAFE_LOW',
+          violence: 'ALLOW_SAFE_LOW'
         })
       ]
     }
@@ -992,7 +996,7 @@ const groundingResult = await new OrchestrationClient(
         'UserQuestion: {{?groundingRequest}} Context: {{?groundingOutput}}'
     }
   ],
-  inputParams: {
+  placeholderValues: {
     // Create a grounding prompt which will combine the provided user message with the grounding output
     groundingRequest: 'Is there any complaint?' 
   }
