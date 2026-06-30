@@ -838,7 +838,7 @@ In this step, we will consume the orchestration service using the [`@sap-ai-sdk/
 
 ```javascript
 
-import { readFile } from 'fs/promises';
+import { readFile } from 'node:fs/promises';
 
 const cvContent = await readFile('path/to/cv.txt', 'utf-8');
 
@@ -851,10 +851,10 @@ The next step involves creating a template that specifies how the AI should hand
 • `user`: Represents the user's input to be processed. 
 
 ```javascript
-import type { TemplatingModuleConfig } from '@sap-ai-sdk/orchestration';
+import type { PromptTemplate } from '@sap-ai-sdk/orchestration';
 
 // Define the system and user messages 
-const templatingConfig: TemplatingModuleConfig = {  
+const promptTemplate: PromptTemplate = {  
   template: [ 
     { 
       role: 'system', 
@@ -894,7 +894,7 @@ Query Execution: Uses `OrchestrationClient` to generate responses for each query
 
 ```javascript
 
-import { writeFile } from 'fs/promises';
+import { writeFile } from 'node:fs/promises';
 import { OrchestrationClient } from '@sap-ai-sdk/orchestration'; 
 
 // Generate responses from multiple models using OrchestrationClient
@@ -904,14 +904,16 @@ async function generateResponsesForModels(cvContent: string) {
       models.map(async (model) => {
         const orchestrationClient = new OrchestrationClient(
           {
-            llm: {
-              model_name: model,
-              model_params: { 
-                max_tokens: 1000, 
-                temperature: 0.6, 
-              }, 
-            },
-            templating: templatingConfig
+            promptTemplating: {
+              prompt: promptTemplate,
+              model: {
+                name: model,
+                params: { 
+                  max_tokens: 1000, 
+                  temperature: 0.6, 
+                }, 
+              },
+            }
           },
           { resourceGroup: RESOURCE_GROUP }
         );
@@ -919,7 +921,7 @@ async function generateResponsesForModels(cvContent: string) {
         try { 
           // Run orchestration with the provided input (candidate resume content) 
           const response = await orchestrationClient.chatCompletion({ 
-            inputParams: { candidate_resume: cvContent }, 
+            placeholderValues: { candidate_resume: cvContent }, 
           }); 
 
           // Extract the response content and return it
