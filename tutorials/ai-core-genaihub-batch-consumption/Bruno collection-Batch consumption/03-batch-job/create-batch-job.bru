@@ -1,0 +1,57 @@
+meta {
+  name: Create Batch Job
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{AI_API_URL}}/v2/llm-batch-service/v1/batches
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{TOKEN}}
+  AI-Resource-Group: {{RESOURCE_GROUP}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "type": "llm-native",
+    "input": {
+      "uri": "ai://<object-store-secret-name>/<input-file-path>/<file-name>.jsonl"
+    },
+    "output": {
+      "uri": "ai://<object-store-secret-name>/<output-folder-path>/"
+    },
+    "spec": {
+      "provider": "azure-openai",
+      "model": "gpt-4.1"
+    }
+  }
+}
+
+script:post-response {
+  if (res.status === 200 || res.status === 201) {
+    bru.setEnvVar("BATCH_ID", res.body.id);
+    console.log("Batch ID saved: " + res.body.id);
+  }
+}
+
+docs {
+  ## Create Batch Job
+
+  Submits a batch job to SAP AI Core. The service schedules the job asynchronously
+  and returns a unique batch ID.
+
+  ### Before You Run
+  - Replace `<object-store-secret-name>` with your registered object store secret name
+  - Replace `<input-file-path>/<file-name>.jsonl` with the path to your uploaded JSONL file
+  - Replace `<output-folder-path>/` with your desired output directory (must end with `/`)
+  - Update `model` to match the model used in your input file
+
+  ### After You Run
+  The batch ID is automatically saved to the `BATCH_ID` environment variable and used
+  in all subsequent requests.
+}

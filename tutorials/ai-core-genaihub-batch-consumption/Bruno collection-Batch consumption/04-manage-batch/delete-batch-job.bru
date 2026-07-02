@@ -1,0 +1,27 @@
+meta {
+  name: Delete Batch Job
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{AI_API_URL}}/v2/llm-batch-service/v1/batches/{{BATCH_ID}}
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{TOKEN}}
+  AI-Resource-Group: {{RESOURCE_GROUP}}
+  Content-Type: application/json
+}
+
+docs {
+  ## Delete Batch Job
+
+  Deletes a batch job and removes its metadata from the service.
+  Output files in the object store are not affected.
+
+  ### Restriction
+  Only jobs in `COMPLETED`, `FAILED`, or `CANCELLED` state can be deleted.
+}

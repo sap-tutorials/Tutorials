@@ -1,0 +1,24 @@
+meta {
+  name: Get Batch Details
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{AI_API_URL}}/v2/llm-batch-service/v1/batches/{{BATCH_ID}}
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{TOKEN}}
+  AI-Resource-Group: {{RESOURCE_GROUP}}
+  Content-Type: application/json
+}
+
+docs {
+  ## Get Batch Details
+
+  Retrieves the full details of a batch job — including input and output URIs,
+  provider, model, and current status.
+}
