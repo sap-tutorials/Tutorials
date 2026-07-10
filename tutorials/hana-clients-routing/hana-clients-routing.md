@@ -85,7 +85,7 @@ Individual read only queries can be routed to the replica.  There are some condi
 
     This table and its contents will be available on both the source and replica.
 
-3. Execute the below SQL to perform a query against the source node and the replica node.  Notice that the second SQL statement uses a hint to direct the query to be executed on the replica.
+3. Execute the below SQL to perform a query against the source node and the replica node.  Notice that the second SQL statement uses a hint to direct the query to be executed on the replica.  The built-in function [STATEMENT_EXECUTION_HOST](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/statement-execution-host-function-miscellaneous?locale=en-US) identifies the host node that the query ran on.
 
     ```SQL
     SELECT * FROM M_VOLUMES;
@@ -170,6 +170,10 @@ A connection can be made directly to the replica so that individual statements d
 
     ![Advanced connection options in the SQL Console](direct-connect-sql-console.png)
 
+    ```
+    replicationRole=REPLICA
+    ```
+
     ![Advanced connection options in the SQL Console](direct-connect-sql-console2.png)
 
     Execute the below SQL.
@@ -196,6 +200,10 @@ A connection can be made directly to the replica so that individual statements d
 The usage monitor app can be used to view metrics such as CPU or memory of the source and replica.
 
 1. Change the SQL Console connection back to the source node as the below SQL creates a new table and inserts data which must be executed on the source node.
+
+    ```
+    replicationRole=SOURCE
+    ```
 
     ![connect to the source](connect-to-source.png)
 
@@ -303,6 +311,8 @@ The following example demonstrates creating a workload class that enables querie
 ### Additional considerations
 
 If you are using hint based routing, the statement needs to be prepared before it is executed for the hint to be considered.  Some tools such as the SQL Console and HDBSQL always prepare statements before executing them.  For applications that do not do this, there is a setting called [routeDirectExecute](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4fe9978ebac44f35b9369ef5a4a26f4c.html) that can be enabled.  A further example using this setting in a Node.js application is shown in step 7 of the tutorial [Use an Elastic Compute Node (ECN) for Scheduled Workloads](hana-cloud-ecn).
+
+The [statementRoutingWarnings](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/f6fb06ffe4484f6fa61f10082b11663d.html) SAP HANA Client connection parameter can be set to true when connecting from an application such as Node.js or Python app.  This may help during development and testing of an app that is routing requests to a replica.  
 
 ### Knowledge check
 
