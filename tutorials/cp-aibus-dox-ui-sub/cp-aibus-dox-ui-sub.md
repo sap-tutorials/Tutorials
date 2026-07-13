@@ -15,56 +15,94 @@ author_profile: https://github.com/Juliana-Morais
 - You have created a service instance for SAP Document AI: [Use Trial to Create a Service Instance for SAP Document AI](cp-aibus-dox-service-instance).
 
 ## You will learn
-  - How to add the entitlements for the SAP Document AI Trial application
+  - How to get a trial tenant for Cloud Identity Services 
+  - How to activate an account for Cloud Identity Services and establish trust
   - How to subscribe, assign role collection and access the SAP Document AI Trial application
 
 ---
 
-### Check entitlements
+### Get your trial tenant for Cloud Identity Services 
 
 
-After completing the prerequisite tutorial [Use Trial to Create a Service Instance for SAP Document AI](cp-aibus-dox-service-instance), to create a service instance for SAP Document AI, you can start with the steps to subscribe to the SAP Document AI Trial application.
+After completing the prerequisite tutorial [Use Trial to Create a Service Instance for SAP Document AI](cp-aibus-dox-service-instance), you can start with the steps to subscribe to the SAP Document AI Trial application.
 
 1. From your global account page, choose the `trial` tile to access your subaccount.
 
     <!-- border -->![DOX-UI](enter-trial-account.png)
 
-2. On the navigation side bar, click **Entitlements** to see a list of all eligible services and applications. You are entitled to use every service in this list according to the assigned plan.
+    The SAP Document AI Trial application requires a trial tenant for Cloud Identity Services. For more information, see [Get Trial Tenant](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/get-your-tenant?version=Cloud#get-trial-tenant). 
+
+    The Service Marketplace is where you find all the services and applications available on SAP BTP.
+
+2. On the navigation side bar, click **Service Marketplace**.
+
+    <!-- border -->![DOX-UI](access-service-marketplace.png)
    
-3. Search for **SAP Document AI**. ***If you find `document-information-extraction-trial-application` in the list, you are entitled to use the SAP Document AI application. Now you can set this step to **Done** and proceed with Step 2.***
+3. Search for **Cloud Identity Services** and click the tile. 
 
-    <!-- border -->![Entitlements](check-entitlements.png)
+    <!-- border -->![DOX-UI](tile-ias.png)
 
-***ONLY if you DO NOT find `document-information-extraction-trial-application` in your list, proceed as follows:***
+4. In the top-right corner, click **Create**.
 
-  1. Click **Edit**.
+    <!-- border -->![DOX-UI](subscribe-ias.png)
 
-    ![Configure Entitlements](configure-entitlements.png)
+4. In the dialog, choose the `default` plan and click **Create**.
 
-  2. Click **Add Service Plans**.
+  <!-- border -->![DOX-UI](dialog-create-ias.png)
 
-    ![Add Service Plan](add-service-plans.png)
+The subscription is going to be created now. Click on **View Subscription** to go to the list of your existing subscriptions.
 
-  3. Select **SAP Document AI**, and choose the **`default (Application)`** plan. Click **Add 1 Service Plan**.
-
-    <!-- border -->![Add Service Plan](add-entitlements.png)
-
-  4. **Save** your **Entitlements** changes.
-
-    <!-- border -->![Add Service Plan](save-entitlements.png)    
-
-You're now entitled to subscribe to the SAP Document AI Trial application.
+<!-- border -->![DOX-UI](dialog-in-progress.png)
 
 >For more details on how to configure entitlements, quotas, subaccounts and plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 
 
-### Get subscribed
+### Activate your account for Cloud Identity Services
 
 
-The **Service Marketplace** is where you find all the services and applications available on SAP BTP.
+1. Go to your inbox and open the account activation email. Choose *Click here to activate your account*.
 
-1. To access it, click **Service Marketplace** on the navigation side bar.
+    <!-- border -->![DOX-UI](activate-account.png)
+
+2. Enter a password and click **Continue**.
+
+    <!-- border -->![DOX-UI](activate-account-continue.png)
+
+3. You are informed that your account is successfully activated. Click **Continue**.
+
+     <!-- border -->![DOX-UI](activate-account-acticated.png)
+
+This opens the administration console of SAP Cloud Identity Services:
+
+<!-- border -->![DOX-UI](console.png)
+
+
+
+### Establish trust
+
+
+1. Back on the SAP BTP Trial cockpit, under **Security**, click **Trust Configuration** and then in the top-right corner, click **Establish Trust**.
+
+    <!-- border -->![DOX-UI](trust.png)    
+
+2. Choose your trial tenant for Cloud Identity Services and click **Next** 3 times.
+
+    <!-- border -->![DOX-UI](next.png) 
+
+3. Click **Finish**.
+
+    <!-- border -->![DOX-UI](finish.png)     
+
+Your trial tenant for Cloud Identity Services is added to the list:
+<!-- border -->![DOX-UI](list.png)
+
+
+
+### Get subscribed to the SAP Document AI Trial application.
+
+
+1. On the navigation side bar, click **Service Marketplace**.
 
     <!-- border -->![DOX-UI](access-service-marketplace.png)
 
@@ -80,18 +118,25 @@ The **Service Marketplace** is where you find all the services and applications 
 
   <!-- border -->![DOX-UI](dialog-create.png)
 
-The subscription will now be created. Click on **View Subscription** to go to the list of your existing subscriptions.
+The subscription is going to be created now. Click on **View Subscription** to go to the list of your existing subscriptions.
 
 <!-- border -->![DOX-UI](dialog-in-progress.png)
 
 
 
-### Assign role collection
+### Create user and assign role collection
 
+1. Under **Security**, click **Users** and then click **Create**.
 
-1. Under **Security**, click **Users** and then the **Navigation** arrow.
+    <!-- border -->![DOX-UI](create-user.png) 
 
-    <!-- border -->![DOX-UI](users.png)    
+2. Enter your *User Name* and *E-mail*. In the *Identity Provider* dropdown, choose your trial tenant for Cloud Identity Services. Click **Create**.
+
+    <!-- border -->![DOX-UI](create-user2.png) 
+
+3. Click the **Navigation** arrow of your trial tenant for Cloud Identity Services.    
+
+    <!-- border -->![DOX-UI](users.png)  
 
 2. Click **Assign Role Collection**.
 
@@ -101,10 +146,9 @@ The subscription will now be created. Click on **View Subscription** to go to th
 
     <!-- border -->![DOX-UI](assign-role-collection.png)
 
-You're now assigned to the **`Document_Information_Extraction_UI_Templates_Admin_trial`** role collection.
+Your trial tenant for Cloud Identity Services is now assigned to the **`Document_Information_Extraction_UI_Templates_Admin_trial`** role collection.
 
 <!-- border -->![DOX-UI](roles.png)
-
 
 
 
