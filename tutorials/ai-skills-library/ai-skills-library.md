@@ -22,7 +22,7 @@ author_profile: https://github.com/noravth
 - For CLI installation: Node.js installed and a terminal (e.g. Claude Code)
 - A public GitHub account (for contributing a skill)
 
-> Important note! Joule Work and Joule Work Desktop are not GA (General Availability) yet.
+> Important note! Joule Work and Joule Work Desktop are not GA (General Availability) yet. They are currently available only to EAC (Early Adopter Care) customers.
 
 ---
 
