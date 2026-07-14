@@ -25,13 +25,9 @@ author_profile: https://github.com/Juliana-Morais
 ### Access the SAP BTP cockpit
 
 
-1. Open the [SAP BTP cockpit](https://account.hana.ondemand.com/cockpit#/home/allaccounts).
+1. Open the [SAP BTP cockpit](https://cockpit.btp.cloud.sap).
 
-2. Access your global account.
-
-    <!-- border -->![Access Subaccount](global-account.png)
-
-3. Click the tile to access your subaccount.
+2. Click the tile to access your subaccount.
 
 <!-- border -->![Access Subaccount](access-subaccount.png)
 
@@ -58,7 +54,7 @@ To use SAP Document AI, you need to make sure that your account is properly conf
 
     <!-- border -->![Add Service Plans](add-service-plans.png)
 
-  3.  In the dialog, select `SAP Document AI`. Choose the `free` and `default (Application)` service plans. Click **Add 2 Service Plans**.
+  3.  Search for `SAP Document AI`. Choose the `free (Free Tier)` and `default (Application)` service plans. Click **Add 2 Service Plans**.
 
     >You can also perform this tutorial series using the following service plans intended for productive use: Premium Edition (premium_edition) or Base Edition (blocks_of_100). To do so, choose either the `premium_edition` or the `blocks_of_100` plan in this step (instead of free). For more information on the service plans available for SAP Document AI, see [Service Plans](https://help.sap.com/docs/DOCUMENT_INFORMATION_EXTRACTION/5fa7265b9ff64d73bac7cec61ee55ae6/2c17b2aa8d6b4fa8a5c6259a33feb360.html).
 

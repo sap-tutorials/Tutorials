@@ -1,7 +1,7 @@
 ---
 parser: v2
 auto_validation: true
-time: 10
+time: 20
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-services, software-product>sap-document-ai]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
@@ -99,7 +99,7 @@ Your trial tenant for Cloud Identity Services is added to the list:
 
 
 
-### Get subscribed to the SAP Document AI Trial application.
+### Get subscribed to the SAP Document AI Trial application
 
 
 1. On the navigation side bar, click **Service Marketplace**.
