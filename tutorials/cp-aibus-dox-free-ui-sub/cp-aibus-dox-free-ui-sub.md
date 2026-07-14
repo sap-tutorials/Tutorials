@@ -56,7 +56,7 @@ To use the SAP Document AI basic UI, you need to make sure that your account is 
 
     <!-- border -->![Add Service Plans](add-service-plans.png)
 
-  3.  Search for `Cloud Identity Services`. Choose the `default (Application)` plan (or the `additional-tenant (Application)` plan). Click **Add 1 Service Plans**.
+  3.  Search for `Cloud Identity Services`. Choose the `default (Application)` plan (or the `additional-tenant (Application)` plan). Click **Add 1 Service Plan**.
 
     <!-- border -->![Add Service Plan](add-plan.png)    
 
