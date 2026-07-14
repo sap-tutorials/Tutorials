@@ -8,7 +8,7 @@ author_name: Nora von Thenen
 author_profile: https://github.com/noravth
 ---
 
-# Get Started with the SAP AI Skills Library
+# Get Started with the AI Skills Library
 
 ## You will learn
 - What the AI Skills Library is
@@ -26,7 +26,7 @@ author_profile: https://github.com/noravth
 
 ---
 
-## What Is the AI Skills Library?
+### What Is the AI Skills Library?
 
 The [AI Skills Library](https://skills.cloud.sap/) is a public catalog of reusable AI skills and related components that you can browse, install, and contribute to. It is built on an open, bring-your-own-repository model — anyone can publish a skill, and the platform surfaces it alongside SAP's own certified content.
 
@@ -49,11 +49,13 @@ Skills work across AI environments that support the installation methods describ
 
 ---
 
-## Browse the Skills Library
+### Browse the Skills Library
 
 1. Open [skills.cloud.sap](https://skills.cloud.sap/) in your browser.
 
+
     ![AI Skills Library homepage showing the search bar and filter buttons](images/skills-library-homepage.png)
+
 
 2. Use the **search bar** to find skills by name, description, tag, or author.
 
@@ -61,7 +63,9 @@ Skills work across AI environments that support the installation methods describ
    - **Classification** — choose *Platform* (development, DevOps, security) or *Business* (finance, HR, procurement)
    - **Publisher** — choose *SAP* or *Third-Party*
 
+
     ![Filter buttons for Classification and Publisher](images/skills-library-filters.png)
+
 
 4. Toggle between grid and list view using the icon in the toolbar.
 
@@ -70,32 +74,38 @@ Skills work across AI environments that support the installation methods describ
    - Links to the source repository
    - Related agents, MCP servers, API resources, and packages
 
+
     ![Skill detail page showing metadata, trust level, and install options](images/skills-library-detail-page.png)
+
 
 Take a moment to explore a few skills and notice how each one describes a concrete, repeatable workflow.
 
 ---
 
-## Install a Skill
+### Install a Skill
 
 Installation options depend on which environment you are working in. Each skill's detail page shows the available methods.
 
-### Option A — Joule Work Desktop
+#### Option A — Joule Work Desktop
 
 1. On the skill's detail page, click **Add to Joule Work Desktop**.
 
+
     ![Add to Joule Work Desktop button on the skill detail page](images/install-joule-work-desktop-button.png)
+
 
 2. A deep link opens Joule Work Desktop and installs the skill locally.
 
+
     ![Add to Joule Work Desktop](images/install-joule-work-desktop.png)
+
 
 3. The skill is now available in your local Joule desktop application.
 
-### Option B - **Add to Joule Work Web**
+#### Option B - **Add to Joule Work Web**
 - Coming soon
 
-### Option C — CLI (npx)
+#### Option C — CLI (npx)
 
 Use this option when working with a local AI coding assistant such as Claude Code.
 
@@ -107,17 +117,18 @@ Use this option when working with a local AI coding assistant such as Claude Cod
 
     ![npx install command shown on the skill detail page](images/install-joule-work-desktop-button.png)
 
+
 2. Open your terminal and run the command.
 
 3. The skill is installed into your local environment and is ready to use.
 
 ---
 
-## Create Your Own Skill
+### Create Your Own Skill
 
 A skill lives in a public GitHub repository under a specific folder structure. The AI Skills Library does not host your code but it points to your repository.
 
-### 1. Structure your repository
+#### 1. Structure your repository
 
 Create the following layout in your public GitHub repository:
 
@@ -130,7 +141,7 @@ your-repo/
 
 Replace `<skill-slug>` with a short, lowercase, hyphenated name for your skill (for example, `summarize-meeting-notes`).
 
-### 2. Write your SKILL.md
+#### 2. Write your SKILL.md
 
 The `SKILL.md` file must include at minimum a `name` and `description` in its frontmatter:
 
@@ -152,13 +163,13 @@ Keep the output concise and structured.
 
 Add author and license information somewhere in your repository — a `README.md`, `LICENSE` file, or `package.json` all work.
 
-### 3. Test your skill locally
+#### 3. Test your skill locally
 
 Before submitting, install your skill locally using the CLI method and verify it behaves as expected in your AI assistant.
 
 ---
 
-## Submit Your Skill to the Library
+### Submit Your Skill to the Library
 
 The AI Skills Library uses a **bring-your-own-repo** model. You keep your skill in your own GitHub repository and register it with the platform.
 
@@ -166,7 +177,9 @@ The AI Skills Library uses a **bring-your-own-repo** model. You keep your skill 
 
 2. Open a **Register a New Skill** issue in the AI Skills Library repository (the link is available on the [documentation page](https://skills.cloud.sap/)).
 
+
     ![GitHub issue template for registering a new skill](images/submit-registration-issue.png)
+
 
 3. A maintainer reviews your submission and onboards your repository. Once approved, your skill appears in the catalog with a **Community** trust level.
 
