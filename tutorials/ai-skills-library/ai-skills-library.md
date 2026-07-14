@@ -64,6 +64,7 @@ Skills work across AI environments that support the installation methods describ
    - **Publisher** — choose *SAP* or *Third-Party*
 
 
+
     ![Filter buttons for Classification and Publisher](images/skills-library-filters.png)
 
 
@@ -73,6 +74,7 @@ Skills work across AI environments that support the installation methods describ
    - Author, category, trust level, tags, and license
    - Links to the source repository
    - Related agents, MCP servers, API resources, and packages
+
 
 
     ![Skill detail page showing metadata, trust level, and install options](images/skills-library-detail-page.png)
@@ -143,15 +145,13 @@ Replace `<skill-slug>` with a short, lowercase, hyphenated name for your skill (
 
 #### 2. Write your SKILL.md
 
-The `SKILL.md` file must include at minimum a `name` and `description` in its frontmatter:
+The `SKILL.md` file must include at minimum a `name` and `description` at the top:
 
-```markdown
----
+```
 name: Summarize Meeting Notes
 description: Extracts action items, decisions, and open questions from raw meeting notes.
----
 
-## Instructions
+Instructions
 
 Given a block of meeting notes, identify and return:
 - **Action items** — who is responsible and by when
