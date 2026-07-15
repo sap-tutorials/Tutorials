@@ -16,7 +16,6 @@ author_profile: https://github.com/Juliana-Morais
 - You have a subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## You will learn
-  - How to check your SAP Document AI entitlements
   - How to create a service instance of SAP Document AI
   - How to create a service key for your service instance
 ---

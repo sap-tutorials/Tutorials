@@ -56,7 +56,7 @@ To use SAP Document AI, you need to make sure that your account is properly conf
 
   3.  Search for `SAP Document AI`. Choose the `free (Free Tier)` and `default (Application)` service plans. Click **Add 2 Service Plans**.
 
-    >You can also perform this tutorial series using the following service plans intended for productive use: Premium Edition (premium_edition) or Base Edition (blocks_of_100). To do so, choose either the `premium_edition` or the `blocks_of_100` plan in this step (instead of free). For more information on the service plans available for SAP Document AI, see [Service Plans](https://help.sap.com/docs/DOCUMENT_INFORMATION_EXTRACTION/5fa7265b9ff64d73bac7cec61ee55ae6/2c17b2aa8d6b4fa8a5c6259a33feb360.html).
+    >You can also perform this tutorial series using the following service plans intended for productive use: base edition (blocks_of_100), embedded edition (embedded_edition), or premium edition (premium_edition). To do so, choose either the `blocks_of_100`, `embedded_edition`, or `premium_edition` plan in this step (instead of `free`). For more information about the service plans available for SAP Document AI, see [Service Plans](https://help.sap.com/docs/document-information-extraction/document-information-extraction/service-plans).
 
     <!-- border -->![Add Service Plan](add-free-plan.png)
 
@@ -70,38 +70,28 @@ You are now entitled to use SAP Document AI and create service instances.
 
 
 
-### Access SAP Document AI via Service Marketplace
-
-
-The Service Marketplace is where you find all the services available on SAP BTP.
-
-1.  To access it, click **Service Marketplace** on the navigation side bar.
-
-    <!-- border -->![Access Marketplace](access-marketplace.png)
-
-2.  Next, search for **SAP Document AI** and click the tile to access it.
-
-    <!-- border -->![Access Service](access-service.png)
-
-
-
 ### Create service instance
 
 
-Next, you will create an instance of SAP Document AI.
+The Service Marketplace is where you find all the services available on SAP BTP. You'll now create a service instance of SAP Document AI.
 
-1. Click **Create** to start the service instance creation dialog.
+1.  Click **Service Marketplace** on the navigation side bar. Search for **SAP Document AI** and click the tile to access it.
+
+    <!-- border -->![Access Service](access-service.png)
+
+2. Click **Create** to start the service instance creation dialog.
 
     <!-- border -->![Create Instance](create-instance.png)
 
-2. In the dialog, choose the `free` plan. Enter a name for your new instance, for example, `doc-ai-instance` and click **Create**.
+3. In the dialog, choose the `free` plan. Enter a name for your new instance, for example, `doc-ai-instance` and click **Create**.
 
-    >Choose `blocks_of_100` in this step (instead of `free`) if you're using the `blocks_of_100` plan to perform this tutorial series.
-    >Choose `premium_edition` in this step (instead of `free`) if you're using the `premium_edition` plan to perform this tutorial series.
+    >Choose `blocks_of_100` in this step (instead of `free`) if you're using the base edition plan to perform this tutorial series.
+    >Choose `embedded_edition` in this step (instead of `free`) if you're using the embedded edition plan to perform this tutorial series.
+    >Choose `premium_edition` in this step (instead of `free`) if you're using the premium edition plan to perform this tutorial series.
 
     <!-- border -->![Create Instance](create-instance-dialog.png)
 
-3. In the following dialog, click on **View Instance** to navigate to the list of your service instances.
+4. In the following dialog, click on **View Instance** to navigate to the list of your service instances.
 
     <!-- border -->![View Instances](view-instances.png)
 
