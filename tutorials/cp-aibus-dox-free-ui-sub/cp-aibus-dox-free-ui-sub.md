@@ -15,8 +15,9 @@ author_profile: https://github.com/Juliana-Morais
 - You have created a service instance for SAP Document AI: [Use Free Tier to Create a Service Instance for SAP Document AI](cp-aibus-dox-free-service-instance)
 
 ## You will learn
-  - How to check your subaccount entitlements and add SAP Document AI basic UI
-  - How to subscribe, assign role collection and access SAP Document AI basic UI
+  - How to get a tenant for Cloud Identity Services 
+  - How to activate an account for Cloud Identity Services and establish trust
+  - How to subscribe, assign role collection and access the SAP Document AI basic UI
 
 ---
 
