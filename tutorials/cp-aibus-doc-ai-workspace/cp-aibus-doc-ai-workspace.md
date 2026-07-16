@@ -26,7 +26,7 @@ author_profile: https://github.com/Juliana-Morais
 
 After completing the prerequisite tutorial [Use Free Tier to Create a Service Instance for SAP Document AI](cp-aibus-dox-free-service-instance), you can start with the steps to subscribe to the SAP Document AI workspace.
 
-For now, the SAP Document AI workspace is only available for enterprise accounts with the plans embedded edition (embedded_edition) and premium edition (premium_edition). Make sure to choose one of these 2 plans when creating your service instance (instead of the free plan). For more information, see [Service Plans](https://help.sap.com/docs/document-ai/sap-document-ai/service-plans)
+For now, the SAP Document AI workspace is only available for enterprise accounts with the plans embedded edition (embedded_edition) and premium edition (premium_edition). Make sure to choose one of these 2 plans when creating your service instance (instead of the free plan). For more information, see [Service Plans](https://help.sap.com/docs/document-ai/sap-document-ai/service-plans).
 
 1. Open the [SAP BTP cockpit](https://cockpit.btp.cloud.sap).
 
@@ -47,27 +47,27 @@ The SAP Document AI workspace requires a tenant for Cloud Identity Services. For
 
 2. Search for `Cloud Identity Services`. ***If you find it in the list, you're entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
-<!-- border -->![Check Entitlements](check-entitlements.png)
+    <!-- border -->![Check Entitlements](check-entitlements.png)
 
 ***ONLY if you DO NOT find `Cloud Identity Services` in your list, proceed as follows:***
 
   1.  Click **Edit**.
   
-        <!-- border -->![DOX-UI](edit.png)
+    <!-- border -->![DOX-UI](edit.png)
 
   2.  Click **Add Service Plans**.
             
-        <!-- border -->![DOX-UI](add-service-plans.png)
+    <!-- border -->![DOX-UI](add-service-plans.png)
 
   3.  Search for `Cloud Identity Services`. Choose the `default (Application)` plan (or the `additional-tenant (Application)` plan). Click **Add 1 Service Plan**.
       
-        <!-- border -->![DOX-UI](add-plan.png)
+    <!-- border -->![DOX-UI](add-plan.png)
 
   4.  Click **Save** to save your entitlement changes.
     
-        <!-- border -->![DOX-UI](save-entitlements.png)
+    <!-- border -->![DOX-UI](save-entitlements.png)
 
-You're now entitled to create a tenant for Cloud Identity Services.
+    You're now entitled to create a tenant for Cloud Identity Services.
 
 
 
@@ -86,11 +86,11 @@ The Service Marketplace is where you find all the services and applications avai
 
 3. In the dialog, click **Create**.
 
-  <!-- border -->![DOX-UI](dialog-create-ias.png)
+    <!-- border -->![DOX-UI](dialog-create-ias.png)
 
-The subscription is going to be created now. Click on **View Subscription** to go to the list of your existing subscriptions.
+    The subscription is going to be created now. Click on **View Subscription** to go to the list of your existing subscriptions.
 
-<!-- border -->![DOX-UI](dialog-in-progress.png)
+    <!-- border -->![DOX-UI](dialog-in-progress.png)
 
 
 
@@ -109,11 +109,11 @@ The subscription is going to be created now. Click on **View Subscription** to g
 
      <!-- border -->![DOX-UI](activate-account-activated.png)
 
-This opens the administration console of SAP Cloud Identity Services:
+    This opens the administration console of SAP Cloud Identity Services:
 
-<!-- border -->![DOX-UI](console.png)
+    <!-- border -->![DOX-UI](console.png)
 
-Leave the administration console of SAP Cloud Identity Services open. We'll go back here in step 7.
+    Leave the administration console of SAP Cloud Identity Services open. We'll go back here in step 7.
 
 
 ### Establish trust
@@ -131,9 +131,9 @@ Leave the administration console of SAP Cloud Identity Services open. We'll go b
 
     <!-- border -->![DOX-UI](finish.png)     
 
-Your tenant for Cloud Identity Services is added to the list:
+    Your tenant for Cloud Identity Services is added to the list:
 
-<!-- border -->![DOX-UI](list.png)
+    <!-- border -->![DOX-UI](list.png)
 
 
 
@@ -147,17 +147,17 @@ Before subscribing to the SAP Document AI workspace, make sure that a service in
 
     <!-- border -->![DOX-UI](tile.png)
 
-3. Click **Create**.
+2. Click **Create**.
 
     <!-- border -->![DOX-UI](subscribe.png)
 
-4. In the dialog, choose the `default` plan and click **Create**.
+3. In the dialog, choose the `default` plan and click **Create**.
 
-  <!-- border -->![DOX-UI](dialog-create.png)
+    <!-- border -->![DOX-UI](dialog-create.png)
 
-The subscription is going to be created now. Click on **View Subscription** to go to the list of your existing subscriptions.
+    The subscription is going to be created now. Click on **View Subscription** to go to the list of your existing subscriptions.
 
-<!-- border -->![DOX-UI](dialog-in-progress.png)
+    <!-- border -->![DOX-UI](dialog-in-progress.png)
 
 
 
@@ -190,14 +190,14 @@ SAP Document AI provides default policies that you can assign to users. These po
 
     <!-- border -->![DOX-UI](add-users.png)
 
-You have added the selected users to an authorization policy. These users are authorized to access and use the resources with the rules and restrictions defined in the authorization policy. 
+    You have added the selected users to an authorization policy. These users are authorized to access and use the resources with the rules and restrictions defined in the authorization policy. 
 
 
 
 ### Go to application
 
 
-1. Back on the SAP BTP cockpit, under **Services**, click **Instances and Subscriptions**, Choose the three dots at the right end of the row with the SAP Document AI application and select **Go to Application** from the dropdown.
+1. Back on the SAP BTP cockpit, under **Services**, click **Instances and Subscriptions**. Choose the three dots at the right end of the row with the SAP Document AI application and select **Go to Application** from the dropdown.
 
     <!-- border -->![DOX-UI](go-to-app.png)
 
@@ -220,4 +220,4 @@ You have added the selected users to an authorization policy. These users are au
 
     <!-- border -->![DOX-UI](app.png)
 
-You have successfully subscribed to the SAP Document AI workspace.
+    You have successfully subscribed to the SAP Document AI workspace.
