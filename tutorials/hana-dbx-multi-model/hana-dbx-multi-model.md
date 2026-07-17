@@ -22,7 +22,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Intro
 
-A [knowledge graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sap-hana-cloud-sap-hana-database-knowledge-graph-engine-guide) can be used to store facts in triples providing additional meaning and relationships. 
+A [knowledge graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sap-hana-cloud-sap-hana-database-knowledge-graph-engine-guide) can be used to store facts in triples providing additional meaning and relationships.
 
 A [property graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-property-graph-engine-reference/sap-hana-cloud-sap-hana-database-property-graph-engine-reference) can be used to show the connections between items such as the connections between airports or between people or groups in a social network.
 
@@ -51,9 +51,8 @@ Before you can create a knowledge graph, please ensure your HANA Instance is ver
     ![Add Triple Store](add_triple_store.png)
 
     *The knowledge graph feature is not available for free tier instances.*
-    
-    To learn more about knowledge graphs see [Connecting the Facts: SAP HANA Cloud’s Knowledge Graph Engine for Business Context](https://community.sap.com/t5/technology-blogs-by-sap/connecting-the-facts-sap-hana-cloud-s-knowledge-graph-engine-for-business/ba-p/13888597) and [Choosing Between Knowledge Graphs and Property Graphs in SAP HANA Cloud and Why Both Matter](https://community.sap.com/t5/technology-blogs-by-sap/choosing-between-knowledge-graphs-and-property-graphs-in-sap-hana-cloud-and/ba-p/14074575).
 
+    To learn more about knowledge graphs see [Connecting the Facts: SAP HANA Cloud’s Knowledge Graph Engine for Business Context](https://community.sap.com/t5/technology-blogs-by-sap/connecting-the-facts-sap-hana-cloud-s-knowledge-graph-engine-for-business/ba-p/13888597) and [Choosing Between Knowledge Graphs and Property Graphs in SAP HANA Cloud and Why Both Matter](https://community.sap.com/t5/technology-blogs-by-sap/choosing-between-knowledge-graphs-and-property-graphs-in-sap-hana-cloud-and/ba-p/14074575).
 
 4. Execute the following in the SQL Console. This query creates a KG with several hotels and amenities such as an indoor pool, hot tub, fitness center, etc.
 
@@ -162,9 +161,8 @@ Before you can create a knowledge graph, please ensure your HANA Instance is ver
         ', '', ?, ?
     );
     ```
-    
-    Additional examples can be found at [SAP HANA Cloud, SAP HANA Database SPARQL Reference Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sparql-reference-guide/sap-hana-cloud-sap-hana-database-sparql-reference-guide)
 
+    Additional examples can be found at [SAP HANA Cloud, SAP HANA Database SPARQL Reference Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sparql-reference-guide/sap-hana-cloud-sap-hana-database-sparql-reference-guide)
 
 5. To visualize and examine the knowledge graph database objects, you must first enable the feature in your preferences.  Click on your account
 
@@ -175,19 +173,18 @@ Before you can create a knowledge graph, please ensure your HANA Instance is ver
     ![Database Objects Tab](go_database_objects.png)
 
     Enable RDF Named Graphs
-    
+
     ![Enable RDF Graphs](enable_RDF_graphs.png)
 
     You will now have the RDF Named Graphs view available. Click on it to view the graphs you have created
-        
+
     ![RDF Named Graphs View](RDF_view.png)
 
     The DEFAULT graph is where content goes when it doesn't have a name. For more information, review the [DEFAULT_GRAPHS and Named Graphs help page](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/default-graph-and-named-graphs).
 
     Click on the kg_hotels graph, and open the graph ontology to see the nodes.
-    
-    ![Graph Ontology View](view_graph.png)
 
+    ![Graph Ontology View](view_graph.png)
 
 6. Run a query to find hotels that have an indoor pool.
 
@@ -212,8 +209,8 @@ Before you can create a knowledge graph, please ensure your HANA Instance is ver
 
     Further examples of creating SPARQL statements can be found at [SPARQL SELECT Queries Using SPARQL_TABLE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sparql-select-queries-using-sparql-table).
 
-
 ### Create a property graph workspace
+
 The following steps will create a property graph workspace that can display the distance between hotels in a state.
 
 In SAP HANA Cloud, a property graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
@@ -291,8 +288,8 @@ In SAP HANA Cloud, a property graph is made up of a set of vertices and a set of
 
 For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Reference](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/sap-hana-cloud-sap-hana-database-graph-reference).
 
-
 ### Explore a property graph using the viewer
+
 1. Open the property graph viewer.
 
     ![DISTANCEGRAPH graph viewer](distance-graph-workspace-viewer.png)
@@ -323,14 +320,14 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH edge filter](edge-filter.png)
 
-5. Highlight the Long Island vertex using the property graph viewer settings. You may do so by selecting a color. 
+5. Highlight the Long Island vertex using the property graph viewer settings. You may do so by selecting a color.
 
     ![DISTANCEGRAPH highlighted Long Island](long-island.png)
 
 Additional property graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/appendix-open-flights-and-company-graph-examples).  The company graph example does not currently display in the SAP HANA database explorer property graph viewer as it does not currently support the display of homogeneous graphs.  Property graph workspaces may also be viewed using the [SAP HANA plug-in for Cytoscape](https://github.com/SAP/sap-hana-plugin-for-cytoscape).
 
-
 ### Use property graph algorithms in the SAP HANA database explorer
+
 The shortest path algorithm can be used to provide the optimal route between two vertices. The nearest neighbor algorithm can be used to show only the vertices that are connected to a specified vertex.
 
 The following steps will walk through using the shortest path algorithm to determine the optimal route from Airport Hotel in Rosemont, IL to Regency Hotel in Seattle, WA.
@@ -367,8 +364,8 @@ The following steps will walk through using the shortest path algorithm to deter
 
     ![Graph Algorithms](graph-algorithms.png)
 
-
 ### Create, populate, and query a JSON collection (optional)
+
 SAP HANA provides the ability to store and query JSON data.  This can be useful if the schema of the data is often changed or if you wish to join data in SQL queries that comes from both SQL tables and JSON data.
 
 The following steps will demonstrate how to create a JSON collection that can be used to collect notes about customers staying at a hotel.
@@ -400,7 +397,7 @@ The following steps will demonstrate how to create a JSON collection that can be
     Notice that the structure of the Guest Notes does not need to be defined in advance.
 
 4. (Optional) You can use the [Support for JSON Schema](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/support-for-json-schema) feature to define rules for your documents to adhere to. The example below restricts the "title" property to only accept strings.
-   
+
     ```SQL
     CREATE COLLECTION "GUEST_NOTES_WITH_SCHEMA" JSON SCHEMA '{
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -415,7 +412,6 @@ The following steps will demonstrate how to create a JSON collection that can be
     ```
 
     ![Schema Validation Error](schema_validation_error.png)
-    
 
 5. The JSON data can be returned as a JSON document, in a tabular result, or can be joined with data from a table.
 
@@ -447,16 +443,17 @@ The following steps will demonstrate how to create a JSON collection that can be
 Further examples can be found in the [The Small JSON Document Store Cookbook](https://community.sap.com/t5/technology-blogs-by-sap/the-small-json-document-store-cookbook/ba-p/13516348).
 
 ### Import a JSON collection using the hana_ml.docstore package (optional)
+
 JSON collections can be imported using the import data wizard but are required to be in a specified format as mentioned at [Import and Export](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/import-and-export).  An alternative method of performing an import is shown in this step.
 
-1. Find a JSON collection to be imported.  The example below uses the Parks dataset from [City of Waterloo Open Data](https://opendata-city-of-waterloo.opendata.arcgis.com/) downloaded as a GeoJSON file. 
+1. Find a JSON collection to be imported.  The example below uses the Parks dataset from [City of Waterloo Open Data](https://opendata-city-of-waterloo.opendata.arcgis.com/) downloaded as a GeoJSON file.
 
-2. Create a Python application and update the host variable below. 
+2. Create a Python application and update the host variable below.
 
     ```Shell (Microsoft Windows)
     notepad loadJSON.py
     ```
-    
+
     ```Python
     from hana_ml import docstore
     from hana_ml.dataframe import ConnectionContext
@@ -508,12 +505,13 @@ JSON collections can be imported using the import data wizard but are required t
     SELECT "features" FROM "HOTELS"."WATERLOO_PARKS" UNNEST "features" as "f";
     SELECT "f"."properties"."NAME", "f"."properties"."TENNIS_COURT" FROM "HOTELS"."WATERLOO_PARKS" UNNEST "features" as "f" ORDER BY "f"."properties"."TENNIS_COURT" DESC;
     ```
+
     ![parks with tennis courts](parks-with-tennis-courts.png)
 
 Additional details can be found at [hana_ml.docstore package](https://help.sap.com/doc/cd94b08fe2e041c2ba778374572ddba9/latest/en-US/hana_ml.docstore.html#hana_ml.docstore.create_collection_from_elements).
 
-
 ### Import and view spatial data
+
 This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/support-for-esri-shapefiles) or optionally a `GeoJSON` file containing points of interest in the city of Waterloo Ontario.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the Delta hotel located in Waterloo.
 
 1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest Waterloo`**.  Scroll through the results and choose the selection below.
@@ -524,11 +522,9 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud
 
     ![download shapefile](download-shapefile.png)
 
-
 3. To import a `shapefile`, start the import data wizard.
 
     ![Open import data wizard](open-import-data-wizard.png)
-
 
     Choose **Import ESRI Shapefiles** and select the `Points_of_Interest.zip` file.
 
@@ -633,8 +629,8 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud
 
     Additional details can be found at [JSON_VALUE Function](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/9355cb9e45a149c1a6ddb2bd2392d864.html) and [ST_GeomFromGeoJSON](https://help.sap.com/docs/HANA_CLOUD_DATABASE/bc9e455fe75541b8a248b4c09b086cf5/40771e89ed1641e88674b45adb2ef6a1.html).
 
-
 ### Use spatial functions in a query
+
 1. The following statement shows the list of points of interest within 3 kilometers of the `Delta` hotel.
 
     ```SQL
@@ -685,6 +681,5 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud
 ### Knowledge check
 
 Congratulations! You have explored a few of the multi-model features in SAP HANA and are now familiar with graph workspaces, JSON collections, and spatial data when using the SAP HANA database explorer.
-
 
 ---

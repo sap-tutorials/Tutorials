@@ -1,0 +1,69 @@
+info:
+  name: Post feedback to an inference
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{AI_API}}/observability/inferences/{{inferenceId}}/feedback"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource-group}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      [{
+        "content": {
+          "stars": 5
+        }
+      }]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/observability/inferences/4ba60b4a-30ee-9070-9671-3fbca68ed085/feedback"
+      method: POST
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: default
+        - name: Content-Encoding
+          value: application/json
+      body:
+        type: json
+        data: |-
+          [{
+            "content": "This was another great suggestions"
+          }]
+    response:
+      status: 202
+      statusText: Accepted
+      headers:
+        - name: content-type
+          value: application/json
+        - name: date
+          value: Tue, 17 Mar 2026 09:47:36 GMT
+        - name: content-length
+          value: "31"
+        - name: server
+          value: istio-envoy
+        - name: x-upstream-service-time
+          value: "330"
+      body:
+        type: json
+        data: |-
+          {
+            "message": "feedback stored."
+          }

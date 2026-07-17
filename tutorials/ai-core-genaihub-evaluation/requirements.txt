@@ -1,4 +1,4 @@
-sap-ai-sdk-gen
+generative-ai-hub-sdk==4.4.3
 python-dotenv==1.0.1
 boto3==1.37.4
 pandas==2.2.3

@@ -2,65 +2,51 @@
 parser: v2
 auto_validation: true
 time: 45
-primary_tag: software-product>sap-business-technology-platform
-tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
+primary_tag: software-product>sap-ai-core
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
 author_name: Smita Naik
 author_profile: https://github.com/I321506
 ---
 
-# Using Evaluation Service available in SAP AI Core 
-<!-- description -->  This tutorial demonstrates how to use SAP AI Core Custom Evaluation to benchmark Large Language Models (LLMs) using two different approaches **Prompt Registry** and **Orchestration Registry**. It guides you through dataset preparation, environment setup, configuration creation, execution, and result analysis in a unified and simplified workflow.
-
-It extends the Quick Start tutorial and is intended for Application Developers and Data Scientists who already know the basics of GenAI workflows in SAP AI Core.
+# Generative AI Custom Evaluation - Quickstart
+<!-- description -->  This tutorial demonstrates how to use SAP AI Core Custom Evaluation to benchmark Large Language Models (LLMs) using **Prompt Registry**. It guides you through  environment setup, configuration creation, execution, and result analysis in a unified and simplified workflow.
 
 ## You will learn
 - How to prepare and organize datasets for evaluation.
-- How to choose between **Prompt Registry** and **Orchestration Registry** approaches.
 - How to configure and run evaluations in SAP AI Core.
 - How to analyze and interpret aggregated evaluation results.
 
 ## Prerequisites
-
-- Setup Environment:
-Ensure your instance and AI Core credentials are properly configured according to the steps provided in the initial tutorial
-- Orchestration Deployment:
-Ensure at least one orchestration deployment is ready to be consumed during this process. 
+1. **BTP Account**  
+   Set up your SAP Business Technology Platform (BTP) account.  
+   [Create a BTP Account](https://developers.sap.com/group.btp-setup.html)
+2. **For SAP Developers or Employees**  
+   Internal SAP stakeholders should refer to the following documentation: [How to create BTP Account For Internal SAP Employee](https://me.sap.com/notes/3493139), [SAP AI Core Internal Documentation](https://help.sap.com/docs/sap-ai-core)
+3. **For External Developers, Customers, or Partners**  
+   Follow this tutorial to set up your environment and entitlements: [External Developer Setup Tutorial](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html), [SAP AI Core External Documentation](https://help.sap.com/docs/sap-ai-core?version=CLOUD)
+4. **Create BTP Instance and Service Key for SAP AI Core**  
+   Follow the steps to create an instance and generate a service key for SAP AI Core:  
+   [Create Service Key and Instance](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/create-service-key?version=CLOUD)
+5. **AI Core Setup Guide**  
+   Step-by-step guide to set up and get started with SAP AI Core:  
+   [AI Core Setup Tutorial](https://developers.sap.com/tutorials/ai-core-setup.html)
+6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to 
+[SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
+7. **Orchestration Deployment**
+   Ensure at least one orchestration deployment is ready to be consumed during this process. 
 Refer to [this tutorial understand the basic consumption of GenAI models using orchestration.](https://developers.sap.com/tutorials/ai-core-orchestration-consumption.html)
-- Basic Knowledge: Familiarity with the orchestration workflow is recommended
-- Install Dependencies: Install the required Python packages using the requirements.txt file provided.
+8. **Basic Knowledge**
+    Familiarity with the orchestration workflow is recommended
+9. **Install Dependencies**
+    Install the required Python packages using the requirements.txt file provided.
 Download [requirements.txt](img/requirements.txt)
-💡 Right-click the link above and choose **"Save link as..."** to download it directly.
 
-**Below are the Steps to Run a GenAI Evaluation in SAP AI Core**
+💡 Right-click the link above and choose **"Save link as..."** to download it directly.
 
 ## Pre-Read
 
-The structure of the input data should be as follows:
-
-```
-Root
-├── PUT_YOUR_PROMPT_TEMPLATE_HERE
-|   ├── prompt_template.json
-│    
-├── PUT_YOUR_DATASET_HERE
-│   ├── medicalqna_dataset.csv
-|
-└── PUT_YOUR_CUSTOM_METRIC_HERE
-    ├── custom-llm-metric.json
-    ├── custom-llm-metric.jsonl
-```
-
-**Dataset and Configuration**:
-To run this evaluation, All required input files must be placed inside the folder structure provided in the repository:
-
-You can download or clone the complete folder from the link below and place your files inside the respective folders [Download / Open Full Folder Structure](https://github.com/SAP-samples/aicore-genai-samples/blob/main/genai-sample-apps/prompt-evaluation)
-
-    1.  **Prompt Template Configuration (`PUT_YOUR_PROMPT_TEMPLATE_HERE`)**
-        *   Place one or more prompt template configurations as JSON files in this folder. 
-    2.  **Test Dataset (`PUT_YOUR_DATASET_HERE`)**
-        *   The test dataset should be a CSV, JSON, or JSONL file containing prompt variables, ground truth references, and other data required for evaluation. 
-    3.  **Custom Metrics (`PUT_YOUR_CUSTOM_METRIC_HERE`)**
-        *   (Optional) You can provide custom metric definitions in a single JSON or JSONL file. For JSONL, each line should be a JSON object defining one metric. For JSON, it should be an array of metric-definition objects. 
+This tutorial is designed for users who are unfamiliar with AI Core services and do not require flexibility in their use case. This tutorial is setup in a way that provides automatic setup for your evaluation where only the dataset is minimally required.
+It demonstrates a quick start simplified workflow for using AI Core's custom evaluation capabilities to benchmark Large Language Models (LLMs), and evaluate different prompts for a specific use case. It utilizes the public [MedicationQA dataset](https://langtest.org/docs/pages/benchmarks/medical/medicationqa/) to showcase how to compute industry-standard metrics and assess the reliability of LLM-generated responses.
 
 ### Environment Variables Setup
 
@@ -165,6 +151,64 @@ client = GenAIHubProxyClient(
 
 [OPTION END]
 
+### Preparing Dataset Files
+
+[OPTION BEGIN [SAP AI Launchpad]]
+
+> **Note:** This step involves local setup using Python and does not require any action on the SAP AI Launchpad.
+
+[OPTION END]
+
+[OPTION BEGIN [Python]]
+
+In this step, the evaluation notebook dynamically detects the dataset file from a predefined folder structure.
+You are not required to hardcode the dataset filename.
+
+```Python
+import os
+import json
+
+def get_dataset_file_name(folder_path):
+    """
+    Retrieves the name of the first file in the specified folder.
+    """
+    if not os.path.isdir(folder_path):
+        print(f"The folder path '{folder_path}' does not exist.")
+        return None
+
+    items_in_folder = os.listdir(folder_path)
+
+    for item in items_in_folder:
+        item_path = os.path.join(folder_path, item)
+        if os.path.isfile(item_path):
+            return item
+
+    print(f"No files were found in the folder '{folder_path}'.")
+    return None
+
+
+# --- MAIN EXECUTION ---
+DATASET_FOLDER = "./DATASET"
+
+DATASET_NAME = get_dataset_file_name(DATASET_FOLDER)
+
+if  DATASET_NAME:
+    print(f"Dataset name: {DATASET_NAME}")
+else:
+    print("Missing run or dataset file.")
+    raise SystemExit("Exiting due to missing run/dataset file.")
+```
+
+![img](img/image_py_dtst.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Bruno]]
+
+> **Note:** This step involves local setup using Python and does not require any action on Bruno.
+
+[OPTION END]
+
 ### Registering an Object Store Secret in AI Core
 
 [OPTION BEGIN [SAP AI Launchpad]]
@@ -215,15 +259,35 @@ Register your S3 bucket and credentials as a secret.
 ```PYTHON
 # Register S3 secret with AI Core which will be used an input source 
 import requests
+import json
+import logging
 
-def register_oss_secret():
+def delete_oss_secret(oss_name=""):
+    headers = _get_headers()
+    
+    DELETE_SECRETS_ENDPOINT = f'/v2/admin/objectStoreSecrets/{oss_name}'
+    request_url = f"{AICORE_BASE_URL}{DELETE_SECRETS_ENDPOINT}"
+    
+    try:
+        response = requests.delete(request_url, headers=headers, timeout=120)
+        if response.status_code == 202:
+            print(f"Successfully deleted object store secret: {oss_name}")
+        elif response.status_code == 404:
+            print(f"Object store secret not found: {oss_name}. It may not exist.")
+        else:
+            logging.error(f"Failed to delete object store secret: {oss_name}, Status Code: {response.status_code}")
+    except Exception as e:
+        logging.error(f"Error occurred while attempting to delete object store secret: {e}")
+        raise
+
+def register_oss_secret(oss_name="", path_prefix=""):
     headers = _get_headers()
     
     POST_SECRETS_ENDPOINT = '/v2/admin/objectStoreSecrets'
     request_url = f"{AICORE_BASE_URL}{POST_SECRETS_ENDPOINT}"
     
     request_body = {
-        "name": "genai-data",
+        "name": oss_name,
         "data": {
             "AWS_ACCESS_KEY_ID": AWS_ACCESS_KEY,
             "AWS_SECRET_ACCESS_KEY": AWS_SECRET_ACCESS_KEY
@@ -232,21 +296,29 @@ def register_oss_secret():
         "bucket": AWS_BUCKET_ID,
         "endpoint": "s3-eu-central-1.amazonaws.com",
         "region": AWS_REGION,
-        "pathPrefix": ""    
+        "pathPrefix": path_prefix,
+        "verifyssl": "0",
+        "usehttps": "1",
     }
     try:
         response = requests.post(
             request_url, headers=headers, data=json.dumps(request_body), timeout=120
         )
         result = response.json()
-        print(result)
         return result
     except:
         logging.error("Error occurred while attempting to create object store secret")
         raise
-
-register_oss_secret()
+        
+delete_oss_secret(oss_name="default")
+delete_oss_secret(oss_name="genai-quick-data-notebook")
+        
+register_oss_secret(oss_name="default", path_prefix="")
+register_oss_secret(oss_name="genai-quick-data-notebook", path_prefix="")
 ```
+
+![img](img/image_objsec.png)
+
 [OPTION END]
 
 [OPTION BEGIN [Bruno]]
@@ -334,61 +406,60 @@ After creating the secret, organize your evaluation files into the eval/ folder 
 
 #### **Upload Files to S3 Bucket**
 ```python
-# Uploads the testdata folder to Object Store for simplified workflow
-def upload_folder_to_s3(root_folder, bucket_name, s3_prefix=None):
+# uploading these files to Object store to register as an artifact inside ai core
+
+import boto3
+import os
+import uuid
+
+def upload_folder_to_s3(folder_path, bucket_name, s3_prefix=""):
     """
-    Look for 'testdata' folder inside root_folder and upload it to S3 under the same s3_prefix. 
-    If no s3_prefix is provided, a static prefix or a UUID will be used.
+    Upload a folder to an S3 bucket recursively.
 
-    The S3 structure will be:
-        genaiEvaluation/{s3_prefix}/testdata/...
-
-    Args:
-        root_folder (str): Path containing the 'testdata' subfolder.
-        bucket_name (str): Name of the S3 bucket.
-        s3_prefix (str, optional): S3 prefix path. Defaults to None.
-    
-    Returns:
-        str: The path for newly uploaded input artifacts on S3.
-        
-    Raises:
-        FileNotFoundError: If 'testdata' subfolder is missing.
+    :param folder_path: The local folder path to upload.
+    :param bucket_name: The name of the S3 bucket.
+    :param s3_prefix: Optional prefix to use for the S3 keys (e.g., subfolder in the bucket).
     """
-    testdata_folder = os.path.join(root_folder, "testdata")
-    if not os.path.isdir(testdata_folder):
-        raise FileNotFoundError(f"Missing required folder: testdata in {root_folder}")
-
-    if s3_prefix is None:
-        # Generate a unique prefix using UUID or static ID
-        prefix_guid = ""  # replace with UUID if needed
-        s3_prefix = f"genaiEvaluation/{prefix_guid}"
-
     s3_client = boto3.client(
-        's3',
-        aws_access_key_id=AWS_ACCESS_KEY,
-        aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
-        region_name=AWS_REGION
-    )
+            's3',
+            aws_access_key_id=AWS_ACCESS_KEY,
+            aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+            region_name=AWS_REGION
+            )
 
-    # Upload only the testdata folder
-    full_prefix = f"{s3_prefix}/testdata"
-    for root, _, files in os.walk(testdata_folder):
-        for file in files:
-            local_path = os.path.join(root, file)
-            relative_path = os.path.relpath(local_path, testdata_folder)
-            s3_key = f"{full_prefix}/{relative_path}".replace("\\", "/")
+    for root, dirs, files in os.walk(folder_path):
+        for file_name in files:
+            print("val of root is ", file_name)
+            local_path = os.path.join(root, file_name)
+            # Compute the relative path for the S3 key
+            relative_path = os.path.relpath(local_path, folder_path)
+            s3_key = os.path.join(s3_prefix, relative_path).replace("\\", "/")  # Ensure S3-compatible paths
+            print("val of s3 key is ", s3_key)
             print(f"Uploading {local_path} to s3://{bucket_name}/{s3_key}")
+            
+            # Upload the file
             s3_client.upload_file(local_path, bucket_name, s3_key)
 
-    return f"ai://genai-data/{s3_prefix}"
+# Example usage
+folder_to_upload_testdata = "../DATASET"
+user_directory_prefix = "" # replace with your i-number as string here
+prefix_guid = user_directory_prefix if user_directory_prefix is not None else str(uuid.uuid4().hex)
+s3_testdata_prefix = f"genaiEvaluation/{prefix_guid}/testdata" # Leave empty for root of the bucket
+
+
+upload_folder_to_s3(folder_to_upload_testdata, AWS_BUCKET_ID, s3_testdata_prefix)
+input_artifact_path = f"ai://genai-quick-data-notebook/genaiEvaluation/{prefix_guid}"
 ```
  ![img](img/image_5.png)
 
 #### **Register Uploaded Files as Artifact in AI Core**
 
-```python
+```Python
+import requests
+import logging
 # Registering the uploaded files from AWS as artifacts to use inside configuration.
-def register_artifact(input_artifact_path):
+
+def register_artifact():
     headers = _get_headers()
     
     GET_ARTIFACTS_ENDPOINT = '/v2/lm/artifacts'
@@ -401,9 +472,9 @@ def register_artifact(input_artifact_path):
             "value": "true"
             }
         ],
-        "name": "genai-eval-test-data",
+        "name": "genai-eval-simplified-test-data",
         "kind": "other",
-        "url": input_artifact_path, 
+        "url": input_artifact_path, # input artifact path
         "description": "demo artifacts for evaluation flow.",
         "scenarioId": "genai-evaluations"
     }
@@ -415,8 +486,10 @@ def register_artifact(input_artifact_path):
         print(result)
         return result['id']
     except:
-        print("Error occurred while attempting to create an execution")
+        print("Error occurred while attempting to register artifact")
         raise
+        
+artifact_id = register_artifact()
 ```
 ![img](img/image_6.png)
 
@@ -424,18 +497,19 @@ def register_artifact(input_artifact_path):
 
 [OPTION BEGIN [Bruno]]
 
-Before registering a dataset artifact in Bruno, you must upload your CSV file to the SAP AI Core object store using the Dataset API.
-Bruno cannot upload files directly to S3; therefore, this step is required.
+Before registering a dataset artifact in Bruno, you must upload your CSV file to the SAP AI Core object store using the Dataset API. 
+
+Bruno cannot upload files directly to S3. therefore, this step is required.
 
 **Prerequisites**
 
-    - An object store secret must already exist in your resource group.Typically, this is the default secret named **default**.
+- An object store secret must already exist in your resource group.Typically, this is the default secret named **default**
 
-    - The Dataset API currently supports:
+- The Dataset API currently supports:
 
-        - S3 object stores only
+    - S3 object stores only
 
-        - CSV file uploads
+    - CSV file uploads
 
 **Upload Your Dataset**
 
@@ -485,31 +559,7 @@ Save the ai://… URL — you will use this when creating the dataset artifact.
 
 [OPTION END]
 
-### Approach Selection – Choose How You Want to Provide Prompts(Read-up)
-
-In this evaluation workflow, you can provide prompts in two different ways.
-Choose only one option based on your requirement.
-
-Here are your two options:
-
-| Option       | Approach                                    | Description                                                     | When to Use                                           |
-| ------------ | ------------------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------- |
-| **Option 1** | Prompt Template + Model Directly            | Prompt stored in Prompt Registry and model referenced directly. | When you want reusable, versioned prompts.            |
-| **Option 2** | Orchestration Registry (Inline Prompt)      | Prompt provided as part of orchestration config.                | When prompt is ad-hoc or not reused.                  |
-
-After selecting your option:
-
-    - Follow only the steps for that option.
-
-    - Skip the other options.
-
-    - After completing your selected option, go directly to Create Evaluation Configuration.
-
-### (Option 1) - Providing Prompts via Prompt Template + Model Directly
-
-✔ Follow this step **ONLY IF** you want to use **Prompt Template**.
-
-If not, **skip this step and go to Option 2**.
+### Create a Prompt Template in Prompt Registry 
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
@@ -589,73 +639,7 @@ Go to Generative AI Hub → Prompt Management → Templates and confirm:
 
 [OPTION BEGIN [Python]]
 
-```python
-import os
-import json
-
-def get_prompt_config_file(folder_path):
-    """
-    Retrieves a list of all JSON file names in the specified folder.
-    """
-    if not os.path.isdir(folder_path):
-        print(f"The folder path '{folder_path}' does not exist.")
-        return []
-
-    json_files = [file for file in os.listdir(folder_path) if file.endswith(".json")]
-
-    if not json_files:
-        print(f"No JSON files were found in the folder '{folder_path}'.")
-    return json_files
-
-
-def get_dataset_file_name(folder_path):
-    """
-    Retrieves the name of the first file in the specified folder.
-    """
-    if not os.path.isdir(folder_path):
-        print(f"The folder path '{folder_path}' does not exist.")
-        return None
-
-    items_in_folder = os.listdir(folder_path)
-
-    for item in items_in_folder:
-        item_path = os.path.join(folder_path, item)
-        if os.path.isfile(item_path):
-            return item
-
-    print(f"No files were found in the folder '{folder_path}'.")
-    return None
-
-
-def load_prompt_template(folder_path, file_name):
-    """
-    Loads the contents of a JSON prompt template into a variable.
-    """
-    file_path = os.path.join(folder_path, file_name)
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            return json.load(f)   # returns Python dict
-    except Exception as e:
-        print(f"Error loading prompt template: {e}")
-        return None
-
-# --- MAIN EXECUTION ---
-PROMPT_FOLDER = "./PUT_YOUR_PROMPT_TEMPLATE_HERE"
-DATASET_FOLDER = "./PUT_YOUR_DATASET_HERE"
-
-PROMPT_CONFIG_FILES = get_prompt_config_file(PROMPT_FOLDER)
-DATASET_NAME = get_dataset_file_name(DATASET_FOLDER)
-
-if PROMPT_CONFIG_FILES and DATASET_NAME:
-    # Load the first JSON prompt template
-    PROMPT_TEMPLATE = load_prompt_template(PROMPT_FOLDER, PROMPT_CONFIG_FILES[0])
-    print(f"Prompt configs: {PROMPT_CONFIG_FILES}")
-    print(f"Dataset name: {DATASET_NAME}")
-    print("Prompt template contents:", PROMPT_TEMPLATE)
-else:
-    print("Missing run or dataset file.")
-    raise SystemExit("Exiting due to missing run/dataset file.")
-```
+The following code defines a function `create_prompt_template()` that creates a new **Prompt Template** in the SAP AI Core **Prompt Registry**.
 
 ```python
 def create_prompt_template():
@@ -663,11 +647,21 @@ def create_prompt_template():
     GET_PROMPT_TEMPLATES_ENDPOINT = '/v2/lm/promptTemplates'
     request_url = f"{AICORE_BASE_URL}{GET_PROMPT_TEMPLATES_ENDPOINT}"
     
+    
+    prompt_template = {
+    "template": [
+        {
+        "role": "user",
+        "content": "List the benefits and side effects of the drug in the following consumer health question: {{?question}}."
+        }
+    ]
+    }
+
     request_body = {
-    "name": "prompt-registry-eval-acc-test",
+    "name": "prompt-registry-eval-demo",
     "version": "1.0.0",
     "scenario": "genai-evaluations",
-    "spec": PROMPT_TEMPLATE
+    "spec": prompt_template
     }
     try:
         response = requests.post(
@@ -684,6 +678,8 @@ def create_prompt_template():
 
 prompt_template_id = create_prompt_template()
 ```
+![img](img/image__py_pmtreg.png)
+
 **Note**
 
 If you wish to use a prompt template that already exists in prompt registry, you can manually set prompt_template_id in the next cell and skip executing this cell
@@ -744,257 +740,15 @@ Content-Type: application/json
 
 🔑 Tip: Always increment the version (e.g., 1.0.1, 1.0.2) when updating a template. This ensures reproducibility across evaluations.
 
-### (Option 2) - Providing Prompts via Orchestration Registry (Inline Prompt)
-
-Follow this step only if you want to **store prompt + model configuration inside Orchestration Registry**.
-
-**Create Orchestration Registry Configuration**
-
-[OPTION BEGIN [SAP AI Launchpad]]
-
-Go to Generative AI Hub → Orchestration → Orchestration Configurations
-
-- click create
-
-- In templating  add the system prompt
-
-```json
-List the benefits and side effects of the drug in the following consumer health question: {{?question}}.
-```
-![img](img/image_ail_or1.png)
-
-- select the model in model configuration and save
-
-![img](img/image_ail_or2.png)
-
-![img](img/image_ail_or3.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Python]]
-
-```python
-def create_orchestration_registry_config():
-    headers = _get_headers()
-    CREATE_ORCHESTRATION_REGISTRY = '/v2/registry/v2/orchestrationConfigs'
-    request_url = f"{AICORE_BASE_URL}{CREATE_ORCHESTRATION_REGISTRY}"
-    model_name,model_version=selected_models_str.split(":")
-    request_body = {
-      "name": "genai-eval-test",
-      "version": "1.0.0",
-      "scenario": "genai-evaluations",
-      "spec": {
-        "modules": {
-          "prompt_templating": {
-            "model": {
-              "name": model_name,
-              "version": model_version
-            },
-            "prompt": PROMPT_TEMPLATE
-          }
-        }
-      }
-    }
-    try:
-        response = requests.post(
-            request_url, headers=headers, data=json.dumps(request_body), timeout=120
-        )
-        if(response.status_code != 200):
-            print(response.json())
-            raise
-        result = response.json()
-        print(result)
-        return result['id']
-    except:
-        logging.error("Error occurred while attempting to create a orchestration registry id")
-        raise
-orchestration_registry_id = create_orchestration_registry_config()
-```
-
-![img](img/image_py_or1.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Bruno]]
-
-You can paste this directly into a Bruno .bru file or create a new request inside Bruno.
-
-**Url:** 
-```bash
-POST {{AICORE_BASE_URL}}/v2/registry/v2/orchestrationConfigs
-```
-
-**headers:** 
-```
-{
-    Authorization: Bearer {{token}}
-    AI-Resource-Group: {{resource_group}}
-    Content-Type: application/json
-  }
-```
-
-**body:** 
-```json
-{
-  "name": "genai-eval-test",
-  "version": "1.0.0",
-  "scenario": "genai-evaluations",
-  "spec": {
-    "modules": {
-      "prompt_templating": {
-        "model": {
-          "name": "model_name",
-          "version": "model_version" 
-        },
-        "prompt": {
-          "template": [
-            {
-              "role": "user",
-              "content": "List the benefits and side effects of the drug in the following consumer health question: {{?question}}."
-            }
-          ],
-          "defaults": {}
-        }
-      }
-    }
-  }
-}
-```
-
-![img](img/image_br_or1.png)
-
-[OPTION END]
-
-After completing Option 2:
-
-    - Proceed directly to the “Create Evaluation Configuration” section
-
-
-### Understanding Metrics (Pre-Read)
+### Providing Models and Metrics for Evaluation
 
 Metrics determine how your model outputs are evaluated during an evaluation run. They define the scoring logic that SAP AI Core uses to compare models, measure quality, and validate improvements over time.
-
-In SAP AI Core, you can use:
-
-    - System-defined metrics (ready-made, no setup needed)
-
-    - Custom metrics (your own definitions stored in the metric registry)
-
-**How Metrics Apply in Each Approach**
-
-| Approach                              | How Metrics Apply                                                             |
-| ------------------------------------- | ----------------------------------------------------------------------------- |
-| **Option 1 – Prompt Template**        | Metrics score responses generated using the prompt template + selected model. |
-| **Option 2 – Orchestration Registry** | Metrics score responses generated through orchestration configuration.        |
-
-Metrics are provided later during **Create Evaluation Configuration**:
-
-```json
-"metrics": "BERT, answer_relevance"
-```
-
-You can specify one or multiple metrics (comma-separated).
-
-#### Types of Metrics
-
-**1. System-defined Metrics**
-
-These come in two categories:
-
-**Computed Metrics**
-
-Score outputs using reference data or validation logic.
-
-| Metric                | Description                                | Needs Reference? |
-| --------------------- | ------------------------------------------ | ---------------- |
-| **BERT Score**         | Embedding similarity to reference          | Yes              |
-| **BLEU**              | N-gram overlap                             | Yes              |
-| **ROUGE**             | Recall-based overlap                       | Yes              |
-| **Exact Match**       | Checks if output exactly matches reference | Yes              |
-| **JSON Schema Match** | Validates output against a schema          | Yes              |
-| **Language Match**    | Detects language                           | No               |
-| **Content Filter**    | Safety filter triggered (input/output)     | No               |
-
-**2. LLM-as-a-Judge Metrics**
-
-These metrics use a judge LLM to score responses based on a rubric.
-They are ideal for open-ended tasks with no exact references.
-
-| Metric                    | What It Measures                  | Needs Reference? |
-| ------------------------- | --------------------------------- | ---------------- |
-| **Instruction Following** | How well the prompt was followed  | No               |
-| **Correctness**           | Factual accuracy                  | Yes              |
-| **Answer Relevance**      | Relevance of the generated answer | No               |
-| **Conciseness**           | Brevity + clarity                 | No               |
-| **RAG Groundedness**      | Grounding in the provided context | No               |
-| **RAG Context Relevance** | Usefulness of retrieved context   | No               |
-
----
-
-#### Custom Metrics
-
-Create them when system metrics are insufficient.
-
-Two ways to define custom metrics:
-
-**1. Structured metrics (recommended)**
-
-    - Provide task, criteria, rubric, optional examples
-
-    - AI Core constructs the judge prompt
-
-**2. Free-form metrics**
-
-    - You define prompts and scoring logic manually
-
-**Custom metric registration:**
-
-```bash
-POST {{ai_api_url}}/v2/lm/evaluationMetrics
-```
-Once registered, use them like system metrics:
-
-```json
-"metrics": "my_custom_metric"
-```
-
-**Example — Prompt Template Approach**
-
-```json
-"metrics": "BERT Score,answer_relevance"
-```
-
-**Example — Orchestration Registry Approach**
-
-```json
-"metrics": "Pointwise Conciseness"
-```
-
-The chosen metrics determine:
-
-    - scoring
-
-    - dashboard visualizations
-
-    - aggregated results
-
-    - model ranking logic
-
-### Providing Metrics for Evaluation
 
 Metrics must be supplied before creating an Evaluation Configuration.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-In SAP AI Launchpad, metrics are selected visually during the Evaluation Configuration creation flow.
-
-You can choose:
-
-    - System-defined metrics
-
-    - Custom metrics (your own definitions stored in the metric registry — cannot be created directly in AI Launchpad; to use them, register them via API/Bruno mentioned in the same step and then select them in the Evaluation Configuration)
-
-No manual JSON input is needed—the UI provides a selectable list of available metrics.
+In SAP AI Launchpad, metrics are selected visually during the Evaluation Configuration creation flow, the UI provides a selectable list of available metrics.
 
 1. Go to Generative AI Hub → Optimization.
 
@@ -1002,23 +756,18 @@ No manual JSON input is needed—the UI provides a selectable list of available 
 
 ![img](img/image_25.png)
 
-Select Test Input / Runs depending on the option you used earlier:
+- Select Test Input, then:
 
-| Earlier Option Used                   | What to Select in AIL                                             |
-| ------------------------------------- | ----------------------------------------------------------------- |
-| **Option 1 – Prompt Template**        | Select your **Prompt Template** and choose one or more **Models** |
-| **Option 2 – Orchestration Registry** | Select your **Orchestration Registry Config ID**                  |
-
-Then:
+    - Select the prompt and select more than one model
 
     - Select your registered dataset artifact
 
     - Enter the dataset path (example):
-    testdata/global_customer_queries.csv
+    testdata/medicalqna_dataset.csv
 
     - Set the number of test samples (e.g., 20)
 
-  ![img](img/image_26.png)
+  ![img](img/image_ail_26.png)
 
 - Click **Next** to go to Metrics selection.
 
@@ -1026,13 +775,15 @@ Then:
 
 Choose the metrics you want to evaluate.
 
-You may choose one or multiple system-defined or custom metrics—examples:
+You may choose one or multiple system-defined metrics—examples:
 
     - BERT Score
 
-    - answer_relevance
+    - Pointwise Answer Relevance
 
-    - instruction_following
+    - Pointwise Correctness
+
+    - Pointwise Instruction Following
 
 ![img](img/image_27.png)
 
@@ -1041,8 +792,6 @@ You may choose one or multiple system-defined or custom metrics—examples:
 > 📘 **Helpful Resources**:
 > 
 > - [System-Defined Evaluation Metrics – SAP Documentation](https://help.sap.com/docs/sap-ai-core/generative-ai-hub/system-defined-evaluation-metrics)  
-> - [Define Your Own Custom Metrics – SAP Guide](https://help.sap.com/docs/sap-ai-core/generative-ai-hub/custom-metrics)  
->   *(If your evaluation requires domain-specific or advanced scoring logic)*
 
 > **Note: You may select additional metrics based on your use case.**
 
@@ -1052,16 +801,22 @@ You may choose one or multiple system-defined or custom metrics—examples:
 
 [OPTION BEGIN [Python]]
 
+**Select your Models**
+ 
+Add the models you wish to use in the string `selected_models_str`
+
+```Python
+# Manual selection of models
+selected_models_str="gemini-2.5-pro:001,gpt-4o:2024-08-06,gpt-5:2025-08-07"
+print("Selected models string:", selected_models_str)
+```
+
 **Metrics Handling in Python Notebook (Automatic Detection & Creation)**
 
 When running the evaluation through the Python notebook, metric setup is partially automated.
 Before the evaluation configuration is created, the script performs the following:
 
     - Users can manually specify metric IDs
-
-    - Or place custom metric JSON files in CUSTOM_METRIC_FOLDER
-
-    - The notebook loads all custom metric definitions automatically
 
     - It checks if each metric already exists in AI Core
 
@@ -1072,122 +827,9 @@ Before the evaluation configuration is created, the script performs the followin
 This ensures all metrics exist before the evaluation configuration is created.
 
 ```python
-import os
-import json
-import requests
-
-# --- Load JSON / JSONL files ---
-def load_all_metrics(folder_path):
-    """
-    Loads all JSON and JSONL files from a folder into a single list of dicts.
-    """
-    metrics = []
-    files = [f for f in os.listdir(folder_path) if f.endswith((".json", ".jsonl"))]
-
-    if not files:
-        print(f"No JSON/JSONL files found in {folder_path}")
-        return metrics
-
-    for file_name in files:
-        file_path = os.path.join(folder_path, file_name)
-        try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                content = f.read().strip()
-                try:
-                    data = json.loads(content)
-                    if isinstance(data, list):
-                        metrics.extend(data)
-                    elif isinstance(data, dict):
-                        metrics.append(data)
-                except json.JSONDecodeError:
-                    # Attempt to parse as JSONL line by line
-                    for line in content.splitlines():
-                        line = line.strip()
-                        if not line:
-                            continue
-                        try:
-                            metrics.append(json.loads(line))
-                        except json.JSONDecodeError:
-                            print(f"Skipping invalid JSON line in {file_name}: {line[:50]}...")
-        except Exception as e:
-            print(f"Error reading {file_name}: {e}")
-    return metrics
-
-# --- Fetch all metrics from SAP AI Core ---
-def fetch_all_metrics():
-    request_url = f"{AICORE_BASE_URL}/v2/lm/evaluationMetrics"
-    resp = requests.get(request_url, headers=_get_headers())
-    resp.raise_for_status()
-    return resp.json().get("resources", [])
-
-# --- Create or fetch a metric ---
-def create_or_get_metric(custom_metric, user_metric_id=None):
-    all_metrics = fetch_all_metrics()
-
-    # 1️⃣ User-supplied ID lookup
-    if user_metric_id:
-        for m in all_metrics:
-            if m.get("id") == user_metric_id:
-                print(f"✅ Metric already exists by ID: {user_metric_id}")
-                return user_metric_id
-        print(f"⚠️ User metric ID {user_metric_id} not found, will only include if valid later")
-
-    # 2️⃣ Check by scenario, name, version
-    scenario = custom_metric.get("scenario")
-    name = custom_metric.get("name")
-    version = custom_metric.get("version")
-    if not all([scenario, name, version]):
-        raise ValueError("Metric must include 'scenario', 'name', and 'version'")
-
-    for m in all_metrics:
-        if (m.get("scenario") == scenario and
-            m.get("name") == name and
-            m.get("version") == version):
-            metric_id = m.get("id")
-            print(f"✅ Metric already exists: {scenario}/{name} v{version}, ID = {metric_id}")
-            return metric_id
-
-    # 3️⃣ Create metric if not found
-    request_url = f"{AICORE_BASE_URL}/v2/lm/evaluationMetrics"
-    required_fields = ["scenario", "name", "version", "evaluationMethod", "metricType"]
-    for f in required_fields:
-        if f not in custom_metric:
-            raise ValueError(f"❌ Missing required field: {f}")
-
-    resp = requests.post(request_url, headers=_get_headers(), json=custom_metric)
-    resp.raise_for_status()
-    metric_id = resp.json().get("id")
-    print(f"✅ Metric created successfully: {name} v{version}, ID = {metric_id}")
-    return metric_id
-
-# --- Main pipeline ---
-CUSTOM_METRIC_FOLDER = "./PUT_YOUR_CUSTOM_METRIC_HERE"
-user_metric_ids = "<metric_ids>"  # set by user if needed
-
-# 1️⃣ Load all metrics from JSON/JSONL
-custom_metric_list = load_all_metrics(CUSTOM_METRIC_FOLDER)
-
-# 2️⃣ Create/fetch metrics from SAP AI Core
-metric_ids = []
-for metric in custom_metric_list:
-    try:
-        metric_id = create_or_get_metric(metric)
-        metric_ids.append(metric_id)
-    except ValueError as e:
-        print(f"Skipping metric due to error: {e}")
-
-# 3️⃣ Validate user_metric_ids separately if provided
-if user_metric_ids and user_metric_ids.strip():
-    all_metrics = fetch_all_metrics()
-    # Split comma-separated IDs and strip whitespace
-    for uid in [uid.strip() for uid in user_metric_ids.split(",")]:
-        if any(m.get("id") == uid for m in all_metrics):
-            metric_ids.append(uid)
-        else:
-            print(f"⚠️ User metric ID {uid} does not exist in AI Core, skipping.")
-# 4️⃣ Convert to comma-separated string
-custom_metric_ids_str = ",".join(metric_ids)
-print("✅ All processed metric IDs:", custom_metric_ids_str)
+# Manual Selection of Metrics
+selected_metrics_str = "Pointwise Conciseness,Pointwise Instruction Following,Pointwise Correctness,Pointwise Answer Relevance,Exact Match,BLEU,ROUGE,Content Filter on Input,Content Filter on Output"
+print(selected_metrics_str)
 ```
 ![img](img/image_py03.png)
 
@@ -1197,99 +839,34 @@ This ensures all required metrics are available before launching the evaluation.
 
 [OPTION BEGIN [Bruno]]
 
-Bruno supports two ways of providing metrics:
+You can directly pass models and system metrics in your configuration:
 
-**Use System-Defined Metrics**
-
-You can directly pass system metrics in your configuration:
-
-Example:
+Example Models:
 
 ```json
-"metrics": "answer_relevance"
+"models":"gemini-2.5-pro:001,gpt-4o:2024-08-06,gpt-5:2025-08-07"
 ```
 
-If you want to register custom metrics, you must call:
-
-➡️ **Create Custom Metric**
-
-```bash
-POST {{ai_api_url}}/v2/lm/evaluationMetrics
-```
-**Body example:**
+Example metrics:
 
 ```json
-{
-  "scenario": "genai-evaluations",
-  "name": "groundedness",
-  "version": "0.0.1",
-  "evaluationMethod": "llm-as-a-judge",
-  "metricType": "evaluation",
-  "promptType": "structured",
-  "spec": {
-    "configuration": {
-      "modelConfiguration": {
-        "name": "gpt-4o",
-        "version": "2024-08-06",
-        "parameters": [
-          {
-            "key": "temperature",
-            "value": "0.1"
-          },
-          {
-            "key": "max_tokens",
-            "value": "110"
-          }
-        ]
-      },
-      "promptConfiguration": {
-        "evaluationTask": "You will be assessing groundedness, which measures how well the AI-generated response aligns with and is supported by the provided reference.",
-        "criteria": "Groundedness: The degree of factual and contextual overlap between the response and the reference.",
-        "ratingRubric": [
-          {
-            "rating": 5,
-            "rule": "Fully grounded — the response completely aligns with and is fully supported by the reference."
-          },
-          {
-            "rating": 4,
-            "rule": "Mostly grounded — the response largely aligns with the reference with only minor deviations."
-          },
-          {
-            "rating": 3,
-            "rule": "Somewhat grounded — the response partially aligns, but some details are missing or loosely connected."
-          },
-          {
-            "rating": 2,
-            "rule": "Poorly grounded — the response contains minimal overlap with the reference."
-          },
-          {
-            "rating": 1,
-            "rule": "Not grounded — the response has no meaningful overlap with the reference."
-          }
-        ],
-        "includeProperties": ["reference","response"]
-      }
-    }
-  }
-}
-
+"metrics": "Pointwise Conciseness,Pointwise Instruction Following,Pointwise Correctness,Pointwise Answer Relevance,Exact Match,BLEU,ROUGE,Content Filter on Input,Content Filter on Output"
 ```
-
-You will receive:
-
-```json
-"id": "<metric_id>"
-```
-
-This metric ID can be directly passed into the evaluation configuration.
 
 [OPTION END]
+
+**Note:** 
+
+To compare different models and generate a leaderboard, you must select more than one model. 
+When multiple models are provided, the evaluation system automatically creates separate 
+evaluation runs for each model within the same execution. This enables the evaluation workflow 
+to compare the runs and compute head-to-head win rates across the selected models.
 
 ### Define and Create Evaluation Configurations
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Once your dataset artifact is registered and you have completed Option 1 (Prompt Template) or Option 2 (Orchestration Registry), the next step is to create an Evaluation Configuration.
+Once your dataset artifact is registered, the next step is to create an Evaluation Configuration.
 
 An Evaluation Configuration tells SAP AI Core:
 
@@ -1335,94 +912,25 @@ Before creating the configuration, the notebook will:
 
     - Load the dataset artifact ID
 
-    - Resolve metric IDs (system + custom)
+    - Resolve metric IDs 
 
-    - Load prompt template or orchestration registry IDs
+    - Load prompt template IDs
 
     - Validate all required parameters
 
-**Choose Configuration Mode (Option 1 or Option 2)**
+**Sample parameter setup:**
 
-The notebook provides a simple UI with two checkboxes:
-
-**Option 1 – Prompt Template + Models**
-
-**Option 2 – Orchestration Registry**
-
-You must select only one.
-
-The notebook ensures mutual exclusivity and stores your selection in the variable:
-
-```python
-from ipywidgets import Checkbox, VBox, HBox, Output, Label, Layout
-from IPython.display import display
-import textwrap
-
-# --- Selection state ---
-approach = None
-suppress_update = False  
-
-# --- Define options ---
-flag_options = [
-    "prompt_registry",
-    "orchestration_registry"
-]
-
-# --- Output widget to show current selection ---
-
-output = Output(layout=Layout(border="1px solid black", height="70px", overflow="auto", width="900px"))
-
-
-# --- Handler for checkbox changes ---
-def on_flag_change(change):
-    global approach, suppress_update
-    if suppress_update:
-        return
-
-    if change["new"]:  # A checkbox was checked
-        suppress_update = True
-        # Uncheck all other checkboxes
-        for cb in checkboxes:
-            if cb.description != change["owner"].description:
-                cb.value = False
-        suppress_update = False
-        approach = change["owner"].description
-    else:
-        # Only clear if the unchecked one was the currently selected
-        if approach == change["owner"].description:
-            approach = None
-
-    # Update display once per action
-    with output:
-        output.clear_output(wait=True)
-        msg = f"Selected approach: {approach or 'None'}"
-        wrapped = textwrap.fill(msg, width=60)
-        output.append_stdout(wrapped + "\n")
-
-# --- Create checkboxes ---
-checkboxes = [
-    Checkbox(value=False, description=option, layout=Layout(width="250px"))
-    for option in flag_options
-]
-
-# --- Attach event handler ---
-for cb in checkboxes:
-    cb.observe(on_flag_change, names="value")
-
-# --- Display UI ---
-header = Label(
-    value="Please select the configuration mode:",
-    layout=Layout(margin="10px 0px 10px 0px")
-)
-ui = VBox([header, HBox(checkboxes), output])
-display(ui)
+```Python
+import json
+test_data_path = f"testdata/{DATASET_NAME}" # specify the test data path here. For the full folder just specifying testdata will work
+test_datasets = json.dumps({'path': test_data_path, 'type': 'csv'})
+metrics_list = selected_metrics_str
+models_list = selected_models_str
+print(f"Selected metrics: {metrics_list}")
+print(f"Selected models: {models_list}")
+orchestration_deployment_url = deployment_url # needs to specify this to use a specific deployment id
+repetitions = "1"
 ```
-
-This value determines which fields are passed later:
-
-    - If approach == "prompt_registry" → notebook passes promptTemplate + models
-
-    - If approach == "orchestration_registry" → notebook passes orchestrationRegistryIds
 
 #### Create Configuration Body
 
@@ -1442,11 +950,13 @@ The notebook builds the configuration using the required SAP AI Core fields:
 
     - orchestration deployment URL
 
-    - and Option 1 or Option 2 fields, depending on the chosen approach.
+    - promptTemplate
+
+    - models.
 
 The following function dynamically creates the configuration body for AI Core. 
 
-```python
+```Python
 #  creating an AICORE Configuration.
 import requests
 
@@ -1479,15 +989,11 @@ request_body = {
         },
         {
             "key": "promptTemplate",
-            "value": prompt_template_id if approach == "prompt_registry" else ""
+            "value": prompt_template_id
         },
         {
             "key": "models",
-            "value": models_list if approach == "prompt_registry" else ""
-        },
-        {
-            "key": "orchestrationRegistryIds",
-            "value": orchestration_registry_id if approach == "orchestration_registry" else ""
+            "value": models_list
         }
     ]
 }
@@ -1497,34 +1003,22 @@ def create_aicore_configuration():
     GET_CONFIGURATIONS_ENDPOINT = '/v2/lm/configurations'
     request_url = f"{AICORE_BASE_URL}{GET_CONFIGURATIONS_ENDPOINT}"
     try:
+        print(request_body)
         response = requests.post(
             request_url, headers=headers, data=json.dumps(request_body), timeout=120
         )
         print(response)
         if(response.status_code != 201):
-            raise
+            raise Exception(f"Failed to create configuration: {response.status_code} - {response.text}")
         result = response.json()
         print(result)
+        print(request_body)
         return result['id']
     except:
         logging.error("Error occurred while attempting to create a Configuration")
         raise
         
 configuration_id = create_aicore_configuration()
-```
-
-**Sample parameter setup:**
-
-```python
-import json
-test_data_path = f"testdata/{DATASET_NAME}" # specify the test data path here. For the full folder just specifying testdata will work
-test_datasets = json.dumps({'path': test_data_path, 'type': 'csv'})
-metrics_list = ",".join([selected_metrics_str,custom_metric_ids_str])
-models_list = selected_models_str
-print(f"Selected metrics: {metrics_list}")
-print(f"Selected models: {models_list}")
-orchestration_deployment_url = "<ORCHESTRATION_DEPLOYMENT_URL>"
-repetitions = "1"
 ```
 
 You will receive a configuration ID, which is required for the next step (Execution).
@@ -1542,24 +1036,8 @@ When creating an Evaluation Configuration through Bruno, you call:
 ```bash
 POST {{api_url}}/v2/lm/configurations
 ```
-Instead, you choose between:
 
-**Option 1 — Prompt Template + Models**
-
-**Option 2 — Orchestration Registry**
-
-based on which fields you include in your request body.
-
-| Option Selected                       | Fields You Must Pass       |
-| ------------------------------------- | -------------------------- |
-| **Option 1 – Prompt Template**        | `promptTemplate`, `models` |
-| **Option 2 – Orchestration Registry** | `orchestrationRegistryIds` |
-
-All other fields (metrics, testDataset, repetitions, orchestrationDeploymentURL) remain the same across both options.
-
-Below are the sample request bodies for each option.
-
-#### Option 1 — Using Prompt Template + Models
+Below is the sample request body to create configuration.
 
 ```json
 {
@@ -1602,51 +1080,12 @@ Below are the sample request bodies for each option.
 ```
 ![img](img/image-br03.png)
 
-#### Option 2 — Using Orchestration Registry
-
-```json
-{
-  "name": "genai-eval-conf",
-  "scenarioId": "genai-evaluations",
-  "executableId": "genai-evaluations-simplified",
-  "inputArtifactBindings": [
-    {
-      "key": "datasetFolder",
-      "artifactId": "{{artifactId}}"
-    }
-  ],
-  "parameterBindings": [
-    {
-      "key": "repetitions",
-      "value": "1"
-    },
-    {
-      "key": "orchestrationDeploymentURL",
-      "value": "{{deployment_url}}"
-    },
-    {
-      "key": "metrics",
-      "value": "language_match"
-    },
-    {
-      "key": "testDataset",
-      "value": "{\"path\": \"testdata/{{dataset_file}}\", \"type\": \"csv\"}"
-    },
-    {
-      "key": "orchestrationRegistryIds",
-      "value": "{{orchestration_registry_id}}"
-    }
-  ]
-}
-```
-
-![img](img/image-br06.png)
-
 [OPTION END]
 
 ### Create and Run Evaluation Execution
 
 After creating the Evaluation Configuration, the next step is to execute it.
+
 Execution triggers the evaluation workflow, which:
 
     - Reads the test dataset
@@ -1713,7 +1152,7 @@ An execution is a single evaluation run based on the configuration you defined.
 The following function starts the evaluation in SAP AI Core using the configuration ID:
 
 ```python
-# Trigger an execution with the created configuration
+# create an execution with the created configuration.
 
 import requests
 def create_execution():
@@ -1762,6 +1201,7 @@ def get_execution_status(execution_id):
         logging.error("Error occurred while attempting to get execution status")
         raise
  
+
 get_execution_status(execution_id)
 ```
 
@@ -1824,27 +1264,21 @@ These results help compare model performance, understand quality metrics, and de
 
 Once the evaluation workflow execution is completed, this step retrieves the aggregated evaluation metrics from the SAP AI Core service by specifying the run name.
 
-1. Go to Evaluations → Executions
+1. Go to Optimizations 
 
-2. Select your execution
+2. In the runs section , select the runs you created
 
-3. Open the Metrics tab to view:
-
-    - average latency
-
-    - token usage
-
-    - metric scores
-
-4. Open the Artifacts tab to download:
-
-    - the complete result folder
-
-    - the SQLite DB for deeper analysis
+3. you can View detailed results of a runs across your selected metrics and models
 
 This is the easiest way to visually inspect evaluation outcomes and compare multiple model runs.
 
+![img](img/image_46_01.png)
+
+- Compare run performance across your selected metrics. Metrics are aggregated at run level.
+
 ![img](img/image_46.png)
+
+![img](img/image_46a.png)
 
 [OPTION END]
 
@@ -1852,9 +1286,9 @@ This is the easiest way to visually inspect evaluation outcomes and compare mult
 
 The notebook includes utility scripts to retrieve aggregated metrics, download detailed artifacts, and inspect SQLite results.This returns all metric values per evaluated run, which your notebook then:
 
-    - Converts into a DataFrame
+    - Aggregated evaluation metrics 
 
-    - Creates a pivot table
+    - Raw instance-level results 
 
     - Prepares for ranking and scoring
 
@@ -1863,10 +1297,31 @@ The notebook includes utility scripts to retrieve aggregated metrics, download d
 Aggregated metrics summarize performance across all test samples.
 To fetch them using execution ID:
 
-```python
+```Python
 # Get aggregate metrics using execution id
+import requests
+def retrieve_aggregate_metrics(execution_id):
+    headers = _get_headers()
+    GET_METRICS_ENDPOINT = f'/v2/lm/metrics?tagFilters=evaluation.ai.sap.com/child-of={execution_id}'
+    request_url = f"{AICORE_BASE_URL}{GET_METRICS_ENDPOINT}"
+    try:
+        response = requests.get(request_url, headers=headers, timeout=120)
+        print("response received is ", response)
+        result = response.json()
+        return result
+    except:
+        logging.error("Error occurred while attempting to retreive aggeregate metrics for the run")
+        raise
+
+runs_data = retrieve_aggregate_metrics(execution_id)
+```
+
+**Transform Metrics by Model**
+
+Each run contains tags that identify the evaluated model.
+
+```python
 import pandas as pd
-from IPython.display import HTML
 
 def get_model_from_run(run):
     for tag in run.get("tags", []):
@@ -1878,10 +1333,18 @@ def aggregate_metrics_by_model(runs_list):
     for run in runs_list:
         model = get_model_from_run(run)
         for metric in run["metrics"]:
+            metric_value = metric.get("value")
+
+            # Override only for /mode
+            if metric.get("name").endswith("/mode"):
+                for label in metric.get("labels", []):
+                    if label.get("name") == "evaluation.ai.sap.com/mode_category":
+                        metric_value = label.get("value")
+                        break
             output_json = {
                 "model": model,
                 "metrics_name": metric.get("name"),
-                "metric_value": metric.get("value")
+                "metric_value": metric_value
             }
             transformed_data.append(output_json)
     return transformed_data
@@ -1916,12 +1379,6 @@ metrics_pivot = create_metrics_pivot_table(transformed_data)
 HTML(metrics_pivot.to_html())
 ```
 ![img](img/image_47.png)
-
-You can also retrieve using run name:
-
-```bash
-{base_url}/v2/lm/metrics?tagFilters=evaluation.ai.sap.com/run-name={run_name}
-```
 
 **Download Raw Results (Output Artifact)**
 
@@ -1973,7 +1430,7 @@ def download_all_objects(prefix, destination_folder):
 # Download the evaluation results from the object store. Look at execution status under "outputArtifacts" key to see the 'url'
 # which shows the data path of where your output results are stored
 EXECUTION_ID = execution_id
-sqlite_db_prefix = f'{EXECUTION_ID}/evaluation_result/'  # change the prefix based on where your output artifact is stored in the bucket.
+sqlite_db_prefix = f'{EXECUTION_ID}/tmp/'  # change the prefix based on where your output artifact is stored in the bucket.
 destination_folder = 'results-new'
 
 download_all_objects(sqlite_db_prefix, destination_folder)
@@ -2043,7 +1500,7 @@ for table_name in table_names:
     query = f"SELECT * FROM {table_name};"
     df = pd.read_sql_query(query, connection)
     # If you want to see all the rows across all tables, remove/comment the next line
-    df = df.head(10)  # Limiting the number of rows displayed
+    df = df.head(5)  # Limiting the number of rows displayed
     table_html = df.to_html(classes='table-container', index=False)
     html_content += f"""
     <div class="table-container">
@@ -2060,284 +1517,278 @@ display(HTML(html_content))
 connection.close()
 ```
 
-**Process and Rank Models (Optional Python Helpers)**
+![img](img/image_py_rk.png)
 
-The notebook includes post-processing utilities that:
+#### Process and Rank Results
 
-    - normalize numeric metrics
+This step generates a leaderboard ranking models by their Win Rate (percentage of pairwise victories), providing a robust, comparative measure of the best-performing model and prompt configuration.
 
-    - process boolean and categorical metrics
+```Python
 
-    - compute weighted scores
-
-    - generate a final ranking to identify the best model
-
-```python
 import pandas as pd
-from IPython.display import HTML
+import numpy as np
+import sqlite3
+import json
+import os
+from IPython.display import display, HTML
 
-# Scoring logic depends on "scoring_type"
-# "weight" represents the relative weight of this metric to all SELECTED metrics
-METRICS_SCORING_TYPE_MAPPING = {
-    "Content Filter on Input": {
-        "scoring_type": "bool-false", # False is good
-        "weight": 1
+# ==========================================
+# 1. CONFIGURATION (Separated Groups)
+# ==========================================
+METRIC_GROUPS = {
+    "Categorical": {
+        "type": "categorical",
+        "description": "Weighted Average (1-5 scale)",
+        "metrics": [
+            "Pointwise Conciseness", 
+            "Pointwise Instruction Following", 
+            "Pointwise Correctness", 
+            "Pointwise Answer Relevance"
+        ]
     },
-    "Content Filter on Output": {
-        "scoring_type": "bool-false", # False is good
-        "weight": 1
+    "Boolean": {
+        "type": "categorical", # Uses same weighted avg logic (0 or 1)
+        "description": "Pass Rate (0-1 scale)",
+        "metrics": [
+            "Exact Match",
+            "Content Filter on Input",
+            "Content Filter on Output",
+            "Language Match",
+            "JSON Schema Match"
+        ]
     },
-    "Pointwise Instruction Following": {
-        "scoring_type": "num_1_to_5",
-        "weight": 1
-    },
-    "Pointwise Answer Relevance": {
-        "scoring_type": "num_1_to_5",
-        "weight": 1
-    },
-    "Pointwise Conciseness": {
-        "scoring_type": "num_1_to_5",
-        "weight": 1
-    },
-    "Pointwise Correctness": {
-        "scoring_type": "num_1_to_5",
-        "weight": 1
-    },
-    "BLEU": {
-        "scoring_type": "num_0_to_1",
-        "weight": 1
-    },
-    "ROUGE": {
-        "scoring_type": "num_0_to_1",
-        "weight": 1
-    },
-    "BERT Score": {
-        "scoring_type": "F1/Precision/Recall num_0_to_1",
-        "weight": 1
+    "Numerical": {
+        "type": "numerical",
+        "description": "Mean Value",
+        "metrics": [
+            "BLEU", 
+            "ROUGE", 
+            "BERT Score",
+            "test-metric"
+        ]
     }
 }
 
-def calculate_bool_metric_score(pivot_df, metric_base_name, true_is_good):
-    """
-    Calculate scores for boolean metrics based on False/True counts.
+# ==========================================
+# 2. DATA EXTRACTION
+# ==========================================
+def extract_db_metadata(db_path):
+    if not os.path.exists(db_path): return pd.DataFrame()
+    conn = sqlite3.connect(db_path)
+    df_runs = pd.read_sql_query("SELECT id, name, tags, config FROM run", conn)
+    conn.close()
     
-    Args:
-        pivot_df: DataFrame with models as rows and metrics as columns
-        metric_base_name: Base name of the metric (without /False/count or /True/count)
-        true_is_good: Boolean indicating if True is considered a good outcome
-    
-    Returns:
-        Series with boolean metric scores per model (scaled to -1 to 1)
-    """
-    false_col = f"{metric_base_name}/False/count"
-    true_col = f"{metric_base_name}/True/count"
-    
-    false_values = pivot_df[false_col] if false_col in pivot_df.columns else 0
-    true_values = pivot_df[true_col] if true_col in pivot_df.columns else 0
-    total_values = true_values + false_values
+    meta_data = []
+    for _, row in df_runs.iterrows():
+        run_id = str(row["id"])
+        run_name = str(row["name"])
+        tags = {}
+        config = {}
+        try: tags = json.loads(row["tags"]) if isinstance(row["tags"], str) else row["tags"]
+        except: pass
+        try: config = json.loads(row["config"]) if isinstance(row["config"], str) else row["config"]
+        except: pass
 
-    score = ((false_values * 1) + (true_values * -1)) / total_values
+        model = "Unknown"
+        try: model = config["modules"]["prompt_templating"]["model"]["name"]
+        except:
+            if isinstance(tags, dict): model = tags.get("evaluation.ai.sap.com/model", "Unknown")
+            elif isinstance(tags, list):
+                for t in tags: 
+                    if t.get("key") == "evaluation.ai.sap.com/model": model = t.get("value")
 
-    if true_is_good:
-        score = 0 - score
+        meta_data.append({"run_id": run_id, "run_name": run_name, "model": model})
+    return pd.DataFrame(meta_data)
 
-    return score
-
-def calculate_numeric_metric_score(pivot_df, metric_base_name, range_min=0, range_max=1):
-    """
-    Calculate scores for numeric metrics with /mean
-    The mean is normalized to a score between -1 and 1 using the provided range.
-    
-    Args:
-        pivot_df: DataFrame with models as rows and metrics as columns
-        metric_base_name: Base name of the metric (without suffixes)
-        range_min: Minimum possible value of the metric
-        range_max: Maximum possible value of the metric
-    
-    Returns:
-        Series with numeric metric scores per model (scaled to -1 to 1)
-    """
-    mean_col = f"{metric_base_name}/mean"
-    
-    if mean_col not in pivot_df.columns:
-        return pd.Series(0.0, index=pivot_df.index)
-    
-    mean_values = pivot_df[mean_col]
-    
-    # Linear normalization from [range_min, range_max] to [0, 1]
-    normalized = (mean_values - range_min) / (range_max - range_min)
-    
-    # Scale to [-1, 1]
-    score = (normalized * 2) - 1
-    
-    return score
-
-def calculate_bert_score(pivot_df, metric_base_name):
-    """
-    Calculate BERT Score by averaging F1, Precision, and Recall scores.
-    
-    Args:
-        pivot_df: DataFrame with models as rows and metrics as columns
-        metric_base_name: Base name "BERT Score"
-    
-    Returns:
-        Series with BERT scores per model (scaled to -1 to 1)
-    """
-    f1_col = f"{metric_base_name}/F1/mean"
-    precision_col = f"{metric_base_name}/Precision/mean"
-    recall_col = f"{metric_base_name}/Recall/mean"
-    
-    scores = []
-    for col in [f1_col, precision_col, recall_col]:
-        if col in pivot_df.columns:
-            scores.append(pivot_df[col])
-    
-    if not scores:
-        return pd.Series(0.0, index=pivot_df.index)
-    
-    # Average the three metrics (already in 0 to 1 range)
-    avg_score = sum(scores) / len(scores)
-    
-    # Scale to [-1, 1]
-    score = (avg_score * 2) - 1
-    
-    return score
-
-def find_unique_metrics_in_pivot(pivot_df):
-    """
-    Identify unique metric base names present in the pivot table.
-    
-    Args:
-        pivot_df: DataFrame with models as rows and metrics as columns
-    """
-    # Extract unique metric names from pivot table columns
-    unique_metrics = set()
-    for col in pivot_df.columns:
-        # Extract base metric name by removing suffixes
-        base_name = col
-        for suffix in ['/False/count', '/True/count', '/F1_score/mean','/Precision_score/mean', 
-                       '/Recall_score/mean','/mean','/median', '/p90', '/p95', '/stddev']:
-            if suffix in base_name and "BERT Score" not in base_name:
-                base_name = base_name.replace(suffix, '')
-                unique_metrics.add(base_name)
+def extract_api_metrics(runs_data_resource):
+    flat_data = []
+    for run in runs_data_resource:
+        model = "Unknown"
+        for t in run.get("tags", []):
+            if t.get("name") == "evaluation.ai.sap.com/model":
+                model = t.get("value")
                 break
-        if base_name.startswith("BERT Score/"):
-            base_name = "BERT Score"
-            unique_metrics.add(base_name)
-    if not unique_metrics:
-        raise ValueError("No valid metrics found in pivot table")
-    return unique_metrics
+        for m in run.get("metrics", []):
+            clean_name = m.get("name", "").replace('"', '').strip()
+            flat_data.append({
+                "model": model,
+                "metrics_name_clean": clean_name,
+                "metric_value": m.get("value")
+            })
+    df = pd.DataFrame(flat_data)
+    df['metric_value'] = pd.to_numeric(df['metric_value'], errors='coerce')
+    return df
 
-
-def rank_models(pivot_df, unique_metrics=None):
+# ==========================================
+# 3. SCORING & HELM LOGIC
+# ==========================================
+def calculate_weighted_avg_score(row, cols):
+    """ Returns a score based on counts. 
+        Categorical: 1-5 scale. 
+        Boolean: 0-1 scale (Pass Rate). 
     """
-    Rank models based on metrics present in the pivot table.
+    total_score = 0
+    total_count = 0
+    # Check counts 0-5 (covers Boolean 0/1 and Categorical 1-5)
+    for rating in range(0, 6):
+        col_name = next((c for c in cols if f"/{rating}/count" in c), None)
+        if col_name and not pd.isna(row[col_name]):
+            count = row[col_name]
+            total_score += count * rating
+            total_count += count
+    return total_score / total_count if total_count > 0 else 0.0
+
+def get_metric_score_series(df_metrics, metric_name, group_type):
+    """ Returns a Series of SCORES (Scalar) for each model for a specific metric """
+    subset = df_metrics[df_metrics['metrics_name_clean'].str.startswith(metric_name)]
+    if subset.empty: return None
+
+    # Pivot to get columns for this metric
+    pivot = subset.pivot_table(index='model', columns='metrics_name_clean', values='metric_value', aggfunc='first')
+    cols = pivot.columns.tolist()
     
-    Args:
-        pivot_df: DataFrame with models as rows (index) and metrics as columns
-    
-    Returns:
-        DataFrame with model rankings and scores
-    """    
-    # Calculate total weight for metrics present in pivot table
-    total_weight = sum(METRICS_SCORING_TYPE_MAPPING[m]["weight"] for m in unique_metrics)
-    
-    # Initialize total score
-    total_scores = pd.Series(0.0, index=pivot_df.index)
-    
-    # Process each metric found in the pivot table
-    for metric_name in unique_metrics:
-        config = METRICS_SCORING_TYPE_MAPPING[metric_name]
-        scoring_type = config["scoring_type"]
-        weight = config["weight"] / total_weight
+    if group_type == "categorical":
+        # Calculate Weighted Average (or Pass Rate for Boolean)
+        return pivot.apply(lambda row: calculate_weighted_avg_score(row, cols), axis=1)
+    else:
+        # Calculate Mean (Numerical)
+        c_mean = next((c for c in cols if "mean" in c), None)
+        if c_mean: return pivot[c_mean]
+        return None
+
+def calculate_group_win_rate(score_table):
+    """
+    Calculates HELM Win Rate: % of times a model beats another model across all metrics in this group.
+    """
+    models = score_table.index.tolist()
+    metrics = score_table.columns.tolist()
+    win_rates = {}
+
+    for model_a in models:
+        wins = 0
+        comparisons = 0
         
-        if scoring_type == "bool-false":
-            # False is good (True is bad)
-            metric_score = calculate_bool_metric_score(pivot_df, metric_name, true_is_good=False)
-            total_scores += metric_score * weight
+        for model_b in models:
+            if model_a == model_b: continue
             
-        elif scoring_type == "bool-true":
-            # True is good (False is bad)
-            metric_score = calculate_bool_metric_score(pivot_df, metric_name, true_is_good=True)
-            total_scores += metric_score * weight
-            
-        elif scoring_type == "num_1_to_5":
-            metric_score = calculate_numeric_metric_score(pivot_df, metric_name, range_min=1, range_max=5)
-            total_scores += metric_score * weight
-            
-        elif scoring_type == "num_0_to_1":
-            metric_score = calculate_numeric_metric_score(pivot_df, metric_name, range_min=0, range_max=1)
-            total_scores += metric_score * weight
-            
-        elif scoring_type == "F1/Precision/Recall num_0_to_1":
-            # BERT Score
-            metric_score = calculate_bert_score(pivot_df, metric_name)
-            total_scores += metric_score * weight
-    
-    # Create results DataFrame
-    results_df = pd.DataFrame({
-        'model': pivot_df.index,
-        'total_score': total_scores.values
-    })
-    
-    # Rank models (higher score = better rank)
-    results_df['rank'] = results_df['total_score'].rank(ascending=False, method='min').astype(int)
-    results_df = results_df.sort_values('rank')
-    
-    return results_df
-
-def get_detailed_scores(pivot_df, unique_metrics):
-    """
-    Get detailed breakdown of scores per metric for each model.
-    
-    Args:
-        pivot_df: DataFrame with models as rows and metrics as columns
-    
-    Returns:
-        DataFrame with detailed scores per metric
-    """
-    detailed_scores = pd.DataFrame(index=pivot_df.index)
-    
-    # Process each metric in the mapping
-    for metric_name in unique_metrics:
-        scoring_type = METRICS_SCORING_TYPE_MAPPING[metric_name]["scoring_type"]
+            # Compare across ALL metrics in this table
+            for metric in metrics:
+                score_a = score_table.at[model_a, metric]
+                score_b = score_table.at[model_b, metric]
+                
+                # Only compare valid scores
+                if pd.isna(score_a) or pd.isna(score_b): continue
+                
+                comparisons += 1
+                if score_a > score_b:
+                    wins += 1
         
-        if scoring_type == "bool-false":
-            detailed_scores[f"{metric_name}_score"] = calculate_bool_metric_score(pivot_df, metric_name, true_is_good=False)
-            
-        elif scoring_type == "bool-true":
-            detailed_scores[f"{metric_name}_score"] = calculate_bool_metric_score(pivot_df, metric_name, true_is_good=True)
-            
-        elif scoring_type == "num_1_to_5":
-            detailed_scores[f"{metric_name}_score"] = calculate_numeric_metric_score(pivot_df, metric_name, range_min=1, range_max=5)
-            
-        elif scoring_type == "num_0_to_1":
-            detailed_scores[f"{metric_name}_score"] = calculate_numeric_metric_score(pivot_df, metric_name, range_min=0, range_max=1)
-            
-        elif scoring_type == "F1/Precision/Recall num_0_to_1":
-            detailed_scores[f"{metric_name}_score"] = calculate_bert_score(pivot_df, metric_name)
+        win_rates[model_a] = wins / comparisons if comparisons > 0 else 0.0
+        
+    return pd.Series(win_rates)
+
+# ==========================================
+# 4. EXECUTION
+# ==========================================
+db_file = 'results-new/results.db'
+
+# A. Metadata
+df_db_meta = extract_db_metadata(db_file)
+df_db_unique = df_db_meta.drop_duplicates(subset=['model'], keep='last')
+
+# B. CSS
+html_content = """
+<style>
+.fixed-container {
+    max-height: 600px;
+    overflow-y: auto;
+    border: 2px solid #ddd;
+    padding: 10px;
+}
+.table-container table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.table-container th, .table-container td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    white-space: nowrap;
+}
+.table-container th {
+    font-weight: bold;
+}
+.table-container td {
+    white-space: nowrap;
+}
+</style>
+<div class="fixed-container">
+"""
+if 'runs_data' in locals() and runs_data:
+    df_metrics_all = extract_api_metrics(runs_data['resources'])
     
-    return detailed_scores
+    for group_name, config in METRIC_GROUPS.items():
+        
+        # 1. Build Score Table
+        score_table = pd.DataFrame(index=df_db_unique['model'].unique())
+        score_table.index.name = 'model'
+        
+        valid_metrics = []
+        
+        # 2. Calculate Scores
+        for metric in config["metrics"]:
+            scores = get_metric_score_series(df_metrics_all, metric, config["type"])
+            if scores is not None:
+                score_table[metric] = scores
+                valid_metrics.append(metric)
+        
+        if not valid_metrics:
+            continue
 
-unique_metrics = find_unique_metrics_in_pivot(metrics_pivot)
+        # 3. Calculate HELM Win Rate (Specific to this group)
+        score_table['Win Rate'] = calculate_group_win_rate(score_table[valid_metrics])
+        
+        # 4. Calculate Final Rank
+        score_table['Final Rank'] = score_table['Win Rate'].rank(ascending=False, method='min')
+        
+        # 5. Merge & Format
+        df_final = pd.merge(df_db_unique, score_table, on='model', how='inner')
+        df_final = df_final.sort_values('Final Rank')
+        
+        # Rounding
+        for c in valid_metrics: df_final[c] = df_final[c].fillna(0.0).astype(float).round(4)
+        df_final['Win Rate'] = df_final['Win Rate'].fillna(0.0).astype(float).round(4)
+        df_final['Final Rank'] = df_final['Final Rank'].fillna(0).astype(int)
+        
+        # Columns
+        meta_cols = ['run_id', 'run_name', 'model']
+        final_cols = meta_cols + ['Win Rate', 'Final Rank'] + valid_metrics
+        
+        # 6. Generate HTML
+        table_html = df_final[final_cols].to_html(classes='table-container', index=False)
+        
+        html_content += f"""
+        <div class="table-container">
+            <h3>{group_name} Comparison</h3>
+            <p><i>Values: {config['description']}. Win Rate based on head-to-head performance.</i></p>
+            {table_html}
+        </div>
+        """
 
-# Get detailed scores breakdown
-detailed = get_detailed_scores(metrics_pivot, unique_metrics)
-display(HTML(detailed.to_html()))
-
-# Rank models
-ranking = rank_models(metrics_pivot, unique_metrics)
-display(HTML(ranking.to_html()))
+    html_content += "</div>"
+    display(HTML(html_content))
+    
+else:
+    print("'runs_data' missing.")
 ```
-This provides a clear ranking of models based on the metrics you selected during evaluation.
-
-![img](img/image_py_rk.png)
+![img](img/image_py_rnk1.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Bruno]]
 
-Retrieve Aggregate Metrics
+**Retrieve Aggregate Metrics by execution_id**
 
 Send a GET request:
 
@@ -2345,7 +1796,10 @@ Send a GET request:
 ```bash
 {{apiurl}}/v2/lm/metrics?tagFilters=evaluation.ai.sap.com/child-of={{execution_id}}
 ```
-or using dataset run name:
+
+**Retrieve Aggregate Metrics Using Run Name**
+
+Send a GET request:
 
 **GET** 
 ```bash
@@ -2390,9 +1844,11 @@ Open the SQLite DB in any client to inspect:
 
 ![img](img/image_49.png)
 
+![img](img/image_49a.png)
+
 [OPTION END]
 
-### Delete Evaluation Artifacts, Configurations & Metrics
+### Delete Evaluation Artifacts and Configurations 
 
 Over time, your workspace may accumulate old configurations, executions, and metrics.
 SAP AI Core allows you to safely delete these resources once they are no longer needed.
@@ -2403,18 +1859,15 @@ This section explains how to delete:
 
     - Evaluation Configurations
 
-    - Custom Metrics (if created)
-
 ⚠️ Important:
 
 Deletions are permanent and cannot be undone.
-System-defined metrics cannot be deleted — only your custom metrics.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
 **Delete Executions**
 
-1. Go to Evaluations → Executions
+1. Go to ML Operations → Executions
 
 2. Select the execution
 
@@ -2424,7 +1877,7 @@ System-defined metrics cannot be deleted — only your custom metrics.
 
 **Delete Evaluation Configurations**
 
-1. Go to Evaluations → Configurations
+1. Go to ML Operations → Configurations
 
 2. Select the configuration you created
 
@@ -2474,22 +1927,6 @@ def delete_configuration(configuration_id):
 delete_configuration(configuration_id)
 ```
 
-**3. Delete a Custom Metric**
-
-```python
-def delete_metric(metric_id):
-    headers = _get_headers()
-    endpoint = f"/v2/lm/evaluationMetrics/{metric_id}"
-    url = f"{AICORE_BASE_URL}{endpoint}"
-
-    response = requests.delete(url, headers=headers)
-    print("Status:", response.status_code)
-    print(response.text)
-
-# Example:
-delete_metric(metric_id)
-```
-
 [OPTION END]
 
 [OPTION BEGIN [Bruno]]
@@ -2509,12 +1946,6 @@ AI-Resource-Group: {{resource_group}}
 
 ```bash
 DELETE {{apiurl}}/v2/lm/configurations/{{configuration_id}}
-```
-
-**3. Delete Custom Metric**
-
-```bash
-DELETE {{apiurl}}/v2/lm/evaluationMetrics/{{metric_id}}
 ```
 
 [OPTION END]

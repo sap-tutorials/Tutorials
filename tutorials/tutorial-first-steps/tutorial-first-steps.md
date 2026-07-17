@@ -2,18 +2,18 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner ]
+tags: [ tutorial>beginner, topic>sap-community ]
 primary_tag: topic>sap-community
 author_name: Riley Rainey
 author_profile: https://github.com/rbrainey
 ---
 
+
 # Get to Know SAP Tutorials
-<!-- description --> Take a tour of the SAP Tutorial Navigator and learn how to complete tutorials and earn badges – and everything else you ever wanted to know about tutorials but were afraid to ask.
+<!-- description --> Take a tour of the SAP Tutorial Navigator and learn how to complete tutorials and earn badges.
 
 ## Prerequisites
 - You can view the tutorials without an SAP ID, but you will not be able to keep your progress and earn badges without an SAP ID (nor do this tutorial and earn the tutorial beginner badge). If you don't have one, go to [Create your SAP Universal ID](https://account.sap.com/core/create) or click the person icon at the top-right of this page ![person](person.png).
-
 
 
 ## You will learn
@@ -24,11 +24,10 @@ author_profile: https://github.com/rbrainey
   - How to give feedback
 
 ## Intro
-We want to give a very quick tour of SAP Tutorials.
+This tutorial is designed to get you started using SAP's Developer Tutorial system.
 
-Since you are already doing a tutorial -- this tutorial -- you already know some of the basics. Still, we'd like to review some things maybe you didn't know.
+There are over 1,300 tutorials published here -- all organized into hundreds of topic-related tracks designed to help you learn the concepts and mechanics of SAP developer technologies.
 
->**The main thing to know:** the SAP Tutorial Navigator now provides over 1,000 tutorials contained within hundreds of scenarios and projects.
 
 ---
 
@@ -203,6 +202,11 @@ Go back to the [developers home page](https://developers.sap.com), and make sure
 
 ![Achievements](achievements.png)
 
+```json
+{
+  "key": "value"
+}
+```
 
 
 ### Test yourself

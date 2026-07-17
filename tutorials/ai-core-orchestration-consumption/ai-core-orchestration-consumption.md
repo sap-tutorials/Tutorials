@@ -39,6 +39,10 @@ This tutorial provides a basic introduction to using **orchestration in SAP AI C
 
 You will learn how to deploy and configure orchestration to enable the consumption of **multiple GenAI models** within a single workflow.
 
+Please note that:
+- The **model** and **model-version** referenced in the tutorial may differ from the current offerings. Refer to the [SAP Note](https://me.sap.com/notes/3437766) for the list of available models.
+- The AILaunchpad screenshots in tutorial may slightly vary from the current AILaunchpad UI.
+
 We will walk through a **step-by-step guide** and demonstrate the orchestration flow using a **resume processing use case**. This real-world scenario highlights how different models can collaborate within a cohesive pipeline using orchestration.
 
 > **Note:** In SAP AI Core, orchestration deployment is available by default in the default resource group during the onboarding. For any new or additional resource groups, you must deploy a separate orchestration setup.
@@ -531,7 +535,10 @@ Follow the screenshot attached for reference.
 
 ###  Consume LLM's in Generative AI Hub through Orchestration
 
+Please note that the **model** and **model-version** referenced in the tutorial may differ from the current offerings. Refer to the [SAP Note](https://me.sap.com/notes/3437766) for the list of available models.
+
 [OPTION BEGIN [AI Launchpad]]
+
 
 • Navigate to the resource group where your orchestration has been deployed. 
 
@@ -541,6 +548,8 @@ Follow the screenshot attached for reference.
 
 • In the Templating section, locate the message icon with three tabs: User, Assistance, and System. 
 
+Please take note that the screenshots in tutorial may slightly vary from the current AILaunchpad UI.
+
 
 Click on the User tab, Enter the following details: 
 
@@ -548,7 +557,7 @@ Click on the User tab, Enter the following details:
 
 ```CODE
 
-Here is a candidate's resume: {{?candidate_resume}} 
+Here is a candidate's resume: {{ ?candidate_resume }} 
 
 ```
 **Variable Definitions:** 
@@ -630,7 +639,7 @@ Personal Interests
 - I love traveling and experiencing new cultures. 
 - I enjoy playing video games, especially competitive ones. 
 - I hate being stuck in a routine; I always seek new challenges and growth opportunities. 
--I hate working in Azure cloud -"Azure cloud is the most irritating platform i have ever used" 
+- I hate working in xyz cloud -"xyz cloud is the most irritating platform i have ever used" 
 ```
 
 ![img](img/image019.png)
@@ -726,7 +735,7 @@ template = Template(
                       organizational history, and personal interests"""), 
 
         UserMessage( 
-            "Here is a candidate's resume: {{?candidate_resume}}" 
+            "Here is a candidate's resume: {{ ?candidate_resume }}" 
         ), 
     ], 
 
@@ -829,7 +838,7 @@ In this step, we will consume the orchestration service using the [`@sap-ai-sdk/
 
 ```javascript
 
-import { readFile } from 'fs/promises';
+import { readFile } from 'node:fs/promises';
 
 const cvContent = await readFile('path/to/cv.txt', 'utf-8');
 
@@ -842,10 +851,10 @@ The next step involves creating a template that specifies how the AI should hand
 • `user`: Represents the user's input to be processed. 
 
 ```javascript
-import type { TemplatingModuleConfig } from '@sap-ai-sdk/orchestration';
+import type { PromptTemplate } from '@sap-ai-sdk/orchestration';
 
 // Define the system and user messages 
-const templatingConfig: TemplatingModuleConfig = {  
+const promptTemplate: PromptTemplate = {  
   template: [ 
     { 
       role: 'system', 
@@ -853,7 +862,7 @@ const templatingConfig: TemplatingModuleConfig = {
     }, 
     { 
       role: 'user', 
-      content: 'Candidate Resume:\n{{?candidate_resume}}', 
+      content: 'Candidate Resume:\n{{ ?candidate_resume }}', 
     }, 
   ],
 }; 
@@ -885,7 +894,7 @@ Query Execution: Uses `OrchestrationClient` to generate responses for each query
 
 ```javascript
 
-import { writeFile } from 'fs/promises';
+import { writeFile } from 'node:fs/promises';
 import { OrchestrationClient } from '@sap-ai-sdk/orchestration'; 
 
 // Generate responses from multiple models using OrchestrationClient
@@ -895,14 +904,16 @@ async function generateResponsesForModels(cvContent: string) {
       models.map(async (model) => {
         const orchestrationClient = new OrchestrationClient(
           {
-            llm: {
-              model_name: model,
-              model_params: { 
-                max_tokens: 1000, 
-                temperature: 0.6, 
-              }, 
-            },
-            template: templatingConfig
+            promptTemplating: {
+              prompt: promptTemplate,
+              model: {
+                name: model,
+                params: { 
+                  max_tokens: 1000, 
+                  temperature: 0.6, 
+                }, 
+              },
+            }
           },
           { resourceGroup: RESOURCE_GROUP }
         );
@@ -910,7 +921,7 @@ async function generateResponsesForModels(cvContent: string) {
         try { 
           // Run orchestration with the provided input (candidate resume content) 
           const response = await orchestrationClient.chatCompletion({ 
-            inputParams: { candidate_resume: cvContent }, 
+            placeholderValues: { candidate_resume: cvContent }, 
           }); 
 
           // Extract the response content and return it
@@ -1110,7 +1121,7 @@ Together with document grounding and templating, data masking and content filter
           },  
           {  
             "role": "user",  
-            "content": "Candidate Resume:\n{{?candidate_resume}}"  
+            "content": "Candidate Resume:\n{{ ?candidate_resume }}"  
           }  
         ],  
         "defaults": {  

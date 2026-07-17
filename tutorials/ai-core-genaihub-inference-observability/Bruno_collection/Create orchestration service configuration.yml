@@ -1,0 +1,89 @@
+info:
+  name: Create orchestration service configuration
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{ai_api_url}}/lm/configurations"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource_group}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "orchestration-config",
+        "executableId": "orchestration",
+        "scenarioId": "orchestration"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if ( res.status === 200 ) {
+          let data = res.getBody();
+          bru.setEnvVar("configurationId", data.id);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/lm/configurations"
+      method: POST
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: "{{resource-group}}"
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "name": "orchestration-config",
+            "executableId": "orchestration",
+            "scenarioId": "orchestration"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: date
+          value: Thu, 26 Mar 2026 11:41:59 GMT
+        - name: location
+          value: https://api.ai.internalprod.eu-central-1.aws.ml.hana.ondemand.com:None/api/v2/configurations/a660a213-5933-4b2c-872b-c1dbb3e771c2
+        - name: content-type
+          value: application/json
+        - name: content-location
+          value: https://api.ai.internalprod.eu-central-1.aws.ml.hana.ondemand.com:None/api/v2/configurations/a660a213-5933-4b2c-872b-c1dbb3e771c2
+        - name: content-length
+          value: "83"
+        - name: access-control-allow-origin
+          value: "null"
+        - name: access-control-allow-credentials
+          value: "false"
+        - name: cache-control
+          value: no-store, must-revalidate
+        - name: x-upstream-service-time
+          value: "89"
+      body:
+        type: json
+        data: |-
+          {
+            "id": "a660a213-5933-4b2c-872b-c1dbb3e771c2",
+            "message": "Configuration created"
+          }

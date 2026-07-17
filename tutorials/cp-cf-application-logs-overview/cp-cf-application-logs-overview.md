@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
-primary_tag: software-product>sap-btp--cloud-foundry-environment
+tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-runtime-and-environment, topic>cloud]
+primary_tag: software-product>sap-btp--cloud-foundry-runtime-and-environment
 author_name: Beyhan Veli
 author_profile: https://github.com/beyhan
 ---

@@ -16,7 +16,6 @@ author_profile: https://github.com/Juliana-Morais
 - You have a subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## You will learn
-  - How to check your SAP Document AI entitlements
   - How to create a service instance of SAP Document AI
   - How to create a service key for your service instance
 ---
@@ -44,41 +43,6 @@ author_profile: https://github.com/Juliana-Morais
 
 
 
-### Check entitlements
-
-
-To try out SAP Document AI, you need to make sure that your subaccount is properly configured.
-
-1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
-
-2. Search for **SAP Document AI Trial**. ***If you find it in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
-
-    <!-- border -->![Entitlements](check-entitlements.png)
-
-***ONLY if you DO NOT find **SAP Document AI Trial** in your list, proceed as follows:***
-
-  1. Click **Edit**.
-
-    ![Configure Entitlements](edit.png)
-
-  2. Click **Add Service Plans**.
-
-    ![Add Service Plan](add-service-plans.png)
-
-  3. Select **SAP Document AI Trial**, and choose the **`blocks_of_100`** service plan. Click **Add 1 Service Plan**.
-
-    <!-- border -->![Add Service Plan](add-entitlements.png)
-
-  4. **Save** your **Entitlements** changes.
-
-    <!-- border -->![Add Service Plan](save-entitlements.png)    
-
-You're now entitled to use SAP Document AI and create service instances.
-
->For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
-
-
-
 ### Access SAP Document AI Trial via Service Marketplace
 
 
@@ -91,6 +55,8 @@ The **Service Marketplace** is where you find all the services available on SAP 
 2. Next, search for **SAP Document AI Trial** and click the tile to access it.
 
     <!-- border -->![SAP Document AI in Service Marketplace](access-dox.png)
+
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 
 

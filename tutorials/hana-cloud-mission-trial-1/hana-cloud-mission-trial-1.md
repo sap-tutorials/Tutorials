@@ -42,9 +42,11 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 - SAP BTP trial allows you to build full applications in a test environment to learn and explore the capabilities of SAP BTP.  However, once you are ready to move to productive use a new productive BTP account is required.
 
-- Customers with a productive SAP BTP account can use free service plans for SAP BTP to explore, learn, and try SAP BTP services (such as SAP HANA Cloud) with a path to productive use.
+- Customers with a productive SAP BTP account can use free tier service plans for SAP BTP to explore, learn, and try SAP BTP services (such as SAP HANA Cloud) with a path to productive use.
 
-- Free service plans provide a means to try out selected services up to a specified capacity limit.  In the case of SAP HANA Cloud free tier service, when running in a productive account, it can be switched easily to the paid tier service, enabling additional functionality without losing any work.  
+- Free tier service plans provide a means to try out selected services up to a specified capacity limit.  In the case of SAP HANA Cloud free tier service, when running in a productive account, it can be switched easily to the paid tier service, enabling additional functionality without losing any work
+
+Further details can be found at [Trial Accounts and Free Tier](https://help.sap.com/docs/btp/sap-business-technology-platform/trial-accounts-and-free-tier).
 
 ### Sign up for an SAP BTP account
 
@@ -52,7 +54,7 @@ In this step, you can learn how to sign up for the SAP BTP trial or a productive
 
 To sign up for an SAP BTP trial account follow the below steps.
 
-1. Click on [this link](https://www.sap.com/products/technology-platform/pricing.html) to get to the try and buy page. 
+1. Click on [this link](https://www.sap.com/products/technology-platform/pricing.html) to get to the try and buy page.
 
     ![Screenshot Trial signup1](ss-01-trial-Signup1.png)
 

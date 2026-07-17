@@ -153,7 +153,7 @@ Similarly to the previous step, this step will add additional controls to the ex
 	</mvc:View>
 	```
 
-	2.	The previous snippet contains a button. Let's implement the logic to display a [MessageBox](https://sapui5.hana.ondemand.com/#/api/sap.m.MessageBox) once this button has been pressed. **Add** a missing imports and the listener for the press event in the `webapp/controller/Detail.controller.js`.
+2.	The previous snippet contains a button. Let's implement the logic to display a [MessageBox](https://sapui5.hana.ondemand.com/#/api/sap.m.MessageBox) once this button has been pressed. **Add** a missing imports and the listener for the press event in the `webapp/controller/Detail.controller.js`.
 
 		```JavaScript[2,3,4,6,34-51]
 		sap.ui.define([

@@ -1,0 +1,160 @@
+info:
+  name: Retrieve one inference
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{AI_API}}/observability/inferences/{{inferenceId}}"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource-group}}"
+    - name: Content-Type
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/observability/inferences/{{inferenceId}}"
+      method: GET
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: "{{resource-group}}"
+        - name: Content-Type
+          value: application/json
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: content-type
+          value: application/json
+        - name: date
+          value: Thu, 26 Mar 2026 14:33:22 GMT
+        - name: x-upstream-service-time
+          value: "226"
+        - name: transfer-encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+            "id": "4ea1c986-ec03-4011-9731-c752b4188b3f",
+            "source": "orchestration",
+            "resourceGroup": "inferenceobservability",
+            "deploymentId": "d51944c2eeb63099",
+            "modelName": "gpt-5-mini",
+            "modelVersion": "latest",
+            "responseHttpCode": 200,
+            "inputTokens": 13,
+            "outputTokens": 383,
+            "latency": 8.058194893994369,
+            "request": {
+              "config": {
+                "modules": {
+                  "prompt_templating": {
+                    "prompt": {
+                      "template": [
+                        {
+                          "role": "user",
+                          "content": "What is the speed of light?"
+                        }
+                      ]
+                    },
+                    "model": {
+                      "name": "gpt-5-mini",
+                      "version": "latest",
+                      "params": {
+                        "max_completion_tokens": 3000
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "response": {
+              "request_id": "37928603-f35e-91c8-9baf-b81eadc41ad7",
+              "intermediate_results": {
+                "templating": [
+                  {
+                    "content": "What is the speed of light?",
+                    "role": "user"
+                  }
+                ],
+                "llm": {
+                  "id": "chatcmpl-DNg3RvrIBf1CNGmyhaClr1ZHt1UUv",
+                  "object": "chat.completion",
+                  "created": 1774535573,
+                  "model": "gpt-5-mini-2025-08-07",
+                  "choices": [
+                    {
+                      "index": 0,
+                      "message": {
+                        "role": "assistant",
+                        "content": "The speed of light in vacuum (symbol c) is exactly 299,792,458 meters per second. \n\nQuick equivalents and notes:\n- ≈ 299,792.458 km/s\n- ≈ 186,282.397 miles/s (≈ 670,616,629 mph)\n- Often rounded to 3.00 × 10^8 m/s for rough calculations.\n- In materials light travels slower by the refractive index n: v = c/n.\n- In special relativity c is the ultimate speed limit for information and for objects with mass."
+                      },
+                      "finish_reason": "stop"
+                    }
+                  ],
+                  "usage": {
+                    "completion_tokens": 383,
+                    "prompt_tokens": 13,
+                    "total_tokens": 396,
+                    "prompt_tokens_details": {
+                      "audio_tokens": 0,
+                      "cached_tokens": 0
+                    },
+                    "completion_tokens_details": {
+                      "accepted_prediction_tokens": 0,
+                      "audio_tokens": 0,
+                      "reasoning_tokens": 256,
+                      "rejected_prediction_tokens": 0
+                    }
+                  }
+                }
+              },
+              "final_result": {
+                "id": "chatcmpl-DNg3RvrIBf1CNGmyhaClr1ZHt1UUv",
+                "object": "chat.completion",
+                "created": 1774535573,
+                "model": "gpt-5-mini-2025-08-07",
+                "choices": [
+                  {
+                    "index": 0,
+                    "message": {
+                      "role": "assistant",
+                      "content": "The speed of light in vacuum (symbol c) is exactly 299,792,458 meters per second. \n\nQuick equivalents and notes:\n- ≈ 299,792.458 km/s\n- ≈ 186,282.397 miles/s (≈ 670,616,629 mph)\n- Often rounded to 3.00 × 10^8 m/s for rough calculations.\n- In materials light travels slower by the refractive index n: v = c/n.\n- In special relativity c is the ultimate speed limit for information and for objects with mass."
+                    },
+                    "finish_reason": "stop"
+                  }
+                ],
+                "usage": {
+                  "completion_tokens": 383,
+                  "prompt_tokens": 13,
+                  "total_tokens": 396,
+                  "prompt_tokens_details": {
+                    "audio_tokens": 0,
+                    "cached_tokens": 0
+                  },
+                  "completion_tokens_details": {
+                    "accepted_prediction_tokens": 0,
+                    "audio_tokens": 0,
+                    "reasoning_tokens": 256,
+                    "rejected_prediction_tokens": 0
+                  }
+                }
+              }
+            },
+            "createdAt": "2026-03-26T14:33:01.7065395Z",
+            "objectStoreSecretName": "inference-observability"
+          }

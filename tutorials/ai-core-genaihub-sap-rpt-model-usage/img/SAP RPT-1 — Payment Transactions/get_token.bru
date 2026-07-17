@@ -1,0 +1,61 @@
+meta {
+  name: get_token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{authUrl}}
+  body: formUrlEncoded
+  auth: none
+}
+
+headers {
+  Content-Type: application/x-www-form-urlencoded
+}
+
+body:form-urlencoded {
+  grant_type: client_credentials
+  client_id: {{clientId}}
+  client_secret: {{clientSecret}}
+}
+
+script:post-response {
+  // Automatically write the returned access_token into the bearerToken environment variable.
+  // This means you do not need to manually copy and paste the token —
+  // simply run this request and the token is ready for all subsequent requests.
+  const json = res.getBody();
+  if (json && json.access_token) {
+    bru.setEnvVar("bearerToken", json.access_token);
+    console.log("Bearer token saved to environment variable: bearerToken");
+  } else {
+    console.error("Token request failed — check clientId, clientSecret and authUrl values.");
+  }
+}
+
+docs {
+  ## Get OAuth Token
+
+  Fetches an OAuth 2.0 access token from SAP AI Core using the Client Credentials grant flow.
+
+  ### Before running this request
+
+  Open the Environments panel (top-right in Bruno) and fill in all four values:
+
+  | Variable       | Where to find it in creds.json                                      |
+  |----------------|----------------------------------------------------------------------|
+  | baseUrl        | serviceurls.AI_API_URL  (do NOT append /v2 here)                    |
+  | authUrl        | url  +  /oauth/token                                                |
+  | clientId       | clientid                                                            |
+  | clientSecret   | clientsecret                                                        |
+  | resourceGroup  | your AI Core resource group name (default: "default")               |
+  | deploymentId   | Deployment ID from SAP AI Launchpad (status must be Running)        |
+
+  ### After running this request
+
+  The post-response script automatically stores the token in the `bearerToken`
+  environment variable. You do not need to copy anything manually.
+
+  Tokens expire after a fixed period. If you receive a 401 Unauthorized error
+  on a subsequent request, re-run this get_token request to refresh the token.
+}

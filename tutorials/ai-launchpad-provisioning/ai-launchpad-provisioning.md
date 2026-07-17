@@ -57,7 +57,7 @@ Click `Configure Entitlements` > `Add Service Plans`.
 ![Set SAP AI Launchpad as an entitlement](img/configureentitlements.png)
 ![Set SAP AI Launchpad as an entitlement](img/addserviceplan.png)
 
-Select SAP AI Core and the `standard` service plan.
+Select SAP AI Launchpad and the `standard` service plan.
 
 ![Set SAP AI Launchpad as an entitlement](img/ail_select_entitlement.png)
 

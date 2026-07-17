@@ -92,28 +92,26 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 Click on an instance to see further details of an instance including:
 
-    - *Memory*
-    - *Compute*
-    - *Network*
-    - *Storage*
-    - *Consumption*
-    - *User & Authorization Management*
-    - *Workload Management*
-    - *Data Replication*
-    - *Auditing*
-    - *Performance Details including expensive statements*
+- *Memory*
+- *Compute*
+- *Network*
+- *Storage*
+- *Consumption*
+- *User & Authorization Management*
+- *Workload Management*
+- *Data Replication*
+- *Auditing*
+- *Performance Details including expensive statements*
 
-    
     ![HCC Instance details](HCC-instance-details.png)
 
-    Based on this information, you can make important decisions on how to manage and optimize your instances.   
+    Based on this information, you can make important decisions on how to manage and optimize your instances.
 
 **Provide database authentication**
 
 Initially, you are signed in with the DBADMIN database user and the password specified during the instance provisioning wizard.  This can be changed using this is the first-time you are accessing a database instance, you will need to **Choose Authentication** and enter the credentials of your DBADMIN user.
 
 ![Choose authentication](choose-auth.png)
-
 
 ### Get to know the SAP HANA database explorer
 
@@ -128,7 +126,6 @@ SAP HANA database explorer allows you to interact with SAP HANA databases, as we
 >![SQL console UI from HANA Cloud Central](sql-console-ui.png)
 >
 >Learn more about how to use the SQL console and database objects in HANA Cloud Central by visiting [Query Databases Using the SQL Console in SAP HANA Cloud Central](hana-dbx-hcc) and [Browse and Explore Catalog Objects with the Database Objects App](hana-dbx-database-objects).
-
 
 **What you can do in SAP HANA database explorer**
 
@@ -171,7 +168,6 @@ An important part of the SAP HANA database explorer is the **Catalog** browser. 
 > In this mission, you will use the SAP HANA database explorer for many tasks, so we recommend you bookmark it for easy access.
 
 For more information on how to use the SAP HANA database explorer, you can also check out the tutorial group [Get Started with the SAP HANA database explorer](group.hana-cloud-get-started) or refer to the [technical documentation](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/LATEST/en-US/7fa981c8f1b44196b243faeb4afb5793.html).
-
 
 ### Get to know SAP Business Application Studio
 
@@ -255,5 +251,3 @@ Well done!
 You have completed the fourth tutorial of this mission! Now you know how to access the tools you need to make the best use of your SAP HANA Cloud, SAP HANA database instances. Learn in the next tutorial how to import data into your SAP HANA Cloud database.
 
 ### Knowledge Check
-
----

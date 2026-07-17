@@ -37,19 +37,15 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![open SQL console from an instance](open-sql-console-instance.png)
 
-    Notice that it is now connected to the instance named `HC_HDB` as shown by the name of the tab and the connection label.
-
-    ![SQL console connected to HC_HDB](sql-console-connected.png)
-
-3. The currently connected user can be seen by executing the SQL statement below.
+    Notice that it is now connected to the instance named `HC_HDB` as shown by the name of the tab and the connection label or through the below SQL.
 
     ```SQL
     SELECT CURRENT_USER FROM DUMMY;
     ```
 
-    ![Current user](current-user.png)
+    ![SQL console connected to HC_HDB](sql-console-connected.png)
 
-4. If you wish to connect to the database using a different set of credentials, select the **Connect this SQL console to a different instance** icon, select the current database and uncheck **Use cached credentials if possible**.
+3. If you wish to connect to the database using a different set of credentials, select the **Connect to** link, select the Connect ... button and provide the new user name and password.  Note that these credentials are not persisted.
 
     ![Change credentials](change-credentials.png)
 
@@ -74,7 +70,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![Show current user for a data lake Relational Engine](current-user-dl.png)
 
-5. The current schema can be set and viewed for a SAP HANA database using the SQL statements below.
+4. The current schema can be set and viewed for a SAP HANA database using the SQL statements below.
 
     ```SQL
     SET SCHEMA HOTELS;
@@ -92,7 +88,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     ![set the schema of a data lake RE](set-schema-dl.png)
 
-6. Multiple light and dark themes are available.  
+5. Multiple light and dark themes are available.  
 
     Click on the SAP HANA Cloud Central settings icon.  Then select **Settings** > **Appearance**.  The default theme is SAP Morning Horizon. 
 
@@ -128,7 +124,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
     Options are provided on how to format the data.
 
     ![download options](download-options.png)
-    
+
     Rows can also be selected and then copied to the clipboard by pressing Ctrl+C.
 
     ![](copy-results.png)
@@ -167,9 +163,8 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
     Notice details for each executed statement are displayed, including metrics such as memory consumption. Statements can be quickly located using the search functionality. Selected statements may be inserted back into the SQL console or copied for further use.
 
     The columns can also be changed by selecting the gear icon in the right corner.
-    
-    ![history-tab-columns tab](history-tab-columns.png)
 
+    ![history-tab-columns tab](history-tab-columns.png)
 
 6. Examine the **SQL Console Settings**.  
 
@@ -267,6 +262,25 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     ![download and import](download-and-import.png)
 
+9. SQL statements can also be executed in the background. This allows users to start a long-running statement, disconnect, and return later to view the results.
+
+    Execute the following statement by clicking the Run dropdown menu and selecting Run Statement in Background:
+
+    ```SQL
+    DO BEGIN
+    --Wait for a few SECONDS
+        USING SQLSCRIPT_SYNC AS SYNCLIB;
+        CALL SYNCLIB:SLEEP_SECONDS(3); --runs for longer than 3 SECONDS
+        --Now execute a query
+        SELECT * FROM M_TABLES;
+    END
+
+    ```
+
+    ![RunBackgroundStatement](RunBackgroundStatement.png)
+
+    The results will appear in the Background Statements tab at the bottom on the console.
+
 ### Statement library
 
 The statement library is a convenient location in the SQL Console to store and retrieve frequently executed SQL statements.  It provides a place to store statements that are used frequently as to not type them in repeatedly.
@@ -291,7 +305,7 @@ SELECT * FROM RESERVATION
 ```
 
 1. Save your custom statement, add a name and an optional description.
-   
+
     ![Statement Library Create User Statements](save_custom_statement.png)
 
     Set the name to `All Future Check-ins`.
@@ -299,11 +313,11 @@ SELECT * FROM RESERVATION
     ![Statement Library Save Statements](save_statement.png)
 
 2. View your custom statement in the statement library
-   
+
     ![Statement Library View User Statements](statement_libaray_user.png)
 
 3. To run a statement, select one from the statement library and click the Run button.  
-   
+
     ![Run Saved Statement](run_saved_statement.png)
 
     If you select multiple saved statements, you additionally have the option to open them together in one tab or in individual tabs.
@@ -318,6 +332,56 @@ User-defined statements can be edited. From the Statement library, select the de
 
 ![Modify Saved Statements](replace_statement.png)
 
+### GenAI in the SQL Console
+
+The SQL Console also provides GenAI tools that assist with creating, understanding, and optimizing SQL statements. To enable GenAI in the SQL Console, refer to the following [Using Gen AI in SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/using-joule-in-sap-hana-cloud-central?locale=en-US#loio3ec50257efcf49adacebd37babb7455c__section_kpw_4gb_jdc).
+
+1. By selecting SQL text and clicking Run Prompt from the Run dropdown menu, users can generate SQL statements from natural-language instructions. Execute the following prompt.
+
+    ```
+    List all the column store tables and their columns in the schema HOTELS
+    ```
+
+    ![RunPrompt](RunPrompt.png)
+
+2. To understand an existing query, select the SQL statement and click Explain SQL Statement using AI from the same menu. This returns a clear natural-language explanation of what the query does.
+
+    ```SQL
+    SELECT
+        t.SCHEMA_NAME,
+        t.TABLE_NAME,
+        c.COLUMN_NAME
+    FROM
+        SYS.TABLES AS t
+    JOIN
+        SYS.TABLE_COLUMNS AS c
+        ON t.SCHEMA_NAME = c.SCHEMA_NAME
+        AND t.TABLE_NAME = c.TABLE_NAME
+    ORDER BY
+        t.SCHEMA_NAME,
+        t.TABLE_NAME,
+        c.POSITION;
+    ```
+
+    ![ExplainAI](ExplainAI.png)
+
+3. To improve a query, select the SQL statement and click Optimize SQL Statement using AI. The system will suggest a refined version of the query, often improving readability and performance.
+
+    ```SQL
+
+    SELECT 
+        TABLES.SCHEMA_NAME,
+        TABLES.TABLE_NAME,
+        TABLE_COLUMNS.COLUMN_NAME
+    FROM 
+        TABLE_COLUMNS
+        INNER JOIN
+        TABLES
+        ON TABLE_COLUMNS.TABLE_NAME = TABLES.TABLE_NAME;
+    ```
+
+    ![OptimizeAI](OptimizeAI.png)
+
 ### A few things to note
 
 The SQL console within SAP HANA Cloud Central appears similar to the one within the SAP HANA database explorer but there are some differences.
@@ -329,11 +393,10 @@ The SQL console within SAP HANA Cloud Central appears similar to the one within 
   - Ability to format results
   - Support for SAP Morning and Evening Horizon themes
   - Additional details such as time of execution, duration, rows returned, and success or failure in the history tab
-
+  
 - The SAP HANA database explorer has some additional functionality
 
   - SQL debugging
-  - Code completion of schema objects
   - Viewer for spatial
   - Analysis tab for tables and views
   - Ability to search for database objects across multiple databases

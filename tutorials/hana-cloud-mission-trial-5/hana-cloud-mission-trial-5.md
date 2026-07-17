@@ -120,8 +120,6 @@ You can browse the dataset to get a better overview of the data available.
 
 You have completed the fifth tutorial of this mission! Now you know how to import tar.gz files to your database using the SAP HANA database explorer.
 
-Learn in the next tutorial how to create and manage users and privileges. 
+Learn in the next tutorial how to create and manage users and privileges.
 
 ### Knowledge Check
-
----

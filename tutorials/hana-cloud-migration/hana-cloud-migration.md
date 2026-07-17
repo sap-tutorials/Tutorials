@@ -7,51 +7,59 @@ primary_tag: software-product-function>sap-hana-cloud--sap-hana-database
 ---
 
 # Migrate to SAP HANA Cloud from SAP HANA Platform
+
 <!-- description -->This tutorial demonstrates a migration from an on-premise SAP HANA database to an SAP HANA Cloud database.
 
 ## Prerequisites
- - Access to, and administrative rights on, an on-premise SAP HANA database that you wish to migrate to SAP HANA Cloud such as an SAP HANA, express edition database
- - Access to, and administrative rights on, an SAP HANA Cloud instance such as a free-tier instance
+
+- Access to, and administrative rights on, an on-premise SAP HANA database that you wish to migrate to SAP HANA Cloud
+- Access to, and administrative rights on, an SAP HANA Cloud instance such as a free-tier instance
 
 ## You will learn
-  - About resources available to help prepare and plan for a migration
-  - How the Self-Service Migration tool can be used to perform a compatibility check
-  - Examples of how to identify and migrate schema objects, data, and HDI projects
+
+- About resources available to help prepare and plan for a migration
+- How the Self-Service Migration tool can be used to perform a compatibility check
+- Examples of how to identify and migrate schema objects, data, and HDI projects
 
 ## Overview
-SAP HANA Cloud is a database-as-a service and it is one of the many services of the [SAP Business Technology Platform](https://help.sap.com/docs/btp).  "Database-as-a-service" means that SAP manages updates, hardware, backups, etc.  One of the benefits of SAP HANA Cloud is that it that it can be easily resized, as described at [Managing SAP HANA Database Instances](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/managing-sap-hana-database-instances).  New features are released quarterly.  For further details, see [Introduction to SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-getting-started-guide/introduction-to-sap-hana-cloud).
 
+SAP HANA Cloud is a database-as-a service and it is one of the many services of the [SAP Business Technology Platform](https://help.sap.com/docs/btp).  "Database-as-a-service" means that SAP manages updates, hardware, backups, etc.  One of the benefits of SAP HANA Cloud is that it that it can be easily resized, as described at [Managing SAP HANA Database Instances](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/managing-sap-hana-database-instances).  New features are released quarterly.  For further details, see [Introduction to SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-getting-started-guide/introduction-to-sap-hana-cloud).
 
 This tutorial will illustrate steps taken to migrate a small sample dataset from an [on-premise SAP HANA database](https://help.sap.com/docs/SAP_HANA_PLATFORM) to [SAP HANA Cloud](https://help.sap.com/docs/HANA_CLOUD).  It does not cover the migration of content from XS Classic, which was deprecated in July 2017 with the release of SAP HANA 2.0 SPS02.  If you need to migrate XS Classic applications, please see [SAP HANA XS Advanced Migration Guide](https://help.sap.com/docs/SAP_HANA_PLATFORM/58d81eb4c9bc4899ba972c9fe7a1a115/2aa5aa246a704e199cd06ca5c84d1155.html).
 
 ---
 
 ### Planning and preparation
+
 Planning and preparation are key to a successful migration.  Migration can be an iterative process done initially in a test environment.  A migration should be run during a planned downtime for production databases.  SAP HANA Cloud provides an [SAP HANA Cloud, data lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/welcome-guide/sap-hana-cloud-data-lake-welcome-guide) that is a columnar disk-based store that can be used to store less-frequently accessed data.  This may be a good time to evaluate if some of your data that is not accessed as frequently may be well suited to be stored in SAP HANA Cloud data lake, Relational Engine or SAP HANA Cloud, data lake Files.  
 
 The following topics may be of help when planning a migration to SAP HANA Cloud:
 
-* [SAP HANA Cloud Migration Guide (product documentation)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/sap-hana-cloud-migration-guide)
+- [SAP HANA Cloud Migration Guide (product documentation)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/sap-hana-cloud-migration-guide)
 
-* [Migration to SAP HANA Cloud (sap.com)](https://www.sap.com/products/technology-platform/hana/cloud-migration.html)
+- [Migration to SAP HANA Cloud (sap.com)](https://www.sap.com/products/technology-platform/hana/cloud-migration./)
 
-* [Migrating your SAP HANA on-premise to SAP HANA Cloud (video)](https://www.sap.com/assetdetail/2023/01/8a0f1b28-597e-0010-bca6-c68f7e60039b.html)
+- [SAP Learning Journey - Migrating SAP HANA to SAP HANA Cloud](https://learning.sap.com/courses/migrating-sap-hana-to-sap-hana-cloud)
 
-* [Migrate your SAP HANA Services for BTP (on Cloud Foundry) to SAP HANA Cloud using Self-Service Migration Tool (blog post)](https://community.sap.com/t5/technology-blogs-by-sap/migrate-your-sap-hana-services-for-btp-on-cloud-foundry-to-sap-hana-cloud/ba-p/13571116)
+- [Migrating your SAP HANA on-premise to SAP HANA Cloud (video)](https://www.youtube.com/watch?v=7EgXyqNHAUI)
 
-* [SAP HANA Database Upgrades and Patches (product documentation)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-upgrades-and-patches)
+- [SAP Migration Factory for SAP BTP (sap.com)](https://www.sap.com/documents/2024/08/c637a2fb-d07e-0010-bca6-c68f7e60039b.html)
 
-* [SAP HANA Database Size (product documentation)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-size)
+- [Migrate your SAP HANA Services for BTP (on Cloud Foundry) to SAP HANA Cloud using Self-Service Migration Tool (blog post)](https://community.sap.com/t5/technology-blogs-by-sap/migrate-your-sap-hana-services-for-btp-on-cloud-foundry-to-sap-hana-cloud/ba-p/13571116)
 
-* [System Limitations (product documentation)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/system-limitations)
+- [SAP HANA Database Upgrades and Patches (product documentation)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-upgrades-and-patches)
 
-* [SAP HANA Cloud: A Customer Perspective on Migration Success - SAP TechEd DA104 (video)](https://www.youtube.com/watch?v=ReJ_8lG98zs)
+- [SAP HANA Database Size (product documentation)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-size)
 
-* [All-New Webinar: NHL shares a success story of migration to SAP HANA Cloud (webinar)](https://blogs.sap.com/2022/11/16/all-new-webinar-nhl-shares-a-success-story-of-migration-to-sap-hana-cloud/)
+- [System Limitations (product documentation)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/system-limitations)
 
+- [SAP HANA Cloud: A Customer Perspective on Migration Success - SAP TechEd DA104 (video)](https://www.youtube.com/watch?v=ReJ_8lG98zs)
+
+- [All-New Webinar: NHL shares a success story of migration to SAP HANA Cloud (webinar)](https://blogs.sap.com/2022/11/16/all-new-webinar-nhl-shares-a-success-story-of-migration-to-sap-hana-cloud/)
 
 ### Select an on-premise database to migrate
-This tutorial uses an [SAP HANA, express edition](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION) instance that has been populated with the HOTEL sample schema.  The steps to create the objects in the HOTEL sample schema are described in the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started) and include steps to create tables, views, functions, procedures, a scheduled job, a graph workspace, a JSON document store, remote sources, as well as steps to create an HDI container.  A few of the tables are shown below.
+
+This tutorial uses an [SAP HANA, on-premise](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION) instance that has been populated with the HOTELS sample schema.  The steps to create the objects in the HOTELS sample schema are described in the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started) and include steps to create tables, views, functions, procedures, a scheduled job, a graph workspace, a JSON document store, remote sources, as well as steps to create an HDI container.  A few of the tables are shown below.
 
 ![source database to be migrated](source-database.png)
 
@@ -65,30 +73,31 @@ SELECT DATABASE_NAME, HOST, SQL_PORT, SERVICE_NAME
    WHERE SQL_PORT != 0;
 ```
 
-In this tutorial, the content from a tenant database (HXE), will migrated.  When migrating from a multi-tenant database, each tenant database is migrated to a dedicated SAP HANA Cloud database instance.
+In this tutorial, the content from a tenant database (HXE), will be migrated.  When migrating from a multi-tenant database, each tenant database is migrated to a dedicated SAP HANA Cloud database instance.
 
 ### Select an SAP HANA Cloud database
+
 This tutorial uses an SAP HANA Cloud free tier instance as the migration target.  The following tutorials cover how to sign up for and create a free-tier SAP HANA Cloud instance.
 
-  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics) (Only the first 3 steps of this tutorial are needed for basic setup of SAP HANA Cloud.)
+- [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics) (Only the first 3 steps of this tutorial are needed for basic setup of SAP HANA Cloud.)
 
-  * [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial)
+- [Set Up Your SAP HANA Cloud, SAP HANA Database and Understand the Basics](group.hana-cloud-get-started-1-trial)
 
-  * [SAP Learning Journey - Provisioning and Administration with SAP HANA Cloud](https://learning.sap.com/learning-journeys/provision-and-administer-databases-in-sap-hana-cloud)
+- [SAP Learning Journey - Provisioning and Administration with SAP HANA Cloud](https://learning.sap.com/learning-journeys/provision-and-administer-databases-in-sap-hana-cloud)
 
-  * [SAP Discovery Center - Learn the fundamentals of SAP HANA Cloud, SAP HANA database](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
+- [SAP Discovery Center - Learn the fundamentals of SAP HANA Cloud, SAP HANA database](https://discovery-center.cloud.sap/protected/index.html#/missiondetail/3643/)
 
-  * [SAP HANA Cloud Getting Started Guide](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-getting-started-guide/sap-hana-cloud-getting-started-guide)
+- [SAP HANA Cloud Getting Started Guide](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-getting-started-guide/sap-hana-cloud-getting-started-guide)
 
 Before proceeding, ensure that you have access to a running SAP HANA Cloud instance as shown below.
 
 ![SAP HANA Cloud provisioned](HANA-Cloud-instances-other.png)
 
-
 ### SAP HANA compatibility
+
 The version of an SAP HANA database can be found in the Database Information card in SAP HANA cockpit, or through a SQL query against the `M_DATABASE` view.  The version of both the source and target database should be checked.  The Self-Service Migration tool requires the source database to be 2.00.053 or higher while certain features such as the ability of the [EXPORT INTO](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-cloud-administration-guide) statement that supports cloud storage providers requires a 2.0 SPS 06 database.
 
-SAP HANA, express edition 2.0 SPS06.
+SAP HANA, on-premise 2.0 SPS06.
 
 ![database version 2.0](database-version.png)
 
@@ -98,25 +107,15 @@ SAP HANA Cloud
 
 Different versions of SAP HANA databases will have slightly different features.  This topic is covered in detail at [Compatibility with Other SAP HANA Versions](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/compatibility-with-other-sap-hana-versions).
 
-
 ### Self-Service Migration tool
-The Self-Service Migration tool can be used when performing a migration. It automates the migration process and can reduce the cost and effort of a migration.  It is a free service and SAP manages the temporary storage used during the migration.  This tool is accessed from SAP HANA Cloud Central, the main tool for creating and configuring SAP HANA Cloud instances. For more information about SAP HANA Cloud Central, see [SAP HANA Cloud Administration Guide](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-cloud-administration-guide).
 
-![Migrations in SAP HANA Cloud Central](migrations.png)
-
->The Self-Service Migration tool is supported in free tier but not in trial.
-
-![List of migrations](self-service-migration.png)
-
-The Self-Service Migration tool supports migration to SAP HANA Cloud from SAP HANA 2.0 databases, as shown below.
-
-![create migration dialog](create-migration.png)
+The Self-Service Migration tool can be used when performing a migration. It automates the migration process and can reduce the cost and effort of a migration.  It is a free service, and SAP manages the temporary storage used during the migration.  
 
 In order to connect from the Self-Service Migration tool running in the public internet to an on-premise SAP HANA database, you need to install and configure the [SAP Cloud Connector](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e54cc8fbbb571014beb5caaf6aa31280.html).  
 
 ![SAP Cloud Connector](cloud-connector.png)
 
-The cloud connector provides connectivity from a public internet where SAP HANA Cloud is running to an on-premise SAP HANA database.  Step-by-step instructions are provided at [Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector](hana-dbx-remote-sources#b30ac17a-9705-4be4-bc30-d6dbdddfa6d8).
+The cloud connector provides connectivity from a public internet where SAP HANA Cloud is running to an on-premise SAP HANA database. Follow steps 1-6 in [Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector](hana-dbx-remote-sources) for detailed instructions.
 
 Once the cloud connector has been installed and configured to connect to a BTP subaccount, it will appear as shown below in the SAP BTP Cockpit.
 
@@ -126,7 +125,20 @@ The Self-Service Migration tool requires connectivity_proxy plan entitlement to 
 
 ![connectivity proxy](connectivity-proxy.png)
 
-The Self-Service Migration tool also requires a migration user.  For additional details on how to create the migration user, see [Create the Migration User in the Source Database](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/create-migration-user).
+The Self-Service Migration tool also requires the source database to have a migration user.  For additional details on how to create the migration user, see [Create the Migration User in the Source Database](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/create-migration-user).
+
+After the migration user has been created, it must be granted sufficient privileges to read and transfer data associated with these accounts. For this tutorial, we are migrating the users USER1 and USER2 and the schema HOTELS.  You can grant the required access using statements such as the following:
+
+```SQL
+CONNECT USER1 PASSWORD Password1;
+SELECT CURRENT_USER FROM DUMMY;
+GRANT SELECT ON SCHEMA "USER1" TO MIG;
+GRANT SELECT ON SCHEMA "HOTELS" TO MIG;
+
+CONNECT USER2 PASSWORD Password2;
+SELECT CURRENT_USER FROM DUMMY;
+GRANT SELECT ON SCHEMA "USER2" TO MIG;
+```
 
 The Self-Service Migration tool can now be used to assist with a migration such as an SAP HANA on-premise migration to SAP HANA Cloud.
 
@@ -138,9 +150,28 @@ CREATE TABLE TEST(
 );
 ```
 
+The Self-Service Migration tool is accessed from SAP HANA Cloud Central, the main tool for creating and configuring SAP HANA Cloud instances. For more information about SAP HANA Cloud Central, see [SAP HANA Cloud Administration Guide](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-cloud-administration-guide).
+
+![Migrations in SAP HANA Cloud Central](migrations.png)
+
+![List of migrations](self-service-migration.png)
+
+The Self-Service Migration tool supports migration to SAP HANA Cloud from SAP HANA 2.0 databases, as shown below.
+
+![create migration dialog](create-migration.png)
 The first step on the Plan tab in the tool is a compatibility check.
 
 ![compatibility report](compatability-check.png)
+
+In SAP HANA Cloud Central, you can choose from multiple migration patterns depending on your requirements and how much of your source system you want to move. Each option provides a different level of control over what gets migrated:
+
+- Full Database Migration: Migrates the entire source database, including all schemas and objects. This is the recommended option for complete system moves where no filtering is required. You can optionally choose to exclude database users if you prefer to manage users separately in the target system.
+
+- Selective Migration: Allows you to migrate only specific database objects based on your needs. This helps reduce migration time and effort by excluding unnecessary data. When using this option, ensure that any required database users already exist in the target system, as they are not automatically created.
+
+- Data-only Migration: Migrates only the data for selected database objects. This option assumes that the corresponding schemas and tables already exist in the target system, so you must prepare the structure in advance before running the migration.
+
+![migration options](migration-options.png)
 
 The presence of the previously created table is flagged during the compatibility check because the SYSTEM user is not accessible in SAP HANA Cloud.
 
@@ -154,15 +185,18 @@ A completed migration is shown below.
 
 For further details see:
 
-  * [Migration Scenarios Supported by the Self-Service Migration for SAP HANA Cloud Tool](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migration-scenarios-supported-by-self-service-migration-for-sap-hana-cloud-tool)
+- [Migration Scenarios Supported by the Self-Service Migration for SAP HANA Cloud Tool](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migration-scenarios-supported-by-self-service-migration-for-sap-hana-cloud-tool)
 
-  * [Checks Performed by the Migration Tool](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool)
+- [Checks Performed by the Migration Tool](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/checks-performed-by-migration-tool)
 
-  * [SAP HANA Cloud Migration: Setup your on-premise HANA system for the Self-Service Migration tool](https://community.sap.com/t5/technology-blogs-by-sap/sap-hana-cloud-migration-setup-your-on-premise-hana-system-for-the-self/ba-p/13549100)
+- [SAP HANA Cloud Migration: Setup your on-premise HANA system for the Self-Service Migration tool](https://community.sap.com/t5/technology-blogs-by-sap/sap-hana-cloud-migration-setup-your-on-premise-hana-system-for-the-self/ba-p/13549100)
 
 If you wish to perform all or part of a migration manually rather than using the Self-Service Migration tool, the following are some steps to consider.
 
 ### Database configuration
+
+The following steps offer some insights into steps that could be performed should you wish to manually migrate your database.
+
 SAP HANA databases enable configuration through a set of `ini` files.  These files can be modified through multiple methods including the SAP HANA cockpit database configuration app and ALTER SQL statements.  
 
 ![database configuration app](database-configuration.png)
@@ -205,7 +239,6 @@ SELECT * FROM M_INIFILE_CONTENT_HISTORY;
 --ALTER SYSTEM CLEAR INIFILE CONTENT HISTORY;
 ```
 
-
 The [SAP Note: 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700) provides multiple queries that can be used to examine configuration settings.  One example is the HANA configuration parameters check shown below.
 
 ![example of a mini check](hana-configuration-parameters.png)
@@ -214,19 +247,19 @@ When migrating a database, it is important to review any non-default settings an
 
 Additional details on configuration parameters can be found at the links below:
 
-  * [Configuring SAP HANA System Properties (INI Files) (On-Prem)](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/3f1a6a7dc31049409e1a9f9108d73d51.html)
+- [Configuring SAP HANA System Properties (INI Files) (On-Prem)](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/3f1a6a7dc31049409e1a9f9108d73d51.html)
 
-  * [SAP HANA Configuration Parameter Reference (On-Prem)](https://help.sap.com/docs/SAP_HANA_PLATFORM/009e68bc5f3c440cb31823a3ec4bb95b/4b4d88980622427ab2d6ca8c05448166.html)
+- [SAP HANA Configuration Parameter Reference (On-Prem)](https://help.sap.com/docs/SAP_HANA_PLATFORM/009e68bc5f3c440cb31823a3ec4bb95b/4b4d88980622427ab2d6ca8c05448166.html)
 
-  * [Configuring SAP HANA System Properties (INI Files) (SAP HANA Cloud)](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/3f1a6a7dc31049409e1a9f9108d73d51.html)
+- [Configuring SAP HANA System Properties (INI Files) (SAP HANA Cloud)](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/3f1a6a7dc31049409e1a9f9108d73d51.html)
 
-  * [SAP HANA Configuration Parameter Reference (SAP HANA Cloud)](https://help.sap.com/docs/HANA_CLOUD_DATABASE/138dcf7d779543608917a2307a6115f2/4b4d88980622427ab2d6ca8c05448166.html)
+- [SAP HANA Configuration Parameter Reference (SAP HANA Cloud)](https://help.sap.com/docs/HANA_CLOUD_DATABASE/138dcf7d779543608917a2307a6115f2/4b4d88980622427ab2d6ca8c05448166.html)
 
-  * [SAP Note: 2186744 - FAQ: SAP HANA Parameters](https://launchpad.support.sap.com/#/notes/2186744)
+- [SAP Note: 2186744 - FAQ: SAP HANA Parameters](https://launchpad.support.sap.com/#/notes/2186744)
 
-### Exporting and importing users and roles
+### Export and import users and roles
 
-In the sample [HOTEL dataset](hana-dbx-create-schema) used in this tutorial, two users and two roles were created.
+In the sample [HOTELS dataset](hana-dbx-create-schema) used in this tutorial, two users and two roles were created.
 
 1. Identify the users that have been created in the source database.  Note that you can also view when a user last successfully connected.  You may wish to review users that have not connected to the database in a while to decide if you want to include them in the migration.
 
@@ -265,12 +298,13 @@ In the sample [HOTEL dataset](hana-dbx-create-schema) used in this tutorial, two
 
     ![Users in a role](users-in-a-role.png)
 
-### Exporting and importing table data (optional)
+### Export and import table data (optional)
+
 The [EXPORT INTO](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html) statement can be used to export the data from a table or view into a CSV file on the on-premise SAP HANA file system or to a cloud storage provider.  
 
 The tutorial [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import) details the required steps to configure the an SAP HANA database to be able to connect to SAP HANA Cloud, Data Lake Files, or a cloud storage provider.
 
->The next step in this tutorial, exporting and importing catalog objects, explains how to export and import multiple objects in one operation.  The catalog export/import statements support additional output types such as binary and parquet, in addition to CSV, and would be a better choice for most migrations.
+>The next step in this tutorial, export and import catalog objects, explains how to export and import multiple objects in one operation.  The catalog export/import statements support additional output types such as binary and parquet, in addition to CSV, and would be a better choice for most migrations.
 
 1. The below SQL exports the data from the HOTEL table into a CSV file in a Microsoft Azure blob container.
 
@@ -299,13 +333,12 @@ The tutorial [Export and Import Data and Schema with SAP HANA Database Explorer]
         "STATE" NVARCHAR(2) NOT NULL,
         "ZIP" NVARCHAR(6),
         "LOCATION" ST_POINT(4326),
-    	PRIMARY KEY(
-	    	"HNO"
-	    )
+        PRIMARY KEY(
+            "HNO"
+        )
     );
 
     IMPORT FROM CSV FILE 'azure://dansblobcont/hotel.csv' INTO HOTEL WITH CREDENTIAL 'Azure';
-
     ```
 
     ![create table and import data](import-data.png)
@@ -317,19 +350,20 @@ The tutorial [Export and Import Data and Schema with SAP HANA Database Explorer]
 
     CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HC');
 
-    CREATE VIRTUAL TABLE VT_CUSTOMER AT "REMOTE_HC"."HC_HDB".HOTEL."CUSTOMER";
-    INSERT INTO VT_CUSTOMER SELECT * FROM HOTEL.CUSTOMER;"  
+    CREATE VIRTUAL TABLE VT_CUSTOMER AT "REMOTE_HC"."HC_HDB".HOTELS."CUSTOMER";
+    INSERT INTO VT_CUSTOMER SELECT * FROM HOTELS.CUSTOMER;"  
     ```
 
     There are other options to move data from one SAP HANA database to another, such as using Smart Data Integration, that may also be considered.
 
-### Exporting and importing catalog objects
+### Export and import catalog objects
+
 The [EXPORT](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a04f6754767/20da0bec751910148e69c9668ea3ccb8.html) statement can be used to export one or more catalog objects, including the SQL definition required to recreate the object, and optionally the data, in the objects being exported.  You can export the content to the on-premise SAP HANA file system, to SAP HANA Cloud data lake Files, or to a cloud storage provider.  The tutorial [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import) provides additional details.
 
 1. Export database objects: This example exports database objects from a source database (an SAP HANA, express edition database) to cloud storage (Microsoft Azure).
 
     ```SQL
-    EXPORT ALL HAVING schema_name = 'HOTEL' AS BINARY DATA INTO 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
+    EXPORT ALL HAVING schema_name = 'HOTELS' AS BINARY DATA INTO 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
     ```
 
     Notice that the data is being exported in a BINARY DATA format, which is more efficient than CSV format.  It is also possible to export the schema only by adding CATALOG ONLY to the end of the above export statement.
@@ -346,10 +380,9 @@ The [EXPORT](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a0
 
     In the SAP HANA release used in this tutorial, scheduled jobs are not included in the catalog export.
 
+2. Import the database objects: This example imports the previously exported schema objects and data into the target database (an SAP HANA Cloud database).  `GUEST_NOTES` is excluded because the JSON document store is not supported in the free tier service.
 
-2. Import the database objects: This example imports the previously exported schema objects and data into the target database (an SAP HANA Cloud database).  `GUEST_NOTES` is exculded because the JSON document store is not supported in free tier or trial environments.
-
-    ```SQL Free Tier or Trial
+    ```SQL Free Tier
     IMPORT ALL HAVING OBJECT_NAME != 'GUEST_NOTES' FROM 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
     ```
 
@@ -371,8 +404,8 @@ The [EXPORT](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a0
 
     It is also possible to use the Export and Import Catalog wizards in the SAP HANA database explorer with zip files that are downloaded and uploaded through the browser with smaller datasets.  For larger datasets it is recommended to use SAP HANA Cloud, data lake Files or a cloud storage provider such as Microsoft Azure, Amazon, or Google.
 
+### Export and import SAP HANA Deployment Infrastructure (HDI) projects
 
-### Exporting and importing SAP HANA Deployment Infrastructure (HDI) projects
 HDI containers contain both design time and runtime artifacts.  In addition to objects such as tables and views, they can contain additional advanced SAP HANA artifacts such as calculation views, flow graphs, and replication tasks.
 
 The list of HDI container groups and containers can be seen by executing the below SQL statements.
@@ -428,9 +461,15 @@ The recommended tool for native application development with SAP HANA Cloud is t
 
     ![Bind project](bind.png)
 
+    Click on the Bind icon.
+
     ![Bind to the default instance](bind2.png)
 
+    Select "Bind to the default instance: "
+
     ![progress dialog](bind3.png)
+
+    Wait for the operation to complete.
 
     ![binding success](bind4.png)
 
@@ -450,9 +489,11 @@ The recommended tool for native application development with SAP HANA Cloud is t
 
     ![open the HDI container in the SAP HANA database explorer](open-dbx.png)
 
+    Select Open HDI conatiner.
+
     ![open data in the SAP HANA database explorer](open-data.png)
 
-12. A similar set of steps to those followed in the exporting and importing catalog objects steps can be followed to move the data.
+12. A similar set of steps to those followed in the export and import catalog objects steps can be followed to move the data.
 
     In the source and destination HDI containers, the RT (runtime user) will need to be given sufficient privileges.  The RT user's name can be seen by executing the below SQL when connected to an HDI container.  This user name is needed for the subsequent steps.
 
@@ -488,8 +529,8 @@ The recommended tool for native application development with SAP HANA Cloud is t
 
     The data for the tables in the HDI container should now be available in the SAP HANA Cloud HDI container.
 
+### Connect applications to SAP HANA Cloud
 
-### Connect from applications to SAP HANA Cloud
 When connecting to an SAP HANA Cloud database, an encrypted connection must be used.  By default, the [SAP HANA Client](https://help.sap.com/docs/SAP_HANA_CLIENT) enables encrypted connections when the port is 443.  The port for SAP HANA Cloud SQL is always 443.  
 
 The host name (and port) can be obtained from SAP HANA Cloud Central as shown below.
@@ -500,23 +541,23 @@ To connect to SAP HANA Cloud, the SAP HANA Client is used.  The same client is u
 
 A few examples of connections to an SAP HANA Cloud database are shown below.  The essential parts of a connection are the host, port, user ID and password.
 
-* SAP HANA database explorer
+- SAP HANA database explorer
 
     ![SAP HANA database explorer connection](dbx-connection.png)
 
-* HDBSQL
+- HDBSQL
 
     ![HDBSQL connection](hdbsql.png)
 
     For additional details see [Connect to SAP HANA using HDBSQL](hana-clients-hdbsql).
 
-* ODBC
+- ODBC
 
     ![odbc connection](odbc.png)
 
     For additional details, see [Connect Using the SAP HANA ODBC Driver](hana-clients-odbc).
 
-* HDI
+- HDI
 
     The connection details to an HDI container can be found in the service binding.
 
@@ -532,12 +573,8 @@ A few examples of connections to an SAP HANA Cloud database are shown below.  Th
 
 To see details of additional connections including JDBC, Node.js, Python, Go, and .NET, see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
-
-
-
 ### Knowledge check
 
 Congratulations! You now have an overview of some of the tasks involved with a migration from an on-premise SAP HANA database to an SAP HANA Cloud instance.
-
 
 ---

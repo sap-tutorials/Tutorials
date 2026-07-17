@@ -9,15 +9,17 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 # Create a Development Project in SAP Business Application Studio
+
 <!-- description --> Create a development project, establish a connection to a database, create a user-provided service and .hdbgrants file, and deploy your project.
 
 ## Prerequisites
+
 - You have completed the tutorial to [provision an instance of SAP HANA Cloud, SAP HANA database](hana-cloud-mission-trial-3)
 - You have completed the tutorial to [import the sample data needed for this mission](hana-cloud-mission-trial-5)
 - [Download the sample code](https://github.com/SAP-samples/hana-cloud-learning/blob/4ac0be770033d3425cc30a2f22f8f5c0823bb810/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%206/Tutorial%206%20Queries.txt) files from our public GitHub repository
 
-
 ## You will learn
+
 - How to create an HDI container in a Cloud Foundry runtime that is mapped to a SAP HANA Cloud instance
 - How to create a development space and project in SAP Business Application Studio
 - How to establish a connection to your database
@@ -39,6 +41,7 @@ In this tutorial, you will learn how to start preparations to create a calculati
 ---
 
 ### Create an HDI Container
+
 **Important**: If you have been using an instance provisioned under **Other Environments** as shown in the prerequisite tutorials, you must map that instance to a Cloud Foundry organization and optionally a space.
 
 1. In the **SAP BTP Cockpit Overview** page, verify that the Cloud Foundry environment is enabled and that a space exists.
@@ -79,6 +82,7 @@ In this tutorial, you will learn how to start preparations to create a calculati
         "database_id":"<SAP HANA Cloud database instance ID>"
     }
     ```
+
     >You can copy your SAP HANA Cloud database instance ID from SAP HANA Cloud Central, through the **three dots** menu under the Actions column.
     >
     >![Copy instance ID](copy-instance-id.png)
@@ -87,10 +91,9 @@ In this tutorial, you will learn how to start preparations to create a calculati
 
 5. Review and create your instance.
 
-    When completed, the HDI container will appear as shown below.  The calculation view created in the next tutorial will be deployed into this HDI container. 
+    When completed, the HDI container will appear as shown below.  The calculation view created in the next tutorial will be deployed into this HDI container.
 
     ![HDI Container created](hdi-container-created.png)
-
 
 ### Create your development space
 
@@ -104,57 +107,55 @@ In this tutorial, you will learn how to start preparations to create a calculati
 
 The first step in the SAP Business Application Studio is to create your development space. Development spaces are like isolated virtual machines in the cloud containing tailored tools and pre-installed runtimes per business scenario, such as an SAP HANA development project.
 
-
 You are now ready to create your first development space.
 
-1.	Open **SAP Business Application Studio** 
+1. Open **SAP Business Application Studio**
 
     ![open BAS from subaccount](open-bas.png)
-    
+
     If you have yet to subscribe to SAP Business Application Studio application, you can create one by clicking **Create** on the top right-hand corner of the screen.
 
-2.	Once you have opened Business Application Studio, click on **Create Dev Space**.
+2. Once you have opened Business Application Studio, click on **Create Dev Space**.
 
     ![Create Dev Space](LT01_07_01-Create-Dev-Space_resized.png)
 
-3.	Give your development space a name. You can choose any name you prefer, but you cannot use spaces in this name.
+3. Give your development space a name. You can choose any name you prefer, but you cannot use spaces in this name.
 
-4.	Under the name, you need to choose the kind of application you will create. To use SAP HANA tools, such as calculation views, please make sure to check **SAP HANA Native Application** in the list.
+4. Under the name, you need to choose the kind of application you will create. To use SAP HANA tools, such as calculation views, please make sure to check **SAP HANA Native Application** in the list.
 
     ![Create Dev Space2](create-new-dev-space.png)
 
-5.	On the right-side of the screen, you will see a list of the pre-defined extensions included in this project. You can also choose to select additional extensions to your project, if necessary.
+5. On the right-side of the screen, you will see a list of the pre-defined extensions included in this project. You can also choose to select additional extensions to your project, if necessary.
 
-6.	Then, click on **Create Dev Space** on the bottom right-side of the screen. You will return to the list of existing development spaces. Your newly created space is now on the list and you can see the status as **Starting**. This should take no more than a couple of minutes to start.
+6. Then, click on **Create Dev Space** on the bottom right-side of the screen. You will return to the list of existing development spaces. Your newly created space is now on the list and you can see the status as **Starting**. This should take no more than a couple of minutes to start.
 
-7.	Once the status changes to **Running**, you can click on the name of the development space to open it.
+7. Once the status changes to **Running**, you can click on the name of the development space to open it.
 
     ![Create Dev Space3](ss-03-create-Dev-Space3.png)
-
 
 ### Create your development project
 
 Now you can create a development project within your new space. Follow these steps:
 
-1.	On the **Get Started** page, click on **New Project from Template**.
+1. On the **Get Started** page, click on **New Project from Template**.
 
     ![Start from Template](bas-welcome.png)
 
-2.	Next, click on **SAP HANA Database Project**, and then click on **Start** at the very bottom of the screen.
+2. Next, click on **SAP HANA Database Project**, and then click on **Start** at the very bottom of the screen.
 
     ![HANA project](ss-05-HANA-project.png)
 
-3.	Give your project a name, such as `BestRunTravel`, and then click on **Next**.
+3. Give your project a name, such as `BestRunTravel`, and then click on **Next**.
 
-4.	The module name defaults to `db`.  Click on **Next**.
+4. The module name defaults to `db`.  Click on **Next**.
 
-5.	In the step **Set Database Information**, you can choose to determine a **Namespace** and a **Schema Name**. These are not mandatory and for the purpose of this mission, *we recommend you leave these fields **empty***.
+5. In the step **Set Database Information**, you can choose to determine a **Namespace** and a **Schema Name**. These are not mandatory and for the purpose of this mission, *we recommend you leave these fields **empty***.
 
     Make sure the **SAP HANA database version** is set to `HANA Cloud` and  **Bind the database tutorial to a Cloud Foundry service instance** is set to **Yes**.
 
     ![DB Information](ss-06-DB-information.png)
 
-6.	To bind your project to your SAP HANA Cloud, SAP HANA database, you must log on to Cloud Foundry if you have not already done so.
+6. To bind your project to your SAP HANA Cloud, SAP HANA database, you must log on to Cloud Foundry if you have not already done so.
 
     ![bind to HDI](bind-to-hdi2.png)
 
@@ -170,20 +171,20 @@ Now you can create a development project within your new space. Follow these ste
 
     ![Bind to HDI service](bind-to-hdi.png)
 
-8.	Click on **Finish** to create the project.
+8. Click on **Finish** to create the project.
 
-    Your project will be generated, which takes a few minutes to complete. 
+    Your project will be generated, which takes a few minutes to complete.
 
     Once the project is complete, it can be opened if it isn't open already.
 
     ![open project](open-project.png)  
-    
+
     The structure can be seen on the left-hand panel.
 
     ![Open in New Workspace](left-panel.png)
 
-
 ### Get to know the SAP HANA Project Panel
+
 On the left panel, you can now see your workspace where you have your files, and the **SAP HANA Project** panel underneath where you can deploy your project and open the HDI container in the SAP HANA database explorer.
 
 > **What is an HDI container?**
@@ -196,10 +197,10 @@ Whenever you add a new database object that can be deployed to your HDI containe
 
 Moving your cursor to the name of an object, folder, or connection in this panel, you will see different icons:
 
--	This icon ![Container](icon-container.png) will open the HDI container in SAP HANA database explorer
--	This icon ![Deploy](icon-deploy.png) will deploy an object, folder or the whole project to the HDI container or other connected database.
--	This icon ![Add DB connection](icon-add-DB-connection.png) (only on the Database Connections level) allows you to create a new database connection.
--	This icon ![Bind green](icon-Bind-green.png) / ![Bind grey](icon-Bind-grey.png)  allows you to bind (green color) or unbind (grey color) a database connection.
+- This icon ![Container](icon-container.png) will open the HDI container in SAP HANA database explorer
+- This icon ![Deploy](icon-deploy.png) will deploy an object, folder or the whole project to the HDI container or other connected database.
+- This icon ![Add DB connection](icon-add-DB-connection.png) (only on the Database Connections level) allows you to create a new database connection.
+- This icon ![Bind green](icon-Bind-green.png) / ![Bind grey](icon-Bind-grey.png)  allows you to bind (green color) or unbind (grey color) a database connection.
 
 **Command Palette**
 
@@ -216,21 +217,22 @@ The most important one for SAP HANA Cloud, SAP HANA database development is the 
 > To open the **Command Palette**, you can also use the key combination `Ctrl + Shift + P` or F1.
 
 ### Create a user-provided service
+
 Now that your project is created and you know the basics of how to navigate SAP Business Application Studio, your next step is to create a user-provided service, which will allow the project to access the data within the database.
 
-1.	In the **SAP HANA Projects** panel, expand your project.
+1. In the **SAP HANA Projects** panel, expand your project.
 
-2.	Hover your cursor over the section **Database Connections**, and a plus icon (![Add DB connection](icon-add-DB-connection.png)) will appear. This option allows you to add a new database connection. Click on the icon.
+2. Hover your cursor over the section **Database Connections**, and a plus icon (![Add DB connection](icon-add-DB-connection.png)) will appear. This option allows you to add a new database connection. Click on the icon.
 
     ![Project panel add DB connection](add-db-connection.png)
 
-3.	In the field **Select connection type**, choose the option **Create user-provided service instance** from the drop-down menu.
+3. In the field **Select connection type**, choose the option **Create user-provided service instance** from the drop-down menu.
 
-4.	Enter the name `MyUPS` for your service name and provide the user name `UPS_GRANTOR` and password `Password1` for this user previously created in step 2 of the [Create Users and Manage Roles and Privileges](hana-cloud-mission-trial-6) tutorial.
+4. Enter the name `MyUPS` for your service name and provide the user name `UPS_GRANTOR` and password `Password1` for this user previously created in step 2 of the [Create Users and Manage Roles and Privileges](hana-cloud-mission-trial-6) tutorial.
 
     ![USP UI1](ss-13-USP-UI1_.png)
 
-5.	Select the `Generate hdbgrants file` checkbox.
+5. Select the `Generate hdbgrants file` checkbox.
 
     You will assign a set of privileges to many users directly from your project in an `.hdbgrants` file. This file will specify that the user-provided service will be used to grant the privileges entered in the `.hdbgrants` file in the connected database.
 
@@ -246,7 +248,7 @@ Now that your project is created and you know the basics of how to navigate SAP 
 
     ![Open .hdbgrants file](open-hdbgrants.png)
 
-2.	For the purposes of this tutorial, we would like to grant the roles we have [previously]() created to object owners and application users. To view this tutorial, click [here](hana-cloud-mission-trial-6). The object owner will be assigned the role `genericRoleForOO` and the application user the role `genericRoleForAP`.
+2. For the purposes of this tutorial, we would like to grant the roles we have [previously]() created to object owners and application users. To view this tutorial, click [here](hana-cloud-mission-trial-6). The object owner will be assigned the role `genericRoleForOO` and the application user the role `genericRoleForAP`.
 
     To do so, replace the contents of the `hdbgrants` file with the following:
 
@@ -271,14 +273,13 @@ Now that your project is created and you know the basics of how to navigate SAP 
     }
     ```
 
-
 ### Deploy your project
 
 Now that the connection to your database is established and the grants file is created, you can deploy the project.
 
-1.	Go to the lower left corner of the screen, where you can see the **SAP HANA Projects** pane.
+1. Go to the lower left corner of the screen, where you can see the **SAP HANA Projects** pane.
 
-2.	Next to your project name, you will see a small icon in the shape of a rocket(![Deploy](icon-deploy.png)). Click on it to deploy your project.
+2. Next to your project name, you will see a small icon in the shape of a rocket(![Deploy](icon-deploy.png)). Click on it to deploy your project.
 
     Once the deployment is successfully completed, you will see the completion message in the bottom area of your screen.
 
@@ -296,7 +297,7 @@ Now that the connection to your database is established and the grants file is c
 
     ![current user and schema](current-user-schema.png)
 
-4.  Notice that you can now access the tables in the SFLIGHT schema which is in the SAP HANA Cloud database instance from within the HDI container.
+4. Notice that you can now access the tables in the SFLIGHT schema which is in the SAP HANA Cloud database instance from within the HDI container.
 
     ```SQL
     SELECT * FROM SFLIGHT.SAIRPORT;
@@ -308,12 +309,4 @@ Now that the connection to your database is established and the grants file is c
 
 You have completed the eighth tutorial of this mission! You learned how to set up a development project in SAP Business Application Studio and connecting it to your database with a user-provided service and an `.hdbgrants` file. You are all set now to create a calculation view.  Learn in the next tutorial how to create a calculation view to achieve your mission objective.
 
-
 ### Knowledge Check
-
-
-
-
-
-
----

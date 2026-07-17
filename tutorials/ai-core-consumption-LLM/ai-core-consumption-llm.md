@@ -228,6 +228,28 @@ print(response.to_dict()["choices"][0]["message"]["content"])
 ```
 [OPTION END]
 
+[OPTION BEGIN [JavaScript SDK]]
+
+In this example we will see how to consume this generative AI model using the SAP AI SDK for JavaScript.
+
+Before we proceed, ensure that the `@sap-ai-sdk/foundation-models` package has been installed. Refer to the [SAP AI SDK for JavaScript](https://github.com/SAP/ai-sdk-js) for setup instructions.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+```javascript
+import { AzureOpenAiChatClient } from '@sap-ai-sdk/foundation-models';
+
+const client = new AzureOpenAiChatClient('gpt-4o-mini');
+const response = await client.run({
+  messages: [{ role: 'user', content: 'What is SAP Business AI?' }],
+  max_tokens: 100,
+  temperature: 0.0
+});
+console.log(response.getContent());
+```
+
+[OPTION END]
+
 For more information on the models refer to [GPT4.0 Mini](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/).
 
 ### LLAMA 3.1 
@@ -394,6 +416,28 @@ print(response.data)
 **NOTE** - you can switch the model name between text-embedding-ada-002/text-embedding-3-small/text-embedding-3-large as per requirement.
 
 ![image](img/2.%20sdkTextEmbedding.png)
+
+[OPTION END]
+
+[OPTION BEGIN [JavaScript SDK]]
+
+In this example we will see how to consume this generative AI model using the SAP AI SDK for JavaScript.
+
+Before we proceed, ensure that the `@sap-ai-sdk/foundation-models` package has been installed. Refer to the [SAP AI SDK for JavaScript](https://github.com/SAP/ai-sdk-js) for setup instructions.
+
+Before you use these models, please ensure that the deployment has already been created. You can create the deployment either through generative-ai-hub-sdk or AI Launchpad.
+
+```javascript
+import { AzureOpenAiEmbeddingClient } from '@sap-ai-sdk/foundation-models';
+
+const client = new AzureOpenAiEmbeddingClient('text-embedding-3-small');
+const response = await client.run({
+  input: 'Every decoding is another encoding.'
+});
+console.log(response.getEmbedding());
+```
+
+**NOTE** - you can switch the model name between `text-embedding-ada-002`, `text-embedding-3-small`, and `text-embedding-3-large` as per requirement.
 
 [OPTION END]
 

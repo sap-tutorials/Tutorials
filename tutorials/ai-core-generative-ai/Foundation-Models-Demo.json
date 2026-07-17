@@ -1,0 +1,541 @@
+{
+  "name": "Foundation-Models-Demo",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "Administrative",
+      "filename": "Administrative",
+      "seq": 1,
+      "examples": [],
+      "root": {
+        "meta": {
+          "name": "Administrative",
+          "seq": 1
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "1 - Get Auth Token",
+          "filename": "1 - Get Auth Token.bru",
+          "seq": 1,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{AUTH_URL}}/oauth/token?grant_type=client_credentials",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "grant_type",
+                "value": "client_credentials",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {
+              "res": "const data = res.getBody();\n\nconst token = data.access_token;\nbru.setEnvVar(\"TOKEN\", token);\nconsole.info(\"Set TOKEN env var.\");\n\nconst decodeJwtPart = (value) => {\n  return JSON.parse(Buffer.from(value, \"base64url\").toString(\"utf8\"));\n};\n\ntry {\n  const parts = token.split(\".\");\n  if (parts.length < 2) {\n    throw new Error(\"Returned token is not a valid JWT.\");\n  }\n\n  const header = decodeJwtPart(parts[0]);\n  const payload = decodeJwtPart(parts[1]);\n\n  console.info(\"Decoded header.typ:\", header.typ);\n  console.info(\"Decoded payload.iss:\", payload.iss);\n  console.info(\"Decoded payload.exp (token expiry):\", new Date(payload.exp * 1000).toISOString());\n} catch (error) {\n  console.error(\"Failed to decode access_token:\", error.message || error);\n}"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "basic",
+              "basic": {
+                "username": "{{CLIENT_ID}}",
+                "password": "{{CLIENT_SECRET}}"
+              }
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "2 - List Scenarios",
+          "filename": "2 - List Scenarios.bru",
+          "seq": 2,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{AI_API_URL}}/lm/scenarios",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "default",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {
+              "res": "const body = res.getBody();\nconst resources = Array.isArray(body?.resources) ? body.resources : [];\n\nconst str = (v) => {\n  if (v == null) return \"\";\n  if (typeof v === \"object\") return JSON.stringify(v);\n  return String(v);\n};\n\nconst rows = resources.map((s) => {\n  const row = {};\n  for (const [k, v] of Object.entries(s)) row[k] = str(v);\n  return row;\n});\n\nconst columnDefinitions = Array.from(\n  new Set(rows.flatMap((r) => Object.keys(r)))\n).map((k) => ({ field: k, filter: true, floatingFilter: true }));\n\nbru.visualize(\"table\", {\n  name: \"Table View\",\n  provider: \"ag-grid\",\n  props: { rowData: rows, columnDefinitions },\n});"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "3 - List Foundation Models",
+          "filename": "3 - List Foundation Models.bru",
+          "seq": 3,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{AI_API_URL}}/lm/scenarios/foundation-models/models",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "default",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {
+              "res": "const body = res.getBody();\nconst resources = Array.isArray(body?.resources) ? body.resources : [];\n\nconst str = (v) => {\n  if (v == null) return \"\";\n  if (typeof v === \"object\") return JSON.stringify(v);\n  return String(v);\n};\n\nconst rows = [];\nconst columnKeys = new Set();\n\nconst addField = (row, key, value) => {\n  row[key] = str(value);\n  columnKeys.add(key);\n};\n\nconst MODEL_PINNED = [\"displayName\", \"model\"];\nconst MODEL_PINNED_SET = new Set(MODEL_PINNED);\n\nfor (const model of resources) {\n  const modelEntries = Object.entries(model);\n  const versions = Array.isArray(model.versions) ? model.versions : [];\n\n  for (const version of versions) {\n    const row = {};\n\n    for (const k of MODEL_PINNED) addField(row, k, model[k]);\n\n    addField(row, \"version\", version.name);\n    for (const [k, v] of Object.entries(version)) {\n      if (k === \"name\") continue;\n      addField(row, k, v);\n    }\n\n    for (const [k, v] of modelEntries) {\n      if (k === \"versions\" || MODEL_PINNED_SET.has(k)) continue;\n      addField(row, k, v);\n    }\n\n    rows.push(row);\n  }\n}\n\nconst columnDefinitions = Array.from(columnKeys).map((k) => ({\n  field: k,\n  filter: true,\n  floatingFilter: true,\n}));\n\nbru.visualize(\"table\", {\n  name: \"Table View\",\n  provider: \"ag-grid\",\n  props: { rowData: rows, columnDefinitions },\n});"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "4 - Create Model Configuration",
+          "filename": "4 - Create Model Configuration.bru",
+          "seq": 4,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{AI_API_URL}}/lm/configurations",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "default",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  // executableId identifies the model provider/family, not the specific model.\n  // The specific model is set via parameterBindings below.\n  //\n  // Known executableId values:\n  //   \"azure-openai\"   → GPT models (gpt-4o, gpt-4.1-nano, etc.)\n  //   \"anthropic\"      → Claude models (claude-4-sonnet, claude-3-haiku, etc.)\n  //\n  // Use \"0.0.1\" for versionId (not \"latest\").\n  \"name\": \"my-gpt4o-config\",\n  \"executableId\": \"azure-openai\",\n  \"scenarioId\": \"foundation-models\",\n  \"versionId\": \"0.0.1\",\n  \"parameterBindings\": [\n    {\n      \"key\": \"modelName\",\n      \"value\": \"gpt-4o\"\n    },\n    {\n      \"key\": \"modelVersion\",\n      \"value\": \"latest\"\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {
+              "res": "const data = res.getBody();\nif (data?.id) {\n  bru.setEnvVar(\"MODEL_CONFIG_ID\", data.id);\n  console.info(\"Set MODEL_CONFIG_ID:\", data.id);\n} else {\n  console.error(\"Could not find configuration ID in response:\", JSON.stringify(data));\n}"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "5 - Create Model Deployment",
+          "filename": "5 - Create Model Deployment.bru",
+          "seq": 5,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{AI_API_URL}}/lm/deployments",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "default",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  // MODEL_CONFIG_ID is set automatically by \"4 - Create Model Configuration\".\n  // You can also paste a configuration ID here directly.\n  \"configurationId\": \"{{MODEL_CONFIG_ID}}\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {
+              "res": "const data = res.getBody();\nif (data?.id) {\n  bru.setEnvVar(\"MODEL_DEPLOYMENT_ID\", data.id);\n  console.info(\"Set MODEL_DEPLOYMENT_ID:\", data.id, \"| Status:\", data.status);\n  console.info(\"The deployment starts as PENDING and transitions to RUNNING.\");\n  console.info(\"Run '6 - List Deployments' after a few minutes to get the deployment URL once it is RUNNING.\");\n} else {\n  console.error(\"Unexpected response:\", JSON.stringify(data));\n}"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "6 - List Deployments",
+          "filename": "6 - List Deployments.bru",
+          "seq": 6,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{AI_API_URL}}/lm/deployments",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "default",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "scenarioId",
+                "value": "foundation-models",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {
+              "res": "const data = res.getBody();\nconst resources = Array.isArray(data?.resources) ? data.resources : [];\n\nconst target = resources[0];\n\nif (target) {\n  bru.setEnvVar(\"MODEL_DEPLOYMENT_ID\", target.id);\n  bru.setEnvVar(\"MODEL_DEPLOYMENT_URL\", target.deploymentUrl || \"\");\n  console.info(\n    \"Set MODEL_DEPLOYMENT_ID:\", target.id,\n    \"| MODEL_DEPLOYMENT_URL:\", target.deploymentUrl || \"(not yet available)\",\n    \"| Status:\", target.status,\n    \"| model config:\", target.configurationName\n  );\n} else {\n  console.info(\"No deployments found.\");\n}\n\n// Table view of all deployments\nconst rows = resources.map(r => ({\n  id: r.id || \"\",\n  configurationName: r.configurationName || \"\",\n  status: r.status || \"\",\n  deploymentUrl: r.deploymentUrl || \"\",\n  createdAt: r.createdAt || \"\",\n  modifiedAt: r.modifiedAt || \"\",\n}));\n\nconst columnDefinitions = Object.keys(rows[0] || {}).map(k => ({\n  field: k,\n  filter: true,\n  floatingFilter: true,\n}));\n\nbru.visualize(\"table\", {\n  name: \"Deployments\",\n  provider: \"ag-grid\",\n  props: { rowData: rows, columnDefinitions },\n});"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "7 - Stop Deployment",
+          "filename": "7 - Stop Deployment.bru",
+          "seq": 7,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{AI_API_URL}}/lm/deployments/{{MODEL_DEPLOYMENT_ID}}",
+            "method": "PATCH",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "default",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"targetStatus\": \"STOPPED\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {
+              "res": "const data = res.getBody();\nif (data?.id) {\n  console.info(\"Stop initiated. ID:\", data.id, \"| targetStatus:\", data.targetStatus, \"| current status:\", data.status);\n  console.info(\"Wait for status to become STOPPED, then run '8 - Delete Deployment'.\");\n} else {\n  console.error(\"Unexpected response:\", JSON.stringify(data));\n}"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "8 - Delete Deployment",
+          "filename": "8 - Delete Deployment.bru",
+          "seq": 8,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{AI_API_URL}}/lm/deployments/{{MODEL_DEPLOYMENT_ID}}",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "AI-Resource-Group",
+                "value": "default",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {
+              "res": "const data = res.getBody();\nif (res.status === 202 || data?.id) {\n  console.info(\"Deployment deletion initiated. ID:\", data?.id, \"| Status:\", data?.targetStatus ?? data?.status);\n  console.info(\"The deployment will transition to STOPPED then be removed.\");\n  bru.setEnvVar(\"MODEL_DEPLOYMENT_URL\", \"\");\n  bru.setEnvVar(\"MODEL_DEPLOYMENT_ID\", \"\");\n  console.info(\"Cleared MODEL_DEPLOYMENT_URL and MODEL_DEPLOYMENT_ID.\");\n} else {\n  console.error(\"Unexpected response:\", JSON.stringify(data));\n}"
+            },
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Inference",
+      "filename": "Inference",
+      "seq": 2,
+      "examples": [],
+      "root": {
+        "meta": {
+          "name": "Inference",
+          "seq": 2
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "1 - Inference Claude",
+          "filename": "1 - Inference Claude.bru",
+          "seq": 2,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{MODEL_DEPLOYMENT_URL}}/invoke",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{TOKEN}}",
+                "enabled": true
+              },
+              {
+                "name": "AI-Resource-Group",
+                "value": "default",
+                "enabled": true
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  // Anthropic Bedrock message format.\n  // Required for all Anthropic Claude models (e.g. anthropic--claude-4-sonnet).\n  \"anthropic_version\": \"bedrock-2023-05-31\",\n  \"max_tokens\": 100,\n  \"system\": \"You are a helpful assistant.\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Explain SAP AI Core in one sentence.\"\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "1 - Inference GPT",
+          "filename": "1 - Inference GPT.bru",
+          "seq": 1,
+          "settings": {},
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{MODEL_DEPLOYMENT_URL}}/chat/completions?api-version=latest",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{TOKEN}}",
+                "enabled": true
+              },
+              {
+                "name": "AI-Resource-Group",
+                "value": "default",
+                "enabled": true
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  // Azure OpenAI chat completions format.\n  // The model is already determined by the deployment — do not pass a \"model\" field.\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a helpful assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Explain SAP AI Core in one sentence.\"\n    }\n  ],\n  \"max_tokens\": 100,\n  \"temperature\": 0.7\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "UHEm2it2dY95boD6UBQvv",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "AI_API_URL",
+          "value": "<AI_API_URL>/v2",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "AUTH_URL",
+          "value": "<AUTH_URL>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "CLIENT_ID",
+          "value": "<CLIENT_ID>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "CLIENT_SECRET",
+          "value": "<CLIENT_SECRET>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "TOKEN",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "MODEL_CONFIG_ID",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "MODEL_DEPLOYMENT_ID",
+          "value": "<MODEL_DEPLOYMENT_ID>",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "MODEL_DEPLOYMENT_URL",
+          "value": "",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "default"
+    }
+  ],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "oauth2",
+        "oauth2": {
+          "grantType": "client_credentials",
+          "accessTokenUrl": "{{AUTH_URL}}/oauth/token",
+          "refreshTokenUrl": "",
+          "clientId": "{{CLIENT_ID}}",
+          "clientSecret": "{{CLIENT_SECRET}}",
+          "scope": "",
+          "credentialsPlacement": "body",
+          "credentialsId": "credentials",
+          "tokenPlacement": "header",
+          "tokenHeaderPrefix": "Bearer",
+          "tokenQueryKey": "access_token",
+          "autoFetchToken": true,
+          "autoRefreshToken": false
+        }
+      }
+    },
+    "meta": {
+      "name": "Foundation-Models-Demo"
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "Foundation-Models-Demo",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.010193824768066406,
+    "filesCount": 14
+  },
+  "exportedAt": "2026-07-09T22:19:02.748Z",
+  "exportedUsing": "Bruno/3.0.2"
+}

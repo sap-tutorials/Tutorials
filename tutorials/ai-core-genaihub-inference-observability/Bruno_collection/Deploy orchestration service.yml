@@ -1,0 +1,85 @@
+info:
+  name: Deploy orchestration service
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{ai_api_url}}/lm/deployments"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: AI-Resource-Group
+      value: "{{resource_group}}"
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "configurationId": "69b1ddb0-0cfa-4584-8b8c-b1f9ac04aa58"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if ( res.status == 202 ){
+          let data = res.getBody();
+          bru.setEnvVar("deploymentId", data.id);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{AI_API}}/lm/deployments"
+      method: POST
+      headers:
+        - name: Authorization
+          value: Bearer {{access_token}}
+        - name: AI-Resource-Group
+          value: "{{resource-group}}"
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "configurationId": "{{configurationId}}"
+          }
+    response:
+      status: 202
+      statusText: Accepted
+      headers:
+        - name: date
+          value: Thu, 26 Mar 2026 11:44:12 GMT
+        - name: location
+          value: https://api.ai.internalprod.eu-central-1.aws.ml.hana.ondemand.com:None/api/v2/deployments/db664f32e41f2694
+        - name: content-type
+          value: application/json
+        - name: content-length
+          value: "105"
+        - name: access-control-allow-origin
+          value: "null"
+        - name: access-control-allow-credentials
+          value: "false"
+        - name: cache-control
+          value: no-store, must-revalidate
+        - name: x-upstream-service-time
+          value: "144"
+      body:
+        type: json
+        data: |-
+          {
+            "id": "db664f32e41f2694",
+            "deploymentUrl": "",
+            "message": "Deployment scheduled.",
+            "status": "UNKNOWN"
+          }

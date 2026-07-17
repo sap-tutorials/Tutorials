@@ -2,8 +2,8 @@
 parser: v2
 auto_validation: true
 time: 45
-primary_tag: software-product>sap-business-technology-platform
-tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
+primary_tag: software-product>sap-ai-core
+tags: [ tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
 author_name: Smita Naik
 author_profile: https://github.com/I321506
 ---

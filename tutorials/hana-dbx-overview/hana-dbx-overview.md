@@ -36,31 +36,31 @@ It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP 
 
 The following tools also provide the ability to execute SQL queries.
 
-  * `hdbsql` is a text-based tool that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
+- `hdbsql` is a text-based tool that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
-  * `dbisql` is a tool that can be used to query a data lake Relational Engine. For additional details see [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
+- `dbisql` is a tool that can be used to query a data lake Relational Engine. For additional details see [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
 
-  * [SAP HANA Database Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) is an extension for Visual Studio Code that offers a subset of the functionality in the SAP HANA database explorer.
+- [SAP HANA Database Explorer for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) is an extension for Visual Studio Code that offers a subset of the functionality in the SAP HANA database explorer.
 
-  * [SQL Notebook](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-developer-guide-for-cloud-foundry-multitarget-applications-sap-business-app-studio/test-your-sql-code-with-sql-notebook) is a tool available inside of the SAP Business Application Studio.  The SQL Notebook enable you to save your queries into .notebook file that combines Markdown cells with cells that control the connection (they start with #) and SAP HANA SQL statements.
+- [SQL Notebook](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-developer-guide-for-cloud-foundry-multitarget-applications-sap-business-app-studio/test-your-sql-code-with-sql-notebook) is a tool available inside of the SAP Business Application Studio.  The SQL Notebook enable you to save your queries into .notebook file that combines Markdown cells with cells that control the connection (they start with #) and SAP HANA SQL statements.
 
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
-* From SAP HANA Cloud Central on either a SAP HANA or SAP data lake instance found under the 'Actions' column. 
+- From SAP HANA Cloud Central on either a SAP HANA or SAP data lake instance found under the 'Actions' column.
 
     ![opening the SAP HANA database explorer from SAP HANA Cloud Central](from-hcc.png)
 
-* From the SAP HANA cockpit  
+- From the SAP HANA cockpit  
 
     ![opening the SAP HANA database explorer from the SAP HANA Cockpit](open-dbx-from-hana-cockpit.png)
 
-* From the Business Application Studio in a SAP HANA Native Application development space
+- From the Business Application Studio in a SAP HANA Native Application development space
 
     The command palette or the SAP HANA Projects panel can be used to open the SAP HANA database explorer.
 
     ![BAS Open SAP HANA Database Explorer](BusinessAppStudioOpenDBX.png)
 
-* From the SAP Web IDE for SAP HANA with the extension enabled
+- From the SAP Web IDE for SAP HANA with the extension enabled
 
     ![opening the SAP HANA database explorer from the SAP Web IDE](open-dbx-from-web-ide.png)
 
@@ -106,8 +106,6 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 [SAP HANA Runtime Tools 2.0](https://launchpad.support.sap.com/#/softwarecenter/search/XSACHRTT) (Adds the SAP HANA database explorer to the SAP HANA Web IDE)
 
-
-
 ### SAP HANA Cloud free tier
 
 To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3 and 4 in this tutorial provide two  different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.  Alternatively, step 7 provides a quick and easy way to try out SAP HANA Cloud although you will be given access to a user with fewer permissions.  The SAP BTP Trial is available on the US10 and AP21 landscapes.  If a free tier instance is used in a productive subaccount, a seamless transition from a free tier to a paid plan is available.
@@ -146,7 +144,7 @@ Continue on to the next tutorial in this group once you have access to an SAP HA
 
 An alternative option to using the SAP HANA Cloud free tier is to use the SAP HANA, express edition.  SAP provides a free, streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html).
 
-SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides a binary install as well as virtual machine images that can be run on Microsoft Windows, macOS and Linux machines.  This is described in the [Getting Started with SAP HANA 2.0, express edition (Binary Installer Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/32c9e0c8afba4c87814e61d6a1141280) or [Getting Started with SAP HANA 2.0, express edition (Virtual Machine Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/8c3bbc4a904d42efac77c09da0bccf64).  The **Applications** option adds XS Advanced, the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
+SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides a binary install as well as [docker images](https://hub.docker.com/u/saplabs).  This is described in the [Getting Started with SAP HANA 2.0, express edition (Binary Installer Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/32c9e0c8afba4c87814e61d6a1141280).  A database-only option and a database + XS Advanced Applications option are available. The database + XS Advanced Applications install includes the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.  The **Applications** option adds XS Advanced, the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
 
 ![SAP HANA express download manager](express-download-manager.png)
 
