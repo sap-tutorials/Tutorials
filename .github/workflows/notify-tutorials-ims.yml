@@ -1,0 +1,66 @@
+# Tutorial Repo Dispatch Workflow
+#
+# Copy this file to .github/workflows/notify-tutorials-ims.yml in each
+# sap-tutorials tutorial *source* repo that should trigger a content rebuild.
+#
+# Auth (#1154): prefers a GitHub App installation token, falls back to a PAT.
+#   - App path (recommended): set repo variable USE_GITHUB_APP=true and add
+#     Actions secrets TUTORIALS_APP_ID + TUTORIALS_APP_PRIVATE_KEY. The App
+#     (sap-tutorials-builder) must be installed on this repo and hold
+#     Contents: write on sap-tutorials/tutorials-ims (repository_dispatch).
+#     See docs/developers/operations/github-app-setup.md.
+#   - PAT fallback (legacy): TUTORIALS_DISPATCH_TOKEN — GitHub PAT with `repo`
+#     scope on tutorials-ims. Used while USE_GITHUB_APP is unset/false.
+#
+# NOTE: the || fallback only engages if App-token GENERATION fails — NOT if
+# the dispatch itself is unauthorized. Grant the App Contents:write on
+# tutorials-ims BEFORE setting USE_GITHUB_APP=true here.
+#
+# Target env (#1154): this template sends client_payload.environment (default
+# 'prod', override per-repo via the REBUILD_ENVIRONMENT repo variable).
+# rebuild-content.yml honors that field (allowlist dev|qa|prod) as of PR #1273.
+# BOTH must be merged before rolling this out to production source repos — on
+# a rebuild-content.yml that predates #1273, repository_dispatch still routes
+# to DEV regardless of payload, so every tutorial push would rebuild DEV.
+
+name: Notify Tutorials Platform
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.md'
+      - '**.png'
+      - '**.jpg'
+      - '**.gif'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      # GitHub App token (preferred). Activates when this repo has
+      # USE_GITHUB_APP=true and the TUTORIALS_APP_* secrets populated. Falls
+      # back to the classic TUTORIALS_DISPATCH_TOKEN PAT while unset.
+      - name: Generate GitHub App token
+        id: app-token
+        if: ${{ vars.USE_GITHUB_APP == 'true' }}
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.TUTORIALS_APP_ID }}
+          private-key: ${{ secrets.TUTORIALS_APP_PRIVATE_KEY }}
+          owner: sap-tutorials
+          repositories: tutorials-ims
+      - name: Trigger content rebuild
+        env:
+          DISPATCH_TOKEN: ${{ steps.app-token.outputs.token || secrets.TUTORIALS_DISPATCH_TOKEN }}
+          # rebuild-content.yml routes on client_payload.environment (allowlist
+          # dev|qa|prod, defaults dev when absent). This is the PRODUCTION
+          # source-repo template, so it targets prod; override per-repo with a
+          # REBUILD_ENVIRONMENT repo variable (e.g. a staging source repo → qa).
+          TARGET_ENV: ${{ vars.REBUILD_ENVIRONMENT || 'prod' }}
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${DISPATCH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -d "{\"event_type\":\"tutorial-updated\",\"client_payload\":{\"repository\":\"${{ github.repository }}\",\"ref\":\"${{ github.ref }}\",\"sha\":\"${{ github.sha }}\",\"environment\":\"${TARGET_ENV}\"}}" \
+            "https://api.github.com/repos/sap-tutorials/tutorials-ims/dispatches"
