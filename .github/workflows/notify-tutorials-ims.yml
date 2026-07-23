@@ -38,6 +38,32 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      # Determine the single changed tutorial slug (if exactly one), so the
+      # rebuild can run in fast slug-targeted mode (~2 min) instead of a full
+      # rebuild (~10 min). Mirrors notify-qa.yml.template. Needs full history
+      # (fetch-depth: 0) for the before..after diff. Empty slug (0 or >1
+      # tutorials touched) → rebuild-content.yml falls back to a full rebuild.
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Determine changed slug
+        id: slug
+        run: |
+          changed=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+            | awk -F/ '/^tutorials\//{print $2}' | sort -u)
+          count=$(echo "$changed" | wc -l)
+          # Only emit a slug when EXACTLY one tutorial changed AND it matches the
+          # strict slug charset (whole-value POSIX case match). Anything else →
+          # empty slug → rebuild-content.yml runs a full rebuild. Validating here
+          # (sender) too — not just the receiver — keeps a malformed dir name out
+          # of the dispatch payload entirely.
+          if [ "$count" = "1" ] && [ -n "$changed" ]; then
+            case "$changed" in
+              *[!a-z0-9-]* | -* ) echo "slug=" >> "$GITHUB_OUTPUT" ;;
+              *) echo "slug=$changed" >> "$GITHUB_OUTPUT" ;;
+            esac
+          else
+            echo "slug=" >> "$GITHUB_OUTPUT"
+          fi
       # GitHub App token (preferred). Activates when this repo has
       # USE_GITHUB_APP=true and the TUTORIALS_APP_* secrets populated. Falls
       # back to the classic TUTORIALS_DISPATCH_TOKEN PAT while unset.
@@ -58,9 +84,25 @@ jobs:
           # source-repo template, so it targets prod; override per-repo with a
           # REBUILD_ENVIRONMENT repo variable (e.g. a staging source repo → qa).
           TARGET_ENV: ${{ vars.REBUILD_ENVIRONMENT || 'prod' }}
+          # Single changed slug (empty if 0 or >1 or non-slug-charset) →
+          # rebuild-content.yml uses it to run slug-targeted (fast) vs full.
+          SLUG: ${{ steps.slug.outputs.slug }}
+          # Pin the github context values into env too, so the JSON body is
+          # assembled entirely from shell vars via jq (no template interpolation
+          # into the payload string).
+          REPO: ${{ github.repository }}
+          REF: ${{ github.ref }}
+          SHA: ${{ github.sha }}
         run: |
+          # Build the payload with jq so every value is correctly JSON-escaped
+          # (a slug / ref / repo containing quotes or backslashes can't break out
+          # of the JSON — the string-interpolation form was a json-injection risk).
+          BODY=$(jq -nc \
+            --arg repo "$REPO" --arg ref "$REF" --arg sha "$SHA" \
+            --arg env "$TARGET_ENV" --arg slug "$SLUG" \
+            '{event_type:"tutorial-updated", client_payload:{repository:$repo, ref:$ref, sha:$sha, environment:$env, slug:$slug}}')
           curl -X POST \
             -H "Authorization: Bearer ${DISPATCH_TOKEN}" \
             -H "Accept: application/vnd.github+json" \
-            -d "{\"event_type\":\"tutorial-updated\",\"client_payload\":{\"repository\":\"${{ github.repository }}\",\"ref\":\"${{ github.ref }}\",\"sha\":\"${{ github.sha }}\",\"environment\":\"${TARGET_ENV}\"}}" \
+            --data "$BODY" \
             "https://api.github.com/repos/sap-tutorials/tutorials-ims/dispatches"
