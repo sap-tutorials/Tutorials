@@ -127,11 +127,11 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
                                                                </Sale>
                                                </LineItem>
                                                 <LineItem>
-                               <SequenceNumber>1</SequenceNumber>
-                               <Coupon>
-                                               <PrimaryLabel>ANNIVERSARY25</PrimaryLabel>
-                                               <Quantity>1</Quantity>
-                               </Coupon>
+                                                                <SequenceNumber>1</SequenceNumber>
+                                                                <Coupon>
+                                                                                 <PrimaryLabel>ANNIVERSARY25</PrimaryLabel>
+                                                                                 <Quantity>1</Quantity>
+                                                                 </Coupon>
                                                </LineItem>  
                                </ShoppingBasket>
                </PriceCalculateBody>
@@ -223,11 +223,11 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
                                                                </Sale>
                                                </LineItem>
                                                 <LineItem>
-                               <SequenceNumber>1</SequenceNumber>
-                               <Coupon>
-                                               <PrimaryLabel>ANNIVERSARY25</PrimaryLabel>
-                                               <Quantity>1</Quantity>
-                               </Coupon>
+                                                                <SequenceNumber>1</SequenceNumber>
+                                                                <Coupon>
+                                                                                <PrimaryLabel>ANNIVERSARY25</PrimaryLabel>
+                                                                                <Quantity>1</Quantity>
+                                                                </Coupon>
                                                </LineItem>  
                                </ShoppingBasket>
                </PriceCalculateBody>
