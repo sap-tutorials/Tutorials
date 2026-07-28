@@ -43,7 +43,7 @@ Upload to SAP Document AI any standard document type file (in PDF format or sing
 >- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
 
 
-1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app).   
+1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub).   
 
 2. In the top right, click **+** (Upload Document).
 

@@ -78,6 +78,6 @@ You have successfully used the booster **Set up account for SAP Document AI** to
 
 <!-- border -->![UI application](app.png)
 
->If you face any issue with the booster **Set up account for SAP Document AI**, you can alternatively follow the steps in [Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub) to subscribe to the user interface application manually.
+>If you face any issue with the booster **Set up account for SAP Document AI**, you can alternatively follow the steps in [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub) to subscribe to the user interface application manually.
 
 Congratulations, you’ve completed this tutorial. You're now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-ui).

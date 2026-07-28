@@ -73,7 +73,7 @@ Click **Download Service Key** to save the service key locally on your computer.
 
 <!-- border -->![Service Key](booster-success-key.png)
 
->If you face any issue with the booster **Set up account for SAP Document AI**, you can alternatively follow the steps in [Create Service Instance for SAP Document AI](cp-aibus-dox-service-instance) to create a service key for SAP Document AI manually.
+>If you face any issue with the booster **Set up account for SAP Document AI**, you can alternatively follow the steps in [Use Trial to Create a Service Instance for SAP Document AI](cp-aibus-dox-service-instance) to create a service key for SAP Document AI manually.
 
 You are now all set to [Get OAuth Access Token for SAP Document AI Using Any Web Browser](cp-aibus-dox-web-oauth-token). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 

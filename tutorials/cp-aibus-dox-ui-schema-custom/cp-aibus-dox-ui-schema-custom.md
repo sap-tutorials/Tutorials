@@ -29,7 +29,7 @@ If you are new to the SAP Document AI basic UI, first try out the tutorial: [Use
 ### Access schema configuration
 
 
-1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app) or [Use Free Tier to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-free-booster-app).
+1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub) or [Use Free Tier to Subscribe to SAP Document AI Basic UI](cp-aibus-dox-free-ui-sub).
 
 
     >If you **HAVE NOT** just used the **Set up account for SAP Document AI** booster to create a service instance for SAP Document AI and subscribe to the SAP Document AI basic UI, observe the following:

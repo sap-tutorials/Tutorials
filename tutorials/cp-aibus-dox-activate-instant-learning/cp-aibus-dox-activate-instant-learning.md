@@ -23,15 +23,15 @@ Before using the instant learning feature, you need to activate it. This tutoria
 ### Access and authorize Swagger UI
 
 
-To use a trial account to perform this tutorial, first follow the steps described in [Use Trial to Set Up Account for SAP Document AI and Get Service Key](cp-aibus-dox-booster-key).
+To use a trial account to perform this tutorial, first follow the steps described in [Use Trial to Create a Service Instance for SAP Document AI](cp-aibus-dox-service-instance).
 
-To perform this tutorial using the Free (`free`) service plan or one of the service plans intended for productive use – either Premium Edition (`premium_edition`) or Base Edition (`blocks_of_100`) –, first follow the steps described in [Use Free Tier to Set Up Account for SAP Document AI and Get Service Key](cp-aibus-dox-free-booster-key). For more information on the service plans available for SAP Document AI, see [Service Plans](https://help.sap.com/docs/document-information-extraction/document-information-extraction/service-plans).
+To perform this tutorial using the Free (`free`) service plan or one of the service plans intended for productive use – either Premium Edition (`premium_edition`) or Base Edition (`blocks_of_100`) –, first follow the steps described in [Use Free Tier to Create a Service Instance for SAP Document AI](cp-aibus-dox-free-service-instance). For more information on the service plans available for SAP Document AI, see [Service Plans](https://help.sap.com/docs/document-information-extraction/document-information-extraction/service-plans).
 
 Next, perform the steps described in [Get OAuth Access Token for SAP Document AI via Web Browser](cp-aibus-dox-web-oauth-token). 
 
 Finally, you need to access and authorize the SAP Document AI Swagger UI as described below. You'll use Swagger UI to call the SAP Document AI APIs via any web browser. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
-To access and authorize the SAP Document AI Swagger UI, you'll need the following entries from the service key that you created for SAP Document AI in the tutorials [Use Trial to Set Up Account for SAP Document AI and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for SAP Document AI and Get Service Key] (cp-aibus-dox-free-booster-key):
+To access and authorize the SAP Document AI Swagger UI, you'll need the following entries from the service key that you created for SAP Document AI in the tutorials [Use Trial to Create a Service Instance for SAP Document AI](cp-aibus-dox-service-instance) or [Use Free Tier to Create a Service Instance for SAP Document AI](cp-aibus-dox-free-service-instance):
 
 - `tenantuiurl` 
   
