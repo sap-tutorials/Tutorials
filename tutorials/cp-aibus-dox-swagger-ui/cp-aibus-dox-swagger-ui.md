@@ -26,7 +26,7 @@ The core functionality of SAP Document AI is to automatically extract structured
 
 You'll use Swagger UI, via any web browser, to call the SAP Document AI APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
-You need the service key that you created for SAP Document AI in the previous tutorial – either [Use Trial to Set Up Account for SAP Document AI and Get Service Key](cp-aibus-dox-booster-key) or [Use Free Tier to Set Up Account for SAP Document AI and Get Service Key](cp-aibus-dox-free-booster-key). Outside the `uaa` section of the service key, you'll find an entry called `tenantuiurl` and another called `swagger` (highlighted in the image below).
+You need the service key that you created for SAP Document AI in the previous tutorial – either [Use Trial to Create a Service Instance for SAP Document AI](cp-aibus-dox-service-instance) or [Use Free Tier to Create a Service Instance for SAP Document AI](cp-aibus-dox-free-service-instance). Outside the `uaa` section of the service key, you'll find an entry called `tenantuiurl` and another called `swagger` (highlighted in the image below).
 
 1. To access the SAP Document AI Swagger UI, first copy the `tenantuiurl` value and paste it into a text editor. Then, copy the `swagger` value and paste it onto the end of the `tenantuiurl` value. Finally, copy the resulting string, paste it into the address bar of your web browser, and press **Enter**.
 

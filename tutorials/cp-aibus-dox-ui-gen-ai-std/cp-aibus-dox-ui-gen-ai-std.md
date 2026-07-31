@@ -13,7 +13,7 @@ author_profile: https://github.com/Juliana-Morais
 
 ## Prerequisites
 - You've created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You've access to the SAP Document AI basic UI, as described in the tutorial [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app)
+- You've access to the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub)
 
 ## You will learn
   - How to create and activate your own schema for standard documents
@@ -33,7 +33,7 @@ It's also possible to use LLMs to extract information from standard document typ
 
 Before you upload our sample invoice file to SAP Document AI, you’ll create a corresponding schema. 
 
-1. Open the SAP Document AI basic UI, as described in the tutorial [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app).
+1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub).
 
 2. In the left navigation pane, click **Schema Configuration**.
 

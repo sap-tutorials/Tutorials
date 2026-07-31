@@ -86,7 +86,9 @@ The Service Marketplace is where you find all the services available on SAP BTP.
 3. In the dialog, choose the `free` plan. Enter a name for your new instance, for example, `doc-ai-instance` and click **Create**.
 
     >Choose `blocks_of_100` in this step (instead of `free`) if you're using the base edition plan to perform this tutorial series.
+
     >Choose `embedded_edition` in this step (instead of `free`) if you're using the embedded edition plan to perform this tutorial series.
+    
     >Choose `premium_edition` in this step (instead of `free`) if you're using the premium edition plan to perform this tutorial series.
 
     <!-- border -->![Create Instance](create-instance-dialog.png)
