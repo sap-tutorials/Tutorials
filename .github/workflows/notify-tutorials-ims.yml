@@ -27,7 +27,7 @@ name: Notify Tutorials Platform
 
 on:
   push:
-    branches: [main]
+    branches: [master, main]
     paths:
       - '**.md'
       - '**.png'
