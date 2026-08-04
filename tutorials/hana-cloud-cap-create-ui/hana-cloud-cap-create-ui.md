@@ -5,6 +5,9 @@ author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model]
 primary_tag: products>sap-hana-cloud
 parser: v2
+video:
+  url: https://www.youtube.com/watch?v=6WY70LyLS1c
+  title: Create a User Interface with CAP (SAP HANA Cloud)
 ---
 
 # Create a User Interface with CAP (SAP HANA Cloud)
@@ -20,12 +23,6 @@ parser: v2
 
 - This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
 - You have created database artifacts and loaded data as explained in [the previous tutorial](hana-cloud-cap-create-database-cds).
-
-## Video Version
-
-Video tutorial version:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6WY70LyLS1c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Run the services
 
