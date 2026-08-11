@@ -27,7 +27,7 @@ SAP HANA Cloud provides many features that make it well suited as a database for
 
 SAP HANA Cloud provides a [vector engine](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-vector-engine-guide/introduction?locale=en-US) and a set of [vector functions](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-vector-engine-guide/vector-function-reference?locale=en-US) to work with vectors.  The ability to embed data as a vector data type and to provide a method to perform a similarity search on the embedded data is helpful in providing grounding data to an LLM.  Retrieval Augmented Generation (RAG) is a pattern where instead of asking a large language model (LLM) to answer a question from memory alone, you first retrieve relevant context from a knowledge base (in this case the tables, views, and functions in your database) and then augment the LLM's prompt with that context. The LLM generates a response grounded in your data rather than generating its response based only on the data it's been trained with.
 
-SAP HANA Cloud also provides the [SAP HANA Database Knowledge Graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sap-hana-cloud-sap-hana-database-knowledge-graph-engine-guide?locale=en-US) which can be used to store the relationships between objects.  The data exploration tools as part of its configuration will create a knowledge graph containing information about the relationships between the database table, views, and functions that are specified during its configuration.
+SAP HANA Cloud also provides the [SAP HANA Database Knowledge Graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sap-hana-cloud-sap-hana-database-knowledge-graph-engine-guide?locale=en-US) which can be used to store the relationships between objects.  The data exploration tools as part of its configuration will create a knowledge graph containing information about the relationships between the database table, views, and functions that are specified during its configuration.  Further details can also be found at [From Preview to Production: Get Started with the SAP HANA Cloud's Agentic Data Exploration Tools](https://community.sap.com/t5/technology-blog-posts-by-sap/from-preview-to-production-get-started-with-the-sap-hana-cloud-s-agentic/ba-p/14440515).
 
 ---
 
@@ -386,6 +386,8 @@ The following steps demonstrate creating a read only user that will be granted a
     CALL "DBADMIN"."MY_OBJECT_RETRIEVAL"( 'Where can I find work orders?', ? );
     CALL "DBADMIN"."MY_DATA_RETRIEVAL"( 'Is there a vendor that we use for pool maintenance?  Describe the steps taken to arrive at an answer', ? );
     ```
+
+    ![Read only user](read-only-user.png)
 
 ### Knowledge check
 
