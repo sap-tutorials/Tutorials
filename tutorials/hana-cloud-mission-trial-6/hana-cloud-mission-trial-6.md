@@ -225,7 +225,7 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
 Well done!
 
-You have completed the fourth tutorial of this mission! Now you know how you can manage access rights in your instance by creating users, and granting roles and privileges using SAP HANA cockpit and the SAP HANA database explorer. You also have the necessary users, roles, and privileges to proceed with the [Create a Development Project in SAP Business Application Studio](hana-cloud-mission-trial-8) tutorial.
+You have completed the sixth tutorial of this mission! Now you know how you can manage access rights in your instance by creating users, and granting roles and privileges using SAP HANA Cloud Central. You also have the necessary users, roles, and privileges to proceed with the a future tutorial group on creating a calculation view.
 
 You now know all the basics to start working with our sample data and help Alex gain business insights about their company, **Best Run Travel**.
 

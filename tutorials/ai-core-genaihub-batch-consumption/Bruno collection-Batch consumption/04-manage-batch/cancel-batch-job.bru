@@ -1,0 +1,27 @@
+meta {
+  name: Cancel Batch Job
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{AI_API_URL}}/v2/llm-batch-service/v1/batches/{{BATCH_ID}}/cancel
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{TOKEN}}
+  AI-Resource-Group: {{RESOURCE_GROUP}}
+  Content-Type: application/json
+}
+
+docs {
+  ## Cancel Batch Job
+
+  Cancels a batch job that is in a non-terminal state (`PENDING` or `IN_PROGRESS`).
+
+  ### Note
+  Cancellation is asynchronous. The job transitions to `CANCELLED` after any
+  in-flight provider requests are terminated. Use Check Batch Status to confirm.
+}

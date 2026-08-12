@@ -13,7 +13,7 @@ author_profile: https://github.com/Juliana-Morais
 
 ## Prerequisites
 - You've created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You've access to the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app)
+- You've access to the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub)
 
 ## You will learn
   - How to create and activate your own schema for custom documents
@@ -43,7 +43,7 @@ Before you upload a custom document for extraction, you’ll create a correspond
   
 In the first example, you'll use a delivery note. After working through this example, you can go on and try out the other custom document types covered in Step 5.
 
-1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Set Up Account for SAP Document AI and Go to Application](cp-aibus-dox-booster-app).
+1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub).
 
 2. In the left navigation pane, click **Schema Configuration**.
 

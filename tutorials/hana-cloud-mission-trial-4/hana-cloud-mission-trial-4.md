@@ -19,7 +19,6 @@ primary_tag: software-product>sap-hana-cloud
 ## You will learn
 
 - How to use SAP HANA Cloud Central
-- How to access SAP HANA database explorer
 - How to access SAP Business Application Studio
 
 ## Intro
@@ -48,29 +47,18 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 **What you can do in SAP HANA Cloud Central**
 
-- *Get an overview of all SAP HANA Cloud instances in a subaccount*
-
-- *Create SAP HANA Cloud instances*
-
-- *Find an instance using the instance ID*
-
-- *Check the status of an instance*
-
-- *Review notifications*
-
-- *Check the memory, compute, and storage consumption*
-
-- *Start and stop instances*
-
-- *Manage and delete instances*
-
-- *Perform SAP HANA database migrations*
-
-- *View alerts in the Alerts app*
-
-- *Run queries in the SQL console tab*
-
-- *Explore the schema of the database using the database objects app*
+- Find an instance using using various filters such as the name, instance ID, state, or type
+- Get an overview of all SAP HANA Cloud instances in a subaccount
+- Create SAP HANA Cloud instances
+- Check the status of an instance
+- Review notifications
+- Examine the memory, compute, and storage consumption
+- Start and stop instances
+- Manage and delete instances
+- Perform SAP HANA database migrations
+- View alerts in the Alerts app
+- Run queries in the SQL console tab
+- Explore the schema of the database using the database objects app
 
 **How to find your instances**
 
@@ -80,9 +68,9 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 **Manage your instances**
 
-- You can open many options by clicking on the **three dots** under the **Actions** column to each instance on the list. This includes options to manage configurations, start or stop the instance, or delete it. From this menu, you can also open the other tools you can use with your instances, such as SAP HANA database explorer.
+- You can open many options by clicking on the **three dots** under the **Actions** column to each instance on the list. This includes options to manage configurations, start or stop the instance, or delete it.
 
-- One of the most important options you can get is the **SQL Endpoint** of your instance. To do so, click **Copy SQL Endpoint**. You will need this for multiple tasks, such as connecting to other systems.
+- One important option is to obtain the **SQL Endpoint** of your instance. To do so, click **Copy SQL Endpoint**. You will need this when you wish to connect to this instance from another application.
 
     ![HCC SQL Endpoint](hcc-sqlend2.png)
 
@@ -90,18 +78,18 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 **View details of an instance**
 
-Click on an instance to see further details of an instance including:
+- Click on an instance to see further details of an instance including:
 
-- *Memory*
-- *Compute*
-- *Network*
-- *Storage*
-- *Consumption*
-- *User & Authorization Management*
-- *Workload Management*
-- *Data Replication*
-- *Auditing*
-- *Performance Details including expensive statements*
+    - Memory
+    - Compute
+    - Network
+    - Storage
+    - Consumption
+    - User & Authorization Management
+    - Workload Management
+    - Data Replication
+    - Auditing
+    - Performance Details including expensive statements
 
     ![HCC Instance details](HCC-instance-details.png)
 
@@ -109,65 +97,57 @@ Click on an instance to see further details of an instance including:
 
 **Provide database authentication**
 
-Initially, you are signed in with the DBADMIN database user and the password specified during the instance provisioning wizard.  This can be changed using this is the first-time you are accessing a database instance, you will need to **Choose Authentication** and enter the credentials of your DBADMIN user.
+- Initially, you are signed in with the DBADMIN database user and the password specified during the instance provisioning wizard.  Should you wish to change this, you can do so using the **Choose Authentication** menu item.
 
-![Choose authentication](choose-auth.png)
+    ![Choose authentication](choose-auth.png)
 
-### Get to know the SAP HANA database explorer
+**Browse the database objects**
 
-SAP HANA database explorer allows you to interact with SAP HANA databases, as well as use the SAP Graph and Spatial engines. You also have access to the SQL console.  It can be accessed from the actions menu of an instance.
+- In the database objects app, you can:
 
->**Note**: The SQL console and catalog details can now be accessed directly in HANA Cloud Central by clicking on the SQL console or database objects toolbar items or through the actions menu.
->
->![SQL console tab](sql-console-tab.png)
->
->After connecting to a database instance, you can execute SQL queries or browse catalog objects.
->
->![SQL console UI from HANA Cloud Central](sql-console-ui.png)
->
->Learn more about how to use the SQL console and database objects in HANA Cloud Central by visiting [Query Databases Using the SQL Console in SAP HANA Cloud Central](hana-dbx-hcc) and [Browse and Explore Catalog Objects with the Database Objects App](hana-dbx-database-objects).
+    - Search for objects in the database
+    - Browse the metadata for each object such as the number of rows in a table and the columns and column types
+    - View the create statements for objects
+    - Generate SQL select statements to view the data of tables or views
+    - Generate SQL statements to call functions or procedures
+    - Import and export data
+    - Add, remove, or manage remote sources
 
-**What you can do in SAP HANA database explorer**
+    From the instances action menu, select **Open Database Objects**.
 
-![Generic DBX](ss-06-database-explorer-generic.png)
+    ![open database objects](open-database-objects.png)
 
-The SAP HANA database explorer offers a graphical interface and the SQL console, allowing you to freely access and manage your data.
+    Select Views, set the schema to be **SYS**, and search for **M_**.
 
-In SAP HANA database explorer, you can:
+    ![Find a view](find-a-view.png)
 
-- *Browse the database catalog*
+    Above you can see the list of monitoring views in the SYS schema that contain M_ in their name.
 
-- *Execute SQL statements*
+    Open the monitoring view **M_DATABASE** and examine its metadata.
 
-- *Debug stored procedures*
+    ![view metadata](view-metadata.png)
 
-- *Add, remove, or manage remote sources*
+    Using the database objects app you can quickly locate and examine database objects.
 
-- *Import, and export data*
+**Run queries in the SQL console**
 
-- *View diagnostic files*
+- The SQL console app can be used to write and run SQL queries.
 
-If you want to view, add, or manage any of the catalog items, right click on the item and choose from the available options.
+    From the instances page action menu or from the database objects app, select **Open SQL Console**.  
 
-An important part of the SAP HANA database explorer is the **Catalog** browser. Each database on the SAP HANA database explorer has its own catalog that allows you to view data, execute SQL commands, and manage remote sources, among other tasks.
+    ![Open SQL Consonle](open-sql-console.png)
 
-![Database Explorer Catalog](ss-07-database-explorer-catalog.png)
+    Once the SQL Console app opens, notice that details can be seen about the current schema, the connected instance, and that further details can be seen in the instance information dialog such as the user being used, and the instance's SQL endpoint.
 
-**How to open SAP HANA database explorer**
+    ![SQL console tab](sql-console-tab.png)
+    
+    Execute the below SQL query to see the database details.
 
-1. Open SAP HANA Cloud Central.
-
-2. In the row of the SAP HANA Cloud database instance you want to open in SAP HANA database explorer, click on the **three dots** in the **Actions** column.
-
-3. Then, click on **Open in SAP HANA database explorer**.
-
-    ![HCC Open DBX](hcc-open-dbx2.png)
-
-4. The SAP HANA database explorer will open on a new tab. If this is the first-time you are accessing it, you will need to enter the credentials of your DBADMIN user.
-
-> In this mission, you will use the SAP HANA database explorer for many tasks, so we recommend you bookmark it for easy access.
-
-For more information on how to use the SAP HANA database explorer, you can also check out the tutorial group [Get Started with the SAP HANA database explorer](group.hana-cloud-get-started) or refer to the [technical documentation](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/LATEST/en-US/7fa981c8f1b44196b243faeb4afb5793.html).
+    ```SQL
+    SELECT * FROM SYS.M_DATABASE;
+    ```
+    
+    ![SQL console query](sql-console-ui.png)
 
 ### Get to know SAP Business Application Studio
 
@@ -179,17 +159,12 @@ Using SAP Business Application Studio is not strictly necessary to use your SAP 
 
 The SAP Business Application Studio provides tools specific to building business applications within the SAP ecosystem, covering the end-to-end development cycle. You can:
 
-- *Create development spaces*
-
-- *Clone an existing project*
-
-- *Create a new project using a template*
-
-- *Use editors for SAP-specific technologies*
-
-- *Test your application while consuming services from remote sources*
-
-- *Build and deploy you application as a multi-target application*  
+- Create development spaces
+- Clone an existing project
+- Create a new project using a template
+- Use editors for SAP-specific technologies
+- Test your application while consuming services from remote sources
+- Build and deploy you application as a multi-target application  
 
 > To use SAP Business Application Studio, you need be subscribed to this service within the SAP BTP Cockpit. You must also have Cloud Foundry enabled to add the SAP Business Application Studio entitlement.
 >

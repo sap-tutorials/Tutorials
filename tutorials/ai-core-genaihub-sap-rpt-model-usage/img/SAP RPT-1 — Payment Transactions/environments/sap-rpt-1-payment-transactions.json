@@ -1,0 +1,54 @@
+{
+  "name": "sap-rpt-1-payment-transactions",
+  "variables": [
+    {
+      "name": "baseUrl",
+      "value": "",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    },
+    {
+      "name": "authUrl",
+      "value": "",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    },
+    {
+      "name": "clientId",
+      "value": "",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    },
+    {
+      "name": "clientSecret",
+      "value": "",
+      "type": "text",
+      "enabled": true,
+      "secret": true
+    },
+    {
+      "name": "resourceGroup",
+      "value": "default",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    },
+    {
+      "name": "deploymentId",
+      "value": "",
+      "type": "text",
+      "enabled": true,
+      "secret": false
+    },
+    {
+      "name": "bearerToken",
+      "value": "",
+      "type": "text",
+      "enabled": true,
+      "secret": true
+    }
+  ]
+}

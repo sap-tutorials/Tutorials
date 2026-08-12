@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "SAP AI Core - Batch Consumption",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

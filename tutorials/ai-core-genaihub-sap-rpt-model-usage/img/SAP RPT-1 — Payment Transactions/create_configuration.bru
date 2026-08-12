@@ -1,0 +1,38 @@
+meta {
+  name: create_configuration
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/v2/lm/configurations
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{bearerToken}}
+  AI-Resource-Group: {{resourceGroup}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "sap-rpt-1-small",
+    "executableId": "aicore-sap",
+    "scenarioId": "foundation-models",
+    "versionId": "0.0.1",
+    "parameterBindings": [
+      {
+        "key": "modelName",
+        "value": "sap-rpt-1-small"
+      },
+      {
+        "key": "modelVersion",
+        "value": "latest"
+      }
+    ],
+    "inputArtifactBindings": []
+  }
+}
+

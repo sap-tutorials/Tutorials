@@ -181,6 +181,8 @@ The following steps walk through the process of exporting to and importing data 
     SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
 
     --cert from https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem and is the CA for HANA Cloud
+    --https://knowledge.digicert.com/general-information/digicert-trusted-root-authority-certificates
+    --https://cacerts.digicert.com/DigiCertTLSRSA4096RootG5.crt.pem
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
     MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
     d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
@@ -282,12 +284,44 @@ The following steps walk through the process of exporting to and importing data 
 
 The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, data lake Relational Engine database.  This step requires a productive SAP HANA Cloud data lake instance as data lake files is currently not part of free tier.  The following steps assume you have followed the first two sub steps in the previous step so that a data lake Files connection has been added to the SAP HANA database explorer.
 
-1. Create a database credential for the data lake Files container.  This step is required if you wish to export to a data lake Files instance that is not the one associated with the data lake Relational Engine.  Further details are described at [Unloading Data to Data Lake Files from Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/unloading-data-to-data-lake-files).  Open a SQL Console connected to a data lake Relational Engine instance and execute the below SQL statements.
+1. Create a database credential for the data lake Files container.  This step is required if you wish to export to a data lake Files instance that is not the one associated with the data lake Relational Engine.  Open a SQL Console connected to a data lake Relational Engine instance and execute the below SQL statements.
 
     ```SQL
     SELECT * FROM SYSPSE;
     CREATE PSE HTTPS;
-    SELECT * FROM SYSCERTIFICATE WHERE cert_name = 'DigiCertRootCA';
+    SELECT * FROM SYSCERTIFICATE;
+    CREATE CERTIFICATE DIGICERTG5 FROM '-----BEGIN CERTIFICATE-----
+    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
+    -----END CERTIFICATE-----';
+    SELECT * FROM SYSCERTIFICATE WHERE cert_name = 'DIGICERTG5';
     ALTER PSE HTTPS ADD CERTIFICATE <object_id>;
     ```
 
@@ -306,27 +340,49 @@ The following steps walk through the process of exporting to and importing data 
     --DROP CREDENTIAL FOR COMPONENT 'SAPHDLRELOADUNLOAD' PURPOSE 'DL_FILES' TYPE 'X509';
     ```
 
-2. Export or unload the data from the MAINTENANCE table to a data lake Files instance.  Note that the CONNECTION_STRING and WITH CREDENTIALS are not required if you are targeting the associated data lake Files instance.
+2. Export or unload the data from the MAINTENANCE table to a data lake Files instance.  
+
+    The below example targets the data lake Files instance that is attached to the data lake Relational Engine.
 
     ```SQL
     UNLOAD SELECT * FROM HOTELS.MAINTENANCE
     INTO FILE 'hdlfs:///maint.csv'
     NULL FORMAT EMPTY
-    CONNECTION_STRING 'ENDPOINT=060acb0b-de9b-4801-9aa0-0dcfe503f0f0.files.hdl.prod-us10.hanacloud.ondemand.com'
-    WITH CREDENTIAL 'DL_FILES';
+    ```
+
+    The below example targets a different data lake Files instance.
+
+    ```SQL
+    UNLOAD SELECT * FROM HOTELS.MAINTENANCE
+    INTO FILE 'hdlfs://18b4be74-a4f1-40a0-a357-60155aee5f30/maint.csv'
+    CONNECTION_STRING 'ENDPOINT=https://18b4be74-a4f1-40a0-a357-60155aee5f30.files.hdl.prod-ca10.hanacloud.ondemand.com'
+    WITH CREDENTIAL 'DL_FILES'
+    NULL FORMAT EMPTY;
     ```
 
 3. Import or load the data back into the MAINTENANCE table.
 
+    The below example targets the data lake Files instance that is attached to the data lake Relational Engine.
+
     ```SQL
     DELETE FROM HOTELS.MAINTENANCE;
     LOAD TABLE HOTELS.MAINTENANCE (MNO, HNO, DESCRIPTION, DATE_PERFORMED, PERFORMED_BY) FROM 'hdlfs:///maint.csv'
-    CONNECTION_STRING 'ENDPOINT=https://060acb0b-de9b-4801-9aa0-0dcfe503f0f0.files.hdl.prod-us10.hanacloud.ondemand.com'
-    WITH CREDENTIAL 'DL_FILES' 
     ESCAPES OFF;
+    SELECT * FROM HOTELS.MAINTENANCE;
     ```
 
-Additional details can be found at [Unloading Data to Data Lake Files from Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/unloading-data-to-data-lake-files) and [Loading Data From Data Lake Files to Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/load-and-unload-management/loading-data-from-data-lake-files).
+    The below example targets a different data lake Files instance.\
+
+    ```SQL
+    DELETE FROM HOTELS.MAINTENANCE;
+    LOAD TABLE HOTELS.MAINTENANCE (MNO, HNO, DESCRIPTION, DATE_PERFORMED, PERFORMED_BY) FROM 'hdlfs://18b4be74-a4f1-40a0-a357-60155aee5f30/maint.csv'
+    CONNECTION_STRING 'ENDPOINT=https://18b4be74-a4f1-40a0-a357-60155aee5f30.files.hdl.prod-ca10.hanacloud.ondemand.com'
+    WITH CREDENTIAL 'DL_FILES' 
+    ESCAPES OFF;
+    SELECT * FROM HOTELS.MAINTENANCE;
+    ```
+
+Additional details are described at [CREATE CERTIFICATE](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-certificate-statement-for-data-lake-relational-engine), [Unload Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/unload-statement-for-data-lake-relational-engine), and [LOAD Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/load-table-statement-for-data-lake-relational-engine).
 
 ### Use Google Cloud Storage (GCS) for data exports and imports (optional)
 

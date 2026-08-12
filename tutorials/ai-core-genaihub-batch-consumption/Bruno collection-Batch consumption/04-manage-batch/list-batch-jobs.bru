@@ -1,0 +1,24 @@
+meta {
+  name: List Batch Jobs
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{AI_API_URL}}/v2/llm-batch-service/v1/batches
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{TOKEN}}
+  AI-Resource-Group: {{RESOURCE_GROUP}}
+  Content-Type: application/json
+}
+
+docs {
+  ## List Batch Jobs
+
+  Lists all batch jobs for the current tenant and resource group.
+  Returns `id`, `type`, `provider`, `created_at`, and `status` for each job.
+}

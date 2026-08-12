@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "SAP RPT-1 — Payment Transaction Predictions",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

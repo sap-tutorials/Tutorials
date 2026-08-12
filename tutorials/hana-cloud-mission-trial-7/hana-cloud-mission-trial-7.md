@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Christopher Kollhed
-author_profile: https://github.com/chriskollhed
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, programming-tool>sql]
@@ -189,7 +189,7 @@ To find the top booking days, we will first create two new tables:
 
 *Well done!*
 
-You have completed the sixth tutorial of this mission! You learned how to create new tables, view table details, join tables and extract specific data from tables using SQL statements in the SAP HANA database explorer. This way you were able to help Alex get the business inside they were looking for.
+You have completed the sixth tutorial of this mission! You learned how to create new tables, view table details, join tables and extract specific data from tables using SQL statements. This way you were able to help Alex get the business inside they were looking for.
 
 Since Alex needs to make these insights available to other departments in Best Run Travel, the next step is to create a calculation view to share these findings with other departments.  
 

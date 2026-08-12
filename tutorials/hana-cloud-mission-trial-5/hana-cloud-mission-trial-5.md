@@ -10,7 +10,7 @@ primary_tag: software-product>sap-hana-cloud
 
 # Import Data into SAP HANA Cloud, SAP HANA Database
 
-<!-- description --> Learn in this tutorial how to use the SAP HANA database explorer to import the sample data needed for this mission from a tar.gz file.
+<!-- description --> Learn in this tutorial how to import the sample data needed for this mission from a tar.gz file.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## You will learn
 
-- How to import catalog objects from your local machine to your database using the SAP HANA database explorer
+- How to import catalog objects from your local machine to your database using the import and export application
 
 ## Intro
 >
@@ -34,91 +34,55 @@ primary_tag: software-product>sap-hana-cloud
 
 SAP provides a free data model focused on flight data for anyone to use. We're going to import this sample data and use it to help you complete the mission for Best Run Travel.
 
-Download the [SFLIGHT sample data](https://github.com/SAP/hana-xsa-opensap-hana7/raw/snippets_2.3.2/ex2/sflight_hana.tar.gz) from the public SAP GitHub repository and save it on your local machine.
+1. Download the [SFLIGHT sample data](https://github.com/SAP/hana-xsa-opensap-hana7/raw/snippets_2.3.2/ex2/sflight_hana.tar.gz) from the public SAP GitHub repository and save it on your local machine.
 
-Note the location of the file.
-
-### Open the SAP HANA database explorer
-
-1. Under Instances and Subscriptions, open SAP HANA Cloud Central.
-
-    ![HCC application](hcc-app.png)
-
-2. In the **Actions** column, click on the **three dots** and select the option to **Open in SAP HANA Database Explorer**.
-
-    ![Open the SAP HANA database explorer](open-dbx.png)
-
-3. SAP HANA database explorer will open in a new tab.
+    Note the location of the file.
 
 ### Import the data to your catalog
 
-1. In the pane on the left, expand your database and right-click on **Catalog**.
+The Import and Export application in SAP HANA Cloud Central simplifies operations involving getting data into or out of your SAP HANA Cloud instance.  The following steps demonstrate how it can be used to import a sample dataset.
 
-2. Click on **Import Catalog Objects**.
+1. In the pane on the left, select the **Import and Export** application and click on **Import**.
 
-    ![DBX - import catalog objects](ss-02-dbx-import-catalog-objects.png)
+    ![import and export app](import.png)
 
-3. Where it says **Local archive**, click on **Browse** and select the `SFLIGHT` file you previously downloaded to your local machine.
+2. Select the instance that the data will be imported to and click next.
 
-    ![Browse](ss-03-browse.png)
+3. Choose to import catalog objects, specify that the import will be from a local file (as opposed to a file on a cloud storage provider), and browse to the previously downloaded file and click next.
 
-4. Wait until the archive is uploaded completely. You can see the status of the upload next to the **Browse** button.
+    ![catalog import](import-file.png)
 
-    ![DBX uploading archive](ss-04-dbx-uploading-archive.png)
+4. The list of available objects to be imported is shown.  Select them all and click **Add to List**.  It is possible at this point to optionally rename the schema that these object will be imported.  Click next.
 
-5. Once the upload is completed, you will see a list of **Catalog Objects**. All of the objects will be automatically selected for import.
+    ![object selection](import-selection.png)
 
-    ![DBX catalog objects](ss-05-dbx-catalog-objects.png)
+5. The options for the import are shown next.  Click Import to start the import operation.
 
-6. Keep all options as they are and then click on **Import**.
+6. Once the import is completed, the state will change to completed.  
 
-7. Once the import is completed, you will see a confirmation notification on the top right-hand side of the screen.
-
-    ![DBX import completed successfully](ss-06-dbx-import-completed-successfully.png)
-
-> - Note that you can also import individual `.csv` files in a similar manner. Simply right click on Tables in your catalog and select **Import Data**.
->
->     ![Import CSV1](ss-07-import-CSV1.png)
-
-> - A wizard will guide you through the steps. You can select to add the data to an existing or new table and which schema the import should happen in.
->
->     ![Import CSV2.png](ss-08-import-CSV2.png)
-
-> - You will then be asked to specify the column mappings, as well as how errors should be handled.
->
->     ![Import CSV3.png](ss-09-import-CSV3.png)
+    ![import state](import-complete.png)
 
 ### Preview the data
 
-Once the data is imported, you can take a look at it.
+Once the data is imported, you can take a look at the imported tables in the database objects app and execute SQL queries against the tables in the SQL Console.
 
-Click on **Tables** to view all your newly imported tables. Please note that your data will be automatically stored in a new schema named `SFLIGHT`.
+1. Open the database objects app, connect to the instance, specify a schema filter of **SFLIGHT**, and click on tables.
 
-To ensure that you can see your new tables, click on the **Choose Schema** button next to the schema name on the bottom left-hand side panel.
+    ![SFLIGHT objects](view-tables.png)
 
-![view tables - change schema](ss-10-view-tables-change-schema.png)
+2. Select a table such as SAIRPORT, and choose **SELECT Statement** from the Generate SQL Statement dropdown.
 
-Then select the schema `SFLIGHT`. You can uncheck the default `DBADMIN` schema to see only the `SFLIGHT` tables you just imported.
+    ![Open Data](open-sql-console.png)
 
-![Select Schema](ss-11-select-schema.png)
+    The data of the table will now appear in the SQL Console.
 
-Click **OK** and the list of available tables will be displayed on the same side panel.
-
-![View Tables](ss-12-view-tables.png)
-
-If you want to see the data inside any of your tables, right click on any of them and then click on **Open Data**.
-
-![Open Data](ss-13-open-data.png)
-
-This will open the table on the main panel.
-
-![Data Preview resized](ss-14-data-preview.png)
+    ![SQL Query](sql-query.png)
 
 You can browse the dataset to get a better overview of the data available.
 
 *Well done!*
 
-You have completed the fifth tutorial of this mission! Now you know how to import tar.gz files to your database using the SAP HANA database explorer.
+You have completed the fifth tutorial of this mission! Now you know how to import tar.gz files to your database.
 
 Learn in the next tutorial how to create and manage users and privileges.
 

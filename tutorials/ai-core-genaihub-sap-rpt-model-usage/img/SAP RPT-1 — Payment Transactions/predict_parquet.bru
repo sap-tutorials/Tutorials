@@ -1,0 +1,23 @@
+meta {
+  name: predict_parquet
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/v2/inference/deployments/{{deploymentId}}/predict_parquet
+  body: multipartForm
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{bearerToken}}
+  AI-Resource-Group: {{resourceGroup}}
+}
+
+body:multipart-form {
+  prediction_config: {"target_columns": [{"name": "Days Late","prediction_placeholder": "[PREDICT]","task_type": "regression"},{"name": "Risk Score","prediction_placeholder": "[PREDICT]","task_type": "classification"}]}
+  index_column: Transaction ID
+  parse_data_types: false
+  file: @file(./data/payment_transactions.parquet)
+}

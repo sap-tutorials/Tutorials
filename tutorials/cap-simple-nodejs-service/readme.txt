@@ -1,10 +1,10 @@
 repository: https://github.com/sap-tutorials/sap-build-process-automation-Contribution/tree/main/tutorials
             https://github.com/sap-tutorials/Tutorials-Contribution/tree/master/tutorials/spa-consume-actions-cap-nodejs-service
 
-https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/spa-consume-actions-cap-nodejs-service.html
-https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/spa-consume-actions-cap-setupenv.html
-https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/spa-consume-actions-cap-action-create.html
-https://developers-qa-blue.wcms-nonprod.c.eu-de-2.cloud.sap/tutorials/spa-consume-actions-cap-process.html
+https://developers-prod-aqua.wcms-prod.c.eu-de-2.cloud.sap/tutorials/spa-consume-actions-cap-nodejs-service.html
+https://developers-prod-aqua.wcms-prod.c.eu-de-2.cloud.sap/tutorials/spa-consume-actions-cap-setupenv.html
+https://developers-prod-aqua.wcms-prod.c.eu-de-2.cloud.sap/tutorials/spa-consume-actions-cap-action-create.html
+https://developers-prod-aqua.wcms-prod.c.eu-de-2.cloud.sap/tutorials/spa-consume-actions-cap-process.html
 
 SBPA tutorial: https://developers.sap.com/group.connect-process-external-sap-bpa.html?source=social-atw-email
 SBPA - add action...: https://developers.sap.com/tutorials/spa-process-action-add.html

@@ -1,0 +1,34 @@
+meta {
+  name: Check Batch Status
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{AI_API_URL}}/v2/llm-batch-service/v1/batches/{{BATCH_ID}}/status
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{TOKEN}}
+  AI-Resource-Group: {{RESOURCE_GROUP}}
+  Content-Type: application/json
+}
+
+docs {
+  ## Check Batch Status
+
+  Polls the status of a submitted batch job. Resend this request periodically
+  until `current_status` is `COMPLETED` before retrieving results.
+
+  ### Statuses
+  - `PENDING` — Job is queued and waiting to start
+  - `PREPARING_INPUT` — Input file is being validated
+  - `INPUT_PREPARED` — Input ready, job will be submitted to provider shortly
+  - `IN_PROGRESS` — Job is actively being processed
+  - `PREPARING_OUTPUT` — Results being written to object store
+  - `COMPLETED` — Results available in your object store
+  - `FAILED` — Processing encountered an error
+  - `CANCELLED` — Job was cancelled by the user
+}

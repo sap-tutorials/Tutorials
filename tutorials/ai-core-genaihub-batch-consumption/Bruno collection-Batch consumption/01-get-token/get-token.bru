@@ -1,0 +1,42 @@
+meta {
+  name: Get Token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{AI_AUTH_URL}}/oauth/token?grant_type=client_credentials
+  body: none
+  auth: basic
+}
+
+params:query {
+  grant_type: client_credentials
+}
+
+auth:basic {
+  username: {{CLIENT_ID}}
+  password: {{CLIENT_SECRET}}
+}
+
+script:post-response {
+  if (res.status === 200) {
+    bru.setEnvVar("TOKEN", res.body.access_token);
+    console.log("Token saved successfully");
+  }
+}
+
+docs {
+  ## Get Token
+  
+  Fetches a bearer token using client credentials from your SAP AI Core service key.
+  
+  ### Before You Run
+  Set the following environment variables in your Bruno environment:
+  - `AUTH_URL` — the `url` value from your service key (without trailing slash)
+  - `CLIENT_ID` — the `clientid` from your service key
+  - `CLIENT_SECRET` — the `clientsecret` from your service key
+  
+  ### After You Run
+  The token is automatically saved to the `TOKEN` environment variable and used in all subsequent requests.
+}
