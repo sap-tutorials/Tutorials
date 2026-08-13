@@ -141,7 +141,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     Rows can also be selected and then copied to the clipboard by pressing Ctrl+C.
 
-    ![](copy-results.png)
+    ![Copy Results](copy-results.png)
 
 3. Place the cursor on line four and open the **Syntax Help** panel.
 
