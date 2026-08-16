@@ -56,17 +56,17 @@ To sign up for an SAP BTP trial account follow the below steps.
 
 1. Click on [this link](https://www.sap.com/products/technology-platform/pricing.html) to get to the try and buy page.
 
-    ![Screenshot Trial signup1](ss-01-trial-Signup1.png)
+    ![SAP Business Technology Platform Try and Buy](ss-01-trial-Signup1.png)
 
     Select the Advanced trial option.  
 
 2. You will then receive a popup and an email with a link to access the [SAP BTP Trial](https://cockpit.hanatrial.ondemand.com/trial/#/home/trial).
 
-    ![Open the trial](ss-02-Trial-Signup2.png)
+    ![Advanced trial email](ss-02-Trial-Signup2.png)
 
     Select the region that is closest to you.
 
-    ![select region](select-region.png)
+    ![Select SAP BTP region for trial](select-region.png)
 
     >It is important to note that the first time you access your trial, you will need to choose your identity provider (you can choose the default). Additionally, if you have two-factor authentication enabled, you will have to enter the security token that is sent to you based on the method of authentication you have chosen.
 

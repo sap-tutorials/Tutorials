@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
 tags: [software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, programming-tool>sql, tutorial>beginner, tutorial>license]

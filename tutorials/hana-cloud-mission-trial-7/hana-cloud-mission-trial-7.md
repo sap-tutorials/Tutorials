@@ -39,7 +39,7 @@ primary_tag: software-product>sap-hana-cloud
 
 1. Go to the Instances tab in SAP HANA Cloud Central and open SQL Console.
 
-    ![Open DBX from HANA Cloud Central](open-dbx.png)
+    ![Open SQL console](open-dbx.png)
 
     > You can also open the SQL console by right-clicking on a database name and selecting **Open SQL console** or by using the shortcut `Ctrl+Alt+C`.
 
@@ -51,11 +51,11 @@ primary_tag: software-product>sap-hana-cloud
     SET SCHEMA SFLIGHT;
     ```  
 
-    ![SQL Console, with highlight on Current Schema](ss-02-sql-console-current-schema.png)
+    ![Change schema to SFLIGHT using SQL](ss-02-sql-console-current-schema.png)
 
     You can also change the schema by clicking on the current schema name in the center of the console, selecting `SFLIGHT` from the list, and then clicking the **Change** button.
 
-    ![Second Option to Change Current Schema in SQL Console](ss-02-sql-console-current-schema-second-option.png)
+    ![Change schema to SFLIGHT using schema selector](ss-02-sql-console-current-schema-second-option.png)
 
     The current schema will then display `SFLIGHT`.  
 
@@ -89,7 +89,7 @@ Let's find out which of the Best Run Travel agents are most popular. For this, w
 
     This will show you the contents of the new table:
 
-    ![View contents of SAGENCYDATA](ss-03-view-contents-SAGENCYDATA.png)
+    ![View data from SAGENCYDATA](ss-03-view-contents-SAGENCYDATA.png)
 
 ### Join tables to find out which agency makes the most bookings
 
@@ -111,7 +111,7 @@ FROM
 
 In the results panel, you can now see that the travel agency that makes the maximum bookings is `Rainy, Stormy, Cloudy` with a total of **27870 bookings**.
 
-![Top 5 agency details](ss-04-top-5-agency-details.png)
+![Top 5 agencies](ss-04-top-5-agency-details.png)
 
 ### Find out which days have the most bookings
 
@@ -185,7 +185,7 @@ To find the top booking days, we will first create two new tables:
 
 6. Now you can see that the most bookings for the top 5 agencies have been done on **Thursdays**.
 
-    ![Maximum days](maximum-days.png)
+    ![Most popular booking day](maximum-days.png)
 
 *Well done!*
 

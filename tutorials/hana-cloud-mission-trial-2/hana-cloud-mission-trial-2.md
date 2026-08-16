@@ -43,11 +43,11 @@ Before a service can be used in the SAP BTP cockpit, it must have its entitlemen
 
 1. In the SAP BTP cockpit, click on your **subaccount**.
 
-    ![open the subaccount](open-subaccount.png)
+    ![SAP BTP subaccount selection](open-subaccount.png)
 
 2. Then click on **Entitlements** on the left-hand side menu and search for entitlements for SAP HANA Cloud.
 
-    ![BTP Entitlements](BTP-entitlements-ft.png)
+    ![SAP BTP subaccount entitlements](BTP-entitlements-ft.png)
 
 3. Confirm that you have entitlements for the services and plans listed here:
 
@@ -65,11 +65,11 @@ Before a service can be used in the SAP BTP cockpit, it must have its entitlemen
 
     In the pop-up that opens, type `SAP HANA` in the search box to see all relevant entitlements.
 
-    ![BTP select entitlements](add-serv-plans.png)
+    ![SAP BTP subaccount entitlements selection](add-serv-plans.png)
 
     After clicking on **Add X Service Plans**, where X is the number of services you want to add,  make sure to click on the **Save** button.
 
-    ![BTP entitlements save](BTP-entitlement-save-ft.png)
+    ![Save SAP BTP subaccount entitlements](BTP-entitlement-save-ft.png)
 
 ### Add a subscription to SAP HANA Cloud tools
 

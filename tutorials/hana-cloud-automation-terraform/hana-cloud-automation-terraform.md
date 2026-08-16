@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
 tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake]
@@ -142,7 +144,7 @@ For additional details, see [Creating SAP HANA Cloud Instances Using Terraform](
 
     ![Provision a subaccount](provision-subaccount.png)
 
-4. In the SAP BTP Cockpit, examine the subaccount and added entitlements.
+  4.  In the SAP BTP Cockpit, examine the subaccount and added entitlements.
 
     ![View the subaccount](subaccount-created.png)
 

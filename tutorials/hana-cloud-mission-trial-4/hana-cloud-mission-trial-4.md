@@ -41,7 +41,7 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 - In SAP BTP cockpit, open SAP HANA Cloud Central by clicking on the subscription to SAP HANA Cloud in the Subscriptions tab.
 
-    ![BTP Manage SAP HANA Cloud](hcc-app.png)
+    ![Open SAP HANA Cloud Central](hcc-app.png)
 
 - SAP HANA Cloud Central will open in a new tab, where you can manage this instance.
 
@@ -64,7 +64,7 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 - In SAP HANA Cloud Central you can see all your instances. If you want to manage and maintain multiple instances, you can use the filters and search options on the top center area of the screen. Use **Adapt Filters** to modify the types of filters displayed.
 
-    ![HCC filters](hcc-filters.png)
+    ![Instance filters](hcc-filters.png)
 
 **Manage your instances**
 
@@ -72,7 +72,7 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 - One important option is to obtain the **SQL Endpoint** of your instance. To do so, click **Copy SQL Endpoint**. You will need this when you wish to connect to this instance from another application.
 
-    ![HCC SQL Endpoint](hcc-sqlend2.png)
+    ![Copy SQL endpoint menu item](hcc-sqlend2.png)
 
     To learn about more options to create and manage instances with SAP HANA Cloud Central, you can refer to the [**SAP HANA Cloud Administration with SAP HANA Cloud Central Guide**](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-cloud-administration-guide).
 
@@ -91,7 +91,7 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
     - Auditing
     - Performance Details including expensive statements
 
-    ![HCC Instance details](HCC-instance-details.png)
+    ![Instance details page](HCC-instance-details.png)
 
     Based on this information, you can make important decisions on how to manage and optimize your instances.
 
@@ -99,7 +99,7 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
 - Initially, you are signed in with the DBADMIN database user and the password specified during the instance provisioning wizard.  Should you wish to change this, you can do so using the **Choose Authentication** menu item.
 
-    ![Choose authentication](choose-auth.png)
+    ![Sign in with different user menu item](choose-auth.png)
 
 **Browse the database objects**
 
@@ -115,7 +115,7 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
     From the instances action menu, select **Open Database Objects**.
 
-    ![open database objects](open-database-objects.png)
+    ![Open database objects](open-database-objects.png)
 
     Select Views, set the schema to be **SYS**, and search for **M_**.
 
@@ -125,7 +125,7 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
     Open the monitoring view **M_DATABASE** and examine its metadata.
 
-    ![view metadata](view-metadata.png)
+    ![View an object's metadata](view-metadata.png)
 
     Using the database objects app you can quickly locate and examine database objects.
 
@@ -135,11 +135,11 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
 
     From the instances page action menu or from the database objects app, select **Open SQL Console**.  
 
-    ![Open SQL Consonle](open-sql-console.png)
+    ![Open SQL Console](open-sql-console.png)
 
     Once the SQL Console app opens, notice that details can be seen about the current schema, the connected instance, and that further details can be seen in the instance information dialog such as the user being used, and the instance's SQL endpoint.
 
-    ![SQL console tab](sql-console-tab.png)
+    ![SQL Console](sql-console-tab.png)
     
     Execute the below SQL query to see the database details.
 
@@ -147,7 +147,7 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
     SELECT * FROM SYS.M_DATABASE;
     ```
     
-    ![SQL console query](sql-console-ui.png)
+    ![A query in the SQL Console](sql-console-ui.png)
 
 ### Get to know SAP Business Application Studio
 
@@ -176,7 +176,7 @@ The SAP Business Application Studio provides tools specific to building business
 
 1. Go to the [SAP BTP Cockpit trial home page](https://account.hanatrial.ondemand.com/trial/#/home/trial).
 
-    ![Trial Home Page Quick Access BAS](ss-10-Trial-home-page-quick-access-BAS.png)
+    ![Quick tool access to the Business Application Studio](ss-10-Trial-home-page-quick-access-BAS.png)
 
 2. After logging in, click on the **SAP Business Application Studio** button under the **Quick Tool Access** area.
 
@@ -199,7 +199,7 @@ The SAP Business Application Studio provides tools specific to building business
 
 3. Scroll down or use the search bar to find **SAP Business Application Studio** and click on the three dots and choose **Create** to add a subscription.  If you can see the option **Go to Application**, you are already subscribed.
 
-    ![BTP Marketplace](ss-11-BTP-marketplace.png)
+    ![SAP BTP Service Marketplace](ss-11-BTP-marketplace.png)
 
 4. Click on **Security** and then **Users**.
 
@@ -211,7 +211,7 @@ The SAP Business Application Studio provides tools specific to building business
 
 5. Open the SAP Business Application Studio.
 
-    ![Open BAS](start-bas.png)
+    ![Open SAP Business Application Studio](start-bas.png)
 
 6. Click on **OK** to accept the privacy statement if this is your first-time accessing SAP Business Application Studio.
 

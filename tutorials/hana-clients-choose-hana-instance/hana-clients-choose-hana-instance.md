@@ -1,24 +1,26 @@
 ---
 parser: v2
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
 
 # Choose an SAP HANA Database
 
-<!-- description --> Learn about SAP HANA Cloud and SAP HANA, express edition and choose one that will be used with the SAP HANA client interfaces in subsequent tutorials.
+<!-- description --> Learn about SAP HANA Cloud and SAP HANA, on premise and choose one that will be used with the SAP HANA client interfaces in subsequent tutorials.
 
 ## Prerequisites
 
 - A Microsoft Windows, Linux, or Mac computer
-- A machine that can run SAP HANA, express edition if SAP HANA Cloud free tier is not used
+- A machine that can run SAP HANA on premise if SAP HANA Cloud free tier is not used
 
 ## You will learn
 
-- How to create an instance of SAP HANA Cloud or SAP HANA, express edition
-- How to connect to a SAP HANA Cloud or an SAP HANA, express edition database
+- How to create an instance of SAP HANA Cloud
+- How to connect to a SAP HANA Cloud or an SAP HANA on premise database
 
 ## Intro
 
@@ -49,7 +51,6 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 |  Version     | Notes
 |  :------------- | :-------------
 |  [SAP HANA Platform 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM)           | Released in November 2016. Current version is 2.0 SPS 08, which was released on Nov 20th, 2024.
-|  **[SAP HANA, express edition](https://help.sap.com/docs/SAP_HANA_EXPRESS_EDITION)**    | Released in September 2016.  Current version is 2.0 SPS 08.
 |  **[SAP HANA Cloud](https://help.sap.com/docs/hana-cloud)**   | Released in March 2020.  New features are released quarterly.
 
 ### SAP HANA Cloud
@@ -150,23 +151,7 @@ Continue with this tutorial once you have created an SAP HANA Cloud instance as 
 
 Congratulations! You have connected to SAP HANA Cloud and performed a few queries.
 
-### SAP HANA, express edition
-
->This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not set up an SAP HANA instance through the SAP HANA Cloud free tier as explained in step 3.
-
-SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/products/technology-platform/hana/express-trial.html).  
-
-SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides a binary install as well as [docker images](https://hub.docker.com/u/saplabs).  This is described in the [Getting Started with SAP HANA 2.0, express edition (Binary Installer Method)](https://help.sap.com/docs/SAP_HANA,_EXPRESS_EDITION/32c9e0c8afba4c87814e61d6a1141280).  A database-only option and a database + XS Advanced Applications option are available. The database + XS Advanced Applications install includes the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
-
-![SAP HANA express download manager](express-download-manager.png)
-
-Further details can be found in the [release notes](https://www.sap.com/documents/2023/12/242fc18e-9c7e-0010-bca6-c68f7e60039b.html).   
-
-Choose an option and proceed to install SAP HANA, express edition.  The server-only install, which requires less memory, is sufficient to complete the tutorials in the mission.  Be sure to note the SAP HANA database master password, as it will be needed later for connecting.
-
-At this point, you should have a running instance of SAP HANA, express edition.
-
-### Connect to SAP HANA, express edition
+### Connect to SAP HANA on premise
 
 >This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not set up an SAP HANA instance using the SAP HANA Cloud free tier as explained in step 3.
 
@@ -174,9 +159,9 @@ A default installation will contain one [system](https://help.sap.com/docs/SAP_H
 
 The system database contains information about the tenant database(s) and is used for overall administration.  The default port for the system database is **39013**.  Later in this tutorial mission, a connection to the tenant database will be made and tables will be created and populated with data.  For more information, see [SAP HANA Tenant Databases Operations Guide](https://help.sap.com/docs/SAP_HANA_PLATFORM/78209c1d3a9b41cd8624338e42a12bf6/0ba9f43aed594a449d497fabf6bc381e.html).
 
-The SAP HANA, express edition includes a command line tool (part of the SAP HANA client install) called [HDBSQL](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c22c67c3bb571014afebeb4a76c3d95d.html) that can be used to query the database.  
+The SAP HANA on premise includes a command line tool (part of the SAP HANA client install) called [HDBSQL](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c22c67c3bb571014afebeb4a76c3d95d.html) that can be used to query the database.  
 
-The following steps will demonstrate connecting to and examining a SAP HANA, express edition database.  
+The following steps will demonstrate connecting to and examining a SAP HANA on premise edition database.  
 
 1. Enter the following to connect to the system database:
 
@@ -198,7 +183,7 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
 
     If the hdbsql command cannot be found, simply read through the following examples.  The installation and further examples of running HDBSQL will be covered in subsequent tutorials.
 
-2. Determine the IP address of the machine that is running SAP HANA, express edition.  Record the value as it will be needed in later tutorials in the mission.  It is important to note the IP address or host name of the machine, as this will be needed in later tutorials.
+2. Determine the IP address of the machine that is running SAP HANA on premise.  Record the value as it will be needed in later tutorials in the mission.  It is important to note the IP address or host name of the machine, as this will be needed in later tutorials.
 
     ```Shell
     ip addr
@@ -255,6 +240,6 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
 
 ### Knowledge check
 
-Congratulations!  You now have access to an SAP HANA instance and understand some of the differences between SAP HANA Cloud and SAP HANA, express edition.
+Congratulations!  You now have access to an SAP HANA instance and understand some of the differences between SAP HANA Cloud and SAP HANA on premise.
 
 ---

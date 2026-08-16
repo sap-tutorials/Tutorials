@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 20
 tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake]
@@ -19,8 +21,6 @@ primary_tag: software-product>sap-hana-cloud
   - An overview of two different runtimes that SAP HANA Cloud can be provisioned into
   - How to use the BTP, CF, and service manager command line interfaces (CLIs) with an SAP HANA Cloud instance
 
----
-
 SAP HANA Cloud Central can be used to perform many administrative tasks for SAP HANA Cloud instances within a graphical interface such as creating, deleting, starting, stopping, updating, upgrading, cloning, or running diagnostic checks. 
 
 ![SAP HANA Cloud Central](HCC.png)
@@ -30,6 +30,8 @@ A text-based interface can be faster, more efficient, and less error prone when 
 ![running and scheduling tasks](running-scheduling.png)
 
 > Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
+
+---
 
 ### Executing SQL Statements from a shell
 
@@ -118,18 +120,17 @@ Further details can be found at [Consuming SAP BTP Services from Various Environ
 
     ![Create service](create-service.png)
 
-3. When creating an instance using the multi-environment edition of SAP HANA Cloud Central, the instance is provisioned into the subaccount (Other).  
+3. When creating an instance using SAP HANA Cloud Central, you are provided a choice to provision the instance in the subaccount (Other) or to a Cloud Foundry space.  
 
-    When creating an instance using the Cloud Foundry edition of SAP HANA Cloud Central, the instance is provisioned in the Cloud Foundry environment.
+    ![runtime environment](hcc-create-instance.png)
 
-    You can also choose to copy the JSON parameters that the multi-environment edition wizard generates and then use the SAP BTP wizard (or one of the CLIs shown in the next section) to provision the instance in your environment of choice.
+    You can also choose to copy the JSON parameters that the wizard generates and then use the one of the CLIs (shown in the next section) to provision the instance.
 
     ![copy configuration](create-json.png)
 
 4. Considerations when provisioning to the subaccount (Other):
 
-    * SAP HANA Cloud Central, multi-environment edition (introduced in 2022 QRC 3) provisions to the subaccount (Other) in the Create Instance wizard
-    * SAP HANA Cloud Central, multi-environment edition uses the BTP subaccount [role collections](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/role-collections-for-sap-hana-cloud) for security
+    * BTP subaccount [role collections](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/role-collections-for-sap-hana-cloud) are used for security
     * Instances can be managed using the SAP BTP CLI or SAP Service Manager
 
 5. Considerations when provisioning to a Cloud Foundry space:
@@ -137,23 +138,21 @@ Further details can be found at [Consuming SAP BTP Services from Various Environ
     * SAP HANA native development in the SAP Business Application Studio currently deploys to HDI containers in Cloud Foundry spaces
     * HDI containers provisioned into Cloud Foundry can be mapped to SAP HANA Cloud databases provisioned to the subaccount (Other)
     * If you already have instances deployed to Cloud Foundry spaces, you may wish to have all of your instances in the same runtime environment
-    * SAP HANA Cloud Central, Cloud Foundry edition, uses the Cloud Foundry [space roles](https://help.sap.com/docs/btp/sap-business-technology-platform/about-roles-in-cloud-foundry-environment) for security
+    * Cloud Foundry [space roles](https://help.sap.com/docs/btp/sap-business-technology-platform/about-roles-in-cloud-foundry-environment) are used for security
     * Instances can be managed using the Cloud Foundry CLI
-    * SAP HANA Cloud Central, multi-environment edition cannot currently (as of Q3 2023) create or delete instances provisioned in Cloud Foundry.  Instances can be created or deleted using the SAP BTP Cockpit or the Cloud Foundry CLI
-
 
 ### Overview of the CLIs
-A command line interface (CLI) is a text-based interface.  There are three different CLIs that can be used with an SAP HANA Cloud instance to perform administrative tasks such as start, stop, create, delete, update, or upgrade.
+A command line interface (CLI) is a text-based interface.  There are two different CLIs that can be used with an SAP HANA Cloud instance to perform administrative tasks such as start, stop, create, delete, update, or upgrade.
 
-The CLI used depends on whether the SAP HANA Cloud instances were provisioned to the subaccount (Other) or to a Cloud Foundry space.  Details on the three CLIs can be found at [Create and Manage SAP HANA Cloud Instances Using the CLI](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/create-and-manage-sap-hana-cloud-instances-using-cli).  
+The CLI used depends on whether the SAP HANA Cloud instances were provisioned to the subaccount (Other) or to a Cloud Foundry space.  Details on the two CLIs can be found at [Create and Manage SAP HANA Cloud Instances Using the CLI](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/create-and-manage-sap-hana-cloud-instances-using-cli).  
 
 [SAP BTP CLI](https://help.sap.com/docs/btp/sap-business-technology-platform/account-administration-using-sap-btp-command-line-interface-btp-cli) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.  More details can be found in the [btp CLI Command Reference](https://help.sap.com/docs/btp/btp-cli-command-reference/btp-cli-command-reference).  Details on how to install the CF CLI can be found in the tutorial [Get Started with the SAP BTP Command Line Interface](cp-sapcp-getstarted).  Additionally, the SAP BTP CLI can be used to create and configure subaccounts.
 
 [Cloud Foundry CLI (CF CLI)](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/using-cloud-foundry-command-line-interface-cf-cli-with-sap-hana-cloud) can be used to create, update, configure, or delete instances provisioned in a Cloud Foundry space.  Further details can be found at [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) and [Cloud Foundry Releases](https://github.com/cloudfoundry/cli/releases).
 
-[SAP Service Manager](https://help.sap.com/docs/service-manager/sap-service-manager/sap-service-manager) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.   The service manager also provides a REST API that can be accessed programmatically in applications such as a Node.js application.  Details on how install the service manager can be found at [Installing the Service Manager Control (SMCTL) Command-Line Tool](https://help.sap.com/docs/service-manager/sap-service-manager/installing-service-manager-control-smctl-command-line-tool).
+[SAP Service Manager](https://help.sap.com/docs/service-manager/sap-service-manager/sap-service-manager) can create, read, update, and delete an instance provisioned in a subaccount (Other).  It can also be used to read the configuration of an instance deployed in a Cloud Foundry space.   The service manager provides a REST API that can be accessed programmatically in applications such as a Node.js application.  Details on the service manager can be found at [Working with SAP Service Manager APIs](https://help.sap.com/docs/service-manager/sap-service-manager/working-with-sap-service-manager-apis).
 
-The following steps will provide examples of each CLI as well as accessing the SAP Service Manager REST API.  **Please install one or more of the CLIs before proceeding.**
+The following steps will provide examples of each CLI.  The SAP Service Manager REST API will covered in the next tutorial.  **Please install one or both of the CLIs before proceeding.**
 
 When using a CLI to perform an update to an instance, the update operation will take an input parameter in JSON format that describes the change being requested.  The parameters are common across the three CLIs.  Details on the SAP HANA Cloud service specific parameters can be found at [Parameter Reference](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/13ed4d847bd3485c8b3ef2bc7b89ec79.html).  
 
@@ -817,44 +816,6 @@ When an upgrade is available, the details for the upgrade options are included i
     ```
 
     ![cf upgrade](cf-upgrade.png)
-
-### Examples using the Service Manager CLI
-Before proceeding ensure that your user has the proper permissions.  The Service Manager uses the same role collection Subaccount Service Administrator that was assigned with the BTP CLI previously.  Further details can be found at [Assign Subaccount Service Administrator Collection](https://help.sap.com/docs/service-manager/sap-service-manager/assign-subaccount-service-administrator-collection).
-
-#### Version and help
-
-```Shell
-smctl version
-smctl help
-```
-
-![sm help](sm-help.png)
-
-#### Log on
-
-```Shell
-smctl info
-smctl login --url https://service-manager.cfapps.<REGION>.hana.ondemand.com --param subdomain=<SUBDOMAIN>
-```
-
-![service manager login](sm-login.png)
-
-The region and subdomain can be obtained from the subaccount overview page within the SAP BTP Cockpit.  Additional details are available at [Logging in to SAP Service Manager](https://help.sap.com/docs/service-manager/sap-service-manager/logging-in-to-sap-service-manager).  Provide your SAP BTP credentials for the user and password.
-
-![service manager login required values](sm-login-values.png)
-
-#### List instances
-
-```Shell
-smctl list-instances --output json
-```
-
-![Viewing the instance list](sm-list-instances.png)
-
-
-The commands are very similar to the BTP CLI and are not repeated here. The BTP CLI additionally provides commands for working with global accounts.
-
-Further details can be found at [Service Manager Control (SMCTL) CLI Commands](https://help.sap.com/docs/service-manager/sap-service-manager/service-manager-control-smctl-cli-commands).
 
 
 ### Knowledge check

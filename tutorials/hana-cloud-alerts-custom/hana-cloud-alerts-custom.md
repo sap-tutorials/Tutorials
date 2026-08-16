@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, software-product>sap-automation-pilot, programming-tool>python]
@@ -37,7 +39,6 @@ An SAP Automation Pilot command will be created to check if any maintenance item
 >---
 >
 >If you do not have an instance of the SAP Alert Notification service, see step 5 of the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts).
-
 
 ---
 
