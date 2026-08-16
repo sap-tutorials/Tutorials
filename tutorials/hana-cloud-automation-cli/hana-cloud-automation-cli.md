@@ -21,6 +21,8 @@ primary_tag: software-product>sap-hana-cloud
   - An overview of two different runtimes that SAP HANA Cloud can be provisioned into
   - How to use the BTP, CF, and service manager command line interfaces (CLIs) with an SAP HANA Cloud instance
 
+## Overview
+
 SAP HANA Cloud Central can be used to perform many administrative tasks for SAP HANA Cloud instances within a graphical interface such as creating, deleting, starting, stopping, updating, upgrading, cloning, or running diagnostic checks. 
 
 ![SAP HANA Cloud Central](HCC.png)
