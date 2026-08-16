@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]

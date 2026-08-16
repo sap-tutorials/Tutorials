@@ -44,23 +44,23 @@ The Import and Export application in SAP HANA Cloud Central simplifies operation
 
 1. In the pane on the left, select the **Import and Export** application and click on **Import**.
 
-    ![import and export app](import.png)
+    ![Import and export app](import.png)
 
 2. Select the instance that the data will be imported to and click next.
 
 3. Choose to import catalog objects, specify that the import will be from a local file (as opposed to a file on a cloud storage provider), and browse to the previously downloaded file and click next.
 
-    ![catalog import](import-file.png)
+    ![Catalog import](import-file.png)
 
 4. The list of available objects to be imported is shown.  Select them all and click **Add to List**.  It is possible at this point to optionally rename the schema that these object will be imported.  Click next.
 
-    ![object selection](import-selection.png)
+    ![Object selection](import-selection.png)
 
 5. The options for the import are shown next.  Click Import to start the import operation.
 
 6. Once the import is completed, the state will change to completed.  
 
-    ![import state](import-complete.png)
+    ![Summary of imports and exports](import-complete.png)
 
 ### Preview the data
 
@@ -68,15 +68,15 @@ Once the data is imported, you can take a look at the imported tables in the dat
 
 1. Open the database objects app, connect to the instance, specify a schema filter of **SFLIGHT**, and click on tables.
 
-    ![SFLIGHT objects](view-tables.png)
+    ![Objects in the SFLIGHT schema](view-tables.png)
 
 2. Select a table such as SAIRPORT, and choose **SELECT Statement** from the Generate SQL Statement dropdown.
 
-    ![Open Data](open-sql-console.png)
+    ![View the data of an table](open-sql-console.png)
 
     The data of the table will now appear in the SQL Console.
 
-    ![SQL Query](sql-query.png)
+    ![SQL query](sql-query.png)
 
 You can browse the dataset to get a better overview of the data available.
 

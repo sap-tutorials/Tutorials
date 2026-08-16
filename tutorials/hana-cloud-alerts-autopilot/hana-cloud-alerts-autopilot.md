@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp, software-product>sap-automation-pilot]

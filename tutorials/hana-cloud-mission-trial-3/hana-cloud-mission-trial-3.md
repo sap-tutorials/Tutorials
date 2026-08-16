@@ -34,7 +34,7 @@ A few notes to remember about free tier instances:
 
 -If you are instead using a productive instance (below right), a monthly consumption unit estimate is shown.
 
-    ![Estimator for each tier](estimator-tiers.png)
+![Estimator for each tier](estimator-tiers.png)
 
 ---
 
@@ -48,7 +48,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
 1. In SAP BTP cockpit, open SAP HANA Cloud Central by clicking on the subscription to SAP HANA Cloud in the **Subscriptions** tab. With a Free Tier Service Plan, you have the option to configure your instance manually or clone a SAP HANA Database. Select **Configure manually** as shown below.
 
-    ![HCC ME tooling](hcc-app.png)
+    ![Open SAP HANA Cloud Central](hcc-app.png)
 
 2. On the top-right corner of the screen, click on **Create Instance**.
 
@@ -60,7 +60,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
     > If you would like to learn more about **SAP HANA Cloud, Data Lake**, and [Get Started with a Standalone SAP HANA Cloud, Data Lake](mission.hana-cloud-data-lake-get-started), navigate to the linked mission for the basics.
 
-    ![Free Tier Provisioning Wizard](free-tier-step-1.png)
+    ![Free Tier provisioning wizard](free-tier-step-1.png)
 
 4. Click on **Next Step** to continue.
 
@@ -70,7 +70,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
 1. In SAP BTP cockpit, open SAP HANA Cloud Central by clicking on the subscription to SAP HANA Cloud in the **Subscriptions** tab.
 
-    ![HCC ME tooling](open-hcc.png)
+    ![Open SAP HANA Cloud Central](open-hcc.png)
 
 2. On the top-right corner of the screen, click on **Create Instance**.
 
@@ -82,7 +82,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
     Note that if you have enabled only one type of service plan in your SAP HANA Cloud entitlement (e.g. free tier only), the License section does not appear and that service plan type will be used automatically.
 
-    ![Paid Tier Provisioning Wizard](paid-tier-step-1.png)
+    ![Paid tier provisioning wizard](paid-tier-step-1.png)
 
 4. Click on **Next Step** to continue.
 
@@ -94,7 +94,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
 1. In the **Basics** section, enter a name for your instance in the field **Instance Name**, such as `HC_HDB`.
 
-    ![HANA step 1](hdb-instance-name.png)
+    ![General settings](hdb-instance-name.png)
 
     > This field does not allow any spaces in the name. Keep in mind that you will not be able to change the name after the instance has been created.
 
@@ -103,7 +103,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 [OPTION BEGIN [Production]]
 1. In the **Basics** section, enter a name for your instance in the field **Instance Name**, such as `HC_HDB`.
 
-    ![HANA step 1](hdb-instance-name-prod.png)
+    ![General settings](hdb-instance-name-prod.png)
 
     > This field does not allow any spaces in the name. Keep in mind that you will not be able to change the name after the instance has been created.
 
@@ -129,7 +129,7 @@ For a free tier instance, the option to specify a performance class which can ch
 
 As well, the size is predefined to 16 GB for memory, 80 GB for storage and 1 vCPU for computation.
 
-![SAP HANA Database Memory Allocation](hdb-memory2.png)
+![Size and availability](hdb-memory2.png)
 
 Finally, the ability to set the availability zone and optional replicas are not available in the free tier service.
 
@@ -143,7 +143,7 @@ In a production environment, you are able to select a performance class which af
 
 1. Here, you can select how much **Memory** you wish to allocate to this instance.
 
-    ![HDB Memory](2-ss-04-HDB-Memory.png)
+    ![Size and availability](2-ss-04-HDB-Memory.png)
 
     As you increase your memory requirements, the **Compute** and **Storage** values will be automatically adjusted as well.
 
@@ -167,7 +167,7 @@ The connections settings enables you to specify which IP addresses can connect t
 
 1. You may manage the allowed connections for your SAP HANA database instance, i.e. allowing access to your SAP HANA database instance from outside of the SAP Business Technology Platform (SAP BTP). Selecting Allow only BTP IP addresses denies all IP addresses outside SAP BTP. You may choose to allow access to specific applications by inserting one or more specific IP addresses or you can allow connections from all IP addresses.
 
-    ![connections](connections.png)
+    ![Connections](connections.png)
 
 [OPTION END]
 
@@ -175,7 +175,7 @@ The connections settings enables you to specify which IP addresses can connect t
 
 1. You may manage the allowed connections for your SAP HANA database instance, i.e. allowing access to your SAP HANA database instance from outside of the SAP Business Technology Platform (SAP BTP). Selecting Allow only BTP IP addresses denies all IP addresses outside SAP BTP. You may choose to allow access to specific applications by inserting one or more specific IP addresses or you can allow connections from all IP addresses.
 
-    ![connections](connections-prod.png)
+    ![Connections](connections-prod.png)
 
 [OPTION END]
 
@@ -189,7 +189,7 @@ The advanced settings can be used to select a version, to enable additional func
 
 1. The version can be selected.  The default is the latest selected version.  Additional details can be found at [SAP HANA Database Upgrades and Patches](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-database-upgrades-and-patches).
 
-    ![HDB advanced settings](hdb-advanced-settings2.png)
+    ![Advanced settings](hdb-advanced-settings2.png)
 
 [OPTION END]
 
@@ -197,7 +197,7 @@ The advanced settings can be used to select a version, to enable additional func
 
 1. Under **Advanced Settings**, you can choose to enable additional features such as the **JSON Document Store**, **Natural Language Processing (NLP)**, and **Triple Store**.  If your database does not have the required `vCPUs`, you can click on the link on the error message, which will change your original setup and add more `vCPUs` automatically.
 
-    ![Advanced Settings](prod-advanced-settings2.png)
+    ![Advanced settings](prod-advanced-settings2.png)
 
 [OPTION END]
 
@@ -217,7 +217,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
 1. Once you select **Create Data Lake** option, two more menu options will appear in the wizard with additional steps.  Note that a data lake Files instance is not included in the free tier plan.
 
-    ![Create Data Lake](hdl-create2.png)
+    ![Add a data lake](hdl-create2.png)
 
     Give your data lake instance a name under **Instance Name** such as HC_DL and set the allowed connections.
 
@@ -229,7 +229,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
 3. Under the **Additional Settings**, the option to enable backups is available for productive instances and the option to enable the cloud connector which enables connectivity to on-premise databases is available.
 
-    ![Data Lake Create Instances](hdl-create-instance2.png)
+    ![Data lake additional settings](hdl-create-instance2.png)
 
 [OPTION END]
 
@@ -237,7 +237,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
 1. If you click on **Create data lake**, a managed SAP HANA Cloud, data lake will be provisioned alongside your SAP HANA database in SAP HANA Cloud and will include a data lake Files instance.
 
-    ![Data Lake Enabled](hdl-prod-create2.png)
+    ![Add a data lake](hdl-prod-create2.png)
 
     Give your data lake instance a name under **Instance Name** such as HC_DL and set the allowed connections.
 
@@ -245,7 +245,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
     The size section is where you can adjust how many **coordinators** and **workers** you want for your data lake, as well the amount of **storage** you wish to allocate to this instance.
 
-    ![Data Lake IQ](hdl-prod-dlre2.png)
+    ![Data lake size](hdl-prod-dlre2.png)
 
     > The coordinator and worker size, as well as the number of workers will affect instance pricing. For details, click on the link beside the Total Estimate to open the SAP HANA Cloud Capacity Unit Estimator.
 
@@ -253,7 +253,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
 3. Under the **Additional Settings**, the option to enable backups is available for productive instances and the option to enable the cloud connector which enables connectivity to on-premise databases is available.
 
-    ![HDL Connections](hdl-prod-review2.png)
+    ![Additional settings](hdl-prod-review2.png)
 
 [OPTION END]
 
@@ -269,24 +269,24 @@ The final step is learning how to stop and start your instance.
 
 1. To stop an instance, just click on **Stop** in the three dots menu next to the SAP HANA Cloud instance line in SAP HANA Cloud Central. Once your instance is stopped, the menu item will be updated to **Start**.
 
-    ![Three Dots](three-dots2.png)
+    ![Stop menu item](three-dots2.png)
 
 2. To restart the instance, simply click on the **Start** menu item. Once it's ready to be used, it will show a green **Created** status on SAP BTP Cockpit, and a **Running** status on the SAP HANA Cloud Central.
 
 >Note that all these processes take a few minutes to be completed and to show an updated status. You can use the auto-refresh button to select how often you would like your instances list to periodically refresh.
 
-> ![Refresh Instances](time-refresh2.png)
+> ![Auto refresh](time-refresh2.png)
 >
 
 ### Upgrade to Paid Tier
 
 When you are ready to upgrade your free tier instance running in a productive SAP BTP account to a Paid Tier, you can choose the three dots menu (under Actions) next to the SAP HANA Cloud instance line in SAP HANA Cloud Central.  From here, click on **Upgrade to Paid Tier**.  Note that paid tier plans must be enabled in your SAP HANA Cloud entitlement for the **Upgrade to Paid Tier** menu item to appear.
 
-![upgrade to paid tier](upgrade-paid-tier-2.png)
+![Upgrade to paid tier](upgrade-paid-tier-2.png)
 
 A dialog box will appear indicating that there will be costs associated with the Paid Tier instance – an estimate is also included.  Click on **Upgrade to Paid Tier** to complete the process.
 
-![upgrade to paid tier](upgrade-paid-tier-confirm.png)
+![Upgrade to paid tier confirmation](upgrade-paid-tier-confirm.png)
 
 Now you know how to provision an instance of SAP HANA Cloud using SAP BTP Cockpit and SAP HANA Cloud Central. In the next tutorial, learn about the tools that help to manage and access your database instance.
 

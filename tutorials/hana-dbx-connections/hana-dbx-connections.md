@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, software-product-function>sap-hana-cloud--data-lake]
@@ -186,7 +188,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
 ### Add a data lake Files container (Optional)
 
-A [data lake Files container](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/understanding-data-lake-files) provides storage for non structured files such as images or PDF documents.  It can also store structured files such as CSV, parquet, or ORC files and with the use of [SQL on Files](https://help.sap.com/docs/hana-cloud-data-lake/administration-guide-for-sql-on-files/using-sql-on-files), queries can be performed on the data contained in those files.  An example of using the data lake Files container is shown as a target for an export operation at [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import).
+A [data lake Files container](https://help.sap.com/docs/hana-cloud-data-lake/user-guide-for-data-lake-files/understanding-data-lake-files) provides storage for non structured files such as images or PDF documents.  It can also store structured files such as CSV, parquet, or ORC files and with the use of [SQL on Files](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-on-files-guide/sap-hana-native-sql-on-files-overview), queries can be performed on the data contained in those files.  An example of using the data lake Files container is shown as a target for an export operation at [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import).
 
 1. A connection can be added to a data lake Files container.  A data lake Files container is not currently available in free tier instances of SAP HANA Cloud.
 

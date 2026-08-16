@@ -1,5 +1,7 @@
 ---
 parser: v2
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, tutorial>license]
@@ -103,6 +105,22 @@ Individual read only queries can be routed to the replica.  There are some condi
 
     Further details on hint based routing can be found at [Hints for Active/Active (Read-Enabled)](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/hint-details?locale=en-US#loio4ba9edce1f2347a0b9fcda99879c17a1__section_HintsforActiveActive).
 
+    A few additional queries that can be used to gather details about the instance currently connected to are included below.
+
+    ```SQL
+    SELECT * FROM M_SERVICES;
+    SELECT * FROM M_CONNECTIONS WHERE CONNECTION_ID = CURRENT_CONNECTION;
+    SELECT DISTINCT S.VOLUME_REPLICATION_ROLE
+    FROM 
+        M_CONNECTIONS AS C
+        INNER JOIN
+        M_SERVICES AS S
+        ON S.HOST = C.HOST
+            AND S.PORT = C.PORT
+    WHERE CONNECTION_ID = CURRENT_CONNECTION AND SERVICE_NAME = 'indexserver'
+        AND own = 'TRUE';
+    ```
+
 4. Examine the M_SQL_PLAN_CACHE view of the source and replica.  Views prefixed with M_ are monitoring views.  The view [M_SQL_PLAN_CACHE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/m-sql-plan-cache-system-view?locale=en-US) provides execution plan statistics.  _SYS_VR_REPLICA is a schema prefix used to access monitoring views that reside on a replica node.
 
     ```SQL
@@ -115,6 +133,7 @@ Individual read only queries can be routed to the replica.  There are some condi
     --Notice that only the statement routed to the replica appears with this query
 
     --ALTER SYSTEM CLEAR SQL PLAN CACHE;
+    --with hint(ignore_plan_cache)
     ```
 
     ![querying M_SQL_PLAN_CACHE](M_SQL_PLAN_CACHE.png)
