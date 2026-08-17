@@ -2,8 +2,6 @@
 parser: v2
 author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
-author_name: Dan van Leeuwen
-author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph, tutorial>license]
