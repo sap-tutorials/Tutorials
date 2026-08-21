@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 
 To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Use Trial to Create a Service Instance for SAP Document AI](cp-aibus-dox-service-instance) or [Use Free Tier to Create a Service Instance for SAP Document AI](cp-aibus-dox-free-service-instance). 
 
-<!-- border -->![DOX Service Key](service-key-details.png)
+![DOX Service Key](service-key-details.png)
 
 
 
@@ -36,7 +36,7 @@ To get your OAuth access token you will need the values highlighted in the image
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-<!-- border -->![DOX TOKEN](web-browser.png)
+![DOX TOKEN](web-browser.png)
 
 You should receive a response like the following:
 

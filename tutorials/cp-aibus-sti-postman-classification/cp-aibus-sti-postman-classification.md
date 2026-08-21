@@ -113,7 +113,7 @@ Feel free to try different service request messages in the `Body` tab and find o
 
 You can also try out the other `POST /Classify` requests.
 
-<!-- border -->![Classify Requests](classify-requests2.png)
+![Classify Requests](classify-requests2.png)
 
 You have now successfully used Service Ticket Intelligence to classify new service requests.
 
