@@ -38,17 +38,17 @@ Video tutorial version:
 
     ![sleep](sleep.png)
 
-    ```SQL
-    PROCEDURE "sleep" ( )
-       LANGUAGE SQLSCRIPT
-       SQL SECURITY INVOKER
-       READS SQL DATA AS
-    BEGIN USING SQLSCRIPT_SYNC as SyncLib;
+   ```SQL
+   PROCEDURE "sleep" ( )
+      LANGUAGE SQLSCRIPT
+      SQL SECURITY INVOKER
+      READS SQL DATA AS
+   BEGIN USING SQLSCRIPT_SYNC as SyncLib;
 
-    call SyncLib:SLEEP_SECONDS(10);
+   call SyncLib:SLEEP_SECONDS(10);
 
-    END
-    ```
+   END
+   ```
 
 1. Deploy the to the database again using the SAP HANA Projects view.
 
@@ -88,22 +88,22 @@ Video tutorial version:
 
     ![Call Stored Procedure](call_stored_procedure.png)
 
-    ```JavaScript
-    const cds = require('@sap/cds')
-    module.exports = cds.service.impl(function () {
-        this.on('sleep', async () => {
-        try {
-            let dbQuery = ' Call "sleep"( )'
-            let result = await cds.run(dbQuery, { })
-            cds.log().info(result)
-            return true
-        } catch (error) {
-            cds.log().error(error)
-            return false
-        }
-        })
-    })
-    ```
+   ```JavaScript
+   const cds = require('@sap/cds')
+   module.exports = cds.service.impl(function () {
+       this.on('sleep', async () => {
+       try {
+           let dbQuery = ' Call "sleep"( )'
+           let result = await cds.run(dbQuery, { })
+           cds.log().info(result)
+           return true
+       } catch (error) {
+           cds.log().error(error)
+           return false
+       }
+       })
+   })
+   ```
 
 1. From the console in the project root hopefully you still have the `cds watch ...` running. Otherwise start it again with `cds watch --profile hybrid` to start the CAP service layer for testing.  If you have performed the tutorial [SAP HANA Cloud, Add User Authentication to Your Application](hana-cloud-cap-add-authentication), remember you must also run the application router to test your service with authentication.
 

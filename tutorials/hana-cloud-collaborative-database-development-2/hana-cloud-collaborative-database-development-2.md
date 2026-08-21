@@ -49,11 +49,11 @@ Now you can create the first object in your project: an `HDBTABLE` that will sto
 
   1.	In the explorer panel on the left side, expand the folders under your Project **WS3_1**. Click on the `src` folder.
 
-      <!-- border -->![SRC Folder](ss_01_src_folder.png)
+      ![SRC Folder](ss_01_src_folder.png)
 
   2.	To create a new SAP HANA Database Artifact, you can press the **F1 key** or click on **View – Find Command** at the top of the screen to open a search prompt. Enter **HANA** in the field and from the dropdown list of functionalities, choose **SAP HANA: Create SAP HANA Database Artifact**.
 
-      <!-- border -->![Search Prompt](ss_02_search_prompt.png)
+      ![Search Prompt](ss_02_search_prompt.png)
 
   3.	In the window for creating a new SAP HANA Database Artifact, click on the   folder icon in the first field (Choose path where you want to create the artifact). Navigate to your project, the `src` folder, and then click on **Open**.
 
@@ -75,37 +75,37 @@ Now you can create the first object in your project: an `HDBTABLE` that will sto
     > **The name of the table in this code must be written in upper case characters**.
 
 
-    ```SQL
-  column table "INVENTORY" (
-   "PRODUCT"  NVARCHAR(10),
-   "PRODUCTDESCRIPTION"  NVARCHAR(80),
-   "MATERIAL"  NVARCHAR(80),
-   "MATERIALDESCRIPTION"  NVARCHAR(80),
-   "DESTINATIONCOUNTRY"  NVARCHAR(2),
-   "DESTINATIONCOUNTRYDESCRIPTION"  NVARCHAR(80),
-   "DESTINATIONREGION"  NVARCHAR(80),
-   "REGIONDESCRIPTION"  NVARCHAR(80),
-   "INVENTORYLOCATION"  NVARCHAR(80),
-   "INVENTORYLOCATIONDESCRIPTION"  NVARCHAR(80),
-   "LOCATIONLAT"  DECIMAL(22, 6),
-   "LOCATIONLONG"  DECIMAL(22, 6),
-   "TARGETSTOCKQTY"  DECIMAL(22, 3),
-   "ONHANDSTOCK"  DECIMAL(22, 3),
-   "REPORTINGTIME"  DATE,
-   "TARGETANALYSIS"  NVARCHAR(80),
-   "TARGETANALYSISDESCRIPTION"  NVARCHAR(80),
-   "SOURCECOUNTRY"  NVARCHAR(2),
-   "SOURCECOUNTRYDESCRIPTION"  NVARCHAR(80),
-   "SOURCEREGION"  NVARCHAR(80),
-   "SOURCEREGIODESCRIPTION"  NVARCHAR(80),
-   "SOURCESITE"  NVARCHAR(80),
-   "SOURCESITEDESCRIPTION"  NVARCHAR(80),
-   "SOURCELAT"  DECIMAL(10, 6),
-   "SOURCELONG"  DECIMAL(10, 6),
-   "LOGISTICCENTERS"  NVARCHAR(80),
-   "LOGISTICCENTERDESCRIPTION"  NVARCHAR(80),
-   "PHYSICALROUTECONNECTION"  NVARCHAR(1),
-   "PHYSICALROUTECONNECTIONDESCRIPTION"  NVARCHAR(1)
+   ```SQL
+ column table "INVENTORY" (
+  "PRODUCT"  NVARCHAR(10),
+  "PRODUCTDESCRIPTION"  NVARCHAR(80),
+  "MATERIAL"  NVARCHAR(80),
+  "MATERIALDESCRIPTION"  NVARCHAR(80),
+  "DESTINATIONCOUNTRY"  NVARCHAR(2),
+  "DESTINATIONCOUNTRYDESCRIPTION"  NVARCHAR(80),
+  "DESTINATIONREGION"  NVARCHAR(80),
+  "REGIONDESCRIPTION"  NVARCHAR(80),
+  "INVENTORYLOCATION"  NVARCHAR(80),
+  "INVENTORYLOCATIONDESCRIPTION"  NVARCHAR(80),
+  "LOCATIONLAT"  DECIMAL(22, 6),
+  "LOCATIONLONG"  DECIMAL(22, 6),
+  "TARGETSTOCKQTY"  DECIMAL(22, 3),
+  "ONHANDSTOCK"  DECIMAL(22, 3),
+  "REPORTINGTIME"  DATE,
+  "TARGETANALYSIS"  NVARCHAR(80),
+  "TARGETANALYSISDESCRIPTION"  NVARCHAR(80),
+  "SOURCECOUNTRY"  NVARCHAR(2),
+  "SOURCECOUNTRYDESCRIPTION"  NVARCHAR(80),
+  "SOURCEREGION"  NVARCHAR(80),
+  "SOURCEREGIODESCRIPTION"  NVARCHAR(80),
+  "SOURCESITE"  NVARCHAR(80),
+  "SOURCESITEDESCRIPTION"  NVARCHAR(80),
+  "SOURCELAT"  DECIMAL(10, 6),
+  "SOURCELONG"  DECIMAL(10, 6),
+  "LOGISTICCENTERS"  NVARCHAR(80),
+  "LOGISTICCENTERDESCRIPTION"  NVARCHAR(80),
+  "PHYSICALROUTECONNECTION"  NVARCHAR(1),
+  "PHYSICALROUTECONNECTIONDESCRIPTION"  NVARCHAR(1)
 )
 ```
 > You can right-click inside the file window and choose **Format document** to clean up the formatting of the file.
@@ -124,13 +124,13 @@ Now you can create the first object in your project: an `HDBTABLE` that will sto
 
 1.	In the SAP HANA Project panel, click on the ![Container](icon-container.png)  HDI container icon. The **SAP HANA Database Explorer** will open in a new tab.
 
-    <!-- border -->![Project HDI Icon](ss_04_project_HDI_icon.png)
+    ![Project HDI Icon](ss_04_project_HDI_icon.png)
 
 2.	In the catalog of the **HDI container connection**, click on **Tables**. If you cannot see the `INVENTORY` table, right-click on **Tables** and select **Refresh**.
 
 3.	Click on the `INVENTORY` table to view the list of all the columns you have just defined.
 
-    <!-- border -->![Inventory Table](ss_05_inventory_table.png)
+    ![Inventory Table](ss_05_inventory_table.png)
 
 If you click on **Open Data**, you can see that the table does not contain any data yet. Let's change that!
 
@@ -145,7 +145,7 @@ If you click on **Open Data**, you can see that the table does not contain any d
 
 3.	Go back to the SAP HANA Database Explorer, right-click on the **INVENTORY** table and select **Import Data**.
 
-    <!-- border -->![Import Data](ss_06_import_data.png)
+    ![Import Data](ss_06_import_data.png)
 
 4.	A wizard opens where you can select **Import Data** as **IMPORT TYPE**. Click on **Step 2**.
 
@@ -159,7 +159,7 @@ If you click on **Open Data**, you can see that the table does not contain any d
 
 9.	After reviewing the Import Summary, click **Import into Database**. Wait until the Import Status shows the **Import complete** notification.
 
-    <!-- border -->![Import into Database](ss_07_import_into_database.png)
+    ![Import into Database](ss_07_import_into_database.png)
 
 10.	To verify the data import, click on `INVENTORY` table from the left side panel. Select **Open Data** to view the data added into the table.
 
@@ -175,7 +175,7 @@ If you click on **Open Data**, you can see that the table does not contain any d
 
 3.	For example, you can drag **PRODUCT** from the list of Available Columns to the **Value Axis** and **REGIONDESCRIPTION** to the **Label Axis** to see how products are distributed over regions.
 
-    <!-- border -->![Data analysis graph](ss_08_data_analysis_graph.png)
+    ![Data analysis graph](ss_08_data_analysis_graph.png)
 
 4.	You can select different graphical options provided in a main toolbar at the top or access the corresponding SQL code to these graphical views.
 

@@ -56,7 +56,7 @@ First, we want to create a role that contains SELECT privileges with grant optio
 
 4.	Select the artifact type as **Role `hdbrole`**.
 
-    <!-- border -->![Create hdbrole](ss-01-create-hdbrole.png)
+    ![Create hdbrole](ss-01-create-hdbrole.png)
 
 5.	Under 'Specify the artifact name' option enter the name **`inventory_with_grant`**.
 
@@ -71,7 +71,7 @@ First, we want to create a role that contains SELECT privileges with grant optio
 
 2.	Click on **Edit** for the Role name. Rename it as **`inventory_with_grant#`**.
 
-    <!-- border -->![Edit hdbrole name](ss-02-edit-hdbrole-name.png)
+    ![Edit hdbrole name](ss-02-edit-hdbrole-name.png)
 
     > **IMPORTANT**
     >
@@ -84,7 +84,7 @@ First, we want to create a role that contains SELECT privileges with grant optio
 
 5.	In the column **Privileges with Grant Option**, click on the arrow where it says **Choose privileges** to select from a list of privileges with grant option that you want to assign to this role.
 
-    <!-- border -->![Privileges with grant](ss-03-privileges-with-grant.png)
+    ![Privileges with grant](ss-03-privileges-with-grant.png)
 
 6.	Check the **SELECT** privilege.
 
@@ -99,13 +99,13 @@ Now you will create a new role having privileges without the grant option. Repea
 
 2.	Once the file **`inventory_without_grant.hdbrole`** can be seen under the `src` folder in the explorer panel, open this role file in the **Role Editor**.
 
-    <!-- border -->![Explorer view of new hdbrole](ss-04-explorer-view-new-hdbrole.png)
+    ![Explorer view of new hdbrole](ss-04-explorer-view-new-hdbrole.png)
 
 3.	Again, in the tab **Object Privileges**, in the field **Object Privileges**, select the table **INVENTORY** .
 
 4.	In the column **Privileges**, click on the arrow where it says **Choose privileges** to select from a list of privileges that you want to assign to this role.
 
-    <!-- border -->![Privileges](ss-05-privileges.png)
+    ![Privileges](ss-05-privileges.png)
 
 5.	Check the **SELECT** privilege.
 
@@ -126,7 +126,7 @@ When collaborating with others on development projects, pushing your files to a 
 
 3.	In the top right corner, click on **New** to create a new repository.
 
-    <!-- border -->![New Git repository](ss-06-new-git-repository.png)
+    ![New Git repository](ss-06-new-git-repository.png)
 
 4.	Under Create a new repository, enter **WS3_1** as the Repository name.
 
@@ -136,7 +136,7 @@ When collaborating with others on development projects, pushing your files to a 
 
 7.	Click on **Create repository** to finish. Your first step is done, and you have an empty repository ready to have the content from your development project.
 
-    <!-- border -->![Create repository](ss-07-create-repository.png)
+    ![Create repository](ss-07-create-repository.png)
 
 
 ### Generate a GitHub token
@@ -152,11 +152,11 @@ There are two ways of connecting to a GitHub project: SSH and HTTPS. SSH require
 
 4.	Click on **Generate new token** at the top right corner of the screen. You will be asked to sign in using your GitHub account password.
 
-    <!-- border -->![Generate tokens](ss-08-generate-tokens.png)
+    ![Generate tokens](ss-08-generate-tokens.png)
 
 5.	After signing in, enter a **name** for the token (for example: `MyNewToken`) under the caption Note.
 
-    <!-- border -->![My new token](ss-09-my-new-token.png)
+    ![My new token](ss-09-my-new-token.png)
 
 6.	Next you can select an **expiration date**.
 
@@ -164,7 +164,7 @@ There are two ways of connecting to a GitHub project: SSH and HTTPS. SSH require
 
 8.	Copy the new token you generated and paste it in a safe location that could be accessed later.
 
-    <!-- border -->![Token](ss-11-token.png)
+    ![Token](ss-11-token.png)
 
 > **CAUTION**
 > After you proceed to the next step, you cannot go back to view the token again unless you have saved it in another location. In such a case, you will need to generate a new token.
@@ -177,23 +177,23 @@ There are two ways of connecting to a GitHub project: SSH and HTTPS. SSH require
 
 2.	On the left menu, click on the  ![Source Control Icon](ss-source-control-icon.png) icon to go to the **Source Control** panel. Here, you can see all the recent updates to your project that have not been pushed to GitHub yet. In this panel, you can also administer your GitHub connection and changes from a menu instead of using the terminal.
 
-    <!-- border -->![Git icon](ss-12-git-icon.png)
+    ![Git icon](ss-12-git-icon.png)
 
 3.	Open a terminal by clicking on **Terminal** at the top navigation bar and select **Open Terminal**.
 
 4.	Paste the following command in the terminal and hit Enter.
 
-    ```Shell/Bash
-    git init
-    ```
+   ```Shell/Bash
+   git init
+   ```
 
-    <!-- border -->![Git initialized](ss-13-git-initialized.png)
+    ![Git initialized](ss-13-git-initialized.png)
 
     This will initialize the empty Git repository.
 
 5.	Type **first commit** in the Message box under the Source Control panel. Click on the **tick mark** icon at the top of the panel to stage all your changes and commit them.
 
-    <!-- border -->![first commit](ss-14-first-commit.png)
+    ![first commit](ss-14-first-commit.png)
 
 6.	Select **Yes** or **Always**, if you encounter a message box asking what action to take when the commit (tick mark) icon is selected.
 
@@ -205,23 +205,23 @@ You have now committed all the changes made to the data structures during this s
 
 1.	Go to the terminal and paste the following command. Before you hit Enter, replace `Username` with your GitHub username and `Repository name` with your GitHub repository name. (in this case for example: WS3_1)
 
-    ```Shell/Bash
-    git remote add origin https://github.com/<Username>/<Repository name>.git
-    ```
+   ```Shell/Bash
+   git remote add origin https://github.com/<Username>/<Repository name>.git
+   ```
 
 2.	After making the changes, press **Enter**.
 
 3.	Paste the following command into the terminal and press **Enter**.
 
-    ```Shell/Bash
-    git fetch
-    ```
+   ```Shell/Bash
+   git fetch
+   ```
 
 4.	A prompt will open at the top center of the screen.
 
 5.	There, enter your Git username and press **Enter**.
 
-    <!-- border -->![Git username for connection](ss-15-git-username-for-connection.png)
+    ![Git username for connection](ss-15-git-username-for-connection.png)
 
 6.	Next, paste the token you had generated from GitHub in the prompt and press **Enter**.
 
@@ -229,10 +229,10 @@ You have now committed all the changes made to the data structures during this s
 
 8.	Paste the following command into the terminal and press **Enter**.
 
-    ```Shell/Bash
-    git push -u origin master
+   ```Shell/Bash
+   git push -u origin master
 ```
-    <!-- border -->![Git push objects](ss-16-git-push-objects.png)
+    ![Git push objects](ss-16-git-push-objects.png)
 
     This pushes all the committed changes to the GitHub repository.
 

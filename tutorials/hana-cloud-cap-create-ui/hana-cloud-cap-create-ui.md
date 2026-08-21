@@ -64,15 +64,15 @@ video:
 
 1. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click `Interactions_Items`. Different versions of the Cloud Application Programming Model preview page do different things at this point. Some add a $top limit to the generated URL for `Interactions_Items` automatically. Other and perhaps newer versions do not.  Have a look at the end of the URL when it opens. If it ends in `?$top=11` then add the following to the URL:
 
-    ```URL
-    &$search=DE
-    ```
+   ```URL
+   &$search=DE
+   ```
 
     Otherwise add the following to the URL:
 
-    ```URL
-    ?$search=DE
-    ```
+   ```URL
+   ?$search=DE
+   ```
 
     ![Play with the OData Service](serach.png)
 
@@ -100,30 +100,30 @@ You will use an [Application Router](https://www.npmjs.com/package/@sap/approute
 
     Replace the content of `xs-app.json` with the following content
 
-    ```json
-    {
-    "authenticationMethod": "none",
-    "routes": [
-        {
-        "source": "^/app/(.*)$",
-        "target": "$1",
-        "localDir": ".",
-        "cacheControl": "no-cache, no-store, must-revalidate"
-        },
-        {
-        "source": "^/appconfig/",
-        "localDir": ".",
-        "cacheControl": "no-cache, no-store, must-revalidate"
-        },
-        {
-        "source": "^/(.*)$",
-        "target": "$1",
-        "destination": "srv-api",
-        "csrfProtection": true
-        }
-    ]
-    }
-    ```
+   ```json
+   {
+   "authenticationMethod": "none",
+   "routes": [
+       {
+       "source": "^/app/(.*)$",
+       "target": "$1",
+       "localDir": ".",
+       "cacheControl": "no-cache, no-store, must-revalidate"
+       },
+       {
+       "source": "^/appconfig/",
+       "localDir": ".",
+       "cacheControl": "no-cache, no-store, must-revalidate"
+       },
+       {
+       "source": "^/(.*)$",
+       "target": "$1",
+       "destination": "srv-api",
+       "csrfProtection": true
+       }
+   ]
+   }
+   ```
 
     ![xs-app.json](xsapp_json.png)
 
@@ -179,189 +179,189 @@ We want to create a Fiori UI for our CAP service.  We will use the wizards to ge
 
 3. Replace the `annotations.cds` with the following content:
 
-    ```cds
-    using CatalogService as service from '../../srv/interaction_srv';
+   ```cds
+   using CatalogService as service from '../../srv/interaction_srv';
 
-    annotate service.Interactions_Header with @(
-    UI.HeaderInfo                : {
-        Title         : {
-            $Type: 'UI.DataField',
-            Value: partner,
-        },
-        TypeName      : 'Incident',
-        TypeNamePlural: 'Incidens',
-        Description   : {Value: country.descr}
-    },
-    UI.HeaderFacets            : [{
-            $Type             : 'UI.ReferenceFacet',
-            Target            : '@UI.FieldGroup#Admin'
-    }],
-    UI.FieldGroup #GeneratedGroup: {
-        $Type: 'UI.FieldGroupType',
-        Data : [
-            {
-                $Type: 'UI.DataField',
-                Label: 'Partner',
-                Value: partner,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: 'Country',
-                Value: country_code,
-            },
-            {
-                $Type                  : 'UI.DataField',
-                Label                  : 'Country',
-                ![@Common.FieldControl]: #ReadOnly,
-                Value                  : country.descr,
-            },
-        ]
-    },
-    UI.FieldGroup #Admin       : {Data : [
-        {
-            $Type : 'UI.DataField',
-            Value : createdBy
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : modifiedBy
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : createdAt
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : modifiedAt
-        }
-        ]
-    },
-    UI.Facets                    : [
-        {
-            $Type : 'UI.ReferenceFacet',
-            ID    : 'GeneratedFacet1',
-            Label : 'General Information',
-            Target: '@UI.FieldGroup#GeneratedGroup',
-        },
-        {
-            $Type : 'UI.ReferenceFacet',
-            Label : 'Interaction Items',
-            Target: 'items/@UI.LineItem'
-        }
-    ],
-    UI.LineItem                  : [
-        {
-            $Type: 'UI.DataField',
-            Label: 'Partner',
-            Value: partner,
-        },
-        {
-            $Type                  : 'UI.DataField',
-            Label                  : 'Country',
-            ![@Common.FieldControl]: #ReadOnly,
-            Value                  : country.name,
-        },
-    ]
-    );
+   annotate service.Interactions_Header with @(
+   UI.HeaderInfo                : {
+       Title         : {
+           $Type: 'UI.DataField',
+           Value: partner,
+       },
+       TypeName      : 'Incident',
+       TypeNamePlural: 'Incidens',
+       Description   : {Value: country.descr}
+   },
+   UI.HeaderFacets            : [{
+           $Type             : 'UI.ReferenceFacet',
+           Target            : '@UI.FieldGroup#Admin'
+   }],
+   UI.FieldGroup #GeneratedGroup: {
+       $Type: 'UI.FieldGroupType',
+       Data : [
+           {
+               $Type: 'UI.DataField',
+               Label: 'Partner',
+               Value: partner,
+           },
+           {
+               $Type: 'UI.DataField',
+               Label: 'Country',
+               Value: country_code,
+           },
+           {
+               $Type                  : 'UI.DataField',
+               Label                  : 'Country',
+               ![@Common.FieldControl]: #ReadOnly,
+               Value                  : country.descr,
+           },
+       ]
+   },
+   UI.FieldGroup #Admin       : {Data : [
+       {
+           $Type : 'UI.DataField',
+           Value : createdBy
+       },
+       {
+           $Type : 'UI.DataField',
+           Value : modifiedBy
+       },
+       {
+           $Type : 'UI.DataField',
+           Value : createdAt
+       },
+       {
+           $Type : 'UI.DataField',
+           Value : modifiedAt
+       }
+       ]
+   },
+   UI.Facets                    : [
+       {
+           $Type : 'UI.ReferenceFacet',
+           ID    : 'GeneratedFacet1',
+           Label : 'General Information',
+           Target: '@UI.FieldGroup#GeneratedGroup',
+       },
+       {
+           $Type : 'UI.ReferenceFacet',
+           Label : 'Interaction Items',
+           Target: 'items/@UI.LineItem'
+       }
+   ],
+   UI.LineItem                  : [
+       {
+           $Type: 'UI.DataField',
+           Label: 'Partner',
+           Value: partner,
+       },
+       {
+           $Type                  : 'UI.DataField',
+           Label                  : 'Country',
+           ![@Common.FieldControl]: #ReadOnly,
+           Value                  : country.name,
+       },
+   ]
+   );
 
-    annotate service.Interactions_Items with @(
-    UI.HeaderInfo                : {
-        Title         : {
-            $Type: 'UI.DataField',
-            Value: text,
-        },
-        TypeName      : 'Interaction Item',
-        TypeNamePlural: 'Interaction Items'
-    },
-    UI.FieldGroup #GeneratedGroup: {
-        $Type: 'UI.FieldGroupType',
-        Data : [
-            {
-                $Type: 'UI.DataField',
-                Label: 'Text',
-                Value: text,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: 'Date',
-                Value: date,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: 'Price',
-                Value: price,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: 'Currency',
-                Value: currency_code,
-            }
-        ]
-    },
-    UI.Facets                    : [
-        {
-            $Type : 'UI.ReferenceFacet',
-            ID    : 'GeneratedFacet1',
-            Label : 'General Information',
-            Target: '@UI.FieldGroup#GeneratedGroup',
-        },
-        {
-            $Type : 'UI.ReferenceFacet',
-            Label : 'Item Translations',
-            Target: 'texts/@UI.LineItem'
-        }
-    ],
-    UI.LineItem                  : [
-        {
-            $Type: 'UI.DataField',
-            Label: 'Text',
-            Value: text,
-        },
-        {
-            $Type: 'UI.DataField',
-            Label: 'Date',
-            Value: date,
-        },
-        {
-            $Type: 'UI.DataField',
-            Label: 'Price',
-            Value: price,
-        },
-        {
-            $Type: 'UI.DataField',
-            Label: 'Currency',
-            Value: currency_code,
-        }
-    ]
-    );
+   annotate service.Interactions_Items with @(
+   UI.HeaderInfo                : {
+       Title         : {
+           $Type: 'UI.DataField',
+           Value: text,
+       },
+       TypeName      : 'Interaction Item',
+       TypeNamePlural: 'Interaction Items'
+   },
+   UI.FieldGroup #GeneratedGroup: {
+       $Type: 'UI.FieldGroupType',
+       Data : [
+           {
+               $Type: 'UI.DataField',
+               Label: 'Text',
+               Value: text,
+           },
+           {
+               $Type: 'UI.DataField',
+               Label: 'Date',
+               Value: date,
+           },
+           {
+               $Type: 'UI.DataField',
+               Label: 'Price',
+               Value: price,
+           },
+           {
+               $Type: 'UI.DataField',
+               Label: 'Currency',
+               Value: currency_code,
+           }
+       ]
+   },
+   UI.Facets                    : [
+       {
+           $Type : 'UI.ReferenceFacet',
+           ID    : 'GeneratedFacet1',
+           Label : 'General Information',
+           Target: '@UI.FieldGroup#GeneratedGroup',
+       },
+       {
+           $Type : 'UI.ReferenceFacet',
+           Label : 'Item Translations',
+           Target: 'texts/@UI.LineItem'
+       }
+   ],
+   UI.LineItem                  : [
+       {
+           $Type: 'UI.DataField',
+           Label: 'Text',
+           Value: text,
+       },
+       {
+           $Type: 'UI.DataField',
+           Label: 'Date',
+           Value: date,
+       },
+       {
+           $Type: 'UI.DataField',
+           Label: 'Price',
+           Value: price,
+       },
+       {
+           $Type: 'UI.DataField',
+           Label: 'Currency',
+           Value: currency_code,
+       }
+   ]
+   );
 
-    annotate service.Interactions_Items.texts with @(UI: {
-    Identification : [{Value: text}],
-    SelectionFields: [
-        locale,
-        text
-    ],
-    LineItem       : [
-        {
-            Value: locale,
-            Label: 'Locale'
-        },
-        {Value: text}
-    ]
-    });
+   annotate service.Interactions_Items.texts with @(UI: {
+   Identification : [{Value: text}],
+   SelectionFields: [
+       locale,
+       text
+   ],
+   LineItem       : [
+       {
+           Value: locale,
+           Label: 'Locale'
+       },
+       {Value: text}
+   ]
+   });
 
-    annotate service.Interactions_Items.texts with {
-    ID @UI.Hidden;
-    };
+   annotate service.Interactions_Items.texts with {
+   ID @UI.Hidden;
+   };
 
-    // Add Value Help for Locales
-    annotate service.Interactions_Items.texts {
-    locale @(
-        ValueList.entity: 'Languages',
-        Common.ValueListWithFixedValues,
-    )
-    }
-    ```
+   // Add Value Help for Locales
+   annotate service.Interactions_Items.texts {
+   locale @(
+       ValueList.entity: 'Languages',
+       Common.ValueListWithFixedValues,
+   )
+   }
+   ```
 
 4. Run the application again and you will new functionality including value help for country and currency as well as the ability to see and maintain the translatable text element.
 
