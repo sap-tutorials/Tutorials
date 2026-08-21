@@ -24,73 +24,73 @@ In this exercise you will modify the code of procedure `get_po_header_data` agai
 
 1. Return to your procedure called `get_po_header_data`.
 
-    <!-- border -->![Existing Procedure](1_1.png)
+    ![Existing Procedure](1_1.png)
 
 2. Delete the output parameters which you defined in the last section.
 
-    <!-- border -->![Define output](1_2.png)
+    ![Define output](1_2.png)
 
 
 3. Define a new output parameter as shown
 
-    <!-- border -->![New output](1_3.png)
+    ![New output](1_3.png)
 
 
 4. Rename `EX_PO_CREATE_CNT` to `PO_CREATE_CNT`. Also rename `EX_PO_CHANGE_CNT` to `PO_CHANGE_CNT`
 
-    <!-- border -->![change name](1_4.png)
+    ![change name](1_4.png)
 
 
 5. Modify the two SELECT statements and add `AS EID` after the `CREADEDBY` and `MODIFIEDBY` fields.
 
-    <!-- border -->![modify select](1_5.png)
+    ![modify select](1_5.png)
 
 6. Next, add another SELECT statement after the 2 previous SELECT statements as shown. This statement uses the previously defined table variables.
 
-    <!-- border -->![add another select](1_6.png)
+    ![add another select](1_6.png)
 
 7. The completed code should be very similar to this.
 
-    ```SQLCRIPT
-    PROCEDURE "get_po_header_data"(
-              OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE(
-                  LOGINNAME NVARCHAR(12),
-                  CREATE_CNT INTEGER,
-                  CHANGE_CNT INTEGER,
-                  COMBINED_CNT INTEGER )  )
-       LANGUAGE SQLSCRIPT
-       SQL SECURITY INVOKER
-       --DEFAULT SCHEMA <default_schema_name>
-       READS SQL DATA AS
-    BEGIN
+   ```SQLCRIPT
+   PROCEDURE "get_po_header_data"(
+             OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE(
+                 LOGINNAME NVARCHAR(12),
+                 CREATE_CNT INTEGER,
+                 CHANGE_CNT INTEGER,
+                 COMBINED_CNT INTEGER )  )
+      LANGUAGE SQLSCRIPT
+      SQL SECURITY INVOKER
+      --DEFAULT SCHEMA <default_schema_name>
+      READS SQL DATA AS
+   BEGIN
 
-    po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "CREATEDBY" as EID
-         FROM "OPENSAP_PURCHASEORDER_HEADERS" WHERE ID IN (
-                         SELECT "POHEADER_ID"
-                              FROM "OPENSAP_PURCHASEORDER_ITEMS"
-              WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
-                GROUP BY  "CREATEDBY";
+   po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "CREATEDBY" as EID
+        FROM "OPENSAP_PURCHASEORDER_HEADERS" WHERE ID IN (
+                        SELECT "POHEADER_ID"
+                             FROM "OPENSAP_PURCHASEORDER_ITEMS"
+             WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
+               GROUP BY  "CREATEDBY";
 
-    po_change_cnt = SELECT COUNT(*) AS CHANGE_CNT, "MODIFIEDBY" as EID
-         FROM "OPENSAP_PURCHASEORDER_HEADERS"  WHERE ID IN (
-                         SELECT "POHEADER_ID"
-                              FROM "OPENSAP_PURCHASEORDER_ITEMS"
-              WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
-                 GROUP BY  "MODIFIEDBY";
+   po_change_cnt = SELECT COUNT(*) AS CHANGE_CNT, "MODIFIEDBY" as EID
+        FROM "OPENSAP_PURCHASEORDER_HEADERS"  WHERE ID IN (
+                        SELECT "POHEADER_ID"
+                             FROM "OPENSAP_PURCHASEORDER_ITEMS"
+             WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
+                GROUP BY  "MODIFIEDBY";
 
-    EX_TOP_3_EMP_PO_COMBINED_CNT =
-            SELECT emp.LOGINNAME, crcnt.CREATE_CNT, chcnt.CHANGE_CNT,  crcnt.CREATE_CNT +
-            chcnt.CHANGE_CNT AS COMBINED_CNT
-                FROM "OPENSAP_MD_EMPLOYEES" as emp
-                LEFT OUTER JOIN :PO_CREATE_CNT AS crcnt
-                 ON emp.email = crcnt.EID
-               LEFT OUTER JOIN :PO_CHANGE_CNT AS chcnt
-               ON emp.email = chcnt.EID
-              ORDER BY COMBINED_CNT DESC LIMIT 3;
+   EX_TOP_3_EMP_PO_COMBINED_CNT =
+           SELECT emp.LOGINNAME, crcnt.CREATE_CNT, chcnt.CHANGE_CNT,  crcnt.CREATE_CNT +
+           chcnt.CHANGE_CNT AS COMBINED_CNT
+               FROM "OPENSAP_MD_EMPLOYEES" as emp
+               LEFT OUTER JOIN :PO_CREATE_CNT AS crcnt
+                ON emp.email = crcnt.EID
+              LEFT OUTER JOIN :PO_CHANGE_CNT AS chcnt
+              ON emp.email = chcnt.EID
+             ORDER BY COMBINED_CNT DESC LIMIT 3;
 
-    END
+   END
 
-    ```
+   ```
 
 
 
@@ -99,14 +99,14 @@ In this exercise you will modify the code of procedure `get_po_header_data` agai
 
 1. Save the procedure.
 
-    <!-- border -->![save Procedure](2_1.png)
+    ![save Procedure](2_1.png)
 
 2. Perform a **Deploy**.
 
-    <!-- border -->![deploy](2_2.png)
+    ![deploy](2_2.png)
 
 3. Return to the Database Explorer page and use what you have learned and generate a new call statement for the procedure and run it. The results are then shown.
 
-    <!-- border -->![Results](2_3.png)
+    ![Results](2_3.png)
 
 

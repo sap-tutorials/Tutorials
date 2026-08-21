@@ -40,9 +40,7 @@ Instances shown in SAP HANA Cloud Central or in the SAP HANA cockpit can be open
     ![Open in the database explorer](from-directory.png)
 
     >You may be prompted to enter database login credentials at this point.  Enter the DBADMIN or SYSTEM user credentials that were set when the instance was created.
-
-    >---
-
+    >
     >The credentials can be saved so they do not need to be re-entered if they are entered into SAP HANA Cloud Central or SAP HANA cockpit.
 
     Notice that when the SAP HANA database explorer opens, the selected instance is the one from the selected tile or administered database.  Also note that the URL contains a `&databaseid=`.  
@@ -78,9 +76,7 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
     >![connect using TLS](encryption2.png)
 
     >The public root certificate of the certificate authority (CA) that signed the SAP HANA Cloud instance's server certificate is required.  This certificate is likely already available in the system certificate store on the operating system and accessible by the browser, but if not, it can be pasted into the UI.  For more information see [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients).
-
-    >---
-
+    >
     >For a HANA Cloud database, the host and port values can be copied from SAP HANA Cloud Central.  
 
     >![copy host and port](host-and-port.png)
@@ -94,13 +90,11 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
     >If you are using an SAP HANA, express edition or on-premise database, the port numbers for a system or tenant database can be determined by running the following query against the **System** database.  
 
     >```SQL
-    SELECT "DATABASE_NAME", "HOST", "SERVICE_NAME", "SQL_PORT" FROM SYS_DATABASES.M_SERVICES WHERE SQL_PORT != 0;
+    >SELECT "DATABASE_NAME", "HOST", "SERVICE_NAME", "SQL_PORT" FROM SYS_DATABASES.M_SERVICES WHERE SQL_PORT != 0;
     >```
 
     >![SQL port query](sql-port.png)
-
-    >---
-
+    >
     >Instructions on using X.509 certificate are provided at [Authenticate to SAP HANA Cloud using X.509](tutorials/hana-clients-x509).
 
 4. After pressing OK, a new instance will appear whose type is SAP HANA Database.
@@ -114,9 +108,9 @@ Instances can also be added directly to the SAP HANA database explorer.  To conn
     >An example of what can be configured is shown below.
 
     >
-    ```
-    isolationLevel=SERIALIZABLE;locale=fr_FR;schema=HOTELS;client=55
-    ```
+   ```
+   isolationLevel=SERIALIZABLE;locale=fr_FR;schema=HOTELS;client=55
+   ```
 
     >These values can be seen by opening a SQL console and noticing the schema that the database is using or by executing the following queries.
 
@@ -159,12 +153,12 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
 3. The catalog browser can be used to view database objects and a SQL console can be opened to query the database.
 
-    ```SQL
-    SELECT CURRENT USER FROM DUMMY;
-    SELECT * FROM SYS.SYSINFO;
-    SELECT * FROM SA_DB_PROPERTIES() WHERE UPPER(PropName) LIKE '%NAME%';
-    SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%AUTO%' OR UPPER("option") LIKE '%COMM%' OR UPPER("option") LIKE '%ISOL%';
-    ```
+   ```SQL
+   SELECT CURRENT USER FROM DUMMY;
+   SELECT * FROM SYS.SYSINFO;
+   SELECT * FROM SA_DB_PROPERTIES() WHERE UPPER(PropName) LIKE '%NAME%';
+   SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%AUTO%' OR UPPER("option") LIKE '%COMM%' OR UPPER("option") LIKE '%ISOL%';
+   ```
 
     ![A few queries](iq-query.png)
 
@@ -172,17 +166,17 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
 4. It is also possible to connect using an X.509 certificate.  Instructions can be found at [Authenticate to SAP HANA Cloud using X.509](tutorials/hana-clients-x509) on how to create a certificate.  The below SQL can be used to configure the data lake Relational Engine to enable X.509 certificate authentication.
 
-    ```SQL
-    CREATE LOGIN POLICY X509Policy LOGIN_MODE=X509;  --valid for 180 days by default
-    CREATE USER TESTX509_TECHNICAL LOGIN POLICY X509Policy IDENTIFIED BY 'Password123';
-    CREATE X509 PROVIDER X509Provider WITH ISSUER 'CN=DEMO_ROOT_CERT_AUTH, SP=ON';
-    CREATE CERTIFICATE X509_CERT PURPOSE X509 FOR PROVIDER X509Provider FROM '-----BEGIN CERTIFICATE----- contents from demorootca.crt
-    -----END CERTIFICATE-----';
-    GRANT X509 LOGIN TO 'CN=TESTX509' FOR PROVIDER X509Provider as USER TESTX509_TECHNICAL; 
-    SELECT * FROM SYSCERTIFICATE; 
-    SELECT * FROM SYSX509PROVIDERS;
-    SELECT user_name, subject_name FROM SYSX509LOGINMAP, SYSUSER WHERE database_uid=user_id;
-    ```
+   ```SQL
+   CREATE LOGIN POLICY X509Policy LOGIN_MODE=X509;  --valid for 180 days by default
+   CREATE USER TESTX509_TECHNICAL LOGIN POLICY X509Policy IDENTIFIED BY 'Password123';
+   CREATE X509 PROVIDER X509Provider WITH ISSUER 'CN=DEMO_ROOT_CERT_AUTH, SP=ON';
+   CREATE CERTIFICATE X509_CERT PURPOSE X509 FOR PROVIDER X509Provider FROM '-----BEGIN CERTIFICATE----- contents from demorootca.crt
+   -----END CERTIFICATE-----';
+   GRANT X509 LOGIN TO 'CN=TESTX509' FOR PROVIDER X509Provider as USER TESTX509_TECHNICAL; 
+   SELECT * FROM SYSCERTIFICATE; 
+   SELECT * FROM SYSX509PROVIDERS;
+   SELECT user_name, subject_name FROM SYSX509LOGINMAP, SYSUSER WHERE database_uid=user_id;
+   ```
 
     Additional details on the SQL above can be found at [Login Policy Options](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/login-policy-options), [Create X509 Provider Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-x509-provider-statement-for-data-lake-relational-engine), and [Grant X509 Login Statement](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/grant-x509-login-statement-for-data-lake-relational-engine).
 
@@ -271,9 +265,9 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
     SAP BTP Cockpit or SAP HANA Cloud Central contain in their URL, a parameter that indicates the unique name (GUID) for the space.
 
-    ```
-    https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
-    ```
+   ```
+   https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
+   ```
 
     The spaces that contain SAP HANA Cloud instances appear when running SQL against multiple databases.  Executing commands in the SQL console will be covered in a subsequent tutorial.
 
@@ -359,13 +353,13 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
 9. Paste the below content into the file.
 
-    ```SQL
-    COLUMN TABLE myTable
-    (
-        "ID" INTEGER,
-        "VALUE" VARCHAR(50)
-    )
-    ```
+   ```SQL
+   COLUMN TABLE myTable
+   (
+       "ID" INTEGER,
+       "VALUE" VARCHAR(50)
+   )
+   ```
 
 10. Use the SAP HANA Projects Explorer to deploy the table.
 
@@ -387,10 +381,10 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     An alternative way to determine the URL for the SAP Web IDE for SAP HANA is to run the below command on the machine where SAP HANA on-premise is installed.
 
-    ```Shell
-    su hxeadm
-    xs apps
-    ```
+   ```Shell
+   su hxeadm
+   xs apps
+   ```
 
     ![SAP Web IDE URL](web-ide-url.png)
 
@@ -429,13 +423,13 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     Paste the below content into the file and choose **File** | **Save**.
 
-    ```SQL
-    COLUMN TABLE test
-    (
-        "ID" INTEGER,
-        "VALUE" VARCHAR(50)
-    )
-    ```
+   ```SQL
+   COLUMN TABLE test
+   (
+       "ID" INTEGER,
+       "VALUE" VARCHAR(50)
+   )
+   ```
 
     ![test table](test-table.png)
 

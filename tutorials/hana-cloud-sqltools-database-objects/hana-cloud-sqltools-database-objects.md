@@ -112,9 +112,9 @@ Information for tables includes columns, indexes, properties, runtime informatio
 
     The following SQL will be generated:
 
-    ```SQL
-    CALL "HOTELS"."RESERVATION_GENERATOR"(NUMTOGENERATE => /*<INTEGER>*/)
-    ```
+   ```SQL
+   CALL "HOTELS"."RESERVATION_GENERATOR"(NUMTOGENERATE => /*<INTEGER>*/)
+   ```
 
     The parameter NUMTOGENERATE expects an integer value, which specifies how many reservations to generate. Replace /*<INTEGER>*/ with the desired number of reservations you want the procedure to create.
 

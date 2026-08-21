@@ -62,10 +62,10 @@ Instances in the list can represent an SAP HANA database, a data lake Relational
 
 4. Once the SQL console is open, run the following queries to verify the connection and view basic database information.
 
-    ```SQL
-    SELECT CURRENT_USER FROM DUMMY;
-    SELECT * FROM M_DATABASE;
-    ```
+   ```SQL
+   SELECT CURRENT_USER FROM DUMMY;
+   SELECT * FROM M_DATABASE;
+   ```
 
 5. To copy the SQL endpoint, select the **Instance Information** button in the SQL Console and copy the endpoint. This is needed to connect external [clients](mission.hana-cloud-clients) or tools such as JDBC, ODBC, or a local development environment,
 
@@ -90,12 +90,12 @@ A data lake Relational Engine is a column-oriented, disk-based relational store 
 
 3. Once connected, you can query the data lake Relational Engine using the SQL console.
 
-    ```SQL
-    SELECT CURRENT USER FROM DUMMY;
-    SELECT * FROM SYS.SYSINFO;
-    SELECT * FROM SA_DB_PROPERTIES() WHERE UPPER(PropName) LIKE '%NAME%';
-    SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%AUTO%' OR UPPER("option") LIKE '%COMM%' OR UPPER("option") LIKE '%ISOL%';
-    ```
+   ```SQL
+   SELECT CURRENT USER FROM DUMMY;
+   SELECT * FROM SYS.SYSINFO;
+   SELECT * FROM SA_DB_PROPERTIES() WHERE UPPER(PropName) LIKE '%NAME%';
+   SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%AUTO%' OR UPPER("option") LIKE '%COMM%' OR UPPER("option") LIKE '%ISOL%';
+   ```
 
     ![querying a data lake relational engine](data-lake2.png)
 

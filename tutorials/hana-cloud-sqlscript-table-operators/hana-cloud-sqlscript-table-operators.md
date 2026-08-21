@@ -27,11 +27,11 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 1. Return to the procedure called `build_products` in the procedure folder.
 
-    <!-- border -->![procedure editor](1_1.png)
+    ![procedure editor](1_1.png)
 
 2. Remove the code inside the body, between the BEGIN and END statements leaving only the two lines shown here.
 
-    <!-- border -->![remove](1_2.png)
+    ![remove](1_2.png)
 
 3. After the SELECT statement, Use the INSERT operator to copy all rows of `lt_products` into the output parameter called `ex_products`. Then use the INSERT operator to insert 3 new products into the output table.  Since you are specifying the actual index, it will insert your new rows at that index and push all existing rows down.
 ```SQLCRIPT
@@ -67,7 +67,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 5. Use what you have learned and **Save** your work, and perform a **Deploy**. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data including the new products that you have inserted.
 
-    <!-- border -->![results](1_3.png)
+    ![results](1_3.png)
 
 
 ### Use UPDATE operator
@@ -117,7 +117,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 4. Use what you have learned and **Save** your work, and perform a **Deploy**. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data including the new products that you have inserted and now the prices have been increased.
 
-    <!-- border -->![results](2_1.png)
+    ![results](2_1.png)
 
 
 ### Use DELETE operator
@@ -182,7 +182,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 4. Use what you have learned and **Save** your work, and perform a **Deploy**. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data that is left after the DELETE operation has been performed.
 
-    <!-- border -->![results](3_1.png)
+    ![results](3_1.png)
 
 
 ### Use SEARCH operator
@@ -244,7 +244,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 	```
 4. Use what you have learned and **Save** your work, and perform a **Deploy**. Then return to the Database Explorer and call the procedure.  In the Results tab, you should see the product data that is left after the DELETE operation has been performed in the first tab, and on the second results tab you should see the product id of the first row which category was equal to "PC".
 
-    <!-- border -->![results](4_1.png)
+    ![results](4_1.png)
 
 
 

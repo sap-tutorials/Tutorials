@@ -39,9 +39,9 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     Notice that it is now connected to the instance named `HC_HDB` as shown by the name of the tab and the connection label or through the below SQL.
 
-    ```SQL
-    SELECT CURRENT_USER FROM DUMMY;
-    ```
+   ```SQL
+   SELECT CURRENT_USER FROM DUMMY;
+   ```
 
     ![SQL console connected to HC_HDB](sql-console-connected.png)
 
@@ -92,19 +92,19 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
 5. The current schema can be set and viewed for a SAP HANA database using the SQL statements below or by clicking on the Current Schema link.
 
-    ```SQL
-    SET SCHEMA HOTELS;
-    SELECT CURRENT_SCHEMA, CURRENT_USER FROM DUMMY;
-    ```
+   ```SQL
+   SET SCHEMA HOTELS;
+   SELECT CURRENT_SCHEMA, CURRENT_USER FROM DUMMY;
+   ```
 
     ![Set the schema](set-schema.png)
 
     For data lake Relational Engine instances, the current schema can be set and viewed as shown below.
 
-    ```SQL
-    SET SCHEMA HOTELS;
-    SELECT CURRENT SCHEMA, CURRENT USER;
-    ```
+   ```SQL
+   SET SCHEMA HOTELS;
+   SELECT CURRENT SCHEMA, CURRENT USER;
+   ```
 
     ![set the schema of a data lake RE](set-schema-dl.png)
 
@@ -114,12 +114,12 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
 1. Execute the following SQL statements.
 
-    ```SQL
-    SELECT * FROM HOTELS.CUSTOMER;
-    SELECT * FROM NON_EXISTENT_TABLE;
-    SELECT * FROM NON_EXISTENT_TABLE2;
-    SELECT * FROM HOTELS.HOTEL_ROOMS_VIEW;
-    ```
+   ```SQL
+   SELECT * FROM HOTELS.CUSTOMER;
+   SELECT * FROM NON_EXISTENT_TABLE;
+   SELECT * FROM NON_EXISTENT_TABLE2;
+   SELECT * FROM HOTELS.HOTEL_ROOMS_VIEW;
+   ```
 
     The following error dialog appears.  Select  **Skip All**.
 
@@ -154,12 +154,12 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
 4. Query results can also be displayed as a chart. After executing a query, select the **Visualize Data** tab in the results panel to switch to a graphical view. Execute the following SQL statements to try it out.
 
-    ```SQL
-    SELECT TOP 7
-        COUNT(*) AS NUM_OF_TABLES, SCHEMA_NAME
-    FROM M_TABLES WHERE SCHEMA_NAME != 'SYS'
-    GROUP BY SCHEMA_NAME ORDER BY NUM_OF_TABLES DESC;
-    ```
+   ```SQL
+   SELECT TOP 7
+       COUNT(*) AS NUM_OF_TABLES, SCHEMA_NAME
+   FROM M_TABLES WHERE SCHEMA_NAME != 'SYS'
+   GROUP BY SCHEMA_NAME ORDER BY NUM_OF_TABLES DESC;
+   ```
 
     ![Visualize Data](visualize-data.png)
 
@@ -259,52 +259,52 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
 11. Execute the following SQL statements.
 
-    ```SQL
-    SELECT HEXTOBIN ('48656C6C6F20776F726C64') BINARY_EXAMPLE FROM DUMMY;
+   ```SQL
+   SELECT HEXTOBIN ('48656C6C6F20776F726C64') BINARY_EXAMPLE FROM DUMMY;
 
-    SELECT '{
-        "name":"John",
-        "age":30,
-        "cars": {
-            "car1":"Ford",
-            "car2":"BMW",
-            "car3":"Fiat"
-        }
-        }' AS JSON_EXAMPLE
-        FROM DUMMY;
+   SELECT '{
+       "name":"John",
+       "age":30,
+       "cars": {
+           "car1":"Ford",
+           "car2":"BMW",
+           "car3":"Fiat"
+       }
+       }' AS JSON_EXAMPLE
+       FROM DUMMY;
 
-    SELECT '<?xml version="1.0" encoding="UTF-8"?>
-        <breakfast_menu>
-        <food>
-            <name>Strawberry Belgian Waffles</name>
-            <price>$7.95</price>
-            <description>
-            Light Belgian waffles covered with strawberries and whipped cream
-            </description>
-            <calories>900</calories>
-        </food>
-        <food>
-            <name>French Toast</name>
-            <price>$4.50</price>
-            <description>
-            Thick slices made from our homemade sourdough bread
-            </description>
-            <calories>600</calories>
-        </food>
-        <food>
-            <name>Homestyle Breakfast</name>
-            <price>$6.95</price>
-            <description>
-            Two eggs, bacon or sausage, toast, and our ever-popular hash browns
-            </description>
-            <calories>950</calories>
-        </food>
-        </breakfast_menu>' XML_EXAMPLE FROM DUMMY
-    ```
+   SELECT '<?xml version="1.0" encoding="UTF-8"?>
+       <breakfast_menu>
+       <food>
+           <name>Strawberry Belgian Waffles</name>
+           <price>$7.95</price>
+           <description>
+           Light Belgian waffles covered with strawberries and whipped cream
+           </description>
+           <calories>900</calories>
+       </food>
+       <food>
+           <name>French Toast</name>
+           <price>$4.50</price>
+           <description>
+           Thick slices made from our homemade sourdough bread
+           </description>
+           <calories>600</calories>
+       </food>
+       <food>
+           <name>Homestyle Breakfast</name>
+           <price>$6.95</price>
+           <description>
+           Two eggs, bacon or sausage, toast, and our ever-popular hash browns
+           </description>
+           <calories>950</calories>
+       </food>
+       </breakfast_menu>' XML_EXAMPLE FROM DUMMY
+   ```
 
-    Double tapping on a result will open a result viewer.
+   Double tapping on a result will open a result viewer.
 
-    ![SQL results](result-viewer.png)
+   ![SQL results](result-viewer.png)
 
 12. The Auto-save contents of SQL consoles setting can be used to persist the open SQL console tabs and their contents. This setting is on by default.
 
@@ -314,19 +314,19 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     Execute the following statement by clicking the Run dropdown menu and selecting Run Statement in Background:
 
-    ```SQL
-    DO BEGIN
-    --Wait for a few SECONDS
-        USING SQLSCRIPT_SYNC AS SYNCLIB;
-        CALL SYNCLIB:SLEEP_SECONDS(3); --runs for longer than 3 SECONDS
-        --Now execute a query
-        SELECT * FROM M_TABLES;
-    END
-    ```
+   ```SQL
+   DO BEGIN
+   --Wait for a few SECONDS
+       USING SQLSCRIPT_SYNC AS SYNCLIB;
+       CALL SYNCLIB:SLEEP_SECONDS(3); --runs for longer than 3 SECONDS
+       --Now execute a query
+       SELECT * FROM M_TABLES;
+   END
+   ```
 
-    ![RunBackgroundStatement](RunBackgroundStatement.png)
+   ![RunBackgroundStatement](RunBackgroundStatement.png)
 
-    The results will appear in the Background Statements tab at the bottom on the console.
+   The results will appear in the Background Statements tab at the bottom on the console.
 
 14. The actions menu for a SQL console tab offers additional options such as the ability to rename a tab, to move a tab, to open a previously closed tab, or to search through the content of all open SQL console tabs.
 
@@ -389,46 +389,46 @@ The SQL console also provides GenAI tools that assist with creating, understandi
 
 1. By selecting SQL text and clicking **Generate SQL From Natural Language** from the Run dropdown menu, users can generate SQL statements from natural-language instructions, and also provides an explanation. Execute the following prompt.
 
-    ```
-    List all the column store tables and their columns in the schema HOTELS
-    ```
+   ```
+   List all the column store tables and their columns in the schema HOTELS
+   ```
 
     ![RunPrompt](RunPrompt.png)
 
 2. To understand an existing query, select the SQL statement and click Explain SQL Statement using AI from the same menu. This returns a clear natural-language explanation of what the query does.
 
-    ```SQL
-    SELECT
-        t.SCHEMA_NAME,
-        t.TABLE_NAME,
-        c.COLUMN_NAME
-    FROM
-        SYS.TABLES AS t
-    JOIN
-        SYS.TABLE_COLUMNS AS c
-        ON t.SCHEMA_NAME = c.SCHEMA_NAME
-        AND t.TABLE_NAME = c.TABLE_NAME
-    ORDER BY
-        t.SCHEMA_NAME,
-        t.TABLE_NAME,
-        c.POSITION;
-    ```
+   ```SQL
+   SELECT
+       t.SCHEMA_NAME,
+       t.TABLE_NAME,
+       c.COLUMN_NAME
+   FROM
+       SYS.TABLES AS t
+   JOIN
+       SYS.TABLE_COLUMNS AS c
+       ON t.SCHEMA_NAME = c.SCHEMA_NAME
+       AND t.TABLE_NAME = c.TABLE_NAME
+   ORDER BY
+       t.SCHEMA_NAME,
+       t.TABLE_NAME,
+       c.POSITION;
+   ```
 
     ![ExplainAI](ExplainAI.png)
 
 3. To improve a query, select the SQL statement and click Optimize SQL Statement using AI. The system will suggest a refined version of the query, often improving readability and performance.
 
-    ```SQL
-    SELECT 
-        TABLES.SCHEMA_NAME,
-        TABLES.TABLE_NAME,
-        TABLE_COLUMNS.COLUMN_NAME
-    FROM 
-        TABLE_COLUMNS
-        INNER JOIN
-        TABLES
-        ON TABLE_COLUMNS.TABLE_NAME = TABLES.TABLE_NAME;
-    ```
+   ```SQL
+   SELECT 
+       TABLES.SCHEMA_NAME,
+       TABLES.TABLE_NAME,
+       TABLE_COLUMNS.COLUMN_NAME
+   FROM 
+       TABLE_COLUMNS
+       INNER JOIN
+       TABLES
+       ON TABLE_COLUMNS.TABLE_NAME = TABLES.TABLE_NAME;
+   ```
 
     ![OptimizeAI](OptimizeAI.png)
 

@@ -58,111 +58,111 @@ Before you can create a knowledge graph, please ensure your HANA Instance is ver
 
 4. Execute the following in the SQL Console. This query creates a KG with several hotels and amenities such as an indoor pool, hot tub, fitness center, etc.
 
-    ```SQL
-    --CALL SPARQL_EXECUTE('DROP GRAPH <kg_hotels>', '', ?, ?);
-    CALL SPARQL_EXECUTE('
-        INSERT DATA { GRAPH <kg_hotels> { 
-            <http://example.org/hotels/Delta> a <Hotel>;
-            <name> "Delta";
-            <city> "Waterloo";
-            <yearBuilt> 2012 .
-        
-            <http://example.org/hotels/hotelamenities/IndoorPool1> a <IndoorPool>;
-            <included_at> <http://example.org/hotels/Delta>;
-            <length> 25;
-            <width> 10.
-        
-            <http://example.org/hotels/hotelamenities/Hottub1> a <Hottub>;
-            <included_at> <http://example.org/hotels/Delta>;
-            <length> 6;
-            <width> 6.
-        
-            <http://example.org/hotels/hotelamenities/FitnessCenter1> a <FitnessCenter>;
-            <included_at> <http://example.org/hotels/Delta>.
-        
-            <http://example.org/hotels/hotelamenities/Keurig> a <CoffeeMaker>;
-            <included_at> <http://example.org/hotels/Delta>. 
+   ```SQL
+   --CALL SPARQL_EXECUTE('DROP GRAPH <kg_hotels>', '', ?, ?);
+   CALL SPARQL_EXECUTE('
+       INSERT DATA { GRAPH <kg_hotels> { 
+           <http://example.org/hotels/Delta> a <Hotel>;
+           <name> "Delta";
+           <city> "Waterloo";
+           <yearBuilt> 2012 .
+       
+           <http://example.org/hotels/hotelamenities/IndoorPool1> a <IndoorPool>;
+           <included_at> <http://example.org/hotels/Delta>;
+           <length> 25;
+           <width> 10.
+       
+           <http://example.org/hotels/hotelamenities/Hottub1> a <Hottub>;
+           <included_at> <http://example.org/hotels/Delta>;
+           <length> 6;
+           <width> 6.
+       
+           <http://example.org/hotels/hotelamenities/FitnessCenter1> a <FitnessCenter>;
+           <included_at> <http://example.org/hotels/Delta>.
+       
+           <http://example.org/hotels/hotelamenities/Keurig> a <CoffeeMaker>;
+           <included_at> <http://example.org/hotels/Delta>. 
 
-            <http://example.org/hotels/Sunshine> a <Hotel>;
-            <name> "Sunshine";
-            <city> "Clearwater";
-            <yearBuilt> 1975 .
-        
-            <http://example.org/hotels/hotelamenities/Restaurant1> a <Restaurant>;
-            <included_at> <http://example.org/hotels/Sunshine>;
-            <seating> 95.
-        
-            <http://example.org/hotels/hotelamenities/FitnessCenter2> a <FitnessCenter>;
-            <included_at> <http://example.org/hotels/Sunshine>.
-        
-            <http://example.org/hotels/hotelamenities/Laundry1> a <DryCleaning>;
-            <included_at> <http://example.org/hotels/Sunshine>. 
-            
-            <http://example.org/hotels/Congress> a <Hotel>;
-            <name> "Congress";
-            <city> "Seattle";
-            <yearBuilt> 2012 .
-        
-            <http://example.org/hotels/hotelamenities/IndoorPool2> a <IndoorPool>;
-            <included_at> <http://example.org/hotels/Congress>;
-            <length> 30;
-            <width> 15.
-        
-            <http://example.org/hotels/hotelamenities/Restaurant2> a <Restaurant>;
-            <included_at> <http://example.org/hotels/Congress>;
-            <seating> 122.
-        
-            <http://example.org/hotels/hotelamenities/FitnessCenter3> a <FitnessCenter>;
-            <included_at> <http://example.org/hotels/Congress>.
-        
-            <http://example.org/hotels/hotelamenities/Spa1> a <Spa>;
-            <included_at> <http://example.org/hotels/Congress>. 
+           <http://example.org/hotels/Sunshine> a <Hotel>;
+           <name> "Sunshine";
+           <city> "Clearwater";
+           <yearBuilt> 1975 .
+       
+           <http://example.org/hotels/hotelamenities/Restaurant1> a <Restaurant>;
+           <included_at> <http://example.org/hotels/Sunshine>;
+           <seating> 95.
+       
+           <http://example.org/hotels/hotelamenities/FitnessCenter2> a <FitnessCenter>;
+           <included_at> <http://example.org/hotels/Sunshine>.
+       
+           <http://example.org/hotels/hotelamenities/Laundry1> a <DryCleaning>;
+           <included_at> <http://example.org/hotels/Sunshine>. 
+           
+           <http://example.org/hotels/Congress> a <Hotel>;
+           <name> "Congress";
+           <city> "Seattle";
+           <yearBuilt> 2012 .
+       
+           <http://example.org/hotels/hotelamenities/IndoorPool2> a <IndoorPool>;
+           <included_at> <http://example.org/hotels/Congress>;
+           <length> 30;
+           <width> 15.
+       
+           <http://example.org/hotels/hotelamenities/Restaurant2> a <Restaurant>;
+           <included_at> <http://example.org/hotels/Congress>;
+           <seating> 122.
+       
+           <http://example.org/hotels/hotelamenities/FitnessCenter3> a <FitnessCenter>;
+           <included_at> <http://example.org/hotels/Congress>.
+       
+           <http://example.org/hotels/hotelamenities/Spa1> a <Spa>;
+           <included_at> <http://example.org/hotels/Congress>. 
 
-            <http://example.org/hotels/OceanStar> a <Hotel>;
-            <name> "Ocean Star";
-            <city> "Atlantic City";
-            <yearBuilt> 2012 .
-        
-            <http://example.org/hotels/hotelamenities/IndoorPool3> a <IndoorPool>;
-            <included_at> <http://example.org/hotels/OceanStar>;
-            <length> 50;
-            <width> 30.
-        
-            <http://example.org/hotels/hotelamenities/Restaurant2> a <Restaurant>;
-            <included_at> <http://example.org/hotels/OceanStar>;
-            <seating> 205.
-        
-            <http://example.org/hotels/hotelamenities/Cleaning1> a <CleaningServices>;
-            <included_at> <http://example.org/hotels/OceanStar>.
-        
-            <http://example.org/hotels/hotelamenities/Spa2> a <Spa>;
-            <included_at> <http://example.org/hotels/OceanStar>. 
+           <http://example.org/hotels/OceanStar> a <Hotel>;
+           <name> "Ocean Star";
+           <city> "Atlantic City";
+           <yearBuilt> 2012 .
+       
+           <http://example.org/hotels/hotelamenities/IndoorPool3> a <IndoorPool>;
+           <included_at> <http://example.org/hotels/OceanStar>;
+           <length> 50;
+           <width> 30.
+       
+           <http://example.org/hotels/hotelamenities/Restaurant2> a <Restaurant>;
+           <included_at> <http://example.org/hotels/OceanStar>;
+           <seating> 205.
+       
+           <http://example.org/hotels/hotelamenities/Cleaning1> a <CleaningServices>;
+           <included_at> <http://example.org/hotels/OceanStar>.
+       
+           <http://example.org/hotels/hotelamenities/Spa2> a <Spa>;
+           <included_at> <http://example.org/hotels/OceanStar>. 
 
-            <http://example.org/hotels/LongIsland> a <Hotel>;
-            <name> "LongIsland";
-            <city> "Long Island";
-            <yearBuilt> 2021 .
-        
-            <http://example.org/hotels/hotelamenities/Entertainment1> a <Entertainment>;
-            <included_at> <http://example.org/hotels/LongIsland>.
-        
-            <http://example.org/hotels/hotelamenities/Restaurant3> a <Restaurant>;
-            <included_at> <http://example.org/hotels/LongIsland>;
-            <seating> 122.
-        
-            <http://example.org/hotels/hotelamenities/Cleaning2> a <CleaningServices>;
-            <included_at> <http://example.org/hotels/LongIsland>.
-        
-            <http://example.org/hotels/hotelamenities/Spa3> a <Spa>;
-            <included_at> <http://example.org/hotels/LongIsland>. 
-            
-            <http://example.org/hotels/hotelamenities/Hottub2> a <Hottub>;
-            <included_at> <http://example.org/hotels/LongIsland>. 
-        } 
-        }
-        ', '', ?, ?
-    );
-    ```
+           <http://example.org/hotels/LongIsland> a <Hotel>;
+           <name> "LongIsland";
+           <city> "Long Island";
+           <yearBuilt> 2021 .
+       
+           <http://example.org/hotels/hotelamenities/Entertainment1> a <Entertainment>;
+           <included_at> <http://example.org/hotels/LongIsland>.
+       
+           <http://example.org/hotels/hotelamenities/Restaurant3> a <Restaurant>;
+           <included_at> <http://example.org/hotels/LongIsland>;
+           <seating> 122.
+       
+           <http://example.org/hotels/hotelamenities/Cleaning2> a <CleaningServices>;
+           <included_at> <http://example.org/hotels/LongIsland>.
+       
+           <http://example.org/hotels/hotelamenities/Spa3> a <Spa>;
+           <included_at> <http://example.org/hotels/LongIsland>. 
+           
+           <http://example.org/hotels/hotelamenities/Hottub2> a <Hottub>;
+           <included_at> <http://example.org/hotels/LongIsland>. 
+       } 
+       }
+       ', '', ?, ?
+   );
+   ```
 
     Additional examples can be found at [SAP HANA Cloud, SAP HANA Database SPARQL Reference Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sparql-reference-guide/sap-hana-cloud-sap-hana-database-sparql-reference-guide)
 
@@ -190,24 +190,24 @@ Before you can create a knowledge graph, please ensure your HANA Instance is ver
 
 6. Run a query to find hotels that have an indoor pool.
 
-    ```SQL
-    SELECT *
-    FROM SPARQL_TABLE('
-    PREFIX ex: <http://example.org/hotels/>
-    SELECT ?hotel ?hotelName ?city ?yearBuilt ?poolLength ?poolWidth
-    FROM <kg_hotels>
-    WHERE {
-        ?hotel a <Hotel> ;
-    <name> ?hotelName ;
-    <city> ?city ;
-    <yearBuilt> ?yearBuilt .
-        ?pool a <IndoorPool> ;
-    <included_at> ?hotel ;
-    <length> ?poolLength ;
-    <width> ?poolWidth .
-    }
-    ');
-    ```
+   ```SQL
+   SELECT *
+   FROM SPARQL_TABLE('
+   PREFIX ex: <http://example.org/hotels/>
+   SELECT ?hotel ?hotelName ?city ?yearBuilt ?poolLength ?poolWidth
+   FROM <kg_hotels>
+   WHERE {
+       ?hotel a <Hotel> ;
+   <name> ?hotelName ;
+   <city> ?city ;
+   <yearBuilt> ?yearBuilt .
+       ?pool a <IndoorPool> ;
+   <included_at> ?hotel ;
+   <length> ?poolLength ;
+   <width> ?poolWidth .
+   }
+   ');
+   ```
 
     Further examples of creating SPARQL statements can be found at [SPARQL SELECT Queries Using SPARQL_TABLE](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sparql-select-queries-using-sparql-table).
 
@@ -219,70 +219,70 @@ In SAP HANA Cloud, a property graph is made up of a set of vertices and a set of
 
 1. Create a vertex table that represents distances between hotels by executing the following in the SQL console.
 
-    ```SQL
-    CREATE COLUMN TABLE DISTANCES(
-      DKEY INTEGER UNIQUE NOT NULL,
-      HSOURCE INTEGER NOT NULL
-        REFERENCES HOTEL(HNO),
-      HTARGET INTEGER NOT NULL
-        REFERENCES HOTEL(HNO),
-      DIST_KM DOUBLE
-    );
-    ```
+   ```SQL
+   CREATE COLUMN TABLE DISTANCES(
+     DKEY INTEGER UNIQUE NOT NULL,
+     HSOURCE INTEGER NOT NULL
+       REFERENCES HOTEL(HNO),
+     HTARGET INTEGER NOT NULL
+       REFERENCES HOTEL(HNO),
+     DIST_KM DOUBLE
+   );
+   ```
 
 2. Populate the vertex table with distances between hotels that are in the same state.
 
-    ```SQL
-    --Washington
-    INSERT INTO DISTANCES VALUES (1, 10, 11, 11.8);
-    INSERT INTO DISTANCES VALUES (2, 11, 10, 11.8);
+   ```SQL
+   --Washington
+   INSERT INTO DISTANCES VALUES (1, 10, 11, 11.8);
+   INSERT INTO DISTANCES VALUES (2, 11, 10, 11.8);
 
-    --New York
-    INSERT INTO DISTANCES VALUES (3, 12, 13, 217.3);
-    INSERT INTO DISTANCES VALUES (4, 13, 12, 217.3);
-    INSERT INTO DISTANCES VALUES (5, 12, 14, 71.9);
-    INSERT INTO DISTANCES VALUES (6, 14, 12, 71.9);
-    INSERT INTO DISTANCES VALUES (7, 12, 15, 71.5);
-    INSERT INTO DISTANCES VALUES (8, 15, 12, 71.5);
-    INSERT INTO DISTANCES VALUES (9, 13, 14, 212.2);
-    INSERT INTO DISTANCES VALUES (10, 14, 13, 212.2);
-    INSERT INTO DISTANCES VALUES (11, 13, 15, 212.1);
-    INSERT INTO DISTANCES VALUES (12, 15, 13, 212.1);
-    INSERT INTO DISTANCES VALUES (13, 14, 15, 0.4);
-    INSERT INTO DISTANCES VALUES (14, 15, 14, 0.4);
+   --New York
+   INSERT INTO DISTANCES VALUES (3, 12, 13, 217.3);
+   INSERT INTO DISTANCES VALUES (4, 13, 12, 217.3);
+   INSERT INTO DISTANCES VALUES (5, 12, 14, 71.9);
+   INSERT INTO DISTANCES VALUES (6, 14, 12, 71.9);
+   INSERT INTO DISTANCES VALUES (7, 12, 15, 71.5);
+   INSERT INTO DISTANCES VALUES (8, 15, 12, 71.5);
+   INSERT INTO DISTANCES VALUES (9, 13, 14, 212.2);
+   INSERT INTO DISTANCES VALUES (10, 14, 13, 212.2);
+   INSERT INTO DISTANCES VALUES (11, 13, 15, 212.1);
+   INSERT INTO DISTANCES VALUES (12, 15, 13, 212.1);
+   INSERT INTO DISTANCES VALUES (13, 14, 15, 0.4);
+   INSERT INTO DISTANCES VALUES (14, 15, 14, 0.4);
 
-    --Illinois
-    INSERT INTO DISTANCES VALUES (15, 16, 17, 23.5);
-    INSERT INTO DISTANCES VALUES (16, 17, 16, 23.5);
+   --Illinois
+   INSERT INTO DISTANCES VALUES (15, 16, 17, 23.5);
+   INSERT INTO DISTANCES VALUES (16, 17, 16, 23.5);
 
-    --Florida
-    INSERT INTO DISTANCES VALUES (17, 18, 19, 219.8);
-    INSERT INTO DISTANCES VALUES (18, 19, 18, 219.8);
-    INSERT INTO DISTANCES VALUES (19, 18, 20, 323.4);
-    INSERT INTO DISTANCES VALUES (20, 20, 18, 323.4);
-    INSERT INTO DISTANCES VALUES (21, 19, 20, 333.8);
-    INSERT INTO DISTANCES VALUES (22, 20, 19, 333.8);
+   --Florida
+   INSERT INTO DISTANCES VALUES (17, 18, 19, 219.8);
+   INSERT INTO DISTANCES VALUES (18, 19, 18, 219.8);
+   INSERT INTO DISTANCES VALUES (19, 18, 20, 323.4);
+   INSERT INTO DISTANCES VALUES (20, 20, 18, 323.4);
+   INSERT INTO DISTANCES VALUES (21, 19, 20, 333.8);
+   INSERT INTO DISTANCES VALUES (22, 20, 19, 333.8);
 
-    --California
-    INSERT INTO DISTANCES VALUES (23, 21, 22, 149.5);
-    INSERT INTO DISTANCES VALUES (24, 22, 21, 149.5);
-    INSERT INTO DISTANCES VALUES (25, 21, 23, 35.7);
-    INSERT INTO DISTANCES VALUES (26, 23, 21, 35.7);
-    INSERT INTO DISTANCES VALUES (27, 22, 23, 163.2);
-    INSERT INTO DISTANCES VALUES (28, 23, 22, 163.2);
-    ```
+   --California
+   INSERT INTO DISTANCES VALUES (23, 21, 22, 149.5);
+   INSERT INTO DISTANCES VALUES (24, 22, 21, 149.5);
+   INSERT INTO DISTANCES VALUES (25, 21, 23, 35.7);
+   INSERT INTO DISTANCES VALUES (26, 23, 21, 35.7);
+   INSERT INTO DISTANCES VALUES (27, 22, 23, 163.2);
+   INSERT INTO DISTANCES VALUES (28, 23, 22, 163.2);
+   ```
 
 3. Create a graph workspace.
 
-    ```SQL
-    CREATE GRAPH WORKSPACE DISTANCEGRAPH
-    EDGE TABLE DISTANCES
-        SOURCE COLUMN HSOURCE
-        TARGET COLUMN HTARGET
-        KEY COLUMN DKEY
-    VERTEX TABLE HOTEL
-        KEY COLUMN HNO;
-    ```
+   ```SQL
+   CREATE GRAPH WORKSPACE DISTANCEGRAPH
+   EDGE TABLE DISTANCES
+       SOURCE COLUMN HSOURCE
+       TARGET COLUMN HTARGET
+       KEY COLUMN DKEY
+   VERTEX TABLE HOTEL
+       KEY COLUMN HNO;
+   ```
 
 4. Navigate to graph workspaces, select the previously created graph workspace, and open it to view its properties.
 
@@ -336,31 +336,31 @@ The following steps will walk through using the shortest path algorithm to deter
 
 1. Execute the following in SQL to add a few connections between hotels in different states.
 
-    ```SQL
-    --Midtown New York to Lake Michigan Chicago
-    INSERT INTO DISTANCES VALUES (29,14,16,1227);
-    INSERT INTO DISTANCES VALUES (30,16,14,1227);
+   ```SQL
+   --Midtown New York to Lake Michigan Chicago
+   INSERT INTO DISTANCES VALUES (29,14,16,1227);
+   INSERT INTO DISTANCES VALUES (30,16,14,1227);
 
-    --Long Island New York to Lake Michigan Chicago
-    INSERT INTO DISTANCES VALUES (31,12,16,1357);
-    INSERT INTO DISTANCES VALUES (32,16,12,1357);
+   --Long Island New York to Lake Michigan Chicago
+   INSERT INTO DISTANCES VALUES (31,12,16,1357);
+   INSERT INTO DISTANCES VALUES (32,16,12,1357);
 
-    --Long Island New York to Beach Florida
-    INSERT INTO DISTANCES VALUES (33,12,19,1738);
-    INSERT INTO DISTANCES VALUES (34,19,12,1738);
+   --Long Island New York to Beach Florida
+   INSERT INTO DISTANCES VALUES (33,12,19,1738);
+   INSERT INTO DISTANCES VALUES (34,19,12,1738);
 
-    --Congress Seattle to Star California
-    INSERT INTO DISTANCES VALUES (35,10,23,1817);
-    INSERT INTO DISTANCES VALUES (36,23,10,1817);
+   --Congress Seattle to Star California
+   INSERT INTO DISTANCES VALUES (35,10,23,1817);
+   INSERT INTO DISTANCES VALUES (36,23,10,1817);
 
-    --Indian Horse California to Beach Florida
-    INSERT INTO DISTANCES VALUES (37,22,19,3861);
-    INSERT INTO DISTANCES VALUES (38,19,22,3861);
+   --Indian Horse California to Beach Florida
+   INSERT INTO DISTANCES VALUES (37,22,19,3861);
+   INSERT INTO DISTANCES VALUES (38,19,22,3861);
 
-    --Atlantic Florida to Long Beach California
-    INSERT INTO DISTANCES VALUES (39,20,21,4348);
-    INSERT INTO DISTANCES VALUES (40,21,20,4348);
-    ```
+   --Atlantic Florida to Long Beach California
+   INSERT INTO DISTANCES VALUES (39,20,21,4348);
+   INSERT INTO DISTANCES VALUES (40,21,20,4348);
+   ```
 
 2. After removing the previously applied filters, navigate to the property graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path", specify the values shown below, and click Apply.
 
@@ -384,51 +384,51 @@ The following steps will demonstrate how to create a JSON collection that can be
 
 2. Create a collection named `GUEST_NOTES`.
 
-    ```SQL
-    CREATE COLLECTION GUEST_NOTES;
-    ```
+   ```SQL
+   CREATE COLLECTION GUEST_NOTES;
+   ```
 
 3. Insert some data.
 
-    ```SQL
-    INSERT INTO GUEST_NOTES VALUES ('{"FIRST_NAME": "Jenny", "LAST_NAME": "Porter", "REQUEST": "requested a courtesy call at 7:00 am"}');
-    INSERT INTO GUEST_NOTES VALUES ('{"FIRST_NAME": "Jenny", "LAST_NAME": "Porter", "REQUEST": "requested an extra blanket"}');
-    INSERT INTO GUEST_NOTES VALUES ('{"title": "Mr.", "FIRST_NAME": "Peter", "LAST_NAME": "Brown", "REQUEST": "requested an earl grey at 2:00"}');
-    ```
+   ```SQL
+   INSERT INTO GUEST_NOTES VALUES ('{"FIRST_NAME": "Jenny", "LAST_NAME": "Porter", "REQUEST": "requested a courtesy call at 7:00 am"}');
+   INSERT INTO GUEST_NOTES VALUES ('{"FIRST_NAME": "Jenny", "LAST_NAME": "Porter", "REQUEST": "requested an extra blanket"}');
+   INSERT INTO GUEST_NOTES VALUES ('{"title": "Mr.", "FIRST_NAME": "Peter", "LAST_NAME": "Brown", "REQUEST": "requested an earl grey at 2:00"}');
+   ```
 
     Notice that the structure of the Guest Notes does not need to be defined in advance.
 
 4. (Optional) You can use the [Support for JSON Schema](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-json-document-store-guide/support-for-json-schema) feature to define rules for your documents to adhere to. The example below restricts the "title" property to only accept strings.
 
-    ```SQL
-    CREATE COLLECTION "GUEST_NOTES_WITH_SCHEMA" JSON SCHEMA '{
-        "$schema": "http://json-schema.org/draft-07/schema#",
-            "properties": {
-                "title": {
-                    "type": "string"
-                }
-            }
-        }';
+   ```SQL
+   CREATE COLLECTION "GUEST_NOTES_WITH_SCHEMA" JSON SCHEMA '{
+       "$schema": "http://json-schema.org/draft-07/schema#",
+           "properties": {
+               "title": {
+                   "type": "string"
+               }
+           }
+       }';
 
-    INSERT INTO "GUEST_NOTES_WITH_SCHEMA" VALUES ('{"title": 1, "FIRST_NAME": "Peter", "LAST_NAME": "Brown", "REQUEST": "requested an earl grey at 2:00"}'); -- throws error 
-    ```
+   INSERT INTO "GUEST_NOTES_WITH_SCHEMA" VALUES ('{"title": 1, "FIRST_NAME": "Peter", "LAST_NAME": "Brown", "REQUEST": "requested an earl grey at 2:00"}'); -- throws error 
+   ```
 
     ![Schema Validation Error](schema_validation_error.png)
 
 5. The JSON data can be returned as a JSON document, in a tabular result, or can be joined with data from a table.
 
-    ```SQL
-    SELECT * FROM GUEST_NOTES;  --returns JSON
+   ```SQL
+   SELECT * FROM GUEST_NOTES;  --returns JSON
 
-    SELECT FIRST_NAME, LAST_NAME, REQUEST FROM GUEST_NOTES; --returns tabular result
+   SELECT FIRST_NAME, LAST_NAME, REQUEST FROM GUEST_NOTES; --returns tabular result
 
-    WITH myJSON AS (SELECT GUEST_NOTES FROM GUEST_NOTES)
-        SELECT '[' || STRING_AGG(TO_NVARCHAR(GUEST_NOTES), ',') || ']' FROM myJSON;  --returns all the results as one JSON document
+   WITH myJSON AS (SELECT GUEST_NOTES FROM GUEST_NOTES)
+       SELECT '[' || STRING_AGG(TO_NVARCHAR(GUEST_NOTES), ',') || ']' FROM myJSON;  --returns all the results as one JSON document
 
-    WITH GN_VIEW AS (SELECT FIRST_NAME, LAST_NAME, REQUEST FROM GUEST_NOTES) --joins a collection with a table
-        SELECT DISTINCT GN_VIEW.REQUEST, C.FIRSTNAME, GN_VIEW.LAST_NAME, C.ADDRESS
-        FROM GN_VIEW INNER JOIN CUSTOMER AS C ON GN_VIEW.LAST_NAME = C.NAME;
-    ```
+   WITH GN_VIEW AS (SELECT FIRST_NAME, LAST_NAME, REQUEST FROM GUEST_NOTES) --joins a collection with a table
+       SELECT DISTINCT GN_VIEW.REQUEST, C.FIRSTNAME, GN_VIEW.LAST_NAME, C.ADDRESS
+       FROM GN_VIEW INNER JOIN CUSTOMER AS C ON GN_VIEW.LAST_NAME = C.NAME;
+   ```
 
     ![collection queries](join-query.png)
 
@@ -452,61 +452,61 @@ JSON collections can be imported using the import data wizard but are required t
 
 2. Create a Python application and update the host variable below.
 
-    ```Shell (Microsoft Windows)
-    notepad loadJSON.py
-    ```
+   ```Shell (Microsoft Windows)
+   notepad loadJSON.py
+   ```
 
-    ```Python
-    from hana_ml import docstore
-    from hana_ml.dataframe import ConnectionContext
+   ```Python
+   from hana_ml import docstore
+   from hana_ml.dataframe import ConnectionContext
 
-    import json
+   import json
 
-    host = 'xxxxx-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com'
-    port = 443
-    user = 'USER1'
-    passwd = 'Password1'
+   host = 'xxxxx-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com'
+   port = 443
+   user = 'USER1'
+   passwd = 'Password1'
 
-    try :
-        conn = ConnectionContext(address=host, port=port, user=user, password=passwd)
-    except ConnectionContext.Error as er:
-        print('Connect failed, exiting')
-        print(er)
-        exit()
+   try :
+       conn = ConnectionContext(address=host, port=port, user=user, password=passwd)
+   except ConnectionContext.Error as er:
+       print('Connect failed, exiting')
+       print(er)
+       exit()
 
-    #If no errors, print connected
-    print('connected')
+   #If no errors, print connected
+   print('connected')
 
-    with open("ParksInWaterloo.geojson") as json_file:
-        data = json.load(json_file)
+   with open("ParksInWaterloo.geojson") as json_file:
+       data = json.load(json_file)
 
-    docstore.create_collection_from_elements(conn, 
-        collection_name="WATERLOO_PARKS", elements=[data], drop_exist_coll=True, schema="HOTELS")
-    ```
+   docstore.create_collection_from_elements(conn, 
+       collection_name="WATERLOO_PARKS", elements=[data], drop_exist_coll=True, schema="HOTELS")
+   ```
 
 3. Add the required packages.
 
-    ```Shell
-    pip install hana_ml
-    pip install shapely
-    ```
+   ```Shell
+   pip install hana_ml
+   pip install shapely
+   ```
 
 4. Run the application.
 
-    ```Shell
-    python loadJSON.py 
-    ```
+   ```Shell
+   python loadJSON.py 
+   ```
 
     ![load the collection](load-collection.png)
 
 5. Query the imported collection.
 
-    ```SQL
-    SELECT CARDINALITY("features")  FROM "HOTELS"."WATERLOO_PARKS";
-    SELECT "features" FROM "HOTELS"."WATERLOO_PARKS";
-    SELECT "features" FROM "HOTELS"."WATERLOO_PARKS" UNNEST "features" as "f";
-    SELECT "f"."properties"."NAME", "f"."properties"."TENNIS_COURT" FROM "HOTELS"."WATERLOO_PARKS" UNNEST "features" as "f" ORDER BY "f"."properties"."TENNIS_COURT" DESC;
-    ```
+   ```SQL
+   SELECT CARDINALITY("features")  FROM "HOTELS"."WATERLOO_PARKS";
+   SELECT "features" FROM "HOTELS"."WATERLOO_PARKS";
+   SELECT "features" FROM "HOTELS"."WATERLOO_PARKS" UNNEST "features" as "f";
+   SELECT "f"."properties"."NAME", "f"."properties"."TENNIS_COURT" FROM "HOTELS"."WATERLOO_PARKS" UNNEST "features" as "f" ORDER BY "f"."properties"."TENNIS_COURT" DESC;
+   ```
 
     ![parks with tennis courts](parks-with-tennis-courts.png)
 
@@ -544,9 +544,9 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud
 
 5. Rename the imported table as it was created using mixed case.
 
-    ```SQL
-    RENAME TABLE "Points_of_Interest" TO POI_WATERLOO;
-    ```
+   ```SQL
+   RENAME TABLE "Points_of_Interest" TO POI_WATERLOO;
+   ```
 
 6. View the table.  Notice that the points of interest locations are stored in a column of type `ST_GEOMETRY`.
 
@@ -564,9 +564,9 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud
 
 8. Perform the below query.
 
-    ```SQL
-    SELECT FACILITY, SHAPE.ST_AsWKT(), SHAPE FROM POI_WATERLOO;
-    ```
+   ```SQL
+   SELECT FACILITY, SHAPE.ST_AsWKT(), SHAPE FROM POI_WATERLOO;
+   ```
 
     Notice that the location data can be formatted in a more readable format using the methods `ST_AsWKT` or `ST_AsEWT` which in addition shows the SRID.
 
@@ -604,50 +604,50 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud
 
     Alternatively, a text-based import of the JSON file may be used:
 
-    ```SQL
-    CREATE COLLECTION POI_WATERLOO_JSON;
-    IMPORT FROM JSON FILE 's3-us-east-1://dansawsbucket1/Points_of_Interest.json' INTO POI_WATERLOO_JSON WITH FAIL ON INVALID DATA CREDENTIAL 'AWS';
-    ```
+   ```SQL
+   CREATE COLLECTION POI_WATERLOO_JSON;
+   IMPORT FROM JSON FILE 's3-us-east-1://dansawsbucket1/Points_of_Interest.json' INTO POI_WATERLOO_JSON WITH FAIL ON INVALID DATA CREDENTIAL 'AWS';
+   ```
 
-    After the import completes and the catalog is refreshed, a new JSON collection will appear.
+   After the import completes and the catalog is refreshed, a new JSON collection will appear.
 
-    ![imported collection](import-json-success.png)
+   ![imported collection](import-json-success.png)
 
-    Click on the `glasses` icon to open the JSON document viewer.
+   Click on the `glasses` icon to open the JSON document viewer.
 
-    ![view json](json-viewer.png)
+   ![view json](json-viewer.png)
 
 14. The following SQL queries show a few examples of querying the imported JSON data including the last query which can be shown on the map viewer.
 
-    ```SQL
-    SELECT * FROM POI_WATERLOO_JSON;  --JSON data format. Can use the built-in viewer.
+   ```SQL
+   SELECT * FROM POI_WATERLOO_JSON;  --JSON data format. Can use the built-in viewer.
 
-    SELECT "properties".FACILITY as name, "properties".TYPE as type, "geometry" as geometry FROM POI_WATERLOO_JSON;  --Can return data in column format.
+   SELECT "properties".FACILITY as name, "properties".TYPE as type, "geometry" as geometry FROM POI_WATERLOO_JSON;  --Can return data in column format.
 
-    SELECT "properties".FACILITY as name, "properties".TYPE as type, JSON_VALUE("geometry", '$.coordinates[0]') as long, JSON_VALUE("geometry", '$.coordinates[1]') as lat FROM POI_WATERLOO_JSON; --Can return longitude and latitude
+   SELECT "properties".FACILITY as name, "properties".TYPE as type, JSON_VALUE("geometry", '$.coordinates[0]') as long, JSON_VALUE("geometry", '$.coordinates[1]') as lat FROM POI_WATERLOO_JSON; --Can return longitude and latitude
 
-    SELECT "properties".FACILITY as name, "properties".TYPE as type, ST_GeomFromGeoJSON("geometry", 4326) as shape FROM POI_WATERLOO_JSON; --Can now be shown in the map viewer
-    ```
+   SELECT "properties".FACILITY as name, "properties".TYPE as type, ST_GeomFromGeoJSON("geometry", 4326) as shape FROM POI_WATERLOO_JSON; --Can now be shown in the map viewer
+   ```
 
-    Additional details can be found at [JSON_VALUE Function](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/9355cb9e45a149c1a6ddb2bd2392d864.html) and [ST_GeomFromGeoJSON](https://help.sap.com/docs/HANA_CLOUD_DATABASE/bc9e455fe75541b8a248b4c09b086cf5/40771e89ed1641e88674b45adb2ef6a1.html).
+   Additional details can be found at [JSON_VALUE Function](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/9355cb9e45a149c1a6ddb2bd2392d864.html) and [ST_GeomFromGeoJSON](https://help.sap.com/docs/HANA_CLOUD_DATABASE/bc9e455fe75541b8a248b4c09b086cf5/40771e89ed1641e88674b45adb2ef6a1.html).
 
 ### Use spatial functions in a query
 
 1. The following statement shows the list of points of interest within 3 kilometers of the `Delta` hotel.
 
-    ```SQL
-    SELECT
-        P.FACILITY,
-        P.TYPE,
-        P.ADDRESS,
-        ROUND(H.LOCATION.ST_Distance(P.SHAPE, 'kilometer'), 2) as DISTANCE,
-        P.SHAPE
-    FROM HOTEL H, POI_WATERLOO P
-    WHERE
-        H.HNO=26 /*Delta*/ AND
-        TO_BOOLEAN(H.LOCATION.ST_WithinDistance(NEW ST_Point(SHAPE.ST_AsWKT(), 4326), 3, 'kilometer')) = TRUE
-    ORDER BY DISTANCE ASC;
-    ```
+   ```SQL
+   SELECT
+       P.FACILITY,
+       P.TYPE,
+       P.ADDRESS,
+       ROUND(H.LOCATION.ST_Distance(P.SHAPE, 'kilometer'), 2) as DISTANCE,
+       P.SHAPE
+   FROM HOTEL H, POI_WATERLOO P
+   WHERE
+       H.HNO=26 /*Delta*/ AND
+       TO_BOOLEAN(H.LOCATION.ST_WithinDistance(NEW ST_Point(SHAPE.ST_AsWKT(), 4326), 3, 'kilometer')) = TRUE
+   ORDER BY DISTANCE ASC;
+   ```
 
     Each point can be viewed as shown below.
 
@@ -657,14 +657,14 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud
 
     Alternatively, all the points can be shown together.
 
-    ```SQL
-    SELECT
-        ST_UnionAggr(P.SHAPE)
-    FROM HOTEL H, POI_WATERLOO P
-    WHERE
-        H.HNO=26 /*Delta*/ AND
-        TO_BOOLEAN(H.LOCATION.ST_WithinDistance(NEW ST_Point(SHAPE.ST_AsWKT(), 4326), 3, 'kilometer')) = TRUE;
-    ```
+   ```SQL
+   SELECT
+       ST_UnionAggr(P.SHAPE)
+   FROM HOTEL H, POI_WATERLOO P
+   WHERE
+       H.HNO=26 /*Delta*/ AND
+       TO_BOOLEAN(H.LOCATION.ST_WithinDistance(NEW ST_Point(SHAPE.ST_AsWKT(), 4326), 3, 'kilometer')) = TRUE;
+   ```
 
     ![Points of interest close by](poi-close-to-hotel.png)
 
