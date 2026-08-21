@@ -30,19 +30,19 @@ primary_tag: software-product>sap-hana-cloud
 
     The schema can be changed by executing the SQL statement below:
 
-    ```SQL
-    SET SCHEMA HOTELS;
-    ```
+   ```SQL
+   SET SCHEMA HOTELS;
+   ```
 
     When performing a select against an object in the currently set schema, the schema name can be omitted.
 
-    ```SQL
-    SET SCHEMA USER1;
-    SELECT * FROM HOTELS.CUSTOMER; --succeeds
-    SELECT * FROM CUSTOMER; --fails
-    SET SCHEMA HOTELS;
-    SELECT * FROM CUSTOMER; --succeeds
-    ```
+   ```SQL
+   SET SCHEMA USER1;
+   SELECT * FROM HOTELS.CUSTOMER; --succeeds
+   SELECT * FROM CUSTOMER; --fails
+   SET SCHEMA HOTELS;
+   SELECT * FROM CUSTOMER; --succeeds
+   ```
 
 2. When browsing objects in the database browser, the schema name is shown for each object if a schema filter is not set.
 

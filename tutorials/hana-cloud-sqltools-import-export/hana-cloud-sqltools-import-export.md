@@ -37,9 +37,9 @@ The following steps demonstrate how to export and import data from the MAINTENAN
 
 1. Enter the SQL statement below in the SQL console.
 
-    ```SQL
-    SELECT * FROM HOTELS.MAINTENANCE;
-    ```
+   ```SQL
+   SELECT * FROM HOTELS.MAINTENANCE;
+   ```
 
     Click on the download toolbar item and choose **Download**.
 
@@ -51,9 +51,9 @@ The following steps demonstrate how to export and import data from the MAINTENAN
 
 2. Enter the SQL statement below to delete the rows in the table. They will be added back in the next step.
 
-    ```SQL
-    DELETE FROM HOTELS.MAINTENANCE;
-    ```
+   ```SQL
+   DELETE FROM HOTELS.MAINTENANCE;
+   ```
 
 3. Navigate to the **Import and Export** app and choose **Import Data**.
 
@@ -67,9 +67,9 @@ The following steps demonstrate how to export and import data from the MAINTENAN
 
     After completing the wizard, the contents of the MAINTENANCE table should be the same as before the delete statement was executed. Run the following SQL statement to confirm.
 
-    ```SQL
-    SELECT * FROM HOTELS.MAINTENANCE;
-    ```
+   ```SQL
+   SELECT * FROM HOTELS.MAINTENANCE;
+   ```
 
     ![Maintenance Table](maintenance-table.png)
 
@@ -88,67 +88,67 @@ SQL Statements used:
 
 2. Create a database credential for the data lake Files container by running the following SQL in your database instance as DBADMIN.  Further details are described at [Importing and Exporting with SAP HANA Cloud Data Lake Files Storage](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/importing-and-exporting-with-sap-hana-cloud-data-lake-files-storage).
 
-    ```SQL
-    SELECT * FROM PSES;
-    CREATE PSE HTTPS;
-    SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
+   ```SQL
+   SELECT * FROM PSES;
+   CREATE PSE HTTPS;
+   SELECT SUBJECT_COMMON_NAME, CERTIFICATE_ID, COMMENT, CERTIFICATE FROM CERTIFICATES;
 
-    --cert from https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem and is the CA for HANA Cloud
-    --https://knowledge.digicert.com/general-information/digicert-trusted-root-authority-certificates
-    --https://cacerts.digicert.com/DigiCertTLSRSA4096RootG5.crt.pem
-    CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
-    MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
-    d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
-    QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT
-    MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
-    b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG
-    9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB
-    CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97
-    nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt
-    43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P
-    T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4
-    gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO
-    BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR
-    TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw
-    DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr
-    hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg
-    06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF
-    PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls
-    YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
-    CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----' COMMENT 'SAP_HC';
-    --DROP CERTIFICATE <CERTIFICATE_ID>;
-    ```
+   --cert from https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem and is the CA for HANA Cloud
+   --https://knowledge.digicert.com/general-information/digicert-trusted-root-authority-certificates
+   --https://cacerts.digicert.com/DigiCertTLSRSA4096RootG5.crt.pem
+   CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
+   MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+   d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
+   QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT
+   MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+   b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG
+   9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB
+   CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97
+   nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt
+   43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P
+   T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4
+   gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO
+   BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR
+   TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw
+   DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr
+   hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg
+   06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF
+   PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls
+   YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
+   CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----' COMMENT 'SAP_HC';
+   --DROP CERTIFICATE <CERTIFICATE_ID>;
+   ```
 
     Execute the following to retrieve the certificate ID and add it to the PSE.
 
-    ```SQL
-    SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'SAP_HC';
-    ```
+   ```SQL
+   SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'SAP_HC';
+   ```
 
     Remove the comma and add the certificate ID (ex: 123456) from the previous statement into `<CERTIFICATE_ID>`.
 
-    ```SQL
-    ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
-    --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
-    ```
+   ```SQL
+   ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
+   --ALTER PSE HTTPS DROP CERTIFICATE <CERTIFICATE_ID>;
+   ```
 
     Then set the own certificate using the client private key, client certificate, and Root Certification Authority of the client certificate in plain text. Make sure you have completed steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
 
-    ```SQL
-    ALTER PSE HTTPS SET OWN CERTIFICATE
-    '<Contents from client.key>
-    <Contents from client.crt>
-    <Contents from ca.crt>';
-    --GRANT REFERENCES ON PSE HTTPS TO USER1;
-    SELECT * FROM PSE_CERTIFICATES;
-    ```
+   ```SQL
+   ALTER PSE HTTPS SET OWN CERTIFICATE
+   '<Contents from client.key>
+   <Contents from client.crt>
+   <Contents from ca.crt>';
+   --GRANT REFERENCES ON PSE HTTPS TO USER1;
+   SELECT * FROM PSE_CERTIFICATES;
+   ```
 
 3. Execute the following SQL to store a credential for the data lake Files container.
 
-    ```SQL
-    SELECT * FROM CREDENTIALS;
-    CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
-    ```
+   ```SQL
+   SELECT * FROM CREDENTIALS;
+   CREATE CREDENTIAL FOR COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
+   ```
 
 4. Export the `MAINTENANCE` table into the data lake Files container using the export data wizard or the SQL statement below.
 
@@ -176,14 +176,14 @@ SQL Statements used:
 
 8. The wizard makes use of the `EXPORT INTO` statement. An example is shown below:
 
-    ```SQL
-    EXPORT INTO CSV FILE
-        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTELS/maintenance.csv'
-    FROM MAINTENANCE
-    WITH
-        CREDENTIAL 'DL_FILES'
-        COLUMN LIST IN FIRST ROW;
-    ```
+   ```SQL
+   EXPORT INTO CSV FILE
+       'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTELS/maintenance.csv'
+   FROM MAINTENANCE
+   WITH
+       CREDENTIAL 'DL_FILES'
+       COLUMN LIST IN FIRST ROW;
+   ```
 
     >On the final screen of the wizard, you can select **View Generated SQL** to see the SQL statement that will be executed.
     >
@@ -191,9 +191,9 @@ SQL Statements used:
 
 9. Delete the rows from the table. They will be restored in the next step.
 
-    ```SQL
-    DELETE FROM HOTELS.MAINTENANCE;
-    ```
+   ```SQL
+   DELETE FROM HOTELS.MAINTENANCE;
+   ```
 
 10. Import the data back using the import data wizard or the SQL statement below. Navigate to the **Import and Export** app and choose **Import Data**.
 
@@ -209,20 +209,20 @@ SQL Statements used:
 
 14. The wizard makes use of the import from statement. An example is shown below:
 
-    ```SQL
-    IMPORT FROM CSV FILE 'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTELS/maintenance.csv'
-    INTO HOTELS.MAINTENANCE WITH
-        CREDENTIAL 'DL_FILES'
-        COLUMN LIST IN FIRST ROW;
-    ```
+   ```SQL
+   IMPORT FROM CSV FILE 'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTELS/maintenance.csv'
+   INTO HOTELS.MAINTENANCE WITH
+       CREDENTIAL 'DL_FILES'
+       COLUMN LIST IN FIRST ROW;
+   ```
 
-    You can verify the success of the export or import operation by navigating to the **Import and Export** app and reviewing the job history and by executing a select against the table.
+   You can verify the success of the export or import operation by navigating to the **Import and Export** app and reviewing the job history and by executing a select against the table.
 
-    ![Import Export Success](successful-import-export.png)
+   ![Import Export Success](successful-import-export.png)
 
-    ```SQL
-    SELECT * FROM HOTELS.MAINTENANCE;
-    ```
+   ```SQL
+   SELECT * FROM HOTELS.MAINTENANCE;
+   ```
 
 ### Export and import data from an SAP HANA Cloud, data lake Relational Engine database (optional)
 
@@ -237,82 +237,82 @@ SQL Statements used:
 
 1. Create a database credential for the data lake Files container.  This step is required if you wish to export to a data lake Files instance that is not the one associated with the data lake Relational Engine.  Open a SQL Console connected to a data lake Relational Engine instance and execute the below SQL statements as HDLADMIN.
 
-    ```SQL
-    SELECT * FROM SYSPSE;
-    CREATE PSE HTTPS;
-    SELECT * FROM SYSCERTIFICATE;
-    CREATE CERTIFICATE DIGICERTG5 FROM '-----BEGIN CERTIFICATE-----
-    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
-    -----END CERTIFICATE-----';
-    SELECT * FROM SYSCERTIFICATE WHERE cert_name = 'DIGICERTG5';
-    ALTER PSE HTTPS ADD CERTIFICATE <object_id>;
-    ```
+   ```SQL
+   SELECT * FROM SYSPSE;
+   CREATE PSE HTTPS;
+   SELECT * FROM SYSCERTIFICATE;
+   CREATE CERTIFICATE DIGICERTG5 FROM '-----BEGIN CERTIFICATE-----
+   MIIFZjCCA06gAwIBAgIQCPm0eKj6ftpqMzeJ3nzPijANBgkqhkiG9w0BAQwFADBN
+   MQswCQYDVQQGEwJVUzEXMBUGA1UEChMORGlnaUNlcnQsIEluYy4xJTAjBgNVBAMT
+   HERpZ2lDZXJ0IFRMUyBSU0E0MDk2IFJvb3QgRzUwHhcNMjEwMTE1MDAwMDAwWhcN
+   NDYwMTE0MjM1OTU5WjBNMQswCQYDVQQGEwJVUzEXMBUGA1UEChMORGlnaUNlcnQs
+   IEluYy4xJTAjBgNVBAMTHERpZ2lDZXJ0IFRMUyBSU0E0MDk2IFJvb3QgRzUwggIi
+   MA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCz0PTJeRGd/fxmgefM1eS87IE+
+   ajWOLrfn3q/5B03PMJ3qCQuZvWxX2hhKuHisOjmopkisLnLlvevxGs3npAOpPxG0
+   2C+JFvuUAT27L/gTBaF4HI4o4EXgg/RZG5Wzrn4DReW+wkL+7vI8toUTmDKdFqgp
+   wgscONyfMXdcvyej/Cestyu9dJsXLfKB2l2w4SMXPohKEiPQ6s+d3gMXsUJKoBZM
+   pG2T6T867jp8nVid9E6P/DsjyG244gXazOvswzH016cpVIDPRFtMbzCe88zdH5RD
+   nU1/cHAN1DrRN/BsnZvAFJNY781BOHW8EwOVfH/jXOnVDdXifBBiqmvwPXbzP6Po
+   sMH976pXTayGpxi0KcEsDr9kvimM2AItzVwv8n/vFfQMFawKsPHTDU9qTXeXAaDx
+   Zre3zu/O7Oyldcqs4+Fj97ihBMi8ez9dLRYiVu1ISf6nL3kwJZu6ay0/nTvEF+cd
+   Lvvyz6b84xQslpghjLSR6Rlgg/IwKwZzUNWYOwbpx4oMYIwo+FKbbuH2TbsGJJvX
+   KyY//SovcfXWJL5/MZ4PbeiPT02jP/816t9JXkGPhvnxd3lLG7SjXi/7RgLQZhNe
+   XoVPzthwiHvOAbWWl9fNff2C+MIkwcoBOU+NosEUQB+cZtUMCUbW8tDRSHZWOkPL
+   tgoRObqME2wGtZ7P6wIDAQABo0IwQDAdBgNVHQ4EFgQUUTMc7TZArxfTJc1paPKv
+   TiM+s0EwDgYDVR0PAQH/BAQDAgGGMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcN
+   AQEMBQADggIBAGCmr1tfV9qJ20tQqcQjNSH/0GEwhJG3PxDPJY7Jv0Y02cEhJhxw
+   GXIeo8mH/qlDZJY6yFMECrZBu8RHANmfGBg7sg7zNOok992vIGCukihfNudd5N7H
+   PNtQOa27PShNlnx2xlv0wdsUpasZYgcYQF+Xkdycx6u1UQ3maVNVzDl92sURVXLF
+   O4uJ+DQtpBflF+aZfTCIITfNMBc9uPK8qHWgQ9w+iUuQrm0D4ByjoJYJu32jtyoQ
+   REtGBzRj7TG5BO6jm5qu5jF49OokYTurWGT/u4cnYiWB39yhL/btp/96j1EuMPik
+   AdKFOV8BmZZvWltwGUb+hmA+rYAQCd05JS9Yf7vSdPD3Rh9GOUrYU9DzLjtxpdRv
+   /PNn5AeP3SYZ4Y1b+qOTEZvpyDrDVWiakuFSdjjo4bq9+0/V77PnSIMx8IIh47a+
+   p6tv75/fTM8BuGJqIz3nCU2AG3swpMPdB380vqQmsvZB6Akd4yCYqjdP//fx4ilw
+   MUc/dNAUFvohigLVigmUdy7yWSiLfFCSCmZ4OIN1xLVaqBHG5cGdZlXPU8Sv13WF
+   qUITVuwhd4GTWgzqltlJyqEI8pc7bZsEGCREjnwB8twl2F6GmrE52/WRMmrRpnCK
+   ovfepEWFJqgejF0pW8hL2JpqA15w8oVPbEtoL8pU9ozaMv7Da4M/OMZ+
+   -----END CERTIFICATE-----';
+   SELECT * FROM SYSCERTIFICATE WHERE cert_name = 'DIGICERTG5';
+   ALTER PSE HTTPS ADD CERTIFICATE <object_id>;
+   ```
 
-    ```SQL
-    SELECT * FROM SYSPSECERTIFICATE;
-    ALTER PSE HTTPS SET OWN CERTIFICATE
-    '<Contents from client.key>
-    <Contents from client.crt>
-    <Contents from ca.crt>';
-    ----ALTER PSE HTTPS UNSET OWN CERTIFICATE;
-    ```
+   ```SQL
+   SELECT * FROM SYSPSECERTIFICATE;
+   ALTER PSE HTTPS SET OWN CERTIFICATE
+   '<Contents from client.key>
+   <Contents from client.crt>
+   <Contents from ca.crt>';
+   ----ALTER PSE HTTPS UNSET OWN CERTIFICATE;
+   ```
 
-    ```SQL
-    SELECT * FROM SYSCREDENTIAL;
-    CREATE CREDENTIAL FOR COMPONENT 'SAPHDLRELOADUNLOAD' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
-    --DROP CREDENTIAL FOR COMPONENT 'SAPHDLRELOADUNLOAD' PURPOSE 'DL_FILES' TYPE 'X509';
-    ```
+   ```SQL
+   SELECT * FROM SYSCREDENTIAL;
+   CREATE CREDENTIAL FOR COMPONENT 'SAPHDLRELOADUNLOAD' PURPOSE 'DL_FILES' TYPE 'X509' PSE HTTPS;
+   --DROP CREDENTIAL FOR COMPONENT 'SAPHDLRELOADUNLOAD' PURPOSE 'DL_FILES' TYPE 'X509';
+   ```
 
     Additional details are described at [CREATE CERTIFICATE](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/create-certificate-statement-for-data-lake-relational-engine).
 
 2. The HOTELS schema and MAINTENANCE table are not automatically shared with the Relational Engine. If the schema does not already exist, create it manually in the Relational Engine SQL console.
 
-    ```SQL
-    CREATE SCHEMA HOTELS;
-    CREATE TABLE HOTELS.MAINTENANCE (
-        MNO INTEGER NOT NULL,
-        HNO INTEGER NOT NULL,
-        DESCRIPTION VARCHAR(100),
-        DATE_PERFORMED DATE,
-        PERFORMED_BY VARCHAR(40)
-    );
-    ```
+   ```SQL
+   CREATE SCHEMA HOTELS;
+   CREATE TABLE HOTELS.MAINTENANCE (
+       MNO INTEGER NOT NULL,
+       HNO INTEGER NOT NULL,
+       DESCRIPTION VARCHAR(100),
+       DATE_PERFORMED DATE,
+       PERFORMED_BY VARCHAR(40)
+   );
+   ```
 
     Ensure you are in the HOTELS schema before performing the following inserts.
 
-    ```SQL
-    INSERT INTO MAINTENANCE VALUES(10, 24, 'Replace pool liner and pump', '2019-03-21', 'Discount Pool Supplies');
-    INSERT INTO MAINTENANCE VALUES(11, 25, 'Renovate the bar area.  Replace TV and speakers', '2020-11-29', 'TV and Audio Superstore');
-    INSERT INTO MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
-    ```
+   ```SQL
+   INSERT INTO MAINTENANCE VALUES(10, 24, 'Replace pool liner and pump', '2019-03-21', 'Discount Pool Supplies');
+   INSERT INTO MAINTENANCE VALUES(11, 25, 'Renovate the bar area.  Replace TV and speakers', '2020-11-29', 'TV and Audio Superstore');
+   INSERT INTO MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
+   ```
 
 3. Export (unload) the data from the `MAINTENANCE` table to data lake Files using the export data wizard or the SQL statement below.
 
@@ -328,21 +328,21 @@ SQL Statements used:
   
     >Export or unload the data from the MAINTENANCE table to a data lake Files instance using the SQL statement. The below example targets the data lake Files instance that is attached to the data lake Relational Engine.
 
-    ```SQL
-    UNLOAD SELECT * FROM HOTELS.MAINTENANCE
-    INTO FILE 'hdlfs:///maint.csv'
-    NULL FORMAT EMPTY
-    ```
+   ```SQL
+   UNLOAD SELECT * FROM HOTELS.MAINTENANCE
+   INTO FILE 'hdlfs:///maint.csv'
+   NULL FORMAT EMPTY
+   ```
 
     The below example targets a different data lake Files instance.
 
-    ```SQL
-    UNLOAD SELECT * FROM HOTELS.MAINTENANCE
-    INTO FILE 'hdlfs://18b4be74-a4f1-40a0-a357-60155aee5f30/maint.csv'
-    CONNECTION_STRING 'ENDPOINT=https://18b4be74-a4f1-40a0-a357-60155aee5f30.files.hdl.prod-ca10.hanacloud.ondemand.com'
-    WITH CREDENTIAL 'DL_FILES'
-    NULL FORMAT EMPTY;
-    ```
+   ```SQL
+   UNLOAD SELECT * FROM HOTELS.MAINTENANCE
+   INTO FILE 'hdlfs://18b4be74-a4f1-40a0-a357-60155aee5f30/maint.csv'
+   CONNECTION_STRING 'ENDPOINT=https://18b4be74-a4f1-40a0-a357-60155aee5f30.files.hdl.prod-ca10.hanacloud.ondemand.com'
+   WITH CREDENTIAL 'DL_FILES'
+   NULL FORMAT EMPTY;
+   ```
 
 7. Import (load) the data back into the `MAINTENANCE` table using the import data wizard or the SQL statement below.
 
@@ -360,29 +360,29 @@ SQL Statements used:
 
     >The wizard makes use of the load statement. The below example targets the data lake Files instance that is attached to the data lake Relational Engine.
 
-    ```SQL
-    DELETE FROM HOTELS.MAINTENANCE;
-    LOAD TABLE HOTELS.MAINTENANCE (MNO, HNO, DESCRIPTION, DATE_PERFORMED, PERFORMED_BY) FROM 'hdlfs:///maint.csv'
-    ESCAPES OFF;
-    SELECT * FROM HOTELS.MAINTENANCE;
-    ```
+   ```SQL
+   DELETE FROM HOTELS.MAINTENANCE;
+   LOAD TABLE HOTELS.MAINTENANCE (MNO, HNO, DESCRIPTION, DATE_PERFORMED, PERFORMED_BY) FROM 'hdlfs:///maint.csv'
+   ESCAPES OFF;
+   SELECT * FROM HOTELS.MAINTENANCE;
+   ```
 
-    The below example targets a different data lake Files instance.
+   The below example targets a different data lake Files instance.
 
-    ```SQL
-    DELETE FROM HOTELS.MAINTENANCE;
-    LOAD TABLE HOTELS.MAINTENANCE (MNO, HNO, DESCRIPTION, DATE_PERFORMED, PERFORMED_BY) FROM 'hdlfs://18b4be74-a4f1-40a0-a357-60155aee5f30/maint.csv'
-    CONNECTION_STRING 'ENDPOINT=https://18b4be74-a4f1-40a0-a357-60155aee5f30.files.hdl.prod-ca10.hanacloud.ondemand.com'
-    WITH CREDENTIAL 'DL_FILES' 
-    ESCAPES OFF;
-    SELECT * FROM HOTELS.MAINTENANCE;
-    ```
+   ```SQL
+   DELETE FROM HOTELS.MAINTENANCE;
+   LOAD TABLE HOTELS.MAINTENANCE (MNO, HNO, DESCRIPTION, DATE_PERFORMED, PERFORMED_BY) FROM 'hdlfs://18b4be74-a4f1-40a0-a357-60155aee5f30/maint.csv'
+   CONNECTION_STRING 'ENDPOINT=https://18b4be74-a4f1-40a0-a357-60155aee5f30.files.hdl.prod-ca10.hanacloud.ondemand.com'
+   WITH CREDENTIAL 'DL_FILES' 
+   ESCAPES OFF;
+   SELECT * FROM HOTELS.MAINTENANCE;
+   ```
 
-    Run the following SQL statement to verify the import succeeded.
+   Run the following SQL statement to verify the import succeeded.
 
-    ```SQL
-    SELECT * FROM HOTELS.MAINTENANCE
-    ```
+   ```SQL
+   SELECT * FROM HOTELS.MAINTENANCE
+   ```
 
 ### Export and import schema or catalog objects (optional)
 
@@ -413,9 +413,9 @@ To try these out, follow the steps below.
 
 3. Enter the SQL statement below to drop the table. It will be added back in the next step.
 
-    ```SQL
-    DROP TABLE HOTELS.MAINTENANCE;
-    ```
+   ```SQL
+   DROP TABLE HOTELS.MAINTENANCE;
+   ```
 
 4. Navigate to the **Import and Export** app and choose **Import Database Objects**. Browse to the previously downloaded archive file and complete the wizard. 
 
@@ -427,9 +427,9 @@ To try these out, follow the steps below.
 
     The contents of the MAINTENANCE table should now be the same as before the drop statement was executed.
 
-    ```SQL
-    SELECT * FROM HOTELS.MAINTENANCE;
-    ```
+   ```SQL
+   SELECT * FROM HOTELS.MAINTENANCE;
+   ```
 
 ### Knowledge check
 

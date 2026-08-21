@@ -61,9 +61,9 @@ The SAP HANA database explorer extension can connect to SAP HANA Cloud and on-pr
 
     This tutorial uses the HOTELS schema. Set the default schema value in the **Advanced Options** as shown below. Subsequent SQL consoles you open will now start with this schema value.
 
-    ```Advanced Options Field
-    currentSchema=HOTELS;
-    ```
+   ```Advanced Options Field
+   currentSchema=HOTELS;
+   ```
 
     >Ensure that you connect the database securely using TLS/SSL by ticking the checkbox. If you do not check the Save Password checkbox, you will have to enter your password each time you start using the extension.
 
@@ -99,10 +99,10 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
     ![set the API Endpoint](api-endpoint.png)
 
-    ```Shell
-    cf api
-    cf api https://api.cf.us10-001.hana.ondemand.com
-    ```
+   ```Shell
+   cf api
+   cf api https://api.cf.us10-001.hana.ondemand.com
+   ```
 
     The API endpoint value can be obtained in the SAP BTP Cockpit as shown below.
 
@@ -120,23 +120,23 @@ The SAP HANA database explorer extension also allows you to connect to the datab
 
     To login with email and password:
 
-    ```Terminal
-    cf login 
-    ```
+   ```Terminal
+   cf login 
+   ```
 
     To login with single sign-on:
 
-    ```Terminal
-    cf login --sso
-    ```
+   ```Terminal
+   cf login --sso
+   ```
 
     >Logging in with single sign-on will require you to click on the provided link, copy the code provided, and then paste the code in the terminal by right-clicking and clicking enter.
 
     >For more login options:
 
-    ```Terminal
-    cf login -help
-    ```
+   ```Terminal
+   cf login -help
+   ```
 
 5. After pressing the refresh button you should see the same database instances list from the web-based SAP HANA database explorer (Cloud Foundry edition) appear in your Database List.
 
@@ -220,9 +220,9 @@ Learn how to change settings and leverage features such as split editor, layout 
 
 3. Visual Studio Code also has built-in functionality that allows you to split editors which can be very useful to customize your workspace. For example, if you are working on multiple tasks, or need to refer to a table while manipulating another one, this feature can allow you to work more efficiently. In a SQL console, run the following code.
 
-    ```SQL
-    SELECT * FROM CUSTOMER;
-    ```
+   ```SQL
+   SELECT * FROM CUSTOMER;
+   ```
 
     Open another SQL console, click the split editor icon, and then drag one of the SQL console tabs into the new space to the right.
 
@@ -230,21 +230,21 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     As you can see in the CUSTOMER table, this includes both individual customers and company customers. You want to create a new table that consists only of company customers and insert the relevant information into the new table. To do so, run the following code in the empty SQL console and verify by comparing the table results that the necessary entries were made.
 
-    ```SQL
-    CREATE COLUMN TABLE CORPORATE_CUSTOMER(
-        cno INTEGER PRIMARY KEY,
-        company NVARCHAR(40) NOT NULL,
-        address NVARCHAR(40) NOT NULL,
-        zip NVARCHAR(6)
-    );
+   ```SQL
+   CREATE COLUMN TABLE CORPORATE_CUSTOMER(
+       cno INTEGER PRIMARY KEY,
+       company NVARCHAR(40) NOT NULL,
+       address NVARCHAR(40) NOT NULL,
+       zip NVARCHAR(6)
+   );
 
-    INSERT INTO CORPORATE_CUSTOMER (CNO, COMPANY, ADDRESS, ZIP) 
-    SELECT CNO, NAME, ADDRESS, ZIP 
-    FROM CUSTOMER 
-    WHERE TITLE='Company';
+   INSERT INTO CORPORATE_CUSTOMER (CNO, COMPANY, ADDRESS, ZIP) 
+   SELECT CNO, NAME, ADDRESS, ZIP 
+   FROM CUSTOMER 
+   WHERE TITLE='Company';
 
-    SELECT * FROM CORPORATE_CUSTOMER;
-    ```
+   SELECT * FROM CORPORATE_CUSTOMER;
+   ```
 
     ![Compare Tables](compareTables.png)
 
@@ -256,9 +256,9 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     ![Toggle Panel](togglePanel.png)
 
-    ```Terminal
-    notepad average_rating_function
-    ```
+   ```Terminal
+   notepad average_rating_function
+   ```
 
     >Remember where you created this file, as you will need that location later.
 
@@ -266,15 +266,15 @@ Learn how to change settings and leverage features such as split editor, layout 
 
     Paste the following code into the file and save it as a SQL file by adding `.sql` to the file name. This function will return the average rating of a specific destination from the TOURIST_REVIEWS table.
 
-    ```SQL
-    CREATE OR REPLACE FUNCTION AVERAGE_RATING(destination_id INT)
-    RETURNS avg_rating INT
-    AS
-    BEGIN
-        DECLARE EXIT HANDLER FOR SQLEXCEPTION avg_rating := '-1';
-        SELECT TO_DECIMAL(ROUND(sum(DESTINATION_RATING)/COUNT(*), 2, ROUND_HALF_UP)) INTO avg_rating FROM TOURIST_REVIEWS WHERE destination_id =:destination_id GROUP BY destination_id;
-    END;
-    ```
+   ```SQL
+   CREATE OR REPLACE FUNCTION AVERAGE_RATING(destination_id INT)
+   RETURNS avg_rating INT
+   AS
+   BEGIN
+       DECLARE EXIT HANDLER FOR SQLEXCEPTION avg_rating := '-1';
+       SELECT TO_DECIMAL(ROUND(sum(DESTINATION_RATING)/COUNT(*), 2, ROUND_HALF_UP)) INTO avg_rating FROM TOURIST_REVIEWS WHERE destination_id =:destination_id GROUP BY destination_id;
+   END;
+   ```
 
 ### Import and export SQL code
 
@@ -294,9 +294,9 @@ The extension also allows you to import and export SQL files to and from your co
 
 1. Open a new SQL console and use the newly created function with the following code. Click on the dropdown arrow beside Run to view the different Run options. Then, normally **Run** your code.
 
-    ```SQL
-    SELECT AVERAGE_RATING(1) FROM DUMMY;
-    ```
+   ```SQL
+   SELECT AVERAGE_RATING(1) FROM DUMMY;
+   ```
 
     >Note how the Run options differ in the extension (left) from the web application (right).
 
