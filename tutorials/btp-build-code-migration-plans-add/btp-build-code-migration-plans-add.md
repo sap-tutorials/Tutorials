@@ -33,27 +33,27 @@ parser: v2
 
    On the welcome screen of the SAP BTP Cockpit. Click on [Go To Your Trial Account](https://account.hanatrial.ondemand.com/trial/#/home/trial) to navigate to your global account.
 
-  <!-- border --> ![TrailAccount](TrailAccount.png)
+  ![TrailAccount](TrailAccount.png)
 
 ### Access your subaccount
 
 Click the tile of your Cloud Foundry subaccount to proceed.
 
-  <!-- border --> ![Accessing Subaccount](Subaccount.png)
+  ![Accessing Subaccount](Subaccount.png)
 
 ### Add SAP Build Code standard plan
 
  1. Navigate to **Entitlements**, choose **Edit**.
 
-    <!-- border --> ![Edit Service plan](Entitlementandedit1.jpg)
+    ![Edit Service plan](Entitlementandedit1.jpg)
 
  2. Choose **Add service Plans**.
  
-    <!-- border --> ![Add Service Plan](addserviceplan.jpg)
+    ![Add Service Plan](addserviceplan.jpg)
  
  3. On the new pop-up window, under **Services** search for *`build code`* or *`SAP Build Code`*: Select **SAP Build Code** > under **Available Plans**, select **standard (Application)** plan > choose **Add 1 Service Plan**.
  
-    <!-- border --> ![Adding SAP Build Code Standard plan](addserviceplansave1.jpg)
+    ![Adding SAP Build Code Standard plan](addserviceplansave1.jpg)
   
  4. Choose **Save**.
 

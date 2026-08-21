@@ -33,11 +33,11 @@ Once you have copied the integration package “SAP Sales Cloud Version 2 Integr
 
 3. Click on Configure, then switch to the More tab. Set the field Custom Exit to the value true.
 
-    <!-- border -->![Integration Suite](1.png)
+    ![Integration Suite](1.png)
 
 4. From now on, the CustomExit (ProcessDirect call) within this integration flow will automatically be used whenever a Sales Order is triggered from SAP Sales and Service Cloud to SAP S/4HANA Cloud ERP.
 
-    <!-- border -->![Integration Suite](2.png)
+    ![Integration Suite](2.png)
 
 ### Extension of Data Model in SAP Sales and Service Cloud (SAP C4C)
 
@@ -54,7 +54,7 @@ In this section, you will create the custom field RespSellerName (Responsible Se
     - Type: Text (String)
     - Length: 20 characters 
 
-    <!-- border -->![SAP C4C](3.png)
+    ![SAP C4C](3.png)
 
 4. Enable the field for:
 
@@ -70,7 +70,7 @@ In this section, you will create the custom field RespSellerName (Responsible Se
 
 7. The new custom field RespSellerName now appear and is ready for input.
 
-    <!-- border -->![SAP C4C](4.png)
+    ![SAP C4C](4.png)
 
 ### Extension of Data Model in SAP S/4HANA Cloud ERP
 
@@ -85,7 +85,7 @@ In this section, you will create the corresponding custom field RespSellerName (
     - Label: RespSellerName
     - Length: Match the Sales Cloud field (20 characters)
 
-    <!-- border -->![SAP S4](5.png)
+    ![SAP S4](5.png)
 
 3. Enable the field in Custom Fields app:
 
@@ -93,23 +93,23 @@ In this section, you will create the corresponding custom field RespSellerName (
     - APIs: API_SALES_ORDER_SRV; API_SALES_QUOTATION_SRV
     - Business Scenarios: Sales Document Header Level to Billing Due List
 
-    <!-- border -->![SAP S4](6.png)
+    ![SAP S4](6.png)
 
 4. Open the Manage Sales Orders app and open an existing Sales Order or create a new one and click on the Profile button:
 
-    <!-- border -->![SAP S4](7.png)
+    ![SAP S4](7.png)
 	
 5. Navigate to Basic Data for Order Details and use the Add new field function and the search for field RespSellerName and press OK:
 
-    <!-- border -->![SAP S4](8.png)
+    ![SAP S4](8.png)
 	
 6. Adjust the new field accordingly and activate your changes:
 
-    <!-- border -->![SAP S4](9.png)
+    ![SAP S4](9.png)
 	
 7. From now on the new custom field is editable within the Sales Order App:
 
-    <!-- border -->![SAP S4](10.png)
+    ![SAP S4](10.png)
 
 ### Create a Custom Integration iFlow Triggered by the Standard iFlow
 
@@ -117,15 +117,15 @@ In this chapter, you will create a custom iFlow that can be called from the stan
 
 1. Open the standard iFlow "Create Follow-Up Sales Order in SAP S/4HANA from Sales Quote", navigate to the ProcessDirect call, and check the Connection tab. You will find the endpoint address.
 
-    <!-- border -->![Integration Suite](11.png)
+    ![Integration Suite](11.png)
 
 2. Log on to your SAP Integration Suite, open the package "SAP Sales Cloud Version 2 Integration for Sales Processes with SAP S/4HANA Cloud Public", and create a new custom integration flow named DirectProcessAdapter.
 
-    <!-- border -->![Integration Suite](12.png)
+    ![Integration Suite](12.png)
 	
 3. Now select the custom iFlow DirectProcessAdapter, click on the ProcessDirect call, go to the Connection tab, and enter the endpoint from the standard iFlow "/cns/s4/salesQuoteExternalSalesOrderRequestOut_Exit".
 
-    <!-- border -->![Integration Suite](13.png)
+    ![Integration Suite](13.png)
 
 ### Create the Groovy Script for your Extension Handling
 
@@ -133,41 +133,41 @@ In this chapter, you'll implement a Groovy script artifact named Groovy Script 1
 
 1. Open the newly created custom iFlow named "DirectProcessAdapter" and click Edit to enable modifications..
 
-    <!-- border -->![Integration Suite](14.png)
+    ![Integration Suite](14.png)
 
 2. Position your cursor over the flow line between the Start and End points, click the plus icon (+), and select the Groovy Script artifact to add it.
 
-    <!-- border -->![Integration Suite](15.png)
+    ![Integration Suite](15.png)
 
 3. Create a new Groovy script file on your local machine, name it script1.groovy, and add the following lines of code:
 	
 	<!-- cpes-file db/schema.cds -->
-    ```JSON
+   ```JSON
 	import com.sap.gateway.ip.core.customdev.util.Message
 	import groovy.json.JsonSlurper
 	def Message processData(Message message) {
-    // Get JSON string from header 'sourcePayload'
-    def headerPayload = message.getHeader('sourcePayload', String)
-    // Fix potential missing commas between JSON objects (your hacky fix)
-    def fixedPayload = headerPayload.replaceAll(/}\s*"/, '}, "')
-    // Parse the JSON from header
-    def json = new JsonSlurper().parseText(fixedPayload)
-    // Get extensions map safely
-    def extensions = json?.messageRequests?.getAt(0)?.body?.extensions
-    if (extensions != null) {
-        extensions.each { key, value ->
-            message.setProperty("EXT_" + key, value.toString())
-        }
-    }
-    return message
+   // Get JSON string from header 'sourcePayload'
+   def headerPayload = message.getHeader('sourcePayload', String)
+   // Fix potential missing commas between JSON objects (your hacky fix)
+   def fixedPayload = headerPayload.replaceAll(/}\s*"/, '}, "')
+   // Parse the JSON from header
+   def json = new JsonSlurper().parseText(fixedPayload)
+   // Get extensions map safely
+   def extensions = json?.messageRequests?.getAt(0)?.body?.extensions
+   if (extensions != null) {
+       extensions.each { key, value ->
+           message.setProperty("EXT_" + key, value.toString())
+       }
+   }
+   return message
 	}
-    ```
+   ```
 
-    <!-- border -->![Integration Suite](16.png)
+    ![Integration Suite](16.png)
 	
 4. Press the button Save as version and then the Deploy button.
 
-    <!-- border -->![Integration Suite](18.png)
+    ![Integration Suite](18.png)
 
 ### Create the Content Modifier for your Extension Handling
 
@@ -175,7 +175,7 @@ In this chapter, you'll implement a Content Modifier artifact to your custom iFl
 
 1. Position your cursor over the flow line between the Groovy Script 1 and End point, click the plus icon (+), and select the Content Modifier artifact to add it.
 
-    <!-- border -->![Integration Suite](19.png)
+    ![Integration Suite](19.png)
 
 2. Switch to the Exchange Property tab and add a Property with following attributes:
 
@@ -185,7 +185,7 @@ In this chapter, you'll implement a Content Modifier artifact to your custom iFl
     - Source Value: /SalesOrder
     - Data Type: String
 
-    <!-- border -->![Integration Suite](20.png)
+    ![Integration Suite](20.png)
 	
 3. Press the button Save as version and then the Deploy button.
 
@@ -195,55 +195,55 @@ In this chapter, you'll implement a Message Mapping artifact to your custom iFlo
 
 1. Position your cursor over the flow line between the Content Modifier and End point, click the plus icon (+), and select the Message Mapping artifact to add it.
 
-    <!-- border -->![Integration Suite](21.png)
+    ![Integration Suite](21.png)
 
 2. Press the button Save as version and then the Deploy button.
 
 3. Switch back to the standard integration flow “Create Follow-Up Sales Order in SAP S/4HANA from Sales Quote” and open the tab “References”. In this tab, locate the Mapping Schema named API_SALES_ORDER_SRV, download it, and save the file on your local computer.
 
-    <!-- border -->![Integration Suite](22.png)
+    ![Integration Suite](22.png)
 
 4. Open the newly downloaded file API_SALES_ORDER_SRV in Notepad++ and add the following line below the PropertyRef attributes tag of the Sales Order entity. The property name and corresponding values must be adjusted according to the extension field in your S/4HANA Cloud ERP system.
 
     - <Property Name="YY1_RespSellerName_SDH" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="RespSellerName" sap:quickinfo="RespSellerName"/>
 
-    <!-- border -->![Integration Suite](23.png)
+    ![Integration Suite](23.png)
 
 5. Switch back to the iFlow DirectProcessAdapter, click Edit, and open the Reference tab. Click Add, select Schema (EDMX), and upload the extended API_SALES_ORDER_SRV file.
 
-    <!-- border -->![Integration Suite](24.png)
+    ![Integration Suite](24.png)
 	
 6. Then open the Reference tab again, open the newly added mapping file, and verify that the extended line is present.
 
-	<!-- border -->![Integration Suite](25.png)
+	![Integration Suite](25.png)
 
 7. In the DirectProcessAdapter click on the Message Mapping 1 artifact and add a MessageMapping item.
 
-	<!-- border -->![Integration Suite](26.png)
+	![Integration Suite](26.png)
 	
 8. Now open the DirectProcessAdapter iFlow and switch to the References tab. You will see the newly added MessageMapping item. Click on it, then add the API_SALES_ORDER_SRV file as both the source and target message, selecting the A_SalesOrder element in each case. And click the OK button to confirm your selection.
 
-	<!-- border -->![Integration Suite](27.png)
+	![Integration Suite](27.png)
 
 9. Press the button Save as version and then the Deploy button.
 
 11. When triggering the standard iFlow Create Follow-Up Sales Order in SAP S/4HANA from Sales Quote, you can verify the transmission of the extension field by checking the Monitoring view. Within the Mapping artifact CNS_S4_ExternalSalesOrderFollowupRequest, open the Header tab and locate the transmitted extension value "EXT_RespSellerName" under the body.extensions section.
 
-	<!-- border -->![Integration Suite](28.png)
+	![Integration Suite](28.png)
 
 9. Now click again on the Message Mapping 1 artifact, switch to the Processing tab, and open the MessageMapping item. On the target side, locate the extension field and click the Assign Constant button.
 
-	<!-- border -->![Integration Suite](29.png)
+	![Integration Suite](29.png)
 
 12. Now rename the constant value to EXT_RespSellerName, then click on New functions and select the getProperty function. Then delete the arrow between EXT_RespSellerName and YY1_RespSellerName_SDH, and replace the connection by linking the getProperty function to YY1_RespSellerName_SDH.
 
-	<!-- border -->![Integration Suite](30.png)
+	![Integration Suite](30.png)
 
 13. Please don't forget to press the OK button.
 
 14. Finally, open the Runtime Configuration tab of your DirectProcessAdapter iFlow and add your Source Payload to the Allowed Header(s) field. This ensures that your extension field is passed through and included in the Message Mapping 1 artifact.
 
-	<!-- border -->![Integration Suite](31.png)
+	![Integration Suite](31.png)
 
 15. Press the button Save as version and then the Deploy button.
 
@@ -253,17 +253,17 @@ In this chapter, we will create a Sales Quote in the SAP Sales Cloud system usin
 
 1. Log on to the SAP Sales Cloud system and create a Sales Quote using the extension field RespSellerName, entering a name for testing purposes.
 
-    <!-- border -->![SAP C4C](32.png)
+    ![SAP C4C](32.png)
 
 2. The next step is to add a Sales Order, which will automatically trigger the Integration Flow in the background.
 
-    <!-- border -->![SAP C4C](33.png)
+    ![SAP C4C](33.png)
 
 3. In the Integration Flow Message Monitor function, you can check the distributed payloads. Here, you can see that the payloads were successfully transmitted across the entire iFlow and that the custom exit call, which invokes the DirectProcessAdapter, was executed successfully.
 
-	<!-- border -->![Integration Suite](34.png)
+	![Integration Suite](34.png)
 
 4. Log on to the SAP S/4HANA Cloud ERP system and open the Manage Sales Orders app to check for the newly created Sales Order from the Sales Cloud system. Here, you can verify that the corresponding extension field was correctly populated in the target system.
 
-    <!-- border -->![SAP S4](35.png)
+    ![SAP S4](35.png)
 

@@ -29,9 +29,9 @@ The example MTA demonstrates the creation of a service instance and an applicati
 
 1. Create an `index.html` file with the following content:
 
-    ```HTML
-    <h3>Hello World!</h3>
-    ```
+   ```HTML
+   <h3>Hello World!</h3>
+   ```
 
 2. Archive the `index.html` file into a `content.zip` archive and place it to a directory that is called `my_first_mta`.
 
@@ -126,8 +126,8 @@ In the output example above, the `application my-first-app` is deployed and star
  If you want to deploy a ready MTA archive, with a file extension `.mtar`, execute the following command:
 
 >``` Console command
-cf deploy <PATH_TO_MTAR>
-```
+>cf deploy <PATH_TO_MTAR>
+>```
 
 When triggering a deployment from a directory, the MTAR is built under the hood and it can be verified by checking the new file `app.mtar` in the current folder.
 
@@ -193,16 +193,16 @@ Extension descriptors are files complementary to the main deployment descriptor 
 
 1. Copy the example below to an `app-2-instances.mtaext` file:
 
-    ```YAML
-    _schema-version: "3.1"
-    ID: app-instances-2
-    extends: app
+   ```YAML
+   _schema-version: "3.1"
+   ID: app-instances-2
+   extends: app
 
-    modules:
-    - name: my-first-app
-      parameters:
-        instances: 2
-    ```
+   modules:
+   - name: my-first-app
+     parameters:
+       instances: 2
+   ```
 
 
 2. Place the file to the directory `my_first_mta`.

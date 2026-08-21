@@ -40,29 +40,29 @@ author_profile: https://github.com/mariajosesap
 4. Set up the custom needed schema for testing a POST request. Remember the payload structure you are using for this exercise:
 
     <!-- cpes-file db/schema.cds -->
-    ```JSON
-    {
-    "AppGyverSalesOrder": {
-        "customer": {
-        "ObjectID": "<Object ID from SAP C4C>",
-        "BuyerPartyID": <BuyerPartyID from SAP C4C>
-        },
-        "paymentData": {
-        "amount": <Payment transaction amount to be processed in Stripe>,
-        "customer": "<stripe customer id>",
-        "currency": "<currency selected in stripe account>",
-        "source": "<card id>",
-        "description": "Test payment via CPI"
-        },
-        "product": [
-        {
-            "ProductID": "<Product ID from SAP C4C>",
-            "Quantity": <Product quantity to be purchased>
-        }
-        ]
-    }
-    }
-    ```
+   ```JSON
+   {
+   "AppGyverSalesOrder": {
+       "customer": {
+       "ObjectID": "<Object ID from SAP C4C>",
+       "BuyerPartyID": <BuyerPartyID from SAP C4C>
+       },
+       "paymentData": {
+       "amount": <Payment transaction amount to be processed in Stripe>,
+       "customer": "<stripe customer id>",
+       "currency": "<currency selected in stripe account>",
+       "source": "<card id>",
+       "description": "Test payment via CPI"
+       },
+       "product": [
+       {
+           "ProductID": "<Product ID from SAP C4C>",
+           "Quantity": <Product quantity to be purchased>
+       }
+       ]
+   }
+   }
+   ```
     So to "translate it" into the custom schema in SAP Build Apps, you'll need to add these properties manually, as shown in the following image:
 
     ![Adding the schema propertis for Payloads to be sent](adding_schema_properties.png)
@@ -112,13 +112,13 @@ Remember you're following this previous exercise of a custom application develop
 1. Go back to your QR code generator (you can use this [one](https://www.qr-code-generator.com/)), and paste this JSON object. You may need to change the model and URL too, if you want to test your integration with a different product defined in your SAP Sales and Service Core tenant (SAP Cloud for Customer):
 
     <!-- cpes-file db/schema.cds -->
-    ```JSON
-    {
-    "ProductID": "<your SAP C4C product ID>",
-    "model": "Samsung French Door 29 ft",
-    "imgURL": "https://samsungmx.vtexassets.com/arquivos/ids/180853-800-auto?width=800&height=auto&aspect=true"
-    }
-    ```
+   ```JSON
+   {
+   "ProductID": "<your SAP C4C product ID>",
+   "model": "Samsung French Door 29 ft",
+   "imgURL": "https://samsungmx.vtexassets.com/arquivos/ids/180853-800-auto?width=800&height=auto&aspect=true"
+   }
+   ```
     Save the generated QR Code:
 
     ![Create a page variable](save_generated_qrcode.png)

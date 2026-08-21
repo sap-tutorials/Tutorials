@@ -88,14 +88,14 @@ parser: v2
 1. To create a **Service Key** choose the option **Create Service Key** from the **Actions** list and enter the following:
 
 
-    ``` JSON
-    {
-      "type": "BASIC",
-      "permissions": [
-             "ALERT_READ"
-      ]
-    }
-    ```
+   ``` JSON
+   {
+     "type": "BASIC",
+     "permissions": [
+            "ALERT_READ"
+     ]
+   }
+   ```
 
     ![ServiceKey](10-ServiceKey.png)
 
@@ -227,19 +227,19 @@ parser: v2
 
 3. Enter your **Event** information and click on the **Send** button. You can either edit the existing information or copy it directly from here:
     
-    ```JSON
-    {
-        "eventType": "MyDemoEventType",
-        "resource": {
-            "resourceName": "DemoApp",
-            "resourceType": "app"
-        },
-        "severity": "INFO",
-        "category": "NOTIFICATION",
-        "subject": "My Demo Notification",
-        "body": "Sample event body."
-    }
-    ```
+   ```JSON
+   {
+       "eventType": "MyDemoEventType",
+       "resource": {
+           "resourceName": "DemoApp",
+           "resourceType": "app"
+       },
+       "severity": "INFO",
+       "category": "NOTIFICATION",
+       "subject": "My Demo Notification",
+       "body": "Sample event body."
+   }
+   ```
 
     ![EventInfo](3-EventInfo.png)
 
