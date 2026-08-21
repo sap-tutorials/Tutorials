@@ -118,13 +118,13 @@ Open a command line or terminal with administration rights.
 Use the following commands to set the environment variables to the installation path you specified in step 2:
 
 -   For Windows:
-    ```ssh
-    set DPA_INSTANCE="C:\usr\sap\dpa"
-    ```
+   ```ssh
+   set DPA_INSTANCE="C:\usr\sap\dpa"
+   ```
 -   For Linux:
-    ```ssh
-    export DPA_INSTANCE=/usr/sap/dpa
-    ```
+   ```ssh
+   export DPA_INSTANCE=/usr/sap/dpa
+   ```
 
 Switch to that directory using command **`cd`**.  For example:
 

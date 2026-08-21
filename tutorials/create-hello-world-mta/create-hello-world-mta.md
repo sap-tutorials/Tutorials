@@ -29,15 +29,15 @@ You define the entities that have to be deployed, namely modules and resources r
 1. Create an empty text file and name it `mtad.yaml.`
 2. Using a text editor, enter the following data in the file:
 
-    ``` YAML
-    _schema-version: '3.1'
+   ``` YAML
+   _schema-version: '3.1'
 
-    parameters:
-        hcp-deployer-version: '1.1.0'
+   parameters:
+       hcp-deployer-version: '1.1.0'
 
-    ID: com.example.demo.basic
-    version: 0.1.0
-    ```
+   ID: com.example.demo.basic
+   version: 0.1.0
+   ```
 
     >Strictly adhere to the correct indentations when working with YAML files, and do not use the tabulator character.
 
@@ -50,19 +50,19 @@ You define the entities that have to be deployed, namely modules and resources r
 
 3. Create the module that describes the Java application. In the mtad.yaml, add the following data:
 
-    ``` YAML
-    modules:
-        -name: example-java-app
-         type: com.sap.java
-         requires:
-           - name: db-binding
-         parameters:
-           name: example
-           jvm-arguments: -server
-           java-version: JRE 7
-           runtime: neo-java-web
-           runtime-version: 1
-    ```  
+   ``` YAML
+   modules:
+       -name: example-java-app
+        type: com.sap.java
+        requires:
+          - name: db-binding
+        parameters:
+          name: example
+          jvm-arguments: -server
+          java-version: JRE 7
+          runtime: neo-java-web
+          runtime-version: 1
+   ```  
 
     The example above instructs the SAP BTP to:
 
@@ -71,13 +71,13 @@ You define the entities that have to be deployed, namely modules and resources r
 
 4. Describe the database binding ID and the database credentials the Java application has to use by adding the following to the `mtad.yaml`:
 
-    ```YAML
-    resources:
-      - name: db-binding
-        type: com.sap.hcp.persistence
-        parameters:
-          id:
-    ```
+   ```YAML
+   resources:
+     - name: db-binding
+       type: com.sap.hcp.persistence
+       parameters:
+         id:
+   ```
 
     The example above instructs the SAP BTP to create a database binding during the deployment process.
 
@@ -96,20 +96,20 @@ You define the entities that have to be deployed, namely modules and resources r
 
 2. Using a text editor, enter the following data in the file:
 
-    ```YAML
+   ```YAML
 _schema-version: '3.1'
 ID: com.example.demo.basic.config
 extends: com.example.demo.basic
 parameters:
-  title: Basic Solution
-  description: This is a sample of a basic Solution.
+ title: Basic Solution
+ description: This is a sample of a basic Solution.
 resources:
-    - name: db-binding
-      parameters:
-        id: dbalias
-        user-id: myuser
-        password : mypassword
-    ```
+   - name: db-binding
+     parameters:
+       id: dbalias
+       user-id: myuser
+       password : mypassword
+   ```
 
     The example above instructs the SAP BTP to:
 
@@ -135,14 +135,14 @@ resources:
 
 2. Using a text editor, enter the following data in the file:
 
-    ```
-    Manifest-Version: 1.0
-    Created-By: example.com
+   ```
+   Manifest-Version: 1.0
+   Created-By: example.com
 
-    Name: example.war
-    Content-Type: application/zip
-    MTA-Module: example-java-app
-    ```
+   Name: example.war
+   Content-Type: application/zip
+   MTA-Module: example-java-app
+   ```
 
     The example above instructs the SAP BTP to link the module example-java-app to the archive example.war.
 
@@ -165,12 +165,12 @@ MTA archives are compliant to the JAR file specification. This allows you to use
 
     The root directory should now be structured as follows:
 
-    ```
-    /example.war
-    /META-INF
-    /META-INF/mtad.yaml
-    /META-INF/MANIFEST.MF
-    ```
+   ```
+   /example.war
+   /META-INF
+   /META-INF/mtad.yaml
+   /META-INF/MANIFEST.MF
+   ```
 
 4. Archive the content of the root directory in an `.mtar` format using an archiving tool capable of producing a JAR archive.
 

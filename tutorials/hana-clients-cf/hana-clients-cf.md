@@ -36,9 +36,9 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
 1. Check to see if you have the CF CLI installed and verify the version.  
 
-    ```Shell
-    cf -v
-    ```
+   ```Shell
+   cf -v
+   ```
 
     ![cf cli version](new-cf-version.png)  
 
@@ -46,9 +46,9 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     Check to see if you have the XS CLI installed and verify its version.
 
-    ```Shell
-    xs -v
-    ```
+   ```Shell
+   xs -v
+   ```
 
     ![xs cli version](xsShowVersion.png)  
 
@@ -56,21 +56,21 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
 2. Access help by running the following:
 
-    ```Shell
-    cf help
-    cf help login
-    ```
+   ```Shell
+   cf help
+   cf help login
+   ```
 
-    ```Shell
-    xs help
-    xs help login
-    ```
+   ```Shell
+   xs help
+   xs help login
+   ```
 
 3. Log in to the Cloud Foundry or XS advanced.
 
-    ```Shell
-    cf login
-    ```
+   ```Shell
+   cf login
+   ```
 
     ![cf login](cfLogin.png)
 
@@ -82,15 +82,15 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     The API URL can be set with the below command.
 
-    ```Shell
-    cf api <API Endpoint>
-    ```  
+   ```Shell
+   cf api <API Endpoint>
+   ```  
 
     **XS advanced**
 
-    ```Shell
-    xs login
-    ```
+   ```Shell
+   xs login
+   ```
 
     ![xs login](xsLogin.png)
 
@@ -100,21 +100,21 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
 4. Additional examples are shown below to view the target information, running services, and deployed apps.
 
-    ```Shell
-    cf target
-    cf services
-    cf apps
-    cf buildpacks
-    ```
+   ```Shell
+   cf target
+   cf services
+   cf apps
+   cf buildpacks
+   ```
 
     **XS advanced**
 
-    ```Shell
-    xs target
-    xs services
-    xs apps
-    xs buildpacks
-    ```
+   ```Shell
+   xs target
+   xs services
+   xs apps
+   xs buildpacks
+   ```
 
     ![services](cliExample.png)  
 
@@ -124,91 +124,91 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
 1. Create a folder named `nodeCF\nodeQueryCF` and enter the newly created directory.
 
-    ```Shell (Microsoft Windows)
-    mkdir %HOMEPATH%\HANAClientsTutorial\nodeCF\nodeQueryCF
-    cd %HOMEPATH%\HANAClientsTutorial\nodeCF\nodeQueryCF
-    ```
+   ```Shell (Microsoft Windows)
+   mkdir %HOMEPATH%\HANAClientsTutorial\nodeCF\nodeQueryCF
+   cd %HOMEPATH%\HANAClientsTutorial\nodeCF\nodeQueryCF
+   ```
 
-    ```Shell (Linux or Mac)
-    mkdir -p $HOME/HANAClientsTutorial/nodeCF/nodeQueryCF
-    cd $HOME/HANAClientsTutorial/nodeCF/nodeQueryCF
-    ```
+   ```Shell (Linux or Mac)
+   mkdir -p $HOME/HANAClientsTutorial/nodeCF/nodeQueryCF
+   cd $HOME/HANAClientsTutorial/nodeCF/nodeQueryCF
+   ```
 
 2. Initialize the project, install [express](https://www.npmjs.com/package/express), and `@sap/hana-client` from NPM.
 
-    ```Shell
-    npm init -y
-    npm install express
-    npm install @sap/hana-client
-    ```
+   ```Shell
+   npm init -y
+   npm install express
+   npm install @sap/hana-client
+   ```
 
 3. Open a file named `server.js` in an editor.
 
-    ```Shell (Microsoft Windows)
-    notepad server.js
-    ```
+   ```Shell (Microsoft Windows)
+   notepad server.js
+   ```
 
-    ```Shell (Linux or Mac)
-    pico server.js
-    ```
+   ```Shell (Linux or Mac)
+   pico server.js
+   ```
 
 4. Add the code below to `server.js`. Be sure to update the `serverNode` value (SQL Endpoint from your instance) and user credentials if necessary.
 
-    ```JavaScript    
-    var express = require('express');
-    var hana = require('@sap/hana-client');
-    var app = express();
+   ```JavaScript    
+   var express = require('express');
+   var hana = require('@sap/hana-client');
+   var app = express();
 
-    app.get('/', function (req, res) {
-        res.send('Hello World');
-    })
+   app.get('/', function (req, res) {
+       res.send('Hello World');
+   })
 
-    app.get('/Customers', function (req, res) {
-        var connOptions = {
-            serverNode: 'XXXXXX.hana.trial-XXXXX.hanacloud.ondemand.com:443',
-            //serverNode: 'linux-bj72:39015',
-            UID: 'USER1',
-            PWD: 'Password1'
-            //traceFile: 'stdout',
-            //traceOptions: 'sql=warning'
-        };
+   app.get('/Customers', function (req, res) {
+       var connOptions = {
+           serverNode: 'XXXXXX.hana.trial-XXXXX.hanacloud.ondemand.com:443',
+           //serverNode: 'linux-bj72:39015',
+           UID: 'USER1',
+           PWD: 'Password1'
+           //traceFile: 'stdout',
+           //traceOptions: 'sql=warning'
+       };
 
-      var connection = hana.createConnection();
-      connection.connect(connOptions, function(err) {
-          if (err) {
-              return console.error(err);
-          }
-          var sql = 'select * from HOTELS.CUSTOMER;';
-          var rows = connection.exec(sql, function(err, rows) {
-              if (err) {
-                  return console.error(err);
-              }
-              console.log(rows);
-              res.send(rows);
-              connection.disconnect(function(err) {
-                  if (err) {
-                      return console.error(err);
-                  }   
-              });
-          });
-      });
-    })
+     var connection = hana.createConnection();
+     connection.connect(connOptions, function(err) {
+         if (err) {
+             return console.error(err);
+         }
+         var sql = 'select * from HOTELS.CUSTOMER;';
+         var rows = connection.exec(sql, function(err, rows) {
+             if (err) {
+                 return console.error(err);
+             }
+             console.log(rows);
+             res.send(rows);
+             connection.disconnect(function(err) {
+                 if (err) {
+                     return console.error(err);
+                 }   
+             });
+         });
+     });
+   })
 
-    const port = process.env.PORT || 3000;
-    var server = app.listen(port, function () {
-        var host = server.address().address
-        var port = server.address().port
-        console.log("Example app listening at http://%s:%s", host, port)
-    })
-    ```
+   const port = process.env.PORT || 3000;
+   var server = app.listen(port, function () {
+       var host = server.address().address
+       var port = server.address().port
+       console.log("Example app listening at http://%s:%s", host, port)
+   })
+   ```
 
     Update the values for host and port.  
 
 5. Run and test the app locally.
 
-    ```Shell
-    node server.js
-    ```
+   ```Shell
+   node server.js
+   ```
 
     Open a browser and enter a URL similar to http://localhost:3000/Customers.
 
@@ -218,28 +218,28 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
 1. Create a deployment descriptor.
 
-    ```Shell (Microsoft Windows)
-    cd ..
-    notepad manifest.yml
-    ```
+   ```Shell (Microsoft Windows)
+   cd ..
+   notepad manifest.yml
+   ```
 
-    ```Shell (Linux or Mac)
-    cd ..
-    pico manifest.yml
-    ```    
+   ```Shell (Linux or Mac)
+   cd ..
+   pico manifest.yml
+   ```    
 
     Add the code below to `manifest.yml`.
 
-    ```yml
-    ---
-    applications:
-    - name: nodeQueryCF
-      random-route: true
-      type: nodejs
-      path: nodeQueryCF
-      command: node server.js
-      memory: 128M
-    ```
+   ```yml
+   ---
+   applications:
+   - name: nodeQueryCF
+     random-route: true
+     type: nodejs
+     path: nodeQueryCF
+     command: node server.js
+     memory: 128M
+   ```
 
     For additional details, consult [App Manifest Attribute Reference](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html).
 
@@ -255,29 +255,29 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     After verifying that you have the necessary entitlements, run the following:
 
-    ```Shell
-    cf push
-    ```
+   ```Shell
+   cf push
+   ```
 
     ![push result](cfPush.png)
 
     Notice above the URL to open the app was generated as the `manifest.yml` contained the random-route setting.
 
-    ```Shell
-    xs push
-    ```
+   ```Shell
+   xs push
+   ```
 
     ![push result](xsPush.png)
 
     Alternatively, the URL of the app can be found by running the following command:
 
-    ```Shell
-    cf app nodeQueryCF
-    ```
+   ```Shell
+   cf app nodeQueryCF
+   ```
 
-    ```Shell
-    xs app nodeQueryCF
-    ```
+   ```Shell
+   xs app nodeQueryCF
+   ```
 
 3. Test the app.  
 
@@ -297,56 +297,56 @@ For additional details see:
 
 1. The available buildpacks can be found using the command below.
 
-    ```Shell
-    cf buildpacks
-    ```
+   ```Shell
+   cf buildpacks
+   ```
 
     If you use another buildpack such as .NET and encounter the error "Cannot find a matching libadonetHDB.so", this can be corrected by adding the below entry to the .csproj file.
 
-    ```Shell
-    <ItemGroup>
-        <Content Include="./libadonetHDB.so">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-    </ItemGroup>
-    ```
+   ```Shell
+   <ItemGroup>
+       <Content Include="./libadonetHDB.so">
+           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+       </Content>
+   </ItemGroup>
+   ```
 
 2. The app can be stopped and started with the below commands:
 
-    ```Shell
-    cf stop nodeQueryCF
-    cf start nodeQueryCF
-    ```
+   ```Shell
+   cf stop nodeQueryCF
+   cf start nodeQueryCF
+   ```
 
 3. The applications lifecycle events can be seen with the below command:
 
-    ```Shell
-    cf events nodeQueryCF
-    ```
+   ```Shell
+   cf events nodeQueryCF
+   ```
 
     ![events](events.png)
 
 4. The logs of the application can be seen with the below command:
 
-    ```Shell
-    cf logs nodeQueryCF --recent
-    ```
+   ```Shell
+   cf logs nodeQueryCF --recent
+   ```
 
     The following command will show the tail of the log.
 
-    ```Shell
-    cf logs nodeQueryCF
-    ```
+   ```Shell
+   cf logs nodeQueryCF
+   ```
 
 5. As of version 2.7, the SAP HANA client interfaces can output trace information to `stdout` or `stderr`.
 
-    ```Shell
-    cf set-env nodeQueryCF HDB_SQLDBC_TRACEFILE stdout
-    cf set-env nodeQueryCF HDB_SQLDBC_TRACEOPTS SQL=WARN
-    cf restage nodeQueryCF
-    cf env nodeQueryCF
-    cf logs nodeQueryCF
-    ```
+   ```Shell
+   cf set-env nodeQueryCF HDB_SQLDBC_TRACEFILE stdout
+   cf set-env nodeQueryCF HDB_SQLDBC_TRACEOPTS SQL=WARN
+   cf restage nodeQueryCF
+   cf env nodeQueryCF
+   cf logs nodeQueryCF
+   ```
 
     > Alternatively, the trace settings can be specified in the application code.
 
@@ -396,128 +396,128 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
 
 3. Add the service name to the project's manifest.yml.
 
-    ```Shell (Microsoft Windows)
-    cd %HOMEPATH%\HANAClientsTutorial\nodeCF
-    notepad manifest.yml
-    ```
+   ```Shell (Microsoft Windows)
+   cd %HOMEPATH%\HANAClientsTutorial\nodeCF
+   notepad manifest.yml
+   ```
 
-    ```Shell (Linux or Mac)
-    cd $HOME/HANAClientsTutorial/nodeCF
-    pico manifest.yml
-    ```
+   ```Shell (Linux or Mac)
+   cd $HOME/HANAClientsTutorial/nodeCF
+   pico manifest.yml
+   ```
 
-    ```yml
-      services:
-      - MyConnectivityService
-    ```
+   ```yml
+     services:
+     - MyConnectivityService
+   ```
 
 4. Make a backup of the server.js file and add the node module `axios` which is promise based HTTP client and is used to fetch a JWT token.  For further details see [SAP Cloud Platform: How to call – on-Premise System – from Node.js app – via Cloud Connector](https://blogs.sap.com/2020/08/07/sap-cloud-platform-how-to-call-onprem-system-from-node.js-app-via-cloud-connector).
 
-    ```Shell (Microsoft Windows)
-    cd nodeQueryCF
-    copy server.js server.js.bak
-    npm install axios
-    ```
+   ```Shell (Microsoft Windows)
+   cd nodeQueryCF
+   copy server.js server.js.bak
+   npm install axios
+   ```
 
-    ```Shell (Linux or Mac)
-    cd nodeQueryCF
-    cp server.js server.js.bak
-    npm install axios
-    ```
+   ```Shell (Linux or Mac)
+   cd nodeQueryCF
+   cp server.js server.js.bak
+   npm install axios
+   ```
 
 5. Open the file named `server.js` in an editor and replace the contents where necessary.
 
-    ```Shell (Microsoft Windows)
-    notepad server.js
-    ```
+   ```Shell (Microsoft Windows)
+   notepad server.js
+   ```
 
-    ```Shell (Linux or Mac)
-    pico server.js
-    ```
+   ```Shell (Linux or Mac)
+   pico server.js
+   ```
 
-    ```JavaScript
-    var axios = require('axios');
-    var express = require('express');
-    var hana = require('@sap/hana-client');
-    var app = express();
+   ```JavaScript
+   var axios = require('axios');
+   var express = require('express');
+   var hana = require('@sap/hana-client');
+   var app = express();
 
-    const VCAP_SERVICES = JSON.parse(process.env.VCAP_SERVICES);
-    const conSrvCred = VCAP_SERVICES.connectivity[0].credentials;
+   const VCAP_SERVICES = JSON.parse(process.env.VCAP_SERVICES);
+   const conSrvCred = VCAP_SERVICES.connectivity[0].credentials;
 
-    app.get('/', function (req, res) {
-        res.send('Hello World');
-    })
+   app.get('/', function (req, res) {
+       res.send('Hello World');
+   })
 
-    app.get('/Customers', async function (req, res) {
-        const connJwtToken = await _fetchJwtToken(conSrvCred.token_service_url, conSrvCred.clientid, conSrvCred.clientsecret);
+   app.get('/Customers', async function (req, res) {
+       const connJwtToken = await _fetchJwtToken(conSrvCred.token_service_url, conSrvCred.clientid, conSrvCred.clientsecret);
 
-        var connOptions = {
-            serverNode: 'v-linux-bj72:39015', // Virtual host specified in the Cloud Connector
-            proxyUsername: connJwtToken,
-            proxyPort: conSrvCred.onpremise_socks5_proxy_port,
-            proxyHostname: conSrvCred.onpremise_proxy_host,
-            //proxyScpAccount: 'myLocID',  // Cloud Connector's location ID if specified in the Cloud Connector
-                                           // A location ID is used when multiple Cloud Connectors are connected to the same subaccount
-            UID: 'USER1',
-            PWD: 'Password1'
-            //traceFile: 'stdout',
-            //traceOptions: 'sql=warning'
-        };
+       var connOptions = {
+           serverNode: 'v-linux-bj72:39015', // Virtual host specified in the Cloud Connector
+           proxyUsername: connJwtToken,
+           proxyPort: conSrvCred.onpremise_socks5_proxy_port,
+           proxyHostname: conSrvCred.onpremise_proxy_host,
+           //proxyScpAccount: 'myLocID',  // Cloud Connector's location ID if specified in the Cloud Connector
+                                          // A location ID is used when multiple Cloud Connectors are connected to the same subaccount
+           UID: 'USER1',
+           PWD: 'Password1'
+           //traceFile: 'stdout',
+           //traceOptions: 'sql=warning'
+       };
 
-        var connection = hana.createConnection();
-        connection.connect(connOptions, function(err) {
-            if (err) {
-                return console.error(err);
-            }
-            var sql = 'select * from HOTELS.CUSTOMER;';
-            var rows = connection.exec(sql, function(err, rows) {
-                if (err) {
-                    return console.error(err);
-                }
-                console.log(rows);
-                res.send(rows);
-                connection.disconnect(function(err) {
-                    if (err) {
-                        return console.error(err);
-                    }   
-                });
-            });
-        });
-    })
+       var connection = hana.createConnection();
+       connection.connect(connOptions, function(err) {
+           if (err) {
+               return console.error(err);
+           }
+           var sql = 'select * from HOTELS.CUSTOMER;';
+           var rows = connection.exec(sql, function(err, rows) {
+               if (err) {
+                   return console.error(err);
+               }
+               console.log(rows);
+               res.send(rows);
+               connection.disconnect(function(err) {
+                   if (err) {
+                       return console.error(err);
+                   }   
+               });
+           });
+       });
+   })
 
-    const port = process.env.PORT || 3000;
-    var server = app.listen(port, function () {
-         var host = server.address().address
-         var port = server.address().port
-         console.log("Example app listening at http://%s:%s", host, port)
-    })
+   const port = process.env.PORT || 3000;
+   var server = app.listen(port, function () {
+        var host = server.address().address
+        var port = server.address().port
+        console.log("Example app listening at http://%s:%s", host, port)
+   })
 
-    const _fetchJwtToken = async function(oauthUrl, oauthClient, oauthSecret) {
-        return new Promise ((resolve, reject) => {
-            const tokenUrl = oauthUrl + '/oauth/token?grant_type=client_credentials&response_type=token'  
-            const config = {
-                headers: {
-                    Authorization: "Basic " + Buffer.from(oauthClient + ':' + oauthSecret).toString("base64")
-                }
-            }
-            axios.get(tokenUrl, config)
-            .then(response => {
-                resolve(response.data.access_token)
-            })
-            .catch(error => {
-                reject(error)
-            })
-        })   
-    }
+   const _fetchJwtToken = async function(oauthUrl, oauthClient, oauthSecret) {
+       return new Promise ((resolve, reject) => {
+           const tokenUrl = oauthUrl + '/oauth/token?grant_type=client_credentials&response_type=token'  
+           const config = {
+               headers: {
+                   Authorization: "Basic " + Buffer.from(oauthClient + ':' + oauthSecret).toString("base64")
+               }
+           }
+           axios.get(tokenUrl, config)
+           .then(response => {
+               resolve(response.data.access_token)
+           })
+           .catch(error => {
+               reject(error)
+           })
+       })   
+   }
 
-    ```
+   ```
 
 6. Redeploy the app.
 
-    ```Shell
-    cd ..
-    cf push
-    ```
+   ```Shell
+   cd ..
+   cf push
+   ```
 
 7. The application running in the cloud, is now accessing data from an on-premise SAP HANA, express instance.
 
