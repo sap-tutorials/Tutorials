@@ -50,7 +50,7 @@ As with other remote sources, connecting to an SAP HANA Cloud, data lake require
 
 4.	First, to get the certificate string, download the `pem` file to your local device by accessing your **command line** (`iTerm` or [Terminal](https://support.apple.com/en-sg/guide/terminal/welcome/mac) on iOS, or [Command Prompt](https://www.lifewire.com/how-to-open-command-prompt-2618089) on WIN) and entering this command:
 
-    ```Shell/Bash
+   ```Shell/Bash
 curl -O https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
 ```
 
@@ -64,12 +64,12 @@ curl -O https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
 
 1.	Now, in the **SAP HANA Database Explorer** that is connected to your SAP HANA database instance, open a **SQL console**.
 2.	Create a certificate store, also called **PSE** (personal security environment), if you have not done so already.
-    ```SQL
+   ```SQL
 CREATE PSE <certificate store name>;
 ```
 3.	Create a certificate for the SAP HANA Cloud, data lake you want to connect and name it (`HDL` in this example) using SQL statement below. You need to paste the certificate string you retrieved in Step 1 as a single line without any line-breaks (already included in this statement):
 
-    ```SQL
+   ```SQL
 -- create certificate
 CREATE CERTIFICATE FROM
 '-----BEGIN CERTIFICATE-----
@@ -83,13 +83,13 @@ SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'HDL';
 ```
 
 5.	Add this certificate to the certificate store by inserting the certificate ID into the SQL statement:
-    ```SQL
+   ```SQL
 ALTER PSE SSL ADD CERTIFICATE <certificate_id>;
 ```
 
 6.	Now set the PSE purpose as a remote source (unless you already have when following the instructions in the previous tutorial). This way, all remote sources you create will use the certificates stored in the PSE. Please note, that only one PSE can be set as a remote source purpose.
 
-    ```SQL
+   ```SQL
 SET PSE SSL PURPOSE REMOTE SOURCE;
 ```
 
@@ -133,7 +133,7 @@ Now, when you click on **remote sources** in your catalog, you should see the ot
 3.	Here, you can now see the virtual tables in your SAP HANA Cloud instance that are pointing to the source tables in the SAP HANA data lake you connected to.
 4.	To federate the data from those virtual tables to the SAP HANA database instance you are connecting it to, you need to create a virtual table over a virtual table. This is called federation on federation. It means that the virtual table will point to the virtual table in the SAP HANA Cloud, SAP HANA database instance which in turn points to the source table in the SAP HANA Cloud, data lake. To create the virtual table, run this statement:
 
-    ```SQL
+   ```SQL
 -- create a virtual table on a virtual table (federation over federation)
 create virtual table <TARGET_TABLE_NAME> at "<REMOTE_SOURCE_NAME>"."<NULL>"."<SCHEMA>"."<VIRTUAL_SOURCE_TABLE> ";
 --you can drop this table using this statement:

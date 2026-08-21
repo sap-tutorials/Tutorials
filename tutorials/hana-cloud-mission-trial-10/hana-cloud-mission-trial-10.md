@@ -119,21 +119,21 @@ The goal in this step is to add the schema privileges `SELECT` and `EXECUTE` to 
 
 2. Paste the following statements there. Alternatively, you can download this code from our [public GitHub repository](https://github.com/SAP-samples/hana-cloud-learning/blob/181320ae18082d03715c8ea03a61ce2617c9a840/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%209/Tutorial%209%20Queries.txt).
 
-    ```JSON
-    {
-        "role": {
-            "name": "PublicAccessSchema",
-            "schema_privileges": [
-                {
-                    "privileges": [
-                        "SELECT",
-                        "EXECUTE"
-                    ]
-                }
-            ]
-        }
-    }
-    ```
+   ```JSON
+   {
+       "role": {
+           "name": "PublicAccessSchema",
+           "schema_privileges": [
+               {
+                   "privileges": [
+                       "SELECT",
+                       "EXECUTE"
+                   ]
+               }
+           ]
+       }
+   }
+   ```
 
 3. Note that, if you have added a namespace to your `db` folder, you will have to edit the syntax to include that. Before `PublicAccessSchema`, add your namespace and `::`.
 
@@ -151,9 +151,9 @@ Now that you have the role created and granted privileges to this role, it's tim
 
 2. Paste the following statement in the SQL Console. Change the password in the statement and then run.
 
-    ```SQL
-    CREATE USER report PASSWORD Password1 NO FORCE_FIRST_PASSWORD_CHANGE set usergroup default;
-    ```
+   ```SQL
+   CREATE USER report PASSWORD Password1 NO FORCE_FIRST_PASSWORD_CHANGE set usergroup default;
+   ```
 
     > Using the clause `NO FORCE_FIRST_PASSWORD_CHANGE` is not considered a security best practice! We will only use this option for the purpose of this tutorial, in our example to make a user available to multiple individuals. If you create users in your productive environment, please consider forcing a password change for the first log in and giving individuals different users.
 
@@ -163,9 +163,9 @@ Now that you have the role created and granted privileges to this role, it's tim
 
 4. Use the following statement.
 
-    ```SQL
-    GRANT HDI_TUTORIAL."PublicAccessSchema" to report;
-    ```
+   ```SQL
+   GRANT HDI_TUTORIAL."PublicAccessSchema" to report;
+   ```
 
    Notice that the schema name is the value you copied in the beginning of this tutorial.
 
@@ -185,23 +185,23 @@ You have successfully created the new user `report` and assigned it a role to ac
 
 1. To test this, first log in with your new user by typing the following statement:
 
-    ```SQL
-    CONNECT report PASSWORD Password1;
-    ```
+   ```SQL
+   CONNECT report PASSWORD Password1;
+   ```
 
 2. You should now see at the top of the screen, over the SQL console the user you connected with.
 
 3. Since you granted this user `SELECT` privileges, you should be able to now run the statement below with the user report.
 
-    ```SQL
-    SELECT TOP 1000 
-        "AGENCYNUM",
-        "NAME",
-        "ORDERDAY",
-        "NUMBOOKINGS",
-        "DAYCOUNT"
-    FROM "HDI_TUTORIAL"."calculationView";
-    ```
+   ```SQL
+   SELECT TOP 1000 
+       "AGENCYNUM",
+       "NAME",
+       "ORDERDAY",
+       "NUMBOOKINGS",
+       "DAYCOUNT"
+   FROM "HDI_TUTORIAL"."calculationView";
+   ```
 
     ![Final results of the last query](final-result.png)
 

@@ -143,9 +143,9 @@ SAP HANA Cloud Central is your main administration tool for all SAP HANA Cloud i
     
     Execute the below SQL query to see the database details.
 
-    ```SQL
-    SELECT * FROM SYS.M_DATABASE;
-    ```
+   ```SQL
+   SELECT * FROM SYS.M_DATABASE;
+   ```
     
     ![A query in the SQL Console](sql-console-ui.png)
 

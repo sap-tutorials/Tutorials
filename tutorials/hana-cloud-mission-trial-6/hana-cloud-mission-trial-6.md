@@ -73,34 +73,34 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
 2. Users can be created with this simplified statement. You can replace the contents inside the `<>` placeholders to set your desired credentials for your new user. The username must be unique in the database and the password must contain lower case, upper case, and a digit.
 
-    ```
-    CREATE USER <username> PASSWORD "<password>";
-    ```
+   ```
+   CREATE USER <username> PASSWORD "<password>";
+   ```
 
     > Please note that this statement is simplified for an easy start, and you have many more options to create the user the way you need it. For example, you can choose different authentication options, validity specifications, optional user parameter options, or specify users to be restricted.
 
     To avoid using the super-user `DBADMIN`, we will now create a new user `UPSGRANTOR`. This user will be used in a later tutorial when you create a user-provided service in SAP HANA Business Application Studio. Paste the following query and execute the statement.
 
-    ```SQL
-    -- Create a database user that should assign these privileges
-    CREATE USER UPS_GRANTOR PASSWORD "Password1" NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
-    ```
+   ```SQL
+   -- Create a database user that should assign these privileges
+   CREATE USER UPS_GRANTOR PASSWORD "Password1" NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
+   ```
 
 3. To grant this user roles and privileges, you can use the `GRANT` statement. To use this statement to grant a certain privilege, you must have the privilege and permissions required to grant this privilege.
 
     First create `genericRoleForOO` and `genericRoleForAP` roles. These are generic roles for an object owner (OO) and application user (AP), which will be later used in a later tutorial with SAP Business Application Studio.
 
-    ```SQL
-    -- Create SQL roles
-    CREATE ROLE "genericRoleForOO";
-    CREATE ROLE "genericRoleForAP";
-    ```
+   ```SQL
+   -- Create SQL roles
+   CREATE ROLE "genericRoleForOO";
+   CREATE ROLE "genericRoleForAP";
+   ```
 
     When granting roles to users, the statement needs to be adjusted as follows:
 
-    ```
-    GRANT <role_name> TO <user_name>;
-    ```
+   ```
+   GRANT <role_name> TO <user_name>;
+   ```
 
 4. To allow a user to grant a privilege to other users themselves, you need to add `WITH GRANT OPTION` to the end of the statement. For roles and system privileges, you need to add `WITH ADMIN OPTION` to the statement.
 
@@ -108,20 +108,20 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
     The generic structure to grant privileges on a certain schema or object to a user is as follows:
 
-    ```
-    GRANT <privilege> ON <SCHEMA_or_OBJECT> <schema_or_object_name> TO <user_name>;
-    ```
+   ```
+   GRANT <privilege> ON <SCHEMA_or_OBJECT> <schema_or_object_name> TO <user_name>;
+   ```
 
     Paste the following queries in a SQL console and execute the statements.
 
-    ```SQL
-    -- Assign privileges that these roles should grant
-    GRANT SELECT ON SCHEMA SFLIGHT TO "genericRoleForOO" WITH GRANT OPTION;
-    GRANT SELECT ON SCHEMA SFLIGHT TO "genericRoleForAP";
-    -- Allow UPS_GRANTOR to grant the respective roles
-    GRANT "genericRoleForOO" to UPS_GRANTOR WITH ADMIN OPTION;
-    GRANT "genericRoleForAP" to UPS_GRANTOR WITH ADMIN OPTION;
-    ```
+   ```SQL
+   -- Assign privileges that these roles should grant
+   GRANT SELECT ON SCHEMA SFLIGHT TO "genericRoleForOO" WITH GRANT OPTION;
+   GRANT SELECT ON SCHEMA SFLIGHT TO "genericRoleForAP";
+   -- Allow UPS_GRANTOR to grant the respective roles
+   GRANT "genericRoleForOO" to UPS_GRANTOR WITH ADMIN OPTION;
+   GRANT "genericRoleForAP" to UPS_GRANTOR WITH ADMIN OPTION;
+   ```
 
 > You can find all the details about syntax elements and all available privileges to grant in the technical documentation [here](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control).
 

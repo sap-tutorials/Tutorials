@@ -85,7 +85,7 @@ CREATE GRAPH WORKSPACE "LONDON_GRAPH"
 
 To get a glimpse of your network, you can right-click the `LONDON_GRAPH` workspace to launch the Graph Viewer.
 
-<!-- border -->![Database Explorer](ss-01-database-explorer.png)
+![Database Explorer](ss-01-database-explorer.png)
 
 You now have successfully defined constraints on your tables `LONDON_VERTICES` and `LONDON_EDGES` and created a `GRAPH WORKSPACE`. You are all set up to start working with the Graph Engine now!
 

@@ -55,7 +55,7 @@ The GRAPH procedure has a similar structure to a `SQLScript` procedure:
 
 -	The core of this procedure is the call of the built-in graph algorithm:
 
-    ```
+   ```
 WeightedPath<BIGINT> p = Shortest_Path(:g, :v_start, :v_end, :i_direction);
 ```
 
@@ -103,7 +103,7 @@ The result is a set of edges/street segments that make up the path. The `EDGE_OR
 
 You can see the results here:
 
-<!-- border -->![Result](ss-01-result.png)
+![Result](ss-01-result.png)
 
 
 

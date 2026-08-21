@@ -136,7 +136,7 @@ You can check whether the graph was created using the `discover_graph_workspaces
 
 To display only the graph you require, you can use the help of the below image:
 
-<!-- border -->![Discover Graph output](ss-01-output.png)
+![Discover Graph output](ss-01-output.png)
 
 
 
@@ -190,9 +190,9 @@ The calculated column (`GJ`) does not persist along with the database. It's life
 
 Now your notebook should look like this:
 
-<!-- border -->![Notebook Graph P1](ss-02-notebook-graph-part1.png)
+![Notebook Graph P1](ss-02-notebook-graph-part1.png)
 
-<!-- border -->![Notebook Graph P2](ss-03-notebook-graph-part2.png)
+![Notebook Graph P2](ss-03-notebook-graph-part2.png)
 
 > In this tutorial, you have learned how to visualize a Graph Workspace in SAP HANA Cloud, SAP HANA database using Kepler.gl. In the next tutorial, you will see the how to analyze a Graph Workspace using various algorithms in the hana-ml library.
 
