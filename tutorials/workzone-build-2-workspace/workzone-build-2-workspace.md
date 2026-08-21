@@ -51,11 +51,11 @@ Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You
 
 1. In your site, click **Workspaces** in the top-level menu, and then click **New Workspace**. You can also use the **New Workspace** button on the right.
 
-    <!-- border -->![Create workspace](1-create-new-workspace.png)
+    ![Create workspace](1-create-new-workspace.png)
 
 2. Select **No Template** from the dropdown list of available templates.
 
-    <!-- border -->![Select template](2-select-template.png)
+    ![Select template](2-select-template.png)
 
     >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed workpage with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial, you won't use a template.
 
@@ -72,11 +72,11 @@ Workspaces are the building blocks of SAP Build Work Zone, advanced edition. You
 
 6. Click **Create**.
 
-    <!-- border -->![New workspace settings](3-new-workspace-settings.png)
+    ![New workspace settings](3-new-workspace-settings.png)
 
 Your workspace is created and you can now start building your workspace.
 
-<!-- border -->![Start building a workspace](3c-start-building.png)
+![Start building a workspace](3c-start-building.png)
 
 Now, let's add content to the workspace.
 
@@ -88,13 +88,13 @@ When you create a new workspace, the header has a dark and light blue background
 
 1. Hover over the background in the workspace header to expose the  **Edit cover photo** button and select **Upload Photo**.
 
-    <!-- border -->![New cover photo](4-new-header-image.png)
+    ![New cover photo](4-new-header-image.png)
 
 2. Browse for the following image that you downloaded: `workspace_sales_header`.
 
 3. Reposition your photo to display it as you want, and then click **Save**.
 
-    <!-- border -->![Save cover image](5-save-cover-image.png)
+    ![Save cover image](5-save-cover-image.png)
 
 
 
@@ -107,23 +107,23 @@ In this step, you'll add a workpage to your workspace - this workpage will descr
 
 1. Click **+** to add a tab for your workpage to the workspace navigation bar.
 
-    <!-- border -->![Add page tab](6-add-page-tab.png)
+    ![Add page tab](6-add-page-tab.png)
 
 2. From the **Add Tab to Navigation Bar** screen, select the **Workpage** tile.
 
-    <!-- border -->![Add workpage](7-select-workpage.png)
+    ![Add workpage](7-select-workpage.png)
 
 3. Enter a title for the workpage: `Sales Orders`.
 
-    <!-- border -->![Enter workpage title](7a-workpage-title.png)
+    ![Enter workpage title](7a-workpage-title.png)
 
 4. Select the **Workpage Type**. You can either select an existing workpage or you can create a new one. In this tutorial, we'll select **New Workpage**. Select the folder where you want to save it (usually the Content folder), and click **Add**.
 
-    <!-- border -->![New Workpage](8-create-new-workpage.png)
+    ![New Workpage](8-create-new-workpage.png)
 
 This is your new workpage and you can start adding content to it:
 
-<!-- border -->![View Workpage](9-new-workpage.png)
+![View Workpage](9-new-workpage.png)
 
 
 ### Design the first section of your workpage
@@ -133,15 +133,15 @@ In this step, you'll add two text widgets next to each other in the first sectio
 
 1. Click **+** to add a section to your workpage.
 
-    <!-- border -->![Add section](9a-add-section1.png)
+    ![Add section](9a-add-section1.png)
 
 2. Click **Add Widget** in the first section to open the widget gallery.
 
-    <!-- border -->![Add widget](10-add-widget1.png)
+    ![Add widget](10-add-widget1.png)
 
 3. Select the **Text** widget.
 
-    <!-- border -->![Add text widget](11-select-text-widget.png)
+    ![Add text widget](11-select-text-widget.png)
 
 3. Design the **Text** widget as follows:
 
@@ -150,11 +150,11 @@ In this step, you'll add two text widgets next to each other in the first sectio
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text already selected, choose black from the chart.
 
-    <!-- border -->![Design text widget](12-design-text-widget.png)
+    ![Design text widget](12-design-text-widget.png)
 
 4. On the right side of the widget that you've just added, click the  **+** to add another column.
 
-    <!-- border -->![Add second widget](13-add-second-widget.png)
+    ![Add second widget](13-add-second-widget.png)
 
 5. Click **Add Widget** in the second column and select the **Text** widget.
 
@@ -174,15 +174,15 @@ In this step, you'll add images to the second section.
 
 1. Click the **+** under the first section to add a new section.
 
-    <!-- border -->![Add a second row](14-add-second-section.png)
+    ![Add a second row](14-add-second-section.png)
 
 2. In the second section, click **Add Widget**.
 
-    <!-- border -->![Add widget to row 2](15-add-widget-section2.png)
+    ![Add widget to row 2](15-add-widget-section2.png)
 
 3. Select the **Image** widget.
 
-    <!-- border -->![Add image widget](16-add-image-widget.png)
+    ![Add image widget](16-add-image-widget.png)
 
 4. Click the link in the widget to browse for the image that you've saved on your computer and open it: `workspace_row2_image 1`
 
@@ -190,7 +190,7 @@ In this step, you'll add images to the second section.
 
 5. Hover over the image to expose the settings at the top right and click the cog icon to edit the image widget.
 
-    <!-- border -->![Open image settings](17-open-settings.png)
+    ![Open image settings](17-open-settings.png)
 
 6. Design the **Image** widget as follows:
 
@@ -201,28 +201,28 @@ In this step, you'll add images to the second section.
 
 7. Click **Save**.
 
-    <!-- border -->![Define widget settings](18-define-widget-settings.png)
+    ![Define widget settings](18-define-widget-settings.png)
 
 8. On the right side of this widget, click the **+** to add a new column.
 
-    <!-- border -->![Add column](19-add-column.png)
+    ![Add column](19-add-column.png)
 
 9. Click **Add Widget** in the new column, select the **Image** widget, and then click the link in the widget to add this image that you saved on your computer: `workspace_row2_image2`.
 
 10. On the top right of the widget that you've just added, click the cog icon to edit your image widget.
 
-    <!-- border -->![Open settings for second image widget](20-define-settings-image2.png)
+    ![Open settings for second image widget](20-define-settings-image2.png)
 
 11.  Design the second **Image** widget as follows and then click **Save**.
 
-    |  :-------------     | :-------------
-    | Caption             | `Michael Hill, Sales Fulfillment Manager`
-    | Caption Layout      | Inline
-    | Caption Alignment   | Left
+   |  :-------------     | :-------------
+   | Caption             | `Michael Hill, Sales Fulfillment Manager`
+   | Caption Layout      | Inline
+   | Caption Alignment   | Left
 
 12. Click **+** next to the second image widget to open a third column.
 
-    <!-- border -->![Add another column](21-add-another-column.png)
+    ![Add another column](21-add-another-column.png)
 
 13. Add the following 4 image widgets one under each other in the third column. Keep clicking **Add Widget** and select an image each time until you've added all these images:
 
@@ -232,7 +232,7 @@ In this step, you'll add images to the second section.
     | Third image         | `workspace_image_with_icon3`
     | Fourth image        |`workspace_image_with_icon4`
 
-    <!-- border -->![Add widget 4 times](21a-add-widgetx4.png)
+    ![Add widget 4 times](21a-add-widgetx4.png)
 
 
 14. Click the cog icon at the top right of the first image widget and design as follows. When you're done, click **Save**.
@@ -255,19 +255,19 @@ In this step, you'll add images to the second section.
 
 16. Use the dividers between the 3 columns to align all the images. Also make sure to adjust the `More Information` heading in line with the third column.
 
-    <!-- border -->![Align images](21b-align-images.png)
+    ![Align images](21b-align-images.png)
 
     This is how your second section looks:
 
-    <!-- border -->![First preview](22-first-preview.png)
+    ![First preview](22-first-preview.png)
 
 17. To increase the spacing between this section and the first section, hover over the section to expose the settings on the right, and click the cog icon to edit the spacing.
 
-    <!-- border --> ![Edit section settings](22a-edit-section-settings.png)
+    ![Edit section settings](22a-edit-section-settings.png)
 
 18. Under **Padding Top**, add the value `30` pixels and click **Save**.
 
-    <!-- border -->![Edit row pixels](22b-edit-pixels.png)
+    ![Edit row pixels](22b-edit-pixels.png)
 
 
 ### Design the third section of your workspace
@@ -277,7 +277,7 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 1. Click **+** at the bottom of the second section to add another section.
 
-    <!-- border -->![Add the third section](22a-add-third-section.png)
+    ![Add the third section](22a-add-third-section.png)
 
 2. Click **Add Widget**.
 
@@ -285,40 +285,40 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     > Adding an **Action** widget enables workspace members to choose from a selection of commonly used action types. In this tutorial, we want the workspace members to ask questions or add ideas.
 
-    <!-- border -->![Add an action widget](23-add-action-widget.png)
+    ![Add an action widget](23-add-action-widget.png)
 
 4. Enter the **Widget Title**: `Add Your Questions & Ideas`.
 
 5. Uncheck all options except for **Ask a Question** and **Add an Idea**. Click **Save** to add the widget to your workpage.
 
-    <!-- border -->![Design actions widget](24-design-actions-widget.png)
+    ![Design actions widget](24-design-actions-widget.png)
 
     Now let's create the **Forum** widget.
 
 6. Click the **+** next to the widget you just created to add another column.
 
-    <!-- border -->![Add another column](25-add-another-column.png)
+    ![Add another column](25-add-another-column.png)
 
 7. Click **Add Widget**.
 
-    <!-- border -->![Add a widget to 2nd column](25a-add-widget.png)
+    ![Add a widget to 2nd column](25a-add-widget.png)
 
 8. Select the **Forum** widget.
 
     > Adding a **Forum** widget enables a workspace member to view questions, ideas, and discussions submitted by their workspace members.
 
-    <!-- border -->![Add a forum widget](26-add-forum-widget.png)
+    ![Add a forum widget](26-add-forum-widget.png)
 
 9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `What would you like to know?`, and click **Save**.
 
     > On the workpage, only 2 of the questions, ideas or discussions from the forum will be displayed.  
 
-    <!-- border -->![Design the forum widget](27-design-forum-widget.png)
+    ![Design the forum widget](27-design-forum-widget.png)
 
 
 10. To increase the spacing between this section and the section above, hover over the section to expose the settings on the right, and click the cog icon to edit the spacing.
 
-    <!-- border -->![Edit row settings](28-edit-row-settings.png)
+    ![Edit row settings](28-edit-row-settings.png)
 
 11. Under **Padding Top**, add the value `30`pixels and click **Save**.
 
@@ -326,11 +326,11 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
 12.  Add another section.
 
-    <!-- border -->![Add another section](27-add-another-section.png)
+   ![Add another section](27-add-another-section.png)
 
 13. Click **Add Widget**
 
-      <!-- border -->![Add another section](27a-add-widget.png)
+      ![Add another section](27a-add-widget.png)
 
 14. Select the **Feed** widget and keep the default setting to show all events in the feed.  Click **Save**.
 
@@ -339,11 +339,11 @@ In this step, you'll add an **Action** widget, a **Forum** widget, and a **Feed*
 
     > You can save your workpage as a draft so check how it looks before publishing.
 
-    <!-- border -->![Publish](28-publish.png)
+    ![Publish](28-publish.png)
 
 16. In the popup, leave the **Show in Feed Updates** selected and click **Publish**.
 
-    <!-- border -->![Publish again](28a-publish-again.png)
+    ![Publish again](28a-publish-again.png)
 
     > By leaving the **Show in Feed Updates** checked, all workspace members will be informed of your changes. In the future, if the changes you make to your workspace aren't significant, you can uncheck this option.
 
@@ -355,7 +355,7 @@ Apart from the **Forum** widget, you're going to add a dedicated **Forum** tab t
 
 1. Click the **+** icon.
 
-    <!-- border -->![Add new page tab](28-add-new-page.png)
+    ![Add new page tab](28-add-new-page.png)
 
 2.  In the **Add Tab to Navigation Bar** screen, under the **Content** category, select the **Forums** tile to add it as a tab to your workspace navigation bar. You'll get a list of all the forum topics in the workspace.
 
@@ -363,23 +363,23 @@ Apart from the **Forum** widget, you're going to add a dedicated **Forum** tab t
 
 3. Go back to your workpage by clicking the **Sales Orders** workpage in the navigation bar.
 
-    <!-- border -->![Go back to overview page](29-go-to-workpage.png)
+    ![Go back to overview page](29-go-to-workpage.png)
 
 4. Scroll down to your **Actions** widget that you added previously and click **Ask a Question**.
 
-    <!-- border -->![Add new question](35-add-a-question.png)
+    ![Add new question](35-add-a-question.png)
 
 5. Add this question: `What is our sales forecast for the coming year?` Then click **Publish** so that members will be able to see your question. You'll get a confirmation message that your question was created.
 
-    <!-- border -->![Add first questions](35-first-question.png)
+    ![Add first questions](35-first-question.png)
 
 6. Go back to your workspace by using the breadcrumbs at the top.
 
-    <!-- border -->![Go back to Forums page](35a-go-back.png)
+    ![Go back to Forums page](35a-go-back.png)
 
 Note that your question has been added to your workpage as well as to your feed.
 
-<!-- border -->![View question](36-view-questions.png)
+![View question](36-view-questions.png)
 
 
 
@@ -389,6 +389,6 @@ Note that your question has been added to your workpage as well as to your feed.
 
 This is how your workspace looks:
 
-<!-- border -->![Final workspace](37-final-workspace.png)
+![Final workspace](37-final-workspace.png)
 
 Closing

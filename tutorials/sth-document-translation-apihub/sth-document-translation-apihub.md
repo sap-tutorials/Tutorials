@@ -23,7 +23,7 @@ primary_tag: software-product>sap-translation-hub
 
 Follow the link to the [SAP API Business Hub](https://api.sap.com/).
 
-<!-- border -->![API Hub](01_API_hub.png)
+![API Hub](01_API_hub.png)
 
 
 ### Log into SAP API Business Hub
@@ -32,14 +32,14 @@ The SAP API Business Hub offers a test facility for APIs. In order to take advan
 
 Select **Login** at the top of the page.
 
-<!-- border -->![Log On](04_API_hub_log_on.png)
+![Log On](04_API_hub_log_on.png)
 
 
 ### Search for Document Translation API
 
 Search for `document translation` to find the Document Translation API and select the Document Translation API.
 
-<!-- border -->![Search in API Hub](02_API_hub_search.png)
+![Search in API Hub](02_API_hub_search.png)
 
 
 
@@ -47,7 +47,7 @@ Search for `document translation` to find the Document Translation API and selec
 
 The Document Translation API Reference page shows the two available APIs.
 
-<!-- border -->![Show document translation](03_API_hub_document.png)
+![Show document translation](03_API_hub_document.png)
 
 Take a minute to explore both APIs.
 
@@ -59,31 +59,31 @@ The service offers a sandbox system out of the box, but the idea of this tutoria
 
 1. Select the **Try Out** button.
 
-    <!-- border -->![Configure](05_API_hub_configure.png)
+    ![Configure](05_API_hub_configure.png)
 
 2. Click **Environment: Sandbox** to open the menu and select **+ Add New Environment**
 
-    <!-- border -->![Configure](05a_API_hub_configure.png)
+    ![Configure](05a_API_hub_configure.png)
 
 3. In the **Configure Environment** screen, enter a display name for the environment: `myaccount`and select the **Starting URL** corresponding to the region of your SAP BTP account.
 
-    <!-- border -->![Configure](06_API_hub_configure.png)
+    ![Configure](06_API_hub_configure.png)
 
 4. For client ID and client secret, take the information from the Document Translation credentials as described in [Create Service Instance for Document Translation](sth-enable-document-translation)
 
-    <!-- border -->![Configure](07_API_hub_configure.png)
+    ![Configure](07_API_hub_configure.png)
 
 5. For subaccount, take the subdomain information from your SAP Business Technology Platform cockpit. For example, on the screen-shot below, the sub-account is `80c353f5trial`.
 
-    <!-- border -->![Configure](08a_API_hub_account.png)
+    ![Configure](08a_API_hub_account.png)
 
     Enter your value in SAP Business API Hub.
 
-    <!-- border -->![Configure](08_API_hub_configure.png)
+    ![Configure](08_API_hub_configure.png)
 
 6. Save your settings for future sessions.
 
-    <!-- border -->![Configure](09_API_hub_configure.png)
+    ![Configure](09_API_hub_configure.png)
 
 
 ### Test with your own account
@@ -92,7 +92,7 @@ Now that your API environment is maintained, you will see the `myaccount` entry.
 
 Select **Synchronous document translation** and **POST /translation**.
 
-<!-- border -->![Configure](11_API_hub_try_out.png)
+![Configure](11_API_hub_try_out.png)
 
 
 
@@ -100,7 +100,7 @@ Select **Synchronous document translation** and **POST /translation**.
 
 You can maintain the languages in the **Parameters** section. Source and Target Language fields are already pre-filled with values for English and German. If you want to try out other language codes, please refer to the available language information [here](https://help.sap.com/viewer/9f73362817cd48339dd8a6acba160f7f/Cloud/en-US/6fc2e5ab04a94da4a0c3d0740a9bb2ff.html).
 
-<!-- border -->![Configure](12_API_hub_try_out.png)
+![Configure](12_API_hub_try_out.png)
 
 
 
@@ -110,18 +110,18 @@ Go to the **Body** section and select **Form Data**.
 
 **Choose File** to select a document from your file source system (Microsoft Word, Microsoft PowerPoint, Microsoft Excel or other file formats which are mentioned [here](https://help.sap.com/viewer/9f73362817cd48339dd8a6acba160f7f/Cloud/en-US/a2dedd7861624a1a82d7ec7ea431a8e4.html)) and click **Run**.
 
-<!-- border -->![Configure](15_API_hub_try_out.png)
+![Configure](15_API_hub_try_out.png)
 
 
 ### View the translation result
 
 After some seconds you will see in the **Response Body** section a **Download file** link. Click the link and the translated file will be downloaded.
 
-<!-- border -->![Configure](13_API_hub_translation.png)
+![Configure](13_API_hub_translation.png)
 
 Open the file and verify the translation result.
 
-<!-- border -->![Configure](14_API_hub_translation.png)
+![Configure](14_API_hub_translation.png)
 
 
 

@@ -63,16 +63,16 @@ In this tutorial, you'll configure your _ABAP system_ to use the _CF theming ser
 
 7. *Alternative:* Use the `cf` CLI to create the service key. See [Cloud Foundry Documentation: Using the Cloud Foundry Command Line Interface (cf CLI)](https://docs.cloudfoundry.org/cf-cli/) for details on how to interact with the `cf` CLI.
 
-    ```sh
-    # 1. login to your CF space, given $CF_API_URL, $CF_ORG and $CF_SPACE
-    cf login -a $CF_API_URL -o $CF_ORG -s $CF_SPACE
-    # 2. find the name of the service with offering=theming and plan=standard
-    THEMING_SERVICE=$(cf services | awk '$2 == "theming" && $3 == "standard" {print $1}')
-    # 3. create a service key named "abap-remote-theming" for that service
-    cf create-service-key $THEMING_SERVICE abap-remote-theming --wait
-    # 4. view uaa.clientid, uaa.clientsecret, uaa.url and uri of that service key
-    cf service-key $THEMING_SERVICE abap-remote-theming | tail -n +3 | jq '{clientid: .credentials.uaa.clientid, clientsecret: .credentials.uaa.clientsecret, url: .credentials.uaa.url, uri: .credentials.uri}'
-    ```
+   ```sh
+   # 1. login to your CF space, given $CF_API_URL, $CF_ORG and $CF_SPACE
+   cf login -a $CF_API_URL -o $CF_ORG -s $CF_SPACE
+   # 2. find the name of the service with offering=theming and plan=standard
+   THEMING_SERVICE=$(cf services | awk '$2 == "theming" && $3 == "standard" {print $1}')
+   # 3. create a service key named "abap-remote-theming" for that service
+   cf create-service-key $THEMING_SERVICE abap-remote-theming --wait
+   # 4. view uaa.clientid, uaa.clientsecret, uaa.url and uri of that service key
+   cf service-key $THEMING_SERVICE abap-remote-theming | tail -n +3 | jq '{clientid: .credentials.uaa.clientid, clientsecret: .credentials.uaa.clientsecret, url: .credentials.uaa.url, uri: .credentials.uri}'
+   ```
 
 ### Create the OAuth2 client with SOAUTH2_CLIENT in SAP S/4HANA
 

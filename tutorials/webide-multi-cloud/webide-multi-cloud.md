@@ -32,13 +32,13 @@ In this tutorial, you'll locate the SAP Web IDE and access it, all from your bro
 
 2. Navigate to your **global account** and then **subaccount**.
 
-    <!-- border -->![subaccount](subaccount.png)
+    ![subaccount](subaccount.png)
 
 ### Verify that the SAP Web IDE entitlement is in place
 
 Select **Entitlements** on the left-hand menu to see all entitlements that are assigned to this subaccount. Locate the **`SAP Web IDE`** entitlement from this list.
 
-<!-- border -->![webideEntitlement](webideEntitlement.png)
+![webideEntitlement](webideEntitlement.png)
 
 > In case you are missing the entitlement, please follow this tutorial to [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add).
 
@@ -46,14 +46,14 @@ Select **Entitlements** on the left-hand menu to see all entitlements that are a
 
 1. Select **Subscriptions** on the left-hand menu in the SAP BTP cockpit to see all available subscriptions.
 
-    <!-- border -->![Subscriptions](subscriptions.png)
+    ![Subscriptions](subscriptions.png)
 
 2. This detail page will show you a service description and provide you with a link to the service documentation. Click the blue button to **Subscribe** to this service.
 
-    <!-- border -->![subscribe](subscribe.png)
+    ![subscribe](subscribe.png)
 3.  Click on **Go to Application** to open  SAP Web IDE.
 
-    <!-- border -->![goto](gotoapp.png)
+    ![goto](gotoapp.png)
 
     You might be asked to accept a disclaimer if you come here for the first time. **Check** the box and click **accept** to do so.
 

@@ -31,19 +31,19 @@ You can check out all available components in the [Storybook](https://ui5.github
 
 1. Start with importing a `Card` component into your `MyApp.tsx` file.
 
-    ```TypeScript / TSX
-    import { Card } from "@ui5/webcomponents-react";
-    ```
+   ```TypeScript / TSX
+   import { Card } from "@ui5/webcomponents-react";
+   ```
 
 2. So, you imported the `Card` component. Now it's time to use it. Replace the content of your `<div>` with a `<Card>`.
 
     In the [Storybook](https://ui5.github.io/webcomponents-react/v2/?path=/docs/data-display-card--docs), you can see that Cards can receive different props. For now only add some text as `children`.
 
-    ```TypeScript / TSX
-    <div>
-      <Card>This is the content area of the Card</Card>
-    </div>
-    ```
+   ```TypeScript / TSX
+   <div>
+     <Card>This is the content area of the Card</Card>
+   </div>
+   ```
 
 Your webpage should now look like this.
 
@@ -71,34 +71,34 @@ The heading area of the `Card` component is empty, this is because it didn't rec
 
 1. Import the `CardHeader`.
 
-    ```TypeScript / TSX
-    import { Card, CardHeader } from "@ui5/webcomponents-react";
-    ```
+   ```TypeScript / TSX
+   import { Card, CardHeader } from "@ui5/webcomponents-react";
+   ```
 
 2. Add the `CardHeader` component to your `Card` and give it a title by setting the `titleText` prop:
 
-    ```TypeScript / TSX
-    <div>
-      <Card header={<CardHeader titleText="Card" />}>
-        This is the content area of the Card
-      </Card>
-    </div>
-    ```
+   ```TypeScript / TSX
+   <div>
+     <Card header={<CardHeader titleText="Card" />}>
+       This is the content area of the Card
+     </Card>
+   </div>
+   ```
 
 3. Our template applies the SAP defined `font-family` for all texts that don't implement `font-family` themselves. (see `index.css` file)
    To enable this on a single text without using CSS, you can use the `Text` component. Let's wrap the text content of the `Card` inside the `Text` component:
 
-    ```TypeScript / TSX
-    import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
-    ```
+   ```TypeScript / TSX
+   import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
+   ```
 
-    ```TypeScript / TSX
-    <div>
-      <Card header={<CardHeader titleText="Card" />}>
-        <Text>This is the content area of the Card</Text>
-      </Card>
-    </div>
-    ```
+   ```TypeScript / TSX
+   <div>
+     <Card header={<CardHeader titleText="Card" />}>
+       <Text>This is the content area of the Card</Text>
+     </Card>
+   </div>
+   ```
 
 
 
@@ -111,11 +111,11 @@ The Card now spreads across the whole screen, this behavior is intended, so it t
 
 1. To restrict the `width` of the `Card`, add the `style` prop.
 
-    ```TypeScript / TSX
-    <Card header={<CardHeader titleText="Card" />} style={{ width: "300px" }}>
-      <Text>This is the content area of the Card</Text>
-    </Card>
-    ```
+   ```TypeScript / TSX
+   <Card header={<CardHeader titleText="Card" />} style={{ width: "300px" }}>
+     <Text>This is the content area of the Card</Text>
+   </Card>
+   ```
 
     ![Card02](02_card.png)
 
@@ -123,11 +123,11 @@ The Card now spreads across the whole screen, this behavior is intended, so it t
     
     The CSS var in question is `--sapContent_Space_S` (`1rem`) and we're going to apply it via inline-style again:
     
-    ```TypeScript / TSX
-     <Text style={{padding: "var(--sapContent_Space_S)"}}>
-       This is the content area of the Card
-     </Text>
-    ```
+   ```TypeScript / TSX
+    <Text style={{padding: "var(--sapContent_Space_S)"}}>
+      This is the content area of the Card
+    </Text>
+   ```
 
     Hereby you get a standardized content-padding.
 
@@ -157,12 +157,12 @@ And your application like this:
 
 1. The Card header can also be interactive, to enable this set `interactive` to `true`.
 
-    ```TypeScript / TSX
-    <Card
-      header={<CardHeader titleText="Card" interactive />}
-      ...
-    </Card>
-    ```
+   ```TypeScript / TSX
+   <Card
+     header={<CardHeader titleText="Card" interactive />}
+     ...
+   </Card>
+   ```
 
     _We didn't pass a value to `interactive`, because it [defaults to true](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) if the value is omitted._
     
@@ -170,28 +170,28 @@ And your application like this:
    
 2.  To make the header react to a click (or SPACE/ENTER press), add a function as value to the `onClick` prop.
 
-    ```TypeScript / TSX
-    <Card
-      header={
-        <CardHeader
-          titleText="Card"
-          interactive
-          onClick={handleHeaderClick}
-        />
-      }
-    >
-      ...
-    </Card>
-    ```
+   ```TypeScript / TSX
+   <Card
+     header={
+       <CardHeader
+         titleText="Card"
+         interactive
+         onClick={handleHeaderClick}
+       />
+     }
+   >
+     ...
+   </Card>
+   ```
 
 3. Now, add the callback function right in the beginning of the component (definition function):
-    ```TypeScript / TSX
-    export function MyApp() {
-      const handleHeaderClick = () => {
-        alert("Header clicked");
-    };
-    ...
-    ```
+   ```TypeScript / TSX
+   export function MyApp() {
+     const handleHeaderClick = () => {
+       alert("Header clicked");
+   };
+   ...
+   ```
 
 The file should now look like this:
 ```TypeScript / TSX

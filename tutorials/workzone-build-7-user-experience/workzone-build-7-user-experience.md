@@ -28,17 +28,17 @@ In this tutorial, you'll experience the digital workplace you created in this mi
 
 When you open your site, the landing page is the company home page - a centralized information hub that all employees can see. This is where the company shares important information, company news, events, special notices, and useful apps that navigate to company-specifc information.  
 
-<!-- border -->![Open Home page](1-open-home-page.png)
+![Open Home page](1-open-home-page.png)
 
 ### Navigate to the Applications page
 
  - Access the **Applications** page from the top menu bar. This is where you'll see all the applications that you have permissions to see. Note that the apps are displayed in groups. These groups ensure that the apps are visually displayed on the screen. If you want, you can personlize this page by navigating to the user actions menu and selecting the relevant action. 
 
-      <!-- border -->![Open Applications page](11-applications-page.png)
+      ![Open Applications page](11-applications-page.png)
 
  - Click the `Search POs` app under the `Purchase Orders` group and click **Go** to display the backend data. 
 
-      <!-- border -->![See Web Dynpro app](3-see-webdynpro-app.png)
+      ![See Web Dynpro app](3-see-webdynpro-app.png)
 
 
  ### Navigate to your workspace and experience how to collaborate with your colleagues and place a sales order.
@@ -47,25 +47,25 @@ When you open your site, the landing page is the company home page - a centraliz
 
  - Click the SAP logo to get back to your menu.
 
-      <!-- border -->![Go back to the menu](4-go-back-to-menu.png)
+      ![Go back to the menu](4-go-back-to-menu.png)
  
  - Open your `Sales Management` workspace.
 
-      <!-- border -->![Open workspace](5-go-to-workspace.png)
+      ![Open workspace](5-go-to-workspace.png)
 
  - Consult with your colleagues and ask them questions in the forum, browse for answers from your sales managers or from other members of your team.
 
  - Under **Computer Systems - Best Sellers**, use the dropdown list to browse the different items you can order. For example, select  **Computer Systems**  and check out the available computers. Select `Notebook Basic 15` to view its details before you decide what you want to order. 
 
-      <!-- border -->![Open UI5 card](6-click-ui5card.png)
+      ![Open UI5 card](6-click-ui5card.png)
 
  - You may want to get advice about the computer so , click **Ask a Question** and post your question.
 
-      <!-- border -->![Ask a question](9-ask-a-question.png)
+      ![Ask a question](9-ask-a-question.png)
 
  - Now you can order the computer. Under **Most Popular Apps**, click the `Sales Order Trigger` app. 
 
-      <!-- border -->![Click the SAP Build app](7-click-build-app.png)
+      ![Click the SAP Build app](7-click-build-app.png)
 
  -  Click the app to create your order. Add your details in the relevant fields. For example:
 
@@ -77,29 +77,29 @@ When you open your site, the landing page is the company home page - a centraliz
 
  -  Click **Get Approval** to trigger the workflow process. When you send a sales order for approval, an automated process is triggered and the sales order process is digitized so that it can be handled quickly and efficiently.
 
-      <!-- border -->![Place Order](8-place-order.png)
+      ![Place Order](8-place-order.png)
 
      Note the process was triggered with a notification. Remember that the sales order in the process automation flow is based on the size of the Sales Order- under 100,000 items are approved automatically, larger sales orders are sent to the approver’s inbox.
 
-     <!-- border -->![Notification displays](12-notification.png)
+     ![Notification displays](12-notification.png)
 
  - As a general rule, you would send the approval to an approver. In this workshop, we'll send the task to the user who submitted the order to save time.
 
  - Click the **My Inbox** app from the shell to view the task you need to approve. 
 
-      <!-- border -->![Open my inbox](10-my-inbox.png)
+      ![Open my inbox](10-my-inbox.png)
  
  - From the **Approve Sales Order** form, click **Approve**. You'll be notified that that task has been completed successfully.
 
-      <!-- border -->![Approve or reject](13-approve-reject.png)
+      ![Approve or reject](13-approve-reject.png)
 
  - Click **Refresh** to view the **Order Confirmation** form.
 
-     <!-- border -->![Refresh](15-refresh.png)
+     ![Refresh](15-refresh.png)
 
  - Click **Submit**.
 
-     <!-- border -->![Submit](16-submit.png)
+     ![Submit](16-submit.png)
 
      You'll see that once submitted, the order has been handled and it's no longer in the **My Inbox**.
    
