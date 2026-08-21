@@ -56,39 +56,39 @@ code .
 
 1. In VS Code, choose **Terminal** &rarr; **New Terminal** and run the following command:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
     This command installs the required dependencies and updates the **package-lock.json** file of your project.
 
 2. Create the productive CAP build for your application:
 
-    ```bash
-    npx cds build --production
-    ```
+   ```bash
+   npx cds build --production
+   ```
 
     The CAP build writes to the **gen/srv** folder.
 
 3. Build the CAP Node.js image:
 
-    ```bash
-    pack build <your-container-registry>/incident-management-srv:<image-version> \
-        --path gen/srv \
-        --builder paketobuildpacks/builder-jammy-base \
-        --publish
-    ```
+   ```bash
+   pack build <your-container-registry>/incident-management-srv:<image-version> \
+       --path gen/srv \
+       --builder paketobuildpacks/builder-jammy-base \
+       --publish
+   ```
 
     > The pack CLI builds the image that contains the build result in the **gen/srv** folder and the required npm packages by using the [Cloud Native Buildpack for Node.js](https://github.com/paketo-buildpacks/nodejs) provided by Paketo.
 
 4. Build the MTXS sidecar image:
 
-    ```bash
-    pack build <your-container-registry>/incident-management-mtxs-sidecar:<image-version> \
-        --path gen/mtx/sidecar \
-        --builder paketobuildpacks/builder-jammy-base \
-        --publish
-    ```
+   ```bash
+   pack build <your-container-registry>/incident-management-mtxs-sidecar:<image-version> \
+       --path gen/mtx/sidecar \
+       --builder paketobuildpacks/builder-jammy-base \
+       --publish
+   ```
 
     > **IMPORTANT:** The **project.toml** file in the **gen/mtx/sidecar** folder is copied automatically from the **mtxs/sidecar** folder during the build. This file exposes the node process inside the container so that CAP Operator can trigger tenant operations using the MTXS CLIs.
 
@@ -96,48 +96,48 @@ code .
 
 1. In the VS Code terminal, navigate to the **app/router** folder and run the following command:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 2.  In the VS Code terminal, navigate back to the root folder of your project:
 
-    ```bash
-    cd ../..
-    ```
+   ```bash
+   cd ../..
+   ```
 
 3. Build the application router image:
 
-    ```bash
-    pack build <your-container-registry>/incident-management-approuter:<image-version> \
-        --path app/router \
+   ```bash
+   pack build <your-container-registry>/incident-management-approuter:<image-version> \
+       --path app/router \
 		--buildpack paketo-buildpacks/nodejs \
 		--builder paketobuildpacks/builder-jammy-base \
 		--env BP_NODE_RUN_SCRIPTS="" \
 		--publish
-    ```
+   ```
 
 #### Build the HTML5 deployer image
 
 1.  In the VS Code terminal, navigate to the **ui-resources** folder and run the following command:
 
-    ```bash
-    npm install && npm run package
-    ```
+   ```bash
+   npm install && npm run package
+   ```
 
-    This command builds and copies the archive **nsincidents.zip** inside the **ui-resources/resources** folder.
+   This command builds and copies the archive **nsincidents.zip** inside the **ui-resources/resources** folder.
 
 2.  In the VS Code terminal, navigate back to the root folder of your project:
 
-    ```bash
-    cd ..
-    ```
+   ```bash
+   cd ..
+   ```
 
 3. Build the UI deployer image:
 
-    ```bash
-    pack build <your-container-registry>/incident-management-html5-deployer:<image-version> \
-        --path ui-resources \
-        --builder paketobuildpacks/builder-jammy-base \
-        --publish
-    ```
+   ```bash
+   pack build <your-container-registry>/incident-management-html5-deployer:<image-version> \
+       --path ui-resources \
+       --builder paketobuildpacks/builder-jammy-base \
+       --publish
+   ```

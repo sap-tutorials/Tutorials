@@ -95,11 +95,11 @@ See [Setup](https://github.com/int128/kubelogin#setup) in the kubelogin docs for
 
 1. Choose `KubeconfigURL` under the **Kyma Environment** tab in your subaccount.
 
-    <!-- border; size:540px --> ![Kubeconfig URL](./img/kubeconfigURL.png)
+    ![Kubeconfig URL](./img/kubeconfigURL.png)
 
     A `kubeconfig.yaml` file is downloaded.
 
-    <!-- border; size:540px --> ![Kubeconfig yaml](./img/kubeconfig_yaml.png)
+    ![Kubeconfig yaml](./img/kubeconfig_yaml.png)
 
 2. Copy the `kubeconfig.yaml` file to the `~/.kube/` directory and rename it to `config`. Replace or rename any existing file with the same name.
 

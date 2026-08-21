@@ -28,20 +28,20 @@ author_profile: https://github.com/anirudhprasad-sap
 
 2. Navigate to **Configuration** &rarr; **Modules** and choose **Add** within the **Community Modules** list.
 
-    <!-- border; size:540px --> ![Add Community Module](./img/community-module-1.png)
+    ![Add Community Module](./img/community-module-1.png)
 
 3. Choose **Add** in the **Source YAMLs** section to load the list of community modules.
 
-    <!-- border; size:540px --> ![Load Community Modules](./img/community-module-2.png)
+    ![Load Community Modules](./img/community-module-2.png)
 
 4. In the popup, you can see the list of available community modules. Choose **Add**.
 
-    <!-- border; size:540px --> ![Select CAP Operator Module](./img/community-module-3.png)
+    ![Select CAP Operator Module](./img/community-module-3.png)
 
 5. Select the **CAP Operator** module and choose **Add**.
 
-    <!-- border; size:540px --> ![Add CAP Operator Module](./img/community-module-4.png)
+    ![Add CAP Operator Module](./img/community-module-4.png)
 
 6. Wait until the automatic installation is complete and the **Module State** changes to **Ready**.
 
-    <!-- border; size:540px --> ![CAP Operator Installed](./img/community-module-5.png)
+    ![CAP Operator Installed](./img/community-module-5.png)
