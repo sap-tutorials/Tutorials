@@ -32,15 +32,15 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 
 1. Access the **Administration Console** from the user actions dropdown menu under your avatar.
 
-    <!-- border -->![Open the Admin Console](1-open-admin-console.png)
+    ![Open the Admin Console](1-open-admin-console.png)
 
 2. Go to the **External Integrations** section, expand it, and click **Business Content**.
 
-    <!-- border -->![Open Business Content](2-open-business-content.png)
+    ![Open Business Content](2-open-business-content.png)
 
 3. Click **Content Manager** to open it.
 
-    <!-- border -->![Open Content Manager](3-open-content-manager.png)
+    ![Open Content Manager](3-open-content-manager.png)
 
 
 ### Create and configure a new app
@@ -48,7 +48,7 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 
 1. From the **Content Manager**, click **Create** and select **App** from the list.
 
-    <!-- border -->![Create new app](4-create-new-app.png)
+    ![Create new app](4-create-new-app.png)
 
     The App editor opens with the **Configuration** tab in focus.
 
@@ -60,7 +60,7 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 
     * **URL**: `https://sap.io`
 
-      <!-- border -->![Define app properties](5-app-properties.png)
+      ![Define app properties](5-app-properties.png)
 
 3. Click the **Navigation** tab to specify the intent of your app.
 
@@ -73,7 +73,7 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 
       * **Action**: `Display`
 
-        <!-- border -->![Define navigation properties](6-navigation-properties.png)
+        ![Define navigation properties](6-navigation-properties.png)
 
 5. Click the **Visualization** tab. In this tab, you specify how the app tile will appear in the **Applications** page of your site.
 
@@ -88,7 +88,7 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
 7.  On the right, you can see a preview of the tile with all the properties you entered.
      Click **Save**.
 
-      <!-- border -->![Define visualization properties](7-vizualization-properties.png)
+      ![Define visualization properties](7-vizualization-properties.png)
 
 You've configured the URL app and in the next step you'll go back to the **Content Manager** to see it in the list of content items.
 
@@ -99,11 +99,11 @@ You've configured the URL app and in the next step you'll go back to the **Conte
 
 Click **Content Manager** in the breadcrumbs in the header to navigate back to it.
 
-  <!-- border -->![Go back to the Content Manager](8-back-to-content-manager.png)
+  ![Go back to the Content Manager](8-back-to-content-manager.png)
 
 You can see your app in the list of content items:
 
-  <!-- border -->![View app in my content](9-view-app.png)
+  ![View app in my content](9-view-app.png)
 
 To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in the **Applications** page of your site. This is described in the following steps.
 
@@ -117,11 +117,11 @@ The `Everyone` role already exists in the **Items** list of the **Content Manage
 
 1. In the **Items** list, click the **Everyone** role to open the Role editor.
 
-    <!-- border -->![Click Everyone role](10-click-everyone-role.png)
+    ![Click Everyone role](10-click-everyone-role.png)
 
 2. Click **Edit**.
 
-    <!-- border -->![Click Edit](11-click-edit.png)
+    ![Click Edit](11-click-edit.png)
 
 3. Click the search box in the on the right to view any available apps in the list below.
 
@@ -131,7 +131,7 @@ The `Everyone` role already exists in the **Items** list of the **Content Manage
 
 5. Click **Save**.
 
-    <!-- border -->![Assign app to role](12-assign-app-to-role.png)
+    ![Assign app to role](12-assign-app-to-role.png)
 
 
 ### Create a group and assign the app to it
@@ -141,11 +141,11 @@ A group is a set of one or more apps displayed together on the **Applications** 
 
 1. Click **Content Manager** in the breadcrumbs in the header to navigate back to it.
 
-    <!-- border -->![Go back to the Content manager](13-back-to-content-manager.png)
+    ![Go back to the Content manager](13-back-to-content-manager.png)
 
 2. Click **Create** and select **Group** to create a group.
 
-    <!-- border -->![Add new group](14-add-new-group.png)
+    ![Add new group](14-add-new-group.png)
 
 3. Enter `SAP` as the **Title**. 
 
@@ -153,7 +153,7 @@ A group is a set of one or more apps displayed together on the **Applications** 
 
 5. Click **Save**.
 
-    <!-- border -->![Assign app to group](15-assign-app-to-group.png)
+    ![Assign app to group](15-assign-app-to-group.png)
 
 Your app is configured. Now you'll go to the **Applications** page to see that the app appears there.
 
@@ -165,19 +165,19 @@ Your app is configured. Now you'll go to the **Applications** page to see that t
 
 1. Click the **Site Directory** icon in the side panel.
 
-    <!-- border -->![Go to Site Directory](16-go-to-site-directory.png)
+    ![Go to Site Directory](16-go-to-site-directory.png)
 
 2. Click the **Open site** icon.
 
-    <!-- border -->![Open work zone](17-open-work-zone.png)
+    ![Open work zone](17-open-work-zone.png)
 
 3. In the top-level menu of your site, click **Applications**.
 
-    <!-- border -->![Open Applications page](18-open-applications-page.png)
+    ![Open Applications page](18-open-applications-page.png)
 
 You'll see your app displayed as a tile in the new group you assigned it to:
 
-<!-- border -->![View new app in new group](19-view-second-app.png)
+![View new app in new group](19-view-second-app.png)
 
 Now you're going to add this app to the **Home** page.
 
@@ -188,13 +188,13 @@ Now you're going to add this app to the **Home** page.
 
 1. Click the back arrow to go back to the **Home** page.
 
-    <!-- border -->![Back to Home](20-go-to-home.png)
+    ![Back to Home](20-go-to-home.png)
 
     > You can also navigate back to the **Home** page from the top navigation bar.  Click **Home** and then select **Home** next to the little house icon.
 
 2. Click the pencil icon to open the Page Designer.
 
-    <!-- border -->![Open page designer](21-open-page-designer.png)
+    ![Open page designer](21-open-page-designer.png)
 
 
 
@@ -205,18 +205,18 @@ In the previous tutorial, you added a header to your **Home** page and underneat
 
 1. Scroll down to the bottom of the page and in the same section as the `New Orders` app, click the **+ Add Application Tiles**.
 
-    <!-- border -->![Add Widget](22-add-widget.png)
+    ![Add Widget](22-add-widget.png)
 
 
 2. In the **Tiles** screen, from the search box, start typing in the name of your app `Innovation at SAP`, select the app, and then click **Add**. The app is added to the section on your workpage.
 
-    <!-- border -->![Select the app](24-select-app.png)
+    ![Select the app](24-select-app.png)
 
 
 6. Scroll to the top of the screen and click **Publish**.
 
     This is how your **Home** page looks now with the 2 added apps:
 
-    <!-- border -->![View home page with 2 apps](25-homepage-apps2.png)
+    ![View home page with 2 apps](25-homepage-apps2.png)
 
 7. Click the apps to open them.

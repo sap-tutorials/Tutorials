@@ -66,11 +66,11 @@ These commands sets up a [Vite](https://vitejs.dev/) project, creating a React A
 
 3. Now, add the following lines of code to `MyApp.tsx`.
 
-    ```TypeScript / TSX
-    export function MyApp() {
-      return <div>My root component</div>;
-    }
-    ```
+   ```TypeScript / TSX
+   export function MyApp() {
+     return <div>My root component</div>;
+   }
+   ```
 
 > ### Structure of a React component
 This is a very simple component, but it already shows you the basic structure of all components. The file starts with the import statements in the first few lines. Then, the component will be defined as a function ([React docs](https://react.dev/learn/your-first-component#defining-a-component)) in PascalCase notation. This function starts the definitions of the props and the logic, we'll add them in a later tutorial, and ends by returning JSX or HTML components in a return statement.
@@ -82,30 +82,30 @@ With this you created your first `React` component. To actually render the compo
 
 1. In `App.tsx` remove everything except for the [React.Fragment](https://react.dev/reference/react/Fragment) (`<></>`) and the App component itself.
 
-    ```TypeScript / TSX
-    function App() {
-      return (<></>);
-    }
+   ```TypeScript / TSX
+   function App() {
+     return (<></>);
+   }
 
-    export default App;
-    ```
+   export default App;
+   ```
 
 2. Import your created component.
 
-    ```TypeScript / TSX
-    import { MyApp } from "./MyApp";
-    ```
+   ```TypeScript / TSX
+   import { MyApp } from "./MyApp";
+   ```
 3. Add the component to the `return` value of `App()`.
 
-    ```TypeScript / TSX
-    function App() {
-      return (
-        <>
-          <MyApp />
-        </>
-      );
-    }
-    ```
+   ```TypeScript / TSX
+   function App() {
+     return (
+       <>
+         <MyApp />
+       </>
+     );
+   }
+   ```
 
     > Note that `<MyApp />` is using a self-closing syntax and is equivalent to `<MyApp></MyApp>`. All tags in JSX must be closed explicitly, this applies to HTML tags (like `img`) and custom JSX tags. [Here](https://react.dev/learn/writing-markup-with-jsx) you can find out more about JSX in general.
 
@@ -113,22 +113,22 @@ With this you created your first `React` component. To actually render the compo
 
     Your file should look like this:
 
-    ```TypeScript / TSX
-    import '@ui5/webcomponents-react/dist/Assets.js';
-    import { ThemeProvider } from '@ui5/webcomponents-react';
-    import { StrictMode } from 'react';
-    import { createRoot } from 'react-dom/client';
-    import App from './App.tsx';
-    import './index.css';
-    
-    createRoot(document.getElementById('root') as HTMLElement).render(
-      <StrictMode>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </StrictMode>
-    );
-    ```
+   ```TypeScript / TSX
+   import '@ui5/webcomponents-react/dist/Assets.js';
+   import { ThemeProvider } from '@ui5/webcomponents-react';
+   import { StrictMode } from 'react';
+   import { createRoot } from 'react-dom/client';
+   import App from './App.tsx';
+   import './index.css';
+   
+   createRoot(document.getElementById('root') as HTMLElement).render(
+     <StrictMode>
+       <ThemeProvider>
+         <App />
+       </ThemeProvider>
+     </StrictMode>
+   );
+   ```
     
     - `Assets.js'`: This includes assets like translation files (CLDR), theming, etc. of the required packages.
     - `ThemeProvider`: Inter alia, this provider makes your app react to theme and language changes and injects the CSS of __used__ components.
@@ -154,7 +154,7 @@ The page will automatically reload if you make changes to the code. You will see
 
 > **TIP:** You can put a browser window next to the editor in your screen to see the changes live in action.
 
-><!-- border -->![split](splitscreen.png)
+>![split](splitscreen.png)
 >
 >&nbsp;
 
