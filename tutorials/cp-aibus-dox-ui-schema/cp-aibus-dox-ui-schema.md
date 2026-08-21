@@ -29,22 +29,22 @@ If you are new to the SAP Document AI basic UI, first try out the tutorial: [Use
 
     >- To access the [Schema Configuration](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/3c7862e30fc2488ea95f58f1d77e424e.html) and [Template](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/1eeb08998f49409681c06a01febc3172.html) features, ensure that you use the `blocks_of_100` plan to create the service instance for SAP Document AI Trial.
 
-    ><!-- border -->![Access](plan.png)
+    >![Access](plan.png)
 
 
     >- And make sure you're assigned to the role collection: `Document_Information_Extraction_UI_Templates_Admin_trial` (or `Document_Information_Extraction_UI_Templates_Admin` if you're using the free tier option). For more details about how to assign role collections, see step 2 in the tutorial: [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub), or step 3 in the tutorial: [Use Free Tier to Subscribe to SAP Document AI Basic UI](cp-aibus-dox-free-ui-sub).
 
-    ><!-- border -->![Access](roles.png)
+    >![Access](roles.png)
 
 
     >- After assigning new role collections, **Log Off** from the UI application to see all features you're now entitled to try out.
 
-    ><!-- border -->![Access](log-off.png)
+    >![Access](log-off.png)
 
 
 2. In the left navigation pane, click **Schema Configuration**.
 
-    <!-- border -->![Access Schema Configuration](access-schema-configuration.png)
+    ![Access Schema Configuration](access-schema-configuration.png)
 
 Here, you find the SAP schemas. The SAP Document AI basic UI provides preconfigured SAP schemas for the following standard document types:
 
@@ -56,7 +56,7 @@ In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`)
 
 >**NOTE:** You can’t edit or delete original SAP schemas. Always create a copy and then edit the default fields, as required.
 
-<!-- border -->![Access Schema Configuration](sap-schemas.png)
+![Access Schema Configuration](sap-schemas.png)
 
 
 >**CAUTION:**
@@ -70,17 +70,17 @@ In addition, there’s an SAP schema for custom documents (`SAP_OCROnly_schema`)
 
 To create your own schema, click **Create**.
 
-<!-- border -->![Create Schema](create-schema.png)
+![Create Schema](create-schema.png)
 
 In the dialog that appears, enter a name for your schema, `purchase_order_schema`, for example. Note that the name cannot include blanks. Further, select `Purchase Order` as your **Document Type**.
 
 Click **Create** to create the schema.
 
-<!-- border -->![Create Schema Dialog](create-schema-dialog.png)
+![Create Schema Dialog](create-schema-dialog.png)
 
 Now, your schema shows up in the list. Access the schema by clicking on the row.
 
-<!-- border -->![Access Schema](access-schema.png)
+![Access Schema](access-schema.png)
 
 
 
@@ -95,7 +95,7 @@ SAP Document AI already includes a number of fields that it can extract. See [he
 
 The image below shows an example of a purchase order. All the fields that you define in your schema in this tutorial are highlighted. The header fields represent all information outside the table that occurs once. The line item fields represent all information within the table that occurs for each product. You can, of course, extend or reduce the information that you want to extract.
 
-<!-- border -->![Purchase Order Example](purchase-order-example.png)
+![Purchase Order Example](purchase-order-example.png)
 
 
 
@@ -104,7 +104,7 @@ The image below shows an example of a purchase order. All the fields that you de
 
 To define your first header field, click **Add** to the right of the heading `Header Fields`.
 
-<!-- border -->![Add Header Field](add-header-field.png)
+![Add Header Field](add-header-field.png)
 
 For each field, you have to enter a name, a data type, a setup type, and optionally a default extractor and a description. The available data types are `string`, `number`, `date`, `discount`, `currency`, and `country/region`. 
 
@@ -122,11 +122,11 @@ As your first header field, add the purchase order number, which identifies your
 
 4. Click **Save** to add the header field.
 
-    <!-- border -->![Create Purchase Order Number](add-document-number.png)
+    ![Create Purchase Order Number](add-document-number.png)
 
 The field now displays in your list of header fields, where you again find all the information that you've just entered. You can edit or delete the field by clicking the respective icons on the right.
 
-<!-- border -->![View Purchase Order Number](added_purchase-order-number.png)
+![View Purchase Order Number](added_purchase-order-number.png)
 
 You've now added your first header field that uses a default extractor from SAP Document AI. Next, you'll add your first custom header field,
 
@@ -138,7 +138,7 @@ Click **Add** again to open the dialog.
 
 3. As SAP Document AI offers no equivalent field, select `manual` for the `Setup Type`. Click **Save** to add the field.
 
-    <!-- border -->![Create Purchase Order Status](add-purchase-order-status.png)
+    ![Create Purchase Order Status](add-purchase-order-status.png)
 
 You've now added your first custom field. Go ahead and add the header fields shown in the table and image below. Pay attention to which fields have a default extractor and which don't. Feel free to extend or reduce the list of header fields.
 
@@ -160,7 +160,7 @@ You've now added your first custom field. Go ahead and add the header fields sho
 |  `totalVatAmount`     | number      | manual      | none
 
 
-<!-- border -->![All Header Fields](all-header-fields.png)
+![All Header Fields](all-header-fields.png)
 
 >**NOTE:** The SAP Document AI basic UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
 
@@ -174,7 +174,7 @@ Next, you need to define the line item fields. As your first line item field, ad
 
 Click **Add** to the right of the headline `Line Item Fields`.
 
-<!-- border -->![Add Line Item Field](add-line-item.png)
+![Add Line Item Field](add-line-item.png)
 
 In the dialog proceed as follows:
 
@@ -184,11 +184,11 @@ In the dialog proceed as follows:
 
 3. Select `manual` for the `Setup Type` and click **Save** to add the field.
 
-<!-- border -->![Add SKU Number](add-sku-number.png)
+![Add SKU Number](add-sku-number.png)
 
 The field now displays in your list of line item fields, where you find all the information again that you've just entered.
 
-<!-- border -->![View SKU Number](added-sku-number.png)
+![View SKU Number](added-sku-number.png)
 
 You've now added your first line item field. Go ahead and add the line item fields shown in the table and image below. Pay attention to which fields have a default extractor and which don't. Feel free to extend or reduce the list of line item fields.
 
@@ -204,7 +204,7 @@ You've now added your first line item field. Go ahead and add the line item fiel
 |  `totalCost`          | number      | manual      | none
 
 
-<!-- border -->![All Line Item Field](all-line-item-fields.png)
+![All Line Item Field](all-line-item-fields.png)
 
 
 
@@ -215,11 +215,11 @@ Once you've added all header and line item fields, you need to activate the sche
 
 To activate the schema, click **Activate**.
 
-<!-- border -->![Activate Schema](activate.png)
+![Activate Schema](activate.png)
 
 Now, the status of your schema changes to `ACTIVE`. To make changes to your schema, you have to **Deactivate** it first.
 
-<!-- border -->![Activate Schema](active.png)
+![Activate Schema](active.png)
 
 Congratulations, you've created and activated your own schema for purchase order documents.
 

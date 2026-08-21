@@ -47,15 +47,15 @@ Upload to SAP Document AI any standard document type file (in PDF format or sing
 
 2. In the top right, click **+** (Upload Document).
 
-    <!-- border -->![DOX-UI-App](upload.png)
+    ![DOX-UI-App](upload.png)
 
 3. On the Select Document screen, choose the **Document Type**.
 
-    <!-- border -->![DOX-UI-App](type.png)
+    ![DOX-UI-App](type.png)
 
 4. Next, select the **Schema**. 
 
-    <!-- border -->![DOX-UI-App](choose-schema.png) 
+    ![DOX-UI-App](choose-schema.png) 
 
     >**NOTE:**
 
@@ -67,15 +67,15 @@ Upload to SAP Document AI any standard document type file (in PDF format or sing
 
 5.  Drop files directly or click **+** (Upload) to upload one or more document files. Click **Confirm**.
 
-    <!-- border -->![DOX-UI-App](drop-files.png)
+    ![DOX-UI-App](drop-files.png)
 
     You see the Document Name, Upload Date, and Status of the documents you have just uploaded.
 
-    <!-- border -->![DOX-UI-App](pending.png)
+    ![DOX-UI-App](pending.png)
 
     The status changes from PENDING to DONE. This means the selected header fields and line items have been extracted, and the extraction results are ready to be validated and changed if necessary. If the status changes from PENDING to FAILED, this means it was not possible to get the extraction results, and you need to upload the documents again.
 
-    <!-- border -->![DOX-UI-App](done.png)
+    ![DOX-UI-App](done.png)
 
 
 >**CAUTION:**
@@ -104,51 +104,51 @@ If you don’t want to configure your own schema, you can select the appropriate
 
 1. On the Documents screen, click the document row where you see Document Name, Upload Date, and Status.
 
-    <!-- border -->![DOX-UI-App](choose.png)
+    ![DOX-UI-App](choose.png)
 
     You see the page preview of the document file you uploaded and the header fields and line items extraction results.
 
-    <!-- border -->![DOX-UI-App](extraction-results-done.png)
+    ![DOX-UI-App](extraction-results-done.png)
 
     You also see the machine learning model **Extraction Confidence Range** classified by colors: red (confidence between 0% and 50%), orange (confidence between 51% and 79%), and green (confidence between 80% and 100%).
 
     To see the prediction confidence score for each header field and line item extraction result,  hover the mouse over a field name, for example **Invoice Number**.
 
-    <!-- border -->![DOX-UI-App](confidence.png)
+    ![DOX-UI-App](confidence.png)
 
 2. If corrections are needed, and the document status is DONE, you can **Edit** the Header Fields and Line Items extraction results.
 
-    <!-- border -->![DOX-UI-App](edit-1.png)
+    ![DOX-UI-App](edit-1.png)
 
     Here, you see an example where the **Currency Code** header field extraction result is edited:
 
-    <!-- border -->![DOX-UI-App](edit-currency-code-1.png)
+    ![DOX-UI-App](edit-currency-code-1.png)
 
-    <!-- border -->![DOX-UI-App](edit-currency-code-2.png)
+    ![DOX-UI-App](edit-currency-code-2.png)
 
 3. Click **+** to insert a new line item at the bottom.
 
-    <!-- border -->![DOX-UI-App](edit-2.png)
+    ![DOX-UI-App](edit-2.png)
 
 4. To edit fields, first select a value in the document page preview, and choose the appropriate name from the **Field** dropdown list on the **Assign Field** dialog. Then, add or change the extraction value, if necessary. Finally, click **Apply** to add the selected field to the Header Fields or Line Items extraction results.
 
     Here, you see an example where the value for the Buyer Contact field is selected in the document page preview and added to the Header Fields extraction results:
 
-    <!-- border -->![DOX-UI-App](edit-buyer-1.png)
+    ![DOX-UI-App](edit-buyer-1.png)
 
-    <!-- border -->![DOX-UI-App](edit-buyer-2.png)
+    ![DOX-UI-App](edit-buyer-2.png)
 
 5. Save your changes.
 
-    <!-- border -->![DOX-UI-App](save.png)
+    ![DOX-UI-App](save.png)
 
 6. You can also **Edit** and **Confirm** the document.
 
-    <!-- border -->![DOX-UI-App](confirm.png)
+    ![DOX-UI-App](confirm.png)
 
     The status changes from DONE to CONFIRMED. This means the extraction results have been confirmed and can no longer be changed.
 
-    <!-- border -->![DOX-UI-App](confirmed.png)
+    ![DOX-UI-App](confirmed.png)
 
 
 
@@ -157,14 +157,14 @@ If you don’t want to configure your own schema, you can select the appropriate
 
 1. On the Documents screen, select the document you want to delete. Click **Delete**.
 
-    <!-- border -->![DOX-UI-App](choose-delete.png) 
+    ![DOX-UI-App](choose-delete.png) 
 
 2.  Click **Yes** to delete the document you selected.
     
-    <!-- border -->![DOX-UI-App](yes.png)
+    ![DOX-UI-App](yes.png)
 
     The document is then removed from the Documents list.
 
-    <!-- border -->![DOX-UI-App](gone.png)
+    ![DOX-UI-App](gone.png)
 
 Congratulations, you've completed this tutorial.

@@ -78,7 +78,7 @@ cf logs cf-nodejs --recent
 ```
 You should see two log lines of interest, one showing that the health check has started and another stating that the container is healthy. These log messages are outlined below:
 
-<!-- border -->![Health Check Logs](health-check.png)
+![Health Check Logs](health-check.png)
 
 
 ---

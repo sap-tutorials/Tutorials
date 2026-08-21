@@ -34,23 +34,23 @@ In the service key you created for Personalized Recommendation in the previous t
 
 1. To access the Personalized Recommendation Swagger UI, add **`/doc`** to the `url` value, paste it into any web browser and press **Enter**.
 
-    <!-- border -->![PRS](service-key-details.png)
+    ![PRS](service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    <!-- border -->![PRS](Swagger.png)
+    ![PRS](Swagger.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Personalized Recommendation via Web Browser](cp-aibus-pr-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
-    ```
-    bearer <access_token>
-    ```
+   ```
+   bearer <access_token>
+   ```
 
-    <!-- border -->![PRS](Authorize.png)
+    ![PRS](Authorize.png)
 
 4. Click **Authorize** and then click **Close**.
 
-    <!-- border -->![PRS](Authorize-close.png)
+    ![PRS](Authorize-close.png)
 
 
 
@@ -112,28 +112,28 @@ Therefore, while not mandatory, it's highly recommended to have the item catalog
 
 The item catalogue is a JSON file with the following structure:
 
-    ```
-    {
-        raw item ID (string): {
-            'categoricalFeatures': {
-                categorical attribute (string): {
-                    'values': attribute values (list of strings),
-                    'weights' (optional): attribute weights (list of float)
-                },
-                ...
-            },
-            'textFeatures': {
-                text attribute (string): attribute value (string),
-                ...
-            },
-            'numericalFeatures': {
-                numerical attribute (string): attribute value (float),
-                ...
-            },
-            'unavailable' (optional): availability flag (boolean)
-        }
-    }
-    ```
+   ```
+   {
+       raw item ID (string): {
+           'categoricalFeatures': {
+               categorical attribute (string): {
+                   'values': attribute values (list of strings),
+                   'weights' (optional): attribute weights (list of float)
+               },
+               ...
+           },
+           'textFeatures': {
+               text attribute (string): attribute value (string),
+               ...
+           },
+           'numericalFeatures': {
+               numerical attribute (string): attribute value (float),
+               ...
+           },
+           'unavailable' (optional): availability flag (boolean)
+       }
+   }
+   ```
 
 Click on [data](https://help.sap.com/doc/72f40f2a9a664f458cc8643c9d754645/SHIP/en-US/) to download a sample item catalogue file for your reference.
 
@@ -149,7 +149,7 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/jobs/file-upload** endpoint to u
 
 2. Click **Try it out**.
 
-    <!-- border -->![PRS](Training-section.png)
+    ![PRS](Training-section.png)
 
 3.  Enter tenant name. You must enter a name for the tenants, so please input a name of your choice.
 
@@ -157,11 +157,11 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/jobs/file-upload** endpoint to u
 
 5.  Enter site name. A site name is also required, but if you leave this field blank, it is automatically filled with "default".
 
-    <!-- border -->![PRS](Actions-required.png)
+    ![PRS](Actions-required.png)
 
 6.  Set `serve_model` to `true`. Make this setting to automatically deploy the real-time model serving instance.
 
-    <!-- border -->![PRS](Set-serve-model.png)
+    ![PRS](Set-serve-model.png)
 
 7.  Click the **Execute** button. *Bear in mind that users with the free tier model for SAP BTP are limited to a total number of 2 trainings per month*. When you call the third training API, you get a 403 response stating that you have exceeded your quota for the month.
 
@@ -169,11 +169,11 @@ After you trigger the training, there are two possible outcomes:
 
 - Still ongoing, where the status is "PENDING", and code 200.
 
-    <!-- border -->![PRS](Pending-status.png)
+    ![PRS](Pending-status.png)
 
 - Conflict, where the trigger clashed with the ongoing training from the previous trigger. The status is "Previously submitted job still in progress", and the code is 409.
 
-    <!-- border -->![PRS](Conflict-error.png)
+    ![PRS](Conflict-error.png)
 
 
 
@@ -188,21 +188,21 @@ Use the **GET /standard/rs/v1/tenants/{tenant}/jobs/latest** endpoint to check t
 
 3. Enter tenant name and site name (must be exactly the same as in the previous step). Click **Execute**.
 
-<!-- border -->![PRS](Latest-path.png)
+![PRS](Latest-path.png)
 
 There are three possible outcomes:
 
 - Job is still ongoing, with the status "SUBMITTED" and code 200. Please wait for around 5–10 minutes before rechecking the progress.
 
-    <!-- border -->![PRS](Submitted-status.png)
+    ![PRS](Submitted-status.png)
 
 - The job is completed, with the status "SUCCEEDED" and code 200. You can now proceed to the next step.
 
-    <!-- border -->![PRS](Succeeded-status.png)
+    ![PRS](Succeeded-status.png)
 
 - The job fails, with status "FAILED" and code 200. Please retrigger the training and make sure that you have entered all information correctly.
 
-    <!-- border -->![PRS](Failed-status.png)
+    ![PRS](Failed-status.png)
 
 
 
@@ -215,7 +215,7 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/recommendations/next-items** end
 
 1. Click the endpoint name to expand it.
 
-    <!-- border -->![PRS](Inference-section.png)
+    ![PRS](Inference-section.png)
 
 2. Click **Try it out**.
 
@@ -233,13 +233,13 @@ Use the **POST /standard/rs/v1/tenants/{tenant}/recommendations/next-items** end
 
     Taking an example from our sample dataset, insert a payload with the following content:
 
-    ```JSON
-    {
-       "items_ls":[
-          "2858"
-       ]
-    }
-    ```
+   ```JSON
+   {
+      "items_ls":[
+         "2858"
+      ]
+   }
+   ```
 
     For more details regarding the payload input, please refer to [Next-Item Recommendations](https://help.sap.com/docs/Personalized_Recommendation/2c2078b9efa84566ac19d44df9625c65/e24aff359e6645d0b758d15143ec4ddc.html).
 
@@ -249,18 +249,18 @@ You can expect the following responses:
 
 - The model is able to understand the request and successfully return a set of recommendations. This returns a 200 code, stating the recommended items with their respective confidence scores.
 
-    <!-- border -->![PRS](Successfully-return.png)
+    ![PRS](Successfully-return.png)
 
 - The user entered an incorrect payload. This returns a 400 code, stating that the model doesn't understand the payload request.
 
-    <!-- border -->![PRS](Incorrect-payload.png)
+    ![PRS](Incorrect-payload.png)
 
 - Forbidden. The user has exceeded their inference quota for the month. A short message is displayed with code 403. *Bear in mind that users with the free tier model for SAP BTP are limited to a total number of 1000 inference requests per month*.
 
-    <!-- border -->![PRS](Forbidden.png)
+    ![PRS](Forbidden.png)
 
 - The training process has not finished yet. This returns a 404 code, stating that no model instances were found.
 
-    <!-- border -->![PRS](Not-finished-yet.png)
+    ![PRS](Not-finished-yet.png)
 
 You have now successfully used the Personalized Recommendation service and your own dataset to train a machine learning model and get recommendations based on users' browsing history and/or item description.
