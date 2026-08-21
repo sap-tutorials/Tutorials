@@ -50,45 +50,45 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 1. Create a new console app with the below commands:
 
-    ```Shell (Microsoft Windows)
-    cd %HOMEPATH%/DataLakeClientsTutorial
-    dotnet new console -o dotNET
-    ```  
+   ```Shell (Microsoft Windows)
+   cd %HOMEPATH%/DataLakeClientsTutorial
+   dotnet new console -o dotNET
+   ```  
 
-    ```Shell (Linux)
-    cd $HOME/DataLakeClientsTutorial
-    dotnet new console -o dotNET
-    ```
+   ```Shell (Linux)
+   cd $HOME/DataLakeClientsTutorial
+   dotnet new console -o dotNET
+   ```
 
 2. Open the `dotNET.csproj` file:
 
-    ```Shell (Microsoft Windows)
-    cd dotNET
-    notepad dotNET.csproj
-    ```
+   ```Shell (Microsoft Windows)
+   cd dotNET
+   notepad dotNET.csproj
+   ```
 
-    ```Shell (Linux)
-    cd dotNET
-    pico dotNET.csproj
-    ```
+   ```Shell (Linux)
+   cd dotNET
+   pico dotNET.csproj
+   ```
 
     Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the data lake Relational Engine Client .NET driver from.  Modify the `HintPath` section with the information about where the Sap.Data.SQLAnywhere.Core.v2.1.dll is located on your machine.
 
-    ```Shell (Microsoft Windows)
-    <ItemGroup>
-      <Reference Include="Sap.Data.SQLAnywhere.Core.v2.1">
-        <HintPath>C:\SAP\hdlclient\sdk\dotnet\Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-    ```
+   ```Shell (Microsoft Windows)
+   <ItemGroup>
+     <Reference Include="Sap.Data.SQLAnywhere.Core.v2.1">
+       <HintPath>C:\SAP\hdlclient\sdk\dotnet\Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
+     </Reference>
+   </ItemGroup>
+   ```
 
-    ```Shell (Linux)
-    <ItemGroup>
-      <Reference Include="Sap.Data.SQLAnywhere.Core.v2.1">
-        <HintPath>/home/dan/sap/hdlclient/sdk/dotnet/Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-    ```
+   ```Shell (Linux)
+   <ItemGroup>
+     <Reference Include="Sap.Data.SQLAnywhere.Core.v2.1">
+       <HintPath>/home/dan/sap/hdlclient/sdk/dotnet/Sap.Data.SQLAnywhere.Core.v2.1.dll</HintPath>
+     </Reference>
+   </ItemGroup>
+   ```
 
     ![dotNET.csproj updates](dotNET-csproj-code.png)
 
@@ -96,9 +96,9 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 3. Run the app to validate that data lake driver can be loaded:
 
-    ```Shell
-    dotnet run
-    ```
+   ```Shell
+   dotnet run
+   ```
 
     >If an error occurs, double check that the hintpath is correct and on Linux that the script hdlclienv.sh to set the variables has been run.
 
@@ -106,64 +106,64 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 4. Open an editor to edit the file `Program.cs`.
 
-    ```Shell (Windows)
-    notepad Program.cs
-    ```
+   ```Shell (Windows)
+   notepad Program.cs
+   ```
 
-    ```Shell (Linux)
-    pico Program.cs
-    ```
+   ```Shell (Linux)
+   pico Program.cs
+   ```
 
 5. Replace the entire contents of `Program.cs` with the code below. Update the host value in the connection string.
 
-    ```C#
-    using System;
-    using Sap.Data.SQLAnywhere;
-    namespace dotNETQuery
-    {
-        class Program
-        {
-            static void Main(string[] args)
-            {
-                try
-                {
-                    var connStr = "host=XXXX.iq.hdl.prod-XXXX.hanacloud.ondemand.com:443;UID=USER1;PWD=Password1;ENC=TLS(tls_type=rsa;direct=yes)";
-                    using (var conn = new SAConnection(connStr)) {
-                        conn.Open();
-                        var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER";
-                        using (var cmd = new SACommand(query, conn)) {
-                            using (var reader = cmd.ExecuteReader()) {
-                                Console.WriteLine("Query result:");
-                                // Print column names
-                                var sbCol = new System.Text.StringBuilder();
-                                for (var i = 0; i < reader.FieldCount; i++) {
-                                    sbCol.Append(reader.GetName(i).PadRight(20));
-                                }
-                                Console.WriteLine(sbCol.ToString());
-                                // Print rows
-                                while (reader.Read()) {
-                                    var sbRow = new System.Text.StringBuilder();
-                                    for (var i = 0; i < reader.FieldCount; i++) {
-                                        var value = reader[i].ToString();
-                                        if (value != null) {
-                                            sbRow.Append(value.PadRight(20));
-                                        }
-                                    }
-                                    Console.WriteLine(sbRow.ToString());
-                                }
-                                conn.Close();
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex) {
-                    Console.WriteLine("Error - " + ex.Message);
-                    Console.WriteLine(ex.ToString());
-                }
-            }
-        }
-    }
-    ```
+   ```C#
+   using System;
+   using Sap.Data.SQLAnywhere;
+   namespace dotNETQuery
+   {
+       class Program
+       {
+           static void Main(string[] args)
+           {
+               try
+               {
+                   var connStr = "host=XXXX.iq.hdl.prod-XXXX.hanacloud.ondemand.com:443;UID=USER1;PWD=Password1;ENC=TLS(tls_type=rsa;direct=yes)";
+                   using (var conn = new SAConnection(connStr)) {
+                       conn.Open();
+                       var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER";
+                       using (var cmd = new SACommand(query, conn)) {
+                           using (var reader = cmd.ExecuteReader()) {
+                               Console.WriteLine("Query result:");
+                               // Print column names
+                               var sbCol = new System.Text.StringBuilder();
+                               for (var i = 0; i < reader.FieldCount; i++) {
+                                   sbCol.Append(reader.GetName(i).PadRight(20));
+                               }
+                               Console.WriteLine(sbCol.ToString());
+                               // Print rows
+                               while (reader.Read()) {
+                                   var sbRow = new System.Text.StringBuilder();
+                                   for (var i = 0; i < reader.FieldCount; i++) {
+                                       var value = reader[i].ToString();
+                                       if (value != null) {
+                                           sbRow.Append(value.PadRight(20));
+                                       }
+                                   }
+                                   Console.WriteLine(sbRow.ToString());
+                               }
+                               conn.Close();
+                           }
+                       }
+                   }
+               }
+               catch (Exception ex) {
+                   Console.WriteLine("Error - " + ex.Message);
+                   Console.WriteLine(ex.ToString());
+               }
+           }
+       }
+   }
+   ```
 
     Save and close the `Program.cs` file after replacing the code.
 
@@ -171,10 +171,10 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 6.  Run the app.
 
-    ```Shell
-    dotnet run
-    ```
-    ![Result of running the app](result.png)
+   ```Shell
+   dotnet run
+   ```
+   ![Result of running the app](result.png)
 
 
 

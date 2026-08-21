@@ -49,18 +49,18 @@ The data exploration tools require access to an orchestration model running in [
 
     Specify that the key should be an X.509 certificate by including the JSON below.
 
-    ```JSON
-    {
-        "xsuaa": {
-            "credential-type": "x509",
-            "x509": {
-            "key-length": 2048,
-            "validity": 3,
-            "validity-type": "MONTHS"
-            }
-        }
-    }
-    ```
+   ```JSON
+   {
+       "xsuaa": {
+           "credential-type": "x509",
+           "x509": {
+           "key-length": 2048,
+           "validity": 3,
+           "validity-type": "MONTHS"
+           }
+       }
+   }
+   ```
 
     ![providing parameters to the service key](create-service-key2.png)
 
@@ -142,10 +142,10 @@ The data exploration tools require access to an orchestration model running in [
 
 1. Create a Personal Security Environment (PSE).  In a SQL Console connected to your SAP HANA Cloud, SAP HANA database instance, execute the below SQL after replacing the values from the service key created in the previous step.  
 
-    ```SQL
-    SELECT * FROM PSES;
-    CREATE PSE AI_CORE_PSE;
-    ```
+   ```SQL
+   SELECT * FROM PSES;
+   CREATE PSE AI_CORE_PSE;
+   ```
 
 2. Copy the JSON from the service key created on the AI Core instance and paste it into Visual Studio Code.  Perform a search and replace (ctrl-F) for \n and replace it with ctrl enter.
 
@@ -153,33 +153,33 @@ The data exploration tools require access to an orchestration model running in [
 
 3. Use the 4 certificates in the previous sub-step in the SQL below.
 
-    ```SQL
-    ALTER PSE AI_CORE_PSE SET OWN CERTIFICATE '
-    -----BEGIN CERTIFICATE-----
-    -----END CERTIFICATE-----
-    -----BEGIN CERTIFICATE-----
-    -----END CERTIFICATE-----
-    -----BEGIN CERTIFICATE-----
-    -----END CERTIFICATE-----
-    -----BEGIN RSA PRIVATE KEY-----
-    -----END RSA PRIVATE KEY-----';
-    ```
+   ```SQL
+   ALTER PSE AI_CORE_PSE SET OWN CERTIFICATE '
+   -----BEGIN CERTIFICATE-----
+   -----END CERTIFICATE-----
+   -----BEGIN CERTIFICATE-----
+   -----END CERTIFICATE-----
+   -----BEGIN CERTIFICATE-----
+   -----END CERTIFICATE-----
+   -----BEGIN RSA PRIVATE KEY-----
+   -----END RSA PRIVATE KEY-----';
+   ```
 
     ![add certificates to the pse](alter-pse.png)
 
 4. Create a remote source from SAP HANA Cloud to the AI Core instance by executing the SQL below.  Use the deploymentId that was obtained in step 1 sub step 8.  The remainder of the values can be found in the service key created previously on the AI Core instance.  **Note that the authUrl below is labeled certurl in the service key**.
 
-    ```SQL
-    CREATE REMOTE SOURCE AI_CORE_RS ADAPTER "sapgenaihub" CONFIGURATION
-    'aiApiUrl=https://api.ai.prod.us-east-1.aws.ml.hana.ondemand.com;
-     authUrl=https://dan-van-leeuwen-aws.authentication.cert.us10.hana.ondemand.com;
-     resourceGroup=default;
-     deploymentId=d1359bdbe93ddf8c;
-     clientId=sb-fccb40af-2194-4353-b290-...'
-    WITH CREDENTIAL TYPE 'X509' PSE AI_CORE_PSE;
-    CALL GET_REMOTE_SOURCE_AI_MODELS('AI_CORE_RS', ?);
-    SELECT * FROM REMOTE_SOURCES;
-    ```
+   ```SQL
+   CREATE REMOTE SOURCE AI_CORE_RS ADAPTER "sapgenaihub" CONFIGURATION
+   'aiApiUrl=https://api.ai.prod.us-east-1.aws.ml.hana.ondemand.com;
+    authUrl=https://dan-van-leeuwen-aws.authentication.cert.us10.hana.ondemand.com;
+    resourceGroup=default;
+    deploymentId=d1359bdbe93ddf8c;
+    clientId=sb-fccb40af-2194-4353-b290-...'
+   WITH CREDENTIAL TYPE 'X509' PSE AI_CORE_PSE;
+   CALL GET_REMOTE_SOURCE_AI_MODELS('AI_CORE_RS', ?);
+   SELECT * FROM REMOTE_SOURCES;
+   ```
 
     ![create remote source](create-remote-source.png)
 
@@ -205,10 +205,10 @@ The data exploration tools require access to an orchestration model running in [
 
     The discovery and retrieval procedures are now ready to be used.
 
-    ```SQL
-    CALL "DBADMIN"."DATABASE_OBJECT_DISCOVERY_TOOL_HTLS_DET"( 'Any work orders?', ? );
-    CALL "DBADMIN"."DATA_RETRIEVAL_TOOL_HTLS_DET"( 'Which hotels were the most visited in 2026.  Display the result in a table.  Provide the SQL statement used, the tools called, and the tool execution plan.', ? );
-    ```
+   ```SQL
+   CALL "DBADMIN"."DATABASE_OBJECT_DISCOVERY_TOOL_HTLS_DET"( 'Any work orders?', ? );
+   CALL "DBADMIN"."DATA_RETRIEVAL_TOOL_HTLS_DET"( 'Which hotels were the most visited in 2026.  Display the result in a table.  Provide the SQL statement used, the tools called, and the tool execution plan.', ? );
+   ```
 
     ![result 1](result1.png)
 
@@ -216,65 +216,65 @@ The data exploration tools require access to an orchestration model running in [
 
     The following is the full result for the call using the data retrieval stored procedure.
 
-    ```
-    Here are the most visited hotels in 2026, displayed in a table:
+   ```
+   Here are the most visited hotels in 2026, displayed in a table:
 
-    | HOTEL_NAME     | VISIT_COUNT |
-    |----------------|-------------|
-    | Regency        | 5           |
-    | Long Island    | 5           |
-    | Eighth Avenue  | 5           |
-    | Beach          | 5           |
-    | Empire State   | 4           |
-    | Atlantic       | 4           |
-    | Long Beach     | 4           |
-    | Indian Horse   | 4           |
-    | River Boat     | 4           |
-    | Midtown        | 3           |
-    | Sunshine       | 3           |
-    | Lake Michigan  | 2           |
-    | Airport        | 2           |
-    | Delta          | 2           |
-    | Star           | 1           |
-    | Ocean Star     | 1           |
+   | HOTEL_NAME     | VISIT_COUNT |
+   |----------------|-------------|
+   | Regency        | 5           |
+   | Long Island    | 5           |
+   | Eighth Avenue  | 5           |
+   | Beach          | 5           |
+   | Empire State   | 4           |
+   | Atlantic       | 4           |
+   | Long Beach     | 4           |
+   | Indian Horse   | 4           |
+   | River Boat     | 4           |
+   | Midtown        | 3           |
+   | Sunshine       | 3           |
+   | Lake Michigan  | 2           |
+   | Airport        | 2           |
+   | Delta          | 2           |
+   | Star           | 1           |
+   | Ocean Star     | 1           |
 
-    ---
+   ---
 
-    **SQL Statement Used:**
-    
-    SELECT
-    "HOTEL"."NAME" AS "HOTEL_NAME",
-    COUNT(*) AS "VISIT_COUNT"
-    FROM
-    "HOTELS"."RESERVATION"
-    JOIN
-    "HOTELS"."HOTEL"
-    ON
-    "RESERVATION"."HNO" = "HOTEL"."HNO"
-    WHERE
-    YEAR("RESERVATION"."ARRIVAL") = 2026
-    GROUP BY
-    "HOTEL"."NAME"
-    ORDER BY
-    "VISIT_COUNT" DESC
-    
-    **Tools Called:**
-    - functions.hana_objects_tool (to discover relevant tables)
-    - functions.hana_data_tool (to execute the SQL and retrieve results)
+   **SQL Statement Used:**
+   
+   SELECT
+   "HOTEL"."NAME" AS "HOTEL_NAME",
+   COUNT(*) AS "VISIT_COUNT"
+   FROM
+   "HOTELS"."RESERVATION"
+   JOIN
+   "HOTELS"."HOTEL"
+   ON
+   "RESERVATION"."HNO" = "HOTEL"."HNO"
+   WHERE
+   YEAR("RESERVATION"."ARRIVAL") = 2026
+   GROUP BY
+   "HOTEL"."NAME"
+   ORDER BY
+   "VISIT_COUNT" DESC
+   
+   **Tools Called:**
+   - functions.hana_objects_tool (to discover relevant tables)
+   - functions.hana_data_tool (to execute the SQL and retrieve results)
 
-    **Tool Execution Plan:**
-    1. Discover tables related to hotel visits and bookings.
-    2. Construct and execute an SQL query to count visits per hotel for 2026.
-    3. Display the results in a table.
-    ```
+   **Tool Execution Plan:**
+   1. Discover tables related to hotel visits and bookings.
+   2. Construct and execute an SQL query to count visits per hotel for 2026.
+   3. Display the results in a table.
+   ```
 
 ### Understanding the objects created
 
 1. Perform the below query to see the details stored in the RAG table.
 
-    ```SQL
-    SELECT * FROM D1_INDEX ORDER BY OBJECT_NAME ASC;
-    ```
+   ```SQL
+   SELECT * FROM D1_INDEX ORDER BY OBJECT_NAME ASC;
+   ```
 
     ![rag table showing descriptions of each table](rag-table.png)
 
@@ -282,51 +282,51 @@ The data exploration tools require access to an orchestration model running in [
 
 2. SAP HANA Cloud provides vector functions such as COSINE_SIMILARITY that can determine semantic similarity and embedding functions that can be used to create a vector representation of an input string.  The below is an example of using some of these methods.  
 
-    ```SQL
-    --An example of a similarity search using the SUMMARY_VECTOR COLUMN
-    --https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-vector-engine-guide/cosine-similarity-function-vector
-    SELECT TOP 10 SCHEMA_NAME, OBJECT_NAME, OBJECT_TYPE, 
-            COSINE_SIMILARITY(SUMMARY_VECTOR, TO_REAL_VECTOR(VECTOR_EMBEDDING('work items', 'DOCUMENT', 'SAP_NEB.20240715'))) AS SCORE 
-        FROM D1_INDEX 
-        ORDER BY SCORE DESC;
-    
-    --The list of available models
-    CALL GET_REMOTE_SOURCE_AI_MODELS('AI_CORE_RS', ?);
+   ```SQL
+   --An example of a similarity search using the SUMMARY_VECTOR COLUMN
+   --https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-vector-engine-guide/cosine-similarity-function-vector
+   SELECT TOP 10 SCHEMA_NAME, OBJECT_NAME, OBJECT_TYPE, 
+           COSINE_SIMILARITY(SUMMARY_VECTOR, TO_REAL_VECTOR(VECTOR_EMBEDDING('work items', 'DOCUMENT', 'SAP_NEB.20240715'))) AS SCORE 
+       FROM D1_INDEX 
+       ORDER BY SCORE DESC;
+   
+   --The list of available models
+   CALL GET_REMOTE_SOURCE_AI_MODELS('AI_CORE_RS', ?);
 
-    --An example showing how a summary of a table from a well known schema could be created
-    --The data exploration tool uses comments on the tables, views, and functions for the summary.
-    --https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/ai-text-completion-vector
-    SELECT AI_TEXT_COMPLETION(
-    'In one sentence, describe the purpose of the table SFLIGHT.STRAVELAG',
-    'gpt-5',
-    NULL,
-    'AI_CORE_RS')
-    FROM DUMMY;
+   --An example showing how a summary of a table from a well known schema could be created
+   --The data exploration tool uses comments on the tables, views, and functions for the summary.
+   --https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/ai-text-completion-vector
+   SELECT AI_TEXT_COMPLETION(
+   'In one sentence, describe the purpose of the table SFLIGHT.STRAVELAG',
+   'gpt-5',
+   NULL,
+   'AI_CORE_RS')
+   FROM DUMMY;
 
-    --Examples showing how a summary can be turned into a vector representation
-    --https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-vector-engine-guide/vector-embedding-function-vector?locale=en-US
-    SELECT VECTOR_EMBEDDING('STRAVELAG is the SAP Flight Model demo table that stores travel agency master data (e.g., agency ID and details) referenced by flight bookings.', 'DOCUMENT', 'SAP_NEB.20240715') FROM DUMMY;
+   --Examples showing how a summary can be turned into a vector representation
+   --https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-vector-engine-guide/vector-embedding-function-vector?locale=en-US
+   SELECT VECTOR_EMBEDDING('STRAVELAG is the SAP Flight Model demo table that stores travel agency master data (e.g., agency ID and details) referenced by flight bookings.', 'DOCUMENT', 'SAP_NEB.20240715') FROM DUMMY;
 
-    SELECT VECTOR_EMBEDDING('STRAVELAG is the SAP Flight Model demo table that stores travel agency master data (e.g., agency ID and details) referenced by flight bookings.', 'DOCUMENT', 'text-embedding-ada-002.2', AI_CORE_RS) FROM DUMMY;
-    ```
+   SELECT VECTOR_EMBEDDING('STRAVELAG is the SAP Flight Model demo table that stores travel agency master data (e.g., agency ID and details) referenced by flight bookings.', 'DOCUMENT', 'text-embedding-ada-002.2', AI_CORE_RS) FROM DUMMY;
+   ```
 
     In the wizard, the summary of the object is obtained either by the object level comment or optionally, you can provide a description for an object.  It should be noted that the [COMMENT ON](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/comment-on-statement-data-definition) statement does not apply to functions.
 
-    ```SQL
-    COMMENT ON TABLE HOTELS.CUSTOMER IS 'This table contains customer details who have made hotel reservations';
-    SELECT schema_name, table_name, comments
-    FROM TABLES
-    WHERE table_name = 'CUSTOMER’;
-    ```
+   ```SQL
+   COMMENT ON TABLE HOTELS.CUSTOMER IS 'This table contains customer details who have made hotel reservations';
+   SELECT schema_name, table_name, comments
+   FROM TABLES
+   WHERE table_name = 'CUSTOMER’;
+   ```
 
 3. Perform the below query to see the details stored in the knowledge graph used by the data exploration tool.
 
-    ```SQL
-    SELECT *
-    FROM SPARQL_TABLE('SELECT ?s ?p ?o FROM <DBADMIN.D1_GRAPH>
-    WHERE {  ?s ?p ?o .}
-    ORDER BY DESC(?p)');
-    ```
+   ```SQL
+   SELECT *
+   FROM SPARQL_TABLE('SELECT ?s ?p ?o FROM <DBADMIN.D1_GRAPH>
+   WHERE {  ?s ?p ?o .}
+   ORDER BY DESC(?p)');
+   ```
 
     ![knowledge graph](knowledge-graph.png)
 
@@ -338,24 +338,24 @@ The data exploration tools require access to an orchestration model running in [
 
     When a data exploration tool instance is created, it creates a set of wrapper stored procedures that have the details such as the name of the remote source, the name of the schema the RAG table is in etc. to make calling the procedures easier.  An example of the SQL for a generated function is shown below.
 
-    ```SQL
-    CREATE PROCEDURE "DBADMIN"."MY_OBJECT_RETRIEVAL"( IN QUERY NCLOB, OUT RESULT NCLOB )
-        LANGUAGE SQLSCRIPT
-        SQL SECURITY INVOKER AS
-    BEGIN
-        CALL AI_OBJECT_RETRIEVAL( null, 'AI_CORE_RS', 'DBADMIN', 'D1', null, :QUERY, :RESULT );
-    END;
+   ```SQL
+   CREATE PROCEDURE "DBADMIN"."MY_OBJECT_RETRIEVAL"( IN QUERY NCLOB, OUT RESULT NCLOB )
+       LANGUAGE SQLSCRIPT
+       SQL SECURITY INVOKER AS
+   BEGIN
+       CALL AI_OBJECT_RETRIEVAL( null, 'AI_CORE_RS', 'DBADMIN', 'D1', null, :QUERY, :RESULT );
+   END;
 
-    CREATE PROCEDURE "DBADMIN"."MY_DATA_RETRIEVAL"( IN QUERY NCLOB, OUT RESULT NCLOB )
-        LANGUAGE SQLSCRIPT
-        SQL SECURITY INVOKER AS
-    BEGIN
-        CALL AI_DATA_RETRIEVAL( null, 'AI_CORE_RS', 'DBADMIN', 'D1', null, :QUERY, :RESULT );
-    END;
+   CREATE PROCEDURE "DBADMIN"."MY_DATA_RETRIEVAL"( IN QUERY NCLOB, OUT RESULT NCLOB )
+       LANGUAGE SQLSCRIPT
+       SQL SECURITY INVOKER AS
+   BEGIN
+       CALL AI_DATA_RETRIEVAL( null, 'AI_CORE_RS', 'DBADMIN', 'D1', null, :QUERY, :RESULT );
+   END;
 
-    CALL "DBADMIN"."MY_OBJECT_RETRIEVAL"( 'Where can I find work orders?', ? );
-    CALL "DBADMIN"."MY_DATA_RETRIEVAL"( 'Is there a vendor that we use for pool maintenance?', ? );
-    ```
+   CALL "DBADMIN"."MY_OBJECT_RETRIEVAL"( 'Where can I find work orders?', ? );
+   CALL "DBADMIN"."MY_DATA_RETRIEVAL"( 'Is there a vendor that we use for pool maintenance?', ? );
+   ```
 
     ![custom stored procedure](customer-stored-procedure.png)
 
@@ -365,29 +365,29 @@ The following steps demonstrate creating a read only user that will be granted a
 
 1. Execute the below SQL to create a read only user that can all the data exploration tools procedures.
 
-    ```SQL
-    CREATE USER DET_USER PASSWORD Password1 SET USERGROUP HOTEL_USER_GROUP;
-    CREATE ROLE DET_ROLE;
-    GRANT DET_ROLE TO DET_USER;
-    
-    GRANT SELECT ON DBADMIN.D1_INDEX TO DET_ROLE;
-    GRANT EXECUTE ON REMOTE SOURCE AI_CORE_RS TO DET_ROLE;
-    
-    GRANT EXECUTE ON SYS.AI_OBJECT_RETRIEVAL TO DET_ROLE;
-    GRANT EXECUTE ON SYS.AI_DATA_RETRIEVAL TO DET_ROLE;
-    GRANT EXECUTE ON DBADMIN.MY_OBJECT_RETRIEVAL TO DET_ROLE;
-    GRANT EXECUTE ON DBADMIN.MY_DATA_RETRIEVAL TO DET_ROLE;
-    
-    GRANT SPARQL QUERY TO DET_ROLE;
-    CALL SPARQL_EXECUTE ('GRANT SELECT ON <DBADMIN.D1_GRAPH> TO <DET_ROLE>', '', ?, ?);
-    
-    CONNECT USER1 PASSWORD Password1;
-    GRANT SELECT ON SCHEMA HOTELS TO DET_ROLE;
-    CONNECT DET_USER PASSWORD Password1;
+   ```SQL
+   CREATE USER DET_USER PASSWORD Password1 SET USERGROUP HOTEL_USER_GROUP;
+   CREATE ROLE DET_ROLE;
+   GRANT DET_ROLE TO DET_USER;
+   
+   GRANT SELECT ON DBADMIN.D1_INDEX TO DET_ROLE;
+   GRANT EXECUTE ON REMOTE SOURCE AI_CORE_RS TO DET_ROLE;
+   
+   GRANT EXECUTE ON SYS.AI_OBJECT_RETRIEVAL TO DET_ROLE;
+   GRANT EXECUTE ON SYS.AI_DATA_RETRIEVAL TO DET_ROLE;
+   GRANT EXECUTE ON DBADMIN.MY_OBJECT_RETRIEVAL TO DET_ROLE;
+   GRANT EXECUTE ON DBADMIN.MY_DATA_RETRIEVAL TO DET_ROLE;
+   
+   GRANT SPARQL QUERY TO DET_ROLE;
+   CALL SPARQL_EXECUTE ('GRANT SELECT ON <DBADMIN.D1_GRAPH> TO <DET_ROLE>', '', ?, ?);
+   
+   CONNECT USER1 PASSWORD Password1;
+   GRANT SELECT ON SCHEMA HOTELS TO DET_ROLE;
+   CONNECT DET_USER PASSWORD Password1;
 
-    CALL "DBADMIN"."MY_OBJECT_RETRIEVAL"( 'Where can I find work orders?', ? );
-    CALL "DBADMIN"."MY_DATA_RETRIEVAL"( 'Is there a vendor that we use for pool maintenance?  Describe the steps taken to arrive at an answer', ? );
-    ```
+   CALL "DBADMIN"."MY_OBJECT_RETRIEVAL"( 'Where can I find work orders?', ? );
+   CALL "DBADMIN"."MY_DATA_RETRIEVAL"( 'Is there a vendor that we use for pool maintenance?  Describe the steps taken to arrive at an answer', ? );
+   ```
 
     ![Read only user](read-only-user.png)
 

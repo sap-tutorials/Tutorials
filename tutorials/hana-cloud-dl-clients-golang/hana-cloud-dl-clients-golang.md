@@ -53,9 +53,9 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
 1. To check if a 64-bit `gcc` compiler is installed, run the following command:
 
-    ```Shell
-    gcc --version
-    ```
+   ```Shell
+   gcc --version
+   ```
 
     On Windows (if needed), download the compiler from [MinGW](https://www.mingw-w64.org/downloads/). Under **WinLibs.com**, follow the link to [winlibs.com](https://winlibs.com/).  Navigate to the **Release versions** section. Find the latest release version of the Zip archive (UCRT runtime) for Win64 – x86_64. Then extract the folder. 
 
@@ -73,9 +73,9 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
     On Windows, to ensure the gcc compiler is installed, open a new Command prompt window and run the following command:
 
-    ```Shell
-    gcc --version
-    ```
+   ```Shell
+   gcc --version
+   ```
 
     On Linux (if needed), install the System GNU C compiler for your version of Linux.  Note that if you are using openSUSE, minGW is included in the installation for Go through YaST.
 
@@ -83,9 +83,9 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
 2. Examine the Go environment by running the below command:
 
-    ```Shell
-    go env
-    ```
+   ```Shell
+   go env
+   ```
 
     Notice that GOROOT is set to a location such as `C:\go` or `/usr/lib64/go/1.23`.  This is the location that the Go SDK is installed to.  
 
@@ -101,34 +101,34 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
     On Linux, check if the following variable are defined.  
 
-    ```Shell (Linux)
-    echo $CGO_LDFLAGS
-    echo $LD_LIBRARY_PATH
-    ```
+   ```Shell (Linux)
+   echo $CGO_LDFLAGS
+   echo $LD_LIBRARY_PATH
+   ```
 
     If needed, open the '.bashrc' or '.bash_profile' and add the following lines.  Note that the path may be different depending on the data lake client install used.
 
-    ```Shell (Linux)
-    pico .bashrc
-    export CGO_LDFLAGS=$HDL_CLIENT_HOME/lib64/libdbcapi_r.so
-    export LD_LIBRARY_PATH=$HDL_CLIENT_HOME/lib64
-    ```
+   ```Shell (Linux)
+   pico .bashrc
+   export CGO_LDFLAGS=$HDL_CLIENT_HOME/lib64/libdbcapi_r.so
+   export LD_LIBRARY_PATH=$HDL_CLIENT_HOME/lib64
+   ```
 
     ![.bash_profile contents](bashProfileAfterCGO.png)
 
 4. Navigate to the driver folder and create a Go module.  Note that the path may be different depending on the data lake client install used.
 
-    ```Shell (Windows)
-    cd %HDL_CLIENT_HOME%\sdk\golang\SAP\go-hdlre\driver
-    go mod init "SAP/go-hdlre/driver"
-    go mod tidy
-    ```
+   ```Shell (Windows)
+   cd %HDL_CLIENT_HOME%\sdk\golang\SAP\go-hdlre\driver
+   go mod init "SAP/go-hdlre/driver"
+   go mod tidy
+   ```
 
-    ```Shell (Linux)
-    cd $HDL_CLIENT_HOME/sdk/golang/SAP/go-hdlre/driver/
-    go mod init "SAP/go-hdlre/driver"
-    go mod tidy
-    ```
+   ```Shell (Linux)
+   cd $HDL_CLIENT_HOME/sdk/golang/SAP/go-hdlre/driver/
+   go mod init "SAP/go-hdlre/driver"
+   go mod tidy
+   ```
 
     ![createModule](createModule.png)
 
@@ -138,109 +138,109 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
 
-    ```Shell (Windows)
-    mkdir %HOMEPATH%\DataLakeClientsTutorial\go
-    cd %HOMEPATH%\DataLakeClientsTutorial\go
-    notepad goQuery.go
-    ```
+   ```Shell (Windows)
+   mkdir %HOMEPATH%\DataLakeClientsTutorial\go
+   cd %HOMEPATH%\DataLakeClientsTutorial\go
+   notepad goQuery.go
+   ```
 
-    ```Shell (Linux)
-    mkdir -p ~/DataLakeClientsTutorial/go
-    cd ~/DataLakeClientsTutorial/go
-    pico goQuery.go
-    ```
+   ```Shell (Linux)
+   mkdir -p ~/DataLakeClientsTutorial/go
+   cd ~/DataLakeClientsTutorial/go
+   pico goQuery.go
+   ```
 
 2. Add the code below to `goQuery.go` and then modify the connectString variable.
 
-    ```Go Code
-    package main
+   ```Go Code
+   package main
 
-    import (
-      "fmt"
-    	"database/sql"
-    	"log"
+   import (
+     "fmt"
+   	"database/sql"
+   	"log"
 
-      _ "SAP/go-hdlre/driver"
-      )
+     _ "SAP/go-hdlre/driver"
+     )
 
-    func main() {
-      //specify the connection parameters
-      connectString := "hdlre://User1:Password1@xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.iq.hdl.prod-xxxx.hanacloud.ondemand.com:443?enc='TLS{tls_type=rsa;direct=yes}'"
+   func main() {
+     //specify the connection parameters
+     connectString := "hdlre://User1:Password1@xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.iq.hdl.prod-xxxx.hanacloud.ondemand.com:443?enc='TLS{tls_type=rsa;direct=yes}'"
 
-      fmt.Println("Connect String is " + connectString)
+     fmt.Println("Connect String is " + connectString)
 
-      db, err := sql.Open("hdlre", connectString)
-      if err != nil {
-        log.Fatal(err)
-        return
-      }
-      defer db.Close()
+     db, err := sql.Open("hdlre", connectString)
+     if err != nil {
+       log.Fatal(err)
+       return
+     }
+     defer db.Close()
 
-      rows, err := db.Query("SELECT NAME, ADDRESS from HOTELS.CUSTOMER")
-      if err != nil {
-        log.Fatal(err)
-      }
-      defer rows.Close()
+     rows, err := db.Query("SELECT NAME, ADDRESS from HOTELS.CUSTOMER")
+     if err != nil {
+       log.Fatal(err)
+     }
+     defer rows.Close()
 
-      var lastName string
-      var address string
-      for rows.Next() {
-        err = rows.Scan(&lastName, &address)
-        if err != nil {
-          log.Fatal(err)
-        }
-        fmt.Println(lastName + ": " + address)
-      }
+     var lastName string
+     var address string
+     for rows.Next() {
+       err = rows.Scan(&lastName, &address)
+       if err != nil {
+         log.Fatal(err)
+       }
+       fmt.Println(lastName + ": " + address)
+     }
 
-      err = rows.Err()
-      if err != nil {
-      	log.Fatal(err)
-      }
-    }
-    ```
+     err = rows.Err()
+     if err != nil {
+     	log.Fatal(err)
+     }
+   }
+   ```
 
     Once the `goQuery.go` file has been updated, save and close the file.
 
 3. Create another go module and modify its contents:
 
-    ```Shell (Windows)
-    go mod init "go/goQuery"
-    go mod tidy
-    notepad go.mod
-    ```
+   ```Shell (Windows)
+   go mod init "go/goQuery"
+   go mod tidy
+   notepad go.mod
+   ```
 
-    ```Shell (Linux)
-    go mod init "go/goQuery"
-    go mod tidy
-    pico go.mod
-    ```
+   ```Shell (Linux)
+   go mod init "go/goQuery"
+   go mod tidy
+   pico go.mod
+   ```
 
 4. Add the code below to `go.mod` under the go 1.26.1 (version) line:
 
     >Ensure you have the correct path to the driver folder. The path depends on your installation.  Note that two example locations are provided. Choose the one that's closest to your installation and edit it if necessary.
 
-    ```Code (Windows)
-    replace SAP/go-hdlre/driver v0.1.0 => C:\SAP\hdlclient\sdk\golang\SAP\go-hdlre\driver
-    require SAP/go-hdlre/driver v0.1.0 
-    ```
+   ```Code (Windows)
+   replace SAP/go-hdlre/driver v0.1.0 => C:\SAP\hdlclient\sdk\golang\SAP\go-hdlre\driver
+   require SAP/go-hdlre/driver v0.1.0 
+   ```
 
-    ```Code (Linux)
-    replace SAP/go-hdlre/driver v0.1.0 => /home/name/sap/hdlclient/sdk/golang/SAP/go-hdlre/driver
-    require SAP/go-hdlre/driver v0.1.0 
-    ```
+   ```Code (Linux)
+   replace SAP/go-hdlre/driver v0.1.0 => /home/name/sap/hdlclient/sdk/golang/SAP/go-hdlre/driver
+   require SAP/go-hdlre/driver v0.1.0 
+   ```
 
     ![go.mod contents](goModContents.png)
 
 5. Run the application or build and run the application:
 
-    ```Shell
-    go run goQuery.go
-    ```
+   ```Shell
+   go run goQuery.go
+   ```
 
-    ```Shell Microsoft Windows
-    go build goQuery.go
-    goQuery.exe
-    ```
+   ```Shell Microsoft Windows
+   go build goQuery.go
+   goQuery.exe
+   ```
 
     ![Result](results.png)
 

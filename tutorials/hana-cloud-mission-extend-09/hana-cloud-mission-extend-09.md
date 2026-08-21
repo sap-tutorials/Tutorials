@@ -40,7 +40,7 @@ Once you have established the connection using the cloud connector, you can crea
 2.	Open a **SQL console**.
 3.	With the following statement, you can create a remote source from SAP HANA Cloud, SAP HANA database to SAP HANA on-premise to then replicate data from the on-premise system to the cloud. See instructions below the code to find out what to insert for the `<placeholders>`
 
-    ```SQL
+   ```SQL
 CREATE REMOTE SOURCE <NAME> ADAPTER "hanaodbc"
 CONFIGURATION 'ServerNode=<virtual_host_name>:<portnumber>;use_haas_socks_proxy=true;scc_location_id=<locationid>'
 WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=<username>;password=<password>';
@@ -65,7 +65,7 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=<username>;password=<password>';
 1.	In your catalog, click on **Remote Sources**.
 2.	Then, double-click on your remote source. A wizard will open.
 
-    <!-- border -->![RTR 01](ss-01-RTR-01.png)
+    ![RTR 01](ss-01-RTR-01.png)
 
 3.	In the drop-down menu to select a schema, you can now see the schema information from the remote source system.
 4.	Select the schema you would like to replicate a table from and click on **Search**.
@@ -73,7 +73,7 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=<username>;password=<password>';
 6.	Next, select a table from the list and create a virtual object that can be included in federated queries.
 7.	You can also adjust and execute this SQL statement to create a virtual table:
 
-    ```SQL
+   ```SQL
 CREATE VIRTUAL TABLE "<VT_TABLENAME>" AT "<REMOTESOURCENAME>"."<DATABASE>"."<SCHEMA>"."<TABLE>";
 ```
 
@@ -97,7 +97,7 @@ After the virtual table has been created, to set up Remote Table Replication, yo
 1.	The replica table will be the target table, that resides in the SAP HANA Cloud, SAP HANA database. This target table should be just like the virtual table you have just created.
 2.	So, first, create the replica table by executing this statement:
 
-    ```SQL
+   ```SQL
 CREATE COLUMN TABLE <TARGETTABLENAME> LIKE <VIRTUALTABLENAME>;
 ```
 3.	Once this statement is executed, you can find the metadata information from the remote source in this target table.
@@ -114,17 +114,17 @@ To start real-time replication, you need to create a remote subscription and act
 
 1.	When creating a remote subscription, you need to specify a name for this remote subscription and specify from which virtual table to which target table the remote subscription should be established. You can adjust and execute this statement:
 
-    ```SQL
+   ```SQL
 CREATE REMOTE SUBSCRIPTION <REMOTESUBSCRIPTIONNAME> ON <VIRTUALTABLENAME> TARGET TABLE <TARGETTABLENAME>;
 ```
 
 2.	Once this statement has been executed successfully, you can click on **Remote Subscriptions** in your catalog and you should see it in the list there.
 
-    <!-- border -->![RTR 02](ss-02-RTR-02.png)
+    ![RTR 02](ss-02-RTR-02.png)
 
 3.	Next, to activate this remote subscription and start replicating data from your source system, you need to `alter` it and set it to `distribute` using this statement:
 
-    ```SQL
+   ```SQL
 ALTER REMOTE SUBSCRIPTION <REMOTESUBSCRIPTIONNAME> DISTRIBUTE;
 ```
 
@@ -142,7 +142,7 @@ While this statement is being executed, in the background all data from the sour
 -	This applies for **adding columns** to the source table as well. Data definition changes like adding or dropping columns will also be instantly applied to your remote subscription.
 -	The virtual table, however, will stay untouched by these changes and querying it would result in an error.
 
-<!-- border -->![RTR 03](ss-03-RTR-03.png)
+![RTR 03](ss-03-RTR-03.png)
 
 To refresh the virtual table to also include changes in data definitions, you need to execute this statement:
 

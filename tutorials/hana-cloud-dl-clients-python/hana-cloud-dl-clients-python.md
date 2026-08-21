@@ -34,10 +34,10 @@ The first step is to check if Python and pip are installed.
 
 1. Enter the commands below.
 
-    ```Shell
-    python --version
-    python3 --version
-    ```
+   ```Shell
+   python --version
+   python3 --version
+   ```
 
     If Python is installed, the command will return a value such as Python 3.13.0
 
@@ -51,30 +51,28 @@ The first step is to check if Python and pip are installed.
 
     On OpenSUSE Tumbleweed, yast can be used to install python313.  Once it has been installed its version can be seen with the below command.
 
-    ```Shell (Linux)
-    python3.13 --version
-    ```
+   ```Shell (Linux)
+   python3.13 --version
+   ```
 
 2. Enter the commands below.
 
-    ```Shell
-    pip --version
-    pip3 --version
-    pip install --upgrade pip
-    ```
+   ```Shell
+   pip --version
+   pip3 --version
+   pip install --upgrade pip
+   ```
 
     >If you encounter issues with user permissions, run command prompt as an administrator and try again.
 
     The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.  
 
     >On Linux, if you encounter permission issues, one way to solve the issue is to use `sudo` before the command.
-
-    >---
-
+    >
     >On Linux, if Python is installed but pip is not, it can be installed on openSUSE using Zypper as shown below.
 
     >```Shell (Linux)
-    zypper install python3-pip
+    >zypper install python3-pip
     >```
 
 ### Install the sqlanydb Python driver
@@ -83,31 +81,31 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
 1. Navigate to your Data Lake Client installation folder and enter the following command to install the python driver named `sqlanydb`.
 
-    ```Shell (Microsoft Windows)
-    cd %HDL_CLIENT_HOME%\SDK\Python
-    pip install sqlanydb-1.0.14.tar.gz
-    ```
+   ```Shell (Microsoft Windows)
+   cd %HDL_CLIENT_HOME%\SDK\Python
+   pip install sqlanydb-1.0.14.tar.gz
+   ```
 
     On Linux the rest of the steps will be executed in a virtual environment.
 
     First make a project folder, and create a virtual environment inside it. To do so, open the terminal app, write the following command, and hit return, here pyvenv is the name of the folder that you wish to create the virtual environment in.
 
-    ```Shell(Linux)
-    mkdir $HOME/pyvenv
-    ```
+   ```Shell(Linux)
+   mkdir $HOME/pyvenv
+   ```
 
     Now, use the venv command to create a virtual environment inside the given folder, here python-virtualenv is the name of the virtual environment that is to be created.
 
-    ```Shell(Linux)
-    cd $HOME/pyvenv
-    python3 -m venv pyvenv/python-virtualenv
-    ```
+   ```Shell(Linux)
+   cd $HOME/pyvenv
+   python3 -m venv pyvenv/python-virtualenv
+   ```
 
     We now activate the virtual environment, which we will use to complete the rest of the steps for linux based systems.
 
-    ```Shell(Linux)
-    source pyvenv/python-virtualenv/bin/activate
-    ```
+   ```Shell(Linux)
+   source pyvenv/python-virtualenv/bin/activate
+   ```
 
     A successful activation looks like this:-
 
@@ -115,59 +113,59 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
     Now install the driver named 'sqlanydb'.
 
-    ```Shell (Linux)
-    cd $HDL_CLIENT_HOME/sdk/python
-    pip install sqlanydb-1.0.14.tar.gz
-    ```
+   ```Shell (Linux)
+   cd $HDL_CLIENT_HOME/sdk/python
+   pip install sqlanydb-1.0.14.tar.gz
+   ```
 
 ### Create a Python application that uses sqlanydb to query the data lake Relational Engine
 
 1. In a shell, create a folder named `python-sqlanydb`, enter the newly created directory, and open a file name `pythonQuery.py` in an editor.
 
-    ```Shell (Microsoft Windows)
-    mkdir %HOMEPATH%\DataLakeClientsTutorial\python-sqlanydb
-    cd %HOMEPATH%\DataLakeClientsTutorial\python-sqlanydb
-    notepad pythonQuery.py
-    ```
+   ```Shell (Microsoft Windows)
+   mkdir %HOMEPATH%\DataLakeClientsTutorial\python-sqlanydb
+   cd %HOMEPATH%\DataLakeClientsTutorial\python-sqlanydb
+   notepad pythonQuery.py
+   ```
 
     Substitute `pico` below for your preferred text editor.
 
-    ```Shell (Linux)
-    mkdir -p $HOME/DataLakeClientsTutorial/python-sqlanydb
-    cd $HOME/DataLakeClientsTutorial/python-sqlanydb
-    pico pythonQuery.py
-    ```
+   ```Shell (Linux)
+   mkdir -p $HOME/DataLakeClientsTutorial/python-sqlanydb
+   cd $HOME/DataLakeClientsTutorial/python-sqlanydb
+   pico pythonQuery.py
+   ```
 
 2. Copy the following code into `pythonQuery.py`. Replace the host value.
 
-    ```Python
-    #Import your dependencies
-    import sqlanydb
+   ```Python
+   #Import your dependencies
+   import sqlanydb
 
-    #Initialize your connection
-    conn = sqlanydb.connect(uid='USER1', pwd='Password1', host='XX.iq.hdl.trial-us10.hanacloud.ondemand.com:443',enc='TLS{tls_type=rsa;direct=yes}')
+   #Initialize your connection
+   conn = sqlanydb.connect(uid='USER1', pwd='Password1', host='XX.iq.hdl.trial-us10.hanacloud.ondemand.com:443',enc='TLS{tls_type=rsa;direct=yes}')
 
-    #If no errors, print connected
-    print('connected')
+   #If no errors, print connected
+   print('connected')
 
-    curs = conn.cursor()
-    sql_command = "select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;"
-    curs.execute(sql_command)
-    rows = curs.fetchall()
-    for row in rows:
-        for col in row:
-            print ("%s" % col, end=" ")
-        print ("  ")
+   curs = conn.cursor()
+   sql_command = "select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;"
+   curs.execute(sql_command)
+   rows = curs.fetchall()
+   for row in rows:
+       for col in row:
+           print ("%s" % col, end=" ")
+       print ("  ")
 
-    curs.close()
-    conn.close()
-    ```
+   curs.close()
+   conn.close()
+   ```
 
 3. Save and close `pythonQuery.py`. Run the app. Make sure your data lake Relational Engine is running before executing the app.
 
-    ```Shell
-    python pythonQuery.py
-    ```
+   ```Shell
+   python pythonQuery.py
+   ```
 
     ![python Query](sqlanydb-success.png)
 
@@ -185,59 +183,57 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
 
 3. Install `pyodbc`
 
-    ```Shell
-    pip install pyodbc
-    ```
+   ```Shell
+   pip install pyodbc
+   ```
 
 
     >If this command fails on Microsoft Windows with an error "Microsoft Visual C++ 14.0 is required", additional details can be found at [Unable to install pyodbc using python 3.10 in windows 10](https://stackoverflow.com/questions/69943254/unable-to-install-pyodbc-using-python-3-10-in-windows-10) and [Release python 3.10 win wheels for pyodbc](https://github.com/mkleehammer/pyodbc/issues/981).
-
-    >---
-
+    >
     >If this command fails on Linux, you may need to install gcc-c++, python3-devel, and unixodbc-dev.
 
 ### Create a Python application that uses pyodbc to query the data lake Relational Engine
 
 1. In a shell, create a folder named `python-pyodbc`, enter the newly created directory, and open a file name `pythonQuery.py` in an editor.
 
-    ```Shell (Microsoft Windows)
-    mkdir %HOMEPATH%\DataLakeClientsTutorial\python-pyodbc
-    cd %HOMEPATH%\DataLakeClientsTutorial\python-pyodbc
-    notepad pythonQuery.py
-    ```
+   ```Shell (Microsoft Windows)
+   mkdir %HOMEPATH%\DataLakeClientsTutorial\python-pyodbc
+   cd %HOMEPATH%\DataLakeClientsTutorial\python-pyodbc
+   notepad pythonQuery.py
+   ```
 
     Substitute `pico` below for your preferred text editor.
 
-    ```Shell (Linux)
-    mkdir -p $HOME/DataLakeClientsTutorial/python-pyodbc
-    cd $HOME/DataLakeClientsTutorial/python-pyodbc
-    pico pythonQuery.py
-    ```
+   ```Shell (Linux)
+   mkdir -p $HOME/DataLakeClientsTutorial/python-pyodbc
+   cd $HOME/DataLakeClientsTutorial/python-pyodbc
+   pico pythonQuery.py
+   ```
 
 2. Copy the following code into `pythonQuery.py`.
 
-    ```Python
-    #Import your dependencies
-    import pyodbc
+   ```Python
+   #Import your dependencies
+   import pyodbc
 
-    #Initialize your connection
-    conn = pyodbc.connect(uid='USER1',pwd='Password1',dsn='HC_DL')
+   #Initialize your connection
+   conn = pyodbc.connect(uid='USER1',pwd='Password1',dsn='HC_DL')
 
-    #If no errors, print connected
-    print('connected')
+   #If no errors, print connected
+   print('connected')
 
-    curs = conn.cursor()
-    sql_command = "select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;"
-    curs.execute(sql_command)
-    rows = curs.fetchall()
-    for row in rows:
-        for col in row:
-            print ("%s" % col, end= " ")
-        print ("  ")
+   curs = conn.cursor()
+   sql_command = "select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;"
+   curs.execute(sql_command)
+   rows = curs.fetchall()
+   for row in rows:
+       for col in row:
+           print ("%s" % col, end= " ")
+       print ("  ")
 
-    curs.close()
-    conn.close()
-    ```
+   curs.close()
+   conn.close()
+   ```
 
     Save and close `pythongQuery.py`.
 
@@ -251,9 +247,9 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
 
 4. Run the app.
 
-    ```Shell
-    python pythonQuery.py
-    ```
+   ```Shell
+   python pythonQuery.py
+   ```
 
     >On some Linux distributions, python refers to a 2.x version of Python.  If so, replace `python` with `python3`.
 

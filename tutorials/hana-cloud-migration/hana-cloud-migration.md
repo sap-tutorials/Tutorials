@@ -265,32 +265,32 @@ In the sample [HOTELS dataset](hana-dbx-create-schema) used in this tutorial, tw
 
 1. Identify the users that have been created in the source database.  Note that you can also view when a user last successfully connected.  You may wish to review users that have not connected to the database in a while to decide if you want to include them in the migration.
 
-    ```SQL
-    SELECT USER_NAME, LAST_SUCCESSFUL_CONNECT FROM USERS WHERE USER_NAME LIKE 'USER%';
-    ```
+   ```SQL
+   SELECT USER_NAME, LAST_SUCCESSFUL_CONNECT FROM USERS WHERE USER_NAME LIKE 'USER%';
+   ```
 
     ![Users](users.png)
 
 2. Review the existing roles, the privileges, and details about user groups.
 
-    ```SQL
-    --View the list of roles
-    SELECT * FROM ROLES WHERE ROLE_NAME LIKE 'HOTEL%' ORDER BY ROLE_NAME;
-    --View the roles assigned to a user
-    SELECT * FROM GRANTED_ROLES WHERE GRANTEE LIKE 'USER1';
-    -- View the users assigned to a role
-    SELECT * FROM GRANTED_ROLES WHERE ROLE_NAME LIKE 'HOTEL_ADMIN';
-    --View the list of privileges assigned directly to a user
-    SELECT PRIVILEGE, OBJECT_TYPE, OBJECT_NAME, SCHEMA_NAME, IS_GRANTABLE FROM GRANTED_PRIVILEGES WHERE GRANTEE = 'USER1' ORDER BY OBJECT_TYPE, PRIVILEGE, OBJECT_NAME;
-    --View the list of privileges assigned to a role
-    SELECT PRIVILEGE, IS_GRANTABLE, OBJECT_TYPE, SCHEMA_NAME FROM GRANTED_PRIVILEGES WHERE GRANTEE = 'HOTEL_ADMIN' ORDER BY OBJECT_TYPE, PRIVILEGE;
-    --View the list of user groups
-    SELECT * FROM USERGROUPS;
-    --View the details of a user group
-    SELECT * FROM USERGROUP_PARAMETERS WHERE USERGROUP_NAME = 'HOTEL_USER_GROUP';
-    --View the users in a user group
-    SELECT * FROM USERS WHERE USERGROUP_NAME = 'HOTEL_USER_GROUP';
-    ```
+   ```SQL
+   --View the list of roles
+   SELECT * FROM ROLES WHERE ROLE_NAME LIKE 'HOTEL%' ORDER BY ROLE_NAME;
+   --View the roles assigned to a user
+   SELECT * FROM GRANTED_ROLES WHERE GRANTEE LIKE 'USER1';
+   -- View the users assigned to a role
+   SELECT * FROM GRANTED_ROLES WHERE ROLE_NAME LIKE 'HOTEL_ADMIN';
+   --View the list of privileges assigned directly to a user
+   SELECT PRIVILEGE, OBJECT_TYPE, OBJECT_NAME, SCHEMA_NAME, IS_GRANTABLE FROM GRANTED_PRIVILEGES WHERE GRANTEE = 'USER1' ORDER BY OBJECT_TYPE, PRIVILEGE, OBJECT_NAME;
+   --View the list of privileges assigned to a role
+   SELECT PRIVILEGE, IS_GRANTABLE, OBJECT_TYPE, SCHEMA_NAME FROM GRANTED_PRIVILEGES WHERE GRANTEE = 'HOTEL_ADMIN' ORDER BY OBJECT_TYPE, PRIVILEGE;
+   --View the list of user groups
+   SELECT * FROM USERGROUPS;
+   --View the details of a user group
+   SELECT * FROM USERGROUP_PARAMETERS WHERE USERGROUP_NAME = 'HOTEL_USER_GROUP';
+   --View the users in a user group
+   SELECT * FROM USERS WHERE USERGROUP_NAME = 'HOTEL_USER_GROUP';
+   ```
 
     ![Roles](roles.png)
 
@@ -310,9 +310,9 @@ The tutorial [Export and Import Data and Schema with SAP HANA Database Explorer]
 
 1. The below SQL exports the data from the HOTEL table into a CSV file in a Microsoft Azure blob container.
 
-    ```SQL
-    EXPORT INTO 'azure://dansblobcont/hotel.csv' FROM HOTEL WITH CREDENTIAL 'Azure';
-    ```
+   ```SQL
+   EXPORT INTO 'azure://dansblobcont/hotel.csv' FROM HOTEL WITH CREDENTIAL 'Azure';
+   ```
 
     ![export to Microsoft Azure](export-table.png)
 
@@ -326,35 +326,35 @@ The tutorial [Export and Import Data and Schema with SAP HANA Database Explorer]
 
 3. On the target SAP HANA Cloud system, the create table statement and [import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) can be run to recreate the schema and load the data.
 
-    ```SQL
-    CREATE COLUMN TABLE "HOTEL" (
-        "HNO" INTEGER NOT NULL,
-        "NAME" NVARCHAR(50) NOT NULL,
-        "ADDRESS" NVARCHAR(40) NOT NULL,
-        "CITY" NVARCHAR(30) NOT NULL,
-        "STATE" NVARCHAR(2) NOT NULL,
-        "ZIP" NVARCHAR(6),
-        "LOCATION" ST_POINT(4326),
-        PRIMARY KEY(
-            "HNO"
-        )
-    );
+   ```SQL
+   CREATE COLUMN TABLE "HOTEL" (
+       "HNO" INTEGER NOT NULL,
+       "NAME" NVARCHAR(50) NOT NULL,
+       "ADDRESS" NVARCHAR(40) NOT NULL,
+       "CITY" NVARCHAR(30) NOT NULL,
+       "STATE" NVARCHAR(2) NOT NULL,
+       "ZIP" NVARCHAR(6),
+       "LOCATION" ST_POINT(4326),
+       PRIMARY KEY(
+           "HNO"
+       )
+   );
 
-    IMPORT FROM CSV FILE 'azure://dansblobcont/hotel.csv' INTO HOTEL WITH CREDENTIAL 'Azure';
-    ```
+   IMPORT FROM CSV FILE 'azure://dansblobcont/hotel.csv' INTO HOTEL WITH CREDENTIAL 'Azure';
+   ```
 
     ![create table and import data](import-data.png)
 
 4. An alternative method is to create a remote source from the SAP HANA on-premise database to the SAP HANA Cloud database and use an INSERT INTO statement.  An example is given below.  For additional details on creating remote source connections, see [Access Remote Sources with SAP HANA Database Explorer](hana-dbx-remote-sources).
 
-    ```SQL
-    CREATE REMOTE SOURCE REMOTE_HC ADAPTER "hanaodbc" CONFIGURATION 'ServerNode=84b....hana.prod-ca10.hanacloud.ondemand.com:443;driver=libodbcHDB.so;dml_mode=readwrite;sslTrustStore="-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsBCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7PT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbRTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/EsrhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJFPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0lsYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQkCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----"' WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=USER1;password=Password1';
+   ```SQL
+   CREATE REMOTE SOURCE REMOTE_HC ADAPTER "hanaodbc" CONFIGURATION 'ServerNode=84b....hana.prod-ca10.hanacloud.ondemand.com:443;driver=libodbcHDB.so;dml_mode=readwrite;sslTrustStore="-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsBCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7PT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbRTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/EsrhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJFPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0lsYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQkCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----"' WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=USER1;password=Password1';
 
-    CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HC');
+   CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HC');
 
-    CREATE VIRTUAL TABLE VT_CUSTOMER AT "REMOTE_HC"."HC_HDB".HOTELS."CUSTOMER";
-    INSERT INTO VT_CUSTOMER SELECT * FROM HOTELS.CUSTOMER;"  
-    ```
+   CREATE VIRTUAL TABLE VT_CUSTOMER AT "REMOTE_HC"."HC_HDB".HOTELS."CUSTOMER";
+   INSERT INTO VT_CUSTOMER SELECT * FROM HOTELS.CUSTOMER;"  
+   ```
 
     There are other options to move data from one SAP HANA database to another, such as using Smart Data Integration, that may also be considered.
 
@@ -364,17 +364,17 @@ The [EXPORT](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a0
 
 1. Export database objects: This example exports database objects from a source database (an SAP HANA, express edition database) to cloud storage (Microsoft Azure).
 
-    ```SQL
-    EXPORT ALL HAVING schema_name = 'HOTELS' AS BINARY DATA INTO 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
-    ```
+   ```SQL
+   EXPORT ALL HAVING schema_name = 'HOTELS' AS BINARY DATA INTO 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
+   ```
 
     Notice that the data is being exported in a BINARY DATA format, which is more efficient than CSV format.  It is also possible to export the schema only by adding CATALOG ONLY to the end of the above export statement.
 
     The results of the export can be viewed with the following SQL query.
 
-    ```SQL
-    SELECT * FROM #EXPORT_RESULT;
-    ```
+   ```SQL
+   SELECT * FROM #EXPORT_RESULT;
+   ```
 
     Multiple object types are exported such as tables, views, functions, procedures, and graph workspaces.  
 
@@ -384,19 +384,19 @@ The [EXPORT](https://help.sap.com/docs/SAP_HANA_PLATFORM/4fe29514fd584807ac9f2a0
 
 2. Import the database objects: This example imports the previously exported schema objects and data into the target database (an SAP HANA Cloud database).  `GUEST_NOTES` is excluded because the JSON document store is not supported in the free tier service.
 
-    ```SQL Free Tier
-    IMPORT ALL HAVING OBJECT_NAME != 'GUEST_NOTES' FROM 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
-    ```
+   ```SQL Free Tier
+   IMPORT ALL HAVING OBJECT_NAME != 'GUEST_NOTES' FROM 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
+   ```
 
-    ```SQL Production Instance
-    IMPORT ALL FROM 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
-    ```
+   ```SQL Production Instance
+   IMPORT ALL FROM 'azure://dansblobcont/export/' WITH CREDENTIAL 'Azure';
+   ```
 
     The results of the import can be viewed with the following SQL query.
 
-    ```SQL
-    SELECT * FROM #IMPORT_RESULT;
-    ```
+   ```SQL
+   SELECT * FROM #IMPORT_RESULT;
+   ```
 
     ![import multiple catalog objects](import-catalog-objects.png)
 
@@ -499,37 +499,37 @@ The recommended tool for native application development with SAP HANA Cloud is t
 
     In the source and destination HDI containers, the RT (runtime user) will need to be given sufficient privileges.  The RT user's name can be seen by executing the below SQL when connected to an HDI container.  This user name is needed for the subsequent steps.
 
-    ```SQL
-    SELECT CURRENT_USER FROM DUMMY;
-    ```
+   ```SQL
+   SELECT CURRENT_USER FROM DUMMY;
+   ```
 
-    Execute the following SQL statement while connected to the SYSTEM database in the (on-premise) SAP HANA database.
+   Execute the following SQL statement while connected to the SYSTEM database in the (on-premise) SAP HANA database.
 
-    ```SQL
-    GRANT EXPORT TO MYHANAPROJ_HDI_DB_1_DA7VCTZ9GMTJHJ47F1MI4Y08N_RT; --required to enable export of data
-    ```
+   ```SQL
+   GRANT EXPORT TO MYHANAPROJ_HDI_DB_1_DA7VCTZ9GMTJHJ47F1MI4Y08N_RT; --required to enable export of data
+   ```
 
-    Execute the following SQL statement while connected to the SAP HANA Cloud database.
+   Execute the following SQL statement while connected to the SAP HANA Cloud database.
 
-    ```SQL
-    GRANT IMPORT TO MYHANAPROJ_HDI_DB_1_DWYHG0Y9G8PLSYVE4IEG4DN76_RT; --required to enable import of data
-    ```
+   ```SQL
+   GRANT IMPORT TO MYHANAPROJ_HDI_DB_1_DWYHG0Y9G8PLSYVE4IEG4DN76_RT; --required to enable import of data
+   ```
 
-    Execute the following SQL statement while connected to an HDI container being migrated.  When performing the import, ensure that the option DATA ONLY is used as the objects in an HDI container should only be created when the project is deployed.
+   Execute the following SQL statement while connected to an HDI container being migrated.  When performing the import, ensure that the option DATA ONLY is used as the objects in an HDI container should only be created when the project is deployed.
 
-    ```SQL
-    EXPORT ALL HAVING SCHEMA_NAME = 'MYHANAPROJ_HDI_DB_1' AS BINARY DATA INTO 'azure://dansblobcont/export_hdi/' WITH NO STATISTICS CREDENTIAL 'Azure' ;
-    ```
+   ```SQL
+   EXPORT ALL HAVING SCHEMA_NAME = 'MYHANAPROJ_HDI_DB_1' AS BINARY DATA INTO 'azure://dansblobcont/export_hdi/' WITH NO STATISTICS CREDENTIAL 'Azure' ;
+   ```
 
-    Execute the following SQL statement while connected to an HDI container in SAP HANA Cloud.
+   Execute the following SQL statement while connected to an HDI container in SAP HANA Cloud.
 
-    ```SQL
-    IMPORT ALL FROM 'azure://dansblobcont/export_hdi/' WITH CREDENTIAL 'Azure' DATA ONLY;
-    ```
+   ```SQL
+   IMPORT ALL FROM 'azure://dansblobcont/export_hdi/' WITH CREDENTIAL 'Azure' DATA ONLY;
+   ```
 
-    ![import into HDI container](import-into-hdi.png)
+   ![import into HDI container](import-into-hdi.png)
 
-    The data for the tables in the HDI container should now be available in the SAP HANA Cloud HDI container.
+   The data for the tables in the HDI container should now be available in the SAP HANA Cloud HDI container.
 
 ### Connect applications to SAP HANA Cloud
 

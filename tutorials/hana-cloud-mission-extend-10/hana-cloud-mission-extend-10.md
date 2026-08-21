@@ -83,13 +83,13 @@ Now, that you have on overview of the steps ahead, let us start setting up our d
 
 3.	You also need the certificate information to access the data in S3. Get the object URL of any CSV file in your dataset folder and select the root certificate of the certificate chain and export as `pem` (X.506 base64 encoded) file, then open the file in a text editor to get the certificate string. Click on any csv-file in your dataset folder and then click on the object URL.
 
-    <!-- border -->![Object URL](ss-03-object-url.png)
+    ![Object URL](ss-03-object-url.png)
 
 4.	Then, click on the lock icon in the URL bar of your browser and then click on the certificate. A new window will open. Select the root certificate of the certificate chain and export as `pem` (X.506 base64 encoded) file, then open the file in a text editor to get the certificate string.
 
-    <!-- border -->![Certificate 1](ss-04-certificate1.png)
+    ![Certificate 1](ss-04-certificate1.png)
 
-    <!-- border -->![Certificate 2](ss-05-certificate2.png)
+    ![Certificate 2](ss-05-certificate2.png)
 
 > ### Amazon root certificates
 >
@@ -106,12 +106,12 @@ For further information on how to create and configure Amazon Web Services S3 bu
 
 2.	First, create a certificate store and name it (e.g. "SSL"), using this statement:
 
-    ```SQL
+   ```SQL
 CREATE PSE <CERTIFICATE_STORE_NAME>;
 ```
 3.	Then, register the root certificate in SAP HANA Cloud by inserting the certificate string you copied from the S3 file in the statement below and add a comment to name the certificate (e.g. "S3") for later access:
 
-    ```SQL
+   ```SQL
 CREATE CERTIFICATE FROM
 '-----BEGIN CERTIFICATE-----
 MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsFADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6b24gUm9vdCBDQSAxMB4XDTE1MDUyNjAwMDAwMFoXDTM4MDExNzAwMDAwMFowOTELMAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJvb3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXjca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qwIFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6VOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQmjgSubJrIqg0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0OBBYEFIQYzIU07LwMlJQuCFmcx7IQTgoIMA0GCSqGSIb3DQEBCwUAA4IBAQCY8jdaQZChGsV2USggNiMOruYou6r4lK5IpDB/G/wkjUu0yKGX9rbxenDIU5PMCCjjmCXPI6T53iHTfIUJrU6adTrCC2qJeHZERxhlbI1Bjjt/msv0tadQ1wUsN+gDS63pYaACbvXy8MWy7Vu33PqUXHeeE6V/Uq2V8viTO96LXFvKWlJbYK8U90vvo/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpyrqXRfboQnoZsG4q5WTP468SQvvG5-----END CERTIFICATE-----'
@@ -119,19 +119,19 @@ COMMENT 'S3';
 ```
 
 4.	You now need to get the certificate ID of this newly registered certificate. Use this statement and make sure to adjust the comment of the certificate if you have chosen a different one in the previous step:
-    ```SQL
+   ```SQL
 Select * from certificates where comment = 'S3';
 ```
 
 5.	Copy the certificate ID shown in the results at the bottom panel of your SAP HANA Database Explorer and insert it in the statement below to add the certificate to the certificate store:
 
-    ```SQL
- ALTER PSE SSL ADD CERTIFICATE <INSERT_CERTIFICATE_ID>;
+   ```SQL
+ALTER PSE SSL ADD CERTIFICATE <INSERT_CERTIFICATE_ID>;
 ```
 
 6.	Next, you need to set the certificate store purpose as remote source. This will make the usage of the certificate in the PSE store available to all remote sources. Now, whenever you connect using S3, GBQ or another SAP HANA Cloud instance, the adapter will use the certificates within the certificate store that are required to connect. Please note, that only one PSE's purpose can be set as remote source, so make sure that all SSL Root CA certificates are added to the same PSE. Read more about how to import certificates for SSL connections to remote sources [here](https://help.sap.com/viewer/477aa413a36c4a95878460696fcc8896/LATEST/en-US/86e96624e9a74e77994f7544db51061c.html). Now, to set the certificate store purpose as remote source, use this statement:
 
-    ```SQL
+   ```SQL
 SET PSE <INSERT_CERTIFICATE_STORE_NAME> PURPOSE REMOTE SOURCE;
 ```
 
@@ -144,12 +144,12 @@ SET PSE <INSERT_CERTIFICATE_STORE_NAME> PURPOSE REMOTE SOURCE;
 
 1.	To import a whole schema from an S3 bucket, you can use the `IMPORT ALL` statement below. Make sure to include the correct S3 region name (e.g. s3-eu-central-1 for Frankfurt, Germany. You can find a list of all S3 region names [here](https://docs.aws.amazon.com/general/latest/gr/rande.html)), access key and secret access key of your S3 user, as well as name of S3 bucket and respective folder:
 
-    ```SQL
+   ```SQL
 IMPORT ALL FROM '<S3_REGION>://<ACCESS_KEY>:<SECRET_ACCESS_KEY>@<S3_BUCKET_NAME>/<S3_FOLDER_NAME>' WITH THREADS 4 REPLACE;
 ```
 2.	If you want to import individual `.csv` files, you can also use a statement in which you have to again include all the information from the S3 side. Additionally, you have to specify an existing table to which the file's data should be imported and since it's an import from a CSV file, you also have to indicate delimiter information, delimiter option and threads (`,',`, `'"'` and `4` in this example).
 
-    ```SQL
+   ```SQL
 IMPORT FROM CSV FILE '<S3_REGION>s3-://<ACCESS_KEY>:<SECRET_ACCESS_KEY>@<S3_BUCKET_NAME>/<S3_FOLDER_NAME> /<source_filename.csv> ' INTO <TARGET_TABLE>
 WITH FIELD DELIMITED BY ',' OPTIONALLY ENCLOSED BY '"' threads 4;
 ```
