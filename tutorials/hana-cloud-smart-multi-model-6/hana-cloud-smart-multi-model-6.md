@@ -107,7 +107,7 @@ WHEN MATCHED THEN UPDATE SET lp.VERTEX_OSMID = lv."osmid";
 ```
 
 This picture illustrates the snapping logic.
-<!-- border -->![POI Snapping](ss-01-poi-snapping.png)
+![POI Snapping](ss-01-poi-snapping.png)
 
 You have now connected each point of interest to a node/vertex in the transportation network. This will allow you to calculate shortest paths between POI's in the following tutorials.
 

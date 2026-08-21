@@ -150,7 +150,7 @@ To create a static result cache, follow these steps:
 
 2.	First, you need to create a view on the virtual table you want to query:
 
-    ```SQL
+   ```SQL
 -- create a view on the virtual table
 create view <schema>.<view_name> as
 (select * from <source_table>);
@@ -158,14 +158,14 @@ create view <schema>.<view_name> as
 
 3.	Once that is done, create a cache on this view, including a retention period (2 hours in our example). Enable the static result cache it by running this statement:
 
-    ```SQL
+   ```SQL
 -- create static result cache on the view
 ALTER VIEW <schema>.<view_name> ADD CACHE RETENTION 120;  
 ```
 
 4.	Now, to include the static result cache in a query include a `with hint(RESULT_CACHE)` clause in your query, for example:
 
-    ```SQL
+   ```SQL
 select * from <view_name>
 with hint(RESULT_CACHE);
 ```

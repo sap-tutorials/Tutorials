@@ -47,9 +47,9 @@ primary_tag: software-product>sap-hana-cloud
 
     If not, copy and paste the following statement to the console and run it:
 
-    ```SQL
-    SET SCHEMA SFLIGHT;
-    ```  
+   ```SQL
+   SET SCHEMA SFLIGHT;
+   ```  
 
     ![Change schema to SFLIGHT using SQL](ss-02-sql-console-current-schema.png)
 
@@ -67,25 +67,25 @@ Let's find out which of the Best Run Travel agents are most popular. For this, w
 
 2. The following query will create a new table and order the agencies based on their number of bookings. Copy and paste query to the console and then click on the **Run** button:
 
-    ```SQL
-    CREATE TABLE SAGENCYDATA AS (
-        SELECT 
-            SBOOK.AGENCYNUM,
-            count(SBOOK.AGENCYNUM) AS NUMBOOKINGS
-        FROM 
-            SBOOK,
-            STRAVELAG
-        WHERE SBOOK.AGENCYNUM = STRAVELAG.AGENCYNUM
-        GROUP BY SBOOK.AGENCYNUM
-        ORDER BY count(SBOOK.AGENCYNUM) DESC
-    );
-    ```
+   ```SQL
+   CREATE TABLE SAGENCYDATA AS (
+       SELECT 
+           SBOOK.AGENCYNUM,
+           count(SBOOK.AGENCYNUM) AS NUMBOOKINGS
+       FROM 
+           SBOOK,
+           STRAVELAG
+       WHERE SBOOK.AGENCYNUM = STRAVELAG.AGENCYNUM
+       GROUP BY SBOOK.AGENCYNUM
+       ORDER BY count(SBOOK.AGENCYNUM) DESC
+   );
+   ```
 
 3. You can view the contents of this table by running the following query:
 
-    ```SQL
-    SELECT * FROM SAGENCYDATA;
-    ```
+   ```SQL
+   SELECT * FROM SAGENCYDATA;
+   ```
 
     This will show you the contents of the new table:
 
@@ -124,64 +124,64 @@ To find the top booking days, we will first create two new tables:
 
 1. First create the `STOPAGENCY` table by storing the result of the previous query in a new table. Run this query in your console:
 
-    ```SQL
-    CREATE TABLE STOPAGENCY AS (
-        SELECT TOP 5 
-            SAGENCYDATA.AGENCYNUM,
-            STRAVELAG.NAME,
-            SAGENCYDATA.NUMBOOKINGS
-        FROM 
-            SAGENCYDATA
-            INNER JOIN
-            STRAVELAG
-            ON SAGENCYDATA.AGENCYNUM = STRAVELAG.AGENCYNUM
-    );
-    ```
+   ```SQL
+   CREATE TABLE STOPAGENCY AS (
+       SELECT TOP 5 
+           SAGENCYDATA.AGENCYNUM,
+           STRAVELAG.NAME,
+           SAGENCYDATA.NUMBOOKINGS
+       FROM 
+           SAGENCYDATA
+           INNER JOIN
+           STRAVELAG
+           ON SAGENCYDATA.AGENCYNUM = STRAVELAG.AGENCYNUM
+   );
+   ```
 
 2. To view all contents of this table, just copy and paste the following query into the SQL console and run it:
 
-    ```SQL
-    SELECT * FROM STOPAGENCY;
-    ```
+   ```SQL
+   SELECT * FROM STOPAGENCY;
+   ```
 
 3. Next, create the table `SAGBOOKDAYS` to store the daily bookings for each of the agencies. Use the following query:
 
-    ```SQL
-    CREATE TABLE SAGBOOKDAYS AS (
-        SELECT 
-            AGENCYNUM,
-            dayname(ORDER_DATE) AS ORDERDAY,
-            count(dayname(ORDER_DATE)) AS DAYCOUNT
-        FROM SBOOK
-        GROUP BY 
-            AGENCYNUM,
-            dayname(ORDER_DATE)
-    );
-    ```
+   ```SQL
+   CREATE TABLE SAGBOOKDAYS AS (
+       SELECT 
+           AGENCYNUM,
+           dayname(ORDER_DATE) AS ORDERDAY,
+           count(dayname(ORDER_DATE)) AS DAYCOUNT
+       FROM SBOOK
+       GROUP BY 
+           AGENCYNUM,
+           dayname(ORDER_DATE)
+   );
+   ```
 
 4. To view all contents of this new table, you can again use the `SELECT * FROM` query:
 
-    ```SQL
-    SELECT * FROM SAGBOOKDAYS;
-    ```
+   ```SQL
+   SELECT * FROM SAGBOOKDAYS;
+   ```
 
 5. Now that you have created the 2 tables, join these tables based on the agency number (column `AGENCYNUM`). You also need to extract only the day with maximum number of bookings for each of the top 5 agencies. For this, use the following nested queries:
 
-    ```SQL
-    SELECT 
-        SAGBOOKDAYS.AGENCYNUM,
-        STOPAGENCY.NAME,
-        SAGBOOKDAYS.ORDERDAY,
-        SAGBOOKDAYS.DAYCOUNT
-    FROM 
-        SAGBOOKDAYS
-        INNER JOIN
-        STOPAGENCY
-        ON SAGBOOKDAYS.AGENCYNUM = STOPAGENCY.AGENCYNUM
-    WHERE (SAGBOOKDAYS.DAYCOUNT IN (SELECT max(DAYCOUNT)
-    FROM SAGBOOKDAYS
-    GROUP BY AGENCYNUM));
-    ```
+   ```SQL
+   SELECT 
+       SAGBOOKDAYS.AGENCYNUM,
+       STOPAGENCY.NAME,
+       SAGBOOKDAYS.ORDERDAY,
+       SAGBOOKDAYS.DAYCOUNT
+   FROM 
+       SAGBOOKDAYS
+       INNER JOIN
+       STOPAGENCY
+       ON SAGBOOKDAYS.AGENCYNUM = STOPAGENCY.AGENCYNUM
+   WHERE (SAGBOOKDAYS.DAYCOUNT IN (SELECT max(DAYCOUNT)
+   FROM SAGBOOKDAYS
+   GROUP BY AGENCYNUM));
+   ```
 
 6. Now you can see that the most bookings for the top 5 agencies have been done on **Thursdays**.
 
