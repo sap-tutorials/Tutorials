@@ -65,8 +65,8 @@ You can now upload the promotional rule with the Data Upload service.
 
 Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Data upload 1](data_upload_1.png)
-<!-- border -->![Data upload 2](data_upload_2.png)
+![Data upload 1](data_upload_1.png)
+![Data upload 2](data_upload_2.png)
 
 
 1. For **API Environment**, select the trial environment you have created for the Data Upload service.
@@ -325,8 +325,8 @@ You can now calculate the effective sales price based on the data you have uploa
 
 Let's see if this is the case:
 
-<!-- border -->![Calculation 1](Calculation 1.png)
-<!-- border -->![Calculation 2](Calculation 2.png)
+![Calculation 1](Calculation 1.png)
+![Calculation 2](Calculation 2.png)
 
 
 1. Navigate to the [Calculation service on the SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/resource).

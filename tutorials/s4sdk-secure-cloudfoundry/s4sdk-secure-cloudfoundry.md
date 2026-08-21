@@ -50,59 +50,59 @@ You will let Cloud Foundry retrieve the App Router automatically on deployment. 
 
 1. Create a new directory for the router `security` and create the `approuter` directory inside it:
 
-    ```Bash
-    mkdir security
-    cd security
-    mkdir approuter
-    cd approuter
-    ```
+   ```Bash
+   mkdir security
+   cd security
+   mkdir approuter
+   cd approuter
+   ```
 
 2. Place the following `package.json` in your `approuter` directory:
 
-    ```JSON
-    {
-      "name": "approuter",
-      "dependencies": {
-        "@sap/approuter": "*"
-      },
-      "scripts": {
-        "start": "node node_modules/@sap/approuter/approuter.js"
-      }
-    }
-    ```
+   ```JSON
+   {
+     "name": "approuter",
+     "dependencies": {
+       "@sap/approuter": "*"
+     },
+     "scripts": {
+       "start": "node node_modules/@sap/approuter/approuter.js"
+     }
+   }
+   ```
 
 3. Within `security/approuter` create a new file called `xs-app.json` with the following content:
 
-    ```JSON
-    {
-      "welcomeFile": "index.html",
-      "routes": [{
-        "source": "/",
-        "target": "/",
-        "destination": "app-destination"
-        }]
-    }
-    ```
+   ```JSON
+   {
+     "welcomeFile": "index.html",
+     "routes": [{
+       "source": "/",
+       "target": "/",
+       "destination": "app-destination"
+       }]
+   }
+   ```
 
 4. Last but not least create a new `manifest.yml` file within `security` for the app router microservice with the following content:
 
-    ```YAML
+   ```YAML
 
-    ---
-    applications:
-    - name: approuter
-      routes:
-        - route: approuter-<subdomain>.cfapps.<region_id>.hana.ondemand.com
-      path: approuter
-      memory: 128M
-      buildpacks:
-        - nodejs_buildpack
-      env:
-        TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.<region_id>.hana.ondemand.com'
-        destinations: '[{"name":"app-destination", "url" :"<APPLICATION_URL>", "forwardAuthToken": true}]'
-      services:
-        - my-xsuaa
-    ```
+   ---
+   applications:
+   - name: approuter
+     routes:
+       - route: approuter-<subdomain>.cfapps.<region_id>.hana.ondemand.com
+     path: approuter
+     memory: 128M
+     buildpacks:
+       - nodejs_buildpack
+     env:
+       TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.<region_id>.hana.ondemand.com'
+       destinations: '[{"name":"app-destination", "url" :"<APPLICATION_URL>", "forwardAuthToken": true}]'
+     services:
+       - my-xsuaa
+   ```
 
    Adapt the file as follows:
 
@@ -325,13 +325,13 @@ In that case leverage the XSUAA testing library to mock request authentication.
 
 1. Add the testing capabilities via the following dependency into your `application/pom.xml`:
 
-    ```XML
-    <dependency>
-        <groupId>com.sap.cloud.security</groupId>
-        <artifactId>java-security-test</artifactId>
-        <scope>test</scope>
-    </dependency>
-    ```
+   ```XML
+   <dependency>
+       <groupId>com.sap.cloud.security</groupId>
+       <artifactId>java-security-test</artifactId>
+       <scope>test</scope>
+   </dependency>
+   ```
 
 2. Annotate your test class `HelloWorldControllerTest` with (This code snippet would be commented your test class `HelloWorldControllerTest`, just uncomment them):
 ```java

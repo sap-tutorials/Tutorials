@@ -40,15 +40,15 @@ For Windows 7+ or Windows Server 2003+ adhere to the following steps:
 
 2. Install the Java Development Kit:
 
-    ```shell
-    winget install Microsoft.OpenJDK.17
-    ```
+   ```shell
+   winget install Microsoft.OpenJDK.17
+   ```
 
 3. Install Maven:
 
-    ```shell
-    choco install maven
-    ```
+   ```shell
+   choco install maven
+   ```
 
 [OPTION END]
 
@@ -59,23 +59,23 @@ For Mac OS adhere to the following steps:
 
 1. Install `Homebrew`. `Homebrew` is a package manager for Mac which will be useful for installing necessary components. Install it by opening a terminal and issuing the following command:
 
-    ```bash
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
 2. Install Java Development Kit 8:
 
-    ```bash
-    brew update
-    brew install openjdk@17
-    ```
+   ```bash
+   brew update
+   brew install openjdk@17
+   ```
 
 3. Install Maven:
 
-    ```bash
-    brew update
-    brew install maven
-    ```
+   ```bash
+   brew update
+   brew install maven
+   ```
 
 [OPTION END]
 

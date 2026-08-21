@@ -62,11 +62,11 @@ With the service instances and corresponding credentials that you set up (as des
 
 2. Select **Data Upload**.  
 
-    <!-- border -->![API Business Hub Starting Page](v3_API Business Hub Starting Page.PNG)
+    ![API Business Hub Starting Page](v3_API Business Hub Starting Page.PNG)
 
 3. Navigate to the **Try Out** section and choose **Add New Environment**.
 
-    <!-- border -->![Data Upload Configure Environment](v3_Data Upload Configure Environment.PNG)
+    ![Data Upload Configure Environment](v3_Data Upload Configure Environment.PNG)
 
 4. In the following screen, enter the information from the table below:
 
@@ -104,7 +104,7 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on the
 
 ## Upload regular sales price
 
-<!-- border -->![Data Upload Regular Sales Price 1](v3_Data Upload Regular Sales Price 1.PNG)
+![Data Upload Regular Sales Price 1](v3_Data Upload Regular Sales Price 1.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select the trial environment you have just created for the Data Upload service.
@@ -144,13 +144,13 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on the
 2. Choose **Run**.
 3. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Data Upload Regular Sales Price 2](Data Upload Regular Sales Price 2.png)
+![Data Upload Regular Sales Price 2](Data Upload Regular Sales Price 2.png)
 
 With this, you uploaded the regular sales price of **10 Euro** for the product **sunglasses** (material number: `CHA2111010`) for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **September 8th, 2020 to September 10th, 2021**.
 
 ## Upload promotional rule
 
-<!-- border -->![Data Upload Regular Promotional Rule 1](v3_Data Upload Regular Promotional Rule 1.PNG)
+![Data Upload Regular Promotional Rule 1](v3_Data Upload Regular Promotional Rule 1.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select the trial environment you have just created for the Data Upload service.
@@ -258,7 +258,7 @@ Navigate to the [Data Access service of SAP Omnichannel Promotion Pricing on the
 
 ## Check uploaded regular sales price
 
-<!-- border -->![Data Access Service Base Price 1](v3_Data Access Service Base Price 1.PNG)
+![Data Access Service Base Price 1](v3_Data Access Service Base Price 1.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select your trial environment you have created for the Data Access service.
@@ -268,11 +268,11 @@ Navigate to the [Data Access service of SAP Omnichannel Promotion Pricing on the
 6. Make sure you get the HTTP response **200**.
 7. Check the data in the **Response Body**. For this, scroll down in the response body until you find the respective entry.
 
-<!-- border -->![Data Access Service Base Price 2](Data Access Service Base Price 2.png)
+![Data Access Service Base Price 2](Data Access Service Base Price 2.png)
 
 ### Check uploaded promotional rule
 
-<!-- border -->![Data Access Service Promotional Rule 1](v3_Data Access Service Promotional Rule 1.PNG)
+![Data Access Service Promotional Rule 1](v3_Data Access Service Promotional Rule 1.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select your trial environment for the Data Access service.
@@ -282,7 +282,7 @@ Navigate to the [Data Access service of SAP Omnichannel Promotion Pricing on the
 6. Make sure you get the HTTP response **200**.
 7. Check the data in the **Response Body**. For this, scroll down in the response body until you find the respective entry.
 
-<!-- border -->![Data Access Service Promotional Rule 2](Data Access Service Promotional Rule 2.png)
+![Data Access Service Promotional Rule 2](Data Access Service Promotional Rule 2.png)
 
 
 ### Calculate the effective sales price
@@ -296,8 +296,8 @@ You can now calculate the effective sales price based on the data you have uploa
 
 Let's check if this is the case. Navigate to the [Calculation service on the SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/resource).
 
-<!-- border -->![Calculation](v3_Calculation 2.PNG)
-<!-- border -->![Calculation2b](v3_Calculation 2b.PNG)
+![Calculation](v3_Calculation 2.PNG)
+![Calculation2b](v3_Calculation 2b.PNG)
 
 1. Navigate to the **Try Out** section.
 2. For **Environment**, select your trial environment for the Calculation service.

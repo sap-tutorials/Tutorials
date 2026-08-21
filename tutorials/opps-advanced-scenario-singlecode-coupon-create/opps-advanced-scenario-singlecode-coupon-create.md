@@ -49,7 +49,7 @@ At first, you create a single-code coupon object with the **Coupon Management** 
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same information that you use for your SAP BTP trial account.
 
-<!-- border -->![Coupon creation request](1_create_singlecode_coupon_object_SUI.png)
+![Coupon creation request](1_create_singlecode_coupon_object_SUI.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the **Coupon Management** service.
@@ -74,14 +74,14 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Coupon creation response](1_create_singlecode_coupon_object_response201.png)
+![Coupon creation response](1_create_singlecode_coupon_object_response201.png)
 
 With this, you have created a **single-code** coupon object with the name `ANNIVERSARY25` and a validity period from **January 1, 2026 to December 31, 2026**. The coupon can be redeemed **100,000 times**. 
 
 
 **Optional**: If you want to check whether you have successfully created the single-code coupon `ANNIVERSARY25`, you can proceed with the following steps:
 
-<!-- border -->![Coupon creation check](1_optional_check_coupon_creation_SUI.png)
+![Coupon creation check](1_optional_check_coupon_creation_SUI.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **GET** request `/Coupon`.
@@ -95,7 +95,7 @@ With this, you have created a **single-code** coupon object with the name `ANN
 
 When creating the coupon, you set the status of the coupon object to **inactive**. Now, change the status of the coupon object to **active**.
 
-<!-- border -->![Change status request](2_change_status_coupon_object_SUI.png)
+![Change status request](2_change_status_coupon_object_SUI.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **PATCH** request `/Coupon({ID})`.
@@ -110,7 +110,7 @@ When creating the coupon, you set the status of the coupon object to **inactive*
 1. Choose **Run**. 
 2. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Change status response](2_change_status_coupon_object_response200.png)
+![Change status response](2_change_status_coupon_object_response200.png)
 
 
 You have now successfully changed the status of the coupon object. 
@@ -122,7 +122,7 @@ You have now successfully changed the status of the coupon object.
 Now that you have created the coupon object and set it to active, you create the coupon code to be used in your promotional campaign.
 
 
-<!-- border -->![Create coupon code request](3_create_coupon_code_SUI.png)
+![Create coupon code request](3_create_coupon_code_SUI.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **POST** request `/Coupon({ID})/CouponManagementService.createCouponCode`.
@@ -137,7 +137,7 @@ Now that you have created the coupon object and set it to active, you create the
 6. Choose **Run**.
 7. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Create coupon code response](3_create_coupon_code_response200_v2.png)
+![Create coupon code response](3_create_coupon_code_response200_v2.png)
 
 With this, you have created the coupon code `ANNIVERSARY25`. Your marketing system can now read the coupon information from the Coupon Management service and drive your promotional campaign, for example by distributing the coupon code to your target customers.
 
