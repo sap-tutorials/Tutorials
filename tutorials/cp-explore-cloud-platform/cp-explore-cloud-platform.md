@@ -78,10 +78,10 @@ Finally, SAP also offers IaaS in the cloud.  We didn't mention this before, beca
 
 The SAP BTP is available in two different types of data centers.  First, SAP runs it's own data centers around the world, optimized for SAP software.  Second, SAP also partners with other cloud infrastructure providers.  Currently, we partner with Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and Alibaba Cloud.
 
-<!-- border -->![Data center locations and types](map.png)
+![Data center locations and types](map.png)
 
 This is a graphical representation of all the SAP data centers worldwide. You can open this map when you click on the globe icon on this page to [see a complete list of the types of centers and the services provided at each data center](https://discovery-center.cloud.sap/viewServices?provider=all&regions=all&showFilters=true).
-<!-- border -->![globe button](globe.png)
+![globe button](globe.png)
 
 The list of services and data centers is constantly updated, so please use the link to find the latest information.
 

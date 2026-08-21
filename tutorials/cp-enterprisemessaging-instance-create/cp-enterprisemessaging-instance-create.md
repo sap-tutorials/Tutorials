@@ -41,36 +41,36 @@ primary_tag: software-product>sap-event-mesh
 
 7. Specify parameters using a JSON file (to create an instance of **default** plan)
 
-    ```JSON
-    {
-    "emname": "<yourmessageclientname>",
-    "namespace": "<yourorgname>/<yourmessageclientname>/<uniqueID>",
-    "version": "1.1.0",
-    "options": {
-        "management": true,
-        "messagingrest": true,
-        "messaging": true
-    },
+   ```JSON
+   {
+   "emname": "<yourmessageclientname>",
+   "namespace": "<yourorgname>/<yourmessageclientname>/<uniqueID>",
+   "version": "1.1.0",
+   "options": {
+       "management": true,
+       "messagingrest": true,
+       "messaging": true
+   },
 	"rules": {
-        "queueRules": {
-            "publishFilter": [
-                "${namespace}/*"
-            ],
-            "subscribeFilter": [
-                "${namespace}/*"
-            ]
-        },
-        "topicRules": {
-            "publishFilter": [
-                "${namespace}/*"
-            ],
-            "subscribeFilter": [
-                "${namespace}/*"
-            ]
-        }
-    }
+       "queueRules": {
+           "publishFilter": [
+               "${namespace}/*"
+           ],
+           "subscribeFilter": [
+               "${namespace}/*"
+           ]
+       },
+       "topicRules": {
+           "publishFilter": [
+               "${namespace}/*"
+           ],
+           "subscribeFilter": [
+               "${namespace}/*"
+           ]
+       }
+   }
 }
-    ```
+   ```
 
 
 
@@ -87,15 +87,15 @@ primary_tag: software-product>sap-event-mesh
     - **rules** -  Defines the access privileges for the message client. In order to allow access to a queue or a topic, the namespace of the corresponding owner message client has to be added
 
 8. Specify parameters using a JSON file (to create an instance of **dev** plan)
-    ```JSON
-    {
-    	"emname": "<your-emname>",
-    	"options": {
-    		"management": true,
-    		"messagingrest": true
-    	}
-    }
-    ```
+   ```JSON
+   {
+   	"emname": "<your-emname>",
+   	"options": {
+   		"management": true,
+   		"messagingrest": true
+   	}
+   }
+   ```
 9. Review the information you have provided and choose **Create**.
 
       ![SAP Event Mesh Instance](em-instance-creation.PNG)
