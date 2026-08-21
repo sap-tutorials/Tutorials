@@ -104,7 +104,7 @@ node hxeapp.js
 
 The above command should produce results something like the below:
 
-   <!-- border -->![Results](1.png)
+   ![Results](1.png)
 
 
 ### Extend Simple Node.js Application to Run as a Web Application

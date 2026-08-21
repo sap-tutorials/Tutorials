@@ -27,14 +27,14 @@ Visit <https://www.sap.com> and click the **Log On** icon in the upper-right cor
 
 **If you have an account** on <a href="https://www.sap.com" target="new"><b>`www.sap.com`</b></a> (e.g. a P, S, C, D or I number) you can enter it or the associated email along with your password. If you don't have an account yet, you can select one of the other login methods or click **Register** to create an account.
 
-<!-- border -->![log on dialog](option-logon.png)
+![log on dialog](option-logon.png)
 
 If you don't need to register with sap.com, you can skip to Step 4. Make sure to make all steps as _DONE_ to get credit for completing this tutorial.
 
 ### Register at sap.com
 **If you don't have an account** you will see a **register dialog** on the left-hand side of the dialog. Fill in the required fields, and click **Submit**.
 
-<!-- border -->![register dialog](option-register.png)
+![register dialog](option-register.png)
 
 
 You will see a message that an activation link has been sent to you.
@@ -43,7 +43,7 @@ You will see a message that an activation link has been sent to you.
 
 Check your emails to find the activation button **Click to activate your account**.
 
-<!-- border -->![log into SAP](log-into-sap.png)
+![log into SAP](log-into-sap.png)
 
 You will see a success message after activating your account.
 
@@ -68,11 +68,11 @@ Once the signup process is complete, you can access the cockpit via <https://coc
 
 3. The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-    <!-- border -->![Dialog setting up space](trial-created.png)
+    ![Dialog setting up space](trial-created.png)
 
 4. This page will display the current state of the subaccount. You can manage your subscriptions and jump into the different runtime environments. It also shows you fundamental; information of the Cloud Foundry environment, such as the API endpoint and the available spaces.
 
-    <!-- border -->![subaccount](sub-account.png)
+    ![subaccount](sub-account.png)
 
 ### Learn about the service marketplace
 
@@ -80,5 +80,5 @@ In the service marketplace you can find all services that are available on  **an
 
 Open the **Services** menu section on the left, and select **Service Marketplace** within that to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
 
-<!-- border -->![Service Marketplace](marketplace.png)
+![Service Marketplace](marketplace.png)
 
