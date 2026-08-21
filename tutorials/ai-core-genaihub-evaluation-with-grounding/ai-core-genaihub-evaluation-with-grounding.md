@@ -909,11 +909,11 @@ You may choose one or multiple system-defined or custom metrics—examples:
 - Choose an existing deployment for **Orchestration Endpoint**.
 - In the **Input Variable Mapping**, enter the following mapping:
 
-    ```json
-    {
-    "prompt/question": "data/topic"
-    }
-    ```
+   ```json
+   {
+   "prompt/question": "data/topic"
+   }
+   ```
     ![img](img/image_29.png)
 ---
 [Learn more about variable mapping](https://help.sap.com/docs/sap-ai-core/generative-ai-hub/variable-mapping)

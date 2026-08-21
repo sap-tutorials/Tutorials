@@ -65,7 +65,7 @@ Skills work across AI environments that support the installation methods describ
 
 
 
-    ![Filter buttons for Classification and Publisher](images/skills-library-filters.png)
+   ![Filter buttons for Classification and Publisher](images/skills-library-filters.png)
 
 
 4. Toggle between grid and list view using the icon in the toolbar.
@@ -77,7 +77,7 @@ Skills work across AI environments that support the installation methods describ
 
 
 
-    ![Skill detail page showing metadata, trust level, and install options](images/skills-library-detail-page.png)
+   ![Skill detail page showing metadata, trust level, and install options](images/skills-library-detail-page.png)
 
 
 Take a moment to explore a few skills and notice how each one describes a concrete, repeatable workflow.
@@ -113,9 +113,9 @@ Use this option when working with a local AI coding assistant such as Claude Cod
 
 1. On the skill's detail page, copy the **npx** command. It looks similar to this:
 
-    ```bash
-    npx -y @sap/skill-install <skill-slug>
-    ```
+   ```bash
+   npx -y @sap/skill-install <skill-slug>
+   ```
 
     ![npx install command shown on the skill detail page](images/install-joule-work-desktop-button.png)
 

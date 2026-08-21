@@ -63,7 +63,7 @@ Subscribe to SAP AI Launchpad on your SAP BTP Cockpit, and add **SAP AI Launchpa
 
 Access the app through your SAP BTP Cockpit.
 
-<!-- border -->![image](img/ail/launch.png)
+![image](img/ail/launch.png)
 
 [OPTION END]
 
@@ -80,7 +80,7 @@ Access the app through your SAP BTP Cockpit.
 
 Start the installer with the following settings.
 
-<!-- border -->![image](img/pyinstall.png)
+![image](img/pyinstall.png)
 
 The command line tool `pip` is the python package installer, it will be installed automatically with python.
 
@@ -90,7 +90,7 @@ Use `pip` to install the SAP AI Core SDK.
 pip install ai-core-sdk
 ```
 
-<!-- border -->![image](img/aics/pip-install.png)
+![image](img/aics/pip-install.png)
 
 Use `pip` to install Jupyter Notebook. Jupyter is used to execute python code pieces in the form of reusable cells.
 
@@ -126,13 +126,13 @@ pip install notebook
 
 Click on the **Workspaces** app. Click **Add** to create connection to your SAP AI Core instance.
 
-<!-- border -->![image](img/ail/add.png)
+![image](img/ail/add.png)
 
 Enter the name `my-ai-core` for the connection . Fill other details from your SAP AI Core service key as marked in the image.
 
 > **INFORMATION** If you find that a connection already exists in your SAP AI Launchpad then you may add your connection under a different name. You may add any number of connections to SAP AI Core instances in your SAP AI Launchpad (this may not be case if you are using Free Tier).
 
-<!-- border -->![image](img/ail/key.png)
+![image](img/ail/key.png)
 
 
 [OPTION END]
@@ -143,15 +143,15 @@ Visit [SAP API Business Hub](https://api.sap.com/api/AI_CORE_API/overview) and s
 
 Click on the **Download** icon next to the JSON. This downloads a file `AI_CORE_API.json` which has the available API endpoint of SAP AI Core.
 
-<!-- border -->![image](img/postman/json.png)
+![image](img/postman/json.png)
 
 On the Postman app, click **Import** and open the downloaded JSON file.
 
-<!-- border -->![image](img/postman/import.png)
+![image](img/postman/import.png)
 
 Click **Upload files** and open `AI_CORE_API.json` file. Next, click **Show advanced settings**. Set the following settings:
 
-<!-- border -->![image](img/postman/setting.png)
+![image](img/postman/setting.png)
 
 | Setting | Value
 | --- | --- |
@@ -163,15 +163,15 @@ Leave other settings unchanged and click **Import**.
 
 You now have your copy of the official API collections of SAP AI Core named `AI Core`.
 
-<!-- border -->![image](img/postman/collection.png)
+![image](img/postman/collection.png)
 
 Click on the collection `AI Core`, this shows you the settings page for the whole collections.
 
-<!-- border -->![image](img/postman/auth.png)
+![image](img/postman/auth.png)
 
 Under the **Authorization** tab, scroll to **Configure New Token**. Edit the settings, using the example and instructions below as a guide.
 
-<!-- border -->![image](img/postman/token.png)
+![image](img/postman/token.png)
 
 1. Type any descriptive name for **Token Name**.
 2. Set **Grant Type** to `Client Credentials`.
@@ -184,7 +184,7 @@ This process saves your credentials to make the repetitive task of token generat
 
 Click on the **Variables** tab. Fill the settings as mentioned below.
 
-<!-- border -->![image](img/postman/baseurl.png)
+![image](img/postman/baseurl.png)
 
 1. Remove the values from the **Initial Value** column to avoid confusion. Set the value from your `AI_API_URL` for the variable `baseUrl`.
 
@@ -208,11 +208,11 @@ Create a python notebook.
 
 Create a new cell.
 
-<!-- border -->![image](img/cell.png)
+![image](img/cell.png)
 
 Run the cell.
 
-<!-- border -->![image](img/cell_run.png)
+![image](img/cell_run.png)
 
 Use this notebook in the tutorial to try out python commands for yourself. Please explore how to save, rename and create new cells in the notebook.
 
@@ -232,11 +232,11 @@ Create a python notebook.
 
 Create a new cell.
 
-<!-- border -->![image](img/cell.png)
+![image](img/cell.png)
 
 Run the cell.
 
-<!-- border -->![image](img/cell_run.png)
+![image](img/cell_run.png)
 
 Use this notebook in the tutorial to try out python commands for yourself. Please explore how to save, rename and create new cells in the notebook.
 
@@ -251,11 +251,11 @@ Use this notebook in the tutorial to try out python commands for yourself. Pleas
 
 Click on `my-ai-core` under the **Workspaces** app. You will observe the connection name on the header. You can find new apps on the side navigation bar, like **SAP AI Core Administration** and **ML Operations**.
 
-<!-- border -->![image](img/ail/connection.png)
+![image](img/ail/connection.png)
 
 Select `default` from the **Resource Groups** Pane. Again this selection is updated in the header.
 
-<!-- border -->![image](img/ail/connection2.png)
+![image](img/ail/connection2.png)
 
 [OPTION END]
 
@@ -266,15 +266,15 @@ Click on the collection **AI Core**. Navigate to the **Authorization** tab and s
 
 > **IMPORTANT**: If you face error in this step, please check previous steps and ensure you added the suffix `/oauth/token` to the **Access Token URL**.
 
-<!-- border -->![image](img/postman/generate.png)
+![image](img/postman/generate.png)
 
 Follow the guided steps in  the dialog box that appears.
 
-<!-- border -->![image](img/postman/auth-2.png)
+![image](img/postman/auth-2.png)
 
 Click **Use Token**.
 
-<!-- border -->![image](img/postman/auth-3.png)
+![image](img/postman/auth-3.png)
 
 [OPTION END]
 
@@ -295,7 +295,7 @@ ai_core_client = AICoreV2Client(
 )
 ```
 
-<!-- border -->![image](img/aics/prefix.png)
+![image](img/aics/prefix.png)
 
 
 [OPTION END]
@@ -317,7 +317,7 @@ ai_api_client = AIAPIV2Client(
 )
 ```
 
-<!-- border -->![image](img/apisdk/connection.png)
+![image](img/apisdk/connection.png)
 
 [OPTION END]
 
@@ -329,7 +329,7 @@ ai_api_client = AIAPIV2Client(
 
 Click on **Scenarios** in the **ML Operations** app. The term Scenario refers to a use case. You may not have any scenario listed. You will learn how to add workflows (AI pipelines) to SAP AI Core in future tutorials, which can then be used to create scenarios.
 
-<!-- border -->![image](img/ail/scn.png)
+![image](img/ail/scn.png)
 
 [OPTION END]
 
@@ -337,7 +337,7 @@ Click on **Scenarios** in the **ML Operations** app. The term Scenario refers to
 
 List all the resource groups. Check that there is a resource group named **default** in the response.
 
-<!-- border -->![image](img/postman/rg.png)
+![image](img/postman/rg.png)
 
 >**Troubleshooting (Optional)**
 
@@ -358,7 +358,7 @@ response = ai_core_client.repositories.query()
 print(response.count)
 ```
 
-<!-- border -->![image](img/aics/test.png)
+![image](img/aics/test.png)
 
 
 [OPTION END]
@@ -372,7 +372,7 @@ ai_api_client.rest_client.get(
 )
 ```
 
-<!-- border -->![image](img/apisdk/test.png)
+![image](img/apisdk/test.png)
 
 [OPTION END]
 
@@ -395,7 +395,7 @@ If you have assigned the roles and the sections are still not visible then pleas
 
 You added the suffix `/v2` in your `baseUrl`, because the current SAP AI Core endpoint version is `v2`. You will find all the related information in the SAP API Business Hub.
 
-<!-- border -->![image](img/postman/produrl.png)
+![image](img/postman/produrl.png)
 
 [OPTION END]
 
@@ -411,33 +411,33 @@ When creating a connection to SAP AI Core using the AI API client SDK you must u
 
 - Type 1: Required when performing Admin operations, where `base_url` has suffix `/v2`
 
-    ```PYTHON
-    # Load library
-    from ai_api_client_sdk.ai_api_v2_client import AIAPIV2Client
+   ```PYTHON
+   # Load library
+   from ai_api_client_sdk.ai_api_v2_client import AIAPIV2Client
 
-    # Create connection
-    ai_api_client = AIAPIV2Client(
-        base_url = "https://api.ai.ml.hana.ondemand.com" + "/v2", # The present SAP AI Core API version is 2
-        auth_url=  "https://tutorial.authentication.sap.hana.ondemand.com" + "/oauth/token", # Suffix to add
-        client_id = "ab-cdefg-111-12233!h7777|aicore!1111",
-        client_secret = "qwertyiop="
-    )
-    ```
+   # Create connection
+   ai_api_client = AIAPIV2Client(
+       base_url = "https://api.ai.ml.hana.ondemand.com" + "/v2", # The present SAP AI Core API version is 2
+       auth_url=  "https://tutorial.authentication.sap.hana.ondemand.com" + "/oauth/token", # Suffix to add
+       client_id = "ab-cdefg-111-12233!h7777|aicore!1111",
+       client_secret = "qwertyiop="
+   )
+   ```
 
 - Type 2: Required when performing lifecycle management operations, where `base_url` has suffix `/v2/lm`
 
-    ```PYTHON
-    # Load library
-    from ai_api_client_sdk.ai_api_v2_client import AIAPIV2Client
+   ```PYTHON
+   # Load library
+   from ai_api_client_sdk.ai_api_v2_client import AIAPIV2Client
 
-    # Create connection
-    ai_api_client = AIAPIV2Client(
-        base_url = "https://api.ai.ml.hana.ondemand.com" + "/v2/lm", # The present SAP AI Core API version is 2
-        auth_url=  "https://tutorial.authentication.sap.hana.ondemand.com" + "/oauth/token", # Suffix to add
-        client_id = "ab-cdefg-111-12233!h7777|aicore!1111",
-        client_secret = "qwertyiop="
-    )
-    ```
+   # Create connection
+   ai_api_client = AIAPIV2Client(
+       base_url = "https://api.ai.ml.hana.ondemand.com" + "/v2/lm", # The present SAP AI Core API version is 2
+       auth_url=  "https://tutorial.authentication.sap.hana.ondemand.com" + "/oauth/token", # Suffix to add
+       client_id = "ab-cdefg-111-12233!h7777|aicore!1111",
+       client_secret = "qwertyiop="
+   )
+   ```
 
 Visit [SAP API Business Hub](https://api.sap.com/api/AI_CORE_API/resource) to find out which operation endpoints start with `/v2/admin` (Admin operations) and which ones start with `/v2/lm` (lifecycle management).
 
@@ -452,7 +452,7 @@ Visit [SAP API Business Hub](https://api.sap.com/api/AI_CORE_API/resource) to fi
 
 If Postman is unable to decipher the schema of the JSON file that you downloaded, you will require the following information, which is stored, for your reference, at [API Business Hub of SAP AI Core](https://api.sap.com/api/AI_CORE_API/resource).
 
-<!-- border -->![image](img/postman/hub2.png)
+![image](img/postman/hub2.png)
 
 1. Click on any of the endpoints you would like to know information on, for example, click on **Artifact**.
 
@@ -470,7 +470,7 @@ If Postman is unable to decipher the schema of the JSON file that you downloaded
 print(dir(ai_core_client))
 ```
 
-<!-- border -->![image](img/aics/dir.png)
+![image](img/aics/dir.png)
 
 2. Use python's `help` function on a listed module or function to get a `docstring`, which documents what the function does and what parameters it requires.
 
@@ -478,7 +478,7 @@ print(dir(ai_core_client))
 help(ai_core_client.scenario.query)
 ```
 
-<!-- border -->![image](img/aics/help.png)
+![image](img/aics/help.png)
 
 [OPTION END]
 
@@ -490,7 +490,7 @@ help(ai_core_client.scenario.query)
 print(dir(ai_api_client))
 ```
 
-<!-- border -->![image](img/apisdk/dir.png)
+![image](img/apisdk/dir.png)
 
 2. Use python's `help` function on a listed module or function to get a `docstring`, which documents what the function does and what parameters it requires.
 
@@ -498,7 +498,7 @@ print(dir(ai_api_client))
 help(ai_api_client.scenario.query)
 ```
 
-<!-- border -->![image](img/apisdk/help.png)
+![image](img/apisdk/help.png)
 
 [OPTION END]
 

@@ -42,12 +42,12 @@ Create account on [GitHub](https://github.com/).
 
 Click **New** to create a new repository. You will use this GitHub repository to store all of your workflows for SAP AI Core. Each workflow may belong to more than one AI use case.
 
-<!-- border -->![Link text e.g., Destination screen](img/new_repo.png)
+![Link text e.g., Destination screen](img/new_repo.png)
 <nbsp>
 
 Create a repository named `aicore-pipelines`. It is recommended have this repository's visibility set to **private**.
 
-<!-- border -->![Link text e.g., Destination screen](img/create_repo.png)
+![Link text e.g., Destination screen](img/create_repo.png)
 
 
 ### Generate a GitHub personal access token
@@ -55,27 +55,27 @@ Create a repository named `aicore-pipelines`. It is recommended have this reposi
 
 Click on your GitHub profile icon. Select **Settings**.
 
-<!-- border -->![image](img/profile.png)
+![image](img/profile.png)
 
 Click **Developer Settings** from the left navigation pane.
 
-<!-- border -->![image](img/dev_setting.png)
+![image](img/dev_setting.png)
 
 Click **Personal access tokens**. Click on **Generate new token**. GitHub tokens are an alternative to sharing your GitHub credentials so that you can allow applications like SAP AI Core to access you GitHub repositories, without compromising your account security.
 
-<!-- border -->![image](img/token.png)
+![image](img/token.png)
 
 Give the name `my_access_token` in the **Note** field and select the checkbox `Full control of private repositories` in the **Select Scopes** field.
 
-<!-- border -->![image](img/token_1.png)
+![image](img/token_1.png)
 
 Scroll to the bottom of page and click **Generate token**.
 
-<!-- border -->![image](img/token_2.png)
+![image](img/token_2.png)
 
 Store your generated access token locally.
 
-<!-- border -->![image](img/token_3.png)
+![image](img/token_3.png)
 
 
 ### Onboard GitHub to SAP AI Core
@@ -85,23 +85,23 @@ Store your generated access token locally.
 
 Select on your SAP AI Core connection under **Workspaces** app in the SAP AI Launchpad.
 
-<!-- border -->![image](img/connection.png)
+![image](img/connection.png)
 
 Under the **Git Repositories** section in **AI Core Administration** app, click **Add**.
 
 > **WARNING** If you don't see the **AI Core Administration** app, check that you had selected your SAP AI Core connection from the **Workspaces** app. If it is still not visible then ask your SAP AI Launchpad administrator to assign roles to you so that you can access the app.
-<!-- border -->![image](img/add_git.png)
+![image](img/add_git.png)
 
 Enter your GitHub repository details (created in the previous step) in the dialog box that appears, and click **Add**.
 
-<!-- border -->![image](img/details.png)
+![image](img/details.png)
 
 [OPTION END]
 
 
 [OPTION BEGIN [Postman]]
 
-<!-- border -->![image](img2/postman/git.png)
+![image](img2/postman/git.png)
 
 [OPTION END]
 
@@ -129,7 +129,7 @@ for repository in response.resources:
     print('Status:', repository.status)
 ```
 
-<!-- border -->![image](img2/aics/git.png)
+![image](img2/aics/git.png)
 
 [OPTION END]
 
@@ -143,7 +143,7 @@ Use the following information as reference:
 
 You will see your GitHub onboarding completed in a few seconds. In the next steps you will learn how to enable auto syncing of workflows from GitHub.
 
-<!-- border -->![image](img/finish_onboard.png)
+![image](img/finish_onboard.png)
 
 > **CAUTION** These onboarding steps only store credentials to access the specified SAP AI Core instance within your GitHub account. Therefore, this **Completed** status does not guarantee that your SAP AI Core is able to access a given file, in your GitHub repository. If you need to debug this, follow the steps of application creation and debugging.
 
@@ -155,15 +155,15 @@ Workflows for SAP AI Core are created using **YAML** or **JSON** files that are 
 
 In your GitHub repository, click **Add file** > **Create new file**.
 
-<!-- border -->![image](img/create_file.png)
+![image](img/create_file.png)
 
 Type `LearningScenarios/hello_pipeline.yaml` into the **Name your file** field. This will automatically create the folder `LearningScenarios` and a workflow named `hello_pipeline.yaml` inside it.
 
-<!-- border -->![image](img/type_name.png)
+![image](img/type_name.png)
 
 > **CAUTION** Do not use the name of your workflow file (`hello_pipeline.yaml`) as any other identifier within SAP AI Core.
 
-<!-- border -->![image](img/name2.png)
+![image](img/name2.png)
 
 Now copy and paste the following snippet to the editor. The code is also available by following [this link](https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_02_quick_start_for_your_first_ai_project_using_ai_core/hello_pipeline.yaml).
 
@@ -201,25 +201,25 @@ spec:
 
 > **CAUTION** The key `metadata > name` specifies your executable ID. In the example below, the value `first-pipeline` becomes your executable ID. This executable ID is a unique identifier for your workflow within SAP AI Core. The executable ID of each workflow needs to be unique from all other workflows and GitHub repositories that you sync with your SAP AI Core instance. If your SAP AI Core instance is shared with other users, edit the value to be sure that it is unique, for example, `first-pipeline-1234`.
 
-<!-- border -->![image](img/file.png)
+![image](img/file.png)
 
 Scroll to the bottom of page and click **Commit new file**.
 
-<!-- border -->![image](img/commit.png)
+![image](img/commit.png)
 
 The workflow contains annotations, which are identifiers for SAP AI Core. Your AI use case is termed **Scenario** (`Tutorial` in this case) and within each scenario you create **executables** (workflows), (`Hello Pipeline` in this case). These workflows are used for training, serving or batch inferencing.
 
-<!-- border -->![image](img/explain_1.png)
+![image](img/explain_1.png)
 
 > **IMPORTANT** Recall that the executable ID (`name` in this case) within your workflow (`first-pipeline` in this case) must be unique across all GitHub repositories onboard to your SAP AI Core instance. If your SAP AI Core instance is shared, update the value to `first-pipeline<some-number>`.
 
 The executable uses a step by step flow and starts with `templates` (blocks of code). The order of steps is shown in the example by the values: `mypipeline > greet > greeter`.
 
-<!-- border -->![image](img/explain_2.png)
+![image](img/explain_2.png)
 
 The code first takes takes a public [docker image of python](https://hub.docker.com/_/python), which is run a using a python interpreter, and prints an output.
 
-<!-- border -->![image](img/explain_3.png)
+![image](img/explain_3.png)
 
 > ### What is a Docker Image?
 > A Docker Image is a portable Linux environment, similar to a virtual machine. Docker images are layered environments, which means you may just have Linux OS (for example `Distrom`) as one Docker image or another Docker image which has python layered on top of that Linux.
@@ -237,18 +237,18 @@ Go to your **SAP AI Launchpad**.
 
 In the **AI Core Administration** app, click  **Applications** > **Create**.
 
-<!-- border -->![image](img/add_app.png)
+![image](img/add_app.png)
 
 Using the reference below as a guide, specify the details of your application. This form will create your application on your SAP AI Launchpad.
 
 
-<!-- border -->![image](img/create_app.png)
+![image](img/create_app.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Postman]]
 
-<!-- border -->![image](img2/postman/app.png)
+![image](img2/postman/app.png)
 
 [OPTION END]
 
@@ -275,7 +275,7 @@ for app in response.resources:
     print(app.__dict__)
 ```
 
-<!-- border -->![image](img2/aics/list-app.png)
+![image](img2/aics/list-app.png)
 
 [OPTION END]
 
@@ -301,11 +301,11 @@ Use the following information for reference:
 
 Click through **Applications** > **AI Core Administration App** > `learning-scenarios-app`.
 
-<!-- border -->![image](img/created_app.png)
+![image](img/created_app.png)
 
 You will directed to the details page of your application.
 
-<!-- border -->![image](img/app_status.png)
+![image](img/app_status.png)
 
 1. Click the **Refresh** button.
 
@@ -321,7 +321,7 @@ You will directed to the details page of your application.
 
 [OPTION BEGIN [Postman]]
 
-<!-- border -->![image](img2/postman/status.png)
+![image](img2/postman/status.png)
 
 [OPTION END]
 
@@ -337,7 +337,7 @@ for workflow_sync_status in response.sync_ressources_status:
     print(workflow_sync_status.__dict__)
 ```
 
-<!-- border -->![image](img2/aics/app-status.png)
+![image](img2/aics/app-status.png)
 
 [OPTION END]
 
@@ -363,11 +363,11 @@ Please refer the [Troubleshooting guide](https://help.sap.com/docs/AI_CORE/2d6c5
 [OPTION BEGIN [SAP AI Launchpad]]
 Click **ML Operation** > **Scenario** to find a scenario named `Tutorial`. Scenarios are automatically created from the details specified in your executables in your GitHub.
 
-<!-- border -->![image](img/scenario.png)
+![image](img/scenario.png)
 
 To view the details click on the **Tutorial** row in scenarios and expand **Workflow Executable**. Check these values against your YAML file to better understand the relation between your annotations and values of executable in SAP AI Core.
 
-<!-- border -->![image](img/executable.png)
+![image](img/executable.png)
 
 [OPTION END]
 
@@ -376,16 +376,16 @@ To view the details click on the **Tutorial** row in scenarios and expand **Work
 
 Click **Collections** > **Get list of scenarios** and **Send**.
 
-<!-- border -->![image](img2/postman/scenario.png)
+![image](img2/postman/scenario.png)
 
 
 > **CAUTION** You are required to specify the value of key `AI-Resource-Group` in the **HEADER** when using any of the endpoints or  folders containing `lm`, otherwise, you can use `default` for this tutorial. Where a header is not specified, the header `default` is assumed, however you can override ´this by adding `AI-Resource-Group` to the header value.
 >
-> <!-- border -->![image](img2/postman/lm.png)
+> ![image](img2/postman/lm.png)
 
 List the executables in that scenario ID by clicking **Get list of executables**, specifying your scenario ID and pressing **Send**.
 
-<!-- border -->![image](img2/postman/exec.png)
+![image](img2/postman/exec.png)
 
 [OPTION END]
 
@@ -411,7 +411,7 @@ for executable in response.resources:
 
 Check the values between your code output and workflow to better understand the relation between your annotations and values of executable in SAP AI Core.
 
-<!-- border -->![image](img2/aics/scenario.png)
+![image](img2/aics/scenario.png)
 
 [OPTION END]
 
@@ -425,29 +425,29 @@ Check the values between your code output and workflow to better understand the 
 
 Click **Workspaces** > `default` to select your connection. **Configuration** will now be enabled in the **ML Operations** app.
 
-<!-- border -->![image](img/rg_select.png)
+![image](img/rg_select.png)
 
 Click **configuration** > **Create**.
 
-<!-- border -->![image](img/create_conf.png)
+![image](img/create_conf.png)
 
 The **configuration name** value should be a descriptive name of your choice. All other values must be set as shown in the image below, in line with your executable identifiers.
 
-<!-- border -->![image](img/conf_1.png)
+![image](img/conf_1.png)
 
 Click **Next** through the steps until other step 4, where you click **Create**.
 
-<!-- border -->![image](img/conf_review.png)
+![image](img/conf_review.png)
 
 > **TIP**: This step is one time only. Once a configuration is created, you can use it again and again.
 
 To execute your workflow, click **Create Execution** on the configuration details page.
 
-<!-- border -->![image](img/run.png)
+![image](img/run.png)
 
 This page provides details about the status of your execution under the **Logs** tab. As executables take time to run, click on the **Refresh Icon** to see the latest information. Thirty second intervals are recommended. Observe the output `Hello from SAP AI Core`.
 
-<!-- border -->![image](img/log_1.png)
+![image](img/log_1.png)
 
 [OPTION END]
 
@@ -455,27 +455,27 @@ This page provides details about the status of your execution under the **Logs**
 
 To create a configuration, select the workflow for execution.
 
-<!-- border -->![image](img2/postman/config.png)
+![image](img2/postman/config.png)
 
  The response contains an `id` field. This is your configuration ID, you need to copy this ID.
 
 > **CAUTION** When using the original API collection (downloaded from SAP API Business Hub) you might find that ` "value": "...schema...` is entered automatically. For example:
 >
-> <!-- border -->![image](img2/postman/error.png)
+> ![image](img2/postman/error.png)
 >
 > If this is the case, the value needs to be changed manually by the user. For this specific case, you should enter your `executableID` as determined in the previous step. If this occurs outside of this tutorial, or for other endpoints that you do not know the value for, you should refer to the API specification for SAP AI Core in the [SAP AI Business Hub](https://api.sap.com/api/AI_CORE_API/resource)
 
 To start the execution, click through **executions** > **POST Trigger execution**, and paste your configuration ID into the body. Click send, and as before,  copy the `id` returned in the response. This is your execution ID.
 
-<!-- border -->![image](img2/postman/exec1.png)
+![image](img2/postman/exec1.png)
 
 To query the status using the execution, click **executions** > **Get information about a specific execution**. Copy the execution ID into the **Params**, and click **Send**.  As executables take time to run, click on the **Send** button again to see the latest information. Thirty second intervals are recommended, until the `status: COMPLETED` response is received.
 
-<!-- border -->![image](img2/postman/exec2.png)
+![image](img2/postman/exec2.png)
 
 Click **Get logs of specific execution**, copy the execution ID into the **Params** and click **Send**. Observe the output `Hello from SAP AI Core`.
 
-<!-- border -->![image](img2/postman/exec3.png)
+![image](img2/postman/exec3.png)
 
 [OPTION END]
 
@@ -516,7 +516,7 @@ response = ai_core_client.execution.create(
 response.__dict__
 ```
 
-<!-- border -->![image](img2/aics/conf-exec.png)
+![image](img2/aics/conf-exec.png)
 
 Query the execution status.
 
@@ -531,7 +531,7 @@ response = ai_core_client.execution.get(
 response.__dict__
 ```
 
-<!-- border -->![image](img2/aics/exec.png)
+![image](img2/aics/exec.png)
 
 Check the logs of the execution.
 
@@ -548,7 +548,7 @@ for log in response.data.result:
 
 If your execution is successful, you will see the log message `Hello from SAP AI Core`.
 
-<!-- border -->![image](img2/aics/log.png)
+![image](img2/aics/log.png)
 
 [OPTION END]
 
@@ -563,15 +563,15 @@ Having set all of the automation in the previous steps, it is easy to update you
 
 Click **Edit** (the pencil icon) on your YAML file on your GitHub repository.
 
-<!-- border -->![image](img/edit.png)
+![image](img/edit.png)
 
 Update the greeting message in the executable on your GitHub. It is also recommended to update the **version** value. The value of `api.sap.com/version` is a string identifier of your choice.
 
-<!-- border -->![image](img/edit_2.png)
+![image](img/edit_2.png)
 
 Click **Commit Changes**.
 
-<!-- border -->![image](img/edit_3.png)
+![image](img/edit_3.png)
 
 
 ### Create new execution
@@ -586,15 +586,15 @@ Click on your **hello-pipeline-conf** configuration. Ensure that your configurat
 > ### How did the version update to `2.0` the version was `1.0` when the configuration was created?
 > When you create a configuration, the version is derived from the `executableId` which you specified. Hence when you updated the version to `ai.sap.com/version:2.0` in your workflow, this value was synced and updated in the configuration.
 
-<!-- border -->![image](img/conf_2.png)
+![image](img/conf_2.png)
 
 Click **Create Execution**.
 
-<!-- border -->![image](img/run_2.png)
+![image](img/run_2.png)
 
 You will see the new message in your logs.
 
-<!-- border -->![image](img/final.png)
+![image](img/final.png)
 
 [OPTION END]
 
@@ -602,17 +602,17 @@ You will see the new message in your logs.
 
 Check your executable within the scenario. You should observe the version `2.0`. If not wait for at least 3 minutes for SAP AI Core to sync it.
 
-<!-- border -->![image](img2/postman/vupdate.png)
+![image](img2/postman/vupdate.png)
 
 Start a new execution. Use the same configuration ID used before.
 
-<!-- border -->![image](img2/postman/exec4.png)
+![image](img2/postman/exec4.png)
 
 Query status of this new execution ID. Wait for it to complete.
 
 Get the log of your new execution. You will observe the message that you updated in your workflow.
 
-<!-- border -->![image](img2/postman/final.png)
+![image](img2/postman/final.png)
 
 !![image]
 
@@ -631,7 +631,7 @@ for executable in response.resources:
     print(executable.__dict__)
 ```
 
-<!-- border -->![image](img2/aics/exec2.png)
+![image](img2/aics/exec2.png)
 
 You will reuse the configuration created in previous steps to create a new execution.
 
@@ -666,7 +666,7 @@ for log in response.data.result:
     print(log.__dict__)
 ```
 
-<!-- border -->![image](img2/aics/final.png)
+![image](img2/aics/final.png)
 
 
 

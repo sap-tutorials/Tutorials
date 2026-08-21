@@ -144,7 +144,7 @@ aic_connection.log_metrics(
 
 After execution, this is shown in SAP AI Launchpad. You can zoom in for details.
 
-<!-- border -->![image](img/ail/basic.png)
+![image](img/ail/basic.png)
 
 
 ### Step information
@@ -162,7 +162,7 @@ aic_connection.log_metrics(
 
 The variable `i` is already present in your code to pass to the parameter `step=i`.  This is also shown in SAP AI Launchpad. You can zoom in to view.
 
-<!-- border -->![image](img/ail/step.png)
+![image](img/ail/step.png)
 
 
 ### Attach metrics to generated model
@@ -189,11 +189,11 @@ The parameter `value="housepricemodel"` refers to the artifact name, which refer
 
 Your code should resemble:
 
-<!-- border -->![image](img/ail/modelA.png)
+![image](img/ail/modelA.png)
 
 After execution, this is shown in SAP AI Launchpad.
 
-<!-- border -->![image](img/ail/modelB.png)
+![image](img/ail/modelB.png)
 
 
 ### Custom metrics for model inspection
@@ -216,7 +216,7 @@ The variables `r` and `feature_importances` are already created in the starter c
 
 After execution, you can see this in SAP AI Launchpad.
 
-<!-- border -->![image](img/ail/custom.png)
+![image](img/ail/custom.png)
 
 > ### Permutation Feature Importance
 >
@@ -257,7 +257,7 @@ aic_connection.set_tags(
 
 After execution, you can see this in SAP AI Launchpad.
 
-<!-- border -->![image](img/ail/tag.png)
+![image](img/ail/tag.png)
 
 
 ### Complete files
@@ -492,11 +492,11 @@ Create an execution from this configuration.
 
 In the `ML Operations` app, choose `Executions`. Navigate to your execution and choose the `Metric Resources` tab.
 
-<!-- border -->![image](img/ail/locate.png)
+![image](img/ail/locate.png)
 
 For metrics tagged with the artifact name, you can also locate the metrics in the **Models** details for the artifact.
 
-<!-- border -->![image](img/ail/artifact.png)
+![image](img/ail/artifact.png)
 
 [OPTION END]
 
@@ -505,7 +505,7 @@ For metrics tagged with the artifact name, you can also locate the metrics in th
 
 Click `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executionId`.
 
-<!-- border -->![image](img/postman/metric.png)
+![image](img/postman/metric.png)
 
 [OPTION END]
 
@@ -577,10 +577,10 @@ Unnamed: 0: 0.000 +/- 0.000
 
 Create two configurations: one with `DT_MAX_DEPTH = 3` and the other with `DT_MAX_DEPTH = 6`, then create executions for both configurations.
 
-<!-- border -->![image](img/ail/compare-1.png)
+![image](img/ail/compare-1.png)
 
 You can then compare metrics for the executions using the two different configurations.
 
-<!-- border -->![image](img/ail/compare-2.png)
+![image](img/ail/compare-2.png)
 
 

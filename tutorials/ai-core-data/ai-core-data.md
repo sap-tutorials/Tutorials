@@ -99,7 +99,7 @@ Your code reads the data file `train.csv` from the location `/app/data`, which w
 
 > **Recommendation**: Although the dataset file `train.csv` is not present, it will be dynamically copied during execution to the volume mentioned in `(/app/data)`. Its recommended to pass the filename `(train.csv)` through the environment variable to your code so that if your dataset filename changes, you can dynamically set the dataset file.
 
-<!-- border -->![image](img/code-main.png)
+![image](img/code-main.png)
 
 Create file `requirements.txt` as shown below. Here, if you don't specify a particular version, as shown for `pandas`, then the latest version of the package will be fetched automatically.
 
@@ -135,7 +135,7 @@ RUN chgrp -R 65534 /app && \
     chmod -R 777 /app
 ```
 
-<!-- border -->![image](img/code-docker.png)
+![image](img/code-docker.png)
 
 > **IMPORTANT** Your `Dockerfile` creates empty folders to store your datasets and models (`/app/data` and `/app/model/` in the example above). Contents from cloud storage will be copied to and from these folders later. Any contents in these folders will be overwritten by the Docker image build.
 
@@ -194,7 +194,7 @@ spec:
 
 This change to your workflow creates a placeholder through which you can specify a data path (volume) to the container (Docker image in execution).
 
-<!-- border -->![image](img/pipeline.png)
+![image](img/pipeline.png)
 
 1. A placeholder named `housedataset` is created.
 2. You specify the **kind of artifact** that the placeholder can accept. **Artifact** is covered in details later in this tutorial.
@@ -209,7 +209,7 @@ SAP AI Core only uses your workflows as an interface, so is unaware of the volum
 
 In your workflow, you have used the variable `DT_MAX_DEPTH` to incorporate a static value from the corresponding environment variable. Let's make this a variable in the workflow.
 
-<!-- border -->![image](img/workflow-env.png)
+![image](img/workflow-env.png)
 
 Replace the contents of the above AI workflow with this snippet.
 
@@ -257,7 +257,7 @@ spec:
 
 The following shows the new important lines in the workflows.
 
-<!-- border -->![image](img/pipeline2.png)
+![image](img/pipeline2.png)
 
 ####Understanding these changes
 
@@ -299,13 +299,13 @@ You will observe a scenario named **House Price (Tutorial)** In the **ML Operati
 
 Click on the **Executables** tab. You will find your executable `training`.
 
-<!-- border -->![image](img/ail/workflow-scn.png)
+![image](img/ail/workflow-scn.png)
 
 > **INFORMATION** If multiple executables/workflows (YAML files) have the same annotation values for their scenarios, they the are grouped under same scenario in SAP AI Core.
 
 Click on the executable `training` to view it in more detail. The placeholders that you created in your AI workflow will appear here.
 
-<!-- border -->![image](img/ail/placeholder.png)
+![image](img/ail/placeholder.png)
 
 [OPTION END]
 
@@ -412,7 +412,7 @@ To configure settings for your CWS CLI, open your terminal and run:
 aws configure
 ```
 
-<!-- border -->![image](img/aws-configure.png)
+![image](img/aws-configure.png)
 
 Enter your AWS credentials. Note that the appearance of the screen will not change as you type. You can leave the `Default output format` entry as blank. Press **enter** to submit your credentials.
 
@@ -424,9 +424,9 @@ Your credentials are stored in your system and used by the AWS CLI to interact w
 
  Download the `train.csv` [dataset](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-data/train.csv). You need to right click, and save the page as `train.csv`.
 
-<!-- border -->![image](img/download.png)
+![image](img/download.png)
 
-<!-- border -->![image](img/save.png)
+![image](img/save.png)
 
 > **INFORMATION** The data used is from `Scikit Learn`. The source of the data is [here](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html).
 
@@ -436,7 +436,7 @@ To upload the datasets to your AWS S3 Storage, paste and edit the following comm
 aws s3 cp train.csv s3://<YOUR_BUCKET_NAME>/example-dataset/house-price-toy/data/jan/train.csv
 ```
 
-<!-- border -->![image](img/aws-upload.png)
+![image](img/aws-upload.png)
 
 This command uploaded the data to a folder called `jan`. Upload it one more time in another folder called `feb`, by changing your command as shown:
 
@@ -453,7 +453,7 @@ aws s3 ls s3://<YOUR_BUCKET_NAME/example-dataset/house-price-toy/data/
 ```
 > **CAUTION**: Ensure your file names and format match what you have specified in your code. For example, if you specify ´train.csv´ in your code, the system expects a file called train, which is of type: comma separated value.
 
-<!-- border -->![image](img/aws-upload2.png)
+![image](img/aws-upload2.png)
 
 
 ### Store an object store secret in SAP AI Core
@@ -465,7 +465,7 @@ An object store secret is required to store credentials to access your AWS S3 bu
 
 Create an object store secret by clicking **Object Store Secrets** > **Add** in your workspace, and completing the dialog box.
 
-<!-- border -->![image](img/ail/OSS.png)
+![image](img/ail/OSS.png)
 
 [OPTION END]
 
@@ -473,7 +473,7 @@ Create an object store secret by clicking **Object Store Secrets** > **Add** in 
 
 Create an object store secret by clicking **POST Create a secret** and using the header and body below.
 
-<!-- border -->![image](img/postman/s3.png)
+![image](img/postman/s3.png)
 
 **HEADER**
 
@@ -564,32 +564,32 @@ With your object store secret created, you can now reference any sub-folders to 
 
 You can create the create artifact for first `train.csv` that we uploaded to `jan` folder by visiting Datasets tab under ML operations and clicking on ADD.
 
-<!-- border -->![image](img/ail/artifact1.jpg)
+![image](img/ail/artifact1.jpg)
 
 Choose scenario as House Price (Tutorial) and click next.
 
-<!-- border -->![image](img/ail/artifact2.jpg)
+![image](img/ail/artifact2.jpg)
 
 
 Enter name as `House Price Dataset 101` enter description for the dataset and click next.
 
-<!-- border -->![image](img/ail/artifact3.jpg)
+![image](img/ail/artifact3.jpg)
 
 Enter the URL as `ai://mys3/data/jan` and click on next
 
-<!-- border -->![image](img/ail/artifact4.jpg)
+![image](img/ail/artifact4.jpg)
 
 Enter the labels for your Dataset and click on Review
 
-<!-- border -->![image](img/ail/artifact5.jpg)
+![image](img/ail/artifact5.jpg)
 
 You would be able to see all the details for the artifact you are trying to register just validate all the data and click on add.
 
-<!-- border -->![image](img/ail/artifact6.jpg)
+![image](img/ail/artifact6.jpg)
 
 You would be able to see the artifact created in the datasets tab that can be located at ML operations > datasets.
 
-<!-- border -->![image](img/ail/artifact7.jpg)
+![image](img/ail/artifact7.jpg)
 
 
 
@@ -600,7 +600,7 @@ You would be able to see the artifact created in the datasets tab that can be lo
 
 Create an artifact for the `train.csv` file that we uploaded to the `jan` folder, by clicking **POST Register artifact** and using the body underneath.
 
-<!-- border -->![image](img/postman/artifact.png)
+![image](img/postman/artifact.png)
 
 **BODY**
 
@@ -707,7 +707,7 @@ Navigate to your data set by clicking **Workspaces** > **default** > **ML Operat
 
 
 
-<!-- border -->![image](img/ail/dataset.png)
+![image](img/ail/dataset.png)
 
 [OPTION END]
 
@@ -716,7 +716,7 @@ Navigate to your data set by clicking **Workspaces** > **default** > **ML Operat
 
 Get a list of your artifacts by clicking **GET Get list of artifacts**.
 
-<!-- border -->![image](img/postman/locate-artifact.png)
+![image](img/postman/locate-artifact.png)
 
 [OPTION END]
 
@@ -789,15 +789,15 @@ Copy the artifact ID of the January dataset. You will use this value in the plac
 
 Click **ML Operations** > **Configuration** > **Create**. Enter the following details and click **Next**.
 
-<!-- border -->![image](img/ail/config-1.png)
+![image](img/ail/config-1.png)
 
 The field for `DT_MAX_DEPTH` allows you to use the configuration to pass values to placeholders of hyper-parameters that you prepared earlier in your workflows. In this case, type `3` and click **Next**.
 
-<!-- border -->![image](img/ail/config-2.png)
+![image](img/ail/config-2.png)
 
 Locate your artifact (using the unique **ID**) in the **Available Artifacts** pane. Click the dropdown menu and the checkbox of `housedataset`. This is named of the placeholder for dataset in your workflow. As a result, the placeholder will now take the value of the artifact.
 
-<!-- border -->![image](img/ail/config-3.png)
+![image](img/ail/config-3.png)
 
 Click **Review** and click **Create**.
 
@@ -863,7 +863,7 @@ response = ai_core_client.configuration.create(
 print(response.__dict__)
 ```
 
-<!-- border -->![image](img/aics/config.png)
+![image](img/aics/config.png)
 
 **Important points**
 
@@ -883,7 +883,7 @@ This is how you bind values to placeholders to your workflows.
 
 Click **Create Execution** in the configuration details page. This will start a new execution with the values specified in the configuration. On the **Logs** tab of your execution, you will see that the data from AWS S3 has been incorporated into SAP AI Core.
 
-<!-- border -->![image](img/ail/execute-1.png)
+![image](img/ail/execute-1.png)
 
 [OPTION END]
 
@@ -893,7 +893,7 @@ Use the configuration ID from previous step to create and launch a new execution
 
 Query the execution logs. The logs will show that the data from AWS S3 has been incorporated into SAP AI Core.
 
-<!-- border -->![image](img/postman/s3-download.png)
+![image](img/postman/s3-download.png)
 
 [OPTION END]
 
@@ -987,7 +987,7 @@ spec:
 
 ### Description of changes
 
-<!-- border -->![image](img/code-model.png)
+![image](img/code-model.png)
 
 You added a new `outputs` section, where you specified files and their directories, which are created during the execution, and will be uploaded to AWS S3 and automatically registered as artifacts in SAP AI Core. You also added a line in the `annotations` section, which specified the `kind` of artifact that would be generated. In this case, a model.
 
@@ -1004,7 +1004,7 @@ It is compulsory to create a object store secret named `default` within your res
 
 Create an object store secret by clicking **Object Store Secrets** > **Add** in your workspace, and completing the dialog box. Enter `default` for the secret name.
 
-<!-- border -->![image](img/ail/OSS.png)
+![image](img/ail/OSS.png)
 
 [OPTION END]
 
@@ -1081,13 +1081,13 @@ On your SAP AI Launchpad, click **ML Operations** > **Configuration** > **Create
 
 Enter a configuration name and select your other details. Select your updated the version of workflow here.
 
-<!-- border -->![image](img/ail/config-f-1.png)
+![image](img/ail/config-f-1.png)
 
 Type `5` for the `DT_MAX_DEPTH` field and click **Next**.
 
 Attach the `feb` artifact that you have registered and click **Review**.
 
-<!-- border -->![image](img/ail/config-f-2.png)
+![image](img/ail/config-f-2.png)
 
 click **Create**.
 
@@ -1158,13 +1158,13 @@ Use your new configuration to create an execution.
 
 Click **Create Execution** in the configuration details page.
 
-<!-- border -->![image](img/ail/create_exec.png)
+![image](img/ail/create_exec.png)
 
-<!-- border -->![image](img/ail/output.png)
+![image](img/ail/output.png)
 
 To see the details of your new model, click the model card, and then on **execution** in the **Process Flow**. The information is also available through **ML Operations** > **Models**.
 
-<!-- border -->![image](img/ail/output2.png)
+![image](img/ail/output2.png)
 
 [OPTION END]
 
@@ -1172,7 +1172,7 @@ To see the details of your new model, click the model card, and then on **execut
 
 List the execution status.
 
-<!-- border -->![image](img/postman/model.png)
+![image](img/postman/model.png)
 
 [OPTION END]
 
@@ -1196,7 +1196,7 @@ for key, value in response.__dict__.items():
         print(f"{key} : {value}")
 ```
 
-<!-- border -->![image](img/aics/model.png)
+![image](img/aics/model.png)
 
 [OPTION END]
 
@@ -1248,6 +1248,6 @@ You are listing the files in the path `example-dataset/house-price-toy/model/` b
 
 
 
-<!-- border -->![image](img/aws-model.png)
+![image](img/aws-model.png)
 
 

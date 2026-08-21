@@ -44,7 +44,7 @@ Let's first create a sample message to showcase the customizing changes.
 
 2. Send in a new test message with an empty customer name and a wrong customer type (for example, change **CUSTTYPE** to `Q`) to force an error.
 
-    <!-- border -->![Sample Data](test-idoc-sample-data.png)
+    ![Sample Data](test-idoc-sample-data.png)
 
 3. In SAP GUI, check the results of your test in the Interface Monitor (transaction code `/n/AIF/IFMON`).
 
@@ -52,7 +52,7 @@ Let's first create a sample message to showcase the customizing changes.
   
     > The fields and structures that are highlighted in the following screenshot will be impacted by the customizing changes carried out in this tutorial.
   
-    <!-- border -->![Monitoring and Error Handling](test-error-handling-before.png)
+    ![Monitoring and Error Handling](test-error-handling-before.png)
 
 
 ### Define changeable fields
@@ -67,7 +67,7 @@ Since you want to edit fields that contain wrong or even no data to be able to f
 
 4. Add a new entry with **Index** number `20` and **Field Path** `E1SCU_CRE-E1BPSCUNEW-CUSTNAME`.
 
-    <!-- border -->![Define Changeable Fields](changeable-field.png)
+    ![Define Changeable Fields](changeable-field.png)
 
 5. **Save** your changes.
 
@@ -80,7 +80,7 @@ As a next step, you want to hide a structure that is empty anyway.
 
 2. Add a new entry with **Field Path** `E1SCU_CRE-E1BPPAREX`.
 
-    <!-- border -->![Hide Structures](hide-structure.png)
+    ![Hide Structures](hide-structure.png)
 
 3. **Save** your changes.
 
@@ -93,7 +93,7 @@ Now, you also want to hide a field that contains sensitive data.
 
 2. Add a new entry with **Index** number `10` and **Field Path** `E1SCU_CRE-E1BPSCUNEW-EMAIL`.
 
-    <!-- border -->![Hide Fields of Structure](hide-field.png)
+    ![Hide Fields of Structure](hide-field.png)
 
 3. **Save** your changes.
 
@@ -107,17 +107,17 @@ You want to rename the labels of the data structures and fields.
 2. First, let's rename the structure label. 
 Add a new entry. For the **Component Name**, select the **Field Path** `E1SCU_CRE-E1BPSCUNEW`. The **Component Name** is now `ZDEMO_1_00000021`. Enter `Customer Data` as **Description**, **Medium Text**, and **Long Text**, and `Data` as **Short Text**.
 
-    <!-- border -->![Structure Label](label-structure-customer-data.png)
+    ![Structure Label](label-structure-customer-data.png)
 
 4. Next, let's rename the label of the customer name. 
 Add a new entry. Select the same **Component Name** `ZDEMO_1_00000021` as before and the **Component Field** `CUSTNAME`. Enter `Customer Name` as **Description**, **Medium Text**, and **Long Text**, and `Customer` as **Short Text**.
 
-    <!-- border -->![Field Label](label-field-customer.png)
+    ![Field Label](label-field-customer.png)
 
 5. Finally, let's rename the label of the form of address. 
 Add a new entry. Select the same **Component Name** `ZDEMO_1_00000021` as before and the **Component Field** `FORM`. Enter `Form of Address` as **Description**, **Medium Text**, and **Long Text**, and `Form` as **Short Text**.
 
-    <!-- border -->![Field Label](label-field-form.png)
+    ![Field Label](label-field-form.png)
 
 6. **Save** your changes.
 
@@ -133,15 +133,15 @@ Now, let's test that the customizing we configured works as planned.
 
     You'll notice that the structure `E1BPPAREX` is not displayed and that the structure and field labels have been changed accordingly. If you scroll to the right, you'll notice that the field containing the email address is not displayed either.
 
-    <!-- border -->![Monitoring and Error Handling](test-error-handling-after.png)
+    ![Monitoring and Error Handling](test-error-handling-after.png)
 
 2. Double-click the **Customer Name** field, and maintain any customer name, then choose **Confirm**.
 
-    <!-- border -->![Edit customer name](fix-issue-customer-name.png)
+    ![Edit customer name](fix-issue-customer-name.png)
 
 3. Maintain a valid value for the field **CUSTTYPE** (either `B` or `P`), then choose **Confirm**.
 
-    <!-- border -->![Edit customer type](fix-issue-customer-type.png)
+    ![Edit customer type](fix-issue-customer-type.png)
 
 4. **Save** the changes and **Restart** the data message. It should now process without errors.
 
