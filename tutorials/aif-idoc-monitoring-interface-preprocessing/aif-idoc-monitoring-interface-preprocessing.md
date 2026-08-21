@@ -31,7 +31,7 @@ In this tutorial, you will learn how to enhance a simple IDoc interface in SAP A
    
 2. Enable **Change** mode. Double-click the existing interface `FCUSTOMER` to open it. Deselect the **Move Corresponding Structures** flag and select the **Pre-Processing** flag.
 
-    <!-- border -->![Define Interfaces](define-interface-preprocessing.png)
+    ![Define Interfaces](define-interface-preprocessing.png)
 
 3. **Save** your changes.
 
@@ -45,13 +45,13 @@ In this tutorial, you will learn how to enhance a simple IDoc interface in SAP A
 
 3. Choose **New Entries** and enter the root node of your interface structure, here **`ZDEMO_1_FLCUSTOMER_CREATEFROMD`**.
 
-    <!-- border -->![Create New Source Structure](structure-mappings-source-structure.png)
+    ![Create New Source Structure](structure-mappings-source-structure.png)
 
 4. Select the new entry and double-click **Assign Destination Structure** in the menu on the left.
 
 5. Choose **New Entries** and enter the **Number of Structure Mapping** **`10`**. As **Destination Structure**, enter the same root node of your interface structure, **`ZDEMO_1_FLCUSTOMER_CREATEFROMD`**. Finally, select the **Move Corresponding Fields** flag.
 
-    <!-- border -->![Assign Destination Structures](structure-mappings-destination-structure.png)
+    ![Assign Destination Structures](structure-mappings-destination-structure.png)
 
 6. **Save** your changes.
 
@@ -70,7 +70,7 @@ We would like to set a fixed discount when creating a new customer.
 
 2. Press **Enter**. Because the fix value doesn't exist yet, you are asked to create the new fix value.
 
-    <!-- border -->![Add New Fix Value](structure-mappings-fix-values-define.png)
+    ![Add New Fix Value](structure-mappings-fix-values-define.png)
 
 3. **Save** the new entry.
 
@@ -81,7 +81,7 @@ We would like to set a fixed discount when creating a new customer.
     | Fix Value Description | Enter a meaningful description, for example **`Flight customer discount`**.
     | Value | **`10`**
 
-    <!-- border -->![Define Fix Value](fix-values-create.png)
+    ![Define Fix Value](fix-values-create.png)
 
 
 5. **Save** your changes and close the new window.
@@ -111,11 +111,11 @@ We would like to set a fixed discount when creating a new customer.
     | Single or Multiple Value Mapping | **`Single`**
     | Customizing or Master Data | **`Master Data`**
 
-    <!-- border -->![Define Value Mapping](value-mapping-create.png)
+    ![Define Value Mapping](value-mapping-create.png)
 
 3. Save the value mapping and navigate back to **Define Field Mappings**. Your field mapping should look like this:
     
-    <!-- border -->![Define Field Mappings](structure-mappings-field-mappings-done.png)
+    ![Define Field Mappings](structure-mappings-field-mappings-done.png)
 
 4. **Save** your changes.
 
@@ -126,7 +126,7 @@ In the mapping, you created a value mapping for the customer type. Before you ru
 
 1. In **Maintenance of value mappings** (transaction code `/AIF/VMAP`), enter namespace **`DEMO_1`** and your value mapping name **`VM_CUSTTYPE`**. Press **Enter** and choose **Execute**.
 
-    <!-- border -->![Maintain Value Mappings](maintain-value-mappings.png)
+    ![Maintain Value Mappings](maintain-value-mappings.png)
 
 2. Choose **Append** and add the following two new entries:
 
@@ -145,7 +145,7 @@ In the mapping, you created a value mapping for the customer type. Before you ru
 
 2. Double-click the existing interface `FCUSTOMER` to open it and select the **Preprocessing (IDoc Runtime)** flag.
 
-    <!-- border -->![Assign IDoc Type](idoc-type-assign-preprocessing.png)
+    ![Assign IDoc Type](idoc-type-assign-preprocessing.png)
 
 3. **Save** your changes.
 
@@ -174,21 +174,21 @@ After the setup is complete, test your settings and verify that the IDoc monitor
 
 5. Then, choose **Standard Inbound**. A dialog pops up informing you that the IDoc was passed to the application.
 
-    <!-- border -->![Maintain data record](test-idoc-data-record.png)
+    ![Maintain data record](test-idoc-data-record.png)
 
 6. Check the results of your test in the **Interface Monitor** (transaction code `/AIF/IFMON`). When you select the summary line for your interface, you're forwarded to **Monitoring and Error Handling**, where you can see your selected test message(s).
 
-    <!-- border -->![Error Handling](test-error-handling.png)
+    ![Error Handling](test-error-handling.png)
 
     As you can see, the flight customer has been successfully created. Note down the generated customer ID provided in the log message. You need it in the next step.
 
 7. To check that the mappings worked as expected, open the **SCUSTOM record display** (transaction code `BC_GLOBAL_SCUST_DISP`), and enter the beforehand copied customer ID into the filter, then choose **Display**.
 
-    <!-- border -->![Interface Monitor Web](scustom-record-filter.png)
+    ![Interface Monitor Web](scustom-record-filter.png)
 
     In the data record, you can see that the customer type and the discount have been successfully mapped.
 
-    <!-- border -->![Message Dashboard Error Handling](scustom-record-display.png)  
+    ![Message Dashboard Error Handling](scustom-record-display.png)  
 
 
 Congratulations! You have enhanced an IDoc interface with preprocessing in SAP Application Interface Framework.  

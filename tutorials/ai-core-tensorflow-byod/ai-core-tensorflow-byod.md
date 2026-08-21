@@ -68,7 +68,7 @@ for rg in response.resources:
     print(rg.resource_group_id)
 ```
 
-<!-- border -->![img](img/acs/1.png)
+![img](img/acs/1.png)
 
 
 
@@ -81,11 +81,11 @@ for rg in response.resources:
 
     Enter your AWS credentials. You can leave the `Default output format` entry blank. Press enter.
 
-    ```BASH
-    aws configure
-    ```
+   ```BASH
+   aws configure
+   ```
 
-    <!-- border -->![img](img/aws-configure.png)
+    ![img](img/aws-configure.png)
 
 3. Download and save the following model files in your local system.
 
@@ -100,31 +100,31 @@ for rg in response.resources:
 
     After download, your directory should look like the following:
 
-    <!-- border -->![img](img/model-save.png)
+    ![img](img/model-save.png)
 
 5. Upload all model files to your AWS S3 bucket. Edit and run the following commands.
 
-    ```BASH[1-4]
-    aws s3 cp model.h5 s3://<YOUR_BUCKET_ID>/movie-clf/model/  
-    aws s3 cp max_pad_len.txt s3://<YOUR_BUCKET_ID>/movie-clf/model/  
-    aws s3 cp label_encoded_classes.npy s3://<YOUR_BUCKET_ID>/movie-clf/model/  
-    aws s3 cp tokens.json s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+   ```BASH[1-4]
+   aws s3 cp model.h5 s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+   aws s3 cp max_pad_len.txt s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+   aws s3 cp label_encoded_classes.npy s3://<YOUR_BUCKET_ID>/movie-clf/model/  
+   aws s3 cp tokens.json s3://<YOUR_BUCKET_ID>/movie-clf/model/  
 
-    ```
+   ```
 
-    <!-- border -->![img](img/model-upload.png)
+    ![img](img/model-upload.png)
 
 
 6. Verify your AWS S3 files upload.
 
 
-    ```BASH[1]
-    aws s3 ls s3://<YOUR_BUCKET_ID>/movie-clf/model/
-    ```
+   ```BASH[1]
+   aws s3 ls s3://<YOUR_BUCKET_ID>/movie-clf/model/
+   ```
 
     It should look like the following:
 
-    <!-- border -->![img](img/model-ls.png)
+    ![img](img/model-ls.png)
 
 
 
@@ -159,7 +159,7 @@ print(response.__dict__)
 
 You should see the following response:
 
-<!-- border -->![img](img/acs/3.png)
+![img](img/acs/3.png)
 
 > Note that depending on your region, your  AWS endpoint syntax may differ from the example above. In the event of an error, try this step again with alternative syntax. For available syntaxes, please see the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteEndpoints.html)
 
@@ -175,7 +175,7 @@ Save the following executable file in your local system:
 
 In the executable, ensure the following.
 
-<!-- border -->![img](img/acs/6_0.png)
+![img](img/acs/6_0.png)
 
 1. Ensure that your `resourcePlan` is set to `infer.s`. This will enable the GPU node in deployment. Find all the available resource plans [here](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/57f4f19d9b3b46208ee1d72017d0eab6.html).
 
@@ -195,36 +195,36 @@ You will create a folder in your GitHub repository connected SAP AI Core, where 
 
 1. Create a folder named `tutorial-tf-text-clf` in your GitHub repository connected to SAP AI Core. Place the following workflows inside it:
 
-    <!-- border -->![img](img/acs/6_1.png)
+    ![img](img/acs/6_1.png)
 
 2. Edit and execute the code below to create an **Application** and sync the folder `tutorial-tf-text-clf`.
 
-    ```PYTHON[4]
-    response = ai_core_client.applications.create(
-    application_name = "tf-clf-app",
-    revision = "HEAD",
-    repository_url = "https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME", # Change this
-    path = "tutorial-tf-text-clf"
-    )
+   ```PYTHON[4]
+   response = ai_core_client.applications.create(
+   application_name = "tf-clf-app",
+   revision = "HEAD",
+   repository_url = "https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME", # Change this
+   path = "tutorial-tf-text-clf"
+   )
 
-    print(response.__dict__)
-    ```
+   print(response.__dict__)
+   ```
 You should then see:
 
-    <!-- border -->![img](img/acs/6_2.png)
+    ![img](img/acs/6_2.png)
 
 3. Verify your workflow sync status, using the following code:
 
-    ```PYTHON
-    response = ai_core_client.applications.get_status(application_name = 'tf-clf-app')
+   ```PYTHON
+   response = ai_core_client.applications.get_status(application_name = 'tf-clf-app')
 
-    print(response.__dict__)
-    print('*'*80)
-    print(response.sync_ressources_status[0].__dict__)
-    ```
+   print(response.__dict__)
+   print('*'*80)
+   print(response.sync_ressources_status[0].__dict__)
+   ```
 You should then see:
 
-    <!-- border -->![img](img/acs/6_3.png)
+    ![img](img/acs/6_3.png)
 
 After your workflows are synced, your **Scenario** will be automatically created in SAP AI Core. The name and ID of the scenario will be same as the one mentioned in your workflows. After The syncing, your workflow will be recognized as an executable.
 
@@ -256,7 +256,7 @@ print(response.__dict__)
 ```
 You should see the following response:
 
-<!-- border -->![img](img/acs/4.png)
+![img](img/acs/4.png)
 
 > Important: Make a note of the ID. This ID uniquely identifies your artifact.
 
@@ -275,17 +275,17 @@ Download and save each of the following files to your local computer. These are 
 
 After download your local directory should look like following:
 
-<!-- border -->![img](img/docker-files.png)
+![img](img/docker-files.png)
 
 A few important parts of the code are discussed here, which will help your understanding.
 
 - To enable GPU usage by `Tensorflow`, your `Dockerfile` must contain following line. This will set all the required dependencies for the GPU. [Read more on `Tensorflow` docker images](https://hub.docker.com/r/tensorflow/tensorflow/)
 
-    ```
-    FROM tensorflow/tensorflow:latest-gpu
-    ```
+   ```
+   FROM tensorflow/tensorflow:latest-gpu
+   ```
 
-    <!-- border -->![img](img/enable-gpu-1.png)
+    ![img](img/enable-gpu-1.png)
 
 - To verify GPU availability, your code must contain the following lines. The output will appear in the logs of SAP AI Core during deployment.
 ```
@@ -294,41 +294,41 @@ import logging
 logging.info(f"Num GPUs Available: {len(tf.config.list_physical_devices('GPU'))}")
 ```
 
-    <!-- border -->![img](img/enable-gpu-2.png)
+   ![img](img/enable-gpu-2.png)
 
 Follow the steps to upload the files downloaded in step two as a docker image.
 
 1. Login to your docker account using your terminal. If you incur an error, ensure your [Docker Desktop](https://www.docker.com/products/docker-desktop) is installed and running.
 
-    ```BASH[1]
-    docker login <YOUR_DOCKER_REGISTRY> -u <YOUR_DOCKER_USERNAME>
+   ```BASH[1]
+   docker login <YOUR_DOCKER_REGISTRY> -u <YOUR_DOCKER_USERNAME>
 
-    ```
+   ```
 
     Type your password, it may not be visible but continue to type and press the `Enter` key.
 
-    <!-- border -->![img](img/docker-login.png)
+    ![img](img/docker-login.png)
 
 2. Navigate to your downloaded files location and build docker the image using the code files that you downloaded.
 
-    ```BASH[1]
-    docker build -t <YOUR_DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/movie-review-clf-serve:0.0.1 .
-    ```
+   ```BASH[1]
+   docker build -t <YOUR_DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/movie-review-clf-serve:0.0.1 .
+   ```
 
     > Don't forget the period (.) at the end of the command, this denotes that the location of the `Dockerfile` is the curent directory.
     >
     > **WARNING** The build process will require approximately 3 GBs of storage space.
 
 
-    <!-- border -->![img](img/docker-build.png)
+    ![img](img/docker-build.png)
 
 3. Upload your docker image to the docker cloud.
 
-    ```BASH[1]
-    docker push <YOUR_DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/movie-review-clf-serve:0.0.1  
-    ```
+   ```BASH[1]
+   docker push <YOUR_DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/movie-review-clf-serve:0.0.1  
+   ```
 
-    <!-- border -->![img](img/docker-push.png)
+    ![img](img/docker-push.png)
 
 
 ### Create configuration for deployment
@@ -338,11 +338,11 @@ Here are the important pieces of your configuration:
 
 - The `scenario_id` should contain the same value as in your executable.
 
-    <!-- border -->![img](img/acs/8_1.png)
+    ![img](img/acs/8_1.png)
 
 - The `executable_id` is the `name` key of your executable.
 
-    <!-- border -->![img](img/acs/8_2.png)
+    ![img](img/acs/8_2.png)
 
 - The `artifact_id` uses the value that was generated after you registered model files as artifacts.
 
@@ -366,7 +366,7 @@ print(response.__dict__)
 ```
 You should then see:
 
-<!-- border -->![img](img/acs/8_3.png)
+![img](img/acs/8_3.png)
 
 >Important: Note down the ID generated. This is your unique configuration identification.
 
@@ -385,7 +385,7 @@ response = ai_core_client.deployment.create(
 print(response.__dict__)
 ```
 You should then see:
-<!-- border -->![img](img/acs/9_1.png)
+![img](img/acs/9_1.png)
 
 >Important: Note the unique ID generated of your deployment. You may create multiple deployments using the same configuration ID, each of which will have s unique endpoint.
 
@@ -412,7 +412,7 @@ print(response.__dict__)
 
 You should then see:
 
-<!-- border -->![img](img/acs/10_1.png)
+![img](img/acs/10_1.png)
 
 
 
@@ -442,7 +442,7 @@ print(prediction)
 
 You should then see something like:
 
-<!-- border -->![img](img/acs/11_1.png)
+![img](img/acs/11_1.png)
 
 Your prediction will be either a `positive` or `negative` along with a confidence value between 0 and 1. This prediction return structure is dependent of the code in docker the image. You can change this as per your requirement.
 
@@ -453,7 +453,7 @@ Your prediction will be either a `positive` or `negative` along with a confidenc
 
 In the preceding steps, you saw that your docker code has the following lines, which will log the number of GPUs that the `Tensorflow` package recognizes during deployment.
 
-<!-- border -->![img](img/enable-gpu-2.png)
+![img](img/enable-gpu-2.png)
 
 Now query the deployment logs to view its output. Replace with the `deployment_id` field value with your own ID, and execute.
 
@@ -470,7 +470,7 @@ for log in response.data.result:
 
 The output will contain the log message on the number of GPUs available.
 
-<!-- border -->![img](img/acs/12_1.png)
+![img](img/acs/12_1.png)
 
 
 
@@ -496,6 +496,6 @@ print(response.__dict__)
 
 You should then see:
 
-<!-- border -->![img](img/acs/13.png)
+![img](img/acs/13.png)
 
 

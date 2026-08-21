@@ -45,11 +45,11 @@ You need a Docker repository to store your AI code on the cloud in the form of D
 
 Click on the profile button (your profile name) and then select **Account Settings**.
 
-<!-- border -->![image](img/docker-1.png)
+![image](img/docker-1.png)
 
 Select **Security** from the navigation bar and click **New Access Token**.
 
-<!-- border -->![image](img/docker-2.png)
+![image](img/docker-2.png)
 
 Follow the guided steps, and then store the token that you receive in your local system.
 
@@ -62,7 +62,7 @@ Follow the guided steps, and then store the token that you receive in your local
 
 Run your Docker Desktop. You will observe "whale icon" on your tray when Docker Desktop is running.
 
-<!-- border -->![image](img/docker-desktop.png)
+![image](img/docker-desktop.png)
 
 
 ### Write AI code for house price prediction
@@ -97,7 +97,7 @@ test_r2_score = clf.score(test_x, test_y)
 print(f"Test Data Score {test_r2_score}")
 ```
 
-<!-- border -->![image](img/code-main.png)
+![image](img/code-main.png)
 
 Create another file `requirements.txt` in the same directory. Here you will mention which python libraries are required to execute your code.
 
@@ -109,7 +109,7 @@ Paste the following snippet into `requirements.txt`.
 scikit-learn
 ```
 
-<!-- border -->![image](img/code-requirements.png)
+![image](img/code-requirements.png)
 
 The code builds a model using the [California Housing Dataset](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset) available in Scikit-Learn. Note that the code neither reads a datafile nor stores the model. We will cover both of these in a different tutorial.
 
@@ -139,13 +139,13 @@ RUN chgrp -R 65534 /app && \
     chmod -R 777 /app
 ```
 
-<!-- border -->![image](img/code-docker.png)
+![image](img/code-docker.png)
 
 You may notice that you did not specify the command to run the script `main.py` in the `Dockerfile`. This command will be written into the AI workflow and is covered later in this tutorial.
 
 Open your terminal and navigate to your `hello-aicore-code` directory.  You will use the terminal to build your Docker image.
 
-<!-- border -->![image](img/navigate.png)
+![image](img/navigate.png)
 
 Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
@@ -164,7 +164,7 @@ docker build --platform linux/amd64 -t docker.io/<YOUR_DOCKER_USERNAME>/house-pr
 
 The result of this command should be:
 
-<!-- border -->![image](img/docker-build.png)
+![image](img/docker-build.png)
 
 
 
@@ -181,7 +181,7 @@ docker login docker.io
 
 Copy and paste your generated Docker Access Token to use as your password. For security reasons, your input will not be printed on the screen.
 
-<!-- border -->![image](img/docker-login.png)
+![image](img/docker-login.png)
 
 
 ### Upload a Docker image to the cloud
@@ -191,7 +191,7 @@ Copy and paste your generated Docker Access Token to use as your password. For s
 docker push docker.io/<YOUR_USERNAME>/house-price:01
 ```
 
-<!-- border -->![image](img/docker-push.png)
+![image](img/docker-push.png)
 
 
 
@@ -208,7 +208,7 @@ Select your SAP AI Core connection under the **Workspaces** app.
 
 Click **Docker Registry Secrets** in the **AI Core Administration** app. Click **Add**.
 
-<!-- border -->![image](img/ail/1.png)
+![image](img/ail/1.png)
 
 Name your secret, and paste and edit the snippet into the `Secret` field.
 
@@ -217,7 +217,7 @@ Name your secret, and paste and edit the snippet into the `Secret` field.
         ".dockerconfigjson": "{\"auths\":{\"YOUR_DOCKER_REGISTRY_URL\":{\"username\":\"YOUR_DOCKER_USERNAME\",\"password\":\"YOUR_DOCKER_ACCESS_TOKEN\"}}}"    }
 ```
 
-<!-- border -->![image](img/ail/DockerSecret.png)
+![image](img/ail/DockerSecret.png)
 
 
 [OPTION END]
@@ -237,7 +237,7 @@ Click on POST Create a secret. Paste and edit the snippet into the body of the r
 }
 ```
 
-<!-- border -->![image](img/postman/docker.png)
+![image](img/postman/docker.png)
 
 [OPTION END]
 
@@ -256,7 +256,7 @@ response = ai_core_client.docker_registry_secrets.create(
 print(response.__dict__)
 ```
 
-<!-- border -->![image](img/aics/docker.png)
+![image](img/aics/docker.png)
 
 [OPTION END]
 
@@ -274,7 +274,7 @@ print(response.__dict__)
 
 This step requires the GitHub folder that you synced in [this tutorial](https://developers.sap.com/tutorials/ai-core-helloworld.html/#). In this folder, create another YAML file called `code-pipeline.yaml`. (This filename is not used as an identifier within SAP AI Core.)
 
-<!-- border -->![image](img/file-new.png)
+![image](img/file-new.png)
 
 Paste the following snippet into your YAML file. Edit the highlighted lines, using the comments and your own Docker image information. Click **Commit Changes**. The code is also available by following [this link](https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_03_build_a_house_price_predictor_with_sap_ai_core/step-8-code-pipeline.yaml)
 
@@ -313,7 +313,7 @@ spec:
 
 Observe the difference between the `hello.yaml` (created in the prerequisite tutorial) and `code-pipeline.yaml`.
 
-<!-- border -->![image](img/file-exp.png)
+![image](img/file-exp.png)
 
 1. `imagePullSecrets`: A key that specifies which credentials will be used to access the Docker registry. The value `credstutorialrepo` specifies the Docker registry secret that you created previously to store Docker information in SAP AI Core.
 2. `image`: A key that specifies which code to use in the workflow and which commands to execute within the Docker image.
@@ -332,11 +332,11 @@ Navigate to your application. Check the status of your workflow. SAP AI Core wil
 
 > **WARNING** If you don't see the YAML workflow file in your Applications, even after 5 minutes, it is possible that another user of your SAP AI Core instance has used the same workflow name. Check that **each** of your workflows have unique executable ID, even if they are from separate users or GitHub repositories.
 
-<!-- border -->![image](img/ail/app-sync-1.png)
+![image](img/ail/app-sync-1.png)
 
 Under scenarios, you will also see a scenario named `Code (Tutorial)`.
 
-<!-- border -->![image](img/ail/scenario.png)
+![image](img/ail/scenario.png)
 
 [OPTION END]
 
@@ -344,7 +344,7 @@ Under scenarios, you will also see a scenario named `Code (Tutorial)`.
 
 Click **Collections** > GET Returns the `ArgoCD` application status.
 
-<!-- border -->![image](img/postman/status.png)
+![image](img/postman/status.png)
 
 **Response**
 
@@ -361,7 +361,7 @@ Click **Collections** > GET Returns the `ArgoCD` application status.
 
 List all available scenarios by clicking **Collections** > **Scenarios** > GET get list of scenarios.
 
-<!-- border -->![image](img/postman/listscenarios.png)
+![image](img/postman/listscenarios.png)
 
 **Response**
 
@@ -432,11 +432,11 @@ In the **ML Operations** App, click **Configurations**.
 
 Click **Create**.
 
-<!-- border -->![image](img/ail/conf.png)
+![image](img/ail/conf.png)
 
 Follow the guided process of creating configurations.
 
-<!-- border -->![image](img/ail/conf-1.png)
+![image](img/ail/conf-1.png)
 
 1. **Configuration Name**: write `code-workflow-1`.
 2. **Scenario Name**: select `Code (Tutorial)`.
@@ -445,11 +445,11 @@ Follow the guided process of creating configurations.
 
 Click **Next** to review the remaining steps, and click **Create**.
 
-<!-- border -->![image](img/ail/conf-2.png)
+![image](img/ail/conf-2.png)
 
 Click **Create Execution**. You will be redirected to your execution details page, and your Docker image will start executing.
 
-<!-- border -->![image](img/ail/run-1.png)
+![image](img/ail/run-1.png)
 
 Click the **refresh icon**.
 
@@ -502,7 +502,7 @@ Use your own configuration ID to start an execution with the **BODY**:
 
 Use your execution ID to get information on the status of your execution.
 
-<!-- border -->![image](img/postman/dead.png)
+![image](img/postman/dead.png)
 
 
 [OPTION END]
@@ -579,13 +579,13 @@ The execution will go from **UNKNOWN** to **RUNNING** then to the **DEAD** state
 
 In the **Overview** tab in the **Status details** section, you will find the most recent log from your execution. You should see a stack trace of errors.
 
-<!-- border -->![image](img/ail/status.png)
+![image](img/ail/status.png)
 
 > **INFORMATION**: In the rare case that you observe the status: `Task currently un-schedulable due to lack of resource`, wait for a few minutes, it will automatically resolve itself and your execution will continue to run.
 
 Click the **Logs** tab to see the stack trace generated from your code.
 
-<!-- border -->![image](img/ail/log.png)
+![image](img/ail/log.png)
 
 [OPTION END]
 
@@ -596,7 +596,7 @@ Use your execution ID to get the logs from SAP AI Core. You should see a stack t
 
 > **WARNING**: You are required to use the `start` parameter when getting logs from an execution older than an hour.
 
-<!-- border -->![image](img/postman/log.png)
+![image](img/postman/log.png)
 
 [OPTION END]
 
@@ -616,7 +616,7 @@ for log in response.data.result:
     print(log.__dict__)
 ```
 
-<!-- border -->![image](img/aics/logs.png)
+![image](img/aics/logs.png)
 
 [OPTION END]
 
@@ -628,7 +628,7 @@ We can see that `scikit-learn` was unable to create directory for caching. Let's
 
 Update the highlighted line in `main.py`. Set the parameter `data_home` of function `dataset.fetch_california_housing` to `/app/src`. You had already set elevated permissions for this directory in your `Dockerfile`.
 
-<!-- border -->![image](img/code-update.png)
+![image](img/code-update.png)
 
 Build your code again, this time with a new tag. We use `02`, i.e. the second version of your Docker image.
 
@@ -636,7 +636,7 @@ Build your code again, this time with a new tag. We use `02`, i.e. the second ve
 docker build -t docker.io/<YOUR_DOCKER_USERNAME>/house-price:02 .
 ```
 
-<!-- border -->![image](img/code-build-2.png)
+![image](img/code-build-2.png)
 
 Upload your code to your Docker registry.
 
@@ -644,7 +644,7 @@ Upload your code to your Docker registry.
 docker push docker.io/<YOUR_DOCKER_USERNAME>/house-price:02
 ```
 
-<!-- border -->![image](img/code-push-2.png)
+![image](img/code-push-2.png)
 
 
 ### Update your AI workflow
@@ -652,11 +652,11 @@ docker push docker.io/<YOUR_DOCKER_USERNAME>/house-price:02
 
 Locate your workflow (YAML file) in GitHub. Click on the **Pencil Icon** to edit your workflow. The original code is also available by following [this link](https://raw.githubusercontent.com/SAP-samples/ai-core-samples/main/02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_03_build_a_house_price_predictor_with_sap_ai_core/step-8-code-pipeline.yaml)
 
-<!-- border -->![image](img/pipeline-update.png)
+![image](img/pipeline-update.png)
 
 Update your workflow by adding the new `02` tag to the `ai.sap.com/version` and the Docker image name.
 
-<!-- border -->![image](img/pipeline-update2.png)
+![image](img/pipeline-update2.png)
 
 Click **Commit Changes** after editing.
 
@@ -674,13 +674,13 @@ Go to SAP AI Launchpad. Click **ML Operations** > **Configuration**.
 
 Look at the **Scenario** version in the configuration named `code-workflow-1`. If it shows `Version 2.0`, it has synced successfully, if not, please wait for ~ 3 minutes and refresh the page.
 
-<!-- border -->![image](img/ail/run-2.png)
+![image](img/ail/run-2.png)
 
 Click on `code-workflow-1` to see your configuration details. Click **Create Execution**. A new run of your workflow will start.
 
 Check the status of your execution. When the status turns to **COMPLETED**, you will see the output of the `print` statement from your code. You may need to check the **Logs** to see this.
 
-<!-- border -->![image](img/ail/final.png)
+![image](img/ail/final.png)
 
 [OPTION END]
 
@@ -721,28 +721,28 @@ AI core Also provides the functionality to auto schedule Executions based on Tim
 
 To schedule an Execution at particular time of the day visit ML `operations > schedules` and click on Add
 
-<!-- border -->![image](img/ail/Schedule1.jpg)
+![image](img/ail/Schedule1.jpg)
 
 Choose scenario as House price and click on next
 
-<!-- border -->![image](img/ail/Schedule2.jpg)
+![image](img/ail/Schedule2.jpg)
 
 Choose Executable and click on next.
 
-<!-- border -->![image](img/ail/Schedule3.jpg)
+![image](img/ail/Schedule3.jpg)
 
 Now a screen will appear where you can choose between the available Execution config and click on next
 
-<!-- border -->![image](img/ail/Schedule4.jpg)
+![image](img/ail/Schedule4.jpg)
 
 Now we need to choose the Schedule for our execution. Enter name as `Demo-Schedule` and choose between date and time in case you need to run the Execution for once else Choose recurring Enter the cron Job and choose the start and end date and click on Review
 
-<!-- border -->![image](img/ail/Schedule5.jpg)
+![image](img/ail/Schedule5.jpg)
 
 Check all the details before creating the execution and click on Create.
 
-<!-- border -->![image](img/ail/Schedule6.jpg)
+![image](img/ail/Schedule6.jpg)
 
 You would be able to see the schedule created under schedules tab in ML operations
 
-<!-- border -->![image](img/ail/Schedule7.jpg)
+![image](img/ail/Schedule7.jpg)

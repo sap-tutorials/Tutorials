@@ -44,7 +44,7 @@ Send in new test IDocs, for example using the **Test Tool for IDoc Processing** 
 
       When you select the summary line for your interface, you're forwarded to **Monitoring and Error Handling**, where you can see your selected test messages. Choose either the **Success** or the **Error** icon to display the respective message. One message should be in status `Successful` with the message text confirming that the flight customer has been created. The other message should be in status `Error` with the message text `Customer type can be only B or P`.
 
-<!-- border -->![Monitoring and Error Handling](error-handling-both-messages.png)
+![Monitoring and Error Handling](error-handling-both-messages.png)
 
 
 ### Create custom function
@@ -57,7 +57,7 @@ Once the new flight customer has been created, you want to navigate to the custo
 
 3. In the menu, choose **Customize** > **Custom Functions**.
 
-    <!-- border -->![Menu Custom Functions](custom-functions-menu-select.png)
+    ![Menu Custom Functions](custom-functions-menu-select.png)
 
 4. In the Custom Function Action section, enter transaction **`BC_GLOBAL_SCUST_DISP`**.
 
@@ -67,7 +67,7 @@ Once the new flight customer has been created, you want to navigate to the custo
     | :----  | :---- | :----
     | **`CSM`** | **`Message Variable`** | **`[MsgVar2]`**
 
-    <!-- border -->![Create Custom Function](custom-functions-create.png)
+    ![Create Custom Function](custom-functions-create.png)
 
 6. Maintain the following details in section Custom Function Attributes:
 
@@ -95,11 +95,11 @@ For the erroneous message, you'd prefer an own custom text instead of the defaul
 
 3. In the menu, choose **Customize** > **Custom Message Text**.
 
-    <!-- border -->![Menu Custom Message Text](custom-message-text-menu-select.png)
+    ![Menu Custom Message Text](custom-message-text-menu-select.png)
 
 4. In the upcoming dialog, enter the **New Message** `Wrong customer type`.
 
-    <!-- border -->![Create Custom Message Text](custom-message-text-create.png)
+    ![Create Custom Message Text](custom-message-text-create.png)
 
 5. **Save** your changes.
 
@@ -117,18 +117,18 @@ For the erroneous message, you also want to maintain a hint that describes how t
 
 3. In the menu, choose **Customize** > **Custom Hints**.
 
-    <!-- border -->![Menu Custom Hints](custom-hints-menu-select.png)
+    ![Menu Custom Hints](custom-hints-menu-select.png)
 
 4. In the upcoming dialog, enter the **Tooltip** `Wrong customer type`.
 
 5. Maintain the **Text** by copying and pasting the following hint:
 
-    ```
-      You have entered a wrong customer type.
-      To be able to proceed with the customer creation, navigate to the Customer Type field in your message, and enter a valid type, i.e., either B or P, then save and restart the message.
-    ```
+   ```
+     You have entered a wrong customer type.
+     To be able to proceed with the customer creation, navigate to the Customer Type field in your message, and enter a valid type, i.e., either B or P, then save and restart the message.
+   ```
 
-    <!-- border -->![Create Custom Hint](custom-hints-create.png)
+    ![Create Custom Hint](custom-hints-create.png)
 
 6. **Save** your changes.
 
@@ -149,11 +149,11 @@ To facilitate the error resolution, you'd like to directly navigate to the field
 
 5. In the **Log Messages** menu, choose **Customize** > **Custom Data Link**.
 
-    <!-- border -->![Menu Custom Data Link](custom-data-link-menu-select.png)
+    ![Menu Custom Data Link](custom-data-link-menu-select.png)
 
 6. In the upcoming dialog, choose **Create** to confirm the creation of the new data link.
 
-    <!-- border -->![Create Custom Data Link](custom-data-link-create.png)
+    ![Create Custom Data Link](custom-data-link-create.png)
 
       The value of the field `CUSTTYPE` is highlighted in red.
 
@@ -171,7 +171,7 @@ Before testing the custom objects, let's change the customer type field so we ca
 
 3. Double-click **Define Changeable Fields** in the menu on the left. Add a new entry with **Index** number `10` and **Field Path** `E1SCU_CRE-E1BPSCUNEW-CUSTTYPE`.
 
-    <!-- border -->![Define Changeable Fields](customizing-changeable-field-define.png)
+    ![Define Changeable Fields](customizing-changeable-field-define.png)
 
 4. **Save** your changes.
 
@@ -191,11 +191,11 @@ Now finally, let's test that the custom objects we configured are working as pla
 
     Your custom message text `Wrong customer type` should be displayed.
 
-    <!-- border -->![Monitoring and Error Handling](error-handling-third-message.png)
+    ![Monitoring and Error Handling](error-handling-third-message.png)
 
 3. Choose the icon in the **Hints** column to display the custom hint you maintained.
 
-    <!-- border -->![Show Hint](error-handling-hint-display.png)
+    ![Show Hint](error-handling-hint-display.png)
 
       Choose **Close**.
 
@@ -203,21 +203,21 @@ Now finally, let's test that the custom objects we configured are working as pla
 
 5. Maintain a valid value for the field **CUSTTYPE** - either `B` or `P` - and choose **Confirm**.
 
-    <!-- border -->![Edit Field](error-handling-custtype-change.png)
+    ![Edit Field](error-handling-custtype-change.png)
 
 6. **Save** the changes.
 
-    <!-- border -->![Save Field Change](error-handling-custtype-save.png)
+    ![Save Field Change](error-handling-custtype-save.png)
 
 7. **Restart** the data message. It should now process without errors.
 
 8. To test your custom function, click the **Display customer** icon that has appeared for your log message in column **Function**.
 
-    <!-- border -->![Navigate To Transaction](error-handling-customer-navigate.png)
+    ![Navigate To Transaction](error-handling-customer-navigate.png)
 
       The customer record details are displayed.
 
-    <!-- border -->![Display customer record](error-handling-customer-display.png)
+    ![Display customer record](error-handling-customer-display.png)
 
 Congratulations! You've successfully configured a custom hint, custom function, custom message text, and custom data link for a log message.
 

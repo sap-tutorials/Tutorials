@@ -48,7 +48,7 @@ To be able to search for messages based on business data, you need to enhance th
 
 3. **Save** and **activate** your changes.
 
-    <!-- border -->![Enhance index table](index-table-additional-fields.png)
+    ![Enhance index table](index-table-additional-fields.png)
 
 
 ### Create selection screen
@@ -57,40 +57,40 @@ To select the additional fields from the index table, you need to create an inte
 
 1. Run transaction code `SE38`, enter the program name `ZIDOC_FCUSTOMER_SELSCREEN` and choose **Create**.
    
-    <!-- border -->![Create program](selection-screen-create.png)
+    ![Create program](selection-screen-create.png)
 
 2. In the upcoming dialog, maintain a **Title**, and select the **Type** `Module pool`. Then select **Save**.
 
-    <!-- border -->![Maintain program attributes](selection-screen-attribute.png)
+    ![Maintain program attributes](selection-screen-attribute.png)
 
 3. In the ABAP editor, maintain the code as follows:
 
-    ```ABAP
-    PROGRAM ZIDOC_FCUSTOMER_SELSCREEN.
+   ```ABAP
+   PROGRAM ZIDOC_FCUSTOMER_SELSCREEN.
 
-    DATA: lv_country  TYPE s_country,
-        lv_region   TYPE s_region,
-        lv_city     TYPE city,
-        lv_custtype TYPE s_custtype.
+   DATA: lv_country  TYPE s_country,
+       lv_region   TYPE s_region,
+       lv_city     TYPE city,
+       lv_custtype TYPE s_custtype.
 
-    SELECTION-SCREEN BEGIN OF SCREEN 0001 AS SUBSCREEN.
-    SELECT-OPTIONS:
-        s_cntry  FOR lv_country,
-        s_region FOR lv_region,
-        s_city   FOR lv_city,
-        s_type   FOR lv_custtype.
-    SELECTION-SCREEN END OF SCREEN 0001.
+   SELECTION-SCREEN BEGIN OF SCREEN 0001 AS SUBSCREEN.
+   SELECT-OPTIONS:
+       s_cntry  FOR lv_country,
+       s_region FOR lv_region,
+       s_city   FOR lv_city,
+       s_type   FOR lv_custtype.
+   SELECTION-SCREEN END OF SCREEN 0001.
 
-    AT SELECTION-SCREEN OUTPUT.
-    /aif/cl_global_tools=>get_value_from_mem( ).
+   AT SELECTION-SCREEN OUTPUT.
+   /aif/cl_global_tools=>get_value_from_mem( ).
 
-    ``` 
+   ``` 
 
 4. Navigate to **Goto** > **Text Elements** from the main menu, then switch to the **Selection Texts** tab.
 
 5. For each of the selection options, select the **DDIC Reference** flag to copy the text from the ABAP Dictionary.
 
-    <!-- border -->![Maintain program texts](selection-screen-texts.png)
+    ![Maintain program texts](selection-screen-texts.png)
 
 6. **Save** and **activate** your changes.
 
@@ -111,7 +111,7 @@ To fill the additional fields of the index table, you need to assign both the in
    
 5. Finally, enter **Screen Number** `0001`.
 
-    <!-- border -->![NS-specific settings](error-handling-ns-specific.png)
+    ![NS-specific settings](error-handling-ns-specific.png)
 
 6. **Save** your changes.
 
@@ -139,7 +139,7 @@ Finally, you need to define the key fields for your interface.
     | Icon                              | **`@DV@`**
     | Tooltip                           | **`Country`**
 
-    <!-- border -->![Add key field country](error-handling-if-specific-country.png)
+    ![Add key field country](error-handling-if-specific-country.png)
 
 4. Add a second new entry with **Field Sequence No.** `20` and the following values:
 
@@ -157,7 +157,7 @@ Finally, you need to define the key fields for your interface.
     | Icon                              | **`@AM@`**
     | Tooltip                           | **`Region`**
 
-    <!-- border -->![Add key field country](error-handling-if-specific-region.png)
+    ![Add key field country](error-handling-if-specific-region.png)
 
 5. Add a third new entry with **Field Sequence No.** `30` as follows:
 
@@ -172,7 +172,7 @@ Finally, you need to define the key fields for your interface.
     | Multi.Selection Type              | **`Single selection`**
     | Hide Tree Node in the View 1 Tree | **selected**
 
-    <!-- border -->![Add key field country](error-handling-if-specific-city.png)
+    ![Add key field country](error-handling-if-specific-city.png)
 
 6. Add a fourth new entry with **Field Sequence No.** `40` as follows:
 
@@ -187,7 +187,7 @@ Finally, you need to define the key fields for your interface.
     | Multi.Selection Type              | **`Single selection`**
     | Hide Tree Node in the View 1 Tree | **selected**
 
-    <!-- border -->![Add key field country](error-handling-if-specific-type.png)
+    ![Add key field country](error-handling-if-specific-type.png)
 
 7. **Save** your changes.
 
@@ -198,7 +198,7 @@ Let's create a couple of sample messages to showcase the customizing changes.
 
 Open the **Test Tool for IDoc Processing** (transaction code `WE19`). Send in new test messages with different customer names, countries, regions, and cities maintained. Enter an existing customer type, either `P` or `B`.
 
-<!-- border -->![Sample Data](test-data-nsw.png)
+![Sample Data](test-data-nsw.png)
 
 
 ### Monitor your interface
@@ -210,11 +210,11 @@ Now, let's check the results of your tests in the Monitoring and Error Handling.
 2. In the selection screen, you'll notice that the additional selection fields have been added. 
 In the **Status Selection** section, select the **Select All** button. Apply any filter, for example, filter on selection field **B/P customer** with value `P`. Then choose **Execute**.
 
-    <!-- border -->![Search message](test-moni-selection-screen.png)
+    ![Search message](test-moni-selection-screen.png)
 
 3. In the message monitor, expand the complete navigation tree. You can see that the messages are grouped by country and region hierarchy. Only the messages suitable to your filter should be displayed.
 
-    <!-- border -->![Display messages](test-moni-gui-messages.png)
+    ![Display messages](test-moni-gui-messages.png)
 
 
 Congratulations! You've successfully defined single key fields.
