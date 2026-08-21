@@ -34,11 +34,11 @@ If you are currently using SAP Data Intelligence Cloud and want to use the SAP H
 
 2.	On the Data Intelligence launchpad, select **Connection Management**.
 
-    <!-- border -->![Connection Management](ss-01-connection-management.png)
+    ![Connection Management](ss-01-connection-management.png)
 
 3.	Click on the plus icon to create a new connection.
 
-    <!-- border -->![Create Connection](ss-02-create-connection.png)
+    ![Create Connection](ss-02-create-connection.png)
 
 
 
@@ -49,7 +49,7 @@ If you are currently using SAP Data Intelligence Cloud and want to use the SAP H
 
 Select the connection type as `HANA_DB`. This type of connection allows you to access tables and views on SAP HANA Cloud database.
 
-<!-- border -->![New Connection](ss-03-new-connection.png)
+![New Connection](ss-03-new-connection.png)
 
 
 

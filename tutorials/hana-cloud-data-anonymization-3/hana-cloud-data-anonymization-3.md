@@ -157,20 +157,20 @@ Once you have filled in all information in this statement, you can run it to cre
 
 1.	To trigger the actual calculation of the required anonymization steps, the view then needs to be refreshed:
 
-    ```SQL
+   ```SQL
 -- refresh creates the metadata (before, it's not queryable)
 REFRESH VIEW "[view_name]" ANONYMIZATION;
 ```
 
 2.	To show the results of the anonymization, you can use a SELECT statement:
 
-    ```SQL
+   ```SQL
 -- shows the results
 SELECT * FROM "[view_name]";
 ```
 3.	If you want to double-check if there are no individual cases with unique combinations of quasi-identifiers left in the view, you can run this statement:
 
-    ```SQL
+   ```SQL
 -- double checks if there are any singled-out ones left --> should be empty
 SELECT "column1", "column2", "column_n", count(*) FROM "[view_name]"
 GROUP BY "column1", "column2", "column_n"
@@ -181,7 +181,7 @@ HAVING count(*)=1;
 
 4.	To examine if your anonymization was successful, you might also check how many people are indistinguishable as specified by the parameter k. To do so, you can run this statement:
 
-    ```SQL
+   ```SQL
 -- show the actual counts
 SELECT "[column1]", "[column2]", "[column_n]", count(*) as "Count" FROM "[view_name]"
 GROUP BY "[column1]","[column2]","[column_n]"
@@ -200,26 +200,26 @@ If you open the **Explain Plan** of your anonymization view, you can examine the
 
 1. To run this example, you must first download the [sample data](https://github.com/SAP-samples/hana-cloud-learning/raw/main/Group:%20Data%20Anonymization%20in%20SAP%20HANA%20Cloud/DataAnonymization_SampleData.zip). Now, right-click on **Tables** from the **Catalog** of your database and choose **Import Catalog Objects** as shown below.
 
-    <!-- border -->![import catalog](ss-05-import-catalog.png)
+    ![import catalog](ss-05-import-catalog.png)
 
 2. Click the **Browse** option for Local Archive and select the downloaded sample data. Click on **Import**. Make sure to change the schema name if necessary.
 
-    <!-- border -->![import catalog complete](ss-06-import-catalog-complete.png)
+    ![import catalog complete](ss-06-import-catalog-complete.png)
 
 3. You can see the overview of the sample data columns by selecting the **Tables** option and choosing the appropriate schema that was used while importing the data.
 
-    <!-- border -->![Table Overview](ss-07-table-overview.png)
+    ![Table Overview](ss-07-table-overview.png)
 
 4. To understand the need for anonymization, run the SQL query on the sample data as given below:
 
-    ```SQL
+   ```SQL
 SELECT "start_year", "gender", "zipcode", "salary", count(*) as "Count" FROM "ANON_SAMPLE"
 GROUP BY "start_year", "gender", "zipcode", "salary" ORDER by "Count" ASC;
 ```
 
 From the result, you can see that there are many unique combinations of quasi-identifiers (where `Count` value =1) that can lead to the disclosure of sensitive information (`salary` amount) of the concerned people. Hence, data anonymization is required to share this sample data without risking data privacy.
 
-<!-- border -->![need for anonymization](ss-08-need-for-anonymization.png)
+![need for anonymization](ss-08-need-for-anonymization.png)
 
 
 Next, as a solution to the above requirement you will create an anonymization view using this sample data.
@@ -253,13 +253,13 @@ Run the above code in SQL Console after setting the right schema. There are a fe
 
 This anonymized view will result in this data:
 
-<!-- border -->![anonymity_example_1](ss-09-k-anonymity-example1.png)
+![anonymity_example_1](ss-09-k-anonymity-example1.png)
 
 > Use the help of instructions in Step 4 to examine the anonymization view. Make sure to refresh the view before trying to query it.
 
 You can see that the algorithm only anonymized the start year column while the other columns stay untouched. To check how many people are indistinguishable this way, you can query the count of unique combinations as shown below:
 
-<!-- border -->![k-anonymity_example2](ss-10-k-anonymity-example2.png)
+![k-anonymity_example2](ss-10-k-anonymity-example2.png)
 
 As you can see, the anonymization was successful, there are much more individuals in each group than `K=8`. That means we could have included more quasi-identifiers in this anonymized view and still get accurate results with high privacy.
 
@@ -318,7 +318,7 @@ COLUMN "zipcode" PARAMETERS '{"is_quasi_identifier":true,"hierarchy":{"schema":"
 
 You can try using this function with the sample data to create a view that looks like this:
 
-<!-- border -->![zip code Hierarchy function](ss-11-zipcode-hierarchy-function.png)
+![zip code Hierarchy function](ss-11-zipcode-hierarchy-function.png)
 
 
 
@@ -395,7 +395,7 @@ COLUMN "zipcode" PARAMETERS '{"is_quasi_identifier":true,"hierarchy":{"embedded"
 
 You can try using this function with the sample data to create a view that looks like this:
 
-<!-- border -->![Start year Hierarchy function](ss-12-startyear-hierarchy-function.png)
+![Start year Hierarchy function](ss-12-startyear-hierarchy-function.png)
 
 
 For more examples of hierarchy functions, you can read the detailed [technical documentation here](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/LATEST/en-US/d1badcd2b5c84547bc470da2e08c035e.html).
