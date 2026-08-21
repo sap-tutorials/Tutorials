@@ -53,9 +53,9 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
 1. To check if a 64-bit `gcc` compiler is installed, run the following command:
 
-    ```Shell
-    gcc --version
-    ```
+   ```Shell
+   gcc --version
+   ```
 
     ![gcc 64-bit](gccLinux.png)
 
@@ -77,9 +77,9 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
 2. Examine the Go environment by running the below command:
 
-    ```Shell
-    go env
-    ```
+   ```Shell
+   go env
+   ```
 
     Notice that GOROOT is set to a location such as `C:\go` or `/usr/lib64/go/1.22`.  This is the location that the Go SDK is installed to.  
 
@@ -97,29 +97,29 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     On Linux and Mac, add the corresponding following lines to the `.bash_profile`.
 
-    ```Shell (Linux)
-    export CGO_LDFLAGS=$HOME/sap/hdbclient/libdbcapiHDB.so
-    export LD_LIBRARY_PATH=$HOME/sap/hdbclient
-    ```
+   ```Shell (Linux)
+   export CGO_LDFLAGS=$HOME/sap/hdbclient/libdbcapiHDB.so
+   export LD_LIBRARY_PATH=$HOME/sap/hdbclient
+   ```
 
-    ```Shell (Mac)
-    export CGO_LDFLAGS="$HOME/sap/hdbclient/libdbcapiHDB.dylib"
-    export DYLD_LIBRARY_PATH="$HOME/sap/hdbclient"
-    ```
+   ```Shell (Mac)
+   export CGO_LDFLAGS="$HOME/sap/hdbclient/libdbcapiHDB.dylib"
+   export DYLD_LIBRARY_PATH="$HOME/sap/hdbclient"
+   ```
 
 4. Go to the driver folder and create a go module.
 
-    ```Shell (Windows)
-    cd C:\SAP\hdbclient\golang\src\SAP\go-hdb\driver
-    go mod init "SAP/go-hdb/driver"
-    go mod tidy
-    ```
+   ```Shell (Windows)
+   cd C:\SAP\hdbclient\golang\src\SAP\go-hdb\driver
+   go mod init "SAP/go-hdb/driver"
+   go mod tidy
+   ```
 
-    ```Shell (Linux or Mac)
-    cd ~/sap/hdbclient/golang/src/SAP/go-hdb/driver
-    go mod init "SAP/go-hdb/driver"
-    go mod tidy
-    ```
+   ```Shell (Linux or Mac)
+   cd ~/sap/hdbclient/golang/src/SAP/go-hdb/driver
+   go mod init "SAP/go-hdb/driver"
+   go mod tidy
+   ```
 
     ![createModule](createModule.png)
 
@@ -129,111 +129,111 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
 1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
 
-    ```Shell (Microsoft Windows)
-    mkdir %HOMEPATH%\HANAClientsTutorial\go
-    cd %HOMEPATH%\HANAClientsTutorial\go
-    notepad goQuery.go
-    ```
+   ```Shell (Microsoft Windows)
+   mkdir %HOMEPATH%\HANAClientsTutorial\go
+   cd %HOMEPATH%\HANAClientsTutorial\go
+   notepad goQuery.go
+   ```
 
-    ```Shell (Linux or Mac)
-    mkdir -p $HOME/HANAClientsTutorial/go
-    cd $HOME/HANAClientsTutorial/go
-    pico goQuery.go
-    ```
+   ```Shell (Linux or Mac)
+   mkdir -p $HOME/HANAClientsTutorial/go
+   cd $HOME/HANAClientsTutorial/go
+   pico goQuery.go
+   ```
 
 2. Add the code below to `goQuery.go`:
 
-    ```Go Code
-    package main
+   ```Go Code
+   package main
 
-    import (
-      "fmt"
-        "database/sql"
-        "log"
+   import (
+     "fmt"
+       "database/sql"
+       "log"
 
-      _ "SAP/go-hdb/driver"
-      )
+     _ "SAP/go-hdb/driver"
+     )
 
-    func main() {
-      //Option 1, retrieve the connection parameters from the hdbuserstore
-      //host, port, user name and password come from the hdbuserstore key USER1UserKey
-      connectString := "hdb://?key=USER1UserKey&encrypt=true&sslValidateCertificate=false"
+   func main() {
+     //Option 1, retrieve the connection parameters from the hdbuserstore
+     //host, port, user name and password come from the hdbuserstore key USER1UserKey
+     connectString := "hdb://?key=USER1UserKey&encrypt=true&sslValidateCertificate=false"
 
-      //Option 2, specify the connection parameters
-      //connectString := "hdb://User1:Password1@999deec0-ccb7-4a5e-b317-d419e19be648.hana.prod-us10.hanacloud.ondemand.com:443?encrypt=true&sslValidateCertificate=false"
+     //Option 2, specify the connection parameters
+     //connectString := "hdb://User1:Password1@999deec0-ccb7-4a5e-b317-d419e19be648.hana.prod-us10.hanacloud.ondemand.com:443?encrypt=true&sslValidateCertificate=false"
 
-      //encrypt and sslValidateCertificate should be true for HANA Cloud connections
-      //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
+     //encrypt and sslValidateCertificate should be true for HANA Cloud connections
+     //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
 
-      fmt.Println("Connect String is " + connectString)
+     fmt.Println("Connect String is " + connectString)
 
-      db, err := sql.Open("hdb", connectString)
-      if err != nil {
-        log.Fatal(err)
-        return
-      }
-      defer db.Close()
+     db, err := sql.Open("hdb", connectString)
+     if err != nil {
+       log.Fatal(err)
+       return
+     }
+     defer db.Close()
 
-      rows, err := db.Query("SELECT NAME, ADDRESS from HOTELS.CUSTOMER")
-      if err != nil {
-        log.Fatal(err)
-      }
-      defer rows.Close()
+     rows, err := db.Query("SELECT NAME, ADDRESS from HOTELS.CUSTOMER")
+     if err != nil {
+       log.Fatal(err)
+     }
+     defer rows.Close()
 
-      var lastName string
-      var address string
-      for rows.Next() {
-        err = rows.Scan(&lastName, &address)
-        if err != nil {
-          log.Fatal(err)
-        }
-        fmt.Println(lastName + ": " + address)
-      }
+     var lastName string
+     var address string
+     for rows.Next() {
+       err = rows.Scan(&lastName, &address)
+       if err != nil {
+         log.Fatal(err)
+       }
+       fmt.Println(lastName + ": " + address)
+     }
 
-      err = rows.Err()
-      if err != nil {
-    log.Fatal(err)
-      }
-    }
-    ```
+     err = rows.Err()
+     if err != nil {
+   log.Fatal(err)
+     }
+   }
+   ```
 
     Once the `goQuery.go` file has been updated, save and close the file.
 
 3. Create another go module and modify its contents:
 
-    ```Shell (Windows)
-    go mod init "go/goQuery"
-    go mod tidy
-    notepad go.mod
-    ```
+   ```Shell (Windows)
+   go mod init "go/goQuery"
+   go mod tidy
+   notepad go.mod
+   ```
 
-    ```Shell (Linux or Mac)
-    go mod init "go/goQuery"
-    go mod tidy
-    pico go.mod
-    ```
+   ```Shell (Linux or Mac)
+   go mod init "go/goQuery"
+   go mod tidy
+   pico go.mod
+   ```
 
 4. Add the code below to `go.mod` under the go version line:
 
     >Make sure the path to the driver folder is correct and make any necessary changes.
 
-    ```Code (Windows)
-    replace SAP/go-hdb/driver v0.1.0 => C:\SAP\hdbclient\golang\src\SAP\go-hdb\driver   
-    require SAP/go-hdb/driver v0.1.0
-    ```
+   ```Code (Windows)
+   replace SAP/go-hdb/driver v0.1.0 => C:\SAP\hdbclient\golang\src\SAP\go-hdb\driver   
+   require SAP/go-hdb/driver v0.1.0
+   ```
 
-    ```Code (Linux or Mac)
-    replace SAP/go-hdb/driver v0.1.0 => /home/name/sap/hdbclient/golang/src/SAP/go-hdb/driver
-    require SAP/go-hdb/driver v0.1.0
-    ```
+   ```Code (Linux or Mac)
+   replace SAP/go-hdb/driver v0.1.0 => /home/name/sap/hdbclient/golang/src/SAP/go-hdb/driver
+   require SAP/go-hdb/driver v0.1.0
+   ```
 
     ![go.mod contents](goModContents.png)
 
 5. Place the dbcapi shared library files in /HANAClientsTutorial/go directory by copying or dragging them into that folder. Then, run the application:
 
-    ```Shell
-    go run goQuery.go
-    ```
+   ```Shell
+   go run goQuery.go
+   ```
 
     ![Result](results.png)
 
@@ -261,11 +261,11 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 
 4. Open the file `launch.json` and add the following code
 
-    ```Go Code
-    "env": {
-        "CGO_LDFLAGS": "./libdbcapiHDB.dylib"
-    }
-    ```
+   ```Go Code
+   "env": {
+       "CGO_LDFLAGS": "./libdbcapiHDB.dylib"
+   }
+   ```
 
     ![Go Json File](GoJsonFile.png)
 

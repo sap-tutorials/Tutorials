@@ -109,9 +109,9 @@ The following instructions demonstrate a few examples of triggering alerts in a 
 
 2. Execute the following query in the SQL console to trigger a high (indicated by the parameter value of 4) severity test alert.
 
-    ```SQL
-    CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');
-    ```
+   ```SQL
+   CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');
+   ```
     ![Severity Test Alert](severity_test_alert.png)
 
     > The alert will be viewed in the alerts app in step 3.
@@ -126,42 +126,42 @@ The following instructions demonstrate a few examples of triggering alerts in a 
     
     Execute the following SQL. 
 
-    ```SQL
-    DO BEGIN 
-    USING SQLSCRIPT_SYNC AS SYNCLIB;
-    CALL SYNCLIB:SLEEP_SECONDS( 300 );  --the SQL runs for 5 minutes
-    -- Now execute a query
-    SELECT * FROM M_TABLES;
-    END;
-    ```
+   ```SQL
+   DO BEGIN 
+   USING SQLSCRIPT_SYNC AS SYNCLIB;
+   CALL SYNCLIB:SLEEP_SECONDS( 300 );  --the SQL runs for 5 minutes
+   -- Now execute a query
+   SELECT * FROM M_TABLES;
+   END;
+   ```
 
 4. The record count of non-partitioned column-store tables alert can be triggered by executing the following SQL.  
 
-    ```SQL
-    --The default threshold for 'Record count of non-partitioned column-store tables' is 300 million
-    -- This SQL may take a minute or two to run
-    -- Create a table and insert more than 300 million rows into it
-    DO BEGIN
-           DECLARE i INT;
-           CREATE TABLE MYTABLE(MYVALUE INT);
-           INSERT INTO MYTABLE VALUES(1);
-           INSERT INTO MYTABLE VALUES(2);
-           INSERT INTO MYTABLE VALUES(3);
-           INSERT INTO MYTABLE VALUES(4);
-           INSERT INTO MYTABLE VALUES(5);
-           FOR i IN 1 .. 26 DO
-                  INSERT INTO MYTABLE (SELECT * FROM MYTABLE);
-           END FOR;
-           SELECT COUNT(*) FROM MYTABLE;
-    END;
-    SELECT TOP 100 * FROM MYTABLE;
+   ```SQL
+   --The default threshold for 'Record count of non-partitioned column-store tables' is 300 million
+   -- This SQL may take a minute or two to run
+   -- Create a table and insert more than 300 million rows into it
+   DO BEGIN
+          DECLARE i INT;
+          CREATE TABLE MYTABLE(MYVALUE INT);
+          INSERT INTO MYTABLE VALUES(1);
+          INSERT INTO MYTABLE VALUES(2);
+          INSERT INTO MYTABLE VALUES(3);
+          INSERT INTO MYTABLE VALUES(4);
+          INSERT INTO MYTABLE VALUES(5);
+          FOR i IN 1 .. 26 DO
+                 INSERT INTO MYTABLE (SELECT * FROM MYTABLE);
+          END FOR;
+          SELECT COUNT(*) FROM MYTABLE;
+   END;
+   SELECT TOP 100 * FROM MYTABLE;
 
-    -- To resolve, partition the table
-    -- ALTER TABLE MYTABLE PARTITION BY HASH(MYVALUE) PARTITIONS 5;
+   -- To resolve, partition the table
+   -- ALTER TABLE MYTABLE PARTITION BY HASH(MYVALUE) PARTITIONS 5;
 
-    -- Clean up
-    -- DROP TABLE MYTABLE;
-    ```
+   -- Clean up
+   -- DROP TABLE MYTABLE;
+   ```
 
     > Note that two other alerts may also be triggered by the above SQL: table growth of non-partitioned column-store tables and record count of column-store table partitions.
 
@@ -183,11 +183,11 @@ The following instructions will show how to view a triggered SAP HANA database a
     
 2. Details about a SQL statement from a long-running statement alert can be found out with the following query. The statement hash can be found in the alert description.
 
-    ```SQL
-    SELECT STATEMENT_STRING
-      FROM M_SQL_PLAN_CACHE 
-      WHERE STATEMENT_HASH='XXXXXXXXXXXXXXXXXXXXX';
-    ```
+   ```SQL
+   SELECT STATEMENT_STRING
+     FROM M_SQL_PLAN_CACHE 
+     WHERE STATEMENT_HASH='XXXXXXXXXXXXXXXXXXXXX';
+   ```
 
     ![using the statement hash](long-running-statement-hash.png)
 
@@ -197,9 +197,9 @@ The following instructions will show how to view a triggered SAP HANA database a
 
 3. The test alert will resolve itself after 5 minutes or be resolved (indicated by the parameter value of 0) by executing the following statement.
 
-    ```SQL
-    CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 0, 'Resolve test alert');
-    ```
+   ```SQL
+   CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 0, 'Resolve test alert');
+   ```
 
     Additional details on the test alert are available at [SAP Note 3004477 - Usage of statistics server test alert (ID 999)](https://launchpad.support.sap.com/#/notes/3004477).
     
@@ -216,13 +216,13 @@ The following instructions show one example of triggering the [data lake locked 
 
 1. In a SQL console that is connected to a **data lake**, execute the following SQL to create a login policy and a new user.
 
-    ```SQL
-    CREATE LOGIN POLICY lp max_failed_login_attempts=3;
-    GRANT CONNECT TO user2 IDENTIFIED BY 'Password2';
-    GRANT SELECT ANY TABLE TO user2;
-    GRANT SET ANY CUSTOMER PUBLIC OPTION to user2;
-    ALTER USER user2 LOGIN POLICY lp;
-    ```
+   ```SQL
+   CREATE LOGIN POLICY lp max_failed_login_attempts=3;
+   GRANT CONNECT TO user2 IDENTIFIED BY 'Password2';
+   GRANT SELECT ANY TABLE TO user2;
+   GRANT SET ANY CUSTOMER PUBLIC OPTION to user2;
+   ALTER USER user2 LOGIN POLICY lp;
+   ```
 
     Additional details can be found at [Login Policy Options](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/login-policy-options).
 
@@ -248,12 +248,12 @@ The following instructions show one example of triggering the [data lake locked 
 
 5. Additional details about users can be seen by calling the procedure `sa_get_user_status`.  The user can be unlocked using by resetting the login policy.
 
-    ```SQL
-    CALL sa_get_user_status;
-    ALTER USER user2 RESET LOGIN POLICY;
-    --DROP USER user2;
-    --DROP LOGIN POLICY lp;
-    ```
+   ```SQL
+   CALL sa_get_user_status;
+   ALTER USER user2 RESET LOGIN POLICY;
+   --DROP USER user2;
+   --DROP LOGIN POLICY lp;
+   ```
 
     The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake Relational Engine monitoring views.
 
@@ -272,9 +272,7 @@ In this step, the Alert Notification Service will be configured to act on the in
     ![find the Alert Notification Service](ans.png)
 
     > The SAP Alert Notification service must be in the same subaccount as the SAP HANA Cloud instances which it will be receiving notifications from.
-
-    >---
-
+    >
     >If the SAP Alert Notification service does not appear, it may be that the entitlement needs to be added to the subaccount.  To do so, navigate to the subaccount, select **Entitlements**, **Edit**, **Add Service Plans**, and **Alert Notification**.
 
     >![Add entitlements](entitlements.png)
@@ -307,9 +305,7 @@ In this step, the Alert Notification Service will be configured to act on the in
     | `HANA-DB-Alerts` | `eventType` Starts With `HDB` |
 
     > Alternatively, a condition `resource.resourceType` set to equal `hana-cloud-hdb` could be used.
-
-    > ---
-
+    >
     > Note that the Mandatory checkbox is left unchecked.  This means that this condition can be `ORed` with one or more other non mandatory conditions.
 
     ![create condition](create-condition-dl.png)
@@ -342,16 +338,16 @@ In this step, the Alert Notification Service will be configured to act on the in
     ![advanced action details](create-action-email-details-advanced.png)
 
     &nbsp;
-    ```Subject Template
-    {severity} {resource.resourceType} {eventType} {tags.ans:status} occurred on {resource.resourceName}
-    ```
+   ```Subject Template
+   {severity} {resource.resourceType} {eventType} {tags.ans:status} occurred on {resource.resourceName}
+   ```
 
-    ```Payload Template
-    AlertID: {tags.hanaAlertRuleId}
-    Body: {body}
-    Recommended Action: {tags.ans:recommendedAction}
-    Instance Details: {resource.tags.*}
-    ```
+   ```Payload Template
+   AlertID: {tags.hanaAlertRuleId}
+   Body: {body}
+   Recommended Action: {tags.ans:recommendedAction}
+   Instance Details: {resource.tags.*}
+   ```
 
     > It is also possible to leave the subject and payload template fields empty.  In this case, a default template will be used.
 
@@ -504,39 +500,39 @@ This step will briefly show an example of how to receive a notification in Slack
 
     An example of a payload template.
 
-    ```JSON
-    [{
+   ```JSON
+   [{
 		"type": "section",
 		"text": {
 			"type": "mrkdwn",
 			"text": "* {severity} {eventType} {tags.ans:status} on {resource.resourceName}*"
 		}
-  	},
-  	{
-  		"type": "divider"
-  	},
-  	{
-  		"type": "section",
-  		"text": {
-  			"type": "mrkdwn",
-  			"text": ":pencil2: Subject: {subject}"
-  		}
-  	},
-  	{
-  		"type": "section",
-  		"text": {
-  			"type": "mrkdwn",
-  			"text": ":scroll: Body: {body}"
-  		}
-  	},
-  	{
-  		"type": "section",
-  		"text": {
-  			"type": "mrkdwn",
-  			"text": " :medical_symbol: Recommended Action: {tags.ans:recommendedAction}"
-  		}
-  	}]
-    ```
+ 	},
+ 	{
+ 		"type": "divider"
+ 	},
+ 	{
+ 		"type": "section",
+ 		"text": {
+ 			"type": "mrkdwn",
+ 			"text": ":pencil2: Subject: {subject}"
+ 		}
+ 	},
+ 	{
+ 		"type": "section",
+ 		"text": {
+ 			"type": "mrkdwn",
+ 			"text": ":scroll: Body: {body}"
+ 		}
+ 	},
+ 	{
+ 		"type": "section",
+ 		"text": {
+ 			"type": "mrkdwn",
+ 			"text": " :medical_symbol: Recommended Action: {tags.ans:recommendedAction}"
+ 		}
+ 	}]
+   ```
 
 5. Assign the action to a subscription.
 

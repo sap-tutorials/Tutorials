@@ -68,1202 +68,1202 @@ The catalog below contains examples of commands and inputs for those commands th
 
     ![import catalog](import.png)
 
-    ```JSON
-    {
-      "id": "Automation-<<<TENANT_ID>>>",
-      "technicalName": "Automation",
-      "name": "Automation",
-      "description": "Collection of commands to demonstrate automating tasks in SAP HANA Cloud",
-      "owner": "<<<TENANT_ID>>>",
-      "inputs": [
-        {
-          "id": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
-          "name": "CFInstanceDetails",
-          "description": "The details of an SAP HANA Cloud instance provisioned in Cloud Foundry",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "owner": null,
-          "version": 1,
-          "keys": {
-            "resourceGroup": {
-              "type": "string",
-              "sensitive": false,
-              "description": "Cloud Foundry space name (dev)"
-            },
-            "resourceName": {
-              "type": "string",
-              "sensitive": false,
-              "description": "The name of an instance (HC_HDB_CF)"
-            },
-            "region": {
-              "type": "string",
-              "sensitive": false,
-              "description": "cf- value from API Endpoint (cf-us10-001)"
-            },
-            "subAccount": {
-              "type": "string",
-              "sensitive": false,
-              "description": "The Cloud Foundry org name (2fb68c96trial)"
-            }
-          },
-          "values": {
-            "resourceGroup": "dev",
-            "resourceName": "HC_HDB_CF",
-            "region": "cf-us10-001",
-            "subAccount": "2fb68c96trial"
-          },
-          "tags": {}
-        },
-        {
-          "id": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
-          "name": "CFTechnicalUser",
-          "description": "A user that has space developer role in a Cloud Foundry space",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "owner": null,
-          "version": 1,
-          "keys": {
-            "password": {
-              "type": "string",
-              "sensitive": true,
-              "description": ""
-            },
-            "user": {
-              "type": "string",
-              "sensitive": false,
-              "description": "A Cloud Foundry user"
-            }
-          },
-          "values": {
-            "user": "",
-            "password": ""
-          },
-          "tags": {}
-        },
-        {
-          "id": "Automation-<<<TENANT_ID>>>:Description:1",
-          "name": "Description",
-          "description": "Update description JSON for an SAP HANA Cloud instance",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "owner": null,
-          "version": 1,
-          "keys": {
-            "parameters": {
-              "type": "object",
-              "sensitive": false,
-              "description": "JSON parameter to update its description"
-            }
-          },
-          "values": {
-            "parameters": "{\n    \"metadata\": {\n        \"ui.hc.sap.com/description\": \"Updated by the SAP Automation Pilot\"\n    }\n}"
-          },
-          "tags": {}
-        },
-        {
-          "id": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
-          "name": "InstanceDetails",
-          "description": "The details of an SAP HANA Cloud Instance deployed to an SAP BTP subaccount",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "owner": null,
-          "version": 1,
-          "keys": {
-            "instanceId": {
-              "type": "string",
-              "sensitive": false,
-              "description": "The instance ID"
-            },
-            "instanceName": {
-              "type": "string",
-              "sensitive": false,
-              "description": "The name of an SAP HANA Cloud instance"
-            },
-            "instanceBindingKey": {
-              "type": "object",
-              "sensitive": false,
-              "description": "An optional binding key on an SAP HANA Cloud Instance used to access alerts and metrics"
-            },
-            "servicePlanId": {
-              "type": "string",
-              "sensitive": false,
-              "description": "Required for MassUpgradeHC when attempting to get a  list of all the SAP HANA Cloud database instances in a subaccount.  Obtained via btp list services/plan --fields-filter \"name contains 'hana'\" "
-            },
-            "smBindingKey": {
-              "type": "object",
-              "sensitive": false,
-              "description": "An optional binding key from a service manager instance used to perform management tasks against multiple instances in a BTP subaccount."
-            }
-          },
-          "values": {
-            "instanceId": "b00eac16-5486-4f27-a52b-359f250273c3",
-            "instanceName": "HC_HDB",
-            "instanceBindingKey": "{}",
-            "servicePlanId": "e573479c-39f8-4774-80a9-12d762b0f159",
-            "smBindingKey": "{}"
-          },
-          "tags": {}
-        },
-        {
-          "id": "Automation-<<<TENANT_ID>>>:Start:1",
-          "name": "Start",
-          "description": "Start JSON for an SAP HANA Cloud instance",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "owner": null,
-          "version": 1,
-          "keys": {
-            "parameters": {
-              "type": "object",
-              "sensitive": false,
-              "description": "JSON parameter to start an SAP HANA Cloud instance"
-            }
-          },
-          "values": {
-            "parameters": "{\n    \"data\": {\n        \"serviceStopped\": false\n    }\n}"
-          },
-          "tags": {}
-        },
-        {
-          "id": "Automation-<<<TENANT_ID>>>:Stop:1",
-          "name": "Stop",
-          "description": "Stop JSON for an SAP HANA Cloud instance",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "owner": null,
-          "version": 1,
-          "keys": {
-            "parameters": {
-              "type": "object",
-              "sensitive": false,
-              "description": "JSON parameter to stop an SAP HANA Cloud instance"
-            }
-          },
-          "values": {
-            "parameters": "{\n    \"data\": {\n        \"serviceStopped\": true\n    }\n}"
-          },
-          "tags": {}
-        },
-        {
-          "id": "Automation-<<<TENANT_ID>>>:Upgrade:1",
-          "name": "Upgrade",
-          "description": "Upgrade JSON for an SAP HANA Cloud instance",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "owner": null,
-          "version": 1,
-          "keys": {
-            "parameters": {
-              "type": "object",
-              "sensitive": false,
-              "description": "JSON parameter to upgrade an instance in the subaccount"
-            }
-          },
-          "values": {
-            "parameters": "{\n   \"data\": {\n     \"productVersion\": {\n         \"releaseCycle\":\"generally-available-quarterly\",\n         \"track\": \"2023.40\",\n         \"id\": \"2023.40.7\"\n     }\n   }\n}\n"
-          },
-          "tags": {}
-        }
-      ],
-      "commands": [
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "CFUser",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "CFInstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {
-              "instanceParameters": "$(.getDetails.output.parameters) "
-            },
-            "executors": [
-              {
-                "execute": "cf-sapcp:GetCfServiceInstance:1",
-                "input": {
-                  "password": "$(.CFUser.password)",
-                  "org": "$(.CFInstanceDetails.subAccount)",
-                  "serviceInstance": "$(.CFInstanceDetails.resourceName)",
-                  "region": "$(.CFInstanceDetails.region)",
-                  "user": "$(.CFUser.user)",
-                  "includeParameters": "true",
-                  "space": "$(.CFInstanceDetails.resourceGroup)"
-                },
-                "alias": "getDetails",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:CFGetInstanceParameters:1",
-          "name": "CFGetInstanceParameters",
-          "description": "Get details on available upgrades for an SAP HANA Cloud Instance provisioned in Cloud Foundry",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {
-            "instanceParameters": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            }
-          },
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "CFUser",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "CFInstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {},
-            "executors": [
-              {
-                "execute": "dblm-sapcp:StartHanaCloudInstance:1",
-                "input": {
-                  "resourceGroup": "$(.CFInstanceDetails.resourceGroup)",
-                  "password": "$(.CFUser.password)",
-                  "resourceName": "$(.CFInstanceDetails.resourceName)",
-                  "region": "$(.CFInstanceDetails.region)",
-                  "user": "$(.CFUser.user)",
-                  "subAccount": "$(.CFInstanceDetails.subAccount)"
-                },
-                "alias": "CFStartHC",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:CFStartHC:1",
-          "name": "CFStartHC",
-          "description": "Start an SAP HANA Cloud Instance provisioned in Cloud Foundry",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {},
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "CFUser",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "CFInstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {},
-            "executors": [
-              {
-                "execute": "dblm-sapcp:StopHanaCloudInstance:1",
-                "input": {
-                  "resourceGroup": "$(.CFInstanceDetails.resourceGroup)",
-                  "password": "$(.CFUser.password)",
-                  "resourceName": "$(.CFInstanceDetails.resourceName)",
-                  "region": "$(.CFInstanceDetails.region)",
-                  "user": "$(.CFUser.user)",
-                  "subAccount": "$(.CFInstanceDetails.subAccount)"
-                },
-                "alias": "CFStopHC",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:CFStopHC:1",
-          "name": "CFStopHC",
-          "description": "Stop an SAP HANA Cloud Instance provisioned in Cloud Foundry",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {},
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "CFUser",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "CFInstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "description",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:Description:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {},
-            "executors": [
-              {
-                "execute": "cf-sapcp:UpdateCfServiceInstance:1",
-                "input": {
-                  "password": "$(.CFUser.password)",
-                  "org": "$(.CFInstanceDetails.subAccount)",
-                  "serviceInstance": "$(.CFInstanceDetails.resourceName)",
-                  "region": "$(.CFInstanceDetails.region)",
-                  "deadline": "30",
-                  "user": "$(.CFUser.user)",
-                  "parameters": "$(.description.parameters)",
-                  "space": "$(.CFInstanceDetails.resourceGroup)"
-                },
-                "alias": "CFUpdateHC",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:CFUpdateHC:1",
-          "name": "CFUpdateHC",
-          "description": "Update the description of an SAP HANA Cloud Instance provisioned in Cloud Foundry",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {},
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "CFUser",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "CFInstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {
-              "availableUpgradeVersions": "$(.getParams.output.parameters.availableUpgradeVersions)",
-              "appliedVersion": "$(.generateJSON.output.output[0])",
-              "previousProductVersion": "$(.getParams.output.parameters.currentProductVersion)"
-            },
-            "executors": [
-              {
-                "execute": "cf-sapcp:GetCfServiceInstance:1",
-                "input": {
-                  "password": "$(.CFUser.password)",
-                  "org": "$(.CFInstanceDetails.subAccount)",
-                  "serviceInstance": "$(.CFInstanceDetails.resourceName)",
-                  "region": "$(.CFInstanceDetails.region)",
-                  "user": "$(.CFUser.user)",
-                  "includeParameters": "true",
-                  "space": "$(.CFInstanceDetails.resourceGroup)"
-                },
-                "alias": "getParams",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": {
-                  "semantic": "OR",
-                  "conditions": [
-                    {
-                      "semantic": "OR",
-                      "cases": [
-                        {
-                          "expression": "$(.getParams.output.parameters.availableUpgradeVersions) | length",
-                          "operator": "GREATER_THAN",
-                          "semantic": "OR",
-                          "values": [
-                            "0"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": [
-                  {
-                    "message": "No patches or updates found",
-                    "when": {
-                      "semantic": "OR",
-                      "conditions": [
-                        {
-                          "semantic": "OR",
-                          "cases": [
-                            {
-                              "expression": "$(.execution.error.originalMessage)",
-                              "operator": "STARTS_WITH",
-                              "semantic": "OR",
-                              "values": [
-                                "Validation"
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                ]
-              },
-              {
-                "execute": "scripts-sapcp:ExecuteScript:2",
-                "input": {
-                  "stdin": "$(.getParams.output.parameters)",
-                  "script": "#!/usr/bin/env python3\n\nimport json\nimport sys\n\ninput = sys.stdin.read()\nparameters = json.loads(input)\n\n#There is only ever the latest patch per QRC\n#There can be up to two QRCs\n#So at most there could be two patches and two QRCs\n#For simplicity, select the first entry in the list of availableUpgradeVersions\n#Logic could be added here to: \n#  favour QRC upgrades over patches or vice versa\n#  Check the expirationDate of the currentProductVersion\n\nversionParameter= {'data': {'productVersion': {'releaseCycle':'generally-available-quarterly', 'track': parameters['availableUpgradeVersions'][0]['track'], 'id': parameters['availableUpgradeVersions'][0]['id']} } }\n\nprint(json.dumps(versionParameter))"
-                },
-                "alias": "generateJSON",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              },
-              {
-                "execute": "cf-sapcp:UpdateCfServiceInstance:1",
-                "input": {
-                  "password": "$(.CFUser.password) ",
-                  "org": "$(.CFInstanceDetails.subAccount) ",
-                  "serviceInstance": "$(.CFInstanceDetails.resourceName) ",
-                  "region": "$(.CFInstanceDetails.region) ",
-                  "user": "$(.CFUser.user)",
-                  "parameters": "$(.generateJSON.output.output[0])",
-                  "space": "$(.CFInstanceDetails.resourceGroup) "
-                },
-                "alias": "upgrade",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:CFUpgradeHC:1",
-          "name": "CFUpgradeHC",
-          "description": "Upgrade an SAP HANA Cloud Instance provisioned in Cloud Foundry",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {
-            "availableUpgradeVersions": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            },
-            "appliedVersion": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            },
-            "previousProductVersion": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            }
-          },
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [],
-            "output": {
-              "EchoAsString": "$(.execution.input.InputArray[])",
-              "AlternateSelectOddNumbers": "$(.execution.input.InputArray | map(select(. %2 == 1)))",
-              "ReverseArray": "$(.execution.input.InputArray | reverse)",
-              "NotFirstNotLast": "$(.execution.input.InputArray | .[1:-1] )",
-              "Add100": "$( [.execution.input.InputArray[] | . + 100 ] )",
-              "EchoInputArray": "$(.execution.input.InputArray)",
-              "SelectOddNumbers": "$( [ .execution.input.InputArray[] | select (. %2 == 1 ) ] )",
-              "ValuesGreaterThan1": "$(.execution.input.InputArray | map(select(. >1) ) )"
-            },
-            "executors": [],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:ExampleCommand:1",
-          "name": "ExampleCommand",
-          "description": "An example command that demonstrates how inputs can be manipulated using jq or dynamic expressions.",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {
-            "InputArray": {
-              "type": "array",
-              "sensitive": false,
-              "required": false,
-              "minSize": null,
-              "maxSize": null,
-              "minValue": null,
-              "maxValue": null,
-              "allowedValues": null,
-              "allowedValuesFromInputKeys": null,
-              "suggestedValues": null,
-              "suggestedValuesFromInputKeys": null,
-              "defaultValue": "[1, 2, 3, 4, 5]",
-              "defaultValueFromInput": null,
-              "description": null
-            }
-          },
-          "outputKeys": {
-            "EchoAsString": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            },
-            "AlternateSelectOddNumbers": {
-              "type": "array",
-              "sensitive": false,
-              "description": ""
-            },
-            "ReverseArray": {
-              "type": "array",
-              "sensitive": false,
-              "description": null
-            },
-            "NotFirstNotLast": {
-              "type": "array",
-              "sensitive": false,
-              "description": null
-            },
-            "Add100": {
-              "type": "array",
-              "sensitive": false,
-              "description": null
-            },
-            "EchoInputArray": {
-              "type": "array",
-              "sensitive": false,
-              "description": null
-            },
-            "SelectOddNumbers": {
-              "type": "array",
-              "sensitive": false,
-              "description": null
-            },
-            "ValuesGreaterThan1": {
-              "type": "array",
-              "sensitive": false,
-              "description": null
-            }
-          },
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "InstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {
-              "CommandOutput": "$(.getDetails.output.parameters)"
-            },
-            "executors": [
-              {
-                "execute": "sm-sapcp:GetServiceInstanceParameters:1",
-                "input": {
-                  "instanceId": "$(.InstanceDetails.instanceId)",
-                  "serviceKey": "$(.InstanceDetails.smBindingKey)"
-                },
-                "alias": "getDetails",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:GetInstanceParameters:1",
-          "name": "GetInstanceParameters",
-          "description": "Get the instance parameter details",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {
-            "CommandOutput": {
-              "type": "object",
-              "sensitive": false,
-              "description": "Instance parameters"
-            }
-          },
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "InstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "Upgrade",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:Upgrade:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {
-              "result": "$(.upgrade.output.outputs[])",
-              "instancesFound": "$(.getInstances.output.serviceInstances | map({name: .name,  env: .context.env_type, instanceId: .id, service_plan: .service_plan_id}))",
-              "instanceList": "$(.getInstances.output.serviceInstances)"
-            },
-            "executors": [
-              {
-                "execute": "sm-sapcp:ListServiceInstances:1",
-                "input": {
-                  "fieldSelector": "service_plan_id eq '$(.InstanceDetails.servicePlanId)' and context/env_type eq 'sapcp'",
-                  "serviceKey": "$(.InstanceDetails.smBindingKey)"
-                },
-                "alias": "getInstances",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": {
-                  "semantic": "OR",
-                  "conditions": [
-                    {
-                      "semantic": "OR",
-                      "cases": [
-                        {
-                          "expression": "$(.getInstances.output.totalResultsCount) ",
-                          "operator": "GREATER_THAN",
-                          "semantic": "OR",
-                          "values": [
-                            "0"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": [
-                  {
-                    "message": "No instances found to update",
-                    "when": {
-                      "semantic": "OR",
-                      "conditions": [
-                        {
-                          "semantic": "OR",
-                          "cases": [
-                            {
-                              "expression": "$(.execution.error.originalMessage)",
-                              "operator": "STARTS_WITH",
-                              "semantic": "OR",
-                              "values": [
-                                "Validation"
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                ]
-              },
-              {
-                "execute": "utils-sapcp:ForEach:1",
-                "input": {
-                  "inputs": "$(.getInstances.output.serviceInstances | map({ instanceId: .id })) ",
-                  "defaultValues": "{ \"parameters\": $(.Upgrade.parameters), \"serviceKey\": $(.InstanceDetails.smBindingKey) }",
-                  "command": "sm-sapcp:TriggerUpdateServiceInstance:1"
-                },
-                "alias": "upgrade",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:MassUpgradeHC:1",
-          "name": "MassUpgradeHC",
-          "description": "Update the description of an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {
-            "result": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            },
-            "instancesFound": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            },
-            "instanceList": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            }
-          },
-          "tags": {
-            "feature:priority": "medium"
-          }
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "InstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {
-              "CommandOutput": "$(.metricRequest.output.body)",
-              "Count": "$(.metricRequest.output.body | toObject.data[0].values | map(select(.value >= 100)) | length)",
-              "FilteredOutput": "$(.metricRequest.output.body | toObject.data[0].values | map(select(.value >= 100)))"
-            },
-            "executors": [
-              {
-                "execute": "http-sapcp:SensitiveHttpRequest:1",
-                "input": {
-                  "password": "$(.InstanceDetails.instanceBindingKey.uaa.clientsecret)",
-                  "method": "GET",
-                  "user": "$(.InstanceDetails.instanceBindingKey.uaa.clientid)",
-                  "url": "$(.InstanceDetails.instanceBindingKey.uaa.url)/oauth/token?grant_type=client_credentials"
-                },
-                "alias": "getToken",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              },
-              {
-                "execute": "http-sapcp:HttpRequest:1",
-                "input": {
-                  "method": "GET",
-                  "authorizationHeader": "Bearer $(.getToken.output.body | toObject.access_token)",
-                  "url": "https://api.gateway.orchestration.prod-us10.hanacloud.ondemand.com/metrics/v1/serviceInstances/$(.InstanceDetails.instanceId)/values?names=HDBConnectionCount&$filter=dimensions/service_name%20eq%20indexserver"
-                },
-                "alias": "metricRequest",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:MetricRequest:1",
-          "name": "MetricRequest",
-          "description": "Start an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {
-            "CommandOutput": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            },
-            "Count": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            },
-            "FilteredOutput": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            }
-          },
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "InstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "start",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:Start:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {},
-            "executors": [
-              {
-                "execute": "sm-sapcp:UpdateServiceInstance:1",
-                "input": {
-                  "instanceId": "$(.InstanceDetails.instanceId)",
-                  "displayName": "$(.InstanceDetails.instanceName)",
-                  "serviceKey": "$(.InstanceDetails.smBindingKey)",
-                  "parameters": "$(.start.parameters)"
-                },
-                "alias": "update",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:StartHC:1",
-          "name": "StartHC",
-          "description": "Start an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {},
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "InstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "stop",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:Stop:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {},
-            "executors": [
-              {
-                "execute": "sm-sapcp:UpdateServiceInstance:1",
-                "input": {
-                  "instanceId": "$(.InstanceDetails.instanceId)",
-                  "displayName": "$(.InstanceDetails.instanceName)",
-                  "serviceKey": "$(.InstanceDetails.smBindingKey)",
-                  "parameters": "$(.stop.parameters)"
-                },
-                "alias": "update",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:StopHC:1",
-          "name": "StopHC",
-          "description": "Stop an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {},
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "InstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
-                  "inputKey": null
-                }
-              },
-              {
-                "alias": "description",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:Description:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {
-              "CommandOutput": "$(.update.output.serviceInstance)"
-            },
-            "executors": [
-              {
-                "execute": "sm-sapcp:UpdateServiceInstance:1",
-                "input": {
-                  "instanceId": "$(.InstanceDetails.instanceId)",
-                  "displayName": "$(.InstanceDetails.instanceName)",
-                  "serviceKey": "$(.InstanceDetails.smBindingKey)",
-                  "parameters": "$(.description.parameters)"
-                },
-                "alias": "update",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:UpdateHC:1",
-          "name": "UpdateHC",
-          "description": "Update the description of an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {
-            "CommandOutput": {
-              "type": "string",
-              "sensitive": false,
-              "description": ""
-            }
-          },
-          "tags": {}
-        },
-        {
-          "configuration": {
-            "values": [
-              {
-                "alias": "InstanceDetails",
-                "valueFrom": {
-                  "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
-                  "inputKey": null
-                }
-              }
-            ],
-            "output": {
-              "availableUpgradeVersions": "$(.getParams.output.CommandOutput.availableUpgradeVersions)",
-              "appliedVersion": "$(.generateJSON.output.output[0])",
-              "previousProductVersion": "$(.getParams.output.CommandOutput.currentProductVersion)"
-            },
-            "executors": [
-              {
-                "execute": "Automation-<<<TENANT_ID>>>:GetInstanceParameters:1",
-                "input": {},
-                "alias": "getParams",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": {
-                  "semantic": "OR",
-                  "conditions": [
-                    {
-                      "semantic": "OR",
-                      "cases": [
-                        {
-                          "expression": "$(.getParams.output.CommandOutput.availableUpgradeVersions) | length",
-                          "operator": "GREATER_THAN",
-                          "semantic": "OR",
-                          "values": [
-                            "0"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": [
-                  {
-                    "message": "No patches or updates found",
-                    "when": {
-                      "semantic": "OR",
-                      "conditions": [
-                        {
-                          "semantic": "OR",
-                          "cases": [
-                            {
-                              "expression": "$(.execution.error.originalMessage)",
-                              "operator": "STARTS_WITH",
-                              "semantic": "OR",
-                              "values": [
-                                "Validation"
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  }
-                ]
-              },
-              {
-                "execute": "scripts-sapcp:ExecuteScript:2",
-                "input": {
-                  "stdin": "$(.getParams.output.CommandOutput)",
-                  "script": "#!/usr/bin/env python3\n\nimport json\nimport sys\n\ninput = sys.stdin.read()\nparameters = json.loads(input)\n\n#There is only ever the latest patch per QRC\n#There can be up to two QRCs\n#So at most there could be two patches and two QRCs\n#For simplicity, select the first entry in the list of availableUpgradeVersions\n#Logic could be added here to: \n#  favour QRC upgrades over patches or vice versa\n#  Check the expirationDate of the currentProductVersion\n\nversionParameter= {'data': {'productVersion': {'releaseCycle':'generally-available-quarterly', 'track': parameters['availableUpgradeVersions'][0]['track'], 'id': parameters['availableUpgradeVersions'][0]['id']} } }\n\nprint(json.dumps(versionParameter))"
-                },
-                "alias": "generateJSON",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              },
-              {
-                "execute": "sm-sapcp:UpdateServiceInstance:1",
-                "input": {
-                  "instanceId": "$(.InstanceDetails.instanceId)",
-                  "serviceKey": "$(.InstanceDetails.smBindingKey)",
-                  "deadline": "30",
-                  "parameters": "$(.generateJSON.output.output[0])"
-                },
-                "alias": "upgrade",
-                "progressMessage": null,
-                "initialDelay": null,
-                "pause": null,
-                "when": null,
-                "validate": null,
-                "autoRetry": null,
-                "repeat": null,
-                "errorMessages": []
-              }
-            ],
-            "listeners": []
-          },
-          "id": "Automation-<<<TENANT_ID>>>:UpgradeHC:1",
-          "name": "UpgradeHC",
-          "description": "Upgrade an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
-          "catalog": "Automation-<<<TENANT_ID>>>",
-          "version": 1,
-          "inputKeys": {},
-          "outputKeys": {
-            "availableUpgradeVersions": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            },
-            "appliedVersion": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            },
-            "previousProductVersion": {
-              "type": "string",
-              "sensitive": false,
-              "description": null
-            }
-          },
-          "tags": {}
-        }
-      ]
-    }
-    ```
+   ```JSON
+   {
+     "id": "Automation-<<<TENANT_ID>>>",
+     "technicalName": "Automation",
+     "name": "Automation",
+     "description": "Collection of commands to demonstrate automating tasks in SAP HANA Cloud",
+     "owner": "<<<TENANT_ID>>>",
+     "inputs": [
+       {
+         "id": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
+         "name": "CFInstanceDetails",
+         "description": "The details of an SAP HANA Cloud instance provisioned in Cloud Foundry",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "owner": null,
+         "version": 1,
+         "keys": {
+           "resourceGroup": {
+             "type": "string",
+             "sensitive": false,
+             "description": "Cloud Foundry space name (dev)"
+           },
+           "resourceName": {
+             "type": "string",
+             "sensitive": false,
+             "description": "The name of an instance (HC_HDB_CF)"
+           },
+           "region": {
+             "type": "string",
+             "sensitive": false,
+             "description": "cf- value from API Endpoint (cf-us10-001)"
+           },
+           "subAccount": {
+             "type": "string",
+             "sensitive": false,
+             "description": "The Cloud Foundry org name (2fb68c96trial)"
+           }
+         },
+         "values": {
+           "resourceGroup": "dev",
+           "resourceName": "HC_HDB_CF",
+           "region": "cf-us10-001",
+           "subAccount": "2fb68c96trial"
+         },
+         "tags": {}
+       },
+       {
+         "id": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
+         "name": "CFTechnicalUser",
+         "description": "A user that has space developer role in a Cloud Foundry space",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "owner": null,
+         "version": 1,
+         "keys": {
+           "password": {
+             "type": "string",
+             "sensitive": true,
+             "description": ""
+           },
+           "user": {
+             "type": "string",
+             "sensitive": false,
+             "description": "A Cloud Foundry user"
+           }
+         },
+         "values": {
+           "user": "",
+           "password": ""
+         },
+         "tags": {}
+       },
+       {
+         "id": "Automation-<<<TENANT_ID>>>:Description:1",
+         "name": "Description",
+         "description": "Update description JSON for an SAP HANA Cloud instance",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "owner": null,
+         "version": 1,
+         "keys": {
+           "parameters": {
+             "type": "object",
+             "sensitive": false,
+             "description": "JSON parameter to update its description"
+           }
+         },
+         "values": {
+           "parameters": "{\n    \"metadata\": {\n        \"ui.hc.sap.com/description\": \"Updated by the SAP Automation Pilot\"\n    }\n}"
+         },
+         "tags": {}
+       },
+       {
+         "id": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+         "name": "InstanceDetails",
+         "description": "The details of an SAP HANA Cloud Instance deployed to an SAP BTP subaccount",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "owner": null,
+         "version": 1,
+         "keys": {
+           "instanceId": {
+             "type": "string",
+             "sensitive": false,
+             "description": "The instance ID"
+           },
+           "instanceName": {
+             "type": "string",
+             "sensitive": false,
+             "description": "The name of an SAP HANA Cloud instance"
+           },
+           "instanceBindingKey": {
+             "type": "object",
+             "sensitive": false,
+             "description": "An optional binding key on an SAP HANA Cloud Instance used to access alerts and metrics"
+           },
+           "servicePlanId": {
+             "type": "string",
+             "sensitive": false,
+             "description": "Required for MassUpgradeHC when attempting to get a  list of all the SAP HANA Cloud database instances in a subaccount.  Obtained via btp list services/plan --fields-filter \"name contains 'hana'\" "
+           },
+           "smBindingKey": {
+             "type": "object",
+             "sensitive": false,
+             "description": "An optional binding key from a service manager instance used to perform management tasks against multiple instances in a BTP subaccount."
+           }
+         },
+         "values": {
+           "instanceId": "b00eac16-5486-4f27-a52b-359f250273c3",
+           "instanceName": "HC_HDB",
+           "instanceBindingKey": "{}",
+           "servicePlanId": "e573479c-39f8-4774-80a9-12d762b0f159",
+           "smBindingKey": "{}"
+         },
+         "tags": {}
+       },
+       {
+         "id": "Automation-<<<TENANT_ID>>>:Start:1",
+         "name": "Start",
+         "description": "Start JSON for an SAP HANA Cloud instance",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "owner": null,
+         "version": 1,
+         "keys": {
+           "parameters": {
+             "type": "object",
+             "sensitive": false,
+             "description": "JSON parameter to start an SAP HANA Cloud instance"
+           }
+         },
+         "values": {
+           "parameters": "{\n    \"data\": {\n        \"serviceStopped\": false\n    }\n}"
+         },
+         "tags": {}
+       },
+       {
+         "id": "Automation-<<<TENANT_ID>>>:Stop:1",
+         "name": "Stop",
+         "description": "Stop JSON for an SAP HANA Cloud instance",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "owner": null,
+         "version": 1,
+         "keys": {
+           "parameters": {
+             "type": "object",
+             "sensitive": false,
+             "description": "JSON parameter to stop an SAP HANA Cloud instance"
+           }
+         },
+         "values": {
+           "parameters": "{\n    \"data\": {\n        \"serviceStopped\": true\n    }\n}"
+         },
+         "tags": {}
+       },
+       {
+         "id": "Automation-<<<TENANT_ID>>>:Upgrade:1",
+         "name": "Upgrade",
+         "description": "Upgrade JSON for an SAP HANA Cloud instance",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "owner": null,
+         "version": 1,
+         "keys": {
+           "parameters": {
+             "type": "object",
+             "sensitive": false,
+             "description": "JSON parameter to upgrade an instance in the subaccount"
+           }
+         },
+         "values": {
+           "parameters": "{\n   \"data\": {\n     \"productVersion\": {\n         \"releaseCycle\":\"generally-available-quarterly\",\n         \"track\": \"2023.40\",\n         \"id\": \"2023.40.7\"\n     }\n   }\n}\n"
+         },
+         "tags": {}
+       }
+     ],
+     "commands": [
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "CFUser",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "CFInstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {
+             "instanceParameters": "$(.getDetails.output.parameters) "
+           },
+           "executors": [
+             {
+               "execute": "cf-sapcp:GetCfServiceInstance:1",
+               "input": {
+                 "password": "$(.CFUser.password)",
+                 "org": "$(.CFInstanceDetails.subAccount)",
+                 "serviceInstance": "$(.CFInstanceDetails.resourceName)",
+                 "region": "$(.CFInstanceDetails.region)",
+                 "user": "$(.CFUser.user)",
+                 "includeParameters": "true",
+                 "space": "$(.CFInstanceDetails.resourceGroup)"
+               },
+               "alias": "getDetails",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:CFGetInstanceParameters:1",
+         "name": "CFGetInstanceParameters",
+         "description": "Get details on available upgrades for an SAP HANA Cloud Instance provisioned in Cloud Foundry",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {
+           "instanceParameters": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           }
+         },
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "CFUser",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "CFInstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {},
+           "executors": [
+             {
+               "execute": "dblm-sapcp:StartHanaCloudInstance:1",
+               "input": {
+                 "resourceGroup": "$(.CFInstanceDetails.resourceGroup)",
+                 "password": "$(.CFUser.password)",
+                 "resourceName": "$(.CFInstanceDetails.resourceName)",
+                 "region": "$(.CFInstanceDetails.region)",
+                 "user": "$(.CFUser.user)",
+                 "subAccount": "$(.CFInstanceDetails.subAccount)"
+               },
+               "alias": "CFStartHC",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:CFStartHC:1",
+         "name": "CFStartHC",
+         "description": "Start an SAP HANA Cloud Instance provisioned in Cloud Foundry",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {},
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "CFUser",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "CFInstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {},
+           "executors": [
+             {
+               "execute": "dblm-sapcp:StopHanaCloudInstance:1",
+               "input": {
+                 "resourceGroup": "$(.CFInstanceDetails.resourceGroup)",
+                 "password": "$(.CFUser.password)",
+                 "resourceName": "$(.CFInstanceDetails.resourceName)",
+                 "region": "$(.CFInstanceDetails.region)",
+                 "user": "$(.CFUser.user)",
+                 "subAccount": "$(.CFInstanceDetails.subAccount)"
+               },
+               "alias": "CFStopHC",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:CFStopHC:1",
+         "name": "CFStopHC",
+         "description": "Stop an SAP HANA Cloud Instance provisioned in Cloud Foundry",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {},
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "CFUser",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "CFInstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "description",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:Description:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {},
+           "executors": [
+             {
+               "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+               "input": {
+                 "password": "$(.CFUser.password)",
+                 "org": "$(.CFInstanceDetails.subAccount)",
+                 "serviceInstance": "$(.CFInstanceDetails.resourceName)",
+                 "region": "$(.CFInstanceDetails.region)",
+                 "deadline": "30",
+                 "user": "$(.CFUser.user)",
+                 "parameters": "$(.description.parameters)",
+                 "space": "$(.CFInstanceDetails.resourceGroup)"
+               },
+               "alias": "CFUpdateHC",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:CFUpdateHC:1",
+         "name": "CFUpdateHC",
+         "description": "Update the description of an SAP HANA Cloud Instance provisioned in Cloud Foundry",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {},
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "CFUser",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFTechnicalUser:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "CFInstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:CFInstanceDetails:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {
+             "availableUpgradeVersions": "$(.getParams.output.parameters.availableUpgradeVersions)",
+             "appliedVersion": "$(.generateJSON.output.output[0])",
+             "previousProductVersion": "$(.getParams.output.parameters.currentProductVersion)"
+           },
+           "executors": [
+             {
+               "execute": "cf-sapcp:GetCfServiceInstance:1",
+               "input": {
+                 "password": "$(.CFUser.password)",
+                 "org": "$(.CFInstanceDetails.subAccount)",
+                 "serviceInstance": "$(.CFInstanceDetails.resourceName)",
+                 "region": "$(.CFInstanceDetails.region)",
+                 "user": "$(.CFUser.user)",
+                 "includeParameters": "true",
+                 "space": "$(.CFInstanceDetails.resourceGroup)"
+               },
+               "alias": "getParams",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": {
+                 "semantic": "OR",
+                 "conditions": [
+                   {
+                     "semantic": "OR",
+                     "cases": [
+                       {
+                         "expression": "$(.getParams.output.parameters.availableUpgradeVersions) | length",
+                         "operator": "GREATER_THAN",
+                         "semantic": "OR",
+                         "values": [
+                           "0"
+                         ]
+                       }
+                     ]
+                   }
+                 ]
+               },
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": [
+                 {
+                   "message": "No patches or updates found",
+                   "when": {
+                     "semantic": "OR",
+                     "conditions": [
+                       {
+                         "semantic": "OR",
+                         "cases": [
+                           {
+                             "expression": "$(.execution.error.originalMessage)",
+                             "operator": "STARTS_WITH",
+                             "semantic": "OR",
+                             "values": [
+                               "Validation"
+                             ]
+                           }
+                         ]
+                       }
+                     ]
+                   }
+                 }
+               ]
+             },
+             {
+               "execute": "scripts-sapcp:ExecuteScript:2",
+               "input": {
+                 "stdin": "$(.getParams.output.parameters)",
+                 "script": "#!/usr/bin/env python3\n\nimport json\nimport sys\n\ninput = sys.stdin.read()\nparameters = json.loads(input)\n\n#There is only ever the latest patch per QRC\n#There can be up to two QRCs\n#So at most there could be two patches and two QRCs\n#For simplicity, select the first entry in the list of availableUpgradeVersions\n#Logic could be added here to: \n#  favour QRC upgrades over patches or vice versa\n#  Check the expirationDate of the currentProductVersion\n\nversionParameter= {'data': {'productVersion': {'releaseCycle':'generally-available-quarterly', 'track': parameters['availableUpgradeVersions'][0]['track'], 'id': parameters['availableUpgradeVersions'][0]['id']} } }\n\nprint(json.dumps(versionParameter))"
+               },
+               "alias": "generateJSON",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             },
+             {
+               "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+               "input": {
+                 "password": "$(.CFUser.password) ",
+                 "org": "$(.CFInstanceDetails.subAccount) ",
+                 "serviceInstance": "$(.CFInstanceDetails.resourceName) ",
+                 "region": "$(.CFInstanceDetails.region) ",
+                 "user": "$(.CFUser.user)",
+                 "parameters": "$(.generateJSON.output.output[0])",
+                 "space": "$(.CFInstanceDetails.resourceGroup) "
+               },
+               "alias": "upgrade",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:CFUpgradeHC:1",
+         "name": "CFUpgradeHC",
+         "description": "Upgrade an SAP HANA Cloud Instance provisioned in Cloud Foundry",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {
+           "availableUpgradeVersions": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           },
+           "appliedVersion": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           },
+           "previousProductVersion": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           }
+         },
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [],
+           "output": {
+             "EchoAsString": "$(.execution.input.InputArray[])",
+             "AlternateSelectOddNumbers": "$(.execution.input.InputArray | map(select(. %2 == 1)))",
+             "ReverseArray": "$(.execution.input.InputArray | reverse)",
+             "NotFirstNotLast": "$(.execution.input.InputArray | .[1:-1] )",
+             "Add100": "$( [.execution.input.InputArray[] | . + 100 ] )",
+             "EchoInputArray": "$(.execution.input.InputArray)",
+             "SelectOddNumbers": "$( [ .execution.input.InputArray[] | select (. %2 == 1 ) ] )",
+             "ValuesGreaterThan1": "$(.execution.input.InputArray | map(select(. >1) ) )"
+           },
+           "executors": [],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:ExampleCommand:1",
+         "name": "ExampleCommand",
+         "description": "An example command that demonstrates how inputs can be manipulated using jq or dynamic expressions.",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {
+           "InputArray": {
+             "type": "array",
+             "sensitive": false,
+             "required": false,
+             "minSize": null,
+             "maxSize": null,
+             "minValue": null,
+             "maxValue": null,
+             "allowedValues": null,
+             "allowedValuesFromInputKeys": null,
+             "suggestedValues": null,
+             "suggestedValuesFromInputKeys": null,
+             "defaultValue": "[1, 2, 3, 4, 5]",
+             "defaultValueFromInput": null,
+             "description": null
+           }
+         },
+         "outputKeys": {
+           "EchoAsString": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           },
+           "AlternateSelectOddNumbers": {
+             "type": "array",
+             "sensitive": false,
+             "description": ""
+           },
+           "ReverseArray": {
+             "type": "array",
+             "sensitive": false,
+             "description": null
+           },
+           "NotFirstNotLast": {
+             "type": "array",
+             "sensitive": false,
+             "description": null
+           },
+           "Add100": {
+             "type": "array",
+             "sensitive": false,
+             "description": null
+           },
+           "EchoInputArray": {
+             "type": "array",
+             "sensitive": false,
+             "description": null
+           },
+           "SelectOddNumbers": {
+             "type": "array",
+             "sensitive": false,
+             "description": null
+           },
+           "ValuesGreaterThan1": {
+             "type": "array",
+             "sensitive": false,
+             "description": null
+           }
+         },
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "InstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {
+             "CommandOutput": "$(.getDetails.output.parameters)"
+           },
+           "executors": [
+             {
+               "execute": "sm-sapcp:GetServiceInstanceParameters:1",
+               "input": {
+                 "instanceId": "$(.InstanceDetails.instanceId)",
+                 "serviceKey": "$(.InstanceDetails.smBindingKey)"
+               },
+               "alias": "getDetails",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:GetInstanceParameters:1",
+         "name": "GetInstanceParameters",
+         "description": "Get the instance parameter details",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {
+           "CommandOutput": {
+             "type": "object",
+             "sensitive": false,
+             "description": "Instance parameters"
+           }
+         },
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "InstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "Upgrade",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:Upgrade:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {
+             "result": "$(.upgrade.output.outputs[])",
+             "instancesFound": "$(.getInstances.output.serviceInstances | map({name: .name,  env: .context.env_type, instanceId: .id, service_plan: .service_plan_id}))",
+             "instanceList": "$(.getInstances.output.serviceInstances)"
+           },
+           "executors": [
+             {
+               "execute": "sm-sapcp:ListServiceInstances:1",
+               "input": {
+                 "fieldSelector": "service_plan_id eq '$(.InstanceDetails.servicePlanId)' and context/env_type eq 'sapcp'",
+                 "serviceKey": "$(.InstanceDetails.smBindingKey)"
+               },
+               "alias": "getInstances",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": {
+                 "semantic": "OR",
+                 "conditions": [
+                   {
+                     "semantic": "OR",
+                     "cases": [
+                       {
+                         "expression": "$(.getInstances.output.totalResultsCount) ",
+                         "operator": "GREATER_THAN",
+                         "semantic": "OR",
+                         "values": [
+                           "0"
+                         ]
+                       }
+                     ]
+                   }
+                 ]
+               },
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": [
+                 {
+                   "message": "No instances found to update",
+                   "when": {
+                     "semantic": "OR",
+                     "conditions": [
+                       {
+                         "semantic": "OR",
+                         "cases": [
+                           {
+                             "expression": "$(.execution.error.originalMessage)",
+                             "operator": "STARTS_WITH",
+                             "semantic": "OR",
+                             "values": [
+                               "Validation"
+                             ]
+                           }
+                         ]
+                       }
+                     ]
+                   }
+                 }
+               ]
+             },
+             {
+               "execute": "utils-sapcp:ForEach:1",
+               "input": {
+                 "inputs": "$(.getInstances.output.serviceInstances | map({ instanceId: .id })) ",
+                 "defaultValues": "{ \"parameters\": $(.Upgrade.parameters), \"serviceKey\": $(.InstanceDetails.smBindingKey) }",
+                 "command": "sm-sapcp:TriggerUpdateServiceInstance:1"
+               },
+               "alias": "upgrade",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:MassUpgradeHC:1",
+         "name": "MassUpgradeHC",
+         "description": "Update the description of an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {
+           "result": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           },
+           "instancesFound": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           },
+           "instanceList": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           }
+         },
+         "tags": {
+           "feature:priority": "medium"
+         }
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "InstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {
+             "CommandOutput": "$(.metricRequest.output.body)",
+             "Count": "$(.metricRequest.output.body | toObject.data[0].values | map(select(.value >= 100)) | length)",
+             "FilteredOutput": "$(.metricRequest.output.body | toObject.data[0].values | map(select(.value >= 100)))"
+           },
+           "executors": [
+             {
+               "execute": "http-sapcp:SensitiveHttpRequest:1",
+               "input": {
+                 "password": "$(.InstanceDetails.instanceBindingKey.uaa.clientsecret)",
+                 "method": "GET",
+                 "user": "$(.InstanceDetails.instanceBindingKey.uaa.clientid)",
+                 "url": "$(.InstanceDetails.instanceBindingKey.uaa.url)/oauth/token?grant_type=client_credentials"
+               },
+               "alias": "getToken",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             },
+             {
+               "execute": "http-sapcp:HttpRequest:1",
+               "input": {
+                 "method": "GET",
+                 "authorizationHeader": "Bearer $(.getToken.output.body | toObject.access_token)",
+                 "url": "https://api.gateway.orchestration.prod-us10.hanacloud.ondemand.com/metrics/v1/serviceInstances/$(.InstanceDetails.instanceId)/values?names=HDBConnectionCount&$filter=dimensions/service_name%20eq%20indexserver"
+               },
+               "alias": "metricRequest",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:MetricRequest:1",
+         "name": "MetricRequest",
+         "description": "Start an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {
+           "CommandOutput": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           },
+           "Count": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           },
+           "FilteredOutput": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           }
+         },
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "InstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "start",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:Start:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {},
+           "executors": [
+             {
+               "execute": "sm-sapcp:UpdateServiceInstance:1",
+               "input": {
+                 "instanceId": "$(.InstanceDetails.instanceId)",
+                 "displayName": "$(.InstanceDetails.instanceName)",
+                 "serviceKey": "$(.InstanceDetails.smBindingKey)",
+                 "parameters": "$(.start.parameters)"
+               },
+               "alias": "update",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:StartHC:1",
+         "name": "StartHC",
+         "description": "Start an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {},
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "InstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "stop",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:Stop:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {},
+           "executors": [
+             {
+               "execute": "sm-sapcp:UpdateServiceInstance:1",
+               "input": {
+                 "instanceId": "$(.InstanceDetails.instanceId)",
+                 "displayName": "$(.InstanceDetails.instanceName)",
+                 "serviceKey": "$(.InstanceDetails.smBindingKey)",
+                 "parameters": "$(.stop.parameters)"
+               },
+               "alias": "update",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:StopHC:1",
+         "name": "StopHC",
+         "description": "Stop an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {},
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "InstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+                 "inputKey": null
+               }
+             },
+             {
+               "alias": "description",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:Description:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {
+             "CommandOutput": "$(.update.output.serviceInstance)"
+           },
+           "executors": [
+             {
+               "execute": "sm-sapcp:UpdateServiceInstance:1",
+               "input": {
+                 "instanceId": "$(.InstanceDetails.instanceId)",
+                 "displayName": "$(.InstanceDetails.instanceName)",
+                 "serviceKey": "$(.InstanceDetails.smBindingKey)",
+                 "parameters": "$(.description.parameters)"
+               },
+               "alias": "update",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:UpdateHC:1",
+         "name": "UpdateHC",
+         "description": "Update the description of an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {
+           "CommandOutput": {
+             "type": "string",
+             "sensitive": false,
+             "description": ""
+           }
+         },
+         "tags": {}
+       },
+       {
+         "configuration": {
+           "values": [
+             {
+               "alias": "InstanceDetails",
+               "valueFrom": {
+                 "inputReference": "Automation-<<<TENANT_ID>>>:InstanceDetails:1",
+                 "inputKey": null
+               }
+             }
+           ],
+           "output": {
+             "availableUpgradeVersions": "$(.getParams.output.CommandOutput.availableUpgradeVersions)",
+             "appliedVersion": "$(.generateJSON.output.output[0])",
+             "previousProductVersion": "$(.getParams.output.CommandOutput.currentProductVersion)"
+           },
+           "executors": [
+             {
+               "execute": "Automation-<<<TENANT_ID>>>:GetInstanceParameters:1",
+               "input": {},
+               "alias": "getParams",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": {
+                 "semantic": "OR",
+                 "conditions": [
+                   {
+                     "semantic": "OR",
+                     "cases": [
+                       {
+                         "expression": "$(.getParams.output.CommandOutput.availableUpgradeVersions) | length",
+                         "operator": "GREATER_THAN",
+                         "semantic": "OR",
+                         "values": [
+                           "0"
+                         ]
+                       }
+                     ]
+                   }
+                 ]
+               },
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": [
+                 {
+                   "message": "No patches or updates found",
+                   "when": {
+                     "semantic": "OR",
+                     "conditions": [
+                       {
+                         "semantic": "OR",
+                         "cases": [
+                           {
+                             "expression": "$(.execution.error.originalMessage)",
+                             "operator": "STARTS_WITH",
+                             "semantic": "OR",
+                             "values": [
+                               "Validation"
+                             ]
+                           }
+                         ]
+                       }
+                     ]
+                   }
+                 }
+               ]
+             },
+             {
+               "execute": "scripts-sapcp:ExecuteScript:2",
+               "input": {
+                 "stdin": "$(.getParams.output.CommandOutput)",
+                 "script": "#!/usr/bin/env python3\n\nimport json\nimport sys\n\ninput = sys.stdin.read()\nparameters = json.loads(input)\n\n#There is only ever the latest patch per QRC\n#There can be up to two QRCs\n#So at most there could be two patches and two QRCs\n#For simplicity, select the first entry in the list of availableUpgradeVersions\n#Logic could be added here to: \n#  favour QRC upgrades over patches or vice versa\n#  Check the expirationDate of the currentProductVersion\n\nversionParameter= {'data': {'productVersion': {'releaseCycle':'generally-available-quarterly', 'track': parameters['availableUpgradeVersions'][0]['track'], 'id': parameters['availableUpgradeVersions'][0]['id']} } }\n\nprint(json.dumps(versionParameter))"
+               },
+               "alias": "generateJSON",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             },
+             {
+               "execute": "sm-sapcp:UpdateServiceInstance:1",
+               "input": {
+                 "instanceId": "$(.InstanceDetails.instanceId)",
+                 "serviceKey": "$(.InstanceDetails.smBindingKey)",
+                 "deadline": "30",
+                 "parameters": "$(.generateJSON.output.output[0])"
+               },
+               "alias": "upgrade",
+               "progressMessage": null,
+               "initialDelay": null,
+               "pause": null,
+               "when": null,
+               "validate": null,
+               "autoRetry": null,
+               "repeat": null,
+               "errorMessages": []
+             }
+           ],
+           "listeners": []
+         },
+         "id": "Automation-<<<TENANT_ID>>>:UpgradeHC:1",
+         "name": "UpgradeHC",
+         "description": "Upgrade an SAP HANA Cloud instance provisioned to an SAP BTP subaccount",
+         "catalog": "Automation-<<<TENANT_ID>>>",
+         "version": 1,
+         "inputKeys": {},
+         "outputKeys": {
+           "availableUpgradeVersions": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           },
+           "appliedVersion": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           },
+           "previousProductVersion": {
+             "type": "string",
+             "sensitive": false,
+             "description": null
+           }
+         },
+         "tags": {}
+       }
+     ]
+   }
+   ```
 
     The catalog will appear under **My Catalogs** and is named **Automation**.
 
@@ -1370,8 +1370,8 @@ The examples shown include commands to start, stop, update, access instance metr
     >It should be noted that connection details are also available in the system view [M_CONNECTIONS](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/m-connections-system-view).  The number of currently open connections can be determined by using a SQL query such as the one shown below.
 
     >```SQL
-    SELECT * FROM PUBLIC.M_CONNECTIONS WHERE END_TIME is NULL;
-    ```
+    >SELECT * FROM PUBLIC.M_CONNECTIONS WHERE END_TIME is NULL;
+    >```
 
 5. Open the command **UpgradeHC**.  This command takes an input parameter to specify the instance to target.  It can be used to perform an upgrade of an SAP HANA Cloud instance and selects the instance to upgrade to from a value returned by a call to GetInstanceParameters.  This command could then be scheduled to run nightly or weekly which would then keep the SAP HANA Cloud instance running using the latest available patch or update.  
     

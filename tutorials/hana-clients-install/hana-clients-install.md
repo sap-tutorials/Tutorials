@@ -51,26 +51,26 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
     On Linux, use the following:
 
-    ```Shell (Linux)
-    tar -zxvf hanaclient*.tar.gz
-    ```  
+   ```Shell (Linux)
+   tar -zxvf hanaclient*.tar.gz
+   ```  
 
     On Mac, use the following:
 
-    ```Shell (Mac)
-    hdiutil attach hanaclient-*.dmg
-    cd "/Volumes/SAP HANA Client"
-    ```  
+   ```Shell (Mac)
+   hdiutil attach hanaclient-*.dmg
+   cd "/Volumes/SAP HANA Client"
+   ```  
 
 3. Start the graphical installer `hdbsetup` or use the command line installer `hdbinst`.  
 
-    ```Shell (Microsoft Windows)
-    hdbsetup.exe
-    ```
+   ```Shell (Microsoft Windows)
+   hdbsetup.exe
+   ```
 
-    ```Shell (Linux or Mac)
-    ./hdbsetup
-    ```  
+   ```Shell (Linux or Mac)
+   ./hdbsetup
+   ```  
 
     Set the install directory to `C:\SAP\hdbclient` on Microsoft Windows or to `users/your_user/sap/hdbclient` on Linux or macOS and complete the installation.  
 
@@ -89,34 +89,32 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
     ![using set to view environment variables](env-variables.png)
 
     >For details on how to configure your path on a Mac see [this](https://blogs.sap.com/2020/04/03/quick-tip-how-to-add-hdbsql-to-a-path-on-macos/) blog post and proceed to sub-step 5.
-
-    >---
-
+    >
     >To configure your path on Linux:
 
     >Open an editor to edit the file `.bash_profile`, `.profile`, or `.zshrc`.
 
     >```Shell (Linux or Mac)
-    pico ~/.bash_profile
+    >pico ~/.bash_profile
     >```
 
     >This tutorial uses notepad and `pico` as default text editors, but any text editor will do.
     >`Pico` can be installed on SUSE Linux with
 
     >```Shell (Linux SUSE)
-    sudo zypper install pico
+    >sudo zypper install pico
     >```
 
     >Add the following line to the .bash_profile after adjusting the path to match the location of where the SAP HANA client was installed.
 
     >```Shell (Linux or Mac)
-    export PATH=$PATH:/home/dan/sap/hdbclient
+    >export PATH=$PATH:/home/dan/sap/hdbclient
     >```
 
     >Run the source command to immediately apply all the changes made to the `.bash_profile` file
 
     >```Shell (Linux or Mac)
-    source ~/.bash_profile
+    >source ~/.bash_profile
     >```
 
 5. In the `hdbclient` folder, notice that files such as `hdbsql` and the client database drivers are available.  
@@ -125,9 +123,9 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
 6. Run the following command in a newly opened shell to verify the installation succeeded and the path is correct.
 
-    ```Shell
-    hdbsql -v
-    ```
+   ```Shell
+   hdbsql -v
+   ```
 
     ![Version of HDBSQL](hdbsql-v-cmd-prompt.png)
 
@@ -167,14 +165,14 @@ Another download location is the [SAP Software Center](https://me.sap.com/softwa
 
     The command to extract a `.sar` file is shown below.  The command options are extract, verbose and file. Make sure the `.sar` file you want to extract is in the same directory as the SAPCAR executable.
 
-    ```Shell (Microsoft Windows Command Prompt)
-    SAPCAR_600-70009506.EXE -xvf IMDB_CLIENT*.SAR
-    ```
+   ```Shell (Microsoft Windows Command Prompt)
+   SAPCAR_600-70009506.EXE -xvf IMDB_CLIENT*.SAR
+   ```
 
-    ```Shell (Linux or Mac)
-    chmod u+x SAPCAR
-    ./SAPCAR -xvf IMDB_CLIENT*.SAR
-    ```
+   ```Shell (Linux or Mac)
+   chmod u+x SAPCAR
+   ./SAPCAR -xvf IMDB_CLIENT*.SAR
+   ```
 
 3. Install the software as shown in sub-step 3 of Install from SAP Development Tools.
 

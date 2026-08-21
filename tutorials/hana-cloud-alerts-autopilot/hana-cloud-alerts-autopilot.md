@@ -46,9 +46,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
     >If the Automation Pilot service does not appear, it may be that the entitlement needs to be added to the subaccount.  To do so, navigate to the subaccount, select **Entitlements**, **Configure Entitlements**, **Add Service Plans**, select **Automation Pilot**, and add a plan such as free or standard. Do not forget to save the changes made to Entitlements,
 
     > ![add entitlement](add-entitlement.png)
-
-    > ---
-
+    >
     > The SAP Automation Pilot subscription can be located in a different global account or subaccount from the SAP Alert Notification service and the SAP HANA Cloud database.
 
     ![create service](create-service.png)
@@ -106,17 +104,17 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     Notice that it contains the below script and that the parameters, environment, and `stdin` have their values set from the input `WelcomeScriptInput` using its alias name of `scriptInput`.
 
-    ```Python
-    #!/usr/bin/env python3
+   ```Python
+   #!/usr/bin/env python3
 
-    import sys, os
+   import sys, os
 
-    stdin = sys.stdin.readline()
-    env = os.environ.get("GREETING")
-    (arg1, arg2) = sys.argv[1:3]
+   stdin = sys.stdin.readline()
+   env = os.environ.get("GREETING")
+   (arg1, arg2) = sys.argv[1:3]
 
-    print(f"{env}{arg1} {stdin}{arg2}")
-    ```
+   print(f"{env}{arg1} {stdin}{arg2}")
+   ```
 
 10. Trigger the command.
 
@@ -329,20 +327,18 @@ This step will configure the SAP Alert Notification service to invoke the previo
 
 5. Update the conditions and action of an Alert Notification service subscription, such as the one created in step 5 of the [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts) tutorial to use the newly created conditions and action.
 
-    <!-- border -->![action added to subscription](ans-subscription-updated.png)
+    ![action added to subscription](ans-subscription-updated.png)
 
     >For the purpose of this example, the condition matches `HDBTestAlert` rather than `HDBDiskUsage` to make it easy to trigger.  More details can be found at [HDB Test Alert](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/8e2f22048df24d1b81cb2c05ce637958.html).
-
-    >---
-
+    >
     >Note that multiple alerts will be triggered.  For example, alerts are sent with a status of  CREATE, UPDATE, or CLOSE.  Some alerts have different thresholds or severity values such as ERROR, WARNING, or NOTICE.  See also [Alerts in SAP HANA Cloud](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/8eca57e7e82e4b788246b6d9db020937.html).
 
 
 6. In the SAP HANA database explorer, trigger the test alert.
 
-    ```SQL
-    CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
-    ```
+   ```SQL
+   CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
+   ```
 
     An alert will appear in the SAP HANA Cockpit and a notification will be sent to the SAP Alert Notification service.  In the SAP Alert Notification service, the previously edited subscription will trigger the command in the SAP Automation Pilot.
 
@@ -356,56 +352,56 @@ This step will configure the SAP Alert Notification service to invoke the previo
 
     As subset of input is shown below.
 
-    ```JSON
-    {
-        "eventType": "HDBTestAlert",
-        "severity": "ERROR",
-        "category": "ALERT",
-        "subject": "Statistics server test alert",
-        "body": "Test alert for testing statistics server alert handling. This alert can only be triggered by calling the procedure _SYS_STATISTICS.Trigger_Test_Alert.\nHigh test alert",
-        "region": "cf-us10",
-        "regionType": "sap-cp",
-        "resource": {
-            "resourceName": "HC_HDB_Trial",
-            "resourceType": "hana-cloud-hdb",
-            "tags": {
-                "organizationId": "f3894582-...",
-                "resourceId": "296ff33c-...",
-                "spaceId": "d1e245ad-...",
-            }
-        }
-    }
-    ```
+   ```JSON
+   {
+       "eventType": "HDBTestAlert",
+       "severity": "ERROR",
+       "category": "ALERT",
+       "subject": "Statistics server test alert",
+       "body": "Test alert for testing statistics server alert handling. This alert can only be triggered by calling the procedure _SYS_STATISTICS.Trigger_Test_Alert.\nHigh test alert",
+       "region": "cf-us10",
+       "regionType": "sap-cp",
+       "resource": {
+           "resourceName": "HC_HDB_Trial",
+           "resourceType": "hana-cloud-hdb",
+           "tags": {
+               "organizationId": "f3894582-...",
+               "resourceId": "296ff33c-...",
+               "spaceId": "d1e245ad-...",
+           }
+       }
+   }
+   ```
 
     The output contains the details of the SAP HANA Cloud database in which the alert came from including the current storage size of the database instance.
 
     A subset of the output is shown below.
 
-    ```JSON[17]
-    {
-    "data": {
-        "edition": "cloud",
-        "enabledservices": {
-            "scriptserver": false
-        },
-        "extensionservices": [
-            {
-                "enabled": false,
-                "name": "ConnectivityProxy",
-                "whitelistIPs": [
-                    "0.0.0.0/0"
-                ]
-            }
-        ],
-        "memory": 30,
-        "storage": 120,
-        "updateStrategy": "withRestart",
-        "vcpu": 3,
-        "whitelistIPs": [
-            "0.0.0.0/0"
-        ] },
-    }
-    ```
+   ```JSON[17]
+   {
+   "data": {
+       "edition": "cloud",
+       "enabledservices": {
+           "scriptserver": false
+       },
+       "extensionservices": [
+           {
+               "enabled": false,
+               "name": "ConnectivityProxy",
+               "whitelistIPs": [
+                   "0.0.0.0/0"
+               ]
+           }
+       ],
+       "memory": 30,
+       "storage": 120,
+       "updateStrategy": "withRestart",
+       "vcpu": 3,
+       "whitelistIPs": [
+           "0.0.0.0/0"
+       ] },
+   }
+   ```
 
 
 
@@ -415,9 +411,7 @@ This step will configure the SAP Alert Notification service to invoke the previo
 This step will add an executor to calculate a new storage size for the SAP HANA instance based on its current size and will then use a provided command to request the SAP HANA Cloud database to increase its storage size.  
 
 >Note that a trial or free-tier instance does not provide an option of changing the storage size of the provisioned SAP HANA Cloud database.
-
->---
-
+>
 >This example is for demonstration purposes only.  Consult the [SAP HANA Cloud Capacity Unit Estimator](https://hcsizingestimator.cfapps.eu10.hana.ondemand.com/) for further details on how the storage size affects capacity units.  It is not possible to decrease the storage size.  For additional details see [Managing SAP HANA Database Instances](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/649092e9d9be41c59930179ce4f3d59e.html).
 
 
@@ -437,19 +431,19 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
     Specify the following for the script.
 
-    ```Python
-    #!/usr/bin/env python3
+   ```Python
+   #!/usr/bin/env python3
 
-    import json
-    import sys
+   import json
+   import sys
 
-    input = sys.stdin.read()
-    parameters = json.loads(input)
-    #If you wish to test this without actually doing the resize, change +40 to -1
-    storageParameter = {'data': {'storage': parameters['data']['storage'] + 40}}
+   input = sys.stdin.read()
+   parameters = json.loads(input)
+   #If you wish to test this without actually doing the resize, change +40 to -1
+   storageParameter = {'data': {'storage': parameters['data']['storage'] + 40}}
 
-    print(json.dumps(storageParameter))
-    ```
+   print(json.dumps(storageParameter))
+   ```
 
     Under **STDIN**, specify `$(.getHANACloudDBDetails.output.parameters)`.
 
@@ -461,9 +455,9 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
 4. Optionally, in the SAP HANA database explorer, trigger the test alert.
 
-    ```SQL
-    CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
-    ```
+   ```SQL
+   CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
+   ```
 
     When the execution completes, the output should contain the JSON input for the new storage size.
 
@@ -496,9 +490,9 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
 7. In the SAP HANA database explorer, trigger the test alert.
 
-    ```SQL
-    CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
-    ```
+   ```SQL
+   CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
+   ```
 
 8. Examine the completed execution. Click **Show** to view the output value. 
 
