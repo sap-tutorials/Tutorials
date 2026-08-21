@@ -32,12 +32,10 @@ You'll need to set up the correct email configurations so that the right people 
 
 1. Change up the correct address of your reviewer. This person will get all the notifications about new submitted use cases, so this might be your IT Admin or CoE team. The email address can be entered in the email header. 
     
-    <!-- size:500px -->
     ![](visuals/emailaddress.png)
 
 1. Feel free to also change up the content of the mail. Edit the mail body to reflect your thoughts on how such a email should look like.  Make sure to change the link of the inbox.
     
-    <!-- size:300px -->
     ![](visuals/mailbody.png)
 
 1. Similarily, edit the email body of the other email steps - for instance if an Use Case gets denied. 
@@ -45,7 +43,6 @@ You'll need to set up the correct email configurations so that the right people 
 1. Go to the approval step and enter the email address of your SAP Build Admin/IT admin.
    Following the same approach, also change the recipient for the use case auto approval form to this person.
 
-    <!-- size:500px -->
     ![](visuals/Approval.png)
 
 
@@ -56,38 +53,31 @@ In the previous [tutorial](https://developers.sap.com/tutorials/build-use-case-b
 
 1. Click on the **+** icon under the left branch of the approval form (success branch) to add a step.  Select **Actions** now.
    
-   <!-- size:500px -->
    ![](visuals/addaction.png)
 
 2. Now search for the action project you created and add it. 
     
-    <!-- size:500px -->
     ![](visuals/addaction2.png)
    
 3. Rename the step to *Submit idea to Build COE*. Make sure a destination variable is selected, if not, please create one.
     Under **Run step on behalf of**, select **Approval form**. Leave the input parameters as it is.
 
-    <!-- size:500px -->
     ![](visuals/Actionconfig.png)
     
     Go to the Inputs tab, map, choose **postmessage** to *Content* and **title** to *Name*
 
-    <!-- size:500px -->
     ![](visuals/Actioninput.png)
 
 4. Similarily add another action project under the **Auto approval form** in the default branch of the Condition.
    
-     <!-- size:500px -->
-    ![](visuals/Actionconfig2.png)
+     ![](visuals/Actionconfig2.png)
 
 5. After all the configuration, make sure to **save** it and **release** it.
 
-    <!-- size:500px -->
     ![](visuals/release.png)
 
 6. After releasing, deploy your project. Select the target you created to connect to  SAP Build Work Zone to define the target variable.
 
-    <!-- size:500px -->
     ![](visuals/Destination.png)
 
 
@@ -98,23 +88,19 @@ In order for the Use Case Buddy to be able provide submitted ideas to your proce
 
 6. From your Build Lobby, select *Options* of your Use Case Buddy process and click on *Publish to library*.
     
-    <!-- size:500px -->
     ![](visuals/publishtolibrary.png)
     
 
 7. Click on *Publish* to publish your process automation content. This way it becomes accessible for SAP Build Apps.
     
-    <!-- size:500px -->
     ![](visuals/publishbutton.png)
 
 8.  Open your Use Case Buddy app project in SAP Build Apps, go to *DATA* tab and *Add Integration* and select SAP Build Library by clicking on *LIBRARY*.
 
-    <!-- size:500px -->
     ![](visuals/BuildLibrary.png)
 
 9.  Select your *Usecase approval* process from the library and enable it. 
     
-    <!-- size:500px -->
     ![](visuals/processlibrary.png)
     
 

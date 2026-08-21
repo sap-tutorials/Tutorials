@@ -28,7 +28,7 @@ author_profile: https://github.com/Juliana-Morais
 
 2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
-    <!-- border -->![Trial global account](01_Foundation20Onboarding_Home.png)
+    ![Trial global account](01_Foundation20Onboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
@@ -49,19 +49,19 @@ Now, you will use the **Set up account for Business Entity Recognition** booster
 
 1. On the navigation side bar, click **Boosters**.
 
-    <!-- border -->![Service Key](access-booster.png)
+    ![Service Key](access-booster.png)
 
 2. Search for **Set up account for Business Entity Recognition** and click the tile to access the booster.
 
-    <!-- border -->![Service Key](access-booster-tile.png)
+    ![Service Key](access-booster-tile.png)
 
 3. Click **Start**.
 
-    <!-- border -->![Service Key](booster-start.png)
+    ![Service Key](booster-start.png)
 
     >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** dialog box.
 
-    <!-- border -->![Service Key](booster-success.png)
+    ![Service Key](booster-success.png)
 
 
 
@@ -72,7 +72,7 @@ You have successfully used the booster **Set up account for Business Entity Reco
 
 Click **Download Service Key** to save the service key locally on your computer.
 
-<!-- border -->![Service Key](booster-success-key.png)
+![Service Key](booster-success-key.png)
 
 >If you face any issue with the booster **Set up account for Business Entity Recognition**, you can alternatively follow the steps in [Use Trial to Create a Service Instance for Business Entity Recognition](cp-aibus-ber-service-instance).
 
@@ -90,23 +90,23 @@ Do the following to access your service instance and service key, without having
 
 1. Close the booster **Success** dialog box.
 
-    <!-- border -->![Service Key](leave-success.png)
+    ![Service Key](leave-success.png)
 
 2. Access your trial account.
 
-    <!-- border -->![Service Key](trial-account.png)
+    ![Service Key](trial-account.png)
 
 3. Click **Account Explorer** on the navigation side bar, and then click **trial** to access your subaccount.
 
-    <!-- border -->![Service Key](subaccounts.png)
+    ![Service Key](subaccounts.png)
 
 4. Click **Instances and Subscriptions** on the navigation side bar. You see the service instance you created with the **Set up account for Business Entity Recognition** booster.
 
-    <!-- border -->![Service Key](service-instance.png)
+    ![Service Key](service-instance.png)
 
 5. Click the navigation arrow to open the details of your service instance. Then, click the dots to **View**, **Download** or **Delete** your service key.
 
-    <!-- border -->![Service Key](service-key.png)
+    ![Service Key](service-key.png)
 
 Congratulations, you have completed this tutorial.
 

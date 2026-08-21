@@ -23,9 +23,9 @@ parser: v2
   - You are subscribed to [SAP Business Application Studio](appstudio-onboarding)
   - The following prerequisites are optional, on trial accounts the space and role should have been created by default
   - Under Cloud Foundry **Create a Space** if you don't have one already
-    <!-- border -->![space](CheckSpace.png)
+    ![space](CheckSpace.png)
   - Make sure your user has a **Space Developer** Role
-    <!-- border -->![developer](CheckSpaceDeveloper.png)
+    ![developer](CheckSpaceDeveloper.png)
 
 
 ## Overview
@@ -33,7 +33,7 @@ Find more information on SAP Cloud Application Programming Model [Welcome to CAP
 
 In this tutorial group you will learn all the steps to finally consume a CAP Service in a process of SAP Build Process Automation.
 
-<!-- border -->![steps](Steps.png)
+![steps](Steps.png)
 
 ## The Use Case
 In this series of tutorials, you will implement a CAP Service with very easy functions like converting a String to a number, converting a list of ids to a comma separated String and finally consume the CAP Service API functions in SAP Build Process Automation Process.
@@ -46,23 +46,23 @@ In this series of tutorials, you will implement a CAP Service with very easy fun
 
 2. Choose **Create Dev Space**.
 
-    <!-- border -->![Create DEV Space](step2-newicon-create-dev-space.png)
+    ![Create DEV Space](step2-newicon-create-dev-space.png)
 
 3. Use name **`demo`** for your dev space and select kind **`Full-Stack Application Using Productivity Tools`**. 
 
-    <!-- border -->![name](CreateNameKind.png)
+    ![name](CreateNameKind.png)
 
     >By selecting **Full-Stack Application Using Productivity Tools**, your dev space comes with several extensions out-of-the-box that you need to develop CAP services.
 
 4.  Choose **Create Dev Space**.
 
-    <!-- border -->![create](CreateDevSpace.png)
+    ![create](CreateDevSpace.png)
 
     >The creation of the dev space takes a while. You see that the status for your dev space will change from **STARTING** to **RUNNING**.
 
 6. Once the dev space is running, click the dev space name to open it.
 
-    <!-- border -->![open](OpenDevSpace.png)
+    ![open](OpenDevSpace.png)
 
     >Opening the dev space and starting the Application Studio takes a while. 
 
@@ -71,21 +71,21 @@ In this series of tutorials, you will implement a CAP Service with very easy fun
 
 1. Use the **File** menu to create a **New Project from Template**.
 
-    <!-- border -->![file menu](FileMenu.png)
+    ![file menu](FileMenu.png)
 
 2. Choose **CAP Project** from the templates and choose **Start**.
 
-    <!-- border -->![cap project](NewCAP-1.png)
+    ![cap project](NewCAP-1.png)
 
 3. Enter the **CAP Project Details**, use name **`sap-build-cap-sample-library`**, select **`Cloud Foundry: MTA Deployment`**  and choose **Finish**.
 
     >Runtime **Node.js** is already selected.
 
-    <!-- border -->![finish](ProjectDetails.png)
+    ![finish](ProjectDetails.png)
 
 4. Change the view from **Project Explorer** to **Explorer**, choose **View** > **Explorer**.
 
-    <!-- border -->![guidedHome](ViewExplorer.png)
+    ![guidedHome](ViewExplorer.png)
 
     >The Explorer view will show all files of your project. 
 
@@ -94,12 +94,12 @@ In this series of tutorials, you will implement a CAP Service with very easy fun
 
 1. In the Explorer view you will find the file `mta.yaml` in the root folder of your project `sap-build-cap-sample-library`.
 
-    <!-- border -->![project](ProjectFiles.png)
+    ![project](ProjectFiles.png)
 
 
 2. Check the file in a text editor, **right-click** > **Open With...** > **Text Editor default**.
 
-    <!-- border -->![mta](MTAyaml.png)
+    ![mta](MTAyaml.png)
 
 3. In the **`srv`** folder, create a new file called **`service.cds`**.
    
@@ -111,117 +111,117 @@ In this series of tutorials, you will implement a CAP Service with very easy fun
 
     >Simple functions like converting a String to an Integer, a list to a CSV String or getting the list of Todos.
 
-    ```CDS
-    @Capabilities.BatchSupported : false
+   ```CDS
+   @Capabilities.BatchSupported : false
 
-    service sap_build_cap_sample_library @(path : '/api/v1') {
-    
-    define type DataString {
-        value : String;
-    }
+   service sap_build_cap_sample_library @(path : '/api/v1') {
+   
+   define type DataString {
+       value : String;
+   }
 
-    define type DataInteger {
-        value : Integer;
-    }
-    
-    define type DataNumber {
-        value : Double;
-    }
+   define type DataInteger {
+       value : Integer;
+   }
+   
+   define type DataNumber {
+       value : Double;
+   }
 
-    define type DataList {
-        id : Integer;
-        title: String;
-        userId: Integer;
-        completed: Boolean;
-    }
+   define type DataList {
+       id : Integer;
+       title: String;
+       userId: Integer;
+       completed: Boolean;
+   }
 
-    define type DataListArray {
-        responseArray : array of DataList;
-    }
+   define type DataListArray {
+       responseArray : array of DataList;
+   }
 
-    @Core.Description : 'toInteger'
-    function toInteger(value : String) returns DataInteger;
+   @Core.Description : 'toInteger'
+   function toInteger(value : String) returns DataInteger;
 
-    @Core.Description : 'toNumber'
-    function toNumber(value : String) returns DataNumber;
+   @Core.Description : 'toNumber'
+   function toNumber(value : String) returns DataNumber;
 
-    @Core.Description : 'toString'
-    function toStr(value : Double) returns DataString;
+   @Core.Description : 'toString'
+   function toStr(value : Double) returns DataString;
 
-    @Core.Description : 'addQuotes'
-    function addQuotes(value : String) returns DataString;
+   @Core.Description : 'addQuotes'
+   function addQuotes(value : String) returns DataString;
 
-    @Core.Description : 'listToString'
-    action listToString(responseArray : array of DataList, field : String) returns DataString;
+   @Core.Description : 'listToString'
+   action listToString(responseArray : array of DataList, field : String) returns DataString;
 
-    @Core.Description : 'get list of dodos'
-    function getListOfTodos() returns DataListArray;
+   @Core.Description : 'get list of dodos'
+   function getListOfTodos() returns DataListArray;
 
-    }
-    ```
+   }
+   ```
 
 6. Select the file **`service.js`** and copy the following code into the editor.
 
     >The JavaScript implementation for the API of your service.
 
-    ```JavaScript
-    module.exports = srv => {
+   ```JavaScript
+   module.exports = srv => {
 
-        srv.on('toInteger', req => {
-            const {value} = req.data;
+       srv.on('toInteger', req => {
+           const {value} = req.data;
 
-            return { 'value' : parseInt(value) };
-        });
+           return { 'value' : parseInt(value) };
+       });
 
-        srv.on('toNumber', req => {
-            const {value} = req.data;
+       srv.on('toNumber', req => {
+           const {value} = req.data;
 
-            return { 'value' : parseFloat(value) };
-        });
+           return { 'value' : parseFloat(value) };
+       });
 
-        srv.on('toStr', req => {
-            const {value} = req.data;
+       srv.on('toStr', req => {
+           const {value} = req.data;
 
-            return { 'value' : value.toString() };
-        });
+           return { 'value' : value.toString() };
+       });
 
-        srv.on('addQuotes', req => {
-            const {value} = req.data;
+       srv.on('addQuotes', req => {
+           const {value} = req.data;
 
-            return { 'value' : "'" + value + "'"};
-        });
-        
-        srv.on('listToString', req => {
+           return { 'value' : "'" + value + "'"};
+       });
+       
+       srv.on('listToString', req => {
 
-            var values = req.data.responseArray;
-            var resultList = [];
-            var field = req.data.field;
-            if (values) {
-                for (var i = 0; i < values.length; i++) {
-                    resultList.push(values[i][field]);
-                }
-            }
+           var values = req.data.responseArray;
+           var resultList = [];
+           var field = req.data.field;
+           if (values) {
+               for (var i = 0; i < values.length; i++) {
+                   resultList.push(values[i][field]);
+               }
+           }
 
-            return { value : resultList.toString() };
-        });
+           return { value : resultList.toString() };
+       });
 
-        srv.on('getListOfTodos', req => {
-            return { responseArray : [            {
-                "id": 1,
-                "completed": false,
-                "title": "delectus aut autem",
-                "userId": 1
-            },
-            {
-                "id": 2,
-                "completed": false,
-                "title": "quis ut nam facilis et officia qui",
-                "userId": 1
-            }] }; 
-        });
+       srv.on('getListOfTodos', req => {
+           return { responseArray : [            {
+               "id": 1,
+               "completed": false,
+               "title": "delectus aut autem",
+               "userId": 1
+           },
+           {
+               "id": 2,
+               "completed": false,
+               "title": "quis ut nam facilis et officia qui",
+               "userId": 1
+           }] }; 
+       });
 
-    }
-    ```
+   }
+   ```
 
 ### Test CAP service locally
 
@@ -233,60 +233,60 @@ This step describes how to test the service locally using a file that contains t
 
     >Samples for HTTP requests for the services of your API.
 
-    ```HTTP
-    ### call toInteger
-    GET http://localhost:4004/api/v1/toInteger(value='20')
+   ```HTTP
+   ### call toInteger
+   GET http://localhost:4004/api/v1/toInteger(value='20')
 
-    ### call toNumber
-    GET http://localhost:4004/api/v1/toNumber(value='20.2')
+   ### call toNumber
+   GET http://localhost:4004/api/v1/toNumber(value='20.2')
 
-    ### call toString
-    GET http://localhost:4004/api/v1/toStr(value=20.2)
+   ### call toString
+   GET http://localhost:4004/api/v1/toStr(value=20.2)
 
-    ### call addQoutes
-    GET http://localhost:4004/api/v1/addQuotes(value='abcd')
+   ### call addQoutes
+   GET http://localhost:4004/api/v1/addQuotes(value='abcd')
 
-    ### call getListOfTodods
-    GET http://localhost:4004/api/v1/getListOfTodos()
+   ### call getListOfTodods
+   GET http://localhost:4004/api/v1/getListOfTodos()
 
-    ### call listToString
-    POST http://localhost:4004/api/v1/listToString
-    Content-Type: application/json
+   ### call listToString
+   POST http://localhost:4004/api/v1/listToString
+   Content-Type: application/json
 
-    {
-        "field" : "id",
-        "responseArray": [
-            {
-                "id": 1,
-                "title": "delectus aut autem",
-                "userId": 1,
-                "completed": false
-            },
-            {
-                "id": 2,
-                "title": "quis ut nam facilis et officia qui",
-                "userId": 1,
-                "completed": false
-            }
-        ]
-    }     
-    ```
+   {
+       "field" : "id",
+       "responseArray": [
+           {
+               "id": 1,
+               "title": "delectus aut autem",
+               "userId": 1,
+               "completed": false
+           },
+           {
+               "id": 2,
+               "title": "quis ut nam facilis et officia qui",
+               "userId": 1,
+               "completed": false
+           }
+       ]
+   }     
+   ```
  
 4. From the **Terminal** menu, select **New Terminal**.
 
-    <!-- border -->![open terminal](NewTerminal.png)
+    ![open terminal](NewTerminal.png)
 
 5. On the **`sap-build-cap-sample-library`** folder, run the following command in the **Terminal** window:
 
     >This will start a local server with your service that will allow you to test your API calls.
    
-    ```Shell / Bash
-    cds watch
-    ```
+   ```Shell / Bash
+   cds watch
+   ```
 
 6. Choose **Send Request**, you will get the response in a separate window.
 
-    <!-- border -->![send](TestRequest.png)
+    ![send](TestRequest.png)
 
 7. Choose **Ctrl - C** to terminate the Server session.
 
@@ -296,24 +296,24 @@ This step describes how to test the service locally using a file that contains t
 
 1. Select the package.json file and copy and paste the following code after `scripts`:
 
-    ```JSON
-    ,
-    "cds": {
-    "requires": { "auth": { "kind": "dummy" }}
-    }
-    ```
+   ```JSON
+   ,
+   "cds": {
+   "requires": { "auth": { "kind": "dummy" }}
+   }
+   ```
 
-    <!-- border -->![Update package json](PackageJson.png)
+    ![Update package json](PackageJson.png)
 
 2. Run the following command in the Terminal window:
 
-    ```Shell / Bash
-    npm install
-    ```
+   ```Shell / Bash
+   npm install
+   ```
 
 3. Right click on the file mta.yaml and select Build MTA Project.
 
-    <!-- border -->![Build MTA Project](BuildProject.png)
+    ![Build MTA Project](BuildProject.png)
 
     The service gets built, wait until the tasks are completed.
 
@@ -321,11 +321,11 @@ This step describes how to test the service locally using a file that contains t
 
     Check in BTP Cockpit, if the API Endpoint of your Cloud Foundry environment is matching the information you used for the script https://api.cf.us10-001.hana.ondemand.com
 
-    <!-- border -->![endpoint](APIEndpoint.png)
+    ![endpoint](APIEndpoint.png)
 
 5. Under `mta_archives`, right click on `sap-build-cap-sample-library_1.0.0.mtar` and select Deploy MTA Archive.
 
-    <!-- border -->![Deploy MTA Archive](DeployMTAArchive.png)
+    ![Deploy MTA Archive](DeployMTAArchive.png)
 
     You will provide your login information to sign in to the Cloud Foundry environment.
 
@@ -335,19 +335,19 @@ This step describes how to test the service locally using a file that contains t
 
     > If you select the SSO Passcode authentication method, SAP Business Technology Platform will grant you a temporary authentication code to sign in.
 
-    <!-- border -->![Cloud Foundry Sign in](CloudFoundrySignIn.png)
+    ![Cloud Foundry Sign in](CloudFoundrySignIn.png)
 
 7. Select Cloud Foundry Organization and Space.
    
     > On trial, **dev** is created as default Cloud Foundry space
 
-    <!-- border -->![Cloud Foundry Target](CloudFoundryTarget.png)
+    ![Cloud Foundry Target](CloudFoundryTarget.png)
 
     Your service should be available and running in your Cloud Foundry space.
 
     In the **BTP Cockpit** you can check if the service is running:
 
-    <!-- border -->![service started](ServiceStarted.png)
+    ![service started](ServiceStarted.png)
 
 ---
 
