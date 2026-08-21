@@ -31,18 +31,18 @@ The script `HANA_Configuration_MiniChecks_SHC.txt` will be placed in a stored pr
 
 1. Create a table to hold the results.  Run the below SQL in the SAP HANA database explorer connected to an SAP HANA database.
 
-    ```SQL
-    CREATE COLUMN TABLE DBADMIN.MINI_CHECK_RESULTS(
-      CHID VARCHAR(5),
-      DESCRIPTION VARCHAR(100),
-      HOST VARCHAR(100),
-      VALUE VARCHAR(100),
-      EXPECTED_VALUE VARCHAR(100),
-      C VARCHAR(1),
-      SAP_NOTE VARCHAR(8),
-      CHECK_TIME TIMESTAMP
-    );
-    ```
+   ```SQL
+   CREATE COLUMN TABLE DBADMIN.MINI_CHECK_RESULTS(
+     CHID VARCHAR(5),
+     DESCRIPTION VARCHAR(100),
+     HOST VARCHAR(100),
+     VALUE VARCHAR(100),
+     EXPECTED_VALUE VARCHAR(100),
+     C VARCHAR(1),
+     SAP_NOTE VARCHAR(8),
+     CHECK_TIME TIMESTAMP
+   );
+   ```
 
 2. Copy the contents of `HANA_Configuration_MiniChecks_SHC.txt` into a SQL console.  
 
@@ -54,32 +54,32 @@ The script `HANA_Configuration_MiniChecks_SHC.txt` will be placed in a stored pr
 
 3. Modify the script to only show critical errors by removing the below from approximately line 7916.  Ctrl+L can be used to go to a line within the SQL console.  The line numbers mentioned here are subject to change as the script is frequently updated.
 
-    ```SQL
-    ONLY_POTENTIALLY_CRITICAL_RESULTS = ' ' OR
-    ```
+   ```SQL
+   ONLY_POTENTIALLY_CRITICAL_RESULTS = ' ' OR
+   ```
 
 4. Below line 688 which contains `LPAD(SAP_NOTE, 8) SAP_NOTE)` add the SQL below so that each row in the table will have a timestamp.
 
-    ```SQL
-    ,
-    CURRENT_TIMESTAMP
-    ```
+   ```SQL
+   ,
+   CURRENT_TIMESTAMP
+   ```
 
 5. Create a stored procedure and insert the results into a table by adding the following to the top of the file.  The shortcut Ctrl+Home can be used to navigate to the top of the file.
 
-    ```SQL
-    CREATE OR REPLACE PROCEDURE DBADMIN.HANA_Configuration_MiniChecks()
-    LANGUAGE SQLSCRIPT AS
-    BEGIN
-    INSERT INTO DBADMIN.MINI_CHECK_RESULTS
-    ```
+   ```SQL
+   CREATE OR REPLACE PROCEDURE DBADMIN.HANA_Configuration_MiniChecks()
+   LANGUAGE SQLSCRIPT AS
+   BEGIN
+   INSERT INTO DBADMIN.MINI_CHECK_RESULTS
+   ```
 
 6. At the bottom (Ctrl+End), add
 
-    ```SQL
-    ;
-    END;
-    ```
+   ```SQL
+   ;
+   END;
+   ```
 
 7. Run the SQL to create the new procedure.
 
@@ -87,10 +87,10 @@ The script `HANA_Configuration_MiniChecks_SHC.txt` will be placed in a stored pr
 
 8. In a new SQL console, call the stored procedure and check the results.
 
-    ```SQL
-    CALL DBADMIN.HANA_CONFIGURATION_MINICHECKS();
-    SELECT * FROM DBADMIN.MINI_CHECK_RESULTS;
-    ```
+   ```SQL
+   CALL DBADMIN.HANA_CONFIGURATION_MINICHECKS();
+   SELECT * FROM DBADMIN.MINI_CHECK_RESULTS;
+   ```
 
     ![call the procedure](call-procedure.png)
 
@@ -98,26 +98,26 @@ The script `HANA_Configuration_MiniChecks_SHC.txt` will be placed in a stored pr
 
 9. The procedure can now be scheduled to run at a set frequency.  
 
-    ```SQL
-    --Get the current date and time in UTC
-    SELECT CURRENT_DATE, CURRENT_TIME FROM DUMMY;
-    ```
+   ```SQL
+   --Get the current date and time in UTC
+   SELECT CURRENT_DATE, CURRENT_TIME FROM DUMMY;
+   ```
 
-    ```SQL    
-    --Schedule an event a few minutes in the future
-    --Adjust the date and time below
-    CREATE SCHEDULER JOB DBADMIN.MINICHECKS CRON '2023 08 28 * 17 14 0' ENABLE PROCEDURE DBADMIN.HANA_CONFIGURATION_MINICHECKS;
-    SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'MINICHECKS';
-    SELECT * FROM M_SCHEDULER_JOBS;
-    ```
+   ```SQL    
+   --Schedule an event a few minutes in the future
+   --Adjust the date and time below
+   CREATE SCHEDULER JOB DBADMIN.MINICHECKS CRON '2023 08 28 * 17 14 0' ENABLE PROCEDURE DBADMIN.HANA_CONFIGURATION_MINICHECKS;
+   SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'MINICHECKS';
+   SELECT * FROM M_SCHEDULER_JOBS;
+   ```
 
     The script will be run on a specified schedule and will record the results of each run in the table MINI_CHECK_RESULTS.
 
     After the scheduled time, examine the contents of the table **MINI_CHECK_RESULTS** to confirm that the stored procedure was executed at the scheduled time.
 
-    ```SQL
-    SELECT * FROM DBADMIN.MINI_CHECK_RESULTS;
-    ```
+   ```SQL
+   SELECT * FROM DBADMIN.MINI_CHECK_RESULTS;
+   ```
 
 10. Details of scheduled jobs and their executions can also be seen under **Job Scheduler** in the SAP HANA database explorer's catalog.
 
@@ -146,58 +146,58 @@ The example shown below was run on an WSL 2 Ubuntu 22 instance.
 
 1. Copy the file HANA_Configuration_Overview_SHC.txt to your machine.  The paths below are an example and will need to change.
 
-    ```Shell
-    cp /mnt/c/SAP/SQL\ Statements/HANA_Configuration_Overview_SHC.txt /home/dan/.
-    ```
+   ```Shell
+   cp /mnt/c/SAP/SQL\ Statements/HANA_Configuration_Overview_SHC.txt /home/dan/.
+   ```
 
 2. Create a file that will call hdbsql using your editor of choice such as pico, nano, vi, etc.
 
-    ```Shell
-    pico SQLScript.sh
-    ```
+   ```Shell
+   pico SQLScript.sh
+   ```
 
 3. Paste following into the file after updating the folder locations to match your setup.
 
-    ```Shell
-    now=`date +"%d-%m-%Y-%H:%M"`
+   ```Shell
+   now=`date +"%d-%m-%Y-%H:%M"`
 
-    /home/dan/sap/hdbclient/hdbsql -A -o /home/dan/results_${now}.txt -U AdminUserKey -I /home/dan/HANA_Configuration_Overview_SHC.txt
-    ```
+   /home/dan/sap/hdbclient/hdbsql -A -o /home/dan/results_${now}.txt -U AdminUserKey -I /home/dan/HANA_Configuration_Overview_SHC.txt
+   ```
 
     Details on using hdbuserstore were shown in the tutorial [Executing SAP HANA Cloud tasks from the command line](hana-cloud-automation-cli).  Follow those instructions to set the host, port, user and password values for the key AdminUserKey.
 
 4. Enable the file to be executed.
 
-    ```Shell
-    chmod +x SQLScript.sh
-    ```
+   ```Shell
+   chmod +x SQLScript.sh
+   ```
 
 5. Call the script to verify that it is correct.
 
-    ```Shell
-    ./SQLScript.sh
-    ```
+   ```Shell
+   ./SQLScript.sh
+   ```
 
     An output file should be generated with the results of calling HANA_Configuration_Overview_SHC.txt
 
-    ```SQL
-    cat results_*.txt
-    ```
+   ```SQL
+   cat results_*.txt
+   ```
 
     ![results from running SQLScript.sh](results-from-SQLScript.png)
 
 6. Schedule the script.
 
-    ```Shell
-    crontab -e
-    ```
+   ```Shell
+   crontab -e
+   ```
 
     Add the following line which instructs it be run every minute.
 
-    ```Shell
-    # MIN (0-59), HOUR(0-23), Day of Month(1-31),  Month(1-12), Day of Week(0-6) 
-    * * * * * /home/dan/SQLScript.sh
-    ```
+   ```Shell
+   # MIN (0-59), HOUR(0-23), Day of Month(1-31),  Month(1-12), Day of Week(0-6) 
+   * * * * * /home/dan/SQLScript.sh
+   ```
 
     ![editing cron](cron.png)
 
@@ -205,9 +205,9 @@ The example shown below was run on an WSL 2 Ubuntu 22 instance.
 
 7. View the list of scheduled tasks using the below command.
 
-    ```Shell
-    crontab -l
-    ```
+   ```Shell
+   crontab -l
+   ```
 
     ![cron list](cron-list.png)
 
@@ -219,15 +219,15 @@ The example shown below was run on an WSL 2 Ubuntu 22 instance.
 
     You may be able to further troubleshoot cron jobs or see additional details by examining the syslog.
 
-    ```SQL
-    cat /var/log/syslog | grep CRON
-    ```
+   ```SQL
+   cat /var/log/syslog | grep CRON
+   ```
 
 9. The cron job can be stopped by deleting or commenting out the previously added line.
 
-    ```Shell
-    crontab -e
-    ```
+   ```Shell
+   crontab -e
+   ```
 
     ![stopping a cron job](cron-stop.png)
 

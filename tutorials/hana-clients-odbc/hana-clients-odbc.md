@@ -88,53 +88,53 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
 2. On a Mac, unixODBC can be installed using [Homebrew](https://brew.sh).  
 
-    ```Shell (Mac)
-    brew install unixodbc
-    ```
+   ```Shell (Mac)
+   brew install unixodbc
+   ```
 
 3. The following commands can be used to confirm that unixODBC is installed, determine the location of the .odbc.ini file (if it exists), and to confirm the location of the SAP HANA client install that contains the ODBC driver.
 
-    ```Shell (Linux or Mac)
-    odbcinst -j
-    which hdbsql
-    ```
+   ```Shell (Linux or Mac)
+   odbcinst -j
+   which hdbsql
+   ```
 
     ![odbcinst](odbcinst.png)
 
 4. Navigate to a directory, similar to the first one that is highlighted in the screenshot above.
 
-    ```Shell (Linux or Mac)
-    cd $HOME
-    ```
+   ```Shell (Linux or Mac)
+   cd $HOME
+   ```
 
 5. Edit the `.odbc.ini` file (or create it if it does not exist) to add one or more data sources. Be sure to configure the values of `servernode` and `driver` so that they conform with your setup.
 
     >The driver's file extension is `dylib` instead of `so` on a Mac.
 
-    ```.odbc.ini
-    [HANA_Cloud]
-    servernode = 6b7ae0da-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443
-    driver = /home/dan/sap/hdbclient/libodbcHDB.so
-    encrypt = true
-    sslValidateCertificate = true
+   ```.odbc.ini
+   [HANA_Cloud]
+   servernode = 6b7ae0da-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443
+   driver = /home/dan/sap/hdbclient/libodbcHDB.so
+   encrypt = true
+   sslValidateCertificate = true
 
-    [HANA_Express]
-    servernode = hxehost:39015
-    driver = /home/dan/sap/hdbclient/libodbcHDB.so
-    databasename = HXE
-    ```
+   [HANA_Express]
+   servernode = hxehost:39015
+   driver = /home/dan/sap/hdbclient/libodbcHDB.so
+   databasename = HXE
+   ```
 
 6. unixODBC provides a basic SQL query tool called `isql` that can be used to validate a data source.
 
-    ```Shell (Linux or Mac)
-    isql -v HANA_Cloud User1 Password1
-    ```
+   ```Shell (Linux or Mac)
+   isql -v HANA_Cloud User1 Password1
+   ```
 
     Once you see a message that indicates a connection has been made, enter the following statement to verify this.
 
-    ```Shell (Linux or Mac)
-    SELECT * FROM HOTELS.CUSTOMER
-    ```
+   ```Shell (Linux or Mac)
+   SELECT * FROM HOTELS.CUSTOMER
+   ```
 
     ![isql](isqlQuery.png)
 

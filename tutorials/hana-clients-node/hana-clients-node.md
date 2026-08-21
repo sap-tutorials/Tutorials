@@ -76,74 +76,70 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 2. Create a folder named `node` and enter the newly created directory.
 
-    ```Shell (Microsoft Windows)
-    mkdir %HOMEPATH%\HANAClientsTutorial\node
-    cd %HOMEPATH%\HANAClientsTutorial\node
-    ```
+   ```Shell (Microsoft Windows)
+   mkdir %HOMEPATH%\HANAClientsTutorial\node
+   cd %HOMEPATH%\HANAClientsTutorial\node
+   ```
 
-    ```Shell (Linux or Mac)
-    mkdir -p $HOME/HANAClientsTutorial/node
-    cd $HOME/HANAClientsTutorial/node
-    ```
+   ```Shell (Linux or Mac)
+   mkdir -p $HOME/HANAClientsTutorial/node
+   cd $HOME/HANAClientsTutorial/node
+   ```
 
 3. Initialize the project and install the `hana-client` driver from NPM.
 
-    ```Shell
-    npm init -y
-    npm install @sap/hana-client
-    ```
+   ```Shell
+   npm init -y
+   npm install @sap/hana-client
+   ```
 
     >The `hana-client` driver contains native libraries as shown below.
     >![pre built libraries](prebuilt.png)
     >When installed using NPM, the native libraries for all available platforms are downloaded.  The following environment variable can be used to remove the other platforms reducing the size of the project.  For additional details, see [Node.js Environment Variables](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/2dbfa39ecc364a65a6ab0fea9c8c8bd9.html).
 
     >```Shell (Microsoft Windows)
-    set HDB_NODE_PLATFORM_CLEAN=1
-    npm uninstall @sap/hana-client
-    npm install @sap/hana-client
+    >set HDB_NODE_PLATFORM_CLEAN=1
+    >npm uninstall @sap/hana-client
+    >npm install @sap/hana-client
     >```
 
     >
     >```Shell (Linux or Mac)
-    export HDB_NODE_PLATFORM_CLEAN=1
-    npm uninstall @sap/hana-client
-    npm install @sap/hana-client
+    >export HDB_NODE_PLATFORM_CLEAN=1
+    >npm uninstall @sap/hana-client
+    >npm install @sap/hana-client
     >```
     >
-    >---
-
     >The hana-client driver is also available from the HANA client install folder.  The install location was set during the install.
 
     >```Shell (Microsoft Windows)
-    cd C:\SAP\hdbclient\node
-    npm install
-    cd %HOMEPATH%\HANAClientsTutorial\node
-    npm install C:\SAP\hdbclient\node
+    >cd C:\SAP\hdbclient\node
+    >npm install
+    >cd %HOMEPATH%\HANAClientsTutorial\node
+    >npm install C:\SAP\hdbclient\node
     >```
     >
     >```Shell (Linux or Mac)
-    cd ~/SAP/hdbclient/node
-    npm install
-    cd ~/HANAClientsTutorial/node
-    npm install ~/SAP/hdbclient/node
+    >cd ~/SAP/hdbclient/node
+    >npm install
+    >cd ~/HANAClientsTutorial/node
+    >npm install ~/SAP/hdbclient/node
     >```
 
     >If you encounter an error about permissions, on Microsoft Windows, run or open the command prompt as an administrator, or use `sudo` on Linux or Mac.
 
 4. The following command lists the Node.js modules that are now installed locally into the `HANAClientsTutorial\node` folder.  
 
-    ```Shell
-    npm list
-    ```
+   ```Shell
+   npm list
+   ```
 
     ![npm list](npm-list.png)
 
 > Some Tips
 
 >At this point, the SAP HANA client module has been installed into the `HANAClientsTutorials\node\node_modules` folder and added as a dependency in the `packages.json` file.  The following is some extra optional information on NPM.  
-
-> ---
-
+>
 >Node.js modules can also be installed globally. To see the list of Node.js modules installed globally enter the following command.  
 
 >The depth parameter can be used to specify the number of levels to show when displaying module dependencies.  By setting depth=x, a tree-structure is outputted that shows modules that are x levels below the top-level module.
@@ -181,84 +177,84 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 1. Open a file named `nodeQuery.js` in an editor.
 
-    ```Shell (Microsoft Windows)
-    notepad nodeQuery.js
-    ```
+   ```Shell (Microsoft Windows)
+   notepad nodeQuery.js
+   ```
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
-    pico nodeQuery.js
-    ```
+   ```Shell (Linux or Mac)
+   pico nodeQuery.js
+   ```
 
 2. Add the code below to `nodeQuery.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
 
-    ```JavaScript
-    'use strict';
-    const { PerformanceObserver, performance } = require('perf_hooks');
-    var util = require('util');
-    var hana = require('@sap/hana-client');
+   ```JavaScript
+   'use strict';
+   const { PerformanceObserver, performance } = require('perf_hooks');
+   var util = require('util');
+   var hana = require('@sap/hana-client');
 
-    var connOptions = {
-        //Option 1, retrieve the connection parameters from the hdbuserstore
-        serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
+   var connOptions = {
+       //Option 1, retrieve the connection parameters from the hdbuserstore
+       serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
 
-        //Option 2, specify the connection parameters
-        //serverNode: 'host:port',
-        //UID: 'USER1',
-        //PWD: 'Password1',
+       //Option 2, specify the connection parameters
+       //serverNode: 'host:port',
+       //UID: 'USER1',
+       //PWD: 'Password1',
 
-        //Additional parameters
-        //As of 2.7 trace info can be directed to stdout or stderr
-        //traceFile: 'stdout',
-        //traceOptions: 'sql=warning',
+       //Additional parameters
+       //As of 2.7 trace info can be directed to stdout or stderr
+       //traceFile: 'stdout',
+       //traceOptions: 'sql=warning',
 
-        //As of SAP HANA client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
-        //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
-        sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
+       //As of SAP HANA client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
+       //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
+       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
 
-        //For encrypted connections, the default crypto provider is mscrypto on Windows or openSSL on Linux or macos
-        //To use the SAP crypto provider, uncomment the below line.
-        //sslCryptoProvider: 'commoncrypto',
+       //For encrypted connections, the default crypto provider is mscrypto on Windows or openSSL on Linux or macos
+       //To use the SAP crypto provider, uncomment the below line.
+       //sslCryptoProvider: 'commoncrypto',
 
-        //As of SAP HANA client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
-        //ssltruststore: '/home/dan/.ssl/trust.pem', //Used to specify where the trust store is located
-        //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
-        //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem used for SAP HANA cloud
-        //on-premise cert can be retrieved using openssl s_client -connect localhost:39015
-        //This option is not supported with the mscrypto provider (the default provider on Windows)
-        //ssltruststore: '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsBCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7PT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbRTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/EsrhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJFPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0lsYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQkCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----'
-    };
+       //As of SAP HANA client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
+       //ssltruststore: '/home/dan/.ssl/trust.pem', //Used to specify where the trust store is located
+       //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
+       //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem used for SAP HANA cloud
+       //on-premise cert can be retrieved using openssl s_client -connect localhost:39015
+       //This option is not supported with the mscrypto provider (the default provider on Windows)
+       //ssltruststore: '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsBCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7PT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbRTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/EsrhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJFPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0lsYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQkCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----'
+   };
 
-    //Synchronous  example querying a table
-    var connection = hana.createConnection();
+   //Synchronous  example querying a table
+   var connection = hana.createConnection();
 
-    //As of 2.9, tracing can be directed to a callback
-    /*
-    var traceCB = function (buf) {
-        console.log(buf);
-    };
-    connection.onTrace("sql=error,api=debug,OutBufferSize=64k", traceCB);  
-    */
+   //As of 2.9, tracing can be directed to a callback
+   /*
+   var traceCB = function (buf) {
+       console.log(buf);
+   };
+   connection.onTrace("sql=error,api=debug,OutBufferSize=64k", traceCB);  
+   */
 
-    connection.connect(connOptions);
+   connection.connect(connOptions);
 
-    //connection.onTrace("", null);  //disables callback tracing for the rest of the program
+   //connection.onTrace("", null);  //disables callback tracing for the rest of the program
 
-    var sql = 'SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;';
-    var t0 = performance.now();
-    var result = connection.exec(sql);
-    console.log(util.inspect(result, { colors: false }));
-    var t1 = performance.now();
-    console.log("time in ms " +  (t1 - t0));
-    connection.disconnect();
-    ```  
+   var sql = 'SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;';
+   var t0 = performance.now();
+   var result = connection.exec(sql);
+   console.log(util.inspect(result, { colors: false }));
+   var t1 = performance.now();
+   console.log("time in ms " +  (t1 - t0));
+   connection.disconnect();
+   ```  
 
 3. Run the app.  
 
-    ```Shell
-    node nodeQuery.js
-    ```
+   ```Shell
+   node nodeQuery.js
+   ```
 
     ![Running nodeQuery.js](Node-query.png)
 
@@ -268,40 +264,40 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 4. To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
 
-    ```Command Prompt (Microsoft Windows)
-    set DEBUG=*
-    node nodeQuery.js
-    ```  
-    ```Powershell (Microsoft Windows)
-    $env:DEBUG='*'
-    node nodeQuery.js
-    ```  
+   ```Command Prompt (Microsoft Windows)
+   set DEBUG=*
+   node nodeQuery.js
+   ```  
+   ```Powershell (Microsoft Windows)
+   $env:DEBUG='*'
+   node nodeQuery.js
+   ```  
 
-    ```Shell (Linux or Mac)
-    export DEBUG=*
-    node nodeQuery.js
-    ```    
+   ```Shell (Linux or Mac)
+   export DEBUG=*
+   node nodeQuery.js
+   ```    
 
     ![debug output](debug-flag.png)
 
     The value of the environment variable DEBUG can be seen and removed with the commands below.
 
-    ```Command Prompt (Microsoft Windows)
-    set DEBUG
-    set DEBUG=
-    set DEBUG
-    ```  
-    ```Powershell (Microsoft Windows)
-    $env:DEBUG
-    $env:DEBUG='*'
-    Remove-Item Env:DEBUG
-    ```  
+   ```Command Prompt (Microsoft Windows)
+   set DEBUG
+   set DEBUG=
+   set DEBUG
+   ```  
+   ```Powershell (Microsoft Windows)
+   $env:DEBUG
+   $env:DEBUG='*'
+   Remove-Item Env:DEBUG
+   ```  
 
-    ```Shell (Linux or Mac)
-    printenv | grep DEBUG
-    unset DEBUG
-    printenv | grep DEBUG
-    ```
+   ```Shell (Linux or Mac)
+   printenv | grep DEBUG
+   unset DEBUG
+   printenv | grep DEBUG
+   ```
 
 ### Create a synchronous app that uses a connection pool
 
@@ -309,104 +305,104 @@ Connection pooling can improve performance when making multiple, brief connectio
 
 1. Open a file named `nodeQueryConnectionPool.js` in an editor.
 
-    ```Shell (Microsoft Windows)
-    notepad nodeQueryConnectionPool.js
-    ```
+   ```Shell (Microsoft Windows)
+   notepad nodeQueryConnectionPool.js
+   ```
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
-    pico nodeQueryConnectionPool.js
-    ```
+   ```Shell (Linux or Mac)
+   pico nodeQueryConnectionPool.js
+   ```
 
 2. Add the code below to `nodeQueryConnectionPool.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
 
-    ```JavaScript
-    'use strict';
-    const { PerformanceObserver, performance } = require('perf_hooks');
-    var util = require('util');
-    var hana = require('@sap/hana-client');
+   ```JavaScript
+   'use strict';
+   const { PerformanceObserver, performance } = require('perf_hooks');
+   var util = require('util');
+   var hana = require('@sap/hana-client');
 
-    var connOptions = {
-        //Option 1, retrieve the connection parameters from the hdbuserstore
-        serverNode: '@USER1UserKey'  //host, port, uid, and pwd retrieved from hdbuserstore
+   var connOptions = {
+       //Option 1, retrieve the connection parameters from the hdbuserstore
+       serverNode: '@USER1UserKey'  //host, port, uid, and pwd retrieved from hdbuserstore
 
-        //Option 2, specify the connection parameters
-        //serverNode: 'host:port',
-        //UID: 'USER1',
-        //PWD: 'Password1',
-    };
+       //Option 2, specify the connection parameters
+       //serverNode: 'host:port',
+       //UID: 'USER1',
+       //PWD: 'Password1',
+   };
 
-    var poolProperties = {
-        poolCapacity: 10,  //max # of connections in the pool waiting to be used
-        maxConnectedOrPooled: 20, //max # of connections in the pool + the # of connections in use
-        pingCheck: false,
-        allowSwitchUser: true,  //requires SAP HANA client 2.17
-        maxPooledIdleTime: 3600, //1 hour (in seconds)
-    }
+   var poolProperties = {
+       poolCapacity: 10,  //max # of connections in the pool waiting to be used
+       maxConnectedOrPooled: 20, //max # of connections in the pool + the # of connections in use
+       pingCheck: false,
+       allowSwitchUser: true,  //requires SAP HANA client 2.17
+       maxPooledIdleTime: 3600, //1 hour (in seconds)
+   }
 
-    var pool = null;
+   var pool = null;
 
-    queryTable(false, "1st Run");       //don't use the connection pool
-    queryTable(false, "2nd Run");
-    queryTable(true, "1st Run");        //use the connection pool
-    queryTable(true, "2nd Run");
-    queryTable(true, "3rd Run", true);  //change user
-    console.log("Connections in use :" + pool.getInUseCount());
-    console.log("Connections in the pool :" + pool.getPooledCount());
+   queryTable(false, "1st Run");       //don't use the connection pool
+   queryTable(false, "2nd Run");
+   queryTable(true, "1st Run");        //use the connection pool
+   queryTable(true, "2nd Run");
+   queryTable(true, "3rd Run", true);  //change user
+   console.log("Connections in use :" + pool.getInUseCount());
+   console.log("Connections in the pool :" + pool.getPooledCount());
 
-    //Creates two connections either using connection pooling or not
-    //Displays timing information
-    function queryTable(usePool, run, user2) {
-        var t0 = performance.now()
-        var connection = null;
-        if (usePool) { //use the connection pool
-            var t0 = performance.now();
-            if (pool === null) {
-                pool = hana.createPool(connOptions, poolProperties); //create a connection pool
-            }
-            if (user2) { //example of changing the user
-                connection = pool.getConnection('USER2','Password2'); //Requires 2.17 of the SAP HANA client
-            }
-            else {
-                connection = pool.getConnection(); //get a connection from the pool
-            }
-            var t1 = performance.now();
-        }
-        else { //don't use the connection pool
-            connection = hana.createConnection();
-            connection.connect(connOptions);
-            var t1 = performance.now();
-        }
+   //Creates two connections either using connection pooling or not
+   //Displays timing information
+   function queryTable(usePool, run, user2) {
+       var t0 = performance.now()
+       var connection = null;
+       if (usePool) { //use the connection pool
+           var t0 = performance.now();
+           if (pool === null) {
+               pool = hana.createPool(connOptions, poolProperties); //create a connection pool
+           }
+           if (user2) { //example of changing the user
+               connection = pool.getConnection('USER2','Password2'); //Requires 2.17 of the SAP HANA client
+           }
+           else {
+               connection = pool.getConnection(); //get a connection from the pool
+           }
+           var t1 = performance.now();
+       }
+       else { //don't use the connection pool
+           connection = hana.createConnection();
+           connection.connect(connOptions);
+           var t1 = performance.now();
+       }
 
-        var t2 = performance.now();
-        var sql = 'select CURRENT_USER FROM DUMMY;';
-        var result = connection.exec(sql);
-        var t3 = performance.now();
+       var t2 = performance.now();
+       var sql = 'select CURRENT_USER FROM DUMMY;';
+       var result = connection.exec(sql);
+       var t3 = performance.now();
 
-        var t4 = performance.now();
-        console.log(util.inspect(result, { colors: false }));
-        var t5 = performance.now();
+       var t4 = performance.now();
+       console.log(util.inspect(result, { colors: false }));
+       var t5 = performance.now();
 
-        var t6 = performance.now();
-        connection.disconnect(); //returns connection to the pool
-        var t7 = performance.now();
+       var t6 = performance.now();
+       connection.disconnect(); //returns connection to the pool
+       var t7 = performance.now();
 
-        console.log("Connection Pool Enabled: " + usePool + " " + run);
-        console.log("=====================================");
-        console.log("Connection time in ms: " +  (t1 - t0));
-        console.log("Query time in ms        " +  (t3 - t2));
-        console.log("Display time in ms:     " +  (t5 - t4));
-        console.log("Disconnect time in ms:   " +  (t7 - t6));
-        console.log("Total time in ms:      " +  (t7 - t0) + "\n");
-    }
-    ```
+       console.log("Connection Pool Enabled: " + usePool + " " + run);
+       console.log("=====================================");
+       console.log("Connection time in ms: " +  (t1 - t0));
+       console.log("Query time in ms        " +  (t3 - t2));
+       console.log("Display time in ms:     " +  (t5 - t4));
+       console.log("Disconnect time in ms:   " +  (t7 - t6));
+       console.log("Total time in ms:      " +  (t7 - t0) + "\n");
+   }
+   ```
 
 3. Run the app.  
 
-    ```Shell
-    node nodeQueryConnectionPool.js
-    ```
+   ```Shell
+   node nodeQueryConnectionPool.js
+   ```
 
     Notice below that the time taken to establish a connection is approx 900 ms but becomes almost instantaneous when the connection pool is used or about 85 ms when a connection from the pool requires changing the user.
 
@@ -420,95 +416,95 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
 
 1. Open a file named `nodeQueryCallback.js` in an editor.
 
-    ```Shell (Microsoft Windows)
-    notepad nodeQueryCallback.js
-    ```
+   ```Shell (Microsoft Windows)
+   notepad nodeQueryCallback.js
+   ```
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
-    pico nodeQueryCallback.js
-    ```
+   ```Shell (Linux or Mac)
+   pico nodeQueryCallback.js
+   ```
 
 2. Add the code below to `nodeQueryCallback.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
 
-    ```JavaScript
-    'use strict';
-    var util = require('util');
-    var hana = require('@sap/hana-client');
+   ```JavaScript
+   'use strict';
+   var util = require('util');
+   var hana = require('@sap/hana-client');
 
-    var connOptions = {
-        //Option 1, retrieve the connection parameters from the hdbuserstore
-        serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
+   var connOptions = {
+       //Option 1, retrieve the connection parameters from the hdbuserstore
+       serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
 
-        //Option 2, specify the connection parameters
-        //serverNode: 'host:port',
-        //UID: 'USER1',
-        //PWD: 'Password1',
+       //Option 2, specify the connection parameters
+       //serverNode: 'host:port',
+       //UID: 'USER1',
+       //PWD: 'Password1',
 
-        sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
-    };
+       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
+   };
 
-    //Asynchronous example calling a stored procedure with callbacks
-    var connection = hana.createConnection();
+   //Asynchronous example calling a stored procedure with callbacks
+   var connection = hana.createConnection();
 
-    connection.connect(connOptions, function(err) {
-        if (err) {
-            return console.error(err);
-        }
-        //Prepared statement example
-        const statement = connection.prepare('CALL HOTELS.SHOW_RESERVATIONS(?,?)');
-        const parameters = [11, '2020-12-24'];
-        var results = statement.execQuery(parameters, function(err, results) {
-            if (err) {
-                return console.error(err);
-            }
-            processResults(results, function(err) {
-                if (err) {
-                    return console.error(err);
-                }
-                results.close(function(err) {
-                    if (err) {
-                        return console.error(err);
-                    }
-                    statement.drop(function(err) {
-                        if (err) {
-                            return console.error(err);
-                        }
-                        return connection.disconnect(function(err) {
-                            if (err) {
-                                return console.error(err);
-                            }
-                        });
-                    });
-                });
-            });
-        });
-    });
+   connection.connect(connOptions, function(err) {
+       if (err) {
+           return console.error(err);
+       }
+       //Prepared statement example
+       const statement = connection.prepare('CALL HOTELS.SHOW_RESERVATIONS(?,?)');
+       const parameters = [11, '2020-12-24'];
+       var results = statement.execQuery(parameters, function(err, results) {
+           if (err) {
+               return console.error(err);
+           }
+           processResults(results, function(err) {
+               if (err) {
+                   return console.error(err);
+               }
+               results.close(function(err) {
+                   if (err) {
+                       return console.error(err);
+                   }
+                   statement.drop(function(err) {
+                       if (err) {
+                           return console.error(err);
+                       }
+                       return connection.disconnect(function(err) {
+                           if (err) {
+                               return console.error(err);
+                           }
+                       });
+                   });
+               });
+           });
+       });
+   });
 
-    function processResults(results, cb) {
-        results.next(function (err, hasValues) {
-            if (err) {
-                return console.error(err);
-            }
-            if (hasValues) {
-                results.getValues(function (err, row) {
-                    console.log(util.inspect(row, { colors: false }));
-                    processResults(results, cb);
-                });
-            }
-            else {
-                return cb();
-            }
-        });
-    }
-    ```  
+   function processResults(results, cb) {
+       results.next(function (err, hasValues) {
+           if (err) {
+               return console.error(err);
+           }
+           if (hasValues) {
+               results.getValues(function (err, row) {
+                   console.log(util.inspect(row, { colors: false }));
+                   processResults(results, cb);
+               });
+           }
+           else {
+               return cb();
+           }
+       });
+   }
+   ```  
 
 4. Run the app.  
 
-    ```Shell
-    node nodeQueryCallback.js
-    ```
+   ```Shell
+   node nodeQueryCallback.js
+   ```
 
     ![Running nodeQueryCallback.js](Node-query-callback.png)
 
@@ -520,102 +516,102 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
 
 1. Open a file named `nodeQueryPromise.js` in an editor.
 
-    ```Shell (Microsoft Windows)
-    notepad nodeQueryPromise.js
-    ```
+   ```Shell (Microsoft Windows)
+   notepad nodeQueryPromise.js
+   ```
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
-    pico nodeQueryPromise.js
-    ```
+   ```Shell (Linux or Mac)
+   pico nodeQueryPromise.js
+   ```
 
 2. Add the code below to `nodeQueryPromise.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey. Save the file when finished.
 
-    ```JavaScript
-    'use strict';
-    var util = require('util');
-    var hana = require('@sap/hana-client');
-    var PromiseModule = require('@sap/hana-client/extension/Promise.js');
+   ```JavaScript
+   'use strict';
+   var util = require('util');
+   var hana = require('@sap/hana-client');
+   var PromiseModule = require('@sap/hana-client/extension/Promise.js');
 
-    var connOptions = {
-        //Option 1, retrieve the connection parameters from the hdbuserstore
-        serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
+   var connOptions = {
+       //Option 1, retrieve the connection parameters from the hdbuserstore
+       serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
 
-        //Option 2, specify the connection parameters
-        //serverNode: 'host:port',
-        //UID: 'USER1',
-        //PWD: 'Password1',
+       //Option 2, specify the connection parameters
+       //serverNode: 'host:port',
+       //UID: 'USER1',
+       //PWD: 'Password1',
 
-        sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
-    };
+       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
+   };
 
-    //Asynchronous example calling a stored procedure that uses the promise module
-    var connection = hana.createConnection();
-    var statement;
+   //Asynchronous example calling a stored procedure that uses the promise module
+   var connection = hana.createConnection();
+   var statement;
 
-    PromiseModule.connect(connection, connOptions)
-        .then(() => {
-             //Prepared statement example
-             return PromiseModule.prepare(connection, 'CALL HOTELS.SHOW_RESERVATIONS(?,?)');
-        })
-        .then((stmt) => {
-            statement = stmt;
-            const parameters = [11, '2020-12-24'];
-            return PromiseModule.executeQuery(stmt, parameters);
-        })
-        .then((results) => {
-            return processResults(results);
-        })
-        .then((results) => {
-            return PromiseModule.close(results);
-        })
-        .then(() => {
-            return PromiseModule.drop(statement);
-        })
-        .then(() => {
-            PromiseModule.disconnect(connection);
-        })
-        .catch(err =>  {
-            console.error(err);
-        });
+   PromiseModule.connect(connection, connOptions)
+       .then(() => {
+            //Prepared statement example
+            return PromiseModule.prepare(connection, 'CALL HOTELS.SHOW_RESERVATIONS(?,?)');
+       })
+       .then((stmt) => {
+           statement = stmt;
+           const parameters = [11, '2020-12-24'];
+           return PromiseModule.executeQuery(stmt, parameters);
+       })
+       .then((results) => {
+           return processResults(results);
+       })
+       .then((results) => {
+           return PromiseModule.close(results);
+       })
+       .then(() => {
+           return PromiseModule.drop(statement);
+       })
+       .then(() => {
+           PromiseModule.disconnect(connection);
+       })
+       .catch(err =>  {
+           console.error(err);
+       });
 
-    function processResults(results) {
-        return new Promise((resolve, reject) => {
-        var done = false;
-            PromiseModule.next(results)
-                .then((hasValues) => {
-                    if (hasValues) {
-                        return PromiseModule.getValues(results);
-                    }
-                    else {
-                        done = true;
-                    }
-                })
-                .then((values) => {
-                    if (done) {
-                        resolve(results);
-                    }
-                    else {
-                        console.log(util.inspect(values, { colors: false }));
-                        processResults(results)
-                        .then((results) => {
-                            resolve(results);
-                        });
-                    }
-                })
-                .catch (err => {
-                    reject(err);
-                });
-        })
-    }
-    ```  
+   function processResults(results) {
+       return new Promise((resolve, reject) => {
+       var done = false;
+           PromiseModule.next(results)
+               .then((hasValues) => {
+                   if (hasValues) {
+                       return PromiseModule.getValues(results);
+                   }
+                   else {
+                       done = true;
+                   }
+               })
+               .then((values) => {
+                   if (done) {
+                       resolve(results);
+                   }
+                   else {
+                       console.log(util.inspect(values, { colors: false }));
+                       processResults(results)
+                       .then((results) => {
+                           resolve(results);
+                       });
+                   }
+               })
+               .catch (err => {
+                   reject(err);
+               });
+       })
+   }
+   ```  
 
 3. Run the app.  
 
-    ```Shell
-    node nodeQueryPromise.js
-    ```
+   ```Shell
+   node nodeQueryPromise.js
+   ```
 
     ![Running nodeQueryPromise.js](Node-query-promise.png)
 
@@ -653,54 +649,54 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
 2. Open a file named `nodeQueryTS.js` in an editor.
 
-    ```Shell (Microsoft Windows)
-    notepad nodeQueryTS.ts
-    ```
+   ```Shell (Microsoft Windows)
+   notepad nodeQueryTS.ts
+   ```
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
-    pico nodeQueryTS.ts
-    ```
+   ```Shell (Linux or Mac)
+   pico nodeQueryTS.ts
+   ```
 
 3. Add the code below to `nodeQueryTS.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
 
-    ```JavaScript
-    "use strict";
-    import * as hana from '@sap/hana-client';
+   ```JavaScript
+   "use strict";
+   import * as hana from '@sap/hana-client';
 
-    var connection: hana.Connection = hana.createConnection();
+   var connection: hana.Connection = hana.createConnection();
 
-    var connOptions: hana.ConnectionOptions = {
-        serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
-        //serverNode: '123456-7890-400a-8bbd-41097dfd15ae.hana0.prod-us10.hanacloud.ondemand.com:443',
-        //UID: 'USER1',
-        //PWD: 'Password1'
-    };
+   var connOptions: hana.ConnectionOptions = {
+       serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
+       //serverNode: '123456-7890-400a-8bbd-41097dfd15ae.hana0.prod-us10.hanacloud.ondemand.com:443',
+       //UID: 'USER1',
+       //PWD: 'Password1'
+   };
 
-    connection.connect(connOptions);
-    connection.setClientInfo("CURRENT_YEAR", 2023);  //should be "2023"
+   connection.connect(connOptions);
+   connection.setClientInfo("CURRENT_YEAR", 2023);  //should be "2023"
 
-    console.log("Year session value is " + connection.getClientInfo("CURRENT_YEAR"));
+   console.log("Year session value is " + connection.getClientInfo("CURRENT_YEAR"));
 
-    var sql1: string = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER WHERE FIRSTNAME LIKE ?";
+   var sql1: string = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER WHERE FIRSTNAME LIKE ?";
 
-    var statement: hana.Statement = connection.prepare(sql1);
-    var result1: hana.ResultSet = statement.executeQuery(['M%']);
-    var moreData: boolean = result1.next();
-    while (moreData) {
-        var row : {[key: string]: string} = result1.getValues();
-        console.log(row);
-        moreData = result1.next();
-    }
-    connection.disconnect();
-    ```
+   var statement: hana.Statement = connection.prepare(sql1);
+   var result1: hana.ResultSet = statement.executeQuery(['M%']);
+   var moreData: boolean = result1.next();
+   while (moreData) {
+       var row : {[key: string]: string} = result1.getValues();
+       console.log(row);
+       moreData = result1.next();
+   }
+   connection.disconnect();
+   ```
 
 4. Check if TypeScript is already installed and if not install it.
 
-    ```Shell
-    tsc -version
-    ```
+   ```Shell
+   tsc -version
+   ```
 
     If the TypeScript is installed, a version value will be returned.
 
@@ -708,25 +704,25 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     If TypeScript is not installed, it can be installed globally with the below command.
 
-    ```Shell
-    npm install -g typescript
-    ```
+   ```Shell
+   npm install -g typescript
+   ```
 
 5. Add the types module.
 
     First check the Node.js version, determine what modules are in the current project, and what are the available versions of `@types/node`.
 
-    ```Shell
-    npm info @types/node
-    ```
+   ```Shell
+   npm info @types/node
+   ```
 
     Install the @types/node module which provides type definitions for Node.js.
 
-    ```Shell
-    npm install @types/node
-    node -v
-    npm list
-    ```
+   ```Shell
+   npm install @types/node
+   node -v
+   npm list
+   ```
 
     ![node and module versions](npm-list-new.png)
 
@@ -739,9 +735,9 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
 6. Run the TypeScript compiler and notice that it finds an error.
 
-    ```Shell
-    tsc nodeQueryTS.ts
-    ```
+   ```Shell
+   tsc nodeQueryTS.ts
+   ```
 
     ![Typescript error](tsc-year-error-new.png)
 
@@ -757,10 +753,10 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
 9. Correct the error, compile, and run the app using the following commands. The error can be corrected by changing 2023 to "2023".
 
-    ```Shell
-    tsc nodeQueryTS.ts
-    node nodeQueryTS.js
-    ```
+   ```Shell
+   tsc nodeQueryTS.ts
+   node nodeQueryTS.js
+   ```
 
     ![Running node application](node-query-ts-execute.png)
 

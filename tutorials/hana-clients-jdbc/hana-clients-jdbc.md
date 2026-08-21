@@ -69,13 +69,13 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
 
 1. Run the following command for version information.  If needed, adjust the path to match the installation location on your machine.
 
-    ```Shell (Microsoft Windows)
-    java -jar C:\SAP\hdbclient\ngdbc.jar -v
-    ```  
+   ```Shell (Microsoft Windows)
+   java -jar C:\SAP\hdbclient\ngdbc.jar -v
+   ```  
 
-    ```Shell (Linux or Mac)
-    java -jar ~/sap/hdbclient/ngdbc.jar -v
-    ```
+   ```Shell (Linux or Mac)
+   java -jar ~/sap/hdbclient/ngdbc.jar -v
+   ```
 
 2. Run the command again without the `-v` to open the configuration window, which provides driver information and the ability to set trace information:
 
@@ -87,19 +87,19 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
 
 3. Run the following and use either connection details stored in the user store or specify the connection details. Details on where to find host, port, and credentials. are covered in the third and fifth steps of the [first tutorial](hana-clients-choose-hana-instance) in this mission.
 
-    ```Shell (Windows)
-    java -jar C:\SAP\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
-    ```
+   ```Shell (Windows)
+   java -jar C:\SAP\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
+   ```
 
     Alternatively, you may run
 
-    ```Shell (Windows)
-    java -jar C:\SAP\hdbclient\ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
-    ```  
+   ```Shell (Windows)
+   java -jar C:\SAP\hdbclient\ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
+   ```  
 
-    ```Shell (Linux or Mac)
-    java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
-    ```
+   ```Shell (Linux or Mac)
+   java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
+   ```
 
     ![Link text e.g., Destination screen](java-driver-result.png)
 
@@ -109,99 +109,99 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/docs/SAP_HANA_CL
 
 1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in the Notepad text editor.
 
-    ```Shell (Microsoft Windows)
-    mkdir %HOMEPATH%\HANAClientsTutorial\java
-    cd %HOMEPATH%\HANAClientsTutorial\java
-    notepad JavaQuery.java
-    ```
+   ```Shell (Microsoft Windows)
+   mkdir %HOMEPATH%\HANAClientsTutorial\java
+   cd %HOMEPATH%\HANAClientsTutorial\java
+   notepad JavaQuery.java
+   ```
 
     Substitute `pico` below for your preferred text editor.
 
-    ```Shell (Linux or Mac)
-    mkdir -p $HOME/HANAClientsTutorial/java
-    cd $HOME/HANAClientsTutorial/java
-    pico JavaQuery.java
-    ```
+   ```Shell (Linux or Mac)
+   mkdir -p $HOME/HANAClientsTutorial/java
+   cd $HOME/HANAClientsTutorial/java
+   pico JavaQuery.java
+   ```
 
 2. Copy the following code into `JavaQuery.java`. Then save and exit the file.
 
-    ```Java
-    import java.sql.*;
-    import com.sap.db.jdbc.Driver;
-    public class JavaQuery {
-        public static void main(String[] argv) {
-            System.out.println("Java version: " + com.sap.db.jdbc.Driver.getJavaVersion());
-            System.out.println("SAP driver details: " + com.sap.db.jdbc.Driver.getVersionInfo() + "\n");
-            Connection connection = null;
-            try {  
-                connection = DriverManager.getConnection(  
-                    //Option 1, retrieve the connection parameters from the hdbuserstore
-                    //The below URL gets the host, port and credentials from the hdbuserstore.
-                    "jdbc:sap://dummy_host:0/?KEY=USER1UserKey&encrypt=true&validateCertificate=false");
+   ```Java
+   import java.sql.*;
+   import com.sap.db.jdbc.Driver;
+   public class JavaQuery {
+       public static void main(String[] argv) {
+           System.out.println("Java version: " + com.sap.db.jdbc.Driver.getJavaVersion());
+           System.out.println("SAP driver details: " + com.sap.db.jdbc.Driver.getVersionInfo() + "\n");
+           Connection connection = null;
+           try {  
+               connection = DriverManager.getConnection(  
+                   //Option 1, retrieve the connection parameters from the hdbuserstore
+                   //The below URL gets the host, port and credentials from the hdbuserstore.
+                   "jdbc:sap://dummy_host:0/?KEY=USER1UserKey&encrypt=true&validateCertificate=false");
 
-                    //Option2, specify the connection parameters
-                    //"jdbc:sap://10.11.123.134:39015/?encrypt=true&validateCertificate=false", "User1", "Password1");
+                   //Option2, specify the connection parameters
+                   //"jdbc:sap://10.11.123.134:39015/?encrypt=true&validateCertificate=false", "User1", "Password1");
 
-                    //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
-                    //validateCertificate should be set to false when connecting
-                    //to an SAP HANA, express edition instance that uses a self-signed certificate.
+                   //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
+                   //validateCertificate should be set to false when connecting
+                   //to an SAP HANA, express edition instance that uses a self-signed certificate.
 
-                    //As of SAP HANA Client 2.7, it is possible to direct trace info to stdout or stderr
-                    //"jdbc:sap://10.11.123.134:39015/?encrypt=true&validateCertificate=false&traceFile=stdout&traceOptions=CONNECTIONS", "User1", "Password1");
+                   //As of SAP HANA Client 2.7, it is possible to direct trace info to stdout or stderr
+                   //"jdbc:sap://10.11.123.134:39015/?encrypt=true&validateCertificate=false&traceFile=stdout&traceOptions=CONNECTIONS", "User1", "Password1");
 
-            }
-            catch (SQLException e) {
-                System.err.println("Connection Failed:");
-                System.err.println(e);
-                return;
-            }
-            if (connection != null) {
-                try {
-                    System.out.println("Connection to HANA successful!");
-                    Statement stmt = connection.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;");
-                    while (resultSet.next()) {
-                        String title = resultSet.getString(1);
-                        String firstName = resultSet.getString(2);
-                        String lastName = resultSet.getString(3);
-                        System.out.println(title + " " + firstName + " " + lastName);
-                    }
-                }
-                catch (SQLException e) {
-                    System.err.println("Query failed!");
-                }
-            }
-        }
-    }
-    ```
+           }
+           catch (SQLException e) {
+               System.err.println("Connection Failed:");
+               System.err.println(e);
+               return;
+           }
+           if (connection != null) {
+               try {
+                   System.out.println("Connection to HANA successful!");
+                   Statement stmt = connection.createStatement();
+                   ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;");
+                   while (resultSet.next()) {
+                       String title = resultSet.getString(1);
+                       String firstName = resultSet.getString(2);
+                       String lastName = resultSet.getString(3);
+                       System.out.println(title + " " + firstName + " " + lastName);
+                   }
+               }
+               catch (SQLException e) {
+                   System.err.println("Query failed!");
+               }
+           }
+       }
+   }
+   ```
 
 3. Compile the `.java` file into a `.class` file using the following command:
 
-    ```Command Prompt (Microsoft Windows)
-    javac -cp C:\SAP\hdbclient\ngdbc.jar;. JavaQuery.java
-    ```  
+   ```Command Prompt (Microsoft Windows)
+   javac -cp C:\SAP\hdbclient\ngdbc.jar;. JavaQuery.java
+   ```  
 
-    ```Powershell (Microsoft Windows)
-    javac -cp "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery.java
-    ```  
+   ```Powershell (Microsoft Windows)
+   javac -cp "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery.java
+   ```  
 
-    ```Shell (Linux or Mac)
-    javac -cp ~/sap/hdbclient/ngdbc.jar:. JavaQuery.java
-    ```  
+   ```Shell (Linux or Mac)
+   javac -cp ~/sap/hdbclient/ngdbc.jar:. JavaQuery.java
+   ```  
 
 4. Run `JavaQuery.class` and indicate where the SAP HANA JDBC driver is located.  Note that the host, port, UID and PWD will be retrieved from the `hdbuserstore`.
 
-    ```Command Prompt (Microsoft Windows)
-    java -classpath C:\SAP\hdbclient\ngdbc.jar;. JavaQuery
-    ```
+   ```Command Prompt (Microsoft Windows)
+   java -classpath C:\SAP\hdbclient\ngdbc.jar;. JavaQuery
+   ```
 
-    ```Powershell (Microsoft Windows)
-    java -classpath "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery
-    ```  
+   ```Powershell (Microsoft Windows)
+   java -classpath "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery
+   ```  
 
-    ```Shell (Linux or Mac)
-    java -classpath ~/sap/hdbclient/ngdbc.jar:. JavaQuery
-    ```  
+   ```Shell (Linux or Mac)
+   java -classpath ~/sap/hdbclient/ngdbc.jar:. JavaQuery
+   ```  
 
     ![Java Query](java-query.png)
 

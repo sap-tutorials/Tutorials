@@ -65,13 +65,11 @@ pip3 install --upgrade pip
 ```
 
 >On Linux or Mac, if you encounter permission issues, one way to solve the issue is to use `sudo` before the command.
-
->---
-
+>
 >On Linux, if Python is installed but pip is not, it can be installed on openSUSE using Zypper as shown below.
 
 >```Shell (Linux)
-zypper install python3-pip
+>zypper install python3-pip
 >```
 
 The repository that contains Python packages is [PyPI](https://pypi.org/project/hdbcli/) and includes a package for the SAP HANA client for Python.
@@ -94,40 +92,29 @@ pip install hdbcli
 > ```
 
 > If the install still fails, check [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) to ensure that a supported version of Python installed.
-
-
-> ---
-
+>
 > To upgrade to the latest available version, enter the following command:
 > ```Shell
 > pip install --no-cache-dir --upgrade hdbcli
 > ```
-
-> ---
-
+>
 > To uninstall `hdbcli`, run the following command:
 > ```Shell
 > pip uninstall hdbcli
 > ```
-
-> ---
-
+>
 > A specific version can be installed using the following command.
 >
 > ```Shell
 > pip install hdbcli==2.18.22
 > ```
-
-> ---
-
+>
 > The list of installed packages can be shown with the following command.
 >
 > ```Shell
 > pip list
 > ```
-
-> ---
-
+>
 > Details of an installed package such as `hdbcli` can be shown with the following command.
 >
 > ```Shell
@@ -138,88 +125,88 @@ pip install hdbcli
 
 1. In a shell, create a folder named `python`, enter the newly created directory, and open a file name `pythonQuery.py` in an editor.
 
-    ```Shell (Microsoft Windows)
-    mkdir %HOMEPATH%\HANAClientsTutorial\python
-    cd %HOMEPATH%\HANAClientsTutorial\python
-    notepad pythonQuery.py
-    ```
+   ```Shell (Microsoft Windows)
+   mkdir %HOMEPATH%\HANAClientsTutorial\python
+   cd %HOMEPATH%\HANAClientsTutorial\python
+   notepad pythonQuery.py
+   ```
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux or Mac)
-    mkdir -p $HOME/HANAClientsTutorial/python
-    cd $HOME/HANAClientsTutorial/python
-    pico pythonQuery.py
-    ```
+   ```Shell (Linux or Mac)
+   mkdir -p $HOME/HANAClientsTutorial/python
+   cd $HOME/HANAClientsTutorial/python
+   pico pythonQuery.py
+   ```
 
 2. Add the code below to `pythonQuery.py`.
 
-    ```Python
-    #Import your dependencies
-    import platform
-    from hdbcli import dbapi
+   ```Python
+   #Import your dependencies
+   import platform
+   from hdbcli import dbapi
 
-    #verify the architecture of Python
-    print ("Platform architecture: " + platform.architecture()[0])
+   #verify the architecture of Python
+   print ("Platform architecture: " + platform.architecture()[0])
 
-    try :
-        #Initialize your connection
-        conn = dbapi.connect(
-            #Option 1, retrieve the connection parameters from the hdbuserstore
-            key='USER1UserKey', # address, port, user and password are retrieved from the hdbuserstore
+   try :
+       #Initialize your connection
+       conn = dbapi.connect(
+           #Option 1, retrieve the connection parameters from the hdbuserstore
+           key='USER1UserKey', # address, port, user and password are retrieved from the hdbuserstore
 
-            #Option2, specify the connection parameters
-            #address='6b7ae0da-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com',
-            #port='443',
-            #user='User1',
-            #password='Password1',
+           #Option2, specify the connection parameters
+           #address='6b7ae0da-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com',
+           #port='443',
+           #user='User1',
+           #password='Password1',
 
-            #Additional parameters
-            #encrypt=True, # must be set to True when connecting to HANA as a Service
-            #As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud)
-            #sslValidateCertificate=False #Must be set to false when connecting
-            #to an SAP HANA, express edition instance that uses a self-signed certificate.
-        )
-    except dbapi.Error as er:
-        print('Connect failed, exiting')
-        print(er)
-        exit()
+           #Additional parameters
+           #encrypt=True, # must be set to True when connecting to HANA as a Service
+           #As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud)
+           #sslValidateCertificate=False #Must be set to false when connecting
+           #to an SAP HANA, express edition instance that uses a self-signed certificate.
+       )
+   except dbapi.Error as er:
+       print('Connect failed, exiting')
+       print(er)
+       exit()
 
-    #If no errors, print connected
-    print('connected')
+   #If no errors, print connected
+   print('connected')
 
-    cursor = conn.cursor()
-    sql_command = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;"
-    cursor.execute(sql_command)
+   cursor = conn.cursor()
+   sql_command = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;"
+   cursor.execute(sql_command)
 
-    rows = cursor.fetchall()
-    for row in rows:
-        for col in row:
-            print ("%s" % col, end=" ")
-        print ("  ")
-    cursor.close()
-    print("\n")
+   rows = cursor.fetchall()
+   for row in rows:
+       for col in row:
+           print ("%s" % col, end=" ")
+       print ("  ")
+   cursor.close()
+   print("\n")
 
-    #Prepared statement example
-    sql_command2 = "CALL HOTELS.SHOW_RESERVATIONS(?,?);"
-    parameters = [11, "2020-12-24"]
-    cursor.execute(sql_command2, parameters)
-    rows = cursor.fetchall()
-    for row in rows:
-        for col in row:
-            print ("%s" % col, end=" ")
-        print (" ")
-    cursor.close()
-    conn.close()
-    ```
+   #Prepared statement example
+   sql_command2 = "CALL HOTELS.SHOW_RESERVATIONS(?,?);"
+   parameters = [11, "2020-12-24"]
+   cursor.execute(sql_command2, parameters)
+   rows = cursor.fetchall()
+   for row in rows:
+       for col in row:
+           print ("%s" % col, end=" ")
+       print (" ")
+   cursor.close()
+   conn.close()
+   ```
 
     Note that the address, port, UID and PWD will be retrieved from the `hdbuserstore`.   
 
 3. Run the app.
 
-    ```Shell
-    python pythonQuery.py
-    ```
+   ```Shell
+   python pythonQuery.py
+   ```
 
     >On some Linux distributions, python refers to a 2.x version of Python.  If so, replace `python` with `python3`.
 

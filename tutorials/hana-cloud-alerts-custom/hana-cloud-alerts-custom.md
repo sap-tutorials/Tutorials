@@ -32,11 +32,7 @@ An SAP Automation Pilot command will be created to check if any maintenance item
 
 >If you do not already have the `HOTELS.MAINTENANCE` table in an SAP HANA Cloud database, please create it now by following the first 2 steps in the [Create Database Objects with SAP HANA Database Explorer](hana-dbx-create-schema) tutorial.
 >
->---
->
 >If you do not have a subscription to the SAP Automation Pilot service, step 1 of the tutorial [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot) provides details on how to so.  
->
->---
 >
 >If you do not have an instance of the SAP Alert Notification service, see step 5 of the tutorial [Alerts in SAP HANA Database and Data Lake](hana-cloud-alerts).
 
@@ -145,11 +141,11 @@ This step will create a catalog, an input, and a command in the SAP Automation P
 
     Paste in the following code for the script parameter.  
 
-    ```Python
-    #!/usr/bin/env python3
+   ```Python
+   #!/usr/bin/env python3
 
-    print("Hello from QueryDB!")
-    ```
+   print("Hello from QueryDB!")
+   ```
 
 9. Select the output and choose Edit.
 
@@ -209,11 +205,11 @@ This step will add an additional executor to the command that can connect to a S
 
 3.  Under Statement, specify the SQL below.
 
-    ```SQL
-    SELECT H.NAME, M.DESCRIPTION FROM HOTELS.MAINTENANCE M, HOTELS.HOTEL H WHERE M.HNO = H.HNO;
-    ```
+   ```SQL
+   SELECT H.NAME, M.DESCRIPTION FROM HOTELS.MAINTENANCE M, HOTELS.HOTEL H WHERE M.HNO = H.HNO;
+   ```
 
-    ![statement](statement.png)
+   ![statement](statement.png)
 
 4. Under Authentication specify the values below.
 
@@ -247,15 +243,15 @@ This step will add an additional executor to the command that can connect to a S
 
     ![script](script.png)
 
-    ```Python
-    #!/usr/bin/env python3
+   ```Python
+   #!/usr/bin/env python3
 
-    import sys, json
+   import sys, json
 
-    input = sys.stdin.readline()
-    rows = json.loads(input)
-    print(rows)
-    ```
+   input = sys.stdin.readline()
+   rows = json.loads(input)
+   print(rows)
+   ```
 
     Under STDIN, specify `$(.SQLStatement.output.result)` so that the output of the previous step can be accessed in the Python code.
 
@@ -284,39 +280,39 @@ This step will demonstrate how SQL queries can be made directly in Python rather
 
     Paste in the following code for the script parameter replacing the previous content.  
 
-    ```Python
-    #!/usr/bin/env python3
+   ```Python
+   #!/usr/bin/env python3
 
-    import sys, os
-    from hdbcli import dbapi
+   import sys, os
+   from hdbcli import dbapi
 
-    #Note:  We cannot directly access input keys such as $(.execution.input.user) or additional parameter values $(.scriptInput.user) in a Python script
-    host = os.environ.get("host")
-    port = os.environ.get("port")
-    user = os.environ.get("user")
-    password = sys.stdin.readline()
+   #Note:  We cannot directly access input keys such as $(.execution.input.user) or additional parameter values $(.scriptInput.user) in a Python script
+   host = os.environ.get("host")
+   port = os.environ.get("port")
+   user = os.environ.get("user")
+   password = sys.stdin.readline()
 
-    conn = dbapi.connect(
-        address=host,
-        port=port,
-        user=user,
-        password=password
-    )
+   conn = dbapi.connect(
+       address=host,
+       port=port,
+       user=user,
+       password=password
+   )
 
-    cursor = conn.cursor()
-    cursor.execute("SELECT count(*) AS UNASSIGNED_ITEMS FROM HOTELS.MAINTENANCE WHERE PERFORMED_BY IS NULL;")
-    rows = cursor.fetchall()
-    numOfUnassignedItems = 0
-    severity = "INFO"
+   cursor = conn.cursor()
+   cursor.execute("SELECT count(*) AS UNASSIGNED_ITEMS FROM HOTELS.MAINTENANCE WHERE PERFORMED_BY IS NULL;")
+   rows = cursor.fetchall()
+   numOfUnassignedItems = 0
+   severity = "INFO"
 
-    for row in rows:
-        numOfUnassignedItems = row[0]
-        severity = "WARNING"
-    
-    cursor.close()
-    print("There are " + str(numOfUnassignedItems) + " unassigned maintenance items.")
-    print(severity)
-    ```
+   for row in rows:
+       numOfUnassignedItems = row[0]
+       severity = "WARNING"
+   
+   cursor.close()
+   print("There are " + str(numOfUnassignedItems) + " unassigned maintenance items.")
+   print(severity)
+   ```
 
     The provided executor [ExecuteScript](https://help.sap.com/docs/AUTOMATION_PILOT/de3900c419f5492a8802274c17e07049/d0854dbb80d84946bb57791db94b7e20.html) supports various languages and when Python is used, it includes the `hdbcli` which is the [Python driver for SAP HANA](hana-clients-python)  which is used to connect to and query an SAP HANA Cloud database.
 
@@ -357,11 +353,11 @@ A second executer will be added in this step.  It will take the output returned 
 
     ![Create an ANS service key](create-service-key.png)
 
-    ```JSON
-    {
+   ```JSON
+   {
 	    "type": "BASIC"
-    }
-    ```
+   }
+   ```
 2. In the SAP Automation Pilot, create an input named 'ServiceKeyANS'.
 
     ![create input](service-key-ans.png)
@@ -452,9 +448,7 @@ The following instructions use the SAP Alert Notification Service to send an ema
     ![create condition details](create-condition-details.png)
 
     >A further condition could be added to send an email only when the severity equals WARNING.  When the severity is INFO, there were no unassigned maintenance items.  
-
-    >---
-
+    >
     >An additional approach would be to apply a condition on `SendNotification` to indicate that it should only execute if the number of unassigned maintenance items does not equal to 0.
 
     >![Add a condition](conditional.png)
