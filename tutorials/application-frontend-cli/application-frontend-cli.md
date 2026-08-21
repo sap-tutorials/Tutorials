@@ -33,7 +33,7 @@ author_profile: https://github.com/tahelMilstein
     <li>In the <strong>Subscriptions</strong> table click on <strong>SAP Business Application Studio</strong> link.
 </ol>
 
-<!-- border -->![Open SAP Business Application Studio from BTP Cockpit](open-bas-1.png)
+![Open SAP Business Application Studio from BTP Cockpit](open-bas-1.png)
 
 <ol start="4">
     <li>Click <strong>CreateDevSpace</strong>.</li>
@@ -43,7 +43,7 @@ author_profile: https://github.com/tahelMilstein
     <li>Click <strong>Create Dev Space</strong>.</li>
 </ol>
 
-<!-- border -->![Create Dev Space](create-bas-ws-1.png)
+![Create Dev Space](create-bas-ws-1.png)
 
 #### Option 2 - Install Application Frontend CLI locally
 

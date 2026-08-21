@@ -50,7 +50,7 @@ For more information about these SAP BTP entities, see:
 
 1. Starting from your global account, go to the **subaccount** in which you want to create a service instance.
 
-      <!-- border -->![Go to subaccount ](tutorial-instance-1-go-to-subaccount.png)
+      ![Go to subaccount ](tutorial-instance-1-go-to-subaccount.png)
 
 2. Select **Services** > **Service Marketplace** from the left-hand navigation bar.
 
@@ -65,7 +65,7 @@ All offerings that are available for consumption in your subaccount are shown as
 
 Select **Services** from the filter to get only the service tiles and find the service you want to consume:
 
-<!-- border -->![Go to Service Marketplace](for-service-offerings-1.png)
+![Go to Service Marketplace](for-service-offerings-1.png)
 
 
 
@@ -77,7 +77,7 @@ Select **Services** from the filter to get only the service tiles and find the s
 
 2. Click on **Create** in the upper-right corner.
 
-    <!-- border -->![Go to Service Marketplace](for-service-offerings-2.png)
+    ![Go to Service Marketplace](for-service-offerings-2.png)
 
 3. A wizard opens, offering you to configure your new instance.
 
@@ -90,7 +90,7 @@ Select **Services** from the filter to get only the service tiles and find the s
     |  **Service**    | This is where you select the **name** of the respective service with which you want to work. <div>&nbsp;</div>The Services list displays all three types of offerings: services, environments, and applications from the service marketplace.<div>&nbsp;</div>The technical name for each item is displayed on the right side of the list. This is how services, environments, or applications are referred to when using the supported APIs or commands for the [SAP BTP Command Line Interface (CLI)](cp-sapcp-getstarted). If an offering can be consumed as both a service and an application, you'll see two technical names next to its commercial name.<div>&nbsp;</div>Since you've already selected the service, this field is populated with the desired value.
     |  **Plan**          | Select a **service plan**.<div>&nbsp;</div> Every service has its own available plans. Aside from the information about the plans you get from the service overview page in the SAP BTP cockpit, you can also get more detailed information by performing the following actions:<div><ol><li>Go to [SAP Discovery Center](https://discovery-center.cloud.sap/) to obtain information on which plans are available. To do so, search for the name of the product you are interested in.</li><li>Select the tile of the product you are interested in.</li><li>From the available tabs, select **Pricing**. You can now see all Service Plans available (such as **Free**, **Default** / **Standard** or **Trial** service plans). <div>&nbsp;</div> **Important:** If you want to experience SAP BTP without generating cost, make sure to only enable services with **Free** service plans.</li></ol>As an example, see the screenshot below.</div>
 
-    <!-- border -->![Discovery Center](tutorial-instance-4-discovery-center.png)
+    ![Discovery Center](tutorial-instance-4-discovery-center.png)
 
 4. Depending on the service and the plan you've selected, you will be asked to add information on the **runtime environment**, **spaces**, and the **instance name**.
 
@@ -112,7 +112,7 @@ Clicking on the instance row opens an instance overview page to the right.
 
 There, you can find more information about your instance.
 
-<!-- border -->![Instance details page ](instances-and-subscriptions.png)
+![Instance details page ](instances-and-subscriptions.png)
 
 
 

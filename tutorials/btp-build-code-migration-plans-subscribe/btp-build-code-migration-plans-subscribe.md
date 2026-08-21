@@ -26,20 +26,20 @@ parser: v2
    
  2. In the navigation area, choose **Services** > **Service Marketplace** and search for **SAP Build Code**.
  
-  <!-- border --> ![Access Service Marketplace](servicemarketplace1.jpg)
+  ![Access Service Marketplace](servicemarketplace1.jpg)
 
 ### Subscribe to SAP Build Code
 
  1. Under **Application Development and Automation** section, choose **SAP Build Code** > click the ellipsis in the line for the **standard** plan, and click **Create**.
  
-    <!-- border --> ![Create Subscription](createsubscription1.jpg)
+    ![Create Subscription](createsubscription1.jpg)
 
  2. On **New Instance or Subscription** wizard choose **Service** and **Plan** from the drop down and choose **Create**.
  
-    <!-- border --> ![Create Subscription for standard plan](createsubscription2.jpg)
+    ![Create Subscription for standard plan](createsubscription2.jpg)
 
  3. To verify the successful creation of subscription for SAP Build Code standard plan, navigate to **Services** > **Instances and Subscriptions**, under   **Subscriptions** section, you will find your subscriptions.
  
-    <!-- border --> ![Verify Subscription](verifysubscription1.jpg)
+    ![Verify Subscription](verifysubscription1.jpg)
 
 ### Test yourself

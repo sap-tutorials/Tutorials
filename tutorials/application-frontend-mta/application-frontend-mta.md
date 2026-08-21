@@ -72,7 +72,7 @@ author_profile: https://github.com/micellius
     <li>Click <strong>Create</strong>.</li>
 </ol>
 
-<!-- border -->![Northwind Destination](trial-destinations-1.png)
+![Northwind Destination](trial-destinations-1.png)
 
 ### Create SAP Business Appication Studio Dev Space
 
@@ -82,7 +82,7 @@ author_profile: https://github.com/micellius
     <li>In the <strong>Subscriptions</strong> table click on <strong>SAP Business Application Studio</strong> link.
 </ol>
 
-<!-- border -->![Open SAP Business Application Studio from BTP Cockpit](open-bas-1.png)
+![Open SAP Business Application Studio from BTP Cockpit](open-bas-1.png)
 
 <ol start="4">
     <li>Click <strong>CreateDevSpace</strong>.</li>
@@ -92,7 +92,7 @@ author_profile: https://github.com/micellius
     <li>Click <strong>Create Dev Space</strong>.</li>
 </ol>
 
-<!-- border -->![Create Dev Space](create-bas-ws-1.png)
+![Create Dev Space](create-bas-ws-1.png)
 
 ### Create Fiori Application From Template
 
@@ -102,19 +102,19 @@ author_profile: https://github.com/micellius
     <p><code>☰ &gt; File &gt; New Project from Template</code></p>
 </ol>
 
-<!-- border -->![New Project from Template](create-fiori-app-1.png)
+![New Project from Template](create-fiori-app-1.png)
 
 <ol start="3">
     <li>Select <strong>SAP Fiori generator</strong> card and click <strong>Start</strong>.</li>
 </ol>
 
-<!-- border -->![SAP Fiori generator](create-fiori-app-2.png)
+![SAP Fiori generator](create-fiori-app-2.png)
 
 <ol start="4">
     <li>Select <strong>List Report Page</strong> card and click <strong>Next</strong>.</li>
 </ol>
 
-<!-- border -->![List Report Page](create-fiori-app-3.png)
+![List Report Page](create-fiori-app-3.png)
 
 <ol start="5">
     <li>At <strong>Data Source and Service Selection</strong> step enter the following and click <strong>Next</strong>:</li>
@@ -125,7 +125,7 @@ author_profile: https://github.com/micellius
     </table>
 </ol>
 
-<!-- border -->![Data Source and Service Selection](create-fiori-app-4.png)
+![Data Source and Service Selection](create-fiori-app-4.png)
 
 <ol start="6">
     <li>At <strong>Entity Selection</strong> step enter the following and click <strong>Next</strong>:</li>
@@ -136,7 +136,7 @@ author_profile: https://github.com/micellius
     </table>
 </ol>
 
-<!-- border -->![Entity Selection](create-fiori-app-5.png)
+![Entity Selection](create-fiori-app-5.png)
 
 <ol start="7">
     <li>At <strong>Project Attributes</strong> step enter select:</li>
@@ -146,7 +146,7 @@ author_profile: https://github.com/micellius
     <p>Leave the rest of the fields without modification. Click <strong>Next</strong>.</p>
 </ol>
 
-<!-- border -->![Entity Selection](create-fiori-app-6.png)
+![Entity Selection](create-fiori-app-6.png)
 
 <ol start="8">
     <li>At <strong>Deployment Configuration</strong> step enter the following and click <strong>Finish</strong>:</li>
@@ -157,13 +157,13 @@ author_profile: https://github.com/micellius
     </table>
 </ol>
 
-<!-- border -->![Deployment Configuration](create-fiori-app-7.png)
+![Deployment Configuration](create-fiori-app-7.png)
 
 <ol start="9">
     <li>Click <strong>Open folder</strong>.</li>
 </ol>
 
-<!-- border -->![Open folder](create-fiori-app-8.png)
+![Open folder](create-fiori-app-8.png)
 
 ### Preview Application
 
@@ -173,27 +173,27 @@ author_profile: https://github.com/micellius
     <p><code>Fiori: Preview Application</code></p>
 </ol>
 
-<!-- border -->![Preview Command](preview-fiori-app-1.png)
+![Preview Command](preview-fiori-app-1.png)
 
 <ol start="3">
     <li>Select:</li>
     <p><code>start fiori run --open "test/flp.html#app-preview"</code></p>
 </ol>
 
-<!-- border -->![Preview Options](preview-fiori-app-2.png)
+![Preview Options](preview-fiori-app-2.png)
 
 <ol start="4">
     <li>In the opened application preview click on the gear button and select columns to display in the table:</li>
 </ol>
 
-<!-- border -->![View Settings](preview-fiori-app-3.png)
+![View Settings](preview-fiori-app-3.png)
 
 <ol start="5">
     <li>Click <strong>OK</strong>.</li>
     <li>Click <strong>Go</strong> button to see the data.</li>
 </ol>
 
-<!-- border -->![Application preview with data](preview-fiori-app-4.png)
+![Application preview with data](preview-fiori-app-4.png)
 
 ### Build & Deploy MTA
 
@@ -201,14 +201,14 @@ author_profile: https://github.com/micellius
     <li>Right click on <code>mta.yaml</code> file in project explorer and select <strong>Build MTA Project</strong>.</li>
 </ol>
 
-<!-- border -->![Build MTA Project](build-mta-1.png)
+![Build MTA Project](build-mta-1.png)
 
 <ol start="2">
     <li>Wait until MTA project build process is finished.</li>
     <li>Right click on <code>mta_archives/project1_0.0.1.mtar</code> file in project explorer and select <strong>Deploy MTA Archive</strong>.</li>
 </ol>
 
-<!-- border -->![Deploy MTA Archive](deploy-mta-1.png)
+![Deploy MTA Archive](deploy-mta-1.png)
 
 <ol start="4">
     <li>If prompted, sign in to Cloud Foundry.
@@ -223,9 +223,9 @@ author_profile: https://github.com/micellius
     </li>
 </ol>
 
-<!-- border -->![Login to Cloud Foundry](bas-cf-login-1.png)
+![Login to Cloud Foundry](bas-cf-login-1.png)
 
-<!-- border -->![Select Organization and Space](bas-cf-login-2.png)
+![Select Organization and Space](bas-cf-login-2.png)
 
 <ol start="5">
     <li>Wait until MTA archive is deployed.</li>
@@ -238,13 +238,13 @@ author_profile: https://github.com/micellius
     <li>Navigate to <strong>HTML5 > Application Frontend</strong>.</li>
 </ol>
 
-<!-- border -->![Application Frontend](cockpit-af-1.png)
+![Application Frontend](cockpit-af-1.png)
 
 <ol start="3">
     <li>Click on the link with application name <strong>project1</strong> and see the application running.</li>
 </ol>
 
-<!-- border -->![Run application](preview-fiori-app-4.png)
+![Run application](preview-fiori-app-4.png)
 
 ### Re-deploy Application with CLI
 
@@ -259,7 +259,7 @@ This step of tutorial is optional. It shows how you can shorten the UI developme
     <li>Open <code>webapp/index.html</code> and change the title of the page:</li>
 </ol>
 
-<!-- border -->![Change title in index.html](bas-index-1.png)
+![Change title in index.html](bas-index-1.png)
 
 <ol start="3">
     <li>Open integrated <strong>Terminal</strong> in the root of the project.</li>
@@ -278,7 +278,7 @@ npm run build
 afctl login --sso -a '<URL>'
 ```
 
-<!-- border -->![Login with CLI](bas-cli-login-1.png)
+![Login with CLI](bas-cli-login-1.png)
 
 <ol start="6">
     <li>Re-deploy build results of the UI:</li>
@@ -288,7 +288,7 @@ afctl login --sso -a '<URL>'
 afctl push dist
 ```
 
-<!-- border -->![Re-deploy with CLI](bas-cli-push-1.png)
+![Re-deploy with CLI](bas-cli-push-1.png)
 
 <ol start="7">
     <li>Click on the link in CLI command output or refresh the browser page with UI application to which you navigated from BTP Cockpit.</li>

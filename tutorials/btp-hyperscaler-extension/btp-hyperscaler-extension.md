@@ -103,13 +103,13 @@ SAP BTP service operator allows you to provision and manage service instances an
 
 2. Choose your global account and then in the **Account Explorer** page, choose the tile of your subaccount.
 
-      <!-- border -->![subaccount](screenshots/subaccount.png)
+      ![subaccount](screenshots/subaccount.png)
 
 3. Choose **Services** > **Service Marketplace**, and in the **Service Marketplace** page, choose the **Service Manager** service tile.
 
 4. From the **Service Manager** page, choose **Create** and follow the steps in the wizard to create a service instance.
 
-     <!-- border -->![servicemarketplace](screenshots/servicemarketplace.png)
+     ![servicemarketplace](screenshots/servicemarketplace.png)
 
 5. On the **Basic Info** step:
 
@@ -126,39 +126,39 @@ SAP BTP service operator allows you to provision and manage service instances an
 
 6. Choose **Create**.
 
-      <!-- border -->![instancecreationfinal](screenshots/instancecreationfinal.png)
+      ![instancecreationfinal](screenshots/instancecreationfinal.png)
 
 7. Choose **View Instance**
 
-     <!-- border -->![clickviewinstance](screenshots/clickviewinstance.png)
+     ![clickviewinstance](screenshots/clickviewinstance.png)
 
 8. To create a binding for the **`btpserviceoperator`** service instance, choose **Create**.
 
-     <!-- border -->![bindingcreation](screenshots/bindingcreation.png)
+     ![bindingcreation](screenshots/bindingcreation.png)
 
 9. In the **Binding Name** field enter **`operatorbinding`** and choose **Create**.
 
-     <!-- border -->![clickonbinding](screenshots/clickonbinding.png)
+     ![clickonbinding](screenshots/clickonbinding.png)
 
 10. Choose **View Credentials**.
 
-     <!-- border -->![bindingcredentials](screenshots/bindingcredentials.png)
+     ![bindingcredentials](screenshots/bindingcredentials.png)
 
 11. Copy the credential information by choosing **Download** or **Copy JSON**.
 
-    <!-- border -->![bindinginfo](screenshots/bindinginfo.png)
+    ![bindinginfo](screenshots/bindinginfo.png)
 
     This is an example of the binding object created with the default credentials type:
 
-    ```JSON
-     {
-        "clientid": "xxxxxxx",
-        "clientsecret": "xxxxxxx",
-        "url": "https://mysubaccount.authentication.xxx.hana.ondemand.com",
-        "xsappname": "<name>",
-        "sm_url": "<service_manager_URL>"
-     }
-    ```
+   ```JSON
+    {
+       "clientid": "xxxxxxx",
+       "clientsecret": "xxxxxxx",
+       "url": "https://mysubaccount.authentication.xxx.hana.ondemand.com",
+       "xsappname": "<name>",
+       "sm_url": "<service_manager_URL>"
+    }
+   ```
 
 12. Deploy the SAP BTP service operator in the cluster using the obtained access credentials.
 
@@ -227,14 +227,14 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
 
  2. Choose your global account and then in the **Account Explorer** page, choose the tile of your subaccount.
 
-       <!-- border -->![subaccount](screenshots/subaccount.png)
+       ![subaccount](screenshots/subaccount.png)
 
  3. Choose **Services** > **Service Marketplace**, and in the **Service Marketplace** page, choose the **Authorization and Trust Management Service** service tile.
 
  4. From the **Authorization and Trust Management Service** page, verify the cross consumable service plan
     from `xsuaa` service instance.Based on the environment specified in the respective plan is supported for cross consumable.
 
-      <!-- border -->![ccservicexsuaa](screenshots/ccservicexsuaa.png)
+      ![ccservicexsuaa](screenshots/ccservicexsuaa.png)
 
     >If you can't see this service plan or service instance , you need to entitle your subaccount to use the respective service and service plan. For more information about how to entitle a service to a subaccount, see: [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5ba357b4fa1e4de4b9fcc4ae771609da.html).
 
@@ -246,9 +246,9 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
 
 1. Execute the following command from your Service Manager Control (SMCTL) command-line interface:
 
-    ```Shell/Bash
-     smctl login -a https://service-manager.cfapps.<region domain> --param subdomain=<subdomain>
-    ```
+   ```Shell/Bash
+    smctl login -a https://service-manager.cfapps.<region domain> --param subdomain=<subdomain>
+   ```
      To find the region domain for the SAP Service Manager, see [Regions and API Endpoints Available for the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html#loiof344a57233d34199b2123b9620d0bb41)
 
      The subdomain is the subaccount subdomain, in which you would like to register the broker. You can find it in the cloud cockpit Overview tab of your subaccount.
@@ -257,18 +257,18 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
 
 2. Input your user, with an assigned subaccount Service Administrator Role Collection, and your password.
 
-    ```Shell/Bash
-    smctl login -a https://service-manager.cfapps.<region domain> --param subdomain=<subdomain name> -u <user.email> -p <password>
-    ```
+   ```Shell/Bash
+   smctl login -a https://service-manager.cfapps.<region domain> --param subdomain=<subdomain name> -u <user.email> -p <password>
+   ```
     >
     > Assign the Subaccount Service Administrator Collection, see the step 2 of the Setup section of [The procedure shows how to assign new service administrator role collections to a user of your choice](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/0735965d10b342a393b5a83924dba9b4.html).
 
 
 3. Check the cross consumable services by entering the following command:
 
-    ```Shell/Bash
-    smctl marketplace
-    ```
+   ```Shell/Bash
+   smctl marketplace
+   ```
 
      ![crossconsuableservices](screenshots/crossconsumption.png)
 
@@ -291,28 +291,28 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
 
     You can instead run the following command within your CLI at your desired folder location:
 
-    ```Shell/Bash
-    git clone https://github.com/SAP-samples/btp-hyperscaler-extension
-    ```
+   ```Shell/Bash
+   git clone https://github.com/SAP-samples/btp-hyperscaler-extension
+   ```
 3. Create your own `sapfiori` namespace in your Kubernetes cluster.
 
-    ```Shell/Bash
-    kubectl create namespace sapfiori
-    ```
+   ```Shell/Bash
+   kubectl create namespace sapfiori
+   ```
 
 4. create the *destination* service instance with plan *lite* and the `xsuaa` service instance with plan
    *application* by running the below command.
 
-    ```Shell/Bash
-    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/createservice.yaml
-    ```
+   ```Shell/Bash
+   kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/createservice.yaml
+   ```
     > The create service file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/k8s/createservice.yaml`.
 
 5. Check that the status of the service instance in your cluster by using the following command:
 
-    ```Shell/Bash
-    kubectl get serviceinstances -n sapfiori
-    ```
+   ```Shell/Bash
+   kubectl get serviceinstances -n sapfiori
+   ```
     **This should return the status of created service instances.**
 
     |NAME|OFFERING|PLAN|STATUS|READY|AGE|
@@ -349,16 +349,16 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 
 4. Execute the below command to deploy the application into hyperscaler.
 
-    ```Shell/Bash
-    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/deployment.yaml
-    ```
+   ```Shell/Bash
+   kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/deployment.yaml
+   ```
     > The deployment file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/k8s/deployment.yaml`.
 
 5. Execute the following command to check the deployed application pod status
 
-    ```Shell/Bash
-    kubectl get pods -n sapfiori
-    ```
+   ```Shell/Bash
+   kubectl get pods -n sapfiori
+   ```
 
     This should return the status of deployed application.
 
@@ -376,24 +376,24 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 
 1. Execute the below command to deploy the application into hyperscaler.
 
-    ```Shell/Bash
-    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/loadbalancer.yaml
-    ```
+   ```Shell/Bash
+   kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/loadbalancer.yaml
+   ```
     > The deployment file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/k8s/loadbalancer.yaml`.
 
 
 3. To find the deployed load balancer public IP, use the following command:
 
-    ```Shell/Bash
-    kubectl get services -n sapfiori
-    ```
-    <!-- border -->![loadbalancer](screenshots/loadbalancer.png)
+   ```Shell/Bash
+   kubectl get services -n sapfiori
+   ```
+    ![loadbalancer](screenshots/loadbalancer.png)
 
 4. Copy the load balancer IP and add the port "5000" run in a browser.
 
     Application should return the list of business partners
 
-    <!-- border -->![finaloutput](screenshots/finaloutput.png)
+    ![finaloutput](screenshots/finaloutput.png)
 
   [OPTION END]
 
@@ -403,9 +403,9 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 
 1. Execute the following command to check the deployed application pod status
 
-    ```Shell/Bash
-    kubectl get pods -n sapfiori
-    ```
+   ```Shell/Bash
+   kubectl get pods -n sapfiori
+   ```
 
     This should return the status of deployed application.
 
@@ -415,15 +415,15 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 
 2. copy the above name of the deployed application `fioriapp-xx-xx`
 
-    ```Shell/Bash
-    kubectl port-forward  fioriapp-xx-xx 5000:5000 -n sapfiori
-    ```
+   ```Shell/Bash
+   kubectl port-forward  fioriapp-xx-xx 5000:5000 -n sapfiori
+   ```
 
 3. Run <http://localhost:4004> in your browser
 
     Application should return the list of business partners
 
-    <!-- border -->![finaloutput](screenshots/finaloutput.png)
+    ![finaloutput](screenshots/finaloutput.png)
 
   [OPTION END]
 

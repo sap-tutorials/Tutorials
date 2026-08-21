@@ -73,17 +73,17 @@ To configure the access to your Kyma-runtime cluster, you have to set the `kubec
 
 1. Open a command line prompt on your computer. In the command line screen, type in the following:
 
-    ```Shell/Bash
-    export KUBECONFIG=<KUBECONFIG_FILE_PATH>
-    ```
+   ```Shell/Bash
+   export KUBECONFIG=<KUBECONFIG_FILE_PATH>
+   ```
 
     Replace the `<KUBECONFIG_FILE_PATH>` section with the file path, including the file name and extension, of the `Kubeconfig` you downloaded in the previous step.
 
 2. Test the configuration by running this command:  
 
-    ```Shell/Bash
-    kubectl config get-contexts
-    ```
+   ```Shell/Bash
+   kubectl config get-contexts
+   ```
 
     This should return a response similar to:
 
@@ -99,21 +99,21 @@ To configure the access to your Kyma-runtime cluster, you have to set the `kubec
 
 1. Open a command line prompt on your computer. In the command line screen, type in the following:
 
-    ```PowerShell
-    $ENV:KUBECONFIG="<KUBECONFIG_FILE_PATH>"
-    ```
+   ```PowerShell
+   $ENV:KUBECONFIG="<KUBECONFIG_FILE_PATH>"
+   ```
 
-    ```DOS
-    set KUBECONFIG="<KUBECONFIG_FILE_PATH>"
-    ```
+   ```DOS
+   set KUBECONFIG="<KUBECONFIG_FILE_PATH>"
+   ```
 
     Replace the `<KUBECONFIG_FILE_PATH>` section with the file path, including the file name and extension, of the `Kubeconfig` you downloaded in the previous step.
 
 2. Test the configuration by running this command:  
 
-    ```Shell/Bash
-    kubectl config get-contexts
-    ```
+   ```Shell/Bash
+   kubectl config get-contexts
+   ```
 
     This should return a response similar to:
 
@@ -138,27 +138,27 @@ To configure the access to your Kyma-runtime cluster, you have to set the `kubec
 
     You can instead run the following command within your CLI at your desired folder location:
 
-    ```Shell/Bash
-    git clone https://github.com/SAP-samples/btp-hyperscaler-extension
-    ```
+   ```Shell/Bash
+   git clone https://github.com/SAP-samples/btp-hyperscaler-extension
+   ```
 3. Create your own `sapfiori` namespace in your `Kyma cluster`.
 
-    ```Shell/Bash
-    kubectl create namespace sapfiori
-    ```
+   ```Shell/Bash
+   kubectl create namespace sapfiori
+   ```
     > Note: Incase of login fails run command  "kubectl krew install oidc-login".
 
 4. Replace the  `<Custom-Domain>` in `<Folder path>/btp-hyperscaler-extension/kyma/createservice.yaml` file.
 
     Find your Cluster-domain and replace in the Createservice.yaml, run the below command and copy the `Kubernetes control pane` URL
 
-    ```Shell/Bash
-    kubectl cluster-info
-    ```
+   ```Shell/Bash
+   kubectl cluster-info
+   ```
 
-    ```Shell/Bash
-    Example: https://api.xxx.kyma.ondemand.com
-    ```
+   ```Shell/Bash
+   Example: https://api.xxx.kyma.ondemand.com
+   ```
 
     And your `Cluster Domain` will be `xxx.kyma.ondemand.com`
 
@@ -166,17 +166,17 @@ To configure the access to your Kyma-runtime cluster, you have to set the `kubec
 5. create the `destination` service instance with plan *lite* and the `xsuaa` service instance with plan
    *application* by running the below command.
 
-    ```Shell/Bash
-    kubectl apply -n sapfiori -f <Folder Path>/btp-hyperscaler-extension/kyma/createservice.yaml
-    ```
+   ```Shell/Bash
+   kubectl apply -n sapfiori -f <Folder Path>/btp-hyperscaler-extension/kyma/createservice.yaml
+   ```
     > Replace your folder path in above command.
     > The create service file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/kyma/createservice.yaml`.
 
 6. Check that the status of the service instance in your cluster by using the following command:
 
-    ```Shell/Bash
-    kubectl get serviceinstances -n sapfiori
-    ```
+   ```Shell/Bash
+   kubectl get serviceinstances -n sapfiori
+   ```
     **This should return the status of created service instances.**
 
     |NAME|CLASS|PLAN|STATUS|AGE|
@@ -194,21 +194,21 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 
 1. Build the docker image of the **`fioriapp`**.
 
-    ```Shell/Bash
+   ```Shell/Bash
 
-    cd `btp-hyperscaler-extension/basicfioriapp`
+   cd `btp-hyperscaler-extension/basicfioriapp`
 
-    docker build . -t `<docker-username>/fioriapp` -f Dockerfile
-    ```
+   docker build . -t `<docker-username>/fioriapp` -f Dockerfile
+   ```
     >Replace `<docker-username>` with your username
 
 2. Push the docker image of the `fioriapp` to your Container Image Library.
 
-    ```Shell/Bash
+   ```Shell/Bash
 
-    docker push `<docker-username>/fioriapp`
+   docker push `<docker-username>/fioriapp`
 
-    ```
+   ```
     >Replace `<docker-username>` with your username
 
 3. Update the docker image in the `<Folder path>/btp-hyperscaler-extension/kyma/deployment.yaml` file.
@@ -217,18 +217,18 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 
 4. Execute the below command to deploy the application into kyma-cluster.
 
-    ```Shell/Bash
-    kubectl apply -n sapfiori -f <Folder path>/btp-hyperscaler-extension/kyma/deployment.yaml
+   ```Shell/Bash
+   kubectl apply -n sapfiori -f <Folder path>/btp-hyperscaler-extension/kyma/deployment.yaml
 
-    ```
+   ```
     > Replace your folder path in above command.
     > The deployment file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/kyma/deployment.yaml`.
 
 5. Execute the following command to check the deployed application pod status
 
-    ```Shell/Bash
-    kubectl get pods -n sapfiori
-    ```
+   ```Shell/Bash
+   kubectl get pods -n sapfiori
+   ```
 
     This should return the status of deployed application.
 
@@ -247,9 +247,9 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 
     Replace the  `<Custom-Domain>` in `<Folder path>/btp-hyperscaler-extension/kyma/service.yaml` file.
 
-    ```Shell/Bash
-    kubectl apply -n sapfiori -f <Folder path>/btp-hyperscaler-extension/kyma/service.yaml
-    ```
+   ```Shell/Bash
+   kubectl apply -n sapfiori -f <Folder path>/btp-hyperscaler-extension/kyma/service.yaml
+   ```
     > Replace your folder path in above command.
     > The deployment file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/kyma/service.yaml`.
 
@@ -271,7 +271,7 @@ To access the API we can use the `APIRule` we created in the previous step.
 
     `https://fioriapp.<cluster>.kyma.ondemand.com`
 
-    <!-- border -->![finaloutput](finaloutput.png)
+    ![finaloutput](finaloutput.png)
 
 **Congratulations!** You have successfully completed the tutorial.
 
