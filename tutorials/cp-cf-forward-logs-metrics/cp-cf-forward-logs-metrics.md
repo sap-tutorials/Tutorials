@@ -59,7 +59,7 @@ $ cf create-user-provided-service <drain-name> -l <drain-url>
   - `drain-name`: any name you would like to use for your drain service
   - `drain-url`: the URL provided by the third-party service for long-term persistence (storage)
 
-<!-- border -->![Create a drain service](create-drain.png)
+![Create a drain service](create-drain.png)
 
 Next, bind an app to the service by specifying the service in the manifest, or running:
 
@@ -70,7 +70,7 @@ $ cf bind-service <app-name> <drain-name>
   - `app-name`: the name of the app you want to get logs _from_
   - `drain-name`: the name of the service you created in step 1 above
 
-<!-- border -->![Bind the service](bind-service.png)
+![Bind the service](bind-service.png)
 
 Finally, you need to restage your application so it picks up the configuration changes. Simply restarting the application does not pick up the changes.
 

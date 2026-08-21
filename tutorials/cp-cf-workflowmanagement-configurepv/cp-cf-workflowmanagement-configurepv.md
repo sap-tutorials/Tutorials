@@ -31,28 +31,28 @@ In this tutorial, you can configure one such approval step and activate a proces
 
 1. In the **Process Flexibility Cockpit**, navigate to **My Live Processes** section and choose **Sample Capital Expenditure Approval Process** tile.
 
-    <!-- border -->![CAPEX](cp-cf-wm-discover-importedcapex0.png)
+    ![CAPEX](cp-cf-wm-discover-importedcapex0.png)
 
 2. Choose the **Process Variants** tile.
 
-    <!-- border -->![Variants](cp-cf-wm-configurepv-variantstile.png)
+    ![Variants](cp-cf-wm-configurepv-variantstile.png)
 
 
 ### Create a new variant
 
 1. Choose **New Process Variant**.
 
-    <!-- border -->![New Variant](cp-cf-wm-configurepv-variantnew.png)
+    ![New Variant](cp-cf-wm-configurepv-variantnew.png)
 
 2. Provide **High Value Investments** as the **Name**. Then choose **Create**.
 
-    <!-- border -->![High Value Variant](cp-cf-wm-configurepv-variantname.png)
+    ![High Value Variant](cp-cf-wm-configurepv-variantname.png)
 
     > The **Process** dropdown is preselected as **`Sample Capital Expenditure Approval Process`**. This process refers to the template from which the new variant will be created. A template contains the process steps that are used to configure the different process variants based on business needs.
 
 3. The new process variant is now created with the given name and default description. Choose the newly created **High Value Investments** process variant tile.
 
-    <!-- border -->![High Value Tile](cp-cf-wm-configurepv-highval.png)
+    ![High Value Tile](cp-cf-wm-configurepv-highval.png)
 
     You are now in the **Manage Process Variants** view.
 
@@ -62,19 +62,19 @@ In this tutorial, you can configure one such approval step and activate a proces
 
 1. In the **Manage Process Variants** view, add a new approval step to the template by dragging the **Approval** tile from **Available Steps** and drop it after the **Local Manager Approval** step.
 
-    <!-- border -->![Variant Editor](cp-cf-wm-configurepv-approvaldrag.png)
+    ![Variant Editor](cp-cf-wm-configurepv-approvaldrag.png)
 
     >Choose the new approval step that opens the **Step Properties**
 
-    ><!-- border -->![Variant Editor two](cp-cf-wm-configurepv-newapprovalpng.png)
+    >![Variant Editor two](cp-cf-wm-configurepv-newapprovalpng.png)
 
 2. In the **Step Properties** section, modify the name of the step to **`CFO Approval`**.
 
-    <!-- border -->![Variant Editor two](cp-cf-wm-configurepv-properties1.png)
+    ![Variant Editor two](cp-cf-wm-configurepv-properties1.png)
 
 3. Choose the **Details** tab, then change the **Role Name** to **`CFO`** and **Approval Step** to **`CFO`**.
 
-    <!-- border -->![Group Head Details](cp-cf-wm-configurepv-details.png)
+    ![Group Head Details](cp-cf-wm-configurepv-details.png)
 
     >In the **Details** section, you should provide information on the role of the persona that should perform the approval task.
 
@@ -84,7 +84,7 @@ In this tutorial, you can configure one such approval step and activate a proces
 
 5. Navigate to the Workflow Management home screen.
 
-    <!-- border -->![Home screen](cp-cf-wm-configuredecision-home.png)
+    ![Home screen](cp-cf-wm-configuredecision-home.png)
 
 
 ---

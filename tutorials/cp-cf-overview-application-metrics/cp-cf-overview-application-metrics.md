@@ -90,7 +90,7 @@ Now that you know about the CPU, disk, and memory metrics, you probably also wan
 cf app cf-nodejs
 ```
 
-<!-- border -->![Using the cf apps command](cf-app-cf-nodejs.png)
+![Using the cf apps command](cf-app-cf-nodejs.png)
 
 
 ### View metrics with the log cache plugin
@@ -102,7 +102,7 @@ The log cache, besides storing logs, also stores container metrics. Viewing metr
 cf tail -c metrics cf-nodejs
 ```
 
-<!-- border -->![Viewing metrics with log cache](cf-log-cache-metrics.png)
+![Viewing metrics with log cache](cf-log-cache-metrics.png)
 
 
 ---

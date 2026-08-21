@@ -136,55 +136,55 @@ You have now created a PSE store that we'll use to store the "own" certificate a
 
     - Copy the values between the *Begin/End Private RSA Key* tags from the *certificate.key* file.
 
-    ```
-    -----BEGIN CERTIFICATE-----
-    MIIDBTCCAe2gAwIBAgIUMQ0cJjTV5k0UAWqTSPN92LcqBbwwDQYJKoZIhvcNAQEL
-    BQAwEjEQMA4GA1UEAwwHZXhhbXBsZTAeFw0yMDEwMDUxNDM3MDlaFw0yMzA3MjYx
-    NDM3MDlaMBIxEDAOBgNVBAMMB2V4YW1wbGUwggEiMA0GCSqGSIb3DQEBAQUAA4IB
-    DwAwggEKAoIBAQDTJwrq4VZsvPbWg5xQTqU3SloIziYQY9KSOKQ+KbBs+Fl3nWx5
-    nHeXDLxi3KH5fn5QVY/3s0V60PrVF3lhCa9QvRRytDWCYBAoGstuAMLlyu6NE6rR
-    5i6GPNC5hvEhWaGDmCWG+ZJx9xinNDBox1jmbjRBuL/taDLqmdRGJGi9WxbtWgAG
-    3TFXbiEX0apf/35oGtM8R57PTSn3F0TztdHCK37sH3azFYUTv1OMhv9UXpcXV26+
-    QF0ISjlX+oIJ2kTUcnan7XmxB8f0/VfX4/WPWiHtrqaC8QORGfksn+nLnVttHaam
-    zrXuYpf7Io7K00kbGkSqywK8+eiSdrjoIBvnAgMBAAGjUzBRMB0GA1UdDgQWBBSY
-    t74eEI/jXeG89jagMaF8bDji5DAfBgNVHSMEGDAWgBSYt74eEI/jXeG89jagMaF8
-    bDji5DAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQA32/k3Q3BH
-    rf8jEai/Hl+P3LEZcIvZjq/1I3dZjTrMKUEeFLC0HCHdbHxmOj4woHaF8yyq8Kas
-    hxfEvPV6as2oYzZP/zjp3Os0rAWSgd3Gkc/a2FTWY86VDA/Co11prz3KGxM9zNiP
-    KXu+b1KTTboqisbKPbkWgfRcq2CCKDWq8z9WbVK2GmLRvKwuTpQd4qEVkmk+BNKx
-    mXcLxR71tjaYH9qT343peLuQH621plBewlErVpf4F298QcBae9tRmWpKgIZHfLGv
-    4+jh3/DgB9orHIMlh+nVN6P3JiMWk8gUTEpYBStPZlBqJZdtgd4kvi6j+1x7oxxN
-    QKshzGHvi3y4
-    -----END CERTIFICATE-----
-    -----BEGIN RSA PRIVATE KEY-----
-    MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDTJwrq4VZsvPbW
-    g5xQTqU3SloIziYQY9KSOKQ+KbBs+Fl3nWx5nHeXDLxi3KH5fn5QVY/3s0V60PrV
-    F3lhCa9QvRRytDWCYBAoGstuAMLlyu6NE6rR5i6GPNC5hvEhWaGDmCWG+ZJx9xin
-    NDBox1jmbjRBuL/taDLqmdRGJGi9WxbtWgAG3TFXbiEX0apf/35oGtM8R57PTSn3
-    F0TztdHCK37sH3azFYUTv1OMhv9UXpcXV26+QF0ISjlX+oIJ2kTUcnan7XmxB8f0
-    /VfX4/WPWiHtrqaC8QORGfksn+nLnVttHaamzrXuYpf7Io7K00kbGkSqywK8+eiS
-    drjoIBvnAgMBAAECggEBAJThRXhhU++tuRl9iLyzBxkaCquEtx/9Ul6ZI21VNblP
-    zr1hOTfyE/xkFXxbdrWU8/kuqykKtSWorgOL3qCGFKAIAZ/y4nu/wgSVB/TTApjF
-    4jeEs3/2Hb22qbD2rZRHP3Oq1mL6G8DRageS68MlM9CdyajBXEpHmwcBWcPvLg68
-    Hzf3WnjvXLFiShsmiY/MZddUZLwl14pZcNnq9SLqNE9MKWYq46sH4vDl+WizrRRV
-    xPdlTNrhMa5iZNJe+n4rTHUKmXtij8bImMOYcEq+3RG9gPY0l317Yyo/C7XSvBq9
-    UujVxnT/erJDsHFtW6BvgqwA6MNzPiK5BhRfr662mGECgYEA/Ukjg4z+VojNtpcA
-    3vlNyHU0xioxgFtxTyP9mGi/YLaRZvOW0Oo8L8+1yVRdmIiPL6LfSFDJ8n+NxSfL
-    Eg2OsBSFGlrXIavEyFIPH8wT1xmR3BwXAS4oVLtAU2e3IXzoCVIdaKkQLIJZgVSo
-    UOlZN1Bqmofr4oAEGJiZV5tgzfcCgYEA1WpQ8WzCFlpblt2Nawe6GEZrSISUT9Xi
-    bgFJ6S9UEpnzaAoPlmDNxtUWVIbskUheLMvI1ukJ31ksp8AwV1qJwlH8Em+OpSFr
-    cYQ+PARwNIc9yjMiBXCDNQoaTNR623Tupqxj32sWqfziJ5dTmup5HbMy3uziQLg4
-    RZsK6dT/ZZECgYBBktjd6vfB4YMYnXl9QJ/xoN5721qbd5EbQx8ZgSzi1gFI3RGT
-    nsDcQ/M1X2En51rio1EZQMk3vewvOcEqOFZTocxf6Vq+/eBhWFVQDx6n1pfbm24d
-    QRzx6tSZg0V3JwZPu3Gfsf1c+JZBlHBLGk6dsnUW8s+QAUKON5ujgbeLOwKBgQCN
-    MdSxlbHnFgroilYIzMjrTJOoG8b/9tLi0slylFR8Jgyq9ZUQeaVK+inW7JlRGV7t
-    JjoPLYjRku7/YSDaelUQEivCiroGOFEcflCqZolRx3Qy9Zd5n9G+4ps5344U6Y0H
-    CqDc7L3G4z9A0FaI9L4Cz09Fu9WI2hiovIYA5GHAcQKBgFeemWeiwFPWfN0unQiI
-    lFP3z7gjdvOugpzsj7s3bvbTudx4RYPiWe77XGO1WUnh0CiasvF0kn92/0e29VS5
-    RFGWslZ38oZPWdZSqHB7KrbWLJ5O2RAtllEoIgEkaSQ2MRub50MYxt2+W5TAkdBH
-    S9gO7JxUfif8owON4XCu2KXw
-    -----END RSA PRIVATE KEY-----
-    ```
+   ```
+   -----BEGIN CERTIFICATE-----
+   MIIDBTCCAe2gAwIBAgIUMQ0cJjTV5k0UAWqTSPN92LcqBbwwDQYJKoZIhvcNAQEL
+   BQAwEjEQMA4GA1UEAwwHZXhhbXBsZTAeFw0yMDEwMDUxNDM3MDlaFw0yMzA3MjYx
+   NDM3MDlaMBIxEDAOBgNVBAMMB2V4YW1wbGUwggEiMA0GCSqGSIb3DQEBAQUAA4IB
+   DwAwggEKAoIBAQDTJwrq4VZsvPbWg5xQTqU3SloIziYQY9KSOKQ+KbBs+Fl3nWx5
+   nHeXDLxi3KH5fn5QVY/3s0V60PrVF3lhCa9QvRRytDWCYBAoGstuAMLlyu6NE6rR
+   5i6GPNC5hvEhWaGDmCWG+ZJx9xinNDBox1jmbjRBuL/taDLqmdRGJGi9WxbtWgAG
+   3TFXbiEX0apf/35oGtM8R57PTSn3F0TztdHCK37sH3azFYUTv1OMhv9UXpcXV26+
+   QF0ISjlX+oIJ2kTUcnan7XmxB8f0/VfX4/WPWiHtrqaC8QORGfksn+nLnVttHaam
+   zrXuYpf7Io7K00kbGkSqywK8+eiSdrjoIBvnAgMBAAGjUzBRMB0GA1UdDgQWBBSY
+   t74eEI/jXeG89jagMaF8bDji5DAfBgNVHSMEGDAWgBSYt74eEI/jXeG89jagMaF8
+   bDji5DAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQA32/k3Q3BH
+   rf8jEai/Hl+P3LEZcIvZjq/1I3dZjTrMKUEeFLC0HCHdbHxmOj4woHaF8yyq8Kas
+   hxfEvPV6as2oYzZP/zjp3Os0rAWSgd3Gkc/a2FTWY86VDA/Co11prz3KGxM9zNiP
+   KXu+b1KTTboqisbKPbkWgfRcq2CCKDWq8z9WbVK2GmLRvKwuTpQd4qEVkmk+BNKx
+   mXcLxR71tjaYH9qT343peLuQH621plBewlErVpf4F298QcBae9tRmWpKgIZHfLGv
+   4+jh3/DgB9orHIMlh+nVN6P3JiMWk8gUTEpYBStPZlBqJZdtgd4kvi6j+1x7oxxN
+   QKshzGHvi3y4
+   -----END CERTIFICATE-----
+   -----BEGIN RSA PRIVATE KEY-----
+   MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDTJwrq4VZsvPbW
+   g5xQTqU3SloIziYQY9KSOKQ+KbBs+Fl3nWx5nHeXDLxi3KH5fn5QVY/3s0V60PrV
+   F3lhCa9QvRRytDWCYBAoGstuAMLlyu6NE6rR5i6GPNC5hvEhWaGDmCWG+ZJx9xin
+   NDBox1jmbjRBuL/taDLqmdRGJGi9WxbtWgAG3TFXbiEX0apf/35oGtM8R57PTSn3
+   F0TztdHCK37sH3azFYUTv1OMhv9UXpcXV26+QF0ISjlX+oIJ2kTUcnan7XmxB8f0
+   /VfX4/WPWiHtrqaC8QORGfksn+nLnVttHaamzrXuYpf7Io7K00kbGkSqywK8+eiS
+   drjoIBvnAgMBAAECggEBAJThRXhhU++tuRl9iLyzBxkaCquEtx/9Ul6ZI21VNblP
+   zr1hOTfyE/xkFXxbdrWU8/kuqykKtSWorgOL3qCGFKAIAZ/y4nu/wgSVB/TTApjF
+   4jeEs3/2Hb22qbD2rZRHP3Oq1mL6G8DRageS68MlM9CdyajBXEpHmwcBWcPvLg68
+   Hzf3WnjvXLFiShsmiY/MZddUZLwl14pZcNnq9SLqNE9MKWYq46sH4vDl+WizrRRV
+   xPdlTNrhMa5iZNJe+n4rTHUKmXtij8bImMOYcEq+3RG9gPY0l317Yyo/C7XSvBq9
+   UujVxnT/erJDsHFtW6BvgqwA6MNzPiK5BhRfr662mGECgYEA/Ukjg4z+VojNtpcA
+   3vlNyHU0xioxgFtxTyP9mGi/YLaRZvOW0Oo8L8+1yVRdmIiPL6LfSFDJ8n+NxSfL
+   Eg2OsBSFGlrXIavEyFIPH8wT1xmR3BwXAS4oVLtAU2e3IXzoCVIdaKkQLIJZgVSo
+   UOlZN1Bqmofr4oAEGJiZV5tgzfcCgYEA1WpQ8WzCFlpblt2Nawe6GEZrSISUT9Xi
+   bgFJ6S9UEpnzaAoPlmDNxtUWVIbskUheLMvI1ukJ31ksp8AwV1qJwlH8Em+OpSFr
+   cYQ+PARwNIc9yjMiBXCDNQoaTNR623Tupqxj32sWqfziJ5dTmup5HbMy3uziQLg4
+   RZsK6dT/ZZECgYBBktjd6vfB4YMYnXl9QJ/xoN5721qbd5EbQx8ZgSzi1gFI3RGT
+   nsDcQ/M1X2En51rio1EZQMk3vewvOcEqOFZTocxf6Vq+/eBhWFVQDx6n1pfbm24d
+   QRzx6tSZg0V3JwZPu3Gfsf1c+JZBlHBLGk6dsnUW8s+QAUKON5ujgbeLOwKBgQCN
+   MdSxlbHnFgroilYIzMjrTJOoG8b/9tLi0slylFR8Jgyq9ZUQeaVK+inW7JlRGV7t
+   JjoPLYjRku7/YSDaelUQEivCiroGOFEcflCqZolRx3Qy9Zd5n9G+4ps5344U6Y0H
+   CqDc7L3G4z9A0FaI9L4Cz09Fu9WI2hiovIYA5GHAcQKBgFeemWeiwFPWfN0unQiI
+   lFP3z7gjdvOugpzsj7s3bvbTudx4RYPiWe77XGO1WUnh0CiasvF0kn92/0e29VS5
+   RFGWslZ38oZPWdZSqHB7KrbWLJ5O2RAtllEoIgEkaSQ2MRub50MYxt2+W5TAkdBH
+   S9gO7JxUfif8owON4XCu2KXw
+   -----END RSA PRIVATE KEY-----
+   ```
 
 2. In the newly created certificate collection, choose **Set Own Certificate**.
 
@@ -216,11 +216,11 @@ To download the metadata from the IDP provider, we'll do the following:
 
 4. Add the BEGIN and END tags to the SAML certificate.
 
-    ```
-    -----BEGIN CERTIFICATE-----
-    MIIDIjCCAgqgAwIBAQIGAUjG8PFJMA0GCSqGSIb3DQEBBQUAMFAxCzAJBgNVB...
-    -----END CERTIFICATE-----
-    ```
+   ```
+   -----BEGIN CERTIFICATE-----
+   MIIDIjCCAgqgAwIBAQIGAUjG8PFJMA0GCSqGSIb3DQEBBQUAMFAxCzAJBgNVB...
+   -----END CERTIFICATE-----
+   ```
 
 
 ### Upload SAML identity provider certificate
@@ -250,7 +250,7 @@ To download the metadata from the IDP provider, we'll do the following:
 
      ![Assign the IDP certificate to the collection](step6-assigntoPSE.png)
 
-    You have now added the identity provider certificate to the certificate collection as **Trust** validation.
+   You have now added the identity provider certificate to the certificate collection as **Trust** validation.
 
 
 ### Make your identity provider trust your SAP HANA system

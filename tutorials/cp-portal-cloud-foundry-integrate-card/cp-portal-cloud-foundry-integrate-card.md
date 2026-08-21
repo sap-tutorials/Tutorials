@@ -26,39 +26,39 @@ In this tutorial, you'll learn how to integrate the card and role from the conte
 
 From the SAP BTP cockpit, go to **Instances and Subscriptions** and click `SAP Build Work Zone, standard edition` to open the service.
 
-<!-- border -->![Access Work Zone](1-access-work-zone.png)
+![Access Work Zone](1-access-work-zone.png)
 
 The **Site Directory** opens.
 
-<!-- border -->![Open Site Directory](2-open-site-directory.png)
+![Open Site Directory](2-open-site-directory.png)
 
 ### Upload your content package
 
 1. Click the **Channel Manager** icon in the side navigation panel to open it.
 
-    <!-- border -->![Open Channel Manager](3-open-channel-manager.png)
+    ![Open Channel Manager](3-open-channel-manager.png)
 
 2. Click **+ New** and select **Content Package**.
 
-    <!-- border -->![New content package](4-new-content-package.png)
+    ![New content package](4-new-content-package.png)
 
 3. In the **New Content Package** dialog box, browse for and select the ZIP file that you downloaded in the previous tutorial. You'll find the ZIP file in your **Downloads** folder on your computer. 
 
-    <!-- border -->![Browse for ZIP file](5-browse-zip-file.png)
+    ![Browse for ZIP file](5-browse-zip-file.png)
 
 4. In the **Runtime Destination** field, select `ES5`, and leave the default values in the other fields. Click **Save**.
 
-    <!-- border -->![Save content package](6-save-content-package.png)
+    ![Save content package](6-save-content-package.png)
 
     Once you've saved the content package properties, the ZIP file is created in the **Channel Manager**.  
     
 5. Click **Report** to check the content of the package. It should look like this showing that your content package includes a role and an app:
 
-    <!-- border -->![Create report](7-create-report.png)
+    ![Create report](7-create-report.png)
 
 6. Ensure that the app is assigned to the `ContentPackageRole` by opening the Content Manager and searching for this role. In the role editor, under the **Apps** tab, you'll see the `Products by Category Card`.
 
-    <!-- border -->![View card in the role editor](14a-view-card-in-role.png)
+    ![View card in the role editor](14a-view-card-in-role.png)
 
 ### Add a header to your page
 
@@ -66,34 +66,34 @@ In this step, you'll add a header to your page for the card that you will add.
 
 1. Go back to the Content Manager by using the breadcrumbs above.
 
-    <!-- border -->![Back to Site Manager](21-go-back.png)
+    ![Back to Site Manager](21-go-back.png)
 
 
 2. Click the `Overview` page to open the page editor.
 
-    <!-- border -->![Open Overview page](23-open-overview-page.png)
+    ![Open Overview page](23-open-overview-page.png)
 
 3. Click **Edit**.
 
 4. Click **+** to add a new secion.
 
-    <!-- border -->![Name section](25-add-section.png)
+    ![Name section](25-add-section.png)
 
 5. In the **Section Title** field, type **My Cards**
 
-    <!-- border -->![Name section](24-name-section.png)
+    ![Name section](24-name-section.png)
 
 6. Click **Add Widget**
 
-    <!-- border -->![Add widget](26-add-widget.png)
+    ![Add widget](26-add-widget.png)
 
 7. Select **Cards**.
 
-    <!-- border -->![Select card](27-select-cards.png)
+    ![Select card](27-select-cards.png)
 
 8. Select the **Products by Category Card** to add it to your **Overview** page and then click **Save**. 
 
-    <!-- border -->![Select card](28-select-your-card.png)
+    ![Select card](28-select-your-card.png)
 
     Your screen will look like this. Don't worry the content will appear on the card once you do the necessary role assignments.
 
@@ -106,39 +106,39 @@ The `ContentPackageRole` is part of the content in the content package ZIP file.
 
 1. Open the **Site Directory**.
 
-    <!-- border -->![Open Site Directory](15-open-site-directory.png)
+    ![Open Site Directory](15-open-site-directory.png)
 
 2. Open the **Site Settings** screen.
 
-    <!-- border -->![Open Site Settings](16-open-site-settings.png)
+    ![Open Site Settings](16-open-site-settings.png)
 
 3. Click **Edit**.
 
 4. In the **Assignments** panel, click inside the search box to open a list of available roles. You'll see the `ContentPackageRole`.  Assign it to the site by clicking the **+** next to the role name and then click **Save**.
 
-    <!-- border -->![Assign role to site](17-assign-role-to-site.png)    
+    ![Assign role to site](17-assign-role-to-site.png)    
 
 ### Assign yourself to the ContentPackageRole
 
 1. Go back to the SAP BTP Cockpit using the **Instances and Subscriptions** tab in your browser.
 
-    <!-- border -->![Go to BTP Cockpit](8-instances-and-subscriptions.png)
+    ![Go to BTP Cockpit](8-instances-and-subscriptions.png)
 
 2. From the side menu, go to **Security** --> **Role Collections** and search for the `ContentPackageRole` role.
 
-    <!-- border -->![ContentPackage role](9-content-package-role.png)
+    ![ContentPackage role](9-content-package-role.png)
 
 3. Click the arrow at the far right of the row displaying the `ContentPackageRole`.
 
-    <!-- border -->![Open role collection details](9a-role-collection-details.png)
+    ![Open role collection details](9a-role-collection-details.png)
 
 4. In the screen that opens, click **Edit**.
   
-    <!-- border -->![Edit role collection](10-edit-role-collection.png)
+    ![Edit role collection](10-edit-role-collection.png)
 
 5. In the **Users** section of the screen, add your ID (your email), and then your email again and add it to the list of users by clicking the **+** button. **Save** your changes.
 
-    <!-- border -->![Add User](11-add-user.png)
+    ![Add User](11-add-user.png)
 
     >Note that assignment to the role can take time. If you don't want to wait, you can log out and log in again in order for the role assignment to take effect. 
 
@@ -148,8 +148,8 @@ The `ContentPackageRole` is part of the content in the content package ZIP file.
 
 2. Click the **Go to site** icon.
 
-     <!-- border -->![Go to site](19-go-to-site.png) 
+     ![Go to site](19-go-to-site.png) 
 
 3. You'll see that your card has been added to the **Overview** page:
 
-    <!-- border -->![Final view](22-view-card.png) 
+    ![Final view](22-view-card.png) 

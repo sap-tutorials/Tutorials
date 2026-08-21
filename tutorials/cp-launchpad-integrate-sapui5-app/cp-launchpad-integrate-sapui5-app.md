@@ -42,7 +42,7 @@ In this step, you will find your custom developed app that you deployed to your 
 
     >The **HTML5 Apps** content provider is created automatically. Any app that you deploy to SAP BTP is automatically added as content to this provider.
 
-    <!-- border -->![Select the HTML5 Provider](3-HTML5-provider.png)
+    ![Select the HTML5 Provider](3-HTML5-provider.png)
 
 4. Click the **Fetch updated content** icon.
 
@@ -56,7 +56,7 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 
 1. Click the icon in the side panel to open the **Content Manager**.
 
-    <!-- border -->![Open Content Editor](1-open-content-editor.png)
+    ![Open Content Editor](1-open-content-editor.png)
 
 2. Click the **Content Explorer** button to explore content from the available content providers.
 
@@ -68,7 +68,7 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 
 4. You'll see that your `Suppliers` app that you've just created in SAP Business Application Studio, already exists in this provider. Select it and click **+ Add to My Content**.
 
-    <!-- border -->![Add app to My Content](4-add-app-my-content.png)
+    ![Add app to My Content](4-add-app-my-content.png)
 
 5. Select the `Suppliers` app and click **Add**.
 

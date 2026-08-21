@@ -27,63 +27,63 @@ In this tutorial, you start a new instance of the process variant that you have 
 
 1. Navigate to the Workflow Management home screen by choosing **home**.
 
-    <!-- border -->![Home](cp-cf-workflowmanagement-runcapex-home.png)
+    ![Home](cp-cf-workflowmanagement-runcapex-home.png)
 
 
 2. In the Workflow Management home screen, choose the **Monitor Workflow - Workflow Definitions** tile.
 
-    <!-- border -->![Workflow Definitions](cp-cf-workflowmanagement-runcapex-wfdef.png)
+    ![Workflow Definitions](cp-cf-workflowmanagement-runcapex-wfdef.png)
 
 3. Choose the **High Value Investments** workflow definition, then choose **Start New Instance**.
 
-    <!-- border -->![Start New Instance](cp-cf-workflowmanagement-runcapex-startinstance.png)
+    ![Start New Instance](cp-cf-workflowmanagement-runcapex-startinstance.png)
 
 4. In the **Start New Instance** popup menu, replace the existing JSON snippet with the below snippet. Then, replace the **`UserId`** field with your SAP trial email ID. Finally, choose **Start New Instance and Close**.
 
-    ```JSON
-    {
-      "RequestId": "IAP-2020-180",
-      "Title": "App Creation",
-      "Requester": {
-        "FirstName": "John",
-        "LastName": "Doe",
-        "Email": "John.Doe@example.com",
-        "UserId": "jdoe",
-        "Comments": "Please Approve"
-      },
-      "Investment": {
-        "TotalCost": 50000,
-        "Type": "Software",
-        "CAPEX": 10000,
-        "OPEX": 2000,
-        "ROI": 5,
-        "IRR": 5,
-        "Country": "Germany",
-        "BusinessUnit": "Purchasing",
-        "Description": "Provide a fresh experience for our customers by providing new apps for our services"
-      },
-      "Sustainability": {
-        "EnergyEfficiency": 10,
-        "CO2Efficiency": 20,
-        "EnergyCostSavings": 15,
-        "WaterSavings": 10
-      },
-      "internal": {
+   ```JSON
+   {
+     "RequestId": "IAP-2020-180",
+     "Title": "App Creation",
+     "Requester": {
+       "FirstName": "John",
+       "LastName": "Doe",
+       "Email": "John.Doe@example.com",
+       "UserId": "jdoe",
+       "Comments": "Please Approve"
+     },
+     "Investment": {
+       "TotalCost": 50000,
+       "Type": "Software",
+       "CAPEX": 10000,
+       "OPEX": 2000,
+       "ROI": 5,
+       "IRR": 5,
+       "Country": "Germany",
+       "BusinessUnit": "Purchasing",
+       "Description": "Provide a fresh experience for our customers by providing new apps for our services"
+     },
+     "Sustainability": {
+       "EnergyEfficiency": 10,
+       "CO2Efficiency": 20,
+       "EnergyCostSavings": 15,
+       "WaterSavings": 10
+     },
+     "internal": {
 
-      }
-    }
-    ```
+     }
+   }
+   ```
 
-      <!-- border -->![Payload](cp-cf-workflowmanagement-runcapex-payload.png)
+      ![Payload](cp-cf-workflowmanagement-runcapex-payload.png)
 
 4. Choose **Show Instances**.
 
-    <!-- border -->![Show Instance](cp-cf-workflowmanagement-runcapex-showinstance.png)
+    ![Show Instance](cp-cf-workflowmanagement-runcapex-showinstance.png)
 
 
 You can view the workflow instance created for approval. You can navigate to the **Execution Log** to ensure that the instance is at the local manager approval stage as shown.
 
-<!-- border -->![Instance Details](cp-cf-workflowmanagement-runcapex-instancedetails.png)
+![Instance Details](cp-cf-workflowmanagement-runcapex-instancedetails.png)
 
 
 ### Approve tasks
@@ -94,19 +94,19 @@ You can view the workflow instance created for approval. You can navigate to the
 
     You can see that there is one task that requires your approval.
 
-    <!-- border -->![My Inbox](cp-cf-workflowmanagement-runcapex-myinbox.png)
+    ![My Inbox](cp-cf-workflowmanagement-runcapex-myinbox.png)
 
 2. Choose the approval task from the **All Tasks** list. You can view details of the task that requires your action such as, Investment Details, Sustainability, Investment Requester, History, and Comments.
 
-    <!-- border -->![All Tasks](cp-cf-workflowmanagement-runcapex-myinbox2.png)
+    ![All Tasks](cp-cf-workflowmanagement-runcapex-myinbox2.png)
 
 3. Choose **Approve** to approve the capital expenditure request.
 
-    <!-- border -->![Approve Task](cp-cf-workflowmanagement-runcapex-myinbox3.png)
+    ![Approve Task](cp-cf-workflowmanagement-runcapex-myinbox3.png)
 
     >Similarly, after the local manager approval, you would have a new task in the **My Inbox** tile for your approval as a CFO.
 
-    ><!-- border -->![CFO Approval](cp-cf-workflowmanagement-runcapex-CFO.png)
+    >![CFO Approval](cp-cf-workflowmanagement-runcapex-CFO.png)
 
 This completes your sample capital expenditure live process approval.
 

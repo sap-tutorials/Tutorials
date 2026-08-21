@@ -29,41 +29,41 @@ In this tutorial, you explore the application, modify a performance indicator, a
 
 1. Choose **Home** to navigate to the home screen.
 
-    <!-- border -->![Home screen](cp-cf-wm-home.png)
+    ![Home screen](cp-cf-wm-home.png)
 
     From the home screen navigate to the **Process Flexibility Cockpit**.
 
-    <!-- border -->![PFC](cp-cf-wm-pfc.png)
+    ![PFC](cp-cf-wm-pfc.png)
 
 2. In the **Process Flexibility Cockpit**, navigate to **My Live Processes** section and choose the **Sample Capital Expenditure Approval Process** tile.
 
-    <!-- border -->![CAPEX](cp-cf-wm-discover-importedcapex.png)
+    ![CAPEX](cp-cf-wm-discover-importedcapex.png)
 
 3. From the **Visibility Scenarios** tile, choose **Sample Capital Expenditure Approval Dashboard**.
 
-    <!-- border -->![Visibility Scenarios](cp-cf-wm-pvcapex.png)
+    ![Visibility Scenarios](cp-cf-wm-pvcapex.png)
 
     You are now in the **Configure Visibility Scenarios** view.
 
-    <!-- border -->![Configure Visibility Scenarios](cp-cf-wm-configscenariosview.png)
+    ![Configure Visibility Scenarios](cp-cf-wm-configscenariosview.png)
 
 
 ### Modify performance indicators
 
 1. Choose the **Performance Indicators** tab.
 
-    <!-- border -->![Performance Indicators](cp-cf-wm-ppi.png)
+    ![Performance Indicators](cp-cf-wm-ppi.png)
 
 2. Choose **Approved Capital Expenditure Requests** and change the **Representation** to **Bar Chart**. Once done, choose **Save**.
 
-    <!-- border -->![Edit Performance Indicators](cp-cf-wm-ppiedit.png)
+    ![Edit Performance Indicators](cp-cf-wm-ppiedit.png)
 
 
 ### Activate the visibility scenario
 
 Choose **Activate**.
 
-<!-- border -->![Activate Visibility Scenario](cp-cf-wm-explorepv-activate.png)
+![Activate Visibility Scenario](cp-cf-wm-explorepv-activate.png)
 
 The successful activation message appears.
 

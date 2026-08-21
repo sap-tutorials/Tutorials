@@ -41,7 +41,7 @@ You will learn how to combine federated content from SAP S/4HANA with apps from 
 2.   You can either use the Windows Remote Desktop and login via SAP Logon there or login directly  via SAP GUI by clicking **Connect** in the SAP GUI row in the **Connect to the Instance** pop-up . Please check the [Getting Started with the SAP S/4HANA 2020 (SP00) Fully-Activated Appliance Guide](https://caldocs.hana.ondemand.com/caldocs/help/7a3ebd3e-d005-4c70-ae35-40a167aed981_Getting_Started_Guide_v1.pdf) for details.
 
 
-    ![Connect to S4](1a-connect-to-s4.png)
+   ![Connect to S4](1a-connect-to-s4.png)
 
 3. An **.sap** file will be downloaded to your computer to connect to the SAP S/4HANA system.Click the downloaded file. If required, click **Allow** in the pop-up window.
    

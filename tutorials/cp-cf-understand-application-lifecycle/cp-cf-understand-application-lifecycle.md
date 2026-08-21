@@ -48,19 +48,19 @@ Once you run the command you will see lots of output print to the screen, and if
 
 The uploading phase begins as follows:
 
-<!-- border -->![Uploading](uploading-phase.png)
+![Uploading](uploading-phase.png)
 
 After that, the staging phase begins. You can see the buildpacks being downloaded (since a specific buildpack is not specified it downloads all of them):
 
-<!-- border -->![Staging Begins](staging-phase.png)
+![Staging Begins](staging-phase.png)
 
 You can also see when the droplet get uploaded:
 
-<!-- border -->![Droplet uploaded](droplet-uploaded.png)
+![Droplet uploaded](droplet-uploaded.png)
 
 And finally you see the starting phase:
 
-<!-- border -->![Application starting](starting-phase.png)
+![Application starting](starting-phase.png)
 
 > If you run `cf push` for an existing application, _all instances of that application are stopped_ and new instances are started with the code you just pushed. Users that try to access the app during this time may get various HTTP error messages, such as "404" ("file not found") and others, while the application is redeployed. The Cloud Foundry API `v3` support the so called [Rolling App Deployments](https://docs.cloudfoundry.org/devguide/deploy-apps/rolling-deploy.html) with `cf push <app-name> --strategy rolling` which allows to push an app without downtime. The API `v3` are also supported on SAP BTP.
 

@@ -43,7 +43,7 @@ The git has two applications for you to try out.
 
 Download both the scenarios to your local IDE. After downloading, the project structure will look like this :
 
-<!-- border -->![Project Structure](ProjectStructure.JPG)
+![Project Structure](ProjectStructure.JPG)
 
 The downloaded project has all the dependencies and required client files for both scenarios mentioned above.
 The Event Mesh service descriptor is `/config/em-config-default.json`. Detailed information on different parameters of the
@@ -101,32 +101,32 @@ i.e. the pom.xml should have dependencies as below.
 
 2. Get the `MessagingService`
 
-    ```Java
-    ServiceConnectorConfig config = null; // currently there are no configurations for the MessagingServiceFactory supported
-    Cloud cloud = new CloudFactory().getCloud();
-    // get a messaging service factory via the service connector
-    MessagingService messagingService = cloud.getSingletonServiceConnector(MessagingService.class, config);
-    ```
+   ```Java
+   ServiceConnectorConfig config = null; // currently there are no configurations for the MessagingServiceFactory supported
+   Cloud cloud = new CloudFactory().getCloud();
+   // get a messaging service factory via the service connector
+   MessagingService messagingService = cloud.getSingletonServiceConnector(MessagingService.class, config);
+   ```
 
 3. Create a `MessagingServiceFactory` object with the help of `MessagingServiceFactoryCreator` and get a `MessagingServiceJmsConnectionFactory`.
 
     The Connection Factory can be configured with the `MessagingServiceJmsSettings`. In case the reconnection feature is not needed and an individual connection mechanism (for example, through a connection cache) is used these settings can be skipped. The connection factory can be built with `messagingServiceFactory.createConnectionFactory(MessagingServiceJmsConnectionFactory.class,settings)`.
 
-    ```Java
-    MessagingServiceJmsSettings settings = new MessagingServiceJmsSettings(); // settings are preset with default values (see JavaDoc)
-    settings.setMaxReconnectAttempts(5); // use -1 for unlimited attempts
-    settings.setInitialReconnectDelay(3000);
-    settings.setReconnectDelay(3000);
-    MessagingServiceFactory messagingServiceFactory = MessagingServiceFactoryCreator.createFactory(messagingService);
-    MessagingServiceJmsConnectionFactory connectionFactory = messagingServiceFactory.createConnectionFactory(MessagingServiceJmsConnectionFactory.class, settings)
-    ```
+   ```Java
+   MessagingServiceJmsSettings settings = new MessagingServiceJmsSettings(); // settings are preset with default values (see JavaDoc)
+   settings.setMaxReconnectAttempts(5); // use -1 for unlimited attempts
+   settings.setInitialReconnectDelay(3000);
+   settings.setReconnectDelay(3000);
+   MessagingServiceFactory messagingServiceFactory = MessagingServiceFactoryCreator.createFactory(messagingService);
+   MessagingServiceJmsConnectionFactory connectionFactory = messagingServiceFactory.createConnectionFactory(MessagingServiceJmsConnectionFactory.class, settings)
+   ```
 
 4. Create a connection and a session
 
-    ```Java
-    Connection connection = connectionFactory.createConnection();
-    Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE));
-    ```
+   ```Java
+   Connection connection = connectionFactory.createConnection();
+   Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE));
+   ```
 
 
 ### Code Snippets — Point to Point communication
