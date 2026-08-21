@@ -119,7 +119,7 @@ Optional: Once you have set up the roles and authorizations, you can check out o
 
 3. Search for **`promotion`**. This will display all **Promotion Pricing** services. The following services are offered with SAP Omnichannel Promotion Pricing:
 
-    <!-- border -->![Promotion Pricing Services](v2_Service_marketplace.PNG)
+    ![Promotion Pricing Services](v2_Service_marketplace.PNG)
 
 4. Choose the tile of the **Promotion Pricing, Calculation** service.
 
@@ -143,7 +143,7 @@ Optional: Once you have set up the roles and authorizations, you can check out o
 
 4. Choose the three dot symbol **°°°**  and **Create Service Key**.
 
-      <!-- border -->![Create service key](create_service_key.png)
+      ![Create service key](create_service_key.png)
 
 5. In the popup, enter a name for the service key. 
 
@@ -157,7 +157,7 @@ After you have created the service key, click the three dot symbol **°°°** ne
 
 Your service key will look something like this:
 
-<!-- border -->![Service Key](v3_Service-Key.png)
+![Service Key](v3_Service-Key.png)
 
 
 You have now successfully set up your SAP Omnichannel Promotion Pricing trial on SAP BTP. You can proceed with the [basic tutorial](opps-basic-scenario) to apply a simple promotion with SAP Omnichannel Promotion Pricing to calculate the effective sales price.

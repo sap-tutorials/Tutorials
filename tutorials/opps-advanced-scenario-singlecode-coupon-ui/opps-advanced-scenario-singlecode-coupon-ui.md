@@ -60,7 +60,7 @@ You now make configuration settings that are required for using the SAP Omnichan
 8. Create a new number range for the **Promotions** entity. Use a start range of **`1`** and end range of **`1,000,000`**.
 9. Create a number range with the same start and end range for **all** remaining entity names. Your number ranges should look like this:
 
-    <!-- border -->![Number ranges](1_create_number_ranges.png)
+    ![Number ranges](1_create_number_ranges.png)
 
 10. Navigate back to the home screen by choosing the SAP logo.
 
@@ -73,7 +73,7 @@ You now want to maintain the first promotion *Show coupon ANNIVERSARY25 and get 
 1. Choose the **Maintain Promotions** app.
 2. Create a new promotion with the following information:
 
-    <!-- border -->![Create first promotion](2_create_first_promotion.png)
+    ![Create first promotion](2_create_first_promotion.png)
 
     |  Field Name                       | Value
     |  :-------------                   | :-------------
@@ -86,7 +86,7 @@ You now want to maintain the first promotion *Show coupon ANNIVERSARY25 and get 
 3. Create a **promotional rule**. Enter a rule name, for example **`Show coupon ANNIVERSARY25 and get 25%`**. You can skip the advanced rule settings. The default values are drawn automatically.
 4. Edit the rule you have just created.
    
-    <!-- border -->![Create first promotional rule](2_create_first_rule.png)
+    ![Create first promotional rule](2_create_first_rule.png)
 
 5. On the **Eligibility** side, add a **Coupon** with the following values:
     
@@ -108,7 +108,7 @@ You now want to maintain the first promotion *Show coupon ANNIVERSARY25 and get 
 8. Navigate back to the promotion.
 9.  On the **Business Units** tab, create a business unit with the following values:
     
-    <!-- border -->![Business unit](2_create_business_unit.png)
+    ![Business unit](2_create_business_unit.png)
     
     |  Field Name                       | Value
     |  :-------------                   | :-------------
@@ -128,7 +128,7 @@ You now maintain a line item-related generic attribute that can be used in your 
 1. Choose the **Configure Generic Attributes** app.
 2. Create a new generic attribute with the following information:
 
-    <!-- border -->![Maintain generic attribute](3_maintain_generic_attribute.png)
+    ![Maintain generic attribute](3_maintain_generic_attribute.png)
     
     |  Field Name                       | Value
     |  :-------------                   | :-------------
@@ -163,7 +163,7 @@ You now want to maintain the second promotion *Buy one or more products of brand
 3. Skip the **Promotional Rules** tab for now and directly go to the **Merchandise Sets** tab.
 4. Create a new merchandise set. The merchandise set will be used for the line item-related generic attribute **`BRAND`**. On the **Inclusion** side of the merchandise set, add a generic attribute with the following values:
 
-    <!-- border -->![Create merchandise set](4_create_merchandise_set.png)
+    ![Create merchandise set](4_create_merchandise_set.png)
     
     |  Field Name        | Value
     |  :-------------    | :-------------
@@ -183,7 +183,7 @@ You now want to maintain the second promotion *Buy one or more products of brand
 8. Now, on the **Promotional Rules** tab, create a promotional rule with the following information. Enter a rule name, for example **`Product brand SAP and spend more than 100.`** You can skip the advanced rule settings. The default values are drawn automatically.
 9.  Edit the rule you have just created.
 
-    <!-- border -->![Create second promotional rule](4_create_second_rule.png)
+    ![Create second promotional rule](4_create_second_rule.png)
 
 10. On the **Eligibility** side, add a **Cart Total** with a **Transaction Total Threshold Amount** of **`100`**.
 11. Also on the **Eligibility** side, add the merchandise set ID that you have created previously. Use the search help. The values are drawn automatically.
@@ -198,7 +198,7 @@ You now want to maintain the second promotion *Buy one or more products of brand
 
 13. Scroll down to the **Advanced Rule Settings** tab, enable the **Available for Promotion Recommendations** option. Enter a **Threshold Percentage for Promotion Recommendations** of **`50`**. This means that if 50% of the respective eligibility is fulfilled, a promotion recommendation is given.
 
-    <!-- border -->![Advanced settings](4_advanced_settings.png)
+    ![Advanced settings](4_advanced_settings.png)
 
 14. Save your changes.
 15. Navigate back to the promotion and **activate** your promotion.
@@ -211,9 +211,9 @@ With this, you have maintained all promotions and you can start your promotional
 
 You can use the **Data Access** service for checking your data stored in the database. If you need guidance, have a look at **step 5** of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
-<!-- border -->![Check master data promo 1](5_check_master_data_promo1.png)
+![Check master data promo 1](5_check_master_data_promo1.png)
 
-<!-- border -->![Check master data promo 2](5_check_master_data_promo2.png)
+![Check master data promo 2](5_check_master_data_promo2.png)
 
 With this, you are all set to launch your promotional campaign. 
 

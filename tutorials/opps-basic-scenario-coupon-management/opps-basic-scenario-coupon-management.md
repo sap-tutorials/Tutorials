@@ -53,7 +53,7 @@ You can now create a multi-code coupon object with the **Coupon Management** ser
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Coupon creation request](coupon_object_creation_request.png)
+![Coupon creation request](coupon_object_creation_request.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the **Coupon Management** service.
@@ -79,14 +79,14 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Coupon creation success](v2coupon_object_creation_success.png)
+![Coupon creation success](v2coupon_object_creation_success.png)
 
 With this, you have created a multi-code coupon with the ID **COFFEE LOVER** and a validity period from **October 1, 2026 to December 31, 2026**.
 
 
 **Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEE LOVER**, you can proceed with the following steps:
 
-<!-- border -->![Check created coupon](GET_coupon_success.png)
+![Check created coupon](GET_coupon_success.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **GET** request `/Coupon`.
@@ -100,7 +100,7 @@ With this, you have created a multi-code coupon with the ID **COFFEE LOVER** and
 
 When creating the coupon, the **status** of the coupon is set as **inactive** because it cannot be created in **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **INACTIVE** to **ACTIVE**.
 
-<!-- border -->![Change coupon status](change_coupon_status_request.png)
+![Change coupon status](change_coupon_status_request.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **PATCH** request `/Coupon({ID})`.
@@ -115,7 +115,7 @@ When creating the coupon, the **status** of the coupon is set as **inactive** be
 1. Choose **Run**. 
 2. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Coupon status change success](coupon_status_change_success.png)
+![Coupon status change success](coupon_status_change_success.png)
 
 
 You have now successfully changed the status of the coupon. 
@@ -126,7 +126,7 @@ You have now successfully changed the status of the coupon.
 
 Now that you have created the multi-code coupon object and set it to active, you can generate a batch of 100 coupon codes to be used in the promotional campaign.
 
-<!-- border -->![Generate coupon codes](generate_coupon_codes_request.png)
+![Generate coupon codes](generate_coupon_codes_request.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **POST** request `/Coupon({ID})/CouponManagementService.generateCouponCodes`.
@@ -143,7 +143,7 @@ Now that you have created the multi-code coupon object and set it to active, you
 7. Make sure you get the HTTP response **200**.
 8. From the response, note down the `batchID` as you will need it later to read the coupon codes.
 
-<!-- border -->![Generate coupon codes success](generate_coupon_codes_success.png)
+![Generate coupon codes success](generate_coupon_codes_success.png)
 
 With this, you have now created a batch of **100** unique coupon codes for the coupon **COFFEE LOVER**.
 
@@ -154,7 +154,7 @@ With this, you have now created a batch of **100** unique coupon codes for the c
 
 You can now read the coupon codes created using the **Coupon Management** service to circulate the coupon information to the target group as part of your promotional campaign. 
 
-<!-- border -->![Read coupon codes](read_coupon_codes_request.png)
+![Read coupon codes](read_coupon_codes_request.png)
 
 1. On the left-hand side, choose **Code Batch**.
 2. Open the **GET** request `/CodeBatch({ID})/codes`.
@@ -164,7 +164,7 @@ You can now read the coupon codes created using the **Coupon Management** servic
 6. Make sure you get the HTTP response **200**.
 7. From the response, note down any coupon `codeValue` as you will need it in the next tutorial when redeeming the coupon.
 
-<!-- border -->![Read coupon codes](read_coupon_codes_success.png)
+![Read coupon codes](read_coupon_codes_success.png)
 
 With this, you can read the coupon codes generated for the multi-code coupon **COFFEE LOVER**. This is the coupon code value to be communicated to the target group members as part of your promotional campaign. 
 
@@ -176,7 +176,7 @@ To finalize your promotional campaign, you want to set up the following promotio
 
 Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/tryout). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Promotion data upload](promotion_data_upload_request.png)
+![Promotion data upload](promotion_data_upload_request.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the Data Upload service.
@@ -323,7 +323,7 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 1. Choose **Run**.
 2. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Promotion data upload](promotion_data_upload_success.png)
+![Promotion data upload](promotion_data_upload_success.png)
 
 With this, you uploaded the promotional rule "Buy a coffee machine and show coupon COFFEE LOVER to get Euro 50 off" for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2026 to December 31st, 2026**. 
 
@@ -333,7 +333,7 @@ With this, you uploaded the promotional rule "Buy a coffee machine and show coup
 
 You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 5 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
-<!-- border -->![Data access success](data_access_success.png)
+![Data access success](data_access_success.png)
 
 
 With this, you are all set to launch your promotional campaign. 

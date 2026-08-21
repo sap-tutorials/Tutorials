@@ -58,7 +58,7 @@ Let's see if this is the case:
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
 
-<!-- border -->![Reserve coupon code request](1_reserve_coupon_code_request.png)
+![Reserve coupon code request](1_reserve_coupon_code_request.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the **Coupon Management** service.
@@ -78,7 +78,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Reserve coupon code response](1_reserve_coupon_code_response200.png)
+![Reserve coupon code response](1_reserve_coupon_code_response200.png)
 
 With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
 
@@ -97,7 +97,7 @@ Let’s see if this is the case:
 
 Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Calculate effective sales price 1 request](2_calculate_effective_sales_price_request_part1.png)
+![Calculate effective sales price 1 request](2_calculate_effective_sales_price_request_part1.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the **Calculation** service.
@@ -142,7 +142,7 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
 
 The response should look like this:
 
-<!-- border -->![Calculate effective sales price 1 response](2_calculate_effective_sales_price_response200_part1.png)
+![Calculate effective sales price 1 response](2_calculate_effective_sales_price_response200_part1.png)
 
 With this, the **Calculation** service has calculated the effective sales price of **EUR 60** for one SAP hoodie by applying the first promotion. It also returns a **promotion recommendation** saying that if you add another EUR 20 to the shopping cart, you'll get an additional 10% discount.
 
@@ -154,7 +154,7 @@ With this, the **Calculation** service has calculated the effective sales price 
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Extend reservation request](3_extend_reservation_request.png)
+![Extend reservation request](3_extend_reservation_request.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the **Coupon Management** service.
@@ -173,7 +173,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Extend reservation response](3_extend_reservation_response200.png)
+![Extend reservation response](3_extend_reservation_response200.png)
 
 With this, you have extended the reservation of the coupon code for another 30 minutes. 
 
@@ -193,7 +193,7 @@ Let’s see if this is the case:
 
 Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Calculate effective sales price 2 request](4_calculate_effective_sales_price_request_part2.png)
+![Calculate effective sales price 2 request](4_calculate_effective_sales_price_request_part2.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the **Calculation** service.
@@ -238,7 +238,7 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
 
 The response should look like this:
 
-<!-- border -->![Calculate effective sales price 2 response](4_calculate_effective_sales_price_response200_part2.png)
+![Calculate effective sales price 2 response](4_calculate_effective_sales_price_response200_part2.png)
 
 With this, the **Calculation** service has calculated the effective sales price of **EUR 108** for the two SAP hoodies by applying two promotions. It then returns the effective sales price to the web shop.
 
@@ -256,7 +256,7 @@ Let’s see if this is the case:
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Redeem coupon code request](5_redeem_coupon_code_request.png)
+![Redeem coupon code request](5_redeem_coupon_code_request.png)
 
 1. Navigate to the **Try Out** section.
 2. On the right-hand side, select the trial environment you have created for the **Coupon Management** service.
@@ -269,7 +269,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Redeem coupon code response](5_redeem_coupon_code_response200.png)
+![Redeem coupon code response](5_redeem_coupon_code_response200.png)
 
 With this, you have successfully redeemed the coupon code. The redemption information is returned to the web shop, which then confirms the completion of payment. Your customer has now successfully purchased two SAP hoodies at a discounted price. Your promotional campaign is a success as you made a customer very happy!
 

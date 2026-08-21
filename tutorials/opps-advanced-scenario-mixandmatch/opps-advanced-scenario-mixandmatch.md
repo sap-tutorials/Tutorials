@@ -66,8 +66,8 @@ You can upload the master data with the Data Upload service. The uploaded master
 
 Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/DataUpload/resource). Log on with the same login information that you use for your SAP BTP account.
 
-<!-- border -->![Data Upload Regular Sales Price 1](Data-Upload-Regular-Sales-Price-1.png)
-<!-- border -->![Data Upload Regular Sales Price 1b](Data Upload Regular Sales Price 1b.png)
+![Data Upload Regular Sales Price 1](Data-Upload-Regular-Sales-Price-1.png)
+![Data Upload Regular Sales Price 1b](Data Upload Regular Sales Price 1b.png)
 
 
 1. For **API Environment**, select the trial environment you have created for the Data Upload service.
@@ -125,8 +125,8 @@ With this, you uploaded the regular sales price of **500 Euro** for the product 
 ### Upload master data - promotional rule
 
 
-<!-- border -->![Data Upload Regular Promotional Rule 1](Data Upload Regular Promotional Rule 1.png)
-<!-- border -->![Data Upload Regular Promotional Rule 1b](Data Upload Regular Promotional Rule 1b.png)
+![Data Upload Regular Promotional Rule 1](Data Upload Regular Promotional Rule 1.png)
+![Data Upload Regular Promotional Rule 1b](Data Upload Regular Promotional Rule 1b.png)
 
 
 1. For **API Environment**, select the trial environment you have created for the Data Upload service.
@@ -306,8 +306,8 @@ You can now calculate the effective sales price based on the data you have uploa
 
 Let's see if this is the case:
 
-<!-- border -->![Calculation 1](Calculation 2.png)
-<!-- border -->![Calculation 2](Calculation 2b.png)
+![Calculation 1](Calculation 2.png)
+![Calculation 2](Calculation 2b.png)
 
 
 1. Navigate to the [Calculation service on the SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/resource).
