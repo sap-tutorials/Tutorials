@@ -48,13 +48,13 @@ In this article, you will learn step by step how to create an SDA connection bet
     -	The exact **name** of your SAP HANA Cloud, SAP HANA database instance
     -	The **Endpoint** of your SAP HANA Cloud, SAP HANA database instance
 
-    <!-- border -->![HCC SQL Endpoint](ss-02-HCC-sql-endpoint-resized.gif)
+    ![HCC SQL Endpoint](ss-02-HCC-sql-endpoint-resized.gif)
 
 4.	Copy the name of the instance and the endpoint and paste it to a text editor.
 
 5.	Next, you need to get a certificate string for SAP HANA Cloud, SAP HANA database. In your **command line** (`iTerm` or [`Terminalon` iOS](https://support.apple.com/en-sg/guide/terminal/welcome/mac), or [Command Prompt](https://www.lifewire.com/how-to-open-command-prompt-2618089)  on WIN) enter this command to download the `pem` file:
 
-    ```Shell/Bash
+   ```Shell/Bash
 curl -O https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
 ```
 
@@ -68,13 +68,13 @@ After the file has been downloaded, use a text editor which can read a `pem` fil
 
 1.	Create a certificate store, also called PSE (personal security environment). You can read more about [PSE and how to import certificates for SSL connections here](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/LATEST/en-US/86e96624e9a74e77994f7544db51061c.html).
 
-    ```SQL
+   ```SQL
 CREATE PSE [certificate store name]
 ```
 
 2.	Create a certificate for SAP HANA Cloud, SAP HANA database and name it, for example 'HC'. Paste the certificate string you copied here (already included in this case).
 
-    ```SQL
+   ```SQL
 -- create certificate
 CREATE CERTIFICATE FROM
 '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG
@@ -95,19 +95,19 @@ COMMENT 'HC';
 
 1.	Get the certificate ID of this certificate by running this SQL statement:
 
-    ```SQL
+   ```SQL
 SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'HC';
 ```
 
 2.	Add this certificate to the certificate store by inserting the certificate ID into the SQL statement:
 
-    ```SQL
+   ```SQL
 ALTER PSE SSL ADD CERTIFICATE <certificate_id>;
 ```
 
 3.	Now set the PSE purpose as remote source. This way, all remote sources you create will use the certificates stored in the PSE. Please note, that only one PSE can be set as remote source purpose.
 
-    ```SQL
+   ```SQL
 SET PSE SSL PURPOSE REMOTE SOURCE;
 ```
 
@@ -132,7 +132,7 @@ WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=<user_name>;password=<password>';
 
 Once all this information is included, run the statement. Then **refresh** and you will now see on the left in your catalog that the remote source has been successfully created.
 
-<!-- border -->![HANA Studio Remote Source Created](ss-03-HANA-studio-remotesource-created.png)
+![HANA Studio Remote Source Created](ss-03-HANA-studio-remotesource-created.png)
 
 #### **CAUTION**:
 
@@ -156,11 +156,11 @@ Now that the SDA connection between the SAP HANA on-premise database and the SAP
 
 1.	You can check whether the remote connection is correctly configured by opening the SAP HANA Database Explorer and clicking on **Remote sources**. Then click on the newly created remote source ("HC" in this example). Another tab will open, where you can check whether the objects from your remote source can be retrieved. If you are using SAP HANA Studio for your local instance, expand the catalog items **HC**, then **Null**, then **SYS** to see all the system view tables.
 
-    <!-- border -->![HANA Studio HC SYS Tree Open](ss-04-HANAstudio-HC-SYS-TreeOpen.png)
+    ![HANA Studio HC SYS Tree Open](ss-04-HANAstudio-HC-SYS-TreeOpen.png)
 
 2.	Next, use the SQL Code below to create the virtual table. Make sure to enter the exact name of your SAP HANA Cloud, SAP HANA database instance (at the top of the tile) that you used in the previous step and to include the name of the remote source that you created in step 4. of the previous section ("HC" in our example):
 
-    ```SQL
+   ```SQL
 CREATE VIRTUAL TABLE WORKSHOP.VT_TABLES AT "HC"."<instance_name>"."SYS"."TABLES";
 ```
 
@@ -179,13 +179,13 @@ CREATE VIRTUAL TABLE WORKSHOP.VT_TABLES AT "HC"."<instance_name>"."SYS"."TABLES"
 
 2. Then, click on **Tables** and you can see the virtual table you have just created. Note, that if you are using the SAP HANA Database Explorer, you must first select TABLES and then filter by the name of your schema.
 
-    <!-- border -->![HANA Studio Virtual Table](ss-05-HANAstudio-virtual-table.png)
+    ![HANA Studio Virtual Table](ss-05-HANAstudio-virtual-table.png)
 
 2.	To check the content of your virtual table, you can run a `SELECT*FROM` statement.
 
 3.	A table view will open. There you can see that the data is being pulled from the remote source to your local SAP HANA on-premise database.
 
-    <!-- border -->![HANA Studio Virtual Table 2](ss-06-HANAstudio-virtual-table2.png)
+    ![HANA Studio Virtual Table 2](ss-06-HANAstudio-virtual-table2.png)
 
 > **Well done!**
 >

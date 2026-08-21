@@ -41,74 +41,74 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
 
 2. The following examples are used for simulation purposes and can create a memory and CPU spike that will be moved to an ECN node.  They are intended to be run on a test or trial instance and not a production instance.  The size of the spike can be adjusted by increasing or decreasing the number of rows in the table. 
 
-    ```SQL
-    SELECT AVG(CPU) AS "CPU Usage %" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);  --avg of the past 1 minute
-    SELECT AVG(MEMORY_USED/1024/1024/1024) AS "Memory Used GB" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);
-    SELECT MEMORY_SIZE/1024/1024/1024 AS MEM_GB, DURATION_MICROSEC/1000000/60 AS DUR_MIN, CPU_TIME/1000000 AS CPU_TIME_SECS, STATEMENT_STRING, STATEMENT_START_TIME, * FROM M_EXPENSIVE_STATEMENTS ORDER BY MEMORY_SIZE DESC; --requires expensive tracing to be enabled
+   ```SQL
+   SELECT AVG(CPU) AS "CPU Usage %" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);  --avg of the past 1 minute
+   SELECT AVG(MEMORY_USED/1024/1024/1024) AS "Memory Used GB" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);
+   SELECT MEMORY_SIZE/1024/1024/1024 AS MEM_GB, DURATION_MICROSEC/1000000/60 AS DUR_MIN, CPU_TIME/1000000 AS CPU_TIME_SECS, STATEMENT_STRING, STATEMENT_START_TIME, * FROM M_EXPENSIVE_STATEMENTS ORDER BY MEMORY_SIZE DESC; --requires expensive tracing to be enabled
 
-    CREATE USER USER4 PASSWORD "Password4"  NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
-    GRANT CATALOG READ TO USER4; 
-    GRANT SELECT ON SCHEMA _SYS_STATISTICS TO USER4;  --Used by the Elastic Compute Node tab
-    GRANT WORKLOAD ADMIN TO USER4; 
-    CONNECT USER4 PASSWORD Password4;
-    GRANT ALL PRIVILEGES ON SCHEMA USER4 TO DBADMIN;
+   CREATE USER USER4 PASSWORD "Password4"  NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
+   GRANT CATALOG READ TO USER4; 
+   GRANT SELECT ON SCHEMA _SYS_STATISTICS TO USER4;  --Used by the Elastic Compute Node tab
+   GRANT WORKLOAD ADMIN TO USER4; 
+   CONNECT USER4 PASSWORD Password4;
+   GRANT ALL PRIVILEGES ON SCHEMA USER4 TO DBADMIN;
 
-    CREATE TABLE MYTABLE(VAL1 DOUBLE);
-    --Demonstrates how an expensive query is made using cross joins
-    INSERT INTO MYTABLE VALUES(1);
-    INSERT INTO MYTABLE VALUES(2);
-    INSERT INTO MYTABLE VALUES(3);
-    SELECT * FROM MYTABLE T1, MYTABLE T2, MYTABLE T3;
+   CREATE TABLE MYTABLE(VAL1 DOUBLE);
+   --Demonstrates how an expensive query is made using cross joins
+   INSERT INTO MYTABLE VALUES(1);
+   INSERT INTO MYTABLE VALUES(2);
+   INSERT INTO MYTABLE VALUES(3);
+   SELECT * FROM MYTABLE T1, MYTABLE T2, MYTABLE T3;
 
-    CREATE OR REPLACE PROCEDURE POPULATE_MYTABLE(NUMOFROWS INT) LANGUAGE SQLSCRIPT AS
-    BEGIN
-        USING SQLSCRIPT_PRINT AS PRTLIB;
-        DECLARE i INT;
-        TRUNCATE TABLE USER4.MYTABLE;
-        FOR i IN 1 .. :NUMOFROWS DO
-            INSERT INTO MYTABLE VALUES(RAND_SECURE());
-        END FOR;
-    END;
+   CREATE OR REPLACE PROCEDURE POPULATE_MYTABLE(NUMOFROWS INT) LANGUAGE SQLSCRIPT AS
+   BEGIN
+       USING SQLSCRIPT_PRINT AS PRTLIB;
+       DECLARE i INT;
+       TRUNCATE TABLE USER4.MYTABLE;
+       FOR i IN 1 .. :NUMOFROWS DO
+           INSERT INTO MYTABLE VALUES(RAND_SECURE());
+       END FOR;
+   END;
 
-    CREATE OR REPLACE PROCEDURE CPU_SPIKE() LANGUAGE SQLSCRIPT AS
-    BEGIN
-        USING SQLSCRIPT_PRINT AS PRTLIB;
-        SELECT SUM(T1.VAL1 + T2.VAL1 + T3.VAL1) FROM USER4.MYTABLE T1, USER4.MYTABLE T2, USER4.MYTABLE T3;
-    END;
+   CREATE OR REPLACE PROCEDURE CPU_SPIKE() LANGUAGE SQLSCRIPT AS
+   BEGIN
+       USING SQLSCRIPT_PRINT AS PRTLIB;
+       SELECT SUM(T1.VAL1 + T2.VAL1 + T3.VAL1) FROM USER4.MYTABLE T1, USER4.MYTABLE T2, USER4.MYTABLE T3;
+   END;
 
-    CALL POPULATE_MYTABLE(2000);
+   CALL POPULATE_MYTABLE(2000);
 
-    --9 seconds and 32 seconds of CPU time each call
-    CALL CPU_SPIKE();
-    CALL CPU_SPIKE();
-    CALL CPU_SPIKE();
-    CALL CPU_SPIKE();
-    CALL CPU_SPIKE();
-    CALL CPU_SPIKE();
+   --9 seconds and 32 seconds of CPU time each call
+   CALL CPU_SPIKE();
+   CALL CPU_SPIKE();
+   CALL CPU_SPIKE();
+   CALL CPU_SPIKE();
+   CALL CPU_SPIKE();
+   CALL CPU_SPIKE();
 
-    CREATE OR REPLACE PROCEDURE CPU_AND_MEMORY_SPIKE() LANGUAGE SQLSCRIPT AS
-    BEGIN
-        USING SQLSCRIPT_PRINT AS PRTLIB;
-        WITH 
-        A AS (SELECT DISTINCT VAL1 AS A1 FROM USER4.MYTABLE ORDER BY VAL1 DESC),
-        B AS (SELECT DISTINCT VAL1 AS B1 FROM USER4.MYTABLE ORDER BY VAL1 ASC),
-        C AS (SELECT DISTINCT VAL1 AS C1 FROM USER4.MYTABLE ORDER BY VAL1 DESC)
-        SELECT TOP 1 DISTINCT A1 + B1 + C1 FROM A, B, C;
-    END;
+   CREATE OR REPLACE PROCEDURE CPU_AND_MEMORY_SPIKE() LANGUAGE SQLSCRIPT AS
+   BEGIN
+       USING SQLSCRIPT_PRINT AS PRTLIB;
+       WITH 
+       A AS (SELECT DISTINCT VAL1 AS A1 FROM USER4.MYTABLE ORDER BY VAL1 DESC),
+       B AS (SELECT DISTINCT VAL1 AS B1 FROM USER4.MYTABLE ORDER BY VAL1 ASC),
+       C AS (SELECT DISTINCT VAL1 AS C1 FROM USER4.MYTABLE ORDER BY VAL1 DESC)
+       SELECT TOP 1 DISTINCT A1 + B1 + C1 FROM A, B, C;
+   END;
 
-    CALL POPULATE_MYTABLE(750);
+   CALL POPULATE_MYTABLE(750);
 
-    --8 seconds, 30 sec CPU time, 9 GB of memory each call
-    CALL CPU_AND_MEMORY_SPIKE();
-    CALL CPU_AND_MEMORY_SPIKE();
-    CALL CPU_AND_MEMORY_SPIKE();
-    CALL CPU_AND_MEMORY_SPIKE();
-    CALL CPU_AND_MEMORY_SPIKE();
-    CALL CPU_AND_MEMORY_SPIKE();
+   --8 seconds, 30 sec CPU time, 9 GB of memory each call
+   CALL CPU_AND_MEMORY_SPIKE();
+   CALL CPU_AND_MEMORY_SPIKE();
+   CALL CPU_AND_MEMORY_SPIKE();
+   CALL CPU_AND_MEMORY_SPIKE();
+   CALL CPU_AND_MEMORY_SPIKE();
+   CALL CPU_AND_MEMORY_SPIKE();
 
-    SELECT AVG(CPU) AS "CPU Usage" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);  --avg of the past 1 minute
-    SELECT AVG(MEMORY_USED) AS "Memory Used" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);
-    ```
+   SELECT AVG(CPU) AS "CPU Usage" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);  --avg of the past 1 minute
+   SELECT AVG(MEMORY_USED) AS "Memory Used" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);
+   ```
 
     After calling the stored procedure CPU_SPIKE and CPU_AND_MEMORY_SPIKE, you can see that the CPU and memory usage has spiked, and you may also see an alert.  Note that the metrics shown are polled once a minute, so the procedures are run multiple times.
 
@@ -116,9 +116,9 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
 
     The following SQL statement can also be used if expensive statement tracing is enabled.
 
-    ```SQL
-    SELECT START_TIME, STATEMENT_STRING, DURATION_MICROSEC, MEMORY_SIZE, CPU_TIME, DB_USER FROM M_EXPENSIVE_STATEMENTS;
-    ```
+   ```SQL
+   SELECT START_TIME, STATEMENT_STRING, DURATION_MICROSEC, MEMORY_SIZE, CPU_TIME, DB_USER FROM M_EXPENSIVE_STATEMENTS;
+   ```
 
 ### Create an ECN
 An ECN can be created in multiple ways.  Further details on the options and limitations when creating an ECN node can be found at [ECN Scope and Limitations](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/ecn-scope-and-limitations).
@@ -489,24 +489,24 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
 1. Create a workload class.
 
-    ```SQL    
-    CREATE WORKLOAD CLASS "WLC1";
-    ```
+   ```SQL    
+   CREATE WORKLOAD CLASS "WLC1";
+   ```
 2.  Route the an ECN.
 
     The workload class can set a routing hint to the ECN.
 
-    ```SQL
-    ALTER WORKLOAD CLASS "WLC1" SET 'ROUTING LOCATION HINT' = 'ecn1';
-    ```
+   ```SQL
+   ALTER WORKLOAD CLASS "WLC1" SET 'ROUTING LOCATION HINT' = 'ecn1';
+   ```
 
-    * This can also be accomplished in the workload management app as shown below.
+* This can also be accomplished in the workload management app as shown below.
 
-        ![Workload management app](routing-ui-1.png)
+   ![Workload management app](routing-ui-1.png)
 
-        After clicking on the routing location, the ECN node ecn1 can be selected.
+   After clicking on the routing location, the ECN node ecn1 can be selected.
 
-        ![Select the routing location](routing-ui-2.png)
+   ![Select the routing location](routing-ui-2.png)
 
 3. Map a workload to the workload class.
 
@@ -538,33 +538,33 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
 4. Enable the workload class.
 
-    ```SQL
-    ALTER WORKLOAD CLASS "WLC1" DISABLE;
-    ALTER WORKLOAD CLASS "WLC1" ENABLE;
-    --DROP WORKLOAD CLASS "WLC1";
-    ```
+   ```SQL
+   ALTER WORKLOAD CLASS "WLC1" DISABLE;
+   ALTER WORKLOAD CLASS "WLC1" ENABLE;
+   --DROP WORKLOAD CLASS "WLC1";
+   ```
 
     The workload class and its mappings can be seen through SQL or in SAP HANA Cloud Central.
 
-    ```SQL
-    SELECT * FROM WORKLOAD_CLASSES;
-    SELECT * FROM WORKLOAD_MAPPINGS;
-    ```
+   ```SQL
+   SELECT * FROM WORKLOAD_CLASSES;
+   SELECT * FROM WORKLOAD_MAPPINGS;
+   ```
 
     ![workload class details](mappings.png)
 
 5. Run the query again and verify that the query was run on the ECN node.
 
-    ```SQL
-    CALL CPU_AND_MEMORY_SPIKE();
+   ```SQL
+   CALL CPU_AND_MEMORY_SPIKE();
 
-    SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP 
-        FROM M_SQL_PLAN_CACHE 
-        WHERE STATEMENT_STRING LIKE 'CALL CPU_AND_MEMORY_SPIKE()' 
-        ORDER BY LAST_EXECUTION_TIMESTAMP DESC;
-    --ALTER SYSTEM CLEAR SQL PLAN CACHE;
-    SELECT * FROM M_SERVICE_STATISTICS WHERE SERVICE_NAME = 'computeserver';
-    ```
+   SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP 
+       FROM M_SQL_PLAN_CACHE 
+       WHERE STATEMENT_STRING LIKE 'CALL CPU_AND_MEMORY_SPIKE()' 
+       ORDER BY LAST_EXECUTION_TIMESTAMP DESC;
+   --ALTER SYSTEM CLEAR SQL PLAN CACHE;
+   SELECT * FROM M_SERVICE_STATISTICS WHERE SERVICE_NAME = 'computeserver';
+   ```
 
     ![ECN verification](ecn_ex1.png)
 
@@ -572,9 +572,9 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
 
     It is also possible to direct a query to a workload class through a hint as shown below.
 
-    ```SQL
-    CALL CPU_AND_MEMORY_SPIKE() WITH HINT(WORKLOAD_CLASS("WLC1"));
-    ```
+   ```SQL
+   CALL CPU_AND_MEMORY_SPIKE() WITH HINT(WORKLOAD_CLASS("WLC1"));
+   ```
 
     It may also be of interest to compare the execution time between this run and after the table is replicated onto the ECN node in a subsequent step.
 
@@ -583,18 +583,18 @@ An alternate approach without using a workload class is to use a hint.
 
 1. Execute the below SQL.
 
-    ```SQL
-    ALTER WORKLOAD CLASS "WLC1" DISABLE;
+   ```SQL
+   ALTER WORKLOAD CLASS "WLC1" DISABLE;
 
-    SELECT * FROM M_VOLUMES;  --1024 is the VOLUME_ID for the ECN
-    
-    CALL USER4.CPU_AND_MEMORY_SPIKE() with hint (RESULT_LAG('HANA_ATR'), route_to(1024));
-    
-    SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP 
-    FROM M_SQL_PLAN_CACHE 
-    WHERE STATEMENT_STRING LIKE 'CALL %' 
-    ORDER BY LAST_EXECUTION_TIMESTAMP DESC;
-    ```
+   SELECT * FROM M_VOLUMES;  --1024 is the VOLUME_ID for the ECN
+   
+   CALL USER4.CPU_AND_MEMORY_SPIKE() with hint (RESULT_LAG('HANA_ATR'), route_to(1024));
+   
+   SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP 
+   FROM M_SQL_PLAN_CACHE 
+   WHERE STATEMENT_STRING LIKE 'CALL %' 
+   ORDER BY LAST_EXECUTION_TIMESTAMP DESC;
+   ```
 
     ![using a hint](hint.png)
 
@@ -603,40 +603,40 @@ A replica table can be stored on an ECN.  This may lead to lower resource consum
 
 1. Run the below in the SQL Console after replacing the host name with the value from the previous query against the M_VOLUMES table view.
 
-    ```SQL
-    ALTER WORKLOAD CLASS "WLC1" ENABLE;
+   ```SQL
+   ALTER WORKLOAD CLASS "WLC1" ENABLE;
 
-    ALTER TABLE USER4.MYTABLE ADD ASYNCHRONOUS REPLICA AT '6101b9d8-bcad-44dc-98c4-388e64ce7370-ern-ecn1:30040';
+   ALTER TABLE USER4.MYTABLE ADD ASYNCHRONOUS REPLICA AT '6101b9d8-bcad-44dc-98c4-388e64ce7370-ern-ecn1:30040';
 
-    ALTER TABLE USER4.MYTABLE ENABLE ASYNCHRONOUS REPLICA;
-    --ALTER TABLE USER4.MYTABLE DISABLE ASYNCHRONOUS REPLICA;
-    --ALTER TABLE USER4.MYTABLE DROP REPLICA AT '6101b9d8-bcad-44dc-98c4-388e64ce7370-ern-ecn1:30040';
-    
-    SELECT * FROM M_TABLE_LOCATIONS WHERE TABLE_NAME LIKE '%MYTABLE%';
-    SELECT * FROM M_TABLE_REPLICAS;
-    ```
+   ALTER TABLE USER4.MYTABLE ENABLE ASYNCHRONOUS REPLICA;
+   --ALTER TABLE USER4.MYTABLE DISABLE ASYNCHRONOUS REPLICA;
+   --ALTER TABLE USER4.MYTABLE DROP REPLICA AT '6101b9d8-bcad-44dc-98c4-388e64ce7370-ern-ecn1:30040';
+   
+   SELECT * FROM M_TABLE_LOCATIONS WHERE TABLE_NAME LIKE '%MYTABLE%';
+   SELECT * FROM M_TABLE_REPLICAS;
+   ```
 
     ![replica table](ecn_ex2a.png)
 
     Run the below SQL to indicate that the workload class should use async replica tables.
 
-    ```SQL
-    ALTER WORKLOAD CLASS "WLC1" SET 'RESULT LAG HINT' = 'HANA_ATR';  --use the replica
-    --ALTER WORKLOAD CLASS "WLC1" UNSET 'RESULT LAG HINT';
-    ```
+   ```SQL
+   ALTER WORKLOAD CLASS "WLC1" SET 'RESULT LAG HINT' = 'HANA_ATR';  --use the replica
+   --ALTER WORKLOAD CLASS "WLC1" UNSET 'RESULT LAG HINT';
+   ```
 
     Further details on using hints can be found at [Using Hints with Select Statements](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/performance-using-hints-to-query-data-snapshots).
 
     Run the SQL below
 
-    ```SQL
-    CALL CPU_AND_MEMORY_SPIKE();
+   ```SQL
+   CALL CPU_AND_MEMORY_SPIKE();
 
-    SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP  
-    FROM M_SQL_PLAN_CACHE 
-    WHERE ACCESSED_TABLE_NAMES LIKE '%MYTABLE%'
-    ORDER BY LAST_EXECUTION_TIMESTAMP DESC;
-    ```
+   SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP  
+   FROM M_SQL_PLAN_CACHE 
+   WHERE ACCESSED_TABLE_NAMES LIKE '%MYTABLE%'
+   ORDER BY LAST_EXECUTION_TIMESTAMP DESC;
+   ```
 
     ![ECN verification 2](ecn_ex2.png)
 
@@ -647,23 +647,23 @@ Before removing the ECN node, disable the workload class so that new queries are
 
 1. Execute the below SQL
 
-    ```SQL
-    ALTER WORKLOAD CLASS "WLC1" DISABLE;
-    ```
+   ```SQL
+   ALTER WORKLOAD CLASS "WLC1" DISABLE;
+   ```
 
     If the ECN is removed and the workload class is still enabled, workloads directed to the ECN will fail with an error message "Client failed to reroute after a server change in workload class routing: Invalid routing location".  This behavior can be changed using the [force_reroute](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/routing-queries-to-replicas) setting.
 
-    ```SQL
-    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('distribution', 'force_reroute') = 'FALSE' WITH RECONFIGURE;
-    SELECT * FROM SYS.M_CONFIGURATION_PARAMETER_VALUES WHERE SECTION = 'distribution';
-    ```
+   ```SQL
+   ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('distribution', 'force_reroute') = 'FALSE' WITH RECONFIGURE;
+   SELECT * FROM SYS.M_CONFIGURATION_PARAMETER_VALUES WHERE SECTION = 'distribution';
+   ```
     
 2. Remove the ECN.  
 
-    ```SHELL
-    btp update services/instance --id <instance ID> --parameters no_ecn.json
-    btp.exe get services/instance <instance ID>
-    ```
+   ```SHELL
+   btp update services/instance --id <instance ID> --parameters no_ecn.json
+   btp.exe get services/instance <instance ID>
+   ```
 
 ### Node.js app demonstrating prepared statements and the option routeDirectExecute on statement routing 
 The below Node.js app is used to demonstrate that statements must be prepared first to be routed to an ECN as documented at [Statement Routing](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/077d30cc847443288d3f0574356de4e7.html).
@@ -678,56 +678,56 @@ Further details on creating applications that connect to an SAP HANA Cloud datab
 
 1. Try running the below app and adjust the prepare and routeDirectExecute variables.  
 
-    ```JavaScript
-    'use strict';
-    var util = require('util');
-    var hana = require('@sap/hana-client');
+   ```JavaScript
+   'use strict';
+   var util = require('util');
+   var hana = require('@sap/hana-client');
 
-    //Used to specify if prepare should be called before executing a query
-    var prepare = false;  
+   //Used to specify if prepare should be called before executing a query
+   var prepare = false;  
 
-    var connOptions = {
-        //default value is false.  If a statement is not prepared before executed, it is not routed to the ECN.  Setting this value to true ensures a prepare.
-        //Further details at https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4fe9978ebac44f35b9369ef5a4a26f4c.html
-        //requires the presence of an ECN node.  See above documentation
-        routeDirectExecute: 'false',
+   var connOptions = {
+       //default value is false.  If a statement is not prepared before executed, it is not routed to the ECN.  Setting this value to true ensures a prepare.
+       //Further details at https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4fe9978ebac44f35b9369ef5a4a26f4c.html
+       //requires the presence of an ECN node.  See above documentation
+       routeDirectExecute: 'false',
 
-        //Specify the connection parameters
-        serverNode: 'host:port',
-        UID: 'USER4',
-        PWD: 'Password4',
-    };
-    console.log('routeDirectExecute: ' + connOptions.routeDirectExecute);
+       //Specify the connection parameters
+       serverNode: 'host:port',
+       UID: 'USER4',
+       PWD: 'Password4',
+   };
+   console.log('routeDirectExecute: ' + connOptions.routeDirectExecute);
 
-    var connection = hana.createConnection();
+   var connection = hana.createConnection();
 
-    connection.connect(connOptions);
+   connection.connect(connOptions);
 
-    var sql = 'SELECT SUM(VAL1) FROM MYTABLE;';
-    var result;
-    if (prepare) {
-        //Prepare before execute
-        console.log('prepare: ' + prepare);
-        const statement = connection.prepare(sql);
-        var results = statement.execQuery();
-        if (results.next()) {
-            result=results.getValues();
-        } ;
-    }
-    else {
-        //Direct execute, 
-        //Unless routeDirectExecute is set to true, this is not routed to ECN
-        console.log('prepare: ' + prepare);
-        result = connection.exec(sql);
-    }
-    console.log(util.inspect(result, { colors: false }));
+   var sql = 'SELECT SUM(VAL1) FROM MYTABLE;';
+   var result;
+   if (prepare) {
+       //Prepare before execute
+       console.log('prepare: ' + prepare);
+       const statement = connection.prepare(sql);
+       var results = statement.execQuery();
+       if (results.next()) {
+           result=results.getValues();
+       } ;
+   }
+   else {
+       //Direct execute, 
+       //Unless routeDirectExecute is set to true, this is not routed to ECN
+       console.log('prepare: ' + prepare);
+       result = connection.exec(sql);
+   }
+   console.log(util.inspect(result, { colors: false }));
 
-    //By looking at the host value, it can be determined if the previous query was run on the ECN node or not.
-    sql = "SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP FROM M_SQL_PLAN_CACHE WHERE STATEMENT_STRING LIKE 'SELECT SUM(VAL1) FROM MYTABLE;' ORDER BY LAST_EXECUTION_TIMESTAMP DESC;"
-    result = connection.exec(sql);
-    console.log(util.inspect(result[0], { colors: false }));
-    connection.disconnect();
-    ```
+   //By looking at the host value, it can be determined if the previous query was run on the ECN node or not.
+   sql = "SELECT HOST, STATEMENT_STRING, ACCESSED_TABLE_NAMES, TABLE_LOCATIONS, USER_NAME, LAST_EXECUTION_TIMESTAMP FROM M_SQL_PLAN_CACHE WHERE STATEMENT_STRING LIKE 'SELECT SUM(VAL1) FROM MYTABLE;' ORDER BY LAST_EXECUTION_TIMESTAMP DESC;"
+   result = connection.exec(sql);
+   console.log(util.inspect(result[0], { colors: false }));
+   connection.disconnect();
+   ```
 
     Output when the variable prepare is false.
 
@@ -748,14 +748,14 @@ The following procedure can be used to check if the ECN is available and then wh
 
 1. Execute the below SQL
 
-    ```SQL
-    DROP WORKLOAD MAPPING "WLM1";
-    CREATE WORKLOAD MAPPING "WLM3" WORKLOAD CLASS "WLC1" SET 'SCHEMA NAME' = 'USER4', 'OBJECT NAME' = 'CPU_AND_MEMORY_SPIKE';
+   ```SQL
+   DROP WORKLOAD MAPPING "WLM1";
+   CREATE WORKLOAD MAPPING "WLM3" WORKLOAD CLASS "WLC1" SET 'SCHEMA NAME' = 'USER4', 'OBJECT NAME' = 'CPU_AND_MEMORY_SPIKE';
 
-    CREATE OR REPLACE PROCEDURE WAIT_FOR_ECN() LANGUAGE SQLSCRIPT AS
-    BEGIN
-        USING SQLSCRIPT_PRINT AS PRTLIB;
-        USING SQLSCRIPT_SYNC AS SYNCLIB;
+   CREATE OR REPLACE PROCEDURE WAIT_FOR_ECN() LANGUAGE SQLSCRIPT AS
+   BEGIN
+       USING SQLSCRIPT_PRINT AS PRTLIB;
+       USING SQLSCRIPT_SYNC AS SYNCLIB;
 		--Check if the ECN is running, pause if not
 		DECLARE state STRING := '';
 		SELECT TOP 1 SERVICE_ACTIVE INTO state DEFAULT NULL FROM M_SYSTEM_AVAILABILITY WHERE HOST LIKE '%-ern-%' ORDER BY EVENT_TIME DESC;
@@ -765,10 +765,10 @@ The following procedure can be used to check if the ECN is available and then wh
 		    SELECT TOP 1 SERVICE_ACTIVE INTO state DEFAULT NULL FROM M_SYSTEM_AVAILABILITY WHERE HOST LIKE '%-ern-%' ORDER BY EVENT_TIME DESC;
 		    PRTLIB:PRINT_LINE(state);
 		END WHILE;
-    END;
-    CALL WAIT_FOR_ECN();
-    CALL CPU_AND_MEMORY_SPIKE();
-    ```
+   END;
+   CALL WAIT_FOR_ECN();
+   CALL CPU_AND_MEMORY_SPIKE();
+   ```
 
 ### ECN sample script
 The following steps demonstrate an approach to automating the creation, running a workload, and deletion of an ECN.
@@ -777,21 +777,21 @@ The following steps demonstrate an approach to automating the creation, running 
 
 2. Paste the following SQL into the file.
 
-    ```SQL
-    CALL WAIT_FOR_ECN();
-    ALTER WORKLOAD CLASS "WLC1" ENABLE;
-    CALL CPU_AND_MEMORY_SPIKE();
-    ALTER WORKLOAD CLASS "WLC1" DISABLE;
-    ```
+   ```SQL
+   CALL WAIT_FOR_ECN();
+   ALTER WORKLOAD CLASS "WLC1" ENABLE;
+   CALL CPU_AND_MEMORY_SPIKE();
+   ALTER WORKLOAD CLASS "WLC1" DISABLE;
+   ```
 
 3. Run the following commands.
 
-    ```Shell
-    hdbuserstore Set USER4UserKey 3805416e-c1e8-4753-b86f-e0a966a49e28.hana.prod-ca10.hanacloud.ondemand.com:443 USER4 Password4
-    btp update services/instance --id 3805416e-c1e8-4753-b86f-e0a966a49e28 --parameters ecn1.json
-    hdbsql -A -o results.txt -U USER4UserKey -I ecn_workload.sql
-    btp update services/instance --id 3805416e-c1e8-4753-b86f-e0a966a49e28 --parameters no_ecn.json
-    ```
+   ```Shell
+   hdbuserstore Set USER4UserKey 3805416e-c1e8-4753-b86f-e0a966a49e28.hana.prod-ca10.hanacloud.ondemand.com:443 USER4 Password4
+   btp update services/instance --id 3805416e-c1e8-4753-b86f-e0a966a49e28 --parameters ecn1.json
+   hdbsql -A -o results.txt -U USER4UserKey -I ecn_workload.sql
+   btp update services/instance --id 3805416e-c1e8-4753-b86f-e0a966a49e28 --parameters no_ecn.json
+   ```
 
     Instructions on using hdbsql and setting the user key can be found at [Executing SQL Statements from a shell](hana-cloud-automation-cli).
 
@@ -802,677 +802,677 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
 
     ![import catalog](import.png)
 
-    ```JSON
-    {
-        "id": "CFECN-<<<TENANT_ID>>>",
-        "technicalName": "CFECN",
-        "name": "Elastic Compute Node Provisioning",
-        "description": "Example commands for creating and deleting an SAP HANA Cloud Elastic Compute Node (ECN)",
-        "owner": "<<<TENANT_ID>>>",
-        "inputs": [
-            {
-            "id": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
-            "name": "NonSensitive",
-            "description": "Required parameters to connect to an SAP HANA Cloud database instance in the Cloud Foundry runtime environment.",
-            "catalog": "CFECN-<<<TENANT_ID>>>",
-            "owner": null,
-            "version": 1,
-            "keys": {
-                "db-user": {
-                "type": "string",
-                "sensitive": false,
-                "description": "The SQL database user that has privileges to enable or disable a workload class and execute SQL queries"
-                },
-                "cf-region": {
-                "type": "string",
-                "sensitive": false,
-                "description": "Examine CF API Endpoint in the subaccount overview page.  Example values: cf-us10, cf-us10-001"
-                },
-                "instance-id": {
-                "type": "string",
-                "sensitive": false,
-                "description": "A HANA Cloud Instance ID"
-                },
-                "instance-name": {
-                "type": "string",
-                "sensitive": false,
-                "description": "Instance name of the SAP HANA Cloud database."
-                },
-                "disable-workload-class": {
-                "type": "string",
-                "sensitive": false,
-                "description": null
-                },
-                "cf-org-id": {
-                "type": "string",
-                "sensitive": false,
-                "description": "CF Org name or Org ID from subaccount overview page"
-                },
-                "param-delete": {
-                "type": "object",
-                "sensitive": false,
-                "description": "JSON string removing all ECN nodes"
-                },
-                "enable-workload-class": {
-                "type": "string",
-                "sensitive": false,
-                "description": null
-                },
-                "param-create": {
-                "type": "object",
-                "sensitive": false,
-                "description": "JSON string describing the ECN node to create"
-                },
-                "cf-user": {
-                "type": "string",
-                "sensitive": false,
-                "description": "A Cloud Foundry user that has permissions to update the configuration of an SAP HANA Cloud instance running in the Cloud Foundry runtime."
-                },
-                "cf-space": {
-                "type": "string",
-                "sensitive": false,
-                "description": "Cloud Foundry space.  Value can be seen in the cloud foundry spaces page.  Example value: dev"
-                },
-                "sql-endpoint": {
-                "type": "string",
-                "sensitive": false,
-                "description": "The endpoint of the SAP HANA Cloud instance"
-                }
-            },
-            "values": {
-                "db-user": "DBADMIN",
-                "cf-region": "cf-ca10",
-                "instance-id": "e73809d6-196a-4dda-b2d2-25a8e307285a",
-                "instance-name": "HC_HDB",
-                "disable-workload-class": "ALTER WORKLOAD CLASS \"WLC1\" DISABLE;",
-                "cf-org-id": "8a254868-6949-45f4-9005-e198a15e6839",
-                "param-delete": "{\"data\":{\"elasticreadnodes\":[]}}",
-                "enable-workload-class": "ALTER WORKLOAD CLASS \"WLC1\" ENABLE;",
-                "param-create": "{\"data\":{\"elasticreadnodes\":[{\"name\":\"ecn1\",\"vcpu\":2,\"memory\":32,\"storage\":120}]}}",
-                "cf-user": "dan@hotmail.com",
-                "cf-space": "dev",
-                "sql-endpoint": "e73809d6-196a-4dda-b2d2-25a8e307285a.hana.prod-ca10.hanacloud.ondemand.com:443"
-            },
-            "tags": {}
-            },
-            {
-            "id": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
-            "name": "Sensitive",
-            "description": null,
-            "catalog": "CFECN-<<<TENANT_ID>>>",
-            "owner": null,
-            "version": 1,
-            "keys": {
-                "cf-password": {
-                "type": "string",
-                "sensitive": true,
-                "description": "The password to a Cloud Foundry user that has permissions to update the SAP HANA Cloud instance running in a Cloud Foundry runtime"
-                },
-                "service-manager-binding": {
-                "type": "string",
-                "sensitive": false,
-                "description": "Required for updating HANA Cloud instances provisioned to the subaccount. Further details at https://developers.sap.com/tutorials/hana-cloud-automation-rest.html"
-                },
-                "db-password": {
-                "type": "string",
-                "sensitive": true,
-                "description": "The SQL database password that has privileges to enable or disable a workload class and execute SQL queries"
-                }
-            },
-            "values": {
-                "service-manager-binding": "{\n    \"clientid\": \"sb-a6bfefa2-5ce6-46b5-ad3f-5e2e5801a395!b7113|service-manager!b16\",\n    \"clientsecret\": \"ab2f6ae1-34b3-4b0a-ba84-dfc397675edf$9uEmOt958OsnHnY_mVvNSZHRntaoLVgLgMmf5ZBOEkw=\",\n    \"url\": \"https://dan-van-leeuwen.authentication.ca10.hana.ondemand.com\",\n    \"xsappname\": \"a6bfefa2-5ce6-46b5-ad3f-5e2e5801a395!b7113|service-manager!b16\",\n    \"sm_url\": \"https://service-manager.cfapps.ca10.hana.ondemand.com\"\n}",
-                "cf-password": "",
-                "db-password": ""
-            },
-            "tags": {}
-            }
-        ],
-        "commands": [
-            {
-            "configuration": {
-                "values": [
-                {
-                    "alias": "NonSensitiveAlias",
-                    "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
-                    "inputKey": null
-                    }
-                },
-                {
-                    "alias": "SensitiveAlias",
-                    "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
-                    "inputKey": null
-                    }
-                }
-                ],
-                "output": {
-                "OutputKey1": "$(.test.output.result)",
-                "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
-                "OutputKey3": "$(.addECN.executed)"
-                },
-                "executors": [
-                {
-                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.db-password)",
-                    "statement": "--Optional query can be written here which checks the state of the instance to ensure the ECN should be added.  As an example, on a public holiday, the memory use is low and an ECN may not be needed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n\n--SELECT * FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600) ORDER BY TIME DESC;\n\n--SELECT AVG(CPU) AS \"CONDITION_TEST\" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600);",
-                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
-                    "resultRowFormat": "OBJECT",
-                    "user": "$(.NonSensitiveAlias.db-user)"
-                    },
-                    "alias": "test",
-                    "description": "A test to confirm that the ECN node should be started",
-                    "progressMessage": null,
-                    "initialDelay": null,
-                    "pause": null,
-                    "when": null,
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                },
-                {
-                    "execute": "sm-sapcp:UpdateServiceInstance:1",
-                    "input": {
-                    "instanceId": "$(.NonSensitiveAlias.instance-id)",
-                    "serviceKey": "$(.SensitiveAlias.service-manager-binding)",
-                    "parameters": "$(.NonSensitiveAlias.param-create)"
-                    },
-                    "alias": "addECN",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": null,
-                    "pause": null,
-                    "when": {
-                    "semantic": "OR",
-                    "conditions": [
-                        {
-                        "semantic": "OR",
-                        "cases": [
-                            {
-                            "expression": "$(.test.output.result | toArray[0][0])",
-                            "operator": "EQUALS",
-                            "semantic": "OR",
-                            "values": [
-                                "{\"CONDITION_TEST\":\"1\"}"
-                            ]
-                            }
-                        ]
-                        }
-                    ]
-                    },
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                },
-                {
-                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.db-password)",
-                    "statement": "$(.NonSensitiveAlias.enable-workload-class)",
-                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
-                    "user": "$(.NonSensitiveAlias.db-user)"
-                    },
-                    "alias": "enableWorkloadClass",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": null,
-                    "pause": null,
-                    "when": {
-                    "semantic": "OR",
-                    "conditions": [
-                        {
-                        "semantic": "OR",
-                        "cases": [
-                            {
-                            "expression": "{\"CONDITION_TEST\":\"1\"}",
-                            "operator": "EQUALS",
-                            "semantic": "OR",
-                            "values": [
-                                "{\"CONDITION_TEST\":\"1\"}"
-                            ]
-                            }
-                        ]
-                        }
-                    ]
-                    },
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                }
-                ],
-                "listeners": []
-            },
-            "id": "CFECN-<<<TENANT_ID>>>:AddECN:1",
-            "name": "AddECN",
-            "description": null,
-            "catalog": "CFECN-<<<TENANT_ID>>>",
-            "version": 1,
-            "inputKeys": {},
-            "outputKeys": {
-                "OutputKey1": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                },
-                "OutputKey2": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                },
-                "OutputKey3": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                }
-            },
-            "tags": {},
-            "issues": []
-            },
-            {
-            "configuration": {
-                "values": [
-                {
-                    "alias": "NonSensitiveAlias",
-                    "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
-                    "inputKey": null
-                    }
-                },
-                {
-                    "alias": "SensitiveAlias",
-                    "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
-                    "inputKey": null
-                    }
-                }
-                ],
-                "output": {
-                "OutputKey1": "$(.test.output.result)",
-                "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
-                "OutputKey3": "$(.addECN.executed)"
-                },
-                "executors": [
-                {
-                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.db-password)",
-                    "statement": "--Optional query can be written here which checks the state of the instance to ensure the ECN should be added.  As an example, on a public holiday, the memory use is low and an ECN may not be needed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n\n--SELECT * FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600) ORDER BY TIME DESC;\n\n--SELECT AVG(CPU) AS \"CONDITION_TEST\" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600);",
-                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
-                    "resultRowFormat": "OBJECT",
-                    "user": "$(.NonSensitiveAlias.db-user)"
-                    },
-                    "alias": "test",
-                    "description": "A test to confirm that the ECN node should be started",
-                    "progressMessage": null,
-                    "initialDelay": null,
-                    "pause": null,
-                    "when": null,
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                },
-                {
-                    "execute": "cf-sapcp:UpdateCfServiceInstance:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.cf-password)",
-                    "org": "$(.NonSensitiveAlias.cf-org-id)",
-                    "serviceInstance": "$(.NonSensitiveAlias.instance-name)",
-                    "region": "$(.NonSensitiveAlias.cf-region)",
-                    "user": "$(.NonSensitiveAlias.cf-user)",
-                    "parameters": "$(.NonSensitiveAlias.param-create)",
-                    "space": "$(.NonSensitiveAlias.cf-space)"
-                    },
-                    "alias": "addECN",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": null,
-                    "pause": null,
-                    "when": {
-                    "semantic": "OR",
-                    "conditions": [
-                        {
-                        "semantic": "OR",
-                        "cases": [
-                            {
-                            "expression": "$(.test.output.result | toArray[0][0])",
-                            "operator": "EQUALS",
-                            "semantic": "OR",
-                            "values": [
-                                "{\"CONDITION_TEST\":\"1\"}"
-                            ]
-                            }
-                        ]
-                        }
-                    ]
-                    },
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                },
-                {
-                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.db-password)",
-                    "statement": "$(.NonSensitiveAlias.enable-workload-class)",
-                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
-                    "user": "$(.NonSensitiveAlias.db-user)"
-                    },
-                    "alias": "enableWorkloadClass",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": null,
-                    "pause": null,
-                    "when": {
-                    "semantic": "OR",
-                    "conditions": [
-                        {
-                        "semantic": "OR",
-                        "cases": [
-                            {
-                            "expression": "{\"CONDITION_TEST\":\"1\"}",
-                            "operator": "EQUALS",
-                            "semantic": "OR",
-                            "values": [
-                                "{\"CONDITION_TEST\":\"1\"}"
-                            ]
-                            }
-                        ]
-                        }
-                    ]
-                    },
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                }
-                ],
-                "listeners": []
-            },
-            "id": "CFECN-<<<TENANT_ID>>>:CFAddECN:1",
-            "name": "CFAddECN",
-            "description": null,
-            "catalog": "CFECN-<<<TENANT_ID>>>",
-            "version": 1,
-            "inputKeys": {},
-            "outputKeys": {
-                "OutputKey1": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                },
-                "OutputKey2": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                },
-                "OutputKey3": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                }
-            },
-            "tags": {},
-            "issues": []
-            },
-            {
-            "configuration": {
-                "values": [
-                {
-                    "alias": "SensitiveAlias",
-                    "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
-                    "inputKey": null
-                    }
-                },
-                {
-                    "alias": "NonSensitiveAlias",
-                    "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
-                    "inputKey": null
-                    }
-                }
-                ],
-                "output": {
-                "OutputKey1": "$(.test.output.result)",
-                "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
-                "OutputKey3": "$(.deleteECN.executed)"
-                },
-                "executors": [
-                {
-                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.db-password)",
-                    "statement": "$(.NonSensitiveAlias.disable-workload-class)",
-                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
-                    "user": "$(.NonSensitiveAlias.db-user)"
-                    },
-                    "alias": "disableWorkloadClass",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": null,
-                    "pause": null,
-                    "when": null,
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                },
-                {
-                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.db-password)",
-                    "statement": "--Write a query that confirms that workloads running on the ECN have completed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n--A simpler approach may be to set an initial delay on this executor and perhaps the deleteECN executor.  Max delay is 3 minutes.\n--A longer delay can be added by adding an new executor that uses the delay command\n",
-                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
-                    "resultRowFormat": "OBJECT",
-                    "user": "$(.NonSensitiveAlias.db-user)",
-                    "timeout": "4"
-                    },
-                    "alias": "test",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": {
-                    "interval": "5s",
-                    "when": null
-                    },
-                    "pause": null,
-                    "when": null,
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                },
-                {
-                    "execute": "cf-sapcp:UpdateCfServiceInstance:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.cf-password)",
-                    "org": "$(.NonSensitiveAlias.cf-org-id)",
-                    "serviceInstance": "$(.NonSensitiveAlias.instance-name)",
-                    "region": "$(.NonSensitiveAlias.cf-region)",
-                    "user": "$(.NonSensitiveAlias.cf-user)",
-                    "parameters": "$(.NonSensitiveAlias.param-delete)",
-                    "space": "$(.NonSensitiveAlias.cf-space)"
-                    },
-                    "alias": "deleteECN",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": {
-                    "interval": "5s",
-                    "when": null
-                    },
-                    "pause": null,
-                    "when": null,
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                }
-                ],
-                "listeners": []
-            },
-            "id": "CFECN-<<<TENANT_ID>>>:CFDeleteECN:1",
-            "name": "CFDeleteECN",
-            "description": null,
-            "catalog": "CFECN-<<<TENANT_ID>>>",
-            "version": 1,
-            "inputKeys": {},
-            "outputKeys": {
-                "OutputKey1": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                },
-                "OutputKey2": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                },
-                "OutputKey3": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                }
-            },
-            "tags": {},
-            "issues": []
-            },
-            {
-            "configuration": {
-                "values": [
-                {
-                    "alias": "SensitiveAlias",
-                    "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
-                    "inputKey": null
-                    }
-                },
-                {
-                    "alias": "NonSensitiveAlias",
-                    "valueFrom": {
-                    "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
-                    "inputKey": null
-                    }
-                }
-                ],
-                "output": {
-                "OutputKey1": "$(.test.output.result)",
-                "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
-                "OutputKey3": "$(.deleteECN.executed)"
-                },
-                "executors": [
-                {
-                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.db-password)",
-                    "statement": "$(.NonSensitiveAlias.disable-workload-class)",
-                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
-                    "user": "$(.NonSensitiveAlias.db-user)"
-                    },
-                    "alias": "disableWorkloadClass",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": null,
-                    "pause": null,
-                    "when": null,
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                },
-                {
-                    "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
-                    "input": {
-                    "password": "$(.SensitiveAlias.db-password)",
-                    "statement": "--Write a query that confirms that workloads running on the ECN have completed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n--A simpler approach may be to set an initial delay on this executor and perhaps the deleteECN executor.  Max delay is 3 minutes.\n--A longer delay can be added by adding an new executor that uses the delay command\n",
-                    "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
-                    "resultRowFormat": "OBJECT",
-                    "user": "$(.NonSensitiveAlias.db-user)",
-                    "timeout": "4"
-                    },
-                    "alias": "test",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": {
-                    "interval": "5s",
-                    "when": null
-                    },
-                    "pause": null,
-                    "when": null,
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                },
-                {
-                    "execute": "sm-sapcp:UpdateServiceInstance:1",
-                    "input": {
-                    "instanceId": "$(.NonSensitiveAlias.instance-id)",
-                    "serviceKey": "$(.SensitiveAlias.service-manager-binding)",
-                    "parameters": "$(.NonSensitiveAlias.param-delete)"
-                    },
-                    "alias": "deleteECN",
-                    "description": null,
-                    "progressMessage": null,
-                    "initialDelay": {
-                    "interval": "5s",
-                    "when": null
-                    },
-                    "pause": null,
-                    "when": null,
-                    "validate": null,
-                    "autoRetry": null,
-                    "repeat": null,
-                    "errorMessages": [],
-                    "dryRun": null
-                }
-                ],
-                "listeners": []
-            },
-            "id": "CFECN-<<<TENANT_ID>>>:DeleteECN:1",
-            "name": "DeleteECN",
-            "description": null,
-            "catalog": "CFECN-<<<TENANT_ID>>>",
-            "version": 1,
-            "inputKeys": {},
-            "outputKeys": {
-                "OutputKey1": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                },
-                "OutputKey2": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                },
-                "OutputKey3": {
-                "type": "string",
-                "sensitive": false,
-                "description": ""
-                }
-            },
-            "tags": {},
-            "issues": []
-            }
-        ]
-    }      
-    ```
+   ```JSON
+   {
+       "id": "CFECN-<<<TENANT_ID>>>",
+       "technicalName": "CFECN",
+       "name": "Elastic Compute Node Provisioning",
+       "description": "Example commands for creating and deleting an SAP HANA Cloud Elastic Compute Node (ECN)",
+       "owner": "<<<TENANT_ID>>>",
+       "inputs": [
+           {
+           "id": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+           "name": "NonSensitive",
+           "description": "Required parameters to connect to an SAP HANA Cloud database instance in the Cloud Foundry runtime environment.",
+           "catalog": "CFECN-<<<TENANT_ID>>>",
+           "owner": null,
+           "version": 1,
+           "keys": {
+               "db-user": {
+               "type": "string",
+               "sensitive": false,
+               "description": "The SQL database user that has privileges to enable or disable a workload class and execute SQL queries"
+               },
+               "cf-region": {
+               "type": "string",
+               "sensitive": false,
+               "description": "Examine CF API Endpoint in the subaccount overview page.  Example values: cf-us10, cf-us10-001"
+               },
+               "instance-id": {
+               "type": "string",
+               "sensitive": false,
+               "description": "A HANA Cloud Instance ID"
+               },
+               "instance-name": {
+               "type": "string",
+               "sensitive": false,
+               "description": "Instance name of the SAP HANA Cloud database."
+               },
+               "disable-workload-class": {
+               "type": "string",
+               "sensitive": false,
+               "description": null
+               },
+               "cf-org-id": {
+               "type": "string",
+               "sensitive": false,
+               "description": "CF Org name or Org ID from subaccount overview page"
+               },
+               "param-delete": {
+               "type": "object",
+               "sensitive": false,
+               "description": "JSON string removing all ECN nodes"
+               },
+               "enable-workload-class": {
+               "type": "string",
+               "sensitive": false,
+               "description": null
+               },
+               "param-create": {
+               "type": "object",
+               "sensitive": false,
+               "description": "JSON string describing the ECN node to create"
+               },
+               "cf-user": {
+               "type": "string",
+               "sensitive": false,
+               "description": "A Cloud Foundry user that has permissions to update the configuration of an SAP HANA Cloud instance running in the Cloud Foundry runtime."
+               },
+               "cf-space": {
+               "type": "string",
+               "sensitive": false,
+               "description": "Cloud Foundry space.  Value can be seen in the cloud foundry spaces page.  Example value: dev"
+               },
+               "sql-endpoint": {
+               "type": "string",
+               "sensitive": false,
+               "description": "The endpoint of the SAP HANA Cloud instance"
+               }
+           },
+           "values": {
+               "db-user": "DBADMIN",
+               "cf-region": "cf-ca10",
+               "instance-id": "e73809d6-196a-4dda-b2d2-25a8e307285a",
+               "instance-name": "HC_HDB",
+               "disable-workload-class": "ALTER WORKLOAD CLASS \"WLC1\" DISABLE;",
+               "cf-org-id": "8a254868-6949-45f4-9005-e198a15e6839",
+               "param-delete": "{\"data\":{\"elasticreadnodes\":[]}}",
+               "enable-workload-class": "ALTER WORKLOAD CLASS \"WLC1\" ENABLE;",
+               "param-create": "{\"data\":{\"elasticreadnodes\":[{\"name\":\"ecn1\",\"vcpu\":2,\"memory\":32,\"storage\":120}]}}",
+               "cf-user": "dan@hotmail.com",
+               "cf-space": "dev",
+               "sql-endpoint": "e73809d6-196a-4dda-b2d2-25a8e307285a.hana.prod-ca10.hanacloud.ondemand.com:443"
+           },
+           "tags": {}
+           },
+           {
+           "id": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
+           "name": "Sensitive",
+           "description": null,
+           "catalog": "CFECN-<<<TENANT_ID>>>",
+           "owner": null,
+           "version": 1,
+           "keys": {
+               "cf-password": {
+               "type": "string",
+               "sensitive": true,
+               "description": "The password to a Cloud Foundry user that has permissions to update the SAP HANA Cloud instance running in a Cloud Foundry runtime"
+               },
+               "service-manager-binding": {
+               "type": "string",
+               "sensitive": false,
+               "description": "Required for updating HANA Cloud instances provisioned to the subaccount. Further details at https://developers.sap.com/tutorials/hana-cloud-automation-rest.html"
+               },
+               "db-password": {
+               "type": "string",
+               "sensitive": true,
+               "description": "The SQL database password that has privileges to enable or disable a workload class and execute SQL queries"
+               }
+           },
+           "values": {
+               "service-manager-binding": "{\n    \"clientid\": \"sb-a6bfefa2-5ce6-46b5-ad3f-5e2e5801a395!b7113|service-manager!b16\",\n    \"clientsecret\": \"ab2f6ae1-34b3-4b0a-ba84-dfc397675edf$9uEmOt958OsnHnY_mVvNSZHRntaoLVgLgMmf5ZBOEkw=\",\n    \"url\": \"https://dan-van-leeuwen.authentication.ca10.hana.ondemand.com\",\n    \"xsappname\": \"a6bfefa2-5ce6-46b5-ad3f-5e2e5801a395!b7113|service-manager!b16\",\n    \"sm_url\": \"https://service-manager.cfapps.ca10.hana.ondemand.com\"\n}",
+               "cf-password": "",
+               "db-password": ""
+           },
+           "tags": {}
+           }
+       ],
+       "commands": [
+           {
+           "configuration": {
+               "values": [
+               {
+                   "alias": "NonSensitiveAlias",
+                   "valueFrom": {
+                   "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+                   "inputKey": null
+                   }
+               },
+               {
+                   "alias": "SensitiveAlias",
+                   "valueFrom": {
+                   "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
+                   "inputKey": null
+                   }
+               }
+               ],
+               "output": {
+               "OutputKey1": "$(.test.output.result)",
+               "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
+               "OutputKey3": "$(.addECN.executed)"
+               },
+               "executors": [
+               {
+                   "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.db-password)",
+                   "statement": "--Optional query can be written here which checks the state of the instance to ensure the ECN should be added.  As an example, on a public holiday, the memory use is low and an ECN may not be needed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n\n--SELECT * FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600) ORDER BY TIME DESC;\n\n--SELECT AVG(CPU) AS \"CONDITION_TEST\" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600);",
+                   "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                   "resultRowFormat": "OBJECT",
+                   "user": "$(.NonSensitiveAlias.db-user)"
+                   },
+                   "alias": "test",
+                   "description": "A test to confirm that the ECN node should be started",
+                   "progressMessage": null,
+                   "initialDelay": null,
+                   "pause": null,
+                   "when": null,
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               },
+               {
+                   "execute": "sm-sapcp:UpdateServiceInstance:1",
+                   "input": {
+                   "instanceId": "$(.NonSensitiveAlias.instance-id)",
+                   "serviceKey": "$(.SensitiveAlias.service-manager-binding)",
+                   "parameters": "$(.NonSensitiveAlias.param-create)"
+                   },
+                   "alias": "addECN",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": null,
+                   "pause": null,
+                   "when": {
+                   "semantic": "OR",
+                   "conditions": [
+                       {
+                       "semantic": "OR",
+                       "cases": [
+                           {
+                           "expression": "$(.test.output.result | toArray[0][0])",
+                           "operator": "EQUALS",
+                           "semantic": "OR",
+                           "values": [
+                               "{\"CONDITION_TEST\":\"1\"}"
+                           ]
+                           }
+                       ]
+                       }
+                   ]
+                   },
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               },
+               {
+                   "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.db-password)",
+                   "statement": "$(.NonSensitiveAlias.enable-workload-class)",
+                   "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                   "user": "$(.NonSensitiveAlias.db-user)"
+                   },
+                   "alias": "enableWorkloadClass",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": null,
+                   "pause": null,
+                   "when": {
+                   "semantic": "OR",
+                   "conditions": [
+                       {
+                       "semantic": "OR",
+                       "cases": [
+                           {
+                           "expression": "{\"CONDITION_TEST\":\"1\"}",
+                           "operator": "EQUALS",
+                           "semantic": "OR",
+                           "values": [
+                               "{\"CONDITION_TEST\":\"1\"}"
+                           ]
+                           }
+                       ]
+                       }
+                   ]
+                   },
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               }
+               ],
+               "listeners": []
+           },
+           "id": "CFECN-<<<TENANT_ID>>>:AddECN:1",
+           "name": "AddECN",
+           "description": null,
+           "catalog": "CFECN-<<<TENANT_ID>>>",
+           "version": 1,
+           "inputKeys": {},
+           "outputKeys": {
+               "OutputKey1": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               },
+               "OutputKey2": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               },
+               "OutputKey3": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               }
+           },
+           "tags": {},
+           "issues": []
+           },
+           {
+           "configuration": {
+               "values": [
+               {
+                   "alias": "NonSensitiveAlias",
+                   "valueFrom": {
+                   "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+                   "inputKey": null
+                   }
+               },
+               {
+                   "alias": "SensitiveAlias",
+                   "valueFrom": {
+                   "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
+                   "inputKey": null
+                   }
+               }
+               ],
+               "output": {
+               "OutputKey1": "$(.test.output.result)",
+               "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
+               "OutputKey3": "$(.addECN.executed)"
+               },
+               "executors": [
+               {
+                   "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.db-password)",
+                   "statement": "--Optional query can be written here which checks the state of the instance to ensure the ECN should be added.  As an example, on a public holiday, the memory use is low and an ECN may not be needed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n\n--SELECT * FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600) ORDER BY TIME DESC;\n\n--SELECT AVG(CPU) AS \"CONDITION_TEST\" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -600);",
+                   "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                   "resultRowFormat": "OBJECT",
+                   "user": "$(.NonSensitiveAlias.db-user)"
+                   },
+                   "alias": "test",
+                   "description": "A test to confirm that the ECN node should be started",
+                   "progressMessage": null,
+                   "initialDelay": null,
+                   "pause": null,
+                   "when": null,
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               },
+               {
+                   "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.cf-password)",
+                   "org": "$(.NonSensitiveAlias.cf-org-id)",
+                   "serviceInstance": "$(.NonSensitiveAlias.instance-name)",
+                   "region": "$(.NonSensitiveAlias.cf-region)",
+                   "user": "$(.NonSensitiveAlias.cf-user)",
+                   "parameters": "$(.NonSensitiveAlias.param-create)",
+                   "space": "$(.NonSensitiveAlias.cf-space)"
+                   },
+                   "alias": "addECN",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": null,
+                   "pause": null,
+                   "when": {
+                   "semantic": "OR",
+                   "conditions": [
+                       {
+                       "semantic": "OR",
+                       "cases": [
+                           {
+                           "expression": "$(.test.output.result | toArray[0][0])",
+                           "operator": "EQUALS",
+                           "semantic": "OR",
+                           "values": [
+                               "{\"CONDITION_TEST\":\"1\"}"
+                           ]
+                           }
+                       ]
+                       }
+                   ]
+                   },
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               },
+               {
+                   "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.db-password)",
+                   "statement": "$(.NonSensitiveAlias.enable-workload-class)",
+                   "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                   "user": "$(.NonSensitiveAlias.db-user)"
+                   },
+                   "alias": "enableWorkloadClass",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": null,
+                   "pause": null,
+                   "when": {
+                   "semantic": "OR",
+                   "conditions": [
+                       {
+                       "semantic": "OR",
+                       "cases": [
+                           {
+                           "expression": "{\"CONDITION_TEST\":\"1\"}",
+                           "operator": "EQUALS",
+                           "semantic": "OR",
+                           "values": [
+                               "{\"CONDITION_TEST\":\"1\"}"
+                           ]
+                           }
+                       ]
+                       }
+                   ]
+                   },
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               }
+               ],
+               "listeners": []
+           },
+           "id": "CFECN-<<<TENANT_ID>>>:CFAddECN:1",
+           "name": "CFAddECN",
+           "description": null,
+           "catalog": "CFECN-<<<TENANT_ID>>>",
+           "version": 1,
+           "inputKeys": {},
+           "outputKeys": {
+               "OutputKey1": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               },
+               "OutputKey2": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               },
+               "OutputKey3": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               }
+           },
+           "tags": {},
+           "issues": []
+           },
+           {
+           "configuration": {
+               "values": [
+               {
+                   "alias": "SensitiveAlias",
+                   "valueFrom": {
+                   "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
+                   "inputKey": null
+                   }
+               },
+               {
+                   "alias": "NonSensitiveAlias",
+                   "valueFrom": {
+                   "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+                   "inputKey": null
+                   }
+               }
+               ],
+               "output": {
+               "OutputKey1": "$(.test.output.result)",
+               "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
+               "OutputKey3": "$(.deleteECN.executed)"
+               },
+               "executors": [
+               {
+                   "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.db-password)",
+                   "statement": "$(.NonSensitiveAlias.disable-workload-class)",
+                   "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                   "user": "$(.NonSensitiveAlias.db-user)"
+                   },
+                   "alias": "disableWorkloadClass",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": null,
+                   "pause": null,
+                   "when": null,
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               },
+               {
+                   "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.db-password)",
+                   "statement": "--Write a query that confirms that workloads running on the ECN have completed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n--A simpler approach may be to set an initial delay on this executor and perhaps the deleteECN executor.  Max delay is 3 minutes.\n--A longer delay can be added by adding an new executor that uses the delay command\n",
+                   "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                   "resultRowFormat": "OBJECT",
+                   "user": "$(.NonSensitiveAlias.db-user)",
+                   "timeout": "4"
+                   },
+                   "alias": "test",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": {
+                   "interval": "5s",
+                   "when": null
+                   },
+                   "pause": null,
+                   "when": null,
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               },
+               {
+                   "execute": "cf-sapcp:UpdateCfServiceInstance:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.cf-password)",
+                   "org": "$(.NonSensitiveAlias.cf-org-id)",
+                   "serviceInstance": "$(.NonSensitiveAlias.instance-name)",
+                   "region": "$(.NonSensitiveAlias.cf-region)",
+                   "user": "$(.NonSensitiveAlias.cf-user)",
+                   "parameters": "$(.NonSensitiveAlias.param-delete)",
+                   "space": "$(.NonSensitiveAlias.cf-space)"
+                   },
+                   "alias": "deleteECN",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": {
+                   "interval": "5s",
+                   "when": null
+                   },
+                   "pause": null,
+                   "when": null,
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               }
+               ],
+               "listeners": []
+           },
+           "id": "CFECN-<<<TENANT_ID>>>:CFDeleteECN:1",
+           "name": "CFDeleteECN",
+           "description": null,
+           "catalog": "CFECN-<<<TENANT_ID>>>",
+           "version": 1,
+           "inputKeys": {},
+           "outputKeys": {
+               "OutputKey1": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               },
+               "OutputKey2": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               },
+               "OutputKey3": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               }
+           },
+           "tags": {},
+           "issues": []
+           },
+           {
+           "configuration": {
+               "values": [
+               {
+                   "alias": "SensitiveAlias",
+                   "valueFrom": {
+                   "inputReference": "CFECN-<<<TENANT_ID>>>:Sensitive:1",
+                   "inputKey": null
+                   }
+               },
+               {
+                   "alias": "NonSensitiveAlias",
+                   "valueFrom": {
+                   "inputReference": "CFECN-<<<TENANT_ID>>>:NonSensitive:1",
+                   "inputKey": null
+                   }
+               }
+               ],
+               "output": {
+               "OutputKey1": "$(.test.output.result)",
+               "OutputKey2": "$(.test.output.result | toArray[0][0].CONDITION_TEST)",
+               "OutputKey3": "$(.deleteECN.executed)"
+               },
+               "executors": [
+               {
+                   "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.db-password)",
+                   "statement": "$(.NonSensitiveAlias.disable-workload-class)",
+                   "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                   "user": "$(.NonSensitiveAlias.db-user)"
+                   },
+                   "alias": "disableWorkloadClass",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": null,
+                   "pause": null,
+                   "when": null,
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               },
+               {
+                   "execute": "sql-sapcp:ExecuteHanaCloudSqlStatement:1",
+                   "input": {
+                   "password": "$(.SensitiveAlias.db-password)",
+                   "statement": "--Write a query that confirms that workloads running on the ECN have completed.\nSELECT '1' AS \"CONDITION_TEST\" FROM DUMMY;\n--A simpler approach may be to set an initial delay on this executor and perhaps the deleteECN executor.  Max delay is 3 minutes.\n--A longer delay can be added by adding an new executor that uses the delay command\n",
+                   "connectionUrl": "jdbc:sap://$(.NonSensitiveAlias.sql-endpoint)",
+                   "resultRowFormat": "OBJECT",
+                   "user": "$(.NonSensitiveAlias.db-user)",
+                   "timeout": "4"
+                   },
+                   "alias": "test",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": {
+                   "interval": "5s",
+                   "when": null
+                   },
+                   "pause": null,
+                   "when": null,
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               },
+               {
+                   "execute": "sm-sapcp:UpdateServiceInstance:1",
+                   "input": {
+                   "instanceId": "$(.NonSensitiveAlias.instance-id)",
+                   "serviceKey": "$(.SensitiveAlias.service-manager-binding)",
+                   "parameters": "$(.NonSensitiveAlias.param-delete)"
+                   },
+                   "alias": "deleteECN",
+                   "description": null,
+                   "progressMessage": null,
+                   "initialDelay": {
+                   "interval": "5s",
+                   "when": null
+                   },
+                   "pause": null,
+                   "when": null,
+                   "validate": null,
+                   "autoRetry": null,
+                   "repeat": null,
+                   "errorMessages": [],
+                   "dryRun": null
+               }
+               ],
+               "listeners": []
+           },
+           "id": "CFECN-<<<TENANT_ID>>>:DeleteECN:1",
+           "name": "DeleteECN",
+           "description": null,
+           "catalog": "CFECN-<<<TENANT_ID>>>",
+           "version": 1,
+           "inputKeys": {},
+           "outputKeys": {
+               "OutputKey1": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               },
+               "OutputKey2": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               },
+               "OutputKey3": {
+               "type": "string",
+               "sensitive": false,
+               "description": ""
+               }
+           },
+           "tags": {},
+           "issues": []
+           }
+       ]
+   }      
+   ```
 
 2. The catalog will appear under My Catalogs and is named Elastic Compute Node Provisioning
 

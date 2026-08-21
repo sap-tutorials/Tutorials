@@ -33,54 +33,54 @@ To learn about SAP CAP and application development on SAP BTP, see [Introduction
 
 2. Within Database Explorer as `DBADMIN`, run the following SQL script to create a new user `HDB_BOOKSHOP_USER` and a relational container `BOOKSHOP_CONTAINER` in the attached HANA-managed data lake Relational Engine instance owned by `HDB_BOOKSHOP_USER`. and a new schema `BOOKSHOP`. This script also grants privileges on the `BOOKSHOP` SCHEMA to the `HDB_BOOKSHOP_USER`. 
 
-    ```SQL
-    -- Create a new user called HDB_BOOKSHOP_USER
-    CREATE USER HDB_BOOKSHOP_USER PASSWORD Password1 NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
-    -- Create a Relational Container in the attached HANA-managed HDLRE instance
-    CALL SYSHDL.CREATE_CONTAINER('BOOKSHOP_CONTAINER', 'HDB_BOOKSHOP_USER');
-    ```
+   ```SQL
+   -- Create a new user called HDB_BOOKSHOP_USER
+   CREATE USER HDB_BOOKSHOP_USER PASSWORD Password1 NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
+   -- Create a Relational Container in the attached HANA-managed HDLRE instance
+   CALL SYSHDL.CREATE_CONTAINER('BOOKSHOP_CONTAINER', 'HDB_BOOKSHOP_USER');
+   ```
     ![create-user-sql](create-user-sql.png)
 
     Then, create a new schema `BOOKSHOP`, and grant schema privileges on `BOOKSHOP` schema to the `HDB_BOOKSHOP_USER`. 
-    ```SQL
-    -- Create a new schema
-    CREATE SCHEMA BOOKSHOP;
-    -- Grant all BOOKSHOP schema privileges to HDB_BOOK_USER
-    GRANT ALL PRIVILEGES ON SCHEMA BOOKSHOP TO HDB_BOOKSHOP_USER WITH GRANT OPTION;
-    ```
+   ```SQL
+   -- Create a new schema
+   CREATE SCHEMA BOOKSHOP;
+   -- Grant all BOOKSHOP schema privileges to HDB_BOOK_USER
+   GRANT ALL PRIVILEGES ON SCHEMA BOOKSHOP TO HDB_BOOKSHOP_USER WITH GRANT OPTION;
+   ```
     ![create-schema-sql](create-schema-sql.png)
 
 3. You will now create database objects in the `BOOKSHOP` schema in the HANA-managed data lake Relational Engine that map to objects in the HANA database. These commands will be executed as the `HDB_BOOKSHOP_USER` as the owner of the relational container created in the previous step. 
 
-    ```SQL
-    -- Connect as the HDB_BOOKSHOP_USER
-    CONNECT HDB_BOOKSHOP_USER PASSWORD Password1;
+   ```SQL
+   -- Connect as the HDB_BOOKSHOP_USER
+   CONNECT HDB_BOOKSHOP_USER PASSWORD Password1;
 
-    -- Create a virtual table in HANA that maps to a table in the attached HANA-managed HDLRE instance, also created here
-    CREATE VIRTUAL TABLE BOOKSHOP.BOOK_REVIEWS (
-        REVIEW_ID INTEGER PRIMARY KEY,
-        BOOK_ID INTEGER NOT NULL,
-        RATING INTEGER NOT NULL,
-        REVIEW VARCHAR(500) NOT NULL
-    ) AT "SYSHDL_BOOKSHOP_CONTAINER_SOURCE"."NULL"."SYSHDL_BOOKSHOP_CONTAINER"."BOOK_REVIEWS" WITH REMOTE;
+   -- Create a virtual table in HANA that maps to a table in the attached HANA-managed HDLRE instance, also created here
+   CREATE VIRTUAL TABLE BOOKSHOP.BOOK_REVIEWS (
+       REVIEW_ID INTEGER PRIMARY KEY,
+       BOOK_ID INTEGER NOT NULL,
+       RATING INTEGER NOT NULL,
+       REVIEW VARCHAR(500) NOT NULL
+   ) AT "SYSHDL_BOOKSHOP_CONTAINER_SOURCE"."NULL"."SYSHDL_BOOKSHOP_CONTAINER"."BOOK_REVIEWS" WITH REMOTE;
 
-    -- Insert sample data into the virtual table
-    INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(1, 1, 5, 'I loved reading this novel since I love mysteries.');
-    INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(2, 12, 4, 'This was a good fantasy book, but not as realistic as I had hoped.');
-    INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(3, 7, 3, 'This book was slow but an interesting read overall.'); 
-    INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(4, 3, 5, 'I could not put this book down. I truly get why this is a classic.');
-    INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(5, 12, 3, 'I wish there was more action and less romance.');
-    ```
+   -- Insert sample data into the virtual table
+   INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(1, 1, 5, 'I loved reading this novel since I love mysteries.');
+   INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(2, 12, 4, 'This was a good fantasy book, but not as realistic as I had hoped.');
+   INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(3, 7, 3, 'This book was slow but an interesting read overall.'); 
+   INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(4, 3, 5, 'I could not put this book down. I truly get why this is a classic.');
+   INSERT INTO BOOKSHOP.BOOK_REVIEWS(REVIEW_ID, BOOK_ID, RATING, REVIEW) VALUES(5, 12, 3, 'I wish there was more action and less romance.');
+   ```
     ![create-table-sql](create-table-sql.png)
 
     For additional details consult [Creating Virtual Tables](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/91e5edbfb2144301abc0085984dce8a7.html?version=1.0.12)
 
 4. Query the local SAP HANA table and the equivalent SAP HANA Cloud, data lake Relational Engine table. Note that both results should be identical. 
    
-    ```SQL
-    SELECT * FROM BOOKSHOP.BOOK_REVIEWS;
-    SELECT * FROM SYSHDL_BOOKSHOP_CONTAINER.BOOK_REVIEWS;
-    ```
+   ```SQL
+   SELECT * FROM BOOKSHOP.BOOK_REVIEWS;
+   SELECT * FROM SYSHDL_BOOKSHOP_CONTAINER.BOOK_REVIEWS;
+   ```
     ![select-query](select-query.png)
 
 ### Create a dev space in SAP Business Application Studio
@@ -193,36 +193,36 @@ To learn about SAP CAP and application development on SAP BTP, see [Introduction
 
 12. Open the `data-model.cds` file and replace the contents with the following code. 
     
-    ```data-model.cds
-    namespace MY.BOOKSHOP;
+   ```data-model.cds
+   namespace MY.BOOKSHOP;
 
-    entity Books {
-    key ID : Integer;
-    title  : String;
-    stock  : Integer;
-    }
+   entity Books {
+   key ID : Integer;
+   title  : String;
+   stock  : Integer;
+   }
 
-    @cds.persistence.exists
-    entity BOOK_REVIEWS_SYNONYM {
-    key REVIEW_ID  : Integer;
-        BOOK_ID    : Integer;
-        RATING     : Integer;
-        REVIEW : String(500)
-    }
-    ```
-    ![data-model](data-model.png)
+   @cds.persistence.exists
+   entity BOOK_REVIEWS_SYNONYM {
+   key REVIEW_ID  : Integer;
+       BOOK_ID    : Integer;
+       RATING     : Integer;
+       REVIEW : String(500)
+   }
+   ```
+   ![data-model](data-model.png)
 
 13. Open the `cat-service.cds` file and replace the contents with the following code.
 
-    ```cat-service.cds
-    using MY.BOOKSHOP as my from '../db/data-model';
+   ```cat-service.cds
+   using MY.BOOKSHOP as my from '../db/data-model';
 
-    service CatalogService {
-        @readonly entity Books as projection on my.Books;
-        @readonly entity BOOK_REVIEWS_SYNONYM as projection on my.BOOK_REVIEWS_SYNONYM;
-    }
-    ```
-    ![cat-service](cat-service.png)
+   service CatalogService {
+       @readonly entity Books as projection on my.Books;
+       @readonly entity BOOK_REVIEWS_SYNONYM as projection on my.BOOK_REVIEWS_SYNONYM;
+   }
+   ```
+   ![cat-service](cat-service.png)
 
 14. Deploy the project using the rocket icon.
     ![deploy](deploy.png)

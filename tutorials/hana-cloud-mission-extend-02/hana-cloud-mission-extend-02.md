@@ -108,7 +108,7 @@ In this video tutorial, you'll see the Database Backups card and the Backup Cata
 
 Additionally, during provisioning an instance, you can select if you want to create **replicas** of your instance to increase your system availability. These replicas are exact duplicates of your instance that will be managed in the background and automatically synchronized. In case of issues, you can take over a replica of your instance to ensure minimal interruption.
 
-<!-- border -->![HCC Step2 replicas cropped](ss-02-trial-HCC-Step-2-parameters.png)
+![HCC Step2 replicas cropped](ss-02-trial-HCC-Step-2-parameters.png)
 
 To read more about increasing system availability, you can take a look at this technical documentation.
 
@@ -127,11 +127,11 @@ To recover a backup, you can use the self-service recovery option in SAP HANA Cl
 
 3.	Select the option **Start Recovery**.
 
-    <!-- border -->![Start Recovery](ss-03-start-recovery.png)
+    ![Start Recovery](ss-03-start-recovery.png)
 
 4.	In the wizard that opens, select a Point in Time in the past via calendar. Note that the time will be displayed in UTC and Local Time.
 
-    <!-- border -->![Start Recovery 2](ss-04-start-recovery-2.png)
+    ![Start Recovery 2](ss-04-start-recovery-2.png)
 
 > **Well done!**
 >

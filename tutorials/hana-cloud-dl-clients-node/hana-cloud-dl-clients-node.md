@@ -54,28 +54,28 @@ The Node.js driver covered in this tutorial is [@sap\iq-client](https://www.npmj
 
 1. Open a new Shell and create a folder named `node` and enter the newly created directory.
 
-    ```Shell (Microsoft Windows)
-    mkdir %HOMEPATH%\DataLakeClientsTutorial\node
-    cd %HOMEPATH%\DataLakeClientsTutorial\node
-    ```
+   ```Shell (Microsoft Windows)
+   mkdir %HOMEPATH%\DataLakeClientsTutorial\node
+   cd %HOMEPATH%\DataLakeClientsTutorial\node
+   ```
 
-    ```Shell (Linux)
-    mkdir $HOME/DataLakeClientsTutorial/node
-    cd $HOME/DataLakeClientsTutorial/node
-    ```
+   ```Shell (Linux)
+   mkdir $HOME/DataLakeClientsTutorial/node
+   cd $HOME/DataLakeClientsTutorial/node
+   ```
 
 2. Initialize the project and install the `@sap\iq-client` driver from npm.
 
-    ```Shell 
-    npm init -y
-    npm install @sap/iq-client
-    ```
+   ```Shell 
+   npm init -y
+   npm install @sap/iq-client
+   ```
 
 3. The following command lists the Node.js modules that are now installed locally into the `DataLakeClientsTutorial\node` folder.
 
-    ```Shell
-    npm list
-    ```
+   ```Shell
+   npm list
+   ```
 
     ![npm list](npm-list.png)
 
@@ -85,60 +85,60 @@ The Node.js driver covered in this tutorial is [@sap\iq-client](https://www.npmj
 
     Depending on what version of the data lake client was used, execute:
 
-    ```Shell (Microsoft Windows)
-    notepad nodeQuery.js
-    ```
+   ```Shell (Microsoft Windows)
+   notepad nodeQuery.js
+   ```
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux)
-    pico nodeQuery.js
-    ```
+   ```Shell (Linux)
+   pico nodeQuery.js
+   ```
 
 2. Add the code below to `nodeQuery.js` and update the **host** variable.
 
-    ```JavaScript
-    'use strict';
-    const { PerformanceObserver, performance } = require('perf_hooks');
-    var t0;
-    var util = require('util');
-    var datalakeRE = require('@sap/iq-client');
+   ```JavaScript
+   'use strict';
+   const { PerformanceObserver, performance } = require('perf_hooks');
+   var t0;
+   var util = require('util');
+   var datalakeRE = require('@sap/iq-client');
 
-    var connOptions = {
-        host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
-        uID: 'USER1',
-        pwd: 'Password1',
-        enc: 'TLS{tls_type=rsa;direct=yes}',
-    };
+   var connOptions = {
+       host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
+       uID: 'USER1',
+       pwd: 'Password1',
+       enc: 'TLS{tls_type=rsa;direct=yes}',
+   };
 
-    //Synchronous example querying a table
-    var connection = datalakeRE.createConnection();
-    connection.connect(connOptions);
+   //Synchronous example querying a table
+   var connection = datalakeRE.createConnection();
+   connection.connect(connOptions);
 
-    var sql = 'select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;';
-    t0 = performance.now();
-    var result = connection.exec(sql);
-    console.log(util.inspect(result, { colors: false }));
-    var t1 = performance.now();
-    console.log("time in ms " +  (t1 - t0));
-    connection.disconnect();
-    ```  
+   var sql = 'select TITLE, FIRSTNAME, NAME from HOTELS.CUSTOMER;';
+   t0 = performance.now();
+   var result = connection.exec(sql);
+   console.log(util.inspect(result, { colors: false }));
+   var t1 = performance.now();
+   console.log("time in ms " +  (t1 - t0));
+   connection.disconnect();
+   ```  
 
 3. Run the app.  
 
-    ```Shell
-    node nodeQuery.js
-    ```
+   ```Shell
+   node nodeQuery.js
+   ```
 
     ![Running nodeQuery.js](node-query-sync.png)
 
     If an error appears such as Error: `libdbcapi_r.so` is missing, its location can be specified using an environment variable such as IQ_DBCAPI_DIR.
 
-    ```Shell (Linux)
-    IQ_DBCAPI_DIR=$HDL_CLIENT_HOME/lib64 
-    export IQ_DBCAPI_DIR
-    echo $IQ_DBCAPI_DIR
-    ```
+   ```Shell (Linux)
+   IQ_DBCAPI_DIR=$HDL_CLIENT_HOME/lib64 
+   export IQ_DBCAPI_DIR
+   echo $IQ_DBCAPI_DIR
+   ```
 
     Note the above app makes use of some of the data lake Relational Engine client Node.js driver methods, such as [connect](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/connect-string-object-function-method), [exec](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/exec-ute-string-array-object-function-method) and [disconnect](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/disconnect-close-end-function-method).
 
@@ -178,92 +178,92 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
 
 1. Open a file named `nodeQueryCallback.js` in an editor.
 
-    ```Shell (Microsoft Windows)
-    notepad nodeQueryCallback.js
-    ```
+   ```Shell (Microsoft Windows)
+   notepad nodeQueryCallback.js
+   ```
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux)
-    pico nodeQueryCallback.js
-    ```
+   ```Shell (Linux)
+   pico nodeQueryCallback.js
+   ```
 
 2. Add the code below to `nodeQueryCallback.js` and update the host variable.
 
-    ```JavaScript
-    'use strict';
-    const { PerformanceObserver, performance } = require('perf_hooks');
-    var t0;
-    var util = require('util');
-    var datalakeRE = require('@sap/iq-client');
+   ```JavaScript
+   'use strict';
+   const { PerformanceObserver, performance } = require('perf_hooks');
+   var t0;
+   var util = require('util');
+   var datalakeRE = require('@sap/iq-client');
 
-    var connOptions = {
-        host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
-        uID: 'USER1',
-        pwd: 'Password1',
-        enc: 'TLS{tls_type=rsa;direct=yes}',
-    };
+   var connOptions = {
+       host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
+       uID: 'USER1',
+       pwd: 'Password1',
+       enc: 'TLS{tls_type=rsa;direct=yes}',
+   };
 
-    //Asynchronous example calling a stored procedure with callbacks
-    var connection = datalakeRE.createConnection();
+   //Asynchronous example calling a stored procedure with callbacks
+   var connection = datalakeRE.createConnection();
 
-    connection.connect(connOptions, function(err) {
-        if (err) {
-            return console.error(err);
-        }
-        //Prepared statement example
-        const statement = connection.prepare('CALL HOTELS.SHOW_RESERVATIONS(?,?)');
-        const parameters = [11, '2020-12-24'];
-        var results = statement.execQuery(parameters, function(err, results) {
-            if (err) {
-                return console.error(err);
-            }
-            processResults(results, function(err) {
-                if (err) {
-                    return console.error(err);
-                }
-                results.close(function(err) {
-                    if (err) {
-                        return console.error(err);
-                    }
-                    statement.drop(function(err) {
-                        if (err) {
-                            return console.error(err);
-                        }
-                        return connection.disconnect(function(err) {
-                            if (err) {
-                                return console.error(err);
-                            }
-                        });
-                    });
-                });
-            });
-        });
-    });
+   connection.connect(connOptions, function(err) {
+       if (err) {
+           return console.error(err);
+       }
+       //Prepared statement example
+       const statement = connection.prepare('CALL HOTELS.SHOW_RESERVATIONS(?,?)');
+       const parameters = [11, '2020-12-24'];
+       var results = statement.execQuery(parameters, function(err, results) {
+           if (err) {
+               return console.error(err);
+           }
+           processResults(results, function(err) {
+               if (err) {
+                   return console.error(err);
+               }
+               results.close(function(err) {
+                   if (err) {
+                       return console.error(err);
+                   }
+                   statement.drop(function(err) {
+                       if (err) {
+                           return console.error(err);
+                       }
+                       return connection.disconnect(function(err) {
+                           if (err) {
+                               return console.error(err);
+                           }
+                       });
+                   });
+               });
+           });
+       });
+   });
 
-    function processResults(results, cb) {
-        results.next(function (err, hasValues) {
-            if (err) {
-                return console.error(err);
-            }
-            if (hasValues) {
-                results.getValues(function (err, row) {
-                    console.log(util.inspect(row, { colors: false }));
-                    processResults(results, cb);
-                });
-            }
-            else {
-                return cb();
-            }
-        });
-    }
-    ```  
+   function processResults(results, cb) {
+       results.next(function (err, hasValues) {
+           if (err) {
+               return console.error(err);
+           }
+           if (hasValues) {
+               results.getValues(function (err, row) {
+                   console.log(util.inspect(row, { colors: false }));
+                   processResults(results, cb);
+               });
+           }
+           else {
+               return cb();
+           }
+       });
+   }
+   ```  
 
 3. Run the app.  
 
-    ```Shell
-    node nodeQueryCallback.js
-    ```
+   ```Shell
+   node nodeQueryCallback.js
+   ```
 
     ![Running nodeQueryCallback.js](Node-query-callback.png)
 
@@ -275,100 +275,100 @@ The Node.js driver for the data lake Relational Engine client provides support f
 
 1. Open a file named `nodeQueryPromise.js` in an editor.
 
-    ```Shell (Microsoft Windows)
-    notepad nodeQueryPromise.js
-    ```
+   ```Shell (Microsoft Windows)
+   notepad nodeQueryPromise.js
+   ```
 
     Substitute `pico` below for your preferred text editor.  
 
-    ```Shell (Linux)
-    pico nodeQueryPromise.js
-    ```
+   ```Shell (Linux)
+   pico nodeQueryPromise.js
+   ```
 
 2. Add the code below to `nodeQueryPromise.js`.  
 
-    ```JavaScript
-    'use strict';
-    const { PerformanceObserver, performance } = require('perf_hooks');
-    var t0;
-    var util = require('util');
-    var datalakeRE = require('@sap/iq-client');
-    var PromiseModule = require('@sap/iq-client/extension/Promise.js');
+   ```JavaScript
+   'use strict';
+   const { PerformanceObserver, performance } = require('perf_hooks');
+   var t0;
+   var util = require('util');
+   var datalakeRE = require('@sap/iq-client');
+   var PromiseModule = require('@sap/iq-client/extension/Promise.js');
 
-    var connOptions = {
-        //Specify the connection parameters
-        host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
-        uid: 'USER1',
-        pwd: 'Password1',
-        enc: 'TLS{tls_type=rsa;direct=yes}',
-    };
+   var connOptions = {
+       //Specify the connection parameters
+       host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
+       uid: 'USER1',
+       pwd: 'Password1',
+       enc: 'TLS{tls_type=rsa;direct=yes}',
+   };
 
-    //Asynchronous example calling a stored procedure that uses the promise module
-    var connection = datalakeRE.createConnection();
-    var statement;
+   //Asynchronous example calling a stored procedure that uses the promise module
+   var connection = datalakeRE.createConnection();
+   var statement;
 
-    PromiseModule.connect(connection, connOptions)
-        .then(() => {
-             //Prepared statement example
-             return PromiseModule.prepare(connection, 'CALL HOTELS.SHOW_RESERVATIONS(?,?)');
-        })
-        .then((stmt) => {
-            statement = stmt;
-            const parameters = [11, '2020-12-24'];
-            return PromiseModule.executeQuery(stmt, parameters);
-        })
-        .then((results) => {
-            return processResults(results);
-        })
-        .then((results) => {
-            return PromiseModule.close(results);
-        })
-        .then(() => {
-            return PromiseModule.drop(statement);
-        })
-        .then(() => {
-            PromiseModule.disconnect(connection);
-        })
-        .catch(err =>  {
-            console.error(err);
-        });
+   PromiseModule.connect(connection, connOptions)
+       .then(() => {
+            //Prepared statement example
+            return PromiseModule.prepare(connection, 'CALL HOTELS.SHOW_RESERVATIONS(?,?)');
+       })
+       .then((stmt) => {
+           statement = stmt;
+           const parameters = [11, '2020-12-24'];
+           return PromiseModule.executeQuery(stmt, parameters);
+       })
+       .then((results) => {
+           return processResults(results);
+       })
+       .then((results) => {
+           return PromiseModule.close(results);
+       })
+       .then(() => {
+           return PromiseModule.drop(statement);
+       })
+       .then(() => {
+           PromiseModule.disconnect(connection);
+       })
+       .catch(err =>  {
+           console.error(err);
+       });
 
-    function processResults(results) {
-        return new Promise((resolve, reject) => {
-        var done = false;
-            PromiseModule.next(results)
-                .then((hasValues) => {
-                    if (hasValues) {
-                        return PromiseModule.getValues(results);
-                    }
-                    else {
-                        done = true;
-                    }
-                })
-                .then((values) => {
-                    if (done) {
-                        resolve(results);
-                    }
-                    else {
-                        console.log(util.inspect(values, { colors: false }));
-                        processResults(results)
-                        .then((results) => {
-                            resolve(results);
-                        });
-                    }
-                })
-                .catch (err => {
-                    reject(err);
-                });
-        })
-    }    
-    ```  
+   function processResults(results) {
+       return new Promise((resolve, reject) => {
+       var done = false;
+           PromiseModule.next(results)
+               .then((hasValues) => {
+                   if (hasValues) {
+                       return PromiseModule.getValues(results);
+                   }
+                   else {
+                       done = true;
+                   }
+               })
+               .then((values) => {
+                   if (done) {
+                       resolve(results);
+                   }
+                   else {
+                       console.log(util.inspect(values, { colors: false }));
+                       processResults(results)
+                       .then((results) => {
+                           resolve(results);
+                       });
+                   }
+               })
+               .catch (err => {
+                   reject(err);
+               });
+       })
+   }    
+   ```  
 
 3. Run the app.  
 
-    ```Shell
-    node nodeQueryPromise.js
-    ```
+   ```Shell
+   node nodeQueryPromise.js
+   ```
 
     ![Running nodeQueryPromise.js](Node-query-promise.png)
 
@@ -396,9 +396,9 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     If "Can't find Node.js binary 'node': path does not exist" error pops up, open a Shell and run the following command.
 
-    ```Shell
-    code .
-    ```
+   ```Shell
+   code .
+   ```
 
     Then restart VSCode.
 

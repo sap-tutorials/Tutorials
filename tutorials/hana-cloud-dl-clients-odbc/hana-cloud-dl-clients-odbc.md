@@ -31,9 +31,9 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 
 1. On SUSE Linux, unixODBC can be installed using Zypper or YaST.
 
-    ```Shell (Linux)
-    sudo zypper install unixODBC
-    ```
+   ```Shell (Linux)
+   sudo zypper install unixODBC
+   ```
 
     ![unixODBC install](unixODBC-install.png)
 
@@ -41,39 +41,39 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 
 2. The following commands can be used to confirm that unixODBC is installed and determine the location of the .odbc.ini file (if it exists).
 
-    ```Shell (Linux)
-    cd /etc/unixODBC
-    odbcinst -j
-    ```
+   ```Shell (Linux)
+   cd /etc/unixODBC
+   odbcinst -j
+   ```
 
     ![odbcinst -j](odbcinst-1.png)
 
 3. Navigate to the directory where the `.odbc.ini` file is located, similar to the one highlighted in the screenshot above. Open or create the `.odbc.ini` file with the following command:
 
-    ```Shell (Linux)
-    pico .odbc.ini
-    ```
+   ```Shell (Linux)
+   pico .odbc.ini
+   ```
 
 4. Configure the values of `driver` and `host` so that they conform with your setup.  Note that with the developer licensed version of the data lake client, the driver path below is slightly different.
 
-    ```.odbc.ini
-    [HC_DL]
-    driver=/home/XXXXX/sap/dlclient/IQ-17_1/lib64/libdbodbc17.so
-    driver=/home/dan/sap/hdlclient/lib64/libdbodbc17.so
-    encryption=TLS(trusted_certificates=*;direct=yes)
-    host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.XXXX-XXXX.hanacloud.ondemand.com:443
-    integrated=NO
-    log=/tmp/hdlclientlog.txt
-    ```
+   ```.odbc.ini
+   [HC_DL]
+   driver=/home/XXXXX/sap/dlclient/IQ-17_1/lib64/libdbodbc17.so
+   driver=/home/dan/sap/hdlclient/lib64/libdbodbc17.so
+   encryption=TLS(trusted_certificates=*;direct=yes)
+   host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.XXXX-XXXX.hanacloud.ondemand.com:443
+   integrated=NO
+   log=/tmp/hdlclientlog.txt
+   ```
 
     Here the driver path is the path to your libdodbc17.so file.
 
 5. DBISQL or `isql`, which is a tool provided by unixODBC can be used to try out the data source. Ensure you are using the correct username and password.
 
-    ```Shell (Linux)
-    dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL" -nogui
-    isql -v HC_DL USER1 Password1
-    ```
+   ```Shell (Linux)
+   dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL" -nogui
+   isql -v HC_DL USER1 Password1
+   ```
 
     dsn is the name set in the odbc.ini file in the previous step.
 
@@ -81,13 +81,13 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 
     Some example queries you can run are listed below.
 
-    ```SQL
-    SELECT * FROM HOTELS.CUSTOMER;
-    ```
+   ```SQL
+   SELECT * FROM HOTELS.CUSTOMER;
+   ```
 
-    ```SQL
-    SELECT * FROM HOTELS.ROOM;
-    ```
+   ```SQL
+   SELECT * FROM HOTELS.ROOM;
+   ```
 
     ![ODBC example with dbisql](ODBC-dbisql.png)
 
@@ -96,12 +96,10 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
     ![isql query](isql-query.png)
 
     > To exit dbisql or isql type `quit`.
-
-    > ---
-
+    >
     > The column width when displaying results in isql can be set using the -m parameter.  
     > ```Shell (Linux)
-    isql -v HC_DL USER1 Password1 -m6
+    > isql -v HC_DL USER1 Password1 -m6
     >```
 
 ### Configure a data source using Microsoft Windows ODBC Data Source Administrator

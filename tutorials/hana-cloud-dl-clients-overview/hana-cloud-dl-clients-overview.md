@@ -133,12 +133,12 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
 2. Execute a few queries.
 
-    ```SQL
-    SELECT CURRENT USER FROM DUMMY;
-    SELECT * FROM sa_db_properties() WHERE UPPER(PropName) LIKE '%NAME%';
-    SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%VERIFY%';
-    CALL sa_conn_properties(CONNECTION_PROPERTY('Number'));
-    ```
+   ```SQL
+   SELECT CURRENT USER FROM DUMMY;
+   SELECT * FROM sa_db_properties() WHERE UPPER(PropName) LIKE '%NAME%';
+   SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%VERIFY%';
+   CALL sa_conn_properties(CONNECTION_PROPERTY('Number'));
+   ```
 
     ![Query's in SQL Console](sql-console-query.png)
 
@@ -146,146 +146,146 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
 3. Execute the below SQL statements
 
-    ```SQL
-    ---- drops the schema and all objects it contains
-    -- SET SCHEMA HOTELS;
-    -- DROP VIEW HOTEL_ROOMS_VIEW;
-    -- DROP PROCEDURE SHOW_RESERVATIONS;
-    -- DROP TABLE MAINTENANCE;
-    -- DROP TABLE RESERVATION;
-    -- DROP TABLE CUSTOMER;
-    -- DROP TABLE ROOM;
-    -- DROP TABLE HOTEL;
-    -- DROP FUNCTION AVERAGE_PRICE;
-    -- DROP SCHEMA HOTELS;
+   ```SQL
+   ---- drops the schema and all objects it contains
+   -- SET SCHEMA HOTELS;
+   -- DROP VIEW HOTEL_ROOMS_VIEW;
+   -- DROP PROCEDURE SHOW_RESERVATIONS;
+   -- DROP TABLE MAINTENANCE;
+   -- DROP TABLE RESERVATION;
+   -- DROP TABLE CUSTOMER;
+   -- DROP TABLE ROOM;
+   -- DROP TABLE HOTEL;
+   -- DROP FUNCTION AVERAGE_PRICE;
+   -- DROP SCHEMA HOTELS;
 
-    -- DROP USER USER1;
-    -- DROP USER USER2;
-    -- DROP ROLE HOTEL_ADMIN;
-    -- DROP ROLE HOTEL_READER;
-    -- SET SCHEMA; --Workaround a bug where creating user fails with f_verify_pwd is no longer valid
+   -- DROP USER USER1;
+   -- DROP USER USER2;
+   -- DROP ROLE HOTEL_ADMIN;
+   -- DROP ROLE HOTEL_READER;
+   -- SET SCHEMA; --Workaround a bug where creating user fails with f_verify_pwd is no longer valid
 
-    CREATE USER USER1 IDENTIFIED BY Password1;
-    CREATE USER USER2 IDENTIFIED BY Password2;
+   CREATE USER USER1 IDENTIFIED BY Password1;
+   CREATE USER USER2 IDENTIFIED BY Password2;
 
-    CREATE ROLE HOTEL_ADMIN;
-    CREATE ROLE HOTEL_READER;
+   CREATE ROLE HOTEL_ADMIN;
+   CREATE ROLE HOTEL_READER;
 
-    --Further privileges will be granted later to the tables, views, functions, and procedures that are created below
-    GRANT SET ANY CUSTOMER PUBLIC OPTION, READ FILE TO HOTEL_ADMIN, HOTEL_READER;
-    GRANT EXECUTE ON sp_list_directory TO HOTEL_ADMIN, HOTEL_READER;
-    GRANT EXECUTE ON sp_real_list_directory TO HOTEL_ADMIN, HOTEL_READER;
+   --Further privileges will be granted later to the tables, views, functions, and procedures that are created below
+   GRANT SET ANY CUSTOMER PUBLIC OPTION, READ FILE TO HOTEL_ADMIN, HOTEL_READER;
+   GRANT EXECUTE ON sp_list_directory TO HOTEL_ADMIN, HOTEL_READER;
+   GRANT EXECUTE ON sp_real_list_directory TO HOTEL_ADMIN, HOTEL_READER;
 
-    GRANT ROLE HOTEL_ADMIN TO USER1;
-    GRANT ROLE HOTEL_READER TO USER2;
+   GRANT ROLE HOTEL_ADMIN TO USER1;
+   GRANT ROLE HOTEL_READER TO USER2;
 
-    --Create a schema for the sample hotel dataset  
-    CREATE SCHEMA HOTELS;
+   --Create a schema for the sample hotel dataset  
+   CREATE SCHEMA HOTELS;
 
-    --Specify the privileges for the roles on the schema HOTEL
-    GRANT CREATE ANY, SELECT, UPDATE, INSERT, DELETE, EXECUTE PROCEDURE ON SCHEMA HOTELS TO HOTEL_ADMIN;
-    GRANT SELECT ON SCHEMA HOTELS TO HOTEL_READER;
-    
-    SET SCHEMA HOTELS;
-    SELECT CURRENT SCHEMA;
-    --Create the objects in the HOTEL schema
-    CREATE TABLE HOTEL(
-        HNO INTEGER PRIMARY KEY,
-        NAME VARCHAR(50) NOT NULL,
-        ADDRESS VARCHAR(40) NOT NULL,
-        CITY VARCHAR(30) NOT NULL,
-        STATE VARCHAR(2) NOT NULL,
-        ZIP VARCHAR(6)
-    );
+   --Specify the privileges for the roles on the schema HOTEL
+   GRANT CREATE ANY, SELECT, UPDATE, INSERT, DELETE, EXECUTE PROCEDURE ON SCHEMA HOTELS TO HOTEL_ADMIN;
+   GRANT SELECT ON SCHEMA HOTELS TO HOTEL_READER;
+   
+   SET SCHEMA HOTELS;
+   SELECT CURRENT SCHEMA;
+   --Create the objects in the HOTEL schema
+   CREATE TABLE HOTEL(
+       HNO INTEGER PRIMARY KEY,
+       NAME VARCHAR(50) NOT NULL,
+       ADDRESS VARCHAR(40) NOT NULL,
+       CITY VARCHAR(30) NOT NULL,
+       STATE VARCHAR(2) NOT NULL,
+       ZIP VARCHAR(6)
+   );
 
-    CREATE TABLE ROOM(
-        HNO INTEGER,
-        TYPE VARCHAR(6),
-        FREE NUMERIC(3),
-        PRICE NUMERIC(6, 2),
-        PRIMARY KEY (HNO, TYPE),
-        FOREIGN KEY (HNO) REFERENCES HOTEL
-    );
+   CREATE TABLE ROOM(
+       HNO INTEGER,
+       TYPE VARCHAR(6),
+       FREE NUMERIC(3),
+       PRICE NUMERIC(6, 2),
+       PRIMARY KEY (HNO, TYPE),
+       FOREIGN KEY (HNO) REFERENCES HOTEL
+   );
 
-    CREATE TABLE CUSTOMER(
-        CNO INTEGER PRIMARY KEY,
-        TITLE VARCHAR(7),
-        FIRSTNAME VARCHAR(20),
-        NAME VARCHAR(40) NOT NULL,
-        ADDRESS VARCHAR(40) NOT NULL,
-        ZIP VARCHAR(6)
-    );
+   CREATE TABLE CUSTOMER(
+       CNO INTEGER PRIMARY KEY,
+       TITLE VARCHAR(7),
+       FIRSTNAME VARCHAR(20),
+       NAME VARCHAR(40) NOT NULL,
+       ADDRESS VARCHAR(40) NOT NULL,
+       ZIP VARCHAR(6)
+   );
 
-    CREATE TABLE RESERVATION(
-        RESNO INTEGER NOT NULL default autoincrement,
-        RNO INTEGER NOT NULL,
-        CNO INTEGER,
-        HNO INTEGER,
-        TYPE VARCHAR(6),
-        ARRIVAL DATE NOT NULL,
-        DEPARTURE DATE NOT NULL,
-        PRIMARY KEY (
-            "RESNO", "ARRIVAL"
-        ),
-        FOREIGN KEY(CNO) REFERENCES CUSTOMER,
-        FOREIGN KEY(HNO) REFERENCES HOTEL
-    );
+   CREATE TABLE RESERVATION(
+       RESNO INTEGER NOT NULL default autoincrement,
+       RNO INTEGER NOT NULL,
+       CNO INTEGER,
+       HNO INTEGER,
+       TYPE VARCHAR(6),
+       ARRIVAL DATE NOT NULL,
+       DEPARTURE DATE NOT NULL,
+       PRIMARY KEY (
+           "RESNO", "ARRIVAL"
+       ),
+       FOREIGN KEY(CNO) REFERENCES CUSTOMER,
+       FOREIGN KEY(HNO) REFERENCES HOTEL
+   );
 
-    CREATE TABLE MAINTENANCE(
-        MNO INTEGER PRIMARY KEY,
-        HNO INTEGER,
-        DESCRIPTION VARCHAR(100),
-        DATE_PERFORMED DATE,
-        PERFORMED_BY VARCHAR(40),
-        FOREIGN KEY(HNO) REFERENCES HOTEL
-    );
+   CREATE TABLE MAINTENANCE(
+       MNO INTEGER PRIMARY KEY,
+       HNO INTEGER,
+       DESCRIPTION VARCHAR(100),
+       DATE_PERFORMED DATE,
+       PERFORMED_BY VARCHAR(40),
+       FOREIGN KEY(HNO) REFERENCES HOTEL
+   );
 
-    --Note the use of the schema name in the FROM clause
-    CREATE OR REPLACE VIEW HOTEL_ROOMS_VIEW AS
-    SELECT
-        H.NAME AS HOTEL_NAME,
-        R.TYPE,
-        R.FREE,
-        R.PRICE
-    FROM HOTELS.ROOM R
-        LEFT JOIN HOTELS.HOTEL H ON R.HNO = H.HNO
-            ORDER BY H.NAME;
+   --Note the use of the schema name in the FROM clause
+   CREATE OR REPLACE VIEW HOTEL_ROOMS_VIEW AS
+   SELECT
+       H.NAME AS HOTEL_NAME,
+       R.TYPE,
+       R.FREE,
+       R.PRICE
+   FROM HOTELS.ROOM R
+       LEFT JOIN HOTELS.HOTEL H ON R.HNO = H.HNO
+           ORDER BY H.NAME;
 
-    CREATE OR REPLACE FUNCTION AVERAGE_PRICE(room_type CHAR(6))
-    RETURNS NUMERIC(6, 2)
-    BEGIN
-        DECLARE avg_price NUMERIC(6,2);  
-        SELECT CAST(ROUND(sum(PRICE)/COUNT(*), 2) as NUMERIC(6,2)) INTO avg_price FROM ROOM WHERE TYPE = room_type GROUP BY TYPE;
-        RETURN avg_price;
-    END;
+   CREATE OR REPLACE FUNCTION AVERAGE_PRICE(room_type CHAR(6))
+   RETURNS NUMERIC(6, 2)
+   BEGIN
+       DECLARE avg_price NUMERIC(6,2);  
+       SELECT CAST(ROUND(sum(PRICE)/COUNT(*), 2) as NUMERIC(6,2)) INTO avg_price FROM ROOM WHERE TYPE = room_type GROUP BY TYPE;
+       RETURN avg_price;
+   END;
 
-    CREATE OR REPLACE PROCEDURE SHOW_RESERVATIONS(
-        IN IN_HNO INTEGER, IN IN_ARRIVAL DATE)
-        RESULT (RESNO INTEGER, ARRIVAL DATE, NIGHTS INTEGER, HOTEL_NAME VARCHAR(50),TITLE VARCHAR(7), FIRST_NAME VARCHAR(20), LAST_NAME VARCHAR(40))
-        BEGIN
-            MESSAGE IN_HNO TO CLIENT;
-            MESSAGE IN_ARRIVAL TO CLIENT;
-        SELECT
-            R.RESNO,
-            R.ARRIVAL,
-            DATEDIFF(DAY, R.ARRIVAL, R.DEPARTURE) as "Nights",
-            H.NAME,
-            CUS.TITLE,
-            CUS.FIRSTNAME AS "FIRST NAME",
-            CUS.NAME AS "LAST NAME"
-        FROM
-            RESERVATION AS R
-            LEFT OUTER JOIN
-            HOTEL AS H
-            ON H.HNO = R.HNO
-            LEFT OUTER JOIN
-            CUSTOMER AS CUS
-            ON CUS.CNO = R.CNO
-            WHERE R.ARRIVAL = IN_ARRIVAL AND
-            H.HNO = IN_HNO
-            ORDER BY CUS.NAME ASC;
-        END;
-    ```
+   CREATE OR REPLACE PROCEDURE SHOW_RESERVATIONS(
+       IN IN_HNO INTEGER, IN IN_ARRIVAL DATE)
+       RESULT (RESNO INTEGER, ARRIVAL DATE, NIGHTS INTEGER, HOTEL_NAME VARCHAR(50),TITLE VARCHAR(7), FIRST_NAME VARCHAR(20), LAST_NAME VARCHAR(40))
+       BEGIN
+           MESSAGE IN_HNO TO CLIENT;
+           MESSAGE IN_ARRIVAL TO CLIENT;
+       SELECT
+           R.RESNO,
+           R.ARRIVAL,
+           DATEDIFF(DAY, R.ARRIVAL, R.DEPARTURE) as "Nights",
+           H.NAME,
+           CUS.TITLE,
+           CUS.FIRSTNAME AS "FIRST NAME",
+           CUS.NAME AS "LAST NAME"
+       FROM
+           RESERVATION AS R
+           LEFT OUTER JOIN
+           HOTEL AS H
+           ON H.HNO = R.HNO
+           LEFT OUTER JOIN
+           CUSTOMER AS CUS
+           ON CUS.CNO = R.CNO
+           WHERE R.ARRIVAL = IN_ARRIVAL AND
+           H.HNO = IN_HNO
+           ORDER BY CUS.NAME ASC;
+       END;
+   ```
 
 4. Open the database objects app.  Select the instance, select **Tables**, and set the schema filter to be **HOTELS** to limit the returned tables to be those that were just created in the HOTELS schema. 
 
@@ -319,15 +319,15 @@ Ensure that [SAP JVM (Java Virtual Machine) 8.0](https://tools.hana.ondemand.com
 
 1. Extract the archive.
 
-    ```Shell (Linux)
-    tar -zxvf hdlclient-latest-linux-x64.tar.gz
-    ```
+   ```Shell (Linux)
+   tar -zxvf hdlclient-latest-linux-x64.tar.gz
+   ```
 
 2. Start the installer.
 
-    ```Shell (Linux)
-    ./hdbinst
-    ```  
+   ```Shell (Linux)
+   ./hdbinst
+   ```  
 
     ![run the installer](hdbinst.png)  
 
@@ -335,34 +335,34 @@ Ensure that [SAP JVM (Java Virtual Machine) 8.0](https://tools.hana.ondemand.com
 
     Open the `.bashrc`.
 
-    ```Shell (Linux)
-    pico ~/.bashrc
-    ```
+   ```Shell (Linux)
+   pico ~/.bashrc
+   ```
 
     >This tutorial uses notepad and `pico` as default text editors, but any text editor will do.
     >`Pico` can be installed on SUSE Linux with
 
     >```Shell (Linux SUSE)
-    sudo zypper install pico
+    >sudo zypper install pico
     >```
 
     Add the following line to point to the location where the SAP data lake client is installed.
 
-    ```Shell (Linux) .bash_profile
-    source ~/sap/hdlclient/bin64/hdlclienv.sh
-    ```
+   ```Shell (Linux) .bash_profile
+   source ~/sap/hdlclient/bin64/hdlclienv.sh
+   ```
 
     Test the change by running:
 
-    ```Shell (Linux)
-    source ~/.bashrc
-    ```
+   ```Shell (Linux)
+   source ~/.bashrc
+   ```
 
     The following command should display the install location of the data lake client.
 
-    ```Shell (Linux)
-    echo $HDL_CLIENT_HOME
-    ```
+   ```Shell (Linux)
+   echo $HDL_CLIENT_HOME
+   ```
 
     >In the case that the data lake client needs to be uninstalled, run the `hdbuninst` file located in the directory `~/sap/hdlclient/install`.
 
@@ -404,9 +404,9 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 
 1. DBISQL requires SAP JVM 8.0.  Verify that you have this installed by entering java -version as shown below.
 
-    ```Shell
-    java -version
-    ```
+   ```Shell
+   java -version
+   ```
 
     ![java version](java-version.png)
 
@@ -489,13 +489,13 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
     >DBISQL can also be started without a GUI.
     >
     >```Shell (Microsoft Windows)
-    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.xxxx-xxxx.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
+    >dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.xxxx-xxxx.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
     >```
     >
     >In a Bash shell, strings in double quotes versus single quotes are treated [differently](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash).
     >
     >```Shell (Linux)
-    dbisql -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
+    >dbisql -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
     >```
 
     >NOTE:-If you encounter the error message "error while loading shared libraries: libnsl.so.1: cannot open shared object file: No such file or directory," you will need to install libnsl.so.1.
@@ -509,115 +509,115 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 
     >If you do not wish to use the GUI mode, paste the insert statements into a file first and then run `dbisql -c "uid..." sql.sql`.
 
-    ```SQL
-    SET SCHEMA HOTELS;
-    INSERT INTO HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
-    INSERT INTO HOTEL VALUES(11, 'Regency', '477 17th Avenue', 'Seattle', 'WA', '20037');
-    INSERT INTO HOTEL VALUES(12, 'Long Island', '1499 Grove Street', 'Long Island', 'NY', '11788');
-    INSERT INTO HOTEL VALUES(13, 'Empire State', '65 Yellowstone Dr.', 'Albany', 'NY', '12203');
-    INSERT INTO HOTEL VALUES(14, 'Midtown', '12 Barnard St.', 'New York', 'NY', '10019');
-    INSERT INTO HOTEL VALUES(15, 'Eighth Avenue', '112 8th Avenue', 'New York', 'NY', '10019');
-    INSERT INTO HOTEL VALUES(16, 'Lake Michigan', '354 OAK Terrace', 'Chicago', 'IL', '60601');
-    INSERT INTO HOTEL VALUES(17, 'Airport', '650 C Parkway', 'Rosemont', 'IL', '60018');
-    INSERT INTO HOTEL VALUES(18, 'Sunshine', '200 Yellowstone Dr.', 'Clearwater', 'FL', '33575');
-    INSERT INTO HOTEL VALUES(19, 'Beach', '1980 34th St.', 'Daytona Beach', 'FL', '32018');
-    INSERT INTO HOTEL VALUES(20, 'Atlantic', '111 78th St.', 'Deerfield Beach', 'FL', '33441');
-    INSERT INTO HOTEL VALUES(21, 'Long Beach', '35 Broadway', 'Long Beach', 'CA', '90804');
-    INSERT INTO HOTEL VALUES(22, 'Indian Horse', '16 MAIN STREET', 'Palm Springs', 'CA', '92262');
-    INSERT INTO HOTEL VALUES(23, 'Star', '13 Beechwood Place', 'Hollywood', 'CA', '90029');
-    INSERT INTO HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '70112');
-    INSERT INTO HOTEL VALUES(25, 'Ocean Star', '45 Pacific Avenue', 'Atlantic City', 'NJ', '08401');
-    INSERT INTO HOTEL VALUES(26, 'Bella Ciente', '1407 Marshall Ave', 'Longview', 'TX', '75601');
+   ```SQL
+   SET SCHEMA HOTELS;
+   INSERT INTO HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
+   INSERT INTO HOTEL VALUES(11, 'Regency', '477 17th Avenue', 'Seattle', 'WA', '20037');
+   INSERT INTO HOTEL VALUES(12, 'Long Island', '1499 Grove Street', 'Long Island', 'NY', '11788');
+   INSERT INTO HOTEL VALUES(13, 'Empire State', '65 Yellowstone Dr.', 'Albany', 'NY', '12203');
+   INSERT INTO HOTEL VALUES(14, 'Midtown', '12 Barnard St.', 'New York', 'NY', '10019');
+   INSERT INTO HOTEL VALUES(15, 'Eighth Avenue', '112 8th Avenue', 'New York', 'NY', '10019');
+   INSERT INTO HOTEL VALUES(16, 'Lake Michigan', '354 OAK Terrace', 'Chicago', 'IL', '60601');
+   INSERT INTO HOTEL VALUES(17, 'Airport', '650 C Parkway', 'Rosemont', 'IL', '60018');
+   INSERT INTO HOTEL VALUES(18, 'Sunshine', '200 Yellowstone Dr.', 'Clearwater', 'FL', '33575');
+   INSERT INTO HOTEL VALUES(19, 'Beach', '1980 34th St.', 'Daytona Beach', 'FL', '32018');
+   INSERT INTO HOTEL VALUES(20, 'Atlantic', '111 78th St.', 'Deerfield Beach', 'FL', '33441');
+   INSERT INTO HOTEL VALUES(21, 'Long Beach', '35 Broadway', 'Long Beach', 'CA', '90804');
+   INSERT INTO HOTEL VALUES(22, 'Indian Horse', '16 MAIN STREET', 'Palm Springs', 'CA', '92262');
+   INSERT INTO HOTEL VALUES(23, 'Star', '13 Beechwood Place', 'Hollywood', 'CA', '90029');
+   INSERT INTO HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '70112');
+   INSERT INTO HOTEL VALUES(25, 'Ocean Star', '45 Pacific Avenue', 'Atlantic City', 'NJ', '08401');
+   INSERT INTO HOTEL VALUES(26, 'Bella Ciente', '1407 Marshall Ave', 'Longview', 'TX', '75601');
 
-    INSERT INTO ROOM VALUES(10, 'single', 20, 135.00);
-    INSERT INTO ROOM VALUES(10, 'double', 45, 200.00);
-    INSERT INTO ROOM VALUES(12, 'single', 10, 70.00);
-    INSERT INTO ROOM VALUES(12, 'double', 13, 100.00);
-    INSERT INTO ROOM VALUES(13, 'single', 12, 45.00);
-    INSERT INTO ROOM VALUES(13, 'double', 15, 80.00);
-    INSERT INTO ROOM VALUES(14, 'single', 20, 85.00);
-    INSERT INTO ROOM VALUES(14, 'double', 35, 140.00);
-    INSERT INTO ROOM VALUES(15, 'single', 50, 105.00);
-    INSERT INTO ROOM VALUES(15, 'double', 230, 180.00);
-    INSERT INTO ROOM VALUES(15, 'suite', 12, 500.00);
-    INSERT INTO ROOM VALUES(16, 'single', 10, 120.00);
-    INSERT INTO ROOM VALUES(16, 'double', 39, 200.00);
-    INSERT INTO ROOM VALUES(16, 'suite', 20, 500.00);
-    INSERT INTO ROOM VALUES(17, 'single', 4, 115.00);
-    INSERT INTO ROOM VALUES(17, 'double', 11, 180.00);
-    INSERT INTO ROOM VALUES(18, 'single', 15, 90.00);
-    INSERT INTO ROOM VALUES(18, 'double', 19, 150.00);
-    INSERT INTO ROOM VALUES(18, 'suite', 5, 400.00);
-    INSERT INTO ROOM VALUES(19, 'single', 45, 90.00);
-    INSERT INTO ROOM VALUES(19, 'double', 145, 150.00);
-    INSERT INTO ROOM VALUES(19, 'suite', 60, 300.00);
-    INSERT INTO ROOM VALUES(20, 'single', 11, 60.00);
-    INSERT INTO ROOM VALUES(20, 'double', 24, 100.00);
-    INSERT INTO ROOM VALUES(21, 'single', 2, 70.00);
-    INSERT INTO ROOM VALUES(21, 'double', 10, 130.00);
-    INSERT INTO ROOM VALUES(22, 'single', 34, 80.00);
-    INSERT INTO ROOM VALUES(22, 'double', 78, 140.00);
-    INSERT INTO ROOM VALUES(22, 'suite', 55, 350.00);
-    INSERT INTO ROOM VALUES(23, 'single', 89, 160.00);
-    INSERT INTO ROOM VALUES(23, 'double', 300, 270.00);
-    INSERT INTO ROOM VALUES(23, 'suite', 100, 700.00);
-    INSERT INTO ROOM VALUES(24, 'single', 10, 125.00);
-    INSERT INTO ROOM VALUES(24, 'double', 9, 200.00);
-    INSERT INTO ROOM VALUES(24, 'suite', 78, 600.00);
-    INSERT INTO ROOM VALUES(25, 'single', 44, 100.00);
-    INSERT INTO ROOM VALUES(25, 'double', 115, 190.00);
-    INSERT INTO ROOM VALUES(25, 'suite', 6, 450.00);
+   INSERT INTO ROOM VALUES(10, 'single', 20, 135.00);
+   INSERT INTO ROOM VALUES(10, 'double', 45, 200.00);
+   INSERT INTO ROOM VALUES(12, 'single', 10, 70.00);
+   INSERT INTO ROOM VALUES(12, 'double', 13, 100.00);
+   INSERT INTO ROOM VALUES(13, 'single', 12, 45.00);
+   INSERT INTO ROOM VALUES(13, 'double', 15, 80.00);
+   INSERT INTO ROOM VALUES(14, 'single', 20, 85.00);
+   INSERT INTO ROOM VALUES(14, 'double', 35, 140.00);
+   INSERT INTO ROOM VALUES(15, 'single', 50, 105.00);
+   INSERT INTO ROOM VALUES(15, 'double', 230, 180.00);
+   INSERT INTO ROOM VALUES(15, 'suite', 12, 500.00);
+   INSERT INTO ROOM VALUES(16, 'single', 10, 120.00);
+   INSERT INTO ROOM VALUES(16, 'double', 39, 200.00);
+   INSERT INTO ROOM VALUES(16, 'suite', 20, 500.00);
+   INSERT INTO ROOM VALUES(17, 'single', 4, 115.00);
+   INSERT INTO ROOM VALUES(17, 'double', 11, 180.00);
+   INSERT INTO ROOM VALUES(18, 'single', 15, 90.00);
+   INSERT INTO ROOM VALUES(18, 'double', 19, 150.00);
+   INSERT INTO ROOM VALUES(18, 'suite', 5, 400.00);
+   INSERT INTO ROOM VALUES(19, 'single', 45, 90.00);
+   INSERT INTO ROOM VALUES(19, 'double', 145, 150.00);
+   INSERT INTO ROOM VALUES(19, 'suite', 60, 300.00);
+   INSERT INTO ROOM VALUES(20, 'single', 11, 60.00);
+   INSERT INTO ROOM VALUES(20, 'double', 24, 100.00);
+   INSERT INTO ROOM VALUES(21, 'single', 2, 70.00);
+   INSERT INTO ROOM VALUES(21, 'double', 10, 130.00);
+   INSERT INTO ROOM VALUES(22, 'single', 34, 80.00);
+   INSERT INTO ROOM VALUES(22, 'double', 78, 140.00);
+   INSERT INTO ROOM VALUES(22, 'suite', 55, 350.00);
+   INSERT INTO ROOM VALUES(23, 'single', 89, 160.00);
+   INSERT INTO ROOM VALUES(23, 'double', 300, 270.00);
+   INSERT INTO ROOM VALUES(23, 'suite', 100, 700.00);
+   INSERT INTO ROOM VALUES(24, 'single', 10, 125.00);
+   INSERT INTO ROOM VALUES(24, 'double', 9, 200.00);
+   INSERT INTO ROOM VALUES(24, 'suite', 78, 600.00);
+   INSERT INTO ROOM VALUES(25, 'single', 44, 100.00);
+   INSERT INTO ROOM VALUES(25, 'double', 115, 190.00);
+   INSERT INTO ROOM VALUES(25, 'suite', 6, 450.00);
 
-    INSERT INTO CUSTOMER VALUES(1000, 'Mrs', 'Jenny', 'Porter', '1340 N. Ash Street, #3', '10580');
-    INSERT INTO CUSTOMER VALUES(1001, 'Mr', 'Peter', 'Brown', '1001 34th St., APT.3', '48226');
-    INSERT INTO CUSTOMER VALUES(1002, 'Company', NULL, 'Datasoft', '486 Maple St.', '90018');
-    INSERT INTO CUSTOMER VALUES(1003, 'Mrs', 'Rose', 'Brian', '500 Yellowstone Drive, #2', '75243');
-    INSERT INTO CUSTOMER VALUES(1004, 'Mrs', 'Mary', 'Griffith', '3401 Elder Lane', '20005');
-    INSERT INTO CUSTOMER VALUES(1005, 'Mr', 'Martin', 'Randolph', '340 MAIN STREET, #7', '60615');
-    INSERT INTO CUSTOMER VALUES(1006, 'Mrs', 'Sally', 'Smith', '250 Curtis Street', '75243');
-    INSERT INTO CUSTOMER VALUES(1007, 'Mr', 'Mike', 'Jackson', '133 BROADWAY APT. 1', '45211');
-    INSERT INTO CUSTOMER VALUES(1008, 'Mrs', 'Rita', 'Doe', '2000 Humboldt St., #6', '97213');
-    INSERT INTO CUSTOMER VALUES(1009, 'Mr', 'George', 'Howe', '111 B Parkway, #23', '75243');
-    INSERT INTO CUSTOMER VALUES(1010, 'Mr', 'Frank', 'Miller', '27 5th St., 76', '95054');
-    INSERT INTO CUSTOMER VALUES(1011, 'Mrs', 'Susan', 'Baker', '200 MAIN STREET, #94', '90018');
-    INSERT INTO CUSTOMER VALUES(1012, 'Mr', 'Joseph', 'Peters', '700 S. Ash St., APT.12', '92714');
-    INSERT INTO CUSTOMER VALUES(1013, 'Company', NULL, 'TOOLware', '410 Mariposa St., #10', '20019');
-    INSERT INTO CUSTOMER VALUES(1014, 'Mr', 'Antony', 'Jenkins', '55 A Parkway, #15', '20903');
+   INSERT INTO CUSTOMER VALUES(1000, 'Mrs', 'Jenny', 'Porter', '1340 N. Ash Street, #3', '10580');
+   INSERT INTO CUSTOMER VALUES(1001, 'Mr', 'Peter', 'Brown', '1001 34th St., APT.3', '48226');
+   INSERT INTO CUSTOMER VALUES(1002, 'Company', NULL, 'Datasoft', '486 Maple St.', '90018');
+   INSERT INTO CUSTOMER VALUES(1003, 'Mrs', 'Rose', 'Brian', '500 Yellowstone Drive, #2', '75243');
+   INSERT INTO CUSTOMER VALUES(1004, 'Mrs', 'Mary', 'Griffith', '3401 Elder Lane', '20005');
+   INSERT INTO CUSTOMER VALUES(1005, 'Mr', 'Martin', 'Randolph', '340 MAIN STREET, #7', '60615');
+   INSERT INTO CUSTOMER VALUES(1006, 'Mrs', 'Sally', 'Smith', '250 Curtis Street', '75243');
+   INSERT INTO CUSTOMER VALUES(1007, 'Mr', 'Mike', 'Jackson', '133 BROADWAY APT. 1', '45211');
+   INSERT INTO CUSTOMER VALUES(1008, 'Mrs', 'Rita', 'Doe', '2000 Humboldt St., #6', '97213');
+   INSERT INTO CUSTOMER VALUES(1009, 'Mr', 'George', 'Howe', '111 B Parkway, #23', '75243');
+   INSERT INTO CUSTOMER VALUES(1010, 'Mr', 'Frank', 'Miller', '27 5th St., 76', '95054');
+   INSERT INTO CUSTOMER VALUES(1011, 'Mrs', 'Susan', 'Baker', '200 MAIN STREET, #94', '90018');
+   INSERT INTO CUSTOMER VALUES(1012, 'Mr', 'Joseph', 'Peters', '700 S. Ash St., APT.12', '92714');
+   INSERT INTO CUSTOMER VALUES(1013, 'Company', NULL, 'TOOLware', '410 Mariposa St., #10', '20019');
+   INSERT INTO CUSTOMER VALUES(1014, 'Mr', 'Antony', 'Jenkins', '55 A Parkway, #15', '20903');
 
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(100, 1000, 11, 'single', '2020-12-24', '2020-12-27');
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(110, 1001, 11, 'double', '2020-12-24', '2021-01-03');
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(120, 1002, 15, 'suite', '2020-11-14', '2020-11-18');
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(130, 1009, 21, 'single', '2019-02-01', '2019-02-03');
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(150, 1006, 17, 'double', '2019-03-14', '2019-03-24');
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(140, 1013, 20, 'double', '2020-04-12', '2020-04-30');
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(160, 1011, 17, 'single', '2020-04-12', '2020-04-15');
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(170, 1014, 25, 'suite', '2020-09-01', '2020-09-03');
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(180, 1001, 22, 'double', '2020-12-23', '2021-01-08');
-    INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(190, 1013, 24, 'double', '2020-11-14', '2020-11-17');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(100, 1000, 11, 'single', '2020-12-24', '2020-12-27');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(110, 1001, 11, 'double', '2020-12-24', '2021-01-03');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(120, 1002, 15, 'suite', '2020-11-14', '2020-11-18');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(130, 1009, 21, 'single', '2019-02-01', '2019-02-03');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(150, 1006, 17, 'double', '2019-03-14', '2019-03-24');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(140, 1013, 20, 'double', '2020-04-12', '2020-04-30');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(160, 1011, 17, 'single', '2020-04-12', '2020-04-15');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(170, 1014, 25, 'suite', '2020-09-01', '2020-09-03');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(180, 1001, 22, 'double', '2020-12-23', '2021-01-08');
+   INSERT INTO RESERVATION(rno, cno, hno, type, arrival, departure) VALUES(190, 1013, 24, 'double', '2020-11-14', '2020-11-17');
 
-    INSERT INTO MAINTENANCE VALUES(10, 24, 'Replace pool liner and pump', '2019-03-21', 'Discount Pool Supplies');
-    INSERT INTO MAINTENANCE VALUES(11, 25, 'Renovate the bar area.  Replace TV and speakers', '2020-11-29', 'TV and Audio Superstore');
-    INSERT INTO MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
-    COMMIT;
-    ```
+   INSERT INTO MAINTENANCE VALUES(10, 24, 'Replace pool liner and pump', '2019-03-21', 'Discount Pool Supplies');
+   INSERT INTO MAINTENANCE VALUES(11, 25, 'Renovate the bar area.  Replace TV and speakers', '2020-11-29', 'TV and Audio Superstore');
+   INSERT INTO MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
+   COMMIT;
+   ```
 
     Additional details on the SQL used above can be found at [INSERT Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/insert-statement-for-data-lake-relational-engine). Moreover, the [LOAD TABLE Statement for Data Lake Relational Engine](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/load-table-statement-for-data-lake-relational-engine) can be used for efficient mass insertion into a database table from a file with ASCII or binary data.
 
     >Autocommit is set to on in the SQL console of the database explorer, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL console if they are surrounded with begin and end or if autocommit is set to off.
     >
-    ```SQL
-    begin
-    INSERT INTO HOTELS.ROOM VALUES(11, 'double', 13, 190.00);
-    INSERT INTO HOTELS.ROOM VALUES(11, 'single', 15, 175.00);
-    end;
-    ```
+   ```SQL
+   begin
+   INSERT INTO HOTELS.ROOM VALUES(11, 'double', 13, 190.00);
+   INSERT INTO HOTELS.ROOM VALUES(11, 'single', 15, 175.00);
+   end;
+   ```
 
-    ```SQL
-    set temporary option auto_commit= 'off';
-    INSERT INTO HOTELS.ROOM VALUES(11, 'triple', 7, 235.00);
-    INSERT INTO HOTELS.ROOM VALUES(11, 'quad', 5, 275.00);
-    set temporary option auto_commit= 'on';
-    ```
+   ```SQL
+   set temporary option auto_commit= 'off';
+   INSERT INTO HOTELS.ROOM VALUES(11, 'triple', 7, 235.00);
+   INSERT INTO HOTELS.ROOM VALUES(11, 'quad', 5, 275.00);
+   set temporary option auto_commit= 'on';
+   ```
     >
     >Autocommit can also be set via the connection settings dialog.
     >
@@ -631,22 +631,22 @@ The data lake client install includes [dbisql Interactive SQL Utility](https://h
 
     Query a table, a view, invoke a function, and call a stored procedure.
 
-    ```SQL
-    SET SCHEMA HOTELS;
-    SELECT * FROM HOTEL;
-    SELECT * FROM HOTEL_ROOMS_VIEW;
-    SELECT AVERAGE_PRICE('single'), AVERAGE_PRICE('double'), AVERAGE_PRICE('suite') FROM DUMMY;
-    CALL SHOW_RESERVATIONS(11, '2020-12-24');
-    ```
+   ```SQL
+   SET SCHEMA HOTELS;
+   SELECT * FROM HOTEL;
+   SELECT * FROM HOTEL_ROOMS_VIEW;
+   SELECT AVERAGE_PRICE('single'), AVERAGE_PRICE('double'), AVERAGE_PRICE('suite') FROM DUMMY;
+   CALL SHOW_RESERVATIONS(11, '2020-12-24');
+   ```
 
     ![Query in DBISQL](dbisql-query.png)
 
 3. DBISQL can also execute SQL from the command line or from a provided file. A few examples are shown below.
 
-    ```Shell
-    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTELS.CUSTOMER;"
-    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
-    ```
+   ```Shell
+   dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTELS.CUSTOMER;"
+   dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
+   ```
 
     ![DBISQL in batch mode](dbisql-batch.png)
 

@@ -61,77 +61,77 @@ See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-clo
 
     >The HOMEPATH environment variable should resolve to your user in your user's folder such as c:\users\dan.  Its value can be seen on Microsoft Windows by entering echo %HOMEPATH% into a shell.
 
-    ```Shell (Microsoft Windows)
-    mkdir %HOMEPATH%\DataLakeClientsTutorial\java
-    cd %HOMEPATH%\DataLakeClientsTutorial\java
-    notepad JavaQuery.java
-    ```
+   ```Shell (Microsoft Windows)
+   mkdir %HOMEPATH%\DataLakeClientsTutorial\java
+   cd %HOMEPATH%\DataLakeClientsTutorial\java
+   notepad JavaQuery.java
+   ```
 
-    ```Shell (Linux)
-    mkdir -p ~/DataLakeClientsTutorial/java
-    cd ~/DataLakeClientsTutorial/java
-    pico JavaQuery.java
-    ```
+   ```Shell (Linux)
+   mkdir -p ~/DataLakeClientsTutorial/java
+   cd ~/DataLakeClientsTutorial/java
+   pico JavaQuery.java
+   ```
 
 2. Copy the following code into `JavaQuery.java`. Update the `host` value in the connection string.
 
-    ```Java
-    import java.sql.*;
-    public class JavaQuery {
-        public static void main(String[] argv) {
-            Connection connection = null;
-            try {
-                //Option 1
-                connection = DriverManager.getConnection("jdbc:sqlanywhere:uid=USER1;pwd=Password1;Host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC='TLS{tls_type=rsa;direct=yes}'");
+   ```Java
+   import java.sql.*;
+   public class JavaQuery {
+       public static void main(String[] argv) {
+           Connection connection = null;
+           try {
+               //Option 1
+               connection = DriverManager.getConnection("jdbc:sqlanywhere:uid=USER1;pwd=Password1;Host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC='TLS{tls_type=rsa;direct=yes}'");
 
-                //Option 2, the connection properties can be loaded from an ODBC datasource.
-                //connection = DriverManager.getConnection("jdbc:sqlanywhere:DSN=HC_HDL_Trial;LOG=myLog.log");  
-                //The LOG option is helpful when diagnosing connection issues.
-            }
-            catch (SQLException e) {
-                System.err.println("Connection Failed:");
-                System.err.println(e);
-                return;
-            }
-            if (connection != null) {
-                try {
-                    System.out.println("Connection to data lake Relational Engine successful!");
-                    Statement stmt = connection.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;");
-                    while (resultSet.next()) {
-                        String title = resultSet.getString(1);
-                        String firstName = resultSet.getString(2);
-                        String lastName = resultSet.getString(3);
-                        System.out.println(title + " " + firstName + " " + lastName);
-                    }
-                }
-                catch (SQLException e) {
-                    System.err.println("Query failed!");
-                }
-            }
-        }
-    }
-    ```
+               //Option 2, the connection properties can be loaded from an ODBC datasource.
+               //connection = DriverManager.getConnection("jdbc:sqlanywhere:DSN=HC_HDL_Trial;LOG=myLog.log");  
+               //The LOG option is helpful when diagnosing connection issues.
+           }
+           catch (SQLException e) {
+               System.err.println("Connection Failed:");
+               System.err.println(e);
+               return;
+           }
+           if (connection != null) {
+               try {
+                   System.out.println("Connection to data lake Relational Engine successful!");
+                   Statement stmt = connection.createStatement();
+                   ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER;");
+                   while (resultSet.next()) {
+                       String title = resultSet.getString(1);
+                       String firstName = resultSet.getString(2);
+                       String lastName = resultSet.getString(3);
+                       System.out.println(title + " " + firstName + " " + lastName);
+                   }
+               }
+               catch (SQLException e) {
+                   System.err.println("Query failed!");
+               }
+           }
+       }
+   }
+   ```
 
 3. Save and close `JavaQuery.java`. On Microsoft Windows, ensure that you are using the command prompt to run the following. 
 
     Compile the `.java` file into a `.class` file using the following command:
 
-    ```Shell (Microsoft Windows)
-    javac -cp %HDL_CLIENT_HOME%\Java\sajdbc4.jar;. JavaQuery.java
-    ```  
-    ```Shell (Linux)
-    javac -cp $HDL_CLIENT_HOME/java/sajdbc4.jar:. JavaQuery.java
-    ```  
+   ```Shell (Microsoft Windows)
+   javac -cp %HDL_CLIENT_HOME%\Java\sajdbc4.jar;. JavaQuery.java
+   ```  
+   ```Shell (Linux)
+   javac -cp $HDL_CLIENT_HOME/java/sajdbc4.jar:. JavaQuery.java
+   ```  
 
 4. Run `JavaQuery.class` and indicate where the JDBC driver is located.  
 
-    ```Shell (Microsoft Windows)
-    java -classpath %HDL_CLIENT_HOME%\Java\sajdbc4.jar;. JavaQuery
-    ```  
-    ```Shell (Linux)
-    java -classpath $HDL_CLIENT_HOME/java/sajdbc4.jar:. JavaQuery
-    ```  
+   ```Shell (Microsoft Windows)
+   java -classpath %HDL_CLIENT_HOME%\Java\sajdbc4.jar;. JavaQuery
+   ```  
+   ```Shell (Linux)
+   java -classpath $HDL_CLIENT_HOME/java/sajdbc4.jar:. JavaQuery
+   ```  
 
     ![Java Query](jdbc-query.png)
 
