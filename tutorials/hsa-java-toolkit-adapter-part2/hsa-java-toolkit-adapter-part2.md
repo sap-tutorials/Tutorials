@@ -70,24 +70,24 @@ The first abstract method we will implement is `void init()`. The purpose of thi
 
   1. First, we want to get the Topic parameter value. This value is set by the streaming developer when configuring the adapter in Studio.
 
-    We can get the value of Topic by calling:
+   We can get the value of Topic by calling:
 
-    ```java
-    utility.getParameters().getString("MQTTInputTransporterParamet
-    ers.Topic");
-    ```
-    > The `MQTTInputTransporterParameters` prefix is defined in our adapter configuration file.
+   ```java
+   utility.getParameters().getString("MQTTInputTransporterParamet
+   ers.Topic");
+   ```
+   > The `MQTTInputTransporterParameters` prefix is defined in our adapter configuration file.
 
 
   2. Next, create an `MqttClient`. The constructor takes `serverURI` - the address of the server to connect to, specified as a `URI` and `clientId` - a client identifier that is unique on the server being connected to.
 
-    We will use the `MosquittoServerAddress` defined by the streaming developer and a unique string
+   We will use the `MosquittoServerAddress` defined by the streaming developer and a unique string
 
-    ```java
-    client = new
-    MqttClient(utility.getParameters().getString("MQTTInputTranspo
-    rterParameters.MosquittoServerAddress"), "MQTT_ESP");
-    ```
+   ```java
+   client = new
+   MqttClient(utility.getParameters().getString("MQTTInputTranspo
+   rterParameters.MosquittoServerAddress"), "MQTT_ESP");
+   ```
 
   3. Connect the `MqttClient` with `client.connect();`
 
@@ -95,10 +95,10 @@ The first abstract method we will implement is `void init()`. The purpose of thi
 
   5. Instantiate an `MqttCB` object and assign it to our `MqttClient`. `MqttCB` is a custom `MqttCallback` class written for this adapter. The code for it is provided in the appendix section of this tutorial.
 
-    ```java
-    cb = new MqttCB();
-    client.setCallback(cb);
-    ```
+   ```java
+   cb = new MqttCB();
+   client.setCallback(cb);
+   ```
 
 The second abstract method we have to implement is `void start()`. The purpose of this method is to perform any necessary tasks when the adapter is started. For our purposes, it is not necessary to
 include any instructions in this method so we will leave it empty.
@@ -107,29 +107,29 @@ The third and most important method to implement is `void execute()`. When the a
 
   1. As such, we will wrap our functionality in a loop that iterates until the adapter has been issued a stop request. Following this loop – and ending the method – is an instruction to change the adapter `RunState` to done.
 
-    ```java
-    while(!utility.isStopRequested())
-    {
-    //steps b-d
-    }
-    utility.setAdapterState(RunState.RS_DONE);
-    ```
+   ```java
+   while(!utility.isStopRequested())
+   {
+   //steps b-d
+   }
+   utility.setAdapterState(RunState.RS_DONE);
+   ```
 
   2. While the adapter has not been requested to stop, we will continuously check for new `MQTT` messages. The `takeNewMsg()` method will return `null` if there are no new messages, or take the message out of the message queue and return it. When a new message is received, we will process it within the `if` statement.
 
-    ```java
-    String msg;
-    if ((msg = cb.takeNewMsg()) != null){
-    //steps c-d
-    }
-    ```
+   ```java
+   String msg;
+   if ((msg = cb.takeNewMsg()) != null){
+   //steps c-d
+   }
+   ```
 
   3. Once we have received a message, we need to create an `AdapterRow` and send it to our `Formatter` module.
 
-    ```java
-    AdapterRow row = utility.createRow(cb.getRcvdMsg());
-    utility.sendRow(row);
-    ```
+   ```java
+   AdapterRow row = utility.createRow(cb.getRcvdMsg());
+   utility.sendRow(row);
+   ```
 
 The fourth overridden method is `void stop()`. Its purpose is to perform any necessary tasks when the adapter is stopped. We will use this method to disconnect our `MqttClient` by issuing
 
@@ -167,11 +167,11 @@ The second method is `AdapterRow convert(AdapterRow in)`.
 
   1. First, we will test whether the received `AdapterRow` is non-empty. If this is the case, we will simply send the `AdapterRow` back.
 
-    ```java
-    if (in.getDataList().isEmpty()){
-     return in;
-    }
-    ```
+   ```java
+   if (in.getDataList().isEmpty()){
+    return in;
+   }
+   ```
 
   2. If we have reached this point in the method, the received `AdapterRow` is non-empty. Our particular Formatter will convert a `MQTT` message (String) to something usable by Streaming Analytics - an `AepRecord`. First, we will create the desired `AepRecord.`
 

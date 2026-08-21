@@ -51,9 +51,9 @@ On your client machine(s), do the following:
 
 2.  Edit the `hosts` file with the following command:
 
-    ```bash
-    sudo sh - c 'echo <ip_address_of_host>    <alias> >> /etc/hosts'
-    ```
+   ```bash
+   sudo sh - c 'echo <ip_address_of_host>    <alias> >> /etc/hosts'
+   ```
 
 
 > **Note:**
@@ -69,10 +69,10 @@ On your client machine(s), do the following:
 
 2. Open `YaST` using `sudo`.
 
-    ```bash
-    sudo -i
-    yast
-    ```
+   ```bash
+   sudo -i
+   yast
+   ```
 
 3. From __Software__ go to __Software Management__
 
@@ -104,37 +104,37 @@ On your client machine(s), do the following:
 
     Example:
 
-    ```bash
-    su -l hxeadm
-    cd /usr/sap/HXE/home
-    ```
+   ```bash
+   su -l hxeadm
+   cd /usr/sap/HXE/home
+   ```
 
 2. Create the `.odbc.ini` file.
 
-    ```bash
-    vi .odbc.ini
-    ```
+   ```bash
+   vi .odbc.ini
+   ```
 
 3. Add the following for each client machine:
 
-    ```bash
-    [<DATABASE_NAME>]
-    servernode = <client_ip_address>:3<instance_number>13
-    #location of the unixODBC driver
-    driver = /usr/sap/<sid>/HDB<instance_number>/exe/libodbcHDB.so
-    description = <optional_description>
-    databasename = <your_database_alias>
-    ```
+   ```bash
+   [<DATABASE_NAME>]
+   servernode = <client_ip_address>:3<instance_number>13
+   #location of the unixODBC driver
+   driver = /usr/sap/<sid>/HDB<instance_number>/exe/libodbcHDB.so
+   description = <optional_description>
+   databasename = <your_database_alias>
+   ```
 
     Here is an example:
 
-    ```
-    [HXECLIENT]
-    servernode = 10.100.100:39013
-    driver = /usr/sap/HXE/HDB90/exe/libodbcHDB.so
-    description = Test database for unixODBC
-    databasename = client
-    ```
+   ```
+   [HXECLIENT]
+   servernode = 10.100.100:39013
+   driver = /usr/sap/HXE/HDB90/exe/libodbcHDB.so
+   description = Test database for unixODBC
+   databasename = client
+   ```
 
 
 

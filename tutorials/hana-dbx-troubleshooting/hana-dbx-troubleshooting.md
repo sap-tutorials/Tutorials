@@ -41,15 +41,15 @@ The debugger can be used to help find issues in procedures, functions, or anonym
     >Anonymous blocks can also be debugged if the **Stop at execution start** option is checked.  An example of an anonymous block is shown below.
 
     >
-    ```SQL
-    DO BEGIN
-        USING SQLSCRIPT_PRINT AS PRTLIB;
-        DECLARE count INT := 0;
-        SQLQUERY = SELECT count(*) C from MAINTENANCE;
-        SELECT C INTO count from :SQLQUERY;
-        PRTLIB:PRINT_LINE(CONCAT('Entries in the maintenance table is: ', count));
-    END
-    ```
+   ```SQL
+   DO BEGIN
+       USING SQLSCRIPT_PRINT AS PRTLIB;
+       DECLARE count INT := 0;
+       SQLQUERY = SELECT count(*) C from MAINTENANCE;
+       SELECT C INTO count from :SQLQUERY;
+       PRTLIB:PRINT_LINE(CONCAT('Entries in the maintenance table is: ', count));
+   END
+   ```
 
 3. Set breakpoints in the procedure by clicking next to the line number.  A check mark will appear next to the line number to  indicate that a breakpoint has been set.
 
@@ -107,67 +107,67 @@ The [SQLScript code analyzer](https://help.sap.com/docs/hana-cloud-database/sap-
 
 1. Create a new procedure to generate fictitious hotel reservations. The procedure accepts a number of reservations to generate and a room type.
 
-    ```SQL
-    CREATE OR REPLACE PROCEDURE RESERVATION_GENERATOR2(
-    		IN numToGenerate INTEGER,
-    		IN rmType STRING
-    	)
-    	LANGUAGE SQLSCRIPT AS
-    BEGIN
-    	USING SQLSCRIPT_PRINT AS PRTLIB;
-    	DECLARE val INT := 0;
-    	DECLARE stmt VARCHAR(256) := '';
-    	DECLARE rno INT := 0;
-    	DECLARE cno INT := 0;
-    	DECLARE hno INT :=0;
-    	DECLARE arriveDate DATE := null;
-    	DECLARE arriveDateString STRING := '';
-    	DECLARE departDate DATE := null;
-    	DECLARE departDateString STRING := '';
-    	DECLARE randomDaysFromCurrent INT :=0;
-    	DECLARE randomLengthOfStay INT :=0;
-    	DECLARE unusedVar INT :=0;
-    	DECLARE MYCOND CONDITION FOR SQL_ERROR_CODE 10001;
-    	DECLARE EXIT HANDLER FOR SQL_ERROR_CODE 301
-    	SELECT ::SQL_ERROR_CODE, ::SQL_ERROR_MESSAGE FROM DUMMY;
-    	unusedVar := unusedVar + 1;
-    	-- IF IS_SQL_INJECTION_SAFE(rmType) <> 1 THEN
-    	--     SIGNAL MYCOND SET MESSAGE_TEXT = 'Invalid field ' || rmType;
-    	-- END IF;
+   ```SQL
+   CREATE OR REPLACE PROCEDURE RESERVATION_GENERATOR2(
+   		IN numToGenerate INTEGER,
+   		IN rmType STRING
+   	)
+   	LANGUAGE SQLSCRIPT AS
+   BEGIN
+   	USING SQLSCRIPT_PRINT AS PRTLIB;
+   	DECLARE val INT := 0;
+   	DECLARE stmt VARCHAR(256) := '';
+   	DECLARE rno INT := 0;
+   	DECLARE cno INT := 0;
+   	DECLARE hno INT :=0;
+   	DECLARE arriveDate DATE := null;
+   	DECLARE arriveDateString STRING := '';
+   	DECLARE departDate DATE := null;
+   	DECLARE departDateString STRING := '';
+   	DECLARE randomDaysFromCurrent INT :=0;
+   	DECLARE randomLengthOfStay INT :=0;
+   	DECLARE unusedVar INT :=0;
+   	DECLARE MYCOND CONDITION FOR SQL_ERROR_CODE 10001;
+   	DECLARE EXIT HANDLER FOR SQL_ERROR_CODE 301
+   	SELECT ::SQL_ERROR_CODE, ::SQL_ERROR_MESSAGE FROM DUMMY;
+   	unusedVar := unusedVar + 1;
+   	-- IF IS_SQL_INJECTION_SAFE(rmType) <> 1 THEN
+   	--     SIGNAL MYCOND SET MESSAGE_TEXT = 'Invalid field ' || rmType;
+   	-- END IF;
 
-    	WHILE (val < numToGenerate) DO
-    		-- generate random room number from 100-300
-    		rno := FLOOR(RAND_SECURE() * 200) + 1 + 100;
-    		-- generate random customer number from 1000-1014
-    		cno := FLOOR(RAND_SECURE() * 14) + 1 + 1000;
-    		-- generate random hotel number from 10-26
-    		hno := FLOOR(RAND_SECURE() * 16) + 1 + 10;
+   	WHILE (val < numToGenerate) DO
+   		-- generate random room number from 100-300
+   		rno := FLOOR(RAND_SECURE() * 200) + 1 + 100;
+   		-- generate random customer number from 1000-1014
+   		cno := FLOOR(RAND_SECURE() * 14) + 1 + 1000;
+   		-- generate random hotel number from 10-26
+   		hno := FLOOR(RAND_SECURE() * 16) + 1 + 10;
 
-            -- generate random number of days to be used for arrival date.  
-    		-- date range is one year in the past to one year in the future
-    		randomDaysFromCurrent := FLOOR(RAND_SECURE() * 730) + 1 - 365;
-    		arriveDate := ADD_DAYS( TO_DATE( CURRENT_DATE, 'YYYY-MM-DD' ), randomDaysFromCurrent );
-    		arriveDateString := '''' || TO_VARCHAR( arriveDate, 'YYYY-MM-DD' ) || '''';
-    		-- generate a random number of days to stay
-    		randomLengthOfStay := FLOOR(RAND_SECURE() * 7) + 1;
-    		departDate := ADD_DAYS( arriveDate, randomLengthOfStay );
-    		departDateString := '''' || TO_VARCHAR( departDate, 'YYYY-MM-DD' ) || '''';
+           -- generate random number of days to be used for arrival date.  
+   		-- date range is one year in the past to one year in the future
+   		randomDaysFromCurrent := FLOOR(RAND_SECURE() * 730) + 1 - 365;
+   		arriveDate := ADD_DAYS( TO_DATE( CURRENT_DATE, 'YYYY-MM-DD' ), randomDaysFromCurrent );
+   		arriveDateString := '''' || TO_VARCHAR( arriveDate, 'YYYY-MM-DD' ) || '''';
+   		-- generate a random number of days to stay
+   		randomLengthOfStay := FLOOR(RAND_SECURE() * 7) + 1;
+   		departDate := ADD_DAYS( arriveDate, randomLengthOfStay );
+   		departDateString := '''' || TO_VARCHAR( departDate, 'YYYY-MM-DD' ) || '''';
 
-            -- Reservations Columns: RNO, CNO, HNO, Type, Arrival, Departure
-    		stmt := 'INSERT INTO RESERVATION (RNO, CNO, HNO, TYPE, ARRIVAL, DEPARTURE) VALUES(' || rno || ',' || cno || ',' || hno || ',' || rmType || ',' || arriveDateString || ',' || departDateString || ');';
-        PRTLIB:PRINT_LINE(stmt);
-        EXEC(stmt);
-    		val := val + 1;
-    	END WHILE;
-    	PRTLIB:PRINT_LINE('Rows inserted: ' || val);
-    END;
-    ```
+           -- Reservations Columns: RNO, CNO, HNO, Type, Arrival, Departure
+   		stmt := 'INSERT INTO RESERVATION (RNO, CNO, HNO, TYPE, ARRIVAL, DEPARTURE) VALUES(' || rno || ',' || cno || ',' || hno || ',' || rmType || ',' || arriveDateString || ',' || departDateString || ');';
+       PRTLIB:PRINT_LINE(stmt);
+       EXEC(stmt);
+   		val := val + 1;
+   	END WHILE;
+   	PRTLIB:PRINT_LINE('Rows inserted: ' || val);
+   END;
+   ```
 
 2. Try it out.
 
-    ```SQL
-    CALL "RESERVATION_GENERATOR2"(NUMTOGENERATE => 3,RMTYPE => '''suite''');
-    ```
+   ```SQL
+   CALL "RESERVATION_GENERATOR2"(NUMTOGENERATE => 3,RMTYPE => '''suite''');
+   ```
 
     ![call resvation_generator2](generateSuite.png)
 
@@ -202,17 +202,17 @@ Explain plan provides a compiled plan in tabular form without executing it.  Thi
 
 1. Choose **Analyze | Explain Plan** to see the compiled plan without executing the statement.  Enter the date 2020-12-24 when prompted.  
 
-    ```SQL
-    SELECT
-      R.RESNO, H.NAME AS HOTEL_NAME, R.ARRIVAL, R.DEPARTURE, 
-      CUS.TITLE, CUS.FIRSTNAME, CUS.NAME AS CUSTOMER_NAME, CUS.ADDRESS AS CUSTOMER_ADDRESS
-    FROM RESERVATION R
-    	LEFT JOIN HOTEL H ON H.HNO = R.HNO
-    	LEFT JOIN CUSTOMER CUS ON CUS.CNO = R.CNO
-    	WHERE ARRIVAL = ?
-    ORDER BY H.NAME, R.ARRIVAL DESC
-    WITH HINT (IGNORE_PLAN_CACHE);
-    ```
+   ```SQL
+   SELECT
+     R.RESNO, H.NAME AS HOTEL_NAME, R.ARRIVAL, R.DEPARTURE, 
+     CUS.TITLE, CUS.FIRSTNAME, CUS.NAME AS CUSTOMER_NAME, CUS.ADDRESS AS CUSTOMER_ADDRESS
+   FROM RESERVATION R
+   	LEFT JOIN HOTEL H ON H.HNO = R.HNO
+   	LEFT JOIN CUSTOMER CUS ON CUS.CNO = R.CNO
+   	WHERE ARRIVAL = ?
+   ORDER BY H.NAME, R.ARRIVAL DESC
+   WITH HINT (IGNORE_PLAN_CACHE);
+   ```
 
     > Notice that a hint is provided which indicates that if a query plan is found in the cache, it should be ignored.
 
@@ -224,9 +224,9 @@ Explain plan provides a compiled plan in tabular form without executing it.  Thi
 
     To clear any cached parameters the below SQL can be run.
 
-    ```SQL
-    ALTER SYSTEM CLEAR SQL PLAN CACHE;
-    ```
+   ```SQL
+   ALTER SYSTEM CLEAR SQL PLAN CACHE;
+   ```
 
 For further details see the links below.
 
@@ -240,16 +240,16 @@ The SQL Analyzer provides a graphical view of how a SQL statement was executed w
 
 1. Run the following SQL.
 
-    ```SQL
-    SELECT
-    R.RESNO, H.NAME AS HOTEL_NAME, R.ARRIVAL, R.DEPARTURE, 
-    CUS.TITLE, CUS.FIRSTNAME, CUS.NAME AS CUSTOMER_NAME, CUS.ADDRESS AS CUSTOMER_ADDRESS
-    FROM RESERVATION R
-        LEFT JOIN HOTEL H ON H.HNO = R.HNO
-        LEFT JOIN CUSTOMER CUS ON CUS.CNO = R.CNO
-        WHERE ARRIVAL = '2020-12-24'
-    ORDER BY H.NAME, R.ARRIVAL DESC;
-    ```
+   ```SQL
+   SELECT
+   R.RESNO, H.NAME AS HOTEL_NAME, R.ARRIVAL, R.DEPARTURE, 
+   CUS.TITLE, CUS.FIRSTNAME, CUS.NAME AS CUSTOMER_NAME, CUS.ADDRESS AS CUSTOMER_ADDRESS
+   FROM RESERVATION R
+       LEFT JOIN HOTEL H ON H.HNO = R.HNO
+       LEFT JOIN CUSTOMER CUS ON CUS.CNO = R.CNO
+       WHERE ARRIVAL = '2020-12-24'
+   ORDER BY H.NAME, R.ARRIVAL DESC;
+   ```
 
     ![Reservations by Hotel](reservationsByHotel.png)
 
@@ -307,18 +307,16 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 
 2. To determine the SQL requests that were executed in order to populate the various fields of the overview (e.g. memory used), enable a SQL trace by running the SQL statements below in a SQL console.
 
-    ```SQL
-    ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'DATABASE') 
-        SET ('sqltrace', 'trace') = 'on', 
-        ('sqltrace', 'application') = 'SAP_HANARuntimeTools_HRA', 
-        ('sqltrace', 'user') = 'USER1' 
-        WITH RECONFIGURE;
-    ```
+   ```SQL
+   ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'DATABASE') 
+       SET ('sqltrace', 'trace') = 'on', 
+       ('sqltrace', 'application') = 'SAP_HANARuntimeTools_HRA', 
+       ('sqltrace', 'user') = 'USER1' 
+       WITH RECONFIGURE;
+   ```
 
     >Additional details can be found in the [Configuration Parameter Reference](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-configuration-parameter-reference/sap-hana-configuration-parameter-reference-detail#loio514ab38a2e574c85a70ebba80ff16d99__configHC_id_30).
-
-    >---
-
+    >
     >The names of the configuration files, their contents, and a history of changes can be viewed by performing a select against the following monitoring views:
     >
     - M_INIFILES
@@ -333,10 +331,10 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 
 4. Turn off the SQL trace as tracing can have an effect on performance and takes up storage space.
 
-    ```SQL
-    ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'DATABASE') 
-        SET ('sqltrace', 'trace') = 'off' WITH RECONFIGURE;
-    ```
+   ```SQL
+   ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'DATABASE') 
+       SET ('sqltrace', 'trace') = 'off' WITH RECONFIGURE;
+   ```
 
     >When using the SAP HANA database explorer running in SAP HANA on-premise or HANA as a Service, it is possible to configure traces using a graphical interface.
     >
@@ -374,29 +372,29 @@ It can be important to examine SQL statements that consume large amounts of time
 
 1. The following SQL will enable tracing of expensive statements, set the threshold values, run some statements that will exceed the thresholds, and then disable expensive statement tracing.
 
-    ```SQL
-    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'enable') = 'on' WITH RECONFIGURE;
-    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'threshold_memory') = '41943040' WITH RECONFIGURE;   -- 40 MB
-    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'threshold_duration') = '3000000' WITH RECONFIGURE;  -- 3 sec
+   ```SQL
+   ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'enable') = 'on' WITH RECONFIGURE;
+   ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'threshold_memory') = '41943040' WITH RECONFIGURE;   -- 40 MB
+   ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'threshold_duration') = '3000000' WITH RECONFIGURE;  -- 3 sec
 
-    CALL RESERVATION_GENERATOR(1000);  --consumes more than 40 MB of memory
+   CALL RESERVATION_GENERATOR(1000);  --consumes more than 40 MB of memory
 
-    DO BEGIN
-      -- Wait for a few seconds
-      USING SQLSCRIPT_SYNC AS SYNCLIB;
-      CALL SYNCLIB:SLEEP_SECONDS( 3 );  --runs for longer than 3 seconds
-      -- Now execute a query
-      SELECT * FROM M_TABLES;
-    END;
+   DO BEGIN
+     -- Wait for a few seconds
+     USING SQLSCRIPT_SYNC AS SYNCLIB;
+     CALL SYNCLIB:SLEEP_SECONDS( 3 );  --runs for longer than 3 seconds
+     -- Now execute a query
+     SELECT * FROM M_TABLES;
+   END;
 
-    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'enable') = 'off' WITH RECONFIGURE;
-    ```
+   ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'enable') = 'off' WITH RECONFIGURE;
+   ```
 
 2. The list of statements that exceed the expensive statement threshold values can be found in the view `M_EXPENSIVE_STATEMENTS`.
 
-    ```SQL
-    select TOP 2 DURATION_MICROSEC/1000000, CPU_TIME/1000000, MEMORY_SIZE/1048576, START_TIME, RECORDS, STATEMENT_STRING from  M_EXPENSIVE_STATEMENTS order by start_time desc;
-    ```
+   ```SQL
+   select TOP 2 DURATION_MICROSEC/1000000, CPU_TIME/1000000, MEMORY_SIZE/1048576, START_TIME, RECORDS, STATEMENT_STRING from  M_EXPENSIVE_STATEMENTS order by start_time desc;
+   ```
 
     ![expensive statements](expensiveTrace.png)
 
@@ -407,10 +405,10 @@ It can be important to examine SQL statements that consume large amounts of time
     > For SAP HANA on-premise databases, the peak memory used option requires the configuration parameters `enable_tracking` and `memory_tracking` to be enabled.
     >
     >```SQL
-    SELECT * FROM SYS.M_CONFIGURATION_PARAMETER_VALUES WHERE KEY = 'memory_tracking' OR KEY = 'enable_tracking';
-    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'enable_tracking') = 'on' WITH RECONFIGURE;
-    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'memory_tracking') = 'on' WITH RECONFIGURE;
-    ```
+    >SELECT * FROM SYS.M_CONFIGURATION_PARAMETER_VALUES WHERE KEY = 'memory_tracking' OR KEY = 'enable_tracking';
+    >ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'enable_tracking') = 'on' WITH RECONFIGURE;
+    >ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'memory_tracking') = 'on' WITH RECONFIGURE;
+    >```
 
     > For additional details see [SAP HANA Configuration Parameter Reference](https://help.sap.com/docs/SAP_HANA_PLATFORM/009e68bc5f3c440cb31823a3ec4bb95b/514ab38a2e574c85a70ebba80ff16d99.html).
 
@@ -421,19 +419,19 @@ The SAP HANA database provides a set of monitoring views (as indicated by 'M') e
 
 1. Information about the available trace files and content from individual trace files can be queried.
 
-    ```SQL
-    SELECT * FROM M_TRACEFILES;
-    SELECT * FROM M_TRACEFILE_CONTENTS  WHERE HOST = 'XXXXXXXX' AND FILE_NAME='XXXXXXXX.XXX';
-    ```
+   ```SQL
+   SELECT * FROM M_TRACEFILES;
+   SELECT * FROM M_TRACEFILE_CONTENTS  WHERE HOST = 'XXXXXXXX' AND FILE_NAME='XXXXXXXX.XXX';
+   ```
 
 2. Execute the following SQL query to see entries from the past 45 minutes.
 
-    ```SQL
-    SELECT SERVICE_NAME, TIMESTAMP, TRACE_LEVEL, COMPONENT, SOURCE_FILE_NAME, TRACE_TEXT
-    FROM M_MERGED_TRACES
-    WHERE TIMESTAMP > ADD_SECONDS (TO_TIMESTAMP (CURRENT_TIMESTAMP), -1*60*45) AND TIMESTAMP < CURRENT_TIMESTAMP
-    ORDER BY TIMESTAMP;
-    ```
+   ```SQL
+   SELECT SERVICE_NAME, TIMESTAMP, TRACE_LEVEL, COMPONENT, SOURCE_FILE_NAME, TRACE_TEXT
+   FROM M_MERGED_TRACES
+   WHERE TIMESTAMP > ADD_SECONDS (TO_TIMESTAMP (CURRENT_TIMESTAMP), -1*60*45) AND TIMESTAMP < CURRENT_TIMESTAMP
+   ORDER BY TIMESTAMP;
+   ```
 
     ![M_MERGED_TRACES](m_merged_traces.png)
 
@@ -465,25 +463,25 @@ A data lake Relational engine can contain log files, query plans, and audit file
 
 2. The logs can also be accessed through SQL.
 
-    ```SQL
-    CALL sp_list_directory('/diag/logs');
-    SELECT * FROM sa_split_list(cast( READ_SERVER_FILE('/diag/logs/<file_path>') as long varchar ), '\n');
-    ```
+   ```SQL
+   CALL sp_list_directory('/diag/logs');
+   SELECT * FROM sa_split_list(cast( READ_SERVER_FILE('/diag/logs/<file_path>') as long varchar ), '\n');
+   ```
 
     Additional details can be found at [Diagnostic Logs for Data Lake Relational Engine](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a8937bea84f21015a80bc776cf758d50/02e694dff4c44c0db8e1b3783d599d6b.html).
 
 3. Query plans can be enabled, configured, and viewed.
 
-    ```SQL
-    SET SCHEMA HOTELS;
-    SET TEMPORARY OPTION Query_Plan_As_HTML = 'ON';
-    SET TEMPORARY OPTION QUERY_DETAIL = 'ON';
-    SET TEMPORARY OPTION QUERY_TIMING  = 'ON';
-    SELECT * FROM TOURIST_REVIEWS WHERE DESTINATION_RATING = 5;
-    SET TEMPORARY OPTION QUERY_DETAIL = 'OFF';
-    SET TEMPORARY OPTION QUERY_TIMING  = 'OFF';
-    SET TEMPORARY OPTION Query_Plan_As_HTML = 'OFF';
-    ```
+   ```SQL
+   SET SCHEMA HOTELS;
+   SET TEMPORARY OPTION Query_Plan_As_HTML = 'ON';
+   SET TEMPORARY OPTION QUERY_DETAIL = 'ON';
+   SET TEMPORARY OPTION QUERY_TIMING  = 'ON';
+   SELECT * FROM TOURIST_REVIEWS WHERE DESTINATION_RATING = 5;
+   SET TEMPORARY OPTION QUERY_DETAIL = 'OFF';
+   SET TEMPORARY OPTION QUERY_TIMING  = 'OFF';
+   SET TEMPORARY OPTION Query_Plan_As_HTML = 'OFF';
+   ```
 
     ![Download Query Plan](DownloadQueryPlan.png)
 
@@ -497,17 +495,17 @@ A data lake Relational engine can contain log files, query plans, and audit file
 
     Additional details can be found at [Configuring Auditing](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a8982cc084f21015a7b4b7fcdeb0953d/a606f4e784f210159f4dfa0340fac977.html).
 
-    ```SQL
-    SET OPTION PUBLIC.auditing = 'On';
-    CALL sa_enable_auditing_type( 'all' );
-    SET OPTION PUBLIC.audit_log='FILE(filename_prefix=audit_log)';
-    CALL sa_audit_string( 'yyz3 Started audit testing here.' );
-    SET OPTION PUBLIC.auditing = 'Off';
-    SELECT * FROM SYSOPTIONS where "option" like '%audit%';
-    CALL sp_list_directory('/diag/audit');
-    SELECT * FROM sp_list_etd_files('*');
-    SELECT * FROM sp_read_etd( 'audit_log_20220726_115854.382_mpx-writer-0-0.etd' ) WHERE event_data LIKE '%yyz%';
-    ```
+   ```SQL
+   SET OPTION PUBLIC.auditing = 'On';
+   CALL sa_enable_auditing_type( 'all' );
+   SET OPTION PUBLIC.audit_log='FILE(filename_prefix=audit_log)';
+   CALL sa_audit_string( 'yyz3 Started audit testing here.' );
+   SET OPTION PUBLIC.auditing = 'Off';
+   SELECT * FROM SYSOPTIONS where "option" like '%audit%';
+   CALL sp_list_directory('/diag/audit');
+   SELECT * FROM sp_list_etd_files('*');
+   SELECT * FROM sp_read_etd( 'audit_log_20220726_115854.382_mpx-writer-0-0.etd' ) WHERE event_data LIKE '%yyz%';
+   ```
 
     ![Viewing an audit log](audit.png)
 

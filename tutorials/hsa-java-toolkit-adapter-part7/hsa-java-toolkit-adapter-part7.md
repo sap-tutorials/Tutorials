@@ -32,18 +32,18 @@ This is done in the custom transporter module. SAP documentation regarding the p
 ### Implement Schema Discovery
 
   1. Add the following two commands to your `.cnxml` file:
-    ```html
-    <Internal id="x_unixCmdDisc"
-      label="Discovery Command"
-      type="string"
-      default="&quot;$STREAMING_HOME/adapters/framework/bin/discover.sh&quot;
-      &quot;$STREAMING_HOME/adapters/framework/instances/mqtt_input/adapter_config.xml&quot;"/>
-    <Internal id="x_winCmdDisc"
-      label="Discovery Command"
-      type="string"
-      default="&quot;%STREAMING_HOME%/adapters/framework/bin/discover.bat&quot;
-      &quot;%STREAMING_HOME%/adapters/framework/instances/mqtt_input/adapter_con fig.xml&quot;"/>
-    ```
+   ```html
+   <Internal id="x_unixCmdDisc"
+     label="Discovery Command"
+     type="string"
+     default="&quot;$STREAMING_HOME/adapters/framework/bin/discover.sh&quot;
+     &quot;$STREAMING_HOME/adapters/framework/instances/mqtt_input/adapter_config.xml&quot;"/>
+   <Internal id="x_winCmdDisc"
+     label="Discovery Command"
+     type="string"
+     default="&quot;%STREAMING_HOME%/adapters/framework/bin/discover.bat&quot;
+     &quot;%STREAMING_HOME%/adapters/framework/instances/mqtt_input/adapter_con fig.xml&quot;"/>
+   ```
 
   2. Implement sampling or non-sampling schema discovery in your custom transporter module. Consult section [Implementing Schema Discovery in a Custom Adapter](https://help.sap.com/doc/saphelp_esp_51sp11_bca/5.1.11/en-US/e7/8a48b56f0f10149134ab152de88342/frameset.htm) for more details.
 
@@ -138,51 +138,51 @@ Documentation regarding custom `Transporter` modules can be found in section [Bu
 
   2. Formatter
 
-    - Have your custom formatter class extend `com.sybase.esp.adapter.framework.module.StreamingFormatter`
+- Have your custom formatter class extend `com.sybase.esp.adapter.framework.module.StreamingFormatter`
 
-    - Implement the following functions:
+- Implement the following functions:
 
-      - The `init()` function.
+- The `init()` function.
 
-        Prepare your formatter module to convert between data formats; for example, obtain properties from the adapter configuration file and perform any required initialization tasks.
+Prepare your formatter module to convert between data formats; for example, obtain properties from the adapter configuration file and perform any required initialization tasks.
 
-      - The `start()` function.
+- The `start()` function.
 
-        Perform any necessary tasks when the adapter is started.
+Perform any necessary tasks when the adapter is started.
 
-    - The `execute()` function.
+- The `execute()` function.
 
-        Here is an example of the execute() function for a formatter that converts row-based data into stream-based:
+Here is an example of the execute() function for a formatter that converts row-based data into stream-based:
 
-        ```java
+```java
 
-        public void execute() throws Exception {
-          OutputStream output = utility.getOutputStream();  while(!utility.isStopRequested())  {
-            AdapterRow row = utility.getRow();
-            if(row != null) {
-              AepRecord record = (AepRecord)row.getData(0);
-              String str = record.getValues().toString() + "\n";   output.write(str.getBytes());
-            }
-          }
-        }
+public void execute() throws Exception {
+OutputStream output = utility.getOutputStream();  while(!utility.isStopRequested())  {
+ AdapterRow row = utility.getRow();
+ if(row != null) {
+   AepRecord record = (AepRecord)row.getData(0);
+   String str = record.getValues().toString() + "\n";   output.write(str.getBytes());
+ }
+}
+}
 
-        ```
+```
 
-    - For a formatter that converts from stream-based data into row-based, use:
+- For a formatter that converts from stream-based data into row-based, use:
 
-        - `utility.getInputStream()` to obtain the `InputStream`
+- `utility.getInputStream()` to obtain the `InputStream`
 
-        - `utility.createRow()` to create the `AdapterRow` objects
+- `utility.createRow()` to create the `AdapterRow` objects
 
-        - `utility.sendRow()` to send the rows to the next module specified in the adapter configuration file
+- `utility.sendRow()` to send the rows to the next module specified in the adapter configuration file
 
-    - The `stop()` function
+- The `stop()` function
 
-        Perform any necessary tasks when the adapter is stopped.
+Perform any necessary tasks when the adapter is stopped.
 
-    - The `destroy()` function.
+- The `destroy()` function.
 
-        Perform clean-up actions for your formatter.
+Perform clean-up actions for your formatter.
 
 
 Documentation regarding custom Formatter modules can be found in section [Building a Custom Formatter Module](https://help.sap.com/viewer/b5a4b8b1574f48a383f7a1e42e63d4d9/2.0.00/en-US/e789b6606f0f10149915c3cb6a302153.html?q=custom%20formatter%20module).
@@ -201,23 +201,23 @@ You can find a listing of the predefined Transporter modules in section [Transpo
 
   1. Comment out the `ATTACH INPUT ADAPTER` statement in the `ccl` code provided in the Appendix of this tutorial. The `ccl` should simply be as follows:
 
-    ```sql
+   ```sql
 
-    CREATE INPUT WINDOW InputWindow1 SCHEMA (
-      Message string ) PRIMARY KEY ( Message ) KEEP ALL ROWS ;
+   CREATE INPUT WINDOW InputWindow1 SCHEMA (
+     Message string ) PRIMARY KEY ( Message ) KEEP ALL ROWS ;
 
-    ```
+   ```
 
   2. Uncomment the `<ProjectName>` and `<StreamName>` elements in `<EspPublisherParameters>`
 
   3. Start the project in Studio by pressing the deploy button.
 
-    ![Deploy Streaming Project](deploy-project.png)
+   ![Deploy Streaming Project](deploy-project.png)
 
   4. Start the adapter by running `start.sh` and pass it the full path to your `adapter_config.xml`.
 
-    `%STREAMING_HOME%\adapters\framework\bin\start.bat`
-    `%STREAMING_HOME%\adapters\framework\instances\mqtt_input\adapter_config.xml`
+   `%STREAMING_HOME%\adapters\framework\bin\start.bat`
+   `%STREAMING_HOME%\adapters\framework\instances\mqtt_input\adapter_config.xml`
 
   5. The adapter will use the `<EspProject>` element properties set in your `adapter_config.xml` file to connect to the project in studio and will use the `<MQTTInputTransporterParameters>` element properties as arguments.
 

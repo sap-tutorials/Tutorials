@@ -151,11 +151,11 @@ In pseudo code, it has the following functionality:
   6. Releases credentials object
   7. Starts a `do/while` loop
 
-    - Creates new row definition with the relative row writer
-    - Define row operation as insert
-    - Inserts row fields one by one
-    - Ends row definition
-    - Publishes and commits row
+   - Creates new row definition with the relative row writer
+   - Define row operation as insert
+   - Inserts row fields one by one
+   - Ends row definition
+   - Publishes and commits row
 
   8. Calls to stop `SDK`
   9. Releases error object
@@ -173,207 +173,207 @@ int main(){
 
   1. Declare Adapter variables
 
-    We are now coding the `main()` function, and the first thing to do is declare adapter variables. The adapter variables can be split into two groups. The first group is used to connect to our Streaming Lite project, and control the quantity and rate of rows sent. The second group is a direct reflection of the stream we are writing to, with one variable for each column.
+We are now coding the `main()` function, and the first thing to do is declare adapter variables. The adapter variables can be split into two groups. The first group is used to connect to our Streaming Lite project, and control the quantity and rate of rows sent. The second group is a direct reflection of the stream we are writing to, with one variable for each column.
 
-    - Declare and Define Variables in the First Group
+- Declare and Define Variables in the First Group
 
-        First group of variables are `hostname`, `port`, `stream`, `username`, `password`, `repeat`, and `interval`. These variables can be named whatever you wish; they are either passed into the various `SDK` calls, or used for loop logic.
+ First group of variables are `hostname`, `port`, `stream`, `username`, `password`, `repeat`, and `interval`. These variables can be named whatever you wish; they are either passed into the various `SDK` calls, or used for loop logic.
 
-        Variable   |  Explanation |
-        |---|---|
-        |hostname| String value containing the `FQDN` of your remote device  |
-        |port| Integer value of the port your Streaming Lite project is running on   |
-        |stream|  String value of the stream name you wish to write to |
-        |username| String value of username you started Streaming Lite with. If you didn't start Streaming Lite with credentials, leave blank  |
-        |password| String value of password you started Streaming Lite with. If you didn't start Streaming Lite with credentials, leave blank |
-        |repeat| Integer value of many times you want to send a row of data into Streaming Lite. A value of -1 will cause the program to repeat infinitely   |
-        |interval| Integer value of the number of seconds in-between sending rows  |
+ Variable   |  Explanation |
+ |---|---|
+ |hostname| String value containing the `FQDN` of your remote device  |
+ |port| Integer value of the port your Streaming Lite project is running on   |
+ |stream|  String value of the stream name you wish to write to |
+ |username| String value of username you started Streaming Lite with. If you didn't start Streaming Lite with credentials, leave blank  |
+ |password| String value of password you started Streaming Lite with. If you didn't start Streaming Lite with credentials, leave blank |
+ |repeat| Integer value of many times you want to send a row of data into Streaming Lite. A value of -1 will cause the program to repeat infinitely   |
+ |interval| Integer value of the number of seconds in-between sending rows  |
 
-        The implementation is shown here:
+ The implementation is shown here:
 
-        ```C++
+ ```C++
 
-        string val_host = "SAPraspberrypi2-B3";
-        int val_port = 9230;
-        string val_stream = "isFreezerTemperatureReading";
-        string val_username ="";
-        string val_password ="";
-        int val_repeat = -1;
-        int val_interval = 1;
-        ```
+ string val_host = "SAPraspberrypi2-B3";
+ int val_port = 9230;
+ string val_stream = "isFreezerTemperatureReading";
+ string val_username ="";
+ string val_password ="";
+ int val_repeat = -1;
+ int val_interval = 1;
+ ```
 
-        When this `C/C++` Adapter executes, it will connect with the project running on port `9230`, and write to the stream `"isFreezerTemperatureReading"`. There are no credentials, and the program will continuously send one row every second.
+ When this `C/C++` Adapter executes, it will connect with the project running on port `9230`, and write to the stream `"isFreezerTemperatureReading"`. There are no credentials, and the program will continuously send one row every second.
 
-    -  Declare and Define Column Variables in the Second Group
+-  Declare and Define Column Variables in the Second Group
 
-        Recall that the schema of the stream we are writing to is:
+ Recall that the schema of the stream we are writing to is:
 
-        ![Schema of Stream](schemaOfStream.png)
+ ![Schema of Stream](schemaOfStream.png)
 
-        This means we will be using four variables. Once again, naming does not matter. In this document they will be:
+ This means we will be using four variables. Once again, naming does not matter. In this document they will be:
 
-        ```C++
+ ```C++
 
-        string val_sensorId = "RaspberryPi";
-        string val_Temperature_Command = "echo 90";
-        int64_t val_readingDate; //generated right before column is set
-        int64_4 val_id = 0; //generated in streaming lite
-        ```
+ string val_sensorId = "RaspberryPi";
+ string val_Temperature_Command = "echo 90";
+ int64_t val_readingDate; //generated right before column is set
+ int64_4 val_id = 0; //generated in streaming lite
+ ```
 
-          - `string val_sensorId` is the name of our sensor
-          -  `string val_temperature` holds the command to run in order to obtain the value for our Temperature column
-          -  `int64_t val_readingDate` is a timestamp, and is only initialized here. A value will be assigned to it later in the code, directly before it is used
-          -  `int64_t val_id` is our primary key, but will be auto-generated inside the streaming project. Although we still declare it, the value of `val_id` is arbitrary and will be overwritten once inside the streaming project. The reason we need it in our Custom `C/C++` Adapter is because the entire row must be constructed before it is sent into Streaming Lite.
+   - `string val_sensorId` is the name of our sensor
+   -  `string val_temperature` holds the command to run in order to obtain the value for our Temperature column
+   -  `int64_t val_readingDate` is a timestamp, and is only initialized here. A value will be assigned to it later in the code, directly before it is used
+   -  `int64_t val_id` is our primary key, but will be auto-generated inside the streaming project. Although we still declare it, the value of `val_id` is arbitrary and will be overwritten once inside the streaming project. The reason we need it in our Custom `C/C++` Adapter is because the entire row must be constructed before it is sent into Streaming Lite.
 
-    - Set Up a Flag
+- Set Up a Flag
 
-        The majority of `SDK` calls will return `0` upon successful completion. We will also set up a flag variable to detect any failures.
+ The majority of `SDK` calls will return `0` upon successful completion. We will also set up a flag variable to detect any failures.
 
-        ```C++
+ ```C++
 
-        int errorflag = 0;
-        ```
+ int errorflag = 0;
+ ```
 
   2. Create the Error Object
 
-    This error object is passed into almost every subsequent `SDK` call as an argument. It works hand in hand with our flag variable: If we check that `errorflag != 0` (meaning the `SDK` call has failed), our error object will contain the relevant error information.
+   This error object is passed into almost every subsequent `SDK` call as an argument. It works hand in hand with our flag variable: If we check that `errorflag != 0` (meaning the `SDK` call has failed), our error object will contain the relevant error information.
 
-    We have previously declared a global variable called `g_error`. Now we must instantiate the object. This is done using:
+   We have previously declared a global variable called `g_error`. Now we must instantiate the object. This is done using:
 
-    ```C++
+   ```C++
 
-    g_error = esp_error_create();
-    ```
+   g_error = esp_error_create();
+   ```
 
-    We will need to remember to free the `g_error` object before the program exits.
+   We will need to remember to free the `g_error` object before the program exits.
 
   3. Starting the `SDK`
 
-    We must now start the `SDK`. This is done by calling `esp_sdk_start()`. We will need to remember to send a stop call to the `SDK` before the program exits.
+   We must now start the `SDK`. This is done by calling `esp_sdk_start()`. We will need to remember to send a stop call to the `SDK` before the program exits.
 
-    Additionally, we will pass the return value into `errorflag`, and check if it was successful. If it fails, `g_error` and `__LINE__` are passed into `print_error_and_exit()` to output a description of the error. `__LINE__` is a predefined macro that defines the current line number.
+   Additionally, we will pass the return value into `errorflag`, and check if it was successful. If it fails, `g_error` and `__LINE__` are passed into `print_error_and_exit()` to output a description of the error. `__LINE__` is a predefined macro that defines the current line number.
 
-    You will see this error-detection structure throughout our Custom `C/C++` Adapter code:
+   You will see this error-detection structure throughout our Custom `C/C++` Adapter code:
 
-    ```C++
+   ```C++
 
-    errorflag = esp_sdk_start(g_error);
-    if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
-    ```
+   errorflag = esp_sdk_start(g_error);
+   if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
+   ```
 
   4. Create the Credentials object
 
-    We have previously declared a global variable called `g_creds`. Now we must instantiate the object using `esp_credentials_create()`. It returns `NULL` if unsuccessful, which we must check for.  
+   We have previously declared a global variable called `g_creds`. Now we must instantiate the object using `esp_credentials_create()`. It returns `NULL` if unsuccessful, which we must check for.  
 
-    ```C++
+   ```C++
 
-    g_creds = esp_credentials_create(ESP_CREDENTIALS_USER_PASSWORD, g_error);
-    if (NULL == g_creds) print_error_and_exit(g_error, __LINE__);
-    ```
+   g_creds = esp_credentials_create(ESP_CREDENTIALS_USER_PASSWORD, g_error);
+   if (NULL == g_creds) print_error_and_exit(g_error, __LINE__);
+   ```
 
-    `ESP_CREDENTIALS_USER_PASSWORD` is an `enum` of type `ESP_CREDENTIALS_T`. Other values can be found in the header file `esp_credentials.h`. The credentials object will need to be freed after we are done with it.
+   `ESP_CREDENTIALS_USER_PASSWORD` is an `enum` of type `ESP_CREDENTIALS_T`. Other values can be found in the header file `esp_credentials.h`. The credentials object will need to be freed after we are done with it.
 
-    ![ESP Credentials Create](espCredentialsCreate.png)
+   ![ESP Credentials Create](espCredentialsCreate.png)
 
-    We will now set the user and password for our credentials object as well, even though both values are blank. Make sure to convert our `val_username` and `val_password` variables into `cstrings` using `c_str()`:
+   We will now set the user and password for our credentials object as well, even though both values are blank. Make sure to convert our `val_username` and `val_password` variables into `cstrings` using `c_str()`:
 
-    ```C++
+   ```C++
 
-    esp_credentials_set_user(g_creds, val_username.c_str(), g_error);
-    esp_credentials_set_password(g_creds, val_password.c_str(), g_error);
-    ```
+   esp_credentials_set_user(g_creds, val_username.c_str(), g_error);
+   esp_credentials_set_password(g_creds, val_password.c_str(), g_error);
+   ```
 
-    ![ESP Credentials Set User](espCredentialsSetUser.png)
+   ![ESP Credentials Set User](espCredentialsSetUser.png)
 
-    ![ESP Credentials Set Password](espCredentialsSetPassword.png)
+   ![ESP Credentials Set Password](espCredentialsSetPassword.png)
 
   5. Create and Connect to Project Object
 
-    Create the project object. Since Streaming Lite only runs one project at a time, we will use `esp_project_get_standalone()`. Its parameters include our host and port name, our credentials object, the error object, and an `EspProjectOptions` type. Set the `EspProjectOptions` parameter as `NULL` for default values.
+   Create the project object. Since Streaming Lite only runs one project at a time, we will use `esp_project_get_standalone()`. Its parameters include our host and port name, our credentials object, the error object, and an `EspProjectOptions` type. Set the `EspProjectOptions` parameter as `NULL` for default values.
 
-    ```C++
+   ```C++
 
-    EspProject * project = esp_project_get_standalone(val_host.c_str(), val_port, g_creds, NULL, g_error);
-    if (NULL == project) print_error_and_exit(g_error, __LINE__);
-    ```
+   EspProject * project = esp_project_get_standalone(val_host.c_str(), val_port, g_creds, NULL, g_error);
+   if (NULL == project) print_error_and_exit(g_error, __LINE__);
+   ```
 
-    ![ESP Project Get Standalone](espProjectGetStandalone.png)
+   ![ESP Project Get Standalone](espProjectGetStandalone.png)
 
-    Connect to the project by passing our project object into `esp_project_connect()`. Check for failure.
+   Connect to the project by passing our project object into `esp_project_connect()`. Check for failure.
 
-    ```C++
+   ```C++
 
-    errorflag = esp_project_connect(project, g_error);
-    if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
-    ```
+   errorflag = esp_project_connect(project, g_error);
+   if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
+   ```
 
   6. Free Credentials Object
 
-    After the project object has been created, we are done with the credentials object. Free it using `esp_credentials_free()`. Check for failure.
+   After the project object has been created, we are done with the credentials object. Free it using `esp_credentials_free()`. Check for failure.
 
-    ```C++
+   ```C++
 
-    errorflag = esp_credentials_free(g_creds, g_error);
-    if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
-    g_creds = NULL;
-    ```
+   errorflag = esp_credentials_free(g_creds, g_error);
+   if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
+   g_creds = NULL;
+   ```
 
   7. Retrieve the Stream Object
 
-    After we have connected to the project object, we can now retrieve the project stream we want to write to. This is done by passing our project object, and stream name into `esp_project_get_stream()`. Make sure to convert `val_stream` into a `c-string` using `c_str()`.
+   After we have connected to the project object, we can now retrieve the project stream we want to write to. This is done by passing our project object, and stream name into `esp_project_get_stream()`. Make sure to convert `val_stream` into a `c-string` using `c_str()`.
 
-    ```C++
+   ```C++
 
-    const EspStream * stream = esp_project_get_stream(project,
-    val_stream.c_str(), g_error);
-    if (NULL == stream) print_error_and_exit(g_error, __LINE__);
-    ```
+   const EspStream * stream = esp_project_get_stream(project,
+   val_stream.c_str(), g_error);
+   if (NULL == stream) print_error_and_exit(g_error, __LINE__);
+   ```
 
-    ![ESP Project Get Stream](espProjectGetStream.png)
+   ![ESP Project Get Stream](espProjectGetStream.png)
 
   8. Create and Connect to the Publisher Object
 
-    We now create the publisher object using `esp_project_create_publisher()`. Its lifetime is managed by the `SDK`, and does not require to be freed. We pass in our project object, the error object, and an `EspPublisherOptions` type. Set the `EspPublisherOptions` parameter as `NULL` for default values.
+   We now create the publisher object using `esp_project_create_publisher()`. Its lifetime is managed by the `SDK`, and does not require to be freed. We pass in our project object, the error object, and an `EspPublisherOptions` type. Set the `EspPublisherOptions` parameter as `NULL` for default values.
 
-    ```C++
+   ```C++
 
-    EspPublisher * publisher = esp_project_create_publisher(project, NULL, g_error);
-    if (NULL == publisher) print_error_and_exit(g_error, __LINE__);
-    ```
+   EspPublisher * publisher = esp_project_create_publisher(project, NULL, g_error);
+   if (NULL == publisher) print_error_and_exit(g_error, __LINE__);
+   ```
 
-    ![ESP Project Create Publisher](espProjectCreatePublisher.png)
+   ![ESP Project Create Publisher](espProjectCreatePublisher.png)
 
-    Connect to the publisher you just created, by passing the publisher object into `esp_publisher_connect()`:
+   Connect to the publisher you just created, by passing the publisher object into `esp_publisher_connect()`:
 
-    ```C++
+   ```C++
 
-    errorflag = esp_publisher_connect(publisher, g_error);
-    if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
-    ```
+   errorflag = esp_publisher_connect(publisher, g_error);
+   if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
+   ```
 
   9. Retrieve the Message Writer Object
 
-    The message writer object builds a single row to be sent into the specific project and stream it was created for.
+   The message writer object builds a single row to be sent into the specific project and stream it was created for.
 
-    We now retrieve the `EspMessageWriter` object, using our publisher and stream objects. This is achieved by calling `esp_publisher_get_writer()`:
+   We now retrieve the `EspMessageWriter` object, using our publisher and stream objects. This is achieved by calling `esp_publisher_get_writer()`:
 
-    ```C++
+   ```C++
 
-    EspMessageWriter * message = esp_publisher_get_writer(publisher, stream, g_error);
-    if (NULL == message) print_error_and_exit(g_error, __LINE__);
-    ```
+   EspMessageWriter * message = esp_publisher_get_writer(publisher, stream, g_error);
+   if (NULL == message) print_error_and_exit(g_error, __LINE__);
+   ```
 
   10. Retrieve the Relative Row Writer Object
 
-    The relative row writer formats a row of data for the stream the `EspMessageWriter` writes to.
+   The relative row writer formats a row of data for the stream the `EspMessageWriter` writes to.
 
-    Retrieve the relative row writer by passing our message writer object into `esp_message_writer_get_relative_rowwriter()`:
+   Retrieve the relative row writer by passing our message writer object into `esp_message_writer_get_relative_rowwriter()`:
 
-    ```C++
+   ```C++
 
-    EspRelativeRowWriter * row = esp_message_writer_get_relative_rowwriter(message, g_error);
-    if (NULL == row) print_error_and_exit(g_error, __LINE__);
-    ```
+   EspRelativeRowWriter * row = esp_message_writer_get_relative_rowwriter(message, g_error);
+   if (NULL == row) print_error_and_exit(g_error, __LINE__);
+   ```
 
   11. Loop
     After setting up all required objects, we will now be able to construct and send our row. This will be done inside a loop, governed by our `val_repeat` and `val_interval` variables. This loop runs inside `main()` and is what controls the quantity and frequency of data the Custom `C/C++` Adapter sends.
@@ -505,50 +505,50 @@ int main(){
         if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
       ```
 
-     - Publishing and Committing Data
+- Publishing and Committing Data
 
-        We now publish the data we have packaged inside our `message writer` object. This is done by passing our message writer object and publisher object into `esp_publisher_publish()`
-        ```C++
+   We now publish the data we have packaged inside our `message writer` object. This is done by passing our message writer object and publisher object into `esp_publisher_publish()`
+   ```C++
 
-        esp_publisher_publish() errorflag = esp_publisher_publish(publisher, message, g_error);
-        if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
-        ```
+   esp_publisher_publish() errorflag = esp_publisher_publish(publisher, message, g_error);
+   if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
+   ```
 
-        We now issue a commit call to the publisher, which causes it to process all its input queues and commit the data
-        ```C++
+   We now issue a commit call to the publisher, which causes it to process all its input queues and commit the data
+   ```C++
 
-        errorflag = esp_publisher_commit(publisher, g_error);
-        if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
-        ```
+   errorflag = esp_publisher_commit(publisher, g_error);
+   if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
+   ```
 
-        Since no errors were detected, at this point we can print a line to notify the user that the row has published correctly:
-        ```C++
+   Since no errors were detected, at this point we can print a line to notify the user that the row has published correctly:
+   ```C++
 
-        printf("Messages published successfully\n");
-        ```
+   printf("Messages published successfully\n");
+   ```
 
   12. Stopping the `SDK`
 
-    We have finished coding the loop. Jumping out of the loop now, we have to do two things before our program ends. After the loop, we will need to send a stop call to the `SDK`, and release our error object.
+   We have finished coding the loop. Jumping out of the loop now, we have to do two things before our program ends. After the loop, we will need to send a stop call to the `SDK`, and release our error object.
 
-    Similar to how we started it, we will now call `esp_sdk_stop()` to stop the `SDK`. Insert this line after our loop body:
+   Similar to how we started it, we will now call `esp_sdk_stop()` to stop the `SDK`. Insert this line after our loop body:
 
-    ```C++
+   ```C++
 
-    errorflag = esp_sdk_stop(g_error);
-    if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
-    ```
+   errorflag = esp_sdk_stop(g_error);
+   if (errorflag != 0) print_error_and_exit(g_error, __LINE__);
+   ```
 
   13. Releasing the `Error` Object
 
-    The last line in our `main()` function is a call to release our error object:
+   The last line in our `main()` function is a call to release our error object:
 
-    ```C++
+   ```C++
 
-    esp_error_free(g_error);
-    ```
+   esp_error_free(g_error);
+   ```
 
-    Save and close your `.cpp` file. You should now have two files inside of your `"custom_c_adapter"` folder, named `"custom_c_adapter.cpp"` and `"Makefile"`.
+   Save and close your `.cpp` file. You should now have two files inside of your `"custom_c_adapter"` folder, named `"custom_c_adapter.cpp"` and `"Makefile"`.
 
 For the question below, select all of the correct answers, and click **Validate**.
 

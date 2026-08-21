@@ -113,9 +113,7 @@ To complete the tutorials in this group, an SAP HANA instance is needed. Steps 3
 ![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
 >SAP HANA Cloud free tier instances are shut down overnight (i.e. 10:00 PM based on the location where your instance was provisioned) and will need to be restarted before working with them the next day. The tutorial group [Automating SAP HANA Cloud Tasks](https://developers.sap.com/group.sap-hana-cloud-automating.html) provides some examples of using tools such as the BTP CLI or the SAP Automation Pilot to help with repetitive tasks such as starting and stopping instances.
-
->---
-
+>
 >In QRC 3 of 2022, a new version of the SAP HANA Cloud tools (SAP HANA Cloud Central, SAP HANA cockpit, and SAP HANA database explorer) was released which runs in the subaccount rather than Cloud Foundry.  This edition of the SAP HANA Cloud tools can better support instances of SAP HANA Cloud running in multiple environments.  SAP BTP provides multiple runtime environments such as Kyma and Cloud Foundry. When a HANA Cloud or data lake instance is created, it can be provisioned at the BTP subaccount or in a Cloud Foundry space.  The runtime environment label in SAP HANA Cloud Central or in the SAP BTP Cockpit indicates where the instance has been provisioned with the value of Other Environments indicating that it was provisioned at the SAP BTP subaccount.  Further details can be found at [SAP HANA Cloud goes multi-environment](https://blogs.sap.com/2022/09/21/sap-hana-cloud-goes-multi-environment-part-1-feature-overview/).
 
 The instructions on how to setup a free SAP HANA Cloud trial or free tier within SAP BTP are well covered in several other sources listed below.  

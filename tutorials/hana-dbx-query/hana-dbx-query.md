@@ -37,11 +37,11 @@ primary_tag: software-product>sap-hana-cloud
 
 3. Enter the SQL statements below.
 
-    ```SQL
-    SELECT * FROM HOTEL;
-    INSERT INTO HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', 
-      NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
-    ```
+   ```SQL
+   SELECT * FROM HOTEL;
+   INSERT INTO HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', 
+     NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
+   ```
 
 4. Expand the **Run** dropdown menu.  Notice that there are multiple options along with their shortcut keys.
 
@@ -77,13 +77,13 @@ primary_tag: software-product>sap-hana-cloud
 
 10. Sometimes you need to execute a SQL statement that takes a long time to run. In that case, you can run it as a background activity.  This allows you to close your browser window and come back later to see the results of the statement. Enter the SQL statement below.
 
-    ```SQL
-    SELECT * FROM CUSTOMER;
-    ```
+   ```SQL
+   SELECT * FROM CUSTOMER;
+   ```
 
-    ![Run As Background Activity](RunAsBackgroundActivity.png)
+   ![Run As Background Activity](RunAsBackgroundActivity.png)
 
-    >If needed, reconnect the database after running the query.
+   >If needed, reconnect the database after running the query.
 
 11. To view the results of a query that was run in the background, open the Background Activities Monitor, select the query, and then choose the Open Details icon.  A new SQL console will open displaying the SQL, the results, and any messages from the execution period.
 
@@ -107,21 +107,21 @@ primary_tag: software-product>sap-hana-cloud
 
 15. Returned results in HTML, XML, JSON, extended well-known binary formatted spatial data, or binary data can be displayed in a separate viewer.  Enter the SQL statements below and execute the query.
 
-    ```SQL
-    SELECT
-    '{ "name":"John", "age":30, "cars": { "car1":"Ford", "car2":"BMW", "car3":"Fiat" }}'
-    AS JSON_EXAMPLE FROM DUMMY;
+   ```SQL
+   SELECT
+   '{ "name":"John", "age":30, "cars": { "car1":"Ford", "car2":"BMW", "car3":"Fiat" }}'
+   AS JSON_EXAMPLE FROM DUMMY;
 
-    SELECT * FROM CUSTOMER FOR JSON;
-    ```
+   SELECT * FROM CUSTOMER FOR JSON;
+   ```
 
-    ![JSON Query Results](JSONQuery.png)
+   ![JSON Query Results](JSONQuery.png)
 
-    Choose **View data** to open a viewer.
+   Choose **View data** to open a viewer.
 
-    ![JSON Viewer](ViewJSON.png)
+   ![JSON Viewer](ViewJSON.png)
 
-    To see an example on viewing spatial data, see [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model).
+   To see an example on viewing spatial data, see [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model).
 
 ### Shortcuts
 
@@ -183,9 +183,9 @@ primary_tag: software-product>sap-hana-cloud
 
     Copy the following SQL statement into the console and then use the autocomplete shortcut to see the available tables:
 
-    ```SQL
-    SELECT * FROM HOTELS.RES
-    ```
+   ```SQL
+   SELECT * FROM HOTELS.RES
+   ```
 
     ![Code Completion Table](CodeCompletionTable.png)
 
@@ -199,18 +199,18 @@ primary_tag: software-product>sap-hana-cloud
 
     Copy the following SQL into the SQL console to populate the Statement/Syntax section of the help panel:
 
-    ```SQL
-    SELECT
-      H.NAME AS HOTEL_NAME,
-      R.TYPE,
-      R.FREE,
-      R.PRICE
-    FROM
-      ROOM AS R
-      LEFT OUTER JOIN
-      HOTEL AS H
-      ON R.HNO = H.HNO;
-    ```
+   ```SQL
+   SELECT
+     H.NAME AS HOTEL_NAME,
+     R.TYPE,
+     R.FREE,
+     R.PRICE
+   FROM
+     ROOM AS R
+     LEFT OUTER JOIN
+     HOTEL AS H
+     ON R.HNO = H.HNO;
+   ```
 
     ![Statement Syntax Helper](StatementSyntaxHelper.png)
 
@@ -228,9 +228,9 @@ primary_tag: software-product>sap-hana-cloud
 
     Copy the following SQL into the SQL console to populate the Procedures and Functions section of the help panel:
 
-    ```SQL
-    SELECT AVERAGE_PRICE('suite') FROM DUMMY;
-    ```
+   ```SQL
+   SELECT AVERAGE_PRICE('suite') FROM DUMMY;
+   ```
 
     ![Procedures and Functions Referenced](FunctionsReferenced.png)
 
@@ -238,11 +238,11 @@ primary_tag: software-product>sap-hana-cloud
 
     Copy the following SQL into the SQL console to populate the SQL Functions section of the help panel:
 
-    ```SQL
-    SELECT TYPE, TO_DECIMAL(ROUND(sum(PRICE) / COUNT(*), 2, ROUND_HALF_UP)) as "Avg Room Price"
-    FROM ROOM
-    GROUP BY TYPE;
-    ```
+   ```SQL
+   SELECT TYPE, TO_DECIMAL(ROUND(sum(PRICE) / COUNT(*), 2, ROUND_HALF_UP)) as "Avg Room Price"
+   FROM ROOM
+   GROUP BY TYPE;
+   ```
 
     ![SQL Function Referenced](SQLFunctionsReferenced.png)
 
@@ -258,11 +258,11 @@ primary_tag: software-product>sap-hana-cloud
 
 2. Notice that there is a preference to limit the number of rows to display as well as the maximum number of open results.  The following shows the results of these being set to 50 and 2.
 
-    ```SQL
-    SELECT * FROM HOTEL;
-    SELECT * FROM RESERVATION;
-    SELECT * FROM CUSTOMER;
-    ```
+   ```SQL
+   SELECT * FROM HOTEL;
+   SELECT * FROM RESERVATION;
+   SELECT * FROM CUSTOMER;
+   ```
 
     ![Limit results](limitResults.png)
 
@@ -290,18 +290,18 @@ The statement library contains a mix of pre-populated system statements and user
 
 1. Frequently used statements can be saved to the statement library for easy access.  Enter the statement below into the SQL console and click the **Add to Statement Library** icon.
 
-    ```SQL
-    /*
+   ```SQL
+   /*
 
-    [DESCRIPTION]
+   [DESCRIPTION]
 
-    - Future guest check-ins across all hotels
+   - Future guest check-ins across all hotels
 
-    */
+   */
 
-    SELECT * FROM RESERVATION
-        WHERE ARRIVAL >= CURRENT_DATE;
-    ```
+   SELECT * FROM RESERVATION
+       WHERE ARRIVAL >= CURRENT_DATE;
+   ```
 
     ![Add to Statement Library](AddToStatementLibrary.png)
 

@@ -65,43 +65,43 @@ In SAP HANA Studio, do the following:
 
 2. Create your new schema.
 
-    ```bash
-    CREATE SCHEMA <schema_name>
-    ```
+   ```bash
+   CREATE SCHEMA <schema_name>
+   ```
 
     Click Execute ![execute](execute.png).
 
 3. Grant rights and permissions for your new user to work on your new schema.
 
-    ```bash
-    GRANT SELECT on SCHEMA <schema_name> to <new_user>
-    ```
+   ```bash
+   GRANT SELECT on SCHEMA <schema_name> to <new_user>
+   ```
 
     Example:
 
-    ```
-    GRANT SELECT on SCHEMA TEST to PREVIEW
-    ```
+   ```
+   GRANT SELECT on SCHEMA TEST to PREVIEW
+   ```
 
-    ```bash
-    GRANT SELECT, CREATE ANY on SCHEMA <schema_name> to <new_user>
-    ```
-
-    Example:
-
-    ```
-    GRANT SELECT, CREATE ANY on SCHEMA TEST to PREVIEW
-    ```
-
-    ```bash
-    GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA <schema_name> to _SYS_REPO WITH GRANT OPTION
-    ```
+   ```bash
+   GRANT SELECT, CREATE ANY on SCHEMA <schema_name> to <new_user>
+   ```
 
     Example:
 
-    ```
-    GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA TEST to _SYS_REPO WITH GRANT OPTION
-    ```
+   ```
+   GRANT SELECT, CREATE ANY on SCHEMA TEST to PREVIEW
+   ```
+
+   ```bash
+   GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA <schema_name> to _SYS_REPO WITH GRANT OPTION
+   ```
+
+    Example:
+
+   ```
+   GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON SCHEMA TEST to _SYS_REPO WITH GRANT OPTION
+   ```
 
     Click Execute ![execute](execute.png) for each line.
 

@@ -80,11 +80,11 @@ time: 15
 
 1. In SAP HANA Studio or another connected SQL command line, create a backup user and grant it backup permissions.
 
-    ```bash
-    CREATE USER backup_operator PASSWORD <password> NO FORCE_FIRST_PASSWORD_CHANGE;
-    GRANT BACKUP OPERATOR to backup_operator;
-    ALTER USER backup_operator DISABLE PASSWORD LIFETIME;
-    ```
+   ```bash
+   CREATE USER backup_operator PASSWORD <password> NO FORCE_FIRST_PASSWORD_CHANGE;
+   GRANT BACKUP OPERATOR to backup_operator;
+   ALTER USER backup_operator DISABLE PASSWORD LIFETIME;
+   ```
 
     This creates the user _backup_operator_ with the given password and tells the system to not require a password change upon first login. It gives also gives _backup_operator_ permission to make backups. You will be using this user to only create backups so logging in for each backup is not required. You only need to do this once.
 
@@ -92,70 +92,70 @@ time: 15
 
 3. Log in as `hxeadm`.
 
-    ```bash
-    su -l hxeadm
-    ```
+   ```bash
+   su -l hxeadm
+   ```
 
 3. Create the _backup_ key.
 
     Execute the following command to create the user key _backup_.
 
-    ```bash
-    hdbuserstore -i SET backup <hostname>:3<instance_number>13 backup_operator
-    ```
+   ```bash
+   hdbuserstore -i SET backup <hostname>:3<instance_number>13 backup_operator
+   ```
 
 4. Create the file `backup.sh`.
 
-    ```bash
-    vi backup.sh
-    ```
+   ```bash
+   vi backup.sh
+   ```
 
     Copy and paste the following code:
 
-    ```bash
-    ## defines backup prefix
-    TIMESTAMP="$(date +\%F\_%H\%M)"
-    BACKUP_PREFIX="SCHEDULED"
-    BACKUP_PREFIX="$BACKUP_PREFIX"_"$TIMESTAMP"
-    # TENANT="<tenant_database_name>"
-    ## runs the backup sequence using the backup key
-    hdbsql -U backup "backup data using file ('$BACKUP_PREFIX')"
-    # hdbsql -U backup "backup data for $TENANT using file ('$BACKUP_PREFIX')"
-    ```
+   ```bash
+   ## defines backup prefix
+   TIMESTAMP="$(date +\%F\_%H\%M)"
+   BACKUP_PREFIX="SCHEDULED"
+   BACKUP_PREFIX="$BACKUP_PREFIX"_"$TIMESTAMP"
+   # TENANT="<tenant_database_name>"
+   ## runs the backup sequence using the backup key
+   hdbsql -U backup "backup data using file ('$BACKUP_PREFIX')"
+   # hdbsql -U backup "backup data for $TENANT using file ('$BACKUP_PREFIX')"
+   ```
 
     This script will be used to create your backups. If you need to backup more than one database (you have tenant databases, for example), use the commented sections as a template.
 
 5. Give `backup.sh` run permission.
 
-    ```bash
-    chmod u+x backup.sh
-    ```
+   ```bash
+   chmod u+x backup.sh
+   ```
 
 6. Run `backup.sh`.
 
-    ```bash
-    <location_of_backup_script>/backup.sh
-    ```
+   ```bash
+   <location_of_backup_script>/backup.sh
+   ```
 
     Example:
 
-    ```
-    /hana/shared/HXE/HDB90/backup.sh
-    ```
+   ```
+   /hana/shared/HXE/HDB90/backup.sh
+   ```
 
     Wait while your backup is created.
 
 7. (Optional) Check your backup repository to ensure your backup was created.
 
-    ```bash
-    ls /usr/sap/<sid>/HDB<instance_number>/backup/data/SYSTEMDB
-    ```
+   ```bash
+   ls /usr/sap/<sid>/HDB<instance_number>/backup/data/SYSTEMDB
+   ```
 
     Example:
 
-    ```
-    ls /usr/sap/HXE/HDB90/backup/data/SYSTEMDB
-    ```
+   ```
+   ls /usr/sap/HXE/HDB90/backup/data/SYSTEMDB
+   ```
 
     A list of your backup files is displayed.
 
