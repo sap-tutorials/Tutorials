@@ -82,18 +82,18 @@ Then you are ready to deploy it into the Kubernetes cluster with Kyma runtime.
 
 **1.** Select the `Link to dashboard` to open Kyma dashboard.
 
-<!-- border -->![image-20220112154735200](image-20220112154735200.png)
+![image-20220112154735200](image-20220112154735200.png)
 
 **2.** Create a new namespace through Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
 
-<!-- border -->![create_namespace](create_namespace.png)
+![create_namespace](create_namespace.png)
 
 
 **3.** Enable Istio Sidecar Proxy Injection  
 Enabling Istio sidecar proxy injection for a namespace allows istiod to watch all Pod creation operations in this namespace and automatically inject newly created Pods with an Istio sidecar proxy.  
 Switch the toggle to enable Istio sidecar proxy injection. Click `Create` to finish namespace creation.  
 
-<!-- border -->![enable_ns_sidecar](enable_ns_sidecar.png)
+![enable_ns_sidecar](enable_ns_sidecar.png)
 
 > For more details, refer to the [Enable Istio Sidecar Proxy Injection](https://kyma-project.io/#/istio/user/tutorials/01-40-enable-sidecar-injection?id=enable-sidecar-injection-for-a-namespace)
 
@@ -288,7 +288,7 @@ Launch Kyma dashboard from SAP BTP cockpit, then navigate to the `multitenancy-n
 
 Go to `Workloads`, and then select `Deployments`. You will see deployment of **kyma-multitenant-node-multitenancy** displayed, with its `Pods` status shown in green. At this point, your application has been deployed successfully.
 
-<!-- border -->![deploy_succeed.png](deploy_succeed.png)
+![deploy_succeed.png](deploy_succeed.png)
 
 
 
@@ -298,7 +298,7 @@ Go to `Workloads`, and then select `Deployments`. You will see deployment of **k
 
 **1.** Find the URL address of your application in Kyma dashboard:
 
-<!-- border -->![api_rule_host](api_rule_host.png)
+![api_rule_host](api_rule_host.png)
 
 **2.** Access it in the browser, then the application will return the message "Hello World!".
 

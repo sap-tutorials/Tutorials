@@ -56,15 +56,15 @@ brew install buildpacks/tap/pack
 <p> </p>
     In the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:  
 
-    ```Shell / Bash
-    pack build <docker-hub-account>/multitenant-approuter:v1 --builder paketobuildpacks/builder-jammy-full
-    ```
+   ```Shell / Bash
+   pack build <docker-hub-account>/multitenant-approuter:v1 --builder paketobuildpacks/builder-jammy-full
+   ```
 <p> </p>
     In the directory `kyma-multitenant-node`, build the image for the multitenant backend app from source, for example:
 
-    ```Shell / Bash
-    pack build <docker-hub-account>/multitenant-kyma-backend:v2 --builder paketobuildpacks/builder-jammy-full
-    ```
+   ```Shell / Bash
+   pack build <docker-hub-account>/multitenant-kyma-backend:v2 --builder paketobuildpacks/builder-jammy-full
+   ```
 
 
 
@@ -98,18 +98,18 @@ If you followed the tutorials [Create a Basic Node.js Application with Express G
 
 **1.** Select the `Link to dashboard` to open Kyma dashboard.
 
-<!-- border -->![image-20220112154735200](image-20220112154735200.png)
+![image-20220112154735200](image-20220112154735200.png)
 
 **2.** Create a new namespace through Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
 
-<!-- border -->![create_namespace](create_namespace.png)
+![create_namespace](create_namespace.png)
 
 
 **3.** Enable Istio Sidecar Proxy Injection  
 Enabling Istio sidecar proxy injection for a namespace allows istiod to watch all Pod creation operations in this namespace and automatically inject newly created Pods with an Istio sidecar proxy.  
 Switch the toggle to enable Istio sidecar proxy injection. Click `Create` to finish namespace creation.  
 
-<!-- border -->![enable_ns_sidecar](enable_ns_sidecar.png)
+![enable_ns_sidecar](enable_ns_sidecar.png)
 
 > For more details, refer to the [Enable Istio Sidecar Proxy Injection](https://kyma-project.io/#/istio/user/tutorials/01-40-enable-sidecar-injection?id=enable-sidecar-injection-for-a-namespace)
 
@@ -169,7 +169,7 @@ Launch Kyma dashboard from SAP BTP cockpit, then navigate to the `multitenancy-n
 
 Go to `Workloads`, and then select `Deployments`. You will see deployments of **kyma-multitenant-approuter-multitenancy** and **kyma-multitenant-node-multitenancy** displayed, with their `Pods` statuses shown in green. At this point, your multitenant application has been deployed successfully.
 
-<!-- border -->![deploy_multi_succeed](deploy_multi_succeed.png)
+![deploy_multi_succeed](deploy_multi_succeed.png)
 
 
 

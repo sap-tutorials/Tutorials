@@ -37,15 +37,15 @@ Annotations controlling the UI can be stored in metadata extension files. In thi
 
 Right click the `ZC_FE_TRAVEL_######` projection view for the Travel entity to open the context menu. Choose **New Metadata Extension**.
 
-<!-- border -->![Create new metadata extension file](MetadataExtension_1.png)
+![Create new metadata extension file](MetadataExtension_1.png)
 
 Enter the name of your metadata extension file. Choose the same name as your projection view file name **`ZC_FE_TRAVEL_######`** and enter a description as well. Choose **Next**.
 
-<!-- border -->![Create new metadata extension file](MetadataExtension_2.png)
+![Create new metadata extension file](MetadataExtension_2.png)
 
 A transport request is already assigned to the metadata extension file. Choose **Finish** to confirm the creation of the file.
 
-<!-- border -->![Create new metadata extension file](MetadataExtension_3.png)
+![Create new metadata extension file](MetadataExtension_3.png)
 
 
 Now open the new metadata extension file `ZC_FE_TRAVEL_######` within the **Metadata Extensions** folder. To show a first column within the list report table, add the content shown in the coding example below. You can use code completion by pressing **`CTRL-SPACE`** at the related coding positions, e.g. when adding the `@UI.lineItem` annotation, just type **`@UI`** and then press **`CTRL-SPACE`** to choose the entry from the list of proposals.
@@ -62,12 +62,12 @@ annotate view ZC_FE_TRAVEL_###### with
 
 To finish this step, choose **Save** and **Activate** to take over the changes in your metadata extensions file.
 
-<!-- border -->![Create new metadata extension file](MetadataExtension_4.png)
+![Create new metadata extension file](MetadataExtension_4.png)
 
 
 Check your changes by refreshing of your real application preview in BAS or use the quick service preview in ADT. Choose **Go** to load the data.
 
-<!-- border -->![Create new metadata extension file](MetadataExtension_5.png)
+![Create new metadata extension file](MetadataExtension_5.png)
 
 You will now see the column **Travel ID** made visible on the list report table by the `@UI.lineItem` annotation added to the metadata extensions file. The data shown in the column is loaded from the database with the request triggered by the **Go** button.
     
@@ -108,7 +108,7 @@ LocalLastChangedAt;
 
 As a result, after saving and activating the metadata extensions file and then refreshing the preview of your application, you will see the additional columns shown in the list report table.
 
-<!-- border -->![add columns to the list report](TableColumnsSelectionFields_1.png)
+![add columns to the list report](TableColumnsSelectionFields_1.png)
 
 >Note: The default table type of a list report is the responsive table. If you reduce the size of your browser window, some columns will disappear and an action `Show Details` appears in the table toolbar (as of SAPUI5 version 1.90). If you use the property `importance: #HIGH` in your `lineItem` annotation, you can make sure that the information of the column will be shown independently of the browser window size.
 
@@ -132,7 +132,7 @@ Again save and activate the file and refresh the application to see the changes 
 
 You can now filter the data loaded into the list report by specifying values for these additional selection fields.
 
-<!-- border -->![add selection fields to the list report](TableColumnsSelectionFields_2.png)
+![add selection fields to the list report](TableColumnsSelectionFields_2.png)
 
 
 ### Add header information and default sorting
@@ -170,7 +170,7 @@ The `@UI.presentationVariant` annotation controls the sorting of the table by fi
 
 Save and activate the metadata extensions file and refresh the application preview to see the result on the UI.
 
-<!-- border -->![add header info](HeaderInfo_1.png)
+![add header info](HeaderInfo_1.png)
 
 ### Refine columns that have IDs
 
@@ -179,7 +179,7 @@ Instead of showing IDs for the fields Travel ID, Agency ID and Customer ID, one 
 
 You will achieve this by using specific annotations which are implemented within the projection view `ZC_FE_TRAVEL_######`. Therefore, open the projection view located in folder **Core Data Services** > **Data Definitions** which contains the root view definitions for the Travel entity.
 
-<!-- border -->![refine ids](IDsLabels_1.png)
+![refine ids](IDsLabels_1.png)
 
 Add the `@EndUserText` and `@ObjectModel` annotations to the fields as shown in the coding fragments below.
 
@@ -226,7 +226,7 @@ define root view entity ZC_FE_TRAVEL_######
 
 After saving and activating the file and refreshing the application, you will see the changed labels and content for the fields **Travel**, **Agency**, **Customer**, **Status** and **Last Changed At**.
 
-<!-- border -->![refine ids](IDsLabels_2.png)
+![refine ids](IDsLabels_2.png)
 
 
 
@@ -237,50 +237,50 @@ When you choose the value help icon of the selection field **Customer** in the f
 
 1. To implement the value help, assign the annotation `@Consumption.valueHelpDefinition` to the field `CustomerID` within the projection view `ZC_FE_TRAVEL_######`.
 
-    ```CDS
-    @EndUserText.label: 'Customer'
-    @ObjectModel.text.element: ['LastName']
-    @Consumption.valueHelpDefinition: [{ entity : {name: '/DMO/I_Customer', element: 'CustomerID'  } }]
-    CustomerID,
-    _Customer.LastName as LastName,
-    ```
+   ```CDS
+   @EndUserText.label: 'Customer'
+   @ObjectModel.text.element: ['LastName']
+   @Consumption.valueHelpDefinition: [{ entity : {name: '/DMO/I_Customer', element: 'CustomerID'  } }]
+   CustomerID,
+   _Customer.LastName as LastName,
+   ```
       The entity property `name` points to the data view and `element` contains the key for the selection.
 
 2. After saving, activating and refreshing your application, the field **Customer** provides the improved value help that allows a user-friendly selection of customer data within the **Search and Select** tab. You are still able to do a conditional selection by choosing the **Define Conditions** tab on the dialog. By entering search values such as the **Last Name** and choosing **Go**, the result is shown in the table. Selecting specific lines in the table and choosing **OK** will load a selected list of Travel items into the list report.
 
-    <!-- border -->![customer value help](CustomerValueHelp_1.png)
+    ![customer value help](CustomerValueHelp_1.png)
 
 Selection field **Status** also shows a conditional value help by default. From a user perspective it would be nice to get a list of values presented as a drop-down list, since the number of different values is very limited.
 
 
 1. In the projection view for the Travel entity `ZC_FE_TRAVEL_######` the annotation for the value help has to be defined for the `OverallStatus` field. As with the field `CustomerID` (see above), the annotation `@Consumption.valueHelpDefinition` is used with properties `name` and `element` containing the appropriate values.
 
-    ```CDS
-    ...
-    @EndUserText.label: 'Status'
-    @Consumption.valueHelpDefinition: [{ entity : {name: 'ZI_FE_STAT_######', element: 'TravelStatusId'  } }]
-    OverallStatus,
-    ...
-    ```
+   ```CDS
+   ...
+   @EndUserText.label: 'Status'
+   @Consumption.valueHelpDefinition: [{ entity : {name: 'ZI_FE_STAT_######', element: 'TravelStatusId'  } }]
+   OverallStatus,
+   ...
+   ```
 
     Save and activate the view.
 
 2. Open the CDS view for the status description `ZI_FE_STAT_######`. Just above the view definition, insert an `@ObjectModel.resultSet.sizeCategory` annotation with value `#XS`. This results in a drop-down list.
 
-    ```CDS
-    ...
-    @EndUserText.label: 'Travel Status view entity'
-    @ObjectModel.resultSet.sizeCategory: #XS -- drop down menu for value help
-    define view ZI_FE_STAT_######
-    ...
-    ```
+   ```CDS
+   ...
+   @EndUserText.label: 'Travel Status view entity'
+   @ObjectModel.resultSet.sizeCategory: #XS -- drop down menu for value help
+   define view ZI_FE_STAT_######
+   ...
+   ```
 
     Save and activate the view.
 
 
 3. After refreshing the application the **Status** field is now a drop-down list. Select one or more of the available status codes and choose **Go** to load the filtered list.
 
-    <!-- border -->![overall status fixed value help](StatusValueHelp_1.png)
+    ![overall status fixed value help](StatusValueHelp_1.png)
 
 
 
@@ -293,48 +293,48 @@ Although the related association is set correctly for `ZI_FE_TRAVEL_######` and 
 
 1. You can check the association already available within the CDS view for the Travel entity `ZI_FE_TRAVEL_######` in folder **Data Definitions** (line 6) and the publication of this association to make it available for projection views (line 14).
 
-    ```CDS
-    define root view entity ZI_FE_TRAVEL_######
-      as select from ZFE_ATRAV_######
-      association [0..1] to /DMO/I_Agency as _Agency on $projection.AgencyID = _Agency.AgencyID
-      association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
-      association [0..1] to /DMO/I_Customer as _Customer on $projection.CustomerID = _Customer.CustomerID
-      association [0..1] to ZI_FE_STAT_###### as _TravelStatus on $projection.OverallStatus = _TravelStatus.TravelStatusId
-      composition [0..*] of ZI_FE_Booking_###### as _Booking
-      {
-        key TRAVEL_UUID as TravelUUID,
-        ...
+   ```CDS
+   define root view entity ZI_FE_TRAVEL_######
+     as select from ZFE_ATRAV_######
+     association [0..1] to /DMO/I_Agency as _Agency on $projection.AgencyID = _Agency.AgencyID
+     association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
+     association [0..1] to /DMO/I_Customer as _Customer on $projection.CustomerID = _Customer.CustomerID
+     association [0..1] to ZI_FE_STAT_###### as _TravelStatus on $projection.OverallStatus = _TravelStatus.TravelStatusId
+     composition [0..*] of ZI_FE_Booking_###### as _Booking
+     {
+       key TRAVEL_UUID as TravelUUID,
+       ...
 
-        ...
-        _Customer,
-        _TravelStatus
-      }
-    ```
+       ...
+       _Customer,
+       _TravelStatus
+     }
+   ```
 
 2. Now the access to the status description has to be set within the projection view  `ZC_FE_TRAVEL_######`. Add the text annotation `@ObjectModel.text.element` for field `OverallStatus` as shown below (line 2). To load the description the corresponding field from the status description view has to be accessed by the association `_TravelStatus` (line 5).
 
-    ```CDS
-    @EndUserText.label: 'Status'
-    @ObjectModel.text.element: ['TravelStatusText']
-    @Consumption.valueHelpDefinition: [{ entity : {name: 'ZI_FE_STAT_######', element: 'TravelStatusId'  } }]
-    OverallStatus,
-    _TravelStatus.TravelStatusText as TravelStatusText,
-    ```
+   ```CDS
+   @EndUserText.label: 'Status'
+   @ObjectModel.text.element: ['TravelStatusText']
+   @Consumption.valueHelpDefinition: [{ entity : {name: 'ZI_FE_STAT_######', element: 'TravelStatusId'  } }]
+   OverallStatus,
+   _TravelStatus.TravelStatusText as TravelStatusText,
+   ```
     Save and activate the view.
 
 3. With these settings the description is displayed in the column **Status** but additionally, the key is shown within parentheses. You can use the `@UI.textArrangement` annotation with value `#TEXT_ONLY` to omit the key. Open the metadata extensions file  `ZC_FE_TRAVEL_######` and add the text arrangement annotation to the field `OverallStatus` (line 3).
 
-    ```CDS
-    @UI.lineItem: [{ position: 80 }]
-    @UI.selectionField: [{ position: 30 }]
-    @UI.textArrangement: #TEXT_ONLY
-    OverallStatus;
-    ```
+   ```CDS
+   @UI.lineItem: [{ position: 80 }]
+   @UI.selectionField: [{ position: 30 }]
+   @UI.textArrangement: #TEXT_ONLY
+   OverallStatus;
+   ```
     Save and activate the metadata extensions file.
 
 4. After refreshing your application you will see the status description within the **Status** column.
 
-    <!-- border -->![overall status text arrangement](StatusTextArrangement_1.png)
+    ![overall status text arrangement](StatusTextArrangement_1.png)
 
 
 ### Implement the criticality feature
@@ -344,22 +344,22 @@ The values of the **Status** field can be semantically colored to visually diffe
 
 1. The criticality feature requires specific values for the different colors to be shown on the UI. Therefore, a new field `OverallStatusCriticality` will be defined in the CDS view  `ZI_FE_TRAVEL_######`. This field will be filled with color codes derived from the values of the field `overall_status`. See the coding fragment below which shows a case structure to define the content of the new field `OverallStatusCriticality` within lines 5 to 10.
 
-    ```CDS
-    ...
-    description as Description,
+   ```CDS
+   ...
+   description as Description,
 
-    overall_status as OverallStatus,
-    case overall_status
-      when 'O'  then 2    -- 'open'       | 2: yellow colour
-      when 'A'  then 3    -- 'accepted'   | 3: green colour
-      when 'X'  then 1    -- 'rejected'   | 1: red colour
-                else 0    -- 'nothing'    | 0: unknown
-    end                   as OverallStatusCriticality,
+   overall_status as OverallStatus,
+   case overall_status
+     when 'O'  then 2    -- 'open'       | 2: yellow colour
+     when 'A'  then 3    -- 'accepted'   | 3: green colour
+     when 'X'  then 1    -- 'rejected'   | 1: red colour
+               else 0    -- 'nothing'    | 0: unknown
+   end                   as OverallStatusCriticality,
 
-    @Semantics.user.createdBy: true
-    created_by as CreatedBy,
-    ...
-    ```
+   @Semantics.user.createdBy: true
+   created_by as CreatedBy,
+   ...
+   ```
 Take over the case structure into the CDS view just below the field `overall_status`. Save and activate the view.
 
 2. Adding a new field to the CDS view is a structural change which requires a recreation of the corresponding draft table `ZFE_DTRAV_######`. This draft table contains all the fields of the CDS view.
@@ -368,29 +368,29 @@ Take over the case structure into the CDS view just below the field `overall_sta
 
     Click on the light bulb icon on the left in that line or position your cursor on the draft table file name `ZFE_DTRAV_######` and press **`CTRL + 1`**. The system proposes to recreate the draft table. By double-clicking on the proposal, the recreation of the table will be started.
 
-    <!-- border -->![overall status criticality](StatusCriticality_1.png)
+    ![overall status criticality](StatusCriticality_1.png)
 
     As soon as the recreation is finished, you will see the draft table `ZFE_DTRAV_######` loaded into the editor containing the new field `OverallStatusCriticality`.
 
-    <!-- border -->![overall status criticality](StatusCriticality_2.png)
+    ![overall status criticality](StatusCriticality_2.png)
 
     Save and activate the draft table and then also activate the behavior definition file `ZI_FE_TRAVEL_######` which is still open in your editor. The error disappears as soon as the behavior definition is activated.
 
 
 3. To be able to use the new field within UI annotations you need to take it over to the projection view of the travel entity `ZC_FE_TRAVEL_######`. Insert the field `OverallStatusCriticality` just below the definition for the field `OverallStatus` (see line 7 in the coding fragment).
 
-    ```CDS
-    ...
-    @ObjectModel.text.element: ['TravelStatusText']
-    @Consumption.valueHelpDefinition: [{ entity : {name: 'ZI_FE_STAT_######', element: 'TravelStatusId'  } }]
-    OverallStatus,
-    _TravelStatus.TravelStatusText as TravelStatusText,
+   ```CDS
+   ...
+   @ObjectModel.text.element: ['TravelStatusText']
+   @Consumption.valueHelpDefinition: [{ entity : {name: 'ZI_FE_STAT_######', element: 'TravelStatusId'  } }]
+   OverallStatus,
+   _TravelStatus.TravelStatusText as TravelStatusText,
 
-    OverallStatusCriticality,
+   OverallStatusCriticality,
 
-    CreatedBy,
-    ...
-    ```
+   CreatedBy,
+   ...
+   ```
 
     Save and activate the projection view.
 
@@ -398,27 +398,27 @@ Take over the case structure into the CDS view just below the field `overall_sta
 
     This can be done by adding the property `criticality` with value  `OverallStatusCriticality` to the `@UI.lineItem` annotation of field `OverallStatus`  (see line 5 in the coding fragment).
 
-    ```CDS
-    ...
-    @UI.lineItem: [{ position: 70 }]
-    TotalPrice;
+   ```CDS
+   ...
+   @UI.lineItem: [{ position: 70 }]
+   TotalPrice;
 
-    @UI.lineItem: [{ position: 80, criticality: 'OverallStatusCriticality' }]
-    @UI.selectionField: [{ position: 30 }]
-    @UI.textArrangement: #TEXT_ONLY
-    OverallStatus;
+   @UI.lineItem: [{ position: 80, criticality: 'OverallStatusCriticality' }]
+   @UI.selectionField: [{ position: 30 }]
+   @UI.textArrangement: #TEXT_ONLY
+   OverallStatus;
 
-    @UI.lineItem: [{ position: 90 }]
-    LocalLastChangedAt;
-    ...
-    ```
+   @UI.lineItem: [{ position: 90 }]
+   LocalLastChangedAt;
+   ...
+   ```
 
     Save and activate the metadata extension file.
 
 
 Refresh your application and reload the data by choosing **Go** in the list report. Now the content of column **Status** is shown in different colors depending on the value of the field.
 
-<!-- border -->![overall status criticality](StatusCriticality_3.png)
+![overall status criticality](StatusCriticality_3.png)
 
 
 

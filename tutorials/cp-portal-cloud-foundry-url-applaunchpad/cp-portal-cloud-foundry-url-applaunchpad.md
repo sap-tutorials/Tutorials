@@ -23,7 +23,7 @@ Use the **Content Manager** to add apps to SAP Build Work Zone.
 
 From the Site Manager, click the **Content Manager** icon from the left panel to open it.
 
-<!-- border -->![Content manager icon](1-content-manager-icon.png)
+![Content manager icon](1-content-manager-icon.png)
 
 
 ### Create and configure new app
@@ -32,11 +32,11 @@ From the Site Manager, click the **Content Manager** icon from the left panel to
 
 1. Click **Create** and select **App** from the list.
 
-    <!-- border -->![Content manager new app](2-new-app.png)
+    ![Content manager new app](2-new-app.png)
 
 2. In the header of the app editor, enter a title `External Community`.
 
-    <!-- border -->![Add title for app](2a-add-title.png)
+    ![Add title for app](2a-add-title.png)
 
 
 3. Under the **Configuration** tab, enter the following values (some of them are already there by default):
@@ -51,7 +51,7 @@ From the Site Manager, click the **Content Manager** icon from the left panel to
 
     * **URL**:  `https://community.sap.com/topics/work-zone`
 
-    <!-- border -->![App editor properties tab](3-app-editor-properties.png)
+    ![App editor properties tab](3-app-editor-properties.png)
 
 4. Click the **Navigation** tab and enter the intent of your app.
 
@@ -63,7 +63,7 @@ From the Site Manager, click the **Content Manager** icon from the left panel to
 
      * **Action**:  `Display`
 
-    <!-- border -->![App editor navigation tab](4-app-editor-navigation.png)
+    ![App editor navigation tab](4-app-editor-navigation.png)
 
 6. Click the **Visualization** tab.
 
@@ -79,7 +79,7 @@ From the Site Manager, click the **Content Manager** icon from the left panel to
 
       You see a preview of the tile with all the properties you entered.
 
-      <!-- border -->![App editor visualization tab](5-app-editor-visualization.png)
+      ![App editor visualization tab](5-app-editor-visualization.png)
 
 8.  Click **Save**.
 
@@ -90,11 +90,11 @@ You have configured the URL app and in the next step you'll go back to the **Con
 
 1. Go back to the Content Manager using the breadcrumbs.
 
-    <!-- border -->![Go to content manager icon](6-go-to-content-manager.png)
+    ![Go to content manager icon](6-go-to-content-manager.png)
 
 2. In the **Content Manager**, you can see your app in the list.
 
-    <!-- border -->![Content manager with app](7-view-app.png)
+    ![Content manager with app](7-view-app.png)
 
 
 To view the app in runtime, you must assign the app to a role. 
@@ -107,16 +107,16 @@ To view the app in runtime, you must assign the app to a role.
 
 1. In the **Content Manager**, click the **Everyone** role.
 
-    <!-- border -->![Click Everyone role](8-everyone-role.png)
+    ![Click Everyone role](8-everyone-role.png)
 
 2. Click **Edit**.
 
-    <!-- border -->![Edit](8a-click-edit.png)
+    ![Edit](8a-click-edit.png)
 
 
 3. All available apps are shown in the editor. In the **Assignment Status** column you can see that the `External Community` is red and is not assigned to the role. Click the toggle to change the toggle to green and click **Save** to assign the app to the `Everyone` role.
 
-    <!-- border -->![Assign app to role](9-assign-role.png)
+    ![Assign app to role](9-assign-role.png)
 
 
 Congratulations you've created a site with two apps.
