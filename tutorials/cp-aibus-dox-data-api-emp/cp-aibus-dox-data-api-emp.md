@@ -40,11 +40,11 @@ Free tier and trial users can only create one client. To see your list of client
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](listClient.png)
+![DOX](listClient.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](listClientResponse.png)
+![DOX](listClientResponse.png)
 
 
 
@@ -61,11 +61,11 @@ Use the **DELETE /clients** endpoint to delete the `default` client.
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](1delete_clients_request.png)
+![DOX](1delete_clients_request.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](1delete_clients_response.png)
+![DOX](1delete_clients_response.png)
 
 
 
@@ -82,11 +82,11 @@ Use the **POST /clients** endpoint to create your own client. The **`clientId`**
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](1create_clients_request.png)
+![DOX](1create_clients_request.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](1create_clients_response.png)
+![DOX](1create_clients_response.png)
 
 You can repeat step 1 to see the **`clientId`** and **`clientName`** of the client you have just created.
 
@@ -108,22 +108,22 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
 
 3. Define the data in the **`payload`** field, so that the system knows which extracted field (using, for example, the employee ID from master data) should be enriched.
 
-    ```JSON
-    {
-       "value":[
-          {
-             "id":"E0001",
-             "firstName":"Linda",
-             "lastName":"Owens"
-          },
-          {
-             "id":"E0002",
-             "firstName":"Lin",
-             "lastName":"Owens"
-          }
-       ]
-    }
-    ```
+   ```JSON
+   {
+      "value":[
+         {
+            "id":"E0001",
+            "firstName":"Linda",
+            "lastName":"Owens"
+         },
+         {
+            "id":"E0002",
+            "firstName":"Lin",
+            "lastName":"Owens"
+         }
+      ]
+   }
+   ```
 
 4. Choose the enrichment data **`type`** `employee`.
 
@@ -131,7 +131,7 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
 
 6. Click **Execute**.
 
-<!-- border -->![DOX](1post_data_jobs_request.png)
+![DOX](1post_data_jobs_request.png)
 
 > ### What just happened?
 >
@@ -139,7 +139,7 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
 
 You should receive a response like the following with status PENDING:
 
-<!-- border -->![DOX](1post_data_jobs_response.png)
+![DOX](1post_data_jobs_response.png)
 
 Copy the **`id`** from the **Response body** to see the result of the enrichment data status in the next step.
 
@@ -159,11 +159,11 @@ Use the **GET /data/jobs/{`id`}** endpoint to see the status of the uploaded enr
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](1get_data_jobs_id_request.png)
+![DOX](1get_data_jobs_id_request.png)
 
 You should receive a response like the following with status SUCCESS:
 
-<!-- border -->![DOX](1get_data_jobs_id_response.png)
+![DOX](1get_data_jobs_id_response.png)
 
 > ### What just happened?
 >
@@ -183,21 +183,21 @@ Set data activation to manual, instead of using the default automatic refresh of
 
 3. Enter the following in the **`payload`** field:
 
-    ```JSON
-    {
-      "value": {
-        "manualDataActivation":"true"
-      }
-    }  
-    ```
+   ```JSON
+   {
+     "value": {
+       "manualDataActivation":"true"
+     }
+   }  
+   ```
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](1create_config_request.png)
+![DOX](1create_config_request.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](1create_config_response.png)
+![DOX](1create_config_response.png)
 
 
 
@@ -212,15 +212,15 @@ Create a data activation job record to see new or updated enrichment data in the
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](1create_data_activation_request.png)
+![DOX](1create_data_activation_request.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](1create_data_activation_response.png)
+![DOX](1create_data_activation_response.png)
 
 >If you have already used this endpoint recently, you should receive a response like the following:
 
-><!-- border -->![DOX](1create_data_activation_error.png)
+>![DOX](1create_data_activation_error.png)
 
 >Wait until next data activation is possible to perform this step once again before moving to step 8.
 
@@ -259,64 +259,64 @@ Do the following:
 
 2. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_27`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example) and the enrichment data type `employee`.
 
-    ```JSON
-    {
-       "extraction":{
-          "headerFields":[
-             "barcode",
-             "documentNumber",
-             "taxId",
-             "taxName",
-             "purchaseOrderNumber",
-             "shippingAmount",
-             "netAmount",
-             "grossAmount",
-             "currencyCode",
-             "receiverContact",
-             "documentDate",
-             "taxAmount",
-             "taxRate",
-             "receiverName",
-             "receiverAddress",
-             "receiverTaxId",
-             "deliveryDate",
-             "paymentTerms",
-             "deliveryNoteNumber",
-             "senderBankAccount",
-             "senderAddress",
-             "senderName",
-             "dueDate",
-             "discount"
-          ],
-          "lineItemFields":[
-             "description",
-             "netAmount",
-             "quantity",
-             "unitPrice",
-             "materialNumber",
-             "unitOfMeasure"
-          ]
-       },
-       "clientId":"c_27",
-       "documentType":"invoice",
-       "receivedDate":"2020-02-17",
-       "enrichment":{
-          "employee":{
-             "type":"employee"
-          }
-       }
-    }
-    ```
+   ```JSON
+   {
+      "extraction":{
+         "headerFields":[
+            "barcode",
+            "documentNumber",
+            "taxId",
+            "taxName",
+            "purchaseOrderNumber",
+            "shippingAmount",
+            "netAmount",
+            "grossAmount",
+            "currencyCode",
+            "receiverContact",
+            "documentDate",
+            "taxAmount",
+            "taxRate",
+            "receiverName",
+            "receiverAddress",
+            "receiverTaxId",
+            "deliveryDate",
+            "paymentTerms",
+            "deliveryNoteNumber",
+            "senderBankAccount",
+            "senderAddress",
+            "senderName",
+            "dueDate",
+            "discount"
+         ],
+         "lineItemFields":[
+            "description",
+            "netAmount",
+            "quantity",
+            "unitPrice",
+            "materialNumber",
+            "unitOfMeasure"
+         ]
+      },
+      "clientId":"c_27",
+      "documentType":"invoice",
+      "receivedDate":"2020-02-17",
+      "enrichment":{
+         "employee":{
+            "type":"employee"
+         }
+      }
+   }
+   ```
 
 3. Click **Execute**.
 
 This is how the request should look like:
 
-<!-- border -->![DOX](1post_document_jobs_request.png)
+![DOX](1post_document_jobs_request.png)
 
 And that's how the response looks like:
 
-<!-- border -->![DOX](1post_document_jobs_response.png)
+![DOX](1post_document_jobs_response.png)
 
 Copy the **`id`** from the **Response body** to get enrichment data prediction in the next step.
 
@@ -339,11 +339,11 @@ When enrichment data has been uploaded and fits to a certain prediction it is ad
 
 5. Click **Execute**.
 
-<!-- border -->![DOX](1get_document_jobs_id_request.png)
+![DOX](1get_document_jobs_id_request.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](1get_document_jobs_id_response.png)
+![DOX](1get_document_jobs_id_response.png)
 
 > ### What just happened?
 >
@@ -366,11 +366,11 @@ To see a list of the enrichment data entries you have created:
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](1get_data_request.png)
+![DOX](1get_data_request.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](1get_data_response.png)
+![DOX](1get_data_response.png)
 
 
 
@@ -385,28 +385,28 @@ To delete enrichment data which has been uploaded before:
 
 3. Define the data in the **`payload`** field, so that the system knows which data entry (using, for example, the data entry ID) should be deleted.
 
-    ```JSON
-    {
-       "value":[
-          {
-             "id":"E0001"
-          },
-          {
-             "id":"E0002"
-          }
-       ]
-    }
-    ```
+   ```JSON
+   {
+      "value":[
+         {
+            "id":"E0001"
+         },
+         {
+            "id":"E0002"
+         }
+      ]
+   }
+   ```
 
 4. Choose the enrichment data **`type`** `employee` and enter your **`clientId`**.
 
 5. Click **Execute**.
 
-<!-- border -->![DOX](1delete_data_request.png)
+![DOX](1delete_data_request.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](1delete_data_response.png)
+![DOX](1delete_data_response.png)
 
 You can repeat step 2 and delete the client you created in step 3.
 
