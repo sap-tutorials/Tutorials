@@ -29,7 +29,7 @@ author_profile: https://github.com/Juliana-Morais
 
 2. Click the tile to access your subaccount.
 
-<!-- border -->![Access Subaccount](access-subaccount.png)
+![Access Subaccount](access-subaccount.png)
 
 
 
@@ -42,29 +42,29 @@ To use SAP Document AI, you need to make sure that your account is properly conf
 
 2. Search for `SAP Document AI`. ***If you find it in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
-<!-- border -->![Check Entitlements](check-entitlements.png)
+![Check Entitlements](check-entitlements.png)
 
 ***ONLY if you DO NOT find `SAP Document AI` in your list, proceed as follows:***
 
   1.  Click **Edit**.
 
-    <!-- border -->![Configure Entitlements](edit.png)
+   ![Configure Entitlements](edit.png)
 
   2.  Click **Add Service Plans**.
 
-    <!-- border -->![Add Service Plans](add-service-plans.png)
+   ![Add Service Plans](add-service-plans.png)
 
   3.  Search for `SAP Document AI`. Choose the `free (Free Tier)` and `default (Application)` service plans. Click **Add 2 Service Plans**.
 
-    >You can also perform this tutorial series using the following service plans intended for productive use: base edition (blocks_of_100), embedded edition (embedded_edition), or premium edition (premium_edition). To do so, choose either the `blocks_of_100`, `embedded_edition`, or `premium_edition` plan in this step (instead of `free`). For more information about the service plans available for SAP Document AI, see [Service Plans](https://help.sap.com/docs/document-information-extraction/document-information-extraction/service-plans).
+   >You can also perform this tutorial series using the following service plans intended for productive use: base edition (blocks_of_100), embedded edition (embedded_edition), or premium edition (premium_edition). To do so, choose either the `blocks_of_100`, `embedded_edition`, or `premium_edition` plan in this step (instead of `free`). For more information about the service plans available for SAP Document AI, see [Service Plans](https://help.sap.com/docs/document-information-extraction/document-information-extraction/service-plans).
 
-    <!-- border -->![Add Service Plan](add-free-plan.png)
+   ![Add Service Plan](add-free-plan.png)
 
-    <!-- border -->![Add Service Plan](add-default-plan.png)
+   ![Add Service Plan](add-default-plan.png)
 
   4.  Click **Save** to save your entitlement changes.
 
-    <!-- border -->![Save Entitlements](save-entitlements.png)
+   ![Save Entitlements](save-entitlements.png)
 
 You are now entitled to use SAP Document AI and create service instances.
 
@@ -77,11 +77,11 @@ The Service Marketplace is where you find all the services available on SAP BTP.
 
 1.  Click **Service Marketplace** on the navigation side bar. Search for **SAP Document AI** and click the tile to access it.
 
-    <!-- border -->![Access Service](access-service.png)
+    ![Access Service](access-service.png)
 
 2. Click **Create** to start the service instance creation dialog.
 
-    <!-- border -->![Create Instance](create-instance.png)
+    ![Create Instance](create-instance.png)
 
 3. In the dialog, choose the `free` plan. Enter a name for your new instance, for example, `doc-ai-instance` and click **Create**.
 
@@ -91,11 +91,11 @@ The Service Marketplace is where you find all the services available on SAP BTP.
     
     >Choose `premium_edition` in this step (instead of `free`) if you're using the premium edition plan to perform this tutorial series.
 
-    <!-- border -->![Create Instance](create-instance-dialog.png)
+    ![Create Instance](create-instance-dialog.png)
 
 4. In the following dialog, click on **View Instance** to navigate to the list of your service instances.
 
-    <!-- border -->![View Instances](view-instances.png)
+    ![View Instances](view-instances.png)
 
 You have successfully created a service instance for SAP Document AI.
 
@@ -108,12 +108,12 @@ You are now able to create a service key for your new service instance. Service 
 
 1. Click the dots to open the menu and select **Create Service Key**.
 
-    <!-- border -->![Service Key](create-service-key.png)
+    ![Service Key](create-service-key.png)
 
 2. In the dialog, enter `doc-ai-key` as the name of your service key. Click **Create** to create the service key.
 
-    <!-- border -->![Create Service Key](create-service-key-name.png)
+    ![Create Service Key](create-service-key-name.png)
 
 You have successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
-<!-- border -->![View Service Key](view-service-key.png)
+![View Service Key](view-service-key.png)

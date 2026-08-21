@@ -32,7 +32,7 @@ For now, the SAP Document AI workspace is only available for enterprise accounts
 
 2. Click the tile to access your subaccount.
 
-<!-- border -->![Access Subaccount](access-subaccount.png)
+![Access Subaccount](access-subaccount.png)
 
 
 
@@ -47,27 +47,27 @@ The SAP Document AI workspace requires a tenant for Cloud Identity Services. For
 
 2. Search for `Cloud Identity Services`. ***If you find it in the list, you're entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
-    <!-- border -->![Check Entitlements](check-entitlements.png)
+    ![Check Entitlements](check-entitlements.png)
 
 ***ONLY if you DO NOT find `Cloud Identity Services` in your list, proceed as follows:***
 
   1.  Click **Edit**.
   
-    <!-- border -->![DOX-UI](edit.png)
+   ![DOX-UI](edit.png)
 
   2.  Click **Add Service Plans**.
             
-    <!-- border -->![DOX-UI](add-service-plans.png)
+   ![DOX-UI](add-service-plans.png)
 
   3.  Search for `Cloud Identity Services`. Choose the `default (Application)` plan (or the `additional-tenant (Application)` plan). Click **Add 1 Service Plan**.
       
-    <!-- border -->![DOX-UI](add-plan.png)
+   ![DOX-UI](add-plan.png)
 
   4.  Click **Save** to save your entitlement changes.
     
-    <!-- border -->![DOX-UI](save-entitlements.png)
+   ![DOX-UI](save-entitlements.png)
 
-    You're now entitled to create a tenant for Cloud Identity Services.
+   You're now entitled to create a tenant for Cloud Identity Services.
 
 
 
@@ -78,19 +78,19 @@ The Service Marketplace is where you find all the services and applications avai
 
 1. On the navigation side bar, click **Service Marketplace**. Search for `Cloud Identity Services` and click the tile.
 
-    <!-- border -->![DOX-UI](tile-ias.png)
+    ![DOX-UI](tile-ias.png)
 
 2. In the top-right corner, click **Create**.
 
-    <!-- border -->![DOX-UI](subscribe-ias.png)
+    ![DOX-UI](subscribe-ias.png)
 
 3. In the dialog, click **Create**.
 
-    <!-- border -->![DOX-UI](dialog-create-ias.png)
+    ![DOX-UI](dialog-create-ias.png)
 
     The subscription is going to be created now. Click on **View Subscription** to go to the list of your existing subscriptions.
 
-    <!-- border -->![DOX-UI](dialog-in-progress.png)
+    ![DOX-UI](dialog-in-progress.png)
 
 
 
@@ -99,19 +99,19 @@ The Service Marketplace is where you find all the services and applications avai
 
 1. Go to your inbox and open the account activation email (`Activation Information for SAP Cloud Identity Services`). Click the activation link.
 
-    <!-- border -->![DOX-UI](activate-account.png)
+    ![DOX-UI](activate-account.png)
 
 2. Enter a password and click **Continue**.
 
-    <!-- border -->![DOX-UI](activate-account-continue.png)
+    ![DOX-UI](activate-account-continue.png)
 
 3. You're informed that your account is successfully activated. Click **Continue**.
 
-     <!-- border -->![DOX-UI](activate-account-activated.png)
+     ![DOX-UI](activate-account-activated.png)
 
     This opens the administration console of SAP Cloud Identity Services:
 
-    <!-- border -->![DOX-UI](console.png)
+    ![DOX-UI](console.png)
 
     Leave the administration console of SAP Cloud Identity Services open. We'll go back here in step 7.
 
@@ -121,19 +121,19 @@ The Service Marketplace is where you find all the services and applications avai
 
 1. Back on the SAP BTP cockpit, under **Security**, click **Trust Configuration** and then in the top-right corner, click **Establish Trust**.
 
-    <!-- border -->![DOX-UI](trust.png)    
+    ![DOX-UI](trust.png)    
 
 2. Choose your tenant for Cloud Identity Services and click **Next** 3 times.
 
-    <!-- border -->![DOX-UI](next.png) 
+    ![DOX-UI](next.png) 
 
 3. Click **Finish**.
 
-    <!-- border -->![DOX-UI](finish.png)     
+    ![DOX-UI](finish.png)     
 
     Your tenant for Cloud Identity Services is added to the list:
 
-    <!-- border -->![DOX-UI](list.png)
+    ![DOX-UI](list.png)
 
 
 
@@ -145,19 +145,19 @@ Before subscribing to the SAP Document AI workspace, make sure that a service in
 
 1. On the navigation side bar, click **Service Marketplace**. Search for `SAP Document AI` and click the tile.
 
-    <!-- border -->![DOX-UI](tile.png)
+    ![DOX-UI](tile.png)
 
 2. Click **Create**.
 
-    <!-- border -->![DOX-UI](subscribe.png)
+    ![DOX-UI](subscribe.png)
 
 3. In the dialog, choose the `default` plan and click **Create**.
 
-    <!-- border -->![DOX-UI](dialog-create.png)
+    ![DOX-UI](dialog-create.png)
 
     The subscription is going to be created now. Click on **View Subscription** to go to the list of your existing subscriptions.
 
-    <!-- border -->![DOX-UI](dialog-in-progress.png)
+    ![DOX-UI](dialog-in-progress.png)
 
 
 
@@ -170,25 +170,25 @@ SAP Document AI provides default policies that you can assign to users. These po
 
 2. Under **Applications & Resources**, choose the **Applications** tile.
 
-    <!-- border -->![DOX-UI](applications.png)
+    ![DOX-UI](applications.png)
 
 3. Choose the bundled application `SAP Document AI`.
 
-    <!-- border -->![DOX-UI](bundled-application.png)
+    ![DOX-UI](bundled-application.png)
 
 4. Choose the **Authorization Policies** tab and choose an authorization policy that you want to assign – for example, `Admin`. 
 
-    <!-- border -->![DOX-UI](authorization-policies.png)
+    ![DOX-UI](authorization-policies.png)
 
     The administration console opens the **Assignments** pane.
 
 5. Choose **Add**.
 
-    <!-- border -->![DOX-UI](add.png)
+    ![DOX-UI](add.png)
 
 6. Select the users that you want to add to the authorization policy and choose **Add**.
 
-    <!-- border -->![DOX-UI](add-users.png)
+    ![DOX-UI](add-users.png)
 
     You have added the selected users to an authorization policy. These users are authorized to access and use the resources with the rules and restrictions defined in the authorization policy. 
 
@@ -199,7 +199,7 @@ SAP Document AI provides default policies that you can assign to users. These po
 
 1. Back on the SAP BTP cockpit, under **Services**, click **Instances and Subscriptions**. Choose the three dots at the right end of the row with the SAP Document AI application and select **Go to Application** from the dropdown.
 
-    <!-- border -->![DOX-UI](go-to-app.png)
+    ![DOX-UI](go-to-app.png)
 
     The logon screen appears.
 
@@ -210,14 +210,14 @@ SAP Document AI provides default policies that you can assign to users. These po
     - On the **Permission Denied** dialog, do the following:
     Choose the link (`here`) in “Or choose `here` if you already have access to the SAP Document AI workspace.”
 
-    <!-- border -->![DOX-UI](denied.png)
+    ![DOX-UI](denied.png)
 
     - From the SAP Document AI basic UI, toggle the **Workspace** switch at the top of the screen from **OFF** to **ON**. Alternatively, edit the URL of the SAP Document AI basic UI, replacing /ui and everything that follows it with /workspace.
     
-    <!-- border -->![DOX-UI](basic.png)
+    ![DOX-UI](basic.png)
 
     The SAP Document AI workspace appears.
 
-    <!-- border -->![DOX-UI](app.png)
+    ![DOX-UI](app.png)
 
     You have successfully subscribed to the SAP Document AI workspace.

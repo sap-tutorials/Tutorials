@@ -28,7 +28,7 @@ author_profile: https://github.com/Juliana-Morais
 
 2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
-    <!-- border -->![Trial global account](01_Foundation20Onboarding_Home.png)
+    ![Trial global account](01_Foundation20Onboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
@@ -36,11 +36,11 @@ author_profile: https://github.com/Juliana-Morais
 
     >Choose **Continue**.
 
-    ><!-- border -->![Account setup](02_Foundation20Onboarding_Processing.png)
+    >![Account setup](02_Foundation20Onboarding_Processing.png)
 
 3. From your global account page, choose the `trial` tile to access your subaccount.
 
-    <!-- border -->![Subaccounts](enter-trial-account.png)
+    ![Subaccounts](enter-trial-account.png)
 
 
 
@@ -59,19 +59,19 @@ To try out Data Attribute Recommendation, you need to make sure that your accoun
 
   1. Click **Configure Entitlements**.
 
-    ![Configure Entitlements](configure-entitlements.png)
+   ![Configure Entitlements](configure-entitlements.png)
 
   2. Click **Add Service Plans** to add service plans to your entitlements.
 
-    ![Add Service Plan](add-service-plans.png)
+   ![Add Service Plan](add-service-plans.png)
 
   3. Select **Data Attribute Recommendation Trial**, and choose the **standard** service plan. Click **Add 1 Service Plan**.
 
-    ![Add Service Plan](add-entitlements.png)
+   ![Add Service Plan](add-entitlements.png)
 
   4. **Save** your entitlement changes.
 
-    ![Add Service Plan](save-entitlements.png)    
+   ![Add Service Plan](save-entitlements.png)    
 
 You are now entitled to use the service and to create instances of the service.
 

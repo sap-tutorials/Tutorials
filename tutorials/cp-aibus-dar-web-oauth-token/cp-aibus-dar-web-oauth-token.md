@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 
 To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Use Free Tier to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-free-key) or [Use Trial to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key).
 
-<!-- border -->![DAR Service Key](service-key.png)
+![DAR Service Key](service-key.png)
 
 
 
@@ -37,7 +37,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-<!-- border -->![DAR TOKEN](web-browser.png)
+![DAR TOKEN](web-browser.png)
 
 You should receive a response like the following:
 

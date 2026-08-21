@@ -27,7 +27,7 @@ author_profile: https://github.com/Juliana-Morais
 
 2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
-    <!-- border -->![Trial global account](01_Foundation20Onboarding_Home.png)
+    ![Trial global account](01_Foundation20Onboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
@@ -35,11 +35,11 @@ author_profile: https://github.com/Juliana-Morais
 
     >Choose **Continue**.
 
-    ><!-- border -->![Account setup](02_Foundation20Onboarding_Processing.png)
+    >![Account setup](02_Foundation20Onboarding_Processing.png)
 
 3. From your global account page, choose the `trial` tile to access your subaccount.
 
-    <!-- border -->![Subaccounts](enter-trial-account.png)
+    ![Subaccounts](enter-trial-account.png)
 
 
 
@@ -50,11 +50,11 @@ The **Service Marketplace** is where you find all the services available on SAP 
 
 1. To access it, click **Service Marketplace** on the navigation side bar.
 
-    <!-- border -->![Service Marketplace](access-service-marketplace.png)
+    ![Service Marketplace](access-service-marketplace.png)
 
 2. Next, search for **SAP Document AI Trial** and click the tile to access it.
 
-    <!-- border -->![SAP Document AI in Service Marketplace](access-dox.png)
+    ![SAP Document AI in Service Marketplace](access-dox.png)
 
 >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
@@ -67,15 +67,15 @@ You will now create a service instance.
 
 Click **Create Instance** to start the creation dialog.
 
-<!-- border -->![Service Instance](create-instance.png)
+![Service Instance](create-instance.png)
 
 In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-ai-instance` and click **Create**.
 
-<!-- border -->![Create Instance](create-instance-dialog.png)
+![Create Instance](create-instance-dialog.png)
 
 In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
 
-<!-- border -->![View Instances](view-instance.png)
+![View Instances](view-instance.png)
 
 You've successfully created a service instance for SAP Document AI.
 
@@ -88,14 +88,14 @@ You are now able to create a service key for your new service instance. Service 
 
   1. Click the dots to open the menu and select **Create Service Key**.
 
-      <!-- border -->![Service Key](create-service-keys.png)
+      ![Service Key](create-service-keys.png)
 
   2. In the dialog, enter a name for your service key, for example, `doc-ai-key`. Click **Create** to create the service key.
 
-      <!-- border -->![Create Service Key](create-service-key-name.png)
+      ![Create Service Key](create-service-key-name.png)
 
 You've successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
-<!-- border -->![View Service Key](view-service-key.png)
+![View Service Key](view-service-key.png)
 
 You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for SAP Document AI Using Any Web Browser](cp-aibus-dox-web-oauth-token).
