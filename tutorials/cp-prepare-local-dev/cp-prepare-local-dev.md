@@ -3,8 +3,8 @@ parser: v2
 auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner, programming-tool>node-js ]
+primary_tag: products>sap-business-technology-platform
+tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner, programming-tool>node-js ]
 time: 20
 ---
 
@@ -33,16 +33,16 @@ We recommend using a package manager on your OS.
 
 [OPTION BEGIN [Windows]]
 
-**Install** the Windows package manager [Chocolatey](https://chocolatey.org/).
+**Install** the Windows package manager [Chocolatey](https://chocolatey.org/) by running the following in an **administrative** PowerShell:
 
 ```Terminal
-@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-**Install Node.js**
+**Install Node.js** (the current Long-Term Support release)
 
 ```Terminal
-choco install nodejs
+choco install nodejs-lts
 ```
 
 
@@ -53,20 +53,20 @@ choco install nodejs
 **Install** the Mac package manager [Homebrew](https://brew.sh/).
 
 ```Terminal
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 **Install Node.js**
 
 ```Terminal
-brew install nodejs
+brew install node
 ```
 
 
 [OPTION END]
-[OPTION BEGIN [Other]]
+[OPTION BEGIN [Linux]]
 
-**Install** the Node.js from the  [official website](https://nodejs.org/en/download/).
+**Install Node.js** via your distribution's package manager, or download the current LTS build from the [official website](https://nodejs.org/en/download).
 
 [OPTION END]
 
@@ -80,6 +80,8 @@ To verify if the installation was successful, check the `npm` and `node.js` vers
 node -v
 npm -v
 ```
+
+> This tutorial requires **Node.js 20 LTS or later**. If `node -v` reports an older version, install a current Long-Term Support release before continuing.
 
 ### Install the cloud MTA build tool
 
@@ -100,10 +102,12 @@ npm install -g mbt
 [OPTION END]
 [OPTION BEGIN [Mac]]
 
-[OPTION END]
-[OPTION BEGIN [Other]]
+> This tool depends on [GNU make](https://www.gnu.org/software/make/). On macOS it is provided by the Xcode Command Line Tools — run `xcode-select --install` if it is not already installed.
 
-> This tool depends on [GNU make](https://www.gnu.org/software/make/) that is most likely already installed when you use a Unix-based OS. In case this tool is not installed on your machine, install it from [here](http://ftp.gnu.org/gnu/make/).
+[OPTION END]
+[OPTION BEGIN [Linux]]
+
+> This tool depends on [GNU make](https://www.gnu.org/software/make/), which is most likely already installed on a Unix-based OS. If it is missing, install it with your distribution's package manager (for example, `sudo apt install make`).
 
 
 [OPTION END]
@@ -130,9 +134,9 @@ brew install git
 
 
 [OPTION END]
-[OPTION BEGIN [Other]]
+[OPTION BEGIN [Linux]]
 
-**Install** the git from the  [official website](https://git-scm.com/downloads).
+**Install** git with your distribution's package manager (for example, `sudo apt install git`), or download it from the [official website](https://git-scm.com/downloads).
 
 
 [OPTION END]
