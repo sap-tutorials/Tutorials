@@ -29,7 +29,7 @@ primary_tag: products>sap-hana\,-express-edition
 
 This is a short **decision guide**, not a hands-on installation walkthrough. Its goal is to help you pick the deployment method that matches your machine and skill level, then send you to the dedicated tutorial that walks through that method step by step.
 
-This tutorial covers the **server-only** package — the SAP HANA database engine on its own, without XS Advanced or other application services. If you need those application services, follow one of the full-installation guides linked below instead.
+This tutorial covers the **server-only** package — the SAP HANA database engine on its own, without XS Advanced or other application services. If you need those application services, follow one of the full-installation guides linked from the branches below instead.
 
 ---
 
@@ -40,21 +40,47 @@ Before choosing a method, confirm your laptop or server meets the minimum requir
 - **8 GB RAM minimum**, **12 GB recommended** for the server-only version.
 - Sufficient free disk space for the download and install.
 
-> ### Not enough RAM or disk space?
+> **Not enough RAM or disk space?**
 >
 > If your machine does not meet these requirements, use **SAP HANA Cloud trial** instead — a completely free, hosted, cloud-managed solution with nothing to install locally. See [Deploy SAP HANA Cloud trial](hana-cloud-deploying).
 
 ### Choose your deployment method
 
-Pick the row that matches your situation and follow the linked tutorial. You only need **one** of these methods.
+You will deploy using **one** of the methods below. Pick the branch that matches your machine and experience level — you only need to complete the one you choose, and the picker above hides the paths that don't apply to you.
 
-| If you… | Choose | Then follow |
-| --- | --- | --- |
-| Want the fastest setup on a supported Linux distribution and are comfortable with Docker | **Docker container** | [Installing SAP HANA, express edition with Docker](hxe-ua-install-using-docker) |
-| Want to customize the operating system or platform and are comfortable with Linux administration | **Binary installer** | [Install SAP HANA, express edition on a Native Linux Machine](group.hxe-install-binary) |
-| Are on Windows or macOS, or have limited local resources | **SAP HANA Cloud trial** (no local install) | [Deploy SAP HANA Cloud trial](hana-cloud-deploying) |
+[BRANCH_BEGIN group="deployment" key="docker" label="Docker container"]
 
-> The **Docker** and **binary installer** options run on Linux operating systems only. On Windows or macOS, run them inside a Linux virtual machine, or use SAP HANA Cloud trial instead.
+### Deploy with Docker (Linux only)
+
+Best if you want the fastest setup on a supported Linux distribution and are comfortable with Docker.
+
+Follow the step-by-step guide: [Installing SAP HANA, express edition with Docker](hxe-ua-install-using-docker).
+
+> Runs on Linux operating systems only. On Windows or macOS, run it inside a Linux virtual machine, or choose the **SAP HANA Cloud trial** branch instead.
+
+[BRANCH_END]
+
+[BRANCH_BEGIN group="deployment" key="binary" label="Binary installer"]
+
+### Deploy with the binary installer (Linux)
+
+Best if you want to customize the operating system or platform and are comfortable with Linux administration. This option allows for some customization of the operating system and the platform.
+
+Follow the step-by-step guide: [Install SAP HANA, express edition on a Native Linux Machine](group.hxe-install-binary).
+
+> Requires a minimum level of expertise with Linux operating systems and runs on Linux only.
+
+[BRANCH_END]
+
+[BRANCH_BEGIN group="deployment" key="cloud" label="SAP HANA Cloud trial" condition="profile.deployment == 'cloud'"]
+
+### Use SAP HANA Cloud trial (no local install)
+
+Best if you are on Windows or macOS, or have limited local resources. This is a completely free, hosted, cloud-managed option with nothing to install locally.
+
+Follow the step-by-step guide: [Deploy SAP HANA Cloud trial](hana-cloud-deploying).
+
+[BRANCH_END]
 
 ### What's next
 
