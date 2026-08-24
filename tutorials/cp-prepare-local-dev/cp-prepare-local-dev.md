@@ -64,9 +64,9 @@ brew install node
 
 
 [OPTION END]
-[OPTION BEGIN [Other]]
+[OPTION BEGIN [Linux]]
 
-**Install** the Node.js from the  [official website](https://nodejs.org/en/download/).
+**Install Node.js** via your distribution's package manager, or download the current LTS build from the [official website](https://nodejs.org/en/download).
 
 [OPTION END]
 
@@ -102,10 +102,12 @@ npm install -g mbt
 [OPTION END]
 [OPTION BEGIN [Mac]]
 
-[OPTION END]
-[OPTION BEGIN [Other]]
+> This tool depends on [GNU make](https://www.gnu.org/software/make/). On macOS it is provided by the Xcode Command Line Tools — run `xcode-select --install` if it is not already installed.
 
-> This tool depends on [GNU make](https://www.gnu.org/software/make/) that is most likely already installed when you use a Unix-based OS. In case this tool is not installed on your machine, install it from [here](http://ftp.gnu.org/gnu/make/).
+[OPTION END]
+[OPTION BEGIN [Linux]]
+
+> This tool depends on [GNU make](https://www.gnu.org/software/make/), which is most likely already installed on a Unix-based OS. If it is missing, install it with your distribution's package manager (for example, `sudo apt install make`).
 
 
 [OPTION END]
@@ -132,9 +134,9 @@ brew install git
 
 
 [OPTION END]
-[OPTION BEGIN [Other]]
+[OPTION BEGIN [Linux]]
 
-**Install** the git from the  [official website](https://git-scm.com/downloads).
+**Install** git with your distribution's package manager (for example, `sudo apt install git`), or download it from the [official website](https://git-scm.com/downloads).
 
 
 [OPTION END]
