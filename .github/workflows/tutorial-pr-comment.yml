@@ -1,0 +1,12 @@
+name: Tutorial PR Comment
+on:
+  workflow_run:
+    workflows: ["Tutorial PR Checks"]
+    types: [completed]
+jobs:
+  comment:
+    uses: sap-tutorials/tutorial-ci/.github/workflows/post-results.yml@v1
+    permissions:
+      actions: read
+      contents: read
+    secrets: inherit
