@@ -4,7 +4,7 @@ author_profile: https://github.com/BastLena
 keywords: tutorial
 auto_validation: true
 time: 10
-tags: [tutorial>advanced, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+tags: [tutorial>advanced, topic>cloud, products>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-runtime-and-environment]
 primary_tag: products>sap-business-technology-platform
 parser: v2
 ---

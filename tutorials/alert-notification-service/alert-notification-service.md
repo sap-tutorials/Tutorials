@@ -7,7 +7,7 @@ keywords: tutorial
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-alert-notification-service-for-sap-btp ]
-primary_tag: software-product>sap-btp--cloud-foundry-environment
+primary_tag: software-product>sap-btp--cloud-foundry-runtime-and-environment
 parser: v2
 ---
 

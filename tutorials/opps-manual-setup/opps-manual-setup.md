@@ -4,7 +4,7 @@ author_name: Lena Bast
 author_profile: https://github.com/BastLena
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-runtime-and-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 

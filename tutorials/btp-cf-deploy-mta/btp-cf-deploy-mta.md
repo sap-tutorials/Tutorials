@@ -4,7 +4,7 @@ author_name: Lilyana Rangelova
 author_profile: https://github.com/lilyanarangelova
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>intermediate, software-product>sap-btp--cloud-foundry-runtime-and-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 
