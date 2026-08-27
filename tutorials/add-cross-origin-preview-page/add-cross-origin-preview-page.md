@@ -4,7 +4,7 @@ author_name: David Klug
 author_profile: https://github.com/david-klug-sap
 auto_validation: true
 time: 20
-tags: [ tutorial>advanced, tutorial:how-to, software-product>sap-business-technology-platform, software-product>ui-theme-designer]
+tags: [ tutorial>advanced, tutorial>how-to, software-product>sap-business-technology-platform, software-product>ui-theme-designer]
 primary_tag: software-product>ui-theme-designer
 ---
 
