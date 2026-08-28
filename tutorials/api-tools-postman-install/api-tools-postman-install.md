@@ -1,7 +1,7 @@
 ---
 parser: v2
 primary_tag: topic>cloud
-tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-management, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-management, software-product>sap-business-technology-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 time: 5
 ---
 
