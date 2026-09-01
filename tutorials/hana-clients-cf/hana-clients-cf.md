@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>node-js, software-product>sap-btp--cloud-foundry-environment, software-product>sap-business-technology-platform, software-product>sap-connectivity-service]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>node-js, software-product>sap-btp--cloud-foundry-runtime-and-environment, software-product>sap-business-technology-platform, software-product>sap-connectivity-service]
 primary_tag: software-product>sap-hana-cloud
 ---
 

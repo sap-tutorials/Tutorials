@@ -1,7 +1,7 @@
 ---
 parser: v2
 time: 20
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-btp--cloud-foundry-runtime-and-environment]
 primary_tag: products>sap-hana-cloud
 ---
 

@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, tutorial>free-tier]
+tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-runtime-and-environment, tutorial>free-tier]
 primary_tag: programming-tool>sapui5
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich

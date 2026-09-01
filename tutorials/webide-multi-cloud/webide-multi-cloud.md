@@ -4,7 +4,7 @@ primary_tag: products>sap-web-ide
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide, tutorial>license]
+tags: [  tutorial>beginner, software-product>sap-business-technology-platform, products>sap-web-ide, tutorial>license]
 time: 10
 ---
 

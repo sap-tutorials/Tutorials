@@ -3,7 +3,7 @@ parser: v2
 author_name: Fiona Murphy
 author_profile: https://github.com/MCMANUSF
 primary_tag: products>sap-translation-hub
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, programming-tool>sapui5 ]
+tags: [  tutorial>beginner, products>sap-translation-hub, software-product>sap-business-technology-platform, programming-tool>sapui5 ]
 ---
 
 # Replace hardcoded text in a sample Fiori app (Neo environment)
