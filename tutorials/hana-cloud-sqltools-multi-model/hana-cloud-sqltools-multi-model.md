@@ -1,8 +1,10 @@
 ---
 parser: v2
 auto_validation: true
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph, tutorial>license]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph, tutorial>license]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -19,7 +21,7 @@ primary_tag: software-product>sap-hana-cloud
 
 - How to create and explore a knowledge graph, a property graph, a document store, and spatial data
 
-## Intro
+## Overview
 
 A [knowledge graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sap-hana-cloud-sap-hana-database-knowledge-graph-engine-guide) can be used to store facts in triples providing additional meaning and relationships.
 
@@ -157,17 +159,17 @@ Before you can create a knowledge graph, please ensure your instance has the tri
    );
    ```
 
-    Additional examples can be found at [SAP HANA Cloud, SAP HANA Database SPARQL Reference Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sparql-reference-guide/sap-hana-cloud-sap-hana-database-sparql-reference-guide)
+    Additional examples can be found at [SAP HANA Cloud, SAP HANA Database SPARQL Reference Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sparql-reference-guide/sap-hana-cloud-sap-hana-database-sparql-reference-guide).
 
-4. To visualize and examine the knowledge graph database objects, you must first enable the feature in your preferences.  Click on your account
+4. To visualize and examine the knowledge graph database objects, you must first enable the feature in your preferences.  Click on your account.
 
     ![Account Settings](go_preferences_RDF.png)
 
-    Go to the Database Objects tab
+    Go to the Database Objects tab.
 
     ![Database Objects Tab](go_database_objects.png)
 
-    Enable RDF Named Graphs
+    Enable RDF Named Graphs.
 
     ![Enable RDF Graphs](enable_RDF_graphs.png)
 
@@ -319,13 +321,13 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
 In the steps above, the property graph viewer was used to visualize hotel distances, filter by state and distance, highlight specific vertices, and view details on individual vertices and edges.
 
-Additional property graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/appendix-open-flights-and-company-graph-examples).  The company graph example does not currently display in the viewer as it does not currently support the display of homogeneous graphs.  Property graph workspaces may also be viewed using the [SAP HANA plug-in for Cytoscape](https://github.com/SAP/sap-hana-plugin-for-cytoscape).
+Additional property graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-graph-reference/appendix-open-flights-and-company-graph-examples).  Property graph workspaces may also be viewed using the [SAP HANA plug-in for Cytoscape](https://github.com/SAP/sap-hana-plugin-for-cytoscape).
 
 ### Use property graph algorithms
 
 The shortest path algorithm can be used to provide the optimal route between two vertices. The nearest neighbor algorithm can be used to show only the vertices that are connected to a specified vertex.
 
-The following steps will walk through using the shortest path algorithm to determine the optimal route from Airport Hotel in Rosemont, IL to Regency Hotel in Seattle, WA.
+The following steps will walk through using the shortest path algorithm to determine the optimal route from Airport Hotel in Rosemont Illinois to the Regency Hotel in Seattle Washington.
 
 1. Execute the following in SQL to add a few connections between hotels in different states.
 
@@ -355,7 +357,7 @@ The following steps will walk through using the shortest path algorithm to deter
    INSERT INTO DISTANCES VALUES (40,21,20,4348);
    ```
 
-2. After removing the previously applied filters, navigate to the property graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path", specify the values shown below, and click Apply.
+2. After removing the previously applied filters, navigate to the property graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path", specify the values shown below, and click **Apply**.
 
     ![Graph Algorithms](graph-algorithms.png)
 
@@ -509,7 +511,7 @@ Additional details can be found at [hana_ml.docstore package](https://help.sap.c
 
 ### Import spatial data
 
-This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/support-for-esri-shapefiles) or optionally a `GeoJSON` file containing points of interest in the city of Waterloo Ontario.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the Delta hotel located in Waterloo.
+This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-spatial-reference/support-for-esri-shapefiles) or optionally a `GeoJSON` file containing points of interest in the city of Waterloo, Ontario.  The `ESRI shapefile` import will result in a table while the JSON import will result in a JSON Collection.  In the following step, a search will be performed to return the closest points of interest to the Delta hotel located in Waterloo.
 
 1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest Waterloo`**.  Scroll through the results and choose the selection below.
 
@@ -519,7 +521,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud
 
     ![download shapefile](download-shapefile.png)
 
-3. Unzip the downloaded `shapefile`. Upload all of the extracted files (`Points_of_Interest.shp`, `.dbf`, `.prj`, `.shx`, `.cpg`, `.xml`) to your data lake Files instance using by navigating to the Data Lake Files app, selecting the desired file, and using the upload button.
+3. Unzip the downloaded `shapefile`. Upload all of the extracted files (`Points_of_Interest.shp`, `.dbf`, `.prj`, `.shx`, `.cpg`, `.xml`) to your data lake Files instance using by navigating to the data lake Files app, selecting the desired file, and using the upload button.
 
     >The `IMPORT AS SHAPEFILE` SQL requires the individual shapefile components to be present in data lake Files — not the `.zip` file.
 
@@ -595,6 +597,6 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/docs/hana-cloud
 
 ### Knowledge check
 
-Congratulations! You have explored a few of the multi-model features in SAP HANA and are now familiar with graph workspaces, JSON collections, and spatial data when using the SAP HANA database explorer.
+Congratulations! You have explored a few of the multi-model features in SAP HANA and are now familiar with knowledge graphs, graph workspaces, JSON collections, and spatial data.
 
 ---

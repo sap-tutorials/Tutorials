@@ -33,7 +33,7 @@ For a broader overview of all export and import options available, including loc
 
 ### Export and import data
 
-The following steps demonstrate how to export and import data from the MAINTENANCE table using the SQL console download option and the import data wizard in SAP HANA Cloud Central.  For use with larger amounts of data, it is recommended to use a cloud storage provider such as SAP HANA Cloud data lake Files which is shown in the next step.
+The following steps demonstrate how to export and import data from the MAINTENANCE table using the SQL console download option and the import data wizard in SAP HANA Cloud Central.  For use with larger amounts of data, it is recommended to use a cloud storage provider such as SAP HANA Cloud data lake Files which is used in subsequent steps of this tutorial.
 
 1. Enter the SQL statement below in the SQL console.
 
@@ -47,7 +47,7 @@ The following steps demonstrate how to export and import data from the MAINTENAN
 
     >There is a setting that controls the number of results displayed which may need to be adjusted for tables with larger results.
     >
-    > ![Max Rows](max-rows.png)
+    > ![Max rows](max-rows.png)
 
 2. Enter the SQL statement below to delete the rows in the table. They will be added back in the next step.
 
@@ -61,9 +61,11 @@ The following steps demonstrate how to export and import data from the MAINTENAN
 
 5. In **Source Data**, select **Local Computer** and browse to the previously downloaded CSV file. 
 
-    ![Local Import](local-import.png)
+    ![Local import](local-import.png)
 
 6. In **Target Table**, select **Use Existing Table**, choose the **HOTELS** schema, and select the **MAINTENANCE** table. Complete the remaining steps of the wizard and click **Import**.
+
+    ![Select where the data will be imported to](target-table.png)
 
     After completing the wizard, the contents of the MAINTENANCE table should be the same as before the delete statement was executed. Run the following SQL statement to confirm.
 
@@ -71,7 +73,7 @@ The following steps demonstrate how to export and import data from the MAINTENAN
    SELECT * FROM HOTELS.MAINTENANCE;
    ```
 
-    ![Maintenance Table](maintenance-table.png)
+    ![Maintenance table](maintenance-table.png)
 
 ### Export and import data from an SAP HANA Cloud, SAP HANA database (optional)
 
@@ -80,7 +82,7 @@ The following steps walk through the process of exporting data to and importing 
 SQL Statements used:
 
 | Statement | Target | Format |
-| -------|--------|-----------|
+| --------- | ------ | ------ |
 | [Export INTO](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/export-into-statement-data-import-export) | Data lake Files, S3, Azure, GCS | CSV, Parquet, JSON |
 | [Import FROM](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/import-from-statement-data-import-export) | Data lake Files, S3, Azure, GCS | CSV, Parquet, JSON |
 
@@ -125,7 +127,7 @@ SQL Statements used:
    SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'SAP_HC';
    ```
 
-    Remove the comma and add the certificate ID (ex: 123456) from the previous statement into `<CERTIFICATE_ID>`.
+    Add the certificate ID (ex: 123456) from the previous statement into `<CERTIFICATE_ID>`.
 
    ```SQL
    ALTER PSE HTTPS ADD CERTIFICATE <CERTIFICATE_ID>;
@@ -154,42 +156,48 @@ SQL Statements used:
 
     Navigate to the **Import and Export** app and choose **Export Data**.
 
-    ![Import and Export App](import-export-app.png)
+    ![Import and Export app](import-export-app.png)
 
 5. In **Source Instance**, select the SAP HANA database instance you want to export data from.
 
 6. Navigate to **Source Data**, select **Data File** as the export type, choose **HOTELS** as the schema, and select the **MAINTENANCE** table as the database object.
 
-    ![Source Data](export-source-data.png)
+    ![Source data](export-source-data.png)
 
 7. For **Target Instance**, select **Data Lake Files** as the export destination. Enter **DL_FILES** as the credential purpose and provide the REST API endpoint of your data lake Files instance. Enter the file path (e.g. `HOTELS/maintenance.csv`).
 
     > The REST API endpoint can be copied by clicking the three dots in the **Actions** column next to your data lake Files instance.
     >
-    > ![Data Lake Endpoint](rest-api-endpoint.png)
+    > ![Data lake endpoint](rest-api-endpoint.png)
 
-    ![Target Instance](export-target-instance.png)
+    ![Target instance](export-target-instance.png)
 
-    Complete the remaining export options and click **Export**. Verify that the export was successful in the Import and Export app, under Exports. 
-
-    ![Export Successful](export-successful.png)
-
-8. The wizard makes use of the `EXPORT INTO` statement. An example is shown below:
-
-   ```SQL
-   EXPORT INTO CSV FILE
-       'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTELS/maintenance.csv'
-   FROM MAINTENANCE
-   WITH
-       CREDENTIAL 'DL_FILES'
-       COLUMN LIST IN FIRST ROW;
-   ```
+    Complete the remaining export options and click **Export**.
 
     >On the final screen of the wizard, you can select **View Generated SQL** to see the SQL statement that will be executed.
     >
     >![Generated SQL](generated-sql.png)
 
-9. Delete the rows from the table. They will be restored in the next step.
+    Verify that the export was successful in the Import and Export app, under Exports.
+
+    ![Export successful](export-successful.png)
+
+    You can also use the data lake Files app to view the contents of the exported file.
+
+    ![maintenance csv](maint.png)
+
+8. The wizard makes use of the `EXPORT INTO` statement. An example is shown below:
+
+    ```SQL
+    EXPORT INTO CSV FILE
+        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/HOTELS/maintenance.csv'
+    FROM MAINTENANCE
+    WITH
+        CREDENTIAL 'DL_FILES'
+        COLUMN LIST IN FIRST ROW;
+    ```
+
+9. In a SQL console connected to the SAP HANA database, delete the rows from the table. They will be restored in the next step.
 
    ```SQL
    DELETE FROM HOTELS.MAINTENANCE;
@@ -201,7 +209,7 @@ SQL Statements used:
 
 12. Under **Source Data**, select **Data Lake Files** as the source type. Enter **DL_FILES** as the database credential, provide the REST API endpoint of your data lake Files instance (which can be copied by clicking the **three dots** in the **Actions** column next to your data lake Files instance in SAP HANA Cloud Central), and enter the file path (e.g. `HOTELS/maintenance.csv`).
 
-    ![Source Data](import-source-data.png)
+    ![Source data](import-source-data.png)
 
 13. In **Target Table** select **Use Existing Table** and choose the **HOTELS** schema and **MAINTENANCE** table.
 
@@ -218,7 +226,7 @@ SQL Statements used:
 
    You can verify the success of the export or import operation by navigating to the **Import and Export** app and reviewing the job history and by executing a select against the table.
 
-   ![Import Export Success](successful-import-export.png)
+   ![Import export success](successful-import-export.png)
 
    ```SQL
    SELECT * FROM HOTELS.MAINTENANCE;
@@ -231,7 +239,7 @@ The following steps walk through exporting to and importing data from data lake 
 SQL Statements used:
 
 | Statement | Target | Format |
-| -------|--------|-----------|
+| --------- | ------ | ------ |
 | [Unload](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/unload-statement-for-data-lake-relational-engine) | Data lake Files, S3, Azure, GCS | Parquet, Text, Binary |
 | [Load](https://help.sap.com/docs/hana-cloud-data-lake/sql-reference-for-data-lake-relational-engine/load-table-statement-for-data-lake-relational-engine) | Data lake Files, S3, Azure, GCS | Parquet, ASCII, Binary |
 
@@ -295,24 +303,20 @@ SQL Statements used:
 
 2. The HOTELS schema and MAINTENANCE table are not automatically shared with the Relational Engine. If the schema does not already exist, create it manually in the Relational Engine SQL console.
 
-   ```SQL
-   CREATE SCHEMA HOTELS;
-   CREATE TABLE HOTELS.MAINTENANCE (
-       MNO INTEGER NOT NULL,
-       HNO INTEGER NOT NULL,
-       DESCRIPTION VARCHAR(100),
-       DATE_PERFORMED DATE,
-       PERFORMED_BY VARCHAR(40)
-   );
-   ```
+    ```SQL
+    CREATE SCHEMA HOTELS;
+    CREATE TABLE HOTELS.MAINTENANCE (
+        MNO INTEGER NOT NULL,
+        HNO INTEGER NOT NULL,
+        DESCRIPTION VARCHAR(100),
+        DATE_PERFORMED DATE,
+        PERFORMED_BY VARCHAR(40)
+    );
 
-    Ensure you are in the HOTELS schema before performing the following inserts.
-
-   ```SQL
-   INSERT INTO MAINTENANCE VALUES(10, 24, 'Replace pool liner and pump', '2019-03-21', 'Discount Pool Supplies');
-   INSERT INTO MAINTENANCE VALUES(11, 25, 'Renovate the bar area.  Replace TV and speakers', '2020-11-29', 'TV and Audio Superstore');
-   INSERT INTO MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
-   ```
+    INSERT INTO HOTELS.MAINTENANCE VALUES(10, 24, 'Replace pool liner and pump', '2019-03-21', 'Discount Pool Supplies');
+    INSERT INTO HOTELS.MAINTENANCE VALUES(11, 25, 'Renovate the bar area.  Replace TV and speakers', '2020-11-29', 'TV and Audio Superstore');
+    INSERT INTO HOTELS.MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
+    ```
 
 3. Export (unload) the data from the `MAINTENANCE` table to data lake Files using the export data wizard or the SQL statement below.
 
@@ -328,21 +332,21 @@ SQL Statements used:
   
     >Export or unload the data from the MAINTENANCE table to a data lake Files instance using the SQL statement. The below example targets the data lake Files instance that is attached to the data lake Relational Engine.
 
-   ```SQL
-   UNLOAD SELECT * FROM HOTELS.MAINTENANCE
-   INTO FILE 'hdlfs:///maint.csv'
-   NULL FORMAT EMPTY
-   ```
+    ```SQL
+    UNLOAD SELECT * FROM HOTELS.MAINTENANCE
+    INTO FILE 'hdlfs:///maint.csv'
+    NULL FORMAT EMPTY
+    ```
 
     The below example targets a different data lake Files instance.
 
-   ```SQL
-   UNLOAD SELECT * FROM HOTELS.MAINTENANCE
-   INTO FILE 'hdlfs://18b4be74-a4f1-40a0-a357-60155aee5f30/maint.csv'
-   CONNECTION_STRING 'ENDPOINT=https://18b4be74-a4f1-40a0-a357-60155aee5f30.files.hdl.prod-ca10.hanacloud.ondemand.com'
-   WITH CREDENTIAL 'DL_FILES'
-   NULL FORMAT EMPTY;
-   ```
+    ```SQL
+    UNLOAD SELECT * FROM HOTELS.MAINTENANCE
+    INTO FILE 'hdlfs://18b4be74-a4f1-40a0-a357-60155aee5f30/maint.csv'
+    CONNECTION_STRING 'ENDPOINT=https://18b4be74-a4f1-40a0-a357-60155aee5f30.files.hdl.prod-ca10.hanacloud.ondemand.com'
+    WITH CREDENTIAL 'DL_FILES'
+    NULL FORMAT EMPTY;
+    ```
 
 7. Import (load) the data back into the `MAINTENANCE` table using the import data wizard or the SQL statement below.
 
@@ -386,49 +390,52 @@ SQL Statements used:
 
 ### Export and import schema or catalog objects (optional)
 
-Similar to the previous examples, the MAINTENANCE table will be exported and re-imported to an SAP HANA Cloud database. The export catalog wizard and export statement can include multiple objects in the export or import, include additional object types such as functions and procedures, and can include the SQL statements to recreate the objects.
+The export catalog wizard and export statement can include multiple objects in the export or import such as tables, views, functions, and procedures.  The operation can also recreated the schema of the objects.
 
 The following tables list the different options available in SAP HANA Cloud Central to export and import catalog objects.
 
 SQL Statements used:
 
 | Statement | Target | Format |
-| -------|--------|-----------|
+| --------- | ------ | ------ |
 | [Export](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/export-statement-data-import-export) | Data lake Files, S3, Azure, GCS | Binary, CSV, Parquet |
 | [Import](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/import-statement-data-import-export) | Data lake Files, S3, Azure, GCS | Binary, CSV, Parquet |
 
 To try these out, follow the steps below.
 
-1. Navigate to the **Import and Export** app and connect to the desired SAP HANA instance you want to export data from. Under **Source Data**, select  **Database Objects**. Navigate to the **Add Database Objects** button and search for **Maintenance**. Notice how you can select multiple object types. 
+1. Navigate to the **Import and Export** app and connect to the desired SAP HANA instance you want to export data from. Under **Source Data**, select **Database Objects**. Navigate to the **Add Database Objects** button and search for the schema **HOTELS**. Notice how you can select multiple object types.  In this example we are exporting all of the objects that are part of the HOTELS schema.  Select **Add to List**.
 
-    ![Export Catalog Objects Wizard](catalog-selection.png)
+    ![Export catalog objects wizard](catalog-selection.png)
 
-    Choose **Local Computer** for the export location and provide a name for the archive. Next, select an export format such as CSV, and click **Export**.
+    Choose **Local Computer** for the export location and provide a name for the archive. 
 
-    ![Export Options](export-options.png)
+    ![Target settings]](target.png)
 
-    > **Binary Raw** is the binary format for SAP HANA Cloud and **Binary Data** is the format option for SAP HANA as a Service and SAP HANA on-premise.
+    Next, select an export format such as CSV, and click **Export**.
+
+    ![Export options](export-options.png)
+
+    > **Binary Raw** is the binary format for SAP HANA Cloud and **Binary Data** is the format option for SAP HANA on-premise.
 
 2. The archive file contains the SQL to recreate the table as well as the data of the table.
 
-3. Enter the SQL statement below to drop the table. It will be added back in the next step.
+3. Enter the SQL statement below to drop all of the objects in the schema.  They will then be re-added in the next sub-step.
 
    ```SQL
-   DROP TABLE HOTELS.MAINTENANCE;
+   DROP SCHEMA HOTELS CASCADE;
    ```
 
-4. Navigate to the **Import and Export** app and choose **Import Database Objects**. Browse to the previously downloaded archive file and complete the wizard. 
+4. Navigate to the **Import and Export** app and choose **Import Database Objects**. Browse to the previously downloaded archive file and complete the wizard.
 
-    ![Import Catalog Wizard](catalog-import.png)
+    ![Import catalog wizard](catalog-import.png)
 
-    You can also rename the schema if desired.
+    ![Adding objects to the import](rename-schema.png)
 
-    ![Rename Schema](rename-schema.png)
-
-    The contents of the MAINTENANCE table should now be the same as before the drop statement was executed.
+    The contents of the HOTELS schema should now be the same as before the drop statement was executed.
 
    ```SQL
-   SELECT * FROM HOTELS.MAINTENANCE;
+   SELECT * FROM HOTELS.CUSTOMER;
+   SELECT * FROM HOTELS.HOTEL;
    ```
 
 ### Knowledge check

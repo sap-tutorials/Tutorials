@@ -25,10 +25,6 @@ parser: v2
 
 ---
 
-## Intro
-
-> Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
-
 ### SAP HANA Cloud Overview
 
 [SAP HANA Cloud](https://www.sap.com/products/data-cloud/hana.html) lets you use advanced data processing capabilities of relational, JSON, text, spatial, predictive, vector, knowledge graph, and more, to pull insights from all types of data.
@@ -37,12 +33,11 @@ By combining in-memory storage with columnar store, data operations are performe
 
 The following are some related documentation links for SAP HANA Cloud.
 
- 
-|  :------------- | :------------- |
-|  Version   | Notes |
-|  [SAP HANA Cloud](https://help.sap.com/docs/hana-cloud)   | Product documentation page |
-|  [SAP HANA Cloud Administration Guide](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-cloud-administration-guide) | Administration tasks performed in SAP HANA Cloud Central |
-|  [Understand How the SAP HANA Cloud Free Tier Service can be Used in a SAP BTP Trial or Productive Account](hana-cloud-mission-trial-1)| Overview of SAP HANA Cloud free tier service plan and the SAP BTP account options available |
+| Version | Notes |
+| ------- | ----- |
+| [SAP HANA Cloud](https://help.sap.com/docs/hana-cloud) | Product documentation page |
+| [SAP HANA Cloud Administration Guide](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/sap-hana-cloud-administration-guide) | Administration tasks performed in SAP HANA Cloud Central |
+| [Understand How the SAP HANA Cloud Free Tier Service can be Used in a SAP BTP Trial or Productive Account](hana-cloud-mission-trial-1) | Overview of SAP HANA Cloud free tier service plan and the SAP BTP account options available |
 
 ### What this tutorial group covers
 
@@ -61,7 +56,7 @@ To complete the tutorials in this group, an SAP HANA Cloud instance is needed. C
 
 The SAP BTP Trial is available on the US10 and AP21 landscapes, and includes the SAP HANA Cloud free tier service. If a free tier instance is used in a productive subaccount, a seamless transition from a free tier to a paid plan is available.
 
-> The SAP HANA Cloud Basic Trial provides a database user and password that has access to a specific schema free for 30 days. The provided database user can be used to create database objects within the provided schema but cannot create new schemas or users. To get started, click on **Try Now** on the Discover SAP HANA Cloud section of the trial page of [SAP HANA Cloud](https://www.sap.com/products/technology-platform/hana/trial.html).  The SAP HANA Cloud Basic Trial does not provide access to SAP HANA Cloud Central or the SQL Console in SAP HANA Cloud Central and for that reason, it is not recommended to be used for this tutorial group.
+> The SAP HANA Cloud Basic Trial does not provide access to SAP HANA Cloud Central or the SQL Console in SAP HANA Cloud Central and for that reason, it is recommended instead to use the advanced trial for this tutorial group.
 
 ### Provision and manage an instance
 
@@ -71,7 +66,7 @@ The full provisioning walkthrough — including how to open SAP HANA Cloud Centr
 
 Complete that tutorial and return here once your instance shows a **Running** status in SAP HANA Cloud Central.
 
-![Instance Running](instances-running.png)
+![Instance running](instances-running.png)
 
 > SAP HANA Cloud free tier instances are shut down overnight (i.e. 10:00 PM based on the location where your instance was provisioned) and will need to be restarted before working with them the next day. The tutorial group [Automating SAP HANA Cloud Tasks](https://developers.sap.com/group.sap-hana-cloud-automating.html) provides some examples of using tools such as the BTP CLI or the SAP Automation Pilot to help with repetitive tasks such as starting and stopping instances.
 

@@ -40,7 +40,7 @@ A few notes to remember about free tier instances:
 
 ### Start the Provisioning Wizard
 
-> There are different instructions available to you depending on whether you are using a free tier instance versus a productive instance. Please make sure to select the one that applies to your situation to get the most out of this tutorial.
+> There are different instructions available to you depending on whether you are using a free tier instance versus a productive instance. Please make sure to select the one that applies to your situation to get the most out of this tutorial.  Additional details can also be found at [Create an SAP HANA Database Instance Using SAP HANA Cloud Central](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/create-sap-hana-database-instance-using-sap-hana-cloud-central).
 
 To create your first instance of SAP HANA Cloud, SAP HANA database, you need to follow these steps:
 
