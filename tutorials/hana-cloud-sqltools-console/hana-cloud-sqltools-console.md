@@ -2,7 +2,9 @@
 parser: v2
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake]
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
+tags: [tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -12,8 +14,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Prerequisites
 
-- An SAP HANA Cloud database
-- You have completed [this](hana-cloud-sqltools-create-schema) tutorial which creates a database schema for an SAP HANA Cloud, SAP HANA database.
+- You have completed the first 3 tutorials in this group
 - You have completed [this](hana-cloud-dl-clients-overview) tutorial which creates a database schema for an SAP HANA Cloud, data lake Relational Engine
 
 ## You will learn
@@ -47,11 +48,11 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
 3. There are several ways to connect to a database as a different user:
 
-    - **From the Instances list:** Click the **three dots** next to the instance and select **Sign in with Different User**. Enter the username and password of the desired user after clicking the "Sign in with a different user" option in the confirmation dialog. 
+    - **From the Instances list:** Click the **three dots** next to the instance and select **Sign in with Different User**. Enter the username and password for the user you wish to connect with.
 
-        ![Change Credentials in Instances](different-user.png)
+        ![Change credentials in instances](different-user.png)
 
-    - **From the SQL console Connect menu:** Select the **Connect to** link, click the **Connect ...** button, and provide the new username and password.
+    - **From the SQL console Connect menu:** Select the **Connected to** link, click the **Connect ...** button, and provide the new username and password.
 
         ![Change credentials](change-credentials.png)
 
@@ -88,7 +89,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
 
     - **Using the SAP HANA Cloud Central UI:** Open the instance, go to the **Overview** tab, and scroll down to **User and Authorization Management**. Select **Users**, click on the user you want to update, and choose **Edit** to make your changes.
 
-    ![Changing User Credentials Using HCC UI](user-ui.png)
+    ![Changing user credentials using the UI](user-ui.png)
 
 5. The current schema can be set and viewed for a SAP HANA database using the SQL statements below or by clicking on the Current Schema link.
 
@@ -106,7 +107,7 @@ This step demonstrates how a SQL console can quickly be opened from within SAP H
    SELECT CURRENT SCHEMA, CURRENT USER;
    ```
 
-    ![set the schema of a data lake RE](set-schema-dl.png)
+    ![Set the schema of a data lake Relational Engine](set-schema-dl.png)
 
 ### Execute SQL
 
@@ -123,7 +124,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     The following error dialog appears.  Select  **Skip All**.
 
-    ![SQL Execution Error dialog](error-dialog.png)
+    ![SQL execution error dialog](error-dialog.png)
 
     Notice that there is an error marker beside the lines that could not be executed.  Pressing **Alt+E** will display further details and advances to the next error when pressed more than once.
 
@@ -133,19 +134,19 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
 2. Results can be downloaded as shown below.
 
-    ![download results](download-results.png)
+    ![Download results](download-results.png)
 
     Options are provided on how to format the data.
 
-    ![download options](download-options.png)
+    ![Download options](download-options.png)
 
     Rows can also be selected and then copied to the clipboard by pressing Ctrl+C.
 
-    ![Copy Results](copy-results.png)
+    ![Copy results](copy-results.png)
 
 3. Place the cursor on line four and open the **Syntax Help** panel.
 
-    ![statement help panel](statement-help.png)
+    ![Statement help panel](statement-help.png)
 
     Notice that for SAP HANA Cloud, SAP HANA databases, links to the related documentation and details on the objects used in the SQL statement are shown including a link which will open the database objects app where additional details of the object can be viewed.
 
@@ -169,11 +170,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
     
 -->
     
-5. The SQL console provides the ability to search across all open tabs. Navigate to the three dots menu in the SQL console and select **Search Through Tabs** to search for text across all open SQL console tabs.
-
-    ![Search Through Tabs](search-through-tabs.png)
-
-6. Commonly used shortcut keys are listed below.  Try a few of them out.
+5. Commonly used shortcut keys are listed below.  Try a few of them out.
 
     Action | Shortcut
     ------ | ------
@@ -196,19 +193,19 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     For the complete list see [Common Keyboard Shortcuts for the SQL Console](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/keyboard-shortcuts-for-sql-console).
 
-7. Examine the **History** tab.
+6. Examine the **History** tab.
 
-    ![history tab](messages-history-tab.png)
+    ![History tab](messages-history-tab.png)
 
     Notice details for each executed statement are displayed, including metrics such as memory consumption. Statements can be quickly located using the search functionality. Selected statements may be inserted back into the SQL console or copied for further use.
 
     The columns can also be changed by selecting the gear icon in the right corner.
 
-    ![history-tab-columns tab](history-tab-columns.png)
+    ![History tab columns](history-tab-columns.png)
 
-8. Examine the **SQL Console Settings**.  
+7. Examine the **SQL Console Settings**.  
 
-    ![connection settings](connection-settings.png)
+    ![Connection settings](connection-settings.png)
 
     - Execute the following SQL which is used to illustrate the result behavior settings.
 
@@ -221,43 +218,43 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
         Double click on a cell to open the viewer. Notice that only the first 1024 bytes from the column STATEMENT are displayed in the results view for the Blocked Transactions row.
 
-        ![limit for large objects](settings-result3.png)
+        ![Limit for large objects](settings-result3.png)
 
         Notice that over 6000 rows are in TABLE_COLUMNS.
 
-        ![one thousand row limit](settings-result1.png)
+        ![One thousand row limit](settings-result1.png)
 
         The first 1000 are displayed.
 
-        ![one thousand row limit](settings-result2.png)
+        ![One thousand row limit](settings-result2.png)
 
         These limits can be adjusted in the result behavior settings shown below.
 
-        ![result behavior settings](result-behavior.png)
+        ![Result behavior settings](result-behavior.png)
 
-9. Execute the following SQL which is used to illustrate the result display settings.
+8. Execute the following SQL which is used to illustrate the result display settings.
 
-        ```SQL
-        SELECT CURRENT_DATE, CURRENT_TIMESTAMP(7), RAND() * 10 FROM DUMMY;
-        ```
+    ```SQL
+    SELECT CURRENT_DATE, CURRENT_TIMESTAMP(7), RAND() * 10 FROM DUMMY;
+    ```
 
-        The below is the result when this setting is disabled.
+    The below is the result when this setting is disabled.
 
-        ![no formatting](no-formatting.png)
+    ![No formatting](no-formatting.png)
 
-        Enable Result Format Settings in the settings.
+    Enable Result Format Settings in the settings.
 
-        ![format settings](result-format-settings.png)
+    ![Format settings](result-format-settings.png)
 
-        The below is the result when this setting is enabled.
+    The below is the result when this setting is enabled.
 
-        ![result formatted](formatted.png)
+    ![Result formatted](formatted.png)
 
-10. The overall theme for SAP HANA Cloud Central can be set in the settings which also affects the theme of the SQL console.
+9. The overall theme for SAP HANA Cloud Central can be set in the settings which also affects the theme of the SQL console.
 
-    ![theme](theme.png)
+    ![Theme](theme.png)
 
-11. Execute the following SQL statements.
+10. Execute the following SQL statements.
 
    ```SQL
    SELECT HEXTOBIN ('48656C6C6F20776F726C64') BINARY_EXAMPLE FROM DUMMY;
@@ -306,11 +303,11 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
    ![SQL results](result-viewer.png)
 
-12. The Auto-save contents of SQL consoles setting can be used to persist the open SQL console tabs and their contents. This setting is on by default.
+11. The Auto-save contents of SQL consoles setting can be used to persist the open SQL console tabs and their contents. This setting is on by default.
 
-    ![Auto-Save](auto-save.png)
+    ![Auto save](auto-save.png)
 
-13. SQL statements can also be executed in the background. This allows users to start a long-running statement, disconnect, and return later to view the results.
+12. SQL statements can also be executed in the background. This allows users to start a long-running statement, disconnect, and return later to view the results.
 
     Execute the following statement by clicking the Run dropdown menu and selecting Run Statement in Background:
 
@@ -328,9 +325,11 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
    The results will appear in the Background Statements tab at the bottom on the console.
 
-14. The actions menu for a SQL console tab offers additional options such as the ability to rename a tab, to move a tab, to open a previously closed tab, or to search through the content of all open SQL console tabs.
+13. The actions menu for a SQL console tab offers additional options such as the ability to rename a tab, to move a tab, to open a previously closed tab, or to search through the content of all open SQL console tabs.
 
     ![SQL console actions menu](actions-menu.png)
+
+    ![Search through tabs](search-through-tabs.png)
 
 ### Statement library
 
@@ -338,7 +337,7 @@ The statement library is a convenient location in the SQL console to store and r
 
 The library is pre-populated with useful statements called ‘SYSTEM’ statements.
 
-![Statement Library System Statements](statement_libaray_system.png)
+![Statement library system statements](statement_libaray_system.png)
 
 You may also define custom statements that are only available to you. These are ‘USER’ statements.
 
@@ -357,31 +356,31 @@ SELECT * FROM RESERVATION
 
 1. Save your custom statement, add a name and an optional description.
 
-    ![Statement Library Create User Statements](save_custom_statement.png)
+    ![Create user statement](save_custom_statement.png)
 
     Set the name to `All Future Check-ins`.
 
-    ![Statement Library Save Statements](save_statement.png)
+    ![Save statement](save_statement.png)
 
 2. View your custom statement in the statement library
 
-    ![Statement Library View User Statements](statement_libaray_user.png)
+    ![View user statements](statement_libaray_user.png)
 
 3. To run a statement, select one from the statement library and click the Run button.  
 
-    ![Run Saved Statement](run_saved_statement.png)
+    ![Run saved statement](run_saved_statement.png)
 
     If you select multiple saved statements, you additionally have the option to open them together in one tab or in individual tabs.
 
-> It is also possible to export and import SQL statements directly to/from the file system
-> 
-> ![Import or Export Statements](export_import_statements.png) 
-> 
-> Files can then be shared using a version control system such as git.
+    > It is also possible to export and import SQL statements directly to/from the file system
+    > 
+    > ![Import or export statements](export_import_statements.png) 
+    > 
+    > Files can then be shared using a version control system such as git.
 
-User-defined statements can be edited. From the Statement library, select the desired statement, click open, and make the desired changes. Select Save to overwrite the previous statement.
+    User-defined statements can be edited. From the Statement library, select the desired statement, click open, and make the desired changes. Select Save to overwrite the previous statement.
 
-![Modify Saved Statements](replace_statement.png)
+    ![Modify saved statements](replace_statement.png)
 
 ### GenAI in the SQL console
 
@@ -393,7 +392,7 @@ The SQL console also provides GenAI tools that assist with creating, understandi
    List all the column store tables and their columns in the schema HOTELS
    ```
 
-    ![RunPrompt](RunPrompt.png)
+    ![Run prompt](RunPrompt.png)
 
 2. To understand an existing query, select the SQL statement and click Explain SQL Statement using AI from the same menu. This returns a clear natural-language explanation of what the query does.
 
@@ -414,7 +413,7 @@ The SQL console also provides GenAI tools that assist with creating, understandi
        c.POSITION;
    ```
 
-    ![ExplainAI](ExplainAI.png)
+    ![Explain AI](ExplainAI.png)
 
 3. To improve a query, select the SQL statement and click Optimize SQL Statement using AI. The system will suggest a refined version of the query, often improving readability and performance.
 
@@ -430,7 +429,7 @@ The SQL console also provides GenAI tools that assist with creating, understandi
        ON TABLE_COLUMNS.TABLE_NAME = TABLES.TABLE_NAME;
    ```
 
-    ![OptimizeAI](OptimizeAI.png)
+    ![Optimize AI](OptimizeAI.png)
 
 ### Knowledge check
 

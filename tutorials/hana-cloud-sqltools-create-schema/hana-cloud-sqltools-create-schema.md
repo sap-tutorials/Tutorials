@@ -1,6 +1,8 @@
 ---
 parser: v2
 auto_validation: true
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 time: 15
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, programming-tool>sql]
 primary_tag: software-product>sap-hana-cloud
@@ -31,7 +33,7 @@ The following steps create a sample hotel dataset using CREATE and INSERT statem
 
 1. In SAP HANA Cloud Central, open a SQL console connected to your SAP HANA database instance.
 
-    ![Open SQL Console](open-sql-console.png)
+    ![Open SQL console](open-sql-console.png)
 
     The connected user is DBADMIN. In this step, you will create USER1 and USER2, which are used throughout the rest of this tutorial group.
 
@@ -74,27 +76,27 @@ The following steps create a sample hotel dataset using CREATE and INSERT statem
 
     Privileges can be assigned to users directly or, as a better practice, assigned to a role that has a defined set of privileges.
 
-    It is recommended not to use the DBADMIN user for day-to-day operations in production environments. For additional details see [Deactivate the DBADMIN User](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/deactivate-dbadmin-user).
+    It is not recommended to use the DBADMIN user for day-to-day operations in production environments. For additional details see [Deactivate the DBADMIN User](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/deactivate-dbadmin-user).
 
     For additional details on the commands above, consult [CREATE USERGROUP Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-usergroup-statement-access-control), [CREATE USER Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-user-statement-access-control), [CREATE ROLE Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-role-statement-access-control), and [GRANT Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control).
 
     > Users and roles can also be managed in SAP HANA Cloud Central under the **User & Role Management** tile in the instance detail panel. Additional details can be found at [User and Role Management](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/user-and-role-management).
 
-    > ![User & Role Management in HCC](user-management.png)
+    > ![User & role management in SAP HANA Cloud Central](user-management.png)
 
 3. Open a new SQL console tab by pressing the **+** in the tab bar.  This time we wish to connect with USER1 and to set the schema to HOTELS so we will not use the cached credentials (DBADMIN).
 
-    Click on **Select an Instnace** and choose the SAP HANA database.
+    Click on **Select an Instance** and choose the SAP HANA database.
 
-    Choose **Connect ...**
+    Select **Connect ...**
 
-    ![Connect New User](connect-new-user.png)
+    ![Connect new user](connect-new-user.png)
 
     Specify USER1 and Password1.
 
     Click on  **Current Schema** in the tab bar and choose **HOTELS**.
 
-    ![Change Schema](current-schema.png)
+    ![Change schema](current-schema.png)
 
     Alternatively, the last two actions could have performed the below SQL.
 
@@ -103,10 +105,9 @@ The following steps create a sample hotel dataset using CREATE and INSERT statem
    SET SCHEMA HOTELS;
    ```
 
-
     The details of the connection also be found in the connection details dialog.
 
-    ![connection details](connection-details.png)
+    ![Connection details](connection-details.png)
 
 4. The following example demonstrates the privilege assignments that were previously created.  USER1 was granted the HOTEL_ADMIN role which has all privileges the HOTELS schema while USER2 was granted the HOTEL_READER role which has only select privileges on the HOTELS schema.
 Execute the below SQL and notice that USER2 does not have the privilege to perform an insert.  Press Skip on the SQL Execution Error dialog so that execution continues and the TEST table is removed.
@@ -213,12 +214,10 @@ Execute the below SQL and notice that USER2 does not have the privilege to perfo
    ```
 
     > To find the newly created tables, open the Database Objects app, set the schema filter to **HOTELS**, and select the **Tables** tab.
-
-    > ![Tables in Database Objects](view-tables.png)
+    > ![Viewing tables in Database Objects](view-tables.png)
 
     > Should you wish to examine the SQL of a table, it can be viewed after selecting a table and choosing **CREATE Statement**.
-
-    > ![CREATE Statement](create-statement.png)
+    > ![CREATE statement](create-statement.png)
 
     For additional details see [CREATE TABLE Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-table-statement-data-definition).
 
@@ -328,7 +327,7 @@ Execute the below SQL and notice that USER2 does not have the privilege to perfo
 
 ### Explore auto-commit (optional)
 
-Auto-commit is a setting that, when enabled, causes each SQL statement to be immediately committed to the database. When auto-commit is off, multiple statements can be executed and then committed or rolled back together.
+Auto-commit is a setting that when enabled, causes each SQL statement to be immediately committed to the database. When auto-commit is off, multiple statements can be executed and then committed or rolled back together.
 
 There are two auto-commit settings:
 
@@ -350,9 +349,9 @@ There are two auto-commit settings:
 
     An error will occur and the table TEST1 will exist with two rows.  There is no option to rollback as DML or data manipulation language autocommit is on by default.  To undo the operation, drop the table.
 
-2. Navigate to the user settings by clicking on your profile. Then in the SQL console section set auto-commit to **off**.
+2. Navigate to the user settings by clicking on your profile. Then in the SQL console section set auto-commit to **off** and press **Save**.
 
-    ![Autocommit Checkbox](auto-commit.png)
+    ![Autocommit checkbox](auto-commit.png)
 
 3. Execute the following SQL.
 
@@ -391,7 +390,7 @@ There are two auto-commit settings:
    INSERT INTO TEST3 VALUES (1, 'Bob');
    INSERT INTO TEST3 VALUES (2, 'Sue');
    SELECT * FROM TEST3;
-   INSERT INTO TEST3 VALUES (2, 'John');
+   INSERT INTO TEST3 VALUES (2, 'John'); --fails due to duplicate primary key
    --DROP TABLE TEST3;
    --ROLLBACK;
    --COMMIT;
@@ -522,7 +521,7 @@ Another option for less frequently accessed data is the SAP HANA data lake.  Add
    SELECT AVERAGE_PRICE('single') from dummy;
    ```
 
-    ![Average Price Function](average-price.png)
+    ![Average price function](average-price.png)
 
     For additional details see [User-Defined Functions](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-sqlscript-reference/user-defined-functions).
 
@@ -598,7 +597,8 @@ Another option for less frequently accessed data is the SAP HANA data lake.  Add
        EXEC('INSERT INTO GENERATOR_LOGS (LOG) VALUES (' || val || ')');
    END;
    ```
-    Details on SQL Error codes such as 301 ERR_SQL_UNIQUE_VIOLATED can be found at [SAP HANA Cloud, SAP HANA Database SQL Reference Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/sap-hana-cloud-sap-hana-database-sql-reference-guide)
+
+    Details on SQL Error codes such as 301 ERR_SQL_UNIQUE_VIOLATED can be found at [SAP HANA Cloud, SAP HANA Database SQL Reference Guide](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/sql-error-codes)
 
 5. Run the stored procedure.
 
@@ -606,7 +606,7 @@ Another option for less frequently accessed data is the SAP HANA data lake.  Add
    CALL RESERVATION_GENERATOR(NUMTOGENERATE => 100);
    ```
 
-    ![RESERVATION_GENERATOR Procedure Output](reservation-generator.png)
+    ![RESERVATION_GENERATOR procedure output](reservation-generator.png)
 
     Once the procedure has been successfully executed, execute the below SQL and notice that dates both in the past and future are generated and that there are now 110 reservations.
 
@@ -646,7 +646,7 @@ SELECT * FROM M_SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB'
 
 Details about a scheduled job — including its properties, parameters, history, and CREATE statement — can be viewed in the **Database Objects** app under **Job Scheduler**. Filter by the HOTELS schema to locate the job. Navigate to **Select Object Types** to add Job Scheduler if unavailable.
 
-![Scheduled Jobs](job-scheduler.png)
+![Scheduled jobs](job-scheduler.png)
 
 For additional details see [Scheduling Administrative Tasks](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/scheduling-administrative-tasks) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-scheduler-job-statement-data-definition).
 

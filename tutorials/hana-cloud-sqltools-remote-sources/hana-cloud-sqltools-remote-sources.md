@@ -1,8 +1,10 @@
 ---
 parser: v2
 auto_validation: true
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product-function>sap-hana-cloud--data-lake]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product-function>sap-hana-cloud--data-lake]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -40,7 +42,7 @@ The example in step 1 demonstrates a connection from one SAP HANA Cloud, SAP HAN
 
 Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can query data from the other in real time using virtual tables, without copying or moving data.
 
-![Virtual Table Diagram](virtual-table-diagram.png)
+![SAP HANA database connecting virtually to another SAP HANA database](virtual-table-diagram.png)
 
 1. In SAP HANA Cloud Central, select an SAP HANA database (HDB) instance  (the one you want to connect *to*), and execute the following SQL statements to create the `tourist_reviews` table.
 
@@ -69,10 +71,10 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
 2. The result can be seen below.
 
    ```SQL
-   SELECT * FROM TOURIST_REVIEWS
+   SELECT * FROM TOURIST_REVIEWS;
    ```
 
-    ![Select All](select-all.png)
+    ![Select all](select-all.png)
 
 3. To create a remote source to SAP HANA Cloud, open another SAP HANA database.
 
@@ -89,21 +91,21 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
 
     For the Database Source Type, select **SAP HANA Cloud, SAP HANA Database**.
 
-    Add a source name and specify the server, port, and credentials (USER1, Password1). The Extra Adapter properties can be retreived by copying the `sslTrustStore` in the SQL query above. 
+    Add a source name and specify the server, port, and credentials (USER1, Password1). The Extra Adapter properties can be retrieved by copying the `sslTrustStore` in the SQL query above. 
 
-    ![Creatomg a Remote Source Using the UI](remote-source-table.png)
+    ![Create a remote source using the UI](remote-source-table.png)
 
     Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-remote-source-statement-access-control)
 
     If the above command fails, one reason might be that an allowlist has been set on the SAP HANA Cloud instance. This can be seen by choosing Actions > Manage Configuration > Connections.
 
-    ![Allow All IP Addresses](allow-all.png)
+    ![Allow all IP addresses](allow-all.png)
 
     The public root certificate of the certificate authority (CA) that signed the SAP HANA Cloud instance’s server certificate is required in the `sslTrustStore` parameter. For more information, see [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients).
 
 5. A virtual table named `vt_tourist_reviews` will be created in the SAP HANA database you are connecting from. This will enable access to the `tourist_reviews` table that was created in SAP HANA Cloud. This can be visualized as follows: 
 
-    Open the SAP HANA database you wish to connect from. 
+    Open the SAP HANA database you wish to connect from.
 
     > If needed, create the HOTELS schema and a user who can access the schema.
 
@@ -118,9 +120,10 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
    ```SQL
    CREATE VIRTUAL TABLE VT_TOURIST_REVIEWS AT "REMOTE_HC"."HC_HDB".HOTELS."TOURIST_REVIEWS";
    ```
+
     Additional details can be found at [CREATE VIRTUAL TABLE STATEMENT](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/create-virtual-table-statement-data-definition)
 
-7. Perform queries against the local tables, the remote table, and perform a federated query that contains both local and remote tables. 
+7. Perform queries against the local tables, the remote table, and perform a federated query that contains both local and remote tables.
 
    ```SQL
    SELECT * FROM HOTELS.RESERVATION;
@@ -141,7 +144,7 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
    SELECT * FROM VT_TOURIST_REVIEWS;
    ```
 
-    ![Virtual Table](virtual-table.png)
+    ![Virtual table](virtual-table.png)
 
     Add a new review.
 
@@ -152,7 +155,7 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
 
     Notice that the virtual table is editable.
 
-    A benefit of a virtual table is that there is no data movement. There is only one location where the data is persisted.
+    A benefit of a non replicated virtual table is that there is only one location where the data is persisted.
 
 ### Connect from SAP HANA Cloud, SAP HANA database to a data lake Relational Engine
 
@@ -160,11 +163,11 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
 
 1. If needed, in SAP HANA Cloud Central, add an SAP HANA Cloud, data lake (HDLRE) instance to your SAP HANA Cloud instance, by choosing **Actions > Add Data Lake**.
 
-    ![add a SAP HANA Data Lake](add-data-lake.png)
+    ![Add a SAP HANA Data Lake](add-data-lake.png)
 
 2. Open a SQL console connected to the data lake instance by selecting the instance tile and choosing **Actions > Open SQL Console**.
 
-    ![Open SQL console in HCC](open-sql-console.png)
+    ![Open SQL console](open-sql-console.png)
 
 3. Execute the following SQL to create a table named `tourist_reviews` in the HDLRE.
 
@@ -195,8 +198,6 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
 
 4. In the HDB SQL console, create a remote source **from** the HANA database **to** the HDLRE.  Be sure to replace the host and password values.
 
-    >If you have not already done so, ensure that you have added USER1 to your HDLRE database, as shown in sub-step 3 above.
-
    ```SQL
    CREATE REMOTE SOURCE HC_DL
        ADAPTER "IQODBC"
@@ -205,23 +206,24 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
                    USING 'user=USER1;password=Password1';
    CALL PUBLIC.CHECK_REMOTE_SOURCE('HC_DL');
    ```
+
     >Access host details under Actions > Copy SQL Endpoint
 
-    ![Copy SQL Endpoint](copy-sql-endpoint.png)
+    ![Copy SQL endpoint](copy-sql-endpoint.png)
 
 5. Navigate to **Database Objects** to view an instance's remote sources. Notice that under remote sources, there is a remote source `HC_DL`.
 
-    ![Remote Sources in Database Objects](remote-source-db-objects.png)
+    ![Remote sources in Database Objects](remote-source-db-objects.png)
 
     If an instance's remote sources are unavailable, go to **Select Object Types** to add **Remote Sources**.
 
-    ![Adding Remote Source Option in Database Objects](add-remote-source-db-objects.png) 
+    ![Adding remote source in Database Objects](add-remote-source-db-objects.png) 
 
 6. In the HDB SQL console, create a virtual table named **`VT_DL_TOURIST_REVIEWS`** in the schema **HOTELS** that maps to the newly created table in the HDLRE.
 
     This can be visualized as follows:
 
-    ![data lake and on-premise remote connection](dl-cloud-connection.png)
+    ![SAP HANA database connecting to a data lake Relational Engine](dl-cloud-connection.png)
 
    ```SQL
    CREATE VIRTUAL TABLE VT_DL_TOURIST_REVIEWS AT HC_DL.iqaas.HOTELS.TOURIST_REVIEWS;
@@ -257,13 +259,13 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
    SELECT * FROM VT_DL_TOURIST_REVIEWS;
    ```
 
-    ![New Review](new-review.png)
+    ![New review](new-review.png)
 
-    Notice that the remote data source is updateable.  Data stored in an HDLRE is stored on disk, which has cost advantages compared to memory storage. HDLRE can also be used to store large amounts of data.
+    Notice that the remote data source is updatable.  Data stored in an HDLRE is stored on disk, which has cost advantages compared to memory storage. HDLRE can also be used to store large amounts of data.
 
 ### Connect from a data lake Relational Engine to SAP HANA Cloud, SAP HANA database
 
-The first task in preparing the HDLRE instance is creating a remote server that connects the HDLRE to the HDB instance that contains the data you want to access.
+The first task in preparing the data lake Relational Engine instance is creating a remote server that connects to the SAP HANA database instance that contains the data you want to access.
 
 1. In SAP HANA Cloud Central, locate the SAP HANA database instance tile and choose **Actions > Copy SQL Endpoint** to obtain the host name.
 
@@ -313,11 +315,9 @@ The first task in preparing the HDLRE instance is creating a remote server that 
    --DROP TABLE VT_HDB_TOURIST_REVIEWS;
    ```
 
-    ![Test Query Results](test_query.png)
+    ![Query the virtual table](test_query.png)
 
 ### Connect from a data lake Relational Engine to another data lake Relational Engine
-
-When connecting from one HDLRE instance to another, the steps follow a similar pattern to connecting from an HDLRE to an HDB instance (Step 2 of this tutorial).
 
 1. In SAP HANA Cloud Central, locate the target data lake instance tile and choose **Actions > Copy SQL Endpoint** to obtain the host name.
 
@@ -361,7 +361,7 @@ When connecting from one HDLRE instance to another, the steps follow a similar p
    --DROP TABLE VT_HDLRE_TOURIST_REVIEWS;
    ```
 
-    ![HDLRE Table](virtual-table.png)
+    ![Query the virtual table](virtual-table.png)
 
 For further information, see [Data Replication and Data Virtualization](group.hana-cloud-extend-2-data-replication), and [Getting Started with SAP HANA Cloud | Remote Data Source](https://blogs.sap.com/2020/08/03/getting-started-with-sap-hana-cloud-vii-smart-data-access/).
 
