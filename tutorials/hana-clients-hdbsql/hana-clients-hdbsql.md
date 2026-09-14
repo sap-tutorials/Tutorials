@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>sql]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>sql]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -23,7 +23,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Intro
 
-HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  HDBSQL is a basic tool for executing SQL scripts and providing an interface for interactive queries.  Another option to execute SQL operations is the [SQL Console](hana-dbx-hcc) that is part of SAP HANA Cloud Central or the [SAP HANA database explorer](group.hana-cloud-get-started) which is part of an on-premise install of the SAP HANA Cockpit or a server + applications SAP HANA, express edition install.  
+HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  HDBSQL is a basic tool for executing SQL scripts and providing an interface for interactive queries.  Another option to execute SQL operations is the [SQL Console](hana-dbx-hcc) that is part of SAP HANA Cloud Central or the [SAP HANA database explorer](group.hana-cloud-get-started) which is part of an on-premise install of the SAP HANA Cockpit.  
 
 ---
 
@@ -37,7 +37,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
    hdbsql -h | more
    ```
 
-2. Connect to either SAP HANA Cloud or SAP HANA, express edition using host, port, and credentials.  Details on where to find these values are covered in the third and fifth steps of the [first tutorial](hana-clients-choose-hana-instance) in this mission.
+2. Connect to either SAP HANA Cloud or SAP HANA on-premise instance using host, port, and credentials.  Details on where to find these values are covered in the third and fifth steps of the [first tutorial](hana-clients-choose-hana-instance) in this mission.
 
     - To connect to SAP HANA Cloud, see the following general command.  
 
@@ -53,7 +53,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
         ![Connect with hdbsql](connect-with-hdbsql.png)
 
-    - For SAP HANA, express edition, there are two options shown below to connect.
+    - For SAP HANA on-premise, there are two options shown below to connect.
 
         ```Shell
         hdbsql -n <ip address>:39015 -u <user> -p <password>
@@ -61,7 +61,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         hdbsql -n <ip address> -d <database name> -i <instance number> -u <user> -p <password>
         ```
 
-        Below are two connection examples for SAP HANA, express edition.
+        Below are two connection examples for an on-premise SAP HANA instance.
 
         ```Shell
         hdbsql -n <ip address>:39015 -u SYSTEM -p your_password
@@ -149,7 +149,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
     ![Connect to HANA Cloud](Connect-to-host-server-cloud.png)
 
-    Notice that for the HANA, express edition, the version number is 2.x.  
+    Notice that for the on-premise instance, the version number is 2.x.  
 
     ![Connect to HXE](Connect-to-host-server.png)  
 

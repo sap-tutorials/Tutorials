@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -42,10 +42,10 @@ For more information on SAP HANA Cloud, consult [Introduction to SAP HANA Cloud]
 
 There are multiple versions of SAP HANA.  The information below is a list of links for the documentation of each version.
 
-|  Version     | Notes
-|  :------------- | :-------------
-|  [SAP HANA Platform 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM)           | Released in November 2016. Current version is 2.0 SPS 08, which was released on Nov 20th, 2024.
-|  **[SAP HANA Cloud](https://help.sap.com/docs/hana-cloud)**   | Released in March 2020.  New features are released quarterly.
+|  Version | Notes
+| -------- | ------ |
+|  [SAP HANA Platform 2.0](https://help.sap.com/docs/SAP_HANA_PLATFORM) | Released in November 2016. Current version is 2.0 SPS 08, which was released on Nov 20th, 2024. |
+|  **[SAP HANA Cloud](https://help.sap.com/docs/hana-cloud)**   | Released in March 2020.  New features are released quarterly. |
 
 ### SAP HANA Cloud
 
@@ -149,7 +149,7 @@ Congratulations! You have connected to SAP HANA Cloud and performed a few querie
 
 >This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not set up an SAP HANA instance using the SAP HANA Cloud free tier as explained in step 3.
 
-A default installation will contain one [system](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/39da3d057f56427ab1bb7f738ca9e7ce.html) database named **SYSTEMDB** and one [tenant](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/623afd167e6b48bf956ebb7f2142f058.html) database named **HXE**.
+A default installation will contain one [system](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/39da3d057f56427ab1bb7f738ca9e7ce.html) database named **SYSTEMDB** and one [tenant](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/623afd167e6b48bf956ebb7f2142f058.html) database which in this example is named **HXE**.
 
 The system database contains information about the tenant database(s) and is used for overall administration.  The default port for the system database is **39013**.  Later in this tutorial mission, a connection to the tenant database will be made and tables will be created and populated with data.  For more information, see [SAP HANA Tenant Databases Operations Guide](https://help.sap.com/docs/SAP_HANA_PLATFORM/78209c1d3a9b41cd8624338e42a12bf6/0ba9f43aed594a449d497fabf6bc381e.html).
 

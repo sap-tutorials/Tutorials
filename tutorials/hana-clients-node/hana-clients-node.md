@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>node-js]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>node-js]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -211,7 +211,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
        //As of SAP HANA client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
        //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
-       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
+       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA on-premise instance that uses a self-signed certificate.
 
        //For encrypted connections, the default crypto provider is mscrypto on Windows or openSSL on Linux or macos
        //To use the SAP crypto provider, uncomment the below line.
@@ -442,7 +442,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
        //UID: 'USER1',
        //PWD: 'Password1',
 
-       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
+       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA on-premise instance that uses a self-signed certificate.
    };
 
    //Asynchronous example calling a stored procedure with callbacks
@@ -500,7 +500,7 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
    }
    ```  
 
-4. Run the app.  
+3. Run the app.  
 
    ```Shell
    node nodeQueryCallback.js
@@ -543,7 +543,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
        //UID: 'USER1',
        //PWD: 'Password1',
 
-       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
+       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA on-premise instance that uses a self-signed certificate.
    };
 
    //Asynchronous example calling a stored procedure that uses the promise module

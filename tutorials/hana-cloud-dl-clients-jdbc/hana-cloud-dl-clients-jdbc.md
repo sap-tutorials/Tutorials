@@ -119,7 +119,8 @@ See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-clo
 
    ```Shell (Microsoft Windows)
    javac -cp %HDL_CLIENT_HOME%\Java\sajdbc4.jar;. JavaQuery.java
-   ```  
+   ```
+
    ```Shell (Linux)
    javac -cp $HDL_CLIENT_HOME/java/sajdbc4.jar:. JavaQuery.java
    ```  
@@ -129,11 +130,12 @@ See [data lake Relational Engine JDBC driver](https://help.sap.com/docs/hana-clo
    ```Shell (Microsoft Windows)
    java -classpath %HDL_CLIENT_HOME%\Java\sajdbc4.jar;. JavaQuery
    ```  
+
    ```Shell (Linux)
    java -classpath $HDL_CLIENT_HOME/java/sajdbc4.jar:. JavaQuery
    ```  
 
-    ![Java Query](jdbc-query.png)
+    ![Java query](jdbc-query.png)
 
 See [JDBC Program Structure](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US/3bd5a89b6c5f1014ad1bae9e04645f43.html) for additional details.  
 
@@ -153,7 +155,7 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
 
 4. Once the Java Extension Pack has been installed, expand the Java Project Explorer, and click on the **+** icon to add the JDBC driver as a referenced library.
 
-    ![referenced libraries](ref-libraries.png)
+    ![Referenced libraries](ref-libraries.png)
 
     The JDBC driver is located at `%HDL_CLIENT_HOME%\Java\sajdbc4.jar` on Microsoft Windows and `$HDL_CLIENT_HOME/java/sajdbc4.jar` on Linux.
 
@@ -163,7 +165,7 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
 
     Notice that the program stops running at the breakpoint that was set. Step through the code by pressing F10 and observe the variable values in the variables pane.
 
-    ![VS Code Debugging](debugging.png)
+    ![Visual Studio Code debugging](debugging.png)
 
 ### Knowledge check
 

@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -104,7 +104,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
                    // encrypt and sslValidateCertificate should be true for HANA Cloud connections
                    // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
                    // sslValidateCertificate should be set to false when connecting
-                   // to an SAP HANA, express edition instance that uses a self-signed certificate.
+                   // to an on-premise SAP HANA instance that uses a self-signed certificate.
 
                    {
                        conn.Open();

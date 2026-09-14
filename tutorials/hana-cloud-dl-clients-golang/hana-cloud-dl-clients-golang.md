@@ -35,9 +35,9 @@ The first step is to check if Go is installed, and if so, which version. To do s
 go version
 ```
 
-![go version linux](version2.png)
+![Go version](version2.png)
 
-If Go is installed, then it will return the currently installed version, such as 1.26.1
+If Go is installed, then it will return the currently installed version, such as 1.26.1.
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
 
@@ -53,19 +53,19 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
 1. To check if a 64-bit `gcc` compiler is installed, run the following command:
 
-   ```Shell
-   gcc --version
-   ```
+    ```Shell
+    gcc --version
+    ```
 
     On Windows (if needed), download the compiler from [MinGW](https://www.mingw-w64.org/downloads/). Under **WinLibs.com**, follow the link to [winlibs.com](https://winlibs.com/).  Navigate to the **Release versions** section. Find the latest release version of the Zip archive (UCRT runtime) for Win64 – x86_64. Then extract the folder. 
 
-    ![download minGW from WinLibs](winLibsMinGW.png)
+    ![Download minGW from WinLibs](winLibsMinGW.png)
 
     If command prompt isn't displaying the installed version after running the version check command, manually add the `bin` folder to your path by setting it in your System environment variables.
 
     >On Windows, search **Edit the System Environment Variables** and click on **Environment Variables...**.
     >
-    ![Edit Environment Variables](editEnvironmentVariables.png)
+    ![Edit environment variables](editEnvironmentVariables.png)
 
     Look for the `Path` environment variable within **User variables** and double click to edit. Select **Browse** and manually browse through your File Explorer to find the bin folder. Click "OK" on all environment variable windows to update.
 
@@ -73,9 +73,9 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
     On Windows, to ensure the gcc compiler is installed, open a new Command prompt window and run the following command:
 
-   ```Shell
-   gcc --version
-   ```
+    ```Shell
+    gcc --version
+    ```
 
     On Linux (if needed), install the System GNU C compiler for your version of Linux.  Note that if you are using openSUSE, minGW is included in the installation for Go through YaST.
 
@@ -95,7 +95,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
 
     On Windows, search **Edit the System Environment Variables** and click on **Environment Variables**. Add a **NEW** user variable. Set the variable name to **CGO_LDFLAGS** and the value as the location of `dbcapi` library: `C:\SAP\hdlclient\bin64\dbcapi.dll`
 
-    ![Set Environment Variables](setEnvVar.png)
+    ![Set environment variables](setEnvVar.png)
 
     >It is also possible on Microsoft Windows to set this using the SETX command from a shell.
 
@@ -130,7 +130,7 @@ The Go driver loads the SQLDBC library  named `libdbcapiHDB` using [cgo](https:/
    go mod tidy
    ```
 
-    ![createModule](createModule.png)
+    ![Create a module](createModule.png)
 
     The contents of the data lake Client folder is not writeable so you may need to change the permissions on the driver folder or copy files to a new location. 
 
@@ -254,17 +254,17 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 
 2. If you have not already done so, in Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `DataLakeClientsTutorial` folder.
 
-    ![Open Workspace](workspace.png)
+    ![Open workspace](workspace.png)
 
 3. Open the file `goQuery.go`.
 
-    ![Go Extension](GoExtension.png)
+    ![Go extension](GoExtension.png)
 
     Visual Studio Code will recognize the `go` file extension and will suggest installing the Go for Visual Studio Code extension.  Click **Install**.
 
 4. Place a breakpoint.
 
-    ![SetBreakpoint](SetGoBreakpoint.png)
+    ![Set a breakpoint](SetGoBreakpoint.png)
 
 5. Select **Run | Start Debugging**.
 
@@ -272,7 +272,7 @@ Visual Studio Code provides plugins for Go and can be used to debug an applicati
 
     Observe the variable values in the leftmost pane.  Step through the code.
 
-    ![Breakpoint](GoBreakpoint.png)  
+    ![Stopped at a breakpoint](GoBreakpoint.png)  
 
     >Note that debugging can also be performed from the command line using [Delve](https://github.com/go-delve/delve ).
 

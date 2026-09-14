@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>python]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>python]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -165,7 +165,7 @@ pip install hdbcli
            #encrypt=True, # must be set to True when connecting to HANA as a Service
            #As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud)
            #sslValidateCertificate=False #Must be set to false when connecting
-           #to an SAP HANA, express edition instance that uses a self-signed certificate.
+           #to an SAP HANA on-premise instance that uses a self-signed certificate.
        )
    except dbapi.Error as er:
        print('Connect failed, exiting')

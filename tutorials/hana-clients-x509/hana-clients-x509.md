@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>sql,tutorial>intermediate, topic>security]
+tags: [ software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>sql,tutorial>intermediate, topic>security]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -47,7 +47,6 @@ The SAP HANA Client can use different [cryptographic service providers](https://
 |Linux| SAP Cryptographic Library | Yes | 
 |macOS| LibreSSL | Yes |
 |macOS| SAP Cryptographic Library | Yes |
-
 
 As a first step, we will ensure that basic connectivity is working with a user name and password.  The steps below check the version of the SAP HANA Client, create a test user, and attempt to connect using basic authentication with mscrypto or OpenSSL.  The SQL commands can be run by an admin user such as DBADMIN in the SQL console or hdbsql.
 

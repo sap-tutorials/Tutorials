@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>java]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>java]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -144,7 +144,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/docs/SAP_HANA_CL
 
                    //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
                    //validateCertificate should be set to false when connecting
-                   //to an SAP HANA, express edition instance that uses a self-signed certificate.
+                   //to an SAP HANA on-premise instance that uses a self-signed certificate.
 
                    //As of SAP HANA Client 2.7, it is possible to direct trace info to stdout or stderr
                    //"jdbc:sap://10.11.123.134:39015/?encrypt=true&validateCertificate=false&traceFile=stdout&traceOptions=CONNECTIONS", "User1", "Password1");
@@ -241,7 +241,7 @@ Visual Studio Code provides plugins for Java and can be used to debug an applica
 
 `DBeaver` is a free and open-source database tool and can be used with the SAP HANA JDBC driver.
 
-The following steps demonstrate how to configure `DBeaver` to connect to SAP HANA Cloud or SAP HANA, express edition using the JDBC driver.
+The following steps demonstrate how to configure `DBeaver` to connect to SAP HANA Cloud or SAP HANA on-premise instance using the JDBC driver.
 
 1. [Download](https://dbeaver.io/download/), install or unzip, and run the community edition of `DBeaver`.
 

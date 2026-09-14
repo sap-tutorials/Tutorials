@@ -34,7 +34,7 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
 >The SAP HANA Cloud free tier is limited to creating one SAP HANA database and one data lake instance.
 
-The example in step 1 demonstrates a connection from one SAP HANA Cloud, SAP HANA database to another. The example in step 2 demonstrates a connection from an SAP HANA Cloud, SAP HANA database to an SAP HANA Cloud, data lake Relational Engine. The example in step 3 demonstrates connecting from SAP HANA Cloud, data lake Relational Engine to an SAP HANA Cloud, SAP HANA database. The example in step 4 demonstrates connecting from one SAP HANA Cloud, data lake Relational Engine to another.
+The example in step 1 demonstrates a connection from one SAP HANA Cloud, SAP HANA database to another. The example in step 2 demonstrates a connection from an SAP HANA Cloud, SAP HANA database to an SAP HANA Cloud, data lake Relational Engine. The example in step 3 demonstrates connecting from SAP HANA Cloud, data lake Relational Engine to an SAP HANA Cloud, SAP HANA database. The example in step 4 demonstrates connecting from one SAP HANA Cloud, data lake Relational Engine to another.  It is also possible to connect from an SAP HANA on-premise database to SAP HANA Cloud or from SAP HANA Cloud to an on-premise SAP HANA database.  These last two examples are covered at [Access Remote Sources with SAP HANA Database Explorer](tutorials.hana-dbx-remote-sources).
 
 ---
 
