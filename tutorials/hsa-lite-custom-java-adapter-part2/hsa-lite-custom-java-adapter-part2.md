@@ -32,11 +32,11 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
   2. Connect to your SAP HANA system in `WinSCP`, and navigate to the directory `/hana/shared/<sid>/streaming-<Version>/STREAMING-2_0`. This is the Streaming Analytics installation folder, and its path is defined in `$STREAMING_HOME`
 
-    > Don't forget to replace `<sid>` with your HANA System id and <Version> with your Streaming Analytics instance version
+   > Don't forget to replace `<sid>` with your HANA System id and <Version> with your Streaming Analytics instance version
 
   3. Copy over the `"libj"` folder into your `"custom_java_adapter"` folder. These are Java SDK files required to build our custom Java Adapter.
 
-    ![Move Java SDK Files](moveJavaSDKLibj.png)
+   ![Move Java SDK Files](moveJavaSDKLibj.png)
 
 For the question below, select the correct answer, and click **Validate**.
 
@@ -54,7 +54,7 @@ For the question below, select the correct answer, and click **Validate**.
   4. Click next
 
 
-    ![Create new Java Project](createNewJavaProject.png)
+   ![Create new Java Project](createNewJavaProject.png)
 
 
 
@@ -64,7 +64,7 @@ For the question below, select the correct answer, and click **Validate**.
   1. Under the Source tab, click "Create new source folder"
 
 
-    ![Create New Source Folder](createNewSourceFolder.png)
+   ![Create New Source Folder](createNewSourceFolder.png)
 
 
   2. In the window which pops up, name the folder `"src"` and click finish, to create a folder called `"src"`. You will now see this folder displayed under our project directory in the "Source" tab.
@@ -72,7 +72,7 @@ For the question below, select the correct answer, and click **Validate**.
   3. Check the box which says "Allow output folder for source folders", and click finish. You have now created a new package called `custom_java_adapter`. You can expand and view it under "Package Explorer".
 
 
-    ![Allow Output Folder For Source Folders](allowOutputFolderForSourceFolders.png)
+   ![Allow Output Folder For Source Folders](allowOutputFolderForSourceFolders.png)
 
 
 ### Create a new Java Class
@@ -81,16 +81,16 @@ For the question below, select the correct answer, and click **Validate**.
   1. Right click on our `"src"` folder, and select `New>Class` to create a new Java class.
 
 
-    ![Create a New Java Class](createNewJavaClass.png)
+   ![Create a New Java Class](createNewJavaClass.png)
 
 
   2. Create a new Java class in the folder `custom_java_adapter/src`. Set the package name as `custom_java_adapter`. Name the class `"JavaAdapter"`. Only select `"public static void main(String[] args)"`. Click `Finish`.
 
-    ![New Java Class Configuration](newJavaClassConfiguration.png)
+   ![New Java Class Configuration](newJavaClassConfiguration.png)
 
-    We have now created a new class, and a corresponding `JavaAdapter.java` file in which we will develop our code.
+   We have now created a new class, and a corresponding `JavaAdapter.java` file in which we will develop our code.
 
-    ![Java Adapter Ready to Develop](javaAdapterReadyToDevelop.png)
+   ![Java Adapter Ready to Develop](javaAdapterReadyToDevelop.png)
 
 
 ---

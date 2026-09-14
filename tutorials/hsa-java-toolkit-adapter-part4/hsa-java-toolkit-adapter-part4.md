@@ -126,32 +126,32 @@ For the question below, select the correct answer, and click **Validate**.
 
   2. Add the following line to the `<xs:choice>` element
 
-    ```XML
-      <xs:element name="MQTTInputTransporterParameters" type="MQTTInputTransporterParametersDefn"/>
-    ```
+   ```XML
+     <xs:element name="MQTTInputTransporterParameters" type="MQTTInputTransporterParametersDefn"/>
+   ```
 
   3. Since we have defined the `MQTTInputTransporterParameters` type to be `MQTTInputTransporterParametersDefn`, we must now set up a rule for it.
 
-    - Create a <xs:complex> element and specify the name attribute.
+- Create a <xs:complex> element and specify the name attribute.
 
-      ```XML
-        <xs:complexType name="MQTTInputTransporterParametersDefn">
-      ```
+```XML
+ <xs:complexType name="MQTTInputTransporterParametersDefn">
+```
 
-    - Create an `<xs:all>` element.
+- Create an `<xs:all>` element.
 
-    - Create an `<xs:element>` element for each `MQTTInputTransporterParametersDefn` parameter (`Topic` and `MosquittoServerAddress`) and specify name and type attributes for each.
+- Create an `<xs:element>` element for each `MQTTInputTransporterParametersDefn` parameter (`Topic` and `MosquittoServerAddress`) and specify name and type attributes for each.
 
-      ```XML
-        <xs:element name="MosquittoServerAddress" type="xs:string"></xs:element> <xs:element name="Topic" type="xs:string"></xs:element>
-      ```
+```XML
+ <xs:element name="MosquittoServerAddress" type="xs:string"></xs:element> <xs:element name="Topic" type="xs:string"></xs:element>
+```
 
-    - Close off the `<xs:all>` and `<xs:complexType>` elements.
+- Close off the `<xs:all>` and `<xs:complexType>` elements.
 
-      ```XML
-          </xs:all>
-        </xs:complexType>
-      ```
+```XML
+   </xs:all>
+ </xs:complexType>
+```
 
 ### Appendix 
 

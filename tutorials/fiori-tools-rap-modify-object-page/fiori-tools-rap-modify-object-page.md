@@ -40,29 +40,29 @@ Clicking on any item of the list report will show the object page for this item.
 
 1. Open the metadata extensions for the Travel view `ZC_FE_TRAVEL_######`. In the previous tutorial [Refine the List Report with Additional Annotations](fiori-tools-rap-modify-list-report) you already defined header information in step 3. Now you will enhance the annotation `@UI.headerInfo` with a `title` and a `description` property.
 
-    ```CDS
-    ...
+   ```CDS
+   ...
 
-    @UI: {
-        headerInfo: {
-            typeName: 'Travel',
-            typeNamePlural: 'Travels',
-            title: {
-                type: #STANDARD, value: 'Description'
-            },
-            description: {
-                value: 'TravelID'
-            }
-        },
-    ...
+   @UI: {
+       headerInfo: {
+           typeName: 'Travel',
+           typeNamePlural: 'Travels',
+           title: {
+               type: #STANDARD, value: 'Description'
+           },
+           description: {
+               value: 'TravelID'
+           }
+       },
+   ...
 
-    ```
+   ```
 
     Choose **Save** and **Activate**.
 
 2. Refresh the app preview. You will see an object page containing a title and a subtitle in the header and an empty content section.
 
-    <!-- border -->![App object page title](t3-app-object-page-title.png)
+    ![App object page title](t3-app-object-page-title.png)
 
 
 
@@ -75,56 +75,56 @@ In this step you will add some key information to the object page header using d
 1. As in the steps before, open the metadata extensions file for the Travel view `ZC_FE_TRAVEL_######`.
 
     Add the `@UI.facet` annotation with two objects of type `#DATAPOINT_REFERENCE`.
-    ```CDS
-    ...
-    annotate view ZC_FE_TRAVEL_###### with
-    {
+   ```CDS
+   ...
+   annotate view ZC_FE_TRAVEL_###### with
+   {
 
-        @UI.facet: [
-          {
-              id: 'TravelHeaderPrice',
-              purpose: #HEADER,
-              type: #DATAPOINT_REFERENCE,
-              position: 10,
-              targetQualifier: 'PriceData'
-          },
-          {
-              id: 'TravelHeaderOverallStatus',
-              purpose: #HEADER,
-              type: #DATAPOINT_REFERENCE,
-              position: 20,
-              targetQualifier: 'StatusData'
-           }
-      ]
+       @UI.facet: [
+         {
+             id: 'TravelHeaderPrice',
+             purpose: #HEADER,
+             type: #DATAPOINT_REFERENCE,
+             position: 10,
+             targetQualifier: 'PriceData'
+         },
+         {
+             id: 'TravelHeaderOverallStatus',
+             purpose: #HEADER,
+             type: #DATAPOINT_REFERENCE,
+             position: 20,
+             targetQualifier: 'StatusData'
+          }
+     ]
 
-      @UI.lineItem: [{ position: 10}]
-      TravelID;  
-      ...      
-    ```
+     @UI.lineItem: [{ position: 10}]
+     TravelID;  
+     ...      
+   ```
 
 2. Annotating properties `TotalPrice` and `OverallStatus` with `@UI.datapoint` using the `targetQualifier` from the facet definition in step 1 will assign the properties to the header facet accordingly.
 
-    ```CDS
-    ...
+   ```CDS
+   ...
 
-    @UI.lineItem: [{ position: 70}]
-    @UI.dataPoint: { qualifier: 'PriceData', title: 'Total Price'}
-    TotalPrice;
+   @UI.lineItem: [{ position: 70}]
+   @UI.dataPoint: { qualifier: 'PriceData', title: 'Total Price'}
+   TotalPrice;
 
-    @UI.lineItem: [{ position: 80, criticality: 'OverallStatusCriticality' }]
-    @UI.selectionField: [{ position: 30}]
-    @UI.textArrangement: #TEXT_ONLY
-    @UI.dataPoint: { qualifier: 'StatusData', title: 'Status', criticality: 'OverallStatusCriticality' }
-    OverallStatus;
+   @UI.lineItem: [{ position: 80, criticality: 'OverallStatusCriticality' }]
+   @UI.selectionField: [{ position: 30}]
+   @UI.textArrangement: #TEXT_ONLY
+   @UI.dataPoint: { qualifier: 'StatusData', title: 'Status', criticality: 'OverallStatusCriticality' }
+   OverallStatus;
 
-    ...
+   ...
 
-    ```
+   ```
     Choose **Save** and **Activate**.
 
 3. Refresh the app preview. The two new data points show up in the object page header. The labels are taken from property `title`, the color of **Status** from property `criticality` of the `datapoint` annotations .
 
-    <!-- border -->![App Data Points](t3-app-data-points.png)
+    ![App Data Points](t3-app-data-points.png)
 
 
 
@@ -136,67 +136,67 @@ In this step you will add a section to the content area of the object page. The 
 1. Open the metadata extensions file for the Travel view `ZC_FE_TRAVEL_######` and enter the facet annotations that define the section **General Information** as a collection facet, using the type `Collection`. Add a second facet as a child of **General Information** with facet type `#IDENTIFICATION_REFERENCE` to create a form with title **General**. Add the code from line 8 to line 21 to your existing UI facet definition.
 
 
-    ```CDS
-    ...
-    annotate view ZC_FE_TRAVEL_###### with
-    {
+   ```CDS
+   ...
+   annotate view ZC_FE_TRAVEL_###### with
+   {
 
-      @UI.facet: [
-      ...
+     @UI.facet: [
+     ...
 
-        {
-          label: 'General Information',
-          id: 'GeneralInfo',
-          type: #COLLECTION,
-          position: 10
-        },
-        {
-          label: 'General',
-          id: 'Travel',
-          type: #IDENTIFICATION_REFERENCE,
-          purpose: #STANDARD,
-          parentId: 'GeneralInfo',
-          position: 10
-        }
-      ]
+       {
+         label: 'General Information',
+         id: 'GeneralInfo',
+         type: #COLLECTION,
+         position: 10
+       },
+       {
+         label: 'General',
+         id: 'Travel',
+         type: #IDENTIFICATION_REFERENCE,
+         purpose: #STANDARD,
+         parentId: 'GeneralInfo',
+         position: 10
+       }
+     ]
 
-    ...
+   ...
 
-    }
-    ```
+   }
+   ```
 
 2. Add a new property `Description` and annotate this and the properties `AgencyID` and `CustomerID` with `@UI.Identification` to position these fields under **General**.
 
-    ```CDS
-    annotate view ZC_FE_TRAVEL_###### with
-    {
+   ```CDS
+   annotate view ZC_FE_TRAVEL_###### with
+   {
 
-    ...
+   ...
 
-      @UI.lineItem: [{ position: 10}]
-      TravelID;
+     @UI.lineItem: [{ position: 10}]
+     TravelID;
 
-      @UI.identification: [{ position: 10 }]
-      Description;
+     @UI.identification: [{ position: 10 }]
+     Description;
 
-      @UI.lineItem: [{ position: 20}]
-      @UI.selectionField: [{ position: 10}]
-      @UI.identification: [{ position: 30 }]
-      AgencyID;
+     @UI.lineItem: [{ position: 20}]
+     @UI.selectionField: [{ position: 10}]
+     @UI.identification: [{ position: 30 }]
+     AgencyID;
 
-      @UI.lineItem: [{ position: 30}]
-      @UI.selectionField: [{ position: 20}]
-      @UI.identification: [{ position: 20 }]
-      CustomerID;
-    ...
-    }
-    ```
+     @UI.lineItem: [{ position: 30}]
+     @UI.selectionField: [{ position: 20}]
+     @UI.identification: [{ position: 20 }]
+     CustomerID;
+   ...
+   }
+   ```
 
     Choose **Save** and **Activate**.
 
 3. Refresh the app preview. The new form **General** is shown in section **General Information** containing the three fields.
 
-    <!-- border -->![App section GeneralInfo](t3-app-section-General-Information.png)
+    ![App section GeneralInfo](t3-app-section-General-Information.png)
 
 
 
@@ -209,67 +209,67 @@ A field group contains one or more data fields inside a UI container. In this st
 
     First, define a field group for the beginning and end date of a travel item and for the prices. The facet type for a field group is `#FIELDGROUP_REFERENCE`. Add the code from line 8 to line 25 to the end of the `@UI.facet` section.
 
-    ```CDS
-    annotate view ZC_FE_TRAVEL_###### with
-    {
+   ```CDS
+   annotate view ZC_FE_TRAVEL_###### with
+   {
 
-      @UI.facet: [
-        {
+     @UI.facet: [
+       {
 
-        ...
-        {
-          id: 'Dates',
-          purpose: #STANDARD,
-          type: #FIELDGROUP_REFERENCE,
-          parentId: 'GeneralInfo',
-          label: 'Dates',
-          position: 30,
-          targetQualifier: 'DatesGroup'
-        },
-        {
-          id: 'Prices',
-          purpose: #STANDARD,
-          type: #FIELDGROUP_REFERENCE,
-          parentId: 'GeneralInfo',
-          label: 'Prices',
-          position: 20,
-          targetQualifier: 'PricesGroup'
-        }
-      ]
-    ...
+       ...
+       {
+         id: 'Dates',
+         purpose: #STANDARD,
+         type: #FIELDGROUP_REFERENCE,
+         parentId: 'GeneralInfo',
+         label: 'Dates',
+         position: 30,
+         targetQualifier: 'DatesGroup'
+       },
+       {
+         id: 'Prices',
+         purpose: #STANDARD,
+         type: #FIELDGROUP_REFERENCE,
+         parentId: 'GeneralInfo',
+         label: 'Prices',
+         position: 20,
+         targetQualifier: 'PricesGroup'
+       }
+     ]
+   ...
 
-    }
-    ```
+   }
+   ```
 
 2. Annotate the properties `BeginDate` and `EndDate `with `@UI.fieldGroup`. Make sure you use the same field group qualifier `DatesGroup` but different positions in each annotation. Apply the same for the properties `BookingFee` and `TotalPrice` using field group annotations with qualifier `PricesGroup`.
 
-    ```CDS
-     ...
+   ```CDS
+    ...
 
-     @UI.lineItem: [{ position: 40}]
-     @UI.fieldGroup: [{ qualifier: 'DatesGroup', position: 10 }]
-     BeginDate;
+    @UI.lineItem: [{ position: 40}]
+    @UI.fieldGroup: [{ qualifier: 'DatesGroup', position: 10 }]
+    BeginDate;
 
-     @UI.lineItem: [{ position: 50}]
-     @UI.fieldGroup: [{ qualifier: 'DatesGroup', position: 20 }]
-     EndDate;
+    @UI.lineItem: [{ position: 50}]
+    @UI.fieldGroup: [{ qualifier: 'DatesGroup', position: 20 }]
+    EndDate;
 
-     @UI.lineItem: [{ position: 60}]
-     @UI.fieldGroup: [ { qualifier: 'PricesGroup', position: 10} ]
-     BookingFee;
+    @UI.lineItem: [{ position: 60}]
+    @UI.fieldGroup: [ { qualifier: 'PricesGroup', position: 10} ]
+    BookingFee;
 
-     @UI.lineItem: [{ position: 70}]  
-     @UI.fieldGroup: [{ qualifier: 'PricesGroup', position: 20 }]
-     TotalPrice;
+    @UI.lineItem: [{ position: 70}]  
+    @UI.fieldGroup: [{ qualifier: 'PricesGroup', position: 20 }]
+    TotalPrice;
 
-     ...
-    ```
+    ...
+   ```
 
     Choose **Save** and **Activate**.
 
 3. Refresh the app preview. There are two additional field groups showing price and date information.
 
-    <!-- border -->![App field Groups](t3-app-field-groups.png)
+    ![App field Groups](t3-app-field-groups.png)
 
 
 
@@ -281,71 +281,71 @@ In this step you will add a new section that contains a table with booking infor
 
 1. Open the metadata extensions file for the Travel view `ZC_FE_TRAVEL_######`. In the facet annotation block, add a new facet `Booking` with type `#LINEITEM_REFERENCE`. Add the code from line 7 to line 14 to the end of the `@UI.facet` section. Choose **Save** and **Activate**.
 
-    ```CDS
-    ...
-    annotate view ZC_FE_TRAVEL_###### with
-    {
-      ...
-      @UI.facet: [
-        ...
-        {
-          id: 'Booking',
-          purpose: #STANDARD,
-          type: #LINEITEM_REFERENCE,
-          label: 'Bookings',
-          position: 20,
-          targetElement: '_Booking'
-        }
-      ]
-    ...
+   ```CDS
+   ...
+   annotate view ZC_FE_TRAVEL_###### with
+   {
+     ...
+     @UI.facet: [
+       ...
+       {
+         id: 'Booking',
+         purpose: #STANDARD,
+         type: #LINEITEM_REFERENCE,
+         label: 'Bookings',
+         position: 20,
+         targetElement: '_Booking'
+       }
+     ]
+   ...
 
-    ```
+   ```
     The property `targetElement: _Booking` references the association to the booking table that will be shown in the booking section. You can look up the definition of Booking in the projection view of Travel `ZC_FE_TRAVEL_######`.
 
 2. In the project explorer open the folder `Data Definitions`, right-click on projection view `ZC_FE_BOOKING_######` and create a new metadata extensions file from the context menu. Enter **`ZC_FE_BOOKING_######`** as name and **`Metadata Extension for Booking view`** as description.
 
-    <!-- border -->![add Metadata Extension for Booking](t3-booking-metadata-extension-popup.png)
+    ![add Metadata Extension for Booking](t3-booking-metadata-extension-popup.png)
 
     Choose **Next** and then **Finish**.
 
 3. In the metadata extensions file `ZC_FE_BOOKING_######` use `@UI.lineItem` annotations to add some fields from the Booking view `ZC_FE_BOOKING_###### Projection View for Booking` to the bookings table. Add `textArrangement` for **CustomerID** and **CarrierID** like you did it for list report. Replace the content of `ZC_FE_BOOKING_######` by the following code:
 
-    ```CDS
-    @Metadata.layer: #CORE
+   ```CDS
+   @Metadata.layer: #CORE
 
-    annotate view ZC_FE_BOOKING_######
-      with
-    {
-        @UI.lineItem: [ { position: 10 } ]
-        BookingID;
+   annotate view ZC_FE_BOOKING_######
+     with
+   {
+       @UI.lineItem: [ { position: 10 } ]
+       BookingID;
 
-        @UI.lineItem: [ { position: 20 } ]
-        BookingDate;
+       @UI.lineItem: [ { position: 20 } ]
+       BookingDate;
 
-        @UI.lineItem: [ { position: 30 } ]
-        @UI.textArrangement: #TEXT_ONLY
-        CustomerID;
+       @UI.lineItem: [ { position: 30 } ]
+       @UI.textArrangement: #TEXT_ONLY
+       CustomerID;
 
-        @UI.lineItem: [ { position: 40 } ]
-        @UI.textArrangement: #TEXT_ONLY
-        CarrierID;
+       @UI.lineItem: [ { position: 40 } ]
+       @UI.textArrangement: #TEXT_ONLY
+       CarrierID;
 
-        @UI.lineItem: [ { position: 50 } ]
-        ConnectionID;
+       @UI.lineItem: [ { position: 50 } ]
+       ConnectionID;
 
-        @UI.lineItem: [ { position: 60 } ]
-        FlightDate;
+       @UI.lineItem: [ { position: 60 } ]
+       FlightDate;
 
-        @UI.lineItem: [ { position: 70 } ]
-        FlightPrice;
+       @UI.lineItem: [ { position: 70 } ]
+       FlightPrice;
 
-    }
-    ```
+   }
+   ```
     Choose **Save** and **Activate**.
 
 4. Refresh the app preview. The booking table is now displayed in the new **Bookings** section of the object page.
 
-    <!-- border -->![App booking table](t3-app-booking-table.png)
+    ![App booking table](t3-app-booking-table.png)
 
 
 5. Instead of showing IDs for the fields Customer ID and Airline ID, one would preferably show descriptions or names.
@@ -356,24 +356,24 @@ In this step you will add a new section that contains a table with booking infor
 
     Annotation `@EndUserText.label` defines the column label for the related fields. Using annotation `@ObjectModel.text.element` controls the source of the content shown for the related field. Fields `CarrierID` and `CustomerID` will get their content through the corresponding association.
 
-    ```CDS
-    @EndUserText.label: 'Customer'
-    @ObjectModel.text.element: ['LastName']
-    CustomerID,
-    _Customer.LastName as LastName,
-    ```
+   ```CDS
+   @EndUserText.label: 'Customer'
+   @ObjectModel.text.element: ['LastName']
+   CustomerID,
+   _Customer.LastName as LastName,
+   ```
 
-    ```CDS
-    @EndUserText.label: 'Airline'
-    @ObjectModel.text.element: ['CarrierName']
-    CarrierID,
-    _Carrier.Name as CarrierName,
-    ```
+   ```CDS
+   @EndUserText.label: 'Airline'
+   @ObjectModel.text.element: ['CarrierName']
+   CarrierID,
+   _Carrier.Name as CarrierName,
+   ```
   Choose **Save** and **Activate**.
 
 6. Refresh the app preview. The booking table is now displayed in the new **Bookings** section of the object page with descriptions for **Customer** and **Airline**.
 
-    <!-- border -->![App booking table](t3-app-booking-table-descriptions.png)
+    ![App booking table](t3-app-booking-table-descriptions.png)
 
 
 
@@ -383,18 +383,18 @@ In this step you will add the airline logo in a new column at the beginning of t
 
 1. To achieve this, open the metadata extensions file `ZC_FE_BOOKING_######` and add the following code lines to the annotation structure.
 
-    ```CDS
-        ...
-        @UI.lineItem: [ { position: 05, label: ' ', value: '_Carrier.AirlinePicURL' } ]
-        _Carrier;
-        ...
-    ```
+   ```CDS
+       ...
+       @UI.lineItem: [ { position: 05, label: ' ', value: '_Carrier.AirlinePicURL' } ]
+       _Carrier;
+       ...
+   ```
 
     Choose **Save** and **Activate**.
 
 2. Refresh the app preview. The booking table is now displayed with the airline logo in the first column.
 
-    <!-- border -->![App airline logos](t3-app-booking-airline-logos.png)
+    ![App airline logos](t3-app-booking-airline-logos.png)
 
 
 
@@ -405,15 +405,15 @@ With the flexible column layout you can have the list report and the object page
 
 1. In the SAP Business Application Studio open the context menu by right clicking on your `webapp` folder and select the menu entry **Show Page Map**.
 
-    <!-- border -->![Right-click on webapp folder](SetFCL_1a.png)
+    ![Right-click on webapp folder](SetFCL_1a.png)
 
 2. In the left area of the page map you see the UI structure of your application showing the two pages, the list report and the object page. In the right area you can see the property panel with the application settings. Choose option **Flexible Column Layout** and then select the **Mid-Expanded** option for the two columns layout. Leave the default for the three columns layout unchanged.
 
-    <!-- border -->![The Page Map with page map and layout settings](SetFCL_2a.png)
+    ![The Page Map with page map and layout settings](SetFCL_2a.png)
 
 3. The application is refreshed automatically. Choose **Go** to load data into the list report table. Select any of the items within the table to open the object page.
 
-    <!-- border -->![Click go on list report after refresh](SetFCL_3.png)
+    ![Click go on list report after refresh](SetFCL_3.png)
 
     Now the object page is displayed together with the list report. When you select another item in the list report, the object page is updated.
 
@@ -430,19 +430,19 @@ In this step you will activate the initial load feature that will trigger the lo
 
 2. In the UI structure of your application switch to edit mode of the **List Report** tile.
 
-    <!-- border -->![Configure Page icon on list report block](InitialLoad_1a.png)
+    ![Configure Page icon on list report block](InitialLoad_1a.png)
 
 3. Now the structure of the list report is shown. Open the properties of the list report table by selecting the **Table** component.
 
-    <!-- border -->![Click on table in page editor](InitialLoad_2a.png)
+    ![Click on table in page editor](InitialLoad_2a.png)
 
 4. In the list of table properties select the value **Enabled** for the table property **Initial Load**. This setting is immediately active without the need of any confirmation.
 
-    <!-- border -->![Select true for initial load in drop down field](InitialLoad_3a.png)
+    ![Select true for initial load in drop down field](InitialLoad_3a.png)
 
 5. Your application is updated and you will see that the data of the list report table is loaded immediately without choosing **Go**.
 
-    <!-- border -->![Restart the app and see the initial load of data](InitialLoad_4.png)
+    ![Restart the app and see the initial load of data](InitialLoad_4.png)
 
     &nbsp;
 
@@ -462,11 +462,11 @@ You will now learn how to update the metadata with the next steps.
 
     In the main service row click the `edit button`.
 
-    <!-- border -->![Start Service Manger](ServiceManager_1.png)
+    ![Start Service Manger](ServiceManager_1.png)
 
 2. Choose **Refresh** to update local metadata of your application.
    
-    <!-- border -->![Refresh Service](ServiceManager_2.png)
+    ![Refresh Service](ServiceManager_2.png)
    
     The Service Manager has updated the service metadata in the application's **webapp/localService** folder.
 
@@ -484,14 +484,14 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
    
     In Eclipse open the behavior definition for the Travel `ZI_FE_TRAVEL_######` in **Behavior Definitions** folder and add the following code line to define the internal action.
 
-    ```CDS
-    define behavior for ZI_FE_Travel_###### alias Travel
-    {
-    ...
-    internal action reCalcTotalPrice;
-    ...
-    }
-    ```
+   ```CDS
+   define behavior for ZI_FE_Travel_###### alias Travel
+   {
+   ...
+   internal action reCalcTotalPrice;
+   ...
+   }
+   ```
 
     Choose **Save** and **Activate**.
 
@@ -502,82 +502,82 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
    
     Via a quick fix assist (Ctrl+Shift+1), you can generate the method declaration in the behavior pool directly from the behavior definition editor (your method will be in the implementation class `ZBP_I_FE_TRAVEL_######->LHC_TRAVEL`).
 
-    <!-- border -->![Using a quck fix assist](SideEffectGuide_11.png)
+    ![Using a quck fix assist](SideEffectGuide_11.png)
 
     The added **method declaration** will look like:
-    ```ABAP
-    reCalcTotalPrice FOR MODIFY
-            IMPORTING keys FOR ACTION Travel~reCalcTotalPrice,
-    ```
+   ```ABAP
+   reCalcTotalPrice FOR MODIFY
+           IMPORTING keys FOR ACTION Travel~reCalcTotalPrice,
+   ```
 
     **Implementation**: To determine the total price of a travel, all prices must be converted to the travel currency and then summed up. This is done for each BO entity separately.
 
     Add the following code lines to the method `reCalcTotalPrice`. Replace ###### in `ZI_FE_Travel_######` with your number.
 
-    ```ABAP
-    METHOD reCalcTotalPrice.
+   ```ABAP
+   METHOD reCalcTotalPrice.
 
-        TYPES: BEGIN OF ty_amount_per_currencycode,
-                amount        TYPE /dmo/total_price,
-                currency_code TYPE /dmo/currency_code,
-        END OF ty_amount_per_currencycode.
+       TYPES: BEGIN OF ty_amount_per_currencycode,
+               amount        TYPE /dmo/total_price,
+               currency_code TYPE /dmo/currency_code,
+       END OF ty_amount_per_currencycode.
 
-        DATA: amount_per_currencycode TYPE STANDARD TABLE OF ty_amount_per_currencycode.
+       DATA: amount_per_currencycode TYPE STANDARD TABLE OF ty_amount_per_currencycode.
 
-        " Read all relevant travel instances.
-        READ ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
-            ENTITY Travel
-                FIELDS ( BookingFee CurrencyCode )
-                WITH CORRESPONDING #( keys )
-            RESULT DATA(travels).
+       " Read all relevant travel instances.
+       READ ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+           ENTITY Travel
+               FIELDS ( BookingFee CurrencyCode )
+               WITH CORRESPONDING #( keys )
+           RESULT DATA(travels).
 
-        DELETE travels WHERE CurrencyCode IS INITIAL.
+       DELETE travels WHERE CurrencyCode IS INITIAL.
 
-        LOOP AT travels ASSIGNING FIELD-SYMBOL(<travel>).
-        " Set the start for the calculation by adding the booking fee.
-        amount_per_currencycode = VALUE #( ( amount        = <travel>-BookingFee
-                                            currency_code = <travel>-CurrencyCode ) ).
+       LOOP AT travels ASSIGNING FIELD-SYMBOL(<travel>).
+       " Set the start for the calculation by adding the booking fee.
+       amount_per_currencycode = VALUE #( ( amount        = <travel>-BookingFee
+                                           currency_code = <travel>-CurrencyCode ) ).
 
-        " Read all associated bookings and add them to the total price.
-        READ ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
-            ENTITY Travel BY \_Booking
-            FIELDS ( FlightPrice CurrencyCode )
-            WITH VALUE #( ( %tky = <travel>-%tky ) )
-            RESULT DATA(bookings).
+       " Read all associated bookings and add them to the total price.
+       READ ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+           ENTITY Travel BY \_Booking
+           FIELDS ( FlightPrice CurrencyCode )
+           WITH VALUE #( ( %tky = <travel>-%tky ) )
+           RESULT DATA(bookings).
 
-        LOOP AT bookings INTO DATA(booking) WHERE CurrencyCode IS NOT INITIAL.
-        COLLECT VALUE ty_amount_per_currencycode( amount        = booking-FlightPrice
-                currency_code = booking-CurrencyCode ) INTO amount_per_currencycode.
-        ENDLOOP.
+       LOOP AT bookings INTO DATA(booking) WHERE CurrencyCode IS NOT INITIAL.
+       COLLECT VALUE ty_amount_per_currencycode( amount        = booking-FlightPrice
+               currency_code = booking-CurrencyCode ) INTO amount_per_currencycode.
+       ENDLOOP.
 
 
-        CLEAR <travel>-TotalPrice.
-        LOOP AT amount_per_currencycode INTO DATA(single_amount_per_currencycode).
-        " If needed do a Currency Conversion
-        IF single_amount_per_currencycode-currency_code = <travel>-CurrencyCode.
-            <travel>-TotalPrice += single_amount_per_currencycode-amount.
-        ELSE.
-            /dmo/cl_flight_amdp=>convert_currency(
-                EXPORTING
-                iv_amount                   =  single_amount_per_currencycode-amount
-                iv_currency_code_source     =  single_amount_per_currencycode-currency_code
-                iv_currency_code_target     =  <travel>-CurrencyCode
-                iv_exchange_rate_date       =  cl_abap_context_info=>get_system_date( )
-            IMPORTING
-                ev_amount                   = DATA(total_booking_price_per_curr)
-            ).
-            <travel>-TotalPrice += total_booking_price_per_curr.
-        ENDIF.
-        ENDLOOP.
-        ENDLOOP.
+       CLEAR <travel>-TotalPrice.
+       LOOP AT amount_per_currencycode INTO DATA(single_amount_per_currencycode).
+       " If needed do a Currency Conversion
+       IF single_amount_per_currencycode-currency_code = <travel>-CurrencyCode.
+           <travel>-TotalPrice += single_amount_per_currencycode-amount.
+       ELSE.
+           /dmo/cl_flight_amdp=>convert_currency(
+               EXPORTING
+               iv_amount                   =  single_amount_per_currencycode-amount
+               iv_currency_code_source     =  single_amount_per_currencycode-currency_code
+               iv_currency_code_target     =  <travel>-CurrencyCode
+               iv_exchange_rate_date       =  cl_abap_context_info=>get_system_date( )
+           IMPORTING
+               ev_amount                   = DATA(total_booking_price_per_curr)
+           ).
+           <travel>-TotalPrice += total_booking_price_per_curr.
+       ENDIF.
+       ENDLOOP.
+       ENDLOOP.
 
-        " write back the modified total_price of travels
-        MODIFY ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
-        ENTITY travel
-            UPDATE FIELDS ( TotalPrice )
-            WITH CORRESPONDING #( travels ).
-    ENDMETHOD.
-    ```
+       " write back the modified total_price of travels
+       MODIFY ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+       ENTITY travel
+           UPDATE FIELDS ( TotalPrice )
+           WITH CORRESPONDING #( travels ).
+   ENDMETHOD.
+   ```
 
     Choose **Save** and **Activate**.
 
@@ -589,15 +589,15 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
    
     In the behavior definition for the Travel `ZI_FE_TRAVEL_######` add the following code lines.
    
-    ```CDS
-    define behavior for ZI_FE_Travel_###### alias Travel
-    {
-    ...
-    field ( readonly ) TotalPrice;
-    determination calculateTotalPrice on modify { create; field BookingFee, CurrencyCode; }
-    ...
-    }
-    ```
+   ```CDS
+   define behavior for ZI_FE_Travel_###### alias Travel
+   {
+   ...
+   field ( readonly ) TotalPrice;
+   determination calculateTotalPrice on modify { create; field BookingFee, CurrencyCode; }
+   ...
+   }
+   ```
 
     Choose **Save** and **Activate**.
 
@@ -610,21 +610,21 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
 
     Add the following code lines to the method `calculateTotalPrice`. Replace ###### in `ZI_FE_Travel_######` with your number.
 
-    ```ABAP
-    METHOD calculateTotalPrice.
-        MODIFY ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
-            ENTITY Travel
-            EXECUTE reCalcTotalPrice
-            FROM CORRESPONDING #( keys ).
-    ENDMETHOD.
-        
-    ```
+   ```ABAP
+   METHOD calculateTotalPrice.
+       MODIFY ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+           ENTITY Travel
+           EXECUTE reCalcTotalPrice
+           FROM CORRESPONDING #( keys ).
+   ENDMETHOD.
+       
+   ```
 
-    Choose **Save** and **Activate**.
+   Choose **Save** and **Activate**.
 
-    >At this point the backend implementation for the total price recalculation is finished. Now if you start the application preview in SAP Business Application Studio, navigate from List Report to Object Page, click on **Edit**, change the **booking fee** and **Save** the data. The total price is recalculated. Note that **Total Price** field is read only now.
+   >At this point the backend implementation for the total price recalculation is finished. Now if you start the application preview in SAP Business Application Studio, navigate from List Report to Object Page, click on **Edit**, change the **booking fee** and **Save** the data. The total price is recalculated. Note that **Total Price** field is read only now.
 
-    With the next steps you will learn how to add side effects to update the total price after changing the booking fee directly. This means, if you change the field `booking fee` and jump into another field, the total price is already re-calculated without the need to save the data. For this we will use **Guided Development**.
+   With the next steps you will learn how to add side effects to update the total price after changing the booking fee directly. This means, if you change the field `booking fee` and jump into another field, the total price is already re-calculated without the need to save the data. For this we will use **Guided Development**.
 
 
 5. Switch to the SAP Business Application Studio with your generated application. 
@@ -635,38 +635,38 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
 
     >In the right upper corner you can use the **Fullscreen** button, to hide/show the search view. 
 
-    <!-- border -->![Open Configure Side Effects Guide](SideEffectGuide_1.png)
+    ![Open Configure Side Effects Guide](SideEffectGuide_1.png)
 
 6. Switch to the first step of the guide. Here you will configure the property **BookingFee** from Entity Type **Travel** as a source of the side effect.
 
-    <!-- border -->![Add Side Effect Source Options](SideEffectGuide_2.png)
+    ![Add Side Effect Source Options](SideEffectGuide_2.png)
 
     In the code snippet preview you will see the annotations and the file name, which will be changed.
 
     Choose **Insert Snippet**.
 
-    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_3.png)
+    ![Check and insert Code Snippet](SideEffectGuide_3.png)
 
     The **anonnotations.xml** file editor opens with newly added annotations for side effect source.
 
-    <!-- border -->![Annotations result in the file](SideEffectGuide_4.png)
+    ![Annotations result in the file](SideEffectGuide_4.png)
 
 7. Switch to the second step of the guide. Here you will configure the **TotalPrice** as a side effect target.
 
     Choose **Insert Snippet**.
 
-    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_5.png)
+    ![Check and insert Code Snippet](SideEffectGuide_5.png)
 
     The **anonnotations.xml** is adopted with a new lines.
 
-    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_6.png)
+    ![Check and insert Code Snippet](SideEffectGuide_6.png)
 
 
 8. Refresh the application and choose **Go** to load data into the list report table. Select any of the items within the table to open the object page. Choose **Edit** to start chaining data of the draft.
 
     Change the amount of **Booking Fee** and step out of the field. The side effect is triggered and the **Total Price** is recalculated.
 
-    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_7.png)
+    ![Check and insert Code Snippet](SideEffectGuide_7.png)
 
     >**Self study (OPTIONAL)**: at this point the recalculation is triggered if the **Booking Fee** amount is changed. What do you need to change in the backend and side effects to trigger **Total Price** recalculation, if the **Flight Price** of a **Booking** is changed on the UI? Hint: the **Travel** entity has an association to **Booking** entity with the property **FlightPrice**. 
     
@@ -682,16 +682,16 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
     In the behavior definition for the Travel `ZI_FE_TRAVEL_######` add the following code lines.
 
 
-    ```CDS
-    define behavior for ZI_FE_Booking_###### alias Booking
-    {
-    ...
-    determination calculateTotalPrice on modify { create; field FlightPrice, CurrencyCode; }
-    ...
-    }
-    ```
+   ```CDS
+   define behavior for ZI_FE_Booking_###### alias Booking
+   {
+   ...
+   determination calculateTotalPrice on modify { create; field FlightPrice, CurrencyCode; }
+   ...
+   }
+   ```
 
-    Choose **Save** and **Activate**.
+   Choose **Save** and **Activate**.
 
 
 10. (OPTIONAL) Implement the method **calculateTotalPrice**.
@@ -702,44 +702,44 @@ But first you need to define the internal action **reCalcTotalPrice** in the beh
 
     Add the following code lines to the method `calculateTotalPrice`. Replace ###### in `ZI_FE_Travel_######` with your number.
 
-    ```ABAP
-    METHOD calculateTotalPrice.
-        " Read all parent UUIDs
-        READ ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
-        ENTITY Booking BY \_Travel
-            FIELDS ( TravelUUID  )
-            WITH CORRESPONDING #(  keys  )
-        RESULT DATA(travels).
+   ```ABAP
+   METHOD calculateTotalPrice.
+       " Read all parent UUIDs
+       READ ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+       ENTITY Booking BY \_Travel
+           FIELDS ( TravelUUID  )
+           WITH CORRESPONDING #(  keys  )
+       RESULT DATA(travels).
 
-        " Trigger Re-Calculation on Root Node
-        MODIFY ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
-        ENTITY Travel
-            EXECUTE reCalcTotalPrice
-            FROM CORRESPONDING  #( travels ).
-    ENDMETHOD. 
-    ```
+       " Trigger Re-Calculation on Root Node
+       MODIFY ENTITIES OF ZI_FE_Travel_###### IN LOCAL MODE
+       ENTITY Travel
+           EXECUTE reCalcTotalPrice
+           FROM CORRESPONDING  #( travels ).
+   ENDMETHOD. 
+   ```
 
-    The backend implementations is finished.
+   The backend implementations is finished.
 
-    Choose **Save** and **Activate**.
+   Choose **Save** and **Activate**.
 
 11. (OPTIONAL) Switch again to the SAP Business Application Studio and the **Configure Side Effects Guide**. Configure the property **FlightPrice** via navigation property **Booking** as a source and the property **TotalPrice** remains as a target for the new side effect.
 
     >Change the side effect qualifier name as this will be an additional side effect. 
 
-    <!-- border -->![Add Side Effect Source Options](SideEffectGuide_8.png)
+    ![Add Side Effect Source Options](SideEffectGuide_8.png)
 
     Choose **Insert Snippet** for source and then in **step 2** insert corresponding snippet for **TotalPrice as target**.
 
     The resulting **annotations.xml** file opens with newly added source and target annotations for your second side effect.
 
-    <!-- border -->![Annotations result in the file](SideEffectGuide_9.png)
+    ![Annotations result in the file](SideEffectGuide_9.png)
 
 12. (OPTIONAL) Refresh the application and choose **Edit** on object page to start changing data of the draft.
 
     Now change the amount of **Flight Price** and step out of the field. The side effect is triggered and the **Total Price** is recalculated.
 
-    <!-- border -->![Check and insert Code Snippet](SideEffectGuide_10.png)
+    ![Check and insert Code Snippet](SideEffectGuide_10.png)
 
 
 ---

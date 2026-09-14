@@ -105,9 +105,9 @@ The data product that was previously shared can now be installed into SAP HANA C
 
 3. The database user that is currently connected will be granted read access to the virtual tables.  The below SQL is an example of granting an additional user access to the schema that contains the virtual tables.
 
-    ```SQL
-    GRANT SELECT ON SCHEMA "_SAP_DATAPRODUCT_sap_s4com_dataProduct_SalesOrder_v1_4a6dc5d7-7af5-4b74-8ac7-b9ed0d1e6e95" TO USER1;
-    ```
+   ```SQL
+   GRANT SELECT ON SCHEMA "_SAP_DATAPRODUCT_sap_s4com_dataProduct_SalesOrder_v1_4a6dc5d7-7af5-4b74-8ac7-b9ed0d1e6e95" TO USER1;
+   ```
 
 ### Examine the remote source and virtual tables
 

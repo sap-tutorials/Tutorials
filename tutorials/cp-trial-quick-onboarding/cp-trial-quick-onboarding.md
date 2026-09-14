@@ -93,7 +93,7 @@ A **global account** is the realization of a contract you made with SAP (be it e
 
 In your trial global account, a Cloud Foundry subaccount with an org and a space called `dev` is automatically created for you.
 
-<!-- border -->![Account Structure](AccountStructure.png)
+![Account Structure](AccountStructure.png)
 
 If you want to get a deeper understanding of the account structure, have a look at the documentation on the [Account Model](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/8ed4a705efa0431b910056c0acdbf377.html).
 
@@ -142,7 +142,7 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 To get an overview of the navigation in the cockpit, have a look at our guided tour: **Get Familiar with the Cockpit**. To start the guided tour, navigate to your global account scope and open SAP Companion by clicking on the icon next to the user menu.
 
-<!-- border -->![Start Guided Tour](guidedtour.png)
+![Start Guided Tour](guidedtour.png)
 
 ### Get to know the SAP BTP command line interface (btp CLI)
 The SAP BTP command line interface (btp CLI) is **an alternative to the cockpit**, for users who prefer working on the command line rather than GUIs. It consists of a client and a server. The client needs to be installed on your computer (make sure you update it regularly!) and it interacts with SAP BTP through a server. You connect to this CLI server at login.

@@ -5,7 +5,7 @@ author_name: DJ Adams
 author_profile: https://github.com/qmacro
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-btp--cloud-foundry-environment
+primary_tag: software-product>sap-btp--cloud-foundry-runtime-and-environment
 
 ---
 

@@ -290,15 +290,15 @@ spec:
 
 Click **ML Operations > Configuration > Create**. Enter the following details and click **Next**.
 
-<!-- border -->![configuration create](img/ail/config1.jpg)
+![configuration create](img/ail/config1.jpg)
 
 Enter `Hi AI Core Server` in the `greetmessage` field and click **Next**.
 
-<!-- border -->![parameter value](img/ail/config2.jpg)
+![parameter value](img/ail/config2.jpg)
 
 Locate your model artifact in the **Available Artifacts** pane, by using the unique ID. Click the dropdown menu and click the checkbox of `housepricemodel`. This is the name of the placeholder for the model in your serving executable. As a result, the placeholder will now take the value of the artifact.
 
-<!-- border -->![model](img/ail/config3.jpg)
+![model](img/ail/config3.jpg)
 
 > Note This is specific to this executable, and allows you pass values to the placeholder of environment variables that you prepared earlier in your workflows.
 
@@ -344,11 +344,11 @@ print(response.__dict__)
 
 Click **Start Deployment** in the configuration details page.
 
-<!-- border -->![deploy](img/ail/deploy1.jpg)
+![deploy](img/ail/deploy1.jpg)
 
 A next Screen will apear where you need to choose time to live for Deployment either you can choose standard for unlimtied time or Custom with set Expiry for Deployment
 
-<!-- border -->![TTL](img/ail/deploy3.png)
+![TTL](img/ail/deploy3.png)
 
 Once You have choosen TTL for deployment click on review. and once you are sure Click Next. This starts a new deployment with the values specified in the configuration.
 
@@ -356,7 +356,7 @@ Once You have choosen TTL for deployment click on review. and once you are sure 
 
 On the **Logs** tab of your deployment, you will see the serving engine start.
 
-<!-- border -->![deploy log](img/ail/deploy2.jpg)
+![deploy log](img/ail/deploy2.jpg)
 
 [OPTION END]
 
@@ -385,7 +385,7 @@ print(response.__dict__)
 
 Copy your deployment URL.
 
-<!-- border -->![URL](img/ail/predict-url.jpg)
+![URL](img/ail/predict-url.jpg)
 
 You must use a REST client to make prediction calls. If you are using the official API collection of SAP AI Core with Postman this may look like the following:
 
@@ -414,7 +414,7 @@ POST `<DEPLOYMENT_URL>/v2/predict`
 }
 ```
 
-<!-- border -->![predict](img/postman/predict1.jpg)
+![predict](img/postman/predict1.jpg)
 
 > **IMPORTANT** You may need to duplicate an existing endpoint in the collection and modify it. If you get `RBAC: Access Denied` then check the following in the order mentioned.
 >
@@ -441,7 +441,7 @@ print(response.__dict__)
 
 Copy the deployment URL. The deployment URL is generated only when the deployment state is **Running**.
 
-<!-- border -->![image](img/aics/deploy_url.png)
+![image](img/aics/deploy_url.png)
 
 Paste and edit the snippet below to make a prediction.
 
@@ -472,7 +472,7 @@ response = requests.post(endpoint, headers=headers, json=test_input)
 print('Inference result:', response.json())
 ```
 
-<!-- border -->![prediction](img/aics/predict.png)
+![prediction](img/aics/predict.png)
 
 [OPTION END]
 
@@ -488,11 +488,11 @@ Switching between deployed models means that you can update the model used in yo
 
 To create a new configuration, click **ML Operations > Configuration > Create**. Enter the following details and click **Next**.
 
-<!-- border -->![configuration create](img/ail/config21.jpg)
+![configuration create](img/ail/config21.jpg)
 
 Select a different model in the **Input Artifact** step.
 
-<!-- border -->![configuration model](img/ail/config22.jpg)
+![configuration model](img/ail/config22.jpg)
 
 Click **Review** and **Create**.
 
@@ -500,11 +500,11 @@ To update your existing deployment with this newly created configuration, click 
 
 Click on your deployment row in the table, then click **Update**.
 
-<!-- border -->![deployment update](img/ail/dep_update1.png)
+![deployment update](img/ail/dep_update1.png)
 
 Select the configuration named `House Predictor Feb` and click **Update**.
 
-<!-- border -->![deployment update 2](img/ail/dep_update2.jpg)
+![deployment update 2](img/ail/dep_update2.jpg)
 
 
 [OPTION END]
@@ -546,7 +546,7 @@ print(response.__dict__)
 
 The **Current Status** of your deployment changes to **Unknown** while your new model is copied to the serving engine. After the deployment has been copied successfully, the status changes to **Running** and is ready to make new predictions.
 
-<!-- border -->![deployment update](img/ail/dep_update3.jpg)
+![deployment update](img/ail/dep_update3.jpg)
 
 ### Stop a deployment
 
@@ -557,7 +557,7 @@ A running deployment incurs cost because it is allocated cloud resources. Stoppi
 
 On the deployment details page, click **Stop**.
 
-<!-- border -->![stop](img/ail/stop.jpg)
+![stop](img/ail/stop.jpg)
 
 [OPTION END]
 
@@ -589,8 +589,8 @@ print(response.__dict__)
 
 You can check the current running Pods Using in AI Launchpad, choosing the Deployment, and clicking on Scaling tab
 
-<!-- border -->![resource](img/ail/resource1.jpg)
+![resource](img/ail/resource1.jpg)
 
 Similarly if you want to check for resource plan just visit the resources tab 
 
-<!-- border -->![resource](img/ail/resource2.jpg) 
+![resource](img/ail/resource2.jpg) 

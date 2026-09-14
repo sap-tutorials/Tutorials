@@ -47,52 +47,43 @@ What does the **SAP Build Digital Center of Excellence** toolkit contain?
 
 1. [Sign up](https://url.sap/f96fc8) to get access to our SAP Build Governance resource center. Within it you will find the needed template!
     
-    <!-- size:300px -->
     ![SignUp](SignUp1.png)
 
 2. Then click on "accept" in the email invitation that will be sent to you. Access requests may take several minutes to verify and trigger the email, so kindly be patient.
     
-    <!-- size:400px -->
     ![SignUp](SignUp2.png)
 
 3. Log-in with your SAP universal ID or quickly create a new one.    
     
-    <!-- size:300px -->
     ![SignUp](SignUp3.png)
 
 4. Click on the little bell icon in your Work Zone account to go to your notifications.
 
 5. Access the SAP Build Governance Resource Center by clicking on *Join*.
     
-    <!-- size:500px -->
     ![SignUp](SignUp4.png)
 
 6. Scroll down in the SAP Build Governance Resource center and click on *Click here to get the template.*
     
-    <!-- size:500px-->
     ![SignUp](SignUp5.png)
 
 7. Now just click on the file-name to download the template to your personal device!
     
-    <!-- size:500px -->
     ![SignUp](SignUp6.png)
 
 ### Import the template
 1. Go to the Administration console of Work Zone. Please note that you only do that when you have Admin rights. Please ask your technical administrator for support.
    
-    <!-- size:800px -->
     ![Admin 1](Admin1.png)
 
 2. Choose from *Area & Workspace Configuration*  the option *Workspaces*.
  
 4. Click on *Import Workspace* on the left.
     
-    <!-- size:600px -->
     ![Admin 2](Admin2.png)
 
 5. Click on *Import Workspace* and choose the right .zip-file which was provided to you.
     
-    <!-- size:600px -->
     ![Admin 3](Admin3.png)
 
 >REALITY CHECK: You just imported the template and can now start working on it further!
@@ -107,7 +98,6 @@ What does the **SAP Build Digital Center of Excellence** toolkit contain?
       - Link the *Get access* call-to-action to the sub-page *Access & Rules* of this Work Zone page. Do so by copying the link from the Access & Rules page and insert it as a link to the respective clickable word(s).
       - Link the *Forum* to the forum in this Work Zone page to get connected. Do so by copying the link from the Forums page and insert it as a link to the respective clickable word(s).
     
-    <!-- size:600px -->
     ![Overview1](Overview1.png)
 
 
@@ -119,7 +109,6 @@ What does the **SAP Build Digital Center of Excellence** toolkit contain?
    
 6. Take a look at the description of SAP Build. Is this sufficient for your company? Do you want it to have more or less information? Do you want to link any other resources of information or a quote from your executives describing it in their own words?
     
-    <!-- size:600px -->
     ![Overview2](Overview2.png)
 
 7. Link the correct Work Zone product pages to the widgets. Do so by copying the link from the right Work Zone page and insert it as a link to the respective clickable word.
@@ -129,7 +118,6 @@ What does the **SAP Build Digital Center of Excellence** toolkit contain?
   
 8. Are there any news or important information you want your Citizen Developers to have at the first place? In this widget you can easily position them.
     
-    <!-- size:600px -->  
     ![Overview3](Overview3.png)
 
 9.  Link the correct respective Work Zone pages to the following pages:
@@ -138,7 +126,6 @@ What does the **SAP Build Digital Center of Excellence** toolkit contain?
   
 10. Your Citizen Developer will all have different expectations and motivations coming to this page. With the area *Managing expectations* you can chime in and directly explain what this page is about and what your own situation and goal is. Being transparent about that will help building your community and also bring everyone to a joint course.
     
-    <!-- size:600px -->
     ![Overview4](Overview4.png)
 
 ### Customize the Product pages
@@ -147,12 +134,10 @@ What does the **SAP Build Digital Center of Excellence** toolkit contain?
 
 1. Think about replacing the banner. Is there maybe an engaging photo of something you already built or some people from your own community? This will spark interest and will reduce the hurdles to get started because the own colleagues already started it.
     
-    <!-- size:600px -->
     ![Product Page 1](ProductPage1.png)
 
 2. Customize your direct Call-to-Action to get access to your alpha phase or directly point them to your *Access & Rules* page for them to start their building career. Do so by copying either the link from the *Access & Rules* page or your link to directly get access to the solution and insert it as a link to the respective clickable word(s).
     
-    <!-- size:600px -->
     ![Product Page 2](ProductPage2.png)
 
 3. Customize your Call-to-Actions for your Citizen Developers to get directed to the Forum or to the FAQs.
@@ -161,7 +146,6 @@ What does the **SAP Build Digital Center of Excellence** toolkit contain?
   
 4. Do you have your own social feeds or different places where you spread information? Here you can link all that and add pictures as big call-to-actions and link your respective pages. If you don’t have any other pages – keeping the SAP channels will always be a great source of inspiration and for gaining great insights.
     
-    <!-- size:600px -->
     ![Product Page 3](ProductPage3.png)
 
 5. **Repeat all of the tasks for the other Product pages:**
@@ -179,7 +163,6 @@ What does the **SAP Build Digital Center of Excellence** toolkit contain?
 
 3. Swap out the banner and create your own call-to-action for your employees to directly get access with one click. This could lead them for instance to your testing environment where they can directly start building.
    
-    <!-- size:600px -->
     ![Access and Rules 1](Access1.png)
 
 4. What are important information you would want your Citizen Developers to have? Here you can link your security guidelines, IT strategy or in general your guiding principles. Feel free to include everything that would be helpful and beneficial. It might already answer some of the questions your Citizen Developer would ask later on.
@@ -187,7 +170,6 @@ What does the **SAP Build Digital Center of Excellence** toolkit contain?
 5. Make your network stay active and have people they can approach directly. This will help your community to start building and actively stay engaged – otherwise they might stop when they are stuck at some point. 
 Who knows the best about Data Protection and Privacy or Security? Add the respective colleagues to the Work Zone page and make them visible. 
     
-    <!-- size:600px -->
     ![Access and Rules 2](Access2.png)
 
 ### Give out your Alpha-Phase manual
@@ -198,12 +180,10 @@ Who knows the best about Data Protection and Privacy or Security? Add the respec
 
 2. Having a smaller or bigger set of rules can help everyone developing in a safe setting and feel comfortable knowing whats allowed and what’s rather not be done. Here you can add your Do’s and Don’t to describe your own environment.
     
-    <!-- size:600px -->
     ![Manual 1](Manual1.png)
 
 3.  Add your call-to-action banner to again guide your Citizen Developer to get access after they read the rules.
     
-    <!-- size:600px -->
     ![Manual 2](Manual2.png)
 
 
@@ -213,14 +193,12 @@ Who knows the best about Data Protection and Privacy or Security? Add the respec
 
 1. Your Citizen Developer will wonder what the ultimate goal of the rollout is: *Why are we using it? What is the purpose? What will change for us?*. Here you can answer these questions and provide answers. Understanding the background of projects always makes a big difference in the successful adoption and usage of the proposed solution afterwards.
     
-    <!-- size:600px -->
     ![Rollout 1](Rollout1.png)
 
 2. Having a written motivation statement strengthens the understanding of the purpose. This way your Citizen Developers are really aligned with your motivation. Customize this text and make it reflect your very own motivation and goal.
    
 3. What is the plan for the next months? Maybe your Citizen Developer will decide to start their journey at a later point of time or they simply want to know what to expect in the upcoming time. By customizing this project pipeline with the given PowerPoint Template in the Contents area of the template you can visualize your next goals and milestones. You can also think about adding a call-to-action here for employees to join a specific beta-phase or a feedback-cycle. It’s up to you! 
     
-    <!-- size:600px -->
     ![Rollout 2](Rollout2.png)
 
 ### Adapt the Use-Case Repository to your needs
@@ -231,12 +209,10 @@ Who knows the best about Data Protection and Privacy or Security? Add the respec
 
 2. By using the Knowledge-Base feature, every new Use-Case which is uploaded to the Work Zone page from your Citizen Developer will automatically appear in this list and turn the Use-Case Repository into an actively used page. Take a look at the settings of the widget – how many entries do you want to be shown? How do you want it to be sorted?
 
-    <!-- size:600px -->
     ![Use-Case Repository 1](UseCase1.png)
 
 3. Take a look at the template of the „Use-Case template“ entry which is provided. Are the requested information sufficient? Do you want to include different types of information? Just directly change the template and make it visible to everyone.
 
-    <!-- size:600px -->
     ![Use-Case Repository 2](UseCase2.png)
 
 ### Change up your upcoming formats and interactions
@@ -245,7 +221,6 @@ Who knows the best about Data Protection and Privacy or Security? Add the respec
 
 1. Think about different formats and sessions you might want to offer to your Citizen Developers. What would be helpful and will be actively used? Fill in the information on the overview widget to make everyone get the information about the different types at one glance.
     
-   <!-- size:600px -->
    ![Events 1](Events1.png)
 
 2. What is your main format to engage with your community? Highlight it in this area and also make slides/recordings etc. accessible for everyone wanting to learn more.
@@ -254,7 +229,6 @@ Who knows the best about Data Protection and Privacy or Security? Add the respec
    
 4. What are different types of information and insiders who also have valuable insights? Here you can link interesting external events for everyone to think even outside the box.
     
-    <!-- size:600px -->
     ![Events 2](Events2.png)
 
 ### Personalize the FAQ and add your questions
@@ -264,12 +238,10 @@ Who knows the best about Data Protection and Privacy or Security? Add the respec
 1. Think about your most common asked questions or things that you personally wondered about working with SAP Build.
 Divide these questions into useful groups and answer them in this FAQ format.
    
-    <!-- size:600px -->
     ![FAQ 1](FAQ1.png)
 
 1. To add a new question copy one of the previous entries in the *Content > FAQ* area and customize the title and content of the FAQ entry. Afterwards copy the link to the content entry in the FAQs page. There include it as a link to the respective clickable question.
     
-    <!-- size:600px -->
     ![FAQ 2](FAQ2.png)
 
 ### Congrats!

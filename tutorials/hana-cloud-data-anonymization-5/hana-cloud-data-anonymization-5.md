@@ -64,7 +64,7 @@ To use differential privacy on your data, follow these steps:
 3.	Define, which columns should be included in your anonymized view. Only columns that contain data relevant for analysis should be included in the view.
 
 4.	This is the SQL statement to create an anonymized view with differential privacy (see instructions below):
-    ```SQL
+   ```SQL
 CREATE VIEW "[view_name]" ("id", "[column1]", "[column2]", "[column_sensitive]")
 AS
 SELECT "id", "[column1]", "[column2]", "[ column_sensitive]"
@@ -113,13 +113,13 @@ REFRESH VIEW "[view_name]" ANONYMIZATION;
 
 1.	To show the results of the anonymization, you can use a `SELECT` statement:
 
-    ```SQL
+   ```SQL
 SELECT * FROM "[view_name]";
 ```
 
 2.	To check if queries of the anonymized data deliver results with the same accuracy of the data that does not contain added noise, you can run a query on both the anonymized view and the original data. For example, calculating an average grouped by a certain column using this statement:
 
-    ```SQL
+   ```SQL
 -- querying the anonymized view
 select "[column1]", AVG("[sensitive_column]") from "[view-name]" group by "[column1]" order by "[column1] ";
 -- querying the original data to compare
@@ -149,7 +149,7 @@ COLUMN "salary" PARAMETERS '{"is_sensitive":true, "epsilon" : 0.5, "sensitivity"
 
 This is how the data will look like:
 
-<!-- border -->![differential privacy example 1](ss-01-differential-privacy-example1.png)
+![differential privacy example 1](ss-01-differential-privacy-example1.png)
 
 You can see below that comparative queries on the anonymized view `SALARYANON_DP` and the non-anonymized data (table `ANON_SAMPLE`) show similar results.
 
@@ -159,7 +159,7 @@ You can see below that comparative queries on the anonymized view `SALARYANON_DP
 select "start_year", AVG("salary") from "SALARYANON_DP" group by "start_year" order by "start_year";
 ```
 
-<!-- border -->![differential privacy example 2](ss-02-differential-privacy-example2.png)
+![differential privacy example 2](ss-02-differential-privacy-example2.png)
 
 **Original data**
 
@@ -167,7 +167,7 @@ select "start_year", AVG("salary") from "SALARYANON_DP" group by "start_year" or
 select "start_year", AVG("salary") from "ANON_SAMPLE" group by "start_year" order by "start_year";
 ```
 
-<!-- border -->![differential privacy example 3](ss-03-differential-privacy-example3.png)
+![differential privacy example 3](ss-03-differential-privacy-example3.png)
 
 > **Well done!**
 >

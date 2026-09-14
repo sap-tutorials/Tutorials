@@ -80,11 +80,11 @@ Additionally, to virtualise and replicate data the other way around, if SAP HANA
 
 By creating connections to data sources outside of your SAP HANA Cloud database, you can use data stored in these remote sources by creating various virtual tables. To create remote connections, you need to use the SAP Database Explorer, and have at least one instance of SAP HANA Cloud already provisioned.
 
-<!-- border -->![Expanded Catalog add remote source](ss-03-DBX-expanded-catalog-addremotesource.png)
+![Expanded Catalog add remote source](ss-03-DBX-expanded-catalog-addremotesource.png)
 
 In the SAP HANA Database Explorer, expand the **Catalog** in the panel on the left side of the screen. Then right click on **Remote Sources** and then click on **Add Remote Source**. In the prompt that opens, add the name of the source and then select the adapter to the source you are trying to connect to. The following connections are currently available:
 
-<!-- border -->![DBX – Add Remote Sources](ss-04-DBX-addremotesources-resized.png)
+![DBX – Add Remote Sources](ss-04-DBX-addremotesources-resized.png)
 
 Depending on the connection you choose, the form and mandatory information needed will change. To connect to an SAP HANA on-premise installation, for example, you would choose the connection **HANA (ODBC)**.
 
@@ -100,11 +100,11 @@ Once you are done filling out the necessary fields, click on **Create**. Your re
 
 In the SAP HANA Database Explorer, expand the **Catalog** in the panel on the left side of the screen. Then right click on **Remote Sources** and then click on **Show Remote Sources**. All available remote sources are listed in the lower left-hand corner.
 
-<!-- border -->![DBX – Remote Sources](ss-05-DBX-remote-sources-cropped.png)
+![DBX – Remote Sources](ss-05-DBX-remote-sources-cropped.png)
 
 When you click on one remote source, you will be able to search all the databases, schema, objects, or types within this source. You can then view the individual remote objects. These can be, for example, actual tables of data. To access individual tables, check the boxes next to each table you want to access. Then click on **Create Virtual Objects** on the right-hand side of the screen.
 
-<!-- border -->![DBX – Create virtual tables](ss-06-DBX-create-virtualtables-resized.png)
+![DBX – Create virtual tables](ss-06-DBX-create-virtualtables-resized.png)
 
 Your virtual tables will be created. You will see them listed on the lower panel on the left side of the screen.
 

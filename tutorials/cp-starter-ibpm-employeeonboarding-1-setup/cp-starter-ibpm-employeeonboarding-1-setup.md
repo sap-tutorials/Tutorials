@@ -36,7 +36,7 @@ User can use Workflow, Business Rules, Process Visibility and Process Flexibilit
 
 2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
-    <!-- border -->![Trial global account](FoundationOnboarding_Home.png)
+    ![Trial global account](FoundationOnboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (*select the region closest to you*). Your user profile will be set up for you automatically.  
 
@@ -53,7 +53,7 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
 1. From your global account page, choose the **Boosters** from left-hand navigation. Among the available options, click **Start** of **Set up account for Workflow Management**.
 
-    <!-- border -->![Start Booster](startrecipe_21.png)
+    ![Start Booster](startrecipe_21.png)
 
     > If you have multiple sub-accounts, then you will get a wizard to select the sub-account where you want to set up SAP Workflow Management capabilities. In the wizard, select the Subaccount, Org and Space. Click Finish to start the Booster.
 
@@ -61,17 +61,17 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     > It will take 4-5 minutes to complete the entire set up.
 
-    <!-- border -->![Recipe In Progress](startrecipe_51.png)
+    ![Recipe In Progress](startrecipe_51.png)
 
     - Wait until you see the success popup window once the booster completes successfully.
 
     - Click on the **Go to Application** to open Workflow Management Launchpad.
 
-        <!-- border -->![Recipe In Progress](startrecipe_3.png)
+        ![Recipe In Progress](startrecipe_3.png)
 
         > This is the Workflow Management Launchpad which gives you the access to all the workflow, business rules, process visibility and process flexibility applications.
 
-        ><!-- border -->![WM FLP](bpmFLP.png)
+        >![WM FLP](bpmFLP.png)
 
     - **Close** the **Success** popup.  
 

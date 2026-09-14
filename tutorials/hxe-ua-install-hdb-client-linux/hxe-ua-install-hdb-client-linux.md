@@ -61,20 +61,20 @@ Install the Download Manager to your client machine and download the client pack
 
     Navigate to the directory in which you wish to extract the client files and use the `tar` command:
 
-    ```bash
-    cd <preferred_filepath>
-    sudo tar <download_filepath>/clients_linux_x86_64.tgz
-    ```
+   ```bash
+   cd <preferred_filepath>
+   sudo tar <download_filepath>/clients_linux_x86_64.tgz
+   ```
 
-    This extracts the following files and their contents:
+   This extracts the following files and their contents:
 
-    -   `hana_ml- <version>.tar.gz`
+   -   `hana_ml- <version>.tar.gz`
 
-    -   `hana.ml.r- <version>.tar.gz`
+   -   `hana.ml.r- <version>.tar.gz`
 
-    -   `hdb_client_linux_x86_64.tgz`
+   -   `hdb_client_linux_x86_64.tgz`
 
-    -   `xs.onpremise.runtime.client_linuxx86_64.zip`
+   -   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
 
 
@@ -85,26 +85,26 @@ To install the SAP HANA client on a Linux machine, do the following:
 
 1.  Go to the directory where you wish to unpack the `hdb_client_linux_x86_64.tgz` files:
 
-    ```bash
-    cd <your_destination>
-    ```
+   ```bash
+   cd <your_destination>
+   ```
 
 2.  Unpack the file:
 
-    ```bash
-    sudo tar -xvzf <unzipped_filepath>/hdb_client_linux_x86_64.tgz
-    ```
+   ```bash
+   sudo tar -xvzf <unzipped_filepath>/hdb_client_linux_x86_64.tgz
+   ```
 
-    The directory `HDB_CLIENT_LINUX_X86_64` is created.
+   The directory `HDB_CLIENT_LINUX_X86_64` is created.
 
 3.  Navigate to the `HDB_CLIENT_LINUX_X86_64` directory and run `hdbinst` to start the installer:
 
-    ```bash
-    cd HDB_CLIENT_LINUX_X86_64
-    sudo ./hdbinst
-    ```
+   ```bash
+   cd HDB_CLIENT_LINUX_X86_64
+   sudo ./hdbinst
+   ```
 
-    Follow the instructions on the screen to install the SAP HANA client.
+   Follow the instructions on the screen to install the SAP HANA client.
 
 
 

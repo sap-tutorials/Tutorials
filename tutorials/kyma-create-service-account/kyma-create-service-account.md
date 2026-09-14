@@ -46,78 +46,78 @@ A service account alone won't do the job. You also need to define a Kubernetes `
 
 1. Create a new file called `tutorial-sa.yaml` with the following payload to create all artifacts (service account, secret, role, role binding, and a `ConfigMap` for verification).
 
-    ```YAML
-    apiVersion: v1
-    kind: ServiceAccount
-    metadata:
-      name: tutorial-service-account
-    ---
-    apiVersion: v1
-    kind: Secret
-    metadata:
-      name: tutorial-service-account
-      annotations:
-        kubernetes.io/service-account.name: tutorial-service-account
-    type: kubernetes.io/service-account-token
-    ---
-    kind: ClusterRole
-    apiVersion: rbac.authorization.k8s.io/v1
-    metadata:
-      name: tutorial-role
-    rules:
-      - apiGroups:
-          - ""
-          - extensions
-          - batch
-          - apps
-          - gateway.kyma-project.io
-          - servicecatalog.k8s.io
-        resources:
-          - deployments
-          - replicasets
-          - pods
-          - jobs
-          - configmaps
-          - apirules
-          - serviceinstances
-          - servicebindings
-          - services
-          - secrets
-        verbs:
-          - create
-          - update
-          - patch
-          - delete
-          - get
-          - list
-    ---
-    kind: ClusterRoleBinding
-    apiVersion: rbac.authorization.k8s.io/v1
-    metadata:
-      name: tutorial-role-binding
-    subjects:
-      - kind: ServiceAccount
-        name: tutorial-service-account
-        namespace: tutorial
-    roleRef:
-      kind: ClusterRole
-      name: tutorial-role
-      apiGroup: rbac.authorization.k8s.io
-    ---
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      name: tutorial-config-map
-    data:
-      out: "Congrats, you completed the tutorial successfully!"
-    ```
+   ```YAML
+   apiVersion: v1
+   kind: ServiceAccount
+   metadata:
+     name: tutorial-service-account
+   ---
+   apiVersion: v1
+   kind: Secret
+   metadata:
+     name: tutorial-service-account
+     annotations:
+       kubernetes.io/service-account.name: tutorial-service-account
+   type: kubernetes.io/service-account-token
+   ---
+   kind: ClusterRole
+   apiVersion: rbac.authorization.k8s.io/v1
+   metadata:
+     name: tutorial-role
+   rules:
+     - apiGroups:
+         - ""
+         - extensions
+         - batch
+         - apps
+         - gateway.kyma-project.io
+         - servicecatalog.k8s.io
+       resources:
+         - deployments
+         - replicasets
+         - pods
+         - jobs
+         - configmaps
+         - apirules
+         - serviceinstances
+         - servicebindings
+         - services
+         - secrets
+       verbs:
+         - create
+         - update
+         - patch
+         - delete
+         - get
+         - list
+   ---
+   kind: ClusterRoleBinding
+   apiVersion: rbac.authorization.k8s.io/v1
+   metadata:
+     name: tutorial-role-binding
+   subjects:
+     - kind: ServiceAccount
+       name: tutorial-service-account
+       namespace: tutorial
+   roleRef:
+     kind: ClusterRole
+     name: tutorial-role
+     apiGroup: rbac.authorization.k8s.io
+   ---
+   apiVersion: v1
+   kind: ConfigMap
+   metadata:
+     name: tutorial-config-map
+   data:
+     out: "Congrats, you completed the tutorial successfully!"
+   ```
     Note that the `rules` section specified the permissions of the service account. Modify this section to adjust the role to your needs.
 
 2. Create a service account based on the file.
 
-    ```Bash
-    kubectl apply -f tutorial-sa.yaml -n tutorial
-    ```
+   ```Bash
+   kubectl apply -f tutorial-sa.yaml -n tutorial
+   ```
 
 
 ### Understand the structure of the configuration file
@@ -161,53 +161,53 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
 
 1.    Create a temporary file `temp.ps1` that will fetch all required information and create the `kubeconfig` file.
 
-    ```PowerShell
-    $ns = "tutorial"
-    $API_SERVER_URL = kubectl config view -o=jsonpath='{.clusters[].cluster.server}'
+   ```PowerShell
+   $ns = "tutorial"
+   $API_SERVER_URL = kubectl config view -o=jsonpath='{.clusters[].cluster.server}'
 
-    $SECRET_NAME = "tutorial-service-account"
+   $SECRET_NAME = "tutorial-service-account"
 
-    $CA = kubectl get secret/$SECRET_NAME -n $ns -o jsonpath='{.data.ca\.crt}'
+   $CA = kubectl get secret/$SECRET_NAME -n $ns -o jsonpath='{.data.ca\.crt}'
 
-    $TOKEN = kubectl get secret/$SECRET_NAME -n $ns -o jsonpath='{.data.token}'
-    $DEC_TOKEN = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($TOKEN))
+   $TOKEN = kubectl get secret/$SECRET_NAME -n $ns -o jsonpath='{.data.token}'
+   $DEC_TOKEN = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($TOKEN))
 
-    Add-Content -Path templates/kubeconfig.yaml @"
-    apiVersion: v1
-    kind: Config
-    clusters:
-    - name: default-cluster
-      cluster:
-        certificate-authority-data: $CA
-        server: $API_SERVER_URL
-    users:
-    - name: default-user
-      user:
-        token: $DEC_TOKEN
-    contexts:
-    - name: default-context
-      context:
-        cluster: default-cluster
-        namespace: $ns
-        user: default-user
-    current-context: default-context
-    "@
+   Add-Content -Path templates/kubeconfig.yaml @"
+   apiVersion: v1
+   kind: Config
+   clusters:
+   - name: default-cluster
+     cluster:
+       certificate-authority-data: $CA
+       server: $API_SERVER_URL
+   users:
+   - name: default-user
+     user:
+       token: $DEC_TOKEN
+   contexts:
+   - name: default-context
+     context:
+       cluster: default-cluster
+       namespace: $ns
+       user: default-user
+   current-context: default-context
+   "@
 
 
-    Write-Host "Finished"
-    ```
+   Write-Host "Finished"
+   ```
 
 2.   Run the following commands **[in PowerShell](https://docs.microsoft.com/en-us/powershell/)** to replace the current `kubeconfig` file:
 
 
-    > You can use `Set-ExecutionPolicy Unrestricted` to change the execution policy if needed.
+   > You can use `Set-ExecutionPolicy Unrestricted` to change the execution policy if needed.
 
-    ```PowerShell
-     .\temp.ps1  
-     cp .\kubeconfig.yaml  ~/.kube/config
-    ```
+   ```PowerShell
+    .\temp.ps1  
+    cp .\kubeconfig.yaml  ~/.kube/config
+   ```
 
-    > The default location for `kubeconfig` might vary depending on your `kubectl` installation.
+   > The default location for `kubeconfig` might vary depending on your `kubectl` installation.
 
 
 [OPTION END]
@@ -217,47 +217,47 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
 
 1.   Create a temporary file `temp.sh` that will fetch all required information and print the content of the `kubeconfig` file.
 
-    ```Shell
-    # API server URL is api.KYMA_CLUSTER_DOMAIN
-    ns=tutorial
-    API_SERVER_URL=$(kubectl config view -o=jsonpath='{.clusters[].cluster.server}')
+   ```Shell
+   # API server URL is api.KYMA_CLUSTER_DOMAIN
+   ns=tutorial
+   API_SERVER_URL=$(kubectl config view -o=jsonpath='{.clusters[].cluster.server}')
 
-    SECRET_NAME=tutorial-service-account
+   SECRET_NAME=tutorial-service-account
 
-    CA=$(kubectl get secret/${SECRET_NAME} -n $ns -o jsonpath='{.data.ca\.crt}')
-    TOKEN=$(kubectl get secret/${SECRET_NAME} -n $ns -o jsonpath='{.data.token}' | base64 --decode)
+   CA=$(kubectl get secret/${SECRET_NAME} -n $ns -o jsonpath='{.data.ca\.crt}')
+   TOKEN=$(kubectl get secret/${SECRET_NAME} -n $ns -o jsonpath='{.data.token}' | base64 --decode)
 
-    echo "apiVersion: v1
-    kind: Config
-    clusters:
-      - name: default-cluster
-        cluster:
-          certificate-authority-data: ${CA}
-          server: ${API_SERVER_URL}
-    users:
-      - name: default-user
-        user:
-          token: ${TOKEN}
-    contexts:
-      - name: default-context
-        context:
-          cluster: default-cluster
-          namespace: $ns
-          user: default-user
-    current-context: default-context"
-    ```
+   echo "apiVersion: v1
+   kind: Config
+   clusters:
+     - name: default-cluster
+       cluster:
+         certificate-authority-data: ${CA}
+         server: ${API_SERVER_URL}
+   users:
+     - name: default-user
+       user:
+         token: ${TOKEN}
+   contexts:
+     - name: default-context
+       context:
+         cluster: default-cluster
+         namespace: $ns
+         user: default-user
+   current-context: default-context"
+   ```
 
 2.   Run the following commands to replace the current `kubeconfig` file:
 
-    ```bash
-    chmod +x temp.sh
-    ./temp.sh > tutorial-kubeconfig.yaml  
-    cp tutorial-kubeconfig.yaml ~/.kube/config
-    ```
+   ```bash
+   chmod +x temp.sh
+   ./temp.sh > tutorial-kubeconfig.yaml  
+   cp tutorial-kubeconfig.yaml ~/.kube/config
+   ```
 
-    > Alternatively, you can write the content to a new file and export the path to this file `export KUBECONFIG=./tutorial-kubeconfig.yaml`.
-    >
-    > The default location for `kubeconfig` might vary depending on your `kubectl` installation.
+   > Alternatively, you can write the content to a new file and export the path to this file `export KUBECONFIG=./tutorial-kubeconfig.yaml`.
+   >
+   > The default location for `kubeconfig` might vary depending on your `kubectl` installation.
 
 
 

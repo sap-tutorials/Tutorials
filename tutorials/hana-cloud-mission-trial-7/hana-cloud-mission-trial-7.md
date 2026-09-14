@@ -1,7 +1,7 @@
 ---
 parser: v2
-author_name: Christopher Kollhed
-author_profile: https://github.com/chriskollhed
+author_name: Dan van Leeuwen
+author_profile: https://github.com/danielva
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, programming-tool>sql]
@@ -39,7 +39,7 @@ primary_tag: software-product>sap-hana-cloud
 
 1. Go to the Instances tab in SAP HANA Cloud Central and open SQL Console.
 
-    ![Open DBX from HANA Cloud Central](open-dbx.png)
+    ![Open SQL console](open-dbx.png)
 
     > You can also open the SQL console by right-clicking on a database name and selecting **Open SQL console** or by using the shortcut `Ctrl+Alt+C`.
 
@@ -47,15 +47,15 @@ primary_tag: software-product>sap-hana-cloud
 
     If not, copy and paste the following statement to the console and run it:
 
-    ```SQL
-    SET SCHEMA SFLIGHT;
-    ```  
+   ```SQL
+   SET SCHEMA SFLIGHT;
+   ```  
 
-    ![SQL Console, with highlight on Current Schema](ss-02-sql-console-current-schema.png)
+    ![Change schema to SFLIGHT using SQL](ss-02-sql-console-current-schema.png)
 
     You can also change the schema by clicking on the current schema name in the center of the console, selecting `SFLIGHT` from the list, and then clicking the **Change** button.
 
-    ![Second Option to Change Current Schema in SQL Console](ss-02-sql-console-current-schema-second-option.png)
+    ![Change schema to SFLIGHT using schema selector](ss-02-sql-console-current-schema-second-option.png)
 
     The current schema will then display `SFLIGHT`.  
 
@@ -67,29 +67,29 @@ Let's find out which of the Best Run Travel agents are most popular. For this, w
 
 2. The following query will create a new table and order the agencies based on their number of bookings. Copy and paste query to the console and then click on the **Run** button:
 
-    ```SQL
-    CREATE TABLE SAGENCYDATA AS (
-        SELECT 
-            SBOOK.AGENCYNUM,
-            count(SBOOK.AGENCYNUM) AS NUMBOOKINGS
-        FROM 
-            SBOOK,
-            STRAVELAG
-        WHERE SBOOK.AGENCYNUM = STRAVELAG.AGENCYNUM
-        GROUP BY SBOOK.AGENCYNUM
-        ORDER BY count(SBOOK.AGENCYNUM) DESC
-    );
-    ```
+   ```SQL
+   CREATE TABLE SAGENCYDATA AS (
+       SELECT 
+           SBOOK.AGENCYNUM,
+           count(SBOOK.AGENCYNUM) AS NUMBOOKINGS
+       FROM 
+           SBOOK,
+           STRAVELAG
+       WHERE SBOOK.AGENCYNUM = STRAVELAG.AGENCYNUM
+       GROUP BY SBOOK.AGENCYNUM
+       ORDER BY count(SBOOK.AGENCYNUM) DESC
+   );
+   ```
 
 3. You can view the contents of this table by running the following query:
 
-    ```SQL
-    SELECT * FROM SAGENCYDATA;
-    ```
+   ```SQL
+   SELECT * FROM SAGENCYDATA;
+   ```
 
     This will show you the contents of the new table:
 
-    ![View contents of SAGENCYDATA](ss-03-view-contents-SAGENCYDATA.png)
+    ![View data from SAGENCYDATA](ss-03-view-contents-SAGENCYDATA.png)
 
 ### Join tables to find out which agency makes the most bookings
 
@@ -111,7 +111,7 @@ FROM
 
 In the results panel, you can now see that the travel agency that makes the maximum bookings is `Rainy, Stormy, Cloudy` with a total of **27870 bookings**.
 
-![Top 5 agency details](ss-04-top-5-agency-details.png)
+![Top 5 agencies](ss-04-top-5-agency-details.png)
 
 ### Find out which days have the most bookings
 
@@ -124,72 +124,72 @@ To find the top booking days, we will first create two new tables:
 
 1. First create the `STOPAGENCY` table by storing the result of the previous query in a new table. Run this query in your console:
 
-    ```SQL
-    CREATE TABLE STOPAGENCY AS (
-        SELECT TOP 5 
-            SAGENCYDATA.AGENCYNUM,
-            STRAVELAG.NAME,
-            SAGENCYDATA.NUMBOOKINGS
-        FROM 
-            SAGENCYDATA
-            INNER JOIN
-            STRAVELAG
-            ON SAGENCYDATA.AGENCYNUM = STRAVELAG.AGENCYNUM
-    );
-    ```
+   ```SQL
+   CREATE TABLE STOPAGENCY AS (
+       SELECT TOP 5 
+           SAGENCYDATA.AGENCYNUM,
+           STRAVELAG.NAME,
+           SAGENCYDATA.NUMBOOKINGS
+       FROM 
+           SAGENCYDATA
+           INNER JOIN
+           STRAVELAG
+           ON SAGENCYDATA.AGENCYNUM = STRAVELAG.AGENCYNUM
+   );
+   ```
 
 2. To view all contents of this table, just copy and paste the following query into the SQL console and run it:
 
-    ```SQL
-    SELECT * FROM STOPAGENCY;
-    ```
+   ```SQL
+   SELECT * FROM STOPAGENCY;
+   ```
 
 3. Next, create the table `SAGBOOKDAYS` to store the daily bookings for each of the agencies. Use the following query:
 
-    ```SQL
-    CREATE TABLE SAGBOOKDAYS AS (
-        SELECT 
-            AGENCYNUM,
-            dayname(ORDER_DATE) AS ORDERDAY,
-            count(dayname(ORDER_DATE)) AS DAYCOUNT
-        FROM SBOOK
-        GROUP BY 
-            AGENCYNUM,
-            dayname(ORDER_DATE)
-    );
-    ```
+   ```SQL
+   CREATE TABLE SAGBOOKDAYS AS (
+       SELECT 
+           AGENCYNUM,
+           dayname(ORDER_DATE) AS ORDERDAY,
+           count(dayname(ORDER_DATE)) AS DAYCOUNT
+       FROM SBOOK
+       GROUP BY 
+           AGENCYNUM,
+           dayname(ORDER_DATE)
+   );
+   ```
 
 4. To view all contents of this new table, you can again use the `SELECT * FROM` query:
 
-    ```SQL
-    SELECT * FROM SAGBOOKDAYS;
-    ```
+   ```SQL
+   SELECT * FROM SAGBOOKDAYS;
+   ```
 
 5. Now that you have created the 2 tables, join these tables based on the agency number (column `AGENCYNUM`). You also need to extract only the day with maximum number of bookings for each of the top 5 agencies. For this, use the following nested queries:
 
-    ```SQL
-    SELECT 
-        SAGBOOKDAYS.AGENCYNUM,
-        STOPAGENCY.NAME,
-        SAGBOOKDAYS.ORDERDAY,
-        SAGBOOKDAYS.DAYCOUNT
-    FROM 
-        SAGBOOKDAYS
-        INNER JOIN
-        STOPAGENCY
-        ON SAGBOOKDAYS.AGENCYNUM = STOPAGENCY.AGENCYNUM
-    WHERE (SAGBOOKDAYS.DAYCOUNT IN (SELECT max(DAYCOUNT)
-    FROM SAGBOOKDAYS
-    GROUP BY AGENCYNUM));
-    ```
+   ```SQL
+   SELECT 
+       SAGBOOKDAYS.AGENCYNUM,
+       STOPAGENCY.NAME,
+       SAGBOOKDAYS.ORDERDAY,
+       SAGBOOKDAYS.DAYCOUNT
+   FROM 
+       SAGBOOKDAYS
+       INNER JOIN
+       STOPAGENCY
+       ON SAGBOOKDAYS.AGENCYNUM = STOPAGENCY.AGENCYNUM
+   WHERE (SAGBOOKDAYS.DAYCOUNT IN (SELECT max(DAYCOUNT)
+   FROM SAGBOOKDAYS
+   GROUP BY AGENCYNUM));
+   ```
 
 6. Now you can see that the most bookings for the top 5 agencies have been done on **Thursdays**.
 
-    ![Maximum days](maximum-days.png)
+    ![Most popular booking day](maximum-days.png)
 
 *Well done!*
 
-You have completed the sixth tutorial of this mission! You learned how to create new tables, view table details, join tables and extract specific data from tables using SQL statements in the SAP HANA database explorer. This way you were able to help Alex get the business inside they were looking for.
+You have completed the sixth tutorial of this mission! You learned how to create new tables, view table details, join tables and extract specific data from tables using SQL statements. This way you were able to help Alex get the business inside they were looking for.
 
 Since Alex needs to make these insights available to other departments in Best Run Travel, the next step is to create a calculation view to share these findings with other departments.  
 

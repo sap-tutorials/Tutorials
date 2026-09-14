@@ -52,7 +52,7 @@ Now that your table is created and the data is imported, we will change the stru
 
 2.	Add two columns to the table definition by copying the following code and pasting at the end of the line 30.
 
-    ```SQL
+   ```SQL
 "ADDITIONALATTRIBUTESTRING" NVARCHAR(10),
 "ADDITIONALATTRIBUTESTRINGNN" NVARCHAR(10) NOT NULL DEFAULT 'TEST'
 ```
@@ -108,7 +108,7 @@ Now that you know how `HDBTABLE` objects handle data changes, you can use a diff
 
 4.	Now, click on the `inventory.hdbmigrationtable` file. Copy and paste the following code at the beginning of the file such that it comes before the table definition.
 
-    ```SQL
+   ```SQL
 == version = 1
 ```
 

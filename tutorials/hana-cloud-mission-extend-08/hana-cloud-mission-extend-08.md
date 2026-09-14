@@ -57,7 +57,7 @@ The cloud connector offers you several advantages. For example, installation and
 
 > In this step you have two options: You can enable the cloud connector either during provisioning or edit an existing instance. Click on "Provisioning" or "Edit instance" below the title of this step.
 >
-> <!-- border -->![Tab Option](TabOption.gif)
+> ![Tab Option](TabOption.gif)
 
 First, you need to enable SAP BTP Connectivity in the SAP HANA Cloud, SAP HANA database you want to connect to an on-premise database.
 
@@ -73,7 +73,7 @@ First, you need to enable SAP BTP Connectivity in the SAP HANA Cloud, SAP HANA d
 8.	Finish the rest of the settings and click on **Create Instance**.
 9.	Your instance will be created, and it is ready to be connected with the cloud connector.
 
-<!-- border -->![Provisioning Enable SCC](ss-01-provisioning-enable-SCC.png)
+![Provisioning Enable SCC](ss-01-provisioning-enable-SCC.png)
 
 [OPTION END]
 [OPTION BEGIN [Edit instance]]
@@ -86,14 +86,14 @@ First, you need to enable SAP BTP Connectivity in the SAP HANA Cloud, SAP HANA d
 6.	There, click on the three dots in the Actions column on the right side of the screen
 7.	Select **Edit**.
 
-    <!-- border -->![EditInstance1](ss-02-edit-instance1.png)
+    ![EditInstance1](ss-02-edit-instance1.png)
 
 8.	In the wizard that opens, scroll down to the section Connections.
 9.	Click on **Enable**.
 10.	Click on **Save**.
 11.	For this instance, the cloud connector is now enabled, and it is ready to be used.
 
-    <!-- border -->![EditInstance2](ss-03-edit-instance2.png)
+    ![EditInstance2](ss-03-edit-instance2.png)
 
 [OPTION END]
 
@@ -118,7 +118,7 @@ Now that you have enabled the cloud connector it is time to install the cloud co
 
 6.	When you first log in, you need to change the password.
 
-    <!-- border -->![SCC Login](ss-04-SCC-login.png)
+    ![SCC Login](ss-04-SCC-login.png)
 
 Now that you have installed the cloud connector, it is time to start configuring it to establish a connection.
 
@@ -132,16 +132,16 @@ In the **Cloud Connector Administration**, you can see at the top of the screen 
 
 2.	First, select the **region** of the subaccount.
 
-    <!-- border -->![SCC Define Subaccount 1](ss-05-SCC-define-subaccount1.png)
+    ![SCC Define Subaccount 1](ss-05-SCC-define-subaccount1.png)
 
 3.	In the field **Subaccount**, you need to enter the **subaccount ID**.
 4.	To obtain it, go to **SAP BTP cockpit** and navigate to your subaccount. If you still have SAP BTP cockpit open from the previous steps, you can get there by clicking on the name of your subaccount in the top panel of the screen.
 
-    <!-- border -->![BTP Subaccount](ss-06-BTP-subaccount.png)
+    ![BTP Subaccount](ss-06-BTP-subaccount.png)
 
 5.	Copy the subaccount ID from the center of the screen and enter it in the field **Subaccount** in the cloud connector.
 
-    <!-- border -->![BTP Subaccount ID](ss-07-BTP-subaccount-ID.png)
+    ![BTP Subaccount ID](ss-07-BTP-subaccount-ID.png)
 
 6.	Next, you can optionally enter a display name
 7.	Log in in with the credentials of the subaccount on SAP BTP Cockpit.
@@ -152,7 +152,7 @@ In the **Cloud Connector Administration**, you can see at the top of the screen 
 9.	Optionally, you can enter a location ID.  You will need this location ID when setting up a remote source.
 10.	Click on **Save** at the top right corner of the screen.
 
-    <!-- border -->![SCC Define Subaccount 2](ss-08-SCC-define-subaccount2.png)
+    ![SCC Define Subaccount 2](ss-08-SCC-define-subaccount2.png)
 
 
 
@@ -162,11 +162,11 @@ In the **Cloud Connector Administration**, you can see at the top of the screen 
 
 1.	After the configuration has finished, click on **Cloud To On-Premise** on the left panel.
 
-    <!-- border -->![SCC on-premise to cloud](ss-09-SCC-onpremise-2cloud.png)
+    ![SCC on-premise to cloud](ss-09-SCC-onpremise-2cloud.png)
 
 2.	There, click on the plus icon in the top right corner to add a new mapping that will map your SAP HANA on-premise system to the cloud connector.
 
-    <!-- border -->![SCC on-premise to cloud add mapping](ss-10-SCC-onpremise-2cloud-addmapping.png)
+    ![SCC on-premise to cloud add mapping](ss-10-SCC-onpremise-2cloud-addmapping.png)
 
 3.	A wizard opens. There, from the drop-down menu **Back-end Type**, select `SAP HANA`.
 4.	Click on **Next**.
@@ -176,13 +176,13 @@ In the **Cloud Connector Administration**, you can see at the top of the screen 
 8.	Click on **Next**. You can optionally add a description to this mapping or skip that step.
 9.	Check the summary shown and click on **Finish**.
 
-    <!-- border -->![SCC Finish Mapping](ss-11-SCC-finish-mapping.png)
+    ![SCC Finish Mapping](ss-11-SCC-finish-mapping.png)
 
 10.	Your internal system name is now mapped to your virtual host name.
 11.	In the column **Check Result**, it still says `Unchecked`.
 12.	To check it, click on the looking glass icon on the right.
 
-    <!-- border -->![SCC Check mapping](ss-12-SCC-check-mapping.png)
+    ![SCC Check mapping](ss-12-SCC-check-mapping.png)
 
 13.	The status will change to **Reachable**. Now the cloud connector can reach your SAP HANA on-premise system.
 Now, you have successfully installed and configured the cloud connector.

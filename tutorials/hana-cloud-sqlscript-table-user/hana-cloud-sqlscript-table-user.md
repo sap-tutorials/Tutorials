@@ -26,7 +26,7 @@ There are application and scenarios where you need a table function instead of p
 
 1. Use what you have learned and return to the `functions` folder and create a new function called `get_po_counts` using the **SAP HANA: Create Database Artifact** command.
 
-    <!-- border -->![New Function](1_1.png)
+    ![New Function](1_1.png)
 
 
 ### Enter table function code
@@ -34,94 +34,94 @@ There are application and scenarios where you need a table function instead of p
 
 1. Add the input parameter called `IM_FDATE` as well as the RETURN Table parameter as shown. Please note the scalar input parameter we will used later on for filtering.
 
-    ```SQLCRIPT
-    FUNCTION "get_po_counts" ( im_fdate DATE )
-     RETURNS TABLE (EMAIL NVARCHAR(255),
-    	       FULLNAME NVARCHAR(255),
-    	       CREATE_CNT INTEGER,
-    	       CHANGE_CNT INTEGER,
-    	       COMBINED_CNT INTEGER)
-        LANGUAGE SQLSCRIPT
-        SQL SECURITY INVOKER AS
-    BEGIN
+   ```SQLCRIPT
+   FUNCTION "get_po_counts" ( im_fdate DATE )
+    RETURNS TABLE (EMAIL NVARCHAR(255),
+   	       FULLNAME NVARCHAR(255),
+   	       CREATE_CNT INTEGER,
+   	       CHANGE_CNT INTEGER,
+   	       COMBINED_CNT INTEGER)
+       LANGUAGE SQLSCRIPT
+       SQL SECURITY INVOKER AS
+   BEGIN
 
 
-    END;
-    ```
+   END;
+   ```
 
 
 2. Copy the logic from the procedure `get_po_header_data` into the body of the function.  Make sure to only copy the code between the BEGIN and END statements
 
-    <!-- border -->![logic statements](2_1.png)
+    ![logic statements](2_1.png)
 
 
 3. Add to the WHERE clauses in the first two SELECT statements for filtering by month. Month is captured from the input parameter `im_fdate`.
 
-    <!-- border -->![where clause](2_2.png)
+    ![where clause](2_2.png)
 
 4. In the third SELECT statement, change the name of the intermediate table variable to `EMP_PO_COMBINED_CNT` to match the variable name to the semantics of the query
 
-    <!-- border -->![select statement](2_3.png)
+    ![select statement](2_3.png)
 
 5. Also add the `EMAIL` column to the field list.
 
-    <!-- border -->![Add email](2_4.png)
+    ![Add email](2_4.png)
 
 
 6. Remove the LIMIT clause at the end.
 
-    <!-- border -->![LIMIT](2_5.png)
+    ![LIMIT](2_5.png)
 
 
 7. Finally, add a RETURN SELECT statement at the end to mark the to be returned result set of the function.
 
-    <!-- border -->![RETURN select](2_6.png)
+    ![RETURN select](2_6.png)
 
 
 8. The completed code should be very similar to this.
 
-    ```SQLCRIPT
-    FUNCTION "get_po_counts"( im_fdate DATE )
-     RETURNS TABLE (EMAIL NVARCHAR(255),
-    	       FULLNAME NVARCHAR(255),
-    	       CREATE_CNT INTEGER,
-    	       CHANGE_CNT INTEGER,
-    	       COMBINED_CNT INTEGER)
-        LANGUAGE SQLSCRIPT
-        SQL SECURITY INVOKER AS
-    BEGIN
+   ```SQLCRIPT
+   FUNCTION "get_po_counts"( im_fdate DATE )
+    RETURNS TABLE (EMAIL NVARCHAR(255),
+   	       FULLNAME NVARCHAR(255),
+   	       CREATE_CNT INTEGER,
+   	       CHANGE_CNT INTEGER,
+   	       COMBINED_CNT INTEGER)
+       LANGUAGE SQLSCRIPT
+       SQL SECURITY INVOKER AS
+   BEGIN
 
-    po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "CREATEDBY" as EID
-         FROM "OPENSAP_PURCHASEORDER_HEADERS" WHERE ID IN (
-                         SELECT "POHEADER_ID"
-                              FROM "OPENSAP_PURCHASEORDER_ITEMS"
-              WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
-                     AND MONTH("CREATEDAT") = MONTH(:im_fdate)
-                GROUP BY  "CREATEDBY";
+   po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "CREATEDBY" as EID
+        FROM "OPENSAP_PURCHASEORDER_HEADERS" WHERE ID IN (
+                        SELECT "POHEADER_ID"
+                             FROM "OPENSAP_PURCHASEORDER_ITEMS"
+             WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
+                    AND MONTH("CREATEDAT") = MONTH(:im_fdate)
+               GROUP BY  "CREATEDBY";
 
-    po_change_cnt = SELECT COUNT(*) AS CHANGE_CNT, "MODIFIEDBY" as EID
-         FROM "OPENSAP_PURCHASEORDER_HEADERS"  WHERE ID IN (
-                         SELECT "POHEADER_ID"
-                              FROM "OPENSAP_PURCHASEORDER_ITEMS"
-              WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
-                    AND MONTH("MODIFIEDAT") = MONTH(:im_fdate)
-                 GROUP BY  "MODIFIEDBY";
+   po_change_cnt = SELECT COUNT(*) AS CHANGE_CNT, "MODIFIEDBY" as EID
+        FROM "OPENSAP_PURCHASEORDER_HEADERS"  WHERE ID IN (
+                        SELECT "POHEADER_ID"
+                             FROM "OPENSAP_PURCHASEORDER_ITEMS"
+             WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
+                   AND MONTH("MODIFIEDAT") = MONTH(:im_fdate)
+                GROUP BY  "MODIFIEDBY";
 
-    EMP_PO_COMBINED_CNT =
-            SELECT EMAIL, "get_full_name"( "NAMEFIRST", "NAMEMIDDLE", "NAMELAST") as FULLNAME,
-             crcnt.CREATE_CNT, chcnt.CHANGE_CNT,  crcnt.CREATE_CNT +
-             chcnt.CHANGE_CNT AS COMBINED_CNT
-                FROM "OPENSAP_MD_EMPLOYEES" as emp
-                LEFT OUTER JOIN :PO_CREATE_CNT AS crcnt
-                 ON emp.email = crcnt.EID
-               LEFT OUTER JOIN :PO_CHANGE_CNT AS chcnt
-               ON emp.email = chcnt.EID
-              ORDER BY COMBINED_CNT DESC;
+   EMP_PO_COMBINED_CNT =
+           SELECT EMAIL, "get_full_name"( "NAMEFIRST", "NAMEMIDDLE", "NAMELAST") as FULLNAME,
+            crcnt.CREATE_CNT, chcnt.CHANGE_CNT,  crcnt.CREATE_CNT +
+            chcnt.CHANGE_CNT AS COMBINED_CNT
+               FROM "OPENSAP_MD_EMPLOYEES" as emp
+               LEFT OUTER JOIN :PO_CREATE_CNT AS crcnt
+                ON emp.email = crcnt.EID
+              LEFT OUTER JOIN :PO_CHANGE_CNT AS chcnt
+              ON emp.email = chcnt.EID
+             ORDER BY COMBINED_CNT DESC;
 
-    return select * from :emp_po_combined_cnt;
+   return select * from :emp_po_combined_cnt;
 
-    END;
-    ```
+   END;
+   ```
 
 
 
@@ -130,20 +130,20 @@ There are application and scenarios where you need a table function instead of p
 
 1. **Save** the function.
 
-    <!-- border -->![Save](3_1.png)
+    ![Save](3_1.png)
 
 2. Perform a **Deploy**
 
-    <!-- border -->![DBX](3_2.png)
+    ![DBX](3_2.png)
 
 3. Return to the Database Explorer page. Select the Functions folder.  Right-click on the `get_po_counts` function and choose Generate SELECT statement.
 
-    <!-- border -->![SQL Tab](3_3.png)
+    ![SQL Tab](3_3.png)
 
 4. A new SQL tab will be opened with a SELECT statement. Enter the date `18.12.2014` as the input parameter and add  LIMIT 3 at the end of it. Click **Run**.
 
-    ```SQLCRIPT
-    SELECT * FROM "get_po_counts"('18.12.2014') LIMIT 3;
-    ```
-    <!-- border -->![Results](3_4.png)
+   ```SQLCRIPT
+   SELECT * FROM "get_po_counts"('18.12.2014') LIMIT 3;
+   ```
+    ![Results](3_4.png)
 

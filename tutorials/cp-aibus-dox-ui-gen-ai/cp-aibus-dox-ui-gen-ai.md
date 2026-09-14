@@ -47,21 +47,21 @@ In the first example, you'll use a delivery note. After working through this exa
 
 2. In the left navigation pane, click **Schema Configuration**.
 
-    <!-- border -->![LLM](access-schema-configuration.png)
+    ![LLM](access-schema-configuration.png)
 
 3. To create your own schema, click **Create**.
 
-    <!-- border -->![LLM](create-schema.png)
+    ![LLM](create-schema.png)
 
 4. In the dialog that opens, enter a name for your own schema – for example, `delivery_note_schema`. Note that the name can't include blanks. Next, select `Custom` as your **Document Type** and `Document` as the **OCR Engine Type**. 
 
 5. Click **Create** to create the schema.
 
-    <!-- border -->![LLM](create-schema-dialog.png)    
+    ![LLM](create-schema-dialog.png)    
 
 6. Your schema now appears in the list. Access the schema by clicking on it.
 
-    <!-- border -->![LLM](access-schema.png)
+    ![LLM](access-schema.png)
 
 
 
@@ -70,7 +70,7 @@ In the first example, you'll use a delivery note. After working through this exa
 
 To add your first header field, click **Add**.
 
-<!-- border -->![LLM](add-field.png)
+![LLM](add-field.png)
 
 You must enter a field name and data type for each custom field. The available data types are `string`, `number`, `date`, `discount`, `currency`, `country/region`, and `list of values`. Default extractors aren't available for custom documents. You can also optionally add a field label (user-friendly name) and a description.
 
@@ -90,11 +90,11 @@ As your first header field, add the number of the delivery note.
    
 >Note that when you use the setup type `auto` without a default extractor, LLMs are used to extract the information from the document. The setup type `manual` supports extraction using a template. For more details of this approach, take a look at the tutorial mission: [Shape Machine Learning to Process Custom Business Documents](mission.btp-aibus-shape-ml-custom).
 
-<!-- border -->![LLM](add-number.png)
+![LLM](add-number.png)
 
 The field now appears in your list of header fields, where you can see all the information that you've just entered. You can edit or delete the field by clicking the respective icons on the right.
 
-<!-- border -->![LLM](added-number.png)
+![LLM](added-number.png)
 
 Click **Add** again to open the **Add Data Field** dialog.
 
@@ -104,7 +104,7 @@ Click **Add** again to open the **Add Data Field** dialog.
 
 3. Use `auto` as the **Setup Type** and click **Save**.
 
-<!-- border -->![LLM](add-ponumber.png)
+![LLM](add-ponumber.png)
 
 Now, go ahead and add the remaining header fields and line item fields shown in the table and image below. Pay attention to the different data types and notice that the last three fields are line item fields (not header fields). Feel free to extend or reduce the list of fields.
 
@@ -117,7 +117,7 @@ Now, go ahead and add the remaining header fields and line item fields shown in 
 |  line item field      |  `quantity`             | number        | auto       
 |  line item field      |  `unitOfMeasure`        | string        | auto                      
 
-<!-- border -->![LLM](all-fields.png)
+![LLM](all-fields.png)
 
 >**NOTE:** The SAP Document AI basic UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
 
@@ -131,11 +131,11 @@ Once you've added all your fields, you need to activate the schema so that you c
 
 To activate the schema, click **Activate**.
 
-<!-- border -->![LLM](activate.png)
+![LLM](activate.png)
 
 Now, the status of your schema changes to `ACTIVE`. To make changes to your schema, you must first **Deactivate** it.
 
-<!-- border -->![LLM](active.png)
+![LLM](active.png)
 
 Congratulations, you've now created and activated your own schema for delivery note documents.
 
@@ -146,7 +146,7 @@ Congratulations, you've now created and activated your own schema for delivery n
 
 1. Access **Document** from the navigation on the left of the screen, then click **+** to upload the delivery note document.
 
-    <!-- border -->![LLM](add-document.png)
+    ![LLM](add-document.png)
 
 2. On the *Select Document* screen, choose `Custom` for the **Document Type**.
    
@@ -156,17 +156,17 @@ Congratulations, you've now created and activated your own schema for delivery n
    
 5. Drag and drop the file directly or click **+** to upload the sample document.
 
-    <!-- border -->![LLM](upload.png)
+    ![LLM](upload.png)
 
 6. Click **Confirm**.
   
     The document status changes from `PENDING` to `DONE`.
 
-    <!-- border -->![LLM](ready.png)
+    ![LLM](ready.png)
 
 7. Access the document by clicking on it. You now see the page preview of the document file you uploaded, and the information extracted from the delivery note header fields and line items using LLMs and the schema that you created.
 
-    <!-- border -->![LLM](results.png)
+    ![LLM](results.png)
 
 Congratulations, you've now successfully extracted information from a delivery note document using the schema configuration feature from SAP Document AI and LLMs.
 
@@ -190,7 +190,7 @@ Create the header fields shown in the table and image below. Don't forget to add
 |  header field         |  `jobTitle`           | string        | auto       
              
 
-<!-- border -->![LLM](resume-all-fields.png)
+![LLM](resume-all-fields.png)
 
 
 - Birth Certificate (in Chinese) – [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/birth_certificate.png)
@@ -206,7 +206,7 @@ Create the header fields shown in the table and image below. Pay attention to th
 |  header field         |  `registrationNumber`   | string        | auto       
              
 
-<!-- border -->![LLM](birth-certificate-all-fields.png)
+![LLM](birth-certificate-all-fields.png)
 
 
 - Work Contract (in German) – [sample document](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-gen-ai/work_contract.pdf)
@@ -222,7 +222,7 @@ Create the header fields shown in the table and image below. Pay attention to th
 |  header field         |  `startDate`          | date          | auto       
              
 
-<!-- border -->![LLM](work-contract-all-fields.png)
+![LLM](work-contract-all-fields.png)
 
 
 Congratulations, you've completed this tutorial. Feel free to repeat the steps using your own custom documents.

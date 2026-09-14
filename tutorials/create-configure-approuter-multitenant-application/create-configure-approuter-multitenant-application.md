@@ -88,7 +88,7 @@ Your `clusterdomain` is `xxxxx.kyma.ondemand.com`.
 
 `subdomain` and `clusterdomain` will be quoted in subsequent deployment definition.  
 
-<!-- border -->![check_subdomain_clusterdomain](./check_subdomain_clusterdomain.png)
+![check_subdomain_clusterdomain](./check_subdomain_clusterdomain.png)
 
 
 

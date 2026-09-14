@@ -39,16 +39,16 @@ For local development, you need to do the following:
 
 2. Install the `cds` development kit globally:
 
-    ```Shell
-    npm i -g @sap/cds-dk
-    ```
+   ```Shell
+   npm i -g @sap/cds-dk
+   ```
 
 3. Now, run:
 
-    ```Shell/Bash
-    mvn archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds -DarchetypeVersion=RELEASE \
-    -DartifactId=cap-business-service -DgroupId=org.your.org.cap.test
-    ```    
+   ```Shell/Bash
+   mvn archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds -DarchetypeVersion=RELEASE \
+   -DartifactId=cap-business-service -DgroupId=org.your.org.cap.test
+   ```    
 
     This will initialise the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
 
@@ -56,7 +56,7 @@ For local development, you need to do the following:
     - The `db` folder stores database-related artifacts.
     - The `srv` folder stores your Java application.
 
-      <!-- border -->![project creation done](projectCreation.png)
+      ![project creation done](projectCreation.png)
 
 Find more information about the SAP Cloud Application Programming Model in its [documentation](https://cap.cloud.sap/docs/get-started/).
 
@@ -73,22 +73,22 @@ In this step, you'll define a data model, which defines the entity.
 
 1. Right-click on the `db` folder and choose **New File**.
 
-    <!-- border -->![new file](dataModel.png)
+    ![new file](dataModel.png)
 
 2. Call it `datamodel.cds` and click **OK** to create the file.
 
 3. Add the following service definition to the file.
 
-    ```CDS
-    namespace my.bookshop;
+   ```CDS
+   namespace my.bookshop;
 
-    entity CapBusinessPartner {
-      key ID : String;
-      firstName  : String;
-      surname  : String;
-      sourceDestination: String;
-    }
-    ```
+   entity CapBusinessPartner {
+     key ID : String;
+     firstName  : String;
+     surname  : String;
+     sourceDestination: String;
+   }
+   ```
 
 
 
@@ -99,29 +99,29 @@ In this step, you'll define a simple service, which exposes a projection on the 
 
 1. Right-click the `srv` folder and choose **New File**.
 
-    <!-- border -->![new file](newFile.png)
+    ![new file](newFile.png)
 
 2. Call the file `cat-service.cds` and click **OK**.
 
 3. Add the following service definition to the `cat-service.cds`:
 
-    ```CDS
-    using my.bookshop as my from '../db/datamodel';
+   ```CDS
+   using my.bookshop as my from '../db/datamodel';
 
-    service cloud.sdk.capng {
-         entity CapBusinessPartner as projection on my.CapBusinessPartner;
-    }
-    ```
+   service cloud.sdk.capng {
+        entity CapBusinessPartner as projection on my.CapBusinessPartner;
+   }
+   ```
 
 4. Run the following command in the terminal to trigger the maven build process:
 
-    ```Shell
-    mvn clean install
-    ```
+   ```Shell
+   mvn clean install
+   ```
 
 In your project directory, the data model has auto-generated the classes.
 
-<!-- border -->![generated file](genFile.png)
+![generated file](genFile.png)
 
 
 
@@ -316,22 +316,22 @@ Be aware that the variable is only available in your current terminal session.
 
 1. Go to the root of your project by running the following command in the terminal:
 
-    ```Shell/Bash
-    cd ~/projects/cap-business-service
-    ```
+   ```Shell/Bash
+   cd ~/projects/cap-business-service
+   ```
 
 2. Start the application:
 
-    ```Shell/Bash
-    mvn clean spring-boot:run
-    ```
+   ```Shell/Bash
+   mvn clean spring-boot:run
+   ```
     A notification message saying "A service is listening to port 8080" will appear in the bottom right.
 
 3. Go to <http://localhost:8080>.
 
 4. Choose **`$metadata`** from the welcome page to inspect the OData metadata that is automatically served by the CAP Java runtime.
 
-  <!-- border -->![metadata option](metaData.png)
+  ![metadata option](metaData.png)
 
 
 ### Create/read data through Postman
@@ -341,7 +341,7 @@ Do the **GET** request on <http://localhost:8080/odata/v4/cloud.sdk.capng/CapBus
 
 Try to insert some data into the running application. For example, use Postman to do the following post request on same link.
 
-<!-- border -->![postman post](postmanPost.png)
+![postman post](postmanPost.png)
 
 The **POST** request causes an [OData Insert](https://www.odata.org/getting-started/basic-tutorial/#create) on the entity `CAPBusinessPartner`.
 
@@ -409,15 +409,15 @@ cf create-service destination lite MyErpSystem
 
 2. Add the following code to the newly created file:
 
-    ```YAML
-      ---
-      applications:
-        - name: cap-business-service
-          path: srv/target/cds-services-archetype-exec.jar
-          random-route: true
-      services:
-        - MyErpSystem
-    ```
+   ```YAML
+     ---
+     applications:
+       - name: cap-business-service
+         path: srv/target/cds-services-archetype-exec.jar
+         random-route: true
+     services:
+       - MyErpSystem
+   ```
 
     The manifest describes the name of the application and the path where the application archive can be found. Spring Boot applications can be deployed from a single JAR archive, which is what you are making use of here.
 
@@ -425,53 +425,53 @@ cf create-service destination lite MyErpSystem
 
 4. Add the following dependency under the `dependencies` tag:
 
-    ```XML
-      <dependency>
-        <groupId>com.sap.cds</groupId>
-        <artifactId>cds-feature-cloudfoundry</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>com.sap.cds</groupId>
-        <artifactId>cds-feature-hana</artifactId>
-      </dependency>
-    ```
+   ```XML
+     <dependency>
+       <groupId>com.sap.cds</groupId>
+       <artifactId>cds-feature-cloudfoundry</artifactId>
+     </dependency>
+     <dependency>
+       <groupId>com.sap.cds</groupId>
+       <artifactId>cds-feature-hana</artifactId>
+     </dependency>
+   ```
 
 5. Add the following annotation to your `Application` class:
 
-    ```Java
-    @EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
-    ```
+   ```Java
+   @EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
+   ```
 
     This will allow you to deploy to Cloud Foundry without any database service binding.
 
 6. Build your application once by running:
 
-    ```Shell/Bash
-    mvn clean
-    install
-    ```
+   ```Shell/Bash
+   mvn clean
+   install
+   ```
 7. Push the application to the cloud by running:
 
-    ```Shell/Bash
-    cf push
-    ```
+   ```Shell/Bash
+   cf push
+   ```
      The manifest will be automatically picked up.
 
     >Provide the credentials you usually log in to SAP Cloud Platform if you are asked to log in.
 
     You can see the following, if the application was successfully deployed.
 
-    <!-- border -->![applicationDeployed](appDeploy.png)
+    ![applicationDeployed](appDeploy.png)
 
 8. To retrieve the application URL run the following command:
 
-    ```Shell/Bash
-    cf app cap-business-service
-    ```
+   ```Shell/Bash
+   cf app cap-business-service
+   ```
 
     You can find URL, next to routes.
 
-    <!-- border -->![applicationURL](appUrl.png)
+    ![applicationURL](appUrl.png)
 
 Now you can do the **GET** / **POST** request in the same way as described in step 9.
 

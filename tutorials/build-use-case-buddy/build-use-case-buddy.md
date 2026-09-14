@@ -31,7 +31,6 @@ The Use Case Buddy uses straightforward and practical questions to assess the pr
 
 >Objective of this tutorial: *Take over the content packages,  give it your own branding, customize it according to your needs and ideas & you're already good to go!*
 
-<!-- size:400px -->
 ![SignUp](visuals/buddy_screenshots.png)
 
 ### Understand how the Use Case Buddy works
@@ -42,8 +41,7 @@ Building the Use Case Buddy and making it work for your organization will bring 
 
 2. Go over the solution diagram for the Use Case Buddy setup including the respective roles. This is our target for this tutorial. 
 
-     <!-- size:400px -->
-    ![SignUp](visuals/solution_diagram.png)
+     ![SignUp](visuals/solution_diagram.png)
 
      Users input the details of their use case idea, and the app calculates its complexity. IT admins can then review and approve or deny the idea. Approved use cases are listed in a repository to further collaborate on.
 
@@ -56,17 +54,14 @@ Building the Use Case Buddy and making it work for your organization will bring 
     
     You will get an email invitation afterwards. Please accept the invitation. *Note: Access requests may take up to some hours to verify and trigger the email, so kindly be patient.*
     
-    <!-- size:300px -->
     ![SignUp](visuals/SignUp2.png)
 
     You will need to create a SAP universal ID account - or you can use your existing account if you have one. Then you have access to the resource center.
 
-    <!-- size:150px -->
     ![SignUp](visuals/SignUp3.png)
 
     *In case you don't receive an invitation mail after 24 hours, use this [link](https://workzone.one.int.sap/) and then create an SAP universal ID account or use your existing one. Afterwards when you're logged in, look for the invitation in the notifications (bell button) and join the workspace from there. This will only work when you signed up with your email before.*
     
-    <!-- size:300px -->
     ![SignUp](visuals/SignUp4.png)
 
 1. Scroll down in the SAP Build Governance Resource center until you reach the widget for the Use Case Buddy. Click on *Click here to get the templates* and download the templates on the next page.
@@ -77,22 +72,18 @@ Building the Use Case Buddy and making it work for your organization will bring 
 
 1. Open your SAP Build Lobby and if necessary log-in with your credentials or SSO.
 
-    <!-- size:400px -->
     ![Import](visuals/Import1.png)
 
 1. Click on the *Import* symbol.
 
-    <!-- size:400px -->
     ![Import](visuals/Import2.png)
     
 1. Click on *Browse Files*. Choose the first template you downloaded previously.
 
-    <!-- size:400px -->
     ![Import](visuals/Import3.png)
 
 1. Select the template you just uploaded and click on the *Import* button.
 
-    <!-- size:400px -->
     ![Import](visuals/Import4.png)
     
     *In case you receive an error due to missing roles at this point, it may be that you lack the right roles in your BTP cockpit setup. A quick role assignment should fix that. Please refer to this [guide]( https://help.sap.com/docs/build-apps/service-guide/configuring-user-roles) and use the mentioned roles.*
@@ -101,7 +92,6 @@ Building the Use Case Buddy and making it work for your organization will bring 
 
 3. All done! Now you can see your imported projects.
 
-    <!-- size:300px -->
     ![Import](visuals/Import5.png)
 
 ### Import the template for SAP Build Work Zone Advanced Edition
@@ -117,7 +107,6 @@ Let's start setting up your Use Case Buddy with the first connection. As the Use
 
 1. For preparation: let's do Destination Setup first. Open **SAP BTP Cockpit** and navigate to **Destinations** section.
 
-    <!-- size:500px -->
     ![Destination](visuals/destination1.png)
 
 2. Search for **JAM** destination and click on **Clone** Icon to create a duplicate of the JAM Destination. 
@@ -125,7 +114,6 @@ Let's start setting up your Use Case Buddy with the first connection. As the Use
     
     *JAM destination will be created by default when subscribed to the SAP Build Work Zone.*
 
-    <!-- size:500px -->
     ![Destination](visuals/destination2.png)
 
 3. In order to use this destination for the action project, change the following parameters in the cloned destination destination.
@@ -137,41 +125,34 @@ Let's start setting up your Use Case Buddy with the first connection. As the Use
       - sap.build.usage: odata_gen
      - Click on SAVE
 
-    <!-- size:500px -->
     ![Destination](visuals/destination3.png)
     
     Please take a note of the **JAM URL**. It’s the Work Zone domain URL of your BTP account.
 
 4. Click on **Check Connection** on newly created destination and verify the connection. You should get “**200: OK**”.
 
-    <!-- size:500px -->
     ![Destination](visuals/destination4.png)
 
 5. To add the ideas in the forum, you will need the *forum id* of your workspace. Log into **SAP Build Work Zone** site (Advanced Edition) and navigate to your workspace, where you want to setup the Forum.
 
-    <!-- size:500px -->
     ![Destination](visuals/forum1.png)
 
     Click on **Forums** and click on **New Forum Topic**.
 
-    <!-- size:500px -->
     ![Destination](visuals/forum2.png)
 
 6. Enter the **Topic** Name (For example “Use Case Buddy”) and click on **Save**.
 
-    <!-- size:500px -->
     ![Destination](visuals/forum3.png)
 
     You will see that new Forum got added to the existing forum topics.
     
-    <!-- size:500px -->
     ![Destination](visuals/forum4.png)
 
     Click on the new Forum topic, to navigate to see the ideas available. At this point, you will find zero ideas for the newly created forum.
 
 7.  **Please write down** the **folder_id** for the forum topic, you just created. You can see the **forum id** as marked in the URL. It will be used while creating the Action project later.
 
-    <!-- size:500px -->
     ![Destination](visuals/forum5.png)
 
 8. Create an action project using the open API specification (API Spec). Download the specification from this git repository: [APISpec](https://github.com/SAP-samples/build-apps-enablement/blob/main/UseCaseBuddy/IdeaPostAPISpec.json)
@@ -182,7 +163,6 @@ Let's start setting up your Use Case Buddy with the first connection. As the Use
 
     In  **Servers>url**, include JAM host URL (refer to the Step 3)
     
-    <!-- size:500px -->
     ![APISpec](visuals/apispec1.png)
 
     **Please note** the *requestBody* and response of the API Spec. These are the properties we need to execute the Action Project.
@@ -198,48 +178,39 @@ After you've setup the destination you are now ready to create an action project
 
 1. Open **SAP Build Lobby** and navigate to **Actions** section. Click on **Create**.
 
-    <!-- size:400px -->
     ![APISpec](visuals/apispec2.png)
 
 1. Click on **“Upload API Specification”**
    
-    <!-- size:400px -->
     ![APISpec](visuals/apispec3.png)
 
 2. **Browse** the API Spec which you have downloaded in previous section and click on **Next**.
 
-    <!-- size:400px -->
     ![APISpec](visuals/apispec4.png)
-    <!-- size:400px -->
     ![APISpec](visuals/apispec5.png)
 
     Enter the **Project Name** (For example "Workzone_Adv_Forum_Create_Idea") and **Description**. 
      
     Click on Create. It will open the **Action Editor**, with the option of selecting the Actions, which we have preconfigured in our APISpec file.
  
-    <!-- size:300px -->
     ![APISpec](visuals/apispec6.png)
 
 3. Choose the **Post Action** ("/api/v1/OData/Forums('{id}\*\*')/Ideas"). Click on **Add**
 
-    <!-- size:400px -->
     ![APISpec](visuals/apispec7.png)
 
     Now, you can see the Action Project in Action Editor with prefilled **Input and Output** section.
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec8.png)
 
     You can see that **“id”** as **path** parameter is missing as Input parameter. **Let’s create it.**
 
 4.  In the **Input** Tab, click on **Add**.
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec9.png)
 
     Select **New Field** and enter all the required fields as followed.
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec10.png)
 
     Enter the values of New Field as follows:
@@ -253,22 +224,18 @@ After you've setup the destination you are now ready to create an action project
 
     Click on **Add**.
 
-    <!-- size:300px -->
     ![APISpec](visuals/apispec11.png)
 
     You can see that the **mandatory path parameter (id)** is now appearing in Input parameter section. 
-    <!-- size:400px -->
     ![APISpec](visuals/apispec12.png)
 
 5.  Select the parameter action. In the value field enter *application/json.* Click on **Save**.
      
-     <!-- size:500px -->
      ![APISpec](visuals/actionaccept.png)
 
 
 1. Navigate to **Test** tab. And select the **JAM destination** (Say "JAMForActions") from Destinations dropdown, which we have created in previous section.
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec13.png)
 
 1. Enter the following **Input values** and click on **Test**.
@@ -277,44 +244,36 @@ After you've setup the destination you are now ready to create an action project
     - **Content**: New Idea Content (For example: "Considering the need for universal access, I propose developing a new mobile application for the team.")
     - **id** and **Accept** fields should be prefilled.
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec14.png)
 
     You can see that now the execution is successful with *201 status* code. 
 
 1. Click on **Save** to save the Action Project.
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec15.png)
 
 2. Lets verify the created Idea in Work Zone! Navigate to your Work Zone site's Forum, which you created in the previous steps. You can see the **idea posted** from Action Project now appears under the Forum.
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec16.png)
 
     You can click on the **Idea Title** to navigate to the Idea detail. Where you can find various options for *Vote Up/Down* and *Comments*.
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec17.png)
 
      **Go Back to Action Editor** to Release and Publish the Action Project. 
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec18.png)
     
 4. Enter *Summary* for Release Note. Click on **Release**
 
-    <!-- size:400px -->
     ![APISpec](visuals/apispec19.png)
 
 5. After Successful Release, click on **Publish to Library**.
 
-    <!-- size:500px -->
     ![APISpec](visuals/apispec20.png)
 
     Click on **Publish** on Confirmation Dialog.
 
-    <!-- size:300px -->
     ![APISpec](visuals/apispec21.png)
 
 6. On successful publish, you can see the status of the Action project as **Published**.   

@@ -432,47 +432,47 @@ Use the below payload to create a secret for AWS S3 with NoAuthentication as aut
 
     • Enter the secret in JSON format. For example:
 
-    ```CODE
-      {
+   ```CODE
+     {
 
-      "type": "SFRUUA==",
+     "type": "SFRUUA==",
 
-      "description": "<description of generic secret>",
+     "description": "<description of generic secret>",
 
-      "clientId": "<client id>",
+     "clientId": "<client id>",
 
-      "authentication": "<AUTHENTICATION>",
+     "authentication": "<AUTHENTICATION>",
 
-      "tokenServiceURL": "<token service url>",
+     "tokenServiceURL": "<token service url>",
 
-      "password": "<password>",
+     "password": "<password>",
 
-      "proxyType": "<PROXY>",
+     "proxyType": "<PROXY>",
 
-      "url": "<URL>",
+     "url": "<URL>",
 
-      "tokenServiceURLType": "<TOKENSERVICE URL>",
+     "tokenServiceURLType": "<TOKENSERVICE URL>",
 
-      "user": "<user>",
+     "user": "<user>",
 
-      "clientSecret": "<client secret>",
+     "clientSecret": "<client secret>",
 
-      "scope": "SCOPE",
+     "scope": "SCOPE",
 
-      "labels": [
+     "labels": [
 
-      {
+     {
 
-      "key": "ext.ai.sap.com/document-grounding",
+     "key": "ext.ai.sap.com/document-grounding",
 
-      "value": "true"
+     "value": "true"
 
-      }
+     }
 
-      ]
+     ]
 
-      }
-    ```
+     }
+   ```
 
 #### **Generic secret for AWS S3 (option-2)**
 

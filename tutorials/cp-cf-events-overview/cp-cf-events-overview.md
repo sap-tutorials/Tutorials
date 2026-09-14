@@ -35,7 +35,7 @@ cf events cf-nodejs
 
 You will be greeted by output showing the last 50 events that have occurred in relation to the application.
 
-<!-- border -->![cf events example](cf-events.png)
+![cf events example](cf-events.png)
 
 
 ### Events through the CF API

@@ -25,7 +25,7 @@ In [Create Schema for Purchase Order Documents](cp-aibus-dox-ui-schema), you def
 
 In the SAP Document AI basic UI, access **Template** on the left navigation pane and click **+** to create a new template.
 
-<!-- border -->![Template](access-template.png)
+![Template](access-template.png)
 
 In the dialog, proceed as follows:
 
@@ -37,17 +37,17 @@ In the dialog, proceed as follows:
 
 4. Click **Create** to create your template.
 
-    <!-- border -->![Template](create-template.png)
+    ![Template](create-template.png)
 
 5. After your template is created, a confirmation dialog pops up. Click **OK** to acknowledge it. It will now navigate you to the detail page of your template.
 
-    <!-- border -->![Template](template-created-dialog.png)
+    ![Template](template-created-dialog.png)
 
     You now see a list of the associated documents (in our case, **No data** yet) and a list of the extraction fields that you've defined in your schema.
 
-    <!-- border -->![Template](associated.png)
+    ![Template](associated.png)
 
-    <!-- border -->![Template](extraction.png)
+    ![Template](extraction.png)
 
     In the next steps, you'll upload a document, get the extraction results, and edit them so that you can associate the document with your template.
 
@@ -69,7 +69,7 @@ In the dialog, proceed as follows:
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
-    <!-- border -->![Template](add-document.png)
+    ![Template](add-document.png)
 
 2. On the Select Document screen, choose `Purchase Order` for the **Document Type**.
 
@@ -79,15 +79,15 @@ In the dialog, proceed as follows:
 
 5. Click **Confirm**.
 
-    <!-- border -->![Template](upload.png)
+    ![Template](upload.png)
 
     The document status changes from `PENDING` to `DONE`.
 
-    <!-- border -->![Template](ready.png)
+    ![Template](ready.png)
 
 6. Click the document row to see the information extracted from the document using the schema you created.
 
-    <!-- border -->![Template](results.png)
+    ![Template](results.png)
 
 
 
@@ -98,23 +98,23 @@ Before associating the document with your template, make sure the extraction res
 
 1. Click **Edit**. You can edit extracted values manually on the right of the screen. You can also select them from the page preview in the middle of the screen. To do the latter, hover your mouse over the page preview. The mouse pointer changes to a crosshair cursor. Position the cursor at the corner of the value you wish to select. Then, hold down the left mouse button. Move the cursor diagonally to the opposite corner to draw a bounding box around the value you want to select. Select the appropriate header or line item field from the **Field** dropdown in the **Assign Field** dialog. Add or change the value, as necessary. If you choose a line item, set the number in the **Row Index** field. Make sure the number you enter here matches the appropriate line item in the **Label** column on the right of the screen. 
 
-    <!-- border -->![Template](edit.png)
+    ![Template](edit.png)
 
     This is an example of how to edit the field `cancelDate`:
 
-    <!-- border -->![Template](cancelDate.png)
+    ![Template](cancelDate.png)
 
     Once you've edited all incorrect header fields, the extraction results should look like the following:
 
-    <!-- border -->![Template](header.png)
+    ![Template](header.png)
 
     Once you've edited at least two lines of incorrect line item fields, the extraction results should look like the following:
 
-    <!-- border -->![Template](line.png)
+    ![Template](line.png)
     
 2. Save your changes.
 
-    <!-- border -->![Template](save.png)
+    ![Template](save.png)
 
 
 
@@ -123,15 +123,15 @@ Before associating the document with your template, make sure the extraction res
 
 1. Click **Add to template** to associate the document with your template.
    
-    <!-- border -->![Template](add.png)
+    ![Template](add.png)
 
 2. Select the relevant template from the dropdown and click **Add**.
 
-    <!-- border -->![Template](add2.png)
+    ![Template](add2.png)
 
 3. Click **OK**. The document file is now associated with the template you selected. You can repeat the preceding steps to associate additional documents with your template.
 
-    <!-- border -->![Template](ok.png)
+    ![Template](ok.png)
 
 
 
@@ -142,15 +142,15 @@ The last step that remains is to activate the template.
 
 1. Access **Template** on the left navigation pane and click the row of the template you created to access it.
 
-    <!-- border -->![Template](draft.png)
+    ![Template](draft.png)
 
 2. Click **Activate**.
 
-    <!-- border -->![Template](activate.png)
+    ![Template](activate.png)
 
     Now, the status of your template changes from `DRAFT` to `ACTIVE`, which means you can use the template to extract information from documents. To make changes to your template, you have to **Deactivate** it first.
 
-    <!-- border -->![Template](active.png)
+    ![Template](active.png)
     
 
    
@@ -159,7 +159,7 @@ The last step that remains is to activate the template.
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
-    <!-- border -->![Template](add-document2.png)
+    ![Template](add-document2.png)
 
 2. In the Select Document screen, choose `Purchase Order` for the **Document Type**.
 
@@ -169,15 +169,15 @@ The last step that remains is to activate the template.
 
 5. Click **Confirm**.
 
-    <!-- border -->![Template](upload2.png)
+    ![Template](upload2.png)
 
     The document status changes from `PENDING` to `DONE`.
 
-    <!-- border -->![Template](ready2.png)
+    ![Template](ready2.png)
 
 6. Access the document by clicking on it. You now see the page preview of the document file you uploaded, and the information extracted from the purchase order header fields and line items using the schema and template you created.
 
-    <!-- border -->![Template](results2.png)
+    ![Template](results2.png)
 
     You can now create a schema and a template and use them to get the extraction results for your own standard document types: invoices, payment advices, and purchase orders.
 

@@ -148,7 +148,7 @@ public class BusinessPartnerController
 ```
 When you call this servlet on the server, you can see a result like this:
 
-<!-- border -->![Result](screenshot22.png)
+![Result](screenshot22.png)
 
 If you have a similar result, you are ready to proceed with this tutorial.
 
@@ -234,7 +234,7 @@ The only two lines added to the initial example are:
 
 After deploying this again, you can now see that custom fields are correctly served:
 
-<!-- border -->![Test](screenshot33.png)
+![Test](screenshot33.png)
 
 #### Working programmatically with extension fields
 Of course, extension fields cannot only be provided as part of GET requests to the API, but you can work programmatically with them. For example, on each object instance you can access which custom fields are defined and get their names leveraging the following methods:
@@ -245,7 +245,7 @@ Of course, extension fields cannot only be provided as part of GET requests to t
 
 ##### Example:
 
-<!-- border -->![Test](screenshot44.png)
+![Test](screenshot44.png)
 
 In order to expose the clients of the application in a nicer representation, you write your own business partner entity called `MyBusinessPartner` that inherits from the provided `BusinessPartner` entity.
 
@@ -343,7 +343,7 @@ public class BusinessPartnerController
 
 As a result, you can now expose our new `MyBusinessPartner` entity via our initial controller which should lead to the following result:
 
-<!-- border -->![Test](screenshot555.png)
+![Test](screenshot555.png)
 
 
 ### Type-safe and eager expand
@@ -352,7 +352,7 @@ As a result, you can now expose our new `MyBusinessPartner` entity via our initi
 #### What is type-safe and eager expand?
 So far, you have been working with the `BusinessPartner` entity only. However, this is merely the root entity of a more complex data model. For example, each `BusinessPartner` can be associated with zero-to-many `BusinessPartnerAddresses` which again can be associated with zero-to-many `BusinessPartnerEMailAddresses`. Another popular association in an ERP context are header-item relationships such as an invoice header and invoice line items.
 
-<!-- border -->![Tree](screenshot66.png)
+![Tree](screenshot66.png)
 
 One possibility is to consider a lazy fetch of connected entities only using the `fetchXY()` methods that every instance exposes. In the case of your business partner, you could fetch the associated addresses with the following line of code:
 
@@ -432,7 +432,7 @@ public class GetBusinessPartnersCommand {
 
 Without further modifications, this will immediately yield the following serialization result to our client (hint: again assume to use the original `BusinessPartner` entity being serialized to the client, not the `MyBusinessPartner` entity)
 
-<!-- border -->![Test](screenshot77.png)
+![Test](screenshot77.png)
 
 Readers who are familiar with the `OData` query language might wonder about the missing expand() syntax. In the `OData` query language, expand and select are two independent keywords.
 

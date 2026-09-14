@@ -37,9 +37,9 @@ author_profile: https://github.com/reginasheynblat
 
 2. If you need to install mock server manually to a project, see the following.
 
-    ```URL
-    https://github.com/SAP/open-ux-odata
-    ```
+   ```URL
+   https://github.com/SAP/open-ux-odata
+   ```
 
 
 ### Start Mockserver
@@ -147,15 +147,15 @@ To be completely off-line, you would need to add additional mock services for ea
 
     Depending on where you place your `config.json` adjust the path for the metadata file in `metadataPath` and the mock data in `mockdataPath`.
 
-    ```json
-    [{
-      "urlBasePath": "/sap/opu/odata4/sap/zfe_ui_travel_o4_######/srvd/sap/zfe_ui_travel_o4_######/0001",
-      "name": "",
-      "metadataPath": "./metadata.xml",
-      "mockdataPath": "./data",
-      "generateMockData": true
-    }]
-    ```
+   ```json
+   [{
+     "urlBasePath": "/sap/opu/odata4/sap/zfe_ui_travel_o4_######/srvd/sap/zfe_ui_travel_o4_######/0001",
+     "name": "",
+     "metadataPath": "./metadata.xml",
+     "mockdataPath": "./data",
+     "generateMockData": true
+   }]
+   ```
     Paste the code into your new `config.json` file.
 
     >You will need to add parenthesis and double quotes since the format of the `.json` file is different then the `.yaml` file.
@@ -169,12 +169,12 @@ To be completely off-line, you would need to add additional mock services for ea
 
     In order to do that you need to replace your `sap-fe-mockserver` code snippet with this:
 
-    ```yaml
-    name: sap-fe-mockserver
-    beforeMiddleware: csp
-    configuration:
-      mockFolder: webapp/localService
-    ```
+   ```yaml
+   name: sap-fe-mockserver
+   beforeMiddleware: csp
+   configuration:
+     mockFolder: webapp/localService
+   ```
 
 7. Validate that your mock server still works by executing `start-mock` command under **Preview Application**   
 
@@ -186,15 +186,15 @@ To be completely off-line, you would need to add additional mock services for ea
     * `urlPath` - is the path you copied from your  *info server:ux-proxy* without the **$metadata**
     * `metadataPath` - reflects the path and the name of your new metadata file that was saved in the above step.
 
-    ```json
-    {
-        "urlPath": "/sap/opu/odata4/sap/zfe_ui_travel_o4_######/srvd_f4/dmo/i_agency/0001;ps=%27srvd-zfe_ui_travel_######-0001%27;va=%27com.sap.gateway.srvd.zfe_ui_travel_######.v0001.et-zfe_c_travel_######.agencyid%27",
-        "name": "",
-        "metadataPath": "./AgencyVHMetadata.xml",
-        "mockdataPath": "./data",
-        "generateMockData": true
-    }
-    ```
+   ```json
+   {
+       "urlPath": "/sap/opu/odata4/sap/zfe_ui_travel_o4_######/srvd_f4/dmo/i_agency/0001;ps=%27srvd-zfe_ui_travel_######-0001%27;va=%27com.sap.gateway.srvd.zfe_ui_travel_######.v0001.et-zfe_c_travel_######.agencyid%27",
+       "name": "",
+       "metadataPath": "./AgencyVHMetadata.xml",
+       "mockdataPath": "./data",
+       "generateMockData": true
+   }
+   ```
 
     ![New Config File](NewConfigFile.png)
 

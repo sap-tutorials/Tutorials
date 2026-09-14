@@ -25,22 +25,22 @@ primary_tag: software-product>sap-integration-suite
 
 1. Navigate to the **SAP Integration Suite** home page and choose **Manage Capabilities**.
 
-    <!-- border -->![Image](Images/CapabilityOverview_1.png)
+    ![Image](Images/CapabilityOverview_1.png)
 
 2. Choose **Add Capabilities**.
 
-    <!-- border -->![Image](Images/CapabilityOverview_2.png)
+    ![Image](Images/CapabilityOverview_2.png)
 
 3. Select **Assess Migration Scenarios**. Then choose **Next** and **Activate** to proceed with the activation of the capability.
 
-    <!-- border -->![Image](Images/CapabilityOverview_3.png)
+    ![Image](Images/CapabilityOverview_3.png)
 
-    <!-- border -->![Image](Images/CapabilityOverview_4.png)
+    ![Image](Images/CapabilityOverview_4.png)
 
 
     Wait until the capability is enabled. Refresh your page to see the successfully activated capability.
 
-    <!-- border -->![Image](Images/CapabilityOverview_5.png)
+    ![Image](Images/CapabilityOverview_5.png)
 
 ---
 ### Assign role collection to user
@@ -55,11 +55,11 @@ In Migration Assessment, there are two role collections that cover different per
 
 2. Select your user and choose **Assign Role Collection**.
 
-    <!-- border -->![Image](Images/Step2AssignRoleCollection_1_1.png)
+    ![Image](Images/Step2AssignRoleCollection_1_1.png)
 
 3. Select the role collection relevant for your user, then choose **Assign Role Collection**.
 
-    <!-- border -->![Image](Images/Step2AssignRoleCollection_1.png)
+    ![Image](Images/Step2AssignRoleCollection_1.png)
 
 
 To get a detailed overview of the role templates and role collections users need to accomplish the various tasks related to Migration Assessment, see [Tasks and Permissions](https://help.sap.com/docs/integration-suite/sap-integration-suite/2714db1701114de4ab5ffd1bebd0c4de.html).

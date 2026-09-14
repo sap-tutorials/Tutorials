@@ -57,11 +57,11 @@ First, we will import sample events & data, process these events and view them i
 
 2. Select `Employee Onboarding` scenario and click **Process Data**.
 
-    <!-- border -->![Process Events Data](processdata.png)
+    ![Process Events Data](processdata.png)
 
 3. **Refresh** to see the processing details.
 
-    <!-- border -->![View Processed Data](processeddata.png)
+    ![View Processed Data](processeddata.png)
 
 
 ### View the process visibility workspace
@@ -97,7 +97,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 4. Choose **Show Instances** to see all workflow instances of the onboard workflow definition.
 
-    <!-- border -->![View Details of Instance](workflow-instance-1.png)
+    ![View Details of Instance](workflow-instance-1.png)
 
 5. Go back to the Workflow Management Launchpad homepage. The **My Inbox** tile shows one open task.
 
@@ -116,7 +116,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 1. In the Workflow Management Launchpad, open **Monitor Visibility Scenarios** application, click **Process Data** and **Refresh** to see the new batch of processed events.
 
-    <!-- border -->![New Workflow Event Processed](processworkflowevents.png)
+    ![New Workflow Event Processed](processworkflowevents.png)
 
     > If *Schedule Job* in *ON* then the events are automatically processed at an interval of 5 minutes.
 
@@ -157,7 +157,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 1. In the Workflow Management Launchpad, choose **Monitor Visibility Scenarios** to process the new set of events.
 
-    <!-- border -->![See Processed data](processeddata_2.png)
+    ![See Processed data](processeddata_2.png)
 
 2. Go back to the homepage, choose **Process Workspace** tile and open the `Employee Onboarding` scenario.
 

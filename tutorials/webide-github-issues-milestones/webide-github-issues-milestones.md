@@ -1,7 +1,7 @@
 ---
 parser: v2
 primary_tag: products>sap-web-ide
-tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, software-product>sap-business-technology-platform ]
 time: 10
 ---
 

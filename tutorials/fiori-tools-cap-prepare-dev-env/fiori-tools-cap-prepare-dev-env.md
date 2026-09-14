@@ -48,9 +48,9 @@ Once you are in the development space, you will see a **Welcome** page from whic
 
 1. Copy the following GitHub repository URL into your clipboard:
 
-    ```URL
-    https://github.com/SAP-samples/fiori-elements-incident-management.git
-    ```
+   ```URL
+   https://github.com/SAP-samples/fiori-elements-incident-management.git
+   ```
 
 2. Click the link **Clone from Git**.
 

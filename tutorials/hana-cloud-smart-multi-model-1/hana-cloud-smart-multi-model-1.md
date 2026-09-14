@@ -67,13 +67,13 @@ These are the requirements to follow along:
 4. Create a user and assign this user the privileges **CREATE SCHEMA** and **IMPORT**. If you are unsure how to create users and assign privileges, you can read more [here](hana-cloud-mission-trial-6).
 
     Take the following code for example.
-    ```SQL
-    CREATE USER USER1 PASSWORD "Password1";
-    -- Grant CREATE SCHEMA privilege
-    GRANT CREATE SCHEMA TO USER1;
-    -- Grant IMPORT system privilege
-    GRANT IMPORT TO USER1;
-    ```
+   ```SQL
+   CREATE USER USER1 PASSWORD "Password1";
+   -- Grant CREATE SCHEMA privilege
+   GRANT CREATE SCHEMA TO USER1;
+   -- Grant IMPORT system privilege
+   GRANT IMPORT TO USER1;
+   ```
 
 5. From BTP cockpit or SAP HANA Cloud Central, open your trial instance in the SAP HANA Database Explorer and log in with this user's credentials.
 
@@ -92,11 +92,11 @@ The data for the exercises is packaged as an SAP HANA database export. The expor
 
 3. Right-click on the **Catalog** and select **Import Catalog Objects** to start the wizard.
 
-    <!-- border -->![import_catalog_objects](ss-01-import-catalog-objects.png)
+    ![import_catalog_objects](ss-01-import-catalog-objects.png)
 
 4. You can keep all the default settings in the **Import Catalog Objects** wizard and click **Import**.
 
-    <!-- border -->![Import Catalog Objects Wizard](ss-02-import-catalog-objects-wizard.png)
+    ![Import Catalog Objects Wizard](ss-02-import-catalog-objects-wizard.png)
 
 
 
@@ -112,19 +112,19 @@ The most important tables will be `LONDON_POI`, `LONDON_EDGES` and `LONDON_VERTI
 
     The Table `LONDON_POI` contains points of interest. Other than the naming suggests these POI's can also be represented by polygon (e.g. the ground view of a house). There are different categories of POI's. A POI may be a park bench as well as a hospital or school. The field amenity can be used to filter the type of POI.
 
-    <!-- border -->![POI Table](ss-03-sample-table-first.png)
+    ![POI Table](ss-03-sample-table-first.png)
 
 2. **Edge Data (Table `LONDON_EDGES`)**
 
     The Table `LONDON_EDGES` contains street (or path) segments. If you understand the streets and pathways as a network or graph, you may consider a street the edge of a graph. Intersections between streets would then be vertices (nodes) in this graph.
 
-    <!-- border -->![Edge Table](ss-04-sample-table-second.png)
+    ![Edge Table](ss-04-sample-table-second.png)
 
 3. **Vertex Data (Table `LONDON_VERTICES`)**
 
     The Table `LONDON_VERTICES` contains all the vertices, that can be inferred from the street network in table `LONDON_EDGES`. So, each vertex is essentially a point where at least two street segments come together.
 
-    <!-- border -->![Vertex Table](ss-05-sample-table-third.png)
+    ![Vertex Table](ss-05-sample-table-third.png)
 
 
 
@@ -133,7 +133,7 @@ The most important tables will be `LONDON_POI`, `LONDON_EDGES` and `LONDON_VERTI
 
 > **For this step, select your preferred method by clicking on the options under the step title.**
 >
-><!-- border -->![Tab Options](TabOptions-Screenshot.png)
+>![Tab Options](TabOptions-Screenshot.png)
 
 Especially when working with Spatial data it can be extremely valuable to visualize the results - ideally on a map. Without proper visualization, you will just receive geometries described by latitude/longitude pairs, which is hard to interpret.
 
@@ -173,7 +173,7 @@ DBeaver.io is an open source database client with support for SAP HANA Cloud. Th
 
 The example query above will simply return the results while showing a map preview of the geometries.
 
-<!-- border -->![dbeaver_preview](ss-06-dbeaver-preview.png)
+![dbeaver_preview](ss-06-dbeaver-preview.png)
 
 [OPTION END]
 [OPTION BEGIN [GeoJson.io]]
@@ -202,7 +202,7 @@ The resulting `GeoJSON` can be copy and pasted into the web form:
 
 You can then see the visualization of this point on a map:
 
-<!-- border -->![geojson_io](ss-07-geojson.png)
+![geojson_io](ss-07-geojson.png)
 
 
 [OPTION END]

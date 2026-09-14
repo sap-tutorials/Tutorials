@@ -51,18 +51,18 @@ To continue from the previous tutorial where you configured a SAP Sales and Serv
     Copy and paste this code:
 
     <!-- cpes-file db/schema.cds -->
-    ```Javascript
-    import com.sap.gateway.ip.core.customdev.util.Message;
-    import java.util.HashMap;
-    def Message processData(Message message) {
-        //Properties
-        def properties = message.getProperties();
-        salesOrder = properties.get("salesOrderId");
-        messageText = ("Thank you for your purchase, your order id is " + salesOrder)
-        message.setProperty("encodedMessageText", java.net.URLEncoder.encode(messageText, "UTF-8"));
-        return message;
-    }
-    ```
+   ```Javascript
+   import com.sap.gateway.ip.core.customdev.util.Message;
+   import java.util.HashMap;
+   def Message processData(Message message) {
+       //Properties
+       def properties = message.getProperties();
+       salesOrder = properties.get("salesOrderId");
+       messageText = ("Thank you for your purchase, your order id is " + salesOrder)
+       message.setProperty("encodedMessageText", java.net.URLEncoder.encode(messageText, "UTF-8"));
+       return message;
+   }
+   ```
 
     You should see it like this:
 
@@ -128,29 +128,29 @@ As you can see, you don't need to add the headers here or the body, as you will 
 2. Use Postman for testing my CPI API endpoint with the same initial payload mentioned in the previous tutorials:
 
     <!-- cpes-file db/schema.cds -->
-    ```JSON
-    {
-    "AppGyverSalesOrder": {
-        "customer": {
-        "ObjectID": "<Object ID from SAP C4C>",
-        "BuyerPartyID": <BuyerPartyID from SAP C4C>
-        },
-        "paymentData": {
-        "amount": <Payment transaction amount to be processed in Stripe>,
-        "customer": "<stripe customer id>",
-        "currency": "<currency selected in stripe account>",
-        "source": "<card id>",
-        "description": "Test payment via CPI"
-        },
-        "product": [
-        {
-            "ProductID": "<Product ID from SAP C4C>",
-            "Quantity": <Product quantity to be purchased>
-        }
-        ]
-    }
-    }
-    ```
+   ```JSON
+   {
+   "AppGyverSalesOrder": {
+       "customer": {
+       "ObjectID": "<Object ID from SAP C4C>",
+       "BuyerPartyID": <BuyerPartyID from SAP C4C>
+       },
+       "paymentData": {
+       "amount": <Payment transaction amount to be processed in Stripe>,
+       "customer": "<stripe customer id>",
+       "currency": "<currency selected in stripe account>",
+       "source": "<card id>",
+       "description": "Test payment via CPI"
+       },
+       "product": [
+       {
+           "ProductID": "<Product ID from SAP C4C>",
+           "Quantity": <Product quantity to be purchased>
+       }
+       ]
+   }
+   }
+   ```
 
     ![Test your integration flow](test_integration_flow.png)
 

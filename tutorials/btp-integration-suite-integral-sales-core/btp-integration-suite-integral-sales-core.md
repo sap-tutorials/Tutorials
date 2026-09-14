@@ -130,105 +130,105 @@ To create the credentials, follow the same steps used to create the Open Connect
     Remember this is the payload structure of the exercise:
 
     <!-- cpes-file db/schema.cds -->
-    ```JSON
-    {
-    "AppGyverSalesOrder": {
-        "customer": {
-        "ObjectID": "<Object ID from SAP C4C>",
-        "BuyerPartyID": <BuyerPartyID from SAP C4C>
-        },
-        "paymentData": {
-        "amount": <Payment transaction amount to be processed in Stripe>,
-        "customer": "<stripe customer id>",
-        "currency": "<currency selected in stripe account>",
-        "source": "<card id>",
-        "description": "Test payment via CPI"
-        },
-        "product": [
-        {
-            "ProductID": "<Product ID from SAP C4C>",
-            "Quantity": <Product quantity to be purchased>
-        }
-        ]
-    }
-    }
-    ```
+   ```JSON
+   {
+   "AppGyverSalesOrder": {
+       "customer": {
+       "ObjectID": "<Object ID from SAP C4C>",
+       "BuyerPartyID": <BuyerPartyID from SAP C4C>
+       },
+       "paymentData": {
+       "amount": <Payment transaction amount to be processed in Stripe>,
+       "customer": "<stripe customer id>",
+       "currency": "<currency selected in stripe account>",
+       "source": "<card id>",
+       "description": "Test payment via CPI"
+       },
+       "product": [
+       {
+           "ProductID": "<Product ID from SAP C4C>",
+           "Quantity": <Product quantity to be purchased>
+       }
+       ]
+   }
+   }
+   ```
 
     By converting it to XML, it should look like this (replace the XXXX with your data):
 
     <!-- cpes-file db/schema.cds -->
-    ```XML
-    <?xml version="1.0" encoding="UTF-8"?>
-    <AppGyverSalesOrder>
-        <customer>
-            <ObjectID>XXXXXX</ObjectID>
-            <BuyerPartyID>XXXXXX</BuyerPartyID>
-        </customer>
-        <paymentData>
-            <amount>XXXXXX</amount>
-            <customer>XXXXXX</customer>
-            <currency>XXXXXX</currency>
-            <source>XXXXXX</source>
-            <description>XXXXXX</description>
-        </paymentData>
-        <product>
-            <ProductID>XXXXXX</ProductID>
-            <Quantity>XXX</Quantity>
-        </product>
-    </AppGyverSalesOrder>
-    ```
+   ```XML
+   <?xml version="1.0" encoding="UTF-8"?>
+   <AppGyverSalesOrder>
+       <customer>
+           <ObjectID>XXXXXX</ObjectID>
+           <BuyerPartyID>XXXXXX</BuyerPartyID>
+       </customer>
+       <paymentData>
+           <amount>XXXXXX</amount>
+           <customer>XXXXXX</customer>
+           <currency>XXXXXX</currency>
+           <source>XXXXXX</source>
+           <description>XXXXXX</description>
+       </paymentData>
+       <product>
+           <ProductID>XXXXXX</ProductID>
+           <Quantity>XXX</Quantity>
+       </product>
+   </AppGyverSalesOrder>
+   ```
 
     You can also download the target XSD schema to use it as a guide to build the source XSD schema.
 
 6. Create the source XSD schema. Save the following schema as a local file. Later, you'll use it to upload it to the Message Mapping artifact.
 
     <!-- cpes-file db/schema.cds -->
-    ```XSD
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-        <xsd:element name="AppGyverSalesOrder">
-            <xsd:complexType>
-                <xsd:sequence>
-                    <xsd:element name="customer" minOccurs="1">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="ObjectID" type="xsd:string"/>
-                                <xsd:element name="BuyerPartyID" type="xsd:string"/>
-                            </xsd:sequence>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="paymentData" minOccurs="0">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="amount" type="xsd:decimal"/>
-                                <xsd:element name="customer" type="xsd:string"/>
-                                <xsd:element name="currency" type="xsd:string"/>
-                                <xsd:element name="source" type="xsd:string"/>
-                                <xsd:element name="description" type="xsd:string"/>
-                            </xsd:sequence>
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="product" minOccurs="1" maxOccurs="unbounded">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="ProductID" nillable="false" minOccurs="1" type="xsd:string"/>
-                                <xsd:element name="Quantity" minOccurs="1" type="xsd:double"/>
-                            </xsd:sequence>
-                        </xsd:complexType>
-                    </xsd:element>
-                </xsd:sequence>
-            </xsd:complexType>
-        </xsd:element>
-    </xsd:schema>
-    ```
+   ```XSD
+   <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+   <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+       <xsd:element name="AppGyverSalesOrder">
+           <xsd:complexType>
+               <xsd:sequence>
+                   <xsd:element name="customer" minOccurs="1">
+                       <xsd:complexType>
+                           <xsd:sequence>
+                               <xsd:element name="ObjectID" type="xsd:string"/>
+                               <xsd:element name="BuyerPartyID" type="xsd:string"/>
+                           </xsd:sequence>
+                       </xsd:complexType>
+                   </xsd:element>
+                   <xsd:element name="paymentData" minOccurs="0">
+                       <xsd:complexType>
+                           <xsd:sequence>
+                               <xsd:element name="amount" type="xsd:decimal"/>
+                               <xsd:element name="customer" type="xsd:string"/>
+                               <xsd:element name="currency" type="xsd:string"/>
+                               <xsd:element name="source" type="xsd:string"/>
+                               <xsd:element name="description" type="xsd:string"/>
+                           </xsd:sequence>
+                       </xsd:complexType>
+                   </xsd:element>
+                   <xsd:element name="product" minOccurs="1" maxOccurs="unbounded">
+                       <xsd:complexType>
+                           <xsd:sequence>
+                               <xsd:element name="ProductID" nillable="false" minOccurs="1" type="xsd:string"/>
+                               <xsd:element name="Quantity" minOccurs="1" type="xsd:double"/>
+                           </xsd:sequence>
+                       </xsd:complexType>
+                   </xsd:element>
+               </xsd:sequence>
+           </xsd:complexType>
+       </xsd:element>
+   </xsd:schema>
+   ```
 
-    ```
-    Remember that when you are setting the possible values for each XSD element, using minOccurs and maxOccurs, you need to make it consistent with the Message Mapping artifact messages' structures. You'll be able to see them in the source and target message's structure, and these are the definitions:
+   ```
+   Remember that when you are setting the possible values for each XSD element, using minOccurs and maxOccurs, you need to make it consistent with the Message Mapping artifact messages' structures. You'll be able to see them in the source and target message's structure, and these are the definitions:
 
-    - 1..1 -> needs and allows only one value.
-    - 0..1 -> doesn't need a value but if there is, it would be only one.
-    - 0..* -> it can go from no value to multiple values.
-    ```
+   - 1..1 -> needs and allows only one value.
+   - 0..1 -> doesn't need a value but if there is, it would be only one.
+   - 0..* -> it can go from no value to multiple values.
+   ```
 
 ### Test your XML structure with the needed XSD source schema.
 

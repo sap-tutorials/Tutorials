@@ -35,7 +35,7 @@ These are the overall steps needed to create the connection:
 5.	Register the adapter
 6.	Connect SAP S/4HANA to SAP HANA Cloud
 
-<!-- border -->![Connection Diagram](ss-01-connection-diagram.png)
+![Connection Diagram](ss-01-connection-diagram.png)
 
 ---
 
@@ -130,7 +130,7 @@ Then follow these steps:
 
 1.	Start the command prompt on your system and type the following command:
 
-    ```Shell/Bash
+   ```Shell/Bash
 set DPA_INSTANCE=C:\usr\sap\dataprovagent
 ```
     The command-line agent configuration tool requires the `DPA_INSTANCE` environment variable to be set to the installation root location.
@@ -139,13 +139,13 @@ set DPA_INSTANCE=C:\usr\sap\dataprovagent
 
 3.	Start the command-line agent configuration tool by typing the following command:
 
-    ```Shell/Bash
+   ```Shell/Bash
 agentcli.bat –configAgent
 ```
 
 4.	Select **SAP HANA Connection**.
 
-    <!-- border -->![Start command line config tool](ss-02-start-command-line-config-tool.png)
+    ![Start command line config tool](ss-02-start-command-line-config-tool.png)
 
 5.	Next, select **Connect to SAP HANA Cloud via JDBC** and specify true to use an encrypted connection over JDBC.
 
@@ -167,8 +167,8 @@ agentcli.bat –configAgent
 
 1.	On your command prompt interface, now run the command:
 
-    ```Shell/Bash
- <DPAgent_root>/bin/agentcli.sh –configAgent.
+   ```Shell/Bash
+<DPAgent_root>/bin/agentcli.sh –configAgent.
 ```
 
 2.	Select the option **Register Agent**.

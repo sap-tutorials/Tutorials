@@ -92,50 +92,50 @@ The adapter variables can be split into two groups. The first group is used to c
 
   1. Declare and define all variables in the first group. They are: `hostname`, `port`, `stream`, `username`, `password`, `repeat`, and `interval`. These variables can be named whatever you wish; they are either passed into the various `SDK` calls, or used for loop logic.
 
-    Variable   |  Explanation |
-    |---|---|
-    |hostname| String value containing the FQDN of your remote device  |
-    |port| Integer value of the port your Streaming Lite project is running on   |
-    |stream|  String value of the stream name you wish to write to |
-    |username| String value of username you started Streaming Lite with. If you didn't start Streaming Lite with credentials, leave blank  |
-    |password| String value of password you started Streaming Lite with. If you didn't start Streaming Lite with credentials, leave blank |
-    |repeat| Integer value of many times you want to send a row of data into Streaming Lite. A value of -1 will cause the program to repeat infinitely   |
-    |interval| Integer value of the number of seconds in-between sending rows  |
+   Variable   |  Explanation |
+   |---|---|
+   |hostname| String value containing the FQDN of your remote device  |
+   |port| Integer value of the port your Streaming Lite project is running on   |
+   |stream|  String value of the stream name you wish to write to |
+   |username| String value of username you started Streaming Lite with. If you didn't start Streaming Lite with credentials, leave blank  |
+   |password| String value of password you started Streaming Lite with. If you didn't start Streaming Lite with credentials, leave blank |
+   |repeat| Integer value of many times you want to send a row of data into Streaming Lite. A value of -1 will cause the program to repeat infinitely   |
+   |interval| Integer value of the number of seconds in-between sending rows  |
 
 
-    Our implementation is shown here. You will need to change these values to suit your program:
+   Our implementation is shown here. You will need to change these values to suit your program:
 
-    ```Java
+   ```Java
 
-    String val_host = "SAPraspberrypi2-B3";
-    int val_port = 9230;
-    String val_stream = "isFreezerTemperatureReading";
-    String val_username ="";
-    String val_password ="";
-    int val_repeat = -1;
-    int val_interval = 1;
-    ```
+   String val_host = "SAPraspberrypi2-B3";
+   int val_port = 9230;
+   String val_stream = "isFreezerTemperatureReading";
+   String val_username ="";
+   String val_password ="";
+   int val_repeat = -1;
+   int val_interval = 1;
+   ```
 
-    When this Java Adapter executes, it will connect with the project running on port `9230`, and write to the stream `"isFreezerTemperatureReading"`. There are no credentials, and the program will continuously send one row every second.
+   When this Java Adapter executes, it will connect with the project running on port `9230`, and write to the stream `"isFreezerTemperatureReading"`. There are no credentials, and the program will continuously send one row every second.
 
   2. Declare and define column variables in the second group. Recall that the schema of the stream we are writing to is:
 
-    ![Schema of the Stream We're Writing](schemaOfTheStreamWereWriting.png)
+   ![Schema of the Stream We're Writing](schemaOfTheStreamWereWriting.png)
 
-    This means we will be using four variables. Every custom Java Adapter will have a different group of variables for this section. Once again, naming does not matter. In this document they will be:
+   This means we will be using four variables. Every custom Java Adapter will have a different group of variables for this section. Once again, naming does not matter. In this document they will be:
 
-    ```Java
+   ```Java
 
-    String val_sensorId ="RaspberryPi";
-    String val_Temperature_Command = "echo 90";
-    Date val_readingDate = null; //generated right before row is sent
-    long val_id = 0; //generated in streaming lite
-    ```
+   String val_sensorId ="RaspberryPi";
+   String val_Temperature_Command = "echo 90";
+   Date val_readingDate = null; //generated right before row is sent
+   long val_id = 0; //generated in streaming lite
+   ```
 
-      - **`String val_sensorId`** is the name of our sensor.
-      - **`String val_temperature`** holds the command to run in order to obtain the value for our Temperature column.
-      - **`Date val_readingDate`** is a timestamp. A value will be assigned to it later in the code, directly before it is used.
-      - **`long val_id`** is our primary key, but will be auto-generated inside the streaming project. Although we still declare it, the value of `val_id` is arbitrary and will be overwritten once inside the streaming project. The reason we need it in our custom Java Adapter is because the entire row must be constructed before it is sent into Streaming Lite.
+   - **`String val_sensorId`** is the name of our sensor.
+   - **`String val_temperature`** holds the command to run in order to obtain the value for our Temperature column.
+   - **`Date val_readingDate`** is a timestamp. A value will be assigned to it later in the code, directly before it is used.
+   - **`long val_id`** is our primary key, but will be auto-generated inside the streaming project. Although we still declare it, the value of `val_id` is arbitrary and will be overwritten once inside the streaming project. The reason we need it in our custom Java Adapter is because the entire row must be constructed before it is sent into Streaming Lite.
 
 
 ### Try/Catch
@@ -256,98 +256,98 @@ In this section we will start a row, and set its fields according to the schema 
 
   1. Starting the row
 
-    Start a new row definition. It is the first call when starting a new row:
+   Start a new row definition. It is the first call when starting a new row:
 
-    ```Java
+   ```Java
 
-    row.startRow();
-    ```
+   row.startRow();
+   ```
 
-    Set the row operation as insert:
+   Set the row operation as insert:
 
-    ```Java
+   ```Java
 
-    row.setOperation(Operation.INSERT);
-    ```
+   row.setOperation(Operation.INSERT);
+   ```
 
-    Other possible `enum` values are:
-        - NOOP
-        - UPDATE
-        - DELETE
-        - UPSERT
-        - SAFEDELETE
+Other possible `enum` values are:
+   - NOOP
+   - UPDATE
+   - DELETE
+   - UPSERT
+   - SAFEDELETE
 
   2. Setting Fields
 
-    The `RelativeRowWriter` class provides a series of functions which set one field of your row at a time. Every function will set a field with a specific data type, and these functions cannot search by field name. Therefore, calling one will set the next available matching field of that data type, without regard for field names.
+ The `RelativeRowWriter` class provides a series of functions which set one field of your row at a time. Every function will set a field with a specific data type, and these functions cannot search by field name. Therefore, calling one will set the next available matching field of that data type, without regard for field names.
 
-    A full list of the functions for each data type can be found by viewing the `RelativeRowWriter` class. Under the Package Explorer window, go to Referenced Libraries, and then expand:
+ A full list of the functions for each data type can be found by viewing the `RelativeRowWriter` class. Under the Package Explorer window, go to Referenced Libraries, and then expand:
 
-    **`streaming_client.jar > com.sybase.esp.sdk.data > RelativeRowWriter.class`**
+ **`streaming_client.jar > com.sybase.esp.sdk.data > RelativeRowWriter.class`**
 
-    ![Relative Row Writer Class](relativeRowWriterClass.png)
+ ![Relative Row Writer Class](relativeRowWriterClass.png)
 
-      - **Column 1:** Following the schema of the stream we are writing to, we will now set the first field called `SensorId`. This field is a type String, and the value we wish to write is in our variable `val_sensorId`. To set the field, we will use `row.setString()`
+   - **Column 1:** Following the schema of the stream we are writing to, we will now set the first field called `SensorId`. This field is a type String, and the value we wish to write is in our variable `val_sensorId`. To set the field, we will use `row.setString()`
 
-    ```Java
+   ```Java
 
-    row.setString(val_sensorId);
-    ```
+   row.setString(val_sensorId);
+   ```
 
-      - **Column 2:** The second column we are setting is called `Temperature`, and will contain our temperature sensor data. This is where the function `exec()` will be called, to run the command in our string variable `val_Temperature_Command`. We will declare a new String variable to hold the return value of our `exec()` function, and parse it into a double before setting the field using `row.setDouble()`
+   - **Column 2:** The second column we are setting is called `Temperature`, and will contain our temperature sensor data. This is where the function `exec()` will be called, to run the command in our string variable `val_Temperature_Command`. We will declare a new String variable to hold the return value of our `exec()` function, and parse it into a double before setting the field using `row.setDouble()`
 
-    ```Java
+   ```Java
 
-    String temperature_s = exec(val_Temperature_Command);
-    row.setDouble(Double.parseDouble(temperature_s));
-    ```
+   String temperature_s = exec(val_Temperature_Command);
+   row.setDouble(Double.parseDouble(temperature_s));
+   ```
 
-      - **Column 3:** The third column is called `ReadingDate`, and is a timestamp of when the temperature value was read. We will provide our `val_readingDate` with the current time value, and pass it into `row.setMSDate()`
+   - **Column 3:** The third column is called `ReadingDate`, and is a timestamp of when the temperature value was read. We will provide our `val_readingDate` with the current time value, and pass it into `row.setMSDate()`
 
-    ```Java
+   ```Java
 
-    val_readingDate = new Date();
-    row.setMSDate(val_readingDate);
-    ```
+   val_readingDate = new Date();
+   row.setMSDate(val_readingDate);
+   ```
 
-      - **Column 4:** The forth column is called `Id`, will be automatically generated in our Streaming Lite project. Therefore, we will be arbitrarily sending it a value of `0`, from our `val_id` variable. To set this last column, we will use `row.setLong()`
+   - **Column 4:** The forth column is called `Id`, will be automatically generated in our Streaming Lite project. Therefore, we will be arbitrarily sending it a value of `0`, from our `val_id` variable. To set this last column, we will use `row.setLong()`
 
-    ```Java
+   ```Java
 
-    row.setLong(val_id);
-    ```
+   row.setLong(val_id);
+   ```
 
   3. Ending the Row
 
-    We end the row by calling `row.endRow()`:
+   We end the row by calling `row.endRow()`:
 
-    ```Java
+   ```Java
 
-    row.endRow();
-    ```
+   row.endRow();
+   ```
 
   4. Writing the Completed Row to Streaming Lite
 
-    We now publish the row which `RelativeRowWriter` has packaged inside our `MessageWriter` object
+   We now publish the row which `RelativeRowWriter` has packaged inside our `MessageWriter` object
 
-    ```Java
+   ```Java
 
-    publisher.publish(message, true);
-    ```
+   publisher.publish(message, true);
+   ```
 
-    When we commit the publisher, the row gets sent into Streaming Lite:
+   When we commit the publisher, the row gets sent into Streaming Lite:
 
-    ```Java
+   ```Java
 
-    publisher.commit();
-    ```
+   publisher.commit();
+   ```
 
-    We can add this line after sending the row successfully:
+   We can add this line after sending the row successfully:
 
-    ```Java
+   ```Java
 
-    System.out.print("Message published successfully\n");
-    ```
+   System.out.print("Message published successfully\n");
+   ```
 
 
 ### Stopping the SDK

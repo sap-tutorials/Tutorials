@@ -38,16 +38,16 @@ In addition to the instructions below, you may also watch this video to follow a
 1.	Open the Google Cloud Platform and sign in with your account. You need to have an existing service account with a project and a dataset containing at least one table for the steps in this tutorial.
 2.	In Google BigQuery, go to **IAM & Admin** and click on **IAM**.
 
-    <!-- border -->![GBQ_IAM](ss-01-GBQ-IAM.png)
+    ![GBQ_IAM](ss-01-GBQ-IAM.png)
 
 3.	Create a **Member** or use an existing one and assign either the `BigQuery Admin` role to this member or the roles `BigQuery Data Viewer` and `Big Query User`.
 4.	Go to **service accounts** and click on the three dots under **Actions** in the row of the service account you want to use. Then click on **Create Key**.
 
-    <!-- border -->![GBQ service accounts](ss-02-GBQ-serviceaccounts.png)
+    ![GBQ service accounts](ss-02-GBQ-serviceaccounts.png)
 
 5.	A dialogue will open where you need to specify the key type. Select **JSON** and click on **Create**.
 
-    <!-- border -->![GBQ create key](ss-03-GBQ-createkey.png)
+    ![GBQ create key](ss-03-GBQ-createkey.png)
 
 6.	Open the file that is created (e.g. using Visual Studio Code or a simple text editor). There you will see all the information of the project and client including the credential information you will need in the next steps to create the connection.
 7.	Copy this information from the `JSON` file:
@@ -67,16 +67,16 @@ In addition to the instructions below, you may also watch this video to follow a
 2.	Set the schema you want to work in.
 3.	Open <https://www.google.com> and copy the **Global Sign root certificate** to a text editor.
 
-    <!-- border -->![GBQ Certificate](ss-04-GBQ-certificate.png)
+    ![GBQ Certificate](ss-04-GBQ-certificate.png)
 
 4.	Create a certificate store, also called PSE (personal security environment), if you have not done so already.
 
-    ```SQL
+   ```SQL
 CREATE PSE <certificate store name>;
 ```
 5.	Create a certificate for Google BigQuery and name it `GBQ` using this SQL statement, paste the certificate you retrieved in the previous step as a single line without any line-breaks (already included in this statement):
 
-    ```SQL
+   ```SQL
 -- create certificate
 CREATE CERTIFICATE FROM
 '-----BEGIN CERTIFICATE-----
@@ -86,19 +86,19 @@ COMMENT 'GBQ';
 
 6.	Next, get the certificate ID of this certificate by running this SQL statement:
 
-    ```SQL
+   ```SQL
 SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'GBQ';
 ```
 
 7.	Add this certificate to the certificate store by inserting the certificate ID into the SQL statement:
 
-    ```SQL
+   ```SQL
 ALTER PSE SSL ADD CERTIFICATE <certificate_id>;
 ```
 
 8.	Now set the PSE purpose as remote source. This way, all remote sources you create will use the certificates stored in the PSE. Please note, that only one PSE can be set as remote source purpose.
 
-    ```SQL
+   ```SQL
 SET PSE SSL PURPOSE REMOTE SOURCE;
 ```
 
@@ -112,7 +112,7 @@ SET PSE SSL PURPOSE REMOTE SOURCE;
 
 1.	To now create a remote source to Google BigQuery, insert the information from the JSON file you downloaded from the Google BigQuery service account (i.e. client-email and private key) into the next SQL statement. In this example, we will name the remote source `BIGQUERY`.
 
-    ```SQL
+   ```SQL
 -- create a remote source
 CREATE REMOTE SOURCE BIGQUERY ADAPTER bigqueryrest
 CONFIGURATION 'server=www.googleapis.com'
@@ -137,18 +137,18 @@ WITH CREDENTIAL TYPE 'OAUTH' USING 'user=<INSERT CLIENT EMAIL>;password=-----BEG
     -	dataset
     -	and table name
 
-    ```SQL
+   ```SQL
 -- create a virtual table
 create virtual table <TARGET_VIRTUAL_TABLE> at "<REMOTE_SOURCE_NAME>"."<GBQ_PROJECT_ID>"."<GBQ_DATASET>"."<GBQ_SOURCE_TABLE> ";
 ```
 
 2.	Your virtual table is now created, as you can see under tables in your catalog.
 
-    <!-- border -->![DBX VT](ss-05-DBX-virtual-table.png)
+    ![DBX VT](ss-05-DBX-virtual-table.png)
 
 3.	To check, if the virtual table is working, you can use this statement:
 
-    ```SQL
+   ```SQL
 select * from tpch.vt_gbq_supplier;
 ```
 

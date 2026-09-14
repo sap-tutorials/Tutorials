@@ -91,83 +91,83 @@ The first approach created to bridge the gap of the non-existence of JDBC Lookup
 
 4.	Define a dynamic SQL Statement with the fields value defined in the previous step. The script shown below can be applied in all scenarios:
 
-    ```Groovy
-    import com.sap.gateway.ip.core.customdev.util.Message;
-    import java.util.HashMap;
-    import groovy.xml.*; 
+   ```Groovy
+   import com.sap.gateway.ip.core.customdev.util.Message;
+   import java.util.HashMap;
+   import groovy.xml.*; 
 
-    def Message processData(Message message) {
-    
-        def accessParam = message.getProperty("access")
-        def dbTableName = message.getProperty("table")
-        def sqlAction = message.getProperty("action") 
-        def keyParam = message.getProperty("key")
-        def spParams = message.getProperty("spParams") 
-    
+   def Message processData(Message message) {
+   
+       def accessParam = message.getProperty("access")
+       def dbTableName = message.getProperty("table")
+       def sqlAction = message.getProperty("action") 
+       def keyParam = message.getProperty("key")
+       def spParams = message.getProperty("spParams") 
+   
 
-        def bodyString = message.getBody(java.lang.String) as String;
+       def bodyString = message.getBody(java.lang.String) as String;
 
-        def oXML = new XmlParser().parseText(bodyString);
-    
-        Writer writer = new StringWriter();
-    
-        def indentPrinter = new IndentPrinter(writer, ' ');
-    
-        def builder = new MarkupBuilder(indentPrinter);
-    
-        /*Create the SQL Statement with a builder function with an exception route for the 'EXECUTE' method.
-        Define a Statement with the table name provided followed by the action.
-        In case the access and key parameters are filled, they are processed one by one seperated by a comma.*/
+       def oXML = new XmlParser().parseText(bodyString);
+   
+       Writer writer = new StringWriter();
+   
+       def indentPrinter = new IndentPrinter(writer, ' ');
+   
+       def builder = new MarkupBuilder(indentPrinter);
+   
+       /*Create the SQL Statement with a builder function with an exception route for the 'EXECUTE' method.
+       Define a Statement with the table name provided followed by the action.
+       In case the access and key parameters are filled, they are processed one by one seperated by a comma.*/
 
-        builder.'root' {
-            if (spParams && sqlAction == "EXECUTE"){
-                oXML.row.each{ item ->
-                    'Statement' {
-                        "${dbTableName}"('action': "${sqlAction}") { 
-                            'table' "${dbTableName}"
-                            def arrSPFields = spParams.tokenize(",");
-                            arrSPFields.each{ SPField ->
-                                def SPValue = item."${SPField}".text();
-                                "${SPField}" "${SPValue}"
-                            }
-                        }   
-                    }
-                }            
-            }else{ 
-                'Statement' {
-                    "${dbTableName}"('action': "${sqlAction}") { 
-                        'table' "${dbTableName}"
-                        
-                        if (accessParam){ 
-                            'access' {
-                                def arrFields = accessParam.tokenize(",");
-                                arrFields.each{ field ->
-                                    "${field}" ''
-                                }
-                            }
-                        }
+       builder.'root' {
+           if (spParams && sqlAction == "EXECUTE"){
+               oXML.row.each{ item ->
+                   'Statement' {
+                       "${dbTableName}"('action': "${sqlAction}") { 
+                           'table' "${dbTableName}"
+                           def arrSPFields = spParams.tokenize(",");
+                           arrSPFields.each{ SPField ->
+                               def SPValue = item."${SPField}".text();
+                               "${SPField}" "${SPValue}"
+                           }
+                       }   
+                   }
+               }            
+           }else{ 
+               'Statement' {
+                   "${dbTableName}"('action': "${sqlAction}") { 
+                       'table' "${dbTableName}"
+                       
+                       if (accessParam){ 
+                           'access' {
+                               def arrFields = accessParam.tokenize(",");
+                               arrFields.each{ field ->
+                                   "${field}" ''
+                               }
+                           }
+                       }
 
-                        if (keyParam){ 
-                            oXML.row.each{ item -> 
-                                "key" { 
-                                    def arrKeyFields = keyParam.tokenize(",");
-                                    arrKeyFields.each{ keyField ->
-                                        def keyValue = item."${keyField}".text();
-                                        "${keyField}" "${keyValue}"
-                                    }
-                                }
-                            } 
-                        }
-                    }   
-                }
-            }
-        }
-            
-        message.setBody(writer.toString());
-    
-        return message;
-    }
-    ```  
+                       if (keyParam){ 
+                           oXML.row.each{ item -> 
+                               "key" { 
+                                   def arrKeyFields = keyParam.tokenize(",");
+                                   arrKeyFields.each{ keyField ->
+                                       def keyValue = item."${keyField}".text();
+                                       "${keyField}" "${keyValue}"
+                                   }
+                               }
+                           } 
+                       }
+                   }   
+               }
+           }
+       }
+           
+       message.setBody(writer.toString());
+   
+       return message;
+   }
+   ```  
 
 5.	Join both branches and gather the messages in one XML File.
 
@@ -175,40 +175,40 @@ The first approach created to bridge the gap of the non-existence of JDBC Lookup
 
 6.	Combine the messages through XSLT Mapping. Sample script below:
 
-    ```XML
-    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-        <xsl:output omit-xml-declaration="yes" indent="yes"/>
+   ```XML
+   <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+       <xsl:output omit-xml-declaration="yes" indent="yes"/>
 
-        /*Create a key for the lookup.
-            Its 'match' attribute represents a collection of nodes (response from JDBC query) where lookup takes place.
-            Its 'use' attribute is the field inside the collection.*/
+       /*Create a key for the lookup.
+           Its 'match' attribute represents a collection of nodes (response from JDBC query) where lookup takes place.
+           Its 'use' attribute is the field inside the collection.*/
 
-        <xsl:key name="contacts-lookup" match="Statement_response/row" use="ID"/>
+       <xsl:key name="contacts-lookup" match="Statement_response/row" use="ID"/>
 
-        /*For every row in CustomerNotification do:
-            1. Copy original contents.
-            2. Find via lookup a collection of contacts (use 'key' function and pass a key name and the value to find) and add to the current row copies of EMAIL and TELEPHONE nodes.*/
+       /*For every row in CustomerNotification do:
+           1. Copy original contents.
+           2. Find via lookup a collection of contacts (use 'key' function and pass a key name and the value to find) and add to the current row copies of EMAIL and TELEPHONE nodes.*/
 
-        <xsl:template match="CustomerNotification/row">
-            <row>
-                <xsl:copy-of select="node()" copy-namespaces="no"/>
-                <xsl:for-each select="key('contacts-lookup', ID)">
-                    <xsl:copy-of select="EMAIL" copy-namespaces="no"/>
-                    <xsl:copy-of select="TELEPHONE" copy-namespaces="no"/>
-                </xsl:for-each>
-            </row>
-        </xsl:template>
+       <xsl:template match="CustomerNotification/row">
+           <row>
+               <xsl:copy-of select="node()" copy-namespaces="no"/>
+               <xsl:for-each select="key('contacts-lookup', ID)">
+                   <xsl:copy-of select="EMAIL" copy-namespaces="no"/>
+                   <xsl:copy-of select="TELEPHONE" copy-namespaces="no"/>
+               </xsl:for-each>
+           </row>
+       </xsl:template>
 
-        <xsl:template match="/">
-            <CustomerNotification>
-                <root>
-                    <xsl:apply-templates select="//CustomerNotification/row"/>
-                </root>
-            </CustomerNotification>
-        </xsl:template>
-    </xsl:stylesheet>
+       <xsl:template match="/">
+           <CustomerNotification>
+               <root>
+                   <xsl:apply-templates select="//CustomerNotification/row"/>
+               </root>
+           </CustomerNotification>
+       </xsl:template>
+   </xsl:stylesheet>
 
-    ```
+   ```
 >Disclaimer: In order for XSLT Mapping to work, it needs to be adapted accordingly to each scenario.  
 
 7.	Send the final message.

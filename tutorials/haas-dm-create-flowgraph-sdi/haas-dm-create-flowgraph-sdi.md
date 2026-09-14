@@ -81,26 +81,26 @@ Change the types as follows:
 >
 > ```text
 > VIRTUAL TABLE "vt_salary_data" AT "LocalFile"."<NULL>"."<NULL>"."salarydata"
-REMOTE PROPERTY 'dataprovisioning_parameters'='<?xml version="1.0"  encoding="UTF-8" standalone="yes"?>
-<Parameters>
-<Parameter name="FORMAT">CSV</Parameter>
-<Parameter name="FORCE_FILENAME_PATTERN">%.csv</Parameter>
-<Parameter name="PARTITIONS">0</Parameter>
-<Parameter name="CODEPAGE">utf-8</Parameter>
-<Parameter name="LOCALE">en_US</Parameter>
-<Parameter name="SKIP_HEADER_LINES">1</Parameter>
-<Parameter name="ROW_DELIMITER">\n</Parameter>
-<Parameter name="QUOTED_TEXT_CONTAIN_ROW_DELIMITER">false</Parameter>
-<Parameter name="COLUMN_DELIMITER">,</Parameter>
-<Parameter name="EXPONENTIAL">E</Parameter>
-<Parameter name="LENIENT">true</Parameter>
-<Parameter name="COLUMN">ID;INTEGER;</Parameter>
-<Parameter name="COLUMN">SALARY;FLOAT;</Parameter>
-<Parameter name="COLUMN">START_YEAR;INTEGER;</Parameter>
-<Parameter name="COLUMN">GENDER;NVARCHAR(1);</Parameter>
-<Parameter name="COLUMN">REGION;NVARCHAR(4);</Parameter>
-<Parameter name="COLUMN">T-LEVEL;NVARCHAR(200);</Parameter>
-</Parameters>';
+> REMOTE PROPERTY 'dataprovisioning_parameters'='<?xml version="1.0"  encoding="UTF-8" standalone="yes"?>
+> <Parameters>
+> <Parameter name="FORMAT">CSV</Parameter>
+> <Parameter name="FORCE_FILENAME_PATTERN">%.csv</Parameter>
+> <Parameter name="PARTITIONS">0</Parameter>
+> <Parameter name="CODEPAGE">utf-8</Parameter>
+> <Parameter name="LOCALE">en_US</Parameter>
+> <Parameter name="SKIP_HEADER_LINES">1</Parameter>
+> <Parameter name="ROW_DELIMITER">\n</Parameter>
+> <Parameter name="QUOTED_TEXT_CONTAIN_ROW_DELIMITER">false</Parameter>
+> <Parameter name="COLUMN_DELIMITER">,</Parameter>
+> <Parameter name="EXPONENTIAL">E</Parameter>
+> <Parameter name="LENIENT">true</Parameter>
+> <Parameter name="COLUMN">ID;INTEGER;</Parameter>
+> <Parameter name="COLUMN">SALARY;FLOAT;</Parameter>
+> <Parameter name="COLUMN">START_YEAR;INTEGER;</Parameter>
+> <Parameter name="COLUMN">GENDER;NVARCHAR(1);</Parameter>
+> <Parameter name="COLUMN">REGION;NVARCHAR(4);</Parameter>
+> <Parameter name="COLUMN">T-LEVEL;NVARCHAR(200);</Parameter>
+> </Parameters>';
 >```
 
 

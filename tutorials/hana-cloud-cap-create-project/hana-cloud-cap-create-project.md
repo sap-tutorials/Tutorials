@@ -117,9 +117,9 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
 1. Use the following name for your project and click **Next**
 
-    ```Name
-    MyHANAApp
-    ```
+   ```Name
+   MyHANAApp
+   ```
 
     > **This name will be used in different steps**. It is recommended that you do not change it unless you remember to replace it in future tasks.
 
@@ -159,17 +159,17 @@ We are using several dependent Node.js modules in our project. They are referenc
 
 1. From the terminal run the command `npm install`
 
-    ```shell
-    npm install
-    ```
+   ```shell
+   npm install
+   ```
 
     ![npm install](npm_install.png)
 
 1. We will use an open source sample utility called hana-cli to help with development tasks.  From this same terminal window run the command ```npm install -g hana-cli``` in order to install it for later usage.
 
-    ```shell
-    npm install -g hana-cli
-    ```
+   ```shell
+   npm install -g hana-cli
+   ```
 
 ### Initialize local Git repository
 

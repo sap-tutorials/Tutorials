@@ -36,7 +36,7 @@ In this tutorial, you'll learn how to create and customize an IDoc interface. In
 
 3. Switch to the **Logon & Security** tab. Maintain **Language** and **Client** and set the `Current User` flag.
 
-    <!-- border -->![Create RFC destination](idoc-setup-destination.png)
+    ![Create RFC destination](idoc-setup-destination.png)
 
 4. **Save** your changes.
 
@@ -49,7 +49,7 @@ In this tutorial, you'll learn how to create and customize an IDoc interface. In
 
 3. Maintain a description and in the field **RFC destination**, enter the destination you created in the previous step.
 
-    <!-- border -->![Create port](idoc-setup-port.png)
+    ![Create port](idoc-setup-port.png)
 
 4. **Save** your changes.
 
@@ -70,7 +70,7 @@ To process an IDoc message via SAP Application Interface Framework, one of the S
 | Message type  | **`FLIGHTBOOKING_CREATEFROMDAT`**
 | Direction  | **`Inbound`**
 
-    <!-- border -->![Create port](function-module-idoc-type-assignment.png)
+    ![Create port](function-module-idoc-type-assignment.png)
 
 3. **Save** your changes.
 
@@ -88,7 +88,7 @@ To process an IDoc message via SAP Application Interface Framework, one of the S
 
 3. Maintain a description, select the `Process with ALE service` flag and the `Processing by function module` flag.
 
-    <!-- border -->![Create port](inbound-process-code.png)
+    ![Create port](inbound-process-code.png)
 
 4. **Save** your changes.
 
@@ -101,11 +101,11 @@ To process an IDoc message via SAP Application Interface Framework, one of the S
 
 3. In tab **Post Processing: Valid Processors**, enter **Ty.** (agent type)  `US` (User). As **Agent**, enter your user name.
 
-    <!-- border -->![Create partner profile](idoc-setup-partner-profile.png)
+    ![Create partner profile](idoc-setup-partner-profile.png)
 
 4. In the **Inbound** table, choose **Create inbound parameter**. In the upcoming screen, choose or enter **Message Type** `FLIGHTBOOKING_CREATEFROMDAT` and the beforehand created **Process Code** `ZDEMO_FLBOOK`. Lastly, for **Processing by Function Module**, choose `Trigger immediately`.
 
-    <!-- border -->![Add inbound processing](idoc-setup-inbound-processing.png)
+    ![Add inbound processing](idoc-setup-inbound-processing.png)
 
 5. Navigate back to the partner profile and **Save** your changes.
 
@@ -118,11 +118,11 @@ Create a package that serves as the destination for your newly created objects.
    
 2. From the drop-down menu, select **Package**, enter the name **`ZDEMO`**, and press **Enter** or choose **Display or Create Object**. If you have run through other SAP Application Interface Framework tutorials before, the package may exist. In this case, it will be displayed. Otherwise create it. Confirm the dialogue window, enter a meaningful short description for your new package, and choose **Confirm**. If prompted, enter a workbench request and confirm again.
 
-    <!-- border -->![Create Package](object-navigator-create-package.png)
+    ![Create Package](object-navigator-create-package.png)
 
 3. Additionally, create a new function group by selecting **Function Group** from the drop-down menu and enter the name **`ZDEMO`**.
 
-    <!-- border -->![Create Function Group](object-navigator-create-function-group.png)
+    ![Create Function Group](object-navigator-create-function-group.png)
 
 You have successfully created a new package named `ZDEMO` and a new function group named `ZDEMO`.
 
@@ -139,7 +139,7 @@ The **IDoc Structure Generator** is a report that generates most of the required
 | :-----------  | :--------------------
 | **`DEMO_1`**  | **`For AIF IDoc tutorials`**
 
-    <!-- border -->![Define Namespace](define-namespace-new-entries.png)
+    ![Define Namespace](define-namespace-new-entries.png)
 
 3. Press **Enter** to confirm your entry.
 
@@ -180,11 +180,11 @@ Internally, SAP Application Interface Framework works with ABAP Dictionary struc
 | IDoc Processing Scenario | There are several possibilities to monitor and process an IDoc with SAP Application Interface Framework; depending on the scenario the interface is generated with different settings. | **`AIF runtime; Call IDoc function as action`**
 | Customizing Request      | Enter a customizing request if the interface should be transported. | your customizing request
 
-    <!-- border -->![IDoc Structure Generator - Interface Definition](idoc-struc-gen-details.png)
+    ![IDoc Structure Generator - Interface Definition](idoc-struc-gen-details.png)
 
 4. When you've entered all the details, press **F8** or choose **Execute**. The IDoc Structure Generator will start to create the required ABAP Dictionary objects and the interface. Once the report is finished, a summary of what was created is displayed.
 
-    <!-- border -->![IDoc Structure Generator - Display Logs](idoc-struc-gen-display-logs.png)
+    ![IDoc Structure Generator - Display Logs](idoc-struc-gen-display-logs.png)
 
 5. Choose **Continue**.
 
@@ -195,7 +195,7 @@ Internally, SAP Application Interface Framework works with ABAP Dictionary struc
 
 2. Enable **Change** mode. Double-click the newly generated interface `FLBOOK` to open it. Because we like to maintain checks and field mappings, deselect the **Move Corresponding Structures** flag here. We will set it in the structure mapping.
 
-    <!-- border -->![Define Interfaces](aif-cust-interface-define.png)
+    ![Define Interfaces](aif-cust-interface-define.png)
 
 3. **Save** your changes.
 
@@ -209,13 +209,13 @@ Internally, SAP Application Interface Framework works with ABAP Dictionary struc
 
 3. Choose **New Entries** and enter the root node of your interface structure, here **`ZDEMO_1_FLIGHTBOOKING_CREATE`**.
 
-    <!-- border -->![Create New Source Structure](aif-cust-structure-map-source.png)
+    ![Create New Source Structure](aif-cust-structure-map-source.png)
 
 4. Select the new entry and double-click **Assign Destination Structure** in the menu on the left.
 
 5. Choose **New Entries** and enter the **Number of Structure Mapping** **`10`**. As **Destination Structure**, enter the same root node of your interface structure, **`ZDEMO_1_FLIGHTBOOKING_CREATE`**. Finally, select the **Move Corresponding Fields** flag. Unless you define a mapping for a particular field, this ensures that the fields are mapped one to one.
 
-    <!-- border -->![Assign Destination Structures](aif-cust-structure-map-destination.png)
+    ![Assign Destination Structures](aif-cust-structure-map-destination.png)
 
 6. **Save** your changes.
 
@@ -233,7 +233,7 @@ In the following, we like to enrich the incoming flight booking data, that is, t
     | Namespace | **`DEMO_1`**
     | Value Mapping | **`VM_CUSTOMER`**
 
-    <!-- border -->![Assign Destination Structures](aif-cust-structure-map-field-mapping.png)
+    ![Assign Destination Structures](aif-cust-structure-map-field-mapping.png)
 
     Since the value mapping doesn't exist yet, you are asked to create it. Confirm the dialog.
 
@@ -246,7 +246,7 @@ In the following, we like to enrich the incoming flight booking data, that is, t
     | Field Name | **`NAME`**
     | Where Condition for Select Statement | **`ID = '$1'`**
 
-    <!-- border -->![Assign Destination Structures](aif-cust-structure-map-value-mapping.png)
+    ![Assign Destination Structures](aif-cust-structure-map-value-mapping.png)
 
 3. **Save** the value mapping and navigate back to **Define Field Mappings**.
 
@@ -266,7 +266,7 @@ Next, create an action with a function to book the flights in your test scenario
     | Namespace | **`DEMO_1`**
     | Action | **`FLIGHT_CREATE`**
 
-    <!-- border -->![Assign Destination Structures](aif-cust-structure-map-action-assign.png)
+    ![Assign Destination Structures](aif-cust-structure-map-action-assign.png)
 
 2. Since the action doesn't exist yet, you're asked to create it. Confirm the upcoming dialog with **Yes**.
 
@@ -276,11 +276,11 @@ Next, create an action with a function to book the flights in your test scenario
 
     Enter an action description and set the **Commit Mode** to **`COMMIT WORK`** and the **Commit Level** to **`After Each Function`**.
 
-    <!-- border -->![Assign Destination Structures](aif-cust-structure-map-action-define.png)
+    ![Assign Destination Structures](aif-cust-structure-map-action-define.png)
 
 4. Double-click the **Define Functions** node. Create a new function with **Function Number** **`10`** and **Function Module Name** **`ZFLIGHT_CREATE_IDOC`**.
 
-    <!-- border -->![Assign Destination Structures](aif-cust-structure-map-function-define.png)
+    ![Assign Destination Structures](aif-cust-structure-map-function-define.png)
 
     Since the function module doesn't exist yet, you're asked to create it. Confirm the upcoming dialog with **Yes**.
 
@@ -288,34 +288,34 @@ Next, create an action with a function to book the flights in your test scenario
 
     Open the function module, switch to the **Source code** tab and enter the following source code:
 
-    ```ABAP
+   ```ABAP
 
-    FUNCTION ZFLIGHT_CREATE_IDOC .
-    *"----------------------------------------------------------------------
-    *"*"Local Interface:
-    *"  IMPORTING
-    *"     REFERENCE(TESTRUN) TYPE  C
-    *"     REFERENCE(SENDING_SYSTEM) TYPE  /AIF/AIF_BUSINESS_SYSTEM_KEY
-    *"       OPTIONAL
-    *"  TABLES
-    *"      RETURN_TAB STRUCTURE  BAPIRET2
-    *"  CHANGING
-    *"     REFERENCE(DATA)
-    *"     REFERENCE(CURR_LINE)
-    *"     REFERENCE(SUCCESS) TYPE  /AIF/SUCCESSFLAG
-    *"     REFERENCE(OLD_MESSAGES) TYPE  /AIF/BAL_T_MSG
-    *"----------------------------------------------------------------------
+   FUNCTION ZFLIGHT_CREATE_IDOC .
+   *"----------------------------------------------------------------------
+   *"*"Local Interface:
+   *"  IMPORTING
+   *"     REFERENCE(TESTRUN) TYPE  C
+   *"     REFERENCE(SENDING_SYSTEM) TYPE  /AIF/AIF_BUSINESS_SYSTEM_KEY
+   *"       OPTIONAL
+   *"  TABLES
+   *"      RETURN_TAB STRUCTURE  BAPIRET2
+   *"  CHANGING
+   *"     REFERENCE(DATA)
+   *"     REFERENCE(CURR_LINE)
+   *"     REFERENCE(SUCCESS) TYPE  /AIF/SUCCESSFLAG
+   *"     REFERENCE(OLD_MESSAGES) TYPE  /AIF/BAL_T_MSG
+   *"----------------------------------------------------------------------
 
-      CALL FUNCTION '/AIF/IDOC_ACTION_FUNCTION'
-        EXPORTING
-          iv_idoc_function  = 'IDOC_INPUT_FLIGHTBOOKING_CREAT'
-        TABLES
-          return = return_tab
-        CHANGING
-          data = data.
+     CALL FUNCTION '/AIF/IDOC_ACTION_FUNCTION'
+       EXPORTING
+         iv_idoc_function  = 'IDOC_INPUT_FLIGHTBOOKING_CREAT'
+       TABLES
+         return = return_tab
+       CHANGING
+         data = data.
 
-    ENDFUNCTION.
-    ```
+   ENDFUNCTION.
+   ```
 
 6. **Save** and activate your function module.
 
@@ -333,17 +333,17 @@ It's recommended to implement an interface-specific single index table to ensure
 
 1. Create a table via transaction `SE11`. You can use table `/AIF/STD_IDX_TBL` as a template by entering **`/AIF/STD_IDX_TBL`** in the field **Database table**, right-clicking it and choosing **Copy...**. Enter the name **`ZIDOC_RT_IDX`** for the new table and choose **Continue**. When prompted, enter the package name you created earlier.
 
-    <!-- border -->![Create Single Index Table](single-index-table-copy.png)
+    ![Create Single Index Table](single-index-table-copy.png)
 
 2. After creating the single index table, activate it by choosing **Display** and then **Activate**.
 
-    <!-- border -->![Create Single Index Table](single-index-table-activate.png)
+    ![Create Single Index Table](single-index-table-activate.png)
 
 3. Go to **Customizing** (transaction `/AIF/CUST`) and navigate to **SAP Application Interface Framework** > **Error Handling** > **Define Namespace-Specific Features**. Enter your namespace **`DEMO_1`** and choose **Continue**.
 
 4. Choose **New Entries** to create a new entry in **Define Interface-Specific Features**. Enter your interface name **`FLBOOK`** and version **`1`** and enter the name of the newly created single index table **`ZIDOC_RT_IDX`** in the field **Message Index Table**.
 
-    <!-- border -->![Details of Added Entries](single-index-table-define.png)
+    ![Details of Added Entries](single-index-table-define.png)
 
 5. **Save** your changes.
 
@@ -356,7 +356,7 @@ If you want to monitor the newly created interface in the Interface Monitor of t
 
 2. In the menu on the left, navigate to **Define Recipients** by double-clicking it. Choose **New Entries**, enter a meaningful name for your new recipient and add a description.
 
-    <!-- border -->![Define Recipients - Details](define-recipients-details.png)
+    ![Define Recipients - Details](define-recipients-details.png)
 
 3. **Save** your changes.
 
@@ -368,11 +368,11 @@ To be able to see any data in the Interface Monitor or the Message Dashboard, a 
 
 1. Go to **Customizing** (transaction `/AIF/CUST`) and navigate to **SAP Application Interface Framework** > **Error Handling** > **Define Interface-Specific Features**. Enter or select your namespace **`DEMO_1`**, as well as your interface name **`FLBOOK`** and interface version **`1`**. Choose **Continue**.
 
-    <!-- border -->![Select namespace and interface](assign-recipient-enter-namespace.png)
+    ![Select namespace and interface](assign-recipient-enter-namespace.png)
 
 2. In the menu on the left, double-click **Assign Recipients Without Key Fields** and create a new entry. Enter or select the namespace and the recipient you created before.
 
-    <!-- border -->![Assign recipients](assign-recipient-new-entry.png)
+    ![Assign recipients](assign-recipient-new-entry.png)
 
 3. **Save** your changes.
 
@@ -384,11 +384,11 @@ Now the users in charge of monitoring the IDoc must be assigned to the recipient
 
 1. Go to transaction code `/AIF/RECIPIENTS` and select or enter your user name and any additional user names you want to assign to the recipient.
 
-    <!-- border -->![Enter User Name](recipients-enter-user-name.png)
+    ![Enter User Name](recipients-enter-user-name.png)
 
 2. Create a new entry and select the namespace and recipient you created in the steps before. Enter a user number and check the boxes for **Include on Overview Screen** and **Technical User**.
 
-    <!-- border -->![Assign users to recipient ](assign-user-to-recipient.png)
+    ![Assign users to recipient ](assign-user-to-recipient.png)
 
 3. **Save** the new entry.
 
@@ -400,13 +400,13 @@ Before you can create flight bookings, you need to generate test data.
 
 1. To do so, run transaction code `BC_DATA_GEN`, select the standard data record, and execute the report.
 
-    <!-- border -->![Create Data for Flight Data Model](sample-flight-data-gen.png)
+    ![Create Data for Flight Data Model](sample-flight-data-gen.png)
 
 2. Open the **Data Browser** (transaction code `SE16`), select the table **SFLIGHTS**, and choose **Execute**. The generated flight data entries are displayed.
 
 >If you run the requests in step 18, select existing flights from this table. Ensure that the flight date is in the future, otherwise your requests will fail.
 
-    <!-- border -->![Generated Flight Data Entries](sample-flight-data-table.png)
+    ![Generated Flight Data Entries](sample-flight-data-table.png)
 
 
 ### Test IDoc interface
@@ -430,21 +430,21 @@ After the setup is complete, test your settings and verify that the IDoc monitor
     | Sender Type                   | `LS`
     | Message Type                  | **`FLIGHTBOOKING_CREATEFROMDAT`**
 
-    <!-- border -->![Maintain control record](test-idoc-control-record.png)
+    ![Maintain control record](test-idoc-control-record.png)
 
 4. Maintain existing flight data from table `SFLIGHTS`, see above. Maintain a customer ID, e.g., `42` and an agency number, e.g., `109`. As flight class, choose either `Y`, `C` or `F`.
 
-    <!-- border -->![Maintain data record](test-idoc-data-record.png)
+    ![Maintain data record](test-idoc-data-record.png)
 
 5. Then, choose **Standard Inbound**. A dialog pops up informing you that the IDoc was passed to the application.
 
 6. Check the results of your test in the **Interface Monitor** (transaction code `/AIF/IFMON`). You'll only be able to see the new interface if you correctly assigned your user to the recipient.
 
-    <!-- border -->![Interface Monitor](test-interface-monitor.png)
+    ![Interface Monitor](test-interface-monitor.png)
 
 7. When you select the summary line for your interface, you're forwarded to **Monitoring and Error Handling**, where you can see your selected test message(s).
 
-    <!-- border -->![Error Handling](test-error-handling.png)
+    ![Error Handling](test-error-handling.png)
 
 8. In the log message, the internal reference to the flight booking is displayed. It's a combination of the airline ID and the booking ID. Note down the ID. You need it for the next step.
 
@@ -452,11 +452,11 @@ After the setup is complete, test your settings and verify that the IDoc monitor
 
 10. On the next screen, enter **CARRID** and **BOOKID** of the successful created booking. You derive the values from the log message, see above. Then choose **Execute**.
 
-    <!-- border -->![Error Handling](test-table-sbook-filter.png)
+    ![Error Handling](test-table-sbook-filter.png)
 
     As you can see for the chosen table entry, the pass name has been successfully mapped.
 
-    <!-- border -->![Error Handling](test-table-sbook-display.png)
+    ![Error Handling](test-table-sbook-display.png)
 
 Congratulations! You've created, customized and tested an IDoc interface for processing and monitoring in SAP Application Interface Framework.
 

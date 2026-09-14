@@ -52,7 +52,7 @@ You have two options to complete this step:
 
 > Select the option you prefer by clicking on "Video" or "Written instructions" below this step title.
 >
-> <!-- border -->![Tab Option](TabOption.gif)
+> ![Tab Option](TabOption.gif)
 
 [OPTION BEGIN [Video]]
 
@@ -131,7 +131,7 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 5.	Type in the **Port Number**. For the SAP HANA Express Edition, the default Port Number is `39015`.
 
-    <!-- border -->![DBX Remote Source 1](ss-02-DBX-remotesource1.png)
+    ![DBX Remote Source 1](ss-02-DBX-remotesource1.png)
 
 7.	Scroll down to the section **Connection Security** and `enable` the SSL connection.  
 
@@ -141,7 +141,7 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 10.	Click on **Create** to finish this step.
 
-    <!-- border -->![DBX Remote Source 2](ss-03-DBX-remotesource2.png)
+    ![DBX Remote Source 2](ss-03-DBX-remotesource2.png)
 
 11.	Now, when you click on **Remote Sources** in your catalog, the remote source should appear at the bottom left panel.
 
@@ -155,7 +155,7 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 1.	Double-click on the remote source to load it.
 
-    <!-- border -->![DBX Remote Source 3](ss-04-DBX-remotesource3.png)
+    ![DBX Remote Source 3](ss-04-DBX-remotesource3.png)
 
 2.	In the dialogue that opens, you can see all the metadata of the remote source based on the authorization of the user you specified.
 
@@ -163,7 +163,7 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 4.	There, check the box in the row of the table you want to virtualise data from and then click **Create Virtual Object(s)** in the top right corner.
 
-    <!-- border -->![DBX Remote Source Test Table](ss-05-DBX-remotesource-test-table.png)
+    ![DBX Remote Source Test Table](ss-05-DBX-remotesource-test-table.png)
 
 5.	A new dialogue will open asking for the **Object Name** and **Schema**. To indicate the virtual table, we recommend you prefix the object name with **`VT_`** (`VT_SOURCE_TABLE`).
 
@@ -177,7 +177,7 @@ Now that the DP Agent is configured, you can virtualise and replicate data from 
 
 10.	Click on **Open Data** in the top right corner, and your data will be queried from the remote source you have connected to your SAP HANA Cloud, SAP HANA database instance. This data is now successfully virtualised in your SAP HANA Cloud, SAP HANA database instance without needing extra storage space.
 
-    <!-- border -->![DBX Remote Source VT Test Table](ss-06-DBX-remotesource-VT-testtable.png)
+    ![DBX Remote Source VT Test Table](ss-06-DBX-remotesource-VT-testtable.png)
 
 To continue to learn more about SDI connections, you can take a look at the documentation on what components to install, deploy and configure SDI [here](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/LATEST/en-US/3407f4bc6dc2457f92b5353545505ed5.html).
 

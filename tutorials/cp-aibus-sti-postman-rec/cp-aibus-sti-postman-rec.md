@@ -31,11 +31,11 @@ Find more details on the Service Ticket Intelligence concepts [here](https://hel
 
 Select the request `Upload Recommendation Training File (random Q&A - small)`. The training data is already included in the `Body` of the request. Click **Send** to upload the training data. The dataset contains question-article related data and has the following information: `subject`, `datasource` and `article_id`. If you would like to use your own set of training data, please ensure that the data is in CSV file format and encoded in Base64.
 
-<!-- border -->![Upload Training File](upload-training-file.png)
+![Upload Training File](upload-training-file.png)
 
 The service now automatically creates a new model and sets its status to `NEW`. That indicates that the model was just created and has not been trained yet. Both the ID of the new model, as well as its status, can be found in the response of the request.
 
-<!-- border -->![Upload Training File Response](upload-training-file-response.png)
+![Upload Training File Response](upload-training-file-response.png)
 
 
 
@@ -46,15 +46,15 @@ Next, you can start training the model based on the data that was uploaded in th
 
 Therefore, select the request `Start model training` and click **Send**. This will trigger the model training process.
 
-<!-- border -->![Start Model Training](start-model-training.png)
+![Start Model Training](start-model-training.png)
 
 To observe the current status of your model, select the request `Get model status` and click **Send**.
 
-<!-- border -->![Inspect Model Status](model-status.png)
+![Inspect Model Status](model-status.png)
 
 The response of the request includes all the details of your model along with its current status. When training is triggered, the status is `PENDING_TRAINING` which indicates that the model is queued for training. Once training has started, the status changes to `IN_TRAINING`. When training is done, the status changes to `READY`. Make sure to send the request `Get model status` every couple of minutes until training is completed. Training time varies depending on data size and infrastructure resource utilizations. In this example, it should take approximately 10 to 20 minutes to complete.
 
-<!-- border -->![Model Status](model-status-response.png)
+![Model Status](model-status-response.png)
 
 
 
@@ -65,11 +65,11 @@ To actually get solution recommendations for new service requests using the trai
 
 Select the request `Activate model` and click **Send**. This will start the activation process of the model.
 
-<!-- border -->![Activate Model](activate-model.png)
+![Activate Model](activate-model.png)
 
 Use the request `Get model status` from the previous step again to observe the process. The model status will change from `READY` to `LOADING` as the model is being loaded and deployed. This process may take up to 15 minutes on the first activation of your subaccount. Once the status of the model changes to `ACTIVE`, the model is ready and activated.
 
-<!-- border -->![Activate Model](activate-model-response.png)
+![Activate Model](activate-model-response.png)
 
 
 
@@ -83,9 +83,9 @@ Select the request `Recommend Solution`. Open the `Body` tab to see the service 
 
 The request and response look as follows:
 
-<!-- border -->![Get Rec Requests](get-rec-request.png)
+![Get Rec Requests](get-rec-request.png)
 
-<!-- border -->![Get Rec Requests](get-rec-request-response.png)
+![Get Rec Requests](get-rec-request-response.png)
 
 This is the full prediction:
 
@@ -236,7 +236,7 @@ This is the full prediction:
 
 You can also try out the other `POST /Recommend` requests.
 
-<!-- border -->![Get Rec Requests](get-rec-requests.png)
+![Get Rec Requests](get-rec-requests.png)
 
 You have now successfully used Service Ticket Intelligence to get solution recommendations for new service requests.
 

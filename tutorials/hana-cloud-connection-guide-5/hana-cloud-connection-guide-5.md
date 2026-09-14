@@ -49,7 +49,7 @@ On the SAP Software Download Center, the installation package is in the followin
 
 3.	Then right click on **hdbsetup.exe** and choose **Run as administrator**.
 
-    <!-- border -->![Install new SAP HANA Data Provisioning Agent](ss-01-install-new-SAP-HANA-Data-Provisioning-Agent.png)
+    ![Install new SAP HANA Data Provisioning Agent](ss-01-install-new-SAP-HANA-Data-Provisioning-Agent.png)
 
 4.	Choose **Install new SAP HANA Data Provisioning Agent** and specify the installation path.
 
@@ -57,7 +57,7 @@ On the SAP Software Download Center, the installation package is in the followin
 
 6.	Next, specify the username (`<domain>\<username>`) and password to use for the agent service. The user that runs the agent service must have read and write access to the installation directory so configuration files can be updated.
 
-    <!-- border -->![Services running](ss-02-services-running.png)
+    ![Services running](ss-02-services-running.png)
 
 7.	To check if you agent is running, type services on the windows search bar and select **Run as Administrator**.
 
@@ -75,7 +75,7 @@ On the SAP Software Download Center, the installation package is in the followin
 
 1.	Start the command prompt on your system and type the following command:
 
-    ```Shell/Bash
+   ```Shell/Bash
 set DPA_INSTANCE=C:\usr\sap\dataprovagent
 ```
 
@@ -85,10 +85,10 @@ set DPA_INSTANCE=C:\usr\sap\dataprovagent
 
 4.	Start the command-line agent configuration tool by typing the following command:
 
-    ```Shell/Bash
+   ```Shell/Bash
 agentcli.bat –configAgent
 ```
-    <!-- border -->![Start command line config tool](ss-03-start-command-line-config-tool.png)
+    ![Start command line config tool](ss-03-start-command-line-config-tool.png)
 
 5.	Select **SAP HANA Connection**.
 
@@ -102,7 +102,7 @@ agentcli.bat –configAgent
 
 10.	Then the credentials for the SAP HANA User for Agent Messaging. Also specify whether to create a new SAP HANA User for Agent Messaging.
 
-    <!-- border -->![SAP HANA Connection](ss-04-SAP-HANA-connection.png)
+    ![SAP HANA Connection](ss-04-SAP-HANA-connection.png)
 
 
 
@@ -120,12 +120,12 @@ agentcli.bat –configAgent
 
 3.	Select **Display adapter** to view the list of available adapters. Then note the ABAP Adapter name and go back.
 
-    <!-- border -->![Adapter registration – Display adapter](ss-05-adapter-registration-display-adapter.png)
+    ![Adapter registration – Display adapter](ss-05-adapter-registration-display-adapter.png)
 
 
 4.	Next select **Register Adapters** and type in the adapter name as `ABAPAdapter`.
 
-    <!-- border -->![Register Adapter](ss-06-register-adapter.png)
+    ![Register Adapter](ss-06-register-adapter.png)
 
 The selected adapter has been registered with SAP HANA and can be selected when creating a remote source.
 
@@ -140,12 +140,12 @@ The selected adapter has been registered with SAP HANA and can be selected when 
 
 2.	Expand **Catalog** under your database and right click on **Remote Sources**. Select **Add Remote Source**.
 
-    <!-- border -->![SAP HANA Database Explorer - Catalog](ss-07-SAP-HANA-database-explorer-catalog.png)
+    ![SAP HANA Database Explorer - Catalog](ss-07-SAP-HANA-database-explorer-catalog.png)
 
 
 3.	Under **Adapter Name** select the `ABAPAdapter` that you registered above.
 
-    <!-- border -->![Add Remote Source](ss-08-add-remote-source.png)
+    ![Add Remote Source](ss-08-add-remote-source.png)
 
 4.	Then enter the **Application Server**, **Client**, and **Instance number** of your SAP ERP system.
 
@@ -179,7 +179,7 @@ You can test this connection by creating virtual tables in SAP HANA Cloud, SAP H
 
 5.	Alternative for the last step is, you can map this in SQL as given below:
 
-    ```SQL
+   ```SQL
 create virtual table "TableName" at "RemoteSource"."<NULL>"."<NULL>"."ABAP_CDS.TableName";
 select top 100 * from "SchemaName"."TableName";
 ```
@@ -190,7 +190,7 @@ select top 100 * from "SchemaName"."TableName";
 
 8.	To create a snapshot replica, you can enter the following SQL statement:
 
-    ```SQL
+   ```SQL
 alter virtual table "RemoteSource"."TableName" add shared snapshot replica;
 ```
 

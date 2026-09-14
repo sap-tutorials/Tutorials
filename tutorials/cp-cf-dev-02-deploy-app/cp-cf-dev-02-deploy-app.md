@@ -53,7 +53,7 @@ Make sure that the **Applications** tab is selected in the navigation menu.
 
  1.  Choose **Browse** to select the **`manifest.yml`** file (the one that you edited in the previous tutorial) in the same folder.
 
-    ![Deployment dialog](Deploy-dialog.PNG)
+   ![Deployment dialog](Deploy-dialog.PNG)
 
  1.  Choose **Deploy**.
 

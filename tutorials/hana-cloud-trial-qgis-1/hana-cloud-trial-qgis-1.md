@@ -58,7 +58,7 @@ No matter if you're new to QGIS or if you're new to SAP HANA Cloud – or even b
 
 Here, you should not need more than 2 minutes. To install the SAP HANA ODBC Driver, which is part of the SAP HANA Client, you just need to download it from [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools) and execute the installer for your operating system.
 
-<!-- border -->![SAP HANA ODBC](ss-01-sap-hana-odbc.png)
+![SAP HANA ODBC](ss-01-sap-hana-odbc.png)
 
 There is not much to consider here since this is a Next-Next-Finish-Installer. (Is that an even an official expression? Well, it should be.)
 There are install packages for [Windows](https://tools.hana.ondemand.com/additional/hanaclient-latest-windows-x64.zip), [macOS](https://tools.hana.ondemand.com/additional/hanaclient-latest-macosx-x64.tar.gz) and [Linux](https://tools.hana.ondemand.com/additional/hanaclient-latest-linux-x64.tar.gz) available.
@@ -72,7 +72,7 @@ This is essentially another simple installer without specific considerations. As
 
 > Note: The installation packages for QGIS 3.18 are 1.2GB in size. Depending on server speed, this download may last a while.
 
-<!-- border -->![QGIS](ss-02-qgis.png)
+![QGIS](ss-02-qgis.png)
 
 Once you downloaded and installed QGIS 3.18, you can start the client. Make sure that you see SAP HANA as a data provider in the data browser on the left-hand side.
 
@@ -93,7 +93,7 @@ The general instructions on how to connect QGIS to SAP HANA database in SAP HANA
 
 2. Click on **Actions** and then on **Copy SQL endpoint**. The endpoint will be copied to your clipboard. Keep it there.
 
-    <!-- border -->![SQL Endpoint](ss-03-qgis-sql-endpoint.png)
+    ![SQL Endpoint](ss-03-qgis-sql-endpoint.png)
 
 
 

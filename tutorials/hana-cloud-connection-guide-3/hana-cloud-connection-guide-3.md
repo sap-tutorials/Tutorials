@@ -47,7 +47,7 @@ On the website [SAP Software Download Center](https://support.sap.com/en/my-supp
 
 3.	Then right click on **hdbsetup.exe** and choose **Run as administrator**.
 
-    <!-- border -->![Install new SAP HANA Data Provisioning Agent](ss-01-install-new-SAP-HANA-data-provisioning-agent.png)
+    ![Install new SAP HANA Data Provisioning Agent](ss-01-install-new-SAP-HANA-data-provisioning-agent.png)
 
 4.	Choose **Install new SAP HANA Data Provisioning Agent** and specify the installation path.
 
@@ -55,7 +55,7 @@ On the website [SAP Software Download Center](https://support.sap.com/en/my-supp
 
 6.	Next, specify the username (`<domain>\<username>`) and password to use for the agent service. The user that runs the agent service must have read and write access to the installation directory so configuration files can be updated.
 
-    <!-- border -->![Services running](ss-02-services-running.png)
+    ![Services running](ss-02-services-running.png)
 
 7.	To check if you agent is running, type **services** on the windows search bar and select **Run as Administrator**.
 
@@ -73,7 +73,7 @@ On the website [SAP Software Download Center](https://support.sap.com/en/my-supp
 
 1.	Start the command prompt on your system and type the following command:
 
-    ```Shell/Bash
+   ```Shell/Bash
 set DPA_INSTANCE=C:\usr\sap\dataprovagent
 ```
 
@@ -83,17 +83,17 @@ set DPA_INSTANCE=C:\usr\sap\dataprovagent
 
 3.	Start the command-line agent configuration tool by typing the following command:
 
-    ```Shell/Bash
+   ```Shell/Bash
 agentcli.bat –configAgent
 ```
 
-    <!-- border -->![Start command line config tool](ss-03-start-command-line-config-tool.png)
+    ![Start command line config tool](ss-03-start-command-line-config-tool.png)
 
 4.	Select **SAP HANA Connection**.
 
 5.	Next, select **Connect to SAP HANA Cloud via JDBC** and specify true to use an encrypted connection over JDBC.
 
-    <!-- border -->![SAP HANA Connection](ss-04-SAP-HANA-connection.png)
+    ![SAP HANA Connection](ss-04-SAP-HANA-connection.png)
 
 6.	Then specify the **host name** and **port** for the SAP HANA Cloud instance.
 
@@ -121,11 +121,11 @@ agentcli.bat –configAgent
 
 3.	Select **Display Adapters** to view the list of available adapters. Then note the ABAP Adapter name and go back.
 
-    <!-- border -->![Adapter registration – Display adapter](ss-05-adapter-registration-display-adapter.png)
+    ![Adapter registration – Display adapter](ss-05-adapter-registration-display-adapter.png)
 
 4.	Next select **Register Adapter** and type in the adapter name as `ABAPAdapter`.
 
-    <!-- border -->![Register Adapter](ss-06-register-adapter.png)
+    ![Register Adapter](ss-06-register-adapter.png)
 
 The selected adapter has been registered with SAP HANA and can be selected when creating a remote source.
 
@@ -140,11 +140,11 @@ The selected adapter has been registered with SAP HANA and can be selected when 
 
 2.	Expand Catalog under your database and right click on **Remote Sources**. Select **Add Remote Source**.
 
-    <!-- border -->![SAP HANA Database Explorer - Catalog](ss-07-SAP-HANA-database-explorer-catalog.png)
+    ![SAP HANA Database Explorer - Catalog](ss-07-SAP-HANA-database-explorer-catalog.png)
 
 3.	Under Adapter Name select the `ABAPAdapter` that you registered above.
 
-    <!-- border -->![Add Remote Source](ss-08-add-remote-source.png)
+    ![Add Remote Source](ss-08-add-remote-source.png)
 
 4.	Then enter the **Application Server**, **Client**, and **Instance number** of your SAP BW on SAP HANA or SAP BW/4HANA system.
 

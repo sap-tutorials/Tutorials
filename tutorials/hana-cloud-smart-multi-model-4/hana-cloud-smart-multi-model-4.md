@@ -41,63 +41,63 @@ Note, that generally, the center point of the smallest circle, which includes tw
 
 You can see in this image the circle you will create:
 
-<!-- border -->![transportation area](ss-01-transportation-area.png)
+![transportation area](ss-01-transportation-area.png)
 
 1. First, select the two points from the previous tutorials using this statement:
 
-    ```SQL
+   ```SQL
 SELECT
 	ST_GeomFromText('POINT (706327.107445 5710259.94449)', 32630) AS START_PT,
 	SHAPE AS TARGET_PT
 FROM LONDON_POI lp
 WHERE "osmid" = 6274057185;
-    ```
+   ```
 
 
 
 2. To create a line geometry, which is connecting both points, you can then use the function [`ST_MakeLine`(*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/57758b2af95346db9a478a53ec2c4ccb.html).
 
-    ```SQL
+   ```SQL
 SELECT ST_MakeLine(START_PT, TARGET_PT) AS CONN_LINE
 FROM
 (
 	-- previous statement
 );
-    ```
+   ```
 
 3. To retrieve an arbitrary point on this line, we need to use function [`ST_LineInterpolatePoint`(*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/c8efe60825514403865090fdf1dc1550.html), which takes a fraction of the line as argument. For retrieving the center point of the line, we pass the value 0.5.
 
-    ```SQL
+   ```SQL
 SELECT CONN_LINE.ST_LineInterpolatePoint(0.5) AS CENTER_PT
 FROM
 (
 	-- previous statement
 );
-    ```
+   ```
 
 4. As a final step, we would like to draw a circle with radius distance (start, target)/2 + 500 around `CENTER_PT`. The respective function, which takes the radius as an input, is called [`ST_Buffer`(*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/010c53e227a94966bb009d52d9ec47a2.html).
 
-    ```SQL
+   ```SQL
 SELECT CENTER_PT.ST_Buffer(4835) AS AREA
 FROM
 (
-    -- previous statement
+   -- previous statement
 );
-    ```
+   ```
 
 5. The above steps can be combined into a single select using method chaining.
 
-    ```SQL
+   ```SQL
 SELECT
-    ST_MakeLine(
-        ST_GeomFromText('POINT (706327.107445 5710259.94449)', 32630),
-        SHAPE
-    )
-    .ST_LineInterpolatePoint(0.5)
-    .ST_Buffer(5000) AS AREA
+   ST_MakeLine(
+       ST_GeomFromText('POINT (706327.107445 5710259.94449)', 32630),
+       SHAPE
+   )
+   .ST_LineInterpolatePoint(0.5)
+   .ST_Buffer(5000) AS AREA
 FROM LONDON_POI
 WHERE "osmid" = 6274057185;
-    ```
+   ```
 
 
 ### Add flags for all nodes in a circle
@@ -106,7 +106,7 @@ Next, you need to flag all nodes of the transportation network located in the ci
 
 1. First, we need to enhance the existing vertex table by column `in_scope`.
 
-    ```SQL
+   ```SQL
 ALTER TABLE LONDON_VERTICES ADD (IN_SCOPE INTEGER);
 ```
 
@@ -114,32 +114,32 @@ ALTER TABLE LONDON_VERTICES ADD (IN_SCOPE INTEGER);
 
 3. Instead of using an [UPDATE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/LATEST/en-US/20ff268675191014964add3d17700909.html) statement, we will use [MERGE INTO](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/LATEST/en-US/3226201f95764a57810dd256c9524d56.html), which allows a more complex update logic.
 
-    ```SQL
+   ```SQL
 MERGE INTO LONDON_VERTICES lv
 USING
 (
 	-- previous statement begin --
 	SELECT
-    	ST_MakeLine(
-        	ST_GeomFromText('POINT (706327.107445 5710259.94449)', 32630),
-        	SHAPE
-    	)
-    	.ST_LineInterpolatePoint(0.5)
-    	.ST_Buffer(5000) AS AREA
+   	ST_MakeLine(
+       	ST_GeomFromText('POINT (706327.107445 5710259.94449)', 32630),
+       	SHAPE
+   	)
+   	.ST_LineInterpolatePoint(0.5)
+   	.ST_Buffer(5000) AS AREA
 	FROM LONDON_POI
 	WHERE "osmid" = 6274057185
-    	-- previous statement end --
+   	-- previous statement end --
 ) circle ON 1=1
 WHEN MATCHED THEN UPDATE SET lv.IN_SCOPE = CIRCLE.AREA.ST_Intersects(SHAPE);
 ```
 
 4. You can confirm that you properly selected the nodes by using your preferred tool for visualizing the result set with this query:
 
-    ```SQL
+   ```SQL
 SELECT SHAPE FROM LONDON_VERTICES WHERE IN_SCOPE = 1;
-    ```
+   ```
 
-    <!-- border -->![relevant nodes](ss-02-relevant-nodes.png)
+    ![relevant nodes](ss-02-relevant-nodes.png)
 
 By creating a circle in your relevant area and flagging nodes in this circle, you have successfully identified a sub-network for transportation, which you will consider for finding your path through London in the following exercises.
 

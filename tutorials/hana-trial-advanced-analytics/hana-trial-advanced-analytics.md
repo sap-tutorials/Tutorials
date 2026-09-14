@@ -46,7 +46,7 @@ Thanks to the multiple engines in SAP HANA Cloud, we will also combine text proc
 
 Finally, we will use the **geospatial capabilities** in SAP HANA Cloud to find developers closer to Thomas' location in Munich, Germany.
 
-<!-- border -->![How do we help Thomas](thomas.png)
+![How do we help Thomas](thomas.png)
 
 ---
 
@@ -56,11 +56,11 @@ This tutorial uses validations to track completion and make sure you are all set
 
 1. **Sign in or register** by clicking on the `person` icon in the top right corner. If you're registering for the first time, all you need is an email address.
 
-    <!-- border -->![Log in to Community](zoomlogin.gif)
+    ![Log in to Community](zoomlogin.gif)
 
 2. Use your email address to log in via SAP Universal ID.
 
-    <!-- border -->![Log in to Community](community.png)
+    ![Log in to Community](community.png)
 
 ### Sign up for a trial or free tier in the SAP Business Technology Platform
 
@@ -72,31 +72,31 @@ Now that you have an SAP BTP account (either Free Tier or Free Trial) you need t
 
 1. Complete the tutorial steps in [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-3). This wizard used in the above tutorial will walk you through the process of creating an SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Connections" setting. This setting will allow you to develop against your SAP HANA Cloud using a variety of external development tools including the SAP Business Application Studio.
 
-    <!-- border -->![Allow All IP addresses](trial4.png)
+    ![Allow All IP addresses](trial4.png)
 
 2. Also while in the "Advanced Settings", we want to configure the Instance Mapping. The HANA Cloud instance lives at your BTP sub account level and isn't immediately available in either the Cloud Foundry nor Kyma runtimes. In order to use HANA for HDI (HANA Deployment Infrastructure) or CAP (Cloud Application Programming Model) based development, you need to map the instance to your runtime of choice. For this Tutorial we will map to the default Cloud Foundry runtime of your trial account.  
 
-    <!-- border -->![Add Mapping](addMapping.png)
+    ![Add Mapping](addMapping.png)
 
 3. In the Environment Instance ID of the Mapping supply the Organizational ID from your Cloud Foundry Environment (which can be found in the Subaccount Overview in the SAP BTP Cockpit).  
 
-    <!-- border -->![Add Mapping Instance](addMappingInstance.png)
+    ![Add Mapping Instance](addMappingInstance.png)
 
 4. In the Environment Group of the Mapping supply the Space ID from your Cloud Foundry Environment (which can be found in the URL of the BTP Cockpit after navigating to the Space details).
 
-    <!-- border -->![Add Mapping Space](addMappingSpace1.png)
+    ![Add Mapping Space](addMappingSpace1.png)
 
-    <!-- border -->![Add Mapping Space](addMappingSpace2.png)
+    ![Add Mapping Space](addMappingSpace2.png)
 
 5. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial or free tier.
 
-    <!-- border -->![HANA Cloud Instance](trial5.png)
+    ![HANA Cloud Instance](trial5.png)
 
 6. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
 
 7. Finally it is important to take note that the SAP HANA Cloud instance in both the free tier and free trial shuts down at the end of each day automatically to save costs from unused systems. Therefore you must return to this SAP HANA Cloud administration screen each day you want to use  SAP HANA Cloud and choose to start the system from the **Action** menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
 
-    <!-- border -->![HANA Cloud stopped](hana_stopped.png)
+    ![HANA Cloud stopped](hana_stopped.png)
 
 8. As an optional step if you are completely new to the SAP HANA Cloud environment, you might want to consider also going through this tutorial: [Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-4) in order to familiarize yourself with the various tools that can be used to manage and develop with SAP HANA Cloud.
 
@@ -106,39 +106,39 @@ Now that you have an SAP BTP account (either Free Tier or Free Trial) you need t
 
 2. Creating SAP Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Business Technology Platform subaccount and click the **Services -> Instances and Subscriptions** option.
 
-    <!-- border -->![Subscriptions](BTP_Subscriptions.png)
+    ![Subscriptions](BTP_Subscriptions.png)
 
 3. Locate the **SAP Business Application Studio** entry and click **Go to Application**
 
-    <!-- border -->![Go To Application](go_to_application.png)
+    ![Go To Application](go_to_application.png)
 
 4. Choose **Create Dev Space**. Please NOTE: In the SAP BTP trial and free tier you are limited to only two Dev Spaces and only one can be active at a time. If you have performed other tutorials, you might already have reached your maximum. In that case you might have to delete one of the other dev spaces in order to continue with this tutorial.
 
-    <!-- border -->![Create Dev Space](AppStudio Dev Space Manager_.png)
+    ![Create Dev Space](AppStudio Dev Space Manager_.png)
 
 5. Enter **HANA** for your dev space name and choose **SAP HANA Native Application** as the kind of application you are creating.
 
-    <!-- border -->![Choose Dev Space type](dev_space_type.png)
+    ![Choose Dev Space type](dev_space_type.png)
 
 6. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. For example you might want to add the optional SAP HANA Performance Tools to your HANA Dev Space.
 
-    <!-- border -->![Dev Space Extensions](dev_space_extensions.png)
+    ![Dev Space Extensions](dev_space_extensions.png)
 
 7. Once all selections are completed, press **Create Dev Space**
 
-    <!-- border -->![Create Dev Space](create_dev_space.png)
+    ![Create Dev Space](create_dev_space.png)
 
 8. The Dev Space will then begin starting and the process will take a minute or so as your cloud environment is being created
 
-    <!-- border -->![Dev Space Creating](dev_space_creating.png)
+    ![Dev Space Creating](dev_space_creating.png)
 
 9. Once the Dev Space reaches the green status of **RUNNING**, you can click on the name of the Dev Space and it will load into the editor within your browser
 
-    <!-- border -->![Load Dev Space](load_dev_space.png)
+    ![Load Dev Space](load_dev_space.png)
 
 10. You'll be redirected to your newly created SAP Business Application Studio Dev Space. We recommend you bookmark this URL so it's easier for you to access this dev space of your SAP Business Application Studio in the future
 
-    <!-- border -->![New Dev Space](new_dev_space.png)
+    ![New Dev Space](new_dev_space.png)
 
 ### Configure SAP Business Application Studio Dev Space
 
@@ -146,39 +146,39 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
 1. In the left side of the Business Application Studio click on the Cloud Foundry targets icon
 
-    <!-- border -->![CF Not Set](cf_not_set.png)
+    ![CF Not Set](cf_not_set.png)
 
 2. Now in the Cloud Foundry Targets window you can expand either Service or Applications and then click on the Logon icon to continue the configuration process
 
-    <!-- border -->![Login Required](cf_login_required.png)
+    ![Login Required](cf_login_required.png)
 
 3. The Cloud Foundry Sign In and Targets window will then open at the right side of the SAP Business Application Studio. The first input will prompt you for the API endpoint
 
-    <!-- border -->![API Endpoint](api_endpoint.png)
+    ![API Endpoint](api_endpoint.png)
 
 4. The default value proposed may NOT be the correct value, you need to confirm! The value can be found in the SAP BTP cockpit at the Subaccount level
 
-    <!-- border -->![API Endpoint at Subaccount Level](api_endpoint_from_subaccount.png)
+    ![API Endpoint at Subaccount Level](api_endpoint_from_subaccount.png)
 
 5. The next input field will ask you for the email address you used to create your SAP BTP account
 
-    <!-- border -->![Email](email.png)
+    ![Email](email.png)
 
 6. The next input will ask you for your SAP BTP account password. After entering the password, the **Sign in** button will become enabled. Press that.
 
-    <!-- border -->![Password](password.png)
+    ![Password](password.png)
 
 7. If you successfully sign in, the next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
 
-    <!-- border -->![Organization](organization.png)
+    ![Organization](organization.png)
 
 8. The final input will ask you for your Space. You can then press **Apply**.
 
-    <!-- border -->![Space](space_2.png)
+    ![Space](space_2.png)
 
 9. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see any service instances or application instances from the target space. You will see less items than this screenshot.
 
-    <!-- border -->![Org and Space Set Correctly](org_space_set_correctly.png)
+    ![Org and Space Set Correctly](org_space_set_correctly.png)
 
 ### Clone repository
 
@@ -186,19 +186,19 @@ You can now clone an existing GitHub repository into your workspace. This reposi
 
 1. Return to the **Explorer** view and choose **Clone from Git** from the SAP Business Application Studio Welcome screen
 
-    <!-- border -->![Clone From Git](clone_from_git.png)
+    ![Clone From Git](clone_from_git.png)
 
 2. Enter the following URL and press **Enter**. ```https://github.com/SAP-samples/hana-cf-get-started-trial```
 
-    <!-- border -->![Confirm Clone](confirm_clone_URL.png)
+    ![Confirm Clone](confirm_clone_URL.png)
 
 3. If asked for the project location, choose the **/home/user/projects/** folder and then press **OK**
 
-    <!-- border -->![Choose Repository Location](repo_location.png)
+    ![Choose Repository Location](repo_location.png)
 
 4. The clone log will be shown in the bottom of the screen. Upon completion, please press the **Open** button in the dialog in the bottom right.
 
-    <!-- border -->![Complete Clone](clone_complete.png)
+    ![Complete Clone](clone_complete.png)
 
 > At any time if you get stuck, you can view the completed solution in GitHub as well at this URL: [Project Solution](https://github.com/SAP-samples/hana-cf-get-started-trial/tree/solution)
 
@@ -210,31 +210,31 @@ Artifacts in the current project will be translated into a physical database sch
 
 1. Expand the **SAP HANA PROJECTS** window and press the **Bind** button
 
-    <!-- border -->![Bind](bind.png)
+    ![Bind](bind.png)
 
 1. In the first dialog at the top of the screen, choose **Bind to an HDI container**
 
-    <!-- border -->![Bind](bindToHDI.png)
+    ![Bind](bindToHDI.png)
 
 1. In the dialog that appears near the top of the screen, choose the **Create a new service instance**
 
-    <!-- border -->![Create New Service Instance](create_new_service.png)
+    ![Create New Service Instance](create_new_service.png)
 
 1. Accept the default service instance name
 
-    <!-- border -->![Default Name](default_service_instance_name.png)
+    ![Default Name](default_service_instance_name.png)
 
 1. Press **Enter**.  It will take a minute or so to complete the creation
 
-    <!-- border -->![Create Service](creating_service_instance1.png)
+    ![Create Service](creating_service_instance1.png)
 
 1. Occasionally the binding will fail on the first try with a timing issue. If you receive this error, just repeat the process of binding but this time you will see the HDI container (my-hdi) in the **Select a service instance** list (since it did actually create successfully). Choose it from the list to continue.
 
-    <!-- border -->![Bind Failure](bindFailure.png)
+    ![Bind Failure](bindFailure.png)
 
 1. Once created, return to the **SAP HANA PROJECTS** view. Press the **Deploy** button.
 
-    <!-- border -->![Press Deploy](press_deploy.png)
+    ![Press Deploy](press_deploy.png)
 
     > ### What's going on?
     > The design-time definitions will be deployed by HANA Deployment Infrastructure - a service layer in SAP HANA.
@@ -245,47 +245,47 @@ Artifacts in the current project will be translated into a physical database sch
 
     You will see the build log in the console. Wait until the build has finished successfully.
 
-    <!-- border -->![Deploy Log](deploy_log.png)
+    ![Deploy Log](deploy_log.png)
 
 1. Press the **Open HDI container** button.
 
-    <!-- border -->![Open HDI container](open_hdi_container.png)
+    ![Open HDI container](open_hdi_container.png)
 
     The database explorer will start loading in a new browser tab. If asked to add a database connection, click **No**.
 
 1. You can see your container with a schema and the table `COMMUNITY`. They were generated from definitions in the cloned repository.
 
-    <!-- border -->![Database Explorer Tables](database_explorer_tables.png)
+    ![Database Explorer Tables](database_explorer_tables.png)
 
 ### NoSQL time! Load data into JSON table
 
 1. Open an SQL console.
 
-    <!-- border -->![SAP Web IDE](20.png)
+    ![SAP Web IDE](20.png)
 
-2. Paste the following statements to insert new JSON documents into your table and run <!-- border -->![run](run.png) the statements.
+2. Paste the following statements to insert new JSON documents into your table and run ![run](run.png) the statements.
 
     > The statements may be marked with errors by the editor. You can ignore the errors.
 
-    ```SQL
-    insert into "COMMUNITY" (DATA)  values('{"name" : "Sol" , "hint" :"I love using SAP HANA to develop applications", "learns_from" :"Sam", "office" :"Toronto", "tenure" :17, "geolocation" : "Point( -79.380186 43.647944 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Sam", "hint" :"I like developing in different languages and SQLScript", "learns_from" :"Sol", "office" :"Walldorf", "tenure" :3, "geolocation" : "Point( 8.636789 49.29487 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Jose", "hint" :"I use SAP Cloud platform to deploy cloud-native applications", "learns_from" :"Sol", "office" :"Palo Alto", "tenure" :5, "geolocation" : "Point( -122.146603 37.398989 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Charlotte", "hint" :"Developing apps with SAP HANA has been a game changer. I used to need several databases, now I only need one", "learns_from" :"Sam", "office" :"Australia", "tenure" :6, "geolocation" : "Point( 151.209092 -33.834509 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Maria", "hint" :"I am a coder. In my country, we say developing with SAP HANA is muito legal", "learns_from" :"Charlotte", "office" :"Sao Leopoldo", "tenure" :3, "geolocation" : "Point( -51.148393 -29.796256 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Wei", "hint" :"System administrator here, excited to learn you technologies", "learns_from" :"Sam", "office" :"Beijing", "tenure" :12, "geolocation" : "Point( 121.601862 31.20235 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Hiroshi", "hint" :"I developed many applications with both HANA and SQL Anywhere. I like both", "learns_from" :"Sol", "office" :"Fukuoka", "tenure" :8, "geolocation" : "Point( 130.399091 33.592314 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Saanvi", "hint" :"Developing apps from bangalore to the world", "learns_from" :"Sol", "office" :"Bangalore", "tenure" :7, "geolocation" : "Point( 77.637116 12.972402 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Rick", "hint" :"My team plays with databases regularly. HANA is one of the favorites", "learns_from" :"Maria", "office" :"Irving", "tenure" :11, "geolocation" : "Point( -96.938460 32.873744 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Ann", "hint" :"I like meeting other fellow coders", "learns_from" :"Casey", "office" :"San Ramon", "tenure" :1, "geolocation" : "Point( -121.961661 37.766586 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Hugo", "hint" :"I had never developed such cool apps before", "learns_from" :"Maria", "office" :"Monterrey", "tenure" :2, "geolocation" : "Point( -100.353643 25.64757 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Sofia", "hint" :"I connected SAP Analytics Cloud to HANA", "learns_from" :"Hiroshi", "office" :"Copenhagen", "tenure" :1, "geolocation" : "Point( 12.589387 55.710640 )" }');
-    insert into "COMMUNITY" (DATA) values('{"name" :"Muhammed", "hint" :"I used to prefer Excel spreadsheets but Lumira changed that for me", "learns_from" :"Charlotte", "office" :"Ra anana", "tenure" :11, "geolocation" : "Point( 34.882402 32.201905 )" }');
-    ```
+   ```SQL
+   insert into "COMMUNITY" (DATA)  values('{"name" : "Sol" , "hint" :"I love using SAP HANA to develop applications", "learns_from" :"Sam", "office" :"Toronto", "tenure" :17, "geolocation" : "Point( -79.380186 43.647944 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Sam", "hint" :"I like developing in different languages and SQLScript", "learns_from" :"Sol", "office" :"Walldorf", "tenure" :3, "geolocation" : "Point( 8.636789 49.29487 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Jose", "hint" :"I use SAP Cloud platform to deploy cloud-native applications", "learns_from" :"Sol", "office" :"Palo Alto", "tenure" :5, "geolocation" : "Point( -122.146603 37.398989 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Charlotte", "hint" :"Developing apps with SAP HANA has been a game changer. I used to need several databases, now I only need one", "learns_from" :"Sam", "office" :"Australia", "tenure" :6, "geolocation" : "Point( 151.209092 -33.834509 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Maria", "hint" :"I am a coder. In my country, we say developing with SAP HANA is muito legal", "learns_from" :"Charlotte", "office" :"Sao Leopoldo", "tenure" :3, "geolocation" : "Point( -51.148393 -29.796256 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Wei", "hint" :"System administrator here, excited to learn you technologies", "learns_from" :"Sam", "office" :"Beijing", "tenure" :12, "geolocation" : "Point( 121.601862 31.20235 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Hiroshi", "hint" :"I developed many applications with both HANA and SQL Anywhere. I like both", "learns_from" :"Sol", "office" :"Fukuoka", "tenure" :8, "geolocation" : "Point( 130.399091 33.592314 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Saanvi", "hint" :"Developing apps from bangalore to the world", "learns_from" :"Sol", "office" :"Bangalore", "tenure" :7, "geolocation" : "Point( 77.637116 12.972402 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Rick", "hint" :"My team plays with databases regularly. HANA is one of the favorites", "learns_from" :"Maria", "office" :"Irving", "tenure" :11, "geolocation" : "Point( -96.938460 32.873744 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Ann", "hint" :"I like meeting other fellow coders", "learns_from" :"Casey", "office" :"San Ramon", "tenure" :1, "geolocation" : "Point( -121.961661 37.766586 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Hugo", "hint" :"I had never developed such cool apps before", "learns_from" :"Maria", "office" :"Monterrey", "tenure" :2, "geolocation" : "Point( -100.353643 25.64757 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Sofia", "hint" :"I connected SAP Analytics Cloud to HANA", "learns_from" :"Hiroshi", "office" :"Copenhagen", "tenure" :1, "geolocation" : "Point( 12.589387 55.710640 )" }');
+   insert into "COMMUNITY" (DATA) values('{"name" :"Muhammed", "hint" :"I used to prefer Excel spreadsheets but Lumira changed that for me", "learns_from" :"Charlotte", "office" :"Ra anana", "tenure" :11, "geolocation" : "Point( 34.882402 32.201905 )" }');
+   ```
 
     You should get success messages as in the following example:
 
-    <!-- border -->![SAP Web IDE](21.png)
+    ![SAP Web IDE](21.png)
 
     > ### What's going on?
 
@@ -298,16 +298,16 @@ Artifacts in the current project will be translated into a physical database sch
 
 3. The following statement demonstrates a use of the JSON Object Expression in the `select` statement. Run this statement to complete the validation below:
 
-    ```SQL
-    SELECT *
-    	FROM JSON_TABLE(COMMUNITY.DATA, '$'
-    	COLUMNS
-        (
-            LOCATION NVARCHAR(200) PATH '$.office',
-            NAME NVARCHAR(200) PATH '$.name'
-        )
-    	) AS JT where NAME = 'Maria'
-    ```
+   ```SQL
+   SELECT *
+   	FROM JSON_TABLE(COMMUNITY.DATA, '$'
+   	COLUMNS
+       (
+           LOCATION NVARCHAR(200) PATH '$.office',
+           NAME NVARCHAR(200) PATH '$.name'
+       )
+   	) AS JT where NAME = 'Maria'
+   ```
 
     > You can clear the statements before entering new ones in SQL console (recommended).
     > Alternatively select (highlight) the statements you want to execute.
@@ -320,19 +320,19 @@ You will select people whose experience is 2 years or more. You'll also need to 
 
 1. Create the columnar table first by returning to the SAP Business Application Studio editor view and creating a file named `DEVS.hdbtable` in the `db/src` folder.
 
-    <!-- border -->![DEVS table](devs_table.png)
+    ![DEVS table](devs_table.png)
 
     Here is the content for this file.
 
-    ```SQL
-    column table "DEVS"(
-      "DEVNAME" nvarchar(100) PRIMARY KEY,
-      "LEARNS_FROM" nvarchar(100),
-      "HINT_TEXT" nvarchar(1000),
-      "CITY" nvarchar(100),
-      "LON_LAT" nvarchar(200)
-    )
-    ```
+   ```SQL
+   column table "DEVS"(
+     "DEVNAME" nvarchar(100) PRIMARY KEY,
+     "LEARNS_FROM" nvarchar(100),
+     "HINT_TEXT" nvarchar(1000),
+     "CITY" nvarchar(100),
+     "LON_LAT" nvarchar(200)
+   )
+   ```
 
     > ### Note `column` table definition in the statement
     > SAP HANA creates columnar tables by default. The `column` keyword is optional, but is used in the example to remind about the native column-based storage of tables in SAP HANA.
@@ -342,32 +342,32 @@ You will select people whose experience is 2 years or more. You'll also need to 
 
     Upon completion of the build, return to the database explorer view of your HDI container and refresh the Tables selection. You should see the new table listed under `TABLES`:
 
-    <!-- border -->![SAP Web IDE](22.png)
+    ![SAP Web IDE](22.png)
 
 3. Insert the data from the documents store into the columnar table, filtering out community members with tenure below 1 year:
 
-    ```SQL
-    insert into DEVS
-    SELECT NAME, LEARNS_FROM, HINT, OFFICE, GEOLOCATION
-    	FROM JSON_TABLE(COMMUNITY.DATA, '$'
-    	COLUMNS
-        (
-            LOCATION NVARCHAR(200) PATH '$.office',
-            NAME NVARCHAR(200) PATH '$.name',
-            LEARNS_FROM NVARCHAR(200) PATH '$.learns_from',
-            HINT NVARCHAR(200) PATH '$.hint',
-            OFFICE NVARCHAR(200) PATH '$.office',
-            GEOLOCATION NVARCHAR(200) PATH '$.geolocation',
-            TENURE NVARCHAR(30) PATH '$.tenure'
-        )
-    	) AS JT where to_bigint(TENURE) > 1
-    ```
+   ```SQL
+   insert into DEVS
+   SELECT NAME, LEARNS_FROM, HINT, OFFICE, GEOLOCATION
+   	FROM JSON_TABLE(COMMUNITY.DATA, '$'
+   	COLUMNS
+       (
+           LOCATION NVARCHAR(200) PATH '$.office',
+           NAME NVARCHAR(200) PATH '$.name',
+           LEARNS_FROM NVARCHAR(200) PATH '$.learns_from',
+           HINT NVARCHAR(200) PATH '$.hint',
+           OFFICE NVARCHAR(200) PATH '$.office',
+           GEOLOCATION NVARCHAR(200) PATH '$.geolocation',
+           TENURE NVARCHAR(30) PATH '$.tenure'
+       )
+   	) AS JT where to_bigint(TENURE) > 1
+   ```
 
 4. Count the inserted records in the new columnar table:
 
-    ```SQL
-    select count(*) from "DEVS";
-    ```
+   ```SQL
+   select count(*) from "DEVS";
+   ```
 
 Insert the result of the previous SQL command in the box below to complete the following validation:
 
@@ -383,7 +383,7 @@ from DEVS
 where contains(HINT_TEXT, '%develop%')
 ```
 
-<!-- border -->![Connect to SQLpad](34.png)
+![Connect to SQLpad](34.png)
 
 You will use these results to create a table (as a new `hdbtable` artifact as you did earlier) back in the Business Application Studio tab to show who learns from whom. This table will be used to create a graph workspace.
 

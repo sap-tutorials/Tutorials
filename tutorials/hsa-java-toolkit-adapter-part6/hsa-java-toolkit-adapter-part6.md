@@ -53,11 +53,11 @@ Ensure that the server you have placed your custom adapter, including the requir
 
   1. Select Window > Preferences in your `IDE`.
 
-    ![Setting Default URL Preferences](window-preferences.png)
+   ![Setting Default URL Preferences](window-preferences.png)
 
   2. With the Preferences window now open, select SAP HANA streaming analytics and, if necessary, change the `Default Server URL` to match the `ip address` of the machine you are running the Streaming Server. Click `Apply` and then `OK`.
 
-    ![Setting Default URL Preferences](preferences-streaming-analytics.png)
+   ![Setting Default URL Preferences](preferences-streaming-analytics.png)
 
 
 ### Run your Streaming Project

@@ -53,7 +53,7 @@ To use L-Diversity, you only need to slightly change the statement for creating 
 
 4.	You need to add a `COLUMN PARAMETERS` expression defining the type of data in the sensitive column {`"is sensitive":true`}
 
-    ```SQL
+   ```SQL
 CREATE VIEW "[view_name]" ("id", "[column1]", "[column_n], "[column_sensitive]")
 AS
 SELECT "id", "[column1]", "[column_n], "[column_sensitive]"
@@ -76,23 +76,23 @@ The higher the value you specify for the L-parameter, the more people in each gr
 
 1. First, you must create a sample table `PERSONALDATA` that has sensitive information on people regarding their age. Run the following SQL codes in your SAP HANA Database Explorer.
 
-    ```SQL
+   ```SQL
 CREATE COLUMN TABLE PERSONALDATA (
-  -- sequence column
+ -- sequence column
 ID BIGINT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  -- identifier
+ -- identifier
 NAME NVARCHAR(10),
-  -- quasi-identifiers (QIDs) (to be generalized)
+ -- quasi-identifiers (QIDs) (to be generalized)
 GENDER NVARCHAR(1) NOT NULL,
 CITY NVARCHAR(10) NOT NULL,
-  -- sensitive data
+ -- sensitive data
 AGE NVARCHAR(3) NOT NULL);
 ```
-    > The SQL codes used in this tutorial are available to you in a GitHub repository. You can find them [here](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Group:%20Data%20Anonymization%20in%20SAP%20HANA%20Cloud/Tutorial%204_Create%20an%20Anonymized%20View%20using%20L-Diversity.sql).
+   > The SQL codes used in this tutorial are available to you in a GitHub repository. You can find them [here](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Group:%20Data%20Anonymization%20in%20SAP%20HANA%20Cloud/Tutorial%204_Create%20an%20Anonymized%20View%20using%20L-Diversity.sql).
 
 2. Now, you need to insert information into each column of your table.
 
-    ```SQL
+   ```SQL
 INSERT INTO PERSONALDATA VALUES ('Peter', 'm', 'Berlin', '30');
 INSERT INTO PERSONALDATA VALUES ('Sigrid', 'f', 'Cologne', '31');
 INSERT INTO PERSONALDATA VALUES ('François', 'm', 'Paris', '24');
@@ -105,7 +105,7 @@ INSERT INTO PERSONALDATA VALUES ('Fabienne', 'f', 'Toulouse', '28');
 
 3. Based on the table created above, here is an example of how a completed statement could look like for an anonymized view on a table that contains two quasi-identifying columns (gender and location) as well as a sensitive age column. In this view, at least `K=2` people should be indistinguishable based on their quasi-identifiers and at least `L=2` people should have different age values:
 
-    ```SQL
+   ```SQL
 CREATE VIEW PERSONALDATA_L_ANON (ID, GENDER, LOCATION, AGE)
 AS SELECT ID, GENDER, CITY AS LOCATION, AGE
 FROM PERSONALDATA
@@ -120,11 +120,11 @@ COLUMN AGE PARAMETERS '{"is_sensitive":true}');
 
 This is what the data looked like before anonymization:
 
-<!-- border -->![l-diversity data before](ss-01-l-diversity-data-before.png)
+![l-diversity data before](ss-01-l-diversity-data-before.png)
 
 The anonymized view looks like this:
 
-<!-- border -->![l-diversity data after](ss-02-l-diversity-data-after.png)
+![l-diversity data after](ss-02-l-diversity-data-after.png)
 
 Here you can see that location has been anonymized to level 2 (*) to achieve that at least 2 individuals have different age values in a group of people who share the same quasi-identifying attributes. In this case, everyone who is male or female.
 
@@ -132,7 +132,7 @@ Here you can see that location has been anonymized to level 2 (*) to achieve tha
 
 If we would have only used k-anonymity, we would not be able to leverage privacy guarantees, because, for example, two female individuals from France share the same age (28), therefore revealing their sensitive information:
 
-<!-- border -->![l-diversity data comparison k=2](ss-03-l-diversity-data-comparison.png)
+![l-diversity data comparison k=2](ss-03-l-diversity-data-comparison.png)
 
 Keep in mind that if you use K-Anonymity with L-Diversity, you can still [combine both with the advanced parameters like min/max, loss, or weighted quasi-identifiers](https://help.sap.com/viewer/1d2f0ecc83b34dbf9aa5d08a48be2377/2.0.05/en-US/a6fa451ac1cb4dde96401ea504ade772.html) as well as [data change strategies](https://help.sap.com/viewer/1d2f0ecc83b34dbf9aa5d08a48be2377/2.0.05/en-US/068cfef6953e49de9945c16a36e67171.html).
 

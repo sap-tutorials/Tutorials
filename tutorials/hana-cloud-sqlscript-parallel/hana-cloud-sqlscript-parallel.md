@@ -27,48 +27,48 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 
 1. Return to your procedure called `get_po_header_data`.
 
-    <!-- border -->![Existing Procedure](1_1.png)
+    ![Existing Procedure](1_1.png)
 
 2. Define two tabular output parameters which will be used to explicitly pass the results of the SELECT statements to the caller.
 
-    <!-- border -->![Define output](1_2.png)
+    ![Define output](1_2.png)
 
 3. Next, assign SELECT statements to the output parameters as shown here.
 
-    <!-- border -->![assign select](1_3.png)
+    ![assign select](1_3.png)
 
 4. The completed code should be similar to this.
 
-    ```SQLCRIPT
-    PROCEDURE "get_po_header_data"(
-             OUT EX_PO_CREATE_CNT TABLE(
-               CREATE_CNT INTEGER,
-               "CREATEDBY" NVARCHAR(255)),
-            OUT EX_PO_CHANGE_CNT TABLE(
-               CHANGE_CNT INTEGER,
-               "MODIFIEDBY" NVARCHAR(255))  )
-       LANGUAGE SQLSCRIPT
-       SQL SECURITY INVOKER
-       --DEFAULT SCHEMA <default_schema_name>
-       READS SQL DATA AS
-    BEGIN
+   ```SQLCRIPT
+   PROCEDURE "get_po_header_data"(
+            OUT EX_PO_CREATE_CNT TABLE(
+              CREATE_CNT INTEGER,
+              "CREATEDBY" NVARCHAR(255)),
+           OUT EX_PO_CHANGE_CNT TABLE(
+              CHANGE_CNT INTEGER,
+              "MODIFIEDBY" NVARCHAR(255))  )
+      LANGUAGE SQLSCRIPT
+      SQL SECURITY INVOKER
+      --DEFAULT SCHEMA <default_schema_name>
+      READS SQL DATA AS
+   BEGIN
 
-    ex_po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "CREATEDBY"
-         FROM "OPENSAP_PURCHASEORDER_HEADERS" WHERE ID IN (
-                         SELECT "POHEADER_ID"
-                              FROM "OPENSAP_PURCHASEORDER_ITEMS"
-              WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
-                GROUP BY  "CREATEDBY";
+   ex_po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "CREATEDBY"
+        FROM "OPENSAP_PURCHASEORDER_HEADERS" WHERE ID IN (
+                        SELECT "POHEADER_ID"
+                             FROM "OPENSAP_PURCHASEORDER_ITEMS"
+             WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
+               GROUP BY  "CREATEDBY";
 
-    ex_po_change_cnt = SELECT COUNT(*) AS CHANGE_CNT, "MODIFIEDBY"
-         FROM "OPENSAP_PURCHASEORDER_HEADERS"  WHERE ID IN (
-                         SELECT "POHEADER_ID"
-                              FROM "OPENSAP_PURCHASEORDER_ITEMS"
-              WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
-                 GROUP BY  "MODIFIEDBY";
+   ex_po_change_cnt = SELECT COUNT(*) AS CHANGE_CNT, "MODIFIEDBY"
+        FROM "OPENSAP_PURCHASEORDER_HEADERS"  WHERE ID IN (
+                        SELECT "POHEADER_ID"
+                             FROM "OPENSAP_PURCHASEORDER_ITEMS"
+             WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
+                GROUP BY  "MODIFIEDBY";
 
-    END
-    ```
+   END
+   ```
 
 
 ### Save, deploy, run and check results
@@ -76,21 +76,21 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 
 1. Save the procedure.
 
-    <!-- border -->![Save Procedure](2_1.png)
+    ![Save Procedure](2_1.png)
 
 2. Perform a **Deploy**
 
-    <!-- border -->![Deploy](2_2.png)
+    ![Deploy](2_2.png)
 
 3. Use what you have learned and return to the Database Explorer page and run the procedure again.
 
-    <!-- border -->![DBX](2_3.png)
+    ![DBX](2_3.png)
 
 4. The CALL statement will be inserted into a new "SQL" tab. Click the **Run** button
 
-    <!-- border -->![Run](2_4.png)
+    ![Run](2_4.png)
 
 5. Check the execution time again, you may notice that it is a bit faster this time depending on your system. The reason is that these SQL statements are now executed in parallel.
 
-    <!-- border -->![Check execution time](2_5.png)
+    ![Check execution time](2_5.png)
 

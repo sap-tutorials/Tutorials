@@ -48,29 +48,29 @@ author_profile: https://github.com/mariajosesap
 6. Add this `Xpath` Expression in the Processing Tab: `/AppGyverSalesOrder/paymentData` and select `Nodelist` as the `Valuetype`. It is needed to select `Nodelist` as there is a list in the main payload: 
 
     <!-- cpes-file db/schema.cds -->
-    ```JSON
-    {
-    "AppGyverSalesOrder": {
-        "customer": {
-        "ObjectID": "<Object ID from SAP C4C>",
-        "BuyerPartyID": <BuyerPartyID from SAP C4C>
-        },
-        "paymentData": {
-        "amount": <Payment transaction amount to be processed in Stripe>,
-        "customer": "<stripe customer id>",
-        "currency": "<currency selected in stripe account>",
-        "source": "<card id>",
-        "description": "Test payment via CPI"
-        },
-        "product": [
-        {
-            "ProductID": "<Product ID from SAP C4C>",
-            "Quantity": <Product quantity to be purchased>
-        }
-        ]
-    }
-    }
-    ```
+   ```JSON
+   {
+   "AppGyverSalesOrder": {
+       "customer": {
+       "ObjectID": "<Object ID from SAP C4C>",
+       "BuyerPartyID": <BuyerPartyID from SAP C4C>
+       },
+       "paymentData": {
+       "amount": <Payment transaction amount to be processed in Stripe>,
+       "customer": "<stripe customer id>",
+       "currency": "<currency selected in stripe account>",
+       "source": "<card id>",
+       "description": "Test payment via CPI"
+       },
+       "product": [
+       {
+           "ProductID": "<Product ID from SAP C4C>",
+           "Quantity": <Product quantity to be purchased>
+       }
+       ]
+   }
+   }
+   ```
 
     >Note: Bear in mind that the "customer" and "product" objects are included as part of the whole scenario. You'll need them for requesting SAP Sales and Service Core a sales order creation, which you'll see in the next tutorial.
 

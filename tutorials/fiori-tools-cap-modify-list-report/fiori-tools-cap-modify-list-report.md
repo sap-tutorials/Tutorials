@@ -31,19 +31,16 @@ In this step, you will learn how to add filters to the List Report page of your 
 
 1. From the Application Information page, click on the **ListReport** page.
 
-    <!-- border -->
     ![Open List Report Page](t3-open-list-report-page-app-info.png)
 
     The Page Editor view opens up listing all the major page elements in the application outline structure.
 
 2. Press the **+** icon in the **Filter Fields** sub-node of the **Filter Bar** node on the outline. It becomes visible, once you hover over the sub-node.
    
-    <!-- border -->
     ![Add Filter Fields Icon](t3-add-filter-fields.png)
 
 3.  When prompted, choose **category_code** as **Filter Field** and press **Add**.
     
-    <!-- border -->
     ![Add Filter Fields Icon](t3-add-filter-fields-dialog.png)  
 
     The new filter field is added to the filter bar. The application preview (if started) is automatically refreshed to display it.  
@@ -83,12 +80,10 @@ In this step, you will learn how to enhance the value help defined in the projec
 
     - In the Properties pane displayed to the right of the outline, find the **Display Type** property. Currently it shows **Value Help (base layer)**, indicating that value help is defined in the layer lower than this app. To enhance the value help settings, choose **Value Help** instead.
 
-      <!-- border -->
       ![Filter Properties](t3-initial-load-filter-properties.png)
 
     - In the pop-up dialog, make sure **Display as Dropdown** is switched on, press **Add Column** under **Results List**,  choose **desc** in the **Property** column and press **Apply**.  
 
-      <!-- border -->
       ![Value Help Dialog](t3-value-help-dialog-updated.png)
 
 3. Application preview is refreshed and displays the **Category** filter as drop-down list and shows the value help with the description column.
@@ -103,14 +98,12 @@ In this step, you will learn how to configure the application to load data autom
 1. In the Page Editor, select the **table** node on the outline to show the properties of the table.  
 2.  In the Properties pane, locate the **Initial Load** property and set it to **Enabled**.  
 
-    <!-- border -->
     ![Initial Load](t3-initial-load-table-properties-initial-load-true.PNG)
 
 >To easily find the specific property in the Properties pane, you can use the Search Properties field in the top right corner.
 
 3. After the application is refreshed, the table data will be loaded automatically.  
 
-    <!-- border -->
     ![Add Column](t3-initial-load-table-preview.png)
 
 
@@ -120,12 +113,10 @@ In this step, you will learn how to enhance the list report table with additiona
 
 1. In the Page Editor, press the **+** icon in the **Column** sub-node of the **Table** node on the outline and choose **Add Basic Columns**.
 
-    <!-- border -->
     ![Add Column](t3-add-column.png)
 
 2. When prompted, choose **title** in the **Columns** field
 
-    <!-- border -->
     ![Add Column Dialog](t3-add-title-column.png)
 
     > You can filter the list of suggestions by typing a few characters of the option you want to choose. This will filter the list of suggestions.
@@ -134,7 +125,6 @@ In this step, you will learn how to enhance the list report table with additiona
 
     The application preview refreshes and displays the column added to the table.  
 
-    <!-- border -->
     ![Annotation Cursor](t3-annotation-line-item-LR.PNG)
 
     > If your preview window is not wide enough, the last column is not visible unless its Importance property is set to High or Medium.

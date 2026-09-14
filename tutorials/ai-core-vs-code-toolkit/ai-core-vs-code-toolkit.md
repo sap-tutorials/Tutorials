@@ -38,11 +38,11 @@ You need a Docker repository to store your AI code on the cloud in the form of D
 
 Click on the profile button (your profile name) and then select **Account Settings**.
 
-<!-- border -->![image](img/docker-1.png)
+![image](img/docker-1.png)
 
 Select **Security** from the navigation bar and click **New Access Token**.
 
-<!-- border -->![image](img/docker-2.png)
+![image](img/docker-2.png)
 
 Follow the guided steps, and then store the token that you receive in your local system.
 
@@ -56,7 +56,7 @@ Follow the guided steps, and then store the token that you receive in your local
 
 Run your Docker Desktop. You will observe "whale icon" on your tray when Docker Desktop is running.
 
-<!-- border -->![image](img/docker-desktop.png)
+![image](img/docker-desktop.png)
 
 
 ### Write AI code for house price prediction
@@ -91,7 +91,7 @@ test_r2_score = clf.score(test_x, test_y)
 print(f"Test Data Score {test_r2_score}")
 ```
 
-<!-- border -->![image](img/code-main.png)
+![image](img/code-main.png)
 
 Create another file `requirements.txt` in the same directory. Here you will mention which python libraries are required to execute your code.
 
@@ -103,7 +103,7 @@ Paste the following snippet into `requirements.txt`.
 sklearn==0.0
 ```
 
-<!-- border -->![image](img/code-requirements.png)
+![image](img/code-requirements.png)
 
 The code builds a model using the [California Housing Dataset](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset) available in Scikit-Learn. Note that the code neither reads a datafile nor stores the model. We will cover both of these in a different tutorial.
 
@@ -133,13 +133,13 @@ RUN chgrp -R 65534 /app && \
     chmod -R 777 /app
 ```
 
-<!-- border -->![image](img/code-docker.png)
+![image](img/code-docker.png)
 
 You may notice that you did not specify the command to run the script `main.py` in the `Dockerfile`. This command will be written into the AI workflow and is covered later in this tutorial.
 
 Open your terminal and navigate to your `hello-aicore-code` directory.  You will use the terminal to build your Docker image.
 
-<!-- border -->![image](img/navigate.png)
+![image](img/navigate.png)
 
 Copy and edit the following command to build your docker image. The command follows the format `docker build -t <DOCKER_REGITRY>/<YOUR_DOCKER_USERNAME>/<IMAGE_NAME>:<TAG_NAME>`. So for example, if you are using your organization's registry which has the URL `myteam.myorg`, The command should be `docker build -t myteam.myorg/yourusername/house-price:01 .`
 
@@ -153,7 +153,7 @@ docker buildx build --load --platform=<YOUR_DOCKER_PLATFORM>  -t docker.io/<YOUR
 
 The result of this command should be:
 
-<!-- border -->![image](img/docker-build.png)
+![image](img/docker-build.png)
 
 
 
@@ -170,7 +170,7 @@ docker login docker.io
 
 Copy and paste your generated Docker Access Token to use as your password. For security reasons, your input will not be printed on the screen.
 
-<!-- border -->![image](img/docker-login.png)
+![image](img/docker-login.png)
 
 
 ### Upload a Docker image to the cloud
@@ -180,7 +180,7 @@ Copy and paste your generated Docker Access Token to use as your password. For s
 docker push docker.io/<YOUR_USERNAME>/house-price:01
 ```
 
-<!-- border -->![image](img/docker-push.png)
+![image](img/docker-push.png)
 
 
 ### Adding GitHub
@@ -189,24 +189,24 @@ Here we will be adding our GitHub repository to AI core.
 
 **Step 1:** Select Ai core connection > Go inside admin operations > right click on GitHub repository and click on "Register git repository".
 
-<!-- border -->![](img/Adding_GitHub1.png)
+![](img/Adding_GitHub1.png)
 
 **Step 2:** A pop up will open enter the values as follows
 
-<!-- border -->![](img/Adding_GitHub2.png)
+![](img/Adding_GitHub2.png)
 
-<!-- border -->![](img/Adding_GitHub3.png)
+![](img/Adding_GitHub3.png)
 
-<!-- border -->![](img/Adding_GitHub4.png)
+![](img/Adding_GitHub4.png)
 
 You created the token from from Github.com you can reffer to [here to learn how create Git Token](https://developers.sap.com/tutorials/ai-core-helloworld.html#7ab4912e-2277-496b-84d9-7f1c9ef2365c)
 
-<!-- border -->![](img/Adding_GitHub5.png)
+![](img/Adding_GitHub5.png)
 
 
 Step 3: Fill the details GitHub URL, Name for GitHub, Username, password/token and press enter. This would mark as Completion of adding GitHub.
 
-<!-- border -->![](img/Adding_GitHub6.png)
+![](img/Adding_GitHub6.png)
 
 ### Creating an application
 
@@ -214,7 +214,7 @@ Here we add an application from the GitHub repository we just added to AI core.
 
 **Step 1:** Select Ai core connection > Go inside admin operations > right click on Applications and click on Register Application. A Pop up will open
 
-<!-- border -->![](img/Creating_application1.png)
+![](img/Creating_application1.png)
 
 
 Step 2: Fill the details like application Name, GitHub URL, For following this tutorial enter Git version as HEAD (you can choose any specific commit for the same repository, but if you are using HEAD make sure it's in uppercase), also enter the path to Argo templates and press enter. 
@@ -222,13 +222,13 @@ This would mark as Completion of registering an application.
 
 **Please follow screenshots below**
 
-<!-- border -->![](img/Creating_application2.png)
+![](img/Creating_application2.png)
 
-<!-- border -->![](img/Creating_application3.png)
+![](img/Creating_application3.png)
 
-<!-- border -->![](img/Creating_application4.png)
+![](img/Creating_application4.png)
 
-<!-- border -->![](img/Creating_application5.png)
+![](img/Creating_application5.png)
 
 ### Setting up docker secret
 
@@ -238,7 +238,7 @@ Docker secrets are required to Perform the authentication while fetching Docker 
 
 **On hub.docker.com**
  Click on profile > Go to settings > go to security and click on create Access Tokens.
-<!-- border -->![](img/docker1.png)
+![](img/docker1.png)
 for more info you can reffer [here](https://developers.sap.com/tutorials/ai-core-code.html#9219aeb5-63bb-460a-b5a4-a2d1dd4db740).
 
 
@@ -246,7 +246,7 @@ for more info you can reffer [here](https://developers.sap.com/tutorials/ai-core
 
 **Step 1 :** Select Ai core connection > Go inside admin operations > right click on Docker Credentials and click on create docker credentials.
 
-<!-- border -->![](img/Connecting_docker1.png)
+![](img/Connecting_docker1.png)
 
 **Step 2 :** A pop up will open
 
@@ -254,15 +254,15 @@ for more info you can reffer [here](https://developers.sap.com/tutorials/ai-core
 
 And Docker credentials would be created.
 
-<!-- border -->![](img/Connecting_docker2.png)
+![](img/Connecting_docker2.png)
 
-<!-- border -->![](img/Connecting_docker3.png)
+![](img/Connecting_docker3.png)
 
 Enter the your docker secret secret creds that we created in the previous step
 
-<!-- border -->![](img/Connecting_docker4.png)
+![](img/Connecting_docker4.png)
 
-<!-- border -->![](img/Connecting_docker5.png)
+![](img/Connecting_docker5.png)
 
 
 ### Uploading the dataset to S3
@@ -287,19 +287,19 @@ Object store credentials are required to access the data stored inside S3 bucket
 
 Step 1: Select Ai core connection > Go inside ML operations > right click on Object store creds and click on register Object store creds
 
-<!-- border -->![](img/Creating_object_store1.png)
+![](img/Creating_object_store1.png)
 
 Step 2: enter all the bucket details like Bucket access id, secret name and region and path to the dataset. Object store secret should be **default**
 
 You can follow the Steps below.
 
-<!-- border -->![](img/Creating_object_store2.png)
+![](img/Creating_object_store2.png)
 
 Enter your Bucket Name
 
-<!-- border -->![](img/Creating_object_store4.png)
+![](img/Creating_object_store4.png)
 
-<!-- border -->![](img/Creating_object_store5.png)
+![](img/Creating_object_store5.png)
 
 Enter your AWS Access Key ID
 
@@ -310,23 +310,23 @@ Enter your AWS Access Secret Key
 
 Step 1: Select Ai core connection > Go inside ML operations > > Go inside ML Scenarios > Name of the Scenario you created > right click on Artifacts and click on Create Artifact.
 
-<!-- border -->![](img/Artifact1.png)
+![](img/Artifact1.png)
 
 Step 2: Enter the artifact name for reference, choose type as dataset and enter the artifact URL as _AI://<object\_credStore\_name>/Path\_to\_dataset_, and the description for your reference.
 
 A pop-up will appear on the screen enter the values as per the screenshots below.
 
-<!-- border -->![](img/Artifact2.png)
+![](img/Artifact2.png)
 
 **Choose dataset as an artifact type.**
 
-<!-- border -->![](img/Artifact3.png)
+![](img/Artifact3.png)
 
 **Choose ai://default/data as an artifact URL**
 
-<!-- border -->![](img/Artifact4.png)
+![](img/Artifact4.png)
 
-<!-- border -->![](img/Artifact5.png)
+![](img/Artifact5.png)
 
 ### Creating a Configuration
 
@@ -336,35 +336,35 @@ Step 2: Go inside ML Scenarios and you would be able to see all the Scenarios th
 
 Step 3: Go inside the Scenario and click and right click on Create training configuration. 
 
-<!-- border -->![](img/training_config1.png)
+![](img/training_config1.png)
 
 Step 4: A pop up will appear on the top of screen Enter all the required details as per the Argo template and press enter It will create the Configuration that we will use to run the training.
 
-<!-- border -->![](img/training_config2.png)
+![](img/training_config2.png)
 
-<!-- border -->![](img/training_config3.png)
+![](img/training_config3.png)
 
-<!-- border -->![](img/training_config4.png)
+![](img/training_config4.png)
 
-<!-- border -->![](img/training_config5.png)
+![](img/training_config5.png)
 
 ### Running Training
 
 Go inside training configurations and choose the created Configuration and right click on Execution and click on Start execution to start the training.
 
-<!-- border -->![](img/Running_Training1.png)
+![](img/Running_Training1.png)
 
 Step 2: Expand the execution to see the code status of execution.
 
-<!-- border -->![](img/Running_Training2.png)
+![](img/Running_Training2.png)
 
 Step 3 : Right click on the execution id to perform operations related to execution we are choosing check execution logs to see the status of our training.
 
-<!-- border -->![](img/Running_Training3.png)
+![](img/Running_Training3.png)
 
 Step 4: A pop up appears at the bottom of VS code where you will be able to see execution logs of the extension.
 
-<!-- border -->![](img/Running_Training4.png)
+![](img/Running_Training4.png)
 
 Step 5: Once the execution is complete and the status shows as 'Completed,' you can proceed with the deployment.
 
@@ -375,34 +375,34 @@ Step 5: Once the execution is complete and the status shows as 'Completed,' you 
 
 As soon as training ends the second part would be to deploy the model. So, we will be again creating a deployment configuration using the same steps as we used for creating the configuration for training but this time we would refer these steps under serving configurations.
 
-<!-- border -->![](img/Deployment1.png)
+![](img/Deployment1.png)
 
 Choose the values in pop-up as shown below
 
-<!-- border -->![](img/Deployment2.png)
+![](img/Deployment2.png)
 
-<!-- border -->![](img/Deployment3.png)
+![](img/Deployment3.png)
 
-<!-- border -->![](img/step16_1.png)
+![](img/step16_1.png)
 
 Then we will choose the created configuration and right click on deployments and click on start deployment to deploy the model.
 
-<!-- border -->![](img/Deployment4.png)
+![](img/Deployment4.png)
 
 Once the deployment starts, we would be able to see the Deployment deployment URL by Right click on view Deployment details. To get the deployment URL.
 
-<!-- border -->![](img/Deployment5.png)
+![](img/Deployment5.png)
 
 A Output will open at bottom of VS code showing Deployment details.
 
-<!-- border -->![](img/step16_2.png)
+![](img/step16_2.png)
 
 
 you can refer at : <https://developers.sap.com/tutorials/ai-core-setup.html#6ba18db2-51b7-4c79-baea-df58471b5c42> under Postman Section on how to Download and Setup postman with AI core.
 
 And we would be moving towards inferencing the model using the API by sending the post request to the Deployment URL.
 
-<!-- border -->![predict](img/Deployment7.jpeg)
+![predict](img/Deployment7.jpeg)
 
 Json Body shown in Screen shot
 

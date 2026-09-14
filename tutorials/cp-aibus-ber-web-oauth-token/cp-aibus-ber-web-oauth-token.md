@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 
 To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Use Free Tier to Set Up Account for Business Entity Recognition and Get Service Key](cp-aibus-ber-booster-free-key) or [Use Trial to Set Up Account for Business Entity Recognition and Get Service Key](cp-aibus-ber-booster-key).
 
-<!-- border -->![BER Service Keys](service-key-details.png)
+![BER Service Keys](service-key-details.png)
 
 
 
@@ -37,7 +37,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-<!-- border -->![BER TOKEN](web-browser.png)
+![BER TOKEN](web-browser.png)
 
 You should receive a response like the following:
 

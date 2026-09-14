@@ -82,15 +82,15 @@ SAP HANA HDB client installation supports both GUI and console methods.
 
     The following file path is created:
 
-    ```bash
-    hdb_client_windows/HDB_CLIENT_WINDOWS_X86_32
-    ```
+   ```bash
+   hdb_client_windows/HDB_CLIENT_WINDOWS_X86_32
+   ```
 
-    or
+   or
 
-    ```bash
-    hdb_client_windows/HDB_CLIENT_WINDOWS_X86_64
-    ```
+   ```bash
+   hdb_client_windows/HDB_CLIENT_WINDOWS_X86_64
+   ```
 
 2.  Navigate to the `HDB_CLIENT_WINDOWS_86_32` or `HDB_CLIENT_WINDOWS_X86_64` folder.
 

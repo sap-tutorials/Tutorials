@@ -33,19 +33,19 @@ By combining in-memory storage with columnar store, data operations are performe
 
 1. Complete the tutorial steps in [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-3). This wizard used in this tutorial will walk you through the process of creating an SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Connections" setting. This setting will allow you to develop against your SAP HANA Cloud instance using a variety of external development tools, including the SAP Business Application Studio.
 
-    <!-- border -->![Allow All IP addresses](trial4.png)
+    ![Allow All IP addresses](trial4.png)
 
 1. Once your system is running we need to update the configuration before you use it for development. Click on the three dots and then choose `ManageConfiguration`.
 
-    <!-- border -->![Manage Configuration](ManageConfiguration.png)
+    ![Manage Configuration](ManageConfiguration.png)
 
 1. Go to the `Instance Mapping` section of the Configuration. The HANA Cloud instance lives at your BTP sub account level and isn't immediately available in either the Cloud Foundry nor Kyma runtimes. In order to use HANA for HDI (HANA Deployment Infrastructure) or CAP (Cloud Application Programming Model) based development, you need to map the instance to your runtime of choice. For this Tutorial we will map to the default Cloud Foundry runtime of your trial account.  
 
-    <!-- border -->![Add Mapping](addMapping.png)
+    ![Add Mapping](addMapping.png)
 
 1. In the Environment Instance ID of the Mapping supply the Organizational ID from your Cloud Foundry Environment (which can be found in the Subaccount Overview in the SAP BTP Cockpit).
 
-    <!-- border -->![Add Mapping Instance](addMappingInstance.png)
+    ![Add Mapping Instance](addMappingInstance.png)
 
 1. We do not need to map to an Environment Group (a Cloud Foundry space). If we leave this optional field empty, all spaces within the org will be automatically mapped.
 
@@ -53,11 +53,11 @@ By combining in-memory storage with columnar store, data operations are performe
 
 1. You should now have a new SAP HANA Cloud instance created in the SAP BTP trial or free tier ready for development.
 
-    <!-- border -->![HANA Cloud Instance](trial5.png)
+    ![HANA Cloud Instance](trial5.png)
 
 1. Finally it is important to take note that the SAP HANA Cloud instance in both the free tier and free trial shuts down at the end of each day automatically to save costs from unused systems. Therefore you must return to this SAP HANA Cloud administration screen each day you want to use  SAP HANA Cloud and choose to start the system from the **Action** menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
 
-    <!-- border -->![HANA Cloud stopped](trial6.png)
+    ![HANA Cloud stopped](trial6.png)
 
 1. Once the SAP HANA Cloud instance is created, take note of the admin user (DBADMIN) and password you supplied to connect to the database. This will be useful in subsequent tutorials.
 

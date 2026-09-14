@@ -43,29 +43,29 @@ author_profile: https://github.com/LindsayBert
 
 1. In your global account, navigate to **Entitlements** > **Entity Assignments**.
 
-    <!-- border -->![Open Entitlements](1-open-entitlements.png)
+    ![Open Entitlements](1-open-entitlements.png)
 
 2. In the **Select Subaccount and Directories** dropdown list, choose the `JobCore EMEA` subaccount that you want to assign entitlements to, and click **Select**.
 
-    <!-- border -->![Select entities](2-select-subaccount.png)
+    ![Select entities](2-select-subaccount.png)
 
     You'll see a table for the subaccount with all the entitlements it already has.
 
 3. Click **Edit**.
 
-    <!-- border -->![Click edit](3-click-edit.png)
+    ![Click edit](3-click-edit.png)
 
 4. Click **Add Service Plans**.
 
-    <!-- border -->![Add Service plan](4-add-service-plan.png)
+    ![Add Service plan](4-add-service-plan.png)
 
 5. Search for **SAP Build Work Zone, standard edition**, check the **free (Application)** plan that you want to entitle and then click **Add 1 Service Plan**.
 
-    <!-- border -->![Add Service plan](5-free-plan.png)
+    ![Add Service plan](5-free-plan.png)
 
 6. Click **Save**.
 
-    <!-- border -->![Save](6-save.png)
+    ![Save](6-save.png)
 
 
 
@@ -77,28 +77,28 @@ Now that you've entitled your subaccount for the free plan, you will subscribe t
 
 1. From the Account Explorer, search for and open your `JobCore EMEA` subaccount.
 
-    <!-- border -->![Open subaccount](7-search-for-subaccount.png)
+    ![Open subaccount](7-search-for-subaccount.png)
 
 
 2. Select **Services** > **Service Marketplace**.
 
-    <!-- border -->![Go to service Marketplace](7-go-to-service-marketplace.png)
+    ![Go to service Marketplace](7-go-to-service-marketplace.png)
 
 3. Enter `SAP Build` in the search field to search for the **SAP Build Work Zone, standard edition** tile.
 
-    <!-- border -->![Find launchpad tile](8-search-standard-edition.png)
+    ![Find launchpad tile](8-search-standard-edition.png)
 
 4. Click the tile to get information about the service and then click **Create** in the top right corner to subscribe to the service.
 
-    <!-- border -->![Create subscription](9-create-subscription.png)
+    ![Create subscription](9-create-subscription.png)
 
 5. From the popup you'll see that your plan is **free**. Click **Create**.
 
-    <!-- border -->![Subscription details ](10-subscription-details.png)
+    ![Subscription details ](10-subscription-details.png)
 
 6. You are informed that your request for a new subscription is in process. Click **View Subscription** to view the **Subscribed** status on the **Services and Instances** page.
 
-      <!-- border -->![View Subscription](11-view-subscription.png)
+      ![View Subscription](11-view-subscription.png)
 
 
 
@@ -109,23 +109,23 @@ To be able to access SAP Build Work Zone, standard edition, users must be assign
 
 1. Click **Role Collections** from the side menu.
 
-      <!-- border -->![Open role collections](12-role-collections.png)
+      ![Open role collections](12-role-collections.png)
 
 2. In the search field start typing `Launchpad` to find the `Launchpad_Admin` role collection.
 
-    <!-- border -->![Search for launchpad admin](13-search-launchpad-admin.png)
+    ![Search for launchpad admin](13-search-launchpad-admin.png)
 
 3. Click the `Launchpad_Admin` role collection to see all its details.
 
-    <!-- border -->![Open role collection](14-open-role-collection.png)
+    ![Open role collection](14-open-role-collection.png)
 
 4. Click **Edit**
 
-    <!-- border -->![Click Edit](15-click-edit.png)
+    ![Click Edit](15-click-edit.png)
 
 5. Under the **Users** tab, enter your email in both the **ID** and the **E-Mail** fields. Then click **Save**.
 
-    <!-- border -->![Add emails](16-add-emails.png)
+    ![Add emails](16-add-emails.png)
 
     You've now been assigned to the `Launchpad_Admin` role collection and you can access SAP Build Work Zone, standard edition and carry out all your admin tasks.
 

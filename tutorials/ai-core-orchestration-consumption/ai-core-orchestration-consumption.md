@@ -226,12 +226,9 @@ Go to the Configuration section within your chosen Resource Group.
 • Fill in Deployment Details, Under configuration, input the following details: 
 
         Name:       "orchestration" 
-
-        Executable: "orchestration" 
-
-        Scenario:   "orchestration" 
-
-        Version:    "0.0.1" 
+        Executable:       "orchestration"
+        Scenario:       "orchestration"
+        Version:       "0.0.1"
 
 • Click Next after entering each detail. 
 

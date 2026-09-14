@@ -53,13 +53,13 @@ The user-provided service will be responsible for granting privileges to the pro
 
 4.	Next, click on the **plus icon** for adding database connections.
 
-    <!-- border -->![Add database connection](ss-01-add-database-connection.png)
+    ![Add database connection](ss-01-add-database-connection.png)
 
 5.	The **Add Database Connections** window will open.
 
 6.	In the field **Select connection type**, select **Create a user-provided service instance** from the drop-down menu.
 
-    <!-- border -->![Create UPS instance](ss-02-create-UPS-instance.png)
+    ![Create UPS instance](ss-02-create-UPS-instance.png)
 
 7.	Enter the name of the service instance as `UPS_GENERIC`.
 
@@ -71,7 +71,7 @@ The user-provided service will be responsible for granting privileges to the pro
 
 11.	Click on **Add** to complete the creation of the user-provided service instance. You will see this addition in the SAP HANA PROJECTS panel.
 
-    <!-- border -->![UPS instance view](ss-03-UPS-instance-view.png)
+    ![UPS instance view](ss-03-UPS-instance-view.png)
 
 
 ### Grant privileges using user-provided service
@@ -92,34 +92,34 @@ The user-provided service will be responsible for granting privileges to the pro
 
 7.	The `hdbgrants` file comes pre-filled with templates you can use. In this session, we will only need to grant global roles to object owners and application users. Below you can see the code needed to do that. Remove all the default code and copy and paste the code below to the `generic.hdbgrants` file.
 
-    ```JSON
+   ```JSON
 {
-    "UPS_GENERIC": {
-        "object_owner": {
-            "global_roles": [
-                {
-                    "roles": [
-                        "genericRoleForOO"
-                    ]
-                }
-            ]
-        },
-        "application_user": {
-            "global_roles": [
-                {
-                    "roles": [
-                        "genericRoleForAP"
-                    ]
-                }
-            ]
-        }
-    }
+   "UPS_GENERIC": {
+       "object_owner": {
+           "global_roles": [
+               {
+                   "roles": [
+                       "genericRoleForOO"
+                   ]
+               }
+           ]
+       },
+       "application_user": {
+           "global_roles": [
+               {
+                   "roles": [
+                       "genericRoleForAP"
+                   ]
+               }
+           ]
+       }
+   }
 }
 ```
 
 8.	Click on the deploy icon for the file. You can do this either from the SAP HANA Projects panel or from the deploy icon on the top right corner of the file window.
 
-    <!-- border -->![Grants file deploy](ss-04-grants-file-deploy.png)
+    ![Grants file deploy](ss-04-grants-file-deploy.png)
 
 After successful deployment of the `generic.hdbgrants` file, object owner users and application users will be authorized to report on the data in the container.
 
@@ -138,7 +138,7 @@ Next, you will create a synonym that allows users of the template project to acc
 
 4.	Click on **Click to Add** to add a new synonym.
 
-    <!-- border -->![Click to Add synonym](ss-05-click-to-add-synonym.png)
+    ![Click to Add synonym](ss-05-click-to-add-synonym.png)
 
 5.	Click on the new synonym created under the column Synonym Name and rename it as `SInventory`.
 
@@ -146,11 +146,11 @@ Next, you will create a synonym that allows users of the template project to acc
 
 7.	A new dialog **Find Data Sources** will open. Make sure to select `UPS_GENERIC` in the services filter.
 
-    <!-- border -->![Add services](ss-06-add-services.png)
+    ![Add services](ss-06-add-services.png)
 
 8.	Type `**` in the search bar to view the list of all objects available. Double-click on the object `INVENTORY` contained in the schema used in the first session of this workshop series.
 
-    <!-- border -->![Add object Inventory](ss-07-add-object-inventory.png)
+    ![Add object Inventory](ss-07-add-object-inventory.png)
 
 9.	Select the synonym `SInventory`.
 
@@ -158,7 +158,7 @@ Next, you will create a synonym that allows users of the template project to acc
 
 10.	Click on the **deploy icon** to deploy this synonym.
 
-    <!-- border -->![Deploy the synonym](ss-08-deploy-synonym.png)
+    ![Deploy the synonym](ss-08-deploy-synonym.png)
 
 
 ### Verify the data present in the synonym

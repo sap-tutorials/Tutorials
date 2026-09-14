@@ -44,11 +44,11 @@ In this tutorial, you'll use the **Content Manager** in SAP Build Work Zone, sta
 
 1.  In the **Content Manager**, click **+ New** and then select **App** from the list.
 
-    <!-- border -->![Create new app](4-new-app.png)
+    ![Create new app](4-new-app.png)
 
 2. Enter a title for the app `Search POs`.
 
-    <!-- border -->![Enter a title](4a-add-title.png)
+    ![Enter a title](4a-add-title.png)
 
 3. In the **Configuration** tab, enter these values:
 
@@ -59,7 +59,7 @@ In this tutorial, you'll use the **Content Manager** in SAP Build Work Zone, sta
     |  App UI Technology    | Select `Web Dynpro ABAP`
     |  Application ID           | `S_EPM_FPM_PO`
 
-    <!-- border -->![Add app properties](5-app-properties.png)
+    ![Add app properties](5-app-properties.png)
 
 3. In the **Navigation** tab, enter these values:
 
@@ -68,7 +68,7 @@ In this tutorial, you'll use the **Content Manager** in SAP Build Work Zone, sta
     |  Semantic Object           | `S_EPM_FPM_PO`
     |  Action          | `Display`
 
-    <!-- border -->![Add navigation properties](6-navigation-properties.png)
+    ![Add navigation properties](6-navigation-properties.png)
 
 4. In the **Visualization** tab, enter these values:
 
@@ -121,7 +121,7 @@ If you're not sure what view mode is selected, go to the **Site Settings** scree
 
 1. In the **Content Manager**, click the `Everyone` role.
 
-    <!-- border -->![Click everyone role](11-click-everyone-role.png)
+    ![Click everyone role](11-click-everyone-role.png)
 
 2. Click **Edit**.
 
@@ -180,7 +180,7 @@ A group is a set of one or more apps displayed together in your site. Assigning 
 
 2. Click **Create** and select **Group** from the list to create a group.
 
-    <!-- border -->![Add new Group](9-add-group.png)
+    ![Add new Group](9-add-group.png)
 
 3. Name the group `Purchase Orders`.
 
@@ -210,4 +210,4 @@ A group is a set of one or more apps displayed together in your site. Assigning 
 
 5. Click the app to launch it. This is what you'll see:
 
-  <!-- border -->![View app](16-web-dynpro-app.png)
+  ![View app](16-web-dynpro-app.png)

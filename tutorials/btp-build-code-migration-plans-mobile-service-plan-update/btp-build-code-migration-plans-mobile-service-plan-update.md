@@ -31,7 +31,7 @@ parser: v2
 
 Click on the tile of your Cloud Foundry subaccount.
 
-  <!-- border --> ![Accessing Subaccount](Subaccount.png)
+  ![Accessing Subaccount](Subaccount.png)
 
 ### Update License
 
@@ -39,19 +39,19 @@ Click on the tile of your Cloud Foundry subaccount.
 
   1. Navigate to **Services** > **Instances and Subscriptions** > **Instances**
  
-    <!-- border --> ![Instances](instances1.jpg)
+   ![Instances](instances1.jpg)
 
-    > If you notice in above screenshot, we took example of SAP Mobile Services, here current plan is **resources**.
+   > If you notice in above screenshot, we took example of SAP Mobile Services, here current plan is **resources**.
 
   2. Choose **Mobile Services** row > choose ellipsis at the end of the instances row, and from the menu, click **Update**.
  
-    <!-- border --> ![Update](update1.jpg)
+   ![Update](update1.jpg)
 
   3. On the **Update Instance** wizard, select the **build-code** plan, and click **Update Instance**.
  
-    <!-- border --> ![Update Instance](updateinstance1.jpg)
+   ![Update Instance](updateinstance1.jpg)
 
-    Now, plan is successfully updated to **build-code**.
+   Now, plan is successfully updated to **build-code**.
 
    For more information, see [Changing Service Plans](https://help.sap.com/docs/build_code/d0d8f5bfc3d640478854e6f4e7c7584a/d501fb669447478cbcd07a0b7b7ca4c0.html?version=SHIP)
 
@@ -61,21 +61,21 @@ Click on the tile of your Cloud Foundry subaccount.
 
   1. In Mobile Services cockpit, select **Mobile Applications** > **Native/MDK**
  
-    <!-- border --> ![Mobile Services Home Page](MobileServiceHome.jpg)
+   ![Mobile Services Home Page](MobileServiceHome.jpg)
 
   2. Select an application, navigate to **Info** tab > **Application Details** section, click **Edit** to make modifications.
    
-    > You cannot edit the application when it is locked.
+   > You cannot edit the application when it is locked.
    
-    <!-- border --> ![Edit Application Details](Editmobileservices.jpg)
+   ![Edit Application Details](Editmobileservices.jpg)
    
   3. In **Edit Application Details** wizard > locate the **License Type** field > select the target license i.e. **build-code** from the **License Type** dropdown list.
     
-    <!-- border --> ![Update License from Mobile Services](licenseupdate.jpg)
+   ![Update License from Mobile Services](licenseupdate.jpg)
    
   4. Choose **Save**.
  
-    Now, plan is successfully updated to **build-code**.
+   Now, plan is successfully updated to **build-code**.
 
    For more information, see [Changing Service Plans at the App Level](https://help.sap.com/docs/mobile-services/mobile-services-cloud-foundry/changing-service-plans-at-app-level)
 

@@ -37,56 +37,56 @@ For more information, see [SAP AI Core documentation](https://help.sap.com/docs/
 
 Open the SAP BTP cockpit and access your global account.
 
-<!-- border -->![BTP Cockpit](images/btpcockpit.png)
+![BTP Cockpit](images/btpcockpit.png)
 
 Check the entitlements for your account by clicking `Entitlements` and searching for SAP AI Core.
 
-<!-- border -->![Check Entitlements](images/checkentitlements.png)
+![Check Entitlements](images/checkentitlements.png)
 
 Click `Configure Entitlements` > `Add Service Plans`.
 
-<!-- border -->![Set SAP AI Core as an entitlement](images/configureentitlements.png)
-<!-- border -->![Set SAP AI Core as an entitlement](images/addserviceplan.png)
+![Set SAP AI Core as an entitlement](images/configureentitlements.png)
+![Set SAP AI Core as an entitlement](images/addserviceplan.png)
 
 Select SAP AI Core and the `extended` service plan.
 
-<!-- border -->![Set SAP AI Core as an entitlement](images/aicoreentitlement.png)
+![Set SAP AI Core as an entitlement](images/aicoreentitlement.png)
 
 Save your new entitlement.
 
-<!-- border -->![Save](images/saveentitlement.png)
+![Save](images/saveentitlement.png)
 
 #### Run the booster for SAP AI Core
 
 Choose `Boosters` from the navigation pane. Find and choose the booster for `SAP AI Core` from the selection. 
 
-<!-- border -->![Locate the SAP AI Core booster](images/boostercore.png)
+![Locate the SAP AI Core booster](images/boostercore.png)
 
 The booster tile contains information about SAP AI Core.  Click `Start` when you are ready. 
 
 When you start a booster, a wizard opens up which guides you through the required steps.
 
-<!-- border -->![Start the booster](images/coreboosterstart.png)
+![Start the booster](images/coreboosterstart.png)
 #### View your instances and create your keys
 
 In the subaccount section of SAP BTP Cockpit, choose `Services` from the left navigation menu and `Instances and subscriptions` from the page. 
 
-<!-- border -->![View instances and subscriptions](images/instancesandsubscriptions.png)
+![View instances and subscriptions](images/instancesandsubscriptions.png)
 
 To see the details of your new instance, click the chevron on the entry.
 
 To create the keys that you need to access your instance, click the three dots > `Create Service Key`.
 
-<!-- border -->![Create keys](images/createkeys1.png)
+![Create keys](images/createkeys1.png)
 
 Enter a `Key Name` of your choice and click `Create`.
 
-<!-- border -->![Create keys](images/createkeys2.png)
-<!-- border -->![View new keys](images/keys.png)
+![Create keys](images/createkeys2.png)
+![View new keys](images/keys.png)
 
 Once your keys have been created, you can view or download them at any time by locating the key and clicking the three dots and choosing from the available options.
 
-<!-- border -->![Locate the keys in SAP AI Cockpit](images/viewkeys.png)
+![Locate the keys in SAP AI Cockpit](images/viewkeys.png)
 
 #### Provision SAP AI Launchpad in your global account
 
@@ -98,11 +98,11 @@ Configure your entitlement as before, but select `SAP AI Launchpad`.
 
 Choose `Boosters` from the navigation pane, and then choose the booster for `SAP AI Launchpad` from the selection. 
 
-<!-- border -->![Locate the booster for SAP AI Launchpad](images/boosterailp.png)
+![Locate the booster for SAP AI Launchpad](images/boosterailp.png)
 
 Click `Start` when you are ready.
 
-<!-- border -->![Start the booster](images/lpboosterstart.png)
+![Start the booster](images/lpboosterstart.png)
 
 ### Checking for foundation-models scenario
 

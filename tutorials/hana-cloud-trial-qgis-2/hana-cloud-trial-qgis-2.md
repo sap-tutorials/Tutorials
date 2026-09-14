@@ -43,7 +43,7 @@ What have you achieved so far? You have created an SAP HANA database within the 
 
 ### Download the spatial dataset
 
-<!-- border -->![OpenStreetMap](ss-01-open-street-map.png)
+![OpenStreetMap](ss-01-open-street-map.png)
 
 As suggested in [this blog](https://blogs.sap.com/2021/02/23/qgis-3.18-supports-sap-hana-cloud/) shown above, you can use the [OpenStreetMap](https://download.geofabrik.de/) data provided by `Geofabrik`. Let's start by looking at the point of interest data in the area of SAP's Headquarter in Waldorf, Germany.
 
@@ -66,7 +66,7 @@ Download the [Shapefile (.shp.zip)](https://download.geofabrik.de/europe/germany
 
 6. If you need confirmation, you can open the SAP HANA Database Explorer or **`DBeaver`** and check for the table that has been created.
 
-    <!-- border -->![Upload to QGIS](ss-02-upload-to-qgis.png)
+    ![Upload to QGIS](ss-02-upload-to-qgis.png)
 
 
 
@@ -85,7 +85,7 @@ Follow these steps to add a base map to QGIS project:
 
 1. In the browser, left click on **XYZ Tiles** and choose **New Connection**.
 
-    <!-- border -->![New Connection QGIS](ss-03-new-connection-qgis.png)
+    ![New Connection QGIS](ss-03-new-connection-qgis.png)
 
 2. A dialog for a new tile service opens.
 
@@ -109,7 +109,7 @@ Follow the steps to add all the fountains around the SAP Headquarter:
 
 1. Locate the dataset that we have previously uploaded to SAP HANA in the browser. In this example, this is the path **`SAP HANA`** > **`hctrial`** > **`DBADMIN`** > **`gis_osm_pois_free_1`**.
 
-    <!-- border -->![Vector Data QGIS](ss-04-vector-data-qgis.png)
+    ![Vector Data QGIS](ss-04-vector-data-qgis.png)
 
 2. Double-click on **`gis_osm_pois_free_1`** to add another layer on top of the base map.
 

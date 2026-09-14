@@ -3,7 +3,7 @@ parser: v2
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, programming-tool>javascript, programming-tool>sapui5, programming-tool>html5, software-product>sap-business-technology-platform, software-product>sap-business-application-studio]
-primary_tag: software-product>sap-btp--cloud-foundry-environment
+primary_tag: software-product>sap-btp--cloud-foundry-runtime-and-environment
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 ---
@@ -35,12 +35,10 @@ Build (aka package) the project to an `.mtar` archive to deploy it to Cloud Foun
 
 1. If you don't have the **Application Info** page open, you can open the Command Palette from menu **View > Command Palette**, type **Application Info**, and select **Fiori: Open Application Info**. Click on the **Deploy Application** tile to start deployment process.
 
-    <!-- border -->
     ![deploy](deployTile.png)
 
 2. Once the process is finished, you can get the URL of the deployed app by running `cf html5-list -u -di sapbtpsapui5-destination-service -u --runtime launchpad` in a new terminal session.
 
-    <!-- border -->
     ![cfapps](deployedAppUrl.png)
 
     > Use the following command in case you use the Portal service

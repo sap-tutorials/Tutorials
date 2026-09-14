@@ -46,22 +46,22 @@ author_profile: https://github.com/mariajosesap
 6. Copy and paste this script:
 
     <!-- cpes-file db/schema.cds -->
-    ```XML
-    <!-- This policy can be used to create or modify the standard HTTP request and response messages -->
-    <AssignMessage async="false" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
-            <Set>
-                <Headers>
-                    <Header name="Access-Control-Allow-Origin">*</Header>
-                    <Header name="Access-Control-Allow-Headers">set-cookie, origin, accept, maxdataserviceversion, x-csrf-token, authorization, dataserviceversion, accept-language, x-http-method, content-type, X-Requested-With, apikey</Header>
-                    <Header name="Access-Control-Max-Age">3628800</Header>
-                    <Header name="Access-Control-Allow-Methods">GET, PUT, POST, DELETE</Header>
-                    <Header name="Access-Control-Expose-Headers">set-cookie, x-csrf-token, x-http-method</Header>
-                </Headers>
-            </Set>
-            <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
-            <AssignTo createNew="false" type="response">response</AssignTo>
-    </AssignMessage>
-    ```
+   ```XML
+   <!-- This policy can be used to create or modify the standard HTTP request and response messages -->
+   <AssignMessage async="false" continueOnError="false" enabled="true" xmlns='http://www.sap.com/apimgmt'>
+           <Set>
+               <Headers>
+                   <Header name="Access-Control-Allow-Origin">*</Header>
+                   <Header name="Access-Control-Allow-Headers">set-cookie, origin, accept, maxdataserviceversion, x-csrf-token, authorization, dataserviceversion, accept-language, x-http-method, content-type, X-Requested-With, apikey</Header>
+                   <Header name="Access-Control-Max-Age">3628800</Header>
+                   <Header name="Access-Control-Allow-Methods">GET, PUT, POST, DELETE</Header>
+                   <Header name="Access-Control-Expose-Headers">set-cookie, x-csrf-token, x-http-method</Header>
+               </Headers>
+           </Set>
+           <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+           <AssignTo createNew="false" type="response">response</AssignTo>
+   </AssignMessage>
+   ```
     >Notice that you're already adding `apikey` as a header in the policy.
 
     You should look it like this:
@@ -104,19 +104,19 @@ In the TargetEndpoint, add 3 policies in the PreFlow.
     Copy and Paste this script (you will be referencing 'CPICredentials' with the mapIdentifier parameter):
 
     <!-- cpes-file db/schema.cds -->
-    ```XML
-    <KeyValueMapOperations mapIdentifier="CPICredentials" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
-    <!-- Read parameter with key "username" and assign its value to private variable BasicAuthUsername-->
-    <Get assignTo="private.BasicAuthUsername" index='1'>
-    <Key><Parameter>username</Parameter></Key>
-    </Get>
-    <!-- Read parameter with key "password" and assign its value to private variable BasicAuthPassword-->
-    <Get assignTo="private.BasicAuthPassword" index='1'>
-    <Key><Parameter>password</Parameter></Key>
-    </Get>
-    <Scope>environment</Scope>
-    </KeyValueMapOperations>
-    ```       
+   ```XML
+   <KeyValueMapOperations mapIdentifier="CPICredentials" continueOnError="false" enabled="true" xmlns="http://www.sap.com/apimgmt">
+   <!-- Read parameter with key "username" and assign its value to private variable BasicAuthUsername-->
+   <Get assignTo="private.BasicAuthUsername" index='1'>
+   <Key><Parameter>username</Parameter></Key>
+   </Get>
+   <!-- Read parameter with key "password" and assign its value to private variable BasicAuthPassword-->
+   <Get assignTo="private.BasicAuthPassword" index='1'>
+   <Key><Parameter>password</Parameter></Key>
+   </Get>
+   <Scope>environment</Scope>
+   </KeyValueMapOperations>
+   ```       
     Like this:
 
     ![Set up the Key Value Map Policy](setup_key_value_policy.png)
@@ -128,20 +128,20 @@ In the TargetEndpoint, add 3 policies in the PreFlow.
     Copy and paste this script:
 
     <!-- cpes-file db/schema.cds -->
-    ```XML
-    <BasicAuthentication async='true' continueOnError='false' enabled='true' xmlns='http://www.sap.com/apimgmt'>
-        <!-- Operation can be Encode or Decode -->
-        <Operation>Encode</Operation>
-        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
-        <!-- for Encode, User element can be used to dynamically populate the user value -->
-        <User ref='private.BasicAuthUsername'></User>
-        <!-- for Encode, Password element can be used to dynamically populate the password value -->
-        <Password ref='private.BasicAuthPassword'></Password>
+   ```XML
+   <BasicAuthentication async='true' continueOnError='false' enabled='true' xmlns='http://www.sap.com/apimgmt'>
+       <!-- Operation can be Encode or Decode -->
+       <Operation>Encode</Operation>
+       <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+       <!-- for Encode, User element can be used to dynamically populate the user value -->
+       <User ref='private.BasicAuthUsername'></User>
+       <!-- for Encode, Password element can be used to dynamically populate the password value -->
+       <Password ref='private.BasicAuthPassword'></Password>
 
-        <!-- Assign to is used to assign the encoded value of username and password to a variable. This should not be used if the operation is Decode -->
-        <AssignTo createNew="true">request.header.Authorization</AssignTo>
-    </BasicAuthentication>
-    ```  
+       <!-- Assign to is used to assign the encoded value of username and password to a variable. This should not be used if the operation is Decode -->
+       <AssignTo createNew="true">request.header.Authorization</AssignTo>
+   </BasicAuthentication>
+   ```  
 
     You should look it like this:
 
@@ -152,13 +152,13 @@ In the TargetEndpoint, add 3 policies in the PreFlow.
     ![Set up a Basich Authentication Policy](setup_basic_authentication_policy.png)
 
     <!-- cpes-file db/schema.cds -->
-    ```XML
-    <!--Specify in the APIKey element where to look for the variable containing the api key-->
-        <VerifyAPIKey async='true' continueOnError='false' enabled='true'
-            xmlns='http://www.sap.com/apimgmt'>
-        <APIKey ref='request.header.ApiKey'/>
-    </VerifyAPIKey>
-    ```
+   ```XML
+   <!--Specify in the APIKey element where to look for the variable containing the api key-->
+       <VerifyAPIKey async='true' continueOnError='false' enabled='true'
+           xmlns='http://www.sap.com/apimgmt'>
+       <APIKey ref='request.header.ApiKey'/>
+   </VerifyAPIKey>
+   ```
 
     This should be the first policy to be triggered. Make sure it is set it up as the first one (you can change the order with the arrows in the top-right). Like this:
 

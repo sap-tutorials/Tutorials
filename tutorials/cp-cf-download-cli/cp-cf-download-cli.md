@@ -4,7 +4,7 @@ auto_validation: true
 author_name: Nico Schoenteich
 author_profile: https://github.com/nicoschoenteich
 tags: [tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
-primary_tag: products>sap-btp--cloud-foundry-environment
+primary_tag: software-product>sap-btp--cloud-foundry-runtime-and-environment
 time: 15
 ---
 

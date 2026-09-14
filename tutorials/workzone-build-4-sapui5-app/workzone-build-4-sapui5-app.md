@@ -33,18 +33,18 @@ Once configured, the app appears as a tile in the **Applications** page of your 
 
 1. Access the **Administration Console** from the user actions dropdown menu under your avatar.
 
-    <!-- border -->![Open the admin console](1-open-admin-console.png)
+    ![Open the admin console](1-open-admin-console.png)
 
     >This option is only available to SAP Build Work Zone, advanced edition administrators.
 
 
 2. Go to the **External Integrations** section, expand it, and click **Business Content**.
 
-    <!-- border -->![Open business content](2-business-content.png)
+    ![Open business content](2-business-content.png)
 
 3. Click **Content Manager**.
 
-    <!-- border -->![Open content manager](3-open-content-manager.png)
+    ![Open content manager](3-open-content-manager.png)
 
 The **Content Manager** is part of the Site Manager, where administrators can create and configure their business content. They can also use the **Content Explorer** to explore exposed content from available content providers. The Site Manager also includes the following tools:
 
@@ -63,7 +63,7 @@ First create and configure the app.
 
 1. Click **Create** and select **App** from the dropdown list. 
 
-    <!-- border -->![Add app](6-add-app.png)
+    ![Add app](6-add-app.png)
 
     The app editor opens with the **Configuration** tab in focus.
 
@@ -75,7 +75,7 @@ First create and configure the app.
 
     * **URL**:  `https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/index.html`
 
-      <!-- border -->![Define app properties](7-app-properties.png)
+      ![Define app properties](7-app-properties.png)
 
     >When working in your own environment, it's better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case in the App UI Technology dropdown list, you would select SAPUI5. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
 
@@ -90,7 +90,7 @@ First create and configure the app.
 
     * **Action**: `Display`
 
-      <!-- border -->![Define navigation properties](8-navigation-properties.png)
+      ![Define navigation properties](8-navigation-properties.png)
 
 5. Click the **Visualization** tab. In this tab, you specify how the app tile will appear in the **Applications** page of your site.
 
@@ -104,7 +104,7 @@ First create and configure the app.
 
 7. On the right, you can see a preview of the tile with all the properties you entered. Click **Save**.
 
-    <!-- border -->![Define visualizaton properties](9-vizualization-properties.png)
+    ![Define visualizaton properties](9-vizualization-properties.png)
 
 
 
@@ -113,7 +113,7 @@ First create and configure the app.
 
 Click **Content Manager** in the breadcrumbs in the top header to navigate back to the Content Manager.
 
-<!-- border -->![Go back to Content Manager](10-go-to-content-manager.png)
+![Go back to Content Manager](10-go-to-content-manager.png)
 
 You can see your app in the list of content items in **My Content**:
 
@@ -127,11 +127,11 @@ The `Everyone` role already exists in the **Items** list of the **Content Manage
 
 1. In the **Items** list, click the **Everyone** role to open the Role editor.
 
-    <!-- border -->![Select Everyone role](12-select-everyone-role.png)
+    ![Select Everyone role](12-select-everyone-role.png)
 
 2. Click **Edit**.
 
-    <!-- border -->![Click Edit](13-edit.png)
+    ![Click Edit](13-edit.png)
 
 3. Click the search box in the search box to see any available apps in the list below.
 
@@ -141,7 +141,7 @@ The `Everyone` role already exists in the **Items** list of the **Content Manage
 
 5. Click **Save**.
 
-    <!-- border -->![Assign role to app](14-assign-role.png)
+    ![Assign role to app](14-assign-role.png)
 
 Once an application is configured, it becomes available to add to your workpages.
 
@@ -155,7 +155,7 @@ A group is a set of one or more apps displayed together on the **Applications** 
 
 2. Click **Create** and select **Group** to create a group.
 
-    <!-- border -->![Create a group](15-create-group.png)
+    ![Create a group](15-create-group.png)
 
 3. Enter `Purchasing` as the **Title**.
 
@@ -163,7 +163,7 @@ A group is a set of one or more apps displayed together on the **Applications** 
 
 5. Click **Save**.
 
-    <!-- border -->![Assign app to group](16-assign-to-group.png)
+    ![Assign app to group](16-assign-to-group.png)
 
 Your app is configured. Now you'll go to the **Applications** page to see that the app appears there.
 
@@ -173,19 +173,19 @@ Your app is configured. Now you'll go to the **Applications** page to see that t
 
 1. Click the **Site Directory** icon in the side panel.
 
-    <!-- border -->![Open the Site Directory](17-open-site-directory.png)
+    ![Open the Site Directory](17-open-site-directory.png)
 
 2. Click the **Open site** icon.
 
-    <!-- border -->![Open your work zone](18-open-work-zone.png)
+    ![Open your work zone](18-open-work-zone.png)
 
 3. In the top-level menu of your workpage, click **Applications**.
 
-    <!-- border -->![Open Applications page](19-open-applications-page.png)
+    ![Open Applications page](19-open-applications-page.png)
 
 You'll see your app is displayed as a tile in the group you assigned it to:
 
-<!-- border -->![View Applications page](20-view-applications-page.png)
+![View Applications page](20-view-applications-page.png)
 
 Now that the app is configured, you're going to add it to your **Home** workpage.
 
@@ -197,17 +197,17 @@ To design your workpage to be more practical, we'll add a header for the app and
 
 1. From the **Applications** page, you can quickly navigate back to the **Home** page by clicking **Home** in the top navigation bar of your site. Then click **Home**.
 
-    <!-- border -->![Navigate to Home page](21-navigate-to-home.png)
+    ![Navigate to Home page](21-navigate-to-home.png)
 
     >You can also simply click the back arrow to navigate back to the **Home** workpage.
 
 2. Click the pencil icon to open the Page Designer.
 
-    <!-- border -->![Open Page Designer](22-open-edit-mode.png)
+    ![Open Page Designer](22-open-edit-mode.png)
 
 3. Scroll down to the last section on the page and click **+** to add another section.
 
-    <!-- border -->![Add a row](23-add-row.png)
+    ![Add a row](23-add-row.png)
 
 4. Click **Add Widget** to open the widget gallery and select the **Text** widget.
 
@@ -218,11 +218,11 @@ To design your workpage to be more practical, we'll add a header for the app and
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text still selected, choose the color black from the chart.
 
-    <!-- border -->![Design the header](24-design-text-widget.png)
+    ![Design the header](24-design-text-widget.png)
 
 6. To increase the spacing between this section and the section above, hover over the section to expose the settings at the top right, and click the cog icon.
 
-    <!-- border -->![Edit row settings](27-define-row-settings.png)
+    ![Edit row settings](27-define-row-settings.png)
 
 5. Enter the following values:
 
@@ -232,7 +232,7 @@ To design your workpage to be more practical, we'll add a header for the app and
 
 
 
-    <!-- border -->![Add values to settings](28-add-values.png)
+    ![Add values to settings](28-add-values.png)
 
 Now you're going to add your first app under this header.
 
@@ -242,21 +242,21 @@ Now you're going to add your first app under this header.
 
 1. Click **+** to add another section and then click **Add Widget**.
 
-    <!-- border -->![Add another widget](25-add-another-widget.png)
+    ![Add another widget](25-add-another-widget.png)
 
 2. Click **Tiles**.
 
-    <!-- border -->![Select tiles](25a-select-tiles.png)
+    ![Select tiles](25a-select-tiles.png)
 
 3. In the Search box, start typing in the name of your app `New Orders`, select the app, and then click **Add**.
 
-    <!-- border -->![Select your app](26-select-application.png)
+    ![Select your app](26-select-application.png)
 
 
 5. Scroll to the top of the page, and click **Publish**.
 
     This is how your **Home** workpage looks with the app added to it:
 
-    <!-- border -->![Home page with 1 app](29-homepage-with-app1.png)
+    ![Home page with 1 app](29-homepage-with-app1.png)
 
 6. Click the app to open it.

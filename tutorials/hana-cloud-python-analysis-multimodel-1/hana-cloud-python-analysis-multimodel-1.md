@@ -58,7 +58,7 @@ This tutorial will focus on exploring the integration of multi-modal capabilitie
 
 A figure of this architecture is shown below:
 
-<!-- border -->![hana-ml-architecture](ss-01-hana-ml-architecture.png)
+![hana-ml-architecture](ss-01-hana-ml-architecture.png)
 
 
 
@@ -100,7 +100,7 @@ pandas_df = hana_df.collect()
 
 1. To start, copy your database instance URL into a text file from the SAP BTP cockpit as shown below:
 
-    <!-- border -->![Instance URL](ss-02-instance-url.png)
+    ![Instance URL](ss-02-instance-url.png)
 
     > Instance URL is the SQL Endpoint
 
@@ -112,12 +112,12 @@ pandas_df = hana_df.collect()
 
     Add the following content into the file:
 
-    ```Python
+   ```Python
 {
-  "user": "YourUserName",
-  "pwd": "YourPassword",
-  "url": "database instance URL from above",
-  "port": 443
+ "user": "YourUserName",
+ "pwd": "YourPassword",
+ "url": "database instance URL from above",
+ "port": 443
 }
 ```
 
@@ -165,7 +165,7 @@ print(cc.get_current_schema())
 
 When you execute the cell, you will get a result as seen in the image shown below.
 
-<!-- border -->![Connection context](ss-03-connection-context.png)
+![Connection context](ss-03-connection-context.png)
 
 You can easily identify your **SAP HANA version** and **schema name** from the above result. **Verify these details to confirm a successful connection**.
 

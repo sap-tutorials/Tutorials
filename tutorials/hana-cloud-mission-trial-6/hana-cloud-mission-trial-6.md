@@ -65,42 +65,42 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
 1. Open SAP HANA Cloud Central. Then navigate to the **SQL console** tab for the SAP HANA Cloud, SAP HANA database instance.
 
-    ![SQL Console tab in HANA Cloud Central](sql-console-tab.png)
+    ![Open SQL console in HANA Cloud Central](sql-console-tab.png)
 
     The SQL Console will appear and you will now be able to execute the necessary SQL statements for this tutorial.
 
-    ![SQL console UI](sql-console-ui.png)
+    ![SQL console](sql-console-ui.png)
 
 2. Users can be created with this simplified statement. You can replace the contents inside the `<>` placeholders to set your desired credentials for your new user. The username must be unique in the database and the password must contain lower case, upper case, and a digit.
 
-    ```
-    CREATE USER <username> PASSWORD "<password>";
-    ```
+   ```
+   CREATE USER <username> PASSWORD "<password>";
+   ```
 
     > Please note that this statement is simplified for an easy start, and you have many more options to create the user the way you need it. For example, you can choose different authentication options, validity specifications, optional user parameter options, or specify users to be restricted.
 
     To avoid using the super-user `DBADMIN`, we will now create a new user `UPSGRANTOR`. This user will be used in a later tutorial when you create a user-provided service in SAP HANA Business Application Studio. Paste the following query and execute the statement.
 
-    ```SQL
-    -- Create a database user that should assign these privileges
-    CREATE USER UPS_GRANTOR PASSWORD "Password1" NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
-    ```
+   ```SQL
+   -- Create a database user that should assign these privileges
+   CREATE USER UPS_GRANTOR PASSWORD "Password1" NO FORCE_FIRST_PASSWORD_CHANGE SET USERGROUP DEFAULT;
+   ```
 
 3. To grant this user roles and privileges, you can use the `GRANT` statement. To use this statement to grant a certain privilege, you must have the privilege and permissions required to grant this privilege.
 
     First create `genericRoleForOO` and `genericRoleForAP` roles. These are generic roles for an object owner (OO) and application user (AP), which will be later used in a later tutorial with SAP Business Application Studio.
 
-    ```SQL
-    -- Create SQL roles
-    CREATE ROLE "genericRoleForOO";
-    CREATE ROLE "genericRoleForAP";
-    ```
+   ```SQL
+   -- Create SQL roles
+   CREATE ROLE "genericRoleForOO";
+   CREATE ROLE "genericRoleForAP";
+   ```
 
     When granting roles to users, the statement needs to be adjusted as follows:
 
-    ```
-    GRANT <role_name> TO <user_name>;
-    ```
+   ```
+   GRANT <role_name> TO <user_name>;
+   ```
 
 4. To allow a user to grant a privilege to other users themselves, you need to add `WITH GRANT OPTION` to the end of the statement. For roles and system privileges, you need to add `WITH ADMIN OPTION` to the statement.
 
@@ -108,38 +108,38 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
     The generic structure to grant privileges on a certain schema or object to a user is as follows:
 
-    ```
-    GRANT <privilege> ON <SCHEMA_or_OBJECT> <schema_or_object_name> TO <user_name>;
-    ```
+   ```
+   GRANT <privilege> ON <SCHEMA_or_OBJECT> <schema_or_object_name> TO <user_name>;
+   ```
 
     Paste the following queries in a SQL console and execute the statements.
 
-    ```SQL
-    -- Assign privileges that these roles should grant
-    GRANT SELECT ON SCHEMA SFLIGHT TO "genericRoleForOO" WITH GRANT OPTION;
-    GRANT SELECT ON SCHEMA SFLIGHT TO "genericRoleForAP";
-    -- Allow UPS_GRANTOR to grant the respective roles
-    GRANT "genericRoleForOO" to UPS_GRANTOR WITH ADMIN OPTION;
-    GRANT "genericRoleForAP" to UPS_GRANTOR WITH ADMIN OPTION;
-    ```
-
+   ```SQL
+   -- Assign privileges that these roles should grant
+   GRANT SELECT ON SCHEMA SFLIGHT TO "genericRoleForOO" WITH GRANT OPTION;
+   GRANT SELECT ON SCHEMA SFLIGHT TO "genericRoleForAP";
+   -- Allow UPS_GRANTOR to grant the respective roles
+   GRANT "genericRoleForOO" to UPS_GRANTOR WITH ADMIN OPTION;
+   GRANT "genericRoleForAP" to UPS_GRANTOR WITH ADMIN OPTION;
+   ```
 
 > You can find all the details about syntax elements and all available privileges to grant in the technical documentation [here](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/grant-statement-access-control).
 
 [OPTION END]
-[OPTION BEGIN [User, Role, and Privileges Apps]]
+
+[OPTION BEGIN [User and Role Apps]]
 
 **Create users and roles in the users and roles apps**
 
 1. Within SAP HANA Cloud Central, select your instance by clicking on it and scroll to the **User & Authorization Management** app.
 
-    ![Open cockpit from HCC](open-cockpit-hcc.png)
+    ![Open instance details page](open-cockpit-hcc.png)
 
 2. Click on **Roles** to get started.
 
 3. You will be directed to the Role Management page, where you can see a list of all existing user roles as well as role groups. If you click on one of them, you will see the details of this role on the right-hand side of the screen. Clicking on one of the roles allows you to edit them, for example, you can assign System, Object and Analytic Privileges and more.
 
-    ![HANA cockpit Role Management submenu](role-list-hcc.png)
+    ![Role management app](role-list-hcc.png)
 
 4. To create a new user role, click on the **Create role** button.
 
@@ -147,7 +147,7 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
     Click on **Create** at the bottom right corner of the screen.
 
-    ![HANA cockpit security create role for object owner](OO-role-hcc.png)
+    ![Create role](OO-role-hcc.png)
 
 6. Create another role named `genericRoleForAP`, which represents a generic role for an application user. Leave the rest of the settings as is. This role will be used in a later tutorial when you create a development project using SAP Business Application Studio.
 
@@ -155,7 +155,7 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
     For the `genericRoleForAP` user, go to the **Object Privileges** tab and select **Edit Object Privileges**, then **Add Object** at the top of the table.
 
-    ![HANA cockpit security add privilege](edit-obj-privileges.png)
+    ![Edit object privileges](edit-obj-privileges.png)
 
     >For more technical details on creating roles and deciding on privileges, please see our technical documentation [here](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/LATEST/en-US/dec8d273bb571014b4c2b771d3e0f166.html).
 
@@ -167,13 +167,13 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
 9. Under **Select Privileges**, scroll to find **SELECT** and click on the checkbox. This will grant SELECT privileges to your user.
 
-    ![Select privileges for user](select-privileges-hcc.png)
+    ![Select object privileges](select-privileges-hcc.png)
 
     Press **OK** when done. Then press **Save** to ensure that your changes are saved.
 
 10. Repeat steps 8 - 9 for the `genericRoleForOO` role. When you reach the **Add Objects with Privileges** pop-up, scroll to `SELECT` and click the checkbox **and** enable the toggle under **Grantable to Others**.
 
-    ![Add select privileges with grant option](select-privileges-w-grant-option-hcc.png)
+    ![Add select privilege with grant option](select-privileges-w-grant-option-hcc.png)
 
     Don't forget to press **Save** when finished.
 
@@ -181,15 +181,15 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
 11. To get started, switch to the **User Management** app.
 
-    ![Select User Management](user-mgmt-card-hcc.png)
+    ![Open the user management app](user-mgmt-card-hcc.png)
 
 12. This screen works just like the Role Management page, so click on the **Create User** to add a new user.
 
-    ![HANA cockpit security user mgmt](create-user-hcc.png)
+    ![Create user](create-user-hcc.png)
 
 13. Give the User Name `UPS_GRANTOR`.
 
-    ![Create a user in cockpit](user-create-hcc.png)
+    ![Specify user properties](user-create-hcc.png)
 
     Select **Password** for the authentication method.
 
@@ -203,19 +203,19 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
 14. Click on **Role Assignment** in the top-right corner.
 
-    ![Role assignment dropdown](role-assignment-hcc.png)
+    ![Role assignment](role-assignment-hcc.png)
 
 15. Click **Edit Assigned Roles**, then **Add**.
 
-    ![Add role assignment](add-role-assignment-hcc.png)
+    ![Add role](add-role-assignment-hcc.png)
 
 16. Search for `generic` and check the checkboxes both `genericRoleForAP` and `genericRoleForOO`. Press **Select** when done.
 
-    ![Select generic roles](select-roles-hcc.png)
+    ![Select role](select-roles-hcc.png)
 
 17. Under the **Grantable to Others** column, enable the toggles by clicking on them.
 
-    ![Enable the toggles to be grantable to others](grantable-to-others-toggle-hcc.png)
+    ![Enable the roles to be grantable to others](grantable-to-others-toggle-hcc.png)
 
     Press **Save** at the top of the table when finished.
 
@@ -225,7 +225,7 @@ In this step, you can find instructions on both of these options. Click on **SQL
 
 Well done!
 
-You have completed the fourth tutorial of this mission! Now you know how you can manage access rights in your instance by creating users, and granting roles and privileges using SAP HANA cockpit and the SAP HANA database explorer. You also have the necessary users, roles, and privileges to proceed with the [Create a Development Project in SAP Business Application Studio](hana-cloud-mission-trial-8) tutorial.
+You have completed the sixth tutorial of this mission! Now you know how you can manage access rights in your instance by creating users, and granting roles and privileges using SAP HANA Cloud Central. You also have the necessary users, roles, and privileges to proceed with the a future tutorial group on creating a calculation view.
 
 You now know all the basics to start working with our sample data and help Alex gain business insights about their company, **Best Run Travel**.
 

@@ -36,11 +36,11 @@ Integration cards are UI elements which display concise pieces of information in
 
 2. Edit the dev space by selecting the Edit button.
 
-    <!-- border -->![Image depicting SAP Business Application Studio with configured dev spaces – click on Edit button](1-2.PNG)
+    ![Image depicting SAP Business Application Studio with configured dev spaces – click on Edit button](1-2.PNG)
 
 3. Ensure that the **Development Tools for SAP Build Work Zone** extension is checked and save the changes.
 
-    <!-- border -->![Image depicting SAP BAS with Development Tools for SAP Build Work Zone extension selected](1-3.PNG)
+    ![Image depicting SAP BAS with Development Tools for SAP Build Work Zone extension selected](1-3.PNG)
 
 
 
@@ -49,15 +49,15 @@ Integration cards are UI elements which display concise pieces of information in
 
 1. Open the dev space (If the dev space is not running, you first have to start it).
 
-    <!-- border -->![Image depicting configured dev spaces – open dev space](2-1.PNG)
+    ![Image depicting configured dev spaces – open dev space](2-1.PNG)
 
 2. Select **Start from template**.
 
-    <!-- border -->![Image - start from template](2-2.PNG)
+    ![Image - start from template](2-2.PNG)
 
 3. Choose the **UI Integration Card template** and select **Start**.
 
-    <!-- border -->![Image depicting UI Integration Card template option](2-3.PNG)
+    ![Image depicting UI Integration Card template option](2-3.PNG)
 
 4. Fill-in the required project details. Use the **Highlight Card** template, which creates an Integration card of type List and select Finish.
 >If you are following this tutorial as part of a workshop, please give your card a unique name. In this case your card name should be `wz<your unique identifier>_orders_by_shipper`.
@@ -71,15 +71,15 @@ Integration cards are UI elements which display concise pieces of information in
     | Subtitle                                           | `UI5 Integration Card of Type List`
     | Compatible with SAP Mobile Cards (dropdown menu)   | `False`
 
-    <!-- border -->![Image depicting required Project Details](2-4 NEW.PNG)
+    ![Image depicting required Project Details](2-4 NEW.PNG)
 
 5. To see the card, right-click on `manifest.json` and select **UI Integration Card: Preview**.
 
-    <!-- border -->![Image depicting UI Integration Card: Preview option](2-5 NEW.PNG)
+    ![Image depicting UI Integration Card: Preview option](2-5 NEW.PNG)
 
 6. Currently the card displays only static data:
 
-    <!-- border -->![Image depicting the application showing only static data](2-6 NEW.PNG)
+    ![Image depicting the application showing only static data](2-6 NEW.PNG)
 
 7. Open the `manifest.json` file. Everything needed to render the card is described in this file.
 
@@ -94,7 +94,7 @@ Integration cards are UI elements which display concise pieces of information in
 
     - `data` sections: Define how the card handles its data. It can provide static data (see the `json` object below) or define required parameters for a data request to a backend system. Can be set on different levels (card, header, filter-definition, or content). The inner level data sections take precedence. In the example below the data section is defined on content level.
 
-    <!-- border -->![Image depicting manifest.json file structure](2-7 NEW.PNG)
+    ![Image depicting manifest.json file structure](2-7 NEW.PNG)
 
 In the next steps you edit the `manifest.json` file to configure the card.
 
@@ -104,58 +104,58 @@ In the next steps you edit the `manifest.json` file to configure the card.
 
 1. To set a destination, add the following `configuration` section in the `sap.card` section after the `type` subsection.
 
-    ```JSON
-    "configuration": {
-        "destinations": {
-            "Northwind": {
-                "name": "Northwind",
-                "label": "Northwind V4 Service URL",
-                "defaultUrl": "https://services.odata.org/V4/Northwind/Northwind.svc"
-            }
-        }
-    },
-    ```
+   ```JSON
+   "configuration": {
+       "destinations": {
+           "Northwind": {
+               "name": "Northwind",
+               "label": "Northwind V4 Service URL",
+               "defaultUrl": "https://services.odata.org/V4/Northwind/Northwind.svc"
+           }
+       }
+   },
+   ```
 
-      <!-- border -->![Image depicting manifest.json file – add configuration section](3-1 NEW.PNG)
+      ![Image depicting manifest.json file – add configuration section](3-1 NEW.PNG)
 
 2. To configure a data request pointing to the Northwind demo service, add a new `data` section after the `configuration`. In this way the `data` section will be defined on a card level. Note, that our destination is referred here using the double-bracket syntax `{{destinations.Northwind}}`.
 
-    ```JSON
-    "sap.card": {
-        "data": {
-    	    "request": {
-                "url": "{{destinations.Northwind}}/Orders"
-            },
-            "path": "/value"
-        }
-    },
-    ```
+   ```JSON
+   "sap.card": {
+       "data": {
+   	    "request": {
+               "url": "{{destinations.Northwind}}/Orders"
+           },
+           "path": "/value"
+       }
+   },
+   ```
 
-    <!-- border -->![Image depicting manifest.json file – add data section](3-2 NEW.PNG)
+    ![Image depicting manifest.json file – add data section](3-2 NEW.PNG)
 
 >**IMPORTANT:** Due to an issue with the **UI Integration Card: Preview** option, you may need to replace {{destinations.Northwind}} with "https://services.odata.org/V4/Northwind/Northwind.svc" !
 
 Finally, to display the dynamically requested data, replace the static `content` section with the following one. The `title`, `description`, and `info` properties are now dynamically requested.
 
-    ```JSON
-    "content": {
-        "item": {
-            "title": "{ShipName}",
-            "description": "{ShipAddress}",
-            "info": {
-                "value": "{ShipCountry}"
-            }
-        }
-    }
-    ```
+   ```JSON
+   "content": {
+       "item": {
+           "title": "{ShipName}",
+           "description": "{ShipAddress}",
+           "info": {
+               "value": "{ShipCountry}"
+           }
+       }
+   }
+   ```
 
-      <!-- border -->![Image depicting manifest.json file – replace content section](3-3 NEW.PNG)
+      ![Image depicting manifest.json file – replace content section](3-3 NEW.PNG)
 
 **Results after Step 3:**
 
 The application displays dynamic data loaded from the Northwind demo service. Note, that the actual displayed products may differ depending on the current data provided by the Northwind demo service. You can also check the [manifest.json](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/appstudio-sapui5-integrationcard-create/manifest_after_step3.json) file at this step. To learn more, see the [Destinations](https://ui5.sap.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html#/learn/configuration/destinations) and [Data](https://ui5.sap.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html#/learn/features/data) sections in the Card Explorer.
 
-<!-- border -->![Image depicting the application showing dynamic data](3-4 NEW.PNG)
+![Image depicting the application showing dynamic data](3-4 NEW.PNG)
 
 If you would like to deploy the card and see how it looks on SAP Build Work Zone, you can skip to Step 6 and deploy it. In the next steps you add card capabilities that can make your card more interactive.
 
@@ -169,68 +169,68 @@ If you would like to deploy the card and see how it looks on SAP Build Work Zone
 
 1. To define parameters - add the following `parameters` subsection in the `manifest.json` in the `configuration` section (note the comma which divides the entries).
 
-    ```JSON
-    "parameters": {
-        "title" : {
-            "value": "Orders by Shipper"
-        },
-        "maxOrdersShown": {
-            "value": "4",
-            "type": "integer",
-            "label": "Numbers of orders",
-            "description": "How many orders to show in the list."
-        }
-    }
-    ```
+   ```JSON
+   "parameters": {
+       "title" : {
+           "value": "Orders by Shipper"
+       },
+       "maxOrdersShown": {
+           "value": "4",
+           "type": "integer",
+           "label": "Numbers of orders",
+           "description": "How many orders to show in the list."
+       }
+   }
+   ```
 
-      <!-- border -->![Image depicting manifest.json file - add parameters](4-1 NEW.PNG)
+      ![Image depicting manifest.json file - add parameters](4-1 NEW.PNG)
 
 2. To use the new `maxOrdersShown` parameter, add it as shown below:
 
-    ```JSON
-    "maxItems": "{parameters>/maxOrdersShown/value}"
-    ```
+   ```JSON
+   "maxItems": "{parameters>/maxOrdersShown/value}"
+   ```
 
-      <!-- border -->![Image depicting manifest.json file – use maxOrdersShown parameter](4-2 NEW.PNG)
+      ![Image depicting manifest.json file – use maxOrdersShown parameter](4-2 NEW.PNG)
 
 3. Update the data request as follows:
 
-    ```JSON
-    "data": {
-        "request":{
-            "url": "{{destinations.Northwind_V4}}/Orders",
-            "parameters": {
-                "$top": "{parameters>/maxOrdersShown/value}"	
-            },
-        "path": "/value/"
-        }
-    }
-    ```
-      <!-- border -->![Image depicting manifest.json file – use $top](4-3 DATA REQ.PNG)
+   ```JSON
+   "data": {
+       "request":{
+           "url": "{{destinations.Northwind_V4}}/Orders",
+           "parameters": {
+               "$top": "{parameters>/maxOrdersShown/value}"	
+           },
+       "path": "/value/"
+       }
+   }
+   ```
+      ![Image depicting manifest.json file – use $top](4-3 DATA REQ.PNG)
 
 >**IMPORTANT:** Due to an issue with the **UI Integration Card: Preview** option, you may need to replace {{destinations.Northwind}} with "https://services.odata.org/V4/Northwind/Northwind.svc" !
 
 Finally, let's also use the new parameters in the `header` section. Use the `parameters` syntax and edit (or replace) the header, so it looks like this:
 
-    ```JSON
-    "header": {
-        "title": "{parameters>/title/value}",
-        "icon": {
-            "src": "sap-icon://desktop-mobile"
-        },
-        "status": {
-            "text": "{parameters>/maxOrdersShown/value}"
-        }
-    },
-    ```
+   ```JSON
+   "header": {
+       "title": "{parameters>/title/value}",
+       "icon": {
+           "src": "sap-icon://desktop-mobile"
+       },
+       "status": {
+           "text": "{parameters>/maxOrdersShown/value}"
+       }
+   },
+   ```
 
-      <!-- border -->![Image depicting manifest.json file - edit header](4-3 NEW.PNG)
+      ![Image depicting manifest.json file - edit header](4-3 NEW.PNG)
 
 **Results after Step 4:**
 
 In this step, you have learned how to declare configurable parameters and use them to achieve the desired dynamic behavior. The application now displays a list of 4 items according to the `parameters` property (`maxOrdersShown value: 4`).
 
-<!-- border -->![Image depicting the application showing dynamic data using parameters](4-4 NEW.PNG)
+![Image depicting the application showing dynamic data using parameters](4-4 NEW.PNG)
 
 To learn more, see the [Manifest Parameters](https://ui5.sap.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html#/learn/configuration/manifestParameters) section in the Card Explorer.
 
@@ -240,62 +240,62 @@ To learn more, see the [Manifest Parameters](https://ui5.sap.com/test-resources/
 
 1. Add a `filters` subsection in the `configuration` section. It defines a dropdown list with product categories, which are received by a data request.
 
-    ```JSON
-    "filters": {
-        "shipper": {
-            "value": "{parameters>/selectedShipperID/value}",
-            "type": "Select",
-            "label": "Shipper",
-            "item": {
-                "path": "/value",
-                "template": {
-                    "key": "{ShipperID}",
-                    "title": "{CompanyName}"
-                }
-            },
-            "data": {
-                "request": {
-                    "url": "{{destinations.Northwind}}/Shippers"
-                }
-            }
-        }
-    },
-    ```
+   ```JSON
+   "filters": {
+       "shipper": {
+           "value": "{parameters>/selectedShipperID/value}",
+           "type": "Select",
+           "label": "Shipper",
+           "item": {
+               "path": "/value",
+               "template": {
+                   "key": "{ShipperID}",
+                   "title": "{CompanyName}"
+               }
+           },
+           "data": {
+               "request": {
+                   "url": "{{destinations.Northwind}}/Shippers"
+               }
+           }
+       }
+   },
+   ```
 
-    <!-- border -->![Image depicting manifest.json file - add filters section](5-1 NEW.PNG)
+    ![Image depicting manifest.json file - add filters section](5-1 NEW.PNG)
 
 2. Add `selectedShipperID` subsection in the `parameters` section. This is the shipper that is initially selected in the filter. Later, the user can change it from the dropdown list.
 
-    ```JSON
-    "selectedShipperID": {
-        "value": 3,
-        "label": "The default selected shipper"
-    }   
-    ```
+   ```JSON
+   "selectedShipperID": {
+       "value": 3,
+       "label": "The default selected shipper"
+   }   
+   ```
 
-    <!-- border -->![Image depicting manifest.json file – set the initially selected category](5-2 NEW.PNG)
+    ![Image depicting manifest.json file – set the initially selected category](5-2 NEW.PNG)
 
 3. Add `parameters` in the main `data` section > `request` subsection, after the `url` property as shown below. The `$filter` parameter will be used in a data request for the orders with `shipper` that is equal to the one selected by the user in the filter's dropdown list.
 
-    ```JSON
-    "request": {
+   ```JSON
+   "request": {
 		"url": "https://services.odata.org/V4/Northwind/Northwind.svc/Orders",
-        "parameters": {
-            "$top": "{parameters>/maxOrdersShown/value}",
-            "$filter": "Shipper/ShipperID eq {filters>/shipper/value}"
+       "parameters": {
+           "$top": "{parameters>/maxOrdersShown/value}",
+           "$filter": "Shipper/ShipperID eq {filters>/shipper/value}"
 		}
-    }
-    ```
+   }
+   ```
 
-    <!-- border -->![Image depicting manifest.json file - add filter parameter in the main data section](5-3 NEW.PNG)
+    ![Image depicting manifest.json file - add filter parameter in the main data section](5-3 NEW.PNG)
 
 4. Finally, replace the title in the `header` adding the `{filters>/shipper/selectedItem/title}` parameter, which will show the selected category:
 
-    ```JSON
-    "title": "Orders by Shipper {filters>/shipper/selectedItem/title}",
-    ```
+   ```JSON
+   "title": "Orders by Shipper {filters>/shipper/selectedItem/title}",
+   ```
 
-    <!-- border -->![Image depicting manifest.json file – use parameters in the header's title ](5-4 NEW.PNG)
+    ![Image depicting manifest.json file – use parameters in the header's title ](5-4 NEW.PNG)
 
 **Results after Step 5:**
 
@@ -303,7 +303,7 @@ If you have any issues you can check the [manifest.json](https://raw.githubuserc
 
 The application displays the products from the selected category:
 
-<!-- border -->![Image depicting the application showing dynamic data, parameters, and a filter](5-5 NEW.PNG)
+![Image depicting the application showing dynamic data, parameters, and a filter](5-5 NEW.PNG)
 
 To learn more, see the [Card Filters](https://ui5.sap.com/test-resources/sap/ui/integration/demokit/cardExplorer/webapp/index.html#/learn/filters) section in the Card Explorer.
 
@@ -313,7 +313,7 @@ To learn more, see the [Card Filters](https://ui5.sap.com/test-resources/sap/ui/
 
 1. Select the `dt/configuration.js` file (in the Explorer view on the left).
 
-    <!-- border -->![Image depicting the configuration.js file in the file menu](6-1 NEW.PNG)
+    ![Image depicting the configuration.js file in the file menu](6-1 NEW.PNG)
 
 2. Replace the content with the code below:
 
@@ -345,7 +345,7 @@ sap.ui.define(["sap/ui/integration/Designtime"], function (
 
 The `dt/configuration.js` now looks like:
 
-<!-- border -->![Image depicting the configuration.js file content](6-2 NEW.PNG)
+![Image depicting the configuration.js file content](6-2 NEW.PNG)
 
 
 
@@ -357,15 +357,15 @@ The `dt/configuration.js` now looks like:
 
 1. Right-click on the `manifest.json` file (in the Explorer view on the left) and select the **UI Integration Card:Deploy to SAP Build Work Zone**  option from the dropdown menu.
 
-    <!-- border -->![Image depicting UI Integration Card:Deploy to SAP Build Work Zone option ](7-1.PNG)
+    ![Image depicting UI Integration Card:Deploy to SAP Build Work Zone option ](7-1.PNG)
 
 2. Select the target SAP Build Work Zone destination.
 
-    <!-- border -->![Image depicting Select the target SAP Build Work Zone destination option](7-2.PNG)
+    ![Image depicting Select the target SAP Build Work Zone destination option](7-2.PNG)
 
 3. In the right-bottom corner, confirm to **Continue** and wait to see the successful message.
 
-    <!-- border -->![Image depicting the Continue button to proceed with card deployment](7-3.PNG)
+    ![Image depicting the Continue button to proceed with card deployment](7-3.PNG)
 
 Now the basic UI5 card deployment is done!
 

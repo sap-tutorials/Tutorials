@@ -77,11 +77,11 @@ The command option description:
 You should now use this Docker container as the sandbox environment to complete the tutorial.
 
 
-<!-- border -->![Preview of Docker environment](img/env-docker.png)
+![Preview of Docker environment](img/env-docker.png)
 
 > **INFORMATION** If you are developing with Visual Studio Code (VS Code), you may connect to your VS Code to this sandbox environment using following VS Code extensions: [Remote Explorer Extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) and [Docker Extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 >
-> <!-- border -->![Preview of VS Code](img/env-vscode2.gif)
+> ![Preview of VS Code](img/env-vscode2.gif)
 
 
 [OPTION END]
@@ -121,10 +121,10 @@ The command option description:
 You should now use this Docker container as the sandbox environment to complete the tutorial.
 
 
-<!-- border -->![Preview of Docker environment](img/env-docker.png)
+![Preview of Docker environment](img/env-docker.png)
 > **INFORMATION** If you are developing with Visual Studio Code (VS Code), you may connect to your VS Code to this sandbox environment using following VS Code extensions: [Remote Explorer Extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) and [Docker Extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 >
-> <!-- border -->![Preview of VS Code](img/env-vscode2.gif)
+> ![Preview of VS Code](img/env-vscode2.gif)
 
 [OPTION END]
 
@@ -269,7 +269,7 @@ Run this snippet locally.
 python hellometaflow.py run
 ```
 
-<!-- border -->![metaflow](img/hello-metaflow.png)
+![metaflow](img/hello-metaflow.png)
 
 
 
@@ -306,7 +306,7 @@ docker commit <CONTAINER_ID> tutorial_metaflow:0.1
 
 You may now close the Docker Container, by using the `exit` command inside your Docker container.
 
-<!-- border -->![image](img/env-docker-save.png)
+![image](img/env-docker-save.png)
 
 To pick up where you left off, use the following snippet. Ensure you are using the tag `:01` with which you saved the changes.
 

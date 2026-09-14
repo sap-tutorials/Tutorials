@@ -31,17 +31,17 @@ The sample business rule used in this scenario is published in API Business Hub.
 
 1. From your global account page, choose the `trial` tile to access your subaccount.
 
-    <!-- border -->![Enter Trial Subaccount](entertrialaccount_1.png)
+    ![Enter Trial Subaccount](entertrialaccount_1.png)
 
 2. Click **Connectivity | Destinations** from the left-hand navigation and search for the destination with name `BUSINESSRULES_APIHUB`
 
-    <!-- border -->![Create Destination](createdestination-apihub.png)
+    ![Create Destination](createdestination-apihub.png)
 
 3. In **Destination Configuration** section, click **Edit** and enter your cloud platform trial user password:
 
     > Ensure that the user whose credentials (username and password) are entered in the destination **does not have Two Factor Authentication enabled**.
 
-    <!-- border -->![Create Destination](savedestination-apihub.png)
+    ![Create Destination](savedestination-apihub.png)
 
     - **Save** the destination.
 
@@ -57,13 +57,13 @@ To import the business rules project from API Business Hub, you need to configur
 
     > `https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 
-    <!-- border -->![Rule Editor](ruleeditor.png)
+    ![Rule Editor](ruleeditor.png)
 
 2. Open **Configure Systems**.
 
 3. Click **+** to add a system.
 
-    <!-- border -->![Create System](CreateSystem.png)
+    ![Create System](CreateSystem.png)
 
 4. Enter the following details:
 
@@ -74,7 +74,7 @@ To import the business rules project from API Business Hub, you need to configur
 
 5. **Save** the system configuration.
 
-    <!-- border -->![Create System](CreateSystem_2.png)
+    ![Create System](CreateSystem_2.png)
 
 
 
@@ -83,7 +83,7 @@ To import the business rules project from API Business Hub, you need to configur
 
 1. Click **Design** icon, click **Import** to select **Import Project from API Business Hub**.
 
-    <!-- border -->![Import Business Rules](ImportAPIHub.png)
+    ![Import Business Rules](ImportAPIHub.png)
 
 2. In the popup, do the following:
     - In the **System** field, select `APIHub` or the name you entered while configuring the system.
@@ -92,14 +92,14 @@ To import the business rules project from API Business Hub, you need to configur
     - Select the latest version of the project named `Equipment Determination Rules`.  
     - Choose **Import**.
 
-    <!-- border -->![Import Business Rules](ImportRules.png)
+    ![Import Business Rules](ImportRules.png)
 
     > If you get Bad Gateway Error error, then check the username and password you have used in `BUSINESSRULES_APIHUB` destination. If your user is 2-Factor-Authentication enabled, then the password will be password+passcode. This passcode will expire in a minute.
     > If you do not have 2-Factor-Authentication enabled and still get this error, then check if you are member of SAP API Business Hub. Log in to api.sap.com and try importing again.
 
 3. You will see the business rules project imported and in **Active** status.
 
-    <!-- border -->![Import Business Rules](ImportRules_2.png)
+    ![Import Business Rules](ImportRules_2.png)
 
 
 ### Deploy business rules
@@ -107,17 +107,17 @@ To import the business rules project from API Business Hub, you need to configur
 
 1. Select the business rules project to navigate into the project.
 
-    <!-- border -->![Deploy Business Rules](deploy-ruleservice_1.png)
+    ![Deploy Business Rules](deploy-ruleservice_1.png)
 
 2. Switch to the **Rule Services** tab.
 
 3. Click **Deploy** to deploy rule services `DetermineEquipmentRuleservice` and `EquipmentApprovalRuleservice`.
 
-    <!-- border -->![Deploy Business Rules](deploy-ruleservice_2.png)
+    ![Deploy Business Rules](deploy-ruleservice_2.png)
 
 4. Select the **Cloud Runtime** option.
 
-    <!-- border -->![Deploy Business Rules](deploy-ruleservice_3.png)
+    ![Deploy Business Rules](deploy-ruleservice_3.png)
 
 5. Wait for the deployment to complete. You will get a popup message once the deployment is successful.
 
@@ -132,39 +132,39 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
 1. Download **cf-onboarding-sample.zip**  project from [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-onboarding-sample/resources/cf-onboarding-sample.zip) in your local file system and extract the files.
 
-    <!-- border -->![Download Sample Workflow](downloadsample.png)
+    ![Download Sample Workflow](downloadsample.png)
 
 2. Open [SAP BTP Trial Homepage](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and choose **SAP Business Application Studio**.
 
-    <!-- border -->![Launch Studio](launchbas_2.png)
+    ![Launch Studio](launchbas_2.png)
 
     > If you get the privacy statement screen, then click `Ok` to accept it.
 
 3. Click on the **Dev Space** to go into the workspace and from **File** menu choose **Open Workspace**
 
     > - If you do not have any dev-space, then click **Create Dev Space**. In the New Dev Space page, enter any dev space name, select **SAP Fiori** kind and **Workflow Management** extension. Finally click **Create Dev Space** to create a space in your business application studio.
-    <!-- border -->![Create Dev Spave](createdevspace.png)
+    ![Create Dev Spave](createdevspace.png)
 
     > - If you have a dev-space but **Workflow Management** extension is not added then click on **Edit** button, select **Workflow Management** and **Save Changes**.
-    <!-- border -->![Add Extension](editdevspace1.png)
-    <!-- border -->![Add Extension](editdevspace2.png)
+    ![Add Extension](editdevspace1.png)
+    ![Add Extension](editdevspace2.png)
 
     > - If you have the dev-space with Workflow Management extension added, and the dev-space status is STOPPED then click on the run button to start the space.
-    <!-- border -->![Start Workspace](startspace.png)
+    ![Start Workspace](startspace.png)
 
-    <!-- border -->![Open Workspace](openworkspace.png)
+    ![Open Workspace](openworkspace.png)
 
     > Some File menu options might not appear as they are not relevant if you are opening the workspace for the first time without any projects.
 
 4. Drag and drop the extracted **cf-onboarding-sample** project in the dialog and click **Open**.
 
-    <!-- border -->![Import Sample MTA 1](dragDropProject.png)
+    ![Import Sample MTA 1](dragDropProject.png)
 
-    <!-- border -->![Import Sample MTA 2](opensamplemta.png)
+    ![Import Sample MTA 2](opensamplemta.png)
 
 5. You will see that the **cf-onboarding-sample** project is imported into your workspace.
 
-    <!-- border -->![Workflow Added](sampleworkflowadded.png)
+    ![Workflow Added](sampleworkflowadded.png)
 
     > This sample workflow has:
 
@@ -179,18 +179,18 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
 1. Right-click the **mta.yml** file inside the **cf-onboarding-sample** project, and choose the **Build MTA** option.
 
-    <!-- border -->![Build mta File](build-wf-mta.png)
+    ![Build mta File](build-wf-mta.png)
 
 
 2. Once the build is completed successfully, right-click on the **`mta_archives` | `sample-onboarding.mta_0.0.1.mtar`** file and choose **Deploy MTA Archives**.
 
-    <!-- border -->![Deploy Workflow](deployworkflow.png)
+    ![Deploy Workflow](deployworkflow.png)
 
     >The deployment will fail if you have not logged in to the trial account. Click Function F1 to open the login wizard and follow the wizard to log in to your trial account.
-    <!-- border -->![Login](LoginToCF.png)
+    ![Login](LoginToCF.png)
 
     >A successful deployment message will be shown in the terminal once the deployment has completed successfully.
-    <!-- border -->![View Success Messages](success-message.png)
+    ![View Success Messages](success-message.png)
 
 
 
@@ -205,19 +205,19 @@ In this section, you will create and activate a process visibility scenario to p
 
     >`https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 
-    <!-- border -->![Open Scenarios](openscenarios.png)
+    ![Open Scenarios](openscenarios.png)
 
 2. To create a new visibility scenario, choose **+**.
 
-    <!-- border -->![Create Scenarios](addscenario_1.png)
+    ![Create Scenarios](addscenario_1.png)
 
 3. Enter **Name** as `Employee Onboarding`, any **Description** of your choice, and click **Create**.
 
-    <!-- border -->![Configure Scenario Name](addscenarioprops.png)
+    ![Configure Scenario Name](addscenarioprops.png)
 
     The business scenario will be created with **Draft** status.
 
-    <!-- border -->![Scenario Created](scenariocreated.png)
+    ![Scenario Created](scenariocreated.png)
 
 
 ### Add workflow to visibility scenario
@@ -225,17 +225,17 @@ In this section, you will create and activate a process visibility scenario to p
 
 1. Navigate into the newly created scenario and click the **Processes** tab, choose **+** and select **Add Workflow** to add workflow to business scenario.
 
-    <!-- border -->![Add Workflow](addworkflow_1.png)
+    ![Add Workflow](addworkflow_1.png)
 
 2. Select the `onboard` workflow from the choices.
 
-    <!-- border -->![Select Workflow](selectworkflow.png)
+    ![Select Workflow](selectworkflow.png)
 
     >*onboard* is the sample workflow that you have deployed in the previous tutorial.
 
 3. The workflow is added and all the needed **Events** and **Context** are  imported as well.
 
-    <!-- border -->![Workflow Added](workflowadded.png)
+    ![Workflow Added](workflowadded.png)
 
 
 ### Configure visibility scenario
@@ -245,17 +245,17 @@ In this section, you will create and activate a process visibility scenario to p
 
 2. In the **Instances Label** field, enter `Onboardings` and in the **Instance Label** field enter `Onboarding`.
 
-    <!-- border -->![Scenario Props](configurescenario.png)
+    ![Scenario Props](configurescenario.png)
 
 3. Switch to the **Status** tab.
 
 4. In the **Sub-Status** section, select **At Risk** and choose **+**.
 
-    <!-- border -->![Add Risk Status](configurestatus_1.png)
+    ![Add Risk Status](configurestatus_1.png)
 
 5. In the **Name** field for the risk status, enter **`Approval Pending`** or anything of your choice and click **`Ok`**.
 
-    <!-- border -->![Add Risk Status Name](configurestatus_2.png)
+    ![Add Risk Status Name](configurestatus_2.png)
 
 6. In the properties, enter the following:
 
@@ -265,7 +265,7 @@ In this section, you will create and activate a process visibility scenario to p
     |  **Event A**         | `Approve Equipment Created`
     |  **Event B**         | `Approve Equipment Completed`
 
-    <!-- border -->![Add Risk Status Props](configurestatus_3.png)
+    ![Add Risk Status Props](configurestatus_3.png)
 
 
 ### Activate visibility scenario
@@ -275,7 +275,7 @@ To activate the business scenario, choose **Activate**.
 
 >Activate operation saves and activates the scenario. Only an activated business scenario can be consumed.
 
-<!-- border -->![Activate Scenario](activatescenario.png)
+![Activate Scenario](activatescenario.png)
 
 
 ---

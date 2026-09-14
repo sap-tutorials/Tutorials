@@ -44,7 +44,7 @@ Follow these steps:
 
 4. Expand **Connect to Live Data**. You can also filter your options by clicking on Cloud as your data source type.
 
-    <!-- border -->![sac - connect to live data](ss-01-sac-connect-to-live-data.png)
+    ![sac - connect to live data](ss-01-sac-connect-to-live-data.png)
 
 5. Click on **SAP HANA**.
 
@@ -52,7 +52,7 @@ Follow these steps:
 
 7. Under Connection Type, select **SAP HANA Cloud**.
 
-    <!-- border -->![new HANA live connection username password](ss-02-sac-new-hana-live-connection.png)
+    ![new HANA live connection username password](ss-02-sac-new-hana-live-connection.png)
 
 8. Go to the SAP BTP cockpit and access the SAP HANA Cloud Central to get the address of your instance's host. Click on the three dots icon on your instance's line, then click on **Copy**, and finally on **SQL Endpoint**.
 
@@ -106,7 +106,7 @@ Continue with the following steps to complete setting up SAP Analytics Cloud:
 
 1. Next, select **SAML Single Sign On** as the Authentication Method.
 
-    <!-- border -->![sac - new HANA live connection SAML](ss-03-sac-new-hana-live-connection-SAML.png)
+    ![sac - new HANA live connection SAML](ss-03-sac-new-hana-live-connection-SAML.png)
 
 2. Click on the copy icon next to the provider name to copy this address, as you will need it soon.
 
@@ -135,41 +135,41 @@ For now, we will switch to the SAP HANA cockpit, as you need to setup the single
 
 1.	Open the SAP HANA cockpit you use with your SAP HANA Cloud, SAP HANA database instance. Go to the SAP BTP cockpit  and, on your instance tile, click on **Open in SAP HANA cockpit**. Under Security and User Management, click on **Certificate Store**.
 
-    <!-- border -->![HANA cockpit - certificate store](ss-04-hana-cockpit-certificate-store.png)
+    ![HANA cockpit - certificate store](ss-04-hana-cockpit-certificate-store.png)
 
 2.	Click on **Import**.
 
-     <!-- border -->![HANA cockpit - certificate store detail](ss-05-hana-cockpit-certificate-store-detail.png)
+     ![HANA cockpit - certificate store detail](ss-05-hana-cockpit-certificate-store-detail.png)
 
 3.	Browse to the certificate file you downloaded from SAP Analytics Cloud and import it. You will see the certificate appear on this list once the import is completed. Now go to the **SAML Identity Providers** area.
 
-    <!-- border -->![HANA cockpit - SAML identity providers](ss-06-hana-cockpit-SAML-identity-providers.png)
+    ![HANA cockpit - SAML identity providers](ss-06-hana-cockpit-SAML-identity-providers.png)
 
 4.	Click on **Add Identity Provider**.
 
-    <!-- border -->![HANA cockpit - add identity provider](ss-07-hana cockpit-add-identity-provider.png)
+    ![HANA cockpit - add identity provider](ss-07-hana cockpit-add-identity-provider.png)
 
 5.	Enter the **Identity Provider Name**. Under the **Entity ID**, please paste the provide name that you copied previously from SAP Analytics Cloud. On the bottom of the pop-up, select the certificate you uploaded previously. Click on **Add**. Your identity provider will be created.
 
 6.	Now go to the **Certificate Collections** in SAP HANA cockpit.
 
-    <!-- border -->![HANA cockpit - certificate collections](ss-08-hana-cockpit-certificate-collections.png)
+    ![HANA cockpit - certificate collections](ss-08-hana-cockpit-certificate-collections.png)
 
 7.	Click on **Add Collection**.
 
-    <!-- border -->![HANA cockpit - add collection](ss-09-hana-cockpit-add-collection.png)
+    ![HANA cockpit - add collection](ss-09-hana-cockpit-add-collection.png)
 
 8.	Add a name and click on **OK**. Then click on **Add certificate**. Click on the checkbox next to the correct certificate and click on **OK**.
 
 9.	Now click on the **Edit Purpose** on the top right-hand corner of the screen. Under Purpose, select **SAML**.
 
-     <!-- border -->![HANA cockpit - add collection edit purpose](ss-10-hana-cockpit-add-collection-edit-purpose.png)
+     ![HANA cockpit - add collection edit purpose](ss-10-hana-cockpit-add-collection-edit-purpose.png)
 
 10.	Under Providers, select the **Identity Provider** you recently created. Click on **Save**. Click on **Yes** when you are prompted to confirm the change of purpose.
 
 11.	Next you need to create a database user that is mapped to the SAP Analytics Cloud user creating the connection. Go to **User Management**.
 
-    <!-- border -->![HANA cockpit - user management](ss-11-hana-cockpit-user-management.png)
+    ![HANA cockpit - user management](ss-11-hana-cockpit-user-management.png)
 
 12.	On the left-hand panel, click on the plus icon to create a new user. Then click on **Create User**. Fill out the user creation form and make sure that you include the user email, which must exactly match the email of the user logged into SAP Analytics Cloud.
 
@@ -177,7 +177,7 @@ For now, we will switch to the SAP HANA cockpit, as you need to setup the single
 
 14.	Under External Identity, fill out the user's email.
 
-    <!-- border -->![HANA cockpit - create user SAML](ss-12-hana-cockpit-create-user-SAML.png)
+    ![HANA cockpit - create user SAML](ss-12-hana-cockpit-create-user-SAML.png)
 
 15.	Click on **Save**. Now click on **Assign Roles**. Make sure the user has the correct privileges to access your calculation views on SAP HANA Cloud.
 

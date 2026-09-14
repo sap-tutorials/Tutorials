@@ -102,11 +102,11 @@ applications:
 
 Once you have the code added you need to save your manifest, and then run `cf push`. This will re-push your application, adding the node-exporter sidecar. You can run `cf app cf-nodejs` to confirm that the sidecar has been added, as you will now see the name of your sidecar under the sidecars section.
 
-<!-- border -->![Confirm sidecar is running](running-sidecar.png)
+![Confirm sidecar is running](running-sidecar.png)
 
 You can also confirm that the sidecar is running by looking at your application logs using `cf logs cf-nodejs --recent`, and you should see logs dealing with the sidecar.
 
-<!-- border -->![Sidecar logs](sidecar-logs.png)
+![Sidecar logs](sidecar-logs.png)
 
 > Accessing the metrics without ssh-ing into the app will not work because by default CF can only receive traffic on port 8080 and the node exporter provides its metrics on port 9100. For the purposes of this tutorial it is enough to see that the sidecar is added successfully.
 

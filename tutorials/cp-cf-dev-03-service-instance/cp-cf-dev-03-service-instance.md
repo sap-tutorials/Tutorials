@@ -43,19 +43,19 @@ Choose **Service Bindings** in the navigation area.
 
  1. Choose the **Application Logging** tile and choose **Next**.
 
-    <!-- border -->![Application Logging tile](applicationlogging-tile.PNG)
+    ![Application Logging tile](applicationlogging-tile.PNG)
 
  1. Choose the **Create new instance** option, select a service plan from the **Plan** field, and then choose **Next**.
 
-    <!-- border -->![Service Plan for Application Logging](Service-plan.PNG)
+    ![Service Plan for Application Logging](Service-plan.PNG)
 
  1. Skip specifying parameters by choosing **Next**.
 
-    <!-- border -->![Parameters](Parameters.PNG)
+    ![Parameters](Parameters.PNG)
 
  1. Enter a name for the service instance and choose **Finish**.
 
-    <!-- border -->![Instance name](Instance-name.PNG)
+    ![Instance name](Instance-name.PNG)
 
 The binding is created and added to the list of service bindings:
 
@@ -73,13 +73,13 @@ In the text area below, enter the name of the service used in the service bindin
 
  1.  Choose **Restart** to restart your application.
 
-    ![Restart button](Restart.PNG)
+   ![Restart button](Restart.PNG)
 
  1.  In the **Application Routes** section, choose the URL to open the application.
 
  A new tab opens that displays the app information.
 
- <!-- border -->![CF application information](CF-app-with-service.PNG)
+ ![CF application information](CF-app-with-service.PNG)
 
 In the app, you can see the additional information about the service binding.
 

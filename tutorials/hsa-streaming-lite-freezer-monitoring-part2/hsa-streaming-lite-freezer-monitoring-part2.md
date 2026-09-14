@@ -30,21 +30,21 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
   1. Download
 
-    Go to [SAP Software Downloads > Support Packages and Patches](https://launchpad.support.sap.com/#/softwarecenter/support/index). Look under H, and navigate to "SAP HANA Streaming Analytics". There, click the version of Streaming Analytics you have, and you will see STREAMING LITE under "Comprised Software Component Versions". We want the `LINUX ON ARM 32 BIT` version. Download the most recent edition, which is at the top. In this tutorial, this file is called `"SDSLITE200024_0-80002117.TGZ"`.
+   Go to [SAP Software Downloads > Support Packages and Patches](https://launchpad.support.sap.com/#/softwarecenter/support/index). Look under H, and navigate to "SAP HANA Streaming Analytics". There, click the version of Streaming Analytics you have, and you will see STREAMING LITE under "Comprised Software Component Versions". We want the `LINUX ON ARM 32 BIT` version. Download the most recent edition, which is at the top. In this tutorial, this file is called `"SDSLITE200024_0-80002117.TGZ"`.
 
-    ![Streaming Lite Download](StreamingLiteDownload.png)
+   ![Streaming Lite Download](StreamingLiteDownload.png)
 
   2. Move
 
-    Move the installation file you just downloaded to the root (`/home/pi`) directory of our `Raspberry Pi 2`. `WinSCP` is a useful file transfer tool if you don't already have another preferred option.
+   Move the installation file you just downloaded to the root (`/home/pi`) directory of our `Raspberry Pi 2`. `WinSCP` is a useful file transfer tool if you don't already have another preferred option.
 
   3. Extract
 
-    Extract our installation file by running the following line on `Raspberry Pi 2`. (change the file name below to match the file you downloaded):
+   Extract our installation file by running the following line on `Raspberry Pi 2`. (change the file name below to match the file you downloaded):
 
-    ```LINUX
-    tar xvf streaming_lite_1.0.100.00_linuxarm32.tar
-    ```
+   ```LINUX
+   tar xvf streaming_lite_1.0.100.00_linuxarm32.tar
+   ```
 
 
 ### Configure Raspberry Pi
@@ -52,29 +52,29 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
   1. SSH to our `Raspberry Pi` using `PuTTY`.
 
-    > **Note:** You can run the command `hostname - I` in a local shell session on the `Pi` to return the board's `IP address`
+   > **Note:** You can run the command `hostname - I` in a local shell session on the `Pi` to return the board's `IP address`
 
   2. Configure environment variable
 
-    You need to configure the environment variable `STREAMING HOME` to be the path of our "install" folder. This is done by opening the `/etc/profile` configuration file using:
+   You need to configure the environment variable `STREAMING HOME` to be the path of our "install" folder. This is done by opening the `/etc/profile` configuration file using:
 
-    ```Bash
+   ```Bash
 
-    sudo nano /etc/profile
-    ```
+   sudo nano /etc/profile
+   ```
 
-    and then adding the following line:
+   and then adding the following line:
 
-    ```Bash
+   ```Bash
 
-    export STREAMING_HOME= $HOME/install
-    ```
+   export STREAMING_HOME= $HOME/install
+   ```
 
-    `$HOME` is a variable containing the root directory for the current user, which should be `/home/pi`.
+   `$HOME` is a variable containing the root directory for the current user, which should be `/home/pi`.
 
-    Press `Ctrl+O` to write the change, click `Enter` to confirm, and then `Ctrl+x` to exit.
+   Press `Ctrl+O` to write the change, click `Enter` to confirm, and then `Ctrl+x` to exit.
 
-    ![Configure Streaming Home Environment Variable](ConfigureStreamingHomeEnvironmentVar.png)
+   ![Configure Streaming Home Environment Variable](ConfigureStreamingHomeEnvironmentVar.png)
 
 For the question below, select the correct answer, and click **Validate**.
 

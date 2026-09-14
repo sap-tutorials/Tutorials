@@ -75,7 +75,7 @@ In the last tutorial, you will see how a collaborator can work with the template
 
 9.	Now, you will be taken to a **Quick setup** page for your new repository. Copy the HTTPS connection link for the repository to a safe location. This is required to set up the connection with your SAP Business Application Studio project.
 
-    <!-- border -->![HTTPS for GitHub repo](ss-02-HTTPS-for-github-repo.png)
+    ![HTTPS for GitHub repo](ss-02-HTTPS-for-github-repo.png)
 
 
 
@@ -128,17 +128,17 @@ You can create a new dev space for the following steps or simply restart the SAP
 
 3.	Next, click on the **plus icon** to add a local git repository.
 
-    <!-- border -->![Add repo to GitHub](ss-03-add-repo-to-github.png)
+    ![Add repo to GitHub](ss-03-add-repo-to-github.png)
 
 4.	In the **Source Control** panel, you can see a list of changes made when the empty project `WS3_3` was created. Click on the **plus icon** to stage these changes.
 
-    <!-- border -->![Stage all changes](ss-04-stage-all-changes.png)
+    ![Stage all changes](ss-04-stage-all-changes.png)
 
 5.	Enter a commit message in the Message box (for example: Initial commit).
 
 6.	Click on **tick mark icon** above to commit the changes.
 
-    <!-- border -->![Commit all changes](ss-05-commit-all-changes.png)
+    ![Commit all changes](ss-05-commit-all-changes.png)
 
 
 
@@ -149,11 +149,11 @@ You can create a new dev space for the following steps or simply restart the SAP
 
 2.	Select **Remote** and then **Add Remote**. This will add the remote connection to your GitHub repository
 
-    <!-- border -->![Add remote](ss-06-add-remote.png)
+    ![Add remote](ss-06-add-remote.png)
 
 3.	A prompt asking to provide repository URL appears on the top center of the screen. Paste the GitHub HTTPS connection link that you obtained from GitHub after creating your new repository `WS3_3` into the prompt. Press **Enter**.
 
-    <!-- border -->![Add repo URL](ss-07-add-repo-URL.png)
+    ![Add repo URL](ss-07-add-repo-URL.png)
 
 4.	Now, enter the remote name `main`. Press **Enter**.
 
@@ -170,15 +170,15 @@ You can create a new dev space for the following steps or simply restart the SAP
 
 1.	Go to the **Source Control** panel and click on the **three dots** icon. Select **Pull, Push** and then the **Push to…** option.
 
-    <!-- border -->![Push to main](ss-08-push-to-main.png)
+    ![Push to main](ss-08-push-to-main.png)
 
 2.	A prompt asking for a remote to publish the master branch appears on the top center of the screen. Select the remote connection main that you have just created.
 
-    <!-- border -->![Publish branch to main](ss-09-publish-branch-to-main.png)
+    ![Publish branch to main](ss-09-publish-branch-to-main.png)
 
 3.	You can verify the synchronization by checking your GitHub repository WS3_3. You should now see the folders and objects from your SAP Business Application Studio project there, for example, the `db` folder and `mta.yaml` file.
 
-    <!-- border -->![Synchronized folders](ss-10-synchronized-folders.png)
+    ![Synchronized folders](ss-10-synchronized-folders.png)
 
 
 
@@ -192,20 +192,20 @@ As the last two steps, you will create two generic roles and database users. The
 
 2.	In the SAP HANA Database Explorer, right-click on your HDI container connection from the left-side panel and select **Open SQL Console**.
 
-    <!-- border -->![Open SQL console](ss-11-open-SQL-console.png)
+    ![Open SQL console](ss-11-open-SQL-console.png)
 
     > It is necessary to use the DBADMIN user connected to the instance since you require the DBADMIN user privileges to create and assign the roles.
 
 3.	In the SQL Console, copy and paste the following code. Run it to create a role for the object owner (OO).
 
-    ```SQL
+   ```SQL
 create role "genericRoleForOO";
 ```
     > The Object Owner, in this example, will be assigned to the user who owns the project and creates calculation views. This role will need Select privileges with grant option that will be assigned to it in the next steps.
 
 4.	Next, copy and paste the following code in the SQL Console and run it to create a role for application users (AP).
 
-    ```SQL
+   ```SQL
 create role "genericRoleForAP";
 	```
 
@@ -213,13 +213,13 @@ create role "genericRoleForAP";
 
 5.	Copy and paste the following code in the SQL Console. Run the code to view the schema name for the role inventory created earlier in this tutorial group.
 
-    ```SQL
+   ```SQL
 select role_schema_name,* from roles where role_name='inventory';
 ```
 
     Note the schema name as it is needed for the next statement.
 
-    <!-- border -->![Role schema name](ss-12-role-schema-name.png)
+    ![Role schema name](ss-12-role-schema-name.png)
 
 
 
@@ -229,20 +229,20 @@ select role_schema_name,* from roles where role_name='inventory';
 
 1.	Here, you will assign the two roles you have created in the fourth tutorial ("`inventory_with_grant#`" and "`inventory_without_grant`") to the two new roles you have just created. Copy and paste the following code in the SQL Console and make sure the schema name ("`WS3_1_HDI_DB_1`") matches the schema name you have just checked with the previous statement. Run the statement to grant roles to the object owner and application user.
 
-    ```SQL
+   ```SQL
 grant "WS3_1_HDI_DB_1"."inventory_with_grant#" to "genericRoleForOO";
 grant "WS3_1_HDI_DB_1"."inventory_without_grant" to "genericRoleForAP";
 	```
 
 2.	Create a database user by running the following SQL statement. `UPS_GRANTOR` means **User-Provided Service Granter**. In the next step, this user will be allowed to grant the roles created above.
 
-    ```SQL
+   ```SQL
 create user UPS_GRANTOR password "DnATBG!1" NO FORCE_FIRST_PASSWORD_CHANGE;
 	```
 
 3.	Assign the roles you have created to this user `UPS_GRANTOR` by running the statements below.
 
-    ```SQL
+   ```SQL
 grant  "genericRoleForOO" to UPS_GRANTOR WITH ADMIN OPTION;
 grant  "genericRoleForAP" to UPS_GRANTOR WITH ADMIN OPTION;
 	```

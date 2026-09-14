@@ -525,14 +525,14 @@ In this step, you open SAP Business Application Studio, clone the Bookshop sampl
 
 10. Add the following entries (1). 
         
-    ```text
-    275;The Phoenix Project;"The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win is a business novel by Gene Kim, Kevin Behr, and George Spafford. It presents a fictional case study of a troubled IT organization and its journey towards DevOps, emphasizing the importance of collaboration, automation, and continuous improvement.";180;33;14.99;USD;19
-    276;Italian Journey;"Italian Journey, a travelogue written by Johann Wolfgang von Goethe, recounts his travels through Italy between 1786 and 1788. The work is notable for its detailed descriptions of the Italian landscape, culture, and art, providing a valuable historical perspective.";190;44;11.50;EUR;13
-    277;Life 3.0;"Life 3.0: Being Human in the Age of Artificial Intelligence is a non-fiction book by Swedish-American physicist and cosmologist Max Tegmark. The book explores the implications of artificial intelligence and discusses potential scenarios of advanced AI impacting human society.";200;55;19.99;USD;16
-    278;A Transport Wizard's Tale;"A Transport Wizard's Tale: A tribute to the players who walked every street, spun every PokéStop, and caught every Pokémon. In memory of harry2ndstreet, whose adventures ended way too early.";42;10;0.00;USD;0
-    ```
-    To release them to your Git repository, open the **Source Control** on the side panel (2).    
-    ![Create a transport 11](screenshots/bas-11.png)
+   ```text
+   275;The Phoenix Project;"The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win is a business novel by Gene Kim, Kevin Behr, and George Spafford. It presents a fictional case study of a troubled IT organization and its journey towards DevOps, emphasizing the importance of collaboration, automation, and continuous improvement.";180;33;14.99;USD;19
+   276;Italian Journey;"Italian Journey, a travelogue written by Johann Wolfgang von Goethe, recounts his travels through Italy between 1786 and 1788. The work is notable for its detailed descriptions of the Italian landscape, culture, and art, providing a valuable historical perspective.";190;44;11.50;EUR;13
+   277;Life 3.0;"Life 3.0: Being Human in the Age of Artificial Intelligence is a non-fiction book by Swedish-American physicist and cosmologist Max Tegmark. The book explores the implications of artificial intelligence and discusses potential scenarios of advanced AI impacting human society.";200;55;19.99;USD;16
+   278;A Transport Wizard's Tale;"A Transport Wizard's Tale: A tribute to the players who walked every street, spun every PokéStop, and caught every Pokémon. In memory of harry2ndstreet, whose adventures ended way too early.";42;10;0.00;USD;0
+   ```
+   To release them to your Git repository, open the **Source Control** on the side panel (2).    
+   ![Create a transport 11](screenshots/bas-11.png)
 
 11. Stage your changes.
     

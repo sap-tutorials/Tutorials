@@ -40,32 +40,32 @@ A video version of this tutorial is also available:
 
 1. Return to the SAP BTP cockpit and the HANA Cloud Management screen. Choose **Open SAP HANA Database Explorer** from the **Actions** column.
 
-    <!-- border -->![DB Explorer](1.png)
+    ![DB Explorer](1.png)
 
 2. The Database Explorer will open in another browser tab and the DB entry for your DBADMIN user will be selected. Choose **Open SQL Console** from the context menu
 
-    <!-- border -->![DB Explorer](1_2.png)
+    ![DB Explorer](1_2.png)
 
 3. Use the following code to create a schema and a user. You will also create a simple table to use as an example for cross-container access.
 
     You will create a SQL role and assign it to the user `PLUSR` with the permissions granted manually before. This user will be used for the connection between the HDI container and the plain schema, and will grant the role to the HDI container technical user.
 
-    ```sql
-    CREATE SCHEMA "PLAIN";
-    CREATE USER PLUSR PASSWORD "HanaRocks01" SET USERGROUP DEFAULT;
+   ```sql
+   CREATE SCHEMA "PLAIN";
+   CREATE USER PLUSR PASSWORD "HanaRocks01" SET USERGROUP DEFAULT;
 	  ALTER USER PLUSR DISABLE PASSWORD LIFETIME;
 
-    CREATE ROW TABLE "PLAIN"."REGIONS" (	REGION NVARCHAR(5), 	DESCRIPTION NVARCHAR(100) );
+   CREATE ROW TABLE "PLAIN"."REGIONS" (	REGION NVARCHAR(5), 	DESCRIPTION NVARCHAR(100) );
 
-    CREATE ROLE CCROLE;
-    grant  SELECT, UPDATE, INSERT, DELETE, EXECUTE, SELECT METADATA ON SCHEMA "PLAIN" TO CCROLE with grant option;
-    grant  CCROLE to PLUSR with admin option;
+   CREATE ROLE CCROLE;
+   grant  SELECT, UPDATE, INSERT, DELETE, EXECUTE, SELECT METADATA ON SCHEMA "PLAIN" TO CCROLE with grant option;
+   grant  CCROLE to PLUSR with admin option;
 
-    ```
+   ```
 
 4. Use the green play button or press **`F8`** to execute the statement.
 
-    <!-- border -->![DB Explorer](2.png)
+    ![DB Explorer](2.png)
 
 > ## What is going on?
 >
@@ -85,43 +85,43 @@ A video version of this tutorial is also available:
 
 2. Use the search help to locate schema `PLAIN`.
 
-    <!-- border -->![DB Explorer](3.png)
+    ![DB Explorer](3.png)
 
 3. Click on **Tables**. Right-click on the `REGIONS` table and select **Import Data**
 
-    <!-- border -->![Import data in SAP HANA](4.png)
+    ![Import data in SAP HANA](4.png)
 
 4. Choose **Import Data** and press **Step 2**
 
-    <!-- border -->![Import data in SAP HANA](5.png)
+    ![Import data in SAP HANA](5.png)
 
 5. Choose **Local** as the Import Source. **Browse** for the file you have just downloaded. Press **Step 3**.
 
-    <!-- border -->![Import data in SAP HANA](6.png)
+    ![Import data in SAP HANA](6.png)
 
 6. Keep `PLAIN` and `REGIONS` as the target and click **Step 4**
 
-    <!-- border -->![Import data in SAP HANA](6_2.png)
+    ![Import data in SAP HANA](6_2.png)
 
 7. Keep the default table mapping and click **Step 5**
 
-    <!-- border -->![Import data in SAP HANA](7.png)
+    ![Import data in SAP HANA](7.png)
 
 8. Click **Review**
 
-    <!-- border -->![Import data in SAP HANA](8.png)
+    ![Import data in SAP HANA](8.png)
 
 9. Use **Import Into Database** to load the records
 
-    <!-- border -->![DB Explorer](9.png)
+    ![DB Explorer](9.png)
 
 10. You should see the wizard has imported 4 records
 
-    <!-- border -->![DB Explorer](10.png)
+    ![DB Explorer](10.png)
 
 11. Right-click on the table and choose **Open Data** to see the records loaded into the table.
 
-    <!-- border -->![DB Explorer](10_2.png)
+    ![DB Explorer](10_2.png)
 
 ### Create a user-provided service
 
@@ -129,27 +129,27 @@ You now have a schema with a table and data in it. You have also created a user 
 
 1. Return to the SAP Business Application Studio and the project which you created in previous tutorials in this group. Open a new Terminal
 
-    <!-- border -->![user provided service](11_2.png)
+    ![user provided service](11_2.png)
 
 2. Issue this command from the Terminal
 
-    ```ssh
-    cf cups CC_ACCESS -p "{\"user\":\"PLUSR\",\"password\":\"HanaRocks01\",\"tags\":[\"hana\"] , \"schema\" : \"PLAIN\" }"
-    ```
+   ```ssh
+   cf cups CC_ACCESS -p "{\"user\":\"PLUSR\",\"password\":\"HanaRocks01\",\"tags\":[\"hana\"] , \"schema\" : \"PLAIN\" }"
+   ```
 
-    <!-- border -->![user provided service](11_3.png)
+    ![user provided service](11_3.png)
 
 3. Use  **add database connection** option in the SAP HANA PROJECTS view.
 
-    <!-- border -->![user provided service](11.png)
+    ![user provided service](11.png)
 
 4. In the **Add Database Connection** wizard that opens, please select **Existing User-Provided service instance** as the **Connection Type** and then choose `CC_ACCESS` as the User-Provided service instance we just created. Press **Add**
 
-    <!-- border -->![user provided service](12.png)
+    ![user provided service](12.png)
 
 5. From the SAP HANA PROJECTS view, you should see that the User Provided Service is now part of the Database Connections of your project.
 
-    <!-- border -->![user provided service](13.png)
+    ![user provided service](13.png)
 
 ### Grant permissions to technical users
 
@@ -157,73 +157,73 @@ You will now create an artifact that grants access to the two technical users of
 
 1. Create a new file under `db`.
 
-    <!-- border -->![Grant roles](new.png)
+    ![Grant roles](new.png)
 
 2. Call it `cfg/plain.hdbgrants`
 
-    <!-- border -->![Grant roles](grants.png)
+    ![Grant roles](grants.png)
 
 3. And use the following code in it:
 
-    ```json
-    {
-      "CC_ACCESS": {
-        "object_owner" : {
-          "roles" : ["CCROLE" ]
-        },
-        "application_user" : {
-          "roles" : ["CCROLE" ]
-        }
-      }
-    }
-    ```
+   ```json
+   {
+     "CC_ACCESS": {
+       "object_owner" : {
+         "roles" : ["CCROLE" ]
+       },
+       "application_user" : {
+         "roles" : ["CCROLE" ]
+       }
+     }
+   }
+   ```
 
 ### Create synonyms
 
 1. You can now create a synonym to access the table in the plain schema. Create a new file in `db\src\data`
 
-    <!-- border -->![Create synonym](syn.png)
+    ![Create synonym](syn.png)
 
 2. Call it `regions.hdbsynonym`.
 
-    <!-- border -->![Create synonym](syn2.png)
+    ![Create synonym](syn2.png)
 
 3. Add a new record with name `REGIONS`, object name `REGIONS` and schema `PLAIN`
 
-    <!-- border -->![Create synonym](22.png)
+    ![Create synonym](22.png)
 
 4. **Deploy** the entire **db** module.
 
-    <!-- border -->![Create synonym](25.png)
+    ![Create synonym](25.png)
 
 ### Create a view
 
 1. You can now use the table in the classic schema with other objects created in your HDI container.  In `data` folder, create a new database artifact
 
-    <!-- border -->![Create synonym](30.png)
+    ![Create synonym](30.png)
 
 2. Choose `hdbview` and call it `RegiontextsView`
 
-    <!-- border -->![Create synonym](31.png)
+    ![Create synonym](31.png)
 
 3. Paste the following code into the view.
 
-    ```sql
-    VIEW "RegionTextsView"
-    	(REGION, DESCRIPTION )
-    	as select REGION, DESCRIPTION
-    	from REGIONS
-    ```
+   ```sql
+   VIEW "RegionTextsView"
+   	(REGION, DESCRIPTION )
+   	as select REGION, DESCRIPTION
+   	from REGIONS
+   ```
 
 4. **Deploy**.
 
 5. Return to the Database Explorer and your HDI Container.
 
-    <!-- border -->![Create synonym](32.png)
+    ![Create synonym](32.png)
 
 6. Right-click on the view and choose **Open Data**. Paste the generated SQL statement in the box below to complete the validation.
 
-    <!-- border -->![Create synonym](33.png)
+    ![Create synonym](33.png)
 
 ### Troubleshooting insufficient privileges
 

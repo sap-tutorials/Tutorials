@@ -38,7 +38,7 @@ cf logs cf-nodejs
 
 You can then watch this update in real time by refreshing the application's webpage and observing the output that is produced in the terminal. To exit the stream simply hit `ctrl-c` on your keyboard.
 
-<!-- border -->![Using the cf logs command](cf-logs-app.png)
+![Using the cf logs command](cf-logs-app.png)
 
 If you want to dump the most recent logs from your app to the screen, run:
 
@@ -46,7 +46,7 @@ If you want to dump the most recent logs from your app to the screen, run:
 cf logs cf-nodejs --recent
 ```
 
-<!-- border -->![Grabbing the most recent logs](cf-logs-recent.png)
+![Grabbing the most recent logs](cf-logs-recent.png)
 
 
 
@@ -72,7 +72,7 @@ Once installed this plugin provides three new commands in the `cf cli`:
 
 To find out more about these commands and the options they provide, refer to their help documentation using the `-h` option for each command.
 
-<!-- border -->![Help screen for cf tail](cf-tail-help.png)
+![Help screen for cf tail](cf-tail-help.png)
 
 To view logs using the log cache plugin run:
 
@@ -81,7 +81,7 @@ cf tail -c logs <app-name>
 ```
 The `-c logs` flag filters the log cache so that only logs are displayed in the output.
 
-<!-- border -->![Viewing logs with log cache](cf-log-cache-logs.png)
+![Viewing logs with log cache](cf-log-cache-logs.png)
 
 
 
@@ -100,7 +100,7 @@ Every log that passes through the Cloud Foundry system consists of four fields:
 
 Cloud Foundry supports several different [Log Types](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#types). Application logs, for example, receive a log type of `APP`. Knowing how logs are formatted and the various log types available can help you when troubleshooting your application. As a developer the log type you are most likely to see is `APP` for your application logs. You can filter the output of your logs using `grep`. For example, you can display only those logs with the log type of APP for your `cf-nodejs` app using `cf logs cf-nodejs | grep APP`. You can also combine this with the `--recent` flag above to search through recent logs.
 
-<!-- border -->![Filtering for APP logs](cf-logs-grep.png)
+![Filtering for APP logs](cf-logs-grep.png)
 
 
 

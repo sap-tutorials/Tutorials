@@ -29,15 +29,15 @@ parser: v2
    
  2. Navigate to **Entitlements**, choose **Edit**.
 
-    <!-- border --> ![Edit Service plan](Entitlementandedit2.jpg)
+    ![Edit Service plan](Entitlementandedit2.jpg)
 
  3. Choose **Add service Plans**.
  
-    <!-- border --> ![Add Service Plan](addserviceplan.jpg)
+    ![Add Service Plan](addserviceplan.jpg)
  
  4. On the new pop-up window, under Services search for **Mobile Services**: Select **SAP Mobile Services** > under **Available Plans**, select **build-code** plan > choose **Add 1 Service Plan**.
  
-     <!-- border --> ![Adding build-code plan](addserviceplanmobile1.jpg)
+     ![Adding build-code plan](addserviceplanmobile1.jpg)
 
  5. Choose **Save**.
    

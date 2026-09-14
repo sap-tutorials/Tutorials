@@ -86,9 +86,9 @@ author_profile: https://github.com/Vikramkulkarni01
 
 2. Go to the file in your explorer and right-click on the downloaded file in your local system from the previous step.  Open it with any editor (like **Notepad, Notepad++, Code, Sublime Text, etc.**) scroll down to the bottom of the file to get the token endpoint and copy the URL that is located at the string:
 
-    ```JSON
-      <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:URI" Location="https://example.com"index="1"/>
-    ```
+   ```JSON
+     <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:URI" Location="https://example.com"index="1"/>
+   ```
     !![AssertionConsumerService](screenshots/AssertionConsumerService.png)
 
 [DONE]

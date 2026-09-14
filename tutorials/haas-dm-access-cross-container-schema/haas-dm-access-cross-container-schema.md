@@ -261,20 +261,20 @@ grant "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REM
 > Here is an example for that `.hdbgrants` file
 >
 > ```json
-{
-  "CC_ACCESS": {
-    "object_owner" : {
-      "global_object_privileges" : [
-        {
-          "name" : "LocalFile",
-          "type" : "REMOTE SOURCE",
-          "privileges" : [ "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REMOTE SUBSCRITPION EXCEPTION" ]
-        }
-      ]
-    }
-  }
-}
-
+> {
+>   "CC_ACCESS": {
+>     "object_owner" : {
+>       "global_object_privileges" : [
+>         {
+>           "name" : "LocalFile",
+>           "type" : "REMOTE SOURCE",
+>           "privileges" : [ "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REMOTE SUBSCRITPION EXCEPTION" ]
+>         }
+>       ]
+>     }
+>   }
+> }
+> 
 >```
 
 **Save** the files. **Build** the database module.

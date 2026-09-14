@@ -96,7 +96,7 @@ Within the run() method, i.e., whenever the command is executed, it calls the `b
 >
 > The structure you are interested in is presented below. The root entity will be the business partner which is connected to zero-to-many `BusinessPartnerRoles` and `BusinessPartnerAddresses` which is again connected to zero-to-many `EMailAddresses`:
 
-<!-- border -->![DataModel-4](DataModel-4.png)
+![DataModel-4](DataModel-4.png)
 
 For this purpose, you are editing the `BusinessPartnerController` to expose a POST method to our clients.
 
@@ -229,7 +229,7 @@ To run it on a localhost, run the following:
 
 Then you can use a tool like Postman or Curl to check whether the code works. As you can see in this example, the business partner has been successfully posted and contains a `BusinessPartner` ID and UUID, which was enriched by S/4HANA.
 
-<!-- border -->![screenshot](screenshot.png)
+![screenshot](screenshot.png)
 
 ### Write an integration test
 

@@ -45,7 +45,7 @@ Some services are available to try out for free in both free tier and a trial ac
 
 If you want to know which services currently offer which service plans, visit [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog?provider=all&regions=all&category=freetierservices) and explore our offerings. You find free tier service plans under **Free Tier Services**.
 
- <!-- border -->![SAP Discovery Center](btp-free-tier-dc.png)
+ ![SAP Discovery Center](btp-free-tier-dc.png)
 
 >**IMPORTANT:** Free tier service plans are not designed for productive use. SAP provides no associated support with free tier services plans either.  If you think you have encountered a runtime issue with a plan, you can ask a question on the [SAP Community Q&A site](https://answers.sap.com/index.html) and tag the appropriate service as part of your question.  SAP product folks monitor these forums, so your request should get proper attention quickly.
 

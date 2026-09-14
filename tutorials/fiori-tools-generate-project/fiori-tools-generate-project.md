@@ -30,7 +30,7 @@ In this case, you will create an SAP Fiori elements list report page displaying 
 
 Before generating the application, create a root folder for your project wherever you would like to store it. Name it whatever you like. For the sake of this tutorial, we will call it **`lroptutorial`**. Open this folder in your development environment.
 
-<!-- border -->![Create root folder](t2-root-folder.png)
+![Create root folder](t2-root-folder.png)
 
 
 ### Launch Application Generator
@@ -40,13 +40,13 @@ SAP Fiori tools includes an Application Generator that provides a wizard-style a
 
 In Visual Studio Code, open the Command Palette using **CMD/CTRL + Shift + P**, type **`Application Generator`**, and select **Fiori: Open Application Generator**.
 
-<!-- border -->![Launch Application Generator](t2-application-generator.png)
+![Launch Application Generator](t2-application-generator.png)
 
 >In Visual Studio Code, the **Command Palette** provides convenient access to a variety of commands. These commands give you access to certain functionality in Visual Studio Code, including the custom commands that are part of SAP Fiori tools.
 
 >If this is the first time SAP Fiori Generator is being installed, you will see the following screen while the installation is in process. Installation is still in progress while the loading indicator is visible. This may take a few minutes.
 
-<!-- border -->![Application Generator installation](t2-lrop-generator-install.png)
+![Application Generator installation](t2-lrop-generator-install.png)
 
 
 ### Select application template
@@ -54,11 +54,11 @@ In Visual Studio Code, open the Command Palette using **CMD/CTRL + Shift + P**, 
 
 The **Command Palette** will then close and a new tab for the Application Generator will open. Since the purpose of this tutorial is to create an SAP Fiori elements List Report Page app, ensure that **SAP Fiori** is selected in the Template Type menu.
 
-<!-- border -->![Select Application Type](t2-application-type.png)
+![Select Application Type](t2-application-type.png)
 
 Select the **List Report Page** tile and press **Next**.
 
-<!-- border -->![Application Generator Tile](t2-lrop-tile.png)
+![Application Generator Tile](t2-lrop-tile.png)
 
 
 
@@ -108,7 +108,7 @@ At this point, your application folder will be generated based on the input from
 
 Your project structure should look like the image below.    
 
-<!-- border -->![VSCode Project Folder](t2-project-structure-1.png)
+![VSCode Project Folder](t2-project-structure-1.png)
 
 Once your project has been generated, **Application Information** page will be shown for the project you have created. **Application Information** page gives you a quick overview of the most essential information for your project. You can find more information on **Application Information** page here: <https://help.sap.com/viewer/17d50220bcd848aa854c9c182d65b699/Latest/en-US/c3e0989caf6743a88a52df603f62a52a.html>.
 
@@ -122,11 +122,11 @@ Since the given OData service came with pre-configured backend annotations, you 
 
 From the **Application Information** page, click on the tile **Preview Application**.
 
-<!-- border -->![Application Information Open Preview Application](t2-applicationInfo-preview.png)
+![Application Information Open Preview Application](t2-applicationInfo-preview.png)
 
 From the options, you will need to select a npm script. Select `start` and press **`Enter`** to preview your app with backend data. A new browser window will open with your List Report Page application running. Click **Go** to see display the list of products.
 
-<!-- border -->![VSCode Select npm start](t2-select-npm-start.png)
+![VSCode Select npm start](t2-select-npm-start.png)
 
 >You may need to enter the credentials you created if you had to request access to the OData service.
 
@@ -148,7 +148,7 @@ From the Visual Studio Code **Explorer** on your left, right-click your project 
 
 From the options, you will need to select a npm script. Select `start-mock` and press **`Enter`** to preview your app with mock data.
 
-<!-- border -->![VSCode Select npm start mock](t2-select-npm-start-mock.png)
+![VSCode Select npm start mock](t2-select-npm-start-mock.png)
 
 A new browser window opens with your List Report Page application running with mock data.
 

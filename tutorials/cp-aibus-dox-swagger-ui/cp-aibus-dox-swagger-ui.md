@@ -30,23 +30,23 @@ You need the service key that you created for SAP Document AI in the previous tu
 
 1. To access the SAP Document AI Swagger UI, first copy the `tenantuiurl` value and paste it into a text editor. Then, copy the `swagger` value and paste it onto the end of the `tenantuiurl` value. Finally, copy the resulting string, paste it into the address bar of your web browser, and press **Enter**.
 
-    <!-- border -->![DOX](service-key-details.png)
+    ![DOX](service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    <!-- border -->![DOX](swagger0.png)
+    ![DOX](swagger0.png)
 
 3. Get the `access_token` value created in the previous tutorial [Get OAuth Access Token for SAP Document AI Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
-    ```
-    Bearer <access_token>
-    ```
+   ```
+   Bearer <access_token>
+   ```
 
-    <!-- border -->![DOX](Authorize.png)
+    ![DOX](Authorize.png)
 
 4. Click **Authorize**, and then click **Close**.
 
-    <!-- border -->![DOX](Authorize2.png)
+    ![DOX](Authorize2.png)
     
     
 
@@ -57,13 +57,13 @@ Use the **GET /capabilities** endpoint to see the list of document fields and en
 
 Click the endpoint name to expand it, click **Try it out**, and then **Execute**.
 
-<!-- border -->![DOX](capabilities.png)
+![DOX](capabilities.png)
 
-<!-- border -->![DOX](capabilities2.png)
+![DOX](capabilities2.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](capabilitiesResponse.png)
+![DOX](capabilitiesResponse.png)
 
 >If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`Bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for SAP Document AI via Web Browser](cp-aibus-dox-web-oauth-token).
 
@@ -84,11 +84,11 @@ Free tier and trial users can only create one client. To see your list of client
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](listClient.png)
+![DOX](listClient.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](listClientResponse.png)
+![DOX](listClientResponse.png)
 
 
 
@@ -105,11 +105,11 @@ Use the **DELETE /clients** endpoint to delete the `default` client.
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](deleteClient.png)
+![DOX](deleteClient.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](deleteClientResponse.png)
+![DOX](deleteClientResponse.png)
 
 
 
@@ -126,11 +126,11 @@ Use the **POST /clients** endpoint to create your own client. The **`clientId`**
 
 4. Click **Execute**.
 
-<!-- border -->![DOX](createClient.png)
+![DOX](createClient.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](createClientResponse.png)
+![DOX](createClientResponse.png)
 
 You can repeat step 3 to see the **`clientId`** and **`clientName`** of the client you have just created.
 
@@ -167,57 +167,57 @@ Do the following:
 
 4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client you created in step 5 (`c_00`, for example), and the document type (`invoice`, for example). In this case, you can use the following:
 
-    ```JSON
-    {
-       "extraction":{
-          "headerFields":[
-             "documentNumber",
-             "taxId",
-             "purchaseOrderNumber",
-             "shippingAmount",
-             "netAmount",
-             "senderAddress",
-             "senderName",
-             "grossAmount",
-             "currencyCode",
-             "receiverContact",
-             "documentDate",
-             "taxAmount",
-             "taxRate",
-             "receiverName",
-             "receiverAddress"
-          ],
-          "lineItemFields":[
-             "description",
-             "netAmount",
-             "quantity",
-             "unitPrice",
-             "materialNumber"
-          ]
-       },
-       "clientId":"c_00",
-       "documentType":"invoice",
-       "receivedDate":"2020-02-17",
-       "enrichment":{
-          "sender":{
-             "top":5,
-             "type":"businessEntity",
-             "subtype":"supplier"
-          },
-          "employee":{
-             "type":"employee"
-          }
-       }
-    }
-    ```
+   ```JSON
+   {
+      "extraction":{
+         "headerFields":[
+            "documentNumber",
+            "taxId",
+            "purchaseOrderNumber",
+            "shippingAmount",
+            "netAmount",
+            "senderAddress",
+            "senderName",
+            "grossAmount",
+            "currencyCode",
+            "receiverContact",
+            "documentDate",
+            "taxAmount",
+            "taxRate",
+            "receiverName",
+            "receiverAddress"
+         ],
+         "lineItemFields":[
+            "description",
+            "netAmount",
+            "quantity",
+            "unitPrice",
+            "materialNumber"
+         ]
+      },
+      "clientId":"c_00",
+      "documentType":"invoice",
+      "receivedDate":"2020-02-17",
+      "enrichment":{
+         "sender":{
+            "top":5,
+            "type":"businessEntity",
+            "subtype":"supplier"
+         },
+         "employee":{
+            "type":"employee"
+         }
+      }
+   }
+   ```
 
 5. Click **Execute**.
 
-<!-- border -->![DOX](testInvoice.png)
+![DOX](testInvoice.png)
 
 After you have clicked **Execute**, you should receive a response like the following:
 
-<!-- border -->![DOX](testInvoiceResult.png)
+![DOX](testInvoiceResult.png)
 
 Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
@@ -238,11 +238,11 @@ You can now use the **GET /document/jobs/{`id`}** endpoint to receive the predic
 
 5. Click **Execute**.
 
-<!-- border -->![DOX](getResults.png)
+![DOX](getResults.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](getResultsResponse.png)
+![DOX](getResultsResponse.png)
 
 In the response, you will find some general information about the document you uploaded. In `headerFields`, such as `documentDate` and `taxAmount`, and in `lineItems`, such as `description` and `quantity`, you will find the prediction for the extracted fields.
 

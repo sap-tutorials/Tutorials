@@ -41,23 +41,23 @@ To access and authorize the SAP Document AI Swagger UI, you'll need the followin
 
 1. To access the SAP Document AI Swagger UI, copy the  `tenantuiurl` value and paste it into a text editor. Then, copy the `swagger` value `/document-information-extraction/v1/` and paste it onto the end of the `tenantuiurl` value. Finally, copy the entire string, paste it into the address bar of your web browser, and press **Enter**.
 
-    <!-- border -->![DOX](service-key-details.png)
+    ![DOX](service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top-right corner, click **Authorize**.
 
-    <!-- border -->![DOX](swagger0.png)
+    ![DOX](swagger0.png)
 
 3. Copy the `access_token` value created in the tutorial [Get OAuth Access Token for SAP Document AI Using Any Web Browser](cp-aibus-dox-web-oauth-token) and paste it into a text editor. Move your cursor to the start of the line containing the value and enter **Bearer** followed by a space. Finally, copy the entire string, and paste it into the **Value** field.
 
-    ```
-    Bearer <access_token>
-    ```
+   ```
+   Bearer <access_token>
+   ```
     
 4. Click **Authorize**, and then click **Close**.
    
-    <!-- border -->![DOX](Authorize.png)
+    ![DOX](Authorize.png)
 
-    <!-- border -->![DOX](Authorize2.png)
+    ![DOX](Authorize2.png)
 
 
 
@@ -68,13 +68,13 @@ Use the **GET /capabilities** endpoint to check if you now have access to the SA
 
 Click the endpoint name to expand it, click **Try it out**, and then **Execute**.
 
-<!-- border -->![DOX](capabilities.png)
+![DOX](capabilities.png)
 
-<!-- border -->![DOX](capabilities2.png)
+![DOX](capabilities2.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](capabilitiesResponse.png)
+![DOX](capabilitiesResponse.png)
 
 >If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check whether you've added the word **`Bearer`**, followed by a space, before the token and whether the token value is complete and has been copied properly from the **`access_token`** value in your service key.
 
@@ -89,17 +89,17 @@ Activate the instant learning feature using the **`enableInstantLearning`** conf
 
 2. Click **Try it out**.
 
-    <!-- border -->![DOX](try.png)
+    ![DOX](try.png)
 
 3. Enter the following in the **`payload`** field:
 
-    ```JSON
-    {
-      "value": {
-        "enableInstantLearning":"true"
-      }
-    }  
-    ```
+   ```JSON
+   {
+     "value": {
+       "enableInstantLearning":"true"
+     }
+   }  
+   ```
 
     You can also make the following optional entries: 
 
@@ -114,11 +114,11 @@ Activate the instant learning feature using the **`enableInstantLearning`** conf
 
 4. Click **Execute**.
 
-    <!-- border -->![DOX](execute.png)
+    ![DOX](execute.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](response.png)
+![DOX](response.png)
 
 You've activated the instant learning feature, and you're now all set to start using it as detailed in [Instant Learning (Premium Edition)](https://help.sap.com/docs/document-information-extraction/document-information-extraction/instant-learning-premium-edition-only).
 
@@ -135,15 +135,15 @@ See the list of all configurations already created and their scope, including th
 
 2. Click **Try it out**.
 
-    <!-- border -->![DOX](try2.png)
+    ![DOX](try2.png)
 
 3. Click **Execute**.
 
-    <!-- border -->![DOX](execute2.png)
+    ![DOX](execute2.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](response2.png)
+![DOX](response2.png)
 
 
 
@@ -156,24 +156,24 @@ Do the following to delete the **`enableInstantLearning`** configuration:
 
 2. Click **Try it out**.
 
-    <!-- border -->![DOX](try3.png)
+    ![DOX](try3.png)
 
 3. Enter the following in the **`payload`** field:
 
-    ```JSON
-    {
-      "value": [
-        "enableInstantLearning"
-      ]
-    }  
-    ```
+   ```JSON
+   {
+     "value": [
+       "enableInstantLearning"
+     ]
+   }  
+   ```
 
 4. Click **Execute**.
 
-    <!-- border -->![DOX](execute3.png)
+    ![DOX](execute3.png)
 
 You should receive a response like the following:
 
-<!-- border -->![DOX](response3.png)
+![DOX](response3.png)
 
 Congratulations, you've completed this tutorial.

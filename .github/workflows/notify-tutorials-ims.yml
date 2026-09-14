@@ -27,7 +27,13 @@ name: Notify Tutorials Platform
 
 on:
   push:
-    branches: [main]
+    # Source repos are a MIXTURE of default branches: most default to `main`,
+    # but some (e.g. sap-tutorials/Tutorials) still default to `master`. List
+    # BOTH so this template auto-publishes regardless of a repo's default —
+    # a `main`-only trigger silently never fires on a `master`-default repo
+    # (root cause of the cp-* PROD content-drift incidents). GitHub ignores a
+    # listed branch that doesn't exist, so [master, main] is safe everywhere.
+    branches: [master, main]
     paths:
       - '**.md'
       - '**.png'

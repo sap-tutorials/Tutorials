@@ -28,7 +28,7 @@ In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Wo
 
 > When you open the **Content Manager** you'll see a list of content items that have been added to your subaccount. From here you can manually configure new content items and view any other available content items. You can also access the **Content Explorer** where you can explore exposed content from available channels, select the content, and add it to your own content.
 
-  <!-- border -->![Open Content Manager](1-open-content-manager.png)
+  ![Open Content Manager](1-open-content-manager.png)
 
 
 ### Create and configure new app
@@ -36,11 +36,11 @@ In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Wo
 
 1.  Click **Create** and select **App** from the list.  
 
-    <!-- border -->![Add an app](2-add-app.png)
+    ![Add an app](2-add-app.png)
 
 2. In the header area of the app editor, enter a title `New Orders`.  
 
-    <!-- border -->![Add a title](2a-add-title.png)
+    ![Add a title](2a-add-title.png)
 
 3. Under the **Configuration** tab, enter the following values (some will already be there by default):
 
@@ -52,7 +52,7 @@ In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Wo
 
     * **URL**:  `https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/index.html`
 
-    <!-- border -->![Enter app properties](3-add-app-properties.png)
+    ![Enter app properties](3-add-app-properties.png)
 
     > When working in your own environment, it's better to integrate SAPUI5 apps by configuring a destination to the relevant system and setting the app properties to use this destination. In this case, in the  **App UI Technology** dropdown list, you would select `SAPUI5`. This configuration allows you to better manage your content in the Dev-QA-Prod lifecycle.
 
@@ -66,7 +66,7 @@ In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Wo
 
     * **Action**: `Display`
 
-    <!-- border -->![Add navigation properties](4-navigation-properties.png)
+    ![Add navigation properties](4-navigation-properties.png)
 
 6. Click the **Visualization** tab.
 
@@ -82,7 +82,7 @@ In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Wo
 
 8. On the right, you can see a preview of the tile with all the properties you entered. Click **Save**.
 
-    <!-- border -->![Add visualization properties](5-visualization-properties.png)
+    ![Add visualization properties](5-visualization-properties.png)
 
 
 ### View the app that you created
@@ -90,11 +90,11 @@ In this tutorial, you'll use the **Content Manager** to add apps to SAP Build Wo
 
 Go back to the Content Manager by clicking on the breadcrumbs.
 
-  <!-- border -->![Go back to Content Manager](6-back-to-content-manager.png)
+  ![Go back to Content Manager](6-back-to-content-manager.png)
 
 You can see your app in the list of content items:
 
-  <!-- border -->![View app in content manager list](7-view-app.png)
+  ![View app in content manager list](7-view-app.png)
 
 For end users to access the app in runtime, you must assign the app to a role. 
 
@@ -106,15 +106,15 @@ For end users to access the app in runtime, you must assign the app to a role.
 
 1. Click the **Everyone** role.
 
-    <!-- border -->![Select everyone role](8-everyone-role.png)
+    ![Select everyone role](8-everyone-role.png)
 
 2. Click **Edit**.
 
-    <!-- border -->![Click Edit](9-edit.png)
+    ![Click Edit](9-edit.png)
 
 3. Under the **Apps** tab, you'll see that your `New Orders` app has a red **X** in the **Assignment Status** column. Click the toggle to change the icon to green and then click **Save**. This action assigns the app to the `Everyone` role.
 
-    <!-- border -->![Assign app to role](10-assign-app-to-role.png)
+    ![Assign app to role](10-assign-app-to-role.png)
 
     
     > If you have many apps, you can type some letters of your app name in the search bar, (for example, `Or`) to search for the app.

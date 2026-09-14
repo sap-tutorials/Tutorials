@@ -29,7 +29,6 @@ Simply make it your own for example by using your company colours everywhere, ch
 ### Customize the Introduction (Details) page
 In the Details Page of your app, the basic information of the use case idea is collected. For example the Name, description, Line of business and more. App variables are used to collect this information.
   
-  <!-- size:400px -->
   ![](visuals/Detailspage.png)
 
 If you want to add more questions to learn more or different things from the about the idea then add new questions and include new app variables to save the information. 
@@ -38,11 +37,9 @@ If you want to add more questions to learn more or different things from the abo
 Sometimes the proposed Lines of Business don't reflect your organizations example. By changing up the list and add your own departments / business areas your users will understand the question. This way they are able to provide the right information for IT to process.
 
 1. To add the more options in the list for *Line of Business*, open the binding menu for the *Option list* and add the options. 
-  <!-- size:400px -->
   ![](visuals/loblist.png)
 
 2. In the binding menu - select the list of values to edit or add more options in the dropdownn list.
-<!-- size:500px -->
 ![](visuals/dropdownoption.png)
 
 
@@ -50,12 +47,9 @@ Sometimes the proposed Lines of Business don't reflect your organizations exampl
 Your users are being made aware of their progess in answering all of the questions by seeing the progress bar at the top. If you don't want this to happen or change it up follow these steps.
 
 1. The progress bar has been built by using an app variable: the *completion* value.
-  <!-- size:500px -->
-
   ![](visuals/progressbar.png)
 2. Use the *Set app variable* function to assign the value to progress bar, in every page to hardcode the progress based on the number of pages used.
    
-  <!-- size:500px -->
   ![](visuals/bindingvalueforprgressnar.png)
 
 
@@ -67,12 +61,10 @@ If you want to have different slider questions or change up the look of it follo
 1. Each question container will have a Title component and an Answer component.
   The questions are static, and can be changed in the properties of the component. Here would be the place to insert your new / changed question if you want to have a different or new question.
 
-    <!-- size:500px -->
     ![](visuals/questionbox.png)
 
 1. The Answer component will have a text component and a slider component. Additionally there are page variables binded to the answer and question components respectively to save and process the information.
 
-    <!-- size:500px -->
     ![](visuals/answerbox.png)
 
 3. The slider has 5 values and the text components will display dynamic values based on the slider value with logic created on the page level. Feel free to change the options and values accordingly - for example if you want to weigh certain factors more or get rid of the "Unsure" option.
@@ -80,13 +72,12 @@ If you want to have different slider questions or change up the look of it follo
   Below is the logic for the values:
    - An event logic is used to check the slider values. In the properties of event logic select the question variable which is binded with the slider.
 
-  <!-- size:500px -->
   ![](visuals/sliderlogic.png)
 
    - The answer page variable is binded with a formula to check the slider value and show the respective option accordingly. 
       
-    For example:
-      IF(pageVars.question1==1, "1 Data source", IF(pageVars.question1==2, "2 Data sources", IF(pageVars.question1==3, "3 Data sources", IF(pageVars.question1==4, "4 Data sources", IF(pageVars.question1==5, "not sure about the number of data resources",""))))) <!-- this will format it as code on the sap.developers markdown flavor-->
+ For example:
+   IF(pageVars.question1==1, "1 Data source", IF(pageVars.question1==2, "2 Data sources", IF(pageVars.question1==3, "3 Data sources", IF(pageVars.question1==4, "4 Data sources", IF(pageVars.question1==5, "not sure about the number of data resources",""))))) <!-- this will format it as code on the sap.developers markdown flavor-->
 
 
 ### Understand how the complexity score is calculated
@@ -96,12 +87,10 @@ Consider a page with four questions where each question has a slider with five v
 
       Averagescore= (sum of selected values/maximum value) * 10
 
-  <!-- size:500px -->
   ![](visuals/Scorecalculation.png)
 
 Finally we aggregate the score of all pages to calculate the overall complexity of the idea.
 
-  <!-- size:500px -->
   ![](visuals/aggregate.png)
 
 Feel free to change this calculation path according to your needs. You might want different aspects, meaning different pages, to have more impact than others on the score or add more complexity to the calculation.
@@ -110,12 +99,10 @@ Feel free to change this calculation path according to your needs. You might wan
 ### Customize the summary view in the end
 At the end of the questions in the app your users get a summary screen which invites them to submit their idea with some additional information to IT. Similar to the score calculation, the summaries are concatinated using the page variables and some of the static text in each page.
 
-  <!-- size:500px -->
   ![](visuals/formulasummary.png)
 
 Finally the summaries from all the pages are also concatinated when sending data to SAP Build Process Automation.
 
-  <!-- size:500px -->
   ![](visuals/summaryconcat.png)
 
 Feel free to change up this summary page for instance if you want to give your users more information, like further contacts, information on the next steps or if you want them to just be able to submit without needing to give our further descriptions like the expected go-live date or don't see their own complexity score.
@@ -133,17 +120,14 @@ When your users answered all questions and described the necessary information t
 - Using *create record* logic in the *Submit use case* button, the data is sent from the app to trigger the approval process via destinations. Here, an additional field called *post message* is sent. 
 This field is used to add formatting to the content of the post when adding it to your Work Zone site. 
 
-  <!-- size:500px -->
   ![](visuals/postmessage.png)
 
   The used HTML tags can be used to format this text.
 
-  <!-- size:500px -->
   ![](visuals/postmessageformula.png)
 
   This is the formatted text on the workspace:
   
-  <!-- size:500px -->
   ![](visuals/postmessagerepo.png)
 
 ### Test the app

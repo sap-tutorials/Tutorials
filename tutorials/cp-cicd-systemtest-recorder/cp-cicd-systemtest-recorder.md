@@ -17,13 +17,13 @@ Please note that UIVeri5 is deprecated and will be removed or replaced soon. Eve
 -	You have installed [Node JS](https://nodejs.org/en/) in version 8.0 or higher.
 -	You have installed [Visual Studio Code](https://code.visualstudio.com/).
 -	You have installed UIVeri5 using the following command:
-    ```
-    npm install @ui5/uiveri5 -g
-    ```
+   ```
+   npm install @ui5/uiveri5 -g
+   ```
 -	You have installed [Yeoman](https://yeoman.io/) and [generator-easy-ui5](https://github.com/SAP/generator-easy-ui5) using the following command:
-    ```
-    npm install -g yo generator-easy-ui5
-    ```
+   ```
+   npm install -g yo generator-easy-ui5
+   ```
 - Your Google Chrome version is up to date. See [Update Google Chrome](https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&hl=en).
 -	You have a [Jenkins](https://jenkins.io/) instance that is preconfigured for using project "Piper". See [Configuration](https://sap.github.io/jenkins-library/configuration/).
 -	You have an account and a repository in [GitHub](https://github.com/).
@@ -87,9 +87,9 @@ In Visual Studio Code, set up your UIVeri5 test project.
 
 3. Use the following command to call the generator for UIVeri5 tests:
 
-    ```Shell/Bash
-    yo easy-ui5 project uiveri5
-    ```
+   ```Shell/Bash
+   yo easy-ui5 project uiveri5
+   ```
 
     Now, you're asked a couple of questions that help the generator create your test structure.
 
@@ -140,9 +140,9 @@ In Visual Studio Code, set up your UIVeri5 test project.
 
 7. To check if the test execution works, choose **Terminal** **&rarr;** **New Terminal** in the root folder of your project, and enter the following command:
 
-    ```Shell/Bash
-    uiVeri5
-    ```
+   ```Shell/Bash
+   uiVeri5
+   ```
 
     As a result, the browser briefly opens to execute the tests. However, as you haven't defined any tests, yet, the application doesn't load.
 
@@ -158,25 +158,25 @@ Manually, familiarize yourself with your test scenario before starting to code i
 
 1. In Google Chrome, use the following URL to access the home screen of your shopping application:
 
-    ```
-    https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/index.html
-    ```
+   ```
+   https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/index.html
+   ```
 
 2.    Check how many product categories are shown in the **Product Catalog**:
 
-      <!-- border -->![Product Categories in the Product Catalog](shopping-app.png)
+      ![Product Categories in the Product Catalog](shopping-app.png)
 
 3. In the **Product Catalog**, search for **`Watch`** and check if the displayed results match your request:
 
-    <!-- border -->![Comparison between Search Term and Search Result](search-results.png)
+    ![Comparison between Search Term and Search Result](search-results.png)
 
 4. Choose **Flat Watch HD32** and check if the product appears in the detailed view:
 
-    <!-- border -->![Detail View of Flat Watch HD32](detailed-view.png)
+    ![Detail View of Flat Watch HD32](detailed-view.png)
 
 5. Check if at the bottom right of the detailed view, there is an **Add to Cart** button:
 
-    <!-- border -->![Add to Cart Button](cart-button.png)
+    ![Add to Cart Button](cart-button.png)
 
 
 
@@ -191,11 +191,11 @@ Implement a test that checks if in the product catalog on the home screen of you
 
 2. Implement the `it` function by adding the skeleton of the home screen test:
 
-    ```
-    it("Should validate the home screen", function () {
+   ```
+   it("Should validate the home screen", function () {
 
-    });
-    ```
+   });
+   ```
 
     Your code should now look as follows:
 
@@ -203,9 +203,9 @@ Implement a test that checks if in the product catalog on the home screen of you
 
 3. To specify what you want to check, add the following line to the test skeleton:
 
-    ```
-    Then.onTheHomePage.iShouldSeeAllCategories();
-    ```
+   ```
+   Then.onTheHomePage.iShouldSeeAllCategories();
+   ```
 
     `iShouldSeeAllCategories` is a reference to the test function that you'll define in the following.
 
@@ -225,13 +225,13 @@ Implement a test that checks if in the product catalog on the home screen of you
 
 6. In your sample application, right-click the first entry of the Categories list and choose **Highlight**. As a result, the Test Recorder highlights the entry to indicate its activity:
 
-    <!-- border -->![Highlighting of First Category](highlight-category.png)
+    ![Highlighting of First Category](highlight-category.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect **UIVeri5** is selected.
 
-    <!-- border -->![Code Snippet for List Item](snippet-category.png)
+    ![Code Snippet for List Item](snippet-category.png)
 
 7. Copy this code snippet into the assertions section of your `home.js` page object.
 
@@ -251,11 +251,11 @@ Implement a test that checks if in the product catalog on the home screen of you
 
 10. To run the test, execute the following command in the terminal:
 
-    ```
-    uiveri5
-    ```
+   ```
+   uiveri5
+   ```
 
-    As a result, the browser opens and the home screen is loaded.
+   As a result, the browser opens and the home screen is loaded.
 
 11. In the terminal response, check if the test has been passed successfully:
 
@@ -271,11 +271,11 @@ Implement a test that checks if when you search for a product, the search result
 
 2. Into the `describe` function, add the skeleton of the product search test:
 
-    ```
-    it("Should search for a product", function () {
+   ```
+   it("Should search for a product", function () {
 
-    });
-    ```
+   });
+   ```
 
     Your code should now look as follows:
 
@@ -283,15 +283,15 @@ Implement a test that checks if when you search for a product, the search result
 
 3. Within the test skeleton, add the following interaction, which will be defined later:
 
-    ```
-    When.onTheHomePage.iSearchForProduct();
-    ```
+   ```
+   When.onTheHomePage.iSearchForProduct();
+   ```
 
 4. Then, add the expected behavior, namely that the product list is filtered:
 
-    ```
-    Then.onTheHomePage.theProductListShouldBeFiltered();
-    ```
+   ```
+   Then.onTheHomePage.theProductListShouldBeFiltered();
+   ```
 
     Now, your test is complete. Make sure that it looks as follows and choose **File** **&rarr;** **Save**.
 
@@ -303,13 +303,13 @@ Implement a test that checks if when you search for a product, the search result
 
 7. In your sample application, right-click the search field and choose **Enter Text**. As a result, the Test Recorder highlights the search field to indicate its activity:
 
-    <!-- border -->![Highlighted Search Field](highlight-search-field.png)
+    ![Highlighted Search Field](highlight-search-field.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect UIVeri5 is selected.
 
-    <!-- border -->![Code Snippet for Search Field](snippet-search-field.png)
+    ![Code Snippet for Search Field](snippet-search-field.png)
 
 8. Copy this code snippet into the `actions` section of your `home.js` page object.
 
@@ -325,13 +325,13 @@ Implement a test that checks if when you search for a product, the search result
 
 12. Right-click the first product in the filtered catalog and choose **Highlight**. As a result, the Test Recorder highlights the list entry to indicate its activity:
 
-    <!-- border -->![Highlighted List Entry](highlight-product.png)
+    ![Highlighted List Entry](highlight-product.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect UIVeri5 is selected.
 
-    <!-- border -->![Code Snippet for List Entry](snippet-product.png)
+    ![Code Snippet for List Entry](snippet-product.png)
 
 13. Copy this code snippet into the `assertions` section of your `home.js`.
 
@@ -349,11 +349,11 @@ Implement a test that checks if when you search for a product, the search result
 
 16. To run the test, execute the following command in the terminal:
 
-    ```Shell/Bash
-    uiveri5
-    ```
+   ```Shell/Bash
+   uiveri5
+   ```
 
-    As a result, the browser opens and you can watch the automated test software execute the actions you have defined.
+   As a result, the browser opens and you can watch the automated test software execute the actions you have defined.
 
 17. In the terminal response, check if the test has been passed successfully:
 
@@ -372,11 +372,11 @@ Check if the following two statements are true:
 
 2. Into the `describe` function, add the skeleton of the product search test:
 
-    ```
-    it("Should navigate to the product", function () {
+   ```
+   it("Should navigate to the product", function () {
 
-      });
-    ```
+     });
+   ```
 
     Your code should now look as follows:
 
@@ -384,21 +384,21 @@ Check if the following two statements are true:
 
 3. Within the test skeleton, add the following interaction with reference to your `home.js`:
 
-    ```
-    When.onTheHomePage.iSelectTheFirstProduct();
-    ```
+   ```
+   When.onTheHomePage.iSelectTheFirstProduct();
+   ```
 
 4. Then, add the first behavior you expect, namely that the product title appears in the detail view:
 
-    ```
-    Then.onTheProductPage.theProductTitleIsShown();
-    ```
+   ```
+   Then.onTheProductPage.theProductTitleIsShown();
+   ```
 
 5. Next, add your second expectation, which is that the **Add to cart** button appears:
 
-    ```
-    Then.onTheProductPage.theProductCouldBeOrdered();
-    ```
+   ```
+   Then.onTheProductPage.theProductCouldBeOrdered();
+   ```
 
     Now, your test is complete. Make sure that it looks as follows and choose **File** **&rarr;** **Save**.
 
@@ -412,13 +412,13 @@ Check if the following two statements are true:
 
 9. In your sample application, right-click the title of the first search result and choose **Press**. As a result, the Test Recorder highlights the title to indicate its activity:
 
-    <!-- border -->![Highlighted Title](highlight-title.png)
+    ![Highlighted Title](highlight-title.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect UIVeri5 is selected.
 
-    <!-- border -->![Code Snippet for Title](snippet-title.png)
+    ![Code Snippet for Title](snippet-title.png)
 
 10. Copy this code snippet into the `actions` section of your `home.js`.
 
@@ -438,9 +438,9 @@ Check if the following two statements are true:
 
 13. Enter the following command:
 
-    ```Shell/Bash
-    yo easy-ui5 project newuiveri5po
-    ```
+   ```Shell/Bash
+   yo easy-ui5 project newuiveri5po
+   ```
 
 14. Answer the questions that help the generator create your new page object as follows:
 
@@ -460,13 +460,13 @@ Check if the following two statements are true:
 
 14. In the Shopping Cart application in Google Chrome, right-click the header of the detail view and choose **Highlight**. As a result, the Test Recorder highlights the header to indicate its activity:
 
-    <!-- border -->![Highlighted Header](highlight-header.png)
+    ![Highlighted Header](highlight-header.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     >Please make sure that the dialect UIVeri5 is selected.
 
-    <!-- border -->![Code Snippet for Header](snippet-header.png)
+    ![Code Snippet for Header](snippet-header.png)
 
 15. Copy this code snippet into the `assertions` section of your `product.js`.
 
@@ -484,13 +484,13 @@ Check if the following two statements are true:
 
 18. In the Shopping Cart application in Google Chrome, right-click the **Add to Cart** button and choose **Highlight**. As a result, the Test Recorder highlights the button to indicate its activity:
 
-    <!-- border -->![Highlighted Button](highlight-button.png)
+    ![Highlighted Button](highlight-button.png)
 
     Now, the Test Recorder provides a code snippet for your test:
 
     > Please make sure that the dialect UIVeri5 is selected.
 
-    <!-- border -->![Code Snippet for Button](snippet-button.png)
+    ![Code Snippet for Button](snippet-button.png)
 
 19. Copy this code snippet into the `assertions` section of your `product.js`.
 
@@ -504,9 +504,9 @@ Check if the following two statements are true:
 
 21. To run the test, execute the following command in the terminal:
 
-    ```
-    uiveri5
-    ```
+   ```
+   uiveri5
+   ```
 
 22. In the terminal response, check if the test has been passed successfully:
 
@@ -533,21 +533,21 @@ Automate your system tests by integrating them into a CI/CD pipeline.
 
 6. In the **Script** area, add the skeleton of your pipeline with reference to the project "Piper" library:
 
-    ```
-    #!/usr/bin/env groovy
-    @Library(['piper-lib-os']) _
+   ```
+   #!/usr/bin/env groovy
+   @Library(['piper-lib-os']) _
 
-    //Setup the skeleton for Jenkins based Runs
-    node {
-        stage('System Tests') {
+   //Setup the skeleton for Jenkins based Runs
+   node {
+       stage('System Tests') {
 
-        }
-    }
-    ```
+       }
+   }
+   ```
 
     Make sure that your script looks as follows and choose **Save**:
 
-    <!-- border -->![Screenshot Pipeline Skeleton in Jenkins](pipeline-script.png)
+    ![Screenshot Pipeline Skeleton in Jenkins](pipeline-script.png)
 
 7. To run your newly created pipeline, choose **Build Now**.
 
@@ -557,7 +557,7 @@ Automate your system tests by integrating them into a CI/CD pipeline.
 
 9. To check the log for failures due to syntax issues, choose **Console Output**. Make sure that the (empty) pipeline has run successfully:
 
-    <!-- border -->![Console Output in Jenkins: Successful](console-output.png)
+    ![Console Output in Jenkins: Successful](console-output.png)
 
     Next, implement a pipeline stage for your system tests with UIVeri5.
 
@@ -567,38 +567,38 @@ Automate your system tests by integrating them into a CI/CD pipeline.
 
 12. Add the following content to your `System Tests` stage:
 
-    ```
-    deleteDir()
+   ```
+   deleteDir()
 
-    // Clone code from the system test repository
-    git '<YOUR GITHUB REPOSITORY>'
+   // Clone code from the system test repository
+   git '<YOUR GITHUB REPOSITORY>'
 
-    // checkout the master branch
-    sh 'git checkout master'
+   // checkout the master branch
+   sh 'git checkout master'
 
-    // With this next step UIVeri5 tests can be executed.
-    uiVeri5ExecuteTests script: this
+   // With this next step UIVeri5 tests can be executed.
+   uiVeri5ExecuteTests script: this
 
-    // HTML Publisher plugin
-    // Publish HTML reports
-    // Publish Test Report for UIveri5 on Jenkins
-    publishHTML target: [
-        allowMissing: true,
-        alwaysLinkToLastBuild: true,
-        keepAll: true,
-        reportDir: 'target/report/screenshots/',
-        reportFiles: "report.html",
-        reportName: "UIVeri5 Test Report"
-    ]
-    ```
+   // HTML Publisher plugin
+   // Publish HTML reports
+   // Publish Test Report for UIveri5 on Jenkins
+   publishHTML target: [
+       allowMissing: true,
+       alwaysLinkToLastBuild: true,
+       keepAll: true,
+       reportDir: 'target/report/screenshots/',
+       reportFiles: "report.html",
+       reportName: "UIVeri5 Test Report"
+   ]
+   ```
 
 13.  In the script, exchange `<YOUR GITHUB REPOSITORY>` with the URL of the GitHub repository into which you have pushed your local `TECHED2019-UIVERI5` project.
 
-    Make sure that your script looks as follows and choose **Save**:
+   Make sure that your script looks as follows and choose **Save**:
 
-    ![Pipeline Script Part 1](script-1.png)
+   ![Pipeline Script Part 1](script-1.png)
 
-    ![Pipeline Script Part 2](script-2.png)
+   ![Pipeline Script Part 2](script-2.png)
 
 14. To run your pipeline, choose **Build Now**.
 
@@ -608,13 +608,13 @@ Automate your system tests by integrating them into a CI/CD pipeline.
 
 15. Choose **#2** to view the results of your second pipeline run. Make sure that it has run successfully:
 
-    <!-- border -->![Console Output in Jenkins: Successful](console-output.png)
+    ![Console Output in Jenkins: Successful](console-output.png)
 
 16. From the sidebar, choose **UIVeri5 Test Report**.
 
     Here, you get an overview of all test results together with screenshots from their execution:
 
-    <!-- border -->![UIVeri5 Test Report](test-report-2.png)
+    ![UIVeri5 Test Report](test-report-2.png)
 
 
 **Congratulations!**

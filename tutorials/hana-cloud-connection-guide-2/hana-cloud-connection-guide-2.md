@@ -51,7 +51,7 @@ To get started, install two packages, `hdbcli` and `hana_ml`. The `hdbcli` packa
 
 In addition to this `hana_ml` package can also be used to experience various machine learning capabilities. It is recommended to install `hdbcli` driver version 2.5 and the latest version of `hana_ml` driver. You can install both these packages from [here](https://pypi.org/).
 
-<!-- border -->![Jupyter Notebook New Python](ss-01-jupyter-notebook-new-python.png)
+![Jupyter Notebook New Python](ss-01-jupyter-notebook-new-python.png)
 
 Once the packages are installed, launch Jupyter Notebook.
 
@@ -64,11 +64,11 @@ Once the packages are installed, launch Jupyter Notebook.
 
 1. Create a new Python 3 notebook.
 
-    <!-- border -->![Import Packages 1](ss-02-import-packages-1.png)
+    ![Import Packages 1](ss-02-import-packages-1.png)
 
 2. Import the packages using the following lines of code:
 
-    ```Python
+   ```Python
 import hdbcli
 from hdbcli import dbapi
 import hana_ml
@@ -76,14 +76,14 @@ import hana_ml
 
 3. To check if the package has been imported correctly, you can check the package version. Just type the following:
 
-    ```Python
+   ```Python
 print(hdbcli.__version__) #Use two underscores '_''_' for __version__
 print(hana_ml.__version__) #Use two underscores '_''_' for __version__
 ```
 
 4. Next, import the following packages required for this tutorial:
 
-    ```Python
+   ```Python
 from hana_ml import dataframe
 from hana_ml.dataframe import ConnectionContext
 import pandas as pd
@@ -134,22 +134,22 @@ print(flight_hdf.select_statement)
 
 1. Now that you have a table in your database, to access this table we execute the following lines of code. Replace the XXXX with your schema name and table with your table name.
 
-    ```Python
+   ```Python
 flight_hdf=conn2.sql ('select * from XXXX.(table) ')
 ```
 
 2. To check the data types of the table, you can execute the following command:
 
-    ```Python
+   ```Python
 flight_hdf.dtypes()
 ```
 
 3. To explore the SAP HANA data-frame, you can execute the following command:
 
-    ```Python
+   ```Python
 flight_hdf.describe().collect()
 ```
-    <!-- border -->![Access SAP HANA Cloud Table](ss-03-access-SAP-HANA-Cloud-table.png)
+   ![Access SAP HANA Cloud Table](ss-03-access-SAP-HANA-Cloud-table.png)
 
 
 ### Explore data visualizations
@@ -157,13 +157,13 @@ flight_hdf.describe().collect()
 
 1. To add visualizations to your data, import `EDAVisualizer` using the command:
 
-    ```Python
+   ```Python
 from hana_ml.visualizers.eda import EDAVisualizer
 ```
 
 2. Next, import the following packages required for this tutorial.
 
-    ```Python
+   ```Python
 from hana_ml import dataframe
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -172,11 +172,11 @@ import numpy as np
 from hana_ml.algorithms.pal import stats
 ```
 
-    <!-- border -->![PIE chart](ss-04-PIE-chart.png)
+   ![PIE chart](ss-04-PIE-chart.png)
 
 3. Now we will create a pie chat using the database table to find the most frequently travelled destination. To create a pie chart using run the following:
 
-    ```Python
+   ```Python
 f = plt.figure(figsize=(10,10))
 ax1 = f.add_subplot(111)
 start=time.time()

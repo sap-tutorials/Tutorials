@@ -24,7 +24,7 @@ Instead of using the default domain that is assigned to your subaccount, you can
 ## Illustration of the custom domain configuration process
 To make sure that your domain is trusted by way of activated server certificates and that all application data is protected, you must set up secure TLS/SSL communication. Then, make your application reachable via your custom domain and route traffic to it.
 
-<!-- border -->![Configuration Process](1-configuration-process-diagram.png)
+![Configuration Process](1-configuration-process-diagram.png)
 
 ## Prerequisites
  - You have entitled the Custom Domain Manager to your subaccount. For more information, see [Manage Entitlements Using the Cockpit](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html).
@@ -62,7 +62,7 @@ You define the default site in the Site Directory of your SAP Build Work Zone, s
 
 6. From the action menu, select **Set as Default**.
 
-    <!-- border -->![Select default site](2-site-directory-new.png)
+    ![Select default site](2-site-directory-new.png)
 
 
 ### Manage reserved and custom domains
@@ -77,36 +77,36 @@ Then perform the custom domain configuration steps such as creating custom domai
 
 2. Choose the **Domains** tile.
 
-      <!-- border -->![Reserved domains](3-reserved-domains.png)
+      ![Reserved domains](3-reserved-domains.png)
 
 3. Click **Add**  to add a domain name that you want to reserve for this landscape and associated extension landscapes. For example: `mycompany.com`.
 
-    <!-- border -->![Select reserved domain](4-select-reserved-domain.png)
+    ![Select reserved domain](4-select-reserved-domain.png)
 
     Note that the domain name is now displayed in the list of **Reserved Domains**.
 
 4. Switch to the **Custom Domains** tab and click **Create**, and select **for your Subaccount's SaaS Subscriptions**. 
 
 
-    <!-- border -->![Select create](4a-create.png) 
+    ![Select create](4a-create.png) 
 
 5. A wizard opens displaying your subscribed applications, in their corresponding landscapes. Now do the following:
 
     - From the **Select Deployment Type** step,  select `SAP Build Work Zone, standard edition`  as the SaaS application and click **Next Step**.
 
-    <!-- border -->![Select reserved domain](5-select-Saas-application.png) 
+    ![Select reserved domain](5-select-Saas-application.png) 
 
     - From the **Select Reserved Domain** step, select the desired domain from the list of **Reserved Domains** which in our case is `prod.mycompany.com`. Now click **Next Step**.
 
-    <!-- border -->![Select domain](6-select-domain.png)  
+    ![Select domain](6-select-domain.png)  
 
     - From the **Create Subdomain Name** step, enter a single subdomain name, for example `prod` and click **Finish**. The result is a new custom domain. For example, `workzpne.prod.mycompany.com`
 
-    <!-- border -->![Select subdomain](7-select-subdomain.png) 
+    ![Select subdomain](7-select-subdomain.png) 
 
 6. Create a custom domain for every runtime destination. For example: `xyz200.prod.mycompany.com` (xyz200 in this example is the on-premise backend). The custom domain for the runtime destination must be part of this hierarchy, meaning it should be a **single** subdomain under the reserved domain, otherwise an error will occur. This is because SAP Build Work Zone code suppresses the subdomain (for example, `workzone.prod.mycompany.com`) used for the SAP Build Work Zone site when performing requests to on-premise backend applications.
 
-    <!-- border -->![Custom domain for runtime destinations](8-custom-domain-for-runtime.png) 
+    ![Custom domain for runtime destinations](8-custom-domain-for-runtime.png) 
 
     If you have content providers in multiple subaccounts (e.g. dev/test/prod), make sure that every subaccount has its own custom domain for the SAP Build Work Zone subscription and destination. The destination content could be similar, but the destination’s name should be different.
     
@@ -139,22 +139,22 @@ This step is done in the Custom Domain Manager. You'll create new TLS configurat
 
 1. Choose the **Server Identities** tile.
 
-    <!-- border -->![Select TLS tile](10-TLS-tile.png)
+    ![Select TLS tile](10-TLS-tile.png)
 
 2. Click **Create**.
-    <!-- border -->![Create configuration](10a-create-TLS-configurations.png)
+    ![Create configuration](10a-create-TLS-configurations.png)
 
 3. Enter a configuration name, for example `myTLS` and click **Next Step**.
 
-    <!-- border -->![Configuration name](11-configuration-name.png)
+    ![Configuration name](11-configuration-name.png)
 
 4. From the **Client Authentication (mLTS)** step, you'll see that the client authentication is displayed as disabled by default. Therefore a user name and password are required for authentication. Click **Next Step**.
 
-    <!-- border -->![Client authentication step](12-client-authentication.png)
+    ![Client authentication step](12-client-authentication.png)
 
 5. The **Summary** information displays the entered configuration name and the status of the mTLS mode again. Click **Finish** to exit the wizard and manage the created configuration.
 
-    <!-- border -->![Summary step](13-Summary.png)
+    ![Summary step](13-Summary.png)
 
 For more information, see the **Custom Domain Manager** documentation: [Manage TLS Configurations](https://help.sap.com/docs/custom-domain/custom-domain-manager/manage-tls-configurations).
 
@@ -164,7 +164,7 @@ This step is done in the Custom Domain Manager. You'll create a new server certi
 
 1. Choose the **Server Identities** tile.
 
-     <!-- border -->![Server certificates tile](14-server-certificate-tile.png)
+     ![Server certificates tile](14-server-certificate-tile.png)
 
 2. Choose **Create**.
 
@@ -177,35 +177,35 @@ This step is done in the Custom Domain Manager. You'll create a new server certi
 
     - Enter the desired name, and then click **Next Step**.
 
-        <!-- border -->![Alias and key size](15-select-name.png)
+        ![Alias and key size](15-select-name.png)
 
     - In the **Select Target** step, keep the landscape with the default value, which should be the main landscape (e.g. `cf-eu10`). Then click **Next Step**.
 
-        <!-- border -->![Select target](16-select-target.png)
+        ![Select target](16-select-target.png)
 
     - In the **Select Custom Domains** step, select the domains which you want to assign to the server certificate.
 
-        <!-- border -->![Select domains](17-select-domains.png)
+        ![Select domains](17-select-domains.png)
 
     - In the **Certificate Subject** step, keep the **CommonName (CN)** parameter with the default value, then click **Next Step**. 
 
         > Note that the `CommonName` can't be longer than 64 characters.
 
-        <!-- border -->![Set subject](18-set-subject.png)
+        ![Set subject](18-set-subject.png)
 
     - In the **Key Configuration** step, keep the default Key Type.
 
-        <!-- border -->![Set keyconfiguration](18a-key-configuration.png)
+        ![Set keyconfiguration](18a-key-configuration.png)
 
     - In the **Summary** step, click the **Finish** button.
     
-        <!-- border -->![Summary step](18b-summary-step.png)
+        ![Summary step](18b-summary-step.png)
 
 4. Select the server certificate that you created to expand the details section. To order and install your new server certificate, you must first create the certificate signing request and then send this file to a trusted certificate authority of your choice to get it signed.
 
-    <!-- border -->![Server certificate details](19a-server-certificate-details.png)
+    ![Server certificate details](19a-server-certificate-details.png)
 
-    <!-- border -->![Server certificates signature](19-server-certificate-signature.png)
+    ![Server certificates signature](19-server-certificate-signature.png)
 
 5. Click **Get Certificate Signing Request** to copy the content and create the `.pem` file. You can also paste the content into a web page of your CA, if available.
 
@@ -236,26 +236,26 @@ Now you can map the application to your custom domain as follows:
 
 1. Choose the **SaaS Routes** tile.
 
-     <!-- border -->![Saas Routes tile](20-SaaS-routes-tile.png)
+     ![Saas Routes tile](20-SaaS-routes-tile.png)
 
 2. Click **Create** to open a wizard where you will map a route to your application.
 
-    <!-- border -->![Create route](20a-create-route.png)
+    ![Create route](20a-create-route.png)
 
 
 4. In the **Select Saas Subscription** step, select the **SAP Build Work Zone, standard edition** subscription and click **Next Step**.
 
-    <!-- border -->![Select Work Zone subscription](22-select-wz-subscription.png)
+    ![Select Work Zone subscription](22-select-wz-subscription.png)
 
 5. In the **Edit Route** step, don't change the standard route and click **Next Step**.
 
     > Note: even if your subaccount is in an extension landscape, such as `EU10-004`, you should use the main landscape URL, which is part of the subscription to SAP Build Work Zone, standard edition.
 
-    <!-- border -->![Edit route](23-edit-route.png)
+    ![Edit route](23-edit-route.png)
 
 6. In the **Select Custom Domain** step, select the desired custom domain from the list and click **Next Step**. In this example, select `prod.mycompany.com`.
 
-    <!-- border -->![Select custom domain](24-select-custom-domain.png)
+    ![Select custom domain](24-select-custom-domain.png)
 
 7. In the **Select a Hostname** step, click **Finish**. There's no need to add a hostname.
 
@@ -310,7 +310,7 @@ In this step, (which is only relevant for subscriptions that were created prior 
 
 2. From the **Applications and Resources** tab, choose the **Applications** tile.
 
-    <!-- border -->![Applications tile](27-applications-tile.png)
+    ![Applications tile](27-applications-tile.png)
 
 3. Choose the SAP Build Work Zone, standard edition <`your subaccount name`> application.
 
@@ -330,7 +330,7 @@ In this step, (which is only relevant for subscriptions that were created prior 
 
     The above URI covers both login and logout flows, so there's no need to add also a URI to the Front-Channel Logout URIs.
 
-    <!-- border -->![OpenID Connect Configuration](26-openID-configuration.png)
+    ![OpenID Connect Configuration](26-openID-configuration.png)
 
 7. **Save** your selection. Once the application has been changed, the system displays a message that the application <name of application> is updated.
 

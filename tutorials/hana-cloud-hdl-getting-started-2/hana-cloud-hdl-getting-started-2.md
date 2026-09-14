@@ -144,15 +144,15 @@ If you would like to connect to your data lake instance through an Interactive S
 
 3.	Now, open a Command Prompt window in your system. To begin an Interactive SQL session, execute the following command given below.
 
-    ```Shell
-    dbisql -c <CONNECTION_STRING>
-    ```
+   ```Shell
+   dbisql -c <CONNECTION_STRING>
+   ```
 
     **For example**, paste the connection string as shown below.
 
-    ```Shell
-    dbisql -c "UID=HDLADMIN;PWD=SamplePassword;host=a111111a-1a11-11aa-a11a-1a1a11a1a111.iq.hdl.test.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)"
-    ```
+   ```Shell
+   dbisql -c "UID=HDLADMIN;PWD=SamplePassword;host=a111111a-1a11-11aa-a11a-1a1a11a1a111.iq.hdl.test.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)"
+   ```
 
     ![Command Prompt](ss-10-command-prompt.png)
 
@@ -165,9 +165,9 @@ If you would like to connect to your data lake instance through an Interactive S
 
     **For example**, the command will look like this:
 
-    ```Shell
-    dbisql -c "UID=HDLADMIN;PWD=SamplePassword;host=a111111a-1a11-11aa-a11a-1a1a11a1a111.iq.hdl.test.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
-    ```
+   ```Shell
+   dbisql -c "UID=HDLADMIN;PWD=SamplePassword;host=a111111a-1a11-11aa-a11a-1a1a11a1a111.iq.hdl.test.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
+   ```
 
     ![No GUI dbisql](ss-12-no-gui-dbisql.png)
 
@@ -199,19 +199,19 @@ To use isql, you need to have an **interfaces file**, which you can create in th
 
 4.	Enter your respective credentials using the following format:
 
-    ```
-    <Instance_Name>
+   ```
+   <Instance_Name>
 
-    query tcp ether <InstanceID>.<Landscape> <Port> ssl="CN=hanacloud.ondemand.com"
-    ```
+   query tcp ether <InstanceID>.<Landscape> <Port> ssl="CN=hanacloud.ondemand.com"
+   ```
 
     **For example**, as shown below:
 
-    ```
-    DEMO_INSTANCE
+   ```
+   DEMO_INSTANCE
 
-    query tcp ether a111111a-1a11-11aa-a11a-1a1a11a1a111.iq.hdl.beta-us21.hanacloud.ondemand.com 443 ssl="CN=hanacloud.ondemand.com"
-    ```
+   query tcp ether a111111a-1a11-11aa-a11a-1a1a11a1a111.iq.hdl.beta-us21.hanacloud.ondemand.com 443 ssl="CN=hanacloud.ondemand.com"
+   ```
 
     >Note: There must be a tab used at the beginning of the second line, prior to query. Using spaces will not work.
 
@@ -230,9 +230,9 @@ To use isql, you need to have an **interfaces file**, which you can create in th
 
 9.	Start an isql session and connect to your database by running the following command and entering your credentials:
 
-    ```Shell
-    isql -U <username> -S <Instance_Name> -I<path to interfaces file>
-    ```
+   ```Shell
+   isql -U <username> -S <Instance_Name> -I<path to interfaces file>
+   ```
 
 10.	You will be prompted to enter your password.
 
@@ -250,11 +250,11 @@ To use isql, you need to have an **interfaces file**, which you can create in th
 
     Run the following command before trying again:
 
-    ```Shell
-    unset LANG
-    ```
+   ```Shell
+   unset LANG
+   ```
 
-    >**Attention**: This error was observed while using Ubuntu on a virtual Linux machine. This error will not occur when supported programs are used.
+   >**Attention**: This error was observed while using Ubuntu on a virtual Linux machine. This error will not occur when supported programs are used.
 
 
 [OPTION END]

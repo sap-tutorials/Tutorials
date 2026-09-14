@@ -2,7 +2,7 @@
 parser: v2
 auto_validation: true
 time: 6
-tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-runtime-and-environment]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 

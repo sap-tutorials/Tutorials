@@ -192,28 +192,28 @@ In this step, we will write a file called `adapter_config.xml`, which will defin
 
   2. Add a `<Name>` element and specify a name for the adapter instance.
 
-    ```html
-    <Name>MQTT Input</Name>
-    ```
+   ```html
+   <Name>MQTT Input</Name>
+   ```
 
   3. Add a `<Description>` element and specify the purpose of the adapter.
 
-    ```html
-    <Description>Adapter to receive MQTT messages for a specified topic, transforms to Streaming Analytics data format, and publishes to the Streaming Analytics stream.</Description>
-    ```
+   ```html
+   <Description>Adapter to receive MQTT messages for a specified topic, transforms to Streaming Analytics data format, and publishes to the Streaming Analytics stream.</Description>
+   ```
 
   4. Add a `<Modules>` element. This element will contain the modules we have written for our adapter instance as well as define the `EspConnector` module we chose in the last step.
 
   5. We will now define our modules. For each module, specify (below this table is step by step):
 
-    |Parameter| Description |
-    |---|---|
-    | `InstanceName` | Type: *string* <br/> (Required) Instance name of the specific module to use. For example, `MyInputTransporter`.|
-    | `Name` | Type: *string* <br/> (Required) The name of the module as defined in the `modulesdefine.xml` file. This should be a unique name. For example, `MyCustomInputTransporter`.|
-    | `Next` | Type: *string* <br/> (Required if another module follows this one) Instance name of the module that follows this one |
-    | `BufferMaxSize` |Type: *integer* <br/> (Advanced) Capacity of the buffer queue between this module and the next. The default value is 10240.|
-    | `Parallel` |Type: *boolean* <br/> (Optional; applies only to row-based formatters) If set to true, the module runs as a separated thread. If set to false, the module shares a thread with other modules. The default value is true. |
-    | `Parameters` | (Required) Parameters for the current module. For a custom module, the sub-element can reflect the name or type of the module, for example `<MyCustomInputTransporterParameters>`. <br/> `EspPublisher`, `EspMultiStreamPublisher`, `EspSubscriber`, and `EspMultiStreamSubscriber` all have set parameters that are configured specifically. |
+   |Parameter| Description |
+   |---|---|
+   | `InstanceName` | Type: *string* <br/> (Required) Instance name of the specific module to use. For example, `MyInputTransporter`.|
+   | `Name` | Type: *string* <br/> (Required) The name of the module as defined in the `modulesdefine.xml` file. This should be a unique name. For example, `MyCustomInputTransporter`.|
+   | `Next` | Type: *string* <br/> (Required if another module follows this one) Instance name of the module that follows this one |
+   | `BufferMaxSize` |Type: *integer* <br/> (Advanced) Capacity of the buffer queue between this module and the next. The default value is 10240.|
+   | `Parallel` |Type: *boolean* <br/> (Optional; applies only to row-based formatters) If set to true, the module runs as a separated thread. If set to false, the module shares a thread with other modules. The default value is true. |
+   | `Parameters` | (Required) Parameters for the current module. For a custom module, the sub-element can reflect the name or type of the module, for example `<MyCustomInputTransporterParameters>`. <br/> `EspPublisher`, `EspMultiStreamPublisher`, `EspSubscriber`, and `EspMultiStreamSubscriber` all have set parameters that are configured specifically. |
 
   6. Transporter module
 
@@ -337,51 +337,51 @@ In this step, we will write a file called `adapter_config.xml`, which will defin
 
   1. Create `<EspProjects>` and `<EspProject>` elements.
 
-    ```html
-    <EspProjects>
-     <EspProject>
-    ```
+   ```html
+   <EspProjects>
+    <EspProject>
+   ```
 
   2. Create a `<Name>` element and specify the name of your project in Studio. This must be the same value as specified in the `EspPublisherParameters` `<ProjectName>` element.
 
-    ```html
-    <Name>mqtt</Name>
-    ```
+   ```html
+   <Name>mqtt</Name>
+   ```
 
   3. Create a `<URI>` element and specify the `URI` used to connect to the streaming project. The address of the streaming server should be followed by `/workspace/project-name`. Don't forget to replace `<streaming-server-address>` and `<port>` with your server's `ip address` and `port number`.
 
-    ```html
-    <Uri>esps://<streaming-server-address>:<port 3XX26>/default/mqtt</Uri>
-    ```
+   ```html
+   <Uri>esps://<streaming-server-address>:<port 3XX26>/default/mqtt</Uri>
+   ```
 
   4. Create a `<Security>` element. This element contains all of the authentication details for your streaming server.
 
-    ```html
-    <Security>
-    <User>studio</User>
-    <Password encrypted="false">password</Password>
-    <AuthType>user_password</AuthType>
-    </Security>
-    ```
+   ```html
+   <Security>
+   <User>studio</User>
+   <Password encrypted="false">password</Password>
+   <AuthType>user_password</AuthType>
+   </Security>
+   ```
 
   5. Close off the `<EspProjects>` element.
 
-    ```html
-     </EspProject>
-    </EspProjects>
-    ```
+   ```html
+    </EspProject>
+   </EspProjects>
+   ```
 
   6. Add a `<GlobalParameters>` element. We will not be specifying any global parameters.
 
-    ```html
-    <GlobalParameters></GlobalParameters>
-    ```
+   ```html
+   <GlobalParameters></GlobalParameters>
+   ```
 
   7. Close off the `<Adapter>` element.
 
-    ```html
-    </Adapter>
-    ```
+   ```html
+   </Adapter>
+   ```
 
 >Full documentation on writing a Formatter module can be found in the section [Configuring a New Adapter](https://help.sap.com/viewer/8280db55429040f8b665db30cf05a88e/2.0.01/en-US/e789bb9c6f0f101490bef9e3c7dd5186.html).
 

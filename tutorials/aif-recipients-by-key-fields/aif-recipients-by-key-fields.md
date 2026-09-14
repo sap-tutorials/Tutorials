@@ -48,7 +48,7 @@ To be able to determine recipients based on business data, you need to enhance t
 
 3. **Save** and **activate** your changes.
 
-    <!-- border -->![Enhance index table](index-table-country-add.png)
+    ![Enhance index table](index-table-country-add.png)
 
 
 ### Define single key field
@@ -74,7 +74,7 @@ You need to define the key field for your interface.
 
 4. **Save** your changes.
 
-    <!-- border -->![Add key field country](aif-cust-key-field-define.png)
+    ![Add key field country](aif-cust-key-field-define.png)
 
 
 ### Create recipient assignment table
@@ -95,7 +95,7 @@ You need to create a recipient assignment table by copying the template table `/
 
 5. **Save** and **Activate** your changes.
 
-    <!-- border -->![Create Recipient Assignment Table](recipient-table-create.png)
+    ![Create Recipient Assignment Table](recipient-table-create.png)
 
 
 ### Define recipients
@@ -114,7 +114,7 @@ You need to create different recipients for different key field values.
 
 3. **Save** your changes.
 
-    <!-- border -->![Define Recipients](aif-cust-recipients-define.png)
+    ![Define Recipients](aif-cust-recipients-define.png)
 
 
 ### Assign recipient assignment table to your interface
@@ -135,7 +135,7 @@ You need to assign the beforehand created recipient assignment table as well as 
 
 3. **Save** your changes.
 
-    <!-- border -->![Configure Alerts](aif-cust-alerts-config.png)
+    ![Configure Alerts](aif-cust-alerts-config.png)
 
 
 ### Maintain recipient assignment table
@@ -155,7 +155,7 @@ You need to maintain the recipient assignment table to map key field values to y
 
 3. **Save** your changes.
 
-    <!-- border -->![Maintain assignment table](recipient-table-maintain.png)
+    ![Maintain assignment table](recipient-table-maintain.png)
 
 
 ### Assign users to recipients
@@ -168,11 +168,11 @@ Now the users in charge of monitoring the IDoc must be assigned to the recipient
 
 3. **Save** the new entry.
 
-    <!-- border -->![Assign users to recipient ](aif-cust-user-assign-de.png)
+    ![Assign users to recipient ](aif-cust-user-assign-de.png)
 
 4. Navigate back, and run through the same steps for the recipient **`ZFCUST_RECIPIENT_US`**.
 
-    <!-- border -->![Assign users to recipient ](aif-cust-user-assign-us.png)
+    ![Assign users to recipient ](aif-cust-user-assign-us.png)
 
 
 
@@ -182,7 +182,7 @@ Let's create a couple of sample messages to showcase the customizing changes.
 
 Open the **Test Tool for IDoc Processing** (transaction code `WE19`). Send in two new test messages with different countries, choose either **`DE`** or **`US`**. Maintain customer names, regions, and cities. Enter an existing customer type, either `P` or `B`, to ensure that the message won't fail. Optionally, enter any other customer type to force a message processing error.
 
-<!-- border -->![Sample Data](idoc-test-de.png)
+![Sample Data](idoc-test-de.png)
 
 
 ### Monitor your interface
@@ -193,15 +193,15 @@ Now, let's check the results of your tests in the Monitoring and Error Handling.
 
 2. Open the **Interface Monitor** (transaction code `/AIF/IFMON`). You should see one new message.
 
-    <!-- border -->![Display summary in interface monitor](interface-monitor-overview-de.png)
+    ![Display summary in interface monitor](interface-monitor-overview-de.png)
 
 3. When you select the summary line for your interface, you’re forwarded to **Monitoring and Error Handling** where you can see your selected test message for country **`DE`**. You should not see the messages for any other country.
 
-    <!-- border -->![Display message](interface-monitor-details-de.png)
+    ![Display message](interface-monitor-details-de.png)
 
 4. Alternatively, if you’ve set up Message Monitoring for Administrators in the SAP Fiori launchpad, you can check the test results there. Here, you see all messages grouped by recipient. See [Message Monitoring for Administrators](https://help.sap.com/docs/ABAP_PLATFORM_NEW/4db1676c3f114f119b500bd80ccd944d/2bfccaebd70f4efe905d4f0ec42da2c3.html).
 
-    <!-- border -->![Display messages in Message Monitoring for Administrators](message-monitor-admin.png)
+    ![Display messages in Message Monitoring for Administrators](message-monitor-admin.png)
 
 Congratulations! You've successfully defined key field based recipients.
 

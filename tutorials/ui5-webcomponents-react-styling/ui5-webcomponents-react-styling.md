@@ -58,33 +58,33 @@ In this step we will use [CSS Modules](https://github.com/css-modules/css-module
 
 1. Create a custom component `MyCustomElement.tsx` under `./src` with following content:
 
-    ```TypeScript / TSX
-    import { ThemingParameters } from "@ui5/webcomponents-react-base";
+   ```TypeScript / TSX
+   import { ThemingParameters } from "@ui5/webcomponents-react-base";
 
-    export const MyCustomElement = () => {
-      return (
-        <div >
-          <span>My custom Text Element</span>
-        </div>
-      );
-    };
-    ```
+   export const MyCustomElement = () => {
+     return (
+       <div >
+         <span>My custom Text Element</span>
+       </div>
+     );
+   };
+   ```
    
 2. Explicitly import `@ui5/webcomponents-react-base` package
 
     `@ui5/webcomponents-react-base` is already installed by `@ui5/webcomponents-react`, but as we want to import the `ThemingParameters` in the following step, it's recommended adding the package to the dependencies as well.
 
-    ```shell
-    npm install @ui5/webcomponents-react-base
-    ```
+   ```shell
+   npm install @ui5/webcomponents-react-base
+   ```
 
 3. Add inline-styles to apply `ThemingParameters` to the `<span>`
 
-    ```TypeScript / TSX
-    <span style={{ color: ThemingParameters.sapNegativeColor, fontSize: ThemingParameters.sapFontHeader1Size }}>
-      My custom Text Element
-    </span>
-    ```
+   ```TypeScript / TSX
+   <span style={{ color: ThemingParameters.sapNegativeColor, fontSize: ThemingParameters.sapFontHeader1Size }}>
+     My custom Text Element
+   </span>
+   ```
 
     The global CSS variables contain all publicly available styling parameters. With this it is possible to style custom components with the standardized styles of the UI5 Web Components.
 
@@ -92,53 +92,53 @@ In this step we will use [CSS Modules](https://github.com/css-modules/css-module
 
     First create a new file `MyCustomElement.module.css` in the same folder as `MyCustomElement.tsx` with the following content:
 
-    ```CSS
-     .container {
-       background-color: var(--sapBackgroundColor);
-       font-family: var(--sapFontFamily);
-       height: 50px;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-     }
-    ```
+   ```CSS
+    .container {
+      background-color: var(--sapBackgroundColor);
+      font-family: var(--sapFontFamily);
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+   ```
     Then import the CSS file in your `MyCustomElement.tsx` file and add the class to the `div` element.
 
-    ```TypeScript / TSX
-      import { ThemingParameters } from '@ui5/webcomponents-react-base';
-      import classes from './MyCustomElement.module.css';
-      
-      export const MyCustomElement = () => {
-        return (
-          <div className={classes.container}>
-            <span
-              style={{
-                color: ThemingParameters.sapNegativeColor,
-                fontSize: ThemingParameters.sapFontHeader1Size,
-              }}
-            >
-              My custom Text Element
-            </span>
-          </div>
-        );
-      };
-    ```
+   ```TypeScript / TSX
+     import { ThemingParameters } from '@ui5/webcomponents-react-base';
+     import classes from './MyCustomElement.module.css';
+     
+     export const MyCustomElement = () => {
+       return (
+         <div className={classes.container}>
+           <span
+             style={{
+               color: ThemingParameters.sapNegativeColor,
+               fontSize: ThemingParameters.sapFontHeader1Size,
+             }}
+           >
+             My custom Text Element
+           </span>
+         </div>
+       );
+     };
+   ```
 
 5. Import the custom component and add it to your `Home` component.
 
-    ```TypeScript / TSX
-    import { MyCustomElement } from "./MyCustomElement";
-    ```
+   ```TypeScript / TSX
+   import { MyCustomElement } from "./MyCustomElement";
+   ```
 
-    ```TypeScript / TSX
-     return (
-        <FlexBox
-          justifyContent={FlexBoxJustifyContent.Center}
-          wrap={FlexBoxWrap.Wrap}
-        >
-          <MyCustomElement />
-       ...
-    ```
+   ```TypeScript / TSX
+    return (
+       <FlexBox
+         justifyContent={FlexBoxJustifyContent.Center}
+         wrap={FlexBoxWrap.Wrap}
+       >
+         <MyCustomElement />
+      ...
+   ```
     ![Custom Element](01_customElement.png)
 
    Now you can see, that the element has the same `fontFamily` and uses the same semantic colors as UI5 Web Components for React.
@@ -151,37 +151,37 @@ One example is applying a responsive content padding to the content of the dashb
 
 1. Install Common CSS
 
-    ```shell
-    npm i @sap-ui/common-css
-    ```
+   ```shell
+   npm i @sap-ui/common-css
+   ```
 
 2. Import the required classes in `Home.tsx`
 
-    ```ts
-    import '@sap-ui/common-css/dist/sap-content-paddings.css';
-    import '@sap-ui/common-css/dist/sap-container-type.css';
-    ```
+   ```ts
+   import '@sap-ui/common-css/dist/sap-content-paddings.css';
+   import '@sap-ui/common-css/dist/sap-container-type.css';
+   ```
 3. Apply the classes on elements
 
     Add `div` that is wrapping the outer `FlexBox` and apply the `sap-container-type-inline-size` class:
 
-    ```tsx
-    <div className="sap-container-type-inline-size">
-       <FlexBox
-         justifyContent={FlexBoxJustifyContent.Center}
-         wrap={FlexBoxWrap.Wrap}
-         ...
-    ```
+   ```tsx
+   <div className="sap-container-type-inline-size">
+      <FlexBox
+        justifyContent={FlexBoxJustifyContent.Center}
+        wrap={FlexBoxWrap.Wrap}
+        ...
+   ```
     
     Remove `style` from the outer `FlexBox` and apply the `sap-content-paddings-container` class:
 
-    ```tsx
-    <FlexBox
-      justifyContent={FlexBoxJustifyContent.Center}
-      wrap={FlexBoxWrap.Wrap}
-      className="sap-content-paddings-container"
-    >
-    ```   
+   ```tsx
+   <FlexBox
+     justifyContent={FlexBoxJustifyContent.Center}
+     wrap={FlexBoxWrap.Wrap}
+     className="sap-content-paddings-container"
+   >
+   ```   
     Now, the padding of the `FlexBox` is adjusted automatically according to the viewport size.
 
 ### Conclusion

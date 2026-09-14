@@ -25,7 +25,7 @@ In [Create Schema for Custom Documents](cp-aibus-dox-ui-schema-custom), you defi
 
 In SAP Document AI basic UI, access **Template** on the left navigation pane and click **+** to create a new template.
 
-<!-- border -->![Create Template](access-template.png)
+![Create Template](access-template.png)
 
 In the dialog, proceed as follows:
 
@@ -37,17 +37,17 @@ In the dialog, proceed as follows:
 
 4. Click **Create** to create your template.
 
-    <!-- border -->![Create Template Dialog](create-template.png)
+    ![Create Template Dialog](create-template.png)
 
 5. After your template is created, a confirmation dialog pops up. Click **OK** to acknowledge it. It will now navigate you to the detail page of your template.
 
-    <!-- border -->![Template](template-created-dialog.png)
+    ![Template](template-created-dialog.png)
 
     You now see a list of the associated documents (in our case, **No data** yet) and a list of the extraction fields that you've defined in your schema.
 
-    <!-- border -->![Template](associated.png)
+    ![Template](associated.png)
 
-    <!-- border -->![Template](extraction.png)
+    ![Template](extraction.png)
 
     In the next steps, you'll upload a document, get the extraction results, and edit them so that you can associate the document with your template.
 
@@ -70,7 +70,7 @@ In the dialog, proceed as follows:
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
-    <!-- border -->![Template](add-document.png)
+    ![Template](add-document.png)
 
 2. On the Select Document screen, choose `Custom` for the **Document Type**.
 
@@ -80,15 +80,15 @@ In the dialog, proceed as follows:
 
 5. Click **Confirm**.
 
-    <!-- border -->![Template](upload.png)
+    ![Template](upload.png)
 
     The document status changes from `PENDING` to `DONE`.
 
-    <!-- border -->![Template](ready.png)
+    ![Template](ready.png)
 
 6. Click the document row to see the information extracted from the document using the schema you created.
 
-    <!-- border -->![Template](results.png)
+    ![Template](results.png)
 
     In this case, no information has been extracted from the document because you've used only custom fields in the schema. In the next step, the field values will be added manually and once this document is associated with the template, the extraction should work for the custom fields when you use the template for similar documents.
 
@@ -101,19 +101,19 @@ Before associating the document with your template, make the extraction results 
 
 1. Click **Edit**. You can edit extracted values manually on the right of the screen. You can also select them from the page preview in the middle of the screen. To do the latter, hover your mouse over the page preview. The mouse pointer changes to a crosshair cursor. Position the cursor at the corner of the value you wish to select. Then, hold down the left mouse button. Move the cursor diagonally to the opposite corner to draw a bounding box around the value you want to select. Select the appropriate header or line item field from the **Field** dropdown in the **Assign Field** dialog. Add or change the value, as necessary.
 
-    <!-- border -->![Template](edit.png)
+    ![Template](edit.png)
 
     This is an example of how to edit the field `EIN`:
 
-    <!-- border -->![Template](ein.png)
+    ![Template](ein.png)
 
     Once you've added all header fields, the extraction results should look like the following:
 
-    <!-- border -->![Template](header.png)   
+    ![Template](header.png)   
     
 2. Save your changes.
 
-    <!-- border -->![Template](save.png)
+    ![Template](save.png)
 
 
 
@@ -122,15 +122,15 @@ Before associating the document with your template, make the extraction results 
 
 1. Click **Add to template** to associate the document with your template.
    
-    <!-- border -->![Template](add.png)
+    ![Template](add.png)
 
 2. Select the relevant template from the dropdown and click **Add**.
 
-    <!-- border -->![Template](add2.png)
+    ![Template](add2.png)
 
 3. Click **OK**. The document file is now associated with the template you selected. You can repeat the preceding steps to associate additional documents with your template.
 
-    <!-- border -->![Template](ok.png)
+    ![Template](ok.png)
 
 
 
@@ -141,15 +141,15 @@ The last step that remains is to activate the template.
 
 1. Access **Template** on the left navigation pane and click the row of the template you created to access it.
 
-    <!-- border -->![Template](draft.png)
+    ![Template](draft.png)
 
 2. Click **Activate**.
 
-    <!-- border -->![Template](activate.png)
+    ![Template](activate.png)
 
     Now, the status of your template changes from `DRAFT` to `ACTIVE` which means you can use the template to extract information from documents. To make changes to your template, you have to **Deactivate** it first.
 
-    <!-- border -->![Template](active.png)  
+    ![Template](active.png)  
     
 
 
@@ -158,7 +158,7 @@ The last step that remains is to activate the template.
 
 1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
-    <!-- border -->![Template](add-document2.png)
+    ![Template](add-document2.png)
 
 2. On the Select Document screen, choose `Custom` for the **Document Type**.
 
@@ -166,17 +166,17 @@ The last step that remains is to activate the template.
 
 4. Drop the file directly or click **+** to upload one of the other two power of attorney documents. First, use the [Sample Power of Attorney 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-2.pdf).
 
-    <!-- border -->![Template](upload2.png)
+    ![Template](upload2.png)
 
 5. Click **Confirm**.
 
     The document status changes from `PENDING` to `DONE`.
 
-    <!-- border -->![Template](ready2.png)
+    ![Template](ready2.png)
 
 6. Access the document by clicking on it. You now see the page preview of the document file you uploaded, and the information extracted from the power of attorney header fields using the schema and template you created.
 
-    <!-- border -->![Template](results2.png)
+    ![Template](results2.png)
 
     You can repeat this step using the [Sample Power of Attorney 3](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-ui-template-custom/sample-power_of_attorney-3.pdf).
 

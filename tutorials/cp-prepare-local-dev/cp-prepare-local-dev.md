@@ -3,23 +3,35 @@ parser: v2
 auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner, programming-tool>node-js ]
+primary_tag: products>sap-business-technology-platform
+tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner, programming-tool>node-js ]
 time: 20
 ---
 
 
 
 # Prepare the Local Development Environment
-<!-- description --> Install essential runtimes and tools for local development.
+<!-- description --> Install Node.js, npm, git, and the Cloud MTA Build Tool (`mbt`) to build and deploy SAP BTP apps from your own machine.
 
-## You will learn  
-  - How to install Node.js and npm (Node Package Manager) as a runtime
-  - How to install essential tools like git and Cloud MTA Build Tool (`mbt`)
+## You will learn
+  - How to install the Node.js runtime and the npm (Node Package Manager) package manager
+  - How to install the Cloud MTA Build Tool (`mbt`) to package deployable `.mtar` archives
+  - How to install git to clone and version-control projects
+  - How to verify each tool from the command line
+
+## Prerequisites
+  - A machine running **Windows**, **macOS**, or **Linux**, with administrator rights to install software
+
+| Tool | Minimum version | Verify with |
+| ---- | --------------- | ----------- |
+| Node.js | 20 LTS or later | `node -v` |
+| npm | bundled with Node.js | `npm -v` |
+| Cloud MTA Build Tool (`mbt`) | latest | `mbt -v` |
+| git | latest | `git --version` |
 
 ---
 
-### Install the Node.js runtime
+### Install Node.js (20 LTS or later)
 
 >Node.js is a server-side runtime environment built on Chrome's V8 JavaScript engine. It provides an event-driven, non-blocking (asynchronous) I/O and cross-platform runtime environment. It enables you to build scalable server-side applications using JavaScript and is open-source.
 >&nbsp;
@@ -33,16 +45,16 @@ We recommend using a package manager on your OS.
 
 [OPTION BEGIN [Windows]]
 
-**Install** the Windows package manager [Chocolatey](https://chocolatey.org/).
+**Install** the Windows package manager [Chocolatey](https://chocolatey.org/) by running the following in an **administrative** PowerShell:
 
 ```Terminal
-@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-**Install Node.js**
+**Install Node.js** (the current Long-Term Support release)
 
 ```Terminal
-choco install nodejs
+choco install nodejs-lts
 ```
 
 
@@ -53,35 +65,33 @@ choco install nodejs
 **Install** the Mac package manager [Homebrew](https://brew.sh/).
 
 ```Terminal
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 **Install Node.js**
 
 ```Terminal
-brew install nodejs
+brew install node
 ```
 
 
 [OPTION END]
-[OPTION BEGIN [Other]]
+[OPTION BEGIN [Linux]]
 
-**Install** the Node.js from the  [official website](https://nodejs.org/en/download/).
+**Install Node.js** via your distribution's package manager, or download the current LTS build from the [official website](https://nodejs.org/en/download).
 
 [OPTION END]
 
-
-### Verify your installation
-
-
-To verify if the installation was successful, check the `npm` and `node.js` version. Open the command line and print for the installed version.
+**Verify your installation.** Open the command line and print the installed versions of `node` and `npm`:
 
 ```Terminal
 node -v
 npm -v
 ```
 
-### Install the cloud MTA build tool
+> This tutorial requires **Node.js 20 LTS or later**. If `node -v` reports an older version, install a current Long-Term Support release before continuing.
+
+### Install the Cloud MTA Build Tool (`mbt`)
 
 
 This tool will create so-called `.mtar` archives, which are deployable packages that contain your entire project. The tool itself is an OS-dependent binary, but you can leverage [npm](https://www.npmjs.com/package/mbt) to install the right version for your OS and append it to the Path variable. Run the following command to install this tool:
@@ -100,13 +110,23 @@ npm install -g mbt
 [OPTION END]
 [OPTION BEGIN [Mac]]
 
-[OPTION END]
-[OPTION BEGIN [Other]]
-
-> This tool depends on [GNU make](https://www.gnu.org/software/make/) that is most likely already installed when you use a Unix-based OS. In case this tool is not installed on your machine, install it from [here](http://ftp.gnu.org/gnu/make/).
-
+> This tool depends on [GNU make](https://www.gnu.org/software/make/). On macOS it is provided by the Xcode Command Line Tools — run `xcode-select --install` if it is not already installed.
 
 [OPTION END]
+[OPTION BEGIN [Linux]]
+
+> This tool depends on [GNU make](https://www.gnu.org/software/make/), which is most likely already installed on a Unix-based OS. If it is missing, install it with your distribution's package manager (for example, `sudo apt install make`).
+
+
+[OPTION END]
+
+**Verify your installation.** Print the installed version:
+
+```Terminal
+mbt -v
+```
+
+> You should see output similar to `Cloud MTA Build Tool version 1.2.47`.
 
 ### Install git
 
@@ -130,12 +150,25 @@ brew install git
 
 
 [OPTION END]
-[OPTION BEGIN [Other]]
+[OPTION BEGIN [Linux]]
 
-**Install** the git from the  [official website](https://git-scm.com/downloads).
+**Install** git with your distribution's package manager (for example, `sudo apt install git`), or download it from the [official website](https://git-scm.com/downloads).
 
 
 [OPTION END]
+
+**Verify your installation.** Print the installed version:
+
+```Terminal
+git --version
+```
+
+### Next steps
+
+
+You now have the Node.js runtime, npm, the Cloud MTA Build Tool (`mbt`), and git installed and verified — everything you need to clone a project, build it, and package a deployable `.mtar` archive locally.
+
+Continue with the SAP BTP mission or learning path that brought you here, or discover more hands-on content in the [SAP Tutorial Navigator](https://developers.sap.com/tutorial-navigator.html).
 
 
 

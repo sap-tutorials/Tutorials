@@ -67,7 +67,7 @@ docker build -t <username>/cf-nodejs-app .
 
 You should see output similar to the following:
 
-<!-- border -->![Running docker build](docker-build.png)
+![Running docker build](docker-build.png)
 
 Now that the image is built, you need to push it to a repository on `Dockerhub`. Running the following commands, a repository will be created for your user called `cf-nodejs-app` and your image will be uploaded to it:
 
@@ -76,7 +76,7 @@ docker login -u <docker-id>
 docker push <username>/cf-nodejs-app
 ```
 
-<!-- border -->![Pushing the Docker image](docker-push.png)
+![Pushing the Docker image](docker-push.png)
 
 Finally, once the image has been uploaded, you can push the image to Cloud Foundry (you can replace the name `docker-nodejs` with whatever you want to name your application).
 
@@ -94,7 +94,7 @@ cf app docker-nodejs
 
 You should then see the `docker image` field with the name your Docker image next to it, similar to the output below.
 
-<!-- border -->![Link text e.g., Destination screen](docker-image.png)
+![Link text e.g., Destination screen](docker-image.png)
 
 After running through this example, you can see that using a Docker image requires you to specify and configure things that you didn't have to be concerned with when using a buildpack. A buildpack handles most of this in the background for you.
 

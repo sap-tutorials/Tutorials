@@ -41,23 +41,23 @@ In the service key you created for Business Entity Recognition in the previous t
 
 1. To access the Business Entity Recognition Swagger UI, add **`/api/v1`** to the `url` value, paste it into any web browser and press **Enter**.
 
-    <!-- border -->![BER](service-key-details.png)
+    ![BER](service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    <!-- border -->![BER](swagger.png)
+    ![BER](swagger.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Business Entity Recognition Using Any Web Browser](cp-aibus-ber-web-oauth-token), then add **bearer** in front of it, and enter in the **Value** field.
 
-    ```
-    bearer <access_token>
-    ```
+   ```
+   bearer <access_token>
+   ```
 
-    <!-- border -->![BER](authorize-bearer.png)
+    ![BER](authorize-bearer.png)
 
 4. Click **Authorize** and then click **Close**.
 
-    <!-- border -->![BER](authorize-close.png)
+    ![BER](authorize-close.png)
 
 
 
@@ -71,25 +71,25 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 2. Click **Try it out**.
 
-    <!-- border -->![BER](post-try.png)
+    ![BER](post-try.png)
 
 3. In **payload**, enter the `text` you want to extract named entities from, `modelName`, and `modelVersion`. In this `sap_address_entity` pre-trained model example, you can use the following:
 
-    ```JSON
-    {
-      "text":"Warehouse 02 (UK) Ltd c/o Excel Logistics Waindyke Way WF6 1TF. West Yorkshire United Kingdom.",
-      "modelName":"sap_address_entity",
-      "modelVersion":"3"
-    }
-    ```
+   ```JSON
+   {
+     "text":"Warehouse 02 (UK) Ltd c/o Excel Logistics Waindyke Way WF6 1TF. West Yorkshire United Kingdom.",
+     "modelName":"sap_address_entity",
+     "modelVersion":"3"
+   }
+   ```
 
 4. Click **Execute**.
 
-    <!-- border -->![BER](post-address-payload.png)
+    ![BER](post-address-payload.png)
 
 5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
-    <!-- border -->![BER](post-address-id.png)
+    ![BER](post-address-id.png)
 
 
 
@@ -102,15 +102,15 @@ Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction re
 
 2. Click **Try it out**.
 
-    <!-- border -->![BER](get-try.png)
+    ![BER](get-try.png)
 
 3. Enter the `jobId` obtained in the previous step and click **Execute**.
 
-    <!-- border -->![BER](get-address-id.png)
+    ![BER](get-address-id.png)
 
 You should receive a response like the following:
 
-<!-- border -->![BER](get-address-response.png)
+![BER](get-address-response.png)
 
 In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction.
 
@@ -139,25 +139,25 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 2. Click **Try it out**.
 
-    <!-- border -->![BER](post-try.png)
+    ![BER](post-try.png)
 
 3. In **payload**, enter the `text` you want to extract named entities from, `modelName`, and `modelVersion`. In this `sap_email_business_entity` pre-trained model example, you can use the following:
 
-    ```JSON
-    {
-      "text":"11577210 - FAGOR EDERLAN MEXICO § Dear colleagues, there any way to identify which procurement division has transmitted 1339846 this payment to ABC Ltd. as there is no identification number. Are you able to help? Thank you: Doe, Jane <jane.doe@doe-company.com>: 15 May 2019 15:25 To: Doe, John <john.doe@doe-company.com>Cc: Smith, John <john.smith@doe-company.com>: /432216153 328,439.24 Thanks and best Jane. Doe, Jane. Accountant, Procurement Department, Doe Company, S. L. P.Phone+52 444 880 2300. 1114 Doe Company<doe-company.com>",
-      "modelName":"sap_email_business_entity",
-      "modelVersion":"2"
-    }
-    ```
+   ```JSON
+   {
+     "text":"11577210 - FAGOR EDERLAN MEXICO § Dear colleagues, there any way to identify which procurement division has transmitted 1339846 this payment to ABC Ltd. as there is no identification number. Are you able to help? Thank you: Doe, Jane <jane.doe@doe-company.com>: 15 May 2019 15:25 To: Doe, John <john.doe@doe-company.com>Cc: Smith, John <john.smith@doe-company.com>: /432216153 328,439.24 Thanks and best Jane. Doe, Jane. Accountant, Procurement Department, Doe Company, S. L. P.Phone+52 444 880 2300. 1114 Doe Company<doe-company.com>",
+     "modelName":"sap_email_business_entity",
+     "modelVersion":"2"
+   }
+   ```
 
 4. Click **Execute**.
 
-    <!-- border -->![BER](post-email-payload.png)
+    ![BER](post-email-payload.png)
 
 5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
-    <!-- border -->![BER](post-email-id.png)
+    ![BER](post-email-id.png)
 
 
 
@@ -170,15 +170,15 @@ Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction re
 
 2. Click **Try it out**.
 
-    <!-- border -->![BER](get-try.png)
+    ![BER](get-try.png)
 
 3. Enter the `jobId` obtained in the previous step and click **Execute**.
 
-    <!-- border -->![BER](get-email-id.png)
+    ![BER](get-email-id.png)
 
 You should receive a response like the following:
 
-<!-- border -->![BER](get-email-response.png)
+![BER](get-email-response.png)
 
 In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction.
 
@@ -207,25 +207,25 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 2. Click **Try it out**.
 
-    <!-- border -->![BER](post-try.png)
+    ![BER](post-try.png)
 
 3. In **payload**, enter the `text` you want to extract named entities from, `modelName`, and `modelVersion`. In this `sap_generic_entities` pre-trained model example, you can use the following:
 
-    ```JSON
-    {
-      "text":"In 1988, 31.6% of blacks lived in poverty, compared with 10.1% for whites and 26.8% for Hispanics.",
-      "modelName":"sap_generic_entities",
-      "modelVersion":"1"
-    }
-    ```
+   ```JSON
+   {
+     "text":"In 1988, 31.6% of blacks lived in poverty, compared with 10.1% for whites and 26.8% for Hispanics.",
+     "modelName":"sap_generic_entities",
+     "modelVersion":"1"
+   }
+   ```
 
 4. Click **Execute**.
 
-    <!-- border -->![BER](post-generic-payload.png)
+    ![BER](post-generic-payload.png)
 
 5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
-    <!-- border -->![BER](post-generic-id.png)
+    ![BER](post-generic-id.png)
 
 
 
@@ -238,15 +238,15 @@ Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction re
 
 2. Click **Try it out**.
 
-    <!-- border -->![BER](get-try.png)
+    ![BER](get-try.png)
 
 3. Enter the `jobId` obtained in the previous step and click **Execute**.
 
-    <!-- border -->![BER](get-generic-id.png)
+    ![BER](get-generic-id.png)
 
 You should receive a response like the following:
 
-<!-- border -->![BER](get-generic-response.png)
+![BER](get-generic-response.png)
 
 In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction.
 
@@ -275,25 +275,25 @@ Use the **POST /inference/jobs** endpoint to submit the text to be extracted and
 
 2. Click **Try it out**.
 
-    <!-- border -->![BER](post-try.png)
+    ![BER](post-try.png)
 
 3. In **payload**, enter the `text` you want to extract named entities from, `modelName`, and `modelVersion`. In this `sap_invoice_header` pre-trained model example, you can use the following:
 
-    ```JSON
-    {
-       "text":"-----Original Message----- From: Duma Trunchi, Regina <DumaTrunchi@company.com>  Sent: Thursday, December 20, 2018 4:33 PM To: Dubey, Ashish <Ashish.Dubey@company.com> Cc: Grc, Sony <grcsony@eu.company.com> Subject: CLEARING//226.530,63eur//phoxdistri  Hi Ashish,  Please do the clearing as per the attachment.  Thank you,  Duma-Trunchi Regina  Accounts Receivable Finance company Pvt Ltd F&A services operated by AKAI Pvt Ltd Registered office:  The Heights, 116  Glenurquhart Road, BALLAUGH, Surrey. KT27 0XW. UK Registered Company Number: 2522874",
-       "modelName":"sap_invoice_header",
-       "modelVersion":"1"
-    }
-    ```
+   ```JSON
+   {
+      "text":"-----Original Message----- From: Duma Trunchi, Regina <DumaTrunchi@company.com>  Sent: Thursday, December 20, 2018 4:33 PM To: Dubey, Ashish <Ashish.Dubey@company.com> Cc: Grc, Sony <grcsony@eu.company.com> Subject: CLEARING//226.530,63eur//phoxdistri  Hi Ashish,  Please do the clearing as per the attachment.  Thank you,  Duma-Trunchi Regina  Accounts Receivable Finance company Pvt Ltd F&A services operated by AKAI Pvt Ltd Registered office:  The Heights, 116  Glenurquhart Road, BALLAUGH, Surrey. KT27 0XW. UK Registered Company Number: 2522874",
+      "modelName":"sap_invoice_header",
+      "modelVersion":"1"
+   }
+   ```
 
 4. Click **Execute**.
 
-    <!-- border -->![BER](post-invoice-payload.png)
+    ![BER](post-invoice-payload.png)
 
 5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
-    <!-- border -->![BER](post-invoice-id.png)
+    ![BER](post-invoice-id.png)
 
 
 
@@ -306,15 +306,15 @@ Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction re
 
 2. Click **Try it out**.
 
-    <!-- border -->![BER](get-try.png)
+    ![BER](get-try.png)
 
 3. Enter the `jobId` obtained in the previous step and click **Execute**.
 
-    <!-- border -->![BER](get-invoice-id.png)
+    ![BER](get-invoice-id.png)
 
 You should receive a response like the following:
 
-<!-- border -->![BER](get-invoice-response.png)
+![BER](get-invoice-response.png)
 
 You have now successfully used the `sap_invoice_header` model to get text entity predictions for the unstructured text you submitted to Business Entity Recognition.
 

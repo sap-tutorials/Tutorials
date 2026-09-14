@@ -43,7 +43,7 @@ You need to create a recipient assignment table by copying the template table `/
 
 5. **Activate** your table.
 
-    <!-- border -->![Create Recipient Assignment Table](recipient-table-create.png)
+    ![Create Recipient Assignment Table](recipient-table-create.png)
 
 
 ### Define recipients
@@ -63,7 +63,7 @@ You need to create different recipients for different error categories.
 
 3. **Save** your changes.
 
-    <!-- border -->![Define Recipients](aif-cust-recipients-define.png)
+    ![Define Recipients](aif-cust-recipients-define.png)
 
 
 ### Assign recipient assignment table to your interface
@@ -84,7 +84,7 @@ You need to assign the beforehand created recipient assignment table as well as 
 
 3. **Save** your changes.
 
-    <!-- border -->![Configure Alerts](aif-cust-alerts-config.png)
+    ![Configure Alerts](aif-cust-alerts-config.png)
 
 
 ### Define Message Categories
@@ -103,7 +103,7 @@ You need to create message categories corresponding to your recipients.
 
 3. **Save** your changes.
 
-    <!-- border -->![Create message categories](message-categories-create.png)
+    ![Create message categories](message-categories-create.png)
 
 
 ### Assign Messages to Message Categories
@@ -121,7 +121,7 @@ You need to group log messages in the beforehand created message categories.
 
 3. **Save** your changes.
 
-    <!-- border -->![Assign message category agency](message-category-agency-assign.png)
+    ![Assign message category agency](message-category-agency-assign.png)
 
 4. Rerun transaction code `/AIF/MSG_CAT_ASGN`, enter your namespace **`DEMO_1`** and the next message category **`ERRORS_FLIGHT`**, then select **Apply**.
 
@@ -135,7 +135,7 @@ You need to group log messages in the beforehand created message categories.
 
 6. **Save** your changes.
 
-    <!-- border -->![Assign message category flight](message-category-flight-assign.png)
+    ![Assign message category flight](message-category-flight-assign.png)
 
 7. Rerun transaction code `/AIF/MSG_CAT_ASGN`, enter your namespace **`DEMO_1`** and the next message category **`ERRORS_PASS`**, then select **Apply**.
 
@@ -148,7 +148,7 @@ You need to group log messages in the beforehand created message categories.
 
 9. **Save** your changes.
 
-    <!-- border -->![Assign message category passenger](message-category-passenger-assign.png)
+    ![Assign message category passenger](message-category-passenger-assign.png)
 
 
 ### Maintain recipient assignment table
@@ -171,7 +171,7 @@ Next, you need to maintain the recipient assignment table to map the message cat
 
 3. **Save** your changes.
 
-    <!-- border -->![Maintain assignment table](recipient-table-maintain.png)
+    ![Maintain assignment table](recipient-table-maintain.png)
 
 
 ### Assign users to recipients
@@ -184,7 +184,7 @@ Now the users in charge of monitoring the IDoc must be assigned to the recipient
 
 3. **Save** the new entry.
 
-    <!-- border -->![Assign users to recipient ](aif-cust-user-assign-agency.png)
+    ![Assign users to recipient ](aif-cust-user-assign-agency.png)
 
 4. Navigate back, and run through the same steps for the recipients **`ZFB_RECIPIENT_FLIGHT`** and **`ZFB_RECIPIENT_PASS`**.
 
@@ -203,7 +203,7 @@ Open the **Test Tool for IDoc Processing** (transaction code `WE19`). Send in ne
   - Select an existing flight where the flight date is in the past.
   - Select a flight that does not exist.
 
-<!-- border -->![Sample Data](idoc-test-error.png)
+![Sample Data](idoc-test-error.png)
 
 
 ### Monitor your interface
@@ -214,19 +214,19 @@ Now, let's check the results of your tests in the Monitoring and Error Handling.
 
 2. Open the **Interface Monitor** (transaction code `/AIF/IFMON`). You should see at least one new message.
 
-    <!-- border -->![Display summary in interface monitor](interface-monitor-overview-agency.png)
+    ![Display summary in interface monitor](interface-monitor-overview-agency.png)
 
 3. When you select the summary line for your interface, you’re forwarded to **Monitoring and Error Handling** where you can see your selected test messages. You should see agency related errors only, like an unknown agency:
 
-    <!-- border -->![Display message](interface-monitor-details-wrong-agency.png)
+    ![Display message](interface-monitor-details-wrong-agency.png)
 
 4. If you select another message you may find a message with no agency maintained:
    
-    <!-- border -->![Display message](interface-monitor-details-no-agency.png)
+    ![Display message](interface-monitor-details-no-agency.png)
 
 5. Alternatively, if you’ve set up Message Monitoring for Administrators in the SAP Fiori launchpad, you can check the test results there. Here, you see all messages grouped by recipient. See [Message Monitoring for Administrators](https://help.sap.com/docs/ABAP_PLATFORM_NEW/4db1676c3f114f119b500bd80ccd944d/2bfccaebd70f4efe905d4f0ec42da2c3.html).
 
-    <!-- border -->![Display messages in Message Monitoring for Administrators](message-monitor-admin.png)
+    ![Display messages in Message Monitoring for Administrators](message-monitor-admin.png)
 
 Congratulations! You've successfully defined message category based recipients.
 

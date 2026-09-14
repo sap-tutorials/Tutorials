@@ -76,12 +76,12 @@ In this tutorial, you will learn how to start preparations to create a calculati
 
     Press next. Here you will specify the instance parameters. To associate the HANA Cloud instance (that you have just mapped to Cloud Foundry) with the HDI container instance, specify the following parameters. Be sure to replace the contents in `database_id` with your SAP HANA database instance ID.
 
-    ```JSON
-    {
-        "schema":"HDI_Tutorial",
-        "database_id":"<SAP HANA Cloud database instance ID>"
-    }
-    ```
+   ```JSON
+   {
+       "schema":"HDI_Tutorial",
+       "database_id":"<SAP HANA Cloud database instance ID>"
+   }
+   ```
 
     >You can copy your SAP HANA Cloud database instance ID from SAP HANA Cloud Central, through the **three dots** menu under the Actions column.
     >
@@ -252,26 +252,26 @@ Now that your project is created and you know the basics of how to navigate SAP 
 
     To do so, replace the contents of the `hdbgrants` file with the following:
 
-    ```JSON
-    {
-        "MyUPS": {
-            "object_owner": {
-                "global_roles": [
-                    {
-                        "roles": ["genericRoleForOO"]
-                    }
-                ]
-            },
-            "application_user": {
-                "global_roles": [
-                    {
-                        "roles": ["genericRoleForAP"]
-                    }
-                ]
-            }
-        }
-    }
-    ```
+   ```JSON
+   {
+       "MyUPS": {
+           "object_owner": {
+               "global_roles": [
+                   {
+                       "roles": ["genericRoleForOO"]
+                   }
+               ]
+           },
+           "application_user": {
+               "global_roles": [
+                   {
+                       "roles": ["genericRoleForAP"]
+                   }
+               ]
+           }
+       }
+   }
+   ```
 
 ### Deploy your project
 
@@ -291,17 +291,17 @@ Now that the connection to your database is established and the grants file is c
 
     This will create a connection to the HDI container in the SAP HANA database explorer, allowing you to query and view its contents.  Execute the below SQL to see the current user and schema.
 
-    ```SQL
-    SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
-    ```
+   ```SQL
+   SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
+   ```
 
     ![current user and schema](current-user-schema.png)
 
 4. Notice that you can now access the tables in the SFLIGHT schema which is in the SAP HANA Cloud database instance from within the HDI container.
 
-    ```SQL
-    SELECT * FROM SFLIGHT.SAIRPORT;
-    ```
+   ```SQL
+   SELECT * FROM SFLIGHT.SAIRPORT;
+   ```
 
     ![accessing SFLIGHT schema](access-sflight.png)
 

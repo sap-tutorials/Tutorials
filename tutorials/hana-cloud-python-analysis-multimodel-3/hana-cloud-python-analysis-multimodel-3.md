@@ -41,7 +41,7 @@ Execute `g_storm.describe()` in a new cell of your Jupyter Notebook. This gives 
 
 In this example, let's focus on `IS_CONNECTED`, which indicates that you don't have one connected graph, but multiple independent ones.
 
-<!-- border -->![statistical Node Information](ss-01-gstorm-describe.png)
+![statistical Node Information](ss-01-gstorm-describe.png)
 
 
 
@@ -78,7 +78,7 @@ wcc = hga.WeaklyConnectedComponents(graph=g_storm).execute()
 
 print(f'There are {wcc.components_count} components in the Graph.')
 ```
-<!-- border -->![Total components](ss-02-total-components.png)
+![Total components](ss-02-total-components.png)
 
 The result here indicates that you have **8332 independent components in the graph**. Let's have a closer look at the algorithm as it also exposes other details about these components.
 
@@ -95,7 +95,7 @@ Since these components exist as Pandas `dataframe` (every object that materializ
 
 Notice the two components- number **25** and number **5**. They look interesting.
 
-<!-- border -->![Two components](ss-03-two-components.png)
+![Two components](ss-03-two-components.png)
 
 The algorithm `wcc.vertices` provides a data-frame that maps each vertex to the component it belongs to. So far, you only have the information about the components of a vertex and therefore can't visualize a graph without the missing edges. So, let's store the components to the database and use the `subgraph()` method for the visualization.
 
@@ -114,7 +114,7 @@ hdf_wcc = create_dataframe_from_pandas(
 
 Now, you have uploaded the algorithm results to your database.
 
-<!-- border -->![Upload results](ss-04-upload-results.png)
+![Upload results](ss-04-upload-results.png)
 
 
 ### Create visualization for subgraphs of components
@@ -141,7 +141,7 @@ g_storm_comp2 = g_storm.subgraph(
     force = True
 )
 ```
-<!-- border -->![Separate graphs](ss-05-separate-graphs.png)
+![Separate graphs](ss-05-separate-graphs.png)
 
 Since you have two complete graphs now, you can visualize them like you did before:
 
@@ -158,7 +158,7 @@ map
 
 After completion, your notebook should look like this:
 
-<!-- border -->![Visualize two graphs](ss-06-graph-visualize.png)
+![Visualize two graphs](ss-06-graph-visualize.png)
 
 In the next step, you learn how to evaluate which sections of the water network could be the causal factor of a problem reported on a specific access point (i.e. vertex). In that step you will get to know the algorithms `Neighbors`, `NeighborsSubgraphs` and `ShortestPath`.
 
@@ -180,7 +180,7 @@ start_vertex = g_storm_comp2.vertices_hdf \
     .select('ID', ('SHAPE_GEO.ST_TRANSFORM(4326).ST_ASGEOJSON()', 'GJ')).collect()
 start_vertex
 ```
-<!-- border -->![Load Vertex](ss-07-load-vertex.png)
+![Load Vertex](ss-07-load-vertex.png)
 
 
 
@@ -199,7 +199,7 @@ neighbors = hga.Neighbors(graph=g_storm_comp2).execute(
 
 neighbors.vertices.head(5)
 ```
-<!-- border -->![Neighbors algorithm](ss-08-neighbours.png)
+![Neighbors algorithm](ss-08-neighbours.png)
 
 If you want to display the vertices on the map, you need one additional step. Here, the vertices data-frame can only return vertex IDs. So, you must read the additional columns you need for visualizing separately from the database. To do so, you can use the `filter()` method of the HANA data-frame:
 
@@ -213,7 +213,7 @@ pdf_storm_comp2_neighbors = g_storm_comp2.vertices_hdf \
     .select('ID', ('SHAPE_GEO.ST_TRANSFORM(4326).ST_ASGEOJSON()', 'GJ')).collect()
 ```
 
-<!-- border -->![Separate Visualization](ss-09-separate-visualize.png)
+![Separate Visualization](ss-09-separate-visualize.png)
 
 With that, you query and materialize all positions of all the vertices which are 5 hops away from the start vertex. Visualizing follows the well-known pattern:
 
@@ -226,7 +226,7 @@ map
 
 The final view of the Notebook should look like this:
 
-<!-- border -->![Vertex Visualization](ss-10-vertex-visualization.png)
+![Vertex Visualization](ss-10-vertex-visualization.png)
 
 
 
@@ -252,7 +252,7 @@ g_neighbors_downstream = hga.NeighborsSubgraph(graph=g_storm_comp2).execute(
     lower_bound=0, upper_bound=10000)
 ```
 
-<!-- border -->![Upstream and Downstream](ss-11-upstream-downstream.png)
+![Upstream and Downstream](ss-11-upstream-downstream.png)
 
 You can see from the above code that you will get only the source and target IDs without the additional information, for example, `g_neighbors_downstream.edges.head(5)`. Therefore, you've got to load the spatial information of the edges in the same way you did in the above sections.
 
@@ -270,7 +270,7 @@ pdf_storm_comp2_neighbors_downstream_edges = g_storm_comp2.edges_hdf \
     .select('ID', ('SHAPE_GEO.ST_TRANSFORM(4326).ST_ASGEOJSON()', 'GJ')).collect()
 ```
 
-<!-- border -->![Load Spatial Information](ss-12-load-spatial-info.png)
+![Load Spatial Information](ss-12-load-spatial-info.png)
 
 With that information you can visualize it again:
 
@@ -282,7 +282,7 @@ map.add_data(pdf_storm_comp2_neighbors_downstream_edges, 'Downstream')
 map
 ```
 
-<!-- border -->![Upstream Downstream Visualization](ss-13-up-down-visualize.png)
+![Upstream Downstream Visualization](ss-13-up-down-visualize.png)
 
 Now you understand which vertices are upstream of your problem. Moving on, the next question is- **In which order should you check the incoming vertices to find the one which is the dependent factor?** You will use another algorithm in the next step to solve this question.
 
@@ -300,7 +300,7 @@ spoa = hga.ShortestPathsOneToAll(graph=g_storm_comp2).execute(source=start_verte
 spoa.vertices.sort_values('DISTANCE')
 ```
 
-<!-- border -->![Shortest Upstream Vertices](ss-14-upstream-only-shortest.png)
+![Shortest Upstream Vertices](ss-14-upstream-only-shortest.png)
 
 By having `direction`= `INCOMING` you specify that you're **only interested in the upstream (i.e. incoming) vertices**. By having `weight`=`LENGTH_M` you **specify what information (i.e. column) is used to calculate the** `DISTANCE`. In this case, you are taking the length of a segment while if let unspecified, the algorithm takes the number of hops.
 

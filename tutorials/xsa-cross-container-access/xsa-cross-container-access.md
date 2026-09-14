@@ -31,7 +31,7 @@ Your current database module will use two containers, the `hdi-container` create
 
 - If you are using SAP HANA 2.0 SPS04 or later, right-click on the `db` module and choose **New > SAP HANA Service Connection**
 
-    <!-- border -->![Add external SAP HANA Service](sps04.png)
+    ![Add external SAP HANA Service](sps04.png)
 
     Choose the service from within the list and click **Finish**.
 
@@ -60,23 +60,23 @@ Your current database module will use two containers, the `hdi-container` create
 
       Call it `consumed-core-container` and a new parameter with `service-name` as a key and the name of the service from command `xs s`
 
-      <!-- border -->![Check service name](resource.png)
+      ![Check service name](resource.png)
 
       Add a property with key `consumed-service-name` and value `${service-name}`
 
-      <!-- border -->![Check service name](resource2.png)
+      ![Check service name](resource2.png)
 
       Save the `mta.yaml` file.  Open the consuming `hdi-container` resource definition and take note of the name of the variable that has the service name assigned to its value:
 
-      <!-- border -->![Check resource name](module0.png)
+      ![Check resource name](module0.png)
 
       Select the consuming database module  and add a property with key `TARGET_CONTAINER` and refer to the variable set with the name of the consuming `hdi-container`:
 
-      <!-- border -->![Add resource](module.png)
+      ![Add resource](module.png)
 
       Add group `SERVICE_REPLACEMENTS` with key `consumed-db` and the value of the variable used to hold the value of the service name in the consuming `hdi-container` (`consumed-service-name` in this example).
 
-      <!-- border -->![Add resource](MODULE1.png)
+      ![Add resource](MODULE1.png)
 
       >Except for the name of the `hdi-container` from the external application and the environment variable `service-name`, the names of the variables can be adjusted to fit your needs.
 
@@ -121,7 +121,7 @@ The technical users created for the consuming `hdi-container` will need to be gr
 
 In the SHINE application, the available roles are `admin.hdbrole` and `core-db`. You will use the admin role in this tutorial but if you are using a different container or would like to restrict access further, you can create a new one:
 
-<!-- border -->![Target container role](target.png)
+![Target container role](target.png)
 
 
 >The `#` (pound) sign at the end of the name of a role means it contains privileges with grant option and will be assigned to the schema owner technical user.
@@ -169,7 +169,7 @@ Create a file with extension `.hdbsynonym` in a folder called `synonyms` under `
 
 For example:
 
-<!-- border -->![Check synonyms](synon.png)
+![Check synonyms](synon.png)
 
 Build the consuming database module.
 
@@ -203,13 +203,13 @@ Save and build the artifacts.
 
 You can see the results in the database explorer
 
-<!-- border -->![See database explorer](explorer.png)
+![See database explorer](explorer.png)
 
 You can check the synonyms first
 
-<!-- border -->![See database explorer](db1.png)
+![See database explorer](db1.png)
 
 Or the view you have created
 
-<!-- border -->![See database explorer](db2.png)
+![See database explorer](db2.png)
 

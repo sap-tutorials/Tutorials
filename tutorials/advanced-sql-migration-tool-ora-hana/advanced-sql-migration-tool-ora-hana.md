@@ -22,7 +22,7 @@ primary_tag: programming-tool>sql
 ## Intro
 The SAP Advanced SQL Migration tool is SAP's migration tool to migrate custom applications running on top of non-SAP databases into SAP databases.
 
-  <!-- border -->![Select Data Source](ad-sql-mig.png)
+  ![Select Data Source](ad-sql-mig.png)
 
 The tool can extract SQL data models (e.g., tables, views, indexes) and SQL objects containing SQL code (e.g., stored procedures, functions) via either accessing source database catalogs or using text files containing the object definitions (DDLS) and convert them to the chosen target SAP database.
 
@@ -151,10 +151,10 @@ You are going to configure and start the gateway now.
 
 3. Create a `.bat` file called `START_SAPDBMTK_Gateway_oracle.bat` under `c:\sapdbmtk\gateway` to start the gateway, you can use a variable to set the full path to the JDBC driver, the content of the file should be this:
 
-    ```
-    set ORACLE_JDBC=C:\sapdbmtk\gateway\ora_jdbc\ojdbc7.jar
-    start_sapdbmtk_gateway %ORACLE_JDBC%
-    ```
+   ```
+   set ORACLE_JDBC=C:\sapdbmtk\gateway\ora_jdbc\ojdbc7.jar
+   start_sapdbmtk_gateway %ORACLE_JDBC%
+   ```
 
     ![Select Data Source](gateway-bat-file.png)
 
@@ -310,20 +310,20 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     Connect to your Oracle instance with the `sqlplus` utility and run the following procedure call:
 
-    ```SQL
-    call appdemo2.insert_author (
-    'Javier',
-    'Martin',
-    '+34 a666 666',
-    'C/ Torrelaguna Nº 77',
-    'Madrid',
-    'MAD',
-    'Spain',
-    '28043',
-    null
-    )
-    /
-    ```
+   ```SQL
+   call appdemo2.insert_author (
+   'Javier',
+   'Martin',
+   '+34 a666 666',
+   'C/ Torrelaguna Nº 77',
+   'Madrid',
+   'MAD',
+   'Spain',
+   '28043',
+   null
+   )
+   /
+   ```
 
     It fails with the following error:
 
@@ -331,20 +331,20 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     Modify the stored procedure call by removing last letter (`D`) from `state` field:
 
-    ```SQL
-    call appdemo2.insert_author (
-    'Javier',
-    'Martin',
-    '+34 a666 666',
-    'C/ Torrelaguna Nº 77',
-    'Madrid',
-    'MA',
-    'Spain',
-    '28043',
-    null
-    )
-    /
-    ```
+   ```SQL
+   call appdemo2.insert_author (
+   'Javier',
+   'Martin',
+   '+34 a666 666',
+   'C/ Torrelaguna Nº 77',
+   'Madrid',
+   'MA',
+   'Spain',
+   '28043',
+   null
+   )
+   /
+   ```
 
     Run the new stored procedure call, and a second error appears:
 
@@ -352,20 +352,20 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     Modify the stored procedure call again by removing character `a` from `phone` field:
 
-    ```SQL
-    call appdemo2.insert_author (
-    'Javier',
-    'Martin',
-    '+34 666 666',
-    'C/ Torrelaguna Nº 77',
-    'Madrid',
-    'MA',
-    'Spain',
-    '28043',
-    null
-    )
-    /
-    ```
+   ```SQL
+   call appdemo2.insert_author (
+   'Javier',
+   'Martin',
+   '+34 666 666',
+   'C/ Torrelaguna Nº 77',
+   'Madrid',
+   'MA',
+   'Spain',
+   '28043',
+   null
+   )
+   /
+   ```
 
     Run the stored procedure call again. Now it works well and the author is created.
 
@@ -382,20 +382,20 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     Run the following stored procedure call:
 
-    ```SQL
-    call appdemo2.insert_author (
-    'Javier',
-    'Martin',
-    '+34 a666 666',
-    'C/ Torrelaguna Nº 77',
-    'Madrid',
-    'MAD',
-    'Spain',
-    '28043',
-    null
-    )
-    go
-    ```
+   ```SQL
+   call appdemo2.insert_author (
+   'Javier',
+   'Martin',
+   '+34 a666 666',
+   'C/ Torrelaguna Nº 77',
+   'Madrid',
+   'MAD',
+   'Spain',
+   '28043',
+   null
+   )
+   go
+   ```
 
     Notice that the same error you had in Oracle is appearing in SAP HANA as well.
 
@@ -403,20 +403,20 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     Modify the stored procedure call by removing `D` from `state` field:
 
-    ```SQL
-    call appdemo2.insert_author (
-    'Javier',
-    'Martin',
-    '+34 a666 666',
-    'C/ Torrelaguna Nº 77',
-    'Madrid',
-    'MA',
-    'Spain',
-    '28043',
-    null
-    )
-    go
-    ```
+   ```SQL
+   call appdemo2.insert_author (
+   'Javier',
+   'Martin',
+   '+34 a666 666',
+   'C/ Torrelaguna Nº 77',
+   'Madrid',
+   'MA',
+   'Spain',
+   '28043',
+   null
+   )
+   go
+   ```
 
     Run the stored procedure call again and the second error pointing to an invalid phone appears.
 
@@ -424,20 +424,20 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     Modify the stored procedure call by removing character `a` from the phone number:
 
-    ```SQL
-    call appdemo2.insert_author (
-    'Javier',
-    'Martin',
-    '+34 666 666',
-    'C/ Torrelaguna Nº 77',
-    'Madrid',
-    'MA',
-    'Spain',
-    '28043',
-    null
-    )
-    go
-    ```
+   ```SQL
+   call appdemo2.insert_author (
+   'Javier',
+   'Martin',
+   '+34 666 666',
+   'C/ Torrelaguna Nº 77',
+   'Madrid',
+   'MA',
+   'Spain',
+   '28043',
+   null
+   )
+   go
+   ```
 
     Run the stored procedure again, you see now that it work properly and the new author is created
 

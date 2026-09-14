@@ -28,7 +28,7 @@ author_profile: https://github.com/Juliana-Morais
 
 2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
-    <!-- border -->![Trial global account](01_Foundation20Onboarding_Home.png)
+    ![Trial global account](01_Foundation20Onboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
@@ -36,7 +36,7 @@ author_profile: https://github.com/Juliana-Morais
 
     >Choose **Continue**.
 
-    ><!-- border -->![Account setup](02_Foundation20Onboarding_Processing.png)
+    >![Account setup](02_Foundation20Onboarding_Processing.png)
 
     >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
@@ -51,19 +51,19 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
 1. On the navigation side bar, click **Boosters**.
 
-    <!-- border -->![Postman](access-booster.png)
+    ![Postman](access-booster.png)
 
 2. Search for **Set up account for Data Attribute Recommendation** and click the tile to access the booster.
 
-    <!-- border -->![Postman](access-booster-tile.png)
+    ![Postman](access-booster-tile.png)
 
 3. Click **Start**.
 
-    <!-- border -->![Postman](booster-start.png)
+    ![Postman](booster-start.png)
 
     >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** dialog box.
 
-    <!-- border -->![Postman](booster-success.png)
+    ![Postman](booster-success.png)
 
 
 
@@ -73,7 +73,7 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
 Download Postman environment and collection sample files. Make a local copy of the files.
 
-<!-- border -->![Postman](booster-success-postman.png)
+![Postman](booster-success-postman.png)
 
 >If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Use Trial to Create a Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) to create the service key for Data Attribute Recommendation manually, and download and edit the Postman environment and collection sample files, as described in [Set Up Postman to Call Data Attribute Recommendation APIs](cp-aibus-dar-setup-postman).
 

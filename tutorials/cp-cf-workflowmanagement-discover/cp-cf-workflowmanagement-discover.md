@@ -34,17 +34,17 @@ In this tutorial, you can import a sample package with different artifacts using
 
 1. From your global account page, choose the **trial** tile to access your subaccount.
 
-    <!-- border -->![Trial](cp-cf-wm-discover-trial.png)
+    ![Trial](cp-cf-wm-discover-trial.png)
 
 2. Click **Connectivity | Destinations** from the left-hand navigation.
 
-    <!-- border -->![Destination screen](cp-cf-wm-discover-trialdestination.png)
+    ![Destination screen](cp-cf-wm-discover-trialdestination.png)
 
 3. Search for the `WM_CF_SPACE_PROVIDER` destination, then choose the edit icon. In the **Destination Configuration** section, enter your SAP BTP trial user password and save the changes.
 
-    <!-- border -->![Edit Destination](cp-cf-wm-discover-editdestination.png)
+    ![Edit Destination](cp-cf-wm-discover-editdestination.png)
 
-    <!-- border -->![Destination Password](cp-cf-wm-discover-destinationpassword.png)
+    ![Destination Password](cp-cf-wm-discover-destinationpassword.png)
 
     Ensure to replace the dummy password that is provided upon running the booster.
     > Ensure that the credentials of the trial user that are entered in the destination do not have **Two Factor Authentication enabled**.
@@ -53,15 +53,15 @@ In this tutorial, you can import a sample package with different artifacts using
 
 1. Navigate to **Services | Service Marketplace**.
 
-    <!-- border -->![Subscriptions](cp-cf-wm-discover-subscription.png)
+    ![Subscriptions](cp-cf-wm-discover-subscription.png)
 
 2. Search for the **Workflow Management** tile, and choose **Go To Application** to access the workflow management home screen.
 
-    <!-- border -->![Workflow App](cp-cf-wm-discover-goto.png)
+    ![Workflow App](cp-cf-wm-discover-goto.png)
 
 3. In the **Workflow Management** home screen, choose **Process Flexibility Cockpit** tile.
 
-    <!-- border -->![Workflow Management](cp-cf-wm-discover-home.png)
+    ![Workflow Management](cp-cf-wm-discover-home.png)
 
 
 ### Discover the capital expenditure package
@@ -73,7 +73,7 @@ In this tutorial, you can import a sample package with different artifacts using
 
 2.  Choose the **Sample Capital Expenditure Approval Process** tile.
 
-    <!-- border -->![Process Hub](cp-cf-wm-discover-capex.png)
+    ![Process Hub](cp-cf-wm-discover-capex.png)
 
 
 
@@ -82,20 +82,20 @@ In this tutorial, you can import a sample package with different artifacts using
 
 1. Choose **Import**.
 
-    <!-- border -->![Import](cp-cf-wm-discover-import.png)
+    ![Import](cp-cf-wm-discover-import.png)
 
 2. In the confirmation dialog, choose **Import**.
 
-    <!-- border -->![import dialog](cp-cf-wm-discover-importconfirm.png)
+    ![import dialog](cp-cf-wm-discover-importconfirm.png)
 
     > The import operation takes a few minutes for the package to import. If the package import fails for any reason, then you can check the **Import Logs** to identify the cause. Fix the cause and try to import again.
 
 3. Navigate to the **My Live Processes** section.
 
-    <!-- border -->![Breadcrumb](cp-cf-wm-discover-Breadcrumb.png)
+    ![Breadcrumb](cp-cf-wm-discover-Breadcrumb.png)
 
     > You can view the imported **Sample Capital Expenditure Approval Process** package.
 
-    ><!-- border -->![Live Processes](cp-cf-wm-discover-importedcapex.png)
+    >![Live Processes](cp-cf-wm-discover-importedcapex.png)
 
 

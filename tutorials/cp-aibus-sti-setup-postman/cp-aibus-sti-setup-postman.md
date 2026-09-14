@@ -36,11 +36,11 @@ Make a local copy of the Postman environment sample file for Service Ticket Inte
 
 2. Click **Raw**.
 
-    <!-- border -->![Postman](raw-env.png)
+    ![Postman](raw-env.png)
 
 3. Right click and then click ***Save as*** to download locally the JSON file.
 
-    <!-- border -->![Postman](raw-env-save.png)
+    ![Postman](raw-env-save.png)
 
 
 
@@ -56,11 +56,11 @@ Make a local copy of the Postman collection sample file for Service Ticket Intel
 
 2. Click **Raw**.
 
-    <!-- border -->![Postman](raw-coll.png)
+    ![Postman](raw-coll.png)
 
 3. Right click and then click ***Save as*** to download locally the JSON file.
 
-    <!-- border -->![Postman](raw-coll-save.png)
+    ![Postman](raw-coll-save.png)
 
 
 
@@ -69,19 +69,19 @@ Make a local copy of the Postman collection sample file for Service Ticket Intel
 
 1. **Open** Postman and click **Import** to open the import dialog.
 
-    <!-- border -->![Postman](postman-import-button.png)
+    ![Postman](postman-import-button.png)
 
 2. Drag and drop the Postman collection and environment JSON files in the import dialog. Click **Import**.
 
-    <!-- border -->![Postman](postman-import-dialog.png)
+    ![Postman](postman-import-dialog.png)
 
 A message appears to inform you about the successful import.
 
-<!-- border -->![Postman](import-success.png)
+![Postman](import-success.png)
 
 After you have imported the collection, it will appear on the left. As previously explained, the folder `STI sample collection 2012` contains requests which you can use to call the Service Ticket Intelligence APIs.
 
-<!-- border -->![Postman](postman-collection.png)
+![Postman](postman-collection.png)
 
 You have successfully imported the Postman environment and collection for Service Ticket Intelligence.
 
@@ -92,11 +92,11 @@ You have successfully imported the Postman environment and collection for Servic
 
 `Env for STI sample collection 2012` now shows up in the environment dropdown menu.
 
-<!-- border -->![Postman](postman-environment-list.png)
+![Postman](postman-environment-list.png)
 
 Select it to be able to use the requests in the collection.
 
-<!-- border -->![Postman](postman-select-environment.png)
+![Postman](postman-select-environment.png)
 
 
 
@@ -107,11 +107,11 @@ If you are using the Postman environment and collection sample files from the **
 
 1. Click **Environment quick look**.
 
-    <!-- border -->![Postman](postman-environment-quick-look.png)
+    ![Postman](postman-environment-quick-look.png)
 
 2. Click **Edit**.
 
-    <!-- border -->![Postman](postman-environment-edit.png)
+    ![Postman](postman-environment-edit.png)
 
     As detailed in the images below, enter the following values from your service key (obtained in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-free-key)) into the corresponding spaces of the **Manage Environments** dialog box:
 
@@ -122,17 +122,17 @@ If you are using the Postman environment and collection sample files from the **
     |  `clientid` (inside the `uaa` section of the service key)         | `client_id`
     |  `clientsecret` (inside the `uaa` section of the service key)     | `client_secret`
 
-    <!-- border -->![Postman](service-key.png)
+    ![Postman](service-key.png)
 
-    <!-- border -->![Postman](postman-environment-manage.png)
+    ![Postman](postman-environment-manage.png)
 
 3. Click **Update**.
 
-    <!-- border -->![Postman](postman-environment-update.png)
+    ![Postman](postman-environment-update.png)
 
 4. Click **X**.
 
-    <!-- border -->![Postman](postman-environment-managex.png)
+    ![Postman](postman-environment-managex.png)
 
 Now the Postman environment and collection are ready to be used in the next tutorial: [Use Service Ticket Intelligence and Postman to Classify Service Requests](cp-aibus-sti-postman-classification).
 

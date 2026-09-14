@@ -50,7 +50,7 @@ SAP HANA cockpit allows you to monitor past and current information related to y
 
 In the Monitoring View, you can see several cards that help you access these tools.
 
-<!-- border -->![Monitoring Tools](ss-01-monitoring-tools.png)
+![Monitoring Tools](ss-01-monitoring-tools.png)
 
 -	The **Performance Monitor** helps you to visualize historical performance data related to memory, disk, and CPU usage. Here, you can compare performance of different KPI's and trigger the collection of diagnosis information if you identify issues. You can open it by clicking on **Monitor performance** on the **Monitoring card**. [Read more here](https://help.sap.com/viewer/9630e508caef4578b34db22014998dba/LATEST/en-US/910353c47c7c4239857c94d14896ea43.html).
 
@@ -60,7 +60,7 @@ In the Monitoring View, you can see several cards that help you access these too
 
 -	The **SQL Statements Monitor** gives you several insights about the SQL statements running in your database. On the SQL Statements card, click on View all to see the different Monitoring tools available there: **Active Statements**, **SQL Plan Cache** and **Expensive Statements**.
 
-<!-- border -->![Statement Monitor](ss-02-statement-monitor.png)
+![Statement Monitor](ss-02-statement-monitor.png)
 
 To read more about all available tools to monitor, analyze and improve performance, please refer to this [technical documentation on performance monitoring](https://help.sap.com/viewer/9630e508caef4578b34db22014998dba/LATEST/en-US/cdbda382eb9643cebc72ec3d60c816c7.html).
 

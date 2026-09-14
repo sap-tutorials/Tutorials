@@ -24,7 +24,7 @@ author_profile: https://github.com/Juliana-Morais
 
 To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Use the Free Tier Service Plan to Set Up Account for Personalized Recommendation and Get Service Key](cp-aibus-pr-booster-free-key).
 
-<!-- border -->![PR Token](service-key-details.png)
+![PR Token](service-key-details.png)
 
 
 
@@ -40,7 +40,7 @@ To get your OAuth access token you will need the values highlighted in the image
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-<!-- border -->![PR Token](web-browser.png)
+![PR Token](web-browser.png)
 
 You should receive a response like the following:
 

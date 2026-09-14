@@ -47,15 +47,15 @@ To subscribe to SAP Event Mesh
 
   4. Click on **Go to Application**.
 
-    ![Service Instance](LandingPage-MgmtDashboard.png)
+   ![Service Instance](LandingPage-MgmtDashboard.png)
 
-    It opens the SAP Eventing Mesh management dashboard screen. The management dashboard allows you to manage different messaging clients as shown below.
+   It opens the SAP Eventing Mesh management dashboard screen. The management dashboard allows you to manage different messaging clients as shown below.
 
   5. Select the message client.
   6. It will open the SAP Event Mesh Management Dashboard screen  **Overview** tab.
 
 
-    ![Management Dashboard Message Client Overview](em-overview.PNG)
+   ![Management Dashboard Message Client Overview](em-overview.PNG)
 
 **For dev Plan :**
 

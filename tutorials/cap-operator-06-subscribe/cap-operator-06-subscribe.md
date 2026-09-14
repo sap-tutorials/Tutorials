@@ -29,13 +29,13 @@ Create a new subaccount in the same global account where you have deployed the m
 
 2. Type your application name in the search box and choose **Create**.
 
-    <!-- border; size:540px --> ![application-search](./img/application-search.png)
+    ![application-search](./img/application-search.png)
 
     > When you enter your application name, ensure it matches the one you used in the previous tutorial. For instance, if you used **incident-tutorial** earlier, use that same name here.
 
 3. In the **New Instance or Subscription** popup, choose **Create**.
 
-    <!-- border; size:540px --> ![subscribe-application](./img/subscribe-application.png)
+    ![subscribe-application](./img/subscribe-application.png)
 
     > This subscribes your subaccount to the multi-tenant application deployed in the provider subaccount.
 
@@ -43,6 +43,6 @@ Create a new subaccount in the same global account where you have deployed the m
 
 5. Wait until the subscription status changes to **Subscribed** and choose **Go to Application**.
 
-    <!-- border; size:540px --> ![subscription-succeeded](./img/subscription-succeeded.png)
+    ![subscription-succeeded](./img/subscription-succeeded.png)
 
     > You've successfully subscribed to the multi-tenant application from your consumer subaccount.

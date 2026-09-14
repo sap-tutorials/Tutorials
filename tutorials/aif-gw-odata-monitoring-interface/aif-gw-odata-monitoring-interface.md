@@ -36,7 +36,7 @@ Create a package that serves as the destination for your newly created objects.
 2. From the drop-down menu, choose **Package** and enter the name `ZDEMO`. Press **Enter** or choose **Display or Create Object**.
 3. Confirm the dialogue window, enter a meaningful short description for your new package, and select **Confirm**. If prompted, enter a workbench request and confirm again.
 
-    <!-- border -->![Create Package](object-navigator-package-create.png)
+    ![Create Package](object-navigator-package-create.png)
 
 You have successfully created a new package named `ZDEMO`.
 
@@ -62,7 +62,7 @@ Next, create a new structure in ABAP Dictionary to be used in your interface lat
 
     >The DDIC structure needs to contain a component of type `/AIF/ODATA_STD_RAW_FLDS_S` and a component of any type  that can be used to display the payload.
 
-    <!-- border -->![Create Structure](ddic-structure-components.png)
+    ![Create Structure](ddic-structure-components.png)
 
 6. **Save** and **activate** your changes.
 
@@ -80,7 +80,7 @@ Select **New Entries** and enter the following name and description for your new
 | :----------- | :---------
 | **`DEMO_4`** | **`Namespace for AIF OData tutorials`**
 
-  <!-- border -->![Create namespace](customizing-namespace-create.png)
+  ![Create namespace](customizing-namespace-create.png)
 
 
 ### Create interface
@@ -140,7 +140,7 @@ Next, you need to assign the OData service to the interface.
 
 4. For **oData Service Name**, enter `GWSAMPLE_BASIC`.
 
-    <!-- border -->![Define OData Settings](customizing-odata-settings.png)
+    ![Define OData Settings](customizing-odata-settings.png)
 
 5. **Save** your changes.
 
@@ -160,7 +160,7 @@ It's recommended to implement an interface-specific single index table to ensure
 
 4. Select **New Entries** to create a new entry in **Define Interface-Specific Features**. Enter your interface name **`SALESORD`** and version **`1`** and enter the name of the newly created single index table **`ZSO_MON_IDX`** in the field **Message Index Table**.
 
-    <!-- border -->![Define Interface-Specific Features](customizing-interface-specific-features.png)
+    ![Define Interface-Specific Features](customizing-interface-specific-features.png)
 
 5. **Save** your changes.
 
@@ -175,7 +175,7 @@ If you want to monitor the newly created interface in the Interface Monitor of t
 
 2. In the menu on the left, navigate to **Define Recipients** by double-clicking it. Choose **New Entries**, enter the name **`ZODATA_TEST_RECIPIENT`** for your new recipient, and add a meaningful description.
 
-    <!-- border -->![Define Recipients](customizing-recipients-define.png)
+    ![Define Recipients](customizing-recipients-define.png)
 
 3. **Save** your changes.
 
@@ -190,7 +190,7 @@ To be able to see any data in the Interface Monitor or the Message Dashboard, a 
 
 2. In the menu on the left, double-click **Assign Recipients Without Key Fields** and create a new entry. Enter or select the namespace and the recipient you created before.
 
-    <!-- border -->![Assign Recipients Without Key Fields](customizing-recipients-assign.png)
+    ![Assign Recipients Without Key Fields](customizing-recipients-assign.png)
 
 3. **Save** your changes.
 
@@ -206,7 +206,7 @@ Now the users in charge of monitoring the OData service must be assigned to the 
 
 3. Check the boxes for **Overview** and **Technical User**.
 
-      <!-- border -->![Assign User to Recipient](user-assign.png)
+      ![Assign User to Recipient](user-assign.png)
 
 4. **Save** the new entry.
 
@@ -218,15 +218,15 @@ The OData logs are passed to SAP Application Interface Framework via the OData t
 
 1. Run the **ABAP Editor** (transaction code `SE38`) and enter `/AIF/ODATA_TRANSFER_JOB` in the **Program** field. Select the **Variants** radio button, and choose **Display**.
    
-    <!-- border -->![Display variants](transfer-job-variant-display.png)
+    ![Display variants](transfer-job-variant-display.png)
 
 2. On the next screen, enter a name for the variant, here `SALES_ORDER`, and choose **Create**.
 
-    <!-- border -->![Create variant](transfer-job-variant-create.png)
+    ![Create variant](transfer-job-variant-create.png)
 
 3. On the next screen, enter the **Service Name** `GWSAMPLE_BASIC` and choose **Attributes**.
 
-    <!-- border -->![oData Service Selection](transfer-job-variant-service.png)
+    ![oData Service Selection](transfer-job-variant-service.png)
 
 4. Finally, enter a description.
 
@@ -243,17 +243,17 @@ After creating a variant of the OData transfer job, you need to schedule the res
 1. Run the **Define Background Job** (transaction code `SM36`).
 Enter the job name `ODATA_TRANSFER_JOB` and choose **Start condition**.
 
-    <!-- border -->![Create background job](background-job-create.png)
+    ![Create background job](background-job-create.png)
 
 2. In the upcoming **Start Time** dialog, choose **Immediate**, which selects the **Immediate Start** flag. At the bottom of the dialog, choose **Period values** and enter a time value after which the job should be started periodically, for example, every `5 mins`. The option **Periodic Job** is now selected. **Save** your changes.
 
-    <!-- border -->![Maintain periodic schedule](background-job-period.png)
+    ![Maintain periodic schedule](background-job-period.png)
 
 3. To maintain the program, choose **Step** from the toolbar.
    
 4. In the **Create Step** dialog, enter the program name `/AIF/ODATA_TRANSFER_JOB` and the previously created variant `SALES_ORDER`. Then **save**.
    
-    <!-- border -->![Maintain step](background-job-step.png)
+    ![Maintain step](background-job-step.png)
 
 5. Click on **Back**, and then **save**. This will schedule the background job to run on a regular basis.
 
@@ -265,11 +265,11 @@ By default, only technical errors are logged in the SAP Gateway error log. To al
 
 1. Open the **SAP Gateway: Error Log** (transaction code `/IWFND/ERROR_LOG`) and navigate to **Error Log** > **Global Configuration**.
 
-    <!-- border -->![Select Global Configuration](odata-log-level-enter.png)
+    ![Select Global Configuration](odata-log-level-enter.png)
 
 2. In the **Global Configuration**, change the **Error Log level** to `Full`.
 
-    <!-- border -->![change log level](odata-log-level-change.png)
+    ![change log level](odata-log-level-change.png)
 
 3. **Save** your changes.
 
@@ -282,11 +282,11 @@ Before you can send sample requests, you need to determine the service endpoint.
 
 1. Navigate to **Activate and Maintain Services** (transaction code `/IWFND/MAINT_SERVICE`), select the service `GWSAMPLE_BASIC` with technical service name `ZGWSAMPLE_BASIC`, and choose **Call Browser**.
 
-    <!-- border -->![Maintain service](test-service-endpoint-maintain.png)
+    ![Maintain service](test-service-endpoint-maintain.png)
 
 2. A browser window opens, displaying the service entities. From here, the basic endpoint URL can be gathered. In this tutorial, we use the `SalesOrderSet` collection.
 
-    <!-- border -->![Display metadata](test-service-endpoint-browser.png)
+    ![Display metadata](test-service-endpoint-browser.png)
 
 3. Since you'll need the service endpoint in the next step, copy it or leave the window open. 
 
@@ -301,11 +301,11 @@ Let's send in sample requests to test the SAP Application Interface Framework in
 
 2. Let's first run a successful request. Select a sales order ID that exists, e.g. `0500000000`. In this case, a response with **http status code** `200` containing the sales order details should be returned. Since SAP Gateway doesn’t log successful messages, you won’t find a new entry in the message monitoring.
 
-    <!-- border -->![Successful request](test-sample-request-successful.png)
+    ![Successful request](test-sample-request-successful.png)
 
 3. Now, force an error by selecting a sales order ID that doesn't exist, for example `1500000000`. In this case, you get an **http error code** `400 Bad Request`.
 
-    <!-- border -->![Error message](test-sample-request-error.png)
+    ![Error message](test-sample-request-error.png)
 
 
 ### Monitor OData interface
@@ -319,11 +319,11 @@ If you're using SAP GUI, check the results of your test in the **Interface Monit
 
 Select the summary line for your interface. You're forwarded to **Monitoring and Error Handling**, which shows your selected test message(s).
 
-<!-- border -->![Monitoring in Error Handling](monitoring-error-handling.png)
+![Monitoring in Error Handling](monitoring-error-handling.png)
 
 Alternatively, if you've set up Message Monitoring in the SAP Fiori launchpad, you can check the test results there. See [How to configure the SAP Fiori Apps for SAP Application Interface Framework](https://blogs.sap.com/2021/11/04/how-to-configure-the-sap-fiori-apps-for-sap-application-interface-framework/).
 
-<!-- border -->![Monitoring in Message Monitoring](monitoring-fiori-message-monitoring.png)
+![Monitoring in Message Monitoring](monitoring-fiori-message-monitoring.png)
 
 Congratulations! You've created a simple OData interface and set up monitoring for it in SAP Application Interface Framework.  
 

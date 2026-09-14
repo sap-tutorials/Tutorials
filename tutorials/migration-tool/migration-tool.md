@@ -38,17 +38,17 @@ You can migrate the integration scenario of your choice, but be aware of the sup
 
 1. Open the SAP Integration Suite launchpad, navigate to the design workspace of integrations, and create or open any existing integration package.
 
-<!-- border -->![Image](Images/Image-0.png)
+![Image](Images/Image-0.png)
 
 2. **Edit** the integration package. The **Migrate** appears, so you can migrate the integration scenarios from SAP Process Orchestration to SAP Integration Suite.
 
-<!-- border -->![Image](Images/Image-1.png)
+![Image](Images/Image-1.png)
 
-<!-- border -->![Image](Images/Image-2.png)
+![Image](Images/Image-2.png)
 
 3. Choose **Migrate**. The migration tool opens as a wizard that guides you through the scenario migration.
 
-<!-- border -->![Image](Images/Image-3.png)
+![Image](Images/Image-3.png)
 
 ---
 
@@ -56,11 +56,11 @@ You can migrate the integration scenario of your choice, but be aware of the sup
 
 1. Select the SAP Process Orchestration system and establish the connection. The SAP Process Orchestration systems added as part of **Add an SAP Process Orchestration System** are listed.
 
-<!-- border -->![Image](Images/Image-4.png)
+![Image](Images/Image-4.png)
 
 2.  Select the system to which you want to connect. All the other details related to the system such as the Integration Directory and ESR are populated. Once the connection has been established, continue with **Next Step**.
 
-<!-- border -->![Image](Images/Image-5.png)
+![Image](Images/Image-5.png)
 
 ---
 
@@ -68,13 +68,13 @@ You can migrate the integration scenario of your choice, but be aware of the sup
 
 1. In step **Process Orchestration Artifacts**, select the integration configuration object you want to migrate. All the integration configuration objects are fetched from the Integration Directory of the SAP Process Orchestration system. The **Type** selected is **Integration Configuration Object**. Now the SAP Process Orchestration object **Receiver Determination** is also supported. 
 
-<!-- border -->![Image](Images/Image-6.png)
+![Image](Images/Image-6.png)
 
 2. Once you click on the  value help drop down in **Name** a screen with all the ICO's in the respective system pops up. This screen has various filters such as **Sender Communication Party**, **Sender Communication Component**, **Interface**, **Receiver Communication Party**, **Receiver Communication Component** where you can give provide the details and get the ICO that you want to migrate. There is a search option also available where you can provide the ICO which you wish to migrate. 
 
     In this example, the integration configuration objects are filtered by applying the **Sender Communication Component** parameter. Once an integration configuration object is selected for migration, choose **Next Step**.
 
-<!-- border -->![Image](Images/Image-7.png)
+![Image](Images/Image-7.png)
 
 ---
 
@@ -82,14 +82,14 @@ You can migrate the integration scenario of your choice, but be aware of the sup
 
 Patterns associated with the integration configuration object are available for the selection from the drop-down list. You can select a pattern for the scenario migration. If you want to learn more about the Patterns and what the resultant integration flow model will look like after the migration, use the context-sensitive help. 
 
-<!-- border -->![Image](Images/Image-8.png)
+![Image](Images/Image-8.png)
 
 Currently supported patterns are **Point-to-Point Asynchronous**, **Point-to-Point Synchronous**, **Recipient List Asynchronous**, **Content-Based Routing**.
 Every integration configuration object that is ready for migration also has a default pattern. If there are no associated patterns available and yet the integration configuration object is ready for migration, the migration tooling falls back to the **Default pattern**. Basically, default pattern creates a point-to-point integration flow; this pattern has neither the integration scenario nor the communication channels from the source integration configuration object. However, mapping objects such as message mapping, XSLT mapping etc. are copied and maintained in the point-to-point integration flow.
 
 **Select Migration Approach**
 
-<!-- border -->![Image](Images/Image-9.png)
+![Image](Images/Image-9.png)
 
 As per your migration needs, you can use either of the below two Migration approaches:
 
@@ -115,7 +115,7 @@ Once the Approach is selected, click on the **Next Step** and you will be come t
 Here, the Message Mapping objects from ES Repository that are referenced in ICO via operation mappings are being imported. By default, the option **Enable Reusable Message Mapping Artifacts** is enabled to so that you import the message mappings objects from ESR as message mapping artifacts to SAP Integration Suite. This approach helps you to benefit from the advantages of reusable artifacts.
 
 
-<!-- border -->![Image](Images/Image-10.png)
+![Image](Images/Image-10.png)
 
 If you disable the option, upon successful migration, only the message mapping objects from ESR are imported directly to the integration flow as local resources. Other resources like function library objects and archives are not migrated. In this approach, you must edit a local resource in all places where it's used. If you opt to disable the option, skip the sub steps that follow and move to the next steps.
 
@@ -138,7 +138,7 @@ For more information on how to create Message mapping as an Artifact please refe
 In the **Message Mapping Resources** tab, identify and appropriately import the dependent resources of the message mapping objects like function library, message and data types, WSDL, and a few more.
 This step is applicable only if you are creating at least one message mapping object in the previous step. If you are reusing all associated message mapping objects in the previous step, skip the sub steps that follow and move to the next step.
 
-<!-- border -->![Image](Images/Image-11.png)
+![Image](Images/Image-11.png)
 
 Enable the option Import Only Supported Message Mappings if you like to skip the import of message mapping objects (and the dependent resources) that aren't supported by Integration Suite.
 
@@ -156,7 +156,7 @@ In the **Integration Flow** tab, enter a meaningful integration flow name and ID
 
 The description field is automatically filled with the SAP Process Orchestration system name, scenario type and name, and patter details for future reference.
 
-<!-- border -->![Image](Images/Image-12.png)
+![Image](Images/Image-12.png)
 
 ---
 
@@ -164,7 +164,7 @@ The description field is automatically filled with the SAP Process Orchestration
 
 In the **Review** tab, check the details of your migration, then choose **Migrate**.
 
-<!-- border -->![Image](Images/Image-13.png)
+![Image](Images/Image-13.png)
 
 ---
 
@@ -176,20 +176,20 @@ After the migration, a Success page displays useful information and guidance on 
 Open the anticipated integration flow which is created after a successful migration by clicking on **View Artifact**.
 As depicted in below screenshot you can see the Artifact Details
 
-<!-- border -->![Image](Images/Image-14.png)
+![Image](Images/Image-14.png)
 
 On the next tab, Channels and Resources you can see the **Communication Channel name** and equivalent **Source and Target adapters**.
 
-<!-- border -->![Image](Images/Image-15.png)
+![Image](Images/Image-15.png)
 
 On the **Next Steps** tab, you can review the newly created integration flows for any missing steps and configurations before deployment. After all these steps , you can proceed to deploy the migrated integration flow.
 
-<!-- border -->![Image](Images/Image-16.png)
+![Image](Images/Image-16.png)
 
 
  In this example, a Content Based routing integration flow is created having SOAP Adapter, two message mappings one is Request mapping and the other is Response mapping.
 
-<!-- border -->![Image](Images/Image-17.png)
+![Image](Images/Image-17.png)
 
 ---
 
@@ -199,11 +199,11 @@ All supported adapters are externalized to leverage the benefit of the externali
 
 1. Some configuration changes are required to ensure an integration flow is deployable. For example, in the Receiver SOAP Adapter, configure the address, proxy type as **Internet**.
 
-<!-- border -->![Image](Images/Image-18.png)
+![Image](Images/Image-18.png)
 
 2. Select the Message mapping step and open the corresponding resource for verification. You can also verify the resources of the message mapping steps.
 
-<!-- border -->![Image](Images/Image-19.png)
+![Image](Images/Image-19.png)
 
 ---
 
@@ -211,7 +211,7 @@ All supported adapters are externalized to leverage the benefit of the externali
 
 Process the messages by deploying the integration flow and triggering the endpoints as usual. Check if the security artifacts, like credential name and key alias, that are used in your integration scenario are correctly configured in the integration flow. Deploy the necessary security artifacts before you deploy the integration flow.
 
-<!-- border -->![Image](Images/Image-20.png)
+![Image](Images/Image-20.png)
 
 Congratulations! You've successfully migrated an integration scenario from SAP Process Orchestration to SAP Integration Suite.
 

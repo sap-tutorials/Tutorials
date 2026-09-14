@@ -136,9 +136,9 @@ We now want to expose our Calculation View to the Cloud Application Programming 
 
 1. We need to add a matching entity definition for the Calculation View. This means redefining all the column names and data types / lengths. Doing so manually would be error prone, but the `hana-cli` has a utility that will help.  Open a terminal and change to the `db` folder with the command `cd db`.  Now issue the command:
 
-    ```shell
-    hana-cli inspectView -v V_INTERACTION -o cds
-    ```
+   ```shell
+   hana-cli inspectView -v V_INTERACTION -o cds
+   ```
 
     ![inspectView](inspect_view.png)
 
@@ -156,9 +156,9 @@ We now want to expose our Calculation View to the Cloud Application Programming 
 
 1. From the terminal return to the root of the project and issue the command: `cds build --production`
 
-    ```shell
-    cds build --production
-    ```
+   ```shell
+   cds build --production
+   ```
 
     ![CDS build](cds_build.png)
 

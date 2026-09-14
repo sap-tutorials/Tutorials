@@ -32,15 +32,15 @@ The **Channel Manager** is used to manage content providers. Once a content prov
 
 1. Access the **Administration Console** from the user actions dropdown menu under your avatar.
 
-    <!-- border -->![Open the Admin Console](1-open-admin-console.png)
+    ![Open the Admin Console](1-open-admin-console.png)
 
 2. Go to the **External Integrations** section, expand it, and click **Business Content**.
 
-    <!-- border -->![Open Business Content](2-open-business-content.png)
+    ![Open Business Content](2-open-business-content.png)
 
 3. Click **Content Manager**.
 
-    <!-- border -->![Open Content Manager](3-open-content-manager.png)
+    ![Open Content Manager](3-open-content-manager.png)
 
     The **Content Manager** opens with the **My Content** tab in focus.
 
@@ -48,7 +48,7 @@ The **Channel Manager** is used to manage content providers. Once a content prov
 
 4. From the side navigation panel, click the **Channel Manager** icon to open it. 
 
-    <!-- border -->![Open Channel Manager](4-open-channel-manager.png)
+    ![Open Channel Manager](4-open-channel-manager.png)
 
 
 ### Fetch updated content and add your SAP Build Apps application to your content
@@ -60,33 +60,33 @@ In this step, you're going to fetch updated content from the **HTML5 Apps** cont
 
 1. In the **Channel Manager**, at the end of the **HTML5 Apps** content provider row, click the **Fetch updated content** icon. You'll see in the **Status** column that the content of this provider is being updated. 
 
-    <!-- border -->![Update content provider](5-update-html5-content-provider.png)
+    ![Update content provider](5-update-html5-content-provider.png)
 
     Once updated, the **HTML5 Apps** content provider will expose your newly deployed SAP Build Apps application that you will add to your content.
 
 2. Click the icon in the side panel to open the **Content Manager**.
 
-    <!-- border -->![Go to content manager](6-go-to-content-manager.png) 
+    ![Go to content manager](6-go-to-content-manager.png) 
 
 3. Click the **Content Explorer** tab to explore content from the available content providers.
 
-    <!-- border -->![Open content explorer](7-open-content-explorer.png)
+    ![Open content explorer](7-open-content-explorer.png)
 
 4. Select the **HTML5 Apps** provider.
 
-    <!-- border -->![Open provider](8-click-provider.png)
+    ![Open provider](8-click-provider.png)
 
 4. You’ll see that your `Sales Order Trigger` app created in SAP Build Apps, is displayed in this provider. Select it and click **+ Add to My Content**.
 
-    <!-- border -->![Add to my content](9-add-to-my-content.png)
+    ![Add to my content](9-add-to-my-content.png)
 
 6. Click the **My Content** tab.
 
-    <!-- border -->![Go back to My Content](10-back-to-my-content.png)
+    ![Go back to My Content](10-back-to-my-content.png)
 
 7. You can see your `Sales Order Trigger` app is now in the list of content items.
 
-    <!-- border -->![View app in My Content](11-view-app.png)
+    ![View app in My Content](11-view-app.png)
 
 
 ### Assign app to Everyone role
@@ -95,15 +95,15 @@ To view the app in runtime, you must assign the app to a role. In this step, you
 
 1. Open the **Content Manager** from the side panel.
 
-    <!-- border -->![Open content manager again](15-open-content-manager-again.png)
+    ![Open content manager again](15-open-content-manager-again.png)
 
 2. Click the `Everyone` role to open the role editor.
 
-    <!-- border -->![Select the Everyone role](16-select-everyone-role.png)
+    ![Select the Everyone role](16-select-everyone-role.png)
 
 3. Click **Edit**.
 
-    <!-- border -->![Click edit](17-edit.png)
+    ![Click edit](17-edit.png)
 
 4. Click the search box in the **Assignments** panel on the right. Any available apps are shown in the list below.
 
@@ -119,19 +119,19 @@ Before you add the `Sales Order Trigger` app to your workspace, first add a head
 
 1. Open your workspace. 
 
-    <!-- border -->![Open your workspace](23-open-workspace.png)
+    ![Open your workspace](23-open-workspace.png)
 
 2. Click the pencil icon to open the Page Designer.
 
-    <!-- border -->![Open the Page Designer](24-open-page-designer.png)
+    ![Open the Page Designer](24-open-page-designer.png)
 
 3. Scroll down to the section just before the **Feed** and click **+** to add another section.
 
-    <!-- border -->![Add a section](25-add-section.png)
+    ![Add a section](25-add-section.png)
 
 4. Click **Add Widget** to open the widget gallery.
 
-    <!-- border -->![Add widget](26-add-widget.png)
+    ![Add widget](26-add-widget.png)
 
 6. Select the **Text** widget and design it as follows: 
 
@@ -140,15 +140,15 @@ Before you add the `Sales Order Trigger` app to your workspace, first add a head
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text still selected, choose the color black from the chart.
 
-    <!-- border -->![Design the widget](27-design-widget.png)
+    ![Design the widget](27-design-widget.png)
 
 7. To increase the spacing between this section and the section above, hover to expose the settings on the right, and click the cog icon to edit the spacing.
 
-    <!-- border -->![Add spacing](27a-add-spacing.png)
+    ![Add spacing](27a-add-spacing.png)
 
 8. Under **Padding Top** add the value `30` pixels and click **Save**.
 
-     <!-- border -->![Add pixels](27b-add-pixels.png)
+     ![Add pixels](27b-add-pixels.png)
 
 Now you’re going to add your app under this header.
 
@@ -157,24 +157,24 @@ Now you’re going to add your app under this header.
 
 1. Add another section.
 
-    <!-- border -->![Add another section](28-add-another-section.png)
+    ![Add another section](28-add-another-section.png)
 
 2. Click **Add Widget**.
 
-    <!-- border -->![Add widget](29-add-widget.png)
+    ![Add widget](29-add-widget.png)
 
 3. Click **Tiles** in the widget gallery.
 
-    <!-- border -->![Click Tiles](30-click-tiles.png)
+    ![Click Tiles](30-click-tiles.png)
 
 4. In the search box, start typing the name of your app `Sales`, select the `Sales Order Trigger`app, and then click **Add**.
 
-    <!-- border -->![Select and add the app](31-select-app.png)
+    ![Select and add the app](31-select-app.png)
 
 5. Scroll to the top of your page and click **Publish**.
 
-    <!-- border -->![Publish](32-publish.png)
+    ![Publish](32-publish.png)
 
 This is how your workspace looks - note that the `Sales Order Trigger`app is under the header that you created:
 
-<!-- border -->![View result](33-view-final-workspace.png)
+![View result](33-view-final-workspace.png)

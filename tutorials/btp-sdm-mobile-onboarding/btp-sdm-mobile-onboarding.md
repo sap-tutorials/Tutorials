@@ -31,23 +31,23 @@ parser: v2
    
 2. In the **Subaccounts** tab, choose your subaccount. 
    
-    <!-- border -->![Choose Subaccount](BTP_Global_Account_Explorer.png)
+    ![Choose Subaccount](BTP_Global_Account_Explorer.png)
 
 3. Click on **Entitlements** and choose **Configure Entitlements**(For new account) or **Edit** (For existing account). 
 
-    <!-- border -->![Entitlements](BTP_Entitlements.png)
+    ![Entitlements](BTP_Entitlements.png)
 
 4. Click on **Add Service Plans** to see all available entitlements.
 
-    <!-- border -->![Add Service Plan](BTP_Add_Service_Plan.png)
+    ![Add Service Plan](BTP_Add_Service_Plan.png)
 
 5. Use the filter bar to search for **`Document Management`** to reduce the number of available entitlements. Click the checkbox to select the service plan **'Standard'**. Finally, confirm your selection by clicking on **`Add 1 Service Plan`**.
 
-    <!-- border -->![Add 1 Service Plan](Add1ServicePlan.png)
+    ![Add 1 Service Plan](Add1ServicePlan.png)
 
 6. Choose **Save** to confirm your selection. 
     
-    <!-- border -->![Save Entitlements](Save_Entitlements.png)
+    ![Save Entitlements](Save_Entitlements.png)
 
 
 ### Subscribe to SAP Document Management Service, Application Option
@@ -55,19 +55,19 @@ parser: v2
 
 1. Click **Service Marketplace** on the side navigation pane, search for **Document Management Service, Application Option**, and click tile.
 
-    <!-- border -->![ServiceMarketPlace](Service Market Place.png)
+    ![ServiceMarketPlace](Service Market Place.png)
 
 2. Click **Create**.
 
-    <!-- border -->![Creating App](CreateApplication.png)
+    ![Creating App](CreateApplication.png)
     
 3. In the dialog, choose the **`Standard`** subscription plan and click **Create**.
 
-    <!-- border -->![CreateFinal Step](Create_Final.png)
+    ![CreateFinal Step](Create_Final.png)
 
 4. Your subscription is being set up. To review your existing subscriptions, choose **View Subscription**.
 
-    <!-- border -->![CreationProgress](CreationInProgress.png)
+    ![CreationProgress](CreationInProgress.png)
 
 
 ### Assign roles
@@ -77,23 +77,23 @@ To use the application, ensure that your user account is associated with a role 
 
 2. Choose **Security** &rarr; **Role Collections**, and then choose **Create**.
     
-    <!-- border -->![Create RoleCollections](Create_RoleCollections.png)
+    ![Create RoleCollections](Create_RoleCollections.png)
 
 3. In the **Create Role Collection** dialog, enter **`Mobile Admin`** in the **Name** field and choose **Create**.
 
-    <!-- border -->![Creation popup](Creation_Dialog.png)
+    ![Creation popup](Creation_Dialog.png)
 
 4. Choose the role collection **`Mobile Admin`** from the list of role collections and choose **Edit** on the right.
 
-    <!-- border -->![Edit Role Collections](Edit_RoleCollections.png)
+    ![Edit Role Collections](Edit_RoleCollections.png)
 
 5. Open the value help in the **Role Name** field. 
 
-    <!-- border -->![Role Name](Editing_Role_Name.png)
+    ![Role Name](Editing_Role_Name.png)
 
 6. Search for the role **`SDM_MobileAdmin`**, **`SDMWeb_Admin`**, and **`SDM_Admin`**, select it, and choose **Add**.
    
-    <!-- border -->![Role Name](Adding_Role_2.png)
+    ![Role Name](Adding_Role_2.png)
 
 7. Choose **Save**. 
    
@@ -104,7 +104,7 @@ To use the application, ensure that your user account is associated with a role 
 
 2. Under **Role Collections** on the right, choose **Assign Role Collection**.
 
-    <!-- border -->![Role Collection to a User](Rolecollection_User.png)
+    ![Role Collection to a User](Rolecollection_User.png)
 
 3. In the **Assign Role Collection** dialog, select the **Mobile Admin** role collection and choose **Assign Role Collection**.
 
@@ -116,19 +116,19 @@ To use the application, ensure that your user account is associated with a role 
 
 1. In your subaccount, navigate to **Services** &rarr; **Instances and Subscriptions**, click the button next to **Document Management Service, Application Option**.
 
-    <!-- border -->![Go To Application in your subbacount](GoTo_Application.png)
+    ![Go To Application in your subbacount](GoTo_Application.png)
 
 2. Log on and click the **Document Management Service Admin**.
 
-    <!-- border -->![Accessing Repo Creation Tile](Selecting_Repo_Tile.png)
+    ![Accessing Repo Creation Tile](Selecting_Repo_Tile.png)
 
 3. Click **Add Repository**.
 
-    <!-- border -->![Add Repository](Add_Repo.png)
+    ![Add Repository](Add_Repo.png)
 
 4. Choose **Internal** as a Repository Type, enter the **Display Name** of your choice, and click **Add**. 
 
-    <!-- border -->![Adding Repository](Add_Repo_Details_Page.png)
+    ![Adding Repository](Add_Repo_Details_Page.png)
 
     >**Results:** The repository you've set up will be available for access via the mobile application in the subsequent steps.
 
@@ -137,25 +137,25 @@ To use the application, ensure that your user account is associated with a role 
 
 1. In your subaccount, navigate to **Services** &rarr; **Instances and Subscriptions**, click the button next to **Document Management Service, Application Option**.
 
-    <!-- border -->![Go To Application in your subbacount](GoTo_Application.png)
+    ![Go To Application in your subbacount](GoTo_Application.png)
 
 2. Log on to the application.
 
 3. Click the **Document Management Service Mobile Admin** tile.
     
-    <!-- border -->![Admin View](MobileAdminView_gettingStarted_Horizon.png)
+    ![Admin View](MobileAdminView_gettingStarted_Horizon.png)
 
 4. On the Getting Started page, click **Start Onboarding**.
 
-    <!-- border -->![Accessing Onboarding tile](Start_Onboarding.png)
+    ![Accessing Onboarding tile](Start_Onboarding.png)
 
 5. Click **Mobile Services Cockpit**.
 
-    <!-- border -->![Acccessing Mobile Service Cockpit](Access_Mobile_Services_Cockpit.png)
+    ![Acccessing Mobile Service Cockpit](Access_Mobile_Services_Cockpit.png)
 
 6. Navigate to the **APIs** tab.
 
-    <!-- border -->![Accessing API tab](QR_Code_Scan_API_tab.png)
+    ![Accessing API tab](QR_Code_Scan_API_tab.png)
 
     >**Results:** You've accessed the QR code. Keep this tab open and proceed with the next step.
 
@@ -170,24 +170,24 @@ To use the application, ensure that your user account is associated with a role 
 
 3.  Click **Agree**. 
 
-    <!-- border -->![End User License Agreement](Mobile_EULA_Agree.png)
+    ![End User License Agreement](Mobile_EULA_Agree.png)
 
 4.  On your device, choose **Scan**. 
 
-    <!-- border -->![Scan QR Code](Mobile_Scan_Screen.png)
+    ![Scan QR Code](Mobile_Scan_Screen.png)
 
 5.  Scan the QR code from the previous step to proceed.
    
-    <!-- border -->![Scanning QR Code](Mobile_Scan_Continue.png)
+    ![Scanning QR Code](Mobile_Scan_Continue.png)
 
 6. Choose **Continue**. 
    
-    <!-- border -->![Continue Screen](Mobile_Scan_Continue.png)
+    ![Continue Screen](Mobile_Scan_Continue.png)
 
     >**Results**: A repository that you created in the earlier steps is displayed.
 
 7. To refresh the list manually, pull down on the list and release it.
     
-    <!-- border -->![Repository Lists](List_of_Repostitories.png)
+    ![Repository Lists](List_of_Repostitories.png)
 
    

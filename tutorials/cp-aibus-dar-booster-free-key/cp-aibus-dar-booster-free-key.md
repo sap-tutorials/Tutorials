@@ -28,7 +28,7 @@ author_profile: https://github.com/Juliana-Morais
 
 2. Access your global account.
 
-    <!-- border -->![global account](global-account.png)
+    ![global account](global-account.png)
 
     >You can also perform this tutorial series using a trial account. For that, follow the steps in [Use Trial to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key).
 
@@ -43,41 +43,41 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
 1. On the navigation side bar, click **Boosters**.
 
-    <!-- border -->![Service Key](access-booster.png)
+    ![Service Key](access-booster.png)
 
 2. Search for **Data Attribute Recommendation** and click the tile to access the booster.
 
-    <!-- border -->![Service Key](access-booster-tile.png)
+    ![Service Key](access-booster-tile.png)
 
 3. Click **Start**.
 
-    <!-- border -->![Service Key](booster-start.png)
+    ![Service Key](booster-start.png)
 
 4. Click **Next**.
 
-    <!-- border -->![Service Key](booster-next.png)
+    ![Service Key](booster-next.png)
 
 5. If you want to create a dedicated subaccount for the service instance, choose **Create Subaccount**. If you want to use an already created subaccount, choose **Select Subaccount** (the selection comes in the next step). For this tutorial, we'll create a dedicated subaccount. When you're done with the selection, click **Next**.
 
-    <!-- border -->![Service Key](booster-scenario.png)
+    ![Service Key](booster-scenario.png)
 
 6. Choose the **free** plan. You can also rename the subaccount to `dar-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt) - AWS**. Click **Next**.
 
-    <!-- border -->![Service Key](booster-subaccount.png)
+    ![Service Key](booster-subaccount.png)
 
     >You can also perform this tutorial series using the `standard` service plan. For that, choose the `standard` plan in this step (instead of free). For more information on the service plans available for Data Attribute Recommendation, see [Service Plans](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/e28c50aa9b5b41de8ce8d6d46f2a5aac.html).
 
 7. Click **Finish**.
 
-    <!-- border -->![Service Key](booster-finish.png)
+    ![Service Key](booster-finish.png)
 
     Follow the progress of the booster automated tasks.
 
-    <!-- border -->![Service Key](booster-progress.png)
+    ![Service Key](booster-progress.png)
 
     When the automated tasks are done, see the **Success** dialog box.
 
-    <!-- border -->![Service Key](booster-success.png)
+    ![Service Key](booster-success.png)
 
 
 
@@ -88,7 +88,7 @@ You have successfully used the booster **Set up account for Data Attribute Recom
 
 Click **Download Service Key** to save the service key locally on your computer.
 
-<!-- border -->![Service Key](booster-success-key.png)
+![Service Key](booster-success-key.png)
 
 >If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Data Attribute Recommendation](cp-aibus-dar-free-service-instance) to manually create the service instance and service key for Data Attribute Recommendation using the free tier service plan.
 
@@ -106,23 +106,23 @@ Do the following to access your service instance and service key, without having
 
 1. Close the booster **Success** dialog box.
 
-    <!-- border -->![Service Key](leave-success.png)
+    ![Service Key](leave-success.png)
 
 2. Access your global account.
 
-    <!-- border -->![Service Key](access-global-account.png)
+    ![Service Key](access-global-account.png)
 
 3. Click **Account Explorer** on the navigation side bar and access the subaccount you used to create the service instance and service key for Data Attribute Recommendation.
 
-    <!-- border -->![Service Key](subaccounts.png)
+    ![Service Key](subaccounts.png)
 
 4. Click **Instances and Subscriptions** on the navigation side bar. You see the service instance you created with the **Set up account for Data Attribute Recommendation** booster.
 
-    <!-- border -->![Service Key](service-instance.png)
+    ![Service Key](service-instance.png)
 
 5. Click the navigation arrow to open the details of your service instance. Select **Service Keys (1)**. Then, click the dots to **View**, **Download** or **Delete** your service key.
 
-    <!-- border -->![Service Key](service-key.png)
+    ![Service Key](service-key.png)
 
 Congratulations, you have completed this tutorial.
 

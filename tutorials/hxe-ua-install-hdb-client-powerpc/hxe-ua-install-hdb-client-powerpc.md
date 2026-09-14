@@ -59,16 +59,16 @@ Install the Download Manager to your client machine and download the client pack
 
     Navigate to the directory in which you wish to extract the client files and use the `tar` command:
 
-    ```bash
-    cd <preferred_filepath>
-    sudo tar <download_filepath>/clients_linux_ppc64le.tgz
-    ```
+   ```bash
+   cd <preferred_filepath>
+   sudo tar <download_filepath>/clients_linux_ppc64le.tgz
+   ```
 
-    This extracts the following files and their contents:
+   This extracts the following files and their contents:
 
-    -   `hdb_client_linux_ppc64le.tgz`
+   -   `hdb_client_linux_ppc64le.tgz`
 
-    -   `xs.onpremise.runtime.client_linuxppc64le-1.0.85.zip`
+   -   `xs.onpremise.runtime.client_linuxppc64le-1.0.85.zip`
 
 
 
@@ -79,26 +79,26 @@ To install the SAP HANA client on a Linux PowerPC machine, do the following:
 
 1.  Go to the directory where you wish to unpack the `hdb_client_linux_ppc64le.tgz` files:
 
-    ```bash
-    cd <your_destination>
-    ```
+   ```bash
+   cd <your_destination>
+   ```
 
 2.  Unpack the file:
 
-    ```bash
-    sudo tar -xvzf <unzipped_filepath>/hdb_client_linux_ppc64le.tgz
-    ```
+   ```bash
+   sudo tar -xvzf <unzipped_filepath>/hdb_client_linux_ppc64le.tgz
+   ```
 
-    The directory `HDB_CLIENT_LINUX_X86_64` is created.
+   The directory `HDB_CLIENT_LINUX_X86_64` is created.
 
 3.  Navigate to the `HDB_CLIENT_LINUX_X86_64` directory and run `hdbinst` to start the installer:
 
-    ```bash
-    cd HDB_CLIENT_LINUX_PPC64LE
-    sudo ./hdbinst
-    ```
+   ```bash
+   cd HDB_CLIENT_LINUX_PPC64LE
+   sudo ./hdbinst
+   ```
 
-    Follow the instructions on the screen to install the SAP HANA HDB client.
+   Follow the instructions on the screen to install the SAP HANA HDB client.
 
 
 

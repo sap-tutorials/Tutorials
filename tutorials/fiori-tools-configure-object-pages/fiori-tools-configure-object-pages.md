@@ -42,23 +42,23 @@ To begin, you need to create a **`FieldGroup`** for the technical information th
 
 4. To add a new data field, create a new line after the following section.
 
-    ```XML
-    <Record Type="UI.DataField">
-      <PropertyValue Property="Value" Path="Weight"/>
-      <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
-    </Record>
-    ```
+   ```XML
+   <Record Type="UI.DataField">
+     <PropertyValue Property="Value" Path="Weight"/>
+     <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/>
+   </Record>
+   ```
 
     Use the Code Complete feature: Press **CMD/Ctrl + Space** and then choose **`<Record "DataField">`**.
     Press **CMD/Ctrl + Space** again to choose **`Path=''`**.
     Lastly, for providing value for Path, press **CMD/Ctrl + Space** to select `DimensionUnit`.
     Your added code should look like below:
 
-    ```XML
-    <Record Type="UI.DataField">
-      <PropertyValue Property="Value" Path="DimensionUnit"/>
-    </Record>
-    ```
+   ```XML
+   <Record Type="UI.DataField">
+     <PropertyValue Property="Value" Path="DimensionUnit"/>
+   </Record>
+   ```
 
 
 
@@ -70,17 +70,17 @@ Now that you have edited the **`FieldGroup`**, you need to reference it to displ
 
 1. In your local annotation file `annotation.xml`, for the target `SAP.SEPMRA_C_PD_ProductType`, insert a new line after the end of the `</Annotation>` tag of the annotation term `UI.SelectionFields`.
 
-    <!-- border -->![UI Facet](t4-annotation-modeler-new-line-facet3.png)
+    ![UI Facet](t4-annotation-modeler-new-line-facet3.png)
 
     To accelerate the coding required here, use the Code Complete feature: Press **CMD/Ctrl + Space** and then choose **`UI.Facets`**.
 
     >**Hint:** After pressing **CMD/Ctrl + Space**, you can also search for your desired element, rather than scrolling through the entire list. For example, type **`Fac`** (as in, `UI.Facets`) and this will narrow down the list of items for you.
 
-    <!-- border -->![Code Complete](t4-annotation-modeler-new-facet.png)
+    ![Code Complete](t4-annotation-modeler-new-facet.png)
 
 2. At this point, you have inserted the `Annotation` tag and it already contains the `Collection` tag. Your cursor should be within `<Annotation Term="UI.Facets" >`. Press **Tab** to move your cursor under the `<Collection>` tag.
 
-    <!-- border -->![Select Collection Tab](t4-annotation-modeler-add-facet-collection.png)
+    ![Select Collection Tab](t4-annotation-modeler-add-facet-collection.png)
 
     >**Hint:** Take advantage of this procedure: pressing **CMD/Ctrl + Space**, making your selection, and then using the **Tab** key. This can help minimize the time you spend adding/editing annotations in the code editor.
 
@@ -96,7 +96,7 @@ Now that you have edited the **`FieldGroup`**, you need to reference it to displ
 
     Your annotation file should look like the image below:
 
-    <!-- border -->![Enter Technical Data](t4-annotation-modeler-add-referenceFacet.png)
+    ![Enter Technical Data](t4-annotation-modeler-add-referenceFacet.png)
 
 5. Save `annotation.xml` and take a look at your running app. Select a row in the list to open the object page. You should see a new section in the object page showing the technical data of the selected product.
 
@@ -121,7 +121,7 @@ Next, you are going to add a chart to this object page to show users the monthly
 
     Your annotation file should look like the image below:
 
-    <!-- border -->![Add chart](t4-annotation-modeler-add-chart2.png)
+    ![Add chart](t4-annotation-modeler-add-chart2.png)
 
 3. Save the file `annotation.xml` and take a look at your running app. You should see a new section in the object page showing the monthly revenue chart of the product.
 
@@ -136,15 +136,15 @@ Next, you are going to add a section to your object page that shows the sales hi
 
 1. Insert a new line after the end tag `</Annotations>` for the target `SAP.SEPMRA_C_PD_ProductType`. The line looks like so:
 
-    ```XML
-    <Annotations Target="SAP.SEPMRA_C_PD_ProductType">
-        .....
-    </Annotations>
-    ```
+   ```XML
+   <Annotations Target="SAP.SEPMRA_C_PD_ProductType">
+       .....
+   </Annotations>
+   ```
 
 2. Add a new `<Annotations>` tag for the target `SAP.SEPMRA_C_PD_ProductSalesDataType`. You can use **CMD/Ctrl + Space** and select `<Annotations>`.
 
-    <!-- border -->![Add new target](t4-add-new-target2.gif)
+    ![Add new target](t4-add-new-target2.gif)
 
     >In the next step, you will refer to this **`UI.LineItem`** from the earlier created Facet for the current object page
 
@@ -160,7 +160,7 @@ Next, you are going to add a section to your object page that shows the sales hi
 
     Navigate to the line below the `</Record>` you just created. Again, use **CMD/Ctrl + Space** and select **`Record "DataField"`** and add one property -- **Value** (using **CMD/Ctrl + Space**). Assign the **Path** as **`DeliveryCalendarMonthT`**.
 
-    <!-- border -->![Add column](t4-add-new-target-lineItem.png)
+    ![Add column](t4-add-new-target-lineItem.png)
 
 6. Save the file `anootation.xml`.
 
@@ -180,7 +180,7 @@ Now you are going to add the actual section that displays the table of sales dat
 
     Press **Tab** to go to the property id. Press **CMD/Ctrl + Space** and select **String**, then enter the string **`SalesData`**.
 
-    <!-- border -->![Add New Reference Facet](t4-add-new-reference-facet-lineItem.png)
+    ![Add New Reference Facet](t4-add-new-reference-facet-lineItem.png)
 
 3. Save the file `annotation.xml` and check your running app. You should see a table with line items indicating when the selected item has sold.
 
@@ -196,11 +196,11 @@ Like the other tools, you access it through the Command Palette.
 
 1. Press **CMD/CTRL + Shift + P** and type **`Page Map`** and select **Fiori: Show Page Map**.
 
-    <!-- border -->![Open Page Map](t4-launch-page-map.png)
+    ![Open Page Map](t4-launch-page-map.png)
 
     This opens the visual representation of your application pages. To add a new object page, click on the  **+** on the first object page.
 
-    <!-- border -->![Add New Page](t4-page-map-add-new-page2.png)
+    ![Add New Page](t4-page-map-add-new-page2.png)
 
 2. From the **Navigation** dropdown, select the `to_ProductSalesData (SEPMRA_C_PD_ProductSalesData)` entry and click **Add**.
 

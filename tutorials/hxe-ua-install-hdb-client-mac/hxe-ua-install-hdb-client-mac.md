@@ -72,26 +72,26 @@ To install the SAP HANA client on a Mac machine, do the following:
 
 1.  Go to the directory where you wish to unpack the `hdb_client_mac.tgz` files:
 
-    ```bash
-    cd <your_destination>
-    ```
+   ```bash
+   cd <your_destination>
+   ```
 
 2.  Unpack the file:
 
-    ```bash
-    sudo tar -xvzf <unzipped_filepath>/hdb_client_mac.tgz
-    ```
+   ```bash
+   sudo tar -xvzf <unzipped_filepath>/hdb_client_mac.tgz
+   ```
 
-    The directory `HDB_CLIENT_MACOS` is created.
+   The directory `HDB_CLIENT_MACOS` is created.
 
 3.  Navigate to the `HDB_CLIENT_MACOS` directory and run `hdbinst` to start the installer:
 
-    ```bash
-    cd HDB_CLIENT_MACOS
-    sudo ./hdbinst
-    ```
+   ```bash
+   cd HDB_CLIENT_MACOS
+   sudo ./hdbinst
+   ```
 
-    Follow the instructions on the screen to install the SAP HANA HDB client.
+   Follow the instructions on the screen to install the SAP HANA HDB client.
 
 
 

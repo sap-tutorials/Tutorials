@@ -37,21 +37,21 @@ Before you upload our sample invoice file to SAP Document AI, you’ll create a 
 
 2. In the left navigation pane, click **Schema Configuration**.
 
-    <!-- border -->![LLM](access-schema-configuration.png)
+    ![LLM](access-schema-configuration.png)
 
 3. To create your own schema, click **Create**.
 
-    <!-- border -->![LLM](create-schema.png)
+    ![LLM](create-schema.png)
 
 4. In the dialog that opens, enter a name for your own schema – for example, `invoice_schema`. Note that the name can't include blanks. Next, select `Invoice` as your **Document Type**. 
 
 5. Click **Create** to create the schema.
 
-    <!-- border -->![LLM](create-schema-dialog.png)    
+    ![LLM](create-schema-dialog.png)    
 
 6. Your schema now appears in the list. Access the schema by clicking on it.
 
-    <!-- border -->![LLM](access-schema.png)
+    ![LLM](access-schema.png)
 
 >You can also adapt copies of the appropriate preconfigured SAP schemas to extract information from standard document types. However, we won't cover that approach in this tutorial.
 
@@ -60,7 +60,7 @@ Before you upload our sample invoice file to SAP Document AI, you’ll create a 
 
 To add your first header field, click **Add**.
 
-<!-- border -->![LLM](add-field.png)
+![LLM](add-field.png)
 
 You must enter a field name and data type for each new field. The available data types are `string`, `number`, `date`, `discount`, `currency`, `country/region`, and `list of values`. 
 
@@ -84,11 +84,11 @@ As your first header field, add the total amount of the invoice.
 
 4. Click **Save**.
    
-<!-- border -->![LLM](add-number.png)
+![LLM](add-number.png)
 
 The field now appears in your list of header fields, where you can see all the information that you've just entered. You can edit or delete the field by clicking the respective icons on the right.
 
-<!-- border -->![LLM](added-number.png)
+![LLM](added-number.png)
 
 Click **Add** again to open the `Header Field` dialog.
 
@@ -102,7 +102,7 @@ Click **Add** again to open the `Header Field` dialog.
    
 5. Click **Save**.
 
-<!-- border -->![LLM](add-source-number.png)
+![LLM](add-source-number.png)
 
 Now, go ahead and add the remaining header fields and line item fields shown in the following tables and images. Pay attention to the different data types and whether you should add a description or a default extractor.
 
@@ -120,7 +120,7 @@ Header fields:
 | `currencyCode`        |                                            | string      | auto        | `currencyCode`           |
 | `purchaseOrderNumber` |                                            | string      | auto        | `purchaseOrderNumber`    |
 
-<!-- border -->![LLM](all-header-fields.png)
+![LLM](all-header-fields.png)
 
 Line item fields:
 
@@ -132,7 +132,7 @@ Line item fields:
 | `partNumber` | `part number` | string    | auto       |                   |
 
 
-<!-- border -->![LLM](all-line-item-fields.png)
+![LLM](all-line-item-fields.png)
 
 >Note that the SAP Document AI basic UI also includes a feature that allows you to group schema fields by category. To use this feature, you must first activate it under **UI Settings**. For simplicity's sake, we haven't included the feature in this tutorial. If you'd like to find out more about it, see [Schema Field Categories](https://help.sap.com/docs/document-information-extraction/document-information-extraction/schema-field-category). 
 
@@ -145,11 +145,11 @@ Once you've added the fields, you need to activate the schema so that you can us
 
 To activate the schema, click **Activate**.
 
-<!-- border -->![LLM](activate.png)
+![LLM](activate.png)
 
 Now, the status of your schema changes to `ACTIVE`. To make changes to your schema, you must first **Deactivate** it.
 
-<!-- border -->![LLM](active.png)
+![LLM](active.png)
 
 Congratulations, you've now created and activated your own schema for invoice documents.
 
@@ -160,7 +160,7 @@ Congratulations, you've now created and activated your own schema for invoice do
 
 1. Access **Document** from the navigation on the left of the screen, then click **+** to upload the invoice document.
 
-    <!-- border -->![LLM](add-document.png)
+    ![LLM](add-document.png)
 
 2. On the *Select Document* screen, choose `Invoice` for the **Document Type**.
    
@@ -170,17 +170,17 @@ Congratulations, you've now created and activated your own schema for invoice do
    
 5. Drag and drop the file directly or click **+** to upload the sample document.
 
-    <!-- border -->![LLM](upload.png)
+    ![LLM](upload.png)
 
 6. Click **Confirm**.
   
     The document status changes from `PENDING` to `DONE`.
 
-    <!-- border -->![LLM](done.png)
+    ![LLM](done.png)
 
 7. Access the document by clicking on it. You now see the page preview of the document file you uploaded, and the information extracted from the invoice header fields and line items using LLMs, the solution's pretrained machine learning models, and the schema that you created.
 
-    <!-- border -->![LLM](results.png)
+    ![LLM](results.png)
 
 >Note that the first time you extract fields using generative AI, the results are in the orange confidence range. 
 

@@ -38,44 +38,44 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 1. Use the following name:
 
-    ```Name
-    interactions.cds
-    ```
+   ```Name
+   interactions.cds
+   ```
 
     ![Interactions.cds](interactions_cds.png)
 
 1. Use the following content in this new file:
 
-    ```CAP CDS
-    namespace app.interactions;
+   ```CAP CDS
+   namespace app.interactions;
 
-    using {
-        Country,
-        Currency,
-        cuid,
-        managed
-    } from '@sap/cds/common';
+   using {
+       Country,
+       Currency,
+       cuid,
+       managed
+   } from '@sap/cds/common';
 
-    type BusinessKey : String(10);
-    type Price       : Decimal(10, 2);
-    type Text        : String(1024);
+   type BusinessKey : String(10);
+   type Price       : Decimal(10, 2);
+   type Text        : String(1024);
 
-    entity Headers : cuid, managed {
-        items   : Composition of many Items
-                      on items.interaction = $self;
-        partner : BusinessKey;
-        country : Country;
-    };
+   entity Headers : cuid, managed {
+       items   : Composition of many Items
+                     on items.interaction = $self;
+       partner : BusinessKey;
+       country : Country;
+   };
 
-    entity Items : cuid {
-        interaction : Association to Headers;
-        text        : localized Text;
-        date        : DateTime;
-        @Semantics.amount.currencyCode: 'currency'
-        price       : Price;
-        currency    : Currency;
-    };
-    ```
+   entity Items : cuid {
+       interaction : Association to Headers;
+       text        : localized Text;
+       date        : DateTime;
+       @Semantics.amount.currencyCode: 'currency'
+       price       : Price;
+       currency    : Currency;
+   };
+   ```
 
     > What is going on?
     >
@@ -83,37 +83,37 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 1. We are using a reusable set of content (lists of countries, currencies, etc) provided by SAP in the above model. We also have to add this dependency to our project. From the command line issue the following command to do so:
 
-    ```shell
-    npm add @sap/cds-common-content --save
-    ```
+   ```shell
+   npm add @sap/cds-common-content --save
+   ```
 
 ### Create service interface
 
 1. In the `srv` (**not `src`!**) folder create another file and name it `interaction_srv.cds`
 
-    ```Name
-    interaction_srv.cds
-    ```
+   ```Name
+   interaction_srv.cds
+   ```
 
     ![interaction_srv.cds](interactions_srv.png)
 
 1. Use the following content in this new file:
 
-    ```CAP CDS
-    using app.interactions from '../db/interactions';
-    using {sap} from '@sap/cds-common-content';
+   ```CAP CDS
+   using app.interactions from '../db/interactions';
+   using {sap} from '@sap/cds-common-content';
 
-    service CatalogService {
+   service CatalogService {
 
-        @odata.draft.enabled: true
-        entity Interactions_Header as projection on interactions.Headers;
+       @odata.draft.enabled: true
+       entity Interactions_Header as projection on interactions.Headers;
 
-        entity Interactions_Items  as projection on interactions.Items;
+       entity Interactions_Items  as projection on interactions.Items;
 
-        @readonly
-        entity Languages           as projection on sap.common.Languages;
-    }
-    ```
+       @readonly
+       entity Languages           as projection on sap.common.Languages;
+   }
+   ```
 
 1. Save all.
 
@@ -123,9 +123,9 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 1. From the terminal issue the command: `cds build --production`
 
-    ```shell
-    cds build --production
-    ```
+   ```shell
+   cds build --production
+   ```
 
     ![cds build](cds_build.png)
 
@@ -276,6 +276,6 @@ You can now check the generated tables and views in the Database Explorer.
 
 1. Add the following WHERE clause to the SELECT statement and execute it to complete the validation below.
 
-    ```SQL
-    where "TEXT"  like '%happy%';
-    ```
+   ```SQL
+   where "TEXT"  like '%happy%';
+   ```

@@ -83,82 +83,82 @@ Let's get started. Follow these steps:
 
 2.	Copy the code given below into the SQL Console. Then execute the script after entering your password in the appropriate field. You can also find this code in `CreateTables.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip).
 
-    ```SQL
-     /*==============================================================*/                      
-     /* Created on:     11/21/2008 2:40:41 PM                        */
-     /*==============================================================*/
-     /*==============================================================*/
+   ```SQL
+    /*==============================================================*/                      
+    /* Created on:     11/21/2008 2:40:41 PM                        */
+    /*==============================================================*/
+    /*==============================================================*/
 
-     /*==============================================================*/
-     /* User: TPCH                                                   */
-     /*==============================================================*/
-     CREATE USER TPCH IDENTIFIED BY "<your_password>";
+    /*==============================================================*/
+    /* User: TPCH                                                   */
+    /*==============================================================*/
+    CREATE USER TPCH IDENTIFIED BY "<your_password>";
 
-     /*==============================================================*/
-     /* Table: CUSTOMER                                              */
-     /*==============================================================*/
-     create table TPCH.CUSTOMER (
-       C_CUSTKEY            integer                        not null iq unique (150000),
-       C_NAME               varchar(25)                    not null,
-       C_ADDRESS            varchar(40)                    not null,
-       C_NATIONKEY          integer                        not null iq unique (25),
-       C_PHONE              char(15)                       not null,
-       C_ACCTBAL            decimal(15,2)                  not null,
-       C_MKTSEGMENT         char(10)                       not null,
-       C_COMMENT            varchar(117)                   not null,
-       constraint PK_CUSTOMER primary key (C_CUSTKEY)
-     );
+    /*==============================================================*/
+    /* Table: CUSTOMER                                              */
+    /*==============================================================*/
+    create table TPCH.CUSTOMER (
+      C_CUSTKEY            integer                        not null iq unique (150000),
+      C_NAME               varchar(25)                    not null,
+      C_ADDRESS            varchar(40)                    not null,
+      C_NATIONKEY          integer                        not null iq unique (25),
+      C_PHONE              char(15)                       not null,
+      C_ACCTBAL            decimal(15,2)                  not null,
+      C_MKTSEGMENT         char(10)                       not null,
+      C_COMMENT            varchar(117)                   not null,
+      constraint PK_CUSTOMER primary key (C_CUSTKEY)
+    );
 
-     /*==============================================================*/
-     /* Table: NATION                                                */
-     /*==============================================================*/
-     create table TPCH.NATION (
-       N_NATIONKEY          integer                        not null iq unique (25),
-       N_NAME               char(25)                       not null,
-       N_REGIONKEY          integer                        not null iq unique (5),
-       N_COMMENT            varchar(152)                   not null,
-       constraint PK_NATION primary key (N_NATIONKEY)
-     );
+    /*==============================================================*/
+    /* Table: NATION                                                */
+    /*==============================================================*/
+    create table TPCH.NATION (
+      N_NATIONKEY          integer                        not null iq unique (25),
+      N_NAME               char(25)                       not null,
+      N_REGIONKEY          integer                        not null iq unique (5),
+      N_COMMENT            varchar(152)                   not null,
+      constraint PK_NATION primary key (N_NATIONKEY)
+    );
 
-     /*==============================================================*/
-     /* Table: REGION                                                */
-     /*==============================================================*/
-     create table TPCH.REGION (
-       R_REGIONKEY          integer                        not null iq unique (5),
-       R_NAME               char(25)                       not null,
-       R_COMMENT            varchar(152)                   not null,
-       constraint PK_REGION primary key (R_REGIONKEY)
-     );
+    /*==============================================================*/
+    /* Table: REGION                                                */
+    /*==============================================================*/
+    create table TPCH.REGION (
+      R_REGIONKEY          integer                        not null iq unique (5),
+      R_NAME               char(25)                       not null,
+      R_COMMENT            varchar(152)                   not null,
+      constraint PK_REGION primary key (R_REGIONKEY)
+    );
 
-     /*==============================================================*/
-     /* Table: SUPPLIER                                              */
-     /*==============================================================*/
-     create table TPCH.SUPPLIER (
-       S_SUPPKEY            integer                        not null iq unique (10000),
-       S_NAME               char(25)                       not null,
-       S_ADDRESS            varchar(40)                    not null,
-       S_NATIONKEY          integer                        not null iq unique (25),
-       S_PHONE              char(15)                       not null,
-       S_ACCTBAL            decimal(15,2)                  not null,
-       S_COMMENT            varchar(101)                   not null,
-       constraint PK_SUPPLIER primary key (S_SUPPKEY)
-     );
+    /*==============================================================*/
+    /* Table: SUPPLIER                                              */
+    /*==============================================================*/
+    create table TPCH.SUPPLIER (
+      S_SUPPKEY            integer                        not null iq unique (10000),
+      S_NAME               char(25)                       not null,
+      S_ADDRESS            varchar(40)                    not null,
+      S_NATIONKEY          integer                        not null iq unique (25),
+      S_PHONE              char(15)                       not null,
+      S_ACCTBAL            decimal(15,2)                  not null,
+      S_COMMENT            varchar(101)                   not null,
+      constraint PK_SUPPLIER primary key (S_SUPPKEY)
+    );
 
-     alter table TPCH.CUSTOMER
-       add foreign key FK_CUSTOMER_REFERENCE_NATION (C_NATIONKEY)
-          references TPCH.NATION (N_NATIONKEY)
-          on delete restrict on update restrict;
+    alter table TPCH.CUSTOMER
+      add foreign key FK_CUSTOMER_REFERENCE_NATION (C_NATIONKEY)
+         references TPCH.NATION (N_NATIONKEY)
+         on delete restrict on update restrict;
 
-     alter table TPCH.NATION
-       add foreign key FK_NATION_REFERENCE_REGION (N_REGIONKEY)
-          references TPCH.REGION (R_REGIONKEY)
-          on delete restrict on update restrict;
+    alter table TPCH.NATION
+      add foreign key FK_NATION_REFERENCE_REGION (N_REGIONKEY)
+         references TPCH.REGION (R_REGIONKEY)
+         on delete restrict on update restrict;
 
-     alter table TPCH.SUPPLIER
-       add foreign key FK_SUPPLIER_REFERENCE_NATION (S_NATIONKEY)
-          references TPCH.NATION (N_NATIONKEY)
-          on delete restrict on update restrict;
-    ```
+    alter table TPCH.SUPPLIER
+      add foreign key FK_SUPPLIER_REFERENCE_NATION (S_NATIONKEY)
+         references TPCH.NATION (N_NATIONKEY)
+         on delete restrict on update restrict;
+   ```
 
     ![Create Tables](ss-01-create-tables.png)
 
@@ -178,86 +178,86 @@ Let's get started. Follow these steps:
 
 1.  Within an Interactive SQL window, copy and paste the SQL script given below. You can also find this code in `CreateTables.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip).
 
-    ```SQL
-    /*==============================================================*/                       */
-    /* Created on:     11/21/2008 2:40:41 PM                        */
-    /*==============================================================*/
-    /*==============================================================*/
-    /*==============================================================*/
-    /* User: TPCH                                                   */
-    /*==============================================================*/
-    CREATE USER TPCH IDENTIFIED BY "<your_password>";
+   ```SQL
+   /*==============================================================*/                       */
+   /* Created on:     11/21/2008 2:40:41 PM                        */
+   /*==============================================================*/
+   /*==============================================================*/
+   /*==============================================================*/
+   /* User: TPCH                                                   */
+   /*==============================================================*/
+   CREATE USER TPCH IDENTIFIED BY "<your_password>";
 
-    /*==============================================================*/
-    /* Table: CUSTOMER                                              */
-    /*==============================================================*/
-    create table TPCH.CUSTOMER (
-    C_CUSTKEY            integer                        not null iq unique (150000),
-    C_NAME               varchar(25)                    not null,
-    C_ADDRESS            varchar(40)                    not null,
-    C_NATIONKEY          integer                        not null iq unique (25),
-    C_PHONE              char(15)                       not null,
-    C_ACCTBAL            decimal(15,2)                  not null,
-    C_MKTSEGMENT         char(10)                       not null,
-    C_COMMENT            varchar(117)                   not null,
-    constraint PK_CUSTOMER primary key (C_CUSTKEY)
-    );
+   /*==============================================================*/
+   /* Table: CUSTOMER                                              */
+   /*==============================================================*/
+   create table TPCH.CUSTOMER (
+   C_CUSTKEY            integer                        not null iq unique (150000),
+   C_NAME               varchar(25)                    not null,
+   C_ADDRESS            varchar(40)                    not null,
+   C_NATIONKEY          integer                        not null iq unique (25),
+   C_PHONE              char(15)                       not null,
+   C_ACCTBAL            decimal(15,2)                  not null,
+   C_MKTSEGMENT         char(10)                       not null,
+   C_COMMENT            varchar(117)                   not null,
+   constraint PK_CUSTOMER primary key (C_CUSTKEY)
+   );
 
-    /*==============================================================*/
-    /* Table: NATION                                                */
-    /*==============================================================*/
-    create table TPCH.NATION (
-    N_NATIONKEY          integer                        not null iq unique (25),
-    N_NAME               char(25)                       not null,
-    N_REGIONKEY          integer                        not null iq unique (5),
-    N_COMMENT            varchar(152)                   not null,
-    constraint PK_NATION primary key (N_NATIONKEY)
-    );
+   /*==============================================================*/
+   /* Table: NATION                                                */
+   /*==============================================================*/
+   create table TPCH.NATION (
+   N_NATIONKEY          integer                        not null iq unique (25),
+   N_NAME               char(25)                       not null,
+   N_REGIONKEY          integer                        not null iq unique (5),
+   N_COMMENT            varchar(152)                   not null,
+   constraint PK_NATION primary key (N_NATIONKEY)
+   );
 
-    /*==============================================================*/
-    /* Table: REGION                                                */
-    /*==============================================================*/
-    create table TPCH.REGION (
-    R_REGIONKEY          integer                        not null iq unique (5),
-    R_NAME               char(25)                       not null,
-    R_COMMENT            varchar(152)                   not null,
-    constraint PK_REGION primary key (R_REGIONKEY)
-    );
+   /*==============================================================*/
+   /* Table: REGION                                                */
+   /*==============================================================*/
+   create table TPCH.REGION (
+   R_REGIONKEY          integer                        not null iq unique (5),
+   R_NAME               char(25)                       not null,
+   R_COMMENT            varchar(152)                   not null,
+   constraint PK_REGION primary key (R_REGIONKEY)
+   );
 
-    /*==============================================================*/
-    /* Table: SUPPLIER                                              */
-    /*==============================================================*/
-    create table TPCH.SUPPLIER (
-    S_SUPPKEY            integer                        not null iq unique (10000),
-    S_NAME               char(25)                       not null,
-    S_ADDRESS            varchar(40)                    not null,
-    S_NATIONKEY          integer                        not null iq unique (25),
-    S_PHONE              char(15)                       not null,
-    S_ACCTBAL            decimal(15,2)                  not null,
-    S_COMMENT            varchar(101)                   not null,
-    constraint PK_SUPPLIER primary key (S_SUPPKEY)
-    );
+   /*==============================================================*/
+   /* Table: SUPPLIER                                              */
+   /*==============================================================*/
+   create table TPCH.SUPPLIER (
+   S_SUPPKEY            integer                        not null iq unique (10000),
+   S_NAME               char(25)                       not null,
+   S_ADDRESS            varchar(40)                    not null,
+   S_NATIONKEY          integer                        not null iq unique (25),
+   S_PHONE              char(15)                       not null,
+   S_ACCTBAL            decimal(15,2)                  not null,
+   S_COMMENT            varchar(101)                   not null,
+   constraint PK_SUPPLIER primary key (S_SUPPKEY)
+   );
 
-    alter table TPCH.CUSTOMER
-       add foreign key FK_CUSTOMER_REFERENCE_NATION (C_NATIONKEY)
-         references TPCH.NATION (N_NATIONKEY)
-         on delete restrict on update restrict;
+   alter table TPCH.CUSTOMER
+      add foreign key FK_CUSTOMER_REFERENCE_NATION (C_NATIONKEY)
+        references TPCH.NATION (N_NATIONKEY)
+        on delete restrict on update restrict;
 
-    alter table TPCH.NATION
-      add foreign key FK_NATION_REFERENCE_REGION (N_REGIONKEY)
-         references TPCH.REGION (R_REGIONKEY)
-         on delete restrict on update restrict;
+   alter table TPCH.NATION
+     add foreign key FK_NATION_REFERENCE_REGION (N_REGIONKEY)
+        references TPCH.REGION (R_REGIONKEY)
+        on delete restrict on update restrict;
 
-    alter table TPCH.SUPPLIER
-      add foreign key FK_SUPPLIER_REFERENCE_NATION (S_NATIONKEY)
-         references TPCH.NATION (N_NATIONKEY)
-         on delete restrict on update restrict;
+   alter table TPCH.SUPPLIER
+     add foreign key FK_SUPPLIER_REFERENCE_NATION (S_NATIONKEY)
+        references TPCH.NATION (N_NATIONKEY)
+        on delete restrict on update restrict;
 
-    ```
+   ```
 
-    >**Attention**: You should make a slight adjustment in the  above query if you have provisioned the data lake Relational Engine instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
-    >
-    >For more information on database compatibility modes, please see our [technical documentation](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/LATEST/en-US/82cdda1398644f4a95ec402f3144bcea.html).
+   >**Attention**: You should make a slight adjustment in the  above query if you have provisioned the data lake Relational Engine instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
+   >
+   >For more information on database compatibility modes, please see our [technical documentation](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/LATEST/en-US/82cdda1398644f4a95ec402f3144bcea.html).
 
 2. The Query tab will now contain the file name as seen below, and then the script can be executed.
 

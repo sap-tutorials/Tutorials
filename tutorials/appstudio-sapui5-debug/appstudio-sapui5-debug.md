@@ -158,17 +158,17 @@ Running your application has several advantages over deploying it. Among others,
 
 1. To run the pre-generated run configuration, switch to the **Run Configuration** panel on the left-hand bar. Click on the **▶️** icon of the first run configuration to add start the SAPUI5 app.
 
-    <!-- border -->![run](./run.png)
+    ![run](./run.png)
 
 
 2. Now the SAP Business Application Studio will start the app. When promoted, selected **Open** to make the local port accessible for debugging.
 
-    <!-- border -->![expose](./expose.png)
+    ![expose](./expose.png)
 
 
 3. A new tab should open that displays the following page.
 
-    <!-- border -->![running](./running.png)
+    ![running](./running.png)
 
 
 ### Stop at the breakpoint
