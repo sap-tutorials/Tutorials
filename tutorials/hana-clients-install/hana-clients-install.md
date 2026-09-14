@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
 

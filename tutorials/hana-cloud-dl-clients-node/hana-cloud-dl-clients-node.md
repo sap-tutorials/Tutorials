@@ -156,7 +156,7 @@ The Node.js driver covered in this tutorial is [@sap\iq-client](https://www.npmj
     >node nodeQuery.js
     >```  
 
-    > ![debug output](debug-flag.png)  
+    > ![Debug output](debug-flag.png)  
 
     > The value of the environment variable DEBUG can be seen and removed with the commands below.  
 
@@ -392,7 +392,7 @@ Visual Studio Code can run and debug a Node.js application.  It is a lightweight
 
     Notice that the program stops running at the breakpoint that was set. Observe the variable values in the leftmost pane.  Step through code.
 
-    ![VS Code Debugging](debugging.png)
+    ![Visual Studio Code debugging](debugging.png)
 
     If "Can't find Node.js binary 'node': path does not exist" error pops up, open a Shell and run the following command.
 

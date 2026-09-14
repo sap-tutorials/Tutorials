@@ -35,7 +35,7 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
    sudo zypper install unixODBC
    ```
 
-    ![unixODBC install](unixODBC-install.png)
+    ![Installing unixODBC](unixODBC-install.png)
 
     For more details on how to accomplish this, please follow the second step of [this tutorial](hxe-ua-dbfundamentals-odbc).
 
@@ -112,7 +112,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
 2. Click the **Drivers** tab and view the installed drivers. The SAP HANA Cloud, data lake Relational Engine driver is visible. 
 
-    ![odbc admin drivers](drivers-1.png)
+    ![ODBC admin drivers](drivers-1.png)
 
 3. Click the **User DSN** tab to view the data sources.  
 
@@ -126,7 +126,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
 6. Configure the data source.
 
-    ![specify the data source name](data-source1.png)  
+    ![Specify the data source name](data-source1.png)  
 
     In the **ODBC tab** of the configuration window, fill in the **Data source name**.
 
@@ -134,15 +134,15 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     Retrieve the SQL Endpoint for your data lake instance. You can find this via the SAP BTP Cockpit or by using the **Copy SQL Endpoint** menu option in SAP HANA Cloud Central and input into **Host** field. 
 
-    ![SQL Endpoint](sql-endpoint.png)
+    ![SQL endpoint](sql-endpoint.png)
 
     Select the **Connect to SAP HANA CLOUD, data lake Relational Engine** action. 
 
-    ![specify the credentials, host and port](data-source2.png)  
+    ![Specify the credentials, host and port](data-source2.png)  
 
 7. Verify the connection by clicking on **Test Connection** in the ODBC tab.
 
-    ![test connection](data-source4.png)  
+    ![Test connection](data-source4.png)  
 
     >If the test fails, try pressing the OK button to save the data source, then try the test again.
 
@@ -170,15 +170,15 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 
 4. Select **Database**, enter the credentials, and press **Connect**.
 
-    ![Credential Screen](Excel-credentials.png)
+    ![Credential screen](Excel-credentials.png)
 
 5. Select a schema and table, then press **Load**.
 
-    ![Browse Schema](Excel-choose-table.png)  
+    ![Schema selection](Excel-choose-table.png)  
 
 6. The selected data is now imported into a Microsoft Excel spreadsheet.
 
-    ![Browse Schema](Excel-result.png)
+    ![Hotel table data shown in Excel](Excel-result.png)
 
     > Note, if an error occurs that mentions, you do not have permission to select from SYSINDEX, a newer version of the driver may be needed.
 

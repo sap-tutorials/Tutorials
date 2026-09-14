@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition, programming-tool>node-js, software-product>sap-btp--cloud-foundry-runtime-and-environment, software-product>sap-business-technology-platform, software-product>sap-connectivity-service]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>node-js, software-product>sap-btp--cloud-foundry-runtime-and-environment, software-product>sap-business-technology-platform, software-product>sap-connectivity-service]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -24,7 +24,7 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Intro
 
-In the previous tutorials, applications that queried SAP HANA were run on a local machine.  In this tutorial, a simple application will be run within the SAP BTP which uses Cloud Foundry or within the SAP HANA, express edition which uses XS advanced (and is also based on Cloud Foundry).  
+In the previous tutorials, applications that queried SAP HANA were run on a local machine.  In this tutorial, a simple application will be run within the SAP BTP which uses Cloud Foundry or within the SAP HANA on-premise which uses XS advanced (and is also based on Cloud Foundry).  
 
 For additional details, consult [Developing Applications on SAP BTP, Cloud Foundry runtime](https://learning.sap.com/learning-journeys/developing-applications-on-sap-btp-cloud-foundry-runtime) or [The XS Advanced Programming Model](https://help.sap.com/docs/SAP_HANA_PLATFORM/4505d0bdaf4948449b7f7379d24d0f0d/df19a03dc07e4ba19db4e0006c1da429.html).
 
@@ -32,7 +32,7 @@ For additional details, consult [Developing Applications on SAP BTP, Cloud Found
 
 ### Get started with the Command Line Interface (CLI)
 
-The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI used for apps running in SAP HANA, express edition is named `xs`.
+The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI used for apps running in SAP HANA on-premise is named `xs`.
 
 1. Check to see if you have the CF CLI installed and verify the version.  
 
@@ -372,7 +372,7 @@ For additional details see:
 
 ### Connect from the Node.js app running in the cloud to an on-premise database (optional)
 
-The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/cloud-connector#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.  The following steps demonstrate how to do this with the previously deployed app `nodeQueryCF`.
+The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/cloud-connector#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA on-premise.  The following steps demonstrate how to do this with the previously deployed app `nodeQueryCF`.
 
 1. Follow step 3 in [Access Remote Sources with SAP HANA Database Explorer](hana-dbx-remote-sources) to install and configure the Cloud Connector.
 
@@ -509,7 +509,6 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
            })
        })   
    }
-
    ```
 
 6. Redeploy the app.
@@ -519,7 +518,7 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
    cf push
    ```
 
-7. The application running in the cloud, is now accessing data from an on-premise SAP HANA, express instance.
+7. The application running in the cloud, is now accessing data from an on-premise SAP HANA instance.
 
     ![Result](proxy-result.png)
 

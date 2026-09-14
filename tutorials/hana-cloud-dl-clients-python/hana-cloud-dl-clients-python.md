@@ -10,13 +10,14 @@ primary_tag: software-product-function>sap-hana-cloud--data-lake
 
 # Connect to Data Lake Relational Engine Using Python Drivers
 
-<!-- description --> Create and debug a Python application that connects to a data lake Relational Engine using the sqlanydb python driver or the pyodbc bridge.
+<!-- description --> Create and debug a Python application that connects to a data lake Relational Engine using the sqlanydb Python driver or the pyodbc bridge.
 
 ## Prerequisites
 
 - You have completed the first 2 tutorials in this group
 
 ## You will learn
+
 - How to install Python, the `sqlanydb`, and `pyodbc` Python drivers
 - How to create, run, and debug a Python application that connects to and queries a data lake Relational Engine database
 
@@ -45,9 +46,9 @@ The first step is to check if Python and pip are installed.
 
     If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
-    On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.  The Microsoft Windows command prompt or shell will need to be reopened after Python is installed to pick up the path to python.   
+    On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.  The Microsoft Windows command prompt or shell will need to be reopened after Python is installed to pick up the path to python.
 
-    ![python-install](python-install.png)
+    ![Python installer](python-install.png)
 
     On OpenSUSE Tumbleweed, yast can be used to install python313.  Once it has been installed its version can be seen with the below command.
 
@@ -79,7 +80,7 @@ The first step is to check if Python and pip are installed.
 
 The `sqlanydb` package is the python driver for the data lake Relational Engine and is available as part of the data lake Relational Engine install and is available at [PyPI](https://pypi.org/project/sqlanydb/).
 
-1. Navigate to your Data Lake Client installation folder and enter the following command to install the python driver named `sqlanydb`.
+1. Navigate to your Data Lake Client installation folder and enter the following command to install the Python driver named `sqlanydb`.
 
    ```Shell (Microsoft Windows)
    cd %HDL_CLIENT_HOME%\SDK\Python
@@ -109,7 +110,7 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
     A successful activation looks like this:-
 
-    ![python-install](virtualenv.png)
+    ![Activating a Python virtual environment(virtualenv.png)
 
     Now install the driver named 'sqlanydb'.
 
@@ -163,11 +164,11 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
 3. Save and close `pythonQuery.py`. Run the app. Make sure your data lake Relational Engine is running before executing the app.
 
-   ```Shell
-   python pythonQuery.py
-   ```
+    ```Shell
+    python pythonQuery.py
+    ```
 
-    ![python Query](sqlanydb-success.png)
+    ![Running pythonQuery.py](sqlanydb-success.png)
 
 For further information on the Python Driver, visit [Python and Database Access](https://help.sap.com/docs/hana-cloud-data-lake/developer-guide-for-data-lake-relational-engine/python-and-database-access).
 
@@ -186,7 +187,6 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
    ```Shell
    pip install pyodbc
    ```
-
 
     >If this command fails on Microsoft Windows with an error "Microsoft Visual C++ 14.0 is required", additional details can be found at [Unable to install pyodbc using python 3.10 in windows 10](https://stackoverflow.com/questions/69943254/unable-to-install-pyodbc-using-python-3-10-in-windows-10) and [Release python 3.10 win wheels for pyodbc](https://github.com/mkleehammer/pyodbc/issues/981).
     >
@@ -239,7 +239,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
 
 3. The `dsn` value refers to the data source name in the Microsoft Windows ODBC Administrator or the Linux `.odbc.ini` file.
 
-    ![ODBC Administrator](odbcWindow.png)
+    ![ODBC administrator](odbcWindow.png)
 
     or
 
@@ -253,7 +253,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
 
     >On some Linux distributions, python refers to a 2.x version of Python.  If so, replace `python` with `python3`.
 
-    ![python Query](pyodbc-success.png)
+    ![Running pythonQuery.py](pyodbc-success.png)
 
 The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification](https://www.python.org/dev/peps/pep-0249/), which defines a set of methods that provide a consistent database interface, independent of the actual database being used.   
 
@@ -269,7 +269,7 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
 3. Open the file `pythonQuery.py`.
 
-    ![Python File](OpenFile.png)
+    ![Python file](OpenFile.png)
 
     Visual Studio Code will recognize the `py` file extension and will suggest installing the Python extension. Click **Install**.
 
@@ -281,7 +281,7 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
     Observe the variable values in the leftmost pane.  Step through code.
 
-    ![VS Code Debugging](debugging.png)  
+    ![Visual Studio Code debugging](debugging.png)  
 
 ### Knowledge check
 

@@ -35,7 +35,7 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
 >The SAP HANA Cloud free tier or trial is limited to creating one SAP HANA database and one data lake instance.
 
-The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, express edition database to an SAP HANA Cloud, SAP HANA  database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud, SAP HANA  database to an SAP HANA Cloud, data lake Relational Engine. The example in step 3 demonstrates connecting from SAP HANA Cloud, data lake Relational Engine to an SAP HANA Cloud, SAP HANA  database. The example in step 4 demonstrates connecting from one SAP HANA Cloud, data lake Relational Engine to another. The example in step 5 demonstrates connecting from SAP HANA Cloud, database via the Cloud Connector to an SAP HANA, express edition database.
+The example in step 1 demonstrates connectivity from an on-premise, SAP HANA database to an SAP HANA Cloud, SAP HANA  database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud, SAP HANA  database to an SAP HANA Cloud, data lake Relational Engine. The example in step 3 demonstrates connecting from SAP HANA Cloud, data lake Relational Engine to an SAP HANA Cloud, SAP HANA  database. The example in step 4 demonstrates connecting from one SAP HANA Cloud, data lake Relational Engine to another. The example in step 5 demonstrates connecting from SAP HANA Cloud, database via the Cloud Connector to an SAP HANA, express edition database.
 
 ---
 
@@ -433,6 +433,8 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
 1. Enable the Cloud Connector connectivity in SAP HANA Cloud Central: Actions > Manage Configuration > Edit.
 
     ![Enable the Cloud Connector](enable-cloud-connector.png)
+
+    This also requires adding the hana-cloud-option service plan instance.  Details to enable this are provided at [SAP Note: 3751673 - SAP HANA Cloud Connector Requires `hana-cloud-option` Subscription](https://me.sap.com/notes/3751673).
 
 2. [Download the Cloud Connector](https://tools.hana.ondemand.com/#cloud).  The software needs to run on a machine that can access your on-premise SAP HANA instance.  In this example, the Cloud Connector is running on Windows and is accessing an SAP HANA, express edition database running in a VM on the same machine.  
 

@@ -4,25 +4,28 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 45
-tags: [tutorial>intermediate, software-product-function>sap-hana-cloud--sap-hana-database,tutorial>license]
+tags: software-product>sap-hana-cloud, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database,tutorial>license]
 primary_tag: software-product>sap-hana-cloud
 ---
 
 # Use an Elastic Compute Node (ECN) for Scheduled Workloads
+
 <!-- description --> Learn about Elastic Compute Nodes (ECNs) and how they can be used to address known peaks in scheduled workloads.
 
 ## Prerequisites
+
 - An SAP BTP account
 - A non trial/free tier SAP HANA Cloud instance
 
 ## You will learn
+
 - How to create and delete an ECN
 - How to create a workload class and map its workload to an ECN
 - How to view additional details about ECNs
 
 An [Elastic Compute Node](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/scale-out-using-elastic-compute-node) (ECN) can be added when it is known that additional queries will be run that take significant CPU or memory resources such as at the end of the month or quarter.  Once the queries complete, the node can be removed.  ECNs incur additional [costs](https://www.sap.com/about/trust-center/agreements/cloud/cloud-services.html?search=Supplement%20HANa%20Cloud&sort=latest_desc&tag=language%3Aenglish&pdf-asset=2e80541a-f07e-0010-bca6-c68f7e60039b&page=3) while running but can improve performance or could lower the total cost of ownership if their usage can reduce the instance size by covering known peak loads.  In the screenshot below, if the timing of the darker blue peaks are known and are read only, an ECN node can be started and the workloads directed to the ECN enabling the overall size of the SAP HANA instance to be reduced.  The [SAP HANA Cloud Capacity Unit Estimator](https://hcsizingestimator.cfapps.eu10.hana.ondemand.com/) can be used to estimate the additional cost of adding ECNs.  ECNs are not available in trial or free tier.  Further details on Elastic Compute Nodes can be also found at [Harnessing Dynamic Elasticity (Elastic Compute Node) for Smarter Scaling in SAP HANA Cloud](https://community.sap.com/t5/technology-blogs-by-sap/harnessing-dynamic-elasticity-elastic-compute-node-for-smarter-scaling-in/ba-p/14016836).
 
-![workload](workload.png)
+![Workload over time](workload.png)
 
 ECNs can be used to address compute intensive OLAP or read-only queries and as such, only temporary tables or replica tables can be stored on ECN instances.  Queries can be routed to ECN nodes using client-side statement routing or workload classes.
 
@@ -31,13 +34,14 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
 ---
 
 ### Identify tasks to be run on an Elastic Compute Node (ECN)
+
 1. Read only CPU or memory intensive tasks that occur at a set frequency are suitable candidates to consider redirecting to an ECN.  The CPU and memory used by your instance can be viewed in the usage monitor app in SAP HANA Cloud Central as shown below.
 
-    ![instance details](instance-details.png)
+    ![Instance details](instance-details.png)
 
     Click on the memory, compute, network, or storage cards to open the Usage Monitor app.  Below, notice that the compute is spiking at a set frequency which is every morning at 7 am.
-    
-    ![Usage Monitor](usage_monitor.png)
+
+    ![Usage monitor](usage_monitor.png)
 
 2. The following examples are used for simulation purposes and can create a memory and CPU spike that will be moved to an ECN node.  They are intended to be run on a test or trial instance and not a production instance.  The size of the spike can be adjusted by increasing or decreasing the number of rows in the table. 
 
@@ -110,9 +114,9 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
    SELECT AVG(MEMORY_USED) AS "Memory Used" FROM M_LOAD_HISTORY_HOST WHERE TIME > ADD_SECONDS(CURRENT_TIMESTAMP, -60);
    ```
 
-    After calling the stored procedure CPU_SPIKE and CPU_AND_MEMORY_SPIKE, you can see that the CPU and memory usage has spiked, and you may also see an alert.  Note that the metrics shown are polled once a minute, so the procedures are run multiple times.
+    After calling the stored procedure CPU_AND_MEMORY_SPIKE, you can see that the CPU and memory usage has spiked, and you may also see an alert.  Note that the metrics shown are polled once a minute, so the procedures are run multiple times.
 
-    ![spike shown](usage_monitor_2.png)
+    ![CPU and memory spike](usage_monitor_2.png)
 
     The following SQL statement can also be used if expensive statement tracing is enabled.
 
@@ -121,18 +125,19 @@ The following steps attempt to demonstrate an example of adding an ECN to cover 
    ```
 
 ### Create an ECN
+
 An ECN can be created in multiple ways.  Further details on the options and limitations when creating an ECN node can be found at [ECN Scope and Limitations](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/ecn-scope-and-limitations).
 
 1. Examine the options for creating an ECN.  Create an ECN using one of the methods shown below.
 
-    * An ECN can be added using the manage configuration wizard in SAP HANA Cloud Central.
-    
+    - An ECN can be added using the manage configuration wizard in SAP HANA Cloud Central.
+
         ![Add ECN](add-ecn.png)
 
-    * An ECN can be created or deleted using a CLI. The BTP CLI is shown below but the CF CLI can also be used. 
-    
-        * Create a file named **ecn1.json** with the contents below which can be used to create an ECN.
-    
+    - An ECN can be created or deleted using a CLI. The BTP CLI is shown below but the CF CLI can also be used. 
+
+        - Create a file named **ecn1.json** with the contents below which can be used to create an ECN.
+
             ```JSON
             {
                 "data": {
@@ -148,7 +153,7 @@ An ECN can be created in multiple ways.  Further details on the options and limi
             }
             ```
 
-        * Create a file named **no_ecn.json** with the contents below which can be used to remove the ECN.
+        - Create a file named **no_ecn.json** with the contents below which can be used to remove the ECN.
 
             ```JSON
             {
@@ -159,17 +164,17 @@ An ECN can be created in multiple ways.  Further details on the options and limi
             }
             ```
 
-    * Create the ECN using the BTP CLI or CF CLI.  Further details on using the CLI's can be found at [Executing SAP HANA Cloud Tasks from the Command Line](hana-cloud-automation-cli).  An example using the BTP CLI is shown below.
+    - Create the ECN using the BTP CLI or CF CLI.  Further details on using the CLI's can be found at [Executing SAP HANA Cloud Tasks from the Command Line](hana-cloud-automation-cli).  An example using the BTP CLI is shown below.
 
-            ```Shell
-            btp login --sso
-            btp update services/instance --id <instance ID> --parameters ecn1.json
-            btp.exe get services/instance <instance ID>
-            ```
+        ```Shell
+        btp login --sso
+        btp update services/instance --id <instance ID> --parameters ecn1.json
+        btp.exe get services/instance <instance ID>
+        ```
 
-    * An ECN can be created using a REST API.  Further details are available at [REST API for the ECN](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/rest-api-for-ecn) and [Business Accelerator Hub](https://api.sap.com/api/ComputeAPI/overview).  The below file is a Python notebook that illustrates the REST API.  Follow the steps below if you wish to try out the REST API.
-        
-        * Create a file named `ecn_rest.ipynb`, copy the contents below into the file and open it in Visual Studio Code.
+    - An ECN can be created using a REST API.  Further details are available at [REST API for the ECN](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/rest-api-for-ecn) and [Business Accelerator Hub](https://api.sap.com/api/ComputeAPI/overview).  The below file is a Python notebook that illustrates the REST API.  Follow the steps below if you wish to try out the REST API.
+
+        - Create a file named `ecn_rest.ipynb`, copy the contents below into the file and open it in Visual Studio Code.
 
             ```IPYNB
             {
@@ -433,23 +438,23 @@ An ECN can be created in multiple ways.  Further details on the options and limi
             }
             ```
 
-        * The modification section requires values from a service key (Cloud Foundry), or a service binding (subaccount/other environment) that can be added to an SAP HANA Cloud instance.
+        - The modification section requires values from a service key (Cloud Foundry), or a service binding (subaccount/other environment) that can be added to an SAP HANA Cloud instance.
 
             Create a service key.  
-            
-            ![service key](service-key.png)
+
+            ![Service key](service-key.png)
 
             Copy the values from the service key into the modification section.
 
-            ![modification section](modification-section.png)
+            ![Modification section](modification-section.png)
 
-        * Try out the notebook by executing each cell and viewing its output.
+        - Try out the notebook by executing each cell and viewing its output.
 
-            ![get ECN node details](get-ecn-node-details.png)
+            ![ECN node details](get-ecn-node-details.png)
 
             Visual Studio Code may ask you to enter extensions related to Jupyter and Python such as the ones shown below if they are not already installed.
 
-            ![extensions](extensions.png)
+            ![Extensions](extensions.png)
 
             You may need to install a library such as requests if it is missing.
 
@@ -460,21 +465,21 @@ An ECN can be created in multiple ways.  Further details on the options and limi
 
             You can choose to which Python environment to run by selecting the area shown below.
 
-            ![python environments](python-env.png)
-        
+            ![Python environments](python-env.png)
+
 2. Once the ECN has been created, its details can be viewed.
 
-    * In the instances view.
-    
+    - In the instances view.
+
         ![ECN created](added-ecn.png)
-    
-    * In an instances detail pane.
+
+    - In an instances detail pane.
 
         ![ECN details page](added-ecn-details.png)
 
         Note that the status is also shown.
 
-    * Through SQL
+    - Through SQL
 
         ```SQL
         SELECT HOST, PORT FROM M_SERVICES WHERE SERVICE_NAME = 'computeserver';
@@ -485,14 +490,16 @@ An ECN can be created in multiple ways.  Further details on the options and limi
         ![ECN host and port](ecn1.png)
 
 ### Create a workload class
+
 Workload classes can be used to direct a specified workload to an ECN.  Further details on workload classes can be found at [Workload Management](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/workload-management).
 
 1. Create a workload class.
 
-   ```SQL    
+   ```SQL
    CREATE WORKLOAD CLASS "WLC1";
    ```
-2.  Route the an ECN.
+
+2. Route the an ECN.
 
     The workload class can set a routing hint to the ECN.
 
@@ -500,31 +507,31 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
    ALTER WORKLOAD CLASS "WLC1" SET 'ROUTING LOCATION HINT' = 'ecn1';
    ```
 
-* This can also be accomplished in the workload management app as shown below.
+    - This can also be accomplished in the workload management app as shown below.
 
-   ![Workload management app](routing-ui-1.png)
+        ![Workload management app](routing-ui-1.png)
 
-   After clicking on the routing location, the ECN node ecn1 can be selected.
+        After clicking on the routing location, the ECN node ecn1 can be selected.
 
-   ![Select the routing location](routing-ui-2.png)
+        ![Select the routing location](routing-ui-2.png)
 
 3. Map a workload to the workload class.
 
-    * A mapping to a user can be added
+    - A mapping to a user can be added
 
         ```SQL
         CREATE WORKLOAD MAPPING "WLM1" WORKLOAD CLASS "WLC1" SET 'USER NAME' = 'USER4';
         --DROP WORKLOAD MAPPING "WLM1";
         ```
 
-    * A mapping can be made to specific objects
+    - A mapping can be made to specific objects
 
         ```SQL
         CREATE WORKLOAD MAPPING "WLM2" WORKLOAD CLASS "WLC1" SET 'SCHEMA NAME' = 'USER4', 'OBJECT NAME' = 'CPU_SPIKE';
         CREATE WORKLOAD MAPPING "WLM3" WORKLOAD CLASS "WLC1" SET 'SCHEMA NAME' = 'USER4', 'OBJECT NAME' = 'CPU_AND_MEMORY_SPIKE';
         ```
 
-    * A mapping can be made to a session variable
+    - A mapping can be made to a session variable
 
         ```SQL
         CREATE WORKLOAD MAPPING "WLM4" WORKLOAD CLASS "WLC1" SET 'APPLICATION COMPONENT NAME' = 'ECN_APP';
@@ -551,7 +558,7 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
    SELECT * FROM WORKLOAD_MAPPINGS;
    ```
 
-    ![workload class details](mappings.png)
+    ![Workload class details](mappings.png)
 
 5. Run the query again and verify that the query was run on the ECN node.
 
@@ -579,6 +586,7 @@ Workload classes can be used to direct a specified workload to an ECN.  Further 
     It may also be of interest to compare the execution time between this run and after the table is replicated onto the ECN node in a subsequent step.
 
 ### Route to ECN with a hint
+
 An alternate approach without using a workload class is to use a hint.  
 
 1. Execute the below SQL.
@@ -596,9 +604,10 @@ An alternate approach without using a workload class is to use a hint.
    ORDER BY LAST_EXECUTION_TIMESTAMP DESC;
    ```
 
-    ![using a hint](hint.png)
+    ![Using a hint](hint.png)
 
 ### Replicate a table to the ECN
+
 A replica table can be stored on an ECN.  This may lead to lower resource consumption on the coordinator and reduced latency.  For additional details see [Advantages and Disadvantages of Table Replication](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/advantages-and-disadvantages-of-table-replication).  The following steps demonstrate replicating a table to the ECN and using it in a query.  
 
 1. Run the below in the SQL Console after replacing the host name with the value from the previous query against the M_VOLUMES table view.
@@ -616,7 +625,7 @@ A replica table can be stored on an ECN.  This may lead to lower resource consum
    SELECT * FROM M_TABLE_REPLICAS;
    ```
 
-    ![replica table](ecn_ex2a.png)
+    ![Replica table](ecn_ex2a.png)
 
     Run the below SQL to indicate that the workload class should use async replica tables.
 
@@ -643,6 +652,7 @@ A replica table can be stored on an ECN.  This may lead to lower resource consum
     Notice that this time the table is also located on the ECN. 
 
 ### Remove the workload class and ECN
+
 Before removing the ECN node, disable the workload class so that new queries are no longer directed to the ECN node.
 
 1. Execute the below SQL
@@ -657,7 +667,7 @@ Before removing the ECN node, disable the workload class so that new queries are
    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('distribution', 'force_reroute') = 'FALSE' WITH RECONFIGURE;
    SELECT * FROM SYS.M_CONFIGURATION_PARAMETER_VALUES WHERE SECTION = 'distribution';
    ```
-    
+
 2. Remove the ECN.  
 
    ```SHELL
@@ -666,11 +676,12 @@ Before removing the ECN node, disable the workload class so that new queries are
    ```
 
 ### Node.js app demonstrating prepared statements and the option routeDirectExecute on statement routing 
+
 The below Node.js app is used to demonstrate that statements must be prepared first to be routed to an ECN as documented at [Statement Routing](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/077d30cc847443288d3f0574356de4e7.html).
 
 Some tools such as the SQL Console in SAP HANA Cloud Central, the SAP HANA database explorer, and [hdbsql](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) by default, always prepare statements.
 
-![prepare before execute](prepare-before-execute.png)
+![Prepare before execute](prepare-before-execute.png)
 
 The below code when run, will not be executed on the ECN, unless the variable prepare is set to true or the [routeDirectExecute](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4fe9978ebac44f35b9369ef5a4a26f4c.html) option is set to true.
 
@@ -731,19 +742,20 @@ Further details on creating applications that connect to an SAP HANA Cloud datab
 
     Output when the variable prepare is false.
 
-    ![prepare is false](no-prepare.png)
-    
+    ![Prepare is false](no-prepare.png)
+
     Output when the variable prepare is true.
 
-    ![prepare is true](prepare.png)
+    ![Prepare is true](prepare.png)
 
     Output when the variable prepare is false but routeDirectExecute is true.
 
-    ![routedirectexecute](route-direct-execute.png)
+    ![routedirectexecute is true](route-direct-execute.png)
 
     For further details on the methods of the connection class used above consult [prepare](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c63d283b3635469bb8afbefbbe7aea7b.html) and [execute](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/ef5564058b1747ce99fd3d1e03266b39.html).
 
 ### Procedure to check if the ECN is started
+
 The following procedure can be used to check if the ECN is available and then when it is to run a workload.
 
 1. Execute the below SQL
@@ -756,21 +768,22 @@ The following procedure can be used to check if the ECN is available and then wh
    BEGIN
        USING SQLSCRIPT_PRINT AS PRTLIB;
        USING SQLSCRIPT_SYNC AS SYNCLIB;
-		--Check if the ECN is running, pause if not
-		DECLARE state STRING := '';
-		SELECT TOP 1 SERVICE_ACTIVE INTO state DEFAULT NULL FROM M_SYSTEM_AVAILABILITY WHERE HOST LIKE '%-ern-%' ORDER BY EVENT_TIME DESC;
-		PRTLIB:PRINT_LINE(state);
-		WHILE :state != 'YES' DO
-		    CALL SYNCLIB:SLEEP_SECONDS(10);
-		    SELECT TOP 1 SERVICE_ACTIVE INTO state DEFAULT NULL FROM M_SYSTEM_AVAILABILITY WHERE HOST LIKE '%-ern-%' ORDER BY EVENT_TIME DESC;
-		    PRTLIB:PRINT_LINE(state);
-		END WHILE;
+        --Check if the ECN is running, pause if not
+        DECLARE state STRING := '';
+        SELECT TOP 1 SERVICE_ACTIVE INTO state DEFAULT NULL FROM M_SYSTEM_AVAILABILITY WHERE HOST LIKE '%-ern-%' ORDER BY EVENT_TIME DESC;
+        PRTLIB:PRINT_LINE(state);
+        WHILE :state != 'YES' DO
+            CALL SYNCLIB:SLEEP_SECONDS(10);
+            SELECT TOP 1 SERVICE_ACTIVE INTO state DEFAULT NULL FROM M_SYSTEM_AVAILABILITY WHERE HOST LIKE '%-ern-%' ORDER BY EVENT_TIME DESC;
+            PRTLIB:PRINT_LINE(state);
+        END WHILE;
    END;
    CALL WAIT_FOR_ECN();
    CALL CPU_AND_MEMORY_SPIKE();
    ```
 
 ### ECN sample script
+
 The following steps demonstrate an approach to automating the creation, running a workload, and deletion of an ECN.
 
 1. Create a file named **ecn_workload.sql**.
@@ -796,11 +809,12 @@ The following steps demonstrate an approach to automating the creation, running 
     Instructions on using hdbsql and setting the user key can be found at [Executing SQL Statements from a shell](hana-cloud-automation-cli).
 
 ### Use SAP Automation Pilot to schedule the provisioning of an ECN
-The SAP Automation Pilot can be used to perform and schedule operations on services running in the SAP BTP.  The tutorial [Automating SAP HANA Cloud Tasks with the SAP Automation Pilot Service](https://developers.sap.com/tutorials/hana-cloud-automation-pilot.html) can be used to started with the SAP Automation Pilot.  The following step demonstrates how commands can be scheduled which will start and stop an ECN node and also execute SQL to enable or disable a workload class. 
+
+The SAP Automation Pilot can be used to perform and schedule operations on services running in the SAP BTP.  The tutorial [Automating SAP HANA Cloud Tasks with the SAP Automation Pilot Service](https://developers.sap.com/tutorials/hana-cloud-automation-pilot.html) can be used to started with the SAP Automation Pilot.  The following step demonstrates how commands can be scheduled which will start and stop an ECN node and also execute SQL to enable or disable a workload class.
 
 1. Import the catalog below into the SAP Automation Pilot.
 
-    ![import catalog](import.png)
+    ![Import catalog](import.png)
 
    ```JSON
    {
@@ -920,7 +934,7 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
                }
            },
            "values": {
-               "service-manager-binding": "{\n    \"clientid\": \"sb-a6bfefa2-5ce6-46b5-ad3f-5e2e5801a395!b7113|service-manager!b16\",\n    \"clientsecret\": \"ab2f6ae1-34b3-4b0a-ba84-dfc397675edf$9uEmOt958OsnHnY_mVvNSZHRntaoLVgLgMmf5ZBOEkw=\",\n    \"url\": \"https://dan-van-leeuwen.authentication.ca10.hana.ondemand.com\",\n    \"xsappname\": \"a6bfefa2-5ce6-46b5-ad3f-5e2e5801a395!b7113|service-manager!b16\",\n    \"sm_url\": \"https://service-manager.cfapps.ca10.hana.ondemand.com\"\n}",
+               "service-manager-binding": "{\n    \"clientid\": \"sb-a6bfefa2-...\",\n    \"clientsecret\": \"ab2f6ae1-...\",\n    \"url\": \"https://dan-van-leeuwen.authentication.ca10.hana.ondemand.com\",\n    \"xsappname\": \"a6bfefa2-5ce6-46b5-ad3f-5e2e5801a395!b7113|service-manager!b16\",\n    \"sm_url\": \"https://service-manager.cfapps.ca10.hana.ondemand.com\"\n}",
                "cf-password": "",
                "db-password": ""
            },
@@ -1476,11 +1490,11 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
 
 2. The catalog will appear under My Catalogs and is named Elastic Compute Node Provisioning
 
-    ![catalog imported](imported.png)
+    ![Catalog imported](imported.png)
 
 3. Examine the imported commands and inputs. The list of commands are shown below.  Notice that there is a set of commands for SAP HANA Cloud instances provisioned to the Cloud Foundry environment and another set for instances provisioned to a subaccount.
 
-    ![commands](commands.png)
+    ![Commands](commands.png)
 
     The two inputs are shown below. They provide a location where the details are specified to update the SAP HANA Cloud database instance.  
     Credentials are needed for a Cloud Foundry user that has permissions to update the SAP HANA Cloud database instance and for a SQL user that can enable or disable a workload class and run SQL queries in the database.
@@ -1489,55 +1503,55 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
 
     A separate input named NonSensitive was created so that the input values that are not specified as sensitive can be displayed in the execution viewer.
 
-    ![input](input.png)
+    ![Input](input.png)
 
 4. Open the inputs and edit their values to match the SAP HANA Cloud instance that you wish to work with.
 
-    ![edit input values](edit-input.png)
+    ![Edit input values](edit-input.png)
 
 5. Open the CFAddECN command.  Notice that it takes NonSensitive and Sensitive inputs as an additional value to the input.
 
-    ![additional value](addecn-input.png)
+    ![Additional value](addecn-input.png)
 
     It contains a test executor that can be used to optionally perform an additional check such as checking the memory or CPU use.  
 
-    ![add check](add-check.png)
+    ![Add check](add-check.png)
 
     The addECN and enableWorkloadClass executors check the output of the test executor to see if they should run or not.
 
-    ![check condition](check-condition.png)
+    ![Check condition](check-condition.png)
 
     The addECN executor uses the built in command cf-sapcp:UpdateCfServiceInstance that will request the ECN node to be created.  Notice that the parameter values are being set using the inputs.
 
-    ![add ECN executor](add-ecn-executor.png)
-    
+    ![Add ECN executor](add-ecn-executor.png)
+
     The enableWorkloadClass executor executes a SQL statement to enable a workload class which is used to direct a workload to the just started ECN node.
 
-    ![enable workload class](enable-workload-class.png)
+    ![Enable workload class](enable-workload-class.png)
 
 6. Open the CFDeleteECN command.  Notice that a test can also be performed before the ECN is deleted.  Depending on your workloads, you may wish to increase this delay or add a more involved check.
 
-    ![wait added before delete ECN](delete-ecn-executor.png)
+    ![Wait added before delete ECN](delete-ecn-executor.png)
 
 7. Try out the commands by pressing the Trigger button.
 
-    ![trigger AddECN](trigger.png)
+    ![Trigger AddECN](trigger.png)
 
     Under Additional Features, select Execution Log to see details on the test condition.
 
-    ![enable execution log](enable-execution-log.png)
+    ![Enable execution log](enable-execution-log.png)
 
     The non sensitive input values can be seen as shown below.
 
-    ![Step Input](step-input.png)
+    ![Step input](step-input.png)
 
     The test condition check result can be seen in the step logs.
 
-    ![condition check](step-logs.png)
+    ![Condition check](step-logs.png)
 
 8. The status of the execution can be seen in the Executions section.
 
-    ![executed](executed.png)
+    ![Executed](executed.png)
 
     If your SAP HANA Cloud instance has an allow list configured, add the IP from [IPs for requests from SAP Automation Pilot](https://help.sap.com/docs/automation-pilot/automation-pilot/what-is-sap-automation-pilot?version=Cloud).
 
@@ -1548,30 +1562,31 @@ The SAP Automation Pilot can be used to perform and schedule operations on servi
     ![Schedule](schedule.png)
 
 ### ECN advisor
+
 SAP HANA Cloud Central includes an ECN advisor that provides recommendations for workloads that may be applicable to be run on an ECN.
 
-![advisor card](advisors-card.png)
+![Advisor card](advisors-card.png)
 
-![enable advisor](enable-advisor.png)
+![Enable advisor](enable-advisor.png)
 
-![set the threshold](thresholds.png)
+![Set the threshold](thresholds.png)
 
-![recommendation](ecn-advisor-recommendation.png)
+![Recommendation](ecn-advisor-recommendation.png)
 
 There are a few requirements with the advisor:
-    
-* The instance must have 5 vCPUs
 
-* A workload class is required
+- The instance must have 5 vCPUs
 
-* The timeframe duration must not exceed 24 hours
+- A workload class is required
 
-* The timeframe cannot be less than 30 minutes. 
+- The timeframe duration must not exceed 24 hours
 
-* The timeframe must be within the last 14 days
+- The timeframe cannot be less than 30 minutes. 
 
-* The timeframe must be 20 minutes later than the current timestamp. 
+- The timeframe must be within the last 14 days
 
+- The timeframe must be 20 minutes later than the current timestamp. 
 
 ### Knowledge check
+
 You have now explored Elastic Compute Nodes and how they can be used to address peaks in scheduled workloads.

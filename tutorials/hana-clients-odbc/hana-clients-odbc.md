@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, software-product>sap-hana--express-edition]
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -58,11 +58,11 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 
     ![ODBC HANA Cloud](ODBC-HC.png)  
 
-7. Example data source configuration for SAP HANA, express edition.    
+7. Example data source configuration for SAP HANA on-premise instance.
 
     ![ODBC HXE](ODBC-HXE.png)  
 
-    To connect to SAP HANA, express edition, **Multitenant** should be checked and the **Validate TLS/SSL certificate** option can be unchecked.  For more information on this topic, see [How to Configure TLS/SSL in SAP HANA 2.0](https://blogs.sap.com/2018/11/13/how-to-configure-tlsssl-in-sap-hana-2.0/).  
+    To connect to SAP HANA on-premise, **Multitenant** should be checked and the **Validate TLS/SSL certificate** option can be unchecked.  For more information on this topic, see [How to Configure TLS/SSL in SAP HANA 2.0](https://blogs.sap.com/2018/11/13/how-to-configure-tlsssl-in-sap-hana-2.0/).  
 
 8. Click **Test connection**.  
 
@@ -118,7 +118,7 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
    encrypt = true
    sslValidateCertificate = true
 
-   [HANA_Express]
+   [HANA_OnPremise]
    servernode = hxehost:39015
    driver = /home/dan/sap/hdbclient/libodbcHDB.so
    databasename = HXE
@@ -181,11 +181,5 @@ The following steps demonstrate how to use Microsoft Excel to query data in SAP 
 ### Knowledge check
 
 Congratulations! You have configured an ODBC data source to contain connection information for a SAP HANA database and used that data source from Microsoft Excel.
-
-
-
-
-
-
 
 ---
