@@ -36,11 +36,11 @@ Upload to SAP Document AI any standard document type file (in PDF format or sing
 
 >As an alternative to uploading your own documents to SAP Document AI, you can use the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
+>- [Sample Invoice 1](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-1.pdf)
 
->- [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf)
+>- [Sample Invoice 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf)
 
->- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
+>- [Sample Invoice 3](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-3.pdf)
 
 
 1. Open the SAP Document AI basic UI, as described in the tutorial: [Use Trial to Subscribe to the SAP Document AI Basic UI](cp-aibus-dox-ui-sub).   
