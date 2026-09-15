@@ -123,5 +123,29 @@
         "description": "A playground for testing and experimenting with the Tutorial system",
         "urlBase": "sap-tutorials/sandbox",
         "teamAdmin": "rbrainey"
+    },
+    {
+        "name": "joule-studio",
+        "description": "SAP Joule Studio tutorials",
+        "urlBase": "sap-tutorials/joule-studio",
+        "teamAdmin": null
+    },
+    {
+        "name": "datasphere-skills-club",
+        "description": "SAP Datasphere Skills Club tutorials",
+        "urlBase": "sap-tutorials/datasphere-skills-club",
+        "teamAdmin": null
+    },
+    {
+        "name": "sap-conversational-ai",
+        "description": "SAP Conversational AI tutorials",
+        "urlBase": "sap-tutorials/sap-conversational-ai",
+        "teamAdmin": null
+    },
+    {
+        "name": "sap-mobile-cards",
+        "description": "SAP Mobile Cards tutorials",
+        "urlBase": "sap-tutorials/sap-mobile-cards",
+        "teamAdmin": null
     }
 ]
