@@ -54,9 +54,35 @@ jobs:
       - name: Determine changed slug
         id: slug
         run: |
-          changed=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+          BEFORE="${{ github.event.before }}"
+          SHA="${{ github.sha }}"
+          # Slugs whose tutorials/<slug>/ directory was ENTIRELY removed in this
+          # push (#2349). --diff-filter=D lists deleted paths; a slug counts as
+          # deleted only if NO file under tutorials/<slug>/ survives in the after
+          # tree (guards a partial delete, e.g. removing one screenshot). These
+          # route to the unpublish lane in rebuild-content.yml, NOT the fetch lane
+          # (fetch-tutorials hard-fails on a slug missing from upstream discovery).
+          deleted_raw=$(git diff --name-only --diff-filter=D "$BEFORE" "$SHA" \
             | awk -F/ '/^tutorials\//{print $2}' | sort -u)
-          count=$(echo "$changed" | wc -l)
+          surviving=$(git ls-tree -r --name-only "$SHA" \
+            | awk -F/ '/^tutorials\//{print $2}' | sort -u)
+          deleted=""
+          for cand in $deleted_raw; do
+            # Keep only candidates with no surviving file under tutorials/<cand>/.
+            if ! echo "$surviving" | grep -qx "$cand"; then
+              case "$cand" in
+                *[!a-z0-9-]* | -* ) : ;;                # non-slug charset → skip
+                *) deleted="${deleted:+$deleted,}$cand" ;;
+              esac
+            fi
+          done
+          echo "deleted_slugs=$deleted" >> "$GITHUB_OUTPUT"
+
+          # Changed (added/modified) tutorial slugs, EXCLUDING deletions — a lone
+          # deletion must not emit slug=<deleted> and trip the fetch hard-fail.
+          changed=$(git diff --name-only --diff-filter=d "$BEFORE" "$SHA" \
+            | awk -F/ '/^tutorials\//{print $2}' | sort -u)
+          count=$(echo "$changed" | grep -c . || true)
           # Only emit a slug when EXACTLY one tutorial changed AND it matches the
           # strict slug charset (whole-value POSIX case match). Anything else →
           # empty slug → rebuild-content.yml runs a full rebuild. Validating here
@@ -93,6 +119,9 @@ jobs:
           # Single changed slug (empty if 0 or >1 or non-slug-charset) →
           # rebuild-content.yml uses it to run slug-targeted (fast) vs full.
           SLUG: ${{ steps.slug.outputs.slug }}
+          # Tutorials whose dir was entirely deleted (#2349) → rebuild-content.yml
+          # routes these to the unpublish (soft-delete) lane, not the fetch lane.
+          DELETED_SLUGS: ${{ steps.slug.outputs.deleted_slugs }}
           # Pin the github context values into env too, so the JSON body is
           # assembled entirely from shell vars via jq (no template interpolation
           # into the payload string).
@@ -105,8 +134,8 @@ jobs:
           # of the JSON — the string-interpolation form was a json-injection risk).
           BODY=$(jq -nc \
             --arg repo "$REPO" --arg ref "$REF" --arg sha "$SHA" \
-            --arg env "$TARGET_ENV" --arg slug "$SLUG" \
-            '{event_type:"tutorial-updated", client_payload:{repository:$repo, ref:$ref, sha:$sha, environment:$env, slug:$slug}}')
+            --arg env "$TARGET_ENV" --arg slug "$SLUG" --arg deleted "$DELETED_SLUGS" \
+            '{event_type:"tutorial-updated", client_payload:{repository:$repo, ref:$ref, sha:$sha, environment:$env, slug:$slug, deleted_slugs:$deleted}}')
           curl -X POST \
             -H "Authorization: Bearer ${DISPATCH_TOKEN}" \
             -H "Accept: application/vnd.github+json" \
