@@ -8,8 +8,8 @@ author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
 
-# Use Boosters for Free Tier Use of SAP AI Core and SAP AI Launchpad
-<!-- description --> Use Boosters to set up Free Tier for SAP AI Core and SAP AI Launchpad.
+# Use Boosters for Use of SAP AI Core and SAP AI Launchpad
+<!-- description --> Use Boosters to set up for SAP AI Core and SAP AI Launchpad.
 ## Prerequisites
 - A BTP global account
 If you are an SAP Developer or SAP employee, please refer to the following links ( **for internal SAP stakeholders only** ) - 
@@ -25,21 +25,6 @@ If you are an external developer or a customer or a partner kindly refer to this
 ## Intro
 #### About SAP AI Core and SAP AI Launchpad
 SAP AI Core and SAP AI Launchpad are services which you can link to your BTP global account. SAP AI Core offers a powerful AI runtime which is natively integrated with SAP AI Launchpad. The launchpad offers an easy-to-use interface to manage AI workflow administration, processes, and tasks.
- 
-#### How Does Free Tier Work?
-Both services are available as either free tier or standard (paid) plans. If you choose **free tier** plans, you can try out SAP AI Core and SAP AI Launchpad for free.
-
-After testing and evaluation, you can easily upgrade free tier to paid plans without losing your data or work. Note that creating an instance using a paid plan will incur costs.
-
-Boosters are available for both services to help you get started. Boosters are a set of guided interactive steps that enable you to select, configure, and consume services on SAP BTP. You can use boosters for both free tier and paid plans. In this tutorial, we'll use the boosters to set you up with free tier plans.
-
-For more information, see [Free Tier (SAP AI Core)](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/4533adc472074698b355c70f04b2cf49.html?version=CLOUD) and [Free Tier (SAP AI Launchpad](https://help.sap.com/docs/AI_LAUNCHPAD/92d77f26188e4582897b9106b9cb72e0/87e4fb191e3746c0850f76642da96871.html?version=CLOUD)).
-
-#### Pre-read
-To find out more about free tier service plans, visit the [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog?provider=all&regions=all&category=freetierservices) and explore [SAP AI Launchpad](https://discovery-center.cloud.sap/serviceCatalog/sap-ai-launchpad?region=all) and [SAP AI Core](https://discovery-center.cloud.sap/serviceCatalog/sap-ai-core?region=all).
-
-> Remember, only community support is available for free tier service plans and these are not subject to Service Level Agreements. 
-> Creating provisions for AI Core and Lauchpad using anything other than the Free Tier provision can incur costs.
 
 ---
 
@@ -51,14 +36,12 @@ Open the SAP BTP cockpit and access your global account.
 
 Check the entitlements for your account by clicking `Entitlements` and searching for SAP AI Core.
 
-![Check Entitlements](img/checkentitlements.png)
-
 Click `Configure Entitlements` > `Add Service Plans`.
 
 ![Set SAP AI Core as an entitlement](img/configureentitlements.png)
 ![Set SAP AI Core as an entitlement](img/addserviceplan.png)
 
-Select SAP AI Core and the `Free` service plan.
+Select SAP AI Core and the `Standard` service plan.
 
 ![Set SAP AI Core as an entitlement](img/aicoreentitlement.png)
 
@@ -77,6 +60,22 @@ The booster tile contains information about SAP AI Core.  Click `Start` when you
 When you start a booster, a wizard opens up which guides you through the required steps.
 
 ![Start the booster](img/coreboosterstart.png)
+
+Choose the scenario `Select Subaccount` and click `Next`
+![Choose Scenario select subaccount](img/aicore_booster_select_scenario.png)
+In the Configure Subaccount, select `standard` plan and your subaccount in which you want to provision SAP AI Core and click `Next`.
+
+![configure entitlements and subaccount](img/aicore_booster_configure_subaccount.png)
+
+Review your configuration and click `Finish`.
+![review configuration](img/aicore_booster_review_selections.png)
+
+![booster execution inprogess](img/aicore_create_instance_inprogress.png)
+
+After the execution completes, follow the steps shown to navigate to your subaccount.
+
+![booster execution success](img/aicore_booster_successful_execution.png)
+
 ### View your instances and create your keys
 
 In the subaccount section of SAP BTP Cockpit, choose `Services` from the left navigation menu and `Instances and subscriptions` from the page. 
@@ -114,8 +113,19 @@ Choose `Boosters` from the navigation pane, and then choose the booster for `SAP
 Click `Start` when you are ready.
 
 ![Start the booster](img/lpboosterstart.png)
+
+In the Scenario Section, choose `Select Subaccount` option and click `Next`.
+![choose select subaccount scenario](img/AIL_select_scenario.png)
+In the Configure Subaccount, choose `standard` plan, your subaccount and space where you want to provision SAP AI Launchpad and click `Next`
+![configure entitlement](img/AIL_configure_subaccount_std_plan.png)
+Review the subaccount and entitlement details you have selected previously and click `Finish`.
+![review configuration](img/AIL_review.png)
+![execution in progress](img/AIL_creation_inprogress.png)
+wait until setup completes. Once completed, navigate to your subaccount.
+
 ### View your instances
 
-View your SAP AI Launchpad instance by navigating to `Instances and subscriptions, as you did to view your SAP AI Core instance. Again, to see the details of your new instance, click the chevron on the entry.
+View your SAP AI Launchpad instance by navigating to `Instances and subscriptions`. To see the details of your new instance, click the chevron on the entry.
 
-![Success screen](img/lpsuccess.png)
+![Success screen](img/ail_subscription_success.png)
+
