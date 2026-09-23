@@ -53,12 +53,12 @@ DummyD_Dummy1_*.csv
     |  Stop on Exception             | Checked                 | `When checked, this setting ensures that the processing will stop if an exception occurs in any of the split messages. This is useful for error handling, ensuring that issues are addressed before proceeding further in the process. `  
 
 
-![Add Branches]( IteratingSplitter.png)  
+![Add Branches](IteratingSplitter.png)  
 
 ### Add local Integration Process Call to poll files from SFTP Server
 
 1.  Build the Process Call and the Local Integration Process Call  poll_files. Local integration process poll_files will be triggered from the calling process afterwards.
-        ![Local Integration Process]( poll_files.png)  
+        ![Local Integration Process](poll_files.png)  
 
 2.  Configure a Content Modifier set_filename_dir to define directory and filename in the following property table:
      
@@ -69,10 +69,10 @@ DummyD_Dummy1_*.csv
 
 3.  Add Poll Enrich. It provides the ability polling content from an external component and enrich the original message with it. Currently, you can use the Poll Enrich step to read content from an SFTP server.
 Define Poll Enrich with Replace as Aggregation Algorithm. It indicates that the current message payload will be removed and replaced with the newly retrieved file content.
-![Poll Enrich]( poll_files.png)  
+![Poll Enrich](poll_files.png)  
 
 4. In the SFTP Sender, configure the file access parameters by the properties defined for directory and file name. Set up the address and credentials alias based on your case. 
-![ SFTP Sender]( SFTP.png)  
+![SFTP Sender](SFTP.png)  
 5. Set a content modifier after polling the file to process the headers during runtime. 
 
     | Action | Name | Source Type | Source Value      
@@ -87,7 +87,7 @@ CamelFileNameOnly: The name of the file without the path or extension.
 ### Add your next steps to consume the polled file and parameters
 In the last step, we are using the receiver adapter ProcessDirect. Therefore, after the file is polled, you can deliver to your consuming integration flow which can process the message further.  
 Before sending the message to the next integration flow, you also have the option to take advantage of the Headers Directory and Filename which were set before and build your own message based on the specific scenario.
-![ProcessDirect Branches]( ProcessDirect.png)  
+![ProcessDirect Branches](ProcessDirect.png)  
 
 
 
