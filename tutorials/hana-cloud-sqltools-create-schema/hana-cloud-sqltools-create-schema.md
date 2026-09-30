@@ -3,7 +3,7 @@ parser: v2
 auto_validation: true
 author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
-time: 15
+time: 25
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, programming-tool>sql]
 primary_tag: software-product>sap-hana-cloud
 ---
@@ -83,6 +83,12 @@ The following steps create a sample hotel dataset using CREATE and INSERT statem
     > Users and roles can also be managed in SAP HANA Cloud Central under the **User & Role Management** tile in the instance detail panel. Additional details can be found at [User and Role Management](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-administration-guide/user-and-role-management).
 
     > ![User & role management in SAP HANA Cloud Central](user-management.png)
+
+    It is also possible to use the explain option in regions that support the feature for an explanation of SQL statements.  
+    
+    ![Explain SQL](explain.png)
+    
+    This is covered further in the tutorial [Query Databases Using the SQL Console in SAP HANA Cloud Central](hana-cloud-sqltools-console).
 
 3. Open a new SQL console tab by pressing the **+** in the tab bar.  This time we wish to connect with USER1 and to set the schema to HOTELS so we will not use the cached credentials (DBADMIN).
 
@@ -324,6 +330,18 @@ Execute the below SQL and notice that USER2 does not have the privilege to perfo
    ```
 
     For further details, consult [Identifiers and Case Sensitivity](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/introduction-to-sql#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
+
+4. Monitoring views contain information about the objects within a database. For further details see [Monitoring Views](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/monitoring-views?locale=en-US).
+
+```SQL
+--List of tables and record counts in the schema HOTELS
+SELECT SCHEMA_NAME, TABLE_NAME, RECORD_COUNT, TABLE_SIZE
+FROM M_TABLES WHERE SCHEMA_NAME = 'HOTELS' ORDER BY RECORD_COUNT DESC;
+
+--List of columns and data types for the tables in schema HOTELS
+SELECT SCHEMA_NAME, TABLE_NAME, COLUMN_NAME, DATA_TYPE_NAME
+FROM TABLE_COLUMNS WHERE SCHEMA_NAME = 'HOTELS' ORDER BY TABLE_NAME ASC, COLUMN_NAME ASC;
+```
 
 ### Explore auto-commit (optional)
 
@@ -615,20 +633,6 @@ Another option for less frequently accessed data is the SAP HANA data lake.  Add
    ```
 
     For additional details see [Procedures](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-sqlscript-reference/procedures).
-
-### Examine the created objects using monitoring views
-
-Monitoring views contain information about the objects within a database. For further details see [Monitoring Views](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/monitoring-views?locale=en-US).
-
-```SQL
---List of tables and record counts in the schema HOTELS
-SELECT SCHEMA_NAME, TABLE_NAME, RECORD_COUNT, TABLE_SIZE
-FROM M_TABLES WHERE SCHEMA_NAME = 'HOTELS' ORDER BY RECORD_COUNT DESC;
-
---List of columns and data types for the tables in schema HOTELS
-SELECT SCHEMA_NAME, TABLE_NAME, COLUMN_NAME, DATA_TYPE_NAME
-FROM TABLE_COLUMNS WHERE SCHEMA_NAME = 'HOTELS' ORDER BY TABLE_NAME ASC, COLUMN_NAME ASC;
-```
 
 ### Schedule a stored procedure
 

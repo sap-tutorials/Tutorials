@@ -3,14 +3,14 @@ parser: v2
 auto_validation: true
 author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
-time: 15
+time: 20
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph, tutorial>license]
 primary_tag: software-product>sap-hana-cloud
 ---
 
 # Try Out Multi-Model Functionality with SAP HANA Cloud Central and Database Objects App
 
-<!-- description --> Explore knowledge graph, property graph, JSON document store, and spatial capabilities in SAP HANA Cloud Central.
+<!-- description --> Explore vector, knowledge graph, property graph, JSON document store, and spatial capabilities in SAP HANA Cloud Central.
 
 ## Prerequisites
 
@@ -23,6 +23,8 @@ primary_tag: software-product>sap-hana-cloud
 
 ## Overview
 
+The [SAP HANA Cloud vector engine](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-vector-engine-guide/introduction) enables similarity search using vector embeddings and built in functions.
+
 A [knowledge graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-knowledge-graph-guide/sap-hana-cloud-sap-hana-database-knowledge-graph-engine-guide) can be used to store facts in triples providing additional meaning and relationships.
 
 A [property graph](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-property-graph-engine-reference/sap-hana-cloud-sap-hana-database-property-graph-engine-reference) can be used to show the connections between items such as the connections between airports or between people or groups in a social network.
@@ -32,6 +34,51 @@ SAP HANA Cloud provides the ability to store and perform queries on [spatial dat
 This tutorial is meant to be an introduction to these topics.  For additional content see the tutorial groups [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data) and [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started) as well as the multi-model chapters in [Basic Trial - Introduction to SAP HANA Cloud](https://www.sap.com/products/technology-platform/hana/trial.html) that are available once you sign up for the basic trial.
 
 ---
+
+### Similarity searches using the vector engine
+
+The ability to embed text as a vector and to then use that in a similarity search will be demonstrated in the instructions that follow.  A pre-requisite for these steps is to have enabled the Natural Language Processing (NLP) on the advanced settings tab of the instance provisioning or manage configuration wizard.
+
+1. Open the SQL console and examine the DESCRIPTION column in hte table MAINTENANCE.
+
+    ```SQL
+    SET SCHEMA HOTELS;
+    SELECT * FROM MAINTENANCE;
+    ``
+
+    ![Maintenance work in the hotels dataset](maintenance-table.png)
+
+2. Run the SQL below to see an example of the built-in VECTOR_EMBEDDING function that takes a string and converts it to a vector representation.
+
+    ```SQL
+    SELECT VECTOR_EMBEDDING('Roof repair due to storm', 'DOCUMENT', 'SAP_NEB.20240715') FROM DUMMY;
+    ```
+
+3. Create a new column in the MAINTENANCE table and populate it with a vector representation of the DESCRIPTION column.
+
+    ```SQL
+    ALTER TABLE MAINTENANCE ADD (V_DESCRIPTION REAL_VECTOR GENERATED ALWAYS AS VECTOR_EMBEDDING(DESCRIPTION, 'DOCUMENT', 'SAP_NEB.20240715'));
+    
+    SELECT * FROM MAINTENANCE;
+    ```
+
+    ![Added a vector column](new-vector-column.png)
+
+4. Use the new V_DESCRIPTION column in a similarity search (COSINE_SIMILARITY).
+
+    ```SQL
+    SELECT TOP 1 COSINE_SIMILARITY(V_DESCRIPTION, TO_REAL_VECTOR(VECTOR_EMBEDDING('shingles', 'DOCUMENT', 'SAP_NEB.20240715'))) AS SCORE, * 
+        FROM MAINTENANCE ORDER BY SCORE DESC;
+    SELECT TOP 1 COSINE_SIMILARITY(V_DESCRIPTION, TO_REAL_VECTOR(VECTOR_EMBEDDING('swim', 'DOCUMENT', 'SAP_NEB.20240715'))) AS SCORE, *
+        FROM MAINTENANCE ORDER BY SCORE DESC;
+
+    --Optionally remove the added EMBEDDING column
+    ALTER TABLE MAINTENANCE DROP (V_DESCRIPTION);
+    ```
+
+    ![Similarity search](similarity-search.png)
+
+For further details, see [SAP HANA Cloud, SAP HANA Database AI Development Guide](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-sap-hana-database-ai-development-guide/overview), [Creating Text Embeddings with NLP](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-vector-engine-guide/creating-text-embeddings-with-nlp-51eb170d038d4099a9bbb85c08fda888), and [Similarity Measures](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-vector-engine-guide/similarity-measures).
 
 ### Enable the triple store and create a knowledge graph (optional)
 

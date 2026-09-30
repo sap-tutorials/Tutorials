@@ -25,7 +25,7 @@ primary_tag: software-product>sap-hana-cloud
 
 Trace files can help SAP Support diagnose unexpected behavior.
 
-Tracing can be configured using executables included with the SAP HANA Client installation.  [SQLDBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/0c20691739094593855ece908b4a3cde.html)-based interfaces use `hdbsqldbc_cons`, except for [ODBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/35368f78f6884b019caee12c125b255a.html), which uses `hdbodbc_cons`.  For [JDBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4033f8e603504c0faf305ab77627af03.html), use `ngdbc.jar`.   
+Tracing can be configured using executables included with the SAP HANA Client installation.  [SQLDBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/0c20691739094593855ece908b4a3cde.html)-based interfaces use `hdbsqldbc_cons`, except for [ODBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/35368f78f6884b019caee12c125b255a.html), which uses `hdbodbc_cons`.  For [JDBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4033f8e603504c0faf305ab77627af03.html), use `ngdbc.jar`.
 
 Trace settings can also be configured using environment variables, or via connection parameters.  
 
@@ -42,7 +42,6 @@ Trace settings can also be configured using environment variables, or via connec
     ![hdbsqldbc_cons SHOW ALL Results](ShowAllResults.png)  
 
     > `hdbsqldbc_cons` utility can be found in the `sap/hdbclient` folder.  
-
 
 2. To enable tracing of SQL statements at the INFO level, to enable tracing of TIMING info, and to specify the trace file location and name, enter the following commands:
 
@@ -86,7 +85,7 @@ Trace settings can also be configured using environment variables, or via connec
    hdbsqldbc_cons SHOW ALL
    ```
 
-    ![trace settings](trace-settings.png)
+    ![Trace settings](trace-settings.png)
 
 3. Run the following command to connect to HDBSQL and query for the status.  Since tracing is enabled, a trace file will be generated and can be used to see which SQL statements are called by `\s`.
 
@@ -108,7 +107,7 @@ Trace settings can also be configured using environment variables, or via connec
    pico SQLDBC-####.txt
    ```
 
-    ![Replace Process ID](ReplaceProcessID.png)
+    ![Replace process ID](ReplaceProcessID.png)
 
     Notice that the trace settings are shown at the top of the file.  
 
@@ -232,9 +231,9 @@ The following are some additional options for tracing.
 
 4. In situations where `hdbsqldbc_cons` is not accessible, perhaps because a driver was installed directly using npm or pip, trace settings can be set using environment variables.  The following values can be used in the trace file name.  
 
-    * %p represents the process ID
-    * %a represents the application user
-    * %c represents the connection ID
+    - %p represents the process ID
+    - %a represents the application user
+    - %c represents the connection ID
 
    ```Shell (Windows)
    set HDB_SQLDBC_TRACEFILE=c:\temp\traces\SQLDBC-%p.txt
@@ -267,21 +266,38 @@ The following are some additional options for tracing.
    printenv | grep HDB_SQLDBC_TRACE
    ```
 
-    ![Environment Variable Values](EnvironmentVariable.png)
+   ![Environment variable values](EnvironmentVariable.png)
 
 5. Trace information can be directed to `stdout` or `stderr`.  See below for a few examples.
 
    ```Shell
-   hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=sql=warning "SELECT * FROM HOTELS.CUSTOMER"
+   hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=SQL=ERROR,DEBUG=FATAL,FLUSH=ON "SELECT * FROM HOTELS.CUSTOMER"
    ```
 
    ```Shell
-   set HDB_SQLDBC_TRACEOPTS=SQL=WARN
+   set HDB_SQLDBC_TRACEOPTS=SQL=ERROR,DEBUG=FATAL,FLUSH=ON
    set HDB_SQLDBC_TRACEFILE=stdout
    hdbsql -U User1UserKey "SELECT * FROM HOTELS.CUSTOMER"
    set HDB_SQLDBC_TRACEOPTS=
    set HDB_SQLDBC_TRACEFILE=
    ```
+
+   ![Environment variables set using -Z](environment-variables-z.png)
+
+   It is also possible to set in a Cloud Foundry manifest file or in the SAP BTP Cockpit.
+
+    ```manifest.yaml
+    applications:
+   - name: test-hana-node-tracing
+   memory: 1G
+   instances: 1
+   path: ../
+   env:
+      HDB_SQLDBC_TRACEFILE: stdout
+      HDB_SQLDBC_TRACEOPTS: SQL=ERROR,DEBUG=FATAL,FLUSH=ON
+    ```
+
+    ![Application variables](BTP-app-variables.png)
 
 6. Tracing can also be enabled in an application's connection properties.  For further details see `traceFile` and `traceOptions` in [SQLDBC Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/f6fb06ffe4484f6fa61f10082b11663d.html).
 
@@ -314,7 +330,7 @@ javac -version
    java -jar ~/sap/hdbclient/ngdbc.jar
    ```
 
-    ![JDBC Driver GUI](JDBC-Driver-Trace-Config.png)
+    ![JDBC driver GUI](JDBC-Driver-Trace-Config.png)
 
 2. Turn on the tracing for SQL statements using either the GUI or the commands below:
 

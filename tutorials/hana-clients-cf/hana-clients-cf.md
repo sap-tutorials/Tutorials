@@ -78,7 +78,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     The API URL, if requested, can be found in the Overview page in [SAP BTP cockpit](https://account.hanatrial.ondemand.com/trial/).
 
-    ![api URL](api.png)
+    ![API URL](api.png)
 
     The API URL can be set with the below command.
 
@@ -212,7 +212,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     Open a browser and enter a URL similar to http://localhost:3000/Customers.
 
-    ![running locally](local.png)
+    ![Running locally](local.png)
 
 ### Deploy and test in SAP BTP or XS Advanced
 
@@ -251,7 +251,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
 
     If necessary, you can add the entitlement by clicking Edit.  Don't forget to save your changes when finished.
 
-    ![Add CF Memory service plan](add-cf-runtime-entitlement.png)
+    ![Add CF memory service plan](add-cf-runtime-entitlement.png)
 
     After verifying that you have the necessary entitlements, run the following:
 
@@ -259,7 +259,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
    cf push
    ```
 
-    ![push result](cfPush.png)
+    ![Push result](cfPush.png)
 
     Notice above the URL to open the app was generated as the `manifest.yml` contained the random-route setting.
 
@@ -267,7 +267,7 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
    xs push
    ```
 
-    ![push result](xsPush.png)
+    ![Push result](xsPush.png)
 
     Alternatively, the URL of the app can be found by running the following command:
 
@@ -324,7 +324,7 @@ For additional details see:
    cf events nodeQueryCF
    ```
 
-    ![events](events.png)
+    ![Events](events.png)
 
 4. The logs of the application can be seen with the below command:
 
@@ -352,7 +352,7 @@ For additional details see:
 
     Refresh the browser and notice that the trace information can now be seen.
 
-    ![trace](trace.png)
+    ![Trace](trace.png)
 
 6. The deployed app can also be managed in the associated cockpit.
 
@@ -380,19 +380,19 @@ The [Cloud Connector](https://help.sap.com/docs/connectivity/sap-btp-connectivit
 
     - Navigate to **Service Bindings** and choose **Bind Service**.
 
-        ![bind service](bind-service1.png)
+        ![Bind service](bind-service1.png)
 
     - Add the **Connectivity** service.
 
-        ![connectivity service](connectivity-service.png)
+        ![Connectivity service](connectivity-service.png)
 
     - Provide an instance name such as `MyConnectivityService`.
 
-        ![connectivity service](connectivity-service2.png)
+        ![Connectivity service](connectivity-service2.png)
 
     - Examine the values of the connectivity service.  The indicated values below are used for the `proxyPort` and `proxyHostname` values in the `server.js` file. It will be to access the proxy service which enables communication with the cloud connector.
 
-        ![connectivity service](connectivity-service3.png)
+        ![Connectivity service](connectivity-service3.png)
 
 3. Add the service name to the project's manifest.yml.
 

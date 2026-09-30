@@ -40,9 +40,9 @@ The example in step 1 demonstrates a connection from one SAP HANA Cloud, SAP HAN
 
 ### Connect from one SAP HANA Cloud, SAP HANA database to another
 
-Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can query data from the other in real time using virtual tables, without copying or moving data.
+Two SAP HANA database instances can be connected so that you can query data stored in one database in real time from another using virtual tables, without copying or moving data. The diagram below shows the `tourist_reviews` table stored in one SAP HANA database and the `vt_tourist_reviews` virtual table created in a second SAP HANA database to provide access to the remote data.
 
-![SAP HANA database connecting virtually to another SAP HANA database](virtual-table-diagram.png)
+![SAP HANA database connecting virtually to another SAP HANA database](cloud-to-cloud.png)
 
 1. In SAP HANA Cloud Central, select an SAP HANA database (HDB) instance  (the one you want to connect *to*), and execute the following SQL statements to create the `tourist_reviews` table.
 
@@ -159,7 +159,9 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
 
 ### Connect from SAP HANA Cloud, SAP HANA database to a data lake Relational Engine
 
-[SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) can be used to store large amounts of data that is not accessed and updated as frequently as data in an SAP HANA database.  The following steps create the table `tourist_reviews` in SAP HANA Cloud, data lake Relational Engine and access the table from the associated SAP HANA database (HDB) instance.
+[SAP HANA Cloud, data lake](https://help.sap.com/docs/hana-cloud-data-lake) can be used to store large volumes of data that are accessed less frequently than data stored in SAP HANA database. The diagram below shows the `tourist_reviews` table stored in SAP HANA data lake and the `vt_dl_tourist_reviews` virtual table created in SAP HANA database so that you can access the remote data lake table without replicating the data.
+
+ ![SAP HANA database connecting to a data lake Relational Engine](cloud-to-data-lake.png)
 
 1. If needed, in SAP HANA Cloud Central, add an SAP HANA Cloud, data lake (HDLRE) instance to your SAP HANA Cloud instance, by choosing **Actions > Add Data Lake**.
 
@@ -221,10 +223,6 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
 
 6. In the HDB SQL console, create a virtual table named **`VT_DL_TOURIST_REVIEWS`** in the schema **HOTELS** that maps to the newly created table in the HDLRE.
 
-    This can be visualized as follows:
-
-    ![SAP HANA database connecting to a data lake Relational Engine](dl-cloud-connection.png)
-
    ```SQL
    CREATE VIRTUAL TABLE VT_DL_TOURIST_REVIEWS AT HC_DL.iqaas.HOTELS.TOURIST_REVIEWS;
    ```
@@ -265,7 +263,9 @@ Two SAP HANA Cloud, SAP HANA database instances can be connected so that one can
 
 ### Connect from a data lake Relational Engine to SAP HANA Cloud, SAP HANA database
 
-The first task in preparing the data lake Relational Engine instance is creating a remote server that connects to the SAP HANA database instance that contains the data you want to access.
+SAP HANA data lake can also access data stored in SAP HANA database without replicating the underlying data. The diagram below shows the `tourist_reviews` table stored in SAP HANA database and the `vt_hdb_tourist_reviews` virtual table created in SAP HANA data lake to provide access to the remote table.
+
+ ![SAP HANA data lake connecting to an SAP HANA database](data-lake-to-cloud.png)
 
 1. In SAP HANA Cloud Central, locate the SAP HANA database instance tile and choose **Actions > Copy SQL Endpoint** to obtain the host name.
 
@@ -318,6 +318,10 @@ The first task in preparing the data lake Relational Engine instance is creating
     ![Query the virtual table](test_query.png)
 
 ### Connect from a data lake Relational Engine to another data lake Relational Engine
+
+SAP HANA data lake instances can be connected so that you can access data stored in another data lake instance without copying or moving the underlying data. The diagram below shows the `tourist_reviews` table stored in one SAP HANA data lake instance and the `vt_hdlre_tourist_reviews` virtual table created in a second data lake instance to provide access to the remote table.
+
+ ![SAP HANA data lake connecting virtually to another SAP HANA data lake](data-lake-to-data-lake.png)
 
 1. In SAP HANA Cloud Central, locate the target data lake instance tile and choose **Actions > Copy SQL Endpoint** to obtain the host name.
 
