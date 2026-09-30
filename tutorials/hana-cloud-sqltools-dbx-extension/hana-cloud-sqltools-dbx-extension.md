@@ -57,7 +57,7 @@ Local connections are added directly in Visual Studio Code by specifying the hos
 
 1. In the **Database List** section, navigate to **Local Connections** and click the **+** button to **Add SAP HANA Database**.
 
-2. Select **SAP HANA Cloud** as the database type and enter values for **Host**, **Port**, **User**, and **Password**. You may also set a display name. This tutorial makes use of the `HOTELS` schema, in **Advanced Options** set `currentSchema=HOTELS;`
+2. Select **SAP HANA Cloud** as the database type and enter values for **Host**, **Port**, **User**, and **Password**. These values can be obtained from the actions menu **Copy SQL Endpoint** of an instance in SAP HANA Cloud Central.  Remember to remove the :443 and for the host value and to add 443 as the port.  You may also set a display name. This tutorial makes use of the `HOTELS` schema, in **Advanced Options** set `currentSchema=HOTELS;`
 
     > Enable the **Connect to database securely using TLS/SSL** checkbox to ensure the connection is secure. If you do not check **Save Password**, you will be prompted for your password each time the extension starts.
 
@@ -163,5 +163,3 @@ The SAP HANA Database Explorer extension includes a built-in collection of SQL s
 ### Knowledge check
 
 Congratulations! You have now used the SAP HANA Database Explorer extension for Visual Studio Code and have become familiar with some of the features it provides.
-
-[VALIDATE_7]

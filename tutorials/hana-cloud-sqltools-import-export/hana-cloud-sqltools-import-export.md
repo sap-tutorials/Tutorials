@@ -2,7 +2,7 @@
 author_name: Michelle Wang
 author_profile: https://github.com/MichelleWangSAP
 auto_validation: true
-time: 15
+time: 20
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake]
 primary_tag: software-product>sap-hana-cloud
 parser: v2
