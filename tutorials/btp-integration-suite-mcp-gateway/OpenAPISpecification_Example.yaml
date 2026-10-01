@@ -1,0 +1,252 @@
+openapi: 3.0.1
+info:
+  title: ServiceNowAPI
+  description: >-
+    REST API for managing ServiceNow incidents with query, retrieve, and create
+    operations.
+  version: 1.0.0
+  x-apiProvider: ServiceNow
+  x-relativeUrl: /api/now/table/incident
+servers:
+  - url: 'https://<your-integration-suite-host>/<your-endpoint>'
+paths:
+  /:
+    get:
+      summary: Query incidents
+      description: >-
+        Retrieves incidents matching an encoded query with optional filtering
+        parameters
+      tags:
+        - Incidents
+      parameters:
+        - $ref: '#/components/parameters/SysparmQuery'
+        - $ref: '#/components/parameters/SysparmLimit'
+        - $ref: '#/components/parameters/SysparmFields'
+        - $ref: '#/components/parameters/SysparmDisplayValue'
+      responses:
+        '200':
+          description: List of incidents matching the query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncidentListResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      summary: Create incident
+      description: Creates a new incident record
+      tags:
+        - Incidents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateIncidentRequest'
+      responses:
+        '201':
+          description: Incident created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncidentResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  '/{sys_id}':
+    get:
+      summary: Get incident by sys_id
+      description: Retrieves a specific incident by its system ID
+      tags:
+        - Incidents
+      parameters:
+        - $ref: '#/components/parameters/SysId'
+      responses:
+        '200':
+          description: Incident details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IncidentResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  parameters:
+    SysparmQuery:
+      name: sysparm_query
+      in: query
+      description: Encoded query string for filtering incidents
+      required: false
+      schema:
+        type: string
+      example: number=INC0010002
+    SysparmLimit:
+      name: sysparm_limit
+      in: query
+      description: Maximum number of records to return
+      required: false
+      schema:
+        type: integer
+      example: 100
+    SysparmFields:
+      name: sysparm_fields
+      in: query
+      description: Comma-separated list of fields to return
+      required: false
+      schema:
+        type: string
+      example: 'number,short_description,state'
+    SysparmDisplayValue:
+      name: sysparm_display_value
+      in: query
+      description: Display value format
+      required: false
+      schema:
+        type: string
+        enum:
+          - 'true'
+          - 'false'
+          - all
+      example: 'true'
+    SysId:
+      name: sys_id
+      in: path
+      description: Unique system identifier for the incident
+      required: true
+      schema:
+        type: string
+      example: 46b66a40a9fe198101f243dfbc79033d
+  schemas:
+    Incident:
+      type: object
+      properties:
+        number:
+          type: string
+          example: INC0010002
+        short_description:
+          type: string
+          example: Unable to connect to network printer
+        description:
+          type: string
+          example: >-
+            User reports that they cannot connect to the network printer in the
+            office
+        state:
+          type: string
+          example: '1'
+        sys_id:
+          type: string
+          example: 46b66a40a9fe198101f243dfbc79033d
+    IncidentListResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/Incident'
+      required:
+        - result
+    IncidentResponse:
+      type: object
+      properties:
+        result:
+          $ref: '#/components/schemas/Incident'
+      required:
+        - result
+    CreateIncidentRequest:
+      type: object
+      properties:
+        short_description:
+          type: string
+          example: Unable to connect to network printer
+        description:
+          type: string
+          example: >-
+            User reports that they cannot connect to the network printer in the
+            office
+      required:
+        - short_description
+        - description
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        status:
+          type: string
+      required:
+        - error
+        - status
+  responses:
+    BadRequest:
+      description: Bad request - invalid parameters or request body
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Incident not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: >-
+        OAuth2 security scheme supports six different authorization flows
+        password, client credentials, authorization code, refresh token,
+        saml2bearer, jwt token. Choose the flow that best suits your
+        application's authentication and authorization needs.
+      flows:
+        password:
+          tokenUrl: 'https://<your-subaccount>.authentication.<region>.hana.ondemand.com/oauth/token'
+          scopes: {}
+        clientCredentials:
+          tokenUrl: 'https://<your-subaccount>.authentication.<region>.hana.ondemand.com/oauth/token'
+          scopes: {}
+        authorizationCode:
+          authorizationUrl: 'https://<your-subaccount>.authentication.<region>.hana.ondemand.com/oauth/authorize'
+          tokenUrl: 'https://<your-subaccount>.authentication.<region>.hana.ondemand.com/oauth/token'
+          scopes: {}
+        x-refresh-token:
+          tokenUrl: 'https://<your-subaccount>.authentication.<region>.hana.ondemand.com/oauth/token'
+          refreshUrl: 'https://<your-subaccount>.authentication.<region>.hana.ondemand.com/oauth/token'
+        x-saml2-bearer:
+          tokenUrl: 'https://<your-subaccount>.authentication.<region>.hana.ondemand.com/oauth/token'
+        x-jwt-bearer:
+          tokenUrl: 'https://<your-subaccount>.authentication.<region>.hana.ondemand.com/oauth/token'
+    clientCertAuth:
+      type: http
+      description: >-
+        Client certificate authentication is used to authenticate the client via
+        a TLS certificate. This scheme is commonly used in environments that
+        require mutual TLS (mTLS) for secure communication. The client sends a
+        certificate during the TLS handshake to authenticate itself.
+      scheme: mutualTLS
+security:
+  - clientCertAuth: []
+  - OAuth2: []
