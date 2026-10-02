@@ -9,7 +9,7 @@ tags: [ tutorial>intermediate, software-product>sap-cloud-transport-management, 
 primary_tag: software-product>sap-cloud-transport-management
 parser: v2
 ---
-# Scenario Overview
+# Scenario Overview  
 <!-- description --> Get to know the big picture about the steps required to configure the transport scenario: Transport SAP Integration Suite content using SAP Cloud Transport Management service and SAP Content Agent. 
 
 ## Prerequisites
