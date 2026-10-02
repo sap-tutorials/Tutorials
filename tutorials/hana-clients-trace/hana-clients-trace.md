@@ -286,18 +286,18 @@ The following are some additional options for tracing.
 
    It is also possible to set in a Cloud Foundry manifest file or in the SAP BTP Cockpit.
 
-    ```manifest.yaml
-    applications:
-   - name: test-hana-node-tracing
+   ```yaml
+   applications:
+      - name: test-hana-node-tracing
    memory: 1G
    instances: 1
    path: ../
    env:
       HDB_SQLDBC_TRACEFILE: stdout
       HDB_SQLDBC_TRACEOPTS: SQL=ERROR,DEBUG=FATAL,FLUSH=ON
-    ```
+   ```
 
-    ![Application variables](BTP-app-variables.png)
+   ![Application variables](BTP-app-variables.png)
 
 6. Tracing can also be enabled in an application's connection properties.  For further details see `traceFile` and `traceOptions` in [SQLDBC Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/f6fb06ffe4484f6fa61f10082b11663d.html).
 

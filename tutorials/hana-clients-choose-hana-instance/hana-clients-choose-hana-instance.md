@@ -28,8 +28,6 @@ This tutorial covers how to configure an [SAP HANA](https://www.sap.com/products
 
 For more information on SAP HANA Cloud, consult [Introduction to SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/feature-scope-description-for-sap-hana-cloud-3dd959f1b8574cb0ba19ab05cfc0d3ae/introduction-to-sap-hana-cloud).
 
-> Access help from the SAP community or provide feedback on this tutorial by navigating to the **Feedback** link located on the top right of this page.
->
 >For connections from additional sources such as SAP Analytics Cloud, `Jupyter` Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](group.hana-cloud-database-connection-guides).
 >
 >For connections to the SAP HANA Cloud, Data Lake, see the tutorial [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).

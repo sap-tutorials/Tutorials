@@ -44,7 +44,7 @@ The ability to embed text as a vector and to then use that in a similarity searc
     ```SQL
     SET SCHEMA HOTELS;
     SELECT * FROM MAINTENANCE;
-    ``
+    ```
 
     ![Maintenance work in the hotels dataset](maintenance-table.png)
 
