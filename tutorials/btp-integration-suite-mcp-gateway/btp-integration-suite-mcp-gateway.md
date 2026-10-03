@@ -110,13 +110,12 @@ Click on **Add and Open in API Designer**.
 
 Here you need to navigate to the **Code** tab in order to modify your script. Here you can find a downloadable [example OpenAPI Specification](https://github.com/sap-tutorials/Tutorials-Contribution/raw/master/tutorials/btp-integration-suite-mcp-gateway/OpenAPISpecification_Example.yaml).
 
-11. Add the incident operations to your OpenAPI specification.
+10. Add the incident operations to your OpenAPI specification.
 
-  Replace the empty paths with the incident operations. In the Code tab, find the line that reads exactly paths: {} and replace it with the block below. Change nothing else — leave your servers URL, your tokenUrls, securitySchemes, and security exactly as Integration Suite generated them, since those are unique to your tenant.
+Replace the empty `paths` with the incident operations. In the **Code** tab, find the line that reads exactly `paths: {}` and replace it with the block below. Change nothing else — leave your `servers` URL, your `tokenUrl`s, `securitySchemes`, and `security` exactly as Integration Suite generated them, since those are unique to your tenant.
 
-    Replace `paths: {}` with:
-
-   paths:
+```yaml
+paths:
   /:
     get:
       summary: Query incidents
@@ -229,18 +228,18 @@ Here you need to navigate to the **Code** tab in order to modify your script. He
         '401': { description: Authentication required }
         '404': { description: Incident not found }
         '500': { description: Internal server error }
+```
 
- 
+After pasting into the API Designer, check that `paths:` sits hard against the left margin and that `components:` still contains only `securitySchemes:`. Then validate at editor.swagger.io, click **Save**
 
-   Validate at editor.swagger.io and redeploy. Once you have updated your script, click on **Save**.
     
 ![picture](config13.png)
 
-13. In order to make your API artifact consumable by an MCP server navigate to the **Policies** tab and select the **Authorization** step within the Policy Model flow. Under **Policy Settings** make sure that you tick the box for **Trust Upstream MCP Authorization**.
+11. In order to make your API artifact consumable by an MCP server navigate to the **Policies** tab and select the **Authorization** step within the Policy Model flow. Under **Policy Settings** make sure that you tick the box for **Trust Upstream MCP Authorization**.
 
 ![picture](config14.png)
 
-14. And as the final step of this chapter click on **Deploy** in order to leverage your API artifact and transform it into an MCP server.
+12. And as the final step of this chapter click on **Deploy** in order to leverage your API artifact and transform it into an MCP server.
 
 ![picture](config15.png)
 
