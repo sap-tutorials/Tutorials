@@ -112,12 +112,11 @@ Here you need to navigate to the **Code** tab in order to modify your script. He
 
 11. Add the incident operations to your OpenAPI specification.
 
-    Your generated spec has an empty `paths: {}` and only `securitySchemes` under `components`. Your server URL, token URLs, and title are already correct — leave them alone. Just make the two edits below (identical for everyone).
+  Replace the empty paths with the incident operations. In the Code tab, find the line that reads exactly paths: {} and replace it with the block below. Change nothing else — leave your servers URL, your tokenUrls, securitySchemes, and security exactly as Integration Suite generated them, since those are unique to your tenant.
 
     Replace `paths: {}` with:
 
-    ```yaml
-    paths:
+   paths:
   /:
     get:
       summary: Query incidents
@@ -230,8 +229,6 @@ Here you need to navigate to the **Code** tab in order to modify your script. He
         '401': { description: Authentication required }
         '404': { description: Incident not found }
         '500': { description: Internal server error }
-
-    ```
 
  
 
