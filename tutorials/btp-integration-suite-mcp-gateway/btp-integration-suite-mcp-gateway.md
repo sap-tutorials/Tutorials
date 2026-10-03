@@ -118,158 +118,124 @@ Here you need to navigate to the **Code** tab in order to modify your script. He
 
     ```yaml
     paths:
-      /:
-        get:
-          summary: Query incidents
-          description: Retrieves incidents matching an encoded query
-          tags: [Incidents]
-          parameters:
-            - $ref: '#/components/parameters/SysparmQuery'
-            - $ref: '#/components/parameters/SysparmLimit'
-            - $ref: '#/components/parameters/SysparmFields'
-            - $ref: '#/components/parameters/SysparmDisplayValue'
-          responses:
-            '200':
-              description: List of incidents matching the query
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/IncidentListResponse'
-            '400': { $ref: '#/components/responses/BadRequest' }
-            '401': { $ref: '#/components/responses/Unauthorized' }
-            '500': { $ref: '#/components/responses/InternalServerError' }
-        post:
-          summary: Create incident
-          description: Creates a new incident record
-          tags: [Incidents]
-          requestBody:
-            required: true
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/CreateIncidentRequest'
-          responses:
-            '201':
-              description: Incident created successfully
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/IncidentResponse'
-            '400': { $ref: '#/components/responses/BadRequest' }
-            '401': { $ref: '#/components/responses/Unauthorized' }
-            '500': { $ref: '#/components/responses/InternalServerError' }
-      '/{sys_id}':
-        get:
-          summary: Get incident by sys_id
-          description: Retrieves a specific incident by its system ID
-          tags: [Incidents]
-          parameters:
-            - $ref: '#/components/parameters/SysId'
-          responses:
-            '200':
-              description: Incident details
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/IncidentResponse'
-            '401': { $ref: '#/components/responses/Unauthorized' }
-            '404': { $ref: '#/components/responses/NotFound' }
-            '500': { $ref: '#/components/responses/InternalServerError' }
-    ```
-
-    Add these under `components:` (next to your existing `securitySchemes:`). Keep `securitySchemes:` as-is; paste `parameters:`, `schemas:`, and `responses:` at the same indent (2 spaces).
-
-    ```yaml
-    parameters:
-      SysparmQuery:
-        name: sysparm_query
-        in: query
-        required: false
-        schema: { type: string }
-        example: number=INC0010002
-      SysparmLimit:
-        name: sysparm_limit
-        in: query
-        required: false
-        schema: { type: integer }
-        example: 100
-      SysparmFields:
-        name: sysparm_fields
-        in: query
-        required: false
-        schema: { type: string }
-        example: 'number,short_description,state'
-      SysparmDisplayValue:
-        name: sysparm_display_value
-        in: query
-        required: false
-        schema:
-          type: string
-          enum: ['true', 'false', all]
-        example: 'true'
-      SysId:
-        name: sys_id
-        in: path
+  /:
+    get:
+      summary: Query incidents
+      description: Retrieves incidents matching an encoded query
+      tags: [Incidents]
+      parameters:
+        - name: sysparm_query
+          in: query
+          required: false
+          schema: { type: string }
+          example: number=INC0010002
+        - name: sysparm_limit
+          in: query
+          required: false
+          schema: { type: integer }
+          example: 100
+        - name: sysparm_fields
+          in: query
+          required: false
+          schema: { type: string }
+          example: 'number,short_description,state'
+        - name: sysparm_display_value
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: ['true', 'false', all]
+          example: 'true'
+      responses:
+        '200':
+          description: List of incidents matching the query
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        number: { type: string, example: INC0010002 }
+                        short_description: { type: string }
+                        description: { type: string }
+                        state: { type: string, example: '1' }
+                        sys_id: { type: string, example: 46b66a40a9fe198101f243dfbc79033d }
+        '400': { description: Bad request }
+        '401': { description: Authentication required }
+        '500': { description: Internal server error }
+    post:
+      summary: Create incident
+      description: Creates a new incident record
+      tags: [Incidents]
+      requestBody:
         required: true
-        schema: { type: string }
-        example: 46b66a40a9fe198101f243dfbc79033d
-    schemas:
-      Incident:
-        type: object
-        properties:
-          number: { type: string, example: INC0010002 }
-          short_description: { type: string }
-          description: { type: string }
-          state: { type: string, example: '1' }
-          sys_id: { type: string, example: 46b66a40a9fe198101f243dfbc79033d }
-      IncidentListResponse:
-        type: object
-        properties:
-          result:
-            type: array
-            items: { $ref: '#/components/schemas/Incident' }
-        required: [result]
-      IncidentResponse:
-        type: object
-        properties:
-          result: { $ref: '#/components/schemas/Incident' }
-        required: [result]
-      CreateIncidentRequest:
-        type: object
-        properties:
-          short_description: { type: string }
-          description: { type: string }
-        required: [short_description, description]
-      Error:
-        type: object
-        properties:
-          error: { type: string }
-          status: { type: string }
-        required: [error, status]
-    responses:
-      BadRequest:
-        description: Bad request
         content:
           application/json:
-            schema: { $ref: '#/components/schemas/Error' }
-      Unauthorized:
-        description: Authentication required
-        content:
-          application/json:
-            schema: { $ref: '#/components/schemas/Error' }
-      NotFound:
-        description: Incident not found
-        content:
-          application/json:
-            schema: { $ref: '#/components/schemas/Error' }
-      InternalServerError:
-        description: Internal server error
-        content:
-          application/json:
-            schema: { $ref: '#/components/schemas/Error' }
+            schema:
+              type: object
+              required: [short_description, description]
+              properties:
+                short_description: { type: string }
+                description: { type: string }
+      responses:
+        '201':
+          description: Incident created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      number: { type: string, example: INC0010002 }
+                      short_description: { type: string }
+                      description: { type: string }
+                      state: { type: string, example: '1' }
+                      sys_id: { type: string, example: 46b66a40a9fe198101f243dfbc79033d }
+        '400': { description: Bad request }
+        '401': { description: Authentication required }
+        '500': { description: Internal server error }
+  '/{sys_id}':
+    get:
+      summary: Get incident by sys_id
+      description: Retrieves a specific incident by its system ID
+      tags: [Incidents]
+      parameters:
+        - name: sys_id
+          in: path
+          required: true
+          schema: { type: string }
+          example: 46b66a40a9fe198101f243dfbc79033d
+      responses:
+        '200':
+          description: Incident details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      number: { type: string, example: INC0010002 }
+                      short_description: { type: string }
+                      description: { type: string }
+                      state: { type: string, example: '1' }
+                      sys_id: { type: string, example: 46b66a40a9fe198101f243dfbc79033d }
+        '401': { description: Authentication required }
+        '404': { description: Incident not found }
+        '500': { description: Internal server error }
+
     ```
 
-    Spaces, not tabs. Then validate at editor.swagger.io and redeploy. Once you have updated your script, click on **Save**.
+ 
+
+   Validate at editor.swagger.io and redeploy. Once you have updated your script, click on **Save**.
     
 ![picture](config13.png)
 
