@@ -230,10 +230,10 @@ paths:
         '500': { description: Internal server error }
 ```
 
-After pasting into the API Designer, check that `paths:` sits hard against the left margin and that `components:` still contains only `securitySchemes:`. Then validate at editor.swagger.io, click **Save**
+After pasting into the API Designer, check that `paths:` sits hard against the left margin and that `components:` still contains only `securitySchemes:`. Then validate at editor.swagger.io, click **Save** and then **Switch to API Details**
 
     
-![picture](config13.png)
+![picture](new1.png)
 
 11. In order to make your API artifact consumable by an MCP server navigate to the **Policies** tab and select the **Authorization** step within the Policy Model flow. Under **Policy Settings** make sure that you tick the box for **Trust Upstream MCP Authorization**.
 
