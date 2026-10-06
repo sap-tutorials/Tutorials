@@ -106,7 +106,7 @@ Click on **Add and Open in API Designer**.
 
 9. Once the API Designer has opened click on the **Edit** button in order to change the **OpenAPI specification**.
     
-![picture](config12.png)
+![picture](new7.png)
 
 Here you need to navigate to the **Code** tab in order to modify your script. Here you can find a downloadable [example OpenAPI Specification](https://github.com/sap-tutorials/Tutorials-Contribution/raw/master/tutorials/btp-integration-suite-mcp-gateway/OpenAPISpecification_Example.yaml).
 
