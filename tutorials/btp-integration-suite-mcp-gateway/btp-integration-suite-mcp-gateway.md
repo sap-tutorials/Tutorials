@@ -264,11 +264,11 @@ Once you have entered all the details click on **Next**.
 
 4. The MCP Gateway capability allows you to select all operations from the API that should be accessible from the MCP server. In this case we can select all 3 operations and go ahead by clicking on **Add**.
    
-![picture](config19.png)
+![picture](new3.png)
 
 5. Now your MCP server has been generated within a couple of clicks. If necessary you can add an additional layer of governance by configuring **tools, resources, prompts and policies**. In our case we keep it as it is and **Deploy** our MCP Server to the **Integration Cell** runtime profile:
 
-![picture](config20.png)
+![picture](new4.png)
 
 ### Step 5: Create a Product and AI Agent Subscription in the Developer Hub
 1. To make your new MCP server discoverable and consumable for your entire organization we are going to establish a new Product in the Developer Hub. For this navigate to the top right of your screen and select the **Developer Hub**.
