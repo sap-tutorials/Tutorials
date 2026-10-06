@@ -255,10 +255,10 @@ After pasting into the API Designer, check that `paths:` sits hard against the l
 3. Make sure that you select the previously generated **ServiceNow API** and complete following specification:
 
 - **API:** ServiceNow API
-- **MCP Path:** /ticketCreation
+- **MCP Path:** /ticketCreationMCP
 - **Version:** 1.0.0
 
-![picture](config18.png)
+![picture](new2.png)
 
 Once you have entered all the details click on **Next**.
 
