@@ -243,9 +243,9 @@ After pasting into the API Designer, check that `paths:` sits hard against the l
 
 ![picture](new9.png)
 
-13. And as the final step of this chapter click on **Deploy** in order to leverage your API artifact and transform it into an MCP server.
+13. And as the final step of this chapter click on **Save** and **Deploy** in order to leverage your API artifact and transform it into an MCP server. Make sure that you use the Integration Cell as the Runtime Profile.
 
-![picture](config15.png)
+![picture](new10.png)
 
 ## Step 4: Create the MCP server based on the API artifact
 1. Now we are going to leverage our freshly created API artifact and generate a custom MCP server out of it. Go back to your Integration Package that you have generated previously and click on **Add**. Here you select **MCP Server**.
