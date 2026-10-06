@@ -235,11 +235,15 @@ After pasting into the API Designer, check that `paths:` sits hard against the l
     
 ![picture](new1.png)
 
-11. In order to make your API artifact consumable by an MCP server navigate to the **Policies** tab and select the **Authorization** step within the Policy Model flow. Under **Policy Settings** make sure that you tick the box for **Trust Upstream MCP Authorization**.
+11. In order to make your API artifact consumable by an MCP server navigate to the **Policies** tab and select the **Authorization** step within the Policy Model flow. Under **Policy Settings** make sure that you andd **ESBMessaging.send** in the scope and tick the box for **Trust Upstream MCP Authorization**.
 
-![picture](config14.png)
+![picture](new8.png)
 
-12. And as the final step of this chapter click on **Deploy** in order to leverage your API artifact and transform it into an MCP server.
+12. Stay in the **Policies** tab and select the **Authentication** step within the Policy Model Flow. Go to **Policy Settings** and make sure that **Basic** is added as an authentication type.
+
+![picture](new9.png)
+
+13. And as the final step of this chapter click on **Deploy** in order to leverage your API artifact and transform it into an MCP server.
 
 ![picture](config15.png)
 
