@@ -96,11 +96,11 @@ Now click on **Save**.
 
 8. In order to complete your API artifact enter additional specifications in the next screen:
     - **Name:** ServiceNow API
-    - **Relative URL:** /api/now/table/incident
+    - **Relative URL:** /api/now/table
     - **API Base Path:** ticketCreation
     - **API Version:** 1.0.0
     
-![picture](config11.png)
+![picture](new5.png)
 
 Click on **Add and Open in API Designer**.
 
