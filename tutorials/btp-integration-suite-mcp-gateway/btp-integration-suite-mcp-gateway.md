@@ -96,17 +96,17 @@ Now click on **Save**.
 
 8. In order to complete your API artifact enter additional specifications in the next screen:
     - **Name:** ServiceNow API
-    - **Relative URL:** /api/now/table/incident
-    - **API Base Path:** ticketCreation
+    - **Relative URL:** /api/now/table
+    - **API Base Path:** /ticketCreation
     - **API Version:** 1.0.0
     
-![picture](config11.png)
+![picture](new5.png)
 
 Click on **Add and Open in API Designer**.
 
 9. Once the API Designer has opened click on the **Edit** button in order to change the **OpenAPI specification**.
     
-![picture](config12.png)
+![picture](new7.png)
 
 Here you need to navigate to the **Code** tab in order to modify your script. Here you can find a downloadable [example OpenAPI Specification](https://github.com/sap-tutorials/Tutorials-Contribution/raw/master/tutorials/btp-integration-suite-mcp-gateway/OpenAPISpecification_Example.yaml).
 
@@ -116,7 +116,7 @@ Replace the empty `paths` with the incident operations. In the **Code** tab, fin
 
 ```yaml
 paths:
-  /:
+  /incident:
     get:
       summary: Query incidents
       description: Retrieves incidents matching an encoded query
@@ -198,7 +198,7 @@ paths:
         '400': { description: Bad request }
         '401': { description: Authentication required }
         '500': { description: Internal server error }
-  '/{sys_id}':
+  '/incident/{sys_id}':
     get:
       summary: Get incident by sys_id
       description: Retrieves a specific incident by its system ID
@@ -230,18 +230,22 @@ paths:
         '500': { description: Internal server error }
 ```
 
-After pasting into the API Designer, check that `paths:` sits hard against the left margin and that `components:` still contains only `securitySchemes:`. Then validate at editor.swagger.io, click **Save**
+After pasting into the API Designer, check that `paths:` sits hard against the left margin and that `components:` still contains only `securitySchemes:`. Then validate at editor.swagger.io, click **Save** and then **Switch to API Details**
 
     
-![picture](config13.png)
+![picture](new1.png)
 
-11. In order to make your API artifact consumable by an MCP server navigate to the **Policies** tab and select the **Authorization** step within the Policy Model flow. Under **Policy Settings** make sure that you tick the box for **Trust Upstream MCP Authorization**.
+11. In order to make your API artifact consumable by an MCP server navigate to the **Policies** tab and select the **Authorization** step within the Policy Model flow. Under **Policy Settings** make sure that you andd **ESBMessaging.send** in the scope and tick the box for **Trust Upstream MCP Authorization**.
 
-![picture](config14.png)
+![picture](new8.png)
 
-12. And as the final step of this chapter click on **Deploy** in order to leverage your API artifact and transform it into an MCP server.
+12. Stay in the **Policies** tab and select the **Authentication** step within the Policy Model Flow. Go to **Policy Settings** and make sure that **Basic** is added as an authentication type.
 
-![picture](config15.png)
+![picture](new9.png)
+
+13. And as the final step of this chapter click on **Save** and **Deploy** in order to leverage your API artifact and transform it into an MCP server. Make sure that you use the Integration Cell as the Runtime Profile.
+
+![picture](new10.png)
 
 ## Step 4: Create the MCP server based on the API artifact
 1. Now we are going to leverage our freshly created API artifact and generate a custom MCP server out of it. Go back to your Integration Package that you have generated previously and click on **Add**. Here you select **MCP Server**.
@@ -255,20 +259,20 @@ After pasting into the API Designer, check that `paths:` sits hard against the l
 3. Make sure that you select the previously generated **ServiceNow API** and complete following specification:
 
 - **API:** ServiceNow API
-- **MCP Path:** /ticketCreation
+- **MCP Path:** /ticketCreationMCP
 - **Version:** 1.0.0
 
-![picture](config18.png)
+![picture](new2.png)
 
 Once you have entered all the details click on **Next**.
 
 4. The MCP Gateway capability allows you to select all operations from the API that should be accessible from the MCP server. In this case we can select all 3 operations and go ahead by clicking on **Add**.
    
-![picture](config19.png)
+![picture](new3.png)
 
 5. Now your MCP server has been generated within a couple of clicks. If necessary you can add an additional layer of governance by configuring **tools, resources, prompts and policies**. In our case we keep it as it is and **Deploy** our MCP Server to the **Integration Cell** runtime profile:
 
-![picture](config20.png)
+![picture](new4.png)
 
 ### Step 5: Create a Product and AI Agent Subscription in the Developer Hub
 1. To make your new MCP server discoverable and consumable for your entire organization we are going to establish a new Product in the Developer Hub. For this navigate to the top right of your screen and select the **Developer Hub**.
