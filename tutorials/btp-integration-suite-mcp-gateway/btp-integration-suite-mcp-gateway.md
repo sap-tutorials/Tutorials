@@ -116,7 +116,7 @@ Replace the empty `paths` with the incident operations. In the **Code** tab, fin
 
 ```yaml
 paths:
-  /:
+  /incident:
     get:
       summary: Query incidents
       description: Retrieves incidents matching an encoded query
@@ -198,7 +198,7 @@ paths:
         '400': { description: Bad request }
         '401': { description: Authentication required }
         '500': { description: Internal server error }
-  '/{sys_id}':
+  '/incident/{sys_id}':
     get:
       summary: Get incident by sys_id
       description: Retrieves a specific incident by its system ID
