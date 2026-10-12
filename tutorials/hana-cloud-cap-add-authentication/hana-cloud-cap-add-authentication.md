@@ -162,7 +162,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 1. Next open the xs-app.json file in the `/app/router` folder.  Here want to make several adjustments. Change the `authenicationMethod` to `route`. This will turn on authentication. You can deactivate it later by switching back to `none`.  Also add/update the routes.  We are adding authentication to CAP service route.  We are also adding the Application Router User API route (`sap-approuter-userapi`), which is nice for testing the UAA connection. We will also add the custom `logoutEndpoint` of `/app-logout`.  You can add this path to your URL if you want to force logout your user; which can be helpful to pickup any changes to your role configuration during development. Finally add the route to the local directory to serve the UI5/Fiori web content.
 
    ```json
-  {
+   {
    "authenticationMethod": "route",
    "logout": {
        "logoutEndpoint": "/app-logout",
