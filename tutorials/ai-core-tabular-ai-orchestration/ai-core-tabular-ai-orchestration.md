@@ -421,7 +421,7 @@ dest_body = {
     "type": "HDL",
     "adapterType": "File",
     "config": {
-        "host": "28de4cef-50ad-47fd-b8b9-2d17a8d5d8e8.files.hdl.canary-eu10.hanacloud.ondemand.com"
+        "host": "28dxxxxxxxyyyyyyyyy8d5d8e8.files.hdl.canary-eu10.hanacloud.ondemand.com"
     }
 }
 
