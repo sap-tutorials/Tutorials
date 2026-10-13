@@ -38,7 +38,7 @@ author_profile: https://github.com/I321506
 6. An Extended SAP AI Core service plan is required, as the Generative AI Hub is not available in the Free or Standard tiers. For more details, refer to  
    [SAP AI Core Service Plans](https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/service-plans?version=CLOUD)
 7. You have access to the `tabular-orchestration` scenario in your resource group, and the Tabular AI feature is enabled in your landscape.
-8. A tabular dataset (CSV) uploaded to a storage location that Tabular AI can read — this tutorial uses SAP HANA Data Lake Files with a used-cars dataset.
+8. A tabular dataset (CSV) uploaded to a storage location that Tabular AI can read — this tutorial uses SAP HANA Data Lake Files with a used-cars dataset. The dataset used in this tutorial is available [here](https://github.com/SAP-samples/aicore-genai-samples/tree/main/genai-sample-apps/tabular-ai-orchestration) 
 9. **Read access to that storage from your resource group.** HDL Files authorizes clients by certificate: the subject pattern of your resource group's certificate must be registered in the HDL instance, otherwise reads fail with `401 ... may not be registered in HDL`.
 
 ### Pre-Read
@@ -50,7 +50,7 @@ Before starting this tutorial, ensure that you:
   - **Scenario configuration** — a Context Registry object that describes *which data* a prediction should draw context from.
 - Understand the core idea of Tabular AI: the model does not receive your whole dataset. You register the dataset once, and at prediction time the service retrieves a subset of rows as context. How that subset is chosen is the **context selection strategy**, and it is the main quality lever in this tutorial.
 
-### Architecture Overview
+### Overview
 
 - Tabular AI predictions combine three AI Core pieces: the **`tabular-orchestration` deployment** (the inference endpoint), the **Context Registry** (which knows where your data lives), and the **tabular model** (for example `sap-rpt-1.5-large`) that performs the prediction.
 - A configuration is created for the `tabular-orchestration` scenario and a virtual deployment is created from it. Predictions are only possible once that deployment reaches `RUNNING`.
@@ -59,14 +59,14 @@ Before starting this tutorial, ensure that you:
 - The service retrieves context rows from the registered dataset according to the chosen strategy, sends them along with the query rows to the tabular model, and returns predictions with confidence scores and metadata describing how much context was used.
 - Running the same query rows under different strategies shows the effect of retrieval quality: weak retrieval tends to produce the dataset's most common value with low confidence, while targeted retrieval produces more differentiated predictions.
 
-### Collection Reference
+### Bruno Collection Reference
 
 For hands-on execution, use the accompanying Bruno collection `TabularAI`. It runs the entire pipeline top to bottom — bearer token, AI Core scenario and deployment, the three Context Registry registrations, and one prediction request per context selection strategy.
 
 💡 Run the requests **in the numbered order** — later requests depend on values written by earlier ones (`bearer_token`, `deployment_id`, and the registered `-dd` / `-ta` / `-scm` objects). Configure the environment before executing.
 
 **To use the collection:**
-- Install [Bruno](https://www.usebruno.com) and open the `TabularAI` folder via **Open Collection**.
+- Install [Bruno](https://www.usebruno.com). Bruno collection is available [here](https://github.com/SAP-samples/aicore-genai-samples/tree/main/genai-sample-apps/tabular-ai-orchestration) and open the bruno collection folder via **Open Collection**.
 - Select the environment for your landscape in the top-right dropdown.
 - Fill in `clientid`, `clientsecret`, `auth_url`, `ai_api_url` from your AI Core service key, and set `test_prefix` to something unique to you — every object you create is named with that prefix, so it will not collide with other users' objects.
 - Run `GET Bearer Token` first, then work down the numbered folders.
