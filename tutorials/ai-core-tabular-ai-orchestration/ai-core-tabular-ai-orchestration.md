@@ -9,7 +9,7 @@ author_profile: https://github.com/I321506
 --- 
 
 # Tabular AI Orchestration in SAP AI Core
-<!-- description --> This tutorial demonstrates how to use **Tabular AI** in SAP AI Core to predict missing values in tabular data, using your own dataset as retrieval context. The process deploys the `tabular-orchestration` scenario, registers a data destination and a tabular artifact against a dataset stored in SAP HANA Data Lake (HDL), creates a scenario configuration that binds the two, and then runs predictions where selected cells are marked with a `[PREDICT]` placeholder. Instead of sending the whole dataset with every call, Tabular AI retrieves comparable rows from the registered dataset at inference time — and the tutorial walks through each **context selection strategy** (`random`, `heuristic`, `auto`, `none`) so you can see how retrieval quality changes both the predicted values and their confidence scores. The full flow is executed twice: once with the Python SDK and once with a Bruno collection.
+<!-- description --> This tutorial demonstrates how to use **Tabular AI** in SAP AI Core to predict missing values in tabular data, using your own dataset as retrieval context. The process deploys the `tabular-orchestration` scenario, registers a data destination and a tabular artifact against a dataset stored in SAP HANA Data Lake (HDL), creates a scenario configuration that binds the two, and then runs predictions where selected cells are marked with a `[PREDICT]` placeholder. Instead of sending the whole dataset with every call, Tabular AI retrieves comparable rows from the registered dataset at inference time — and the tutorial walks through each **context selection strategy** (`random`, `heuristic`, `auto`, `none`) so you can see how retrieval quality changes both the predicted values and their confidence scores. The full flow is executed twice: once with the Python and once with a Bruno collection.
 
 ## You will learn
 - How the Tabular AI flow is structured: deployment, context registry, prediction.
@@ -75,7 +75,7 @@ For hands-on execution, use the accompanying Bruno collection `TabularAI`. It ru
 
 ### Environment Variables Setup
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Python]]
 
 - Open **Visual Studio Code or Jupyter Notebook**. Create a new file with the `.ipynb` extension (e.g., `Tabular_AI_Predictions_With_Context_Registry.ipynb`).
 - Create a **`.env`** file in the root directory of your project.
@@ -232,7 +232,7 @@ Use Basic auth with `clientid` / `clientsecret`. Its post-response script writes
 
 ### Create a Configuration and Virtual Deployment
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Python]]
 
 Look up the scenario, create a configuration for it, then create a virtual deployment and wait for it to run:
 
@@ -366,7 +366,7 @@ Run the requests in the **`1. AI Core`** folder in order.
 
 ### Register the Data Destination
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Python]]
 
 The data destination tells the Context Registry where your dataset lives:
 
@@ -498,7 +498,7 @@ If the resource group certificate is not yet registered in the HANA Data Lake Fi
 
 ### Register the Tabular Artifact
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Python]]
 
 The artifact points at the specific file within the destination and declares its schema:
 
@@ -662,7 +662,7 @@ Access works, but the file is not at that path — correct `path` and re-registe
 
 ### Register the Scenario Configuration
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Python]]
 
 The scenario configuration is the named object that prediction requests reference:
 
@@ -725,7 +725,7 @@ Check the status:
 
 ### Run Predictions
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Python]]
 
 Send a small table with the cells to predict marked `[PREDICT]`, and declare those columns in `targetColumns`:
 
@@ -863,7 +863,7 @@ POST {{ai_api_url}}/v2/inference/deployments/{{deployment_id}}/predict
 
 ### Compare Context Selection Strategies
 
-[OPTION BEGIN [Python SDK]]
+[OPTION BEGIN [Python]]
 
 Only `contextSelectionConfig` changes between runs, so sweep it:
 
