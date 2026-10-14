@@ -57,7 +57,7 @@ Follow the steps to create an SQL view doing a hexagonal clustering and counting
 
 5. Copy the following SQL statement into the SQL Console and execute:
 
-   ```
+```
 CREATE VIEW POI_DENSITY AS
 (
 	SELECT
@@ -67,7 +67,7 @@ CREATE VIEW POI_DENSITY AS
 	FROM "gis_osm_pois_free_1"
 	GROUP CLUSTER BY "geom" USING HEXAGON X CELLS 100
 )
-   ```
+```
 
 
 You can find more information on [Spatial Clustering](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7eb3c0e6bbf04fc6bcb9809d81533e6f.html) in the [SAP HANA Spatial Reference](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/e1c934157bd14021a3b43b5822b2cbe9.html).
