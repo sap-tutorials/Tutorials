@@ -127,13 +127,13 @@ Second, you would like to find "attractive" paths. You will calculate a new meas
 
 1. First, let's calculate **`PUBINESS`** by counting pubs within 100m distance and add this to our `LONDON_EDGES` table. You are using the spatial `ST_WithinDistance` predicate as join condition:
 
-   ```SQL
+```SQL
 ON pubs."SHAPE".ST_WithinDistance(e."EDGESHAPE", 100) = 1
 ```
 
 2. This is the complete statement to alter the table and adding our **`PUBINESS`** measure. Paste and execute it:
 
-   ```SQL
+```SQL
 ALTER TABLE "LONDON_EDGES" ADD ("PUBINESS" DOUBLE DEFAULT 0);
 MERGE INTO "LONDON_EDGES"
 USING (
@@ -149,7 +149,7 @@ WHEN MATCHED THEN UPDATE SET "LONDON_EDGES"."PUBINESS" = U."PUBINESS";
 
 3. Using this statement, you can check the distribution of this new **`PUBINESS`** property.
 
-   ```SQL
+```SQL
 SELECT "PUBINESS", COUNT(*) AS C FROM "LONDON_EDGES" GROUP BY "PUBINESS" ORDER BY "PUBINESS" ASC;
 ```
 
@@ -159,7 +159,7 @@ SELECT "PUBINESS", COUNT(*) AS C FROM "LONDON_EDGES" GROUP BY "PUBINESS" ORDER B
 
     Now, you can use the new measure as part of the cost function for path finding with mode "**pub**".
 
-   ```
+```
 Shortest_Path(:g, :v_start, :v_end, (Edge e) => DOUBLE {
 RETURN :e."length"/(5.0*:e."PUBINESS"+1.0);
 }, :i_direction);
@@ -169,7 +169,7 @@ RETURN :e."length"/(5.0*:e."PUBINESS"+1.0);
    For finding the path with mode "**bike**", you can use a conditional cost function. Street segments which are of type "**cycleway**" are boosted by dividing the length by 10.
 
 
-   ```SQL
+```SQL
 Shortest_Path(:g, :v_start, :v_end, (EDGE e)=> DOUBLE {
 IF(:e."highway" == 'cycleway') { RETURN :e."length"/10.0; }
 ELSE { RETURN :e."length"; }
@@ -182,7 +182,7 @@ ELSE { RETURN :e."length"; }
 
 5. Create a **TABLE TYPE** first with the following statement.
 
-   ```SQL
+```SQL
 CREATE TYPE "TT_SPOO_MULTI_MODE" AS TABLE (
 		"ID" NVARCHAR(5000), "SOURCE" BIGINT, "TARGET" BIGINT, "EDGE_ORDER" BIGINT, "length" DOUBLE, "SPEED_MPH" INT, "highway" NVARCHAR(5000)
 );
@@ -190,7 +190,7 @@ CREATE TYPE "TT_SPOO_MULTI_MODE" AS TABLE (
 
 6. Then create the **procedure** with this statement.
 
-   ```SQL
+```SQL
 CREATE OR REPLACE PROCEDURE "GS_SPOO_MULTI_MODE"(
 	IN i_startVertex BIGINT, 		-- the ID of the start vertex
 	IN i_endVertex BIGINT, 			-- the ID of the end vertex
@@ -231,7 +231,7 @@ END;
 
 7. To see the results, you can again use a **CALL** statement:
 
-   ```SQL
+```SQL
 CALL "GS_SPOO_MULTI_MODE"(1433737988, 1794145673, 'ANY', 'pub', ?, ?, ?);
 CALL "GS_SPOO_MULTI_MODE"(1433737988, 1794145673, 'ANY', 'bike', ?, ?, ?);
 ```
@@ -244,15 +244,15 @@ The procedure above returns more than one output - the path's length, weight, an
 
 1. First, as in the previous examples, create the **TABLE TYPE**:
 
-   ```SQL
+```SQL
 CREATE TYPE "TT_EDGES_SPOO_F" AS TABLE (
 		"ID" NVARCHAR(5000), "SOURCE" BIGINT, "TARGET" BIGINT, "EDGE_ORDER" BIGINT, "length" DOUBLE, "SHAPE" ST_GEOMETRY(32630)
 );
-   ```
+```
 
 2. Then create the **function**:
 
-   ```SQL
+```SQL
 CREATE OR REPLACE FUNCTION "F_SPOO_EDGES"(
 	IN i_startVertex BIGINT,
 	IN i_endVertex BIGINT,
@@ -267,22 +267,22 @@ BEGIN
  CALL "GS_SPOO_MULTI_MODE"(:i_startVertex, :i_endVertex, :i_direction, :i_mode, o_path_length, o_path_weight, o_edges);
  RETURN SELECT lbe.* FROM :o_edges AS P LEFT JOIN "LONDON_EDGES" lbe ON P."ID" = lbe."ID";
 END;
-   ```
+```
 
 3. Now you can simply calculate the **average** **`PUBINESS`** of a path, or UNION two paths to compare. To calculate the average value of one path, use this statement:
 
-   ```SQL
+```SQL
 SELECT AVG("PUBINESS")
 	FROM "F_SPOO_EDGES"(1433737988, 1794145673, 'ANY', 'pub');
-   ```
+```
 
 4. To compare two paths, you can use this statement:
 
-   ```SQL
+```SQL
 SELECT "ID", "SHAPE" FROM "F_SPOO_EDGES"(1433737988, 1794145673, 'ANY', 'pub')
 UNION
 SELECT "ID", "SHAPE" FROM "F_SPOO_EDGES"(1433737988, 1794145673, 'ANY', 'bike');
-   ```
+```
 
 5. Visualizing this comparison should look like this:
 
