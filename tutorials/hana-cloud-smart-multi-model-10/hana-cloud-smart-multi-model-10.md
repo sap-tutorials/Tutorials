@@ -49,7 +49,7 @@ ELSE { END TRAVERSE; }
 
 1. Here is the complete statement that you can run in your example. As previously, first you create a **table type** and then the **GRAPH procedure**:
 
-   ```SQL
+```SQL
 CREATE TYPE "TT_SPOA_VERTICES" AS TABLE ("osmid" BIGINT, "CALCULATED_COST" DOUBLE);
 CREATE OR REPLACE PROCEDURE "GS_SPOA"(
 	IN i_startVertex BIGINT, 		-- the key of the start vertex
@@ -72,13 +72,13 @@ END;
 
 2. As an example, what to do with the SPOA method, you can calculate, where you can go in 300 seconds from your starting point Canary Wharf with this statement:
 
-   ```SQL
+```SQL
 CALL "GS_SPOA" (1433737988, 300, ?);
 ```
 
 3. To visualize the data, let's wrap it in a function and do some post-processing to our graph results. With `resultType` = `POINTS` the function will **return the raw data**, i.e. the individual street intersections that are reachable given a certain maximum of travel time. With `resultType` = `CONVEXHULL` the function will **calculate a convex hull of the points and return a single shape**. Finally, with `resultType` = `HEXAGON` a spatial clustering is applied, and **travel times are averaged for each cluster cell**.
 
-   ```SQL
+```SQL
 CREATE OR REPLACE FUNCTION "F_SPOA_VERTICES"(
 	IN i_startVertex BIGINT, 		-- the key of the start vertex
 	IN i_max DOUBLE,				-- the maximum distance/cost
@@ -109,7 +109,7 @@ END;
 
 4. You can use these three statements to explore from your starting point Canary Wharf:
 
-   ```SQL
+```SQL
 SELECT * FROM "F_SPOA_VERTICES"(1433737988, 60, 'POINTS') ORDER BY "CALCULATED_COST" DESC;
 SELECT * FROM "F_SPOA_VERTICES"(1433737988, 60, 'CONVEXHULL') ORDER BY "CALCULATED_COST" DESC;
 SELECT * FROM "F_SPOA_VERTICES"(1433737988, 240, 'HEXAGON') ORDER BY "CALCULATED_COST" DESC;
@@ -123,7 +123,7 @@ SELECT * FROM "F_SPOA_VERTICES"(1433737988, 240, 'HEXAGON') ORDER BY "CALCULATED
 
     So let's calculate 3 min drive time areas around all the bike repair shops in London. You'll use the `MAP_MERGE` operation to digest multiple POI's:
 
-   ```SQL
+```SQL
 CREATE OR REPLACE FUNCTION "F_SPOA_VERTICES_MULTI" (IN i_filter VARCHAR(5000), IN i_max DOUBLE, IN i_resultType VARCHAR(20))
 	RETURNS TABLE("ID" BIGINT, "SHAPE" ST_GEOMETRY(32630), "CALCULATED_COST" DOUBLE)
 LANGUAGE SQLSCRIPT READS SQL DATA AS
@@ -150,7 +150,7 @@ For this step, you will use a different network, the London Tube network. It is 
 
 1. First, select the tables and then create a **GRAPH workspace** with these statements:
 
-   ```SQL
+```SQL
 SELECT * FROM "LONDON_TUBE_STATIONS";
 SELECT * FROM "LONDON_TUBE_CONNECTIONS";
 CREATE GRAPH WORKSPACE "TUBE_GRAPH"
@@ -165,7 +165,7 @@ CREATE GRAPH WORKSPACE "TUBE_GRAPH"
 
    When you traverse a network in a breadth first search manner, you explore the vertices level by level. Starting at a vertex, you first visit all its direct neighbors, then the neighbors of the neighbors and so forth. BFS is a fundamental building block for many custom graph algorithms. In SAP HANA Cloud, SAP HANA database you can "hook" into the vertex/edge "visit" events, executing any logic.
 
-   ```SQL
+```SQL
 TRAVERSE BFS ('ANY') :g FROM :v_start
 ON VISIT VERTEX (Vertex v_visited, BIGINT lvl) {
 [any logic goes here]
@@ -176,7 +176,7 @@ ON VISIT VERTEX (Vertex v_visited, BIGINT lvl) {
 
 2. As usual, create the **table type** first:
 
-   ```SQL
+```SQL
 CREATE TYPE "TT_RESULT_CC" AS TABLE (
    "ID" BIGINT, "CLOSENESS_CENTRALITY" DOUBLE, "NORMALIZED_CLOSENESS_CENTRALITY" DOUBLE, "HARMONIC_CENTRALITY" DOUBLE, "NORMALIZED_HARMONIC_CENTRALITY" DOUBLE
 );
@@ -184,7 +184,7 @@ CREATE TYPE "TT_RESULT_CC" AS TABLE (
 
 3. Then, create the **GRAPH procedure**:
 
-   ```SQL
+```SQL
 CREATE OR REPLACE PROCEDURE "GS_CC_SINGLE_SOURCE"(
 	IN i_start BIGINT,
 	OUT o_vertices "TT_RESULT_CC")
@@ -225,7 +225,7 @@ END;
 
 4. Once the procedure is created, you can call it:
 
-   ```SQL
+```SQL
 CALL "GS_CC_SINGLE_SOURCE"(117, ?);
 ```
 
@@ -233,7 +233,7 @@ CALL "GS_CC_SINGLE_SOURCE"(117, ?);
 
 5. Create the **function** like this:
 
-   ```SQL
+```SQL
 CREATE OR REPLACE FUNCTION "F_CC_SINGLE_SOURCE"(IN i_start BIGINT)
    RETURNS "TT_RESULT_CC"
 LANGUAGE SQLSCRIPT READS SQL DATA AS
@@ -245,7 +245,7 @@ END;
 
 6. Next, you can invoke this function on a set input parameter in a parallel way.
 
-   ```SQL
+```SQL
 CREATE OR REPLACE FUNCTION "F_CC_MAP_MERGE" ()
 	RETURNS "TT_RESULT_CC"
 LANGUAGE SQLSCRIPT READS SQL DATA AS
@@ -258,13 +258,13 @@ END;
 
 7. Then you can select from it:
 
-   ```SQL
+```SQL
 SELECT * FROM "F_CC_MAP_MERGE"() ORDER BY "NORMALIZED_CLOSENESS_CENTRALITY" DESC;
 ```
 
 8. Again, you can mix the results from a graph function with other SQL operations, like a JOIN.
 
-   ```SQL
+```SQL
 SELECT *
  FROM "F_CC_MAP_MERGE"() AS C
 	LEFT JOIN "LONDON_TUBE_STATIONS" AS S
