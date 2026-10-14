@@ -54,22 +54,22 @@ The implementation of this solution can be done by following the next steps:
 
     The *runRFC* Groovy Script is the following:
 
-   ```Groovy
+    ```Groovy
        import com.sap.gateway.ip.core.customdev.util.Message
        import com.sap.conn.jco.*
-
+    
        def Message processRFCCall(Message message) {
            def destinationName = message.getProperty("RFCDestination")
            def rfcName = message.getProperty("RFCName")
-
+    
            try {
                
                JCoDestination jcoDestination = JCoDestinationManager.getDestination(destinationName)
                JCoFunction function = jcoDestination.getRepository().getFunction(rfcName)
-
+    
                if (function != null) {
                    def parameterList = function.getImportParameterList()
-
+    
                    message.getProperties().each { key, value ->
                        if (key.startsWith("InputParameter_")) {
                            def paramName = key.substring("InputParameter_".length())
@@ -80,24 +80,24 @@ The implementation of this solution can be done by following the next steps:
                            }
                        }
                    }
-
+    
                    function.execute(jcoDestination)
-
+    
                    def result = function.toXML()
                    message.setBody(result)
                } else {
                    throw new Exception("ERROR: RFC function '${rfcName}' not found")
                }
-
+    
            } catch (JCoException e) {
                throw new Exception("ERROR executing RFC function: ${e.getMessage()}")
            } catch (Exception e) {
                throw new Exception("Unexpected error: ${e.getMessage()}")
            }
-
+    
            return message
        }
-   ``` 
+    ``` 
 
 4.  Define a content modifier called 'RFC Response Fields' to capture and store the values of response fields extracted from the RFC.
 
@@ -371,12 +371,3 @@ The implementation of this solution can be done by following the next steps:
                        </Details>
                    </ns0:flightConnection_resp>
    ``` 
-
-
-
-### Test yourself
-
-
-
-
-
