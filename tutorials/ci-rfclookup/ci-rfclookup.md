@@ -11,7 +11,6 @@ primary_tag: software-product>sap-integration-suite
 # How to migrate RFC Lookups from SAP Process Orchestration to Cloud Integration
 <!-- description --> This tutorial explores two different solutions to implement RFC Lookup using the Cloud Integration capability of the SAP Integration Suite. 
 
-
 ## Intro
 
 In SAP Process Orchestration, a Remote Function Call (RFC) Lookup is a feature that enables communication between different systems or components within the SAP landscape and it is used during the execution of a mapping program. The SAP Java Connector (SAP JCo) is a development library that enables a Java application to communicate with SAP systems using SAP's RFC protocol and it will be used in both solutions. For more information refer to the [SAP Java Connector](https://help.sap.com/doc/saphelp_gbt10/1.0/en-US/48/70792c872c1b5ae10000000a42189c/content.htm?no_cache=true).
@@ -55,49 +54,49 @@ The implementation of this solution can be done by following the next steps:
     The *runRFC* Groovy Script is the following:
 
     ```Groovy
-       import com.sap.gateway.ip.core.customdev.util.Message
-       import com.sap.conn.jco.*
-    
-       def Message processRFCCall(Message message) {
-           def destinationName = message.getProperty("RFCDestination")
-           def rfcName = message.getProperty("RFCName")
-    
-           try {
-               
-               JCoDestination jcoDestination = JCoDestinationManager.getDestination(destinationName)
-               JCoFunction function = jcoDestination.getRepository().getFunction(rfcName)
-    
-               if (function != null) {
-                   def parameterList = function.getImportParameterList()
-    
-                   message.getProperties().each { key, value ->
-                       if (key.startsWith("InputParameter_")) {
-                           def paramName = key.substring("InputParameter_".length())
-                           try {
-                               parameterList.setValue(paramName, value)
-                           } catch (Exception e) {
-                               throw new Exception("Error setting parameter '${paramName}': ${e.getMessage()}")
-                           }
-                       }
-                   }
-    
-                   function.execute(jcoDestination)
-    
-                   def result = function.toXML()
-                   message.setBody(result)
-               } else {
-                   throw new Exception("ERROR: RFC function '${rfcName}' not found")
-               }
-    
-           } catch (JCoException e) {
-               throw new Exception("ERROR executing RFC function: ${e.getMessage()}")
-           } catch (Exception e) {
-               throw new Exception("Unexpected error: ${e.getMessage()}")
-           }
-    
-           return message
-       }
-    ``` 
+    import com.sap.gateway.ip.core.customdev.util.Message
+    import com.sap.conn.jco.*
+
+    def Message processRFCCall(Message message) {
+        def destinationName = message.getProperty("RFCDestination")
+        def rfcName = message.getProperty("RFCName")
+
+        try {
+            
+            JCoDestination jcoDestination = JCoDestinationManager.getDestination(destinationName)
+            JCoFunction function = jcoDestination.getRepository().getFunction(rfcName)
+
+            if (function != null) {
+                def parameterList = function.getImportParameterList()
+
+                message.getProperties().each { key, value ->
+                    if (key.startsWith("InputParameter_")) {
+                        def paramName = key.substring("InputParameter_".length())
+                        try {
+                            parameterList.setValue(paramName, value)
+                        } catch (Exception e) {
+                            throw new Exception("Error setting parameter '${paramName}': ${e.getMessage()}")
+                        }
+                    }
+                }
+
+                function.execute(jcoDestination)
+
+                def result = function.toXML()
+                message.setBody(result)
+            } else {
+                throw new Exception("ERROR: RFC function '${rfcName}' not found")
+            }
+
+        } catch (JCoException e) {
+            throw new Exception("ERROR executing RFC function: ${e.getMessage()}")
+        } catch (Exception e) {
+            throw new Exception("Unexpected error: ${e.getMessage()}")
+        }
+
+        return message
+    }
+    ```
 
 4.  Define a content modifier called 'RFC Response Fields' to capture and store the values of response fields extracted from the RFC.
 
@@ -127,21 +126,21 @@ The implementation of this solution can be done by following the next steps:
 
     The mapping result is the following:
 
-   ```XML
-       <?xml version="1.0" encoding="UTF-8"?>
-           <ns0:flightConnectionResponse xmlns:ns0="http://pimas.com">
-               <Connection>
-                   <Airline>AA</Airline>
-                   <Connection>0017</Connection>
-                   <Date>20230921</Date>
-               </Connection>
-               <Seats>
-                   <Economy>15</Economy>
-                   <Business>0</Business>
-                   <First>2</First>
-               </Seats>
-           </ns0:flightConnectionResponse>
-   ``` 
+    ```XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <ns0:flightConnectionResponse xmlns:ns0="http://pimas.com">
+        <Connection>
+            <Airline>AA</Airline>
+            <Connection>0017</Connection>
+            <Date>20230921</Date>
+        </Connection>
+        <Seats>
+            <Economy>15</Economy>
+            <Business>0</Business>
+            <First>2</First>
+        </Seats>
+    </ns0:flightConnectionResponse>
+    ```
 
 ### Use Case 2 - Implement RFC Calls in Cloud Integration Using a UDF on Message Mapping
 
@@ -178,42 +177,42 @@ The implementation of this solution can be done by following the next steps:
 
     The *runRFC* code is the following:
 
-   ```Groovy
-       import com.sap.it.api.mapping.*;
-       import com.sap.conn.jco.*;
+    ```Groovy
+    import com.sap.it.api.mapping.*;
+    import com.sap.conn.jco.*;
 
-       public void runRFC(String[] RFCRequestField1, String[] RFCRequestField2, String[] RFCRequestField3, Output OutputParameter1, Output OutputParameter2, Output OutputParameter3, MappingContext context) throws JCoException {
-           
-           String destinationName = context.getProperty("RFCDestination");
-           String rfcname = context.getProperty("RFCName");
+    public void runRFC(String[] RFCRequestField1, String[] RFCRequestField2, String[] RFCRequestField3, Output OutputParameter1, Output OutputParameter2, Output OutputParameter3, MappingContext context) throws JCoException {
+        
+        String destinationName = context.getProperty("RFCDestination");
+        String rfcname = context.getProperty("RFCName");
 
-           JCoDestination jcoDestination = JCoDestinationManager.getDestination(destinationName);
-           JCoFunction function = jcoDestination.getRepository().getFunction(rfcname);
+        JCoDestination jcoDestination = JCoDestinationManager.getDestination(destinationName);
+        JCoFunction function = jcoDestination.getRepository().getFunction(rfcname);
 
-           if (function != null) {
-               function.getImportParameterList().setValue("RFCRequestField1", RFCRequestField1 [0]); 
-               function.getImportParameterList().setValue("RFCRequestField2", RFCRequestField2 [0]); 
-               function.getImportParameterList().setValue("RFCRequestField3", RFCRequestField3 [0]); 
+        if (function != null) {
+            function.getImportParameterList().setValue("RFCRequestField1", RFCRequestField1 [0]); 
+            function.getImportParameterList().setValue("RFCRequestField2", RFCRequestField2 [0]); 
+            function.getImportParameterList().setValue("RFCRequestField3", RFCRequestField3 [0]); 
 
-               function.execute(jcoDestination);
+            function.execute(jcoDestination);
 
-               JCoParameterList outputParams = function.getExportParameterList();
-               JCoStructure availibility = outputParams.getStructure("AVAILIBILITY");
+            JCoParameterList outputParams = function.getExportParameterList();
+            JCoStructure availibility = outputParams.getStructure("AVAILIBILITY");
 
-               String output1 = availibility.getString("OutputParameter1");
-               String output2 = availibility.getString("OutputParameter2");
-               String output3 = availibility.getString("OutputParameter3");
+            String output1 = availibility.getString("OutputParameter1");
+            String output2 = availibility.getString("OutputParameter2");
+            String output3 = availibility.getString("OutputParameter3");
 
-               OutputParameter1.addValue(output1);
-               OutputParameter2.addValue(output2);
-               OutputParameter3.addValue(output3);
-           } else {
-               OutputParameter1.addValue("ERROR: RFC function not found");
-               OutputParameter2.addValue("ERROR: RFC function not found");
-               OutputParameter3.addValue("ERROR: RFC function not found");
-           }
-       }
-   ``` 
+            OutputParameter1.addValue(output1);
+            OutputParameter2.addValue(output2);
+            OutputParameter3.addValue(output3);
+        } else {
+            OutputParameter1.addValue("ERROR: RFC function not found");
+            OutputParameter2.addValue("ERROR: RFC function not found");
+            OutputParameter3.addValue("ERROR: RFC function not found");
+        }
+    }
+    ```
 
 7. Edit the UDF code, define and replace the following parameters:
 
@@ -237,21 +236,21 @@ The implementation of this solution can be done by following the next steps:
 
     The mapping result is the following:
 
-   ```XML
-           <?xml version="1.0" encoding="UTF-8"?>
-                   <ns0:flightConnectionResponse xmlns:ns0="http://pimas.com">
-                       <Connection>
-                           <Airline>AA</Airline>
-                           <Connection>0017</Connection>
-                           <Date>20230921</Date>
-                       </Connection>
-                       <Seats>
-                           <Economy>15</Economy>
-                           <Business>0</Business>
-                           <First>2</First>
-                       </Seats>
-                   </ns0:flightConnectionResponse>
-   ``` 
+    ```XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <ns0:flightConnectionResponse xmlns:ns0="http://pimas.com">
+        <Connection>
+            <Airline>AA</Airline>
+            <Connection>0017</Connection>
+            <Date>20230921</Date>
+        </Connection>
+        <Seats>
+            <Economy>15</Economy>
+            <Business>0</Business>
+            <First>2</First>
+        </Seats>
+    </ns0:flightConnectionResponse>
+    ```
 
 ### Use Case 3 - Implement Multiple RFC Calls in Cloud Integration Using UDF on a Single Message Mapping
 
@@ -283,93 +282,95 @@ The implementation of this solution can be done by following the next steps:
 5.  As previously done on Use Case 2, it was used the Economy, Business, and First fields under the "Record" node on target structure to implement the UDF code. Under Functions, click on "Create" and put the name "runRFCBAPI_FLIGHT_CHECKAVAILIBILITY" and paste the following code:
 
 
-   ```Groovy
-       import com.sap.it.api.mapping.*;
-       import com.sap.conn.jco.*;
+    ```Groovy
+    import com.sap.it.api.mapping.*;
+    import com.sap.conn.jco.*;
 
-       public void runRFCBAPI_FLIGHT_CHECKAVAILIBILITY(String[] rfcName, String[] RFCRequestField1, String[] RFCRequestField2, String[] RFCRequestField3, Output OutputParameter1, Output OutputParameter2, Output OutputParameter3, MappingContext context) throws JCoException {
-           
-           String destinationName = context.getProperty("RFCDestination");
+    public void runRFCBAPI_FLIGHT_CHECKAVAILIBILITY(String[] rfcName, String[] RFCRequestField1, String[] RFCRequestField2, String[] RFCRequestField3, Output OutputParameter1, Output OutputParameter2, Output OutputParameter3, MappingContext context) throws JCoException {
+        
+        String destinationName = context.getProperty("RFCDestination");
 
-           JCoDestination jcoDestination = JCoDestinationManager.getDestination(destinationName);
-           JCoFunction function = jcoDestination.getRepository().getFunction(rfcName[0]);
+        JCoDestination jcoDestination = JCoDestinationManager.getDestination(destinationName);
+        JCoFunction function = jcoDestination.getRepository().getFunction(rfcName[0]);
 
-           if (function != null) {
-               function.getImportParameterList().setValue("RFCRequestField1", RFCRequestField1 [0]); 
-               function.getImportParameterList().setValue("RFCRequestField2", RFCRequestField2 [0]); 
-               function.getImportParameterList().setValue("RFCRequestField3", RFCRequestField3 [0]); 
+        if (function != null) {
+            function.getImportParameterList().setValue("RFCRequestField1", RFCRequestField1 [0]); 
+            function.getImportParameterList().setValue("RFCRequestField2", RFCRequestField2 [0]); 
+            function.getImportParameterList().setValue("RFCRequestField3", RFCRequestField3 [0]); 
 
-               function.execute(jcoDestination);
+            function.execute(jcoDestination);
 
-               JCoParameterList outputParams = function.getExportParameterList();
-               JCoStructure availibility = outputParams.getStructure("AVAILIBILITY");
+            JCoParameterList outputParams = function.getExportParameterList();
+            JCoStructure availibility = outputParams.getStructure("AVAILIBILITY");
 
-               String output1 = availibility.getString("OutputParameter1");
-               String output2 = availibility.getString("OutputParameter2");
-               String output3 = availibility.getString("OutputParameter3");
+            String output1 = availibility.getString("OutputParameter1");
+            String output2 = availibility.getString("OutputParameter2");
+            String output3 = availibility.getString("OutputParameter3");
 
-               OutputParameter1.addValue(output1);
-               OutputParameter2.addValue(output2);
-               OutputParameter3.addValue(output3);
-           } else {
-               OutputParameter1.addValue("ERROR: RFC function not found");
-               OutputParameter2.addValue("ERROR: RFC function not found");
-               OutputParameter3.addValue("ERROR: RFC function not found");
-           }
-       }
-   ``` 
-   >*Note: Since the RFC used in this example is the same as the one used in Use 2, the main difference is the addition of the “String[] rfcname” parameter, which will be mapped with the RFC name. The line “String rfcname = context.getProperty("RFCName")” has been removed since this will not be used to retrieve the name of the RFC from the properties. Additionally, the line “JCoFunction function = jcoDestination.getRepository().getFunction(rfcName)” has been modified to JCoFunction function = jcoDestination.getRepository().getFunction(rfcName[0]).*
+            OutputParameter1.addValue(output1);
+            OutputParameter2.addValue(output2);
+            OutputParameter3.addValue(output3);
+        } else {
+            OutputParameter1.addValue("ERROR: RFC function not found");
+            OutputParameter2.addValue("ERROR: RFC function not found");
+            OutputParameter3.addValue("ERROR: RFC function not found");
+        }
+    }
+    ```
 
-7. Edit the runRFCBAPI_FLIGHT_CHECKAVAILIBILITY UDF code, define and replace the following parameters:
+    > *Note: Since the RFC used in this example is the same as the one used in Use 2, the main difference is the addition of the “String[] rfcname” parameter, which will be mapped with the RFC name. The line “String rfcname = context.getProperty("RFCName")” has been removed since this will not be used to retrieve the name of the RFC from the properties. Additionally, the line “JCoFunction function = jcoDestination.getRepository().getFunction(rfcName)” has been modified to JCoFunction function = jcoDestination.getRepository().getFunction(rfcName[0]).*
+
+6. Edit the runRFCBAPI_FLIGHT_CHECKAVAILIBILITY UDF code, define and replace the following parameters:
 
     - RFCRequestField1, RFCRequestField2, RFCRequestField3 = Name of the RFC Request fields.
     - OutputParameter1, OutputParameter2, OutputParameter3 = Name of the RFC Response fields.
     - output1, output2 and output3 = Values retrieved from the RFC response fields.
 
-    >*Note: In this example it was tested the RFC used in Use Case 2, and it was used the getStructure method to handle the response structures. If a particular RFC doesn’t include a structured response, the getStructure method may not be needed. In this tutorial, it was used the BAPI_FLIGHT_CHECKAVAILIBILITY RFC where the getStructure method was needed to process the “AVAILIBILITY” structure in the response data. It is important to understand the requirements of each RFC and adjust the UDF code.*
+    > *Note: In this example it was tested the RFC used in Use Case 2, and it was used the getStructure method to handle the response structures. If a particular RFC doesn’t include a structured response, the getStructure method may not be needed. In this tutorial, it was used the BAPI_FLIGHT_CHECKAVAILIBILITY RFC where the getStructure method was needed to process the “AVAILIBILITY” structure in the response data. It is important to understand the requirements of each RFC and adjust the UDF code.*
 
-8. After adding the runRFCBAPI_FLIGHT_CHECKAVAILABILITY UDF on message mapping, add the “GetProperty” function, then, add a constant and define the property name that was previously specified in the content modifier and identify the RFC that will be used.
+7. After adding the runRFCBAPI_FLIGHT_CHECKAVAILABILITY UDF on message mapping, add the “GetProperty” function, then, add a constant and define the property name that was previously specified in the content modifier and identify the RFC that will be used.
 
     ![image20](Image20.png)
 
-    >*Note: In this case, map the source fields (Airline, Connection and Date) to the RFC request fields (AIRLINEID, CONNECTIONID and FLIGHTDATE). Regarding the output fields, map the RFC output fields (ECONOFREE, BUSINFREE and FIRSTFREE) to the fields on the target structure (Economy, Business and First) in the message mapping.*
+    > *Note: In this case, map the source fields (Airline, Connection and Date) to the RFC request fields (AIRLINEID, CONNECTIONID and FLIGHTDATE). Regarding the output fields, map the RFC output fields (ECONOFREE, BUSINFREE and FIRSTFREE) to the fields on the target structure (Economy, Business and First) in the message mapping.*
 
-9. The second part of the implementation is focused on the second RFC. As done on the previous steps, you need to add a second UDF to represent the BAPI_FLIGHT_GETDETAIL RFC. Please adjust the parameters described in Step 5 done previously.
+8. The second part of the implementation is focused on the second RFC. As done on the previous steps, you need to add a second UDF to represent the BAPI_FLIGHT_GETDETAIL RFC. Please adjust the parameters described in Step 5 done previously.
 
-8. After adding the runRFCBAPI_FLIGHT_GETDETAIL UDF on message mapping, select the “GetProperty” function as done previously for the first RFC and add a constant with the name of the property which will have the RFC name.
+9. After adding the runRFCBAPI_FLIGHT_GETDETAIL UDF on message mapping, select the “GetProperty” function as done previously for the first RFC and add a constant with the name of the property which will have the RFC name.
 
     ![image21](Image21.png)
 
     >*Note: In this case, map the RFC output fields (AIRPORTFT, CITYFROM, AIRPORTTO and CITYTO) to the field from the target structure (AirportFrom, CityFrom, AirportTo and CityTo) in the message mapping.*
 
-9.  Save the integration flow, deploy it, and trigger a message.
+10. Save the integration flow, deploy it, and trigger a message.
 
     ![image13](Image13.png)
 
     The mapping result is the following:
 
-   ```XML
-           <?xml version="1.0" encoding="UTF-8"?>
-                   <ns0:flightConnection_resp xmlns:ns0="http://pimas.com">
-                       <Connection>
-                           <Airline>AA</Airline>
-                           <Connection>0017</Connection>
-                           <Date>20230921</Date>
-                       </Connection>
-                       <Record>
-                           <Seats>
-                               <Economy>10</Economy>
-                               <Business>0</Business>
-                               <First>2</First>
-                           </Seats>
-                       </Record>
-                       <Details>
-                           <AirportFrom>JFK</AirportFrom>
-                           <CityFrom>NEW YORK</CityFrom>
-                           <AirportTo>SFO</AirportTo>
-                           <CityTo>SAN FRANCISCO</CityTo>
-                       </Details>
-                   </ns0:flightConnection_resp>
-   ``` 
+    ```XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <ns0:flightConnection_resp xmlns:ns0="http://pimas.com">
+        <Connection>
+            <Airline>AA</Airline>
+            <Connection>0017</Connection>
+            <Date>20230921</Date>
+        </Connection>
+        <Record>
+            <Seats>
+                <Economy>10</Economy>
+                <Business>0</Business>
+                <First>2</First>
+            </Seats>
+        </Record>
+        <Details>
+            <AirportFrom>JFK</AirportFrom>
+            <CityFrom>NEW YORK</CityFrom>
+            <AirportTo>SFO</AirportTo>
+            <CityTo>SAN FRANCISCO</CityTo>
+        </Details>
+    </ns0:flightConnection_resp>
+    ```
 
 ### Test yourself
+
