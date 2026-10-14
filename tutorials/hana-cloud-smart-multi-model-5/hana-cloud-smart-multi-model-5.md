@@ -66,7 +66,7 @@ Before creating the query, you need to make an adjustment in the SAP HANA Databa
 
 4. Now that this setting has been adjusted, you can start with your query. To perform a spatial union operation and construct one geometry out of the result set of the above query, use the function [`ST_UnionAggr`(*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/601aa9fb93e241af96faafcb8f01b12e.html). The following query creates the SVG as a CLOB:
 
-   ```SQL
+```SQL
 SELECT ST_UnionAggr(le.SHAPE).ST_AsSVG(Attribute=>'stroke="red" stroke-width="0.1%"')
 FROM LONDON_EDGES le
 JOIN LONDON_VERTICES u ON le.SOURCE = u."osmid"
