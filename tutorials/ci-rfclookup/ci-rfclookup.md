@@ -372,4 +372,4 @@ The implementation of this solution can be done by following the next steps:
                    </ns0:flightConnection_resp>
    ``` 
 
-### Test Yourself
+### Test yourself
