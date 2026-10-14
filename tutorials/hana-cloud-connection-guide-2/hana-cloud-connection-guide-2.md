@@ -68,7 +68,7 @@ Once the packages are installed, launch Jupyter Notebook.
 
 2. Import the packages using the following lines of code:
 
-   ```Python
+```Python
 import hdbcli
 from hdbcli import dbapi
 import hana_ml
@@ -76,14 +76,14 @@ import hana_ml
 
 3. To check if the package has been imported correctly, you can check the package version. Just type the following:
 
-   ```Python
+```Python
 print(hdbcli.__version__) #Use two underscores '_''_' for __version__
 print(hana_ml.__version__) #Use two underscores '_''_' for __version__
 ```
 
 4. Next, import the following packages required for this tutorial:
 
-   ```Python
+```Python
 from hana_ml import dataframe
 from hana_ml.dataframe import ConnectionContext
 import pandas as pd
@@ -134,19 +134,19 @@ print(flight_hdf.select_statement)
 
 1. Now that you have a table in your database, to access this table we execute the following lines of code. Replace the XXXX with your schema name and table with your table name.
 
-   ```Python
+```Python
 flight_hdf=conn2.sql ('select * from XXXX.(table) ')
 ```
 
 2. To check the data types of the table, you can execute the following command:
 
-   ```Python
+```Python
 flight_hdf.dtypes()
 ```
 
 3. To explore the SAP HANA data-frame, you can execute the following command:
 
-   ```Python
+```Python
 flight_hdf.describe().collect()
 ```
    ![Access SAP HANA Cloud Table](ss-03-access-SAP-HANA-Cloud-table.png)
@@ -157,13 +157,13 @@ flight_hdf.describe().collect()
 
 1. To add visualizations to your data, import `EDAVisualizer` using the command:
 
-   ```Python
+```Python
 from hana_ml.visualizers.eda import EDAVisualizer
 ```
 
 2. Next, import the following packages required for this tutorial.
 
-   ```Python
+```Python
 from hana_ml import dataframe
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -176,7 +176,7 @@ from hana_ml.algorithms.pal import stats
 
 3. Now we will create a pie chat using the database table to find the most frequently travelled destination. To create a pie chart using run the following:
 
-   ```Python
+```Python
 f = plt.figure(figsize=(10,10))
 ax1 = f.add_subplot(111)
 start=time.time()
