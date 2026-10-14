@@ -112,7 +112,7 @@ pandas_df = hana_df.collect()
 
     Add the following content into the file:
 
-   ```Python
+```Python
 {
  "user": "YourUserName",
  "pwd": "YourPassword",

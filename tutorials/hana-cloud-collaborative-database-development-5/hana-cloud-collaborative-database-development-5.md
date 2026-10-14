@@ -198,22 +198,22 @@ As the last two steps, you will create two generic roles and database users. The
 
 3.	In the SQL Console, copy and paste the following code. Run it to create a role for the object owner (OO).
 
-   ```SQL
+```SQL
 create role "genericRoleForOO";
 ```
     > The Object Owner, in this example, will be assigned to the user who owns the project and creates calculation views. This role will need Select privileges with grant option that will be assigned to it in the next steps.
 
 4.	Next, copy and paste the following code in the SQL Console and run it to create a role for application users (AP).
 
-   ```SQL
+```SQL
 create role "genericRoleForAP";
-	```
+```
 
     > The Application User, in this example, will be assigned to the user who uses the data preview on the calculation views created by the object owner. This role will need Select privileges that will be assigned to it in the next steps.
 
 5.	Copy and paste the following code in the SQL Console. Run the code to view the schema name for the role inventory created earlier in this tutorial group.
 
-   ```SQL
+```SQL
 select role_schema_name,* from roles where role_name='inventory';
 ```
 
@@ -229,23 +229,23 @@ select role_schema_name,* from roles where role_name='inventory';
 
 1.	Here, you will assign the two roles you have created in the fourth tutorial ("`inventory_with_grant#`" and "`inventory_without_grant`") to the two new roles you have just created. Copy and paste the following code in the SQL Console and make sure the schema name ("`WS3_1_HDI_DB_1`") matches the schema name you have just checked with the previous statement. Run the statement to grant roles to the object owner and application user.
 
-   ```SQL
+```SQL
 grant "WS3_1_HDI_DB_1"."inventory_with_grant#" to "genericRoleForOO";
 grant "WS3_1_HDI_DB_1"."inventory_without_grant" to "genericRoleForAP";
-	```
+```
 
 2.	Create a database user by running the following SQL statement. `UPS_GRANTOR` means **User-Provided Service Granter**. In the next step, this user will be allowed to grant the roles created above.
 
-   ```SQL
+```SQL
 create user UPS_GRANTOR password "DnATBG!1" NO FORCE_FIRST_PASSWORD_CHANGE;
-	```
+```
 
 3.	Assign the roles you have created to this user `UPS_GRANTOR` by running the statements below.
 
-   ```SQL
+```SQL
 grant  "genericRoleForOO" to UPS_GRANTOR WITH ADMIN OPTION;
 grant  "genericRoleForAP" to UPS_GRANTOR WITH ADMIN OPTION;
-	```
+```
 
 4.	Now the user `UPS_GRANTOR` is assigned both roles that were created previously for collaborating on the project.
 

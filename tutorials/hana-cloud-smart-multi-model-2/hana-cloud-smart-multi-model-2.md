@@ -63,19 +63,19 @@ Before, we can create our first column using this SRS, we need to install it on 
 
 2. Set the schema `DAT260` by executing this statement:
 
-   ```SQL
+```SQL
 SET SCHEMA DAT260;
 ```
 
 3. Paste this statement to the console and execute it:
 
-   ```SQL
+```SQL
 CREATE PREDEFINED SPATIAL REFERENCE SYSTEM IDENTIFIED BY 32630;
 ```
 
 4. A list of all installed Spatial Reference Systems can be found in the table [`ST_SPATIAL_REFERENCE_SYSTEMS`(*)](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/LATEST/en-US/7a2ea357787c101488ecd1b725836f07.html). To confirm that the above statement has installed `SRS 32630`, you can check the result by executing this statement:
 
-   ```SQL
+```SQL
 SELECT * FROM ST_SPATIAL_REFERENCE_SYSTEMS WHERE SRS_ID = 32630;
 ```
 

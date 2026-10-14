@@ -157,20 +157,20 @@ Once you have filled in all information in this statement, you can run it to cre
 
 1.	To trigger the actual calculation of the required anonymization steps, the view then needs to be refreshed:
 
-   ```SQL
+```SQL
 -- refresh creates the metadata (before, it's not queryable)
 REFRESH VIEW "[view_name]" ANONYMIZATION;
 ```
 
 2.	To show the results of the anonymization, you can use a SELECT statement:
 
-   ```SQL
+```SQL
 -- shows the results
 SELECT * FROM "[view_name]";
 ```
 3.	If you want to double-check if there are no individual cases with unique combinations of quasi-identifiers left in the view, you can run this statement:
 
-   ```SQL
+```SQL
 -- double checks if there are any singled-out ones left --> should be empty
 SELECT "column1", "column2", "column_n", count(*) FROM "[view_name]"
 GROUP BY "column1", "column2", "column_n"
@@ -181,7 +181,7 @@ HAVING count(*)=1;
 
 4.	To examine if your anonymization was successful, you might also check how many people are indistinguishable as specified by the parameter k. To do so, you can run this statement:
 
-   ```SQL
+```SQL
 -- show the actual counts
 SELECT "[column1]", "[column2]", "[column_n]", count(*) as "Count" FROM "[view_name]"
 GROUP BY "[column1]","[column2]","[column_n]"
@@ -212,7 +212,7 @@ If you open the **Explain Plan** of your anonymization view, you can examine the
 
 4. To understand the need for anonymization, run the SQL query on the sample data as given below:
 
-   ```SQL
+```SQL
 SELECT "start_year", "gender", "zipcode", "salary", count(*) as "Count" FROM "ANON_SAMPLE"
 GROUP BY "start_year", "gender", "zipcode", "salary" ORDER by "Count" ASC;
 ```
