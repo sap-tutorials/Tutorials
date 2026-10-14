@@ -96,7 +96,7 @@ You define the entities that have to be deployed, namely modules and resources r
 
 2. Using a text editor, enter the following data in the file:
 
-   ```YAML
+```YAML
 _schema-version: '3.1'
 ID: com.example.demo.basic.config
 extends: com.example.demo.basic
@@ -109,7 +109,7 @@ resources:
        id: dbalias
        user-id: myuser
        password : mypassword
-   ```
+```
 
     The example above instructs the SAP BTP to:
 
