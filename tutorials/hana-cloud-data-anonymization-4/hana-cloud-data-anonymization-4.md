@@ -53,7 +53,7 @@ To use L-Diversity, you only need to slightly change the statement for creating 
 
 4.	You need to add a `COLUMN PARAMETERS` expression defining the type of data in the sensitive column {`"is sensitive":true`}
 
-   ```SQL
+```SQL
 CREATE VIEW "[view_name]" ("id", "[column1]", "[column_n], "[column_sensitive]")
 AS
 SELECT "id", "[column1]", "[column_n], "[column_sensitive]"
@@ -76,7 +76,7 @@ The higher the value you specify for the L-parameter, the more people in each gr
 
 1. First, you must create a sample table `PERSONALDATA` that has sensitive information on people regarding their age. Run the following SQL codes in your SAP HANA Database Explorer.
 
-   ```SQL
+```SQL
 CREATE COLUMN TABLE PERSONALDATA (
  -- sequence column
 ID BIGINT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -92,7 +92,7 @@ AGE NVARCHAR(3) NOT NULL);
 
 2. Now, you need to insert information into each column of your table.
 
-   ```SQL
+```SQL
 INSERT INTO PERSONALDATA VALUES ('Peter', 'm', 'Berlin', '30');
 INSERT INTO PERSONALDATA VALUES ('Sigrid', 'f', 'Cologne', '31');
 INSERT INTO PERSONALDATA VALUES ('François', 'm', 'Paris', '24');
@@ -105,7 +105,7 @@ INSERT INTO PERSONALDATA VALUES ('Fabienne', 'f', 'Toulouse', '28');
 
 3. Based on the table created above, here is an example of how a completed statement could look like for an anonymized view on a table that contains two quasi-identifying columns (gender and location) as well as a sensitive age column. In this view, at least `K=2` people should be indistinguishable based on their quasi-identifiers and at least `L=2` people should have different age values:
 
-   ```SQL
+```SQL
 CREATE VIEW PERSONALDATA_L_ANON (ID, GENDER, LOCATION, AGE)
 AS SELECT ID, GENDER, CITY AS LOCATION, AGE
 FROM PERSONALDATA
