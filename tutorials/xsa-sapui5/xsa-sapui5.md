@@ -108,7 +108,8 @@ $.ajaxSetup({
 	    });
 	    return token;
 	}
-```
+
+```
 
 And here is the code for `error.js`:
 
@@ -181,7 +182,9 @@ function oDataFailed(oControlEvent) {
 
 	return;
 }
-```
+
+
+```
 
 Finally check that your `common` folder also has a file named `index.js`. You likely created this in a previous tutorial. If not, please create it now  with the following content:
 
@@ -303,7 +306,9 @@ sap.ui.define([
 		}
 	});
 });
-```
+
+
+```
 
 Here you initialize the SAPUI5 component and in doing so you create an instance of the JSON configuration model. You also load your first view which you will create in the next step.
 
@@ -641,7 +646,8 @@ sap.ui.define([
 		});
 
 	}
-);
+);
+
 ```
 
 
@@ -699,9 +705,13 @@ errorText=Sorry, a technical error occurred! Please try again later.
 
 
 ### Run and test the web module
-So now run the `web` module. It will need to rebuild and redeploy all the newly added artifacts.
 
-In the running tab, you should see the `index.html` from earlier. Adjust the URL and add `/odataView`.Test the Execute Service button
+
+So now run the `web` module. It will need to rebuild and redeploy all the newly added artifacts.
+
+In the running tab, you should see the `index.html` from earlier. Adjust the URL and add `/odataView`.
+
+Test the Execute Service button
 
 ![results](15.png)
 
