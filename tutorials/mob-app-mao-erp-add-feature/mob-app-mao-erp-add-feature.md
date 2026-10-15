@@ -2,7 +2,6 @@
 parser: v2
 author_name: Jose Luis Phillips
 author_profile: https://github.com/I545182
-auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-service-and-asset-manager ]
 primary_tag: software-product>sap-service-and-asset-manager
@@ -50,7 +49,7 @@ In this mission you will create a custom feature and assign to a persona in your
     | User Persona | **`MAINTENANCE_TECHNICIAN`** |
     | App. Feature Id | **`ZFLIGHT`** |
     | In-Scope | enabled |
-    | Active Flag | enabled | 
+    | Active Flag | enabled |
 
 
 ### Assign oMDO to Feature
@@ -66,7 +65,8 @@ This step is required once you have created an oMDO which you would like to use 
     | App. Feature Id | **`ZFLIGHT`** |
     | oMDO Id | **`ZSAM<#>_FLIGHT`** |
     | In-Scope | enabled |
-    | Active Flag | enabled | 
+    | Active Flag | enabled |
+
 
 ### Test from Gateway Client
 

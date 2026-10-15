@@ -2,7 +2,6 @@
 parser: v2
 author_name: Jose Luis Phillips
 author_profile: https://github.com/I545182
-auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-service-and-asset-manager ]
 primary_tag: software-product>sap-service-and-asset-manager
@@ -24,7 +23,7 @@ In this mission you will add an Entity to your SAP Service and Asset Manager ser
 **Features**
 
 1. Use up to 5 input filters in online requests.
-Sample URI: **/sap/opu/odata/SAP_SRV_ASSET_MANAGER_2511/ZFlights?$filter=CarrId eq 'DLTA' and Date ge datetime'2024-10-15T00:00:00'**
+Sample URI: **/sap/opu/odata/MERP/SAP_ONLINE_LOOKUP_EXT_<#>/ZFlights?$filter=FlightNumber eq '0790' and Date ge datetime'2024-07-11T00:00:00'**
 
 2. Define up to 5 oMDO Data Filters.
 
@@ -74,7 +73,7 @@ The database tables are stored as a filter of the oMDO.
 
 ### Create Entity
 
-Note, an offline entity must be assigned to a Feature (see [Create Feature via MAIF Config Panel](https://developers.sap.com/tutorials/mob-app-mao-erp-add-feature.html)).
+Please note an offline entity must be assigned to a Feature (see [Create Feature via MAIF Config Panel](https://developers.sap.com/tutorials/mob-app-mao-erp-add-feature.html)).
 
 1. Click **ConfigPanel Home**. Select **oData Model Configuration**. Click **Create** and enter fields below.
 
@@ -87,7 +86,7 @@ Note, an offline entity must be assigned to a Feature (see [Create Feature via M
     | Entity Type Name | **`ZFlight`** |
     | Mobile Application | **`SAP Service and Asset Manager <#>`** |
     | oData Service Id | **`/MERP/SAP_ONLINE_LOOKUP_EXT_<#>`** |
-    | oMDO Id | **`ZSAM2511_FLIGHT`** |
+    | oMDO Id | **`ZSAM<#>_FLIGHT`** |
     | oMDO Entity Type | **`SFLIGHT : SFLIGHT`** |
     | Entityset Name | **`ZFlights`** |
     | Active | **`Yes`** |
@@ -101,7 +100,7 @@ Note, an offline entity must be assigned to a Feature (see [Create Feature via M
     | Entity Type Name | **`ZFlight`** |
     | Mobile Application | **`SAP Service and Asset Manager <#>`** |
     | oData Service Id | **`/MERP/SAP_SRV_ASSET_MANAGER_<#>`** |
-    | oMDO Id | **`ZSAM2511_FLIGHT`** |
+    | oMDO Id | **`ZSAM<#>_FLIGHT`** |
     | oMDO Entity Type | **`SFLIGHT : SFLIGHT`** |
     | Entityset Name | **`ZFlights`** |
     | Active | **`By Feature`** |
@@ -116,7 +115,7 @@ Note, an offline entity must be assigned to a Feature (see [Create Feature via M
     ![Add Properties](add_properties.png)
 
 
-### Test from Gateway Client
+### Test from Gateway Client - Input Filters
 
 1. Execute transaction **/IWFND/GW_CLIENT** from the SAP GUI to open the Gateway Client. Open **Metadata** menu option, select **Cleanup Cache**. Enter the fields below then execute the request.
 
@@ -161,7 +160,7 @@ Note, an offline entity must be assigned to a Feature (see [Create Feature via M
     >**NOTE**: Other Filter Rule Types are also supported.
 
 
-### Test from Gateway Client
+### Test from Gateway Client - Data Filters
 
 1. Execute transaction **/IWFND/GW_CLIENT** from the SAP GUI to open the Gateway Client. Enter the fields below then execute the request.
 
