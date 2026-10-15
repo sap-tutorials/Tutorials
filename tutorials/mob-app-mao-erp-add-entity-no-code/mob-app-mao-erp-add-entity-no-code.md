@@ -73,7 +73,7 @@ The database tables are stored as a filter of the oMDO.
 
 ### Create Entity
 
-Please note an offline entity must be assigned to a Feature (see [Create Feature via MAIF Config Panel](https://developers.sap.com/tutorials/mob-app-mao-erp-add-feature.html)).
+**NOTE**: An offline entity must be assigned to a Feature (see [Create Feature via MAIF Config Panel](https://developers.sap.com/tutorials/mob-app-mao-erp-add-feature.html)).
 
 1. Click **ConfigPanel Home**. Select **oData Model Configuration**. Click **Create** and enter fields below.
 
