@@ -3,7 +3,7 @@ author_name: Boaz Wimmer, Hani Lachnish, Lindsay Bert
 author_profile: https://github.com/LindsayBert  
 keywords: tutorial
 auto_validation: true
-time: 120
+time: 120 
 tags: [ tutorial>beginner, type>tutorial, software-product>sap-business-technology-platform, topic>cloud, software-product>sap-build-work-zone--advanced-edition ]
 primary_tag: software-product>sap-build-work-zone--advanced-edition
 parser: v2
@@ -27,7 +27,7 @@ To make sure that your domain is trusted by way of activated server certificates
 ![Configuration Process](1-configuration-process-diagram.png)
 
 ## Prerequisites
- - You've entitled the Custom Domain Manager to your subaccount. For more information, see [Manage Entitlements Using the Cockpit](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html).
+ - You have entitled the Custom Domain Manager to your subaccount. For more information, see [Manage Entitlements Using the Cockpit](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html).
  - You have entitled the SAP Custom Domain service (plan: custom_domains) to your subaccount. Every server certificate requires 1 unit of quota.
  - You have subscribed to the Custom Domain Manager in the SAP BTP cockpit. For more information, see [Initial Setup](https://help.sap.com/docs/custom-domain/custom-domain-manager/initial-setup?version=Cloud).
  - You have acquired the domain names to be used by your applications. Have a look at the [Prerequisites](https://help.sap.com/docs/custom-domain/custom-domain-manager/prerequisites?version=Cloud). 
@@ -46,15 +46,33 @@ To make sure that your domain is trusted by way of activated server certificates
 
 ### Manage reserved and custom domains
 
-> To make your applications reachable and secure under your own domain, use the **Custom Domain Manager** to create and manage your reserved and custom domains. The reserved domain should be your parent domain (for example, `prod.mycompany.com`). The custom domain is created based on your reserved domain (for example, `workzone.prod.mycompany.com`).
-The best practice is to use 3 different subaccounts for **Dev**, **QA** and, **Prod**, so we recommend creating 3 reserved domains accordingly. Example: **dev.mycompany.com**, **qa.mycompany.com**, **prod.mycompany.com**.
-Then perform the custom domain configuration steps such as creating custom domains, server certificate etc, for all 3 subaccounts.
+> To make your applications reachable and secure under your own domain, use the **Custom Domain Manager** to create and manage your reserved and custom domains. 
+
+- Option 1: If you want to use a single reserved domain across all three subaccounts (Dev, QA, and Prod), create the reserved domain in a central subaccount and share the custom domains with the other subaccounts:
+
+    Uncheck `Continue with current subaccount's list of subscriptions` and then enter the target subaccount where the custom domain will be created.        
+
+
+    ![Reserved domains](3a-reserved-domains1.png)
+
+    
+ - Option 2: If you prefer to have a separate reserved domain for each environment, create one reserved domain in each subaccount (Dev, QA, and Prod). In other words, create 3 reserved domains. : For example: `dev. mycompany.com`, `qa.mycompany.com`, and `prod.mycompany.com`. Continue with custom domain creation in each of the subaccounts.
+ 
+    This option is based on creating the reserved domain in each subaccount (Dev, QA, and Prod)
+
+    
+    ![Reserved domains](3b-reserved-domains2.png)
+
+    
+
+
+Now perform the custom domain configuration steps such as creating custom domains, server certificate etc, for all 3 subaccounts.
 
 1. Open the SAP BTP cockpit, and log on to the **Custom Domain Manager**.
 
 2. Choose the **Domains** tile.
 
-      ![Reserved domains](3-reserved-domains.png)
+    ![Select domain tile](3-reserved-domains.png)
 
 3. Click **Add**  to add a domain name that you want to reserve for this landscape and associated extension landscapes. For example: `mycompany.com`.
 
@@ -86,13 +104,32 @@ Then perform the custom domain configuration steps such as creating custom domai
 
     If you have content providers in multiple subaccounts (for example, dev/test/prod), make sure that every subaccount has its own custom domain for the SAP Build Work Zone subscription and destination. The destination content could be similar, but the destination’s name should be different.
     
-    Here's an example:
+    Example of both options:
 
-    | :------------- | :------------- | :------------- | :-------------
-    | **Runtime Destination Domain**     | **DNS CNAME** | **SaaS Route**        | **SAP Build Work Zone Domain**
-    | xyz200.prod.mycompany.com       | CNAME api.cf.eu10.hana.ondemand.com. | portal-prod-sapdelim-xyz200.workzone.cfapps.eu10.hana.ondemand.com | workzone.prod.mycompany.com
-    | xyz300.qa.mycompany.com    |  CNAME api.cf.eu10.hana.ondemand.com. | portal-qa-sapdelim-xyz300.workzone.cfapps.eu10.hana.ondemand.com  | workzone.qa.mycompany.com.
-    | xyz400.dev.mycompany.com     |  CNAME api.cf.eu10.hana.ondemand.com. | portal-dev-sapdelim-xyz400.workzone.cfapps.eu10.hana.ondemand.com  | workzone.dev.mycompany.com.
+    - Option 1:
+
+    | **Runtime Destination Domain** | **DNS CNAME** | **SaaS Route** | **SAP Build Work Zone Domain** |
+| :--------- | :--------- | :--------- | :--------- |
+| xyz200.prod.mycompany.com | CNAME api.cf.eu10.hana.ondemand.com | portal-prod-sapdelim-xyz200.workzone.cfapps.eu10.hana.ondemand.com | workzone.prod.mycompany.com |
+| xyz300.qa.mycompany.com | CNAME api.cf.eu10.hana.ondemand.com | portal-qa-sapdelim-xyz300.workzone.cfapps.eu10.hana.ondemand.com | workzone.qa.mycompany.com |
+| xyz400.dev.mycompany.com | CNAME api.cf.eu10.hana.ondemand.com | portal-dev-sapdelim-xyz400.workzone.cfapps.eu10.hana.ondemand.com | workzone.dev.mycompany.com |
+
+    - Option 2:
+
+    | **Runtime Destination Domain** | **DNS CNAME** | **SaaS Route** | **SAP Build Work Zone Domain** |
+| **Runtime Destination Domain** | **DNS CNAME** | **SaaS Route** | **SAP Build Work Zone Domain** |
+| :--------- | :--------- | :--------- | :--------- |
+| xyz200.prod.mycompany.com | CNAME api.cf.eu10.hana.ondemand.com | portal-prod-sapdelim-xyz200.workzone.cfapps.eu10.hana.ondemand.com | workzone.prod.mycompany.com |
+| xyz300.qa.mycompany.com | CNAME api.cf.eu10.hana.ondemand.com | portal-qa-sapdelim-xyz300.workzone.cfapps.eu10.hana.ondemand.com | workzone.qa.mycompany.com |
+| xyz400.dev.mycompany.com | CNAME api.cf.eu10.hana.ondemand.com | portal-dev-sapdelim-xyz400.workzone.cfapps.eu10.hana.ondemand.com | workzone.dev.mycompany.com |
+
+> It is mandatory to create the destination custom domain at the same hierarchy level as the application custom domain, meaning it must use the same reserved domain.
+
+  For example:
+  - Application custom domain: workzone.prod.mycompany.com
+  - Destination custom domain: xyz200.prod.mycompany.com
+  In this example, both custom domains are created under the same reserved domain: prod.mycompany.com.
+
 
 7. From the Cloud Identity Services dashboard go to the **Applications & Resources** tab, and create a custom domain for your SAP Cloud Identity Services tenant. For example, `ias.prod.mycompany.com`.
 
