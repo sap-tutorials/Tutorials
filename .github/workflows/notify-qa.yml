@@ -1,0 +1,77 @@
+# .github/workflows/notify-qa.yml.template — copied INTO each *-Contribution repo
+name: Notify tutorials-qa
+on:
+  push:
+    # -Contribution repos are a MIXTURE of default branches: most default to
+    # `main`, but Tutorials-Contribution still defaults to `master`. List BOTH
+    # so this fires ONLY on the repo's default branch — and NEVER on feature
+    # branches. Without this filter a push to any branch (e.g. the devtoberfest
+    # validation-tutorial bot's `validation-tutorial/*` branches) dispatches a
+    # QA rebuild for a slug that exists only on that branch; QA discovery reads
+    # the default branch, so the slug is a phantom and the rebuild hard-fails
+    # "unknown slug in filter" (tutorials-ims#2097). Mirrors the branch filter
+    # in docs/authors/tutorial-repo-dispatch.yml (the PROD notify template).
+    branches: [master, main]
+    paths:
+      - 'tutorials/**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Determine changed slug(s)
+        id: slug
+        run: |
+          changed=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+            | awk -F/ '/^tutorials\//{print $2}' | sort -u)
+          count=$(echo "$changed" | grep -c . || true)
+          # Emit a scoped payload so the rebuild stays slug-targeted (~2 min)
+          # instead of demoting to a full-corpus rebuild (~10 min):
+          #   - exactly 1 changed tutorial  → slug=<slug>
+          #   - 2..CAP changed tutorials    → slugs=<csv>
+          #   - 0, >CAP, or any slug failing the strict charset → both empty
+          #     (full rebuild — a huge push is effectively full anyway, and an
+          #     invalid slug must never reach the dispatch payload).
+          # Mirrors the receiver validation in rebuild-content.yml's mode step.
+          SLUG_CAP=20
+          slug=""
+          slugs=""
+          valid=1
+          for s in $changed; do
+            case "$s" in *[!a-z0-9-]* | -* ) valid=0 ;; esac
+          done
+          if [ "$valid" = "1" ] && [ "$count" -ge 1 ] && [ "$count" -le "$SLUG_CAP" ]; then
+            if [ "$count" = "1" ]; then
+              slug="$changed"
+            else
+              slugs=$(echo "$changed" | paste -sd, -)
+            fi
+          fi
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
+      # GitHub App token (preferred). Activates when this Contribution repo has
+      # USE_GITHUB_APP=true and the TUTORIALS_APP_* secrets populated. Falls
+      # back to the classic TUTORIALS_POC_DISPATCH_TOKEN PAT while unset.
+      # Requires the App to hold Contents:write on sap-tutorials/tutorials-ims
+      # (repository_dispatch permission). See docs/developers/operations/github-app-setup.md.
+      # NOTE: the || fallback below only engages if App-token GENERATION fails —
+      # NOT if dispatch is unauthorized. Grant the App Contents:write on
+      # tutorials-ims BEFORE setting USE_GITHUB_APP=true here (see runbook).
+      - name: Generate GitHub App token
+        id: app-token
+        if: ${{ vars.USE_GITHUB_APP == 'true' }}
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.TUTORIALS_APP_ID }}
+          private-key: ${{ secrets.TUTORIALS_APP_PRIVATE_KEY }}
+          owner: sap-tutorials
+          repositories: tutorials-ims
+      - name: Fire repository_dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ steps.app-token.outputs.token || secrets.TUTORIALS_POC_DISPATCH_TOKEN }}
+          repository: sap-tutorials/tutorials-ims
+          event-type: tutorial-qa-updated
+          client-payload: '{"repo": "${{ github.repository }}", "slug": "${{ steps.slug.outputs.slug }}", "slugs": "${{ steps.slug.outputs.slugs }}", "sha": "${{ github.sha }}"}'
