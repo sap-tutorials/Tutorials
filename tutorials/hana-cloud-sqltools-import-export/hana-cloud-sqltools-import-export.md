@@ -3,7 +3,7 @@ author_name: Michelle Wang
 author_profile: https://github.com/MichelleWangSAP
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake]
+tags: [tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product-function>sap-hana-cloud--data-lake]
 primary_tag: software-product>sap-hana-cloud
 parser: v2
 ---
@@ -69,9 +69,9 @@ The following steps demonstrate how to export and import data from the MAINTENAN
 
     After completing the wizard, the contents of the MAINTENANCE table should be the same as before the delete statement was executed. Run the following SQL statement to confirm.
 
-   ```SQL
-   SELECT * FROM HOTELS.MAINTENANCE;
-   ```
+    ```SQL
+    SELECT * FROM HOTELS.MAINTENANCE;
+    ```
 
     ![Maintenance table](maintenance-table.png)
 
@@ -409,7 +409,7 @@ To try these out, follow the steps below.
 
     Choose **Local Computer** for the export location and provide a name for the archive. 
 
-    ![Target settings]](target.png)
+    ![Target settings](target.png)
 
     Next, select an export format such as CSV, and click **Export**.
 

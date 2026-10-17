@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>python]
+tags: [tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>python]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -64,13 +64,19 @@ pip3 --version
 pip3 install --upgrade pip
 ```
 
->On Linux or Mac, if you encounter permission issues, one way to solve the issue is to use `sudo` before the command.
->
->On Linux, if Python is installed but pip is not, it can be installed on openSUSE using Zypper as shown below.
+> [!TIP]
+> On Linux or Mac, if you encounter permission issues, one way to solve the issue is to use `sudo` before the command.
 
->```Shell (Linux)
->zypper install python3-pip
->```
+[OPTION BEGIN [Linux]]
+
+> [!NOTE]
+> If Python is installed but pip is not, it can be installed on openSUSE using Zypper as shown below.
+
+```Shell
+zypper install python3-pip
+```
+
+[OPTION END]
 
 The repository that contains Python packages is [PyPI](https://pypi.org/project/hdbcli/) and includes a package for the SAP HANA client for Python.
 
@@ -82,62 +88,74 @@ Run the following command to download and install the SAP HANA client for Python
 pip install hdbcli
 ```
 
->If an error is displayed that mentions "No matching distribution found for `hdbcli`, an alternate method is to install it from the SAP HANA client install folder as shown below. 
->
->Ensure that the filename is correct in the install command below because it might change depending on the version of `hdbcli` that you have.
->
-> ```Shell
-> cd C:\SAP\hdbclient
-> pip install hdbcli-2.20.15.zip
-> ```
+> [!NOTE]
+> If an error is displayed that mentions "No matching distribution found for `hdbcli`", an alternate method is to install it from the SAP HANA client install folder as shown below. 
 
-> If the install still fails, check [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) to ensure that a supported version of Python installed.
->
-> To upgrade to the latest available version, enter the following command:
-> ```Shell
-> pip install --no-cache-dir --upgrade hdbcli
-> ```
->
-> To uninstall `hdbcli`, run the following command:
-> ```Shell
-> pip uninstall hdbcli
-> ```
->
-> A specific version can be installed using the following command.
->
-> ```Shell
-> pip install hdbcli==2.18.22
-> ```
->
-> The list of installed packages can be shown with the following command.
->
-> ```Shell
-> pip list
-> ```
->
-> Details of an installed package such as `hdbcli` can be shown with the following command.
->
-> ```Shell
-> pip show hdbcli
-> ```
+```Shell
+cd C:\SAP\hdbclient
+pip install hdbcli-2.20.15.zip
+```
+
+> [!NOTE]
+> If the installation still fails, check [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) to ensure that a supported version of Python installed.
+
+#### Optional hdbcli Package Commands
+
+To upgrade to the latest available version, enter the following command:
+
+```Shell
+pip install --no-cache-dir --upgrade hdbcli
+```
+
+To uninstall `hdbcli`, run the following command:
+
+```Shell
+pip uninstall hdbcli
+```
+
+A specific version can be installed using the following command.
+
+```Shell
+pip install hdbcli==2.18.22
+```
+
+The list of installed packages can be shown with the following command.
+
+```Shell
+pip list
+```
+
+Details of an installed package such as `hdbcli` can be shown with the following command.
+
+```Shell
+pip show hdbcli
+```
 
 ### Create Python application that queries SAP HANA
 
-1. In a shell, create a folder named `python`, enter the newly created directory, and open a file name `pythonQuery.py` in an editor.
+1. In a shell, create a folder named `python`, enter the newly created directory, and open a file named `pythonQuery.py` in an editor.
 
-   ```Shell (Microsoft Windows)
-   mkdir %HOMEPATH%\HANAClientsTutorial\python
-   cd %HOMEPATH%\HANAClientsTutorial\python
-   notepad pythonQuery.py
-   ```
+    [OPTION BEGIN [Windows]]
 
-    Substitute `pico` below for your preferred text editor.  
+    ```Shell
+    mkdir %HOMEPATH%\HANAClientsTutorial\python
+    cd %HOMEPATH%\HANAClientsTutorial\python
+    notepad pythonQuery.py
+    ```
 
-   ```Shell (Linux or Mac)
-   mkdir -p $HOME/HANAClientsTutorial/python
-   cd $HOME/HANAClientsTutorial/python
-   pico pythonQuery.py
-   ```
+    [OPTION END]
+
+    [OPTION BEGIN [Mac and Linux]]
+
+    Substitute `pico` below for your preferred text editor.
+
+    ```Shell
+    mkdir -p $HOME/HANAClientsTutorial/python
+    cd $HOME/HANAClientsTutorial/python
+    pico pythonQuery.py
+    ```
+
+    [OPTION END]
 
 2. Add the code below to `pythonQuery.py`.
 
@@ -208,11 +226,12 @@ pip install hdbcli
    python pythonQuery.py
    ```
 
-    >On some Linux distributions, python refers to a 2.x version of Python.  If so, replace `python` with `python3`.
+    > [!NOTE]
+    > On some Linux distributions, python refers to a 2.x version of Python.  If so, replace `python` with `python3`.
 
-    ![python Query](python-app.png)
+    ![Python query](python-app.png)
 
-The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification](https://www.python.org/dev/peps/pep-0249/), which defines a set of methods that provide a consistent database interface, independent of the actual database being used.   
+The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification](https://www.python.org/dev/peps/pep-0249/), which defines a set of methods that provide a consistent database interface, independent of the actual database being used.
 
 - For further examples of accessing a database from Python, see [Python and SQL](https://www.python-course.eu/sql_python.php) and [Python MySQL](https://www.w3schools.com/python/python_mysql_insert.asp).  
 
@@ -232,7 +251,7 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
 3. Open the file `pythonQuery.py`.
 
-    ![Python Extension](extension.png)
+    ![Python extension](extension.png)
 
     If necessary, Visual Studio Code will recognize the `py` file extension and will suggest installing the Python extension.  Click **Install**.
 
@@ -244,11 +263,10 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
     Observe the variable values in the leftmost pane.  Step through code.
 
-    ![VS Code Debugging](debugging.png)  
+    ![Debugging in Visual Studio Code](debugging.png)  
 
 ### Knowledge check
 
 Congratulations! You have now created and debugged a Python application that connects to and queries an SAP HANA database.  
-
 
 ---

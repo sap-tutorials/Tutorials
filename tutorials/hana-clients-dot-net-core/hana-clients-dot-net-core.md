@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
+tags: [tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -39,114 +39,131 @@ If the `dotnet` command is not recognized, it means that the .NET SDK has not be
 
 If the .NET SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows or Mac.
 
-![.NET Core SDK Install](dotnet-install.png)
+![.NET Core SDK install](dotnet-install.png)
 
 On Linux, follow the instructions for the appropriate Linux version such as [Install the .NET SDK or the .NET Runtime on openSUSE](https://docs.microsoft.com/en-us/dotnet/core/install/linux-opensuse).
 
 In order for the shell to recognize that the .NET SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
->For further details on supported versions, see SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
+> [!NOTE]
+> For further details on supported versions, see SAP Note 3165810 - SAP HANA Client Supported Platforms.
 
 ### Create a .NET application that queries an SAP HANA database
 
 1. Create a new console app with the below commands:
 
-   ```Shell (Microsoft Windows)
-   cd %HOMEPATH%/HANAClientsTutorial
-   dotnet new console -o dotNET
-   ```  
+    [OPTION BEGIN [Windows]]
 
-   ```Shell (Linux or Mac)
-   cd $HOME/HANAClientsTutorial
-   dotnet new console -o dotNET
-   ```
+    ```Shell
+    cd %HOMEPATH%/HANAClientsTutorial
+    dotnet new console -o dotNET
+    ```
+
+    [OPTION END]
+
+    [OPTION BEGIN [Mac and Linux]]
+
+    ```Shell
+    cd $HOME/HANAClientsTutorial
+    dotnet new console -o dotNET
+    ```
+
+    [OPTION END]
 
 2. Add the SAP HANA .NET data provider which is available on [nuget](https://www.nuget.org/packages/Sap.Data.Hana.Net.v8.0/).  A list of available providers from SAP is available at [SAP-SE](https://www.nuget.org/profiles/SAP-SE).
 
-   ```Shell
-   cd dotNET
-   dotnet add package Sap.Data.Hana.Net.v8.0
-   ```
+    ```Shell
+    cd dotNET
+    dotnet add package Sap.Data.Hana.Net.v8.0
+    ```
 
-    ![HANAClientDriverDownload](HANAClientDriver.png)
+    ![HANA Client download](HANAClientDriver.png)
   
 3. Run the app to validate that SAP HANA driver can be loaded:
 
-   ```Shell
-   dotnet run
-   ```
+    ```Shell
+    dotnet run
+    ```
 
 4. Open an editor to edit the file `Program.cs`.
 
-   ```Shell (Windows)
-   notepad Program.cs
-   ```
+    [OPTION BEGIN [Windows]]
 
-   ```Shell (Linux or Mac)
-   pico Program.cs
-   ```
+    ```Shell
+    notepad Program.cs
+    ```
+
+    [OPTION END]
+
+    [OPTION BEGIN [Mac and Linux]]
+
+    ```Shell
+    pico Program.cs
+    ```
+
+    [OPTION END]
 
 5. Replace all content of `Program.cs` with the code below. Be sure to update values where necessary and save the file when finished.
 
-   ```C#
-   using System;
-   using Sap.Data.Hana;
-   namespace dotNETQuery
-   {
-       class Program
-       {
-           static void Main(string[] args)
-           {
-               try
-               {
-                   using (var conn = new HanaConnection("Server=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.hana.prod-xxxx.hanacloud.ondemand.com:443;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
+    ```C#
+    using System;
+    using Sap.Data.Hana;
+    namespace dotNETQuery
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                try
+                {
+                    using (var conn = new HanaConnection("Server=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.hana.prod-xxxx.hanacloud.ondemand.com:443;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
 
-                   // encrypt and sslValidateCertificate should be true for HANA Cloud connections
-                   // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
-                   // sslValidateCertificate should be set to false when connecting
-                   // to an on-premise SAP HANA instance that uses a self-signed certificate.
+                    // encrypt and sslValidateCertificate should be true for HANA Cloud connections
+                    // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
+                    // sslValidateCertificate should be set to false when connecting
+                    // to an on-premise SAP HANA instance that uses a self-signed certificate.
 
-                   {
-                       conn.Open();
-                       Console.WriteLine("Connected");
-                       var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER";
-                       using (var cmd = new HanaCommand(query, conn))
-                       using (var reader = cmd.ExecuteReader())
-                       {
-                           Console.WriteLine("Query result:");
-                           // Print column names
-                           var sbCol = new System.Text.StringBuilder();
-                           for (var i = 0; i < reader.FieldCount; i++)
-                           {
-                               sbCol.Append(reader.GetName(i).PadRight(20));
-                           }
-                           Console.WriteLine(sbCol.ToString());
-                           // Print rows
-                           while (reader.Read())
-                           {
-                               var sbRow = new System.Text.StringBuilder();
-                               for (var i = 0; i < reader.FieldCount; i++)
-                               {
-                                   var result = reader[i].ToString();
-                                   if (result is not null) {
-                                       sbRow.Append(result.PadRight(20));
-                                   }
-                               }
-                               Console.WriteLine(sbRow.ToString());
-                           }
-                           conn.Close();
-                       }
-                   }
-               }
-               catch (Exception ex)
-               {
-                   Console.WriteLine("Error - " + ex.Message);
-                   Console.WriteLine(ex.ToString());
-               }
-           }
-       }
-   }
-   ```
+                    {
+                        conn.Open();
+                        Console.WriteLine("Connected");
+                        var query = "SELECT TITLE, FIRSTNAME, NAME FROM HOTELS.CUSTOMER";
+                        using (var cmd = new HanaCommand(query, conn))
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            Console.WriteLine("Query result:");
+                            // Print column names
+                            var sbCol = new System.Text.StringBuilder();
+                            for (var i = 0; i < reader.FieldCount; i++)
+                            {
+                                sbCol.Append(reader.GetName(i).PadRight(20));
+                            }
+                            Console.WriteLine(sbCol.ToString());
+                            // Print rows
+                            while (reader.Read())
+                            {
+                                var sbRow = new System.Text.StringBuilder();
+                                for (var i = 0; i < reader.FieldCount; i++)
+                                {
+                                    var result = reader[i].ToString();
+                                    if (result is not null) {
+                                        sbRow.Append(result.PadRight(20));
+                                    }
+                                }
+                                Console.WriteLine(sbRow.ToString());
+                            }
+                            conn.Close();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error - " + ex.Message);
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+        }
+    }
+    ```
 
     Save and close the `Program.cs` file after replacing the code and updating the host and port.
 
@@ -154,11 +171,12 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
 6. Run the app:
 
-   ```Shell
-   dotnet run
-   ```
+    ```Shell
+    dotnet run
+    ```
 
-    >Before running the program make sure to be in the directory where Program.cs is saved
+    > [!TIP]
+    > Before running the program, make sure to be in the directory where Program.cs is saved.
 
     ![Result of running the app](result.png)
 
@@ -186,7 +204,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
 
     Observe the variable values in the leftmost pane.  Step through code.
 
-    ![VS Code Debugging](debugging.png)  
+    ![Visual Studio Code debugging](debugging.png)  
 
     For further information on debugging .NET apps consult [Tutorial: Debug a .NET Core console application using Visual Studio Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code) and [Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 

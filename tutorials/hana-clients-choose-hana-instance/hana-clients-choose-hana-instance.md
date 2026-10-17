@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
+tags: [tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -28,11 +28,12 @@ This tutorial covers how to configure an [SAP HANA](https://www.sap.com/products
 
 For more information on SAP HANA Cloud, consult [Introduction to SAP HANA Cloud](https://help.sap.com/docs/hana-cloud/feature-scope-description-for-sap-hana-cloud-3dd959f1b8574cb0ba19ab05cfc0d3ae/introduction-to-sap-hana-cloud).
 
->For connections from additional sources such as SAP Analytics Cloud, `Jupyter` Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](group.hana-cloud-database-connection-guides).
+> [!NOTE] For connections from additional sources such as SAP Analytics Cloud, `Jupyter` Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](group.hana-cloud-database-connection-guides).
 >
 >For connections to the SAP HANA Cloud, Data Lake, see the tutorial [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
->
->**IMPORTANT**: Complete the first 3 tutorials, and then you can select any of the following tutorials about connecting with different client interfaces.
+
+> [!TIP]
+> Complete the first 3 tutorials, and then you can select any of the following tutorials about connecting with different client interfaces.
 
 ---
 
@@ -49,15 +50,15 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 
 Here are a few benefits of using SAP HANA Cloud:
 
-- Software updates are automatically applied by SAP.
+- Software updates are automatically applied by SAP
 
-- Hardware is managed by a cloud provider (e.g. AWS, Azure, or GCP).
+- Hardware is managed by a cloud provider (e.g. AWS, Azure, or GCP)
 
 - Many data center locations to choose from as listed in the [SAP Discovery Center](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan)
 
-- [Backups](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/backup-and-recovery) are automatic and recovery can be initiated in SAP HANA Cloud Central.    
+- [Backups](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/backup-and-recovery) are automatic and recovery can be initiated in SAP HANA Cloud Central
 
-- The memory, compute and storage settings can be changed as your needs change.  Note a few operations can be performed using [service requests](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/service-requests).
+- The memory, compute and storage settings can be changed as your needs change.  Note a few operations can be performed using [service requests](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/service-requests)
 
 - The ability is provided to expand data storage from in-memory, to native storage extensions, to a data lake, while providing a common access layer that enables you to have further control over performance and cost.  See also [Lower Your Data Management Costs With SAP HANA Cloud](https://blogs.sap.com/2019/10/29/lower-your-data-management-costs-with-sap-hana-cloud/).
 
@@ -99,9 +100,10 @@ Continue with this tutorial once you have created an SAP HANA Cloud instance as 
 
 1. Once the SAP HANA Cloud instance is created, take note of the SQL endpoint (host:port) needed to connect to the database. The endpoint can be obtained within the Actions menu on the Instances page. This will be needed in subsequent tutorials in the mission.  
 
-    ![SQL Endpoint](SQLEndpoint.png)
+    ![SQL endpoint](SQLEndpoint.png)
 
-    >The SAP HANA Cloud, HANA database free tier instances are shut down on a nightly basis and will need to be restarted before working with them the next day.  
+    > [!NOTE]
+    > The SAP HANA Cloud, HANA database free tier instances are shut down on a nightly basis and will need to be restarted before working with them the next day.
 
 2. From the Actions menu, Open a SQL console for your database instance.
 
@@ -113,31 +115,31 @@ Continue with this tutorial once you have created an SAP HANA Cloud instance as 
 
 3. Run the following query to see the name of the database you are currently connected to.  
 
-   ```SQL
-   SELECT * FROM M_DATABASE;
-   ```
+    ```SQL
+    SELECT * FROM M_DATABASE;
+    ```
 
-    ![Database Explorer Result](m-database.png)  
+    ![SQL query in the SQL console](m-database.png)  
 
 4. A schema is a container for other database objects such as tables and views and the current schema can be seen via SQL as shown below.  The DUMMY table is available in every HANA database that has one column and one row.  It provides a convenient  way to call a function or perform a simple test.
 
-   ```SQL
-   SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
-   ```
+    ```SQL
+    SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
+    ```
 
     ![SQL console results](select-user-schema.png)
 
 5. To see the list of services, enter the following SQL statement:
 
-   ```SQL
-   SELECT * FROM M_SERVICES;
-   ```
+    ```SQL
+    SELECT * FROM M_SERVICES;
+    ```
 
 6. To see information about the database server, enter the following SQL statement:
 
-   ```SQL
-   SELECT * FROM M_HOST_INFORMATION;
-   ```
+    ```SQL
+    SELECT * FROM M_HOST_INFORMATION;
+    ```
 
 >Views starting with `M_` are examples of [monitoring views](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-sql-reference-guide/monitoring-views) and contain statistics and status details.
 
@@ -157,39 +159,33 @@ The following steps will demonstrate connecting to and examining a SAP HANA on p
 
 1. Enter the following to connect to the system database:
 
-   ```Shell
-   hdbsql -n localhost:39013 -u SYSTEM -p Your_Password
-   ```
+    ```Shell
+    hdbsql -n localhost:39013 -u SYSTEM -p Your_Password
+    ```
 
     ![hdbsql connected](hdbsql-connect.png)
 
     Notice that the database being connected to is SYSTEMDB.
 
-    The example above uses localhost since hdbsql is running on the same machine that the database is trying to connect to.  The host name, `hxehost`, is seen in the terminal above.  
-
-    >If hdbsql is not found and you are logged in with another user, try connecting as the user `hxeadm` and run the command again.
-
-   ```Shell
-   su hxeadm
-   ```
+    The example above uses localhost since hdbsql is running on the same machine that the database is trying to connect to.
 
     If the hdbsql command cannot be found, simply read through the following examples.  The installation and further examples of running HDBSQL will be covered in subsequent tutorials.
 
 2. Determine the IP address of the machine that is running SAP HANA on premise.  Record the value as it will be needed in later tutorials in the mission.  It is important to note the IP address or host name of the machine, as this will be needed in later tutorials.
 
-   ```Shell
-   ip addr
-   ```
+    ```Shell
+    ip addr
+    ```
 
 3. The following are a some examples of [interactive options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/c24d054bbb571014b253ac5d6943b5bd.html) followed by a SQL query, which when run against **SYSTEMDB** returns information about the databases running on the SAP HANA instance.
 
-   ```SQL
-   \al on
-   \pa off
-   \s
-   SELECT * FROM SYS_DATABASES.M_SERVICES WHERE SQL_PORT != 0;
-   \serverstats
-   ```
+    ```SQL
+    \al on
+    \pa off
+    \s
+    SELECT * FROM SYS_DATABASES.M_SERVICES WHERE SQL_PORT != 0;
+    \serverstats
+    ```
 
     ![hdbsql commands](hdbsql-commands.png)
 
@@ -207,22 +203,22 @@ The following steps will demonstrate connecting to and examining a SAP HANA on p
 
 4. Enter one of the below commands to exit from viewing the results of the select statement.  Note that commands can be prefixed with a forward slash(\\) or a colon(:).
 
-   ```HDBSQL
-   \q
-   :q
-   ```
+    ```HDBSQL
+    \q
+    :q
+    ```
 
 5. Connect using the instance number and database name as shown below.
 
-   ```Shell
-   hdbsql -n localhost -i 90 -d HXE -u SYSTEM -p Your_Password
-   ```
+    ```Shell
+    hdbsql -n localhost -i 90 -d HXE -u SYSTEM -p Your_Password
+    ```
 
 6. Enter the following to display database connection information.
 
-   ```HDBSQL
-   \s
-   ```
+    ```HDBSQL
+    \s
+    ```
 
     Notice that this time the database connected to is HXE.  
 
