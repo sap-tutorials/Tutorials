@@ -44,14 +44,18 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      # Determine the single changed tutorial slug (if exactly one), so the
-      # rebuild can run in fast slug-targeted mode (~2 min) instead of a full
-      # rebuild (~10 min). Mirrors notify-qa.yml.template. Needs full history
-      # (fetch-depth: 0) for the before..after diff. Empty slug (0 or >1
-      # tutorials touched) → rebuild-content.yml falls back to a full rebuild.
+      # Determine the changed tutorial slug(s), so the rebuild can run in fast
+      # slug-targeted mode (~2 min) instead of a full rebuild (~10 min). Mirrors
+      # notify-qa.yml.template. Needs full history (fetch-depth: 0) for the
+      # before..after diff.
+      #   - exactly 1 changed tutorial  → slug=<slug>
+      #   - 2..CAP changed tutorials    → slugs=<csv>  (#2803)
+      #   - 0, >CAP, or any invalid slug charset → both empty (full rebuild —
+      #     a huge push is effectively full anyway, and an invalid slug must
+      #     never reach the dispatch payload).
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
-      - name: Determine changed slug
+      - name: Determine changed slug(s)
         id: slug
         run: |
           BEFORE="${{ github.event.before }}"
@@ -83,19 +87,31 @@ jobs:
           changed=$(git diff --name-only --diff-filter=d "$BEFORE" "$SHA" \
             | awk -F/ '/^tutorials\//{print $2}' | sort -u)
           count=$(echo "$changed" | grep -c . || true)
-          # Only emit a slug when EXACTLY one tutorial changed AND it matches the
-          # strict slug charset (whole-value POSIX case match). Anything else →
-          # empty slug → rebuild-content.yml runs a full rebuild. Validating here
-          # (sender) too — not just the receiver — keeps a malformed dir name out
-          # of the dispatch payload entirely.
-          if [ "$count" = "1" ] && [ -n "$changed" ]; then
-            case "$changed" in
-              *[!a-z0-9-]* | -* ) echo "slug=" >> "$GITHUB_OUTPUT" ;;
-              *) echo "slug=$changed" >> "$GITHUB_OUTPUT" ;;
-            esac
-          else
-            echo "slug=" >> "$GITHUB_OUTPUT"
+          # Emit a scoped payload so the rebuild stays slug-targeted (~2 min)
+          # instead of demoting to a full-corpus rebuild (~10 min):
+          #   - exactly 1 changed tutorial  → slug=<slug>
+          #   - 2..CAP changed tutorials    → slugs=<csv>  (#2803)
+          #   - 0, >CAP, or any slug failing the strict charset → both empty.
+          # Validating here (sender) too — not just the receiver — keeps a
+          # malformed dir name out of the dispatch payload entirely. Mirrors the
+          # receiver validation in rebuild-content.yml's mode step and the
+          # notify-qa.yml.template sender.
+          SLUG_CAP=20
+          slug=""
+          slugs=""
+          valid=1
+          for s in $changed; do
+            case "$s" in *[!a-z0-9-]* | -* ) valid=0 ;; esac
+          done
+          if [ "$valid" = "1" ] && [ "$count" -ge 1 ] && [ "$count" -le "$SLUG_CAP" ]; then
+            if [ "$count" = "1" ]; then
+              slug="$changed"
+            else
+              slugs=$(echo "$changed" | paste -sd, -)
+            fi
           fi
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
       # GitHub App token (preferred). Activates when this repo has
       # USE_GITHUB_APP=true and the TUTORIALS_APP_* secrets populated. Falls
       # back to the classic TUTORIALS_DISPATCH_TOKEN PAT while unset.
@@ -119,6 +135,11 @@ jobs:
           # Single changed slug (empty if 0 or >1 or non-slug-charset) →
           # rebuild-content.yml uses it to run slug-targeted (fast) vs full.
           SLUG: ${{ steps.slug.outputs.slug }}
+          # Multi-slug (#2803): a push that changed 2..CAP tutorials sends a
+          # comma-separated list so the rebuild stays slug-targeted (O(N))
+          # instead of demoting to a ~10-min full rebuild. Receiver validates
+          # every entry against the strict slug charset before use.
+          SLUGS: ${{ steps.slug.outputs.slugs }}
           # Tutorials whose dir was entirely deleted (#2349) → rebuild-content.yml
           # routes these to the unpublish (soft-delete) lane, not the fetch lane.
           DELETED_SLUGS: ${{ steps.slug.outputs.deleted_slugs }}
@@ -134,8 +155,8 @@ jobs:
           # of the JSON — the string-interpolation form was a json-injection risk).
           BODY=$(jq -nc \
             --arg repo "$REPO" --arg ref "$REF" --arg sha "$SHA" \
-            --arg env "$TARGET_ENV" --arg slug "$SLUG" --arg deleted "$DELETED_SLUGS" \
-            '{event_type:"tutorial-updated", client_payload:{repository:$repo, ref:$ref, sha:$sha, environment:$env, slug:$slug, deleted_slugs:$deleted}}')
+            --arg env "$TARGET_ENV" --arg slug "$SLUG" --arg slugs "$SLUGS" --arg deleted "$DELETED_SLUGS" \
+            '{event_type:"tutorial-updated", client_payload:{repository:$repo, ref:$ref, sha:$sha, environment:$env, slug:$slug, slugs:$slugs, deleted_slugs:$deleted}}')
           curl -X POST \
             -H "Authorization: Bearer ${DISPATCH_TOKEN}" \
             -H "Accept: application/vnd.github+json" \
