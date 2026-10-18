@@ -36,7 +36,7 @@ SAP Private Link service establishes a private connection between applications r
 
 ---
 
-## Step 1: Check offerings of Private Link service
+### Step 1: Check offerings of Private Link service
 
 After you’ve logged in as described in [Install the Cloud Foundry Command Line Interface (CLI)](https://developers.sap.com/tutorials/cp-cf-download-cli.html), access the Service Marketplace of SAP BTP. Open a command prompt on your computer and type in the following:
 
@@ -56,7 +56,7 @@ privatelink   standard    Link service establishes a private connection between 
 
 Make sure you can see `privatelink` in the sample output.
 
-## Step 2: Get Resource-ID for Google Cloud Private Service Connect
+### Step 2: Get Resource-ID for Google Cloud Private Service Connect
 
 To create and enable a private link, you need to define the connection to the service first. To do so, you need the Service attachment:
 
@@ -64,7 +64,7 @@ To create and enable a private link, you need to define the connection to the se
 2. Navigate to the *Private Service Connect* for which you want to find out the Service Attachment, for example: Private Service Connect > Published services.
 3. Select a published service and copy its **Service Attachment** path.
 
-## Step 3: Create private link service
+### Step 3: Create private link service
 
 Currently, you do not have any service instances enabled. Therefore, you need to create one. To create a new private link, you need the following information:
 
@@ -84,7 +84,7 @@ cf create-service privatelink standard privatelink-test -c '{"resourceId": "Serv
 If the creation of the service instance was accepted, you receive a success message telling you to proceed.
 > Tip: You can add an optional description to your CF CLI `cf create service` command, for example `"requestMessage": "Please approve ASAP."` to provide some extra context.
 
-## Step 4: Check status of private link
+### Step 4: Check status of private link
 
 To check the current status of the newly created service instance, you need the name of your service instance (in this example `privatelink-test`). Type in the following:
 
@@ -102,7 +102,7 @@ started:   <date>
 updated:   <date>
 ```
 
-## Step 5: Bind application to service instance
+### Step 5: Bind application to service instance
 
 Upon the creation of a binding between a CF application and a private link service instance, Private Link service creates a space-scoped Cloud Foundry application security group that enables network access to the IP address associated with the Private Endpoint.
 
