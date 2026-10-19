@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
+tags: [tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -33,9 +33,10 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 
 1. Open the administrator by entering ODBC after clicking on the Microsoft Windows start icon.  
 
-    >Ensure that you choose the 64-bit version if you have the 64-bit version of the SAP HANA client installed.
+    > [!NOTE]
+    > Ensure that you choose the 64-bit version if you have the 64-bit version of the SAP HANA client installed.
 
-    ![start ODBC Administrator](start-odbc.png)
+    ![Start the ODBC Administrator](start-odbc.png)
 
 2. Click the **Drivers** tab and view the installed drivers.  
 
@@ -53,8 +54,10 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 
     ![New data source](Create-new-data-source.png)
 
-6. Example data source configuration for SAP HANA Cloud.   
-    >For the host, paste the SQL Endpoint from your instance. For more details, review [Choose an SAP HANA Database](https://developers.sap.com/tutorials/hana-clients-choose-hana-instance.html).
+6. Example data source configuration for SAP HANA Cloud.  
+
+    > [!NOTE]
+    > For the host, paste the SQL Endpoint from your instance. For more details, review [Choose an SAP HANA Database](https://developers.sap.com/tutorials/hana-clients-choose-hana-instance.html).
 
     ![ODBC HANA Cloud](ODBC-HC.png)  
 
@@ -72,7 +75,8 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 
 9. Press OK to save the data source.  
 
-    >Saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
+    > [!NOTE]
+    > Saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
 
 For additional details see [Connect to SAP HANA via ODBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/66a4169b84b2466892e1af9781049836.html).
 
@@ -88,53 +92,58 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
 2. On a Mac, unixODBC can be installed using [Homebrew](https://brew.sh).  
 
-   ```Shell (Mac)
-   brew install unixodbc
-   ```
+    [OPTION BEGIN [Mac]]
+
+    ```Shell
+    brew install unixodbc
+    ```
+
+    [OPTION END]
 
 3. The following commands can be used to confirm that unixODBC is installed, determine the location of the .odbc.ini file (if it exists), and to confirm the location of the SAP HANA client install that contains the ODBC driver.
 
-   ```Shell (Linux or Mac)
-   odbcinst -j
-   which hdbsql
-   ```
+    ```Shell
+    odbcinst -j
+    which hdbsql
+    ```
 
     ![odbcinst](odbcinst.png)
 
 4. Navigate to a directory, similar to the first one that is highlighted in the screenshot above.
 
-   ```Shell (Linux or Mac)
-   cd $HOME
-   ```
+    ```Shell
+    cd $HOME
+    ```
 
 5. Edit the `.odbc.ini` file (or create it if it does not exist) to add one or more data sources. Be sure to configure the values of `servernode` and `driver` so that they conform with your setup.
 
-    >The driver's file extension is `dylib` instead of `so` on a Mac.
+    > [!NOTE]
+    > The driver's file extension is `dylib` instead of `so` on a Mac.
 
-   ```.odbc.ini
-   [HANA_Cloud]
-   servernode = 6b7ae0da-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443
-   driver = /home/dan/sap/hdbclient/libodbcHDB.so
-   encrypt = true
-   sslValidateCertificate = true
+    ```.odbc.ini
+    [HANA_Cloud]
+    servernode = 6b7ae0da-ee5a-4782-bc7e-297099099b59.hana.prod-ca10.hanacloud.ondemand.com:443
+    driver = /home/dan/sap/hdbclient/libodbcHDB.so
+    encrypt = true
+    sslValidateCertificate = true
 
-   [HANA_OnPremise]
-   servernode = hxehost:39015
-   driver = /home/dan/sap/hdbclient/libodbcHDB.so
-   databasename = HXE
-   ```
+    [HANA_OnPremise]
+    servernode = hxehost:39015
+    driver = /home/dan/sap/hdbclient/libodbcHDB.so
+    databasename = HXE
+    ```
 
 6. unixODBC provides a basic SQL query tool called `isql` that can be used to validate a data source.
 
-   ```Shell (Linux or Mac)
-   isql -v HANA_Cloud User1 Password1
-   ```
+    ```Shell
+    isql -v HANA_Cloud User1 Password1
+    ```
 
     Once you see a message that indicates a connection has been made, enter the following statement to verify this.
 
-   ```Shell (Linux or Mac)
-   SELECT * FROM HOTELS.CUSTOMER
-   ```
+    ```Shell
+    SELECT * FROM HOTELS.CUSTOMER
+    ```
 
     ![isql](isqlQuery.png)
 
@@ -142,11 +151,14 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
 An application that supports ODBC can now make use of the created data source.  One example on Windows is Microsoft Excel.  
 
->Microsoft Excel can be 32 or 64 bit.  This can be seen under **File | Account | About Excel**.    
+> [!NOTE]
+> Microsoft Excel and the SAP HANA client must use the same architecture (both 32-bit or both 64-bit).
 >
-> ![Excel 64 bit](excel-64-bit.png)  
->
-> The SAP HANA client install can also be 32 or 64 bit.  To connect, the versions of SAP HANA client and Microsoft Excel must match.  If needed, the 32-bit installer for SAP HANA client is available from the [SAP Software Centre](https://me.sap.com/softwarecenter) site and can be installed into a separate directory such as `C:\SAP\hdbclient32`.  
+> The Excel version can be checked under **File | Account | About Excel**.
+
+![Excel 64 bit](excel-64-bit.png)  
+
+If needed, the 32-bit installer for SAP HANA client is available from the [SAP Software Centre](https://me.sap.com/softwarecenter) site and can be installed into a separate directory such as `C:\SAP\hdbclient32`.  
 
 The following steps demonstrate how to use Microsoft Excel to query data in SAP HANA using the ODBC connector.  
 

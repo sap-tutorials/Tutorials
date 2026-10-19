@@ -4,7 +4,7 @@ author_name: Dan van Leeuwen
 author_profile: https://github.com/danielva
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>java]
+tags: [tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud--sap-hana-database, software-product>sap-hana, programming-tool>java]
 primary_tag: software-product>sap-hana-cloud
 ---
 
@@ -41,25 +41,34 @@ java -version
 javac -version
 ```
 
-If these commands fail, ensure that the folder they are located in, is included in your path.  
+> [!TIP]
+> If these commands fail, ensure that Java is included in your system path.
+
+[OPTION BEGIN [Linux]]
 
 The following command will install Java on openSUSE Leap 15.5.
 
-```Shell (Linux)
+```Shell
 sudo zypper install java-11-openjdk-devel
 ```
 
-On macOS, you can install Java 11 using Homebrew with the following command:
+[OPTION END]
 
-```Shell (Mac)
+[OPTION BEGIN [Mac]]
+
+On Mac, you can install Java 11 using Homebrew with the following command:
+
+```Shell
 brew install openjdk@11
 ```
 
 To make it visible to system tools and IDEs, you may need to run the following command:
 
-```Shell (Mac)
+```Shell
 sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
 ```
+
+[OPTION END]
 
 ### Examine the SAP HANA JDBC driver
 
@@ -69,37 +78,56 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
 
 1. Run the following command for version information.  If needed, adjust the path to match the installation location on your machine.
 
-   ```Shell (Microsoft Windows)
-   java -jar C:\SAP\hdbclient\ngdbc.jar -v
-   ```  
+    [OPTION BEGIN [Windows]]
 
-   ```Shell (Linux or Mac)
-   java -jar ~/sap/hdbclient/ngdbc.jar -v
-   ```
+    ```Shell
+    java -jar C:\SAP\hdbclient\ngdbc.jar -v
+    ```
+
+    [OPTION END]
+
+    [OPTION BEGIN [Mac and Linux]]
+
+    ```Shell
+    java -jar ~/sap/hdbclient/ngdbc.jar -v
+    ```
+
+    [OPTION END]
 
 2. Run the command again without the `-v` to open the configuration window, which provides driver information and the ability to set trace information:
 
     ![JDBC-Driver-Trace-Config](JDBC-Driver-Trace-Config.png)
 
-    >The JDBC driver has a different version number than the rest of the SAP HANA client interfaces.
+    > [!NOTE]
+    > The JDBC driver has a different version number than the rest of the SAP HANA client interfaces.
 
     The trace options are further described at [JDBC Tracing and Trace Options](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/4033f8e603504c0faf305ab77627af03.html).
 
-3. Run the following and use either connection details stored in the user store or specify the connection details. Details on where to find host, port, and credentials. are covered in the third and fifth steps of the [first tutorial](hana-clients-choose-hana-instance) in this mission.
+3. Run the following and use either connection details stored in the user store or specify the connection details. Details on where to find host, port, and credentials are covered in the third and fifth steps of the first tutorial in this mission.
 
-   ```Shell (Windows)
-   java -jar C:\SAP\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
-   ```
+    [OPTION BEGIN [Windows]]
 
-    Alternatively, you may run
+    Using a user store key:
 
-   ```Shell (Windows)
-   java -jar C:\SAP\hdbclient\ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
-   ```  
+    ```Shell
+    java -jar C:\SAP\hdbclient\ngdbc.jar -k USER1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT * FROM HOTELS.CUSTOMER"
+    ```
 
-   ```Shell (Linux or Mac)
-   java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTELS.CUSTOMER"
-   ```
+    Alternatively:
+
+    ```Shell
+    java -jar C:\SAP\hdbclient\ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT * FROM HOTELS.CUSTOMER"
+    ```
+
+    [OPTION END]
+
+    [OPTION BEGIN [Mac and Linux]]
+
+    ```Shell
+    java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT * FROM HOTELS.CUSTOMER"
+    ```
+
+    [OPTION END]
 
     ![Link text e.g., Destination screen](java-driver-result.png)
 
@@ -107,21 +135,29 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/docs/SAP_HANA_CL
 
 ### Create a Java application that queries SAP HANA
 
-1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in the Notepad text editor.
+1. Create a folder named `java`, enter the directory, create a file named `JavaQuery.java`, and open it in a text editor.
 
-   ```Shell (Microsoft Windows)
-   mkdir %HOMEPATH%\HANAClientsTutorial\java
-   cd %HOMEPATH%\HANAClientsTutorial\java
-   notepad JavaQuery.java
-   ```
+    [OPTION BEGIN [Windows]]
+
+    ```Shell
+    mkdir %HOMEPATH%\HANAClientsTutorial\java
+    cd %HOMEPATH%\HANAClientsTutorial\java
+    notepad JavaQuery.java
+    ```
+
+    [OPTION END]
+
+    [OPTION BEGIN [Mac and Linux]]
 
     Substitute `pico` below for your preferred text editor.
 
-   ```Shell (Linux or Mac)
-   mkdir -p $HOME/HANAClientsTutorial/java
-   cd $HOME/HANAClientsTutorial/java
-   pico JavaQuery.java
-   ```
+    ```Shell
+    mkdir -p $HOME/HANAClientsTutorial/java
+    cd $HOME/HANAClientsTutorial/java
+    pico JavaQuery.java
+    ```
+
+    [OPTION END]
 
 2. Copy the following code into `JavaQuery.java`. Then save and exit the file.
 
@@ -175,33 +211,57 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/docs/SAP_HANA_CL
    }
    ```
 
-3. Compile the `.java` file into a `.class` file using the following command:
+3. Compile the `.java` file into a `.class` file using the following command.
 
-   ```Command Prompt (Microsoft Windows)
-   javac -cp C:\SAP\hdbclient\ngdbc.jar;. JavaQuery.java
-   ```  
+    [OPTION BEGIN [Windows]]
 
-   ```Powershell (Microsoft Windows)
-   javac -cp "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery.java
-   ```  
+    Command Prompt:
 
-   ```Shell (Linux or Mac)
-   javac -cp ~/sap/hdbclient/ngdbc.jar:. JavaQuery.java
-   ```  
+    ```Shell
+    javac -cp C:\SAP\hdbclient\ngdbc.jar;. JavaQuery.java
+    ```
 
-4. Run `JavaQuery.class` and indicate where the SAP HANA JDBC driver is located.  Note that the host, port, UID and PWD will be retrieved from the `hdbuserstore`.
+    PowerShell:
 
-   ```Command Prompt (Microsoft Windows)
-   java -classpath C:\SAP\hdbclient\ngdbc.jar;. JavaQuery
-   ```
+    ```Shell
+    javac -cp "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery.java
+    ```
 
-   ```Powershell (Microsoft Windows)
-   java -classpath "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery
-   ```  
+    [OPTION END]
 
-   ```Shell (Linux or Mac)
-   java -classpath ~/sap/hdbclient/ngdbc.jar:. JavaQuery
-   ```  
+    [OPTION BEGIN [Mac and Linux]]
+
+    ```Shell
+    javac -cp ~/sap/hdbclient/ngdbc.jar:. JavaQuery.java
+    ```
+
+    [OPTION END]
+
+4. Run `JavaQuery.class` and indicate where the SAP HANA JDBC driver is located. Note that the host, port, UID, and PWD will be retrieved from the `hdbuserstore`.
+
+    [OPTION BEGIN [Windows]]
+
+    Command Prompt:
+
+    ```Shell
+    java -classpath C:\SAP\hdbclient\ngdbc.jar;. JavaQuery
+    ```
+
+    PowerShell:
+
+    ```Shell
+    java -classpath "C:\SAP\hdbclient\ngdbc.jar;." JavaQuery
+    ```
+
+    [OPTION END]
+
+    [OPTION BEGIN [Mac and Linux]]
+
+    ```Shell
+    java -classpath ~/sap/hdbclient/ngdbc.jar:. JavaQuery
+    ```
+
+    [OPTION END]
 
     ![Java Query](java-query.png)
 
@@ -227,15 +287,14 @@ Visual Studio Code provides plugins for Java and can be used to debug an applica
 
     ![referenced libraries](ref-libraries.png)
 
-    The JDBC driver is located at `C:\SAP\hdbclient\ngdbc.jar`.
-
+    The JDBC driver is located in your SAP HANA client installation directory (for example, `C:\SAP\hdbclient\ngdbc.jar` on Windows).
 5. Place a breakpoint and then select **Run | Start Debugging**.  
 
     Notice that the debug view becomes active.  
 
     Notice that the program stops running at the breakpoint that was set. Step through the code by pressing F10 and observe the variable values in the variables pane.
 
-    ![VS Code Debugging](debugging.png)
+    ![Visual Studio Code debugging](debugging.png)
 
 ### Browse SAP HANA using DBeaver
 
@@ -249,15 +308,15 @@ The following steps demonstrate how to configure `DBeaver` to connect to SAP HAN
 
 2. Create a new SAP HANA database connection.
 
-    ![New Connection](dbeaver-connect1.png)
+    ![New connection](dbeaver-connect1.png)
 
     Specify the connection type and fill in the **Host** and **Port**.  Then press **Test Connection**.  You may be asked to download the required SAP HANA client JDBC driver.  The driver can also be updated under the **Driver Settings**.
 
-    ![Connection Settings](dbeaver-connect2.png)
+    ![Connection settings](dbeaver-connect2.png)
 
     Click on **Connection details** to specify the connection name.
 
-    ![Connection Details](dbeaver-connect4.png)
+    ![Connection details](dbeaver-connect4.png)
 
 3. After finishing the wizard, the catalog of the database can be viewed, and SQL statements can be executed.
 
