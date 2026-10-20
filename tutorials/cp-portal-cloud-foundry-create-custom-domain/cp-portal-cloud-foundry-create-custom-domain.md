@@ -91,7 +91,7 @@ Then perform the custom domain configuration steps such as creating custom domai
 
 2. Choose the **Domains** tile.
 
-        ![Select domain tile](3-reserved-domains.png)
+    ![Select domain tile](3-reserved-domains.png)
 
 
 3. Click **Add**  to add a domain name that you want to reserve for this landscape and associated extension landscapes. For example: `mycompany.com`.
@@ -299,12 +299,11 @@ Now you can map the application to your custom domain as follows:
     - For the `workzone.cloud.sap` domain: `[subdomain of the subaccount]-sapdelim-[Runtime destination name].[data center].workzone.cloud.sap`
     
 
-Example of a runtime destination mapping:
-
-| :------------- | :-------------
-| App Name            | `SAP Launchpad`
-| Custom route        | `xyz200.prod.mycompany.com`
-| Standard route      | `subprod-sapdelim-xyz200.launchpad.cfapps.us10.hana.ondemand.com` 
+| Setting        | Value                                                              |
+| :------------- | :----------------------------------------------------------------- |
+| App Name       | `SAP Launchpad`                                                    |
+| Custom route   | `xyz200.prod.mycompany.com`                                        |
+| Standard route | `subprod-sapdelim-xyz200.launchpad.cfapps.us10.hana.ondemand.com` |
 
 
 ### Create a CNAME record
@@ -313,21 +312,23 @@ In this step, you'll create a `CNAME` record in the Domain Name Service (DNS) so
 
 Example: 
 
-:------------- | :-------------
-| name        | `workzone.prod.mycompany.com`
-| type        | `CNAME`
-| data        | `api.cf.eu10.hana.ondemand.com`
-| TTL          | `14400`
+| Setting | Value                           |
+| :------ | :------------------------------ |
+| name    | `workzone.prod.mycompany.com`   |
+| type    | `CNAME`                         |
+| data    | `api.cf.eu10.hana.ondemand.com` |
+| TTL     | `14400`                         |
 
 You also need to configure the Domain Name System (DNS) in order to route traffic to an application on your custom domain. For each custom domain that you use, you must create a CNAME mapping from the custom domain to its Cloud Foundry domain. For example, you must create a separate `CNAME` mapping for your runtime destination custom domain in case you're using tunnelled access to access your on-premise apps.
 
 Example:
 
-:------------- | :-------------
-| name        | `<runtime destination>.prod.mycompany.com`
-| type        | `CNAME`
-| data        | `api.cf.eu10.hana.ondemand.com`
-| TTL          | `14400`
+| Setting | Value                                      |
+| :------ | :----------------------------------------- |
+| name    | `<runtime destination>.prod.mycompany.com` |
+| type    | `CNAME`                                    |
+| data    | `api.cf.eu10.hana.ondemand.com`            |
+| TTL     | `14400`   
 
 For more information, see [Configure the DNS for a Custom Domain](https://help.sap.com/docs/custom-domain/custom-domain-manager/configure-dns-for-custom-domain).
 
