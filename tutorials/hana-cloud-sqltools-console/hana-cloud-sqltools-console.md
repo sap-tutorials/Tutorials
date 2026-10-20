@@ -149,28 +149,8 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
     ![Statement help panel](statement-help.png)
 
     Notice that for SAP HANA Cloud, SAP HANA databases, links to the related documentation and details on the objects used in the SQL statement are shown including a link which will open the database objects app where additional details of the object can be viewed.
-
-<!-- FEATURE UNRELEASED
-
-
-4. Query results can also be displayed as a chart. After executing a query, select the **Visualize Data** tab in the results panel to switch to a graphical view. Execute the following SQL statements to try it out.
-
-   ```SQL
-   SELECT TOP 7
-       COUNT(*) AS NUM_OF_TABLES, SCHEMA_NAME
-   FROM M_TABLES WHERE SCHEMA_NAME != 'SYS'
-   GROUP BY SCHEMA_NAME ORDER BY NUM_OF_TABLES DESC;
-   ```
-
-    ![Visualize Data](visualize-data.png)
-
-    Choose a chart type such as bar, horizontal bar, line, pie, donut, or scatter, and configure the axes to visualize the data.
-
-    ![Data Graphs](data-graphs.png)
     
--->
-    
-5. Commonly used shortcut keys are listed below.  Try a few of them out.
+4. Commonly used shortcut keys are listed below.  Try a few of them out.
 
     Action | Shortcut
     ------ | ------
@@ -193,7 +173,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     For the complete list see [Common Keyboard Shortcuts for the SQL Console](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-administration-guide/keyboard-shortcuts-for-sql-console).
 
-6. Examine the **History** tab.
+5. Examine the **History** tab.
 
     ![History tab](messages-history-tab.png)
 
@@ -201,9 +181,75 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     The columns can also be changed by selecting the gear icon in the right corner.
 
-    ![History tab columns](history-tab-columns.png)
+    ![History tab columns](fixed-width-font-setting.png)
 
-7. Examine the **SQL Console Settings**.  
+    The Column Settings dialog also includes a Fixed-Width Font option for the results view. Enabling a fixed-width (monospace) font can improve alignment and readability when reviewing query results or structured data. 
+
+6. Execute the following SQL to illustrate the Fixed-Width Font feature. 
+
+    ```SQL
+    SELECT 
+        '┌────┬──────────┬──────────┐' || CHAR(10) || 
+        '│ ID │ NAME     │ CITY     │' || CHAR(10) || 
+        '├────┼──────────┼──────────┤' || CHAR(10) || 
+        '│ 1  │ Shadida  │ Waterloo │' || CHAR(10) || 
+        '│ 2  │ Dan      │ Victoria │' || CHAR(10) || 
+        '│ 3  │ Jose     │ Toronto  │' || CHAR(10) || 
+        '└────┴──────────┴──────────┘' 
+    AS RAW_TEXT 
+    FROM DUMMY;
+    ``` 
+
+    With Fixed-Width Font disabled, double-click the result to open the results as raw text. Notice how the text does not appear to be aligned when displayed using a proportional font. 
+    
+    ![Fixed-Width Font disabled](fixed-width-font-disabled.png)
+
+    Now, select the gear icon and enable Fixed-Width Font. After confirming the setting, open the raw text view again. With Fixed-Width Font enabled, each character occupies a consistent width, making formatted text and structured output easier to read. 
+
+    ![Fixed-Width Font enabled](fixed-width-font-enabled.png)
+
+7. The SQL Console can display query results as charts directly within the results pane. 
+
+    Execute the following SQL to illustrate the query visualization feature.
+
+    ```SQL
+    SELECT CITY, 
+            COUNT(*) AS HOTEL_COUNT 
+    FROM HOTEL 
+    GROUP BY CITY 
+    ORDER BY HOTEL_COUNT DESC;
+    ```
+
+    The data visualization tab can be opened by selecting the chart icon in the right corner. 
+
+    ![Open data visualizer](visualize-data-before.png)
+
+    To configure the graph: 
+    - Choose Bar Chart. 
+    - Configure CITY as Label Axis and HOTEL_COUNT as Value Axis. 
+
+    This provides a quick visual summary of the number of hotels in each city without leaving the SQL Console. 
+
+    ![Configure data visualizer](visualize-data-after.png)
+
+8. The SQL Console can display the SQL statement associated with a selected result tab. 
+
+    Execute the following SQL statements to illustrate the statement result indicator feature.
+
+    ```SQL
+    SELECT * FROM HOTEL; 
+    SELECT * FROM ROOM; 
+    SELECT CITY, 
+            COUNT(*) AS HOTEL_COUNT 
+    FROM HOTEL 
+    GROUP BY CITY;  
+    ```
+
+    Note that multiple result tabs are created, one for each query that returns a result set. The associated SQL statement for a selected results tab can be displayed by selecting the SQL toggle in the results pane. 
+
+    ![SQL statement indicator](visual-indicator-results.png)
+
+9. Examine the **SQL Console Settings**.  
 
     ![Connection settings](connection-settings.png)
 
@@ -232,7 +278,15 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
         ![Result behavior settings](result-behavior.png)
 
-8. Execute the following SQL which is used to illustrate the result display settings.
+        When enabled, selecting a results tab automatically highlights the corresponding SQL statement in the editor, making it easier to trace results back to their source without manual searching. This setting enhances the SQL statement indicator feature by linking result tabs directly to their corresponding SQL statements.
+
+        ![SQL source statement setting](show-source-sql-setting.png)
+
+        To illustrate this, enable the setting, save the configuration, and select the second result tab. The SQL associated with this result tab will be highlighted in the console as shown below.
+
+        ![SQL source statement demo](show-source-sql-demo.png)
+
+10. Execute the following SQL which is used to illustrate the result display settings.
 
     ```SQL
     SELECT CURRENT_DATE, CURRENT_TIMESTAMP(7), RAND() * 10 FROM DUMMY;
@@ -250,11 +304,11 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
     ![Result formatted](formatted.png)
 
-9. The overall theme for SAP HANA Cloud Central can be set in the settings which also affects the theme of the SQL console.
+11. The overall theme for SAP HANA Cloud Central can be set in the settings which also affects the theme of the SQL console.
 
     ![Theme](theme.png)
 
-10. Execute the following SQL statements.
+12. Execute the following SQL statements.
 
    ```SQL
    SELECT HEXTOBIN ('48656C6C6F20776F726C64') BINARY_EXAMPLE FROM DUMMY;
@@ -303,11 +357,11 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
    ![SQL results](result-viewer.png)
 
-11. The Auto-save contents of SQL consoles setting can be used to persist the open SQL console tabs and their contents. This setting is on by default.
+13. The Auto-save contents of SQL consoles setting can be used to persist the open SQL console tabs and their contents. This setting is on by default.
 
     ![Auto save](auto-save.png)
 
-12. SQL statements can also be executed in the background. This allows users to start a long-running statement, disconnect, and return later to view the results.
+14. SQL statements can also be executed in the background. This allows users to start a long-running statement, disconnect, and return later to view the results.
 
     Execute the following statement by clicking the Run dropdown menu and selecting Run Statement in Background:
 
@@ -325,7 +379,7 @@ This step demonstrates how to execute a SQL query, examine the statement help, v
 
    The results will appear in the Background Statements tab at the bottom on the console.
 
-13. The actions menu for a SQL console tab offers additional options such as the ability to rename a tab, to move a tab, to open a previously closed tab, or to search through the content of all open SQL console tabs.
+15. The actions menu for a SQL console tab offers additional options such as the ability to rename a tab, to move a tab, to open a previously closed tab, or to search through the content of all open SQL console tabs.
 
     ![SQL console actions menu](actions-menu.png)
 
