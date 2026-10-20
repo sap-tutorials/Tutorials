@@ -284,10 +284,11 @@ Now you can map the application to your custom domain as follows:
 
 Example of a runtime destination mapping:
 
-| :------------- | :-------------
-| App Name            | `SAP Build Work Zone, advanced edition`
-| Custom route        | `xyz200.prod.mycompany.com`
-| Standard route      | `subprod-sapdelim-xyz200.workzone.cfapps.us10.hana.ondemand.com` 
+| Setting        | Value                                                            |
+| :------------- | :--------------------------------------------------------------- |
+| App Name       | `SAP Build Work Zone, advanced edition`                          |
+| Custom route   | `xyz200.prod.mycompany.com`                                      |
+| Standard route | `subprod-sapdelim-xyz200.workzone.cfapps.us10.hana.ondemand.com` |  
 
 
 ### Create a CNAME record
@@ -296,21 +297,23 @@ In this step, you'll create a `CNAME` record in the Domain Name Service (DNS) so
 
 Example: 
 
-:------------- | :-------------
-| name        | `workzone.prod.mycompany.com`
-| type        | `CNAME`
-| data        | `api.cf.eu10.hana.ondemand.com`
-| TTL          | `14400`
+| Setting | Value                           |
+| :------ | :------------------------------ |
+| name    | `workzone.prod.mycompany.com`   |
+| type    | `CNAME`                         |
+| data    | `api.cf.eu10.hana.ondemand.com` |
+| TTL     | `14400`   
 
 You must also configure the Domain Name System (DNS) in order to route traffic to an application on your custom domain. For each custom domain that you use, you must create a CNAME mapping from the custom domain to its Cloud Foundry domain. For example, you must create a separate `CNAME` mapping for your runtime destination custom domain in case you're using tunnelled access to access your on-premise apps.
 
 Example:
 
-:------------- | :-------------
-| name        | `<runtime destination>.prod.mycompany.com `
-| type        | `CNAME`
-| data        | `api.cf.eu10.hana.ondemand.com`
-| TTL          | `14400`
+| Setting | Value                                      |
+| :------ | :----------------------------------------- |
+| name    | `<runtime destination>.prod.mycompany.com` |
+| type    | `CNAME`                                    |
+| data    | `api.cf.eu10.hana.ondemand.com`            |
+| TTL     | `14400`   
 
 For more information, see [Configure the DNS for a Custom Domain](https://help.sap.com/docs/custom-domain/custom-domain-manager/configure-dns-for-custom-domain).
 
