@@ -97,7 +97,7 @@ source .venv/bin/activate        # macOS / Linux
 ```
 
 ```
-pip install langchain langchain-litellm requests pandas python-dotenv
+pip install langchain langchain-litellm requests pandas python-dotenv mcp
 ```
 
 ---
@@ -160,7 +160,7 @@ def _get_auth_token() -> str:
 
 Calling TabPFN or SAP-RPT via Generative AI Hub work differently from most ML APIs: you do not need to train the model separately. Instead, you send everything in one request: rows with known labels teach the model on the fly (in context learning), and rows marked with a `[PREDICT]` placeholder become the test set (missing values to predict).
 
-All shipment data lives in a separate file. Download [payload_data.py](payload_data.py) and place it next to `agent-prior-labs.py`. In `agent-prior-labs.py`, import the two names you need:
+All shipment data lives in a separate file. Download [payload_data.py](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/payload_data.py) and place it next to `agent-prior-labs.py`. In `agent-prior-labs.py`, import the two names you need:
 
 ```python
 from payload_data import payload, GROUND_TRUTH
@@ -408,6 +408,46 @@ if __name__ == "__main__":
 
 ---
 
+### Add the evaluation function
+
+After the agent returns its predictions you can verify how well TabPFN performed against the known ground truth values from `GROUND_TRUTH`. Add the following function to your file:
+
+```python
+def evaluate_predictions(predictions_json: str) -> None:
+    data = json.loads(predictions_json)
+    preds = data["predictions"]
+
+    if "DELAY_DAYS" in preds:
+        errors = []
+        for item in preds["DELAY_DAYS"]:
+            truth = GROUND_TRUTH.get(item["ORD_ID"], {}).get("DELAY_DAYS")
+            if truth is not None:
+                errors.append(abs(float(item["DELAY_DAYS"]) - float(truth)))
+        if errors:
+            print(f"\nMAE (DELAY_DAYS): {sum(errors) / len(errors):.2f} days")
+
+    if "LATE" in preds:
+        correct = 0
+        total = 0
+        for item in preds["LATE"]:
+            truth = GROUND_TRUTH.get(item["ORD_ID"], {}).get("LATE")
+            if truth is not None:
+                total += 1
+                if str(item["LATE"]).strip().lower() == str(truth).strip().lower():
+                    correct += 1
+        if total:
+            print(f"Accuracy (LATE): {correct}/{total} = {correct / total:.0%}")
+```
+
+The function expects the raw JSON string returned by `call_tabpfn`. It computes:
+
+- **MAE (mean absolute error)** for the regression task — how many days off the predictions are on average.
+- **Accuracy** for the classification task — how many `LATE` predictions matched the known label.
+
+`evaluate_predictions` is called from `main()` by scanning the agent's message history for the tool result that contains a `"predictions"` key. Because the agent passes the raw JSON through as a tool response, the function can parse it directly without any additional state.
+
+---
+
 ### Run the agent
 
 Run the script from your project folder:
@@ -447,6 +487,6 @@ International
 
 ### Complete source code
 
-The complete agent script is available at [agent-prior-labs.py](../../agent-prior-labs.py).
+The complete agent script is available at [agent-prior-labs.py](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/agent-prior-labs.py).
 
-A template for all required environment variables is provided in [env.example](../../env.example). Copy it to `.env` and fill in your values before running the agent.
+A template for all required environment variables is provided in [env.example](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/env.example). Copy it to `.env` and fill in your values before running the agent.
