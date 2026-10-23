@@ -34,7 +34,7 @@ Refer to the following information for more details:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: Identify objects to be consumed](Identify objects to be consumed)]
+[ACCORDION-BEGIN [Step 1: ](Identify objects to be consumed)]
 
 Use the API Hub (api.sap.com) to identify the business object you need. API Hub provides a list of all the APIs, CDS views, Events and Business Objects and Add-Ins exposed for developer extensibility. For my example, I am looking for Sales Order business object even though there are multiple Sales Order APIs released by SAP. Sales Order is used purely for illustration purpose.
 
@@ -43,7 +43,7 @@ Use the API Hub (api.sap.com) to identify the business object you need. API Hub 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: Create a Projection View](Create a Projection View)]
+[ACCORDION-BEGIN [Step 2: ](Create a Projection View)]
 The business object projection allows you expose just the subset of the business object based on the needs of the service being built and to provide the persona using it the right amount of data. It also helps the business object itself remain service agnostic.
 
 In order to create the projection view, right Click on the package, choose New > Other Repository Objects and look for Data Definition as shown below.
@@ -62,7 +62,7 @@ Once these changes are done, go ahead and save it (CTRL + S) and then activate i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: Create a Behavior Definition for the CDS projection](Create a Behavior Definition for the CDS projection)]
+[ACCORDION-BEGIN [Step 3: ](Create a Behavior Definition for the CDS projection)]
 In order for your service to be able to create or update, you will need to define a behavior definition as well. Without this, the service can act as a read only service. This object provides a way to define service specific behavior for the business object projection.
 
 In order to create the behavior definition, right Click on the package, choose New > Other Repository Objects and look for Behavior Definition or right click on the projection view you create and create the Behavior Definition as shown below. The system will automatically generate the code for the Behavior Definition as shown below which you can change if required.
@@ -73,7 +73,7 @@ Once you are done editing the code, go ahead and save it (CTRL + S) and then act
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: Create a Service definition](Create a Service definition)]
+[ACCORDION-BEGIN [Step 4: ](Create a Service definition)]
 The ABAP Object helps you define the scope of the service by allowing you to specify CDS entities of your data model that you want to expose. It is agnostic of the protocol used in the service and the version of the service.
 
 In order to create the service definition, right click on the package, choose New > Other Repository Objects and look for Service Definition under the Business Services section and create a service definition for the source type definition and for your projection as shown below.
@@ -88,7 +88,7 @@ Once you are done editing the code, go ahead and save it (CTRL + S) and then act
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: Create a Service Binding](Create a Service Binding)]
+[ACCORDION-BEGIN [Step 5: ](Create a Service Binding)]
 The service binding allows you to bind a service definition to a client-server communication protocol such as OData and etc. The separation between the service definition and the service binding helps you export the service a variety of service protocols.
 
 In order to create the service definition, right click on the package, choose New > Other Repository Objects and look for Service Binding or right click on the service definition and choose the option to create the binding. Define the binding type to identify the service protocol and identify the service definition created in the previous step. For more information on the supported binding types, review the information on the  [help](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6aa39f1ac05441e5a23f484f31e477e7/94ebfa045c75426ea32045f6bbba3be5.html) portal.
@@ -104,7 +104,7 @@ This screen also allows you to define a ABAP Test Class for unit testing.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: Create a Communication Scenario](Create a Communication Scenario)]
+[ACCORDION-BEGIN [Step 6: ](Create a Communication Scenario)]
 In order for you to be able to consume the API from external applications like SAP Business Application Studio, postman or your middleware, you will need to create a communication arrangement for the service that you created.
 
 In order to create the communication scenario, right click on the package, choose New > Other Repository Objects and look for communication scenario under the cloud communication management section. You can then identify the type of authentication it allows, the service you want to provide (under the inbound section). Based on the type of service that is exposed, you will have to provide authorization for the service to be able to alter the corresponding business object. Use the Authorization tab to define the authorizations.
@@ -120,7 +120,7 @@ The communication scenario is now available in the S/4HANA Cloud Fiori UI (front
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: Test your knowledge](Test your knowledge)]
+[ACCORDION-BEGIN [Step 7: ](Test your knowledge)]
 
 [VALIDATE_7]
 [ACCORDION-END]
