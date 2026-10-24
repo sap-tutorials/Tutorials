@@ -12,8 +12,7 @@ author_profile: https://github.com/Lukas742
 <!-- description --> Display data in charts using UI5 Web Components for React.
 
 ## You will learn
--  How to install and import charts
--  Learn about charts in UI5 Web Components for React
+-  How to import and use charts with UI5 Web Components for React
 -  How to add dynamic rendering
 
 ## Intro
@@ -21,7 +20,7 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 
 ---
 
-### Install module and import charts
+### Install dependencies and import charts
 
 1. Install the chart library of UI5 Web Components for React.
 
@@ -30,7 +29,7 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
    ```
 
     > **Note:**
-    When facing issues with installing, please ensure you're using the same [minor version](https://semver.org/#summary) as the other `@ui5/webcomponents...` packages.
+    When facing issues with installing, please ensure you're using the same [minor version](https://semver.org/#summary) as the other `@ui5/webcomponents*` packages. You might have to also manually pin `@ui5/webcomponents-react-base` to that minor version. In that case, the install command would be `npm install @ui5/webcomponents-react-charts@<version> @ui5/webcomponents-react-base@<version>`.
 
 2. Then, import `LineChart` and `BarChart` into `MyApp.tsx`.
 
@@ -52,9 +51,9 @@ _Charts only offer limited accessibility support with only basic built-in featur
     <LineChart measures={[]} dimensions={[]} />
    ```
 
-    Now you should see a placeholder for the `LineChart` within the `Card` content. The reason for this is that the chart has not received any data and therefore the placeholder is displayed.
+    In the application you should now see a placeholder for the `LineChart` within the `Card` content. The reason for this is that the chart has not received any data and therefore the placeholder is displayed.
 
-2. Add data to your component. Since `data` is static you can define it outside the component, right above your `MyApp` component.
+2. Add data to your component. For this sample `dataset` is static you can define it outside the component, right above your `MyApp` component.
 
    ```TypeScript / TSX
    const dataset = [
@@ -103,9 +102,7 @@ _Charts only offer limited accessibility support with only basic built-in featur
 
     ![LineChart](01_linechart.png)
 
-4. Add a `BarChart` to the `Card`.
-
-    We want the same data just with a different representation, therefore you can use the same props as you did with the `LineChart`.
+4. We now want to show same data just with a different representation. For that, you can use the same props as you did with the `LineChart` for a `BarChart` and add it to the `Card`.
 
    ```TypeScript / TSX
    <BarChart
@@ -199,7 +196,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
    ```TypeScript / TSX
      import { useState } from "react";
    ```
-    - Use the `useState` function in the right after you start to define the `MyApp` function (before the click handler).
+    - Use the `useState` function right after you start to define the `MyApp` function (before the click handler).
    ```TypeScript / TSX
      const [toggleCharts, setToggleCharts] = useState("lineChart");
    ```
@@ -216,7 +213,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
      }
    };
    ```
-3. To only render the current chart, add the following lines to the render of the component:
+3. To only render the current chart, replace the `Card` with the following code:
    ```TypeScript / TSX
    <Card
      header={
@@ -228,7 +225,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
      }
      style={{ width: "300px" }}
    >
-       <Text style={spacing.sapUiContentPadding}>
+       <Text style={{ padding: "var(--sapContent_Space_S)" }}>
            This is the content area of the Card
        </Text>
        {toggleCharts === "lineChart" ? (
@@ -249,21 +246,19 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
 
     Done! Now you can toggle between charts by clicking on the header of the `Card`.
 
-4. You can further improve your `CardHeader` component by using the `avatar` `prop` and adding an `Icon` to it.
+4. You can further improve your `CardHeader` component by using the `avatar` prop and adding an `Icon` to it.
 
-    Add the following import to your component:
+    Add the following `Icon` import to your component:
    ```TypeScript / TSX
    import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
    ```
 
-    Icons can be imported altogether (`import '@ui5/webcomponents-icons/dist/AllIcons.js';`), but to reduce bundle size and for better maintainability, it's recommended importing each icon on its own:
+    The icons themselved can be imported altogether (`import '@ui5/webcomponents-icons/dist/AllIcons.js';`), but to reduce bundle size and for better maintainability, it's recommended importing each icon on its own:
 
    ```TypeScript / TSX
    import lineChartIcon from '@ui5/webcomponents-icons/dist/line-chart.js';
    import barChartIcon from '@ui5/webcomponents-icons/dist/horizontal-bar-chart.js';
    ```
-
-    The `Icons` should also be conditionally rendered. Luckily, this is easy:
 
     Add the `avatar` prop to the `CardHeader`, which receives an `Icon` as value:
 
@@ -274,7 +269,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
    />
    ```
 
-    Then, change the `name` prop of the `Icon` to the following:
+    The `Icons` should also be conditionally rendered. Luckily, this is easy.     Change the `name` prop of the `Icon` to the following:
    ```TypeScript / TSX
    <CardHeader
       avatar={ <Icon name={ toggleCharts === "lineChart" ? lineChartIcon : barChartIcon } /> }
@@ -394,7 +389,7 @@ export function MyApp() {
 
 One of React's main advantages is its efficient rendering mechanism: a component re-renders only when its state changes or when it receives new props from its parent. So it will not update the whole UI, but only components affected by changes.
 
-1. In order to demonstrate this behavior, add a new `state` (right after the definition of the previous state).
+1. In order to demonstrate this behavior, add a new `state` (right after the definition of the chart state from the previous step).
 
    ```TypeScript / TSX
      const [loading, setLoading] = useState(false);
@@ -442,8 +437,7 @@ One of React's main advantages is its efficient rendering mechanism: a component
 
 This updates the component every time you switch between charts and simulates a data call.
 
-As you can see, only the component affected by the `state` is updated, and the rest stays the same. If you're working with data, you most probably will need a loading indicator. All UI5 web components that are able to display data have a `loading` prop and therefore also a loading indicator.
-
+As you can see, only the component affected by the state is updated, and the rest stays the same: The `CardHeader` remains unchanged until the 2000ms timeout is over (and `setToggleCharts` is called), whereas the charts `loading` prop changes immediately (as `setLoading` is called immediately). If you're working with data, you most probably will need a loading indicator. All UI5 Web Components that are able to display data have a `loading` prop and therefore also a loading indicator.
 
 
 ### Add dynamic header and text
@@ -452,7 +446,7 @@ To make your `Card` look cleaner and to give the user the information that the h
 
 1. Add a dynamic content `Text`
 
-    The content text is not really informative. Let's change that and display the type of the chart. Add the following constants to your component (e.g. after the state definitions):
+    As of now the content text is not really informative. Let's change that and include the chart type. Add the following constants to your component (e.g. after the state definitions):
 
    ```TypeScript / TSX
    const contentTitle = toggleCharts === 'lineChart' ? 'Line Chart' : 'Bar Chart';
@@ -508,7 +502,7 @@ To make your `Card` look cleaner and to give the user the information that the h
     If the `header` alone does not sufficiently describe the currently visible `Icon`, you can define an `accessibleName`. Its value will be applied as the `aria-label` of the internal element, which screen readers will pick up.
     In case the `header` already explains the content and the icon is purely decorative, you can set its `mode` to `"Decorative"`, so it will be ignored by screen readers.
     
-   ```
+   ```TypeScript / TSX
      <Icon
        name={
          toggleCharts === "lineChart" ? lineChartIcon : barChartIcon
