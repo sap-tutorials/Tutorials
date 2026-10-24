@@ -11,6 +11,9 @@ author_profile: https://github.com/Lukas742
 # Integrate Charts and Conditional Rendering
 <!-- description --> Display data in charts using UI5 Web Components for React.
 
+## Prerequisites
+- Complete the tutorial [Create a Card Component](ui5-webcomponents-react-card).
+
 ## You will learn
 -  How to import and use charts with UI5 Web Components for React
 -  How to add dynamic rendering

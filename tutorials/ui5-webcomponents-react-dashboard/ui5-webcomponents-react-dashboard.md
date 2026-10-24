@@ -11,19 +11,22 @@ author_profile: https://github.com/Lukas742
 # Create an Analytical Dashboard via UI5 Web Components for React
 <!-- description --> Create an analytical dashboard with different components using UI5 Web Components for React.
 
+## Prerequisites
+- Complete the tutorial [Integrate Charts and Conditional Rendering](ui5-webcomponents-react-charts).
+
 ## You will learn
 -  How to use the `ShellBar` component
 -  How to use the `AnalyticalTable` component
 -  How to style components
 
 ## Intro
-So far, you have built your first `Card` component. Now to take things further, it's time to build something bigger. In this step, you will learn how different components work together by building an analytical dashboard.
+So far, you have built your first `Card` component. Now to take things further, it's time to build something more interesting. In this tutorial, you will learn how different components work together by building an analytical dashboard.
 
 ---
 
 ### Add necessary imports
 
-To make things easier, first import all the components and enums you will need in this step. Just copy the code below and replace the previous imported components in `MyApp.tsx`.
+To make things easier, first import all the components and enums you will need in this step. Just copy the code below and use it to replace the previous imported UI5 Web Components in `MyApp.tsx`.
 
 ```TypeScript / TSX
 import {
@@ -47,21 +50,21 @@ import {
 ```
 
 
-### Add a `ShellBar`
+### Add a ShellBar
 
 
-The `ShellBar` is the central navigation element in your Web Application and should therefore be visible on all pages.
+The `ShellBar` is the central navigation element in your web application and should therefore be visible on all pages.
 
-> Again, you can try it out in the [Storybook](https://ui5.github.io/webcomponents-react/?path=/docs/layouts-floorplans-shellbar--docs).
+> Feel free to try out the `ShellBar` in the [Storybook](https://ui5.github.io/webcomponents-react/?path=/docs/layouts-floorplans-shellbar--docs).
 
-1. Start with adding the `ShellBar` above your `Card` component and add a `primaryTitle` prop.
+1. Start with adding the `ShellBar` that has a `primaryTitle` above your `Card` component.
 
    ```TypeScript / TSX
    <ShellBar primaryTitle="My App" />
    ```
 
-2. Add some more properties
-
+2. Add some more properties.
+    
     The logo of the application should be displayed and also a profile picture would be nice.
 
     Use the `logo` and `profile` prop to achieve this. The `logo` prop accepts either an `img` tag or the `Avatar` component, the `profile` prop only accepts the `Avatar` component. First add the `logo` prop like this:
@@ -80,7 +83,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
    />
    ```
 
-    You can use your own image, use a URL to an image or simply download the images below and add them inside your `src` folder and then import them.
+    You can use your own image, use a URL to an image or simply download the images below. For the download option, create a new `assets/` directory inside `src/`, download the images into that directory, and then import them in `MyApp.tsx`.
 
     [`reactLogo.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/reactLogo.png)
 
@@ -106,25 +109,25 @@ The `ShellBar` is the central navigation element in your Web Application and sho
    />
    ```
 
-3. Add custom items
+3. Add custom items:
 
     By passing a `ShellBarItem` as `child` you are able to add custom items to your `ShellBar`. The element is basically a `Button` with responsive behavior and styling adapted to the `ShellBar`.
 
    ```TypeScript / TSX
    <ShellBar
-     logo={<img src="reactLogo.png" />}
+     logo={<img src={reactLogo} alt="Company Logo" />}
      profile={
        <Avatar>
-         <img src="profilePictureExample.png" />
+         <img src={profilePictureExample} alt="User Avatar" />
        </Avatar>
      }
      primaryTitle="My App"
    >
-     <ShellBarItem icon="activate" text="Activate" tooltip="activate" />
+     <ShellBarItem icon={activateIcon} text="Activate" />
    </ShellBar>
    ```
 
-    That is strange -- when you render your component, the `ShellBarItem` is not shown.
+    That is strange -- the `ShellBarItem` does not show an icon.
 
     Every `Icon` that is used in a component has to be imported manually. All available icons can be found [here](https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html#/overview/SAP-icons).
 
@@ -137,8 +140,6 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     Now your `ShellBarItem` shows up on the right side of the `ShellBar`.
 
     ![ShellBar](02_shellbar.png)
-
-    For maintainability reasons, replace `icon="activate"` with the import name `icon={activateIcon}`. Now if you replace the icon but forget to remove the import, modern IDEs or linters like [eslint](https://eslint.org/) will tell you that there is an unused import in your file.
 
 Your component should now look like this:
 
@@ -281,10 +282,12 @@ export function MyApp() {
 }
 ```
 
-### Add a `List`
+### Add a List
+
+In this step, we want to add a new `Card` to our application/analytical dashboard, that contains a `List`.
 
 
-1. To wrap the `List` add a `Card` (right after the first one).
+1. Add a `Card` (right after the first one).
 
    ```TypeScript / TSX
    <Card
@@ -319,7 +322,7 @@ export function MyApp() {
     </List>
    ```
 
-5. Users should know the status of the activities. Add the `additionalText` prop to the `StandardListItem`. To visualize if the status is neutral, positive or negative, also add the `additionalTextState` prop.
+5. Users should know the status of some activities. Add the `additionalText` prop to the `StandardListItem`. To visualize the status as neutral, positive or negative, also add the `additionalTextState` prop.
 
     You can either pass a supported string directly, or use the `ValueState` enum:
 
@@ -342,7 +345,7 @@ export function MyApp() {
    </ListItemStandard>
    ```
 
-6. The "Progress" card shows two list items, but both of them are already completed. Let's create two more activities which are still in progress.
+6. The "Progress" card now shows two list items, but both of them are already completed. Let's create two more activities which are still in progress.
 
     First, create two `ListItemCustom`s below the completed items.
 
@@ -368,7 +371,7 @@ export function MyApp() {
    ```
 
 7. The indicators are displayed as part of the list item, but the title and status of the activities is still missing.
-For this, add two `Text` components above the indicator:
+For this, add two `Text` components above the `ProgressIndicator` of the first `ListItemCustom`:
 
    ```TypeScript / TSX
    <ListItemCustom>
@@ -378,7 +381,7 @@ For this, add two `Text` components above the indicator:
    </ListItemCustom>
    ```
 
-8. All necessary information are now available in each item, but the formatting looks terrible. Let's fix that by using a flex-box:
+8. All necessary information are now available, but the formatting doesn't look right. Let's fix that by using a flex-box:
 
    ```TypeScript / TSX
    <ListItemCustom>
@@ -392,9 +395,9 @@ For this, add two `Text` components above the indicator:
    </ListItemCustom>
    ```
 
-    > The `FlexBox` implements most of the [`CSS Flexbox`](https://www.w3schools.com/css/css3_flexbox.asp) behavior without being forced to actually use CSS or other styling methods.
+    > The `FlexBox` component implements most of the [`CSS Flexbox`](https://www.w3schools.com/css/css3_flexbox.asp) behavior without being forced to actually use CSS or other styling methods.
 
-9. The content of the list item is now aligned correctly, but doesn't apply the correct padding, colors and dimensions. To fix this as well, pass the `style` prop, to use the default [React `inlineStyle` syntax](https://reactjs.org/docs/dom-elements.html). Again, we're using global CSS variables for this:
+9. The content of the list item is now aligned correctly, but doesn't apply the correct padding, colors and dimensions. To fix this, pass the `style` prop using the default [React `inlineStyle` syntax](https://reactjs.org/docs/dom-elements.html). Again, we're using global CSS variables for this:
 
    ```TypeScript / TSX
    <ListItemCustom>
@@ -425,10 +428,10 @@ For this, add two `Text` components above the indicator:
     ![List](03_list.png)
 
 
-### Add an `AnalyticalTable`
+### Add an AnalyticalTable
 
 
-1. The last tile should contain a `AnalyticalTable` component. Again, create a `Card` to wrap the Table and set the `max-width` to `900px`.
+1. The analytical dashboard should also contain a `AnalyticalTable` component. Again, create a `Card` (to wrap the Table). This time set the `max-width` to `900px`.
 
    ```TypeScript / TSX
    <Card
@@ -449,6 +452,9 @@ For this, add two `Text` components above the indicator:
    ```TypeScript / TSX
    import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
    ```
+
+   > At this point, the `AnalyticalTable` throws an error due to the missing required `data` prop. You will fix this in the next.
+
 2. Add data and columns to the table. The `columns` prop expects an array of objects that include at least the `accessor` to the data or a unique `id` property. The value of `Header` will be shown as column header.
 
     You can create your own data or just use the code below and paste it right after the definition of the `dataset` of the chart.
@@ -493,9 +499,9 @@ For this, add two `Text` components above the indicator:
 
     ![Table](04_table.png)
 
-4. Add more properties
+4. Add more properties:
 
-    You can add many more properties to the `AnalyticalTable` component. For example, you can allow sorting, filtering and grouping via `sortable`, `filterable` and `groupable`, enable different selection modes with `selectionMode`, control how the table splits up available space between the columns with `scaleWidthMode` and many more.
+    You can add many more properties to the `AnalyticalTable` component. For example, you can allow sorting, filtering and grouping via `sortable`, `filterable` and `groupable`, enable different selection modes with `selectionMode`, control how the table splits up available space between the columns with `scaleWidthMode` and much more.
     Feel free to take a look at the [documentation](https://ui5.github.io/webcomponents-react/v2/?path=/docs/data-display-analyticaltable--docs) and explore the different examples before continuing.
 
     The default visible rows count is at 15. This number is a bit to high for a dashboard table. Reduce the `visibleRows` count to 5 by setting the corresponding prop.
@@ -507,12 +513,12 @@ For this, add two `Text` components above the indicator:
      visibleRows={5}/>
    ```
 
-### Dashboard layout
+### Add the dashboard layout
 
 
-At the moment, the dashboard doesn't really look like a dashboard. The components are way too close to each other and not aligned correctly. Let's change that.
+At the moment, the dashboard doesn't really look like a dashboard. The components are too close to each other and not aligned correctly. Let's change that.
 
-1. Add margin to each `Card`
+1. Add margin to each of the three `Card`s:
 
     To add a margin to the cards, you can use the global CSS vars again:
 
@@ -552,15 +558,15 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
    >
    ```
 
-2. Align the elements
+2. Align the elements:
 
-    To properly align the tiles, use a `FlexBox` component and wrap your `Cards` inside of it. Use the `justifyContent` prop to center align all elements and `wrap` to make them move to the next line if not enough space is available, also apply the `style` prop to add a padding to the whole content area.
+    To properly align the `Card`s, use a `FlexBox` component and wrap your `Cards` inside of it. Use the `justifyContent` prop to center align all elements and `wrap` to make them move to the next line if not enough space is available. Also apply the `style` prop to add a padding to the whole content area.
 
    ```TypeScript / TSX
    <FlexBox
        justifyContent={FlexBoxJustifyContent.Center}
        wrap={FlexBoxWrap.Wrap}
-       style={spacing.sapUiContentPadding}
+       style={{ padding: "var(--sapContent_Space_M)" }}
        ...
    </FlexBox>
    ```

@@ -13,7 +13,6 @@ author_profile: https://github.com/Lukas742
 <!-- description --> Start building a React web application leveraging UI5 Web Components for React.
 
 ## Prerequisites
-- [React](https://www.npmjs.com/package/react) and [React-DOM](https://www.npmjs.com/package/react-dom) ( **18.0.0 or higher** )
 - [Node.js](https://nodejs.org/) - **[LTS](https://github.com/nodejs/release?tab=readme-ov-file#release-schedule) version** (check the version with `node -v`)
 
 

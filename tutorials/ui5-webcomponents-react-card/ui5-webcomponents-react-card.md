@@ -11,6 +11,10 @@ author_profile: https://github.com/Lukas742
 # Create a Card Component
 <!-- description --> Define your first component using UI5 Web Components for React.
 
+## Prerequisites
+
+- Complete the tutorial [Get Started with UI5 Web Components for React](ui5-webcomponents-react-introduction).
+
 ## You will learn
 -  How to import UI5 Web Components into your application
 -  Learn about the usage of props
@@ -101,7 +105,7 @@ The heading area of the `Card` component is empty, this is because it didn't rec
 
 ### Style your component
 
-In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style). You can also style your component using CSS ([modules](https://github.com/css-modules/css-modules)), but this and many more information regarding the styling approach of UI5 Web Components (for React) will be covered in [chapter six](ui5-webcomponents-react-styling) of the tutorial series.
+In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style). You can also style your component using CSS ([modules](https://github.com/css-modules/css-modules)), but this and many more information regarding the styling approach of UI5 Web Components (for React) will be covered in [part six](ui5-webcomponents-react-styling) of the tutorial series.
 
 The `Card` currently spreads across the whole screen, this behavior is intended, so it takes up the whole space of its container.
 
