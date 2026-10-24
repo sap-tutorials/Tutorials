@@ -23,7 +23,7 @@ author_profile: https://github.com/Lukas742
 
 
 ## Intro
-React is a great front-end development tool for building single-page applications (SPA). [UI5 Web Components for React](https://github.com/UI5/webcomponents-react) provides a SAP Fiori-compliant React implementation by leveraging the [UI5 web components](https://github.com/UI5/webcomponents).
+React is a great front-end development tool for building single-page applications (SPA). [UI5 Web Components for React](https://github.com/UI5/webcomponents-react) provides a SAP Fiori-compliant React implementation by leveraging the [UI5 Web Components](https://github.com/UI5/webcomponents).
 
 SAP Fiori provides a consistent and holistic user experience for SAP software. By creating visually pleasing designs with a strong focus on ease of use, the experience is intuitive and simple, across all devices.
 
@@ -45,7 +45,7 @@ npm i
 
 These commands sets up a [Vite](https://vitejs.dev/) project, creating a React Application with [TypeScript](https://www.typescriptlang.org/) and incorporating all essential dependencies for UI5 Web Components for React.
 
-> ### Why TypeScript?
+> Why TypeScript?
 > 
 > TypeScript, a superset of JavaScript and brings a lot of advantages for developers:
 > 
@@ -54,8 +54,6 @@ These commands sets up a [Vite](https://vitejs.dev/) project, creating a React A
 > - **Tool Support:** Offers autocompletion and navigation in editors.
 > - **Readability:** Enhances code clarity with static typing.
 > - **Gradual Adoption:** Can be added to existing JavaScript projects.
-
-
 
 ### Create your new root component
 
@@ -72,13 +70,13 @@ These commands sets up a [Vite](https://vitejs.dev/) project, creating a React A
    }
    ```
 
-> ### Structure of a React component
-This is a very simple component, but it already shows you the basic structure of all components. The file starts with the import statements in the first few lines. Then, the component will be defined as a function ([React docs](https://react.dev/learn/your-first-component#defining-a-component)) in PascalCase notation. This function starts the definitions of the props and the logic, we'll add them in a later tutorial, and ends by returning JSX or HTML components in a return statement.
+> Structure of a React component
+>
+>This is a very simple component, but it already shows you the basic structure of all components. The file usually starts with the import statements in the first few lines (none yet). Then, the component will be defined as a function ([React docs](https://react.dev/learn/your-first-component#defining-a-component)) in PascalCase notation. This function starts the definitions of the props and the logic, we'll add them in a later tutorial, and ends by returning JSX or HTML components in a return statement.
 
 With this you created your first `React` component. To actually render the component you will have to add it to your `src/App.tsx`.
 
 ### Embed your new component
-
 
 1. In `App.tsx` remove everything except for the [React.Fragment](https://react.dev/reference/react/Fragment) (`<></>`) and the App component itself.
 
@@ -107,7 +105,7 @@ With this you created your first `React` component. To actually render the compo
    }
    ```
 
-    > Note that `<MyApp />` is using a self-closing syntax and is equivalent to `<MyApp></MyApp>`. All tags in JSX must be closed explicitly, this applies to HTML tags (like `img`) and custom JSX tags. [Here](https://react.dev/learn/writing-markup-with-jsx) you can find out more about JSX in general.
+> Note that `<MyApp />` is using a self-closing syntax and is equivalent to `<MyApp></MyApp>`. All tags in JSX must be closed explicitly, this applies to HTML tags (like `img`) and custom JSX tags. [Here](https://react.dev/learn/writing-markup-with-jsx) you can find out more about JSX in general.
 
 4. Open `main.tsx`. This is your entry file, let's take a look at the content in more detail.
 
@@ -130,8 +128,8 @@ With this you created your first `React` component. To actually render the compo
    );
    ```
     
-    - `Assets.js'`: This includes assets like translation files (CLDR), theming, etc. of the required packages.
-    - `ThemeProvider`: Inter alia, this provider makes your app react to theme and language changes and injects the CSS of __used__ components.
+    - `Assets.js`: This includes assets like translation files ([CLDR](https://cldr.unicode.org/)), theming, etc. of the required packages.
+    - `ThemeProvider`: This provider makes your app react to theme and language changes and injects the CSS of __used__ components.
     - `StrictMode`: The React `StrictMode` component enables additional development behaviors and warnings for the component tree inside. It is not required, but using it helps find common pitfalls and bugs in development. You can find out more about it [here](https://react.dev/reference/react/StrictMode).
     - `createRoot`: This function lets you create the React root to display React components inside a browser DOM node ([React docs](https://react.dev/reference/react-dom/client/createRoot)). You will usually add this DOM node inside the `index.html` file.
     - `App`: A React component.
@@ -154,10 +152,4 @@ The page will automatically reload if you make changes to the code. You will see
 
 > **TIP:** You can put a browser window next to the editor in your screen to see the changes live in action.
 
->![split](splitscreen.png)
->
->&nbsp;
-
-
-
----
+>![screen split into two windows, VS Code on the left, browser on the right](splitscreen.png)
