@@ -11,6 +11,9 @@ author_profile: https://github.com/Lukas742
 # Add Custom Styles and Components for UI5 Web Components for React
 <!-- description --> Add custom styles and custom components to your application using UI5 Web Components for React.
 
+## Prerequisites
+- Complete the tutorial [Add Routing to a UI5 Web Components for React Project](ui5-webcomponents-react-routing).
+
 ## You will learn
 -  How to change style of existing components
 -  How to style own components
@@ -54,7 +57,7 @@ If you want to add a custom component to your app, but still want to use the sty
 
 In this step we will use [CSS Modules](https://github.com/css-modules/css-modules) and inline styling to style a custom component.
 
-> **Note:** The Vite template already includes support for CSS Modules, so you can use them out of the box.
+> **Note:** The Vite template this project is using already includes support for CSS Modules, so you can use them out of the box.
 
 1. Create a custom component `MyCustomElement.tsx` under `./src` with following content:
 
@@ -70,7 +73,7 @@ In this step we will use [CSS Modules](https://github.com/css-modules/css-module
    };
    ```
    
-2. Explicitly import `@ui5/webcomponents-react-base` package
+2. Explicitly import `@ui5/webcomponents-react-base` package:
 
     `@ui5/webcomponents-react-base` is already installed by `@ui5/webcomponents-react`, but as we want to import the `ThemingParameters` in the following step, it's recommended adding the package to the dependencies as well.
 
@@ -78,7 +81,10 @@ In this step we will use [CSS Modules](https://github.com/css-modules/css-module
    npm install @ui5/webcomponents-react-base
    ```
 
-3. Add inline-styles to apply `ThemingParameters` to the `<span>`
+    > **Note:**
+    When facing issues with installing, please ensure you're using the same [minor version](https://semver.org/#summary) as the other `@ui5/webcomponents*` packages. To pin the version manually, run the command `npm install @ui5/webcomponents-react-base@<version>`.
+
+3. Add inline-styles to apply `ThemingParameters` to the `<span>`:
 
    ```TypeScript / TSX
    <span style={{ color: ThemingParameters.sapNegativeColor, fontSize: ThemingParameters.sapFontHeader1Size }}>
@@ -88,9 +94,9 @@ In this step we will use [CSS Modules](https://github.com/css-modules/css-module
 
     The global CSS variables contain all publicly available styling parameters. With this it is possible to style custom components with the standardized styles of the UI5 Web Components.
 
-4. Add styling using CSS Modules
+4. Add styling using CSS Modules:
 
-    First create a new file `MyCustomElement.module.css` in the same folder as `MyCustomElement.tsx` with the following content:
+    First, create a new file `MyCustomElement.module.css` in `src` with the following content:
 
    ```CSS
     .container {
@@ -141,29 +147,29 @@ In this step we will use [CSS Modules](https://github.com/css-modules/css-module
    ```
     ![Custom Element](01_customElement.png)
 
-   Now you can see, that the element has the same `fontFamily` and uses the same semantic colors as UI5 Web Components for React.
+   As you can see the custom element has the same `fontFamily` and uses the same semantic colors as UI5 Web Components for React.
 
 ### SAP UI Common CSS
 
-It's often required setting more complex styles for e.g. layouting. For this it's recommended using CSS classes of the [SAP UI Common CSS](https://sap.github.io/fundamental-styles/?path=/docs/common-css-introduction--docs) library which is also following the Fiori design guidelines.
+It's often required to define more complex styles, for example for layouting. In this case, it's recommended to use the [SAP UI Common CSS](https://sap.github.io/fundamental-styles/?path=/docs/common-css-introduction--docs) library and its CSS classes, which also follow the SAP Fiori design guidelines.
 
 One example is applying a responsive content padding to the content of the dashboard:
 
-1. Install Common CSS
+1. Install Common CSS:
 
    ```shell
    npm i @sap-ui/common-css
    ```
 
-2. Import the required classes in `Home.tsx`
+2. Import the required classes in `Home.tsx`:
 
    ```ts
    import '@sap-ui/common-css/dist/sap-content-paddings.css';
    import '@sap-ui/common-css/dist/sap-container-type.css';
    ```
-3. Apply the classes on elements
+3. Apply the classes on elements:
 
-    Add `div` that is wrapping the outer `FlexBox` and apply the `sap-container-type-inline-size` class:
+    Add a `div` that is wrapping the outer `FlexBox` and apply the `sap-container-type-inline-size` class:
 
    ```tsx
    <div className="sap-container-type-inline-size">
@@ -173,7 +179,7 @@ One example is applying a responsive content padding to the content of the dashb
         ...
    ```
     
-    Remove `style` from the outer `FlexBox` and apply the `sap-content-paddings-container` class:
+    Also remove the `style` from the outer `FlexBox` and apply the `sap-content-paddings-container` class:
 
    ```tsx
    <FlexBox
