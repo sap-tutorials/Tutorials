@@ -11,6 +11,9 @@ author_profile: https://github.com/Lukas742
 # Add Routing to a UI5 Web Components for React Project
 <!-- description --> Use routes to navigate between different pages using UI5 Web Components for React.
 
+## Prerequisites
+- Complete the tutorial [Create an Analytical Dashboard via UI5 Web Components for React](ui5-webcomponents-react-dashboard).
+
 ## You will learn
 -  How to refactor code into different React components
 -  How to create multiple pages
@@ -39,11 +42,11 @@ export function Detail() {
 ### Add Router
 
 
-1. Install `react-router-dom`.
+1. Install `react-router-dom`:
 
     [React Router](https://reactrouter.com) is a collection of navigational components that compose declaratively with your application.
 
-    Execute the following line in the terminal in your root location of the project.
+    Execute the following command in the terminal in your root location of the project.
 
    ```Shell
    npm install react-router-dom
@@ -76,9 +79,9 @@ export function Detail() {
    }
    ```
 
-2. Refactor `MyApp.tsx`.
+2. Refactor `MyApp.tsx`:
 
-    Some refactoring is necessary now. Extract every component and the corresponding logic except for the `ShellBar` from `MyApp.tsx` and move it to `Home.tsx`.
+    Some refactoring is necessary now to turn `MyApp.tsx` into a navigation container that displays other components based on the route. Extract every component and the corresponding logic except for the `ShellBar` from `MyApp.tsx` and move it to `Home.tsx`.
 
     `MyApp.tsx` should now look like this:
 
@@ -399,7 +402,7 @@ Your current URL now displays the `#/home` path. If you replace `home` with `det
 ### Handle navigation
 
 
-Except for changing the URL of the App users don't have options to navigate to the `Detail` page. The page could contain some more information about activities and should therefore be connected to the `Progress Card`.
+Currently user don't have any options to navigate to the `Detail` page (except for changing the URL). The page could contain some more information about activities and should therefore be connected to the header of the `Progress Card`.
 
 1. Go into your `Home` component and add `interactive` and `onClick={handleProgressHeaderClick}` to your second `CardHeader` component.
 
@@ -418,7 +421,7 @@ Except for changing the URL of the App users don't have options to navigate to t
    >
    ```
 
-2. Define the `handleProgressHeaderClick` function as follows. And import the `useNavigate` hook from `react-router-dom`.
+2. Define the `handleProgressHeaderClick` function as follows (inside the `Home()` function definition). And import the `useNavigate` hook from `react-router-dom`.
 
    ```TypeScript / TSX
    import { useNavigate } from "react-router-dom";
@@ -430,20 +433,13 @@ Except for changing the URL of the App users don't have options to navigate to t
    };
    ```
 
-    Now it is possible to navigate to the `Details` component, but right now, there is no way to go back except for the back button of the browser and typing in the URL manually.
+    Now it is possible to navigate to the `Details` component by pressing the `CardHeader`, but right now, there is no way to go back except for the back button of the browser and typing in the URL manually.
 
-3. Navigate back to the Home Screen
+3. Navigate back to the home screen:
 
-    Normally when you click on the Logo of the app, it should send you back to your `Home` screen. Let's implement that.
+    Usually when you click the logo of an app, it should send you back to the `Home` screen. Let's implement that.
 
     Go into your `MyApp.tsx` file where your `ShellBar` is located and add an `onLogoClick` prop. The function is almost the same as for the `onHeaderClick`, but this time the destination should be the default page.
-
-   ```TypeScript / TSX
-   const navigate = useNavigate();
-   const handleLogoClick = () => {
-     navigate("./");
-   };
-   ```
 
    ```TypeScript / TSX
    <ShellBar
@@ -456,6 +452,15 @@ Except for changing the URL of the App users don't have options to navigate to t
      primaryTitle="My App"
      onLogoClick={handleLogoClick}
    >
+   ```
+   ```TypeScript / TSX
+   import { useNavigate } from "react-router-dom";
+   ```
+   ```TypeScript / TSX
+   const navigate = useNavigate();
+   const handleLogoClick = () => {
+     navigate("./");
+   };
    ```
 
 
