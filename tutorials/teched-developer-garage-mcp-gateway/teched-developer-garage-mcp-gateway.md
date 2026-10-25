@@ -31,7 +31,20 @@ If you're new to this topic, here's a brief introduction: The MCP Gateway is the
 In this hands-on tutorial, you'll create a new API artifact for a third-party API — in this case, Shopify. You'll then use this API artifact to host an entirely new MCP server and enforce policies and guardrails that apply at runtime. Finally, you'll publish the new MCP resource as a product in the SAP Developer Hub, making it discoverable and consumable from your preferred AI agent development environment.
 
 ---
-### Step 1: Create the API artifact
+
+### System access
+
+As part of this tutorial, you will need to access the provisioned systems using the credentials shared with you. In the table below, you will find the necessary information to access each system.
+
+> There are two SAP Integration Suite environments available for use in this tutorial. Use the one corresponding to your user range.
+
+| System | URL |
+| --- | --- |
+| SAP Integration Suite - Dev Garage 1 (User01 - User99) | <https://url.sap/054nme> |
+| SAP Integration Suite - Dev Garage 2 (User100 - User180) | <https://url.sap/i18ebv> |
+
+### Create the API artifact
+
 1. Start by creating a new integration package. In SAP Integration Suite, go to the **Design** tab and click **Create**.
 
 ![picture](screen1.png)
@@ -119,7 +132,8 @@ Click **Next** to proceed.
 
 ![picture](screen14.png)
 
-### Step 2: Create a new MCP server
+### Create a new MCP server
+
 1. With your API artifact deployed, you can now add a new MCP server on top of it. Go back to your integration package and open the **Artifacts** tab. In edit mode, click **Add** and select **MCP Server**.
 
 ![picture](screen15.png)
@@ -155,7 +169,8 @@ Click **Next** to proceed.
 
 ![picture](screen21.png)
 
-### Step 3: Create a product and AI agent subscription in the Developer Hub
+### Create a product and AI agent subscription in the Developer Hub
+
 1. To make your new MCP server discoverable and consumable across your organization, you'll publish it as a product in the Developer Hub. At the top right of your screen, select **Developer Hub**.
 
 ![picture](screen22.png)
@@ -197,7 +212,8 @@ Click **Publish** to proceed.
 
 ![picture](screen30.png)
 
-### Step 4: Test your MCP server with the MCP Inspector
+### Test your MCP server with the MCP Inspector
+
 1. Now that your MCP server is deployed and has a subscription, it's time to test it. For this, I recommend the **MCP Inspector**, an open-source tool from the Model Context Protocol project (created by Anthropic). Because SAP Integration Suite uses machine-to-machine (client credentials) authentication, you first need to retrieve a **Bearer token**. Run the command for your operating system in a terminal.
 
     [OPTION BEGIN [macOS]]
