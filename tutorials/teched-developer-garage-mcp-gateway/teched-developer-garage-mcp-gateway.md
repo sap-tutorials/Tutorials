@@ -6,6 +6,13 @@ tags: [tutorial>intermediate, programming-tool>sap-integration-suite, software-p
 time: 60
 author_name: Manuel Namyslo
 author_profile: https://github.com/manouxnam
+variables:
+  - name: userNumber
+    label: Your user number
+    type: string
+    maxLength: 3
+    required: true
+    placeholder: XX
 ---
 # SAP TechEd Developer Garage: Build and Govern MCP Servers with SAP Integration Suite
 <!-- description -->Use the MCP Gateway in SAP Integration Suite to expose the Shopify API as a governed MCP server for AI agents to consume
@@ -51,7 +58,7 @@ As part of this tutorial, you will need to access the provisioned systems using 
 
 2. Enter the following values for your new integration package:
 
-- **Name:** Shopify Integration Scenario UserXX (replace `XX` with your user number)
+- **Name:** Shopify Integration Scenario User{{var:userNumber}} (replace `XX` with your user number)
 - **Short Description:** This integration package establishes API and MCP connectivity to Shopify
 - **Version:** 1.0.0
 
@@ -77,9 +84,9 @@ Then click **Save**.
 
 7. Enter the following values for your API artifact:
 
-- **Name:** ShopifyAPI UserXX (replace `XX` with your user number)
+- **Name:** ShopifyAPI User{{var:userNumber}} (replace `XX` with your user number)
 - **Relative URL:** /admin/api/2026-07
-- **API Base Path:** /webshopUserXX (replace `XX` with your user number)
+- **API Base Path:** /webshopUser{{var:userNumber}} (replace `XX` with your user number)
 - **API Version:** 1.0.0
 - **Runtime Profile:** Integration Cell
 
@@ -144,8 +151,8 @@ Click **Next** to proceed.
 
 3. Select the API you created in the previous step (look for your user number). In the MCP details, enter the following values:
 
-- **Name:** ShopifyAPI_UserXX_mcpServer (replace `XX` with your user number)
-- **MCP Path:** /webshopUserXX/mcp (replace `XX` with your user number)
+- **Name:** ShopifyAPI_User{{var:userNumber}}_mcpServer (replace `XX` with your user number)
+- **MCP Path:** /webshopUser{{var:userNumber}}/mcp (replace `XX` with your user number)
 - **Version:** 1.0.0
 - **Runtime Profile:** Integration Cell
 
@@ -189,7 +196,7 @@ Click **Next** to proceed.
 
 5. Give your new MCP product a clear name and description so other developers can identify and consume it:
 
-- **Name:** Shopify MCP Product UserXX (replace `XX` with your user number)
+- **Name:** Shopify MCP Product User{{var:userNumber}} (replace `XX` with your user number)
 - **Description:** This product exposes Shopify endpoints as an MCP server
 
 ![picture](screen26.png)
