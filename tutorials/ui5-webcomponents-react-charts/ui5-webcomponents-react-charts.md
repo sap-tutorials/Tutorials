@@ -32,7 +32,13 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
    ```
 
     > **Note:**
-    When facing issues with installing, please ensure you're using the same [minor version](https://semver.org/#summary) as the other `@ui5/webcomponents*` packages. You might have to also manually pin `@ui5/webcomponents-react-base` to that minor version. In that case, the install command would be `npm install @ui5/webcomponents-react-charts@<version> @ui5/webcomponents-react-base@<version>`.
+    > When facing issues with installing, please ensure you're using the same [minor version](https://semver.org/#summary) as the other `@ui5/webcomponents*` packages. You might have to also manually pin `@ui5/webcomponents-react-base` to that minor version. In that case, the install command would be `npm install @ui5/webcomponents-react-charts@<version> @ui5/webcomponents-react-base@<version>`.
+    >
+    > For example:
+    >
+    > ```shell
+    > npm install @ui5/webcomponents-react-charts@2.27 @ui5/webcomponents-react-base@2.27
+    > ```
 
 2. Then, import `LineChart` and `BarChart` into `MyApp.tsx`.
 
@@ -45,7 +51,7 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 
 _Charts only offer limited accessibility support with only basic built-in features, so it’s essential to ensure your implementation meets the accessibility standards of your application!_
 
-1. Start with the `LineChart`. You can add it underneath the `Text` component. Then pass the `dimensions` and `measures` prop with an empty array as value.
+1. Start with the `LineChart`. You can add it underneath the `Text` component. Then pass the `dimensions` and `measures` props with empty arrays as values.
 
    ```TypeScript / TSX
     <Text style={{ padding: "var(--sapContent_Space_S)" }}>
@@ -56,7 +62,7 @@ _Charts only offer limited accessibility support with only basic built-in featur
 
     In the application you should now see a placeholder for the `LineChart` within the `Card` content. The reason for this is that the chart has not received any data and therefore the placeholder is displayed.
 
-2. Add data to your component. For this sample `dataset` is static you can define it outside the component, right above your `MyApp` component.
+2. Add data to your component. For this sample `dataset` is static, and you can define it outside the component, right above your `MyApp` component.
 
    ```TypeScript / TSX
    const dataset = [
@@ -101,11 +107,11 @@ _Charts only offer limited accessibility support with only basic built-in featur
     />
    ```
 
-    Congratulation, you implemented your first Chart component.
+    Congratulations, you implemented your first Chart component.
 
     ![LineChart](01_linechart.png)
 
-4. We now want to show same data just with a different representation. For that, you can use the same props as you did with the `LineChart` for a `BarChart` and add it to the `Card`.
+4. We now want to show the same data, just with a different representation. For that, you can use the same props as you did with the `LineChart` for a `BarChart` and add it to the `Card`.
 
    ```TypeScript / TSX
    <BarChart
@@ -115,7 +121,7 @@ _Charts only offer limited accessibility support with only basic built-in featur
    />
    ```
 
-    Two charts are rendered now with equal datasets but different representation.
+    Two charts are rendered now with equal datasets but different representations.
 
 Your `MyApp.tsx` component should look like this:
 
@@ -194,14 +200,14 @@ export function MyApp() {
 
 Two charts in one `Card` is a bit too much, don't you think? It would be nicer if the charts could be toggled by clicking on the header. Let's implement that!
 
-1. First add a state. It should control, which chart is going to be rendered. Use the [State Hook logic](https://react.dev/reference/react/useState) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
+1. First add a state. It should control which chart is going to be rendered. Use the [State Hook logic](https://react.dev/reference/react/useState) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
     - Import the `useState` function in the header of the `MyApp.tsx` file.
    ```TypeScript / TSX
-     import { useState } from "react";
+   import { useState } from "react";
    ```
     - Use the `useState` function right after you start to define the `MyApp` function (before the click handler).
    ```TypeScript / TSX
-     const [toggleCharts, setToggleCharts] = useState("lineChart");
+   const [toggleCharts, setToggleCharts] = useState("lineChart");
    ```
 
 2. By clicking on the `CardHeader` the state should be set corresponding to the chart which should be displayed.
@@ -256,7 +262,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
    import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
    ```
 
-    The icons themselved can be imported altogether (`import '@ui5/webcomponents-icons/dist/AllIcons.js';`), but to reduce bundle size and for better maintainability, it's recommended importing each icon on its own:
+    The icons themselves can be imported altogether (`import '@ui5/webcomponents-icons/dist/AllIcons.js';`), but to reduce bundle size and for better maintainability, it's recommended importing each icon on its own:
 
    ```TypeScript / TSX
    import lineChartIcon from '@ui5/webcomponents-icons/dist/line-chart.js';
@@ -395,7 +401,7 @@ One of React's main advantages is its efficient rendering mechanism: a component
 1. In order to demonstrate this behavior, add a new `state` (right after the definition of the chart state from the previous step).
 
    ```TypeScript / TSX
-     const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(false);
    ```
 
 2. Then edit your `handleHeaderClick` function like this:
@@ -438,9 +444,9 @@ One of React's main advantages is its efficient rendering mechanism: a component
    />
    ```
 
-This updates the component every time you switch between charts and simulates a data call.
+This updates the component every time you switch between charts and simulates a data call with the 2000ms timeouts.
 
-As you can see, only the component affected by the state is updated, and the rest stays the same: The `CardHeader` remains unchanged until the 2000ms timeout is over (and `setToggleCharts` is called), whereas the charts `loading` prop changes immediately (as `setLoading` is called immediately). If you're working with data, you most probably will need a loading indicator. All UI5 Web Components that are able to display data have a `loading` prop and therefore also a loading indicator.
+As you can see, only the component affected by the state is updated, and the rest stays the same: The `CardHeader` remains unchanged until the timeout is over (and `setToggleCharts` is called), whereas the charts `loading` prop changes immediately (as `setLoading` is called immediately). If you're working with data, you most probably will need a loading indicator. All UI5 Web Components that are able to display data have a `loading` prop and therefore also a loading indicator.
 
 
 ### Add dynamic header and text
@@ -503,7 +509,7 @@ To make your `Card` look cleaner and to give the user the information that the h
 3. Add accessibility attributes to the `Icon`
 
     If the `header` alone does not sufficiently describe the currently visible `Icon`, you can define an `accessibleName`. Its value will be applied as the `aria-label` of the internal element, which screen readers will pick up.
-    In case the `header` already explains the content and the icon is purely decorative, you can set its `mode` to `"Decorative"`, so it will be ignored by screen readers.
+    > In case the `header` already explains the content and the icon is purely decorative, you can set its `mode` to `"Decorative"`, so it will be ignored by screen readers.
     
    ```TypeScript / TSX
      <Icon
