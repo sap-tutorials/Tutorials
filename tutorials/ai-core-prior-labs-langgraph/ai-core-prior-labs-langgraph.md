@@ -27,7 +27,7 @@ at the Developer Garage during SAP TechEd 2026 in Berlin. In this step, you'll
 retrieve such a service key, and store the credentials in your .env file. Instructions will follow below.
 
 The keys are available in a GitHub repo, and are rotated (old ones expired, new
-ones minted) on a regular basis. They can be found in the
+ones minted) on a regular basis. Always chose the latest one and ask a Developer Advocate for the password. They can be found in the
 [keys/](https://github.com/SAP-samples/teched2026-sk-gen/tree/main/keys)
 directory of the `SAP-samples/teched2026-sk-gen` repo on GitHub, stored in
 password-protected ZIP files, which are suffixed with a timestamp
@@ -68,6 +68,8 @@ The agent uses a representative sample of 50 training rows (every 1,000th order)
 
 Before writing any code you need a running deployment of TabPFN-3.5 Plus in your SAP AI Core instance.
 
+> 🚨 As part of the Developer Garage at TechEd 2026 use this deployment ID: `d845a8b8465ba1e6` and move on to the next step.
+
 Use the following values when creating the deployment:
 
 | Field | Value |
@@ -82,9 +84,17 @@ Once the deployment status is **Running**, copy the deployment ID. You will need
 
 ---
 
+### Create your project folder
+
+Create a new empty folder on your machine for this project — for example `prior-labs-agent`. Open it in VS Code using **File > Open Folder**.
+
+All files you create in this tutorial (`.env`, `payload_data.py`, and `agent-prior-labs.py`) go in this folder.
+
+---
+
 ### Configure environment variables
 
-Create a file named `.env` in your project folder and add the following variables. Use the [.env.example](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/.env.example) Never commit this file! Add `.env` to your `.gitignore`. When deploying to Cloud Foundry you can simply bind those variables using [environmental variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
+Create a file named `.env` in your project folder and add the following variables. Use the [.env.example](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/.env.example) as a reference. Never commit this file! Add `.env` to your `.gitignore`. When deploying to Cloud Foundry you can simply bind those variables using [environmental variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
 
 ```
 AICORE_AUTH_URL=https://<your-subdomain>.authentication.<region>.hana.ondemand.com/oauth/token
@@ -100,15 +110,13 @@ You can find all SAP AI Core credentials in the SAP BTP cockpit under your SAP A
 
 > Note: `LLM_MODEL` is optional. This agent defaults to `sap/amazon--nova-lite` if the variable is not set.
 
-> 🚨 You can find the deployment ID for the TabPFN model deployed as part of the Developer Garage in the [.env.example](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/.env.example) file.
-
 ---
 
 ### Install Python dependencies
 
 In your terminal/IDE of choice: Create and activate a virtual environment, then install the required packages:
 
-> 🚨 For the Developer Garage at TechEd 2026 in Berlin open VS Code (Visual Studio Code) on your machine and open the integrated terminal (**Terminal > New Terminal**). Create and activate a virtual environment using the commands for your OS, then run the install command.
+> 🚨 For the Developer Garage at TechEd 2026 in Berlin, open the integrated terminal in VS Code (**Terminal > New Terminal**). Create and activate a virtual environment using the commands for your OS, then run the install command.
 >
 > **macOS/Linux:**
 > ```
@@ -405,35 +413,6 @@ forecast_agent = create_agent(
 )
 ```
 
-**Main**
-
-Invoke the agent with a user message and print the results:
-
-```python
-def main():
-    result = forecast_agent.invoke(
-        {"messages": [{"role": "user", "content": "Run the TabPFN predictions and write a concise logistics operations summary."}]}
-    )
-
-    print("\n" + "=" * 50)
-    print("E-commerce Logistics Report:")
-    print("=" * 50)
-    print(result["messages"][-1].content)
-
-    for msg in result["messages"]:
-        if hasattr(msg, "content") and isinstance(msg.content, str):
-            try:
-                data = json.loads(msg.content)
-                if "predictions" in data:
-                    evaluate_predictions(msg.content)
-                    break
-            except (json.JSONDecodeError, KeyError):
-                pass
-
-if __name__ == "__main__":
-    main()
-```
-
 ---
 
 ### Add the evaluation function
@@ -473,6 +452,37 @@ The function expects the raw JSON string returned by `call_tabpfn`. It computes:
 - **Accuracy** for the classification task — how many `LATE` predictions matched the known label.
 
 `evaluate_predictions` is called from `main()` by scanning the agent's message history for the tool result that contains a `"predictions"` key. Because the agent passes the raw JSON through as a tool response, the function can parse it directly without any additional state.
+
+---
+
+### Add the main function
+
+Finally, add `main()` to invoke the agent and print the results, followed by the entry-point guard:
+
+```python
+def main():
+    result = forecast_agent.invoke(
+        {"messages": [{"role": "user", "content": "Run the TabPFN predictions and write a concise logistics operations summary."}]}
+    )
+
+    print("\n" + "=" * 50)
+    print("E-commerce Logistics Report:")
+    print("=" * 50)
+    print(result["messages"][-1].content)
+
+    for msg in result["messages"]:
+        if hasattr(msg, "content") and isinstance(msg.content, str):
+            try:
+                data = json.loads(msg.content)
+                if "predictions" in data:
+                    evaluate_predictions(msg.content)
+                    break
+            except (json.JSONDecodeError, KeyError):
+                pass
+
+if __name__ == "__main__":
+    main()
+```
 
 ---
 
@@ -517,4 +527,4 @@ International
 
 The complete agent script is available at [agent-prior-labs.py](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/agent-prior-labs.py).
 
-A template for all required environment variables is provided in [env.example](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/env.example). Copy it to `.env` and fill in your values before running the agent.
+A template for all required environment variables is provided in [.env.example](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/.env.example). Copy it to `.env` and fill in your values before running the agent.
