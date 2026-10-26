@@ -13,7 +13,7 @@ author_profile: https://github.com/Lukas742
 
 ## Prerequisites
 
-- Complete the tutorial [Get Started with UI5 Web Components for React](ui5-webcomponents-react-introduction).
+- Complete the tutorial [Get Started with UI5 Web Components for React](tutorials/ui5-webcomponents-react-introduction).
 
 ## You will learn
 -  How to import UI5 Web Components into your application

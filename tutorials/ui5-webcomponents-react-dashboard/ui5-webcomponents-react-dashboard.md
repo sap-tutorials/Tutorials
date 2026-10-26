@@ -127,7 +127,7 @@ The `ShellBar` is the central navigation element in your web application and sho
    </ShellBar>
    ```
 
-    That is strange -- the `ShellBarItem` does not show an icon.
+    But - something's not right. Nothing is rendering now.
 
     Every `Icon` that is used in a component has to be imported manually. All available icons can be found [here](https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html#/overview/SAP-icons).
 
@@ -137,7 +137,7 @@ The `ShellBar` is the central navigation element in your web application and sho
    import activateIcon from "@ui5/webcomponents-icons/dist/activate.js";
    ```
 
-    Now your `ShellBarItem` shows up on the right side of the `ShellBar`.
+    Now everything is back and your `ShellBarItem` shows up on the right side of the `ShellBar`.
 
     ![ShellBar](02_shellbar.png)
 
@@ -453,7 +453,7 @@ For this, add two `Text` components above the `ProgressIndicator` of the first `
    import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
    ```
 
-   > At this point, the `AnalyticalTable` throws an error due to the missing required `data` prop. You will fix this in the next.
+   > At this point, the `AnalyticalTable` throws an error due to the missing required `data` prop, and rendering is not complete. You will fix this next.
 
 2. Add data and columns to the table. The `columns` prop expects an array of objects that include at least the `accessor` to the data or a unique `id` property. The value of `Header` will be shown as column header.
 
@@ -504,7 +504,7 @@ For this, add two `Text` components above the `ProgressIndicator` of the first `
     You can add many more properties to the `AnalyticalTable` component. For example, you can allow sorting, filtering and grouping via `sortable`, `filterable` and `groupable`, enable different selection modes with `selectionMode`, control how the table splits up available space between the columns with `scaleWidthMode` and much more.
     Feel free to take a look at the [documentation](https://ui5.github.io/webcomponents-react/v2/?path=/docs/data-display-analyticaltable--docs) and explore the different examples before continuing.
 
-    The default visible rows count is at 15. This number is a bit to high for a dashboard table. Reduce the `visibleRows` count to 5 by setting the corresponding prop.
+    The default visible rows count (before scrolling starts) is at 15. This number is a bit too high for a dashboard table. Reduce the `visibleRows` count to 5 by setting the corresponding prop.
 
    ```TypeScript / TSX
    <AnalyticalTable
@@ -566,7 +566,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
    <FlexBox
        justifyContent={FlexBoxJustifyContent.Center}
        wrap={FlexBoxWrap.Wrap}
-       style={{ padding: "var(--sapContent_Space_M)" }}
+       style={{ padding: "var(--sapContent_Space_M)" }}>
        ...
    </FlexBox>
    ```
@@ -576,6 +576,8 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
 Your component should now look like this:
 
 ![Dashboard](05_dashboard.png)
+
+The source should look like this:
 
 ```TypeScript / TSX
 import tableViewIcon from "@ui5/webcomponents-icons/dist/table-view.js";
@@ -839,8 +841,3 @@ export function MyApp() {
   );
 }
 ```
-
-
-
-
----

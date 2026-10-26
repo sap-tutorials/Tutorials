@@ -73,7 +73,7 @@ In this step we will use [CSS Modules](https://github.com/css-modules/css-module
    };
    ```
    
-2. Explicitly import `@ui5/webcomponents-react-base` package:
+2. Explicitly install `@ui5/webcomponents-react-base` package:
 
     `@ui5/webcomponents-react-base` is already installed by `@ui5/webcomponents-react`, but as we want to import the `ThemingParameters` in the following step, it's recommended adding the package to the dependencies as well.
 
@@ -99,35 +99,35 @@ In this step we will use [CSS Modules](https://github.com/css-modules/css-module
     First, create a new file `MyCustomElement.module.css` in `src` with the following content:
 
    ```CSS
-    .container {
-      background-color: var(--sapBackgroundColor);
-      font-family: var(--sapFontFamily);
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+   .container {
+     background-color: var(--sapBackgroundColor);
+     font-family: var(--sapFontFamily);
+     height: 50px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
    ```
     Then import the CSS file in your `MyCustomElement.tsx` file and add the class to the `div` element.
 
    ```TypeScript / TSX
-     import { ThemingParameters } from '@ui5/webcomponents-react-base';
-     import classes from './MyCustomElement.module.css';
-     
-     export const MyCustomElement = () => {
-       return (
-         <div className={classes.container}>
-           <span
-             style={{
-               color: ThemingParameters.sapNegativeColor,
-               fontSize: ThemingParameters.sapFontHeader1Size,
-             }}
-           >
-             My custom Text Element
-           </span>
-         </div>
-       );
-     };
+   import { ThemingParameters } from '@ui5/webcomponents-react-base';
+   import classes from './MyCustomElement.module.css';
+   
+   export const MyCustomElement = () => {
+     return (
+       <div className={classes.container}>
+         <span
+           style={{
+             color: ThemingParameters.sapNegativeColor,
+             fontSize: ThemingParameters.sapFontHeader1Size,
+           }}
+         >
+           My custom Text Element
+         </span>
+       </div>
+     );
+   };
    ```
 
 5. Import the custom component and add it to your `Home` component.
@@ -169,7 +169,7 @@ One example is applying a responsive content padding to the content of the dashb
    ```
 3. Apply the classes on elements:
 
-    Add a `div` that is wrapping the outer `FlexBox` and apply the `sap-container-type-inline-size` class:
+    Add a `div` that is wrapping the outer `FlexBox` and apply the `sap-container-type-inline-size` class (remembering to close it too):
 
    ```tsx
    <div className="sap-container-type-inline-size">
@@ -192,11 +192,7 @@ One example is applying a responsive content padding to the content of the dashb
 
 ### Conclusion
 
-In this tutorial mission, you learned the basics of how to build a single page application using UI5 Web Components for React, with routing, styling, and general component behavior and modern React APIs.
+In this series of tutorials, you learned the basics of how to build a single page application using UI5 Web Components for React, with routing, styling, and general component behavior and modern React APIs.
 If you have questions about UI5 Web Components for React, or found something that isn't right, then please feel free to join the [OpenUI5 Slack community](https://ui5-slack-invite.cfapps.eu10.hana.ondemand.com/) and visit us in the [`#webcomponents-react`](https://openui5.slack.com/archives/CSQEJ2J04) channel, or come directly to our [GitHub page](https://github.com/UI5/webcomponents-react), where you can file [issues](https://github.com/UI5/webcomponents-react/issues/new/choose) or participate in [discussions](https://github.com/UI5/webcomponents-react/discussions).
 
-If you enjoyed this tutorial, you can help us out a lot by starring our repo and become one of our wonderful [✨stargazers✨](https://github.com/UI5/webcomponents-react/stargazers)!
-
-
-
----
+If you enjoyed this series, you can help us out a lot by starring our repo and become one of our wonderful [✨stargazers✨](https://github.com/UI5/webcomponents-react/stargazers)!
