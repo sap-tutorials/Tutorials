@@ -19,6 +19,22 @@ author_profile: https://github.com/noravth
 SAP AI Core setup and basic knowledge: [Initial Setup](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/38c4599432d74c1d94e70f7c955a717d.html)
 SAP AI Core instance with **Extended Service Plan** (required for Generative AI Hub) Python 3.10 or higher installed. Basic familiarity with Python and REST APIs.
 
+> 🚨 If you running this as part of the Developer Garage at TechEd Berlin 2026 please follow the instructions below to get a service key from SAP AI Core.
+
+### 🚨 ONLY FOR DEVELOPER GARAGE AT TECHED 2026 IN BERLIN
+There are temporary (limited lifetime) service keys available for your use
+at the Developer Garage during SAP TechEd 2026 in Berlin. In this step, you'll
+retrieve such a service key, and store the credentials in your .env file. Instructions will follow below.
+
+The keys are available in a GitHub repo, and are rotated (old ones expired, new
+ones minted) on a regular basis. They can be found in the
+[keys/](https://github.com/SAP-samples/teched2026-sk-gen/tree/main/keys)
+directory of the `SAP-samples/teched2026-sk-gen` repo on GitHub, stored in
+password-protected ZIP files, which are suffixed with a timestamp
+(YYYYMMDDHHMMSS), like this:
+
+![service key zip files](img/sk-files.png)
+
 ---
 
 ### Architecture Overview
@@ -37,7 +53,7 @@ The agent follows a simple three-step flow:
 
 This tutorial uses the **E-Commerce Delivery & Shipping Dataset 2026**, which contains 50,000 simulated e-commerce orders with logistics attributes such as shipping method, carrier, distance, package weight, warehouse processing time, weather conditions, and delivery outcome.
 
-You can download the dataset from Kaggle: [E-Commerce Delivery and Shipping Data 2026](https://www.kaggle.com/datasets/datascikhan/e-commerce-delivery-and-shipping-data-2026)
+The dataset is already downloaded and added to this repository [(payload_data.py)](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/payload_data.py). The original data you can find on Kaggle: [E-Commerce Delivery and Shipping Data 2026](https://www.kaggle.com/datasets/datascikhan/e-commerce-delivery-and-shipping-data-2026). You do NOT need to download it for this tutorial.
 
 The agent uses a representative sample of 50 training rows (every 1,000th order) plus 10 test rows drawn from that dataset. The two prediction targets are:
 
@@ -68,7 +84,7 @@ Once the deployment status is **Running**, copy the deployment ID. You will need
 
 ### Configure environment variables
 
-Create a file named `.env` in your project folder and add the following variables. Never commit this file! Add `.env` to your `.gitignore`. When deploying to Cloud Foundry you can simply bind those variables using [environmental variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
+Create a file named `.env` in your project folder and add the following variables. Use the [.env.example](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/.env.example) Never commit this file! Add `.env` to your `.gitignore`. When deploying to Cloud Foundry you can simply bind those variables using [environmental variables](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html).
 
 ```
 AICORE_AUTH_URL=https://<your-subdomain>.authentication.<region>.hana.ondemand.com/oauth/token
@@ -84,17 +100,27 @@ You can find all SAP AI Core credentials in the SAP BTP cockpit under your SAP A
 
 > Note: `LLM_MODEL` is optional. This agent defaults to `sap/amazon--nova-lite` if the variable is not set.
 
+> 🚨 You can find the deployment ID for the TabPFN model deployed as part of the Developer Garage in the [.env.example](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/.env.example) file.
+
 ---
 
 ### Install Python dependencies
 
-In your terminal/IDE of your choice: Create and activate a virtual environment, then install the required packages:
+In your terminal/IDE of choice: Create and activate a virtual environment, then install the required packages:
 
-```
-python -m venv .venv
-source .venv/bin/activate        # macOS / Linux
-.venv\Scripts\activate           # Windows
-```
+> 🚨 For the Developer Garage at TechEd 2026 in Berlin open VS Code (Visual Studio Code) on your machine and open the integrated terminal (**Terminal > New Terminal**). Create and activate a virtual environment using the commands for your OS, then run the install command.
+>
+> **macOS/Linux:**
+> ```
+> python3 -m venv .venv
+> source .venv/bin/activate
+> ```
+>
+> **Windows:**
+> ```
+> python -m venv .venv
+> .venv\Scripts\activate
+> ```
 
 ```
 pip install langchain langchain-litellm requests pandas python-dotenv mcp
@@ -160,7 +186,9 @@ def _get_auth_token() -> str:
 
 Calling TabPFN or SAP-RPT via Generative AI Hub work differently from most ML APIs: you do not need to train the model separately. Instead, you send everything in one request: rows with known labels teach the model on the fly (in context learning), and rows marked with a `[PREDICT]` placeholder become the test set (missing values to predict).
 
-All shipment data lives in a separate file. Download [payload_data.py](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/payload_data.py) and place it next to `agent-prior-labs.py`. In `agent-prior-labs.py`, import the two names you need:
+All shipment data lives in a separate file. Download [payload_data.py](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/ai-core-prior-labs-langgraph/payload_data.py) and place it next to `agent-prior-labs.py`. 
+
+In `agent-prior-labs.py`, import the two names you need:
 
 ```python
 from payload_data import payload, GROUND_TRUTH
