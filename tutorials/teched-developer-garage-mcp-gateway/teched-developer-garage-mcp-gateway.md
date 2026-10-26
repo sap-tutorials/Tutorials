@@ -190,7 +190,7 @@ Click **Next** to proceed.
 
 ![picture](screen24.png)
 
-4. Select the **MCP Servers** tab and search for the Shopify MCP server you deployed earlier (look for your user number). Select it and click **Create Product**.
+4. Select the **AI Artifacts** tab and search for the Shopify MCP server you deployed earlier (look for your user number). Select it and click **Create Product**.
 
 ![picture](screen25.png)
 
@@ -211,7 +211,7 @@ Click **Publish** to proceed.
 
 ![picture](screen28.png)
 
-8. Make sure your user number is included in the agent subscription name and click **Create**.
+8. Make sure your user number is included in the agent subscription name, e.g. `Agent Subscription User{{var:userNumber}}`, and click **Create**.
 
 ![picture](screen29.png)
 
@@ -249,6 +249,8 @@ Click **Publish** to proceed.
       }
     "Bearer $($resp.access_token)" | Set-Clipboard
     ```
+
+    You can use Visual Studio Code or any other text editor to replace the values on the command lines and save your Bearer token for later use.
     [OPTION END]
 
     Replace the token URL, key, and secret with the values from your Developer Hub subscription, and **keep the single quotes** around them — your key and secret may contain characters like `$` or `|` that would otherwise be misinterpreted. The command prints nothing on success: your Bearer token is now on the clipboard, ready to paste into the Inspector. Save it somewhere in case you copy something else in the meantime. The token is valid for one hour; if you get a `401` later, simply run the command again.
@@ -275,15 +277,11 @@ Click **Publish** to proceed.
 
 6. Once you have added the Bearer token, switch the toggle of your server to **Connected**. When the connection is verified, go to the **Tools** tab.
 
-![picture](screen34.png)
+  ![picture](screen34.png)
 
 7. The **Tools** tab gives you access to all MCP operations you selected during deployment. In this case, you can create and retrieve sales orders in Shopify. Try out the **Create order** tool by providing an email, a financial status, and the line items. In the MCP Inspector, line items need to be entered as an array — but don't worry, that's just the Inspector's view. With a real conversational agent, you can describe the line items in natural language. Here's an example line-item input you can use:
 
-    ```json
-    [{ "title": "Widget", "price": "29.99", "quantity": 2 }]
-    ```
-
-![picture](screen35.png)
+  ![picture](screen35-2.png)
 
 8. After a few seconds, the MCP server creates a new sales order in Shopify and returns the result body, including the new sales order ID and a confirmation number.
 
@@ -296,9 +294,5 @@ Click **Publish** to proceed.
 10. Copy the confirmation number and share it with one of the instructors.
 
 ![picture](screen38.png)
-
-They can show you what your sales order looks like in the Shopify instance:
-
-![picture](screen39.png)
 
 Congratulations — you just turned a plain REST API into a governed MCP server and let an AI-ready tool place a real order, all without writing a single line of backend code. Your surge protection is standing guard, your Developer Hub product is open for business, and somewhere in Shopify a very patient widget is waiting to be shipped. Time to grab a coffee before your agents start asking for a raise.
