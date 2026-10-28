@@ -131,7 +131,7 @@ In your terminal/IDE of choice: Create and activate a virtual environment, then 
 > ```
 
 ```
-pip install langchain langchain-litellm requests pandas python-dotenv mcp
+pip install --isolated langchain langchain-litellm requests pandas python-dotenv mcp
 ```
 
 ---
