@@ -32,7 +32,7 @@ primary_tag: software-product>sap-hana-cloud
 
 Ensure that you have a Java Development Kit (JDK) installed and ensure that it is accessible from your path.  Details on supported versions can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
-An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download). If you don't already have a JDK installed, please install it from SapMachine.
+An OpenJDK from SAP is available at [SapMachine](https://sap.github.io/SapMachine/#download). If you don't already have a JDK installed, you can install it from SapMachine or use your operating system's package manager.
 
 To verify that the JDK is correctly set up, run the following:
 
@@ -173,7 +173,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/docs/SAP_HANA_CL
                connection = DriverManager.getConnection(  
                    //Option 1, retrieve the connection parameters from the hdbuserstore
                    //The below URL gets the host, port and credentials from the hdbuserstore.
-                   "jdbc:sap://dummy_host:0/?KEY=USER1UserKey&encrypt=true&validateCertificate=false");
+                   "jdbc:sap://dummy_host:0/?KEY=USER1UserKey&encrypt=true&validateCertificate=false&sessionVariable:APPLICATION=JavaQuery.java");
 
                    //Option2, specify the connection parameters
                    //"jdbc:sap://10.11.123.134:39015/?encrypt=true&validateCertificate=false", "User1", "Password1");
@@ -210,6 +210,9 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/docs/SAP_HANA_CL
        }
    }
    ```
+
+   > [!NOTE]
+   > The `sessionVariable:APPLICATION` parameter sets a custom application name for the connection. This value can be viewed in the `CLIENT_APPLICATION` column of the `M_CONNECTIONS` system view and may also appear in SAP HANA telemetry data. 
 
 3. Compile the `.java` file into a `.class` file using the following command.
 
