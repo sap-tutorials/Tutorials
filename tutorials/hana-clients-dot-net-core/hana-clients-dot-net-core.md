@@ -37,13 +37,22 @@ dotnet --version
 
 If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 8.0.203.  
 
+[OPTION BEGIN [Windows and Mac]]
+
 If the .NET SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows or Mac.
 
 ![.NET Core SDK install](dotnet-install.png)
 
+[OPTION END]
+
+[OPTION BEGIN [Linux]]
+
 On Linux, follow the instructions for the appropriate Linux version such as [Install the .NET SDK or the .NET Runtime on openSUSE](https://docs.microsoft.com/en-us/dotnet/core/install/linux-opensuse).
 
-In order for the shell to recognize that the .NET SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
+[OPTION END]
+
+> [!TIP]
+> In order for the shell to recognize that the .NET SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
 > [!NOTE]
 > For further details on supported versions, see SAP Note 3165810 - SAP HANA Client Supported Platforms.
@@ -116,7 +125,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
             {
                 try
                 {
-                    using (var conn = new HanaConnection("Server=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.hana.prod-xxxx.hanacloud.ondemand.com:443;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
+                    using (var conn = new HanaConnection("Server=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx.hana.prod-xxxx.hanacloud.ondemand.com:443;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false;sessionVariable:APPLICATION=dotNETQuery"))
 
                     // encrypt and sslValidateCertificate should be true for HANA Cloud connections
                     // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
@@ -166,6 +175,9 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
     ```
 
     Save and close the `Program.cs` file after replacing the code and updating the host and port.
+
+    > [!NOTE] 
+    > The `sessionVariable:APPLICATION` parameter sets a custom application name for the connection. This value can be viewed in the `CLIENT_APPLICATION` column of the `M_CONNECTIONS` system view and may also appear in SAP HANA telemetry data. 
 
     The above app makes use of some of the SAP HANA client .NET driver  methods, such as [HanaConnection](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/d19390d16d6110149af29776dce510bc.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/469e137b6d611014ac27bffe40be2f18.html).  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0).
 

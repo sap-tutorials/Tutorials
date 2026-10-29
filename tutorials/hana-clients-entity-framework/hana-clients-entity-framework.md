@@ -145,7 +145,7 @@ dotnet ef -h
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) {
-            options.UseHana("Server=xxxxxxxx-.hanacloud.ondemand.com:443;UserName=User2;Password=Password2;Current Schema=USER2");
+            options.UseHana("Server=xxxxxxxx-.hanacloud.ondemand.com:443;UserName=User2;Password=Password2;Current Schema=USER2;sessionVariable:APPLICATION=EFCoreQuery");
         }
     }
 
@@ -158,6 +158,9 @@ dotnet ef -h
     ```
 
     Be sure to update the host URL and optionally the user name and password. 
+
+    > [!NOTE]
+    > The `sessionVariable:APPLICATION` parameter sets a custom application name for the connection. This value can be viewed in the `CLIENT_APPLICATION` column of the `M_CONNECTIONS` system view and may also appear in SAP HANA telemetry data. 
 
     > [!WARNING]
     > EnsureDeleted and EnsureCreated will delete and recreate the objects in the schema USER2. As documented at [RelationalDatabaseCreator.EnsureDeleted Method](https://learn.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.storage.relationaldatabasecreator.ensuredeleted), it will delete all objects in the schema USER2.

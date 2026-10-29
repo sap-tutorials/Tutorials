@@ -233,7 +233,9 @@ npm list @sap/hana-client
 
    var connOptions = {
        //Option 1, retrieve the connection parameters from the hdbuserstore
-       serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
+       serverNode: '@USER1UserKey', //host, port, uid, and pwd retrieved from hdbuserstore
+       sslValidateCertificate: 'false', //Must be set to false when connecting to an SAP HANA on-premise instance that uses a self-signed certificate.
+       'sessionVariable:APPLICATION': 'nodeQuery.js', //Optional custom application name
 
        //Option 2, specify the connection parameters
        //serverNode: 'host:port',
@@ -247,8 +249,6 @@ npm list @sap/hana-client
 
        //As of SAP HANA client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
        //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
-       sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA on-premise instance that uses a self-signed certificate.
-
        //For encrypted connections, the default crypto provider is mscrypto on Windows or openSSL on Linux or macos
        //To use the SAP crypto provider, uncomment the below line.
        //sslCryptoProvider: 'commoncrypto',
@@ -286,6 +286,9 @@ npm list @sap/hana-client
    connection.disconnect();
    ```  
 
+   > [!NOTE]
+   > The `sessionVariable:APPLICATION` parameter sets a custom application name for the connection. This value can be viewed in the `CLIENT_APPLICATION` column of the `M_CONNECTIONS` system view and may also appear in SAP HANA telemetry data. 
+
 3. Run the app.  
 
     ```Shell
@@ -298,7 +301,24 @@ npm list @sap/hana-client
 
     Notice in the documentation that the above methods support being called in a synchronous or asynchronous manner.  Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
 
-4. To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
+4. After running the application, you can verify that the custom application name (nodeQuery.js) was successfully set by querying the `M_CONNECTIONS` system view from any SQL client (i.e. SAP HANA Cloud Central) connected to the same SAP HANA Cloud Instance. 
+
+    Execute the following SQL. 
+    ```SQL
+    SELECT 
+        CLIENT_APPLICATION, 
+        CLIENT_TYPE, 
+        USER_NAME 
+        FROM M_CONNECTIONS 
+    WHERE USER_NAME = CURRENT_USER 
+    ORDER BY START_TIME DESC;
+    ```
+
+    A row similar to the one highlighted below should appear, with `CLIENT_APPLICATION` being nodeQuery.js.
+
+    ![Checking Node application name](custom-application-name-query.png)
+
+5. To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
 
     [OPTION BEGIN [Windows]]
 
@@ -386,7 +406,7 @@ Connection pooling can improve performance when making multiple, brief connectio
 
    var connOptions = {
        //Option 1, retrieve the connection parameters from the hdbuserstore
-       serverNode: '@USER1UserKey'  //host, port, uid, and pwd retrieved from hdbuserstore
+       serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
 
        //Option 2, specify the connection parameters
        //serverNode: 'host:port',

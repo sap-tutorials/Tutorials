@@ -141,7 +141,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
     - If you are on a Linux or Mac machine and the hdbsql connection fails with the error message below, it indicates that the OpenSSL library could not locate a trust store in the default location.  
 
-      _Cannot create SSL context:  SSL trust store cannot be found: `/Users/user1/.ssl/trust.pem`_
+      _Cannot create SSL context:  SSL trust store cannot be found: `$HOME/.ssl/trust.pem`
 
       A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/docs/hana-cloud-database/sap-hana-cloud-sap-hana-database-security-guide/secure-communication-between-sap-hana-and-sap-hana-clients) and [3397584 - HANA Cloud Connections will switch from "DigiCert Global Root CA" to "DigiCert TLS RSA4096 Root G5"](https://me.sap.com/notes/3397584).  
 
@@ -165,9 +165,9 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
 This step creates two users and a schema.  `USER1` will be the owner of the tables that will be created in a subsequent step and will be used to connect to the database. 
 
-On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
-
 [OPTION BEGIN [Mac and Linux]]
+
+Turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
 
 ```HDBSQL
 \pa off
@@ -244,8 +244,6 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     > [!TIP]
     > Uppercase `-U` is for specifying a key from the user store, lower case `-u` is for user.  
 
----
-
 [Using Stored Connection Information](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/708e5fe0e44a4764a1b6b5ea549b88f4.html) contains details on how an application can use a `hdbuserstore` key.
 
 ### Create tables and insert data
@@ -264,9 +262,9 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     [OPTION END]
 
-    Substitute `pico` below for your preferred text editor.
-
     [OPTION BEGIN [Mac and Linux]]
+
+    Substitute `pico` below for your preferred text editor.
 
     ```Shell
     mkdir -p $HOME/HANAClientsTutorial/sql

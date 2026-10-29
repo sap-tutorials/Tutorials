@@ -27,7 +27,9 @@ primary_tag: software-product>sap-hana-cloud
 
 ---
 
-### Configure a data source using Microsoft Windows ODBC Data Source Administrator
+### Configure a data source
+
+[OPTION BEGIN [Windows]]
 
 The ODBC Data Source Administrator lists the installed ODBC drivers and the configured data sources.  
 
@@ -80,7 +82,9 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 
 For additional details see [Connect to SAP HANA via ODBC](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/66a4169b84b2466892e1af9781049836.html).
 
-### Configure a data source on Linux or Mac with unixODBC
+[OPTION END]
+
+[OPTION BEGIN [Mac and Linux]]
 
 The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) can be used to configure and test a data source on Linux or Mac.  
 
@@ -92,13 +96,9 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
 2. On a Mac, unixODBC can be installed using [Homebrew](https://brew.sh).  
 
-    [OPTION BEGIN [Mac]]
-
     ```Shell
     brew install unixodbc
     ```
-
-    [OPTION END]
 
 3. The following commands can be used to confirm that unixODBC is installed, determine the location of the .odbc.ini file (if it exists), and to confirm the location of the SAP HANA client install that contains the ODBC driver.
 
@@ -126,12 +126,17 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
     driver = /home/dan/sap/hdbclient/libodbcHDB.so
     encrypt = true
     sslValidateCertificate = true
+    sessionVariable:APPLICATION = ODBC Application
 
     [HANA_OnPremise]
     servernode = hxehost:39015
     driver = /home/dan/sap/hdbclient/libodbcHDB.so
     databasename = HXE
+    sessionVariable:APPLICATION = ODBC Application
     ```
+
+    > [!NOTE]
+    > The `sessionVariable:APPLICATION` property sets a custom application name for the connection. This value can be viewed in the `CLIENT_APPLICATION` column of the `M_CONNECTIONS` system view and may also appear in SAP HANA telemetry data.
 
 6. unixODBC provides a basic SQL query tool called `isql` that can be used to validate a data source.
 
@@ -146,6 +151,42 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
     ```
 
     ![isql](isqlQuery.png)
+
+[OPTION END]
+
+### Set custom application name
+> [!NOTE] 
+> Linux and macOS users can set a custom application name by adding the `sessionVariable:APPLICATION` property to the data source definition in the `.odbc.ini` file as shown in the previous step. 
+> The following instructions only apply to Microsoft Windows.
+
+The SAP HANA ODBC driver supports setting a custom application name using the `sessionVariable:APPLICATION` connection property. This value can be viewed in the `CLIENT_APPLICATION` column of the `M_CONNECTIONS` system view and may also appear in SAP HANA telemetry data.
+
+1. Open **ODBC Data Sources (64-bit)** from the Microsoft Windows Start menu.
+
+2. Select your SAP HANA data source and click **Configure**.
+
+    ![Configure ODBC application name](config-odbc-application-name.png)
+
+3. Click **Advanced** in the lower-left corner of the configuration dialog.
+
+    ![Open ODBC advanced settings](advanced-settings.png)
+
+
+4. Click **Add** and enter the following values:
+
+    - **Property:** `sessionVariable:APPLICATION`	
+
+    - **Value:** `ODBC Application` 
+        - You can replace ODBC Application with your preferred application name.
+
+    ![Add ODBC connection property](odbc-connection-property.png)
+
+5. Click **OK** to close the Advanced dialog.
+
+6. Click **OK** on each remaining configuration window to save the changes.
+
+    > [!NOTE] 
+    > The custom application name will not be saved unless you confirm and close all open configuration dialogs by clicking OK.
 
 ### Use a SAP HANA data source from another program
 
