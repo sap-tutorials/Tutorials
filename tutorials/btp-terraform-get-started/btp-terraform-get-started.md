@@ -1,8 +1,8 @@
 ---
 parser: v2
 auto_validation: true
-author_name: Christian Volk
-author_profile: https://github.com/v0lkc
+author_name: Christian Lechner
+author_profile: https://github.com/lechnerc77
 tags: [tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
 primary_tag: products>sap-business-technology-platform
 time: 10
@@ -39,7 +39,7 @@ terraform {
   required_providers {
     btp = {
       source  = "SAP/btp"
-      version = "~>1.25.0"
+      version = "~>1.28.0"
     }
   }
 }
